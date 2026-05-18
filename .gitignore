@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# OS / editor
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Live database state — seeded fresh from data/*.seed.json on first boot
+data/db.json
+data/db.json.bak
+
+# Dev artefacts captured during the initial scaffold
+*.png
+.playwright-mcp/
+
+# Local env
+.env
+.env.local

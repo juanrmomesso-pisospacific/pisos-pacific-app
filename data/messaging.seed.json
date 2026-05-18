@@ -1,0 +1,163 @@
+{
+  "templates": [
+    { "id": "tpl-1", "name": "cotizacion_lista",     "category": "UTILITY", "language": "es_AR", "channel": "whatsapp", "status": "approved", "body": "Hola {{1}}, ya está lista tu cotización #{{2}}. Total: {{3}}. ¿La revisás cuando puedas? Gracias!" },
+    { "id": "tpl-2", "name": "entrega_confirmada",   "category": "UTILITY", "language": "es_AR", "channel": "whatsapp", "status": "approved", "body": "Hola {{1}}, te confirmamos la entrega para el {{2}} en {{3}}. Si necesitás reprogramar, avisanos." },
+    { "id": "tpl-3", "name": "cobro_pendiente",      "category": "UTILITY", "language": "es_AR", "channel": "whatsapp", "status": "approved", "body": "Hola {{1}}, te recordamos que el saldo de tu compra #{{2}} es {{3}}. Cualquier consulta acá estamos." },
+    { "id": "tpl-4", "name": "container_recibido",   "category": "UTILITY", "language": "es_AR", "channel": "whatsapp", "status": "approved", "body": "Llegó el container con tu pedido {{1}}. Ya está disponible para coordinar entrega cuando quieras." },
+    { "id": "tpl-5", "name": "bienvenida",           "category": "MARKETING","language": "es_AR", "channel": "whatsapp", "status": "approved", "body": "¡Bienvenido a Pisos Pacific! Soy {{1}} y voy a estar acompañándote. ¿En qué proyecto estás pensando?" }
+  ],
+  "conversations": [
+    {
+      "id": "conv-1", "channel": "whatsapp", "contact_id": "+5491143215567", "contact_name": "Lucía Habiaga",
+      "linked_client_name": "Lucia Habiaga", "status": "open", "unread_count": 2,
+      "last_message_at": "2026-05-18T13:42:00.000Z", "last_message_preview": "Sí, perfecto. ¿Cuándo me podés mandar la cotización?"
+    },
+    {
+      "id": "conv-2", "channel": "whatsapp", "contact_id": "+5491156783214", "contact_name": "Kike Pedreira",
+      "linked_client_name": "Kike Pedreira", "status": "open", "unread_count": 0,
+      "last_message_at": "2026-05-18T11:15:00.000Z", "last_message_preview": "Listo, te paso el comprobante."
+    },
+    {
+      "id": "conv-3", "channel": "instagram", "contact_id": "@martina.iglesias.deco", "contact_name": "Martina Iglesias",
+      "status": "open", "unread_count": 1,
+      "last_message_at": "2026-05-18T10:02:00.000Z", "last_message_preview": "Hola! ¿Tienen Roble Eslavonia en stock?"
+    },
+    {
+      "id": "conv-4", "channel": "whatsapp", "contact_id": "+5491167890123", "contact_name": "Sofi Menditeguy",
+      "linked_client_name": "Sofi Menditeguy", "status": "open", "unread_count": 0,
+      "last_message_at": "2026-05-17T18:30:00.000Z", "last_message_preview": "Genial, mañana paso a las 11."
+    },
+    {
+      "id": "conv-5", "channel": "instagram", "contact_id": "@andres.collado", "contact_name": "Andres Collado",
+      "linked_client_name": "Andres Collado", "status": "open", "unread_count": 0,
+      "last_message_at": "2026-05-17T16:45:00.000Z", "last_message_preview": "Te paso fotos del living para que veas."
+    },
+    {
+      "id": "conv-6", "channel": "whatsapp", "contact_id": "+5491134567890", "contact_name": "Estudio Detry Miguens",
+      "linked_client_name": "Estudio Detry Miguens", "status": "open", "unread_count": 4,
+      "last_message_at": "2026-05-18T14:20:00.000Z", "last_message_preview": "Necesitamos cotización urgente para 3 obras"
+    },
+    {
+      "id": "conv-7", "channel": "whatsapp", "contact_id": "+5491198765432", "contact_name": "Roberto P.",
+      "status": "open", "unread_count": 1,
+      "last_message_at": "2026-05-18T09:10:00.000Z", "last_message_preview": "Buenas, me pasaron su contacto. Quería consultar precios de H2O."
+    },
+    {
+      "id": "conv-8", "channel": "instagram", "contact_id": "@constructora.sz", "contact_name": "Arq. Chloe – Constructora SZ",
+      "linked_client_name": "Arq. Chloe - Constructora SZ", "status": "open", "unread_count": 0,
+      "last_message_at": "2026-05-16T19:00:00.000Z", "last_message_preview": "Quedó hermoso! Mañana subo a stories"
+    },
+
+    {
+      "id": "conv-9", "channel": "whatsapp", "contact_id": "+5491145672389", "contact_name": "Camila Suárez",
+      "status": "open", "unread_count": 3,
+      "last_message_at": "2026-05-18T15:48:00.000Z", "last_message_preview": "Acá te paso fotos del ambiente 📸"
+    },
+    {
+      "id": "conv-10", "channel": "whatsapp", "contact_id": "+5491167234589", "contact_name": "Familia Rossi",
+      "linked_client_name": "Familia Rossi", "status": "open", "unread_count": 0,
+      "last_message_at": "2026-05-17T20:12:00.000Z", "last_message_preview": "Dale, mañana 8am estamos."
+    },
+    {
+      "id": "conv-11", "channel": "instagram", "contact_id": "@diego.maglio", "contact_name": "Diego Maglio",
+      "linked_client_name": "Diego Maglio", "status": "open", "unread_count": 1,
+      "last_message_at": "2026-05-18T08:34:00.000Z", "last_message_preview": "Pero el de la cocina tiene una raya importante 😕"
+    },
+    {
+      "id": "conv-12", "channel": "whatsapp", "contact_id": "+5491178932145", "contact_name": "Constructora Norte SA",
+      "linked_client_name": "Constructora Norte SA", "status": "open", "unread_count": 0,
+      "last_message_at": "2026-05-15T17:22:00.000Z", "last_message_preview": "Perfecto, gestiono el pago esta semana."
+    },
+    {
+      "id": "conv-13", "channel": "instagram", "contact_id": "@deco.belgrano", "contact_name": "Deco Belgrano",
+      "status": "open", "unread_count": 2,
+      "last_message_at": "2026-05-18T12:08:00.000Z", "last_message_preview": "¿Hacen envíos a Mar del Plata?"
+    },
+    {
+      "id": "conv-14", "channel": "whatsapp", "contact_id": "+5491156432187", "contact_name": "Florencia Pizzorno",
+      "linked_client_name": "Florencia Pizzorno", "status": "open", "unread_count": 0,
+      "last_message_at": "2026-05-16T14:50:00.000Z", "last_message_preview": "Buenísimo! Te aviso en cuanto tenga las medidas."
+    },
+    {
+      "id": "conv-15", "channel": "whatsapp", "contact_id": "+5491190876543", "contact_name": "Tobías Acuña",
+      "status": "open", "unread_count": 2,
+      "last_message_at": "2026-05-18T16:30:00.000Z", "last_message_preview": "Hola, vi un piso en su feed que me encantó. ¿Cómo se llama el modelo?"
+    }
+  ],
+  "messages": [
+    { "id": "m-1-1", "conversation_id": "conv-1", "direction": "in",  "body": "Hola! Vi su Instagram, estoy haciendo la casa en Pilar y quería consultar por los pisos H2O.", "ts": "2026-05-18T13:30:00.000Z", "status": "read" },
+    { "id": "m-1-2", "conversation_id": "conv-1", "direction": "out", "body": "Hola Lucía! Buenísimo. ¿Cuántos m² aprox? Y, ¿tenés una idea del estilo/color?", "ts": "2026-05-18T13:35:00.000Z", "status": "read" },
+    { "id": "m-1-3", "conversation_id": "conv-1", "direction": "in",  "body": "Son 120m². Buscamos algo claro pero cálido, como roble.", "ts": "2026-05-18T13:40:00.000Z", "status": "read" },
+    { "id": "m-1-4", "conversation_id": "conv-1", "direction": "in",  "body": "Sí, perfecto. ¿Cuándo me podés mandar la cotización?", "ts": "2026-05-18T13:42:00.000Z", "status": "read" },
+
+    { "id": "m-2-1", "conversation_id": "conv-2", "direction": "out", "body": "Hola Kike, te confirmo: la entrega es mañana 11hs en Obra Tortugas.", "ts": "2026-05-18T11:00:00.000Z", "status": "read" },
+    { "id": "m-2-2", "conversation_id": "conv-2", "direction": "in",  "body": "Buenísimo. Ya te transferí el 50%.", "ts": "2026-05-18T11:10:00.000Z", "status": "read" },
+    { "id": "m-2-3", "conversation_id": "conv-2", "direction": "in",  "body": "Listo, te paso el comprobante.", "ts": "2026-05-18T11:15:00.000Z", "status": "read" },
+
+    { "id": "m-3-1", "conversation_id": "conv-3", "direction": "in",  "body": "Hola! ¿Tienen Roble Eslavonia en stock?", "ts": "2026-05-18T10:02:00.000Z", "status": "delivered" },
+
+    { "id": "m-4-1", "conversation_id": "conv-4", "direction": "out", "body": "Sofi, ¿confirmás visita mañana al showroom?", "ts": "2026-05-17T18:00:00.000Z", "status": "read" },
+    { "id": "m-4-2", "conversation_id": "conv-4", "direction": "in",  "body": "Genial, mañana paso a las 11.", "ts": "2026-05-17T18:30:00.000Z", "status": "read" },
+
+    { "id": "m-5-1", "conversation_id": "conv-5", "direction": "out", "body": "Andrés, ¿qué tal quedó el piso?", "ts": "2026-05-17T16:30:00.000Z", "status": "read" },
+    { "id": "m-5-2", "conversation_id": "conv-5", "direction": "in",  "body": "Te paso fotos del living para que veas.", "ts": "2026-05-17T16:45:00.000Z", "status": "read" },
+
+    { "id": "m-6-1", "conversation_id": "conv-6", "direction": "in",  "body": "Hola, estamos arrancando 3 obras chicas el mes que viene.", "ts": "2026-05-18T14:10:00.000Z", "status": "delivered" },
+    { "id": "m-6-2", "conversation_id": "conv-6", "direction": "in",  "body": "Las direcciones son Belgrano, Núñez y San Isidro.", "ts": "2026-05-18T14:12:00.000Z", "status": "delivered" },
+    { "id": "m-6-3", "conversation_id": "conv-6", "direction": "in",  "body": "Total aprox 280m² entre las 3.", "ts": "2026-05-18T14:15:00.000Z", "status": "delivered" },
+    { "id": "m-6-4", "conversation_id": "conv-6", "direction": "in",  "body": "Necesitamos cotización urgente para 3 obras", "ts": "2026-05-18T14:20:00.000Z", "status": "delivered" },
+
+    { "id": "m-7-1", "conversation_id": "conv-7", "direction": "in",  "body": "Buenas, me pasaron su contacto. Quería consultar precios de H2O.", "ts": "2026-05-18T09:10:00.000Z", "status": "delivered" },
+
+    { "id": "m-8-1", "conversation_id": "conv-8", "direction": "out", "body": "Chloe! Mañana entregamos el balance del pedido.", "ts": "2026-05-16T18:45:00.000Z", "status": "read" },
+    { "id": "m-8-2", "conversation_id": "conv-8", "direction": "in",  "body": "Quedó hermoso! Mañana subo a stories", "ts": "2026-05-16T19:00:00.000Z", "status": "read" },
+
+    { "id": "m-9-1",  "conversation_id": "conv-9", "direction": "in",  "body": "Hola, ¿qué tal? Me recomendó Sole, una amiga.", "ts": "2026-05-18T14:55:00.000Z", "status": "read" },
+    { "id": "m-9-2",  "conversation_id": "conv-9", "direction": "in",  "body": "Estoy refaccionando un depto en Recoleta y necesito piso de madera para living + 2 dormitorios.", "ts": "2026-05-18T14:56:00.000Z", "status": "read" },
+    { "id": "m-9-3",  "conversation_id": "conv-9", "direction": "out", "body": "Hola Camila! Bárbaro 😊 ¿Tenés idea aprox de los m² y si pensás en un tono claro u oscuro?", "ts": "2026-05-18T15:02:00.000Z", "status": "read" },
+    { "id": "m-9-4",  "conversation_id": "conv-9", "direction": "in",  "body": "Calculo 90m² entre todo. Me gusta el roble natural, pero algo no muy amarillo.", "ts": "2026-05-18T15:10:00.000Z", "status": "read" },
+    { "id": "m-9-5",  "conversation_id": "conv-9", "direction": "out", "body": "Para ese tono te recomendaría dos opciones: Roble Eslavonia (más equilibrado) y Roble Ahumado (un poco más grisáceo). ¿Te paso fotos de ambos en obras terminadas?", "ts": "2026-05-18T15:15:00.000Z", "status": "read" },
+    { "id": "m-9-6",  "conversation_id": "conv-9", "direction": "in",  "body": "Sí dale, mándame!", "ts": "2026-05-18T15:18:00.000Z", "status": "read" },
+    { "id": "m-9-7",  "conversation_id": "conv-9", "direction": "out", "body": "📷 [obra-recoleta-eslavonia.jpg]", "ts": "2026-05-18T15:21:00.000Z", "status": "read" },
+    { "id": "m-9-8",  "conversation_id": "conv-9", "direction": "out", "body": "📷 [obra-palermo-ahumado.jpg]", "ts": "2026-05-18T15:22:00.000Z", "status": "read" },
+    { "id": "m-9-9",  "conversation_id": "conv-9", "direction": "in",  "body": "Me gusta más el primero ✨", "ts": "2026-05-18T15:30:00.000Z", "status": "delivered" },
+    { "id": "m-9-10", "conversation_id": "conv-9", "direction": "in",  "body": "¿Cuánto sale el m² instalado?", "ts": "2026-05-18T15:31:00.000Z", "status": "delivered" },
+    { "id": "m-9-11", "conversation_id": "conv-9", "direction": "in",  "body": "Acá te paso fotos del ambiente 📸", "ts": "2026-05-18T15:48:00.000Z", "status": "delivered" },
+
+    { "id": "m-10-1", "conversation_id": "conv-10", "direction": "in",  "body": "Hola! ¿La entrega era mañana cierto?", "ts": "2026-05-17T17:30:00.000Z", "status": "read" },
+    { "id": "m-10-2", "conversation_id": "conv-10", "direction": "out", "body": "Sí, Mariano. Salimos del depósito 7:30am. Llegada estimada 9hs.", "ts": "2026-05-17T17:45:00.000Z", "status": "read" },
+    { "id": "m-10-3", "conversation_id": "conv-10", "direction": "in",  "body": "Mejor 8 sería ideal. Tengo gente para descargar a esa hora.", "ts": "2026-05-17T17:50:00.000Z", "status": "read" },
+    { "id": "m-10-4", "conversation_id": "conv-10", "direction": "out", "body": "Hola Mariano, te confirmamos la entrega para el 18/05 en Av. del Libertador 6800. Si necesitás reprogramar, avisanos.", "ts": "2026-05-17T18:00:00.000Z", "status": "read", "template_name": "entrega_confirmada" },
+    { "id": "m-10-5", "conversation_id": "conv-10", "direction": "out", "body": "Listo, ajusto la salida. Estamos llegando 8 en punto.", "ts": "2026-05-17T18:02:00.000Z", "status": "read" },
+    { "id": "m-10-6", "conversation_id": "conv-10", "direction": "in",  "body": "Perfecto. Una consulta: ¿el flete incluye subir hasta el 4to piso? Hay ascensor de carga.", "ts": "2026-05-17T19:20:00.000Z", "status": "read" },
+    { "id": "m-10-7", "conversation_id": "conv-10", "direction": "out", "body": "Sí, con ascensor de carga sin problema. Vamos con 2 personas.", "ts": "2026-05-17T19:35:00.000Z", "status": "read" },
+    { "id": "m-10-8", "conversation_id": "conv-10", "direction": "in",  "body": "Dale, mañana 8am estamos.", "ts": "2026-05-17T20:12:00.000Z", "status": "read" },
+
+    { "id": "m-11-1", "conversation_id": "conv-11", "direction": "out", "body": "Diego! ¿Qué tal quedó la obra?", "ts": "2026-05-17T19:00:00.000Z", "status": "read" },
+    { "id": "m-11-2", "conversation_id": "conv-11", "direction": "in",  "body": "Hola! Quedó muy bien en general, pero...", "ts": "2026-05-18T08:20:00.000Z", "status": "read" },
+    { "id": "m-11-3", "conversation_id": "conv-11", "direction": "in",  "body": "📷 [raya-cocina.jpg]", "ts": "2026-05-18T08:22:00.000Z", "status": "read" },
+    { "id": "m-11-4", "conversation_id": "conv-11", "direction": "in",  "body": "Pero el de la cocina tiene una raya importante 😕", "ts": "2026-05-18T08:34:00.000Z", "status": "delivered" },
+
+    { "id": "m-12-1", "conversation_id": "conv-12", "direction": "out", "body": "Hola Ricardo, te recordamos que el saldo de tu compra #V-2026-031 es $187.500. Cualquier consulta acá estamos.", "ts": "2026-05-15T15:00:00.000Z", "status": "read", "template_name": "cobro_pendiente" },
+    { "id": "m-12-2", "conversation_id": "conv-12", "direction": "in",  "body": "Hola Andrés, gracias por el aviso. Lo coordinamos con administración.", "ts": "2026-05-15T16:10:00.000Z", "status": "read" },
+    { "id": "m-12-3", "conversation_id": "conv-12", "direction": "in",  "body": "¿Me podés reenviar la factura por si la pierden?", "ts": "2026-05-15T16:11:00.000Z", "status": "read" },
+    { "id": "m-12-4", "conversation_id": "conv-12", "direction": "out", "body": "Por supuesto, te la mando por mail también.", "ts": "2026-05-15T16:30:00.000Z", "status": "read" },
+    { "id": "m-12-5", "conversation_id": "conv-12", "direction": "out", "body": "📎 [factura-V-2026-031.pdf]", "ts": "2026-05-15T16:32:00.000Z", "status": "read" },
+    { "id": "m-12-6", "conversation_id": "conv-12", "direction": "in",  "body": "Perfecto, gestiono el pago esta semana.", "ts": "2026-05-15T17:22:00.000Z", "status": "read" },
+
+    { "id": "m-13-1", "conversation_id": "conv-13", "direction": "in",  "body": "Hola! Me encanta lo que hacen.", "ts": "2026-05-18T12:00:00.000Z", "status": "delivered" },
+    { "id": "m-13-2", "conversation_id": "conv-13", "direction": "in",  "body": "¿Hacen envíos a Mar del Plata?", "ts": "2026-05-18T12:08:00.000Z", "status": "delivered" },
+
+    { "id": "m-14-1", "conversation_id": "conv-14", "direction": "in",  "body": "Hola Andrés! Tanto tiempo. Te acordás del piso que pusimos en San Telmo?", "ts": "2026-05-16T11:30:00.000Z", "status": "read" },
+    { "id": "m-14-2", "conversation_id": "conv-14", "direction": "out", "body": "Flor!! Claro que sí, el roble americano. ¿Cómo está quedando con el uso?", "ts": "2026-05-16T11:45:00.000Z", "status": "read" },
+    { "id": "m-14-3", "conversation_id": "conv-14", "direction": "in",  "body": "Bárbaro, intacto. Por eso te escribo: estamos mudándonos a una casa más grande y queremos algo similar.", "ts": "2026-05-16T12:00:00.000Z", "status": "read" },
+    { "id": "m-14-4", "conversation_id": "conv-14", "direction": "in",  "body": "Son unos 180m² para todo el PB. ¿Tenés stock del mismo modelo?", "ts": "2026-05-16T12:02:00.000Z", "status": "read" },
+    { "id": "m-14-5", "conversation_id": "conv-14", "direction": "out", "body": "Tengo stock del roble americano sí, y ahora tenemos el clear coat mate que te va a encantar para una casa con uso intensivo.", "ts": "2026-05-16T12:30:00.000Z", "status": "read" },
+    { "id": "m-14-6", "conversation_id": "conv-14", "direction": "out", "body": "¿Cuándo necesitarías la instalación? Para ir reservando el stock.", "ts": "2026-05-16T12:31:00.000Z", "status": "read" },
+    { "id": "m-14-7", "conversation_id": "conv-14", "direction": "in",  "body": "Tomamos posesión a fin de julio.", "ts": "2026-05-16T14:00:00.000Z", "status": "read" },
+    { "id": "m-14-8", "conversation_id": "conv-14", "direction": "in",  "body": "Buenísimo! Te aviso en cuanto tenga las medidas.", "ts": "2026-05-16T14:50:00.000Z", "status": "read" },
+
+    { "id": "m-15-1", "conversation_id": "conv-15", "direction": "in",  "body": "Hola, vi un piso en su feed que me encantó. ¿Cómo se llama el modelo?", "ts": "2026-05-18T16:30:00.000Z", "status": "delivered" },
+    { "id": "m-15-2", "conversation_id": "conv-15", "direction": "in",  "body": "Era el del posteo del lunes, el de espina de pescado.", "ts": "2026-05-18T16:31:00.000Z", "status": "delivered" }
+  ]
+}

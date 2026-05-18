@@ -1,0 +1,54 @@
+[
+  {
+    "id": "A-127",
+    "vessel": "MSC Pacific 14",
+    "supplier": "Heyu Flooring Co.",
+    "status": "in_transit",
+    "etd": "2026-04-22",
+    "eta": "2026-06-12",
+    "items": [
+      { "product_id": "PROD-022", "sku": "PROD-022", "description": "H2OHD - Roble Eslavonia 6,5mm x 18cm x 1,20m", "quantity": 1200, "unit_cost_usd": 16.13, "lot": "L-2606-A" },
+      { "product_id": "PROD-023", "sku": "PROD-023", "description": "H2OHD - Roble Clásico 6,5mm x 18cm x 1,20m",   "quantity": 1200, "unit_cost_usd": 16.13, "lot": "L-2606-B" },
+      { "product_id": "PROD-024", "sku": "PROD-024", "description": "H2OHD - Grey Smoke 6,5mm x 18cm x 1,20m",      "quantity":  800, "unit_cost_usd": 16.13, "lot": "L-2606-C" },
+      { "product_id": "PROD-026", "sku": "PROD-026", "description": "H2OHD XL - Natural Oak 6,5mm x 23cm x 1,50m",  "quantity":  600, "unit_cost_usd": 16.33, "lot": "L-2606-D" },
+      { "product_id": "PROD-027", "sku": "PROD-027", "description": "H2OHD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m","quantity": 600, "unit_cost_usd": 16.33, "lot": "L-2606-E" },
+      { "product_id": "PROD-ASP23150", "sku": "PROD-ASP23150", "description": "H2OHD XL - Aspen 6,5mm x 23cm x 1,50m", "quantity": 400, "unit_cost_usd": 16.10, "lot": "L-2606-F" }
+    ],
+    "notes": "Container previsto p/ junio. Confirmar despacho aduanal una semana antes."
+  },
+  {
+    "id": "A-126",
+    "vessel": "Wan Hai 901",
+    "supplier": "Lifeng Wood Industries",
+    "status": "in_transit",
+    "etd": "2026-04-08",
+    "eta": "2026-05-28",
+    "items": [
+      { "product_id": "PROD-001", "sku": "PROD-001", "description": "Madera - Roble 15mm x 18cm x 1,90m - Veta Tallada", "quantity": 850, "unit_cost_usd": 34.89, "lot": "L-2605-A" },
+      { "product_id": "PROD-002", "sku": "PROD-002", "description": "Madera - Roble 15mm x 19cm x 1,90m - Veta Tallada", "quantity": 850, "unit_cost_usd": 34.89, "lot": "L-2605-B" },
+      { "product_id": "PROD-025", "sku": "PROD-025", "description": "H2OHD - Roble Gris 6,5mm x 18cm x 1,20m",            "quantity": 600, "unit_cost_usd": 16.13, "lot": "L-2605-C" },
+      { "product_id": "PROD-026", "sku": "PROD-026", "description": "H2OHD XL - Natural Oak 6,5mm x 23cm x 1,50m",       "quantity": 400, "unit_cost_usd": 16.33, "lot": "L-2605-D" }
+    ],
+    "notes": "Despachante notificado. Entrega esperada terminal 30/05."
+  },
+  {
+    "id": "A-125",
+    "vessel": "Maersk Buenos Aires",
+    "supplier": "Heyu Flooring Co.",
+    "status": "received",
+    "etd": "2026-02-26",
+    "eta": "2026-04-30",
+    "received_at": "2026-05-04T11:20:00.000Z",
+    "items": [
+      { "product_id": "PROD-022", "sku": "PROD-022", "description": "H2OHD - Roble Eslavonia 6,5mm x 18cm x 1,20m", "quantity": 1500, "unit_cost_usd": 15.80, "lot": "L-2604-A" },
+      { "product_id": "PROD-023", "sku": "PROD-023", "description": "H2OHD - Roble Clásico 6,5mm x 18cm x 1,20m",   "quantity":  900, "unit_cost_usd": 15.80, "lot": "L-2604-B" },
+      { "product_id": "PROD-027", "sku": "PROD-027", "description": "H2OHD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m","quantity": 800, "unit_cost_usd": 16.00, "lot": "L-2604-C" },
+      { "product_id": "PROD-024", "sku": "PROD-024", "description": "H2OHD - Grey Smoke 6,5mm x 18cm x 1,20m",      "quantity":  700, "unit_cost_usd": 15.80, "lot": "L-2604-D" },
+      { "product_id": "PROD-026", "sku": "PROD-026", "description": "H2OHD XL - Natural Oak 6,5mm x 23cm x 1,50m",  "quantity":  500, "unit_cost_usd": 16.00, "lot": "L-2604-E" },
+      { "product_id": "PROD-025", "sku": "PROD-025", "description": "H2OHD - Roble Gris 6,5mm x 18cm x 1,20m",      "quantity":  500, "unit_cost_usd": 15.80, "lot": "L-2604-F" },
+      { "product_id": "PROD-001", "sku": "PROD-001", "description": "Madera - Roble 15mm x 18cm x 1,90m - Veta Tallada","quantity": 400, "unit_cost_usd": 33.50, "lot": "L-2604-G" },
+      { "product_id": "PROD-002", "sku": "PROD-002", "description": "Madera - Roble 15mm x 19cm x 1,90m - Veta Tallada","quantity": 400, "unit_cost_usd": 33.50, "lot": "L-2604-H" }
+    ],
+    "notes": "Recibido y descargado. Stock acreditado al inventario."
+  }
+]
