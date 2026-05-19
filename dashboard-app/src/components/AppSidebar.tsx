@@ -14,10 +14,10 @@ const NAV_OPERACION: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutGrid },
   { label: "Mensajes", href: "/mensajes", icon: MessageSquare },
   { label: "Leads", href: "/leads", icon: Sparkles },
-  { label: "Inventario", href: "/inventario", icon: Package },
   { label: "Cotizaciones", href: "/cotizaciones", icon: FileText },
   { label: "Ventas", href: "/ventas", icon: TrendingUp },
   { label: "Agenda", href: "/agenda", icon: Calendar },
+  { label: "Inventario", href: "/inventario", icon: Package },
 ]
 const NAV_ADMIN: NavItem[] = [
   { label: "Gastos y Pagos", href: "/gastos", icon: DollarSign },

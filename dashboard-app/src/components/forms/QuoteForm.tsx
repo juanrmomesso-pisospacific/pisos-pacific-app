@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react"
-import { Plus, Trash2, Sparkles } from "lucide-react"
+import { useEffect, useMemo, useState } from "react"
+import { Plus, Trash2, Sparkles, AlertTriangle } from "lucide-react"
 import { FormSheet, FieldLabel } from "./FormSheet"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -22,6 +22,8 @@ export type QuotePrefill = {
   title?: string
   internal_notes?: string
   source?: string  // shown as a small "desde {source}" hint
+  interested_products?: string[]  // pre-add matching catalog products as items
+  approx_m2?: number               // distributed across matched items as initial qty
 }
 
 const IVA_RATE = 0.21
@@ -35,17 +37,62 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
   const [clientId, setClientId] = useState<string>("")
   const [seller, setSeller] = useState<string>(sellers[0]?.name ?? "")
   const [title, setTitle] = useState<string>(prefill?.title ?? "")
+  const [address, setAddress] = useState<string>(prefill?.client_address ?? "")
   const [internalNotes, setInternalNotes] = useState<string>(prefill?.internal_notes ?? "")
   const [hasIva, setHasIva] = useState<boolean>(false)
   const [items, setItems] = useState<LineItem[]>([])
+  const [discountKind, setDiscountKind] = useState<"pct" | "amount">("pct")
+  const [discountValue, setDiscountValue] = useState<number>(0)
+  const [discountReason, setDiscountReason] = useState<string>("")
 
   const client = clients.find(c => c.id === clientId)
   const create = useAction(api.create)
   const isLeadDriven = !!prefill
 
+  // Walk-in mode: when the user picks a client, copy its saved address as the default
+  // (vendor can still override below). Skip in lead-driven mode (prefill controls address).
+  useEffect(() => {
+    if (isLeadDriven || !client) return
+    setAddress(client.addresses?.[0] ?? "")
+  }, [clientId])
+
+  // Lead-driven: when the sheet opens AND we have both prefill interests and product
+  // catalog loaded, pre-add matching items so the vendor starts with the relevant SKUs.
+  // Skipped if the vendor already added items manually.
+  useEffect(() => {
+    if (!open || !isLeadDriven || items.length > 0) return
+    const interests = prefill!.interested_products ?? []
+    if (interests.length === 0 || products.length === 0) return
+    const matched: LineItem[] = []
+    const used = new Set<string>()
+    for (const term of interests) {
+      const needle = term.toLowerCase()
+      const p = products.find(pr => !used.has(pr.id) && (pr.name.toLowerCase().includes(needle) || pr.sku.toLowerCase().includes(needle) || needle.includes(pr.name.toLowerCase())))
+      if (!p) continue
+      used.add(p.id)
+      matched.push({ product_id: p.id, sku: p.sku, description: p.name, quantity: 0, unit_price: p.price, category: p.category })
+    }
+    if (matched.length === 0) return
+    // If the lead has approx m², split across matched products
+    const m2 = prefill!.approx_m2
+    if (m2 && matched.length > 0) {
+      const each = Math.max(1, Math.round((m2 / matched.length) * 10) / 10)
+      for (const m of matched) m.quantity = each
+    } else {
+      for (const m of matched) m.quantity = 1
+    }
+    setItems(matched)
+  }, [open, products.length])
+
   const subtotal = useMemo(() => items.reduce((s, i) => s + (i.quantity * i.unit_price), 0), [items])
-  const iva = hasIva ? subtotal * IVA_RATE : 0
-  const total = subtotal + iva
+  const discountAmount = useMemo(() => {
+    if (discountValue <= 0) return 0
+    if (discountKind === "pct") return Math.min(subtotal, subtotal * discountValue / 100)
+    return Math.min(subtotal, discountValue)
+  }, [discountKind, discountValue, subtotal])
+  const subtotalAfterDiscount = Math.max(0, subtotal - discountAmount)
+  const iva = hasIva ? subtotalAfterDiscount * IVA_RATE : 0
+  const total = subtotalAfterDiscount + iva
 
   function addItem() {
     setItems([...items, { product_id: "", sku: "", description: "", quantity: 1, unit_price: 0, category: "" }])
@@ -67,13 +114,14 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
     if (!isLeadDriven && !client) return
     const seller_phone = sellers.find(s => s.name === seller)?.phone ?? ""
 
-    // Resolve client info from either the dropdown selection or the prefill payload
+    // Resolve client info from either the dropdown selection or the prefill payload.
+    // Address always comes from the vendor-editable field below (defaults to client's saved address).
     const clientName    = isLeadDriven ? prefill!.client_name           : client!.name
     const clientId_     = isLeadDriven ? ""                             : client!.id
     const clientDni     = isLeadDriven ? ""                             : client!.dni
     const clientEmail   = isLeadDriven ? (prefill!.client_email ?? "")   : (client!.emails?.[0] ?? "")
     const clientPhone   = isLeadDriven ? (prefill!.client_phone ?? "")   : (client!.phones?.[0] ?? "")
-    const clientAddr    = isLeadDriven ? (prefill!.client_address ?? "") : (client!.addresses?.[0] ?? "")
+    const clientAddr    = address.trim()
 
     const body: Partial<Quote> & Record<string, any> = {
       client_id: clientId_,
@@ -94,6 +142,10 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
       items: items.map(it => ({ ...it, total: it.quantity * it.unit_price, image: "", target_item_index: null })),
       status: "DRAFT",
       lead_id: prefill?.lead_id,
+      discount_kind: discountAmount > 0 ? discountKind : undefined,
+      discount_value: discountAmount > 0 ? discountValue : undefined,
+      discount_amount: discountAmount > 0 ? Math.round(discountAmount * 100) / 100 : undefined,
+      internal_discount_reason: discountReason || undefined,
     }
     const r = await create.run("quotes", body)
     if (r) {
@@ -144,6 +196,11 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
         <FieldLabel>Título / referencia (opcional)</FieldLabel>
         <Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Obra Pilar / Casa Tortugas" />
       </div>
+      <div>
+        <FieldLabel>Dirección / Obra</FieldLabel>
+        <Input value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Av. del Libertador 1234 / Casa Pilar" />
+        <p className="text-[11px] text-muted-foreground mt-1">Aparece en el PDF como "Dirección" del cliente.</p>
+      </div>
 
       <div className="pt-2">
         <div className="flex items-center justify-between mb-2">
@@ -154,41 +211,85 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
           <div className="text-xs text-muted-foreground italic border border-dashed border-border rounded-md p-3 text-center">Sin items todavía</div>
         ) : (
           <div className="space-y-2">
-            {items.map((it, idx) => (
-              <div key={idx} className="rounded-md border border-border p-3 space-y-2">
-                <div className="flex items-start gap-2">
-                  <select value={it.product_id} onChange={(e) => pickProduct(idx, e.target.value)} className="h-9 flex-1 rounded-md border border-input bg-transparent px-2 text-xs">
-                    <option value="">— Elegí producto —</option>
-                    {products.map(p => <option key={p.id} value={p.id}>{p.sku} · {p.name}</option>)}
-                  </select>
-                  <Button type="button" size="icon" variant="ghost" className="h-8 w-8 shrink-0" onClick={() => removeItem(idx)}><Trash2 className="h-3.5 w-3.5" /></Button>
+            {items.map((it, idx) => {
+              const p = products.find(x => x.id === it.product_id)
+              const stock = Number(p?.stock ?? 0)
+              const reserved = Number(p?.reservedStock ?? 0)
+              const available = stock - reserved
+              const oversold = !!p && it.quantity > available
+              const noStock = !!p && available <= 0
+              return (
+                <div key={idx} className={`rounded-md border p-3 space-y-2 ${oversold ? "border-amber-500/60 bg-amber-50/40" : "border-border"}`}>
+                  <div className="flex items-start gap-2">
+                    <select value={it.product_id} onChange={(e) => pickProduct(idx, e.target.value)} className="h-9 flex-1 rounded-md border border-input bg-transparent px-2 text-xs">
+                      <option value="">— Elegí producto —</option>
+                      {products.map(pr => {
+                        const av = (Number(pr.stock) || 0) - (Number(pr.reservedStock) || 0)
+                        return <option key={pr.id} value={pr.id}>{pr.sku} · {pr.name}{av <= 0 ? "  (sin stock)" : av <= 5 ? `  (bajo: ${av})` : ""}</option>
+                      })}
+                    </select>
+                    <Button type="button" size="icon" variant="ghost" className="h-8 w-8 shrink-0" onClick={() => removeItem(idx)}><Trash2 className="h-3.5 w-3.5" /></Button>
+                  </div>
+                  {p && (
+                    <div className="flex items-center justify-between text-[11px] text-muted-foreground tabular -mt-1">
+                      <span>Stock total: <span className="text-foreground">{stock}</span> · cotizado: <span className="text-amber-700">{reserved}</span> · disponible: <span className={available <= 0 ? "text-destructive font-medium" : available <= 5 ? "text-amber-600 font-medium" : "text-foreground"}>{available}</span></span>
+                      {oversold && (
+                        <span className="inline-flex items-center gap-1 text-amber-700 font-medium">
+                          <AlertTriangle className="h-3 w-3" />
+                          {noStock ? "Sin stock disponible" : `Falta ${(it.quantity - available).toFixed(2)} m²`}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                  <div className="grid grid-cols-3 gap-2 items-end">
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-muted-foreground mb-0.5">Cantidad</div>
+                      <Input type="number" min={0} step="0.1" value={it.quantity} onChange={(e) => updateItem(idx, { quantity: Number(e.target.value) || 0 })} className="h-8" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-muted-foreground mb-0.5">Precio unit.</div>
+                      <Input type="number" min={0} step="0.01" value={it.unit_price} onChange={(e) => updateItem(idx, { unit_price: Number(e.target.value) || 0 })} className="h-8" />
+                    </div>
+                    <div className="text-right text-xs tabular pt-2">
+                      <span className="text-muted-foreground">Total: </span>{fmtMoney(it.quantity * it.unit_price)}
+                    </div>
+                  </div>
                 </div>
-                <div className="grid grid-cols-3 gap-2 items-end">
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wide text-muted-foreground mb-0.5">Cantidad</div>
-                    <Input type="number" min={0} step="0.1" value={it.quantity} onChange={(e) => updateItem(idx, { quantity: Number(e.target.value) || 0 })} className="h-8" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wide text-muted-foreground mb-0.5">Precio unit.</div>
-                    <Input type="number" min={0} step="0.01" value={it.unit_price} onChange={(e) => updateItem(idx, { unit_price: Number(e.target.value) || 0 })} className="h-8" />
-                  </div>
-                  <div className="text-right text-xs tabular pt-2">
-                    <span className="text-muted-foreground">Total: </span>{fmtMoney(it.quantity * it.unit_price)}
-                  </div>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         )}
       </div>
 
       <div className="pt-2 space-y-2">
+        <div className="rounded-md border border-border p-3 space-y-2">
+          <div className="flex items-center justify-between gap-2">
+            <div className="text-sm font-medium">Descuento</div>
+            <div className="inline-flex rounded-md border border-input overflow-hidden">
+              <button type="button" onClick={() => setDiscountKind("pct")} className={`px-2 h-7 text-xs ${discountKind === "pct" ? "bg-foreground text-background" : "bg-transparent"}`}>%</button>
+              <button type="button" onClick={() => setDiscountKind("amount")} className={`px-2 h-7 text-xs ${discountKind === "amount" ? "bg-foreground text-background" : "bg-transparent"}`}>$</button>
+            </div>
+          </div>
+          <Input type="number" min={0} step="0.01" value={discountValue} onChange={(e) => setDiscountValue(Math.max(0, Number(e.target.value) || 0))} className="h-8" placeholder={discountKind === "pct" ? "0%" : "$ 0"} />
+          {discountAmount > 0 && (
+            <div className="text-[11px] text-muted-foreground tabular">
+              Descontado: <span className="text-foreground font-medium">{fmtMoney(discountAmount)}</span>{discountKind === "pct" ? ` (${discountValue}% sobre ${fmtMoney(subtotal)})` : ""}
+            </div>
+          )}
+          <Input value={discountReason} onChange={(e) => setDiscountReason(e.target.value)} placeholder="Motivo interno (no aparece en el PDF)" className="h-8 text-xs" />
+        </div>
         <label className="flex items-center gap-2 text-sm">
           <input type="checkbox" checked={hasIva} onChange={(e) => setHasIva(e.target.checked)} />
           Incluye IVA ({(IVA_RATE * 100).toFixed(0)}%)
         </label>
         <div className="bg-muted/50 rounded-md p-3 space-y-1 text-sm">
           <div className="flex justify-between"><span className="text-muted-foreground">Subtotal</span><span className="tabular">{fmtMoney(subtotal)}</span></div>
+          {discountAmount > 0 && (
+            <>
+              <div className="flex justify-between text-emerald-700"><span>Descuento{discountKind === "pct" ? ` (-${discountValue}%)` : ""}</span><span className="tabular">−{fmtMoney(discountAmount)}</span></div>
+              <div className="flex justify-between"><span className="text-muted-foreground">Subtotal c/desc.</span><span className="tabular">{fmtMoney(subtotalAfterDiscount)}</span></div>
+            </>
+          )}
           {hasIva && <div className="flex justify-between"><span className="text-muted-foreground">IVA</span><span className="tabular">{fmtMoney(iva)}</span></div>}
           <div className="flex justify-between font-medium pt-1 border-t border-border"><span>Total</span><span className="tabular">{fmtMoney(total)}</span></div>
         </div>

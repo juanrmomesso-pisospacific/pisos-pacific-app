@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FormSheet, FieldLabel } from "./FormSheet"
 import { Input } from "@/components/ui/input"
 import { useApi } from "@/lib/api"
@@ -7,18 +7,26 @@ import { type LeadStatus, STATUS_ORDER, STATUS_LABEL, SOURCES, type Lead } from 
 
 type Settings = { sellers?: { name: string }[] }
 
-export function LeadForm({ open, onOpenChange, initial, onCreated }: { open: boolean; onOpenChange: (o: boolean) => void; initial?: Partial<Lead>; onCreated?: (lead: Lead) => void | Promise<void> }) {
-  const sellers = useApi<Settings>("/api/settings").data?.sellers ?? []
-  const [v, setV] = useState({
+function blankFromInitial(initial?: Partial<Lead>) {
+  return {
     name: initial?.name ?? "",
     phone: initial?.phone ?? "",
     email: initial?.email ?? "",
-    source: initial?.source ?? "WhatsApp" as (typeof SOURCES)[number],
+    source: (initial?.source ?? "WhatsApp") as (typeof SOURCES)[number],
     interested_products: initial?.interested_products?.join(", ") ?? "",
     notes: initial?.notes ?? "",
     status: (initial?.status ?? "New") as LeadStatus,
     assigned_seller: initial?.assigned_seller ?? "",
-  })
+    address: (initial as any)?.address ?? "",
+  }
+}
+
+export function LeadForm({ open, onOpenChange, initial, onCreated }: { open: boolean; onOpenChange: (o: boolean) => void; initial?: Partial<Lead>; onCreated?: (lead: Lead) => void | Promise<void> }) {
+  const sellers = useApi<Settings>("/api/settings").data?.sellers ?? []
+  const [v, setV] = useState(() => blankFromInitial(initial))
+  // Reset to the fresh initial whenever the sheet opens — so jumping between
+  // conversations or leads doesn't carry stale state from a previous open.
+  useEffect(() => { if (open) setV(blankFromInitial(initial)) }, [open])
   const create = useAction(api.create)
 
   async function submit() {
@@ -36,6 +44,8 @@ export function LeadForm({ open, onOpenChange, initial, onCreated }: { open: boo
       else refresh()
     }
   }
+
+  const isPhoneHandle = v.phone.startsWith("@") || v.phone.includes("instagram") || v.source === "Instagram"
 
   return (
     <FormSheet open={open} onOpenChange={onOpenChange} title="Nuevo lead" description="Contacto pre-cotización" onSubmit={submit} busy={create.busy} error={create.error}>
@@ -80,9 +90,16 @@ export function LeadForm({ open, onOpenChange, initial, onCreated }: { open: boo
         </select>
       </div>
       <div>
+        <FieldLabel>Dirección / Obra</FieldLabel>
+        <Input value={v.address} onChange={(e) => setV({ ...v, address: e.target.value })} placeholder="Av. del Libertador 1234 / Casa Pilar" />
+      </div>
+      <div>
         <FieldLabel>Notas</FieldLabel>
         <Input value={v.notes} onChange={(e) => setV({ ...v, notes: e.target.value })} placeholder="Pidió presupuesto para Obra Pilar, 80 m²…" />
       </div>
+      {isPhoneHandle && (
+        <p className="text-[11px] text-muted-foreground">Tip: para leads de Instagram, dejá el handle en notas y pedile el WhatsApp/email para completar los campos de contacto.</p>
+      )}
     </FormSheet>
   )
 }

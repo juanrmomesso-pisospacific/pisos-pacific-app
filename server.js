@@ -89,6 +89,21 @@ if (!db.leads.some(l => l.source === "Web")) {
   } catch (e) { console.warn('Website leads seed missing or invalid:', e.message); }
 }
 if (!Array.isArray(db.payment_links)) db.payment_links = [];
+if (!Array.isArray(db.tasks)) db.tasks = [];
+// One-shot rename: legacy task titles using "Informe de obra" → "Remito"
+{
+  let renamed = 0;
+  for (const t of db.tasks) {
+    if (typeof t.title === 'string' && t.title.includes('Informe de obra')) {
+      t.title = t.title.replace(/Informe de obra/g, 'Remito');
+      renamed += 1;
+    }
+  }
+  if (renamed > 0) {
+    fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
+    console.log(`Renamed ${renamed} legacy task title(s) "Informe de obra" → "Remito"`);
+  }
+}
 if (!db.settings.integrations) db.settings.integrations = {};
 if (!db.settings.integrations.mercadopago) db.settings.integrations.mercadopago = { enabled: false, access_token: '', public_key: '' };
 if (!Array.isArray(db.conversations) || db.conversations.length === 0 || !Array.isArray(db.messages) || !Array.isArray(db.templates)) {
@@ -191,6 +206,7 @@ app.get('/api/quotes',   (_, res) => res.json(db.quotes));
 app.get('/api/clients',  (_, res) => res.json(db.clients));
 app.get('/api/expenses', (_, res) => res.json(db.expenses));
 app.get('/api/leads',    (_, res) => res.json(db.leads));
+app.get('/api/tasks',    (_, res) => res.json(db.tasks));
 app.get('/api/conversations', (_, res) => {
   // Ship the conversations sorted by most-recent-message-first for free
   const sorted = [...db.conversations].sort((a, b) => (b.last_message_at ?? '').localeCompare(a.last_message_at ?? ''));
@@ -299,7 +315,31 @@ app.post('/api/containers/:id/receive', (req, res) => {
 app.get('/api/stock_movements', (_, res) => res.json(db.stock_movements));
 
 // ---------- Generic CRUD (POST/PATCH/DELETE) with persistence ----------
-['products','sales','quotes','clients','expenses','leads','conversations'].forEach(name => {
+// Special-case: lead transition to Won auto-converts the most recent eligible quote into a sale.
+// Runs BEFORE the generic PATCH below so it takes precedence for /api/leads/:id.
+app.patch('/api/leads/:id', (req, res) => {
+  const i = db.leads.findIndex(x => x.id === req.params.id);
+  if (i < 0) return res.sendStatus(404);
+  const wasWon = db.leads[i].status === "Won";
+  db.leads[i] = { ...db.leads[i], ...req.body };
+  let createdSale = null;
+  if (!wasWon && db.leads[i].status === "Won") {
+    const lead = db.leads[i];
+    const alreadyConverted = db.quotes.find(q => q.lead_id === lead.id && q.sale_id);
+    if (!alreadyConverted) {
+      const eligible = db.quotes
+        .filter(q => q.lead_id === lead.id && !q.sale_id)
+        .sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""));
+      if (eligible.length > 0) {
+        createdSale = convertQuoteToSale(eligible[0]);
+      }
+    }
+  }
+  save();
+  res.json({ ...db.leads[i], auto_sale_id: createdSale?.id });
+});
+
+['products','sales','quotes','clients','expenses','leads','conversations','tasks'].forEach(name => {
   app.post(`/api/${name}`, (req, res) => {
     const id = req.body.id ?? `local-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
     const row = { id, ...req.body };
@@ -535,11 +575,28 @@ app.post('/api/sales/:id/payment', (req, res) => {
 });
 
 // ---------- Quote → Sale conversion (T1.G) ----------
-app.post('/api/quotes/:id/convert', (req, res) => {
-  const q = db.quotes.find(x => x.id === req.params.id);
-  if (!q) return res.sendStatus(404);
-  if (q.sale_id) return res.status(409).json({ error: 'already converted', sale_id: q.sale_id });
+// ---------- Duplicar cotización (T-Sales #9) ----------
+app.post('/api/quotes/:id/duplicate', (req, res) => {
+  const orig = db.quotes.find(x => x.id === req.params.id);
+  if (!orig) return res.sendStatus(404);
+  const id = `local-q-${Date.now()}-${Math.random().toString(36).slice(2,6)}`;
+  const quote_number = `A${Math.floor(Math.random() * 9000 + 1000)}`;
+  const copy = JSON.parse(JSON.stringify(orig));
+  copy.id = id;
+  copy.quote_number = quote_number;
+  copy.status = 'DRAFT';
+  copy.created_at = new Date().toISOString();
+  delete copy.renewed_at;
+  delete copy.sale_id;
+  db.quotes.push(copy);
+  save();
+  res.json(copy);
+});
 
+// Shared helper — clones a quote into a new Confirmado sale and links them.
+// Returns the sale (or null if already converted / quote not found).
+function convertQuoteToSale(q) {
+  if (!q || q.sale_id) return null;
   const saleId = `local-sale-${Date.now()}-${Math.random().toString(36).slice(2,6)}`;
   const sale = {
     id: saleId,
@@ -559,13 +616,21 @@ app.post('/api/quotes/:id/convert', (req, res) => {
     created_at: new Date().toISOString(),
     has_iva: q.has_iva ?? false,
     financial_position: { total_invoiced: 0, total_paid: 0, balance_due: q.price },
-    stock_reserved: q.status === 'Enviado' || q.status === 'Aceptado',  // carry the reservation forward
+    stock_reserved: q.status === 'Enviado' || q.status === 'Aceptado' || q.status === 'SENT' || q.status === 'ACCEPTED',
     stock_deducted: false,
     seller_name: q.seller_name ?? '',
   };
   db.sales.push(sale);
   q.sale_id = saleId;
-  if (q.status !== 'ACCEPTED') q.status = 'ACCEPTED';
+  if (q.status !== 'ACCEPTED' && q.status !== 'Aceptado') q.status = 'Aceptado';
+  return sale;
+}
+
+app.post('/api/quotes/:id/convert', (req, res) => {
+  const q = db.quotes.find(x => x.id === req.params.id);
+  if (!q) return res.sendStatus(404);
+  if (q.sale_id) return res.status(409).json({ error: 'already converted', sale_id: q.sale_id });
+  const sale = convertQuoteToSale(q);
   save();
   res.json(sale);
 });

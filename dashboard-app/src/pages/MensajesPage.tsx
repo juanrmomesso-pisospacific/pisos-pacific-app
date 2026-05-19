@@ -8,12 +8,13 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
 import { useApi, getJSON } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
+import { useAuth } from "@/contexts/AuthContext"
 import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, relativeTime, EMOJIS } from "@/lib/messaging"
 import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_LABEL as LEAD_STATUS_LABEL } from "@/lib/leads"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
 import { fmtMoney } from "@/lib/utils"
-import { downloadBusinessDoc } from "@/lib/pdf"
+import { downloadBusinessDoc, quoteToDocData } from "@/lib/pdf"
 import type { Sale, Quote } from "@/lib/types"
 
 type Client = {
@@ -411,12 +412,21 @@ function Composer({
 function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }: { conversation: Conversation | null; clients: Client[]; sales: Sale[]; leads: Lead[]; leadById: Map<string, Lead>; quotes: Quote[] }) {
   const [newLeadOpen, setNewLeadOpen] = useState(false)
   const [newQuoteOpen, setNewQuoteOpen] = useState(false)
-  void leads  // referenced via leadById, kept in signature for symmetry / future use
+  void leads
+  const { state: authState } = useAuth()
+  const currentUser = authState.status === "ready" ? authState.user : null
+  const settings = useApi<{ sellers?: { name: string }[] }>("/api/settings").data
+  const allSellers = settings?.sellers ?? []
 
   const updateLead = useAction(api.update)
   const handleAdvance = async (next: LeadStatus) => {
     if (!conversation?.linked_lead_id) return
     const r = await updateLead.run("leads", conversation.linked_lead_id, { status: next, last_touch_at: new Date().toISOString() })
+    if (r) refresh()
+  }
+  const handleAssign = async (sellerName: string) => {
+    if (!conversation?.linked_lead_id) return
+    const r = await updateLead.run("leads", conversation.linked_lead_id, { assigned_seller: sellerName, last_touch_at: new Date().toISOString() })
     if (r) refresh()
   }
 
@@ -432,13 +442,20 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
   const totalBilled = clientSales.reduce((sum, s) => sum + (s.contract_total ?? 0), 0)
   const totalDue = clientSales.reduce((sum, s) => sum + (s.financial_position?.balance_due ?? 0), 0)
 
-  // Build LeadForm prefill from the conversation
+  // Build LeadForm prefill from the conversation (and any linked client we already have)
   const initialLead: Partial<Lead> = {
-    name: conversation.contact_name,
-    phone: conversation.channel === "whatsapp" ? conversation.contact_id : "",
+    name: linkedClient?.name ?? conversation.contact_name,
+    phone: conversation.channel === "whatsapp"
+      ? conversation.contact_id
+      : (linkedClient?.phones?.[0] ?? ""),
+    email: linkedClient?.emails?.[0] ?? "",
     source: conversation.channel === "whatsapp" ? "WhatsApp" : "Instagram",
     status: "New",
-    notes: conversation.last_message_preview ?? "",
+    address: linkedClient?.addresses?.[0] ?? "",
+    notes: [
+      conversation.channel === "instagram" ? `IG: ${conversation.contact_id}` : "",
+      conversation.last_message_preview ? `Último mensaje: ${conversation.last_message_preview}` : "",
+    ].filter(Boolean).join("  ·  "),
   }
 
   const handleLeadCreated = async (lead: Lead) => {
@@ -463,24 +480,20 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
     title: `Cotización ${linkedLead.name}`,
     internal_notes: linkedLead.notes,
     source: linkedLead.source,
+    interested_products: linkedLead.interested_products,
+    approx_m2: linkedLead.approx_m2,
   } : null
 
   // Quotes already created for this lead — listed in a dedicated section below
   const leadQuotes = linkedLead ? quotes.filter(q => q.lead_id === linkedLead.id) : []
+  // Sales reached through this lead's converted quotes (quote.sale_id → sale.id)
+  const leadSaleIds = new Set(leadQuotes.map(q => q.sale_id).filter(Boolean) as string[])
+  const leadSales = linkedLead && leadSaleIds.size > 0 ? sales.filter(s => leadSaleIds.has(s.id)) : []
 
   const handleQuoteCreated = async (q: Quote) => {
     // Auto-generate the branded PDF so the vendor can drag it straight into the chat
     try {
-      await downloadBusinessDoc({
-        kind: "Cotización",
-        number: q.quote_number,
-        date: q.created_at,
-        client: { name: q.client_name, dni: q.client_dni, address: q.client_address, email: q.client_email, phone: q.client_phone },
-        seller: q.seller_name,
-        items: q.items?.map(it => ({ sku: it.sku, description: it.description, quantity: it.quantity, unit_price: it.unit_price })) ?? [],
-        hasIva: !!q.has_iva,
-        notes: q.internal_notes,
-      })
+      await downloadBusinessDoc(quoteToDocData(q))
     } catch (e) { console.warn("PDF generation failed:", e) }
 
     // Auto-advance lead to "Cotizado" (only if not already further forward)
@@ -522,7 +535,48 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
           <Section title="Lead">
             <Row icon={Sparkles} label="Estado" value={LEAD_STATUS_LABEL[linkedLead.status as LeadStatus] ?? linkedLead.status} />
             <Row icon={UserCircle2} label="Origen" value={linkedLead.source} />
-            {linkedLead.assigned_seller && <Row icon={UserCircle2} label="Vendedor" value={linkedLead.assigned_seller} />}
+            <div className="flex items-start gap-2 min-w-0 pt-0.5">
+              <UserCircle2 className="h-3.5 w-3.5 mt-0.5 shrink-0 text-muted-foreground" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] text-muted-foreground">Vendedor</div>
+                {linkedLead.assigned_seller ? (
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-xs truncate">{linkedLead.assigned_seller}</span>
+                    {currentUser?.role === "admin" && (
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <button type="button" className="text-[10px] text-primary hover:underline">Reasignar</button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="w-48">
+                          <DropdownMenuLabel>Asignar a</DropdownMenuLabel>
+                          <DropdownMenuSeparator />
+                          {allSellers.map(s => <DropdownMenuItem key={s.name} onClick={() => handleAssign(s.name)}>{s.name}</DropdownMenuItem>)}
+                          <DropdownMenuItem onClick={() => handleAssign("")} className="text-muted-foreground">— Sin asignar —</DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    )}
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-xs text-muted-foreground italic">Sin asignar</span>
+                    {currentUser?.role === "vendor" ? (
+                      <button type="button" onClick={() => handleAssign(currentUser.seller_name)} className="text-[10px] text-primary hover:underline">Asignarme</button>
+                    ) : currentUser?.role === "admin" ? (
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <button type="button" className="text-[10px] text-primary hover:underline">Asignar</button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="w-48">
+                          <DropdownMenuLabel>Asignar a</DropdownMenuLabel>
+                          <DropdownMenuSeparator />
+                          {allSellers.map(s => <DropdownMenuItem key={s.name} onClick={() => handleAssign(s.name)}>{s.name}</DropdownMenuItem>)}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    ) : null}
+                  </div>
+                )}
+              </div>
+            </div>
             {linkedLead.interested_products?.length ? <Row icon={FileText} label="Interés" value={linkedLead.interested_products.join(", ")} /> : null}
             {linkedLead.notes && <Row icon={FileText} label="Notas" value={linkedLead.notes} />}
           </Section>
@@ -567,7 +621,15 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
         {linkedLead && leadQuotes.length > 0 && (
           <Section title={`Cotizaciones del lead (${leadQuotes.length})`}>
             <div className="space-y-1.5">
-              {leadQuotes.map(q => <LeadQuoteRow key={q.id} quote={q} />)}
+              {leadQuotes.map(q => <LeadQuoteRow key={q.id} quote={q} conversation={conversation} linkedLead={linkedLead} />)}
+            </div>
+          </Section>
+        )}
+
+        {leadSales.length > 0 && (
+          <Section title={`Ventas vinculadas (${leadSales.length})`}>
+            <div className="space-y-1.5">
+              {leadSales.map(s => <LeadSaleRow key={s.id} sale={s} />)}
             </div>
           </Section>
         )}
@@ -638,35 +700,83 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
   )
 }
 
-function LeadQuoteRow({ quote }: { quote: Quote }) {
+function LeadSaleRow({ sale }: { sale: Sale }) {
+  const due = sale.financial_position?.balance_due ?? 0
+  const total = sale.contract_total ?? 0
+  const paid = sale.financial_position?.total_paid ?? 0
+  const statusVariant =
+    sale.status === "Finalizado" ? "default" :
+    sale.status === "Cancelado" ? "destructive" :
+    "outline"
+  return (
+    <Link to="/ventas" className="block rounded-md border border-border px-2 py-1.5 hover:bg-accent transition-colors">
+      <div className="flex items-center justify-between gap-2 mb-1">
+        <span className="text-xs font-medium truncate">#{sale.quote_number}</span>
+        <span className="tabular text-xs">{fmtMoney(total)}</span>
+      </div>
+      <div className="flex items-center justify-between gap-2 flex-wrap text-[10px]">
+        <Badge variant={statusVariant as any} className="text-[10px]">{sale.status}</Badge>
+        {sale.delivery_date ? (
+          <span className="text-muted-foreground">Entrega {new Date(sale.delivery_date).toLocaleDateString("es-AR")}</span>
+        ) : (
+          <span className="text-muted-foreground italic">Sin entrega programada</span>
+        )}
+      </div>
+      <div className="flex items-center justify-between gap-2 mt-1 text-[10px] tabular">
+        <span className="text-muted-foreground">Cobrado {fmtMoney(paid)}</span>
+        <span className={due > 0 ? "text-amber-700 font-medium" : "text-emerald-700"}>{due > 0 ? `Pendiente ${fmtMoney(due)}` : "✓ Pagado"}</span>
+      </div>
+    </Link>
+  )
+}
+
+function LeadQuoteRow({ quote, conversation, linkedLead }: { quote: Quote; conversation: Conversation; linkedLead?: Lead | null }) {
+  void linkedLead
   const sentLabels = new Set(["Enviado", "SENT"])
   const acceptedLabels = new Set(["Aceptado", "ACCEPTED"])
   const status = quote.status
   const variant = acceptedLabels.has(status) ? "default" : sentLabels.has(status) ? "outline" : "muted"
-  const handlePdf = () => downloadBusinessDoc({
-    kind: "Cotización",
-    number: quote.quote_number,
-    date: quote.created_at,
-    client: { name: quote.client_name, dni: quote.client_dni, address: quote.client_address, email: quote.client_email, phone: quote.client_phone },
-    seller: quote.seller_name,
-    items: quote.items?.map(it => ({ sku: it.sku, description: it.description, quantity: it.quantity, unit_price: it.unit_price })) ?? [],
-    hasIva: !!quote.has_iva,
-    notes: quote.internal_notes,
-  })
+  const handlePdf = () => downloadBusinessDoc(quoteToDocData(quote))
   const markSent = async () => {
     try { await fetch(`/api/quotes/${quote.id}/transition`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status: "Enviado" }) }) } catch { /* ignore */ }
     refresh()
   }
+
+  // Compartir por WhatsApp: posts the message INTO the current conversation thread (no external tab).
+  // Once Meta API is wired (T6.D) the outbound message + PDF attachment relays to the client.
+  // For now we also still download the PDF so the vendor has it handy in case they need to forward manually.
+  const firstName = (quote.client_name || "").split(" ")[0] || ""
+  const messageBody = `Hola${firstName ? " " + firstName : ""}, te paso la cotización #${quote.quote_number} por ${fmtMoney(quote.price ?? 0)}.\n\nLa adjunto en PDF. Cualquier consulta acá estoy. Gracias!`
+
+  const handleWhatsApp = async () => {
+    // Send message into the thread
+    try {
+      await fetch(`/api/conversations/${conversation.id}/messages`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ body: messageBody }),
+      })
+    } catch { /* ignore */ }
+    // Download PDF so the vendor can forward it via WhatsApp Web until Meta API is wired
+    try { await downloadBusinessDoc(quoteToDocData(quote)) } catch { /* error already alerted */ }
+    // Auto-advance status to Enviado (only from Borrador/DRAFT)
+    if (!sentLabels.has(status) && !acceptedLabels.has(status)) {
+      try { await fetch(`/api/quotes/${quote.id}/transition`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status: "Enviado" }) }) } catch { /* ignore */ }
+    }
+    refresh()
+  }
+
   return (
     <div className="rounded-md border border-border px-2 py-1.5">
       <div className="flex items-center justify-between gap-2 mb-1">
         <span className="text-xs font-medium truncate">#{quote.quote_number}</span>
         <span className="tabular text-xs">{fmtMoney(quote.price ?? 0)}</span>
       </div>
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex items-center justify-between gap-2 flex-wrap">
         <Badge variant={variant as any} className="text-[10px]">{status}</Badge>
-        <div className="flex gap-1">
+        <div className="flex gap-2">
           <button type="button" onClick={handlePdf} className="text-[10px] text-primary hover:underline">PDF</button>
+          <button type="button" onClick={handleWhatsApp} className="text-[10px] text-emerald-600 hover:underline" title="Manda el mensaje en este mismo chat + descarga el PDF para adjuntar">Compartir en chat</button>
           {!sentLabels.has(status) && !acceptedLabels.has(status) && (
             <button type="button" onClick={markSent} className="text-[10px] text-muted-foreground hover:underline">Marcar enviada</button>
           )}

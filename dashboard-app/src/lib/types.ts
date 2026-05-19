@@ -53,7 +53,20 @@ export type Sale = {
   stock_deducted: boolean
   // Optional: many sales include seller name (sometimes empty)
   seller_name?: string
-  delivery_date?: string
+  delivery_date?: string           // start of the delivery window (back-compat — same as delivery_date_from)
+  delivery_date_to?: string        // optional end of the window for multi-day installs
+  delivery_crew?: string
+  delivery_notes?: string
+  medicion_data?: {
+    m2_medidos?: number
+    m2_cotizados?: number
+    superficie?: string
+    observaciones?: string
+    extras?: string
+    extras_items?: { description: string; quantity: number; sku?: string }[]
+    recorded_at?: string
+    recorded_by?: string
+  }
   payments?: { ts: string; amount: number; method?: string; notes?: string }[]
 }
 
@@ -77,6 +90,12 @@ export type Quote = {
   items: SaleItem[]
   sale_id?: string
   lead_id?: string
+  renewed_at?: string
+  valid_days?: number
+  discount_kind?: "pct" | "amount"
+  discount_value?: number              // the entered number (% or $)
+  discount_amount?: number             // resolved $ amount actually deducted from subtotal
+  internal_discount_reason?: string
   status: "Borrador" | "Enviado" | "Aceptado" | string
 }
 

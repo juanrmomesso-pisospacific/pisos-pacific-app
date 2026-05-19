@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react"
 import { Plus, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -9,6 +10,7 @@ import { QuoteRowActions, StatusBadge } from "@/components/RowActions"
 import { QuoteForm } from "@/components/forms/QuoteForm"
 import { useApi } from "@/lib/api"
 import { fmtMoney } from "@/lib/utils"
+import { vigenciaState } from "@/lib/vigencia"
 import type { Quote } from "@/lib/types"
 
 // Data uses ENGLISH statuses (DRAFT/SENT/ACCEPTED/REJECTED) but the UI shows Spanish labels.
@@ -73,6 +75,7 @@ export default function CotizacionesPage() {
                 <TableHead>Vendedor</TableHead>
                 <TableHead>Fecha</TableHead>
                 <TableHead>Estado</TableHead>
+                <TableHead>Vigencia</TableHead>
                 <TableHead className="text-right">Total</TableHead>
                 <TableHead className="text-right">Acciones</TableHead>
               </TableRow>
@@ -83,8 +86,12 @@ export default function CotizacionesPage() {
                   <TableCell className="text-muted-foreground tabular">#{r.quote_number}</TableCell>
                   <TableCell><div className="truncate max-w-[280px]">{r.client_name}</div><div className="text-xs text-muted-foreground line-clamp-1">{r.description}</div></TableCell>
                   <TableCell className="text-xs text-muted-foreground">{r.seller_name}</TableCell>
-                  <TableCell className="text-xs text-muted-foreground">{new Date(r.created_at).toLocaleDateString("es-AR")}</TableCell>
+                  <TableCell className="text-xs text-muted-foreground">
+                    {new Date(r.created_at).toLocaleDateString("es-AR")}
+                    {r.renewed_at && <div className="text-[10px]">Renovada {new Date(r.renewed_at).toLocaleDateString("es-AR")}</div>}
+                  </TableCell>
                   <TableCell><StatusBadge status={r.status} /></TableCell>
+                  <TableCell><VigenciaBadge quote={r} /></TableCell>
                   <TableCell className="text-right tabular">{fmtMoney(r.price)}</TableCell>
                   <TableCell className="text-right"><QuoteRowActions quote={r} /></TableCell>
                 </TableRow>
@@ -96,4 +103,12 @@ export default function CotizacionesPage() {
       <QuoteForm open={openNew} onOpenChange={setOpenNew} />
     </>
   )
+}
+
+function VigenciaBadge({ quote }: { quote: Quote }) {
+  const v = vigenciaState(quote)
+  if (v.kind === "n/a") return <span className="text-[10px] text-muted-foreground">—</span>
+  if (v.kind === "vigente")    return <Badge variant="muted" className="text-[10px]">Vigente · {v.daysLeft}d</Badge>
+  if (v.kind === "por-vencer") return <Badge variant="outline" className="text-[10px] border-amber-500/50 text-amber-700">Vence en {v.daysLeft}d</Badge>
+  return <Badge variant="destructive" className="text-[10px]">Vencida · {v.daysOverdue}d</Badge>
 }
