@@ -1,0 +1,81 @@
+import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
+import { Wallet, Landmark, Banknote } from "lucide-react"
+import { useApi } from "@/lib/api"
+import type { CajaBalance } from "@/lib/types"
+
+type BalancesResponse = { balances: CajaBalance[]; unassigned_movements: number }
+
+const usd = (n: number) => "US$ " + Math.round(n).toLocaleString("es-AR")
+const ars = (n: number) => "$ " + Math.round(n).toLocaleString("es-AR")
+const iconFor = (type: string) =>
+  /banco/i.test(type) ? Landmark : /efectivo/i.test(type) ? Banknote : Wallet
+
+export default function CajasPage() {
+  const data = useApi<BalancesResponse>("/api/cajas/balances").data
+  const balances = data?.balances ?? []
+
+  return (
+    <div className="px-4 lg:px-6 space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {balances.map((b) => {
+          const Icon = iconFor(b.type)
+          const primary = b.currency === "USD" ? b.balance_usd : b.balance_ars
+          const fmt = b.currency === "USD" ? usd : ars
+          return (
+            <Card key={b.caja_id} className="p-4 space-y-2">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Icon className="h-4 w-4 text-muted-foreground" />
+                  <span className="font-medium text-sm">{b.name}</span>
+                </div>
+                <Badge variant="outline" className="text-[10px]">{b.currency}</Badge>
+              </div>
+              <div className={`text-2xl font-semibold tabular ${primary >= 0 ? "text-foreground" : "text-rose-500"}`}>{fmt(primary)}</div>
+              <div className="text-[11px] text-muted-foreground">
+                {b.movements} movimientos · {b.type}
+              </div>
+            </Card>
+          )
+        })}
+      </div>
+
+      <Card className="overflow-hidden py-0">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Caja / Cuenta</TableHead>
+              <TableHead>Tipo</TableHead>
+              <TableHead>Moneda</TableHead>
+              <TableHead className="text-right">Movimientos</TableHead>
+              <TableHead className="text-right">Saldo USD</TableHead>
+              <TableHead className="text-right">Saldo ARS</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {balances.map((b) => (
+              <TableRow key={b.caja_id}>
+                <TableCell className="font-medium">{b.name}</TableCell>
+                <TableCell className="text-xs text-muted-foreground">{b.type}</TableCell>
+                <TableCell><Badge variant="outline" className="text-[10px]">{b.currency}</Badge></TableCell>
+                <TableCell className="text-right tabular text-muted-foreground">{b.movements}</TableCell>
+                <TableCell className={`text-right tabular ${b.balance_usd < 0 ? "text-rose-500" : ""}`}>{usd(b.balance_usd)}</TableCell>
+                <TableCell className={`text-right tabular ${b.balance_ars < 0 ? "text-rose-500" : ""}`}>{ars(b.balance_ars)}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </Card>
+
+      {data?.unassigned_movements ? (
+        <div className="text-xs text-amber-500">
+          {data.unassigned_movements} movimiento(s) sin caja asignada — revisar en CashFlow → “A revisar”.
+        </div>
+      ) : null}
+      <p className="text-[11px] text-muted-foreground">
+        Saldos derivados sumando los movimientos del CashFlow (Ingresos − Egresos). El saldo destacado usa la moneda propia de cada caja.
+      </p>
+    </div>
+  )
+}

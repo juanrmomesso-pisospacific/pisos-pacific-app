@@ -17,6 +17,8 @@ export default defineConfig({
       '/api': 'http://localhost:4173',
       '/LogoPacific.png': 'http://localhost:4173',
       '/LogoPacificSmall.png': 'http://localhost:4173',
+      '/LogoPacificDark.png': 'http://localhost:4173',
+      '/LogoPacificSmallDark.png': 'http://localhost:4173',
     },
   },
   build: {

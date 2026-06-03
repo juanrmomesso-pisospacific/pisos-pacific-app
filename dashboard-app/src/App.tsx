@@ -18,6 +18,9 @@ import LeadsPage from "@/pages/LeadsPage"
 import MensajesPage from "@/pages/MensajesPage"
 import ReportesPage from "@/pages/ReportesPage"
 import ConfiguracionPage from "@/pages/ConfiguracionPage"
+import CashFlowPage from "@/pages/CashFlowPage"
+import CajasPage from "@/pages/CajasPage"
+import ProveedoresPage from "@/pages/ProveedoresPage"
 
 function Gate() {
   const { state } = useAuth()
@@ -41,7 +44,10 @@ function Gate() {
                 <Route path="/ventas" element={<VentasPage />} />
                 <Route path="/agenda" element={<AgendaPage />} />
                 <Route path="/gastos" element={<GastosPage />} />
+                <Route path="/cashflow" element={<CashFlowPage />} />
+                <Route path="/cajas" element={<CajasPage />} />
                 <Route path="/clientes" element={<ClientesPage />} />
+                <Route path="/proveedores" element={<ProveedoresPage />} />
                 <Route path="/movimientos" element={<AuditPage />} />
                 <Route path="/reportes" element={<ReportesPage />} />
                 <Route path="/configuracion" element={<ConfiguracionPage />} />

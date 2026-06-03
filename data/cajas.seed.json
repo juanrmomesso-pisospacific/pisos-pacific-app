@@ -1,0 +1,50 @@
+[
+  {
+    "id": "CAJ-001",
+    "name": "BBVA",
+    "type": "Banco",
+    "currency": "ARS",
+    "active": true,
+    "notes": "Cuenta corriente principal"
+  },
+  {
+    "id": "CAJ-002",
+    "name": "Mercado Pago",
+    "type": "Wallet",
+    "currency": "ARS",
+    "active": true,
+    "notes": "Billetera virtual"
+  },
+  {
+    "id": "CAJ-003",
+    "name": "Banco de Comercio - Cuenta Pesos",
+    "type": "Banco",
+    "currency": "ARS",
+    "active": true,
+    "notes": "Cuenta corriente en pesos"
+  },
+  {
+    "id": "CAJ-004",
+    "name": "Banco de Comercio - Cuenta USD",
+    "type": "Banco",
+    "currency": "USD",
+    "active": true,
+    "notes": "Cuenta corriente en dólares"
+  },
+  {
+    "id": "CAJ-005",
+    "name": "Caja General",
+    "type": "Efectivo",
+    "currency": "USD",
+    "active": true,
+    "notes": "Caja física - principal en USD"
+  },
+  {
+    "id": "CAJ-006",
+    "name": "Wise",
+    "type": "Wallet",
+    "currency": "USD",
+    "active": true,
+    "notes": "Cuenta multimoneda - operación internacional"
+  }
+]

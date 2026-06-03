@@ -1,0 +1,450 @@
+[
+  {
+    "id": "CAT-001",
+    "flow": "Ingreso",
+    "category": "Venta - Pisos",
+    "subcategory": "Madera",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-002",
+    "flow": "Ingreso",
+    "category": "Venta - Pisos",
+    "subcategory": "H2O",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-003",
+    "flow": "Ingreso",
+    "category": "Venta - Pisos",
+    "subcategory": "H2O HD XL",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-004",
+    "flow": "Ingreso",
+    "category": "Venta - Pisos",
+    "subcategory": "Deck",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-005",
+    "flow": "Ingreso",
+    "category": "Venta - Pisos",
+    "subcategory": "(Total)",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-006",
+    "flow": "Ingreso",
+    "category": "Venta - No Pisos",
+    "subcategory": "Zócalos",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-007",
+    "flow": "Ingreso",
+    "category": "Venta - No Pisos",
+    "subcategory": "Servicios",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-008",
+    "flow": "Ingreso",
+    "category": "Venta - No Pisos",
+    "subcategory": "Escaleras",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-009",
+    "flow": "Ingreso",
+    "category": "Venta - No Pisos",
+    "subcategory": "Nivelación",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-010",
+    "flow": "Ingreso",
+    "category": "Venta - No Pisos",
+    "subcategory": "Accesorios",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-011",
+    "flow": "Ingreso",
+    "category": "Venta - No Pisos",
+    "subcategory": "(Total)",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-012",
+    "flow": "Ingreso",
+    "category": "Ingreso Otros",
+    "subcategory": "Paneles",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-013",
+    "flow": "Ingreso",
+    "category": "Ingreso Otros",
+    "subcategory": "Ajustes",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-014",
+    "flow": "Ingreso",
+    "category": "Ingreso Otros",
+    "subcategory": "(Total)",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-015",
+    "flow": "Egreso",
+    "category": "Administración",
+    "subcategory": "Alquiler",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-016",
+    "flow": "Egreso",
+    "category": "Administración",
+    "subcategory": "Cobrado Pre Sociedad",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-017",
+    "flow": "Egreso",
+    "category": "Administración",
+    "subcategory": "Contabilium / Administración",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-018",
+    "flow": "Egreso",
+    "category": "Administración",
+    "subcategory": "Contador",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-019",
+    "flow": "Egreso",
+    "category": "Administración",
+    "subcategory": "Google Workspace",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-020",
+    "flow": "Egreso",
+    "category": "Administración",
+    "subcategory": "Mercado Libre",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-021",
+    "flow": "Egreso",
+    "category": "Administración",
+    "subcategory": "Viaje China",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-022",
+    "flow": "Egreso",
+    "category": "Administración",
+    "subcategory": "Viajes Clientes",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-023",
+    "flow": "Egreso",
+    "category": "Ajuste",
+    "subcategory": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-024",
+    "flow": "Egreso",
+    "category": "Bienes de Capital",
+    "subcategory": "Compra Flota",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-025",
+    "flow": "Egreso",
+    "category": "Bienes de Capital",
+    "subcategory": "Maquinaria",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-026",
+    "flow": "Egreso",
+    "category": "Flota",
+    "subcategory": "Flete",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-027",
+    "flow": "Egreso",
+    "category": "Flota",
+    "subcategory": "Gastos TelePase",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-028",
+    "flow": "Egreso",
+    "category": "Flota",
+    "subcategory": "Gastos por Mantenimiento Auto",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-029",
+    "flow": "Egreso",
+    "category": "Flota",
+    "subcategory": "Nafta",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-030",
+    "flow": "Egreso",
+    "category": "Flota",
+    "subcategory": "flete",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-031",
+    "flow": "Egreso",
+    "category": "HR",
+    "subcategory": "Gastos Personales",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-032",
+    "flow": "Egreso",
+    "category": "HR",
+    "subcategory": "Pago Instalaciones",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-033",
+    "flow": "Egreso",
+    "category": "HR",
+    "subcategory": "Pago instalaciones",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-034",
+    "flow": "Egreso",
+    "category": "HR",
+    "subcategory": "Seguros",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-035",
+    "flow": "Egreso",
+    "category": "HR",
+    "subcategory": "Sueldos",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-036",
+    "flow": "Egreso",
+    "category": "HR",
+    "subcategory": "Viaticos",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-037",
+    "flow": "Egreso",
+    "category": "HR",
+    "subcategory": "gastos personales",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-038",
+    "flow": "Egreso",
+    "category": "Importaciones",
+    "subcategory": "Despachante Aduana",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-039",
+    "flow": "Egreso",
+    "category": "Importaciones",
+    "subcategory": "Gastos Locales Importacion",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-040",
+    "flow": "Egreso",
+    "category": "Importaciones",
+    "subcategory": "Navieras",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-041",
+    "flow": "Egreso",
+    "category": "Importaciones",
+    "subcategory": "Terminal",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-042",
+    "flow": "Egreso",
+    "category": "Impuestos",
+    "subcategory": "Autónomos",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-043",
+    "flow": "Egreso",
+    "category": "Impuestos",
+    "subcategory": "Importación / Impuestos",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-044",
+    "flow": "Egreso",
+    "category": "Impuestos",
+    "subcategory": "Ingresos Brutos y Otros Impuestos",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-045",
+    "flow": "Egreso",
+    "category": "Impuestos",
+    "subcategory": "iNGResos Brutos y Otros Impuestos",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-046",
+    "flow": "Egreso",
+    "category": "Instalaciones",
+    "subcategory": "Insumos Generales Colocación",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-047",
+    "flow": "Egreso",
+    "category": "Marketing",
+    "subcategory": "Comisiones",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-048",
+    "flow": "Egreso",
+    "category": "Marketing",
+    "subcategory": "Facebook",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-049",
+    "flow": "Egreso",
+    "category": "Marketing",
+    "subcategory": "Google Ads",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-050",
+    "flow": "Egreso",
+    "category": "Marketing",
+    "subcategory": "Material de Promoción",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-051",
+    "flow": "Egreso",
+    "category": "Marketing",
+    "subcategory": "Paginas",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-052",
+    "flow": "Egreso",
+    "category": "Marketing",
+    "subcategory": "Producciones",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-053",
+    "flow": "Egreso",
+    "category": "Otros",
+    "subcategory": "OTRos",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-054",
+    "flow": "Egreso",
+    "category": "Otros",
+    "subcategory": "Otros",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-055",
+    "flow": "Egreso",
+    "category": "Otros Gastos y Ajustes",
+    "subcategory": "Ajustes",
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "CAT-056",
+    "flow": "Egreso",
+    "category": "Producto",
+    "subcategory": "Pago Mercaderia",
+    "active": true,
+    "notes": null
+  }
+]

@@ -1,0 +1,7387 @@
+[
+  {
+    "id": "0000014",
+    "quote_number": "0000014",
+    "title": "San Fermin",
+    "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-008",
+    "client_name": "RONDA",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 6235.2,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 80,
+        "unit_price": 92.06,
+        "total": 6235.2,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2024-04-10T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 6235.2,
+      "total_paid": 6800,
+      "balance_due": -564.8
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2024-04-10T00:00:00.000Z",
+        "amount": 6800,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000001",
+    "quote_number": "0000001",
+    "title": "3 de Febrero ARQ Juli",
+    "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-010",
+    "client_name": "GGYA",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 9698,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 98,
+        "unit_price": 99,
+        "total": 9698,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-02-10T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 9698,
+      "total_paid": 9700,
+      "balance_due": -2
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-02-10T00:00:00.000Z",
+        "amount": 9700,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000005",
+    "quote_number": "0000005",
+    "title": "Julieta Obra Juncal",
+    "description": "Madera - Roble 15mm x 18cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-001",
+    "client_name": "JULIETA MONTESERIN",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 14170,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 18cm x 1,90m / Veta Tallada",
+        "quantity": 125,
+        "unit_price": 110.64,
+        "total": 14170,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-02-10T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 14170,
+      "total_paid": 14000,
+      "balance_due": 170
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-02-10T00:00:00.000Z",
+        "amount": 14000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000006",
+    "quote_number": "0000006",
+    "title": "Ana Blousson (FALTA AGREGAR COLOCACION)",
+    "description": "Madera - Roble 15mm x 18cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-002",
+    "client_name": "Ana Blousson",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 17540,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 18cm x 1,90m / Veta Tallada",
+        "quantity": 220,
+        "unit_price": 93,
+        "total": 17540,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-02-10T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 17540,
+      "total_paid": 19000,
+      "balance_due": -1460
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-02-10T00:00:00.000Z",
+        "amount": 19000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000007",
+    "quote_number": "0000007",
+    "title": "Obra Villa Ballester",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-003",
+    "client_name": "Arq Valeria Laurino",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 15900.245902,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 43,
+        "unit_price": 44.18032787,
+        "total": 15900.245902,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-02-10T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 15900.245902,
+      "total_paid": 8900,
+      "balance_due": 7000.245902
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-02-10T00:00:00.000Z",
+        "amount": 8900,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000008",
+    "quote_number": "0000008",
+    "title": "Obra La Plata",
+    "description": "H2O XL - Roble Eslavonia 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-004",
+    "client_name": "Agustina Lando",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 3869.8032786885,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Roble Eslavonia 5,5mm x 23cm x 1,50m",
+        "quantity": 73,
+        "unit_price": 53.01639344,
+        "total": 3869.8032786885,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-02-10T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 3869.8032786885,
+      "total_paid": 3870,
+      "balance_due": -0.1967213115
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-02-10T00:00:00.000Z",
+        "amount": 3870,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000002",
+    "quote_number": "0000002",
+    "title": "GPF ARQ Carla",
+    "description": "Madera - Roble 15mm x 18cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-010",
+    "client_name": "GGYA",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 21062.843975816,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 18cm x 1,90m / Veta Tallada",
+        "quantity": 197,
+        "unit_price": 107,
+        "total": 21062.843975816,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-02-17T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 21062.843975816,
+      "total_paid": 21070.92199,
+      "balance_due": -8.078014184
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-02-17T00:00:00.000Z",
+        "amount": 21070.92199,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000003",
+    "quote_number": "0000003",
+    "title": "Capizzi Casa Santa Ana",
+    "description": "H2O - Aspen 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-011",
+    "client_name": "CAPIZZI",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 6100,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Aspen 5,5mm x 18cm x 1,20m",
+        "quantity": 100,
+        "unit_price": 61,
+        "total": 6100,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-02-17T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 6100,
+      "total_paid": 6100,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-02-17T00:00:00.000Z",
+        "amount": 6100,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000004",
+    "quote_number": "0000004",
+    "title": "Capizzi Deck",
+    "description": "Deck PVC Coextrusión - 3cm x 14 cm x 220 cm",
+    "client_id": "CLI-011",
+    "client_name": "CAPIZZI",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 7115,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Deck PVC Coextrusión - 3cm x 14 cm x 220 cm",
+        "quantity": 65,
+        "unit_price": 109,
+        "total": 7115,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-02-17T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 7115,
+      "total_paid": 7100,
+      "balance_due": 15
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-02-17T00:00:00.000Z",
+        "amount": 7100,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000009",
+    "quote_number": "0000009",
+    "title": "Obra La Lucila (Pirovano 793)",
+    "description": "H2O - Aspen 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-049",
+    "client_name": "Coni",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1653,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Aspen 5,5mm x 18cm x 1,20m",
+        "quantity": 29,
+        "unit_price": 57,
+        "total": 1653,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-02-18T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1653,
+      "total_paid": 1653,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-02-18T00:00:00.000Z",
+        "amount": 1653,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000010",
+    "quote_number": "0000010",
+    "title": "Daniel Tiscornia",
+    "description": "Madera - Roble 15mm x 18cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-039",
+    "client_name": "Arq. Miguel Florio",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 28500,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 18cm x 1,90m / Veta Tallada",
+        "quantity": 260,
+        "unit_price": 109.6153846,
+        "total": 28500,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-02-21T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 28500,
+      "total_paid": 28500,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-02-21T00:00:00.000Z",
+        "amount": 28500,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000011",
+    "quote_number": "0000011",
+    "title": "Obra Revestimientos (Cielorraso) - Pilara",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-004",
+    "client_name": "Agustina Lando",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 16417.331157,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 119,
+        "unit_price": 105,
+        "total": 16417.331157,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-02-26T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000031",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 16417.331157,
+      "total_paid": 14456.16558,
+      "balance_due": 1961.165577
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-02-26T00:00:00.000Z",
+        "amount": 14456.16558,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000012",
+    "quote_number": "0000012",
+    "title": "Obra Belgrano Dragones",
+    "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-065",
+    "client_name": "Guillermina (Estudio Arhaus)",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2690.44,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 49,
+        "unit_price": 112.44,
+        "total": 2690.44,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-03-04T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2690.44,
+      "total_paid": 4100,
+      "balance_due": -1409.56
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-03-04T00:00:00.000Z",
+        "amount": 4100,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000013",
+    "quote_number": "0000013",
+    "title": "Obra Greenlands",
+    "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-008",
+    "client_name": "RONDA",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 8584,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 88,
+        "unit_price": 107,
+        "total": 8584,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-03-05T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 8584,
+      "total_paid": 9000,
+      "balance_due": -416
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-03-05T00:00:00.000Z",
+        "amount": 9000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000015",
+    "quote_number": "0000015",
+    "title": "Reparación de Lapacho",
+    "description": "Madera - Lapacho IPE",
+    "client_id": "CLI-009",
+    "client_name": "Sebastian Recio",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 4524,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Lapacho IPE",
+        "quantity": 45,
+        "unit_price": 100.5333333,
+        "total": 4524,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-04-09T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "0002_00000036",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 4524,
+      "total_paid": 4524,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-04-09T00:00:00.000Z",
+        "amount": 4524,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000016",
+    "quote_number": "0000016",
+    "title": "Obra Lanus - N.B. Constructora",
+    "description": "Deck PVC Coextrusión - 3cm x 14 cm x 220 cm",
+    "client_id": "CLI-083",
+    "client_name": "Matias - Copiasur S.A.",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2130,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Deck PVC Coextrusión - 3cm x 14 cm x 220 cm",
+        "quantity": 21.3,
+        "unit_price": 100,
+        "total": 2130,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-04-15T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2130,
+      "total_paid": 2130,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-04-15T00:00:00.000Z",
+        "amount": 2130,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000017",
+    "quote_number": "0000017",
+    "title": "Obra San Martin de los Andes",
+    "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-052",
+    "client_name": "Dinamic",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1140.48,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m",
+        "quantity": 44,
+        "unit_price": 25.92,
+        "total": 1140.48,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-04-16T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1140.48,
+      "total_paid": 1140.48,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-04-16T00:00:00.000Z",
+        "amount": 1140.48,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000018",
+    "quote_number": "0000018",
+    "title": "Obra Agro - Oficinas",
+    "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-023",
+    "client_name": "AgroAlimentos",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -4768,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m",
+        "quantity": 149,
+        "unit_price": 32,
+        "total": -4768,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-04-16T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": -4768,
+      "total_paid": 0,
+      "balance_due": -4768
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000019",
+    "quote_number": "0000019",
+    "title": "Sin instalación en Rosario",
+    "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-017",
+    "client_name": "EIV Software",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 245.948,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m",
+        "quantity": 8.784,
+        "unit_price": 28,
+        "total": 245.948,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-04-22T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "0002_00000041",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 245.948,
+      "total_paid": 245.95,
+      "balance_due": -0.002
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-04-22T00:00:00.000Z",
+        "amount": 245.95,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000020",
+    "quote_number": "0000020",
+    "title": "Obra Greenlands",
+    "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-008",
+    "client_name": "RONDA",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1527,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 15,
+        "unit_price": 178.2,
+        "total": 1527,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-04-25T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1527,
+      "total_paid": 2100,
+      "balance_due": -573
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-04-25T00:00:00.000Z",
+        "amount": 2100,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000021",
+    "quote_number": "0000021",
+    "title": "Obra de casa en San Diego",
+    "description": "H2O XL - Roble Eslavonia 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-018",
+    "client_name": "Alejandro Inmobiliaria - San Diego",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1491.8796996,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Roble Eslavonia 5,5mm x 23cm x 1,50m",
+        "quantity": 42,
+        "unit_price": 30,
+        "total": 1491.8796996,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-04-25T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1491.8796996,
+      "total_paid": 1375.93985,
+      "balance_due": 115.9398496
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-04-25T00:00:00.000Z",
+        "amount": 1375.93985,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000022",
+    "quote_number": "0000022",
+    "title": "Casa campo - Sin colocacion",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-069",
+    "client_name": "Juan Balbin",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2175,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 87,
+        "unit_price": 25,
+        "total": 2175,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-05-09T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000045",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2175,
+      "total_paid": 2175,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-05-09T00:00:00.000Z",
+        "amount": 2175,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000023",
+    "quote_number": "0000023",
+    "title": "Obra Hudson",
+    "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-097",
+    "client_name": "Sole Oriozabala",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 4400,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+        "quantity": 110,
+        "unit_price": 40,
+        "total": 4400,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-05-20T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 4400,
+      "total_paid": 4400,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-05-20T00:00:00.000Z",
+        "amount": 4400,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000024",
+    "quote_number": "0000024",
+    "title": "Club de Polo",
+    "description": "H2O XL - Roble Eslavonia 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-054",
+    "client_name": "Esmeralda",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 3582.18,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Roble Eslavonia 5,5mm x 23cm x 1,50m",
+        "quantity": 66,
+        "unit_price": 54.27,
+        "total": 3582.18,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-05-20T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 3582.18,
+      "total_paid": 3582,
+      "balance_due": 0.18
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-05-20T00:00:00.000Z",
+        "amount": 3582,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000026",
+    "quote_number": "0000026",
+    "title": "Obra Puerto Madero",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-004",
+    "client_name": "Agustina Lando",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2860,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 52,
+        "unit_price": 55,
+        "total": 2860,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-06-09T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2860,
+      "total_paid": 2860,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-06-09T00:00:00.000Z",
+        "amount": 2860,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000027",
+    "quote_number": "0000027",
+    "title": "Obra Ayres del Pilar casa Propia",
+    "description": "H2O XL - Roble Eslavonia 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-068",
+    "client_name": "Joaquin Gonzalez",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2346.15,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Roble Eslavonia 5,5mm x 23cm x 1,50m",
+        "quantity": 63,
+        "unit_price": 38.95,
+        "total": 2346.15,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-06-09T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2346.15,
+      "total_paid": 2400,
+      "balance_due": -53.85
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-06-09T00:00:00.000Z",
+        "amount": 2400,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000028",
+    "quote_number": "0000028",
+    "title": "Obra Arribeños 1509",
+    "description": "Madera - Smoked 15mm x 18cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-032",
+    "client_name": "Arq. Dolores",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 15212.730498,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Smoked 15mm x 18cm x 1,90m / Veta Tallada",
+        "quantity": 115,
+        "unit_price": 107,
+        "total": 15212.730498,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-06-10T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 15212.730498,
+      "total_paid": 13758.86525,
+      "balance_due": 1453.865248
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-06-10T00:00:00.000Z",
+        "amount": 13758.86525,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000029",
+    "quote_number": "0000029",
+    "title": "Obra Santa Fe (Retiro)",
+    "description": "Madera - Roble Eslavonia - 10mm x 120mm x 1200mm / Veta Tallada",
+    "client_id": "CLI-085",
+    "client_name": "Pablo Grandinetti",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2580,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Eslavonia - 10mm x 120mm x 1200mm / Veta Tallada",
+        "quantity": 55,
+        "unit_price": 44,
+        "total": 2580,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-06-17T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2580,
+      "total_paid": 2500,
+      "balance_due": 80
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-06-17T00:00:00.000Z",
+        "amount": 2500,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000029-2",
+    "quote_number": "0000029",
+    "title": "Obra Santa Fe (Retiro)",
+    "description": "Madera - 90x900 - Roble / Veta Tallada",
+    "client_id": "CLI-085",
+    "client_name": "Pablo Grandinetti",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 4920,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - 90x900 - Roble / Veta Tallada",
+        "quantity": 2,
+        "unit_price": 40,
+        "total": 4920,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-06-17T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 4920,
+      "total_paid": 2500,
+      "balance_due": 2420
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-06-17T00:00:00.000Z",
+        "amount": 2500,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000030",
+    "quote_number": "0000030",
+    "title": "Obra Ocampo Deck Lapacho",
+    "description": "Deck Lapacho",
+    "client_id": "CLI-026",
+    "client_name": "Arq Delfina Aguilar",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 7040,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Deck Lapacho",
+        "quantity": 44,
+        "unit_price": 140,
+        "total": 7040,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-06-26T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 7040,
+      "total_paid": 6600,
+      "balance_due": 440
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-06-26T00:00:00.000Z",
+        "amount": 6600,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000031",
+    "quote_number": "0000031",
+    "title": "Obra Capilla del Señor",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-053",
+    "client_name": "Dolores Naon",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1920,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 60,
+        "unit_price": 32,
+        "total": 1920,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-06-26T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1920,
+      "total_paid": 1920,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-06-26T00:00:00.000Z",
+        "amount": 1920,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000032",
+    "quote_number": "0000032",
+    "title": "Obra Dorrego",
+    "description": "H2O - Roble Eslavonia 5,5mm x 18cm x 1,20m",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -720,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Eslavonia 5,5mm x 18cm x 1,20m",
+        "quantity": 20,
+        "unit_price": 36,
+        "total": -720,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-06-26T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "0002_00000050",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": -720,
+      "total_paid": 0,
+      "balance_due": -720
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000033",
+    "quote_number": "0000033",
+    "title": "Obra Palermo/Colegiales",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-024",
+    "client_name": "Alejandra Serrat",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2090.0004,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 41,
+        "unit_price": 50.9756,
+        "total": 2090.0004,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-06-26T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2090.0004,
+      "total_paid": 2090,
+      "balance_due": 0.0003999999999
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-06-26T00:00:00.000Z",
+        "amount": 2090,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000034",
+    "quote_number": "0000034",
+    "title": "Planta Baja Haras del Pilar",
+    "description": "H2O - Aspen 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-067",
+    "client_name": "Ignacio Fonseca",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2728.15,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Aspen 5,5mm x 18cm x 1,20m",
+        "quantity": 99,
+        "unit_price": 43.15,
+        "total": 2728.15,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-11T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": 2728.15,
+      "total_paid": 3500,
+      "balance_due": -771.85
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-07-11T00:00:00.000Z",
+        "amount": 3500,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000035",
+    "quote_number": "0000035",
+    "title": "Planta Alta Haras del Pilar",
+    "description": "H2O - Aspen 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-067",
+    "client_name": "Ignacio Fonseca",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 3147.011,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Aspen 5,5mm x 18cm x 1,20m",
+        "quantity": 61,
+        "unit_price": 50.049,
+        "total": 3147.011,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-11T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 3147.011,
+      "total_paid": 3100,
+      "balance_due": 47.011
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-07-11T00:00:00.000Z",
+        "amount": 3100,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000036",
+    "quote_number": "0000036",
+    "title": "Planta Baja Haras del Pilar",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-070",
+    "client_name": "Julian Rodriguez",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 4928.5,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 98,
+        "unit_price": 51.75,
+        "total": 4928.5,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-11T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 4928.5,
+      "total_paid": 5000,
+      "balance_due": -71.5
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-07-11T00:00:00.000Z",
+        "amount": 5000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000037",
+    "quote_number": "0000037",
+    "title": "Oficinas PRG",
+    "description": "H2O HD - Roble Gris 7mm x 18cm x 1,20m",
+    "client_id": "CLI-023",
+    "client_name": "AgroAlimentos",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -4440,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD - Roble Gris 7mm x 18cm x 1,20m",
+        "quantity": 120,
+        "unit_price": 37,
+        "total": -4440,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-11T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": -4440,
+      "total_paid": 0,
+      "balance_due": -4440
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000038",
+    "quote_number": "0000038",
+    "title": "Baño Obra Forest",
+    "description": "H2O - Light Grey 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-004",
+    "client_name": "Agustina Lando",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 383.97938461,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Light Grey 5,5mm x 18cm x 1,20m",
+        "quantity": 4,
+        "unit_price": 68.5,
+        "total": 383.97938461,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-11T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000054",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 383.97938461,
+      "total_paid": 328.9896923,
+      "balance_due": 54.98969231
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-07-11T00:00:00.000Z",
+        "amount": 328.9896923,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000039",
+    "quote_number": "0000039",
+    "title": "Obra Santa Fe (Retiro)",
+    "description": "Madera - Roble Eslavonia - 10mm x 120mm x 1200mm / Veta Tallada",
+    "client_id": "CLI-085",
+    "client_name": "Pablo Grandinetti",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1540,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Eslavonia - 10mm x 120mm x 1200mm / Veta Tallada",
+        "quantity": 35,
+        "unit_price": 44,
+        "total": 1540,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-14T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1540,
+      "total_paid": 1540,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-07-14T00:00:00.000Z",
+        "amount": 1540,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000040",
+    "quote_number": "0000040",
+    "title": "Obra Belgrano",
+    "description": "H2O XL - Roble Eslavonia 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-059",
+    "client_name": "Fer Faccini",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1644,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Roble Eslavonia 5,5mm x 23cm x 1,50m",
+        "quantity": 30,
+        "unit_price": 54.8,
+        "total": 1644,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-14T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1644,
+      "total_paid": 1644,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-07-14T00:00:00.000Z",
+        "amount": 1644,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000041",
+    "quote_number": "0000041",
+    "title": "Obra Forest - Cielorraso",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-004",
+    "client_name": "Agustina Lando",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 3976.1,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 30,
+        "unit_price": 93.33,
+        "total": 3976.1,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-14T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000057",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 3976.1,
+      "total_paid": 3388,
+      "balance_due": 588.1
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-07-14T00:00:00.000Z",
+        "amount": 3388,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000042",
+    "quote_number": "0000042",
+    "title": "Cordoba envio a interior",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-076",
+    "client_name": "Lucas Aliaga",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 614.88,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 17.568,
+        "unit_price": 35,
+        "total": 614.88,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-25T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 614.88,
+      "total_paid": 614.88,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-07-25T00:00:00.000Z",
+        "amount": 614.88,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000043",
+    "quote_number": "0000043",
+    "title": "Obra 3 de Febrero - Simon",
+    "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-010",
+    "client_name": "GGYA",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 13597.2,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 132,
+        "unit_price": 103,
+        "total": 13597.2,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-28T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 13597.2,
+      "total_paid": 13596.6,
+      "balance_due": 0.6
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-07-28T00:00:00.000Z",
+        "amount": 13596.6,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000044",
+    "quote_number": "0000044",
+    "title": "Obra Villanueva",
+    "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-056",
+    "client_name": "Estudio Aldave",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1020.8,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+        "quantity": 22,
+        "unit_price": 46.4,
+        "total": 1020.8,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-28T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000066/59",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1020.8,
+      "total_paid": 1020.8,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-07-28T00:00:00.000Z",
+        "amount": 1020.8,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000045",
+    "quote_number": "0000045",
+    "title": "Obra Concepcion Arenal",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-084",
+    "client_name": "Maximo Rodriguez Palacios",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1790.4655032,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 30.114,
+        "unit_price": 41.8705,
+        "total": 1790.4655032,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-07-28T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000060",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1790.4655032,
+      "total_paid": 1525.67687,
+      "balance_due": 264.7886332
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-07-28T00:00:00.000Z",
+        "amount": 1525.67687,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000046",
+    "quote_number": "0000046",
+    "title": "Barrio cerrado las Palmas | Tigre",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-029",
+    "client_name": "Arq. Agustina Santillan | Estudio Aldave",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 8801.999987,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 99,
+        "unit_price": 88.868687,
+        "total": 8801.999987,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-08-06T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 8801.999987,
+      "total_paid": 8800,
+      "balance_due": 1.999987
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-08-06T00:00:00.000Z",
+        "amount": 8800,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000047",
+    "quote_number": "0000047",
+    "title": "Colegiales - 90x900 Veta Tallada",
+    "description": "Madera - 90x900 - Roble / Veta Tallada",
+    "client_id": "CLI-079",
+    "client_name": "Marc Persiaux",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2507.02341169,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - 90x900 - Roble / Veta Tallada",
+        "quantity": 60,
+        "unit_price": 40,
+        "total": 2507.02341169,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-08-07T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2507.02341169,
+      "total_paid": 2453.511706,
+      "balance_due": 53.51170569
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-08-07T00:00:00.000Z",
+        "amount": 2453.511706,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000048",
+    "quote_number": "0000048",
+    "title": "Obra Michelle - Clásico",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-087",
+    "client_name": "Pacific San Juan",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 341.6,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 135,
+        "unit_price": 24,
+        "total": 341.6,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-08-07T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000069",
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 341.6,
+      "total_paid": 1790.8,
+      "balance_due": -1449.2
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-08-07T00:00:00.000Z",
+        "amount": 1790.8,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000050",
+    "quote_number": "0000050",
+    "title": "Freire - Cielorraso del Exterior Frente",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-004",
+    "client_name": "Agustina Lando",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 614.63203,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 2.196,
+        "unit_price": 105,
+        "total": 614.63203,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-08-13T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "0002_00000063",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 614.63203,
+      "total_paid": 422.606015,
+      "balance_due": 192.026015
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-08-13T00:00:00.000Z",
+        "amount": 422.606015,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000051",
+    "quote_number": "0000051",
+    "title": "Obra Laguna del Sol - Loli y Legui",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-075",
+    "client_name": "Loli Garcia Gonzalez",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 8643,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 119,
+        "unit_price": 73.58823529,
+        "total": 8643,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-08-25T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 8643,
+      "total_paid": 8700,
+      "balance_due": -57
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-08-25T00:00:00.000Z",
+        "amount": 8700,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000052",
+    "quote_number": "0000052",
+    "title": "Obra Wineberg",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-035",
+    "client_name": "Arq. Guillermina Frangi",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -10146,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 267,
+        "unit_price": 38,
+        "total": -10146,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-08-29T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": -10146,
+      "total_paid": 0,
+      "balance_due": -10146
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000053",
+    "quote_number": "0000053",
+    "title": "Obra Vicente Lopez",
+    "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "client_id": "CLI-034",
+    "client_name": "Arq. Flor Bordeu",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2707.71,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+        "quantity": 48.5,
+        "unit_price": 47.26371134,
+        "total": 2707.71,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-09-13T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000074",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2707.71,
+      "total_paid": 2500,
+      "balance_due": 207.71
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-09-13T00:00:00.000Z",
+        "amount": 2500,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000054",
+    "quote_number": "0000054",
+    "title": "Casa Mara Reparación",
+    "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Cerrada",
+    "client_id": "CLI-011",
+    "client_name": "CAPIZZI",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2900,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Cerrada",
+        "quantity": 27,
+        "unit_price": 107.4074074,
+        "total": 2900,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-09-13T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": 2900,
+      "total_paid": 2900,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-09-13T00:00:00.000Z",
+        "amount": 2900,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000055",
+    "quote_number": "0000055",
+    "title": "Casa Carola San Diego",
+    "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "client_id": "CLI-047",
+    "client_name": "Carola Capizzi",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 17597.8,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+        "quantity": 306.9,
+        "unit_price": 38,
+        "total": 17597.8,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-09-13T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 17597.8,
+      "total_paid": 14630,
+      "balance_due": 2967.8
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-09-13T00:00:00.000Z",
+        "amount": 14630,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000056",
+    "quote_number": "0000056",
+    "title": "Obra Oficinas",
+    "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "client_id": "CLI-004",
+    "client_name": "Agustina Lando",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 6794,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+        "quantity": 550,
+        "unit_price": 34.54545455,
+        "total": 6794,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-09-15T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 6794,
+      "total_paid": 12897,
+      "balance_due": -6103
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-09-15T00:00:00.000Z",
+        "amount": 12897,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000068",
+    "quote_number": "0000068",
+    "title": "Obra Newman",
+    "description": "Limpieza Pro - Clean - Linea H2O",
+    "client_id": "CLI-081",
+    "client_name": "Mariana",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -245.5961538,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Limpieza Pro - Clean - Linea H2O",
+        "quantity": 47.3,
+        "unit_price": 5.192307692,
+        "total": -245.5961538,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-09-17T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": -245.5961538,
+      "total_paid": 0,
+      "balance_due": -245.5961538
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000057",
+    "quote_number": "0000057",
+    "title": "Estudio de Pilates",
+    "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "client_id": "CLI-045",
+    "client_name": "Cami Fuks",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 5034,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+        "quantity": 120,
+        "unit_price": 43.46666667,
+        "total": 5034,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-09-25T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 5034,
+      "total_paid": 5125,
+      "balance_due": -91
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-09-25T00:00:00.000Z",
+        "amount": 5125,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000058",
+    "quote_number": "0000058",
+    "title": "Obra Barbarita",
+    "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "client_id": "CLI-056",
+    "client_name": "Estudio Aldave",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 11999.169938,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+        "quantity": 107,
+        "unit_price": 38,
+        "total": 11999.169938,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-09-25T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "0002_00000076",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 11999.169938,
+      "total_paid": 8032.584969,
+      "balance_due": 3966.584969
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-09-25T00:00:00.000Z",
+        "amount": 8032.584969,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000059",
+    "quote_number": "0000059",
+    "title": "Compra Cajas 10 u",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-027",
+    "client_name": "Arq Paula Ballinotti",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 600,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 21.96,
+        "unit_price": 27.32240437,
+        "total": 600,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-09-29T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 600,
+      "total_paid": 600,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-09-29T00:00:00.000Z",
+        "amount": 600,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000060",
+    "quote_number": "0000060",
+    "title": "Obra Figueroa Alcorta Piso 13",
+    "description": "Madera - Heav Smoked 15mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-040",
+    "client_name": "Arq. Silvi Vanden Bosch",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 22143.95,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Heav Smoked 15mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 187,
+        "unit_price": 98.69545455,
+        "total": 22143.95,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-10-17T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 22143.95,
+      "total_paid": 20300,
+      "balance_due": 1843.95
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-10-17T00:00:00.000Z",
+        "amount": 20300,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000061",
+    "quote_number": "0000061",
+    "title": "Obra Rio Cuarto",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-086",
+    "client_name": "Pacific Cordoba",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 528.204324324,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 23,
+        "unit_price": 23.59459459,
+        "total": 528.204324324,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-10-17T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000078",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 528.204324324,
+      "total_paid": 535.44,
+      "balance_due": -7.235675676
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-10-17T00:00:00.000Z",
+        "amount": 535.44,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000062",
+    "quote_number": "0000062",
+    "title": "Obra Estuio Llauro / Maqui",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-023",
+    "client_name": "AgroAlimentos",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 4471.8071439,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 93,
+        "unit_price": 34.58516129,
+        "total": 4471.8071439,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-10-21T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000090",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 4471.8071439,
+      "total_paid": 3844.113572,
+      "balance_due": 627.6935719
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-10-21T00:00:00.000Z",
+        "amount": 3844.113572,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000063",
+    "quote_number": "0000063",
+    "title": "Obra Deck Putrele",
+    "description": "Deck PVC Coextrusión - 3cm x 14 cm x 220 cm",
+    "client_id": "CLI-004",
+    "client_name": "Agustina Lando",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 10800,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Deck PVC Coextrusión - 3cm x 14 cm x 220 cm",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 10800,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-10-21T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 10800,
+      "total_paid": 5400,
+      "balance_due": 5400
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-10-21T00:00:00.000Z",
+        "amount": 5400,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000064",
+    "quote_number": "0000064",
+    "title": "Obra Caballito",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-036",
+    "client_name": "Arq. Julieta Piñeiro",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 3762.541806,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 65,
+        "unit_price": 46.15384615,
+        "total": 3762.541806,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-10-21T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 3762.541806,
+      "total_paid": 3381.270903,
+      "balance_due": 381.270903
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-10-21T00:00:00.000Z",
+        "amount": 3381.270903,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000065",
+    "quote_number": "0000065",
+    "title": "Obra Olivos Golf Club",
+    "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-089",
+    "client_name": "Patricia Collado",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 3260,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+        "quantity": 57,
+        "unit_price": 50.87719298,
+        "total": 3260,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-10-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000062",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 3260,
+      "total_paid": 3080,
+      "balance_due": 180
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-10-23T00:00:00.000Z",
+        "amount": 3080,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000066",
+    "quote_number": "0000066",
+    "title": "San Carlos Country | lote 88",
+    "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-072",
+    "client_name": "Laura Abraham",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2481,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+        "quantity": 41,
+        "unit_price": 60.46341463,
+        "total": 2481,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-10-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2481,
+      "total_paid": 2480,
+      "balance_due": 1
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-10-23T00:00:00.000Z",
+        "amount": 2480,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000067",
+    "quote_number": "0000067",
+    "title": "Scalabrini Ortiz Piso 8",
+    "description": "Limpieza Pro - Clean - Colección Madera",
+    "client_id": "CLI-074",
+    "client_name": "Leandro - GGYA",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -1395,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Limpieza Pro - Clean - Colección Madera",
+        "quantity": 225,
+        "unit_price": 6.2,
+        "total": -1395,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-10-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": -1395,
+      "total_paid": 0,
+      "balance_due": -1395
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000069",
+    "quote_number": "0000069",
+    "title": "Obra Palermo - Concepción Arenal",
+    "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "client_id": "CLI-061",
+    "client_name": "Flor Vichich",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 6863.915062,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+        "quantity": 70.272,
+        "unit_price": 49.13279827,
+        "total": 6863.915062,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-06T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 6863.915062,
+      "total_paid": 5158.287531,
+      "balance_due": 1705.627531
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-06T00:00:00.000Z",
+        "amount": 5158.287531,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000070",
+    "quote_number": "0000070",
+    "title": "Ciro - Obra Sevilla",
+    "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-040",
+    "client_name": "Arq. Silvi Vanden Bosch",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 18474.2,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 160,
+        "unit_price": 81.3125,
+        "total": 18474.2,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-06T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000064",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 18474.2,
+      "total_paid": 15742.1,
+      "balance_due": 2732.1
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-06T00:00:00.000Z",
+        "amount": 15742.1,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000074",
+    "quote_number": "0000074",
+    "title": "Obra Hauston Nuñez",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-035",
+    "client_name": "Arq. Guillermina Frangi",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 5729.13,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 157,
+        "unit_price": 41.71254777,
+        "total": 5729.13,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-07T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000070",
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 5729.13,
+      "total_paid": 6139,
+      "balance_due": -409.87
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-07T00:00:00.000Z",
+        "amount": 6139,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000071",
+    "quote_number": "0000071",
+    "title": "Escalera - Santa Barbara",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-093",
+    "client_name": "Santiago Cebral",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2464.4,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 45,
+        "unit_price": 54.79111111,
+        "total": 2464.4,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-11T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2464.4,
+      "total_paid": 2465,
+      "balance_due": -0.6
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-11T00:00:00.000Z",
+        "amount": 2465,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000072",
+    "quote_number": "0000072",
+    "title": "Escalera Madera Bellavista",
+    "description": "Madera - Roble 15mm x 18cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-090",
+    "client_name": "Rodrigo Franco",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2826,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 18cm x 1,90m / Veta Tallada",
+        "quantity": 13.7,
+        "unit_price": 217.080292,
+        "total": 2826,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-13T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2826,
+      "total_paid": 2900,
+      "balance_due": -74
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-13T00:00:00.000Z",
+        "amount": 2900,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000073",
+    "quote_number": "0000073",
+    "title": "20 cajas",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-086",
+    "client_name": "Pacific Cordoba",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1219.93819416,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 43.92,
+        "unit_price": 24.50526316,
+        "total": 1219.93819416,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-14T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000088",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1219.93819416,
+      "total_paid": 1148.104676,
+      "balance_due": 71.83351816
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-14T00:00:00.000Z",
+        "amount": 1148.104676,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000075",
+    "quote_number": "0000075",
+    "title": "Obra barto eslavonia",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-030",
+    "client_name": "Arq. Barto Rimoldi",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 8655.8,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 141,
+        "unit_price": 62.01560284,
+        "total": 8655.8,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-14T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 8655.8,
+      "total_paid": 8700,
+      "balance_due": -44.2
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-14T00:00:00.000Z",
+        "amount": 8700,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000076",
+    "quote_number": "0000076",
+    "title": "Obra Villa Crespo",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-064",
+    "client_name": "Gonchi Baya",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1056,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 32,
+        "unit_price": 33,
+        "total": 1056,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-14T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1056,
+      "total_paid": 1056,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-14T00:00:00.000Z",
+        "amount": 1056,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000077",
+    "quote_number": "0000077",
+    "title": "Obra Ayacucho - Sofia Demaria",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-008",
+    "client_name": "RONDA",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2709.9041404,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 35,
+        "unit_price": 54.2,
+        "total": 2709.9041404,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-14T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000084",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2709.9041404,
+      "total_paid": 2303.45207,
+      "balance_due": 406.4520704
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-14T00:00:00.000Z",
+        "amount": 2303.45207,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000078",
+    "quote_number": "0000078",
+    "title": "Obra Gurruchaga - Blas",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-031",
+    "client_name": "Arq. Catalina BOW",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 3393.2,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 115,
+        "unit_price": 43.5373913,
+        "total": 3393.2,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-17T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 3393.2,
+      "total_paid": 4200,
+      "balance_due": -806.8
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-17T00:00:00.000Z",
+        "amount": 4200,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000079",
+    "quote_number": "0000079",
+    "title": "Roble Gris",
+    "description": "H2O - Roble Gris 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-060",
+    "client_name": "Flavia San Juan",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -598.3056339,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Gris 5,5mm x 18cm x 1,20m",
+        "quantity": 60,
+        "unit_price": 26,
+        "total": -598.3056339,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-17T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002_00000067",
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": -598.3056339,
+      "total_paid": 480.8471831,
+      "balance_due": -1079.152817
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-17T00:00:00.000Z",
+        "amount": 480.8471831,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000080",
+    "quote_number": "0000080",
+    "title": "Obra - Av Santa Fe 3132 2A",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-038",
+    "client_name": "Arq. Marina",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 5426.4,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 120,
+        "unit_price": 55.78,
+        "total": 5426.4,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-11-25T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 5426.4,
+      "total_paid": 6060,
+      "balance_due": -633.6
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-11-25T00:00:00.000Z",
+        "amount": 6060,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000081",
+    "quote_number": "0000081",
+    "title": "Hall de Acceso",
+    "description": "H2O HD - Roble Clásico 7mm x 18cm x 1,20m",
+    "client_id": "CLI-023",
+    "client_name": "AgroAlimentos",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -754.6,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD - Roble Clásico 7mm x 18cm x 1,20m",
+        "quantity": 20,
+        "unit_price": 37.73,
+        "total": -754.6,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-12-03T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002-00000093",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": -754.6,
+      "total_paid": 0,
+      "balance_due": -754.6
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000082",
+    "quote_number": "0000082",
+    "title": "Ciro  Obra Sevilla - Escaleras + Adicional",
+    "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-040",
+    "client_name": "Arq. Silvi Vanden Bosch",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 22860.513884,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 60,
+        "unit_price": 116.5333333,
+        "total": 22860.513884,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-12-15T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002-00000072",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 22860.513884,
+      "total_paid": 14926.25694,
+      "balance_due": 7934.256944
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-12-15T00:00:00.000Z",
+        "amount": 14926.25694,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000083",
+    "quote_number": "0000083",
+    "title": "Obra Rosario Freddy Belgrano",
+    "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-010",
+    "client_name": "GGYA",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 9650,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 136.2,
+        "unit_price": 70.85168869,
+        "total": 9650,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-12-15T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 9650,
+      "total_paid": 9650,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-12-15T00:00:00.000Z",
+        "amount": 9650,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000084",
+    "quote_number": "0000084",
+    "title": "Obra Roble 9cm laqueado",
+    "description": "Madera - 90x900 - Roble / Veta Cerrada",
+    "client_id": "CLI-058",
+    "client_name": "Eugenia Serrat",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1964,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - 90x900 - Roble / Veta Cerrada",
+        "quantity": 22,
+        "unit_price": 54.36363636,
+        "total": 1964,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-12-15T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1964,
+      "total_paid": 1580,
+      "balance_due": 384
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-12-15T00:00:00.000Z",
+        "amount": 1580,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000085",
+    "quote_number": "0000085",
+    "title": "Obra Rep. Arabe Siria 2791 piso 12",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-037",
+    "client_name": "Arq. Maria M. Oricchio",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 5449,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 104,
+        "unit_price": 52.99038462,
+        "total": 5449,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-12-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": 5449,
+      "total_paid": 5480,
+      "balance_due": -31
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-12-23T00:00:00.000Z",
+        "amount": 5480,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000086",
+    "quote_number": "0000086",
+    "title": "Obra Kitsilano Casa Propia",
+    "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-041",
+    "client_name": "Arq. Tristan Miguens",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 7380,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 245,
+        "unit_price": 76,
+        "total": 7380,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2025-12-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 7380,
+      "total_paid": 13000,
+      "balance_due": -5620
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2025-12-23T00:00:00.000Z",
+        "amount": 13000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000087",
+    "quote_number": "0000087",
+    "title": "Nahuel Oficinas IAG",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-066",
+    "client_name": "IAG",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1287.9451561,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 26,
+        "unit_price": 35.84615385,
+        "total": 1287.9451561,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-01-05T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002-00000095",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1287.9451561,
+      "total_paid": 1109.972578,
+      "balance_due": 177.9725781
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-01-05T00:00:00.000Z",
+        "amount": 1109.972578,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000088",
+    "quote_number": "0000088",
+    "title": "Casa Tigre Padre Jorge",
+    "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+    "client_id": "CLI-088",
+    "client_name": "Padre Jorge",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -977,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+        "quantity": 158,
+        "unit_price": 31.5,
+        "total": -977,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-01-05T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": -977,
+      "total_paid": 2000,
+      "balance_due": -2977
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-01-05T00:00:00.000Z",
+        "amount": 2000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000089",
+    "quote_number": "0000089",
+    "title": "AGIRA - Oficinas 197",
+    "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "client_id": "CLI-028",
+    "client_name": "Arq Santiago - Proyecto Concreto",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 14800.997957,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+        "quantity": 520,
+        "unit_price": 42.31538462,
+        "total": 14800.997957,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-01-05T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 14800.997957,
+      "total_paid": 18402.49898,
+      "balance_due": -3601.501023
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-01-05T00:00:00.000Z",
+        "amount": 18402.49898,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000090",
+    "quote_number": "0000090",
+    "title": "Obra Neyer 4187 - Boulogne",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-048",
+    "client_name": "Cham",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 4310.16,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 61,
+        "unit_price": 42.45639344,
+        "total": 4310.16,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-01-20T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 4310.16,
+      "total_paid": 3450,
+      "balance_due": 860.16
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-01-20T00:00:00.000Z",
+        "amount": 3450,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000091",
+    "quote_number": "0000091",
+    "title": "Oficinas INMIX/Piasco",
+    "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+    "client_id": "CLI-023",
+    "client_name": "AgroAlimentos",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1980.3131405,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+        "quantity": 45,
+        "unit_price": 36,
+        "total": 1980.3131405,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-01-20T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1980.3131405,
+      "total_paid": 1800.15657,
+      "balance_due": 180.1565705
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-01-20T00:00:00.000Z",
+        "amount": 1800.15657,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000092",
+    "quote_number": "0000092",
+    "title": "Levene 936 sin Escalera",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-080",
+    "client_name": "Maria Dacharry",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 8483,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 149,
+        "unit_price": 42.39597315,
+        "total": 8483,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-01-22T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 8483,
+      "total_paid": 7400,
+      "balance_due": 1083
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-01-22T00:00:00.000Z",
+        "amount": 7400,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000093",
+    "quote_number": "0000093",
+    "title": "Estudio de Pilates - Pto Madero",
+    "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "client_id": "CLI-025",
+    "client_name": "Ari",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 5963.2,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+        "quantity": 132,
+        "unit_price": 45.73333333,
+        "total": 5963.2,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-01-22T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 5963.2,
+      "total_paid": 6000,
+      "balance_due": -36.8
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-01-22T00:00:00.000Z",
+        "amount": 6000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000094",
+    "quote_number": "0000094",
+    "title": "Obra Diaz Velez",
+    "description": "H2O HD XL - Aspen 7mm x 23cm x 1,50m",
+    "client_id": "CLI-046",
+    "client_name": "Camila Btesh",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 8907.531946,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Aspen 7mm x 23cm x 1,50m",
+        "quantity": 45,
+        "unit_price": 47.57777778,
+        "total": 8907.531946,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-01-28T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 8907.531946,
+      "total_paid": 5524.265973,
+      "balance_due": 3383.265973
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-01-28T00:00:00.000Z",
+        "amount": 5524.265973,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000095",
+    "quote_number": "0000095",
+    "title": "Oficinas Thames",
+    "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+    "client_id": "CLI-023",
+    "client_name": "AgroAlimentos",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 13970.678058,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+        "quantity": 192.5,
+        "unit_price": 47.4961039,
+        "total": 13970.678058,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-01-28T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 13970.678058,
+      "total_paid": 11556.83903,
+      "balance_due": 2413.839028
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-01-28T00:00:00.000Z",
+        "amount": 11556.83903,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000096",
+    "quote_number": "0000096",
+    "title": "Obra sin colocación",
+    "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "client_id": "CLI-094",
+    "client_name": "Santiago Estudio Detry Miguens",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 1078.382,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+        "quantity": 27,
+        "unit_price": 38.22592593,
+        "total": 1078.382,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-02-11T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002-00000108",
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 1078.382,
+      "total_paid": 1055.241,
+      "balance_due": 23.141
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-02-11T00:00:00.000Z",
+        "amount": 1055.241,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000097",
+    "quote_number": "0000097",
+    "title": "Escalera",
+    "description": "Madera - Roble Verona 12/1 mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-091",
+    "client_name": "Rosario Novillo",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -3542,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Verona 12/1 mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 20,
+        "unit_price": 177.1,
+        "total": -3542,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-02-11T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": -3542,
+      "total_paid": 0,
+      "balance_due": -3542
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000098",
+    "quote_number": "0000098",
+    "title": "Obra Casa Tortugas",
+    "description": "Madera - Roble Verona 12/1 mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-091",
+    "client_name": "Rosario Novillo",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -1840,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Verona 12/1 mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 259,
+        "unit_price": 84.32432432,
+        "total": -1840,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-02-11T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": -1840,
+      "total_paid": 10000,
+      "balance_due": -11840
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-02-11T00:00:00.000Z",
+        "amount": 10000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000099",
+    "quote_number": "0000099",
+    "title": "Obra Notte",
+    "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+    "client_id": "CLI-027",
+    "client_name": "Arq Paula Ballinotti",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2900,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+        "quantity": 52,
+        "unit_price": 48.69230769,
+        "total": 2900,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-02-19T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2900,
+      "total_paid": 2716,
+      "balance_due": 184
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-02-19T00:00:00.000Z",
+        "amount": 2716,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000100",
+    "quote_number": "0000100",
+    "title": "Obra Nuñez Zapiola",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-031",
+    "client_name": "Arq. Catalina BOW",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 4740.8,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 60,
+        "unit_price": 44.32,
+        "total": 4740.8,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-02-19T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 4740.8,
+      "total_paid": 3700,
+      "balance_due": 1040.8
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-02-19T00:00:00.000Z",
+        "amount": 3700,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000101",
+    "quote_number": "0000101",
+    "title": "Escaleras Obra Nuñez Zapiola",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-031",
+    "client_name": "Arq. Catalina BOW",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -2047.25,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 16,
+        "unit_price": 127.953125,
+        "total": -2047.25,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-02-19T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": -2047.25,
+      "total_paid": 0,
+      "balance_due": -2047.25
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000102",
+    "quote_number": "0000102",
+    "title": "Obra Nordelta",
+    "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+    "client_id": "CLI-095",
+    "client_name": "Santiago Sureda",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 10419.508896,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+        "quantity": 90,
+        "unit_price": 51.97777778,
+        "total": 10419.508896,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-02-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 10419.508896,
+      "total_paid": 7548.754448,
+      "balance_due": 2870.754448
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-02-23T00:00:00.000Z",
+        "amount": 7548.754448,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000103",
+    "quote_number": "0000103",
+    "title": "Obra Puerto Madero Depto 302",
+    "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
+    "client_id": "CLI-004",
+    "client_name": "Agustina Lando",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2200,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
+        "quantity": 60,
+        "unit_price": 36.66666667,
+        "total": 2200,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-04T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2200,
+      "total_paid": 2200,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-03-04T00:00:00.000Z",
+        "amount": 2200,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000104",
+    "quote_number": "0000104",
+    "title": "Obra Gurruchaga - Sebastian Sale",
+    "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "client_id": "CLI-096",
+    "client_name": "Sebastián Gurruchaga",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 6852,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+        "quantity": 34,
+        "unit_price": 45.52941176,
+        "total": 6852,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-04T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 6852,
+      "total_paid": 4200,
+      "balance_due": 2652
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-03-04T00:00:00.000Z",
+        "amount": 4200,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000105",
+    "quote_number": "0000105",
+    "title": "Obra Gurruchaga - Sebastian Natural",
+    "description": "Madera - 90x900 - Roble / Veta Cerrada",
+    "client_id": "CLI-096",
+    "client_name": "Sebastián Gurruchaga",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -2410.8,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - 90x900 - Roble / Veta Cerrada",
+        "quantity": 52,
+        "unit_price": 46.36153846,
+        "total": -2410.8,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-04T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": -2410.8,
+      "total_paid": 0,
+      "balance_due": -2410.8
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000106",
+    "quote_number": "0000106",
+    "title": "Obra Ada Elflein - Las Lomas H2O",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-077",
+    "client_name": "Lucia Racedo",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -198.4,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 87,
+        "unit_price": 48.25747126,
+        "total": -198.4,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-09T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": -198.4,
+      "total_paid": 2000,
+      "balance_due": -2198.4
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-03-09T00:00:00.000Z",
+        "amount": 2000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000107",
+    "quote_number": "0000107",
+    "title": "Obra Tortugas & Zócalo",
+    "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
+    "client_id": "CLI-062",
+    "client_name": "Francisco Rollo",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 7353,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
+        "quantity": 313,
+        "unit_price": 46.79552716,
+        "total": 7353,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-11T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 7353,
+      "total_paid": 11000,
+      "balance_due": -3647
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-03-11T00:00:00.000Z",
+        "amount": 11000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000108",
+    "quote_number": "0000108",
+    "title": "Escalera",
+    "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
+    "client_id": "CLI-062",
+    "client_name": "Francisco Rollo",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -2600,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
+        "quantity": 18,
+        "unit_price": 144.4444444,
+        "total": -2600,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-11T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": -2600,
+      "total_paid": 0,
+      "balance_due": -2600
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000109",
+    "quote_number": "0000109",
+    "title": "Obra Praderas - Luján",
+    "description": "H2O HD XL - Aspen 7mm x 23cm x 1,50m",
+    "client_id": "CLI-050",
+    "client_name": "Conni Basílico",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 5056,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Aspen 7mm x 23cm x 1,50m",
+        "quantity": 255,
+        "unit_price": 50.76078431,
+        "total": 5056,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-12T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 5056,
+      "total_paid": 9000,
+      "balance_due": -3944
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-03-12T00:00:00.000Z",
+        "amount": 9000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000110",
+    "quote_number": "0000110",
+    "title": "Obra sin colocación",
+    "description": "Madera - 12 cm Roble / Veta Tallada",
+    "client_id": "CLI-051",
+    "client_name": "Daniel Colocador",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2535.3191485,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - 12 cm Roble / Veta Tallada",
+        "quantity": 45,
+        "unit_price": 40,
+        "total": 2535.3191485,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-19T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2535.3191485,
+      "total_paid": 2167.659574,
+      "balance_due": 367.6595745
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-03-19T00:00:00.000Z",
+        "amount": 2167.659574,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000111",
+    "quote_number": "0000111",
+    "title": "Chacabuco 553 - 1D",
+    "description": "Madera - 12 cm Roble / Veta Tallada",
+    "client_id": "CLI-042",
+    "client_name": "Beatriz Massotta",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2457.14285757,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - 12 cm Roble / Veta Tallada",
+        "quantity": 40,
+        "unit_price": 60,
+        "total": 2457.14285757,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-19T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2457.14285757,
+      "total_paid": 2428.571429,
+      "balance_due": 28.57142857
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-03-19T00:00:00.000Z",
+        "amount": 2428.571429,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000112",
+    "quote_number": "0000112",
+    "title": "Obra Casa Pilar",
+    "description": "Madera - Roble Verona 12/1 mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-078",
+    "client_name": "Male Aguilar",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -2130,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Verona 12/1 mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 187,
+        "unit_price": 64.86631016,
+        "total": -2130,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-19T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": -2130,
+      "total_paid": 5000,
+      "balance_due": -7130
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-03-19T00:00:00.000Z",
+        "amount": 5000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000113",
+    "quote_number": "0000113",
+    "title": "Reparación de Pisos",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-066",
+    "client_name": "IAG",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 911.8671206,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 2.196,
+        "unit_price": 302.1174863,
+        "total": 911.8671206,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-19T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 911.8671206,
+      "total_paid": 787.6585603,
+      "balance_due": 124.2085603
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-03-19T00:00:00.000Z",
+        "amount": 787.6585603,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000114",
+    "quote_number": "0000114",
+    "title": "Reparación Obra - Quartier Lacroze 202",
+    "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-044",
+    "client_name": "CRIBA",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -1673.09,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+        "quantity": 32.976,
+        "unit_price": 50.73659631,
+        "total": -1673.09,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-19T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": -1673.09,
+      "total_paid": 0,
+      "balance_due": -1673.09
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000115",
+    "quote_number": "0000115",
+    "title": "Castaños Lote 190 - Planta Alta",
+    "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
+    "client_id": "CLI-071",
+    "client_name": "Kevin Stuart Milne",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 3202,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
+        "quantity": 57,
+        "unit_price": 55.56140351,
+        "total": 3202,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-24T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 3202,
+      "total_paid": 3184.5,
+      "balance_due": 17.5
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-03-24T00:00:00.000Z",
+        "amount": 3184.5,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000116",
+    "quote_number": "0000116",
+    "title": "Obra - Eslavonia",
+    "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "client_id": "CLI-033",
+    "client_name": "Arq. Estefy",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -4889.3,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+        "quantity": 95.7,
+        "unit_price": 51.08986416,
+        "total": -4889.3,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-24T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": -4889.3,
+      "total_paid": 0,
+      "balance_due": -4889.3
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000117",
+    "quote_number": "0000117",
+    "title": "Obra La Plata",
+    "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+    "client_id": "CLI-055",
+    "client_name": "Esteban",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2842,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+        "quantity": 35,
+        "unit_price": 57.2,
+        "total": 2842,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-03-24T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2842,
+      "total_paid": 2422,
+      "balance_due": 420
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-03-24T00:00:00.000Z",
+        "amount": 2422,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000120",
+    "quote_number": "0000120",
+    "title": "Obra Oficinas Vicente Lopez",
+    "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+    "client_id": "CLI-045",
+    "client_name": "Cami Fuks",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 5082.32,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+        "quantity": 55,
+        "unit_price": 65.07454545,
+        "total": 5082.32,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-04-01T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 5082.32,
+      "total_paid": 4330.71,
+      "balance_due": 751.61
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-04-01T00:00:00.000Z",
+        "amount": 4330.71,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000121",
+    "quote_number": "0000121",
+    "title": "Obra Pando",
+    "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-057",
+    "client_name": "Estudio Detry Miguenz",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -27258,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 268,
+        "unit_price": 101.7089552,
+        "total": -27258,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-04-08T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": -27258,
+      "total_paid": 0,
+      "balance_due": -27258
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000122",
+    "quote_number": "0000122",
+    "title": "Obra Centauros",
+    "description": "Madera - Roble Verona 12/1 mm x 19cm x 1,90m / Veta Tallada",
+    "client_id": "CLI-092",
+    "client_name": "Roxana Urquiza",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -3240,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Verona 12/1 mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 200,
+        "unit_price": 86.2,
+        "total": -3240,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-04-08T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": -3240,
+      "total_paid": 7000,
+      "balance_due": -10240
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-04-08T00:00:00.000Z",
+        "amount": 7000,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000123",
+    "quote_number": "0000123",
+    "title": "Obra La Plata",
+    "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+    "client_id": "CLI-073",
+    "client_name": "Lea Rodriguez Azuleta",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -939.2,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+        "quantity": 18,
+        "unit_price": 52.17777778,
+        "total": -939.2,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-04-08T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": -939.2,
+      "total_paid": 0,
+      "balance_due": -939.2
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000118",
+    "quote_number": "0000118",
+    "title": "Obra Tigre",
+    "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
+    "client_id": "CLI-063",
+    "client_name": "Gaby Fischer",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2675,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
+        "quantity": 51,
+        "unit_price": 45.58823529,
+        "total": 2675,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-04-09T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Adelanto",
+    "financial_position": {
+      "total_invoiced": 2675,
+      "total_paid": 2500,
+      "balance_due": 175
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-04-09T00:00:00.000Z",
+        "amount": 2500,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000119",
+    "quote_number": "0000119",
+    "title": "2do Piso Chacabuco",
+    "description": "Madera - 12 cm Roble / Veta Tallada",
+    "client_id": "CLI-082",
+    "client_name": "Mariano",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 2919,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - 12 cm Roble / Veta Tallada",
+        "quantity": 48.86465,
+        "unit_price": 59.73643523,
+        "total": 2919,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-04-09T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Cobrado",
+    "financial_position": {
+      "total_invoiced": 2919,
+      "total_paid": 2919,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [
+      {
+        "ts": "2026-04-09T00:00:00.000Z",
+        "amount": 2919,
+        "method": "import",
+        "notes": "Saldo inicial migración"
+      }
+    ],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000124",
+    "quote_number": "0000124",
+    "title": "Obra Oficinas",
+    "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Cerrada",
+    "client_id": "CLI-043",
+    "client_name": "Beto Baras",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -3470,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble 15mm x 19cm x 1,90m / Veta Cerrada",
+        "quantity": 45,
+        "unit_price": 77.11111111,
+        "total": -3470,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "2026-04-15T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "has_iva": true,
+    "condicion": "Facturado",
+    "factura": "00002-00000124",
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": -3470,
+      "total_paid": 0,
+      "balance_due": -3470
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000049",
+    "quote_number": "0000049",
+    "title": "Obra 125 Aspen",
+    "description": "H2O - Aspen 5,5mm x 18cm x 1,20m",
+    "client_id": "CLI-087",
+    "client_name": "Pacific San Juan",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": -3000,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "H2O - Aspen 5,5mm x 18cm x 1,20m",
+        "quantity": 125,
+        "unit_price": 24,
+        "total": -3000,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": "Botella",
+    "factura": null,
+    "comentarios": null,
+    "payment_state": "Pendiente",
+    "financial_position": {
+      "total_invoiced": -3000,
+      "total_paid": 0,
+      "balance_due": -3000
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000125",
+    "quote_number": "0000125",
+    "title": "Venta 0000125",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000126",
+    "quote_number": "0000126",
+    "title": "Venta 0000126",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000127",
+    "quote_number": "0000127",
+    "title": "Venta 0000127",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000128",
+    "quote_number": "0000128",
+    "title": "Venta 0000128",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000129",
+    "quote_number": "0000129",
+    "title": "Venta 0000129",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000130",
+    "quote_number": "0000130",
+    "title": "Venta 0000130",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000131",
+    "quote_number": "0000131",
+    "title": "Venta 0000131",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000132",
+    "quote_number": "0000132",
+    "title": "Venta 0000132",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000133",
+    "quote_number": "0000133",
+    "title": "Venta 0000133",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000134",
+    "quote_number": "0000134",
+    "title": "Venta 0000134",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000135",
+    "quote_number": "0000135",
+    "title": "Venta 0000135",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000136",
+    "quote_number": "0000136",
+    "title": "Venta 0000136",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000137",
+    "quote_number": "0000137",
+    "title": "Venta 0000137",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000138",
+    "quote_number": "0000138",
+    "title": "Venta 0000138",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000139",
+    "quote_number": "0000139",
+    "title": "Venta 0000139",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000140",
+    "quote_number": "0000140",
+    "title": "Venta 0000140",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000141",
+    "quote_number": "0000141",
+    "title": "Venta 0000141",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000142",
+    "quote_number": "0000142",
+    "title": "Venta 0000142",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000143",
+    "quote_number": "0000143",
+    "title": "Venta 0000143",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000144",
+    "quote_number": "0000144",
+    "title": "Venta 0000144",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000145",
+    "quote_number": "0000145",
+    "title": "Venta 0000145",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000146",
+    "quote_number": "0000146",
+    "title": "Venta 0000146",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000147",
+    "quote_number": "0000147",
+    "title": "Venta 0000147",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000148",
+    "quote_number": "0000148",
+    "title": "Venta 0000148",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000149",
+    "quote_number": "0000149",
+    "title": "Venta 0000149",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000150",
+    "quote_number": "0000150",
+    "title": "Venta 0000150",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000151",
+    "quote_number": "0000151",
+    "title": "Venta 0000151",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000152",
+    "quote_number": "0000152",
+    "title": "Venta 0000152",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000153",
+    "quote_number": "0000153",
+    "title": "Venta 0000153",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000154",
+    "quote_number": "0000154",
+    "title": "Venta 0000154",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000155",
+    "quote_number": "0000155",
+    "title": "Venta 0000155",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000156",
+    "quote_number": "0000156",
+    "title": "Venta 0000156",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000157",
+    "quote_number": "0000157",
+    "title": "Venta 0000157",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  },
+  {
+    "id": "0000158",
+    "quote_number": "0000158",
+    "title": "Venta 0000158",
+    "description": "",
+    "client_id": "",
+    "client_name": "",
+    "client_dni": "",
+    "client_email": "",
+    "client_phone": "",
+    "client_address": "",
+    "contract_total": 0,
+    "items": [
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "",
+        "quantity": 0,
+        "unit_price": 0,
+        "total": 0,
+        "category": ""
+      }
+    ],
+    "status": "Finalizado",
+    "created_at": "",
+    "fecha_pendiente": true,
+    "has_iva": false,
+    "condicion": null,
+    "factura": null,
+    "comentarios": null,
+    "payment_state": null,
+    "financial_position": {
+      "total_invoiced": 0,
+      "total_paid": 0,
+      "balance_due": 0
+    },
+    "stock_reserved": false,
+    "stock_deducted": true,
+    "seller_name": "",
+    "payments": [],
+    "source": "excel-import"
+  }
+]

@@ -36,7 +36,7 @@ export function ActivityFeed({ max = 20 }: { max?: number }) {
       if (c.received_at) out.push({ ts: c.received_at, type: "container_received", title: `${c.id} recibido`, subtitle: `${c.vessel} · ${c.items.length} SKUs`, icon: CheckCircle2, color: "text-emerald-400" })
       out.push({ ts: c.eta + "T00:00:00.000Z", type: "container", title: `${c.id} · ETA`, subtitle: `${c.vessel} · ${c.supplier}`, icon: Ship, color: "text-amber-400" })
     }
-    return out.sort((a, b) => b.ts.localeCompare(a.ts)).slice(0, max)
+    return out.filter(e => e.ts).sort((a, b) => (b.ts ?? "").localeCompare(a.ts ?? "")).slice(0, max)
   }, [sales, quotes, containers, max])
 
   return (

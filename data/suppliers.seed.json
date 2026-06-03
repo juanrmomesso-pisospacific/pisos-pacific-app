@@ -1,0 +1,668 @@
+[
+  {
+    "id": "PROV-001",
+    "name": "Gina",
+    "type": "Producto - Pisos",
+    "stock_code": "23",
+    "category_default": "Producto",
+    "active": true,
+    "notes": "Importador China - Pisos H2O / Madera"
+  },
+  {
+    "id": "PROV-002",
+    "name": "Young",
+    "type": "Producto - Pisos",
+    "stock_code": "20",
+    "category_default": "Producto",
+    "active": true,
+    "notes": "Importador China - Pisos"
+  },
+  {
+    "id": "PROV-003",
+    "name": "Martin",
+    "type": "Producto - Pisos",
+    "stock_code": "21",
+    "category_default": "Producto",
+    "active": true,
+    "notes": "Importador China - Pisos"
+  },
+  {
+    "id": "PROV-004",
+    "name": "Maggie",
+    "type": "Producto - Pisos",
+    "stock_code": "22",
+    "category_default": "Producto",
+    "active": true,
+    "notes": "Importador China - Pisos"
+  },
+  {
+    "id": "PROV-005",
+    "name": "Frank",
+    "type": "Producto - Pisos",
+    "stock_code": "24",
+    "category_default": "Producto",
+    "active": true,
+    "notes": "Importador China - Pisos / Deck"
+  },
+  {
+    "id": "PROV-006",
+    "name": "HDI Seguros",
+    "type": "Servicio - Seguros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-007",
+    "name": "Meta",
+    "type": "Servicio - Marketing",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-008",
+    "name": "Otros",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-009",
+    "name": "Mercado Libre",
+    "type": "Servicio - Plataforma",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-010",
+    "name": "Arq. Maria M. Oricchio",
+    "type": "Comisión - Arquitecto",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-011",
+    "name": "Borassi",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-012",
+    "name": "Paula Balinotti",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-013",
+    "name": "Ronda",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-014",
+    "name": "Arhaus",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-015",
+    "name": "VolksWagen",
+    "type": "Servicio - Auto",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-016",
+    "name": "Ariel",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-017",
+    "name": "Hugo",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-018",
+    "name": "Telepase",
+    "type": "Servicio - Plataforma",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-019",
+    "name": "Google",
+    "type": "Servicio - Marketing",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-020",
+    "name": "MT Pilusos",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-021",
+    "name": "Maldo",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-022",
+    "name": "ARCA",
+    "type": "Servicio - Plataforma",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-023",
+    "name": "Via Cargo",
+    "type": "Logística",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-024",
+    "name": "Pipi & Juan",
+    "type": "Personal",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-025",
+    "name": "Kekol",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-026",
+    "name": "Pymedia",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-027",
+    "name": "Fabian Ortiz",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-028",
+    "name": "Tomi Diseño",
+    "type": "Comisión - Arquitecto",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-029",
+    "name": "Maquinarias",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-030",
+    "name": "YPF",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-031",
+    "name": "Framer",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-032",
+    "name": "Charly Flete",
+    "type": "Logística",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-033",
+    "name": "ZonaFix",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-034",
+    "name": "IMDO",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-035",
+    "name": "COMEX",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-036",
+    "name": "Victor",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-037",
+    "name": "Maersk",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-038",
+    "name": "José Nylon",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-039",
+    "name": "Logistica AR",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-040",
+    "name": "Grama",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-041",
+    "name": "Atrim",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-042",
+    "name": "Aserradero San Eduardo",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-043",
+    "name": "Hushfloor Currenxie",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-044",
+    "name": "Oso",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-045",
+    "name": "Hushfloor CITY",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-046",
+    "name": "Pacific Global",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-047",
+    "name": "Luli",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-048",
+    "name": "Ajuste",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-049",
+    "name": "Ruben Taller",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-050",
+    "name": "Dietrich",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-051",
+    "name": "Easy",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-052",
+    "name": "Matias Flete",
+    "type": "Logística",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-053",
+    "name": "TFK",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-054",
+    "name": "Einhell",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-055",
+    "name": "Agus Lando",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-056",
+    "name": "GGYA",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-057",
+    "name": "ZN Embalajes",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-058",
+    "name": "Estudio Aldave",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-059",
+    "name": "Enrique Cabrera",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-060",
+    "name": "Agroalimentos",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-061",
+    "name": "Arq. Silvi Vanden Bosch",
+    "type": "Comisión - Arquitecto",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-062",
+    "name": "Arq. Bartolomé Rimoldi",
+    "type": "Comisión - Arquitecto",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-063",
+    "name": "Otto Estampados",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-064",
+    "name": "Gastón Aguilera",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-065",
+    "name": "Contabilium",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-066",
+    "name": "Soda Belen",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-067",
+    "name": "LOSMAC - Prestigio",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-068",
+    "name": "Arq. Estefy",
+    "type": "Comisión - Arquitecto",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-069",
+    "name": "Arq. Miguel Florio",
+    "type": "Comisión - Arquitecto",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-070",
+    "name": "Eugenia Serrat",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-071",
+    "name": "Viole Fiera",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-072",
+    "name": "Camila Fuks",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-073",
+    "name": "Camila Btesh - Noma",
+    "type": "Otros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  },
+  {
+    "id": "PROV-074",
+    "name": "Sancor Seguros",
+    "type": "Servicio - Seguros",
+    "stock_code": null,
+    "category_default": null,
+    "active": true,
+    "notes": null
+  }
+]

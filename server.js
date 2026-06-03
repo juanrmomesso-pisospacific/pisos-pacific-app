@@ -18,8 +18,18 @@ app.use(cookieParser());
 const DB_PATH = path.join(__dirname, 'data/db.json');
 
 function seedFromDump() {
-  const dump = JSON.parse(fs.readFileSync(path.join(CLONE, 'network/api-dump-core.json'), 'utf8'));
-  const settings = JSON.parse(fs.readFileSync(path.join(CLONE, 'network/settings.json'), 'utf8'));
+  // The core business dump (products/sales/quotes/clients/expenses + settings) lives in an
+  // un-committed clone-source/ dir on the original machine. Fall back to empty collections so
+  // the app can boot locally without it; drop the real files in to seed full data.
+  const readJsonOr = (p, fallback) => {
+    try { return JSON.parse(fs.readFileSync(p, 'utf8')); }
+    catch (e) { console.warn(`Seed source missing (${p}) — using empty fallback`); return fallback; }
+  };
+  const emptyBody = { body: [] };
+  const dump = readJsonOr(path.join(CLONE, 'network/api-dump-core.json'), {
+    products: emptyBody, sales: emptyBody, quotes: emptyBody, clients: emptyBody, expenses: emptyBody,
+  });
+  const settings = readJsonOr(path.join(CLONE, 'network/settings.json'), {});
   const containersSeed = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/containers.seed.json'), 'utf8'));
   // Default users: admin + 2 sellers. Passwords hashed at boot.
   const seedUsers = [
@@ -28,18 +38,25 @@ function seedFromDump() {
     { id: 'u-vicky', email: 'vicky@pisospacific.com',name: 'Victoria Gonzalez Collado', password: 'vicky',    role: 'vendor', seller_name: 'Victoria Gonzalez Collado' },
   ].map(u => ({ id: u.id, email: u.email, name: u.name, role: u.role, seller_name: u.seller_name, password_hash: bcrypt.hashSync(u.password, 10) }));
   const messagingSeed = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/messaging.seed.json'), 'utf8'));
+  // Business data imported from PisosPacific_DataApp_v1.xlsx (scripts/import-excel.mjs).
+  // Prefer the generated seeds; fall back to the (usually empty) dump bodies.
+  const seedArr = (f) => readJsonOr(path.join(__dirname, 'data', f), null);
   return {
-    products: dump.products.body,
-    sales:    dump.sales.body,
+    products: seedArr('products.seed.json') || dump.products.body,
+    sales:    seedArr('sales.seed.json')    || dump.sales.body,
     quotes:   dump.quotes.body,
-    clients:  dump.clients.body,
+    clients:  seedArr('clients.seed.json')  || dump.clients.body,
     expenses: dump.expenses.body,
+    cajas:      seedArr('cajas.seed.json')      || [],
+    suppliers:  seedArr('suppliers.seed.json')  || [],
+    categories: seedArr('categories.seed.json') || [],
+    cashflow:   seedArr('cashflow.seed.json')   || [],
     containers: containersSeed,
     leads: [],          // T4.A
     conversations: messagingSeed.conversations,  // M-INBOX.A
     messages:      messagingSeed.messages,
     templates:     messagingSeed.templates,
-    stock_movements: [],
+    stock_movements: seedArr('stock_movements.seed.json') || [],
     users: seedUsers,
     sessions: {},
     settings: {
@@ -133,7 +150,17 @@ if (!Array.isArray(db.users) || db.users.length === 0) {
 }
 if (!db.sessions) db.sessions = {};
 
+// Backfill the imported business collections (cajas/suppliers/categories/cashflow) on
+// older db.json files. Each loads from its seed if missing or empty.
+for (const [key, file] of [['cajas','cajas.seed.json'],['suppliers','suppliers.seed.json'],['categories','categories.seed.json'],['cashflow','cashflow.seed.json']]) {
+  if (!Array.isArray(db[key]) || db[key].length === 0) {
+    try { db[key] = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', file), 'utf8')); }
+    catch { if (!Array.isArray(db[key])) db[key] = []; }
+  }
+}
+
 console.log(`Loaded: ${db.products.length} products, ${db.quotes.length} quotes, ${db.sales.length} sales, ${db.clients.length} clients, ${db.expenses.length} expenses, ${db.containers.length} containers, ${db.users.length} users`);
+console.log(`Business data: ${db.cajas.length} cajas, ${db.categories.length} categorías, ${db.suppliers.length} proveedores, ${db.cashflow.length} movimientos cashflow`);
 
 // ---------- Auth helpers + endpoints ----------
 const SESSION_COOKIE = 'pp_session';
@@ -201,12 +228,55 @@ function findProductByItem(it) {
 
 // ---------- Mock REST endpoints ----------
 app.get('/api/products', (_, res) => res.json(db.products));
-app.get('/api/sales',    (_, res) => res.json(db.sales));
+app.get('/api/sales',    (_, res) => {
+  // Reconcile each sale's collected amount from cashflow income lines tagged with its venta_nro.
+  const paidByRef = {};
+  for (const m of db.cashflow) {
+    if (m.sale_ref && (m.flow || '').toLowerCase() === 'ingreso') {
+      paidByRef[m.sale_ref] = (paidByRef[m.sale_ref] || 0) + (m.amount_usd || 0);
+    }
+  }
+  res.json(db.sales.map(s => {
+    const cashflow_paid = paidByRef[s.quote_number];
+    if (cashflow_paid == null) return s;
+    const paid = Math.round(cashflow_paid * 100) / 100;
+    return { ...s, cashflow_paid: paid, cashflow_balance_due: Math.round((s.contract_total - paid) * 100) / 100 };
+  }));
+});
 app.get('/api/quotes',   (_, res) => res.json(db.quotes));
 app.get('/api/clients',  (_, res) => res.json(db.clients));
 app.get('/api/expenses', (_, res) => res.json(db.expenses));
 app.get('/api/leads',    (_, res) => res.json(db.leads));
 app.get('/api/tasks',    (_, res) => res.json(db.tasks));
+app.get('/api/suppliers',  (_, res) => res.json(db.suppliers));
+app.get('/api/categories', (_, res) => res.json(db.categories));
+
+// CashFlow ledger with optional filters: ?flow=&caja_id=&from=&to=&needs_review=true
+app.get('/api/cashflow', (req, res) => {
+  const { flow, caja_id, from, to, needs_review } = req.query;
+  let rows = db.cashflow;
+  if (flow)        rows = rows.filter(m => (m.flow || '').toLowerCase() === String(flow).toLowerCase());
+  if (caja_id)     rows = rows.filter(m => m.caja_id === caja_id);
+  if (from)        rows = rows.filter(m => m.date && m.date >= from);
+  if (to)          rows = rows.filter(m => m.date && m.date <= to);
+  if (needs_review === 'true') rows = rows.filter(m => m.needs_review);
+  res.json(rows);
+});
+
+// Cajas: list, plus derived balances (sum of cashflow per caja & currency, USD-consolidated).
+app.get('/api/cajas', (_, res) => res.json(db.cajas));
+app.get('/api/cajas/balances', (_, res) => {
+  const sign = (m) => ((m.flow || '').toLowerCase() === 'ingreso' ? 1 : -1);
+  const balances = db.cajas.map(c => {
+    const movs = db.cashflow.filter(m => m.caja_id === c.id);
+    const balance_usd = movs.reduce((s, m) => s + sign(m) * (m.amount_usd || 0), 0);
+    const balance_ars = movs.reduce((s, m) => s + sign(m) * (m.amount_ars || 0), 0);
+    return { caja_id: c.id, name: c.name, type: c.type, currency: c.currency,
+             movements: movs.length, balance_usd: Math.round(balance_usd * 100) / 100, balance_ars: Math.round(balance_ars * 100) / 100 };
+  });
+  const unassigned = db.cashflow.filter(m => !m.caja_id).length;
+  res.json({ balances, unassigned_movements: unassigned });
+});
 app.get('/api/conversations', (_, res) => {
   // Ship the conversations sorted by most-recent-message-first for free
   const sorted = [...db.conversations].sort((a, b) => (b.last_message_at ?? '').localeCompare(a.last_message_at ?? ''));
@@ -339,7 +409,7 @@ app.patch('/api/leads/:id', (req, res) => {
   res.json({ ...db.leads[i], auto_sale_id: createdSale?.id });
 });
 
-['products','sales','quotes','clients','expenses','leads','conversations','tasks'].forEach(name => {
+['products','sales','quotes','clients','expenses','leads','conversations','tasks','cajas','suppliers','categories','cashflow'].forEach(name => {
   app.post(`/api/${name}`, (req, res) => {
     const id = req.body.id ?? `local-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
     const row = { id, ...req.body };
@@ -635,18 +705,19 @@ app.post('/api/quotes/:id/convert', (req, res) => {
   res.json(sale);
 });
 
-// ---------- Static assets captured during clone ----------
-app.get('/LogoPacific.png',          (_, res) => res.sendFile(path.join(CLONE, 'screenshots/LogoPacific.png')));
-app.get('/LogoPacificSmall.png',     (_, res) => res.sendFile(path.join(CLONE, 'screenshots/LogoPacificSmall.png')));
-app.get('/LogoPacificDark.png',      (_, res) => res.sendFile(path.join(CLONE, 'screenshots/LogoPacificDark.png')));
-app.get('/LogoPacificSmallDark.png', (_, res) => res.sendFile(path.join(CLONE, 'screenshots/LogoPacificSmallDark.png')));
+// ---------- Brand logos (committed in assets/branding/) ----------
+const BRANDING = path.join(__dirname, 'assets/branding');
+app.get('/LogoPacific.png',          (_, res) => res.sendFile(path.join(BRANDING, 'LogoPacific.png')));
+app.get('/LogoPacificSmall.png',     (_, res) => res.sendFile(path.join(BRANDING, 'LogoPacificSmall.png')));
+app.get('/LogoPacificDark.png',      (_, res) => res.sendFile(path.join(BRANDING, 'LogoPacificDark.png')));
+app.get('/LogoPacificSmallDark.png', (_, res) => res.sendFile(path.join(BRANDING, 'LogoPacificSmallDark.png')));
 
 // ---------- React + shadcn SPA bundle (dashboard-app) ----------
 // Vite is configured with base: '/' so assets resolve from /assets/*.
 // All "owned" SPA routes serve the same index.html and let react-router take over.
 const DASHBOARD_DIST = path.join(__dirname, 'dashboard-app/dist');
 app.use('/assets', express.static(path.join(DASHBOARD_DIST, 'assets')));
-const SPA_ROUTES = ['/', '/dashboard', '/inventario', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion'];
+const SPA_ROUTES = ['/', '/dashboard', '/inventario', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow'];
 for (const r of SPA_ROUTES) {
   app.get(r, (_, res) => res.sendFile(path.join(DASHBOARD_DIST, 'index.html')));
 }

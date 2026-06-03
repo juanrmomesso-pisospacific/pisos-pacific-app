@@ -1,0 +1,783 @@
+{
+  "generatedAt": "2026-06-03T18:49:00.417Z",
+  "source": "PisosPacific_DataApp_v1.xlsx",
+  "sheets": {
+    "Cajas": {
+      "read": 6,
+      "imported": 6,
+      "errors": 0,
+      "notes": []
+    },
+    "Categorias": {
+      "read": 56,
+      "imported": 56,
+      "errors": 0,
+      "notes": []
+    },
+    "Productos": {
+      "read": 97,
+      "imported": 97,
+      "errors": 0,
+      "notes": []
+    },
+    "Stock": {
+      "read": 41,
+      "imported": 41,
+      "errors": 0,
+      "notes": []
+    },
+    "Clientes": {
+      "read": 97,
+      "imported": 97,
+      "errors": 0,
+      "notes": []
+    },
+    "Proveedores": {
+      "read": 74,
+      "imported": 74,
+      "errors": 0,
+      "notes": []
+    },
+    "Ventas": {
+      "read": 158,
+      "imported": 158,
+      "errors": 0,
+      "notes": [
+        "35 ventas sin fecha (fecha_pendiente=true)"
+      ]
+    },
+    "CashFlow": {
+      "read": 1804,
+      "imported": 1804,
+      "errors": 0,
+      "notes": [
+        "2 movimientos needs_review",
+        "23 transferencias entre cuentas (excluidas del P&L)"
+      ]
+    }
+  },
+  "fkMismatches": {
+    "cashflow_caja": [],
+    "cashflow_categoria": [],
+    "cashflow_counterparty": [
+      {
+        "mov": "MOV-00001",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00003",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00005",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00007",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00009",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00011",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00022",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00023",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00024",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00025",
+        "flow": "Ingreso",
+        "counterparty": "PISOS"
+      },
+      {
+        "mov": "MOV-00053",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00070",
+        "flow": "Ingreso",
+        "counterparty": "MOV ENTRE CUENTAS"
+      },
+      {
+        "mov": "MOV-00072",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00074",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00075",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00076",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00079",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00091",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00092",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00096",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00097",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00130",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00131",
+        "flow": "Ingreso",
+        "counterparty": "MOV ENTRE CUENTAS"
+      },
+      {
+        "mov": "MOV-00139",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00142",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00163",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00180",
+        "flow": "Ingreso",
+        "counterparty": "MOV ENTRE CUENTAS"
+      },
+      {
+        "mov": "MOV-00248",
+        "flow": "Ingreso",
+        "counterparty": "INGRESOS PERSONALES PRE SOCIEDAD"
+      },
+      {
+        "mov": "MOV-00249",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00255",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00262",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00269",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00275",
+        "flow": "Ingreso",
+        "counterparty": "MOV ENTRE CUENTAS"
+      },
+      {
+        "mov": "MOV-00285",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00286",
+        "flow": "Ingreso",
+        "counterparty": "MOV ENTRE CUENTAS"
+      },
+      {
+        "mov": "MOV-00293",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00294",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00295",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00300",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00305",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00311",
+        "flow": "Ingreso",
+        "counterparty": "DEVOLUCION ARIEL"
+      },
+      {
+        "mov": "MOV-00312",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00314",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00331",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00332",
+        "flow": "Ingreso",
+        "counterparty": "MOV ENTRE CUENTAS"
+      },
+      {
+        "mov": "MOV-00333",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00336",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00338",
+        "flow": "Ingreso",
+        "counterparty": "DEVOLUCION ARIEL"
+      },
+      {
+        "mov": "MOV-00339",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00340",
+        "flow": "Ingreso",
+        "counterparty": "REPARACIONES"
+      },
+      {
+        "mov": "MOV-00365",
+        "flow": "Ingreso",
+        "counterparty": "DEVOLUCION ARIEL"
+      },
+      {
+        "mov": "MOV-00371",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00373",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00374",
+        "flow": "Ingreso",
+        "counterparty": "MOV ENTRE CUENTAS"
+      },
+      {
+        "mov": "MOV-00379",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00384",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00398",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00407",
+        "flow": "Ingreso",
+        "counterparty": "MOV ENTRE CUENTAS"
+      },
+      {
+        "mov": "MOV-00412",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00415",
+        "flow": "Ingreso",
+        "counterparty": "DEVOLUCION ARIEL"
+      },
+      {
+        "mov": "MOV-00416",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00417",
+        "flow": "Ingreso",
+        "counterparty": "APORTE CAPITAL CUENTA PIPI"
+      },
+      {
+        "mov": "MOV-00442",
+        "flow": "Ingreso",
+        "counterparty": "MOV ENTRE CUENTAS"
+      },
+      {
+        "mov": "MOV-00443",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00444",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00461",
+        "flow": "Ingreso",
+        "counterparty": "REPARACIONES"
+      },
+      {
+        "mov": "MOV-00462",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00463",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00467",
+        "flow": "Ingreso",
+        "counterparty": "DEVOLUCION ARIEL"
+      },
+      {
+        "mov": "MOV-00492",
+        "flow": "Ingreso",
+        "counterparty": "DEVOLUCION ARIEL"
+      },
+      {
+        "mov": "MOV-00544",
+        "flow": "Ingreso",
+        "counterparty": "DEVOLUCION ARIEL"
+      },
+      {
+        "mov": "MOV-00549",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00563",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00564",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00577",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00578",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00585",
+        "flow": "Ingreso",
+        "counterparty": "MOV ENTRE CUENTAS"
+      },
+      {
+        "mov": "MOV-00601",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00602",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00613",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00614",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00615",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00640",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00667",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00695",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00718",
+        "flow": "Ingreso",
+        "counterparty": "PISOS"
+      },
+      {
+        "mov": "MOV-00740",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00745",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00774",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00775",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00782",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00822",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00823",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00836",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00880",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00881",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00899",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00904",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00917",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00938",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-00939",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-00994",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01004",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-01005",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-01006",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01051",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01106",
+        "flow": "Ingreso",
+        "counterparty": "DEVOLUCION ARIEL"
+      },
+      {
+        "mov": "MOV-01183",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01195",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-01210",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01283",
+        "flow": "Ingreso",
+        "counterparty": "PISOS"
+      },
+      {
+        "mov": "MOV-01310",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01319",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01320",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-01334",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01377",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-01383",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01388",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01406",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01423",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01469",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01477",
+        "flow": "Ingreso",
+        "counterparty": "PISOS"
+      },
+      {
+        "mov": "MOV-01564",
+        "flow": "Ingreso",
+        "counterparty": "OTROS INGRESOS"
+      },
+      {
+        "mov": "MOV-01569",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01594",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01672",
+        "flow": "Ingreso",
+        "counterparty": "MOV ENTRE CUENTAS"
+      },
+      {
+        "mov": "MOV-01688",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01719",
+        "flow": "Ingreso",
+        "counterparty": "APORTE CAPITAL CUENTA PIPI"
+      },
+      {
+        "mov": "MOV-01738",
+        "flow": "Egreso",
+        "counterparty": "Viem Distribuidora"
+      },
+      {
+        "mov": "MOV-01760",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01786",
+        "flow": "Ingreso",
+        "counterparty": "PANELES"
+      },
+      {
+        "mov": "MOV-01787",
+        "flow": "Ingreso",
+        "counterparty": "REPARACIONES"
+      }
+    ],
+    "ventas_cliente": []
+  },
+  "flags": [
+    {
+      "type": "new_sku",
+      "sku": "PROD-201",
+      "note": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed"
+    },
+    {
+      "type": "new_sku",
+      "sku": "PROD-202",
+      "note": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m"
+    },
+    {
+      "type": "stock_audit",
+      "sku": "PROD-019",
+      "note": "Revisar movimientos: ALERTA: Heavy Smoked — diferencia negativa (-24,75)"
+    },
+    {
+      "type": "stock_missing",
+      "sku": "PROD-018",
+      "note": "Madera Masiza - 4\" x 1\" - Lapacho: stock_track=true pero sin fila en hoja Stock"
+    },
+    {
+      "type": "stock_missing",
+      "sku": "PROD-043",
+      "note": "Deck Lapacho: stock_track=true pero sin fila en hoja Stock"
+    },
+    {
+      "type": "venta_nro_duplicado",
+      "venta": "0000029",
+      "note": "id ajustado a 0000029-2"
+    },
+    {
+      "type": "ventas_sin_fecha",
+      "count": 35
+    },
+    {
+      "type": "movimientos_entre_cuentas",
+      "count": 23,
+      "note": "Ingreso USD 64644 / Egreso USD 72415 — excluidos del P&L, incluidos en saldos de caja"
+    }
+  ],
+  "totals": {
+    "cajas": 6,
+    "categories": 56,
+    "products": 97,
+    "stock_movements": 41,
+    "clients": 97,
+    "suppliers": 74,
+    "sales": 158,
+    "cashflow": 1804
+  },
+  "fkMismatchCounts": {
+    "cashflow_caja": 0,
+    "cashflow_categoria": 0,
+    "cashflow_counterparty": 132,
+    "ventas_cliente": 0
+  }
+}

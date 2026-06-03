@@ -99,6 +99,70 @@ export type Quote = {
   status: "Borrador" | "Enviado" | "Aceptado" | string
 }
 
+// ---- Business data imported from PisosPacific_DataApp_v1.xlsx ----
+export type Caja = {
+  id: string
+  name: string
+  type: string            // Banco | Wallet | Efectivo
+  currency: string        // ARS | USD
+  active: boolean
+  notes?: string | null
+}
+
+export type Supplier = {
+  id: string
+  name: string
+  type: string
+  stock_code?: string | null
+  category_default?: string | null
+  active: boolean
+  notes?: string | null
+}
+
+export type Category = {
+  id: string
+  flow: "Ingreso" | "Egreso"
+  category: string
+  subcategory?: string | null
+  active: boolean
+  notes?: string | null
+}
+
+export type CashflowMovement = {
+  id: string
+  date: string | null
+  flow: "Ingreso" | "Egreso"
+  caja_id: string | null
+  caja_name?: string | null
+  category?: string | null
+  subcategory?: string | null
+  counterparty?: string | null
+  counterparty_type?: "client" | "supplier"
+  client_id?: string | null
+  supplier_id?: string | null
+  description?: string | null
+  sale_ref?: string | null
+  currency: string
+  amount_ars: number | null
+  amount_usd: number | null
+  exchange_rate?: number | null
+  fixed_variable?: string | null
+  expense_type?: string | null
+  transfer?: boolean          // inter-account movement / FX swap — excluded from P&L
+  needs_review: boolean
+  review_reason?: string | null
+}
+
+export type CajaBalance = {
+  caja_id: string
+  name: string
+  type: string
+  currency: string
+  movements: number
+  balance_usd: number
+  balance_ars: number
+}
+
 export type ContainerItem = {
   product_id: string
   sku: string
