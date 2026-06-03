@@ -46,6 +46,8 @@ export type Sale = {
   contract_total: number
   items: SaleItem[]
   status: "Confirmado" | "Programado" | "En proceso" | "Finalizado" | string
+  delivery_status?: "Finalizado" | "Acopiado" | "Agendado" | null   // avance de obra (planilla ventas)
+  payment_state?: string                                            // Cobrado | Adelanto | Pendiente
   created_at: string
   has_iva: boolean
   financial_position: FinancialPosition

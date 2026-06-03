@@ -23,6 +23,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2024-04-10T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -72,6 +73,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-02-10T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -121,6 +123,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-02-10T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -170,6 +173,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-02-10T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -219,6 +223,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-02-10T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -268,6 +273,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-02-10T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -316,7 +322,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "2025-02-17T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -330,7 +337,7 @@
       "balance_due": -8.078014184
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -366,6 +373,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-02-17T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -415,6 +423,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-02-17T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -464,6 +473,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-02-18T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -513,6 +523,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-02-21T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -562,6 +573,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-02-26T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -611,6 +623,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-03-04T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -660,6 +673,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-03-05T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -709,6 +723,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-04-09T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -758,6 +773,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-04-15T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -807,6 +823,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-04-16T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -856,6 +873,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-04-16T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -898,6 +916,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-04-22T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -947,6 +966,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-04-25T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -996,6 +1016,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-04-25T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1045,6 +1066,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-05-09T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -1094,6 +1116,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-05-20T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1142,7 +1165,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "2025-05-20T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1156,7 +1180,7 @@
       "balance_due": 0.18
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -1192,6 +1216,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-06-09T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1241,6 +1266,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-06-09T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1290,6 +1316,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-06-10T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1339,6 +1366,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-06-17T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1388,6 +1416,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-06-17T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1437,6 +1466,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-06-26T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1486,6 +1516,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-06-26T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1535,6 +1566,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-06-26T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -1577,6 +1609,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-06-26T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1626,6 +1659,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-11T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1675,6 +1709,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-11T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1724,6 +1759,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-11T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1773,6 +1809,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-11T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1815,6 +1852,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-11T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -1864,6 +1902,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-14T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1913,6 +1952,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-14T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -1962,6 +2002,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-14T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -2011,6 +2052,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-25T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2060,6 +2102,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-28T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2109,6 +2152,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-28T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -2158,6 +2202,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-07-28T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -2206,7 +2251,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "2025-08-06T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2220,7 +2266,7 @@
       "balance_due": 1.999987
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -2256,6 +2302,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-08-07T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2305,6 +2352,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-08-07T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -2354,6 +2402,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-08-13T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -2403,6 +2452,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-08-25T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2451,7 +2501,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2025-08-29T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2464,8 +2515,8 @@
       "total_paid": 0,
       "balance_due": -10146
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -2494,6 +2545,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-09-13T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -2543,6 +2595,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-09-13T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2592,6 +2645,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-09-13T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2640,7 +2694,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2025-09-15T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -2653,8 +2708,8 @@
       "total_paid": 12897,
       "balance_due": -6103
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -2690,6 +2745,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-09-17T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2732,6 +2788,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-09-25T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2781,6 +2838,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-09-25T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -2830,6 +2888,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-09-29T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2879,6 +2938,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-10-17T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -2928,6 +2988,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-10-17T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -2977,6 +3038,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-10-21T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -3026,6 +3088,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-10-21T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -3075,6 +3138,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-10-21T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -3124,6 +3188,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-10-23T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -3172,7 +3237,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "2025-10-23T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -3186,7 +3252,7 @@
       "balance_due": 1
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -3222,6 +3288,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-10-23T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -3264,6 +3331,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-11-06T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -3312,7 +3380,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2025-11-06T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -3325,8 +3394,8 @@
       "total_paid": 15742.1,
       "balance_due": 2732.1
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -3362,6 +3431,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-11-07T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -3411,6 +3481,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-11-11T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -3460,6 +3531,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-11-13T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -3509,6 +3581,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-11-14T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -3558,6 +3631,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-11-14T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -3607,6 +3681,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-11-14T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -3656,6 +3731,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-11-14T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -3704,7 +3780,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2025-11-17T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -3717,8 +3794,8 @@
       "total_paid": 4200,
       "balance_due": -806.8
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -3754,6 +3831,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-11-17T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -3803,6 +3881,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-11-25T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -3852,6 +3931,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-12-03T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -3893,7 +3973,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2025-12-15T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -3906,8 +3987,8 @@
       "total_paid": 14926.25694,
       "balance_due": 7934.256944
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -3943,6 +4024,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-12-15T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -3992,6 +4074,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-12-15T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4041,6 +4124,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2025-12-23T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4089,7 +4173,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2025-12-23T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -4102,8 +4187,8 @@
       "total_paid": 13000,
       "balance_due": -5620
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -4139,6 +4224,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-01-05T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -4187,7 +4273,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-01-05T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4200,8 +4287,8 @@
       "total_paid": 2000,
       "balance_due": -2977
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -4236,7 +4323,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Agendado",
     "created_at": "2026-01-05T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -4249,8 +4337,8 @@
       "total_paid": 18402.49898,
       "balance_due": -3601.501023
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -4286,6 +4374,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-01-20T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4335,6 +4424,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-01-20T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -4383,7 +4473,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Agendado",
     "created_at": "2026-01-22T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4396,8 +4487,8 @@
       "total_paid": 7400,
       "balance_due": 1083
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -4433,6 +4524,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-01-22T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4482,6 +4574,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-01-28T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -4531,6 +4624,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-01-28T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -4580,6 +4674,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-02-11T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -4628,7 +4723,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-02-11T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4641,8 +4737,8 @@
       "total_paid": 0,
       "balance_due": -3542
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -4670,7 +4766,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-02-11T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4683,8 +4780,8 @@
       "total_paid": 10000,
       "balance_due": -11840
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -4720,6 +4817,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-02-19T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4768,7 +4866,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Agendado",
     "created_at": "2026-02-19T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4781,8 +4880,8 @@
       "total_paid": 3700,
       "balance_due": 1040.8
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -4817,7 +4916,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Agendado",
     "created_at": "2026-02-19T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4830,8 +4930,8 @@
       "total_paid": 0,
       "balance_due": -2047.25
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -4860,6 +4960,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-02-23T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4909,6 +5010,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-03-04T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -4958,6 +5060,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-03-04T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5007,6 +5110,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-03-04T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5048,7 +5152,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-03-09T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -5061,8 +5166,8 @@
       "total_paid": 2000,
       "balance_due": -2198.4
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -5097,7 +5202,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-03-11T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5110,8 +5216,8 @@
       "total_paid": 11000,
       "balance_due": -3647
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -5146,7 +5252,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-03-11T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -5159,8 +5266,8 @@
       "total_paid": 0,
       "balance_due": -2600
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -5188,7 +5295,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-03-12T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -5201,8 +5309,8 @@
       "total_paid": 9000,
       "balance_due": -3944
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -5238,6 +5346,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-03-19T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5287,6 +5396,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-03-19T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5335,7 +5445,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-03-19T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5348,8 +5459,8 @@
       "total_paid": 5000,
       "balance_due": -7130
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -5385,6 +5496,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-03-19T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -5433,7 +5545,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Agendado",
     "created_at": "2026-03-19T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5446,8 +5559,8 @@
       "total_paid": 0,
       "balance_due": -1673.09
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -5475,7 +5588,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-03-24T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5488,8 +5602,8 @@
       "total_paid": 3184.5,
       "balance_due": 17.5
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -5524,7 +5638,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-03-24T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -5537,8 +5652,8 @@
       "total_paid": 0,
       "balance_due": -4889.3
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -5567,6 +5682,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-03-24T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5616,6 +5732,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-04-01T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -5664,7 +5781,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-04-08T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5677,8 +5795,8 @@
       "total_paid": 0,
       "balance_due": -27258
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -5706,7 +5824,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-04-08T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5719,8 +5838,8 @@
       "total_paid": 7000,
       "balance_due": -10240
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [
       {
@@ -5755,7 +5874,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-04-08T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5768,8 +5888,8 @@
       "total_paid": 0,
       "balance_due": -939.2
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -5798,6 +5918,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-04-09T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5847,6 +5968,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "2026-04-09T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": false,
@@ -5895,7 +6017,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "2026-04-15T00:00:00.000Z",
     "fecha_pendiente": false,
     "has_iva": true,
@@ -5908,8 +6031,8 @@
       "total_paid": 0,
       "balance_due": -3470
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -5937,7 +6060,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -5950,8 +6074,8 @@
       "total_paid": 0,
       "balance_due": -3000
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -5979,7 +6103,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -5992,8 +6117,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6021,7 +6146,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6034,8 +6160,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6063,7 +6189,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6076,8 +6203,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6105,7 +6232,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6118,8 +6246,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6147,7 +6275,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6160,8 +6289,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6190,6 +6319,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6231,7 +6361,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6244,8 +6375,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6274,6 +6405,7 @@
       }
     ],
     "status": "Finalizado",
+    "delivery_status": "Finalizado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6315,7 +6447,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6328,8 +6461,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6357,7 +6490,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6370,8 +6504,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6399,7 +6533,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6412,8 +6547,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6441,7 +6576,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6454,8 +6590,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6483,7 +6619,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6496,8 +6633,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6525,7 +6662,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": "Acopiado",
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6538,8 +6676,8 @@
       "total_paid": 0,
       "balance_due": 0
     },
-    "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_reserved": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6567,7 +6705,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6581,7 +6720,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6609,7 +6748,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6623,7 +6763,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6651,7 +6791,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6665,7 +6806,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6693,7 +6834,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6707,7 +6849,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6735,7 +6877,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6749,7 +6892,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6777,7 +6920,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6791,7 +6935,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6819,7 +6963,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6833,7 +6978,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6861,7 +7006,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6875,7 +7021,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6903,7 +7049,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6917,7 +7064,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6945,7 +7092,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -6959,7 +7107,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -6987,7 +7135,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -7001,7 +7150,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -7029,7 +7178,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -7043,7 +7193,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -7071,7 +7221,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -7085,7 +7236,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -7113,7 +7264,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -7127,7 +7279,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -7155,7 +7307,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -7169,7 +7322,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -7197,7 +7350,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -7211,7 +7365,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -7239,7 +7393,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -7253,7 +7408,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -7281,7 +7436,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -7295,7 +7451,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -7323,7 +7479,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -7337,7 +7494,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"
@@ -7365,7 +7522,8 @@
         "category": ""
       }
     ],
-    "status": "Finalizado",
+    "status": "En proceso",
+    "delivery_status": null,
     "created_at": "",
     "fecha_pendiente": true,
     "has_iva": false,
@@ -7379,7 +7537,7 @@
       "balance_due": 0
     },
     "stock_reserved": false,
-    "stock_deducted": true,
+    "stock_deducted": false,
     "seller_name": "",
     "payments": [],
     "source": "excel-import"

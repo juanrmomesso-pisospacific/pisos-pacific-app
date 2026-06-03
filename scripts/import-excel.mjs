@@ -215,6 +215,12 @@ const supplierByName = new Map(suppliers.map(s => [norm(s.name), s]));
 
 // ---------- 7. Ventas ----------
 const STATUS_MAP_PAY = { cobrado: 'Cobrado', adelanto: 'Adelanto', pendiente: 'Pendiente' };
+// Delivery status (Finalizado/Acopiado/Agendado) sourced from the legacy "Planilla Ventas"
+// Google Sheet (keyed by venta_nro). Tells us what is delivered vs pending delivery.
+const deliveryStatus = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(DATA, 'ventas_status.seed.json'), 'utf8')); }
+  catch { return {}; }
+})();
 const ventasRaw = load('Ventas', 'venta_nro');
 const ventasStat = sheetStat('Ventas', ventasRaw.length);
 let ventasNoDate = 0;
@@ -230,6 +236,8 @@ const sales = ventasRaw.map(r => {
   const saldo = num(r.saldo_usd) ?? (total - cobrado);
   const qty = num(r.cantidad_m2) ?? 0;
   const unit = num(r.precio_m2_usd) ?? 0;
+  const delivery = deliveryStatus[nro]?.delivery_status ?? null;   // Finalizado | Acopiado | Agendado | null
+  const isFinal = delivery === 'Finalizado';
   return {
     id: nro,
     quote_number: nro,
@@ -248,7 +256,9 @@ const sales = ventasRaw.map(r => {
       total,
       category: '',
     }],
-    status: 'Finalizado',
+    // status = pipeline stage: Finalizado (entregada) vs En proceso (pendiente de entrega)
+    status: isFinal ? 'Finalizado' : 'En proceso',
+    delivery_status: delivery,   // Finalizado | Acopiado | Agendado | null
     created_at: created || '',   // '' keeps sorts/date-checks null-safe; flagged via fecha_pendiente
     fecha_pendiente: !created,
     has_iva: norm(r.condicion) === 'facturado',
@@ -257,8 +267,8 @@ const sales = ventasRaw.map(r => {
     comentarios: clean(r.comentarios),
     payment_state: STATUS_MAP_PAY[norm(r.estado)] || clean(r.estado),
     financial_position: { total_invoiced: total, total_paid: cobrado, balance_due: saldo },
-    stock_reserved: false,
-    stock_deducted: true,   // historical: do NOT re-deduct inventory (Stock sheet is current snapshot)
+    stock_reserved: !!delivery && !isFinal,   // Acopiado/Agendado = material comprometido, sin entregar
+    stock_deducted: isFinal,   // historical: no real inventory change on import (Stock sheet is the snapshot)
     seller_name: '',
     payments: cobrado ? [{ ts: created || NOW, amount: cobrado, method: 'import', notes: 'Saldo inicial migración' }] : [],
     source: 'excel-import',

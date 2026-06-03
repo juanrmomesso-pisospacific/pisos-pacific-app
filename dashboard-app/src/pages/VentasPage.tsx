@@ -72,9 +72,20 @@ const STATUS_COLOR: Record<SaleStatus, { bar: string; tint: string; icon: string
 
 type View = "tabla" | "kanban"
 
+// Delivery status (avance de obra) — what is delivered vs pending.
+const DELIVERY_LABEL: Record<string, string> = { Finalizado: "Finalizado", Acopiado: "Acopiado", Agendado: "Agendado" }
+function DeliveryBadge({ value }: { value?: string | null }) {
+  if (!value) return <span className="text-[10px] text-muted-foreground">Sin estado</span>
+  const done = value === "Finalizado"
+  return <Badge variant="outline" className={cn("text-[10px] font-normal", done ? "text-muted-foreground" : "text-foreground border-foreground/30")}>{DELIVERY_LABEL[value] ?? value}</Badge>
+}
+const isDue = (s: Sale) => (s.financial_position?.balance_due ?? 0) > 0.5
+const isPendingDelivery = (s: Sale) => s.delivery_status !== "Finalizado"
+
 export default function VentasPage() {
   const sales = useApi<Sale[]>("/api/sales").data ?? []
   const [filter, setFilter] = useState<"Todas" | (typeof STATUSES)[number]>("Todas")
+  const [quick, setQuick] = useState<"none" | "cobro" | "entrega">("none")
   const [q, setQ] = useState("")
   // Default is kanban; persist user choice across reloads (e.g. after drag-drop's refresh())
   const [view, setView] = useState<View>(() => {
@@ -93,16 +104,29 @@ export default function VentasPage() {
       .sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""))
       .filter((row) => {
         if (filter !== "Todas" && row.status !== filter) return false
+        if (quick === "cobro" && !isDue(row)) return false
+        if (quick === "entrega" && !isPendingDelivery(row)) return false
         if (!needle) return true
         return row.client_name.toLowerCase().includes(needle) || row.quote_number.toLowerCase().includes(needle)
       })
-  }, [sales, filter, q])
+  }, [sales, filter, quick, q])
 
   const counts = useMemo(() => {
     const c: Record<string, number> = { Todas: sales.length }
     for (const s of STATUSES) c[s] = 0
     for (const s of sales) c[s.status] = (c[s.status] || 0) + 1
     return c
+  }, [sales])
+
+  // Pendientes: cobro (saldo > 0) y entrega (no finalizada, por sub-estado).
+  const kpis = useMemo(() => {
+    const due = sales.filter(isDue)
+    const dueTotal = due.reduce((a, s) => a + (s.financial_position?.balance_due ?? 0), 0)
+    const acopiado = sales.filter((s) => s.delivery_status === "Acopiado").length
+    const agendado = sales.filter((s) => s.delivery_status === "Agendado").length
+    const sinEstado = sales.filter((s) => !s.delivery_status).length
+    const finalizadas = sales.filter((s) => s.delivery_status === "Finalizado").length
+    return { dueCount: due.length, dueTotal, acopiado, agendado, sinEstado, finalizadas, pendEntrega: acopiado + agendado + sinEstado }
   }, [sales])
 
   const [openNew, setOpenNew] = useState(false)
@@ -113,6 +137,30 @@ export default function VentasPage() {
         <Button size="sm" onClick={() => setOpenNew(true)}><Plus className="h-4 w-4" />Agregar venta</Button>
       </TopbarActions>
       <div className="px-4 lg:px-6 space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <button onClick={() => setQuick(quick === "cobro" ? "none" : "cobro")} className={cn("text-left", quick === "cobro" && "ring-2 ring-foreground rounded-lg")}>
+            <Card className="p-4">
+              <div className="text-xs text-muted-foreground">Pendiente de cobro</div>
+              <div className="text-2xl font-semibold tabular">{fmtMoney(kpis.dueTotal)}</div>
+              <div className="text-[11px] text-muted-foreground">{kpis.dueCount} ventas con saldo</div>
+            </Card>
+          </button>
+          <button onClick={() => setQuick(quick === "entrega" ? "none" : "entrega")} className={cn("text-left", quick === "entrega" && "ring-2 ring-foreground rounded-lg")}>
+            <Card className="p-4">
+              <div className="text-xs text-muted-foreground">Pendiente de entrega</div>
+              <div className="text-2xl font-semibold tabular">{kpis.pendEntrega}</div>
+              <div className="text-[11px] text-muted-foreground">{kpis.agendado} agendadas · {kpis.acopiado} acopiadas · {kpis.sinEstado} s/estado</div>
+            </Card>
+          </button>
+          <Card className="p-4">
+            <div className="text-xs text-muted-foreground">Finalizadas</div>
+            <div className="text-2xl font-semibold tabular">{kpis.finalizadas}</div>
+            <div className="text-[11px] text-muted-foreground">de {sales.length} ventas</div>
+          </Card>
+        </div>
+        {quick !== "none" ? (
+          <div className="text-xs text-muted-foreground">Filtro activo: <b>{quick === "cobro" ? "pendientes de cobro" : "pendientes de entrega"}</b> · <button className="underline" onClick={() => setQuick("none")}>quitar</button></div>
+        ) : null}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap gap-1">
             {(["Todas", ...STATUSES] as const).map((s) => (
@@ -153,10 +201,10 @@ function VentasTable({ rows }: { rows: Sale[] }) {
           <TableHead>#</TableHead>
           <TableHead>Cliente</TableHead>
           <TableHead>Estado</TableHead>
+          <TableHead>Entrega</TableHead>
           <TableHead>Fecha</TableHead>
           <TableHead className="text-right">Total</TableHead>
           <TableHead className="text-right">Saldo</TableHead>
-          <TableHead>Stock</TableHead>
           <TableHead className="text-right">Acciones</TableHead>
         </TableRow>
       </TableHeader>
@@ -168,12 +216,10 @@ function VentasTable({ rows }: { rows: Sale[] }) {
               <TableCell className="text-muted-foreground tabular">#{r.quote_number}</TableCell>
               <TableCell><div className="truncate max-w-[280px]">{r.client_name}</div><div className="text-xs text-muted-foreground line-clamp-1">{r.description}</div></TableCell>
               <TableCell><Badge variant="outline">{r.status}</Badge></TableCell>
-              <TableCell className="text-xs text-muted-foreground">{new Date(r.created_at).toLocaleDateString("es-AR")}</TableCell>
+              <TableCell><DeliveryBadge value={r.delivery_status} /></TableCell>
+              <TableCell className="text-xs text-muted-foreground">{r.created_at ? new Date(r.created_at).toLocaleDateString("es-AR") : "—"}</TableCell>
               <TableCell className="text-right tabular">{fmtMoney(r.contract_total)}</TableCell>
-              <TableCell className={`text-right tabular ${due > 0 ? "text-foreground" : "text-muted-foreground"}`}>{fmtMoney(due)}</TableCell>
-              <TableCell className="text-xs text-muted-foreground">
-                {r.stock_deducted ? "Entregado" : r.stock_reserved ? "Reservado" : "—"}
-              </TableCell>
+              <TableCell className={`text-right tabular ${due > 0 ? "text-foreground font-medium" : "text-muted-foreground"}`}>{fmtMoney(due)}</TableCell>
               <TableCell className="text-right"><SaleRowActions sale={r} /></TableCell>
             </TableRow>
           )
@@ -272,8 +318,9 @@ function VentasKanban({ rows }: { rows: Sale[] }) {
                       <span className="tabular text-foreground">{fmtMoney(r.contract_total)}</span>
                       {due > 0 ? <Badge variant="outline" className="text-[10px]">Saldo {fmtMoney(due)}</Badge> : <span className="text-muted-foreground tabular">{new Date(r.created_at).toLocaleDateString("es-AR")}</span>}
                     </div>
-                    <div className="text-[10px] text-muted-foreground mt-1.5">
-                      {r.stock_deducted ? "Stock entregado" : r.stock_reserved ? "Stock reservado" : "Sin reserva"}
+                    <div className="mt-1.5 flex items-center gap-1.5">
+                      <DeliveryBadge value={r.delivery_status} />
+                      {isDue(r) ? <span className="text-[10px] text-foreground">· debe {fmtMoney(r.financial_position?.balance_due ?? 0)}</span> : null}
                     </div>
                     {r.delivery_date && (
                       <div className="text-[10px] text-muted-foreground mt-0.5 inline-flex items-center gap-1">
@@ -365,8 +412,9 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
             <div>
               <SheetTitle>{sale.client_name}</SheetTitle>
               <SheetDescription>
-                #{sale.quote_number} · {new Date(sale.created_at).toLocaleDateString("es-AR")}
+                #{sale.quote_number} · {sale.created_at ? new Date(sale.created_at).toLocaleDateString("es-AR") : "sin fecha"}
                 {" · "}<Badge variant="outline" className="text-[10px]">{sale.status}</Badge>
+                {" · "}<DeliveryBadge value={sale.delivery_status} />
               </SheetDescription>
             </div>
           </div>

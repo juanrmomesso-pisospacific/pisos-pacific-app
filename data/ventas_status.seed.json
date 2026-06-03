@@ -1,0 +1,622 @@
+{
+  "0000001": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000002": {
+    "delivery_status": null,
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000003": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000004": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000005": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000006": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000007": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000008": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000009": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000010": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000011": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000012": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000013": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000014": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000015": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000016": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000017": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000018": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000019": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000020": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000021": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000022": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000023": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000024": {
+    "delivery_status": null,
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000026": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000027": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000028": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000029": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000030": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000031": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000032": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000033": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000034": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000035": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000036": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000037": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000038": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000039": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000040": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000041": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000042": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000043": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000044": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000045": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000047": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000048": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000049": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000050": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000051": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000052": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000053": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000054": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000055": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000056": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000057": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000058": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000059": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000060": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000061": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000062": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000063": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000064": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000065": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000067": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000068": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000069": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000070": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000071": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000072": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000073": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000074": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000075": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000076": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000077": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000078": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000079": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000080": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000081": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000082": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000083": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000084": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000085": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000086": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000087": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000088": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000089": {
+    "delivery_status": "Agendado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000090": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000091": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000092": {
+    "delivery_status": "Agendado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000093": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000094": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000095": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000096": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000097": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000098": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000099": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000100": {
+    "delivery_status": "Agendado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000101": {
+    "delivery_status": "Agendado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000102": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000103": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000104": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000105": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000106": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000107": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000108": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000109": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000110": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000111": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000112": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000113": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000114": {
+    "delivery_status": "Agendado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000115": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000116": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000117": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000118": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000119": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000120": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000121": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000122": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000123": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000124": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000125": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000126": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000127": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000128": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000129": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000130": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000131": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000132": {
+    "delivery_status": "Finalizado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000133": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000134": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Adelanto"
+  },
+  "0000135": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000136": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000137": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Pendiente"
+  },
+  "0000138": {
+    "delivery_status": "Acopiado",
+    "payment_state_sheet": "Cobrado"
+  },
+  "0000139": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000140": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000141": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000142": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000143": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000144": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000145": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000146": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000147": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000148": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000149": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000150": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000151": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000152": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000153": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000154": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000155": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000156": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000157": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  },
+  "0000158": {
+    "delivery_status": null,
+    "payment_state_sheet": null
+  }
+}
