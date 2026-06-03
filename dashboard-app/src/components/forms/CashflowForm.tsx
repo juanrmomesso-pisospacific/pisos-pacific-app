@@ -1,9 +1,11 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { FormSheet, FieldLabel, FieldHint } from "./FormSheet"
 import { Input } from "@/components/ui/input"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import type { Category, Caja } from "@/lib/types"
+
+type Fx = { compra: number; venta: number; promedio: number; source?: string; updated_at?: string }
 
 const EXPENSE_TYPES = [
   "COGS", "Gastos de Instalaciones y Suministros", "Gastos Administrativos",
@@ -15,7 +17,27 @@ const inputSel = "h-9 w-full rounded-md border border-input bg-transparent px-3 
 
 export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onOpenChange: (o: boolean) => void; cajas: Caja[] }) {
   const categories = useApi<Category[]>("/api/categories").data ?? []
+  const [fx, setFx] = useState<Fx | null>(null)
+  // Live Dólar Blue: fetch dolarapi directly (CORS-enabled); fall back to the backend.
+  useEffect(() => {
+    let cancelled = false
+    ;(async () => {
+      try {
+        const r = await fetch("https://dolarapi.com/v1/dolares/blue")
+        const j = await r.json()
+        const compra = Number(j.compra), venta = Number(j.venta)
+        if (!cancelled) setFx({ compra, venta, promedio: Math.round((compra + venta) / 2 * 100) / 100, updated_at: j.fechaActualizacion })
+      } catch {
+        try {
+          const r = await fetch("/api/fx/blue", { credentials: "include" })
+          if (!cancelled) setFx(await r.json())
+        } catch { /* keep manual default */ }
+      }
+    })()
+    return () => { cancelled = true }
+  }, [])
   const today = new Date().toISOString().slice(0, 10)
+  const [tcTouched, setTcTouched] = useState(false)
   const [v, setV] = useState({
     flow: "Egreso" as "Egreso" | "Ingreso",
     date: today,
@@ -28,8 +50,13 @@ export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onO
     description: "",
     amount_usd: 0,
     amount_ars: 0,
-    exchange_rate: 1395,
+    exchange_rate: 1425,
   })
+
+  // Default the exchange rate to the live Dólar Blue average (unless the user edited it).
+  useEffect(() => {
+    if (fx?.promedio && !tcTouched) setV((prev) => ({ ...prev, exchange_rate: fx.promedio }))
+  }, [fx, tcTouched])
 
   // category -> subcategories for the selected flow
   const catMap = useMemo(() => {
@@ -159,10 +186,13 @@ export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onO
         </div>
         <div>
           <FieldLabel>TC</FieldLabel>
-          <Input type="number" min={0} value={v.exchange_rate} onChange={(e) => setV({ ...v, exchange_rate: Number(e.target.value) })} />
+          <Input type="number" min={0} value={v.exchange_rate} onChange={(e) => { setTcTouched(true); setV({ ...v, exchange_rate: Number(e.target.value) }) }} />
         </div>
       </div>
-      <FieldHint>Cargá el monto en USD, o en ARS con el TC para convertir automáticamente. Los reportes consolidan en USD.</FieldHint>
+      <FieldHint>
+        Cargá el monto en USD, o en ARS con el TC para convertir automáticamente. Los reportes consolidan en USD.
+        {fx ? ` · TC sugerido: Blue prom. $${fx.promedio} (compra $${fx.compra} / venta $${fx.venta})` : ""}
+      </FieldHint>
     </FormSheet>
   )
 }

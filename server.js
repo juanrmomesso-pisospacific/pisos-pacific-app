@@ -251,6 +251,23 @@ app.get('/api/tasks',    (_, res) => res.json(db.tasks));
 app.get('/api/suppliers',  (_, res) => res.json(db.suppliers));
 app.get('/api/categories', (_, res) => res.json(db.categories));
 
+// Dólar Blue (promedio compra/venta) — default exchange rate for new movements.
+// Sourced from dolarapi.com (mirrors the blue shown on DolarHoy). Cached 15 min.
+let fxCache = null;
+app.get('/api/fx/blue', async (_, res) => {
+  if (fxCache && Date.now() - fxCache.fetched_at < 15 * 60 * 1000) return res.json(fxCache);
+  try {
+    const r = await fetch('https://dolarapi.com/v1/dolares/blue', { signal: AbortSignal.timeout(8000) });
+    const j = await r.json();
+    const compra = Number(j.compra), venta = Number(j.venta);
+    fxCache = { compra, venta, promedio: Math.round((compra + venta) / 2 * 100) / 100, source: 'Dólar Blue (DolarHoy)', updated_at: j.fechaActualizacion, fetched_at: Date.now() };
+    res.json(fxCache);
+  } catch (e) {
+    if (fxCache) return res.json(fxCache);  // serve stale on failure
+    res.status(502).json({ error: 'fx unavailable', promedio: 1425, compra: 1415, venta: 1435 });
+  }
+});
+
 // CashFlow ledger with optional filters: ?flow=&caja_id=&from=&to=&needs_review=true
 app.get('/api/cashflow', (req, res) => {
   const { flow, caja_id, from, to, needs_review } = req.query;
