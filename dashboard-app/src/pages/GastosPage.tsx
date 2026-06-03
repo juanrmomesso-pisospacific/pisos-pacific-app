@@ -42,15 +42,34 @@ export default function GastosPage() {
   }, [expenses, filter, q])
 
   const totalUsd = useMemo(() => rows.reduce((s, e) => s + (e.amount_usd || 0), 0), [rows])
-  const summaryLine = `${expenses.length} egresos · mostrando ${rows.length} · total filtrado ${usd(totalUsd)}`
+
+  // Operational KPIs: most recent month with data + current year.
+  const kpis = useMemo(() => {
+    const months = expenses.map((e) => e.date?.slice(0, 7)).filter(Boolean).sort() as string[]
+    const lastMonth = months[months.length - 1] ?? ""
+    const year = lastMonth.slice(0, 4)
+    const sum = (pred: (e: CashflowMovement) => boolean) => expenses.filter(pred).reduce((s, e) => s + (e.amount_usd || 0), 0)
+    return {
+      lastMonth,
+      monthTotal: sum((e) => (e.date ?? "").slice(0, 7) === lastMonth),
+      yearTotal: sum((e) => (e.date ?? "").slice(0, 4) === year),
+      year,
+    }
+  }, [expenses])
 
   return (
     <>
       <TopbarActions>
         <Button size="sm" onClick={() => setOpenNew(true)}><Plus className="h-4 w-4" />Nuevo egreso</Button>
       </TopbarActions>
-      <div className="px-4 lg:px-6 text-xs text-muted-foreground -mb-2">{summaryLine}</div>
       <div className="px-4 lg:px-6 space-y-4">
+        <p className="text-xs text-muted-foreground">Carga y seguimiento de egresos del día a día. Para el análisis (P&amp;L, fijo/variable, ingresos) usá <b>CashFlow</b>.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <Card className="p-4"><div className="text-xs text-muted-foreground">Egresos {kpis.lastMonth || "—"}</div><div className="text-2xl font-semibold tabular">{usd(kpis.monthTotal)}</div></Card>
+          <Card className="p-4"><div className="text-xs text-muted-foreground">Egresos {kpis.year || "año"}</div><div className="text-2xl font-semibold tabular">{usd(kpis.yearTotal)}</div></Card>
+          <Card className="p-4"><div className="text-xs text-muted-foreground">Total registrados</div><div className="text-2xl font-semibold tabular">{expenses.length}</div></Card>
+        </div>
+        <div className="text-xs text-muted-foreground">Mostrando {rows.length} de {expenses.length} · total filtrado {usd(totalUsd)}</div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap gap-1 max-w-[65%]">
             {types.slice(0, 8).map((c) => (
