@@ -174,20 +174,39 @@ def generate_pdf(data: dict) -> bytes:
 
     y = H - 8*mm - logo_h - 9*mm
 
-    # ── TÍTULO ──────────────────────────────────────────────────────
-    c.setFillColor(INK)
-    c.setFont("Helvetica-Bold", FS_TITLE)
-    c._charSpace = 3
-    c.drawString(L, y, "PRESUPUESTO PRELIMINAR")
+    # ── ENCABEZADO TIPO PROPUESTA ───────────────────────────────────
+    # Eyebrow + obra como título grande (se siente hecho a medida, no un recibo).
+    c.setFillColor(MUTED)
+    c.setFont("Helvetica", FS_LABEL)
+    c._charSpace = 2
+    c.drawString(L, y, "PRESUPUESTO")
     c._charSpace = 0
-    y -= 8 * mm
 
-    # ── DATOS CLIENTE ───────────────────────────────────────────────
+    # Badge de vigencia, alineado a la derecha del eyebrow
+    vig = int(data.get("vigencia_dias", 10) or 10)
+    badge_txt = f"VÁLIDO {vig} DÍAS"
+    c.setFont("Helvetica-Bold", FS_LABEL)
+    tw = c.stringWidth(badge_txt, "Helvetica-Bold", FS_LABEL)
+    bw, bh = tw + 7*mm, 5.2*mm
+    c.setStrokeColor(ACCENT); c.setLineWidth(0.8)
+    c.roundRect(R - bw, y - 1.4*mm, bw, bh, 1.2*mm, fill=0, stroke=1)
+    c.setFillColor(ACCENT)
+    c._charSpace = 0.5
+    c.drawCentredString(R - bw/2, y + 0.4*mm, badge_txt)
+    c._charSpace = 0
+
+    y -= 8 * mm
+    obra_title = data.get("obra") or data["cliente"]
+    c.setFillColor(INK)
+    c.setFont("Helvetica-Bold", 18)
+    c.drawString(L, y, obra_title)
+    y -= 9 * mm
+
+    # ── DATOS CLIENTE / VENDEDOR (la obra ya es el título) ──────────
     col_w = CW / 3
     for i, (label, val) in enumerate([
-        ("CLIENTE",          data["cliente"]),
-        ("OBRA / DIRECCION", data["obra"]),
-        ("VENDEDOR",         data["vendedor_short"]),
+        ("CLIENTE",  data["cliente"]),
+        ("VENDEDOR", data["vendedor_short"]),
     ]):
         x = L + i * col_w
         c.setFillColor(MUTED)
@@ -199,7 +218,21 @@ def generate_pdf(data: dict) -> bytes:
         c.setFont("Helvetica-Bold", FS_BODY)
         c.drawString(x, y - 5.5*mm, val)
 
-    y -= 10 * mm
+    y -= 11 * mm
+
+    # ── RESUMEN DEL PROYECTO ────────────────────────────────────────
+    res = data.get("resumen") or {}
+    parts = []
+    if res.get("m2"):        parts.append(f"{res['m2']} m²")
+    if res.get("ambientes"): parts.append(f"{res['ambientes']} ambiente" + ("s" if res['ambientes'] != 1 else ""))
+    if res.get("items"):     parts.append(f"{res['items']} ítems")
+    if parts:
+        c.setStrokeColor(RULE); c.setLineWidth(0.4)
+        c.line(L, y + 3*mm, R, y + 3*mm)
+        c.setFillColor(MID)
+        c.setFont("Helvetica", FS_BODY)
+        c.drawString(L, y - 1.5*mm, "   ·   ".join(parts))
+        y -= 4 * mm
 
     if data.get("obs"):
         c.setFillColor(MUTED)

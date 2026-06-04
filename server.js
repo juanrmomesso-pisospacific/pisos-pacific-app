@@ -786,6 +786,10 @@ function presupuestoData(rec) {
   const discount = Number(rec.discount_total || rec.discount_amount || 0);
   const net = Math.max(0, gross - discount);
   const iva = rec.has_iva ? net * IVA_RATE : 0;
+  const zones = [...new Set(items.map(it => it.zone).filter(Boolean))];
+  // Resumen del proyecto: m² de pisos (productos con stock), cantidad de ambientes e ítems.
+  const isFloor = (it) => { const p = db.products.find(pr => pr.sku === it.sku); return p ? !!p.stockTrack : false; };
+  const m2 = items.filter(isFloor).reduce((s, it) => s + (Number(it.quantity) || 0), 0);
   const base = {
     fecha,
     vendedor: sellerPhone ? `${rec.seller_name || ''} · ${sellerPhone}` : (rec.seller_name || ''),
@@ -794,11 +798,12 @@ function presupuestoData(rec) {
     obra: rec.title || rec.client_address || '',
     obs: rec.public_notes || '',
     template: rec.pdf_template || db.settings.pdf_template || 'clasico',
+    resumen: { m2: Math.round(m2 * 10) / 10, ambientes: (rec.zoned && zones.length) ? zones.length : 1, items: items.length },
+    vigencia_dias: rec.valid_days || 10,
     subtotal: usdFmt(net),
     iva: usdFmt(iva),
     total: usdFmt(net + iva),
   };
-  const zones = [...new Set(items.map(it => it.zone).filter(Boolean))];
   if (rec.zoned && zones.length) {
     const sections = zones.map(z => {
       const zi = items.filter(it => it.zone === z);
