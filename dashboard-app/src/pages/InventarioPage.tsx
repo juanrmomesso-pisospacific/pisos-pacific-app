@@ -56,7 +56,7 @@ export default function InventarioPage() {
     const stockProducts  = products.filter(p => (STOCK_CATEGORIES as readonly string[]).includes(p.category))
     const extrasProducts = products.filter(p => (EXTRAS_CATEGORIES as readonly string[]).includes(p.category))
     const totalStock    = stockProducts.reduce((s, p) => s + (Number(p.stock) || 0), 0)
-    const totalReserved = stockProducts.reduce((s, p) => s + (Number(p.reservedStock) || 0), 0)
+    const totalReserved = stockProducts.reduce((s, p) => s + (Number(p.committed ?? p.reservedStock) || 0), 0)
     return {
       stockCount: stockProducts.length,
       extrasCount: extrasProducts.length,
@@ -136,7 +136,7 @@ function StockTable({ rows }: { rows: Product[] }) {
       <TableBody>
         {rows.map((p) => {
           const stock = Number(p.stock) || 0
-          const reserved = Number(p.reservedStock) || 0
+          const reserved = Number(p.committed ?? p.reservedStock) || 0
           const available = stock - reserved
           const out = stock <= 0
           const oversold = available < 0

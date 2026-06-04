@@ -308,12 +308,13 @@ function VentasKanban({ rows }: { rows: Sale[] }) {
                     )}
                     title="Click para abrir · arrastrá para cambiar estado"
                   >
-                    <div className="flex items-start justify-between gap-2 mb-1">
-                      <div className="text-sm font-medium truncate flex-1">{r.client_name}</div>
+                    <div className="flex items-start justify-between gap-2 mb-0.5">
+                      <div className="text-sm font-medium truncate flex-1" title={r.title}>{r.title || r.client_name}</div>
                       <div onClick={(e) => e.stopPropagation()}><SaleRowActions sale={r} /></div>
                     </div>
-                    <div className="text-[10px] text-muted-foreground tabular">#{r.quote_number}</div>
-                    <div className="text-xs text-muted-foreground line-clamp-2 my-2">{r.description}</div>
+                    <div className="text-xs text-muted-foreground truncate">{r.client_name}</div>
+                    <div className="text-[10px] text-muted-foreground tabular mt-0.5">#{r.quote_number}</div>
+                    {r.description ? <div className="text-xs text-muted-foreground line-clamp-2 mt-1.5">{r.description}</div> : null}
                     <div className="flex items-center justify-between text-xs">
                       <span className="tabular text-foreground">{fmtMoney(r.contract_total)}</span>
                       {due > 0 ? <Badge variant="outline" className="text-[10px]">Saldo {fmtMoney(due)}</Badge> : <span className="text-muted-foreground tabular">{new Date(r.created_at).toLocaleDateString("es-AR")}</span>}

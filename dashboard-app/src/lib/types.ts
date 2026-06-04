@@ -10,6 +10,7 @@ export type Product = {
   stock: number
   margin: number
   reservedStock: number
+  committed?: number          // m² comprometidos en ventas no finalizadas (derivado)
   createdAt: string
   updatedAt: string
 }
@@ -21,6 +22,7 @@ export type SaleItem = {
   quantity: number
   unit_price: number
   total: number
+  cost?: number               // costo bloqueado al confirmar la venta
   image?: string
   category?: string
 }
@@ -53,6 +55,13 @@ export type Sale = {
   financial_position: FinancialPosition
   stock_reserved: boolean
   stock_deducted: boolean
+  discount_total?: number     // suma de descuentos por ítem (sin IVA)
+  // Margen calculado por el backend (para dashboards)
+  venta_neta?: number
+  cogs?: number
+  margin?: number
+  margin_pct?: number | null
+  has_sku_detail?: boolean
   // Optional: many sales include seller name (sometimes empty)
   seller_name?: string
   delivery_date?: string           // start of the delivery window (back-compat — same as delivery_date_from)

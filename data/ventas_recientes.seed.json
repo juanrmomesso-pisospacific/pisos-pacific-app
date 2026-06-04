@@ -1,0 +1,282 @@
+[
+  {
+    "venta_nro": "0000125",
+    "client_name": "Arq. Manuela Pereyra Iraola",
+    "obra": "Obra Paula Zona Norte",
+    "created_at": "2026-04-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Adelanto",
+    "delivery_status": "Acopiado",
+    "condicion": "Botella",
+    "comentarios": "Subido",
+    "variedad": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "cantidad": 53,
+    "precio": 42.42,
+    "financial_position": {
+      "total_invoiced": 2248,
+      "total_paid": 0,
+      "balance_due": 2248
+    },
+    "isFinal": false
+  },
+  {
+    "venta_nro": "0000126",
+    "client_name": "Martina Iglesias",
+    "obra": "Obra Casa Sta Barbara",
+    "created_at": "2026-04-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Pendiente",
+    "delivery_status": "Acopiado",
+    "condicion": "Botella",
+    "comentarios": "Subido",
+    "variedad": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "cantidad": 92,
+    "precio": 25,
+    "financial_position": {
+      "total_invoiced": 2300,
+      "total_paid": 0,
+      "balance_due": 2300
+    },
+    "isFinal": false
+  },
+  {
+    "venta_nro": "0000127",
+    "client_name": "Sofi Menditeguy",
+    "obra": "Obra Casa Propia",
+    "created_at": "2026-04-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Pendiente",
+    "delivery_status": "Acopiado",
+    "condicion": "Botella",
+    "comentarios": "Subido",
+    "variedad": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "cantidad": 230,
+    "precio": 25,
+    "financial_position": {
+      "total_invoiced": 5750,
+      "total_paid": 0,
+      "balance_due": 5750
+    },
+    "isFinal": false
+  },
+  {
+    "venta_nro": "0000128",
+    "client_name": "Sol Allende",
+    "obra": "Obra Casa",
+    "created_at": "2026-04-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Pendiente",
+    "delivery_status": "Acopiado",
+    "condicion": "Botella",
+    "comentarios": "Subido",
+    "variedad": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "cantidad": 115,
+    "precio": 31,
+    "financial_position": {
+      "total_invoiced": 3565,
+      "total_paid": 0,
+      "balance_due": 3565
+    },
+    "isFinal": false
+  },
+  {
+    "venta_nro": "0000129",
+    "client_name": "Beatriz Massotta",
+    "obra": "Chacabuco 553 - Erick",
+    "created_at": "2026-04-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Cobrado",
+    "delivery_status": "Acopiado",
+    "condicion": "Botella",
+    "comentarios": "Subido",
+    "variedad": "Madera - 12 cm Roble / Veta Tallada",
+    "cantidad": 40,
+    "precio": 60,
+    "financial_position": {
+      "total_invoiced": 2400,
+      "total_paid": 0,
+      "balance_due": 2400
+    },
+    "isFinal": false
+  },
+  {
+    "venta_nro": "0000130",
+    "client_name": "DAYNA S.A.",
+    "obra": "Venta Expo Paraguay",
+    "created_at": "2026-04-23T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Cobrado",
+    "delivery_status": "Finalizado",
+    "condicion": "Facturado",
+    "comentarios": "Subido",
+    "variedad": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "cantidad": 142.74,
+    "precio": 25,
+    "financial_position": {
+      "total_invoiced": 3569,
+      "total_paid": 3569,
+      "balance_due": 0
+    },
+    "isFinal": true
+  },
+  {
+    "venta_nro": "0000131",
+    "client_name": "Lucia Habiaga",
+    "obra": "Venta Saldos Arenales y Parana",
+    "created_at": "2026-04-30T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Adelanto",
+    "delivery_status": "Acopiado",
+    "condicion": "Botella",
+    "comentarios": "Subido",
+    "variedad": "Madera - 12 cm Roble / Veta Tallada",
+    "cantidad": 75,
+    "precio": 68.88,
+    "financial_position": {
+      "total_invoiced": 5166.27,
+      "total_paid": 4200,
+      "balance_due": 966.27
+    },
+    "isFinal": false
+  },
+  {
+    "venta_nro": "0000132",
+    "client_name": "Alessio Tricacchia",
+    "obra": "Venta Online - Clásico",
+    "created_at": "2026-05-01T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Pendiente",
+    "delivery_status": "Finalizado",
+    "condicion": "Facturado",
+    "comentarios": null,
+    "variedad": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+    "cantidad": 30,
+    "precio": 34.2,
+    "financial_position": {
+      "total_invoiced": 1026,
+      "total_paid": 0,
+      "balance_due": 1026
+    },
+    "isFinal": true
+  },
+  {
+    "venta_nro": "0000133",
+    "client_name": "Ailen FIEM S.A.",
+    "obra": "Escaleras Hudson",
+    "created_at": "2026-05-01T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Adelanto",
+    "delivery_status": "Acopiado",
+    "condicion": "Botella",
+    "comentarios": null,
+    "variedad": "Madera - Roble 15mm x 19cm x 1,90m / Veta Tallada",
+    "cantidad": 17,
+    "precio": 231.08,
+    "financial_position": {
+      "total_invoiced": 3928.33,
+      "total_paid": 0,
+      "balance_due": 3928.33
+    },
+    "isFinal": false
+  },
+  {
+    "venta_nro": "0000134",
+    "client_name": "Connie Huergo",
+    "obra": "Suipacha 1180 - Oficinas",
+    "created_at": "2026-05-01T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Adelanto",
+    "delivery_status": "Acopiado",
+    "condicion": "Botella",
+    "comentarios": null,
+    "variedad": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
+    "cantidad": 193,
+    "precio": 47.32,
+    "financial_position": {
+      "total_invoiced": 9131.84,
+      "total_paid": 0,
+      "balance_due": 9131.84
+    },
+    "isFinal": false
+  },
+  {
+    "venta_nro": "0000135",
+    "client_name": "Arq. Chloé - Constructora SZ",
+    "obra": "Haras Capilla del Señor - cielorraso dos aguas",
+    "created_at": "2026-05-01T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Pendiente",
+    "delivery_status": "Acopiado",
+    "condicion": "Botella",
+    "comentarios": null,
+    "variedad": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "cantidad": 210,
+    "precio": 61.24,
+    "financial_position": {
+      "total_invoiced": 12861,
+      "total_paid": 0,
+      "balance_due": 12861
+    },
+    "isFinal": false
+  },
+  {
+    "venta_nro": "0000136",
+    "client_name": "Kike Pedreira",
+    "obra": "Casa Propia",
+    "created_at": "2026-05-01T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Pendiente",
+    "delivery_status": "Acopiado",
+    "condicion": "Botella",
+    "comentarios": null,
+    "variedad": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+    "cantidad": 350,
+    "precio": 39.92,
+    "financial_position": {
+      "total_invoiced": 13972.75,
+      "total_paid": 0,
+      "balance_due": 13972.75
+    },
+    "isFinal": false
+  },
+  {
+    "venta_nro": "0000137",
+    "client_name": "Agustina Lando",
+    "obra": "Escaleras Freire 1974",
+    "created_at": "2026-05-01T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Pendiente",
+    "delivery_status": "Acopiado",
+    "condicion": "Botella",
+    "comentarios": null,
+    "variedad": "H2O HD XL - Aspen 7mm x 23cm x 1,50m",
+    "cantidad": 17.7,
+    "precio": 166.7,
+    "financial_position": {
+      "total_invoiced": 2950.65,
+      "total_paid": 0,
+      "balance_due": 2950.65
+    },
+    "isFinal": false
+  },
+  {
+    "venta_nro": "0000138",
+    "client_name": "Joaquin Gonzalez",
+    "obra": "Obra Notte XL Highland",
+    "created_at": "2026-05-22T00:00:00.000Z",
+    "fecha_pendiente": false,
+    "payment_state": "Cobrado",
+    "delivery_status": "Acopiado",
+    "condicion": "Facturado",
+    "comentarios": null,
+    "variedad": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
+    "cantidad": 246,
+    "precio": 48.43,
+    "financial_position": {
+      "total_invoiced": 11913.23,
+      "total_paid": 14415,
+      "balance_due": -2501.77
+    },
+    "isFinal": false
+  }
+]

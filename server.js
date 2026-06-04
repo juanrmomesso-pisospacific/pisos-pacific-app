@@ -44,7 +44,7 @@ function seedFromDump() {
   return {
     products: seedArr('products.seed.json') || dump.products.body,
     sales:    seedArr('sales.seed.json')    || dump.sales.body,
-    quotes:   dump.quotes.body,
+    quotes:   seedArr('quotes.seed.json') || dump.quotes.body,
     clients:  seedArr('clients.seed.json')  || dump.clients.body,
     expenses: dump.expenses.body,
     cajas:      seedArr('cajas.seed.json')      || [],
@@ -227,7 +227,34 @@ function findProductByItem(it) {
 }
 
 // ---------- Mock REST endpoints ----------
-app.get('/api/products', (_, res) => res.json(db.products));
+// Committed stock per SKU = qty in non-finalized sales (material reservado, sin entregar).
+function committedBySku() {
+  const m = {};
+  for (const s of db.sales) {
+    if (s.status === 'Finalizado') continue;
+    for (const it of s.items || []) { if (it && it.sku) m[it.sku] = (m[it.sku] || 0) + (Number(it.quantity) || 0); }
+  }
+  return m;
+}
+app.get('/api/products', (_, res) => {
+  const committed = committedBySku();
+  // Only meaningful for stock-tracked products (floors); services/extras carry no stock.
+  res.json(db.products.map(p => ({ ...p, committed: p.stockTrack ? Math.round((committed[p.sku] || 0) * 100) / 100 : 0 })));
+});
+
+// Margin per sale (for dashboards): venta_neta = Σ(item.total) − discount_total; COGS = Σ(qty × item.cost locked).
+function saleMargin(s) {
+  let net = 0, cogs = 0, hasSku = false;
+  for (const it of s.items || []) {
+    if (!it || it.product_id === 'discount') continue;
+    net += Number(it.total) || 0;
+    cogs += (Number(it.quantity) || 0) * (Number(it.cost) || 0);
+    if (it.sku) hasSku = true;
+  }
+  net -= Number(s.discount_total) || 0;
+  const margin = net - cogs;
+  return { venta_neta: Math.round(net * 100) / 100, cogs: Math.round(cogs * 100) / 100, margin: Math.round(margin * 100) / 100, margin_pct: net ? Math.round((margin / net) * 1000) / 10 : null, has_sku_detail: hasSku };
+}
 app.get('/api/sales',    (_, res) => {
   // Reconcile each sale's collected amount from cashflow income lines tagged with its venta_nro.
   const paidByRef = {};
@@ -237,10 +264,14 @@ app.get('/api/sales',    (_, res) => {
     }
   }
   res.json(db.sales.map(s => {
+    const out = { ...s, ...saleMargin(s) };
     const cashflow_paid = paidByRef[s.quote_number];
-    if (cashflow_paid == null) return s;
-    const paid = Math.round(cashflow_paid * 100) / 100;
-    return { ...s, cashflow_paid: paid, cashflow_balance_due: Math.round((s.contract_total - paid) * 100) / 100 };
+    if (cashflow_paid != null) {
+      const paid = Math.round(cashflow_paid * 100) / 100;
+      out.cashflow_paid = paid;
+      out.cashflow_balance_due = Math.round((s.contract_total - paid) * 100) / 100;
+    }
+    return out;
   }));
 });
 app.get('/api/quotes',   (_, res) => res.json(db.quotes));
