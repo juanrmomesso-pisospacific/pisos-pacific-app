@@ -29,3 +29,6 @@ __pycache__/
 # Local env
 .env
 .env.local
+
+# Source spreadsheets (large; the generated *.seed.json is the committed source of truth)
+data/sources/

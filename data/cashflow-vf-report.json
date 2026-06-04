@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-06-04T11:42:21.912Z",
+  "source": "cashflow_vf.xlsx",
+  "ingresos": 303,
+  "egresos": 1856,
+  "transfers": 23,
+  "needsReview": 0,
+  "sinCaja": 0,
+  "byCaja": {
+    "Caja General": {
+      "n": 834,
+      "usd": 56361
+    },
+    "Wise": {
+      "n": 29,
+      "usd": 16629
+    },
+    "BBVA": {
+      "n": 158,
+      "usd": -4887
+    },
+    "Mercado Pago": {
+      "n": 1099,
+      "usd": -12235
+    },
+    "Banco de Comercio - Cuenta Pesos": {
+      "n": 39,
+      "usd": 22909
+    }
+  }
+}

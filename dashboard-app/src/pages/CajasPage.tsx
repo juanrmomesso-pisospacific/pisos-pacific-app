@@ -21,8 +21,6 @@ export default function CajasPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {balances.map((b) => {
           const Icon = iconFor(b.type)
-          const primary = b.currency === "USD" ? b.balance_usd : b.balance_ars
-          const fmt = b.currency === "USD" ? usd : ars
           return (
             <Card key={b.caja_id} className="p-4 space-y-2">
               <div className="flex items-center justify-between">
@@ -32,7 +30,8 @@ export default function CajasPage() {
                 </div>
                 <Badge variant="outline" className="text-[10px]">{b.currency}</Badge>
               </div>
-              <div className={`text-2xl font-semibold tabular ${primary >= 0 ? "text-foreground" : "text-rose-500"}`}>{fmt(primary)}</div>
+              {/* Saldo consolidado en USD (el negocio se maneja en USD). */}
+              <div className={`text-2xl font-semibold tabular ${b.balance_usd >= 0 ? "text-foreground" : "text-rose-500"}`}>{usd(b.balance_usd)}</div>
               <div className="text-[11px] text-muted-foreground">
                 {b.movements} movimientos · {b.type}
               </div>
@@ -74,7 +73,7 @@ export default function CajasPage() {
         </div>
       ) : null}
       <p className="text-[11px] text-muted-foreground">
-        Saldos derivados sumando los movimientos del CashFlow (Ingresos − Egresos). El saldo destacado usa la moneda propia de cada caja.
+        Saldos derivados sumando los movimientos del CashFlow (Ingresos − Egresos), <b>consolidados en USD</b> (el negocio se maneja en USD). La columna ARS es referencia para las cuentas en pesos.
       </p>
     </div>
   )
