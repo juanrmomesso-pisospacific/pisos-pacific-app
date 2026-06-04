@@ -51,7 +51,7 @@ function seedFromDump() {
     cajas:      seedArr('cajas.seed.json')      || [],
     suppliers:  seedArr('suppliers.seed.json')  || [],
     categories: seedArr('categories.seed.json') || [],
-    cashflow:   seedArr('cashflow.seed.json')   || [],
+    cashflow:   [...(seedArr('cashflow.seed.json') || []), ...(seedArr('cashflow-bank-extra.seed.json') || [])],
     containers: containersSeed,
     leads: [],          // T4.A
     conversations: messagingSeed.conversations,  // M-INBOX.A
