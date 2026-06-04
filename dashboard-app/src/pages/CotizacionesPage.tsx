@@ -46,6 +46,7 @@ export default function CotizacionesPage() {
   }, [quotes])
 
   const [openNew, setOpenNew] = useState(false)
+  const [editing, setEditing] = useState<Quote | null>(null)
 
   return (
     <>
@@ -82,7 +83,7 @@ export default function CotizacionesPage() {
             </TableHeader>
             <TableBody>
               {rows.map((r) => (
-                <TableRow key={r.id}>
+                <TableRow key={r.id} onClick={() => setEditing(r)} className="cursor-pointer">
                   <TableCell className="text-muted-foreground tabular">#{r.quote_number}</TableCell>
                   <TableCell><div className="truncate max-w-[280px]">{r.client_name}</div><div className="text-xs text-muted-foreground line-clamp-1">{r.description}</div></TableCell>
                   <TableCell className="text-xs text-muted-foreground">{r.seller_name}</TableCell>
@@ -93,7 +94,7 @@ export default function CotizacionesPage() {
                   <TableCell><StatusBadge status={r.status} /></TableCell>
                   <TableCell><VigenciaBadge quote={r} /></TableCell>
                   <TableCell className="text-right tabular">{fmtMoney(r.price)}</TableCell>
-                  <TableCell className="text-right"><QuoteRowActions quote={r} /></TableCell>
+                  <TableCell className="text-right" onClick={(e) => e.stopPropagation()}><QuoteRowActions quote={r} /></TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -101,6 +102,7 @@ export default function CotizacionesPage() {
         </Card>
       </div>
       <QuoteForm open={openNew} onOpenChange={setOpenNew} />
+      {editing && <QuoteForm key={editing.id} open onOpenChange={(o) => !o && setEditing(null)} editQuote={editing} />}
     </>
   )
 }

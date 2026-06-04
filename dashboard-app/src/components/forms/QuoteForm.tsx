@@ -29,29 +29,44 @@ export type QuotePrefill = {
 
 const IVA_RATE = 0.21
 
-export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: boolean; onOpenChange: (o: boolean) => void; prefill?: QuotePrefill; onCreated?: (q: Quote) => void | Promise<void> }) {
+export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }: { open: boolean; onOpenChange: (o: boolean) => void; prefill?: QuotePrefill; editQuote?: Quote; onCreated?: (q: Quote) => void | Promise<void> }) {
   const clients = useApi<Client[]>("/api/clients").data ?? []
   const products = useApi<Product[]>("/api/products").data ?? []
   const settings = useApi<Settings>("/api/settings").data
   const sellers = settings?.sellers ?? []
+  const isEdit = !!editQuote
+  const editItems: LineItem[] = (editQuote?.items ?? [])
+    .filter((it) => it.product_id !== "discount" && !/^descuento/i.test(it.description || ""))
+    .map((it) => ({ product_id: it.product_id || "", sku: it.sku, description: it.description, quantity: it.quantity, unit_price: it.unit_price, category: it.category || "", zone: it.zone }))
 
-  const [clientId, setClientId] = useState<string>("")
-  const [seller, setSeller] = useState<string>(sellers[0]?.name ?? "")
-  const [title, setTitle] = useState<string>(prefill?.title ?? "")
-  const [address, setAddress] = useState<string>(prefill?.client_address ?? "")
-  const [internalNotes, setInternalNotes] = useState<string>(prefill?.internal_notes ?? "")
-  const [hasIva, setHasIva] = useState<boolean>(false)
-  const [items, setItems] = useState<LineItem[]>([])
-  const [discountKind, setDiscountKind] = useState<"pct" | "amount">("pct")
-  const [discountValue, setDiscountValue] = useState<number>(0)
-  const [discountReason, setDiscountReason] = useState<string>("")
-  const [zoned, setZoned] = useState<boolean>(false)
-  const [zones, setZones] = useState<string[]>(["Planta Baja"])
+  const [clientId, setClientId] = useState<string>(editQuote?.client_id ?? "")
+  const [seller, setSeller] = useState<string>(editQuote?.seller_name ?? sellers[0]?.name ?? "")
+  const [title, setTitle] = useState<string>(editQuote?.title ?? prefill?.title ?? "")
+  const [address, setAddress] = useState<string>(editQuote?.client_address ?? prefill?.client_address ?? "")
+  const [internalNotes, setInternalNotes] = useState<string>(editQuote?.internal_notes ?? prefill?.internal_notes ?? "")
+  const [hasIva, setHasIva] = useState<boolean>(editQuote?.has_iva ?? false)
+  const [items, setItems] = useState<LineItem[]>(editItems)
+  // Preserve discount on edit: explicit value, or sum of any per-item discount lines (Vercel quotes).
+  const editDiscFromItems = (editQuote?.items ?? []).filter((it) => it.product_id === "discount" || /^descuento/i.test(it.description || "")).reduce((s, it) => s + Math.abs(it.total || 0), 0)
+  const [discountKind, setDiscountKind] = useState<"pct" | "amount">(editQuote?.discount_kind ?? (editDiscFromItems > 0 ? "amount" : "pct"))
+  const [discountValue, setDiscountValue] = useState<number>(editQuote?.discount_value ?? (editDiscFromItems > 0 ? Math.round(editDiscFromItems * 100) / 100 : 0))
+  const [discountReason, setDiscountReason] = useState<string>(editQuote?.internal_discount_reason ?? "")
+  const [zoned, setZoned] = useState<boolean>(editQuote?.zoned ?? false)
+  const [zones, setZones] = useState<string[]>(() => {
+    const zs = [...new Set(editItems.map((i) => i.zone).filter(Boolean) as string[])]
+    return zs.length ? zs : ["Planta Baja"]
+  })
+  // Edit mode: seed the quote's client so the picker shows it (even if it's not in the list).
+  const [extraClients, setExtraClients] = useState<Client[]>(
+    editQuote?.client_id && editQuote.client_name
+      ? [{ id: editQuote.client_id, name: editQuote.client_name, dni: editQuote.client_dni ?? "", emails: editQuote.client_email ? [editQuote.client_email] : [], phones: editQuote.client_phone ? [editQuote.client_phone] : [], addresses: [] }]
+      : []
+  )
 
-  const [extraClients, setExtraClients] = useState<Client[]>([])
   const allClients = useMemo(() => [...clients, ...extraClients], [clients, extraClients])
   const client = allClients.find(c => c.id === clientId)
   const create = useAction(api.create)
+  const update = useAction(api.update)
   const createClient = useAction(api.create)
   const isLeadDriven = !!prefill
 
@@ -79,7 +94,7 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
   // Walk-in mode: when the user picks a client, copy its saved address as the default
   // (vendor can still override below). Skip in lead-driven mode (prefill controls address).
   useEffect(() => {
-    if (isLeadDriven || !client) return
+    if (isEdit || isLeadDriven || !client) return
     setAddress(client.addresses?.[0] ?? "")
   }, [clientId])
 
@@ -142,7 +157,8 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
     const clientPhone   = isLeadDriven ? (prefill!.client_phone ?? "")   : (client!.phones?.[0] ?? "")
     const clientAddr    = address.trim()
 
-    const body: Partial<Quote> & Record<string, any> = {
+    // Editable fields (shared by create + edit). Explicit discount values so editing can clear it.
+    const common: Partial<Quote> & Record<string, any> = {
       client_id: clientId_,
       client_name: clientName,
       client_dni: clientDni,
@@ -152,25 +168,23 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
       internal_notes: internalNotes,
       seller_name: seller,
       seller_phone,
-      created_at: new Date().toISOString(),
-      quote_number: `A${Math.floor(Math.random() * 9000 + 1000)}`,
       title: title || clientName,
       has_iva: hasIva,
       price: total,
-      zoned: zoned || undefined,
+      zoned: zoned,
       description: items.length === 1 ? items[0].description : `${items[0]?.description ?? ""} + ${items.length - 1} más`,
       items: items.map(it => ({ ...it, total: it.quantity * it.unit_price, image: "", target_item_index: null })),
-      status: "DRAFT",
-      lead_id: prefill?.lead_id,
-      discount_kind: discountAmount > 0 ? discountKind : undefined,
-      discount_value: discountAmount > 0 ? discountValue : undefined,
-      discount_amount: discountAmount > 0 ? Math.round(discountAmount * 100) / 100 : undefined,
-      internal_discount_reason: discountReason || undefined,
+      discount_kind: discountKind,
+      discount_value: discountAmount > 0 ? discountValue : 0,
+      discount_amount: discountAmount > 0 ? Math.round(discountAmount * 100) / 100 : 0,
+      internal_discount_reason: discountReason || "",
     }
-    const r = await create.run("quotes", body)
+    const r = isEdit
+      ? await update.run("quotes", editQuote!.id, common)
+      : await create.run("quotes", { ...common, created_at: new Date().toISOString(), quote_number: `A${Math.floor(Math.random() * 9000 + 1000)}`, status: "DRAFT", lead_id: prefill?.lead_id })
     if (r) {
       onOpenChange(false)
-      if (onCreated) await onCreated(r as Quote)
+      if (onCreated && !isEdit) await onCreated(r as Quote)
       else refresh()
     }
   }
@@ -227,9 +241,11 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
   }
 
   return (
-    <FormSheet open={open} onOpenChange={onOpenChange} title={isLeadDriven ? "Nueva cotización (desde lead)" : "Nueva Cotización"} description={isLeadDriven ? `Para ${prefill!.client_name}` : "Generar una cotización en borrador"}
-      onSubmit={submit} busy={create.busy} error={create.error || (!canSubmit ? "Completá vendedor, cliente e items" : "")}
-      submitLabel={canSubmit ? "Crear cotización" : "Completá los campos"}>
+    <FormSheet open={open} onOpenChange={onOpenChange}
+      title={isEdit ? `Editar cotización #${editQuote!.quote_number}` : isLeadDriven ? "Nueva cotización (desde lead)" : "Nueva Cotización"}
+      description={isEdit ? "Modificá items, descuento, zonas y datos" : isLeadDriven ? `Para ${prefill!.client_name}` : "Generar una cotización en borrador"}
+      onSubmit={submit} busy={create.busy || update.busy} error={create.error || update.error || (!canSubmit ? "Completá vendedor, cliente e items" : "")}
+      submitLabel={!canSubmit ? "Completá los campos" : isEdit ? "Guardar cambios" : "Crear cotización"}>
       {isLeadDriven ? (
         <div className="rounded-md border border-border bg-muted/40 p-3 space-y-1.5">
           <div className="flex items-center justify-between">
