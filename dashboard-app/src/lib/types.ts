@@ -24,6 +24,7 @@ export type SaleItem = {
   unit_price: number
   total: number
   cost?: number               // costo bloqueado al confirmar la venta
+  zone?: string               // zona/sección del presupuesto (ej. "Planta Baja")
   image?: string
   category?: string
 }
@@ -48,6 +49,7 @@ export type Sale = {
   client_address: string
   contract_total: number
   items: SaleItem[]
+  zoned?: boolean             // presupuesto separado por zonas
   status: "Confirmado" | "Programado" | "En proceso" | "Finalizado" | string
   delivery_status?: "Finalizado" | "Acopiado" | "Agendado" | null   // avance de obra (planilla ventas)
   payment_state?: string                                            // Cobrado | Adelanto | Pendiente
@@ -100,6 +102,7 @@ export type Quote = {
   price: number
   description: string
   items: SaleItem[]
+  zoned?: boolean             // presupuesto separado por zonas (PDF en modo sections)
   sale_id?: string
   lead_id?: string
   renewed_at?: string

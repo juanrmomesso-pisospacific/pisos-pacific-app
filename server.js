@@ -731,6 +731,8 @@ function convertQuoteToSale(q) {
     client_address: q.client_address ?? '',
     contract_total: q.price,
     items: JSON.parse(JSON.stringify(q.items || [])),
+    zoned: q.zoned,
+    discount_total: q.discount_amount,
     status: 'Confirmado',
     created_at: new Date().toISOString(),
     has_iva: q.has_iva ?? false,
@@ -761,31 +763,40 @@ function presupuestoData(rec) {
   const fecha = rec.created_at ? new Date(rec.created_at).toLocaleDateString('es-AR') : new Date().toLocaleDateString('es-AR');
   const sellerPhone = rec.seller_phone || (db.settings.sellers || []).find(s => s.name === rec.seller_name)?.phone || '';
   const items = (rec.items || []).filter(it => it && it.product_id !== 'discount' && !/^descuento/i.test(it.description || ''));
-  const rows = items.map(it => {
+  const lineTotal = (it) => Number(it.total) || (Number(it.quantity) || 0) * (Number(it.unit_price) || 0);
+  const rowOf = (it) => {
     const isEntrega = /entrega/i.test(it.description || '') || it.sku === 'SERV-131';
     const qty = Number(it.quantity) || 0;
-    const cant = isEntrega ? '—' : `${qty} m2`;
-    const punit = isEntrega ? '—' : usdFmt(it.unit_price);
-    return [it.description || it.sku || '', cant, punit, usdFmt(it.total != null ? it.total : qty * (Number(it.unit_price) || 0))];
-  });
-  const gross = items.reduce((s, it) => s + (Number(it.total) || (Number(it.quantity) || 0) * (Number(it.unit_price) || 0)), 0);
+    return [it.description || it.sku || '', isEntrega ? '—' : `${qty} m2`, isEntrega ? '—' : usdFmt(it.unit_price), usdFmt(lineTotal(it))];
+  };
+  const gross = items.reduce((s, it) => s + lineTotal(it), 0);
   const discount = Number(rec.discount_total || rec.discount_amount || 0);
-  if (discount > 0) rows.push(['Descuento', '—', '—', '-' + usdFmt(discount)]);
   const net = Math.max(0, gross - discount);
   const iva = rec.has_iva ? net * IVA_RATE : 0;
-  return {
+  const base = {
     fecha,
     vendedor: sellerPhone ? `${rec.seller_name || ''} · ${sellerPhone}` : (rec.seller_name || ''),
     vendedor_short: rec.seller_name || '',
     cliente: rec.client_name || '',
     obra: rec.title || rec.client_address || '',
     obs: rec.public_notes || '',
-    mode: 'single',
-    rows,
     subtotal: usdFmt(net),
     iva: usdFmt(iva),
     total: usdFmt(net + iva),
   };
+  const zones = [...new Set(items.map(it => it.zone).filter(Boolean))];
+  if (rec.zoned && zones.length) {
+    const sections = zones.map(z => {
+      const zi = items.filter(it => it.zone === z);
+      return { title: z, rows: zi.map(rowOf), subtotal_label: `Subtotal ${z}`, subtotal_val: usdFmt(zi.reduce((s, it) => s + lineTotal(it), 0)) };
+    });
+    const noZone = items.filter(it => !it.zone);
+    if (noZone.length) sections.push({ title: 'Otros', rows: noZone.map(rowOf), subtotal_label: 'Subtotal Otros', subtotal_val: usdFmt(noZone.reduce((s, it) => s + lineTotal(it), 0)) });
+    return { ...base, mode: 'sections', sections };
+  }
+  const rows = items.map(rowOf);
+  if (discount > 0) rows.push(['Descuento', '—', '—', '-' + usdFmt(discount)]);
+  return { ...base, mode: 'single', rows };
 }
 function renderPdf(data, res, filename) {
   const py = spawn('python3', [path.join(__dirname, 'pdf', 'run_pdf.py')], { cwd: __dirname });
