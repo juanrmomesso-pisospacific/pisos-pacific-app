@@ -126,6 +126,15 @@ FS_TITLE = 9     # "PRESUPUESTO PRELIMINAR" / títulos de zona
 FS_TOTAL = 11    # TOTAL C/IVA
 FS_SUB   = 12    # subtotales prominentes
 
+# ── Plantillas (variantes de diseño) ─────────────────────────────────
+# Seleccionables vía data["template"]. Cada una mantiene el layout aprobado
+# y cambia el color de acento + el tratamiento del bloque de Total.
+STYLES = {
+    "clasico":  {"accent": None,                          "total": "flat"},   # B&N minimal (actual)
+    "calido":   {"accent": colors.HexColor("#9b7a4f"),   "total": "accent"}, # acento bronce/madera + total en banda
+    "moderno":  {"accent": colors.HexColor("#1a1a1a"),   "total": "dark"},   # alto contraste + total en banda oscura
+}
+
 # ── Medidas de página ────────────────────────────────────────────────
 W, H = A4                # 595 × 842 pt
 L    = 18 * mm           # margen izquierdo
@@ -140,6 +149,11 @@ def generate_pdf(data: dict) -> bytes:
     """
     buf = io.BytesIO()
     c = canvas.Canvas(buf, pagesize=A4)
+
+    # Estilo / plantilla
+    S = STYLES.get(data.get("template", "clasico"), STYLES["clasico"])
+    ACCENT = S["accent"] or INK          # color de acento (títulos de zona, subtotales)
+    TOTAL_MODE = S["total"]              # flat | accent | dark
 
     # ── LOGO ────────────────────────────────────────────────────────
     # Ratio original del logo PNG aprobado: 1022 × 306 px = 3.34 : 1
@@ -251,7 +265,7 @@ def generate_pdf(data: dict) -> bytes:
         c._charSpace = 1.5
         c.drawString(L + 3*mm, y - 5.8*mm, label.upper())
         c._charSpace = 0
-        c.setFillColor(INK)
+        c.setFillColor(ACCENT)
         c.setFont("Helvetica-Bold", FS_SUB)
         c.drawRightString(R - 1*mm, y - 6.2*mm, val)
         y -= ROW_H + 6*mm
@@ -259,11 +273,11 @@ def generate_pdf(data: dict) -> bytes:
     def draw_section_title(title: str):
         """Título de zona: línea vertical izquierda + texto en mayúsculas."""
         nonlocal y
-        c.setStrokeColor(INK)
+        c.setStrokeColor(ACCENT)
         c.setLineWidth(1.8)
         c.line(L, y, L, y - 6*mm)
         c.setLineWidth(0.5)
-        c.setFillColor(INK)
+        c.setFillColor(ACCENT)
         c.setFont("Helvetica-Bold", FS_TITLE)
         c._charSpace = 1.5
         c.drawString(L + 4*mm, y - 4.2*mm, title.upper())
@@ -294,7 +308,7 @@ def generate_pdf(data: dict) -> bytes:
     c._charSpace = 1.5
     c.drawString(L + 3*mm, y - 5.8*mm, lbl)
     c._charSpace = 0
-    c.setFillColor(INK)
+    c.setFillColor(ACCENT)
     c.setFont("Helvetica-Bold", FS_SUB)
     c.drawRightString(R - 1*mm, y - 6.2*mm, data["subtotal"])
     y -= 9*mm + 4*mm
@@ -309,20 +323,35 @@ def generate_pdf(data: dict) -> bytes:
     c.drawRightString(R - 1*mm,    y - 4*mm, data["iva"])
     y -= 6 * mm
 
-    # Total con IVA — moderado
-    c.setStrokeColor(RULE)
-    c.setLineWidth(0.5)
-    c.line(L + CW*0.45, y, R, y)
-    y -= 2 * mm
-    c.setFillColor(MUTED)
-    c.setFont("Helvetica", FS_LABEL)
-    c._charSpace = 2
-    c.drawRightString(L + CW*0.78, y - 4.5*mm, "TOTAL C/IVA")
-    c._charSpace = 0
-    c.setFillColor(INK)
-    c.setFont("Helvetica-Bold", FS_TOTAL)
-    c.drawRightString(R - 1*mm, y - 5*mm, data["total"])
-    y -= 12 * mm
+    # Total con IVA — según plantilla
+    if TOTAL_MODE in ("accent", "dark"):
+        # Banda llena prominente: el cliente fija la mirada en el valor.
+        band_h = 12 * mm
+        fill = ACCENT if TOTAL_MODE == "accent" else INK
+        c.setFillColor(fill)
+        c.rect(L, y - band_h, CW, band_h, fill=1, stroke=0)
+        c.setFillColor(WHITE)
+        c.setFont("Helvetica", FS_LABEL)
+        c._charSpace = 2
+        c.drawString(L + 3*mm, y - 7.6*mm, "TOTAL C/IVA")
+        c._charSpace = 0
+        c.setFont("Helvetica-Bold", 14)
+        c.drawRightString(R - 3*mm, y - 8*mm, data["total"])
+        y -= band_h + 2*mm
+    else:
+        c.setStrokeColor(RULE)
+        c.setLineWidth(0.5)
+        c.line(L + CW*0.45, y, R, y)
+        y -= 2 * mm
+        c.setFillColor(MUTED)
+        c.setFont("Helvetica", FS_LABEL)
+        c._charSpace = 2
+        c.drawRightString(L + CW*0.78, y - 4.5*mm, "TOTAL C/IVA")
+        c._charSpace = 0
+        c.setFillColor(INK)
+        c.setFont("Helvetica-Bold", FS_TOTAL)
+        c.drawRightString(R - 1*mm, y - 5*mm, data["total"])
+        y -= 12 * mm
 
     # ── CONDICIONES COMERCIALES ──────────────────────────────────────
     c.setStrokeColor(RULE)

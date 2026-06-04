@@ -793,6 +793,7 @@ function presupuestoData(rec) {
     cliente: rec.client_name || '',
     obra: rec.title || rec.client_address || '',
     obs: rec.public_notes || '',
+    template: rec.pdf_template || db.settings.pdf_template || 'clasico',
     subtotal: usdFmt(net),
     iva: usdFmt(iva),
     total: usdFmt(net + iva),
