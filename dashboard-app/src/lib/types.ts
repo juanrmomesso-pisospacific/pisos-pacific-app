@@ -11,6 +11,7 @@ export type Product = {
   margin: number
   reservedStock: number
   committed?: number          // m² comprometidos en ventas no finalizadas (derivado)
+  stockTrack?: boolean        // true para pisos (se trackea stock); false servicios/extras
   createdAt: string
   updatedAt: string
 }

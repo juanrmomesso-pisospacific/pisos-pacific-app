@@ -7,7 +7,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
-import { downloadBusinessDoc, quoteToDocData } from "@/lib/pdf"
+import { openPacificPdf } from "@/lib/pdf"
 import { fmtMoney } from "@/lib/utils"
 import type { Quote, Sale } from "@/lib/types"
 
@@ -34,7 +34,7 @@ export function QuoteRowActions({ quote }: { quote: Quote }) {
     const r = await duplicate.run(quote.id)
     if (r) refresh()
   }
-  const handlePdf = () => downloadBusinessDoc(quoteToDocData(quote))
+  const handlePdf = () => openPacificPdf("quotes", quote.id)
 
   return (
     <DropdownMenu>
@@ -70,18 +70,7 @@ export function SaleRowActions({ sale }: { sale: Sale }) {
   const canSchedule = sale.status !== "Cancelado" && sale.status !== "Finalizado"
 
   const handle = async (next: string) => { const r = await txn.run(sale.id, next); if (r) refresh() }
-  const handlePdf = () => {
-    downloadBusinessDoc({
-      kind: "Venta",
-      number: sale.quote_number,
-      date: sale.created_at,
-      client: { name: sale.client_name, dni: sale.client_dni, address: sale.client_address, email: sale.client_email, phone: sale.client_phone },
-      seller: sale.seller_name,
-      items: sale.items?.map(it => ({ sku: it.sku, description: it.description, quantity: it.quantity, unit_price: it.unit_price })) ?? [],
-      hasIva: !!sale.has_iva,
-      notes: sale.internal_notes,
-    })
-  }
+  const handlePdf = () => openPacificPdf("sales", sale.id)
 
   return (
     <>

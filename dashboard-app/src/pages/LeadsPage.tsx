@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react"
 import { Plus, Search, LayoutGrid, Rows3, MoreHorizontal, Phone, Mail, UserPlus, Globe, MessageCircle, AtSign, MessageSquare, ExternalLink, Download, Clock } from "lucide-react"
 import { useNavigate } from "react-router-dom"
-import { PDFViewer } from "@react-pdf/renderer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -17,7 +16,7 @@ import { type Lead, type LeadStatus, STATUS_ORDER, STATUS_LABEL } from "@/lib/le
 import { cn } from "@/lib/utils"
 import { type Conversation } from "@/lib/messaging"
 import { LeadForm } from "@/components/forms/LeadForm"
-import { BusinessDoc, downloadBusinessDoc, quoteToDocData } from "@/lib/pdf"
+import { openPacificPdf } from "@/lib/pdf"
 import { fmtMoney } from "@/lib/utils"
 import type { Quote } from "@/lib/types"
 
@@ -416,13 +415,11 @@ function LeadDetailSheet({ lead, onClose, convId, leadQuotes }: { lead: Lead | n
                     {leadQuotes.map(q => <option key={q.id} value={q.id}>#{q.quote_number} · {fmtMoney(q.price ?? 0)}</option>)}
                   </select>
                 )}
-                <Button size="sm" variant="outline" onClick={() => downloadBusinessDoc(quoteToDocData(quote))}><Download className="h-3.5 w-3.5" />Descargar</Button>
+                <Button size="sm" variant="outline" onClick={() => openPacificPdf("quotes", quote.id)}><Download className="h-3.5 w-3.5" />Descargar</Button>
               </div>
             </div>
             <div className="border border-border rounded-md overflow-hidden">
-              <PDFViewer style={{ width: "100%", height: 560 }} showToolbar={false}>
-                <BusinessDoc d={quoteToDocData(quote)} />
-              </PDFViewer>
+              <iframe title="Presupuesto" src={`/api/quotes/${quote.id}/pdf`} style={{ width: "100%", height: 560, border: 0 }} />
             </div>
           </div>
         )}

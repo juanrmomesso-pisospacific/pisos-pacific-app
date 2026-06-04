@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
+import { spawn } from 'node:child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -751,6 +752,65 @@ app.post('/api/quotes/:id/convert', (req, res) => {
   const sale = convertQuoteToSale(q);
   save();
   res.json(sale);
+});
+
+// ---------- Presupuesto PDF (motor Pacific en pdf/pacific_pdf.py) ----------
+const IVA_RATE = 0.21;
+const usdFmt = (n) => 'US$ ' + Number(n || 0).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+function presupuestoData(rec) {
+  const fecha = rec.created_at ? new Date(rec.created_at).toLocaleDateString('es-AR') : new Date().toLocaleDateString('es-AR');
+  const sellerPhone = rec.seller_phone || (db.settings.sellers || []).find(s => s.name === rec.seller_name)?.phone || '';
+  const items = (rec.items || []).filter(it => it && it.product_id !== 'discount' && !/^descuento/i.test(it.description || ''));
+  const rows = items.map(it => {
+    const isEntrega = /entrega/i.test(it.description || '') || it.sku === 'SERV-131';
+    const qty = Number(it.quantity) || 0;
+    const cant = isEntrega ? '—' : `${qty} m2`;
+    const punit = isEntrega ? '—' : usdFmt(it.unit_price);
+    return [it.description || it.sku || '', cant, punit, usdFmt(it.total != null ? it.total : qty * (Number(it.unit_price) || 0))];
+  });
+  const gross = items.reduce((s, it) => s + (Number(it.total) || (Number(it.quantity) || 0) * (Number(it.unit_price) || 0)), 0);
+  const discount = Number(rec.discount_total || rec.discount_amount || 0);
+  if (discount > 0) rows.push(['Descuento', '—', '—', '-' + usdFmt(discount)]);
+  const net = Math.max(0, gross - discount);
+  const iva = rec.has_iva ? net * IVA_RATE : 0;
+  return {
+    fecha,
+    vendedor: sellerPhone ? `${rec.seller_name || ''} · ${sellerPhone}` : (rec.seller_name || ''),
+    vendedor_short: rec.seller_name || '',
+    cliente: rec.client_name || '',
+    obra: rec.title || rec.client_address || '',
+    obs: rec.public_notes || '',
+    mode: 'single',
+    rows,
+    subtotal: usdFmt(net),
+    iva: usdFmt(iva),
+    total: usdFmt(net + iva),
+  };
+}
+function renderPdf(data, res, filename) {
+  const py = spawn('python3', [path.join(__dirname, 'pdf', 'run_pdf.py')], { cwd: __dirname });
+  const chunks = [], errs = [];
+  py.stdout.on('data', d => chunks.push(d));
+  py.stderr.on('data', d => errs.push(d));
+  py.on('close', code => {
+    if (code !== 0) { console.error('pdf engine:', Buffer.concat(errs).toString()); return res.status(500).json({ error: 'pdf generation failed' }); }
+    const pdf = Buffer.concat(chunks);
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
+    res.send(pdf);
+  });
+  py.stdin.write(JSON.stringify(data));
+  py.stdin.end();
+}
+app.get('/api/quotes/:id/pdf', (req, res) => {
+  const q = db.quotes.find(x => x.id === req.params.id);
+  if (!q) return res.sendStatus(404);
+  renderPdf(presupuestoData(q), res, `Presupuesto_${(q.client_name || 'Pacific').replace(/[^\w]+/g, '_')}.pdf`);
+});
+app.get('/api/sales/:id/pdf', (req, res) => {
+  const s = db.sales.find(x => x.id === req.params.id);
+  if (!s) return res.sendStatus(404);
+  renderPdf(presupuestoData(s), res, `Presupuesto_${(s.client_name || 'Pacific').replace(/[^\w]+/g, '_')}.pdf`);
 });
 
 // ---------- Brand logos (committed in assets/branding/) ----------

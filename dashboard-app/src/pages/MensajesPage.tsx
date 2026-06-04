@@ -14,7 +14,7 @@ import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_L
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
 import { fmtMoney } from "@/lib/utils"
-import { downloadBusinessDoc, quoteToDocData } from "@/lib/pdf"
+import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote } from "@/lib/types"
 
 type Client = {
@@ -493,7 +493,7 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
   const handleQuoteCreated = async (q: Quote) => {
     // Auto-generate the branded PDF so the vendor can drag it straight into the chat
     try {
-      await downloadBusinessDoc(quoteToDocData(q))
+      openPacificPdf("quotes", q.id)
     } catch (e) { console.warn("PDF generation failed:", e) }
 
     // Auto-advance lead to "Cotizado" (only if not already further forward)
@@ -736,7 +736,7 @@ function LeadQuoteRow({ quote, conversation, linkedLead }: { quote: Quote; conve
   const acceptedLabels = new Set(["Aceptado", "ACCEPTED"])
   const status = quote.status
   const variant = acceptedLabels.has(status) ? "default" : sentLabels.has(status) ? "outline" : "muted"
-  const handlePdf = () => downloadBusinessDoc(quoteToDocData(quote))
+  const handlePdf = () => openPacificPdf("quotes", quote.id)
   const markSent = async () => {
     try { await fetch(`/api/quotes/${quote.id}/transition`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status: "Enviado" }) }) } catch { /* ignore */ }
     refresh()
@@ -758,7 +758,7 @@ function LeadQuoteRow({ quote, conversation, linkedLead }: { quote: Quote; conve
       })
     } catch { /* ignore */ }
     // Download PDF so the vendor can forward it via WhatsApp Web until Meta API is wired
-    try { await downloadBusinessDoc(quoteToDocData(quote)) } catch { /* error already alerted */ }
+    openPacificPdf("quotes", quote.id)
     // Auto-advance status to Enviado (only from Borrador/DRAFT)
     if (!sentLabels.has(status) && !acceptedLabels.has(status)) {
       try { await fetch(`/api/quotes/${quote.id}/transition`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status: "Enviado" }) }) } catch { /* ignore */ }

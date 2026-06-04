@@ -8,14 +8,13 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
-import { PDFViewer } from "@react-pdf/renderer"
 import { SaleRowActions } from "@/components/RowActions"
 import { SaleForm } from "@/components/forms/SaleForm"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney, cn } from "@/lib/utils"
-import { BusinessDoc, downloadBusinessDoc, quoteToDocData } from "@/lib/pdf"
+import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote } from "@/lib/types"
 
 const STATUSES = ["Confirmado", "Programado", "En proceso", "Finalizado"] as const
@@ -528,12 +527,10 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
           <div className="mt-6">
             <div className="flex items-center justify-between mb-2">
               <div className="text-[10px] uppercase tracking-wide text-muted-foreground">Cotización vinculada · #{linkedQuote.quote_number}</div>
-              <Button size="sm" variant="outline" onClick={() => downloadBusinessDoc(quoteToDocData(linkedQuote))}>Descargar PDF</Button>
+              <Button size="sm" variant="outline" onClick={() => openPacificPdf("quotes", linkedQuote.id)}>Descargar PDF</Button>
             </div>
             <div className="border border-border rounded-md overflow-hidden">
-              <PDFViewer style={{ width: "100%", height: 560 }} showToolbar={false}>
-                <BusinessDoc d={quoteToDocData(linkedQuote)} />
-              </PDFViewer>
+              <iframe title="Presupuesto" src={`/api/quotes/${linkedQuote.id}/pdf`} style={{ width: "100%", height: 560, border: 0 }} />
             </div>
           </div>
         )}

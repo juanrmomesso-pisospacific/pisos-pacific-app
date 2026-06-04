@@ -17,9 +17,14 @@ data/db.json.bak
 
 # Dev artefacts captured during the initial scaffold
 *.png
-# ...but keep the committed brand logos
+# ...but keep the committed brand logos + the PDF engine logo
 !assets/branding/*.png
+!pdf/*.png
 .playwright-mcp/
+
+# Python (PDF engine)
+__pycache__/
+*.pyc
 
 # Local env
 .env

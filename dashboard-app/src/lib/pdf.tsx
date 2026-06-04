@@ -1,5 +1,10 @@
 import { Document, Page, Text, View, StyleSheet, pdf } from "@react-pdf/renderer"
 
+// Pacific PDF engine (server-side, pdf/pacific_pdf.py) — opens the rendered presupuesto.
+export function openPacificPdf(kind: "quotes" | "sales", id: string) {
+  window.open(`/api/${kind}/${id}/pdf`, "_blank")
+}
+
 // Built-in Helvetica — no external fetch, always available.
 
 // Brand tokens

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react"
-import { Plus, Trash2, Sparkles, AlertTriangle } from "lucide-react"
+import { Trash2, Sparkles, AlertTriangle } from "lucide-react"
 import { FormSheet, FieldLabel } from "./FormSheet"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney } from "@/lib/utils"
+import { SearchPicker } from "@/components/SearchPicker"
 import type { Product, Quote } from "@/lib/types"
 
 type Settings = { sellers?: { name: string; phone?: string }[] }
@@ -45,9 +46,22 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
   const [discountValue, setDiscountValue] = useState<number>(0)
   const [discountReason, setDiscountReason] = useState<string>("")
 
-  const client = clients.find(c => c.id === clientId)
+  const [extraClients, setExtraClients] = useState<Client[]>([])
+  const allClients = useMemo(() => [...clients, ...extraClients], [clients, extraClients])
+  const client = allClients.find(c => c.id === clientId)
   const create = useAction(api.create)
+  const createClient = useAction(api.create)
   const isLeadDriven = !!prefill
+
+  function addProduct(productId: string) {
+    const p = products.find(x => x.id === productId)
+    if (!p) return
+    setItems(prev => [...prev, { product_id: p.id, sku: p.sku, description: p.name, quantity: 1, unit_price: p.price, category: p.category }])
+  }
+  async function createAndPickClient(name: string) {
+    const r = await createClient.run("clients", { name, type: "client", dni: "", emails: [], phones: [], addresses: [], updated_at: new Date().toISOString() })
+    if (r) { setExtraClients(prev => [...prev, r as Client]); setClientId((r as Client).id) }
+  }
 
   // Walk-in mode: when the user picks a client, copy its saved address as the default
   // (vendor can still override below). Skip in lead-driven mode (prefill controls address).
@@ -94,19 +108,11 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
   const iva = hasIva ? subtotalAfterDiscount * IVA_RATE : 0
   const total = subtotalAfterDiscount + iva
 
-  function addItem() {
-    setItems([...items, { product_id: "", sku: "", description: "", quantity: 1, unit_price: 0, category: "" }])
-  }
   function updateItem(idx: number, patch: Partial<LineItem>) {
     setItems(items.map((it, i) => i === idx ? { ...it, ...patch } : it))
   }
   function removeItem(idx: number) {
     setItems(items.filter((_, i) => i !== idx))
-  }
-  function pickProduct(idx: number, productId: string) {
-    const p = products.find(x => x.id === productId)
-    if (!p) return
-    updateItem(idx, { product_id: p.id, sku: p.sku, description: p.name, unit_price: p.price, category: p.category })
   }
 
   async function submit() {
@@ -179,10 +185,20 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
         {!isLeadDriven && (
           <div>
             <FieldLabel>Cliente</FieldLabel>
-            <select value={clientId} onChange={(e) => setClientId(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
-              <option value="">— Elegí —</option>
-              {clients.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
-            </select>
+            {client ? (
+              <div className="flex items-center justify-between border border-border rounded-md px-3 h-9 text-sm bg-muted/30">
+                <span className="truncate">{client.name}</span>
+                <button type="button" className="text-xs text-muted-foreground hover:text-foreground shrink-0" onClick={() => setClientId("")}>cambiar</button>
+              </div>
+            ) : (
+              <SearchPicker
+                items={allClients.map(c => ({ id: c.id, label: c.name, sub: c.dni || undefined, keywords: (c.phones || []).join(" ") }))}
+                placeholder="Buscar cliente…"
+                onPick={setClientId}
+                onCreate={createAndPickClient}
+                createLabel={(t) => `+ Crear cliente "${t}"`}
+              />
+            )}
           </div>
         )}
         <div>
@@ -203,36 +219,41 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
       </div>
 
       <div className="pt-2">
-        <div className="flex items-center justify-between mb-2">
-          <FieldLabel>Items</FieldLabel>
-          <Button type="button" size="sm" variant="outline" onClick={addItem}><Plus className="h-3.5 w-3.5" />Agregar</Button>
+        <FieldLabel>Items</FieldLabel>
+        <div className="mt-1.5">
+          <SearchPicker
+            items={products.filter(p => p.active !== false).map(p => {
+              const av = (Number(p.stock) || 0) - (Number(p.committed ?? p.reservedStock) || 0)
+              return { id: p.id, label: p.name, sub: p.sku, keywords: p.category, hint: fmtMoney(p.price) + (p.stockTrack && av <= 0 ? " · sin stock" : "") }
+            })}
+            placeholder="Buscar producto o servicio para agregar…"
+            onPick={addProduct}
+          />
         </div>
         {items.length === 0 ? (
-          <div className="text-xs text-muted-foreground italic border border-dashed border-border rounded-md p-3 text-center">Sin items todavía</div>
+          <div className="text-xs text-muted-foreground italic border border-dashed border-border rounded-md p-3 text-center mt-2">Buscá un producto arriba para agregarlo</div>
         ) : (
-          <div className="space-y-2">
+          <div className="space-y-2 mt-2">
             {items.map((it, idx) => {
               const p = products.find(x => x.id === it.product_id)
               const stock = Number(p?.stock ?? 0)
-              const reserved = Number(p?.reservedStock ?? 0)
+              const reserved = Number(p?.committed ?? p?.reservedStock ?? 0)
               const available = stock - reserved
-              const oversold = !!p && it.quantity > available
-              const noStock = !!p && available <= 0
+              const isFloor = !!p && !!p.stockTrack
+              const oversold = isFloor && it.quantity > available
+              const noStock = isFloor && available <= 0
               return (
                 <div key={idx} className={`rounded-md border p-3 space-y-2 ${oversold ? "border-amber-500/60 bg-amber-50/40" : "border-border"}`}>
                   <div className="flex items-start gap-2">
-                    <select value={it.product_id} onChange={(e) => pickProduct(idx, e.target.value)} className="h-9 flex-1 rounded-md border border-input bg-transparent px-2 text-xs">
-                      <option value="">— Elegí producto —</option>
-                      {products.map(pr => {
-                        const av = (Number(pr.stock) || 0) - (Number(pr.reservedStock) || 0)
-                        return <option key={pr.id} value={pr.id}>{pr.sku} · {pr.name}{av <= 0 ? "  (sin stock)" : av <= 5 ? `  (bajo: ${av})` : ""}</option>
-                      })}
-                    </select>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm truncate">{it.description}</div>
+                      <div className="text-[10px] text-muted-foreground tabular">{it.sku}</div>
+                    </div>
                     <Button type="button" size="icon" variant="ghost" className="h-8 w-8 shrink-0" onClick={() => removeItem(idx)}><Trash2 className="h-3.5 w-3.5" /></Button>
                   </div>
-                  {p && (
+                  {isFloor && (
                     <div className="flex items-center justify-between text-[11px] text-muted-foreground tabular -mt-1">
-                      <span>Stock total: <span className="text-foreground">{stock}</span> · cotizado: <span className="text-amber-700">{reserved}</span> · disponible: <span className={available <= 0 ? "text-destructive font-medium" : available <= 5 ? "text-amber-600 font-medium" : "text-foreground"}>{available}</span></span>
+                      <span>Stock: <span className="text-foreground">{stock}</span> · comprometido: <span className="text-amber-700">{reserved}</span> · disponible: <span className={available <= 0 ? "text-destructive font-medium" : available <= 5 ? "text-amber-600 font-medium" : "text-foreground"}>{available}</span></span>
                       {oversold && (
                         <span className="inline-flex items-center gap-1 text-amber-700 font-medium">
                           <AlertTriangle className="h-3 w-3" />
