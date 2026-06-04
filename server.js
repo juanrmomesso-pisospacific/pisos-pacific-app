@@ -125,13 +125,15 @@ if (!Array.isArray(db.tasks)) db.tasks = [];
 if (!db.settings.integrations) db.settings.integrations = {};
 if (!db.settings.integrations.mercadopago) db.settings.integrations.mercadopago = { enabled: false, access_token: '', public_key: '' };
 // Vendedores para los selectores (cotización/venta) — derivados de los usuarios vendor.
-if (!Array.isArray(db.settings.sellers) || db.settings.sellers.length === 0) {
-  const phones = { 'Juan Rodriguez Momesso': '15 5175 0087' };
-  db.settings.sellers = (db.users || [])
-    .filter(u => u.role === 'vendor' && u.seller_name)
-    .map(u => ({ name: u.seller_name, phone: phones[u.seller_name] || '' }));
-  fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
-  console.log(`Seeded ${db.settings.sellers.length} sellers into settings`);
+{
+  const phones = { 'Juan Rodriguez Momesso': '+54 11 51750097', 'Victoria Gonzalez Collado': '+54 11 36982222' };
+  let changed = false;
+  if (!Array.isArray(db.settings.sellers) || db.settings.sellers.length === 0) {
+    db.settings.sellers = (db.users || []).filter(u => u.role === 'vendor' && u.seller_name).map(u => ({ name: u.seller_name, phone: phones[u.seller_name] || '' }));
+    changed = true;
+  }
+  for (const s of db.settings.sellers) { if (phones[s.name] && s.phone !== phones[s.name]) { s.phone = phones[s.name]; changed = true; } }
+  if (changed) { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); console.log(`Synced ${db.settings.sellers.length} sellers into settings`); }
 }
 if (!Array.isArray(db.conversations) || db.conversations.length === 0 || !Array.isArray(db.messages) || !Array.isArray(db.templates)) {
   try {
@@ -770,7 +772,7 @@ const IVA_RATE = 0.21;
 const usdFmt = (n) => 'US$ ' + Number(n || 0).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 function presupuestoData(rec) {
   const fecha = rec.created_at ? new Date(rec.created_at).toLocaleDateString('es-AR') : new Date().toLocaleDateString('es-AR');
-  const sellerPhone = rec.seller_phone || (db.settings.sellers || []).find(s => s.name === rec.seller_name)?.phone || '';
+  const sellerPhone = (db.settings.sellers || []).find(s => s.name === rec.seller_name)?.phone || rec.seller_phone || '';
   const items = (rec.items || []).filter(it => it && it.product_id !== 'discount' && !/^descuento/i.test(it.description || ''));
   const lineTotal = (it) => Number(it.total) || (Number(it.quantity) || 0) * (Number(it.unit_price) || 0);
   const rowOf = (it) => {

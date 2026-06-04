@@ -119,6 +119,13 @@ RULE  = colors.HexColor("#e0dcd8")   # líneas separadoras
 BGCOL = colors.HexColor("#f2f0ed")   # fondo: col-header + subtotales
 WHITE = colors.white
 
+# ── Escala tipográfica unificada ─────────────────────────────────────
+FS_LABEL = 7     # labels en mayúsculas, IVA, footer, condiciones
+FS_BODY  = 8     # texto, valores, filas
+FS_TITLE = 9     # "PRESUPUESTO PRELIMINAR" / títulos de zona
+FS_TOTAL = 11    # TOTAL C/IVA
+FS_SUB   = 12    # subtotales prominentes
+
 # ── Medidas de página ────────────────────────────────────────────────
 W, H = A4                # 595 × 842 pt
 L    = 18 * mm           # margen izquierdo
@@ -141,13 +148,10 @@ def generate_pdf(data: dict) -> bytes:
     c.drawImage(LOGO_PATH, L, H - 8*mm - logo_h,
                 width=logo_w, height=logo_h, mask="auto")
 
-    # Fecha y vendedor alineados a la derecha
+    # Fecha alineada a la derecha (el vendedor va en la banda de datos, sin duplicar)
     c.setFillColor(INK)
-    c.setFont("Helvetica-Bold", 8)
-    c.drawRightString(R, H - 10*mm, data["fecha"])
-    c.setFillColor(MUTED)
-    c.setFont("Helvetica", 7)
-    c.drawRightString(R, H - 15*mm, data["vendedor"])
+    c.setFont("Helvetica-Bold", FS_BODY)
+    c.drawRightString(R, H - 13*mm, data["fecha"])
 
     # Línea divisoria bajo el header
     c.setStrokeColor(RULE)
@@ -158,7 +162,7 @@ def generate_pdf(data: dict) -> bytes:
 
     # ── TÍTULO ──────────────────────────────────────────────────────
     c.setFillColor(INK)
-    c.setFont("Helvetica-Bold", 9)
+    c.setFont("Helvetica-Bold", FS_TITLE)
     c._charSpace = 3
     c.drawString(L, y, "PRESUPUESTO PRELIMINAR")
     c._charSpace = 0
@@ -173,22 +177,22 @@ def generate_pdf(data: dict) -> bytes:
     ]):
         x = L + i * col_w
         c.setFillColor(MUTED)
-        c.setFont("Helvetica", 6)
+        c.setFont("Helvetica", FS_LABEL)
         c._charSpace = 1.5
         c.drawString(x, y, label)
         c._charSpace = 0
         c.setFillColor(INK)
-        c.setFont("Helvetica-Bold", 8.5)
+        c.setFont("Helvetica-Bold", FS_BODY)
         c.drawString(x, y - 5.5*mm, val)
 
     y -= 10 * mm
 
     if data.get("obs"):
         c.setFillColor(MUTED)
-        c.setFont("Helvetica", 6.5)
+        c.setFont("Helvetica", FS_LABEL)
         c.drawString(L, y, "Obs.")
         c.setFillColor(MID)
-        c.setFont("Helvetica", 7.5)
+        c.setFont("Helvetica", FS_BODY)
         c.drawString(L + 10*mm, y, data["obs"])
         y -= 5 * mm
 
@@ -204,7 +208,7 @@ def generate_pdf(data: dict) -> bytes:
         c.setFillColor(BGCOL)
         c.rect(L, y - 5.5*mm, CW, 5.5*mm, fill=1, stroke=0)
         c.setFillColor(MUTED)
-        c.setFont("Helvetica", 6)
+        c.setFont("Helvetica", FS_LABEL)
         c._charSpace = 1
         c.drawString(L + 3*mm,          y - 3.6*mm, "DESCRIPCION")
         c.drawRightString(L + CW*0.60,  y - 3.6*mm, "CANT / UND")
@@ -220,15 +224,15 @@ def generate_pdf(data: dict) -> bytes:
             c.rect(L, y - 6.5*mm, CW, 6.5*mm, fill=1, stroke=0)
             # descripción
             c.setFillColor(INK)
-            c.setFont("Helvetica", 7.5)
+            c.setFont("Helvetica", FS_BODY)
             c.drawString(L + 3*mm, y - 4.3*mm, row[0])
             # cantidad / precio unit / total
             c.setFillColor(MID)
-            c.setFont("Helvetica", 7.5)
+            c.setFont("Helvetica", FS_BODY)
             c.drawRightString(L + CW*0.60, y - 4.3*mm, str(row[1]) if row[1] else "—")
             c.drawRightString(L + CW*0.77, y - 4.3*mm, row[2] if row[2] else "—")
             c.setFillColor(INK)
-            c.setFont("Helvetica-Bold", 7.5)
+            c.setFont("Helvetica-Bold", FS_BODY)
             c.drawRightString(R - 1*mm, y - 4.3*mm, row[3])
             # línea inferior sutil
             c.setStrokeColor(RULE)
@@ -243,12 +247,12 @@ def generate_pdf(data: dict) -> bytes:
         c.setFillColor(BGCOL)
         c.rect(L, y - ROW_H, CW, ROW_H, fill=1, stroke=0)
         c.setFillColor(MUTED)
-        c.setFont("Helvetica", 6.5)
+        c.setFont("Helvetica", FS_LABEL)
         c._charSpace = 1.5
         c.drawString(L + 3*mm, y - 5.8*mm, label.upper())
         c._charSpace = 0
         c.setFillColor(INK)
-        c.setFont("Helvetica-Bold", 13)
+        c.setFont("Helvetica-Bold", FS_SUB)
         c.drawRightString(R - 1*mm, y - 6.2*mm, val)
         y -= ROW_H + 6*mm
 
@@ -260,7 +264,7 @@ def generate_pdf(data: dict) -> bytes:
         c.line(L, y, L, y - 6*mm)
         c.setLineWidth(0.5)
         c.setFillColor(INK)
-        c.setFont("Helvetica-Bold", 8)
+        c.setFont("Helvetica-Bold", FS_TITLE)
         c._charSpace = 1.5
         c.drawString(L + 4*mm, y - 4.2*mm, title.upper())
         c._charSpace = 0
@@ -278,19 +282,20 @@ def generate_pdf(data: dict) -> bytes:
         draw_rows(data["rows"])
 
     # ── BLOQUE DE TOTALES ────────────────────────────────────────────
-    y -= 1 * mm
+    # Separación clara respecto del listado de productos.
+    y -= 8 * mm if data["mode"] == "single" else 4 * mm
 
     # Subtotal general — grande en ambos modos
     lbl = "SUBTOTAL" if data["mode"] == "single" else "SUBTOTAL GENERAL"
     c.setFillColor(BGCOL)
     c.rect(L, y - 9*mm, CW, 9*mm, fill=1, stroke=0)
     c.setFillColor(MUTED)
-    c.setFont("Helvetica", 6.5)
+    c.setFont("Helvetica", FS_LABEL)
     c._charSpace = 1.5
     c.drawString(L + 3*mm, y - 5.8*mm, lbl)
     c._charSpace = 0
     c.setFillColor(INK)
-    c.setFont("Helvetica-Bold", 13)
+    c.setFont("Helvetica-Bold", FS_SUB)
     c.drawRightString(R - 1*mm, y - 6.2*mm, data["subtotal"])
     y -= 9*mm + 4*mm
 
@@ -299,7 +304,7 @@ def generate_pdf(data: dict) -> bytes:
     c.setLineWidth(0.3)
     c.line(L + CW*0.55, y, R, y)
     c.setFillColor(MUTED)
-    c.setFont("Helvetica", 7)
+    c.setFont("Helvetica", FS_LABEL)
     c.drawRightString(L + CW*0.78, y - 4*mm, "IVA 21%")
     c.drawRightString(R - 1*mm,    y - 4*mm, data["iva"])
     y -= 6 * mm
@@ -310,12 +315,12 @@ def generate_pdf(data: dict) -> bytes:
     c.line(L + CW*0.45, y, R, y)
     y -= 2 * mm
     c.setFillColor(MUTED)
-    c.setFont("Helvetica", 6.5)
+    c.setFont("Helvetica", FS_LABEL)
     c._charSpace = 2
     c.drawRightString(L + CW*0.78, y - 4.5*mm, "TOTAL C/IVA")
     c._charSpace = 0
     c.setFillColor(INK)
-    c.setFont("Helvetica-Bold", 10)
+    c.setFont("Helvetica-Bold", FS_TOTAL)
     c.drawRightString(R - 1*mm, y - 5*mm, data["total"])
     y -= 12 * mm
 
@@ -332,10 +337,10 @@ def generate_pdf(data: dict) -> bytes:
         ("Garantia",      "Valida si la instalacion es realizada por Pisos Pacific"),
     ]:
         c.setFillColor(MUTED)
-        c.setFont("Helvetica", 6.5)
+        c.setFont("Helvetica", FS_LABEL)
         c.drawString(L, y, key)
         c.setFillColor(MID)
-        c.setFont("Helvetica", 6.5)
+        c.setFont("Helvetica", FS_LABEL)
         c.drawString(L + 28*mm, y, val)
         y -= 4.5 * mm
 
@@ -344,7 +349,7 @@ def generate_pdf(data: dict) -> bytes:
     c.setLineWidth(0.6)
     c.line(L, 13*mm, R, 13*mm)
     c.setFillColor(MUTED)
-    c.setFont("Helvetica", 6.5)
+    c.setFont("Helvetica", FS_LABEL)
     c.drawString(L,       9*mm, "pisospacific.com")
     c.drawCentredString(W/2, 9*mm, data["vendedor"])
     c.drawRightString(R,  9*mm, data["fecha"])
