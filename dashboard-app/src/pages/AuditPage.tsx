@@ -43,7 +43,7 @@ export default function AuditPage() {
   const rows = useMemo(() => {
     const needle = q.trim().toLowerCase()
     return [...movs]
-      .sort((a, b) => b.ts.localeCompare(a.ts))
+      .sort((a, b) => (b.ts ?? "").localeCompare(a.ts ?? ""))
       .filter((m) => {
         if (filter !== "Todos" && m.type !== filter) return false
         if (!needle) return true

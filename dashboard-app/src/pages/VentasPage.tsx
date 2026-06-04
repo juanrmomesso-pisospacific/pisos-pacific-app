@@ -316,7 +316,7 @@ function VentasKanban({ rows }: { rows: Sale[] }) {
                     {r.description ? <div className="text-xs text-muted-foreground line-clamp-2 mt-1.5">{r.description}</div> : null}
                     <div className="flex items-center justify-between text-xs">
                       <span className="tabular text-foreground">{fmtMoney(r.contract_total)}</span>
-                      {due > 0 ? <Badge variant="outline" className="text-[10px]">Saldo {fmtMoney(due)}</Badge> : <span className="text-muted-foreground tabular">{new Date(r.created_at).toLocaleDateString("es-AR")}</span>}
+                      {due > 0 ? <Badge variant="outline" className="text-[10px]">Saldo {fmtMoney(due)}</Badge> : <span className="text-muted-foreground tabular">{r.created_at ? new Date(r.created_at).toLocaleDateString("es-AR") : "—"}</span>}
                     </div>
                     <div className="mt-1.5 flex items-center gap-1.5">
                       <DeliveryBadge value={r.delivery_status} />
@@ -513,7 +513,7 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
               <div className="space-y-1.5">
                 {sale.payments!.map((p: any, i) => (
                   <div key={i} className="rounded-md border border-border px-2 py-1.5 flex items-center justify-between text-xs gap-2">
-                    <span>{new Date(p.ts).toLocaleDateString("es-AR")}</span>
+                    <span>{p.ts ? new Date(p.ts).toLocaleDateString("es-AR") : "—"}</span>
                     <span className="text-muted-foreground">{p.method ?? ""}</span>
                     <span className="tabular">{fmtMoney(p.amount)}</span>
                   </div>

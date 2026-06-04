@@ -87,7 +87,7 @@ export default function CotizacionesPage() {
                   <TableCell><div className="truncate max-w-[280px]">{r.client_name}</div><div className="text-xs text-muted-foreground line-clamp-1">{r.description}</div></TableCell>
                   <TableCell className="text-xs text-muted-foreground">{r.seller_name}</TableCell>
                   <TableCell className="text-xs text-muted-foreground">
-                    {new Date(r.created_at).toLocaleDateString("es-AR")}
+                    {r.created_at ? new Date(r.created_at).toLocaleDateString("es-AR") : "—"}
                     {r.renewed_at && <div className="text-[10px]">Renovada {new Date(r.renewed_at).toLocaleDateString("es-AR")}</div>}
                   </TableCell>
                   <TableCell><StatusBadge status={r.status} /></TableCell>

@@ -263,9 +263,11 @@ function saleMargin(s) {
     cogs += (Number(it.quantity) || 0) * (Number(it.cost) || 0);
     if (it.sku) hasSku = true;
   }
+  // Sin detalle SKU no hay costo real → margen no calculable (evita un 100% engañoso en dashboards).
+  if (!hasSku) return { venta_neta: null, cogs: null, margin: null, margin_pct: null, has_sku_detail: false };
   net -= Number(s.discount_total) || 0;
   const margin = net - cogs;
-  return { venta_neta: Math.round(net * 100) / 100, cogs: Math.round(cogs * 100) / 100, margin: Math.round(margin * 100) / 100, margin_pct: net ? Math.round((margin / net) * 1000) / 10 : null, has_sku_detail: hasSku };
+  return { venta_neta: Math.round(net * 100) / 100, cogs: Math.round(cogs * 100) / 100, margin: Math.round(margin * 100) / 100, margin_pct: net ? Math.round((margin / net) * 1000) / 10 : null, has_sku_detail: true };
 }
 app.get('/api/sales',    (_, res) => {
   // Reconcile each sale's collected amount from cashflow income lines tagged with its venta_nro.
@@ -810,19 +812,27 @@ function presupuestoData(rec) {
   return { ...base, mode: 'single', rows };
 }
 function renderPdf(data, res, filename) {
-  const py = spawn('python3', [path.join(__dirname, 'pdf', 'run_pdf.py')], { cwd: __dirname });
+  let done = false;
+  const finish = (fn) => { if (done) return; done = true; clearTimeout(timer); fn(); };
+  let py;
+  try {
+    py = spawn('python3', [path.join(__dirname, 'pdf', 'run_pdf.py')], { cwd: __dirname });
+  } catch (e) {
+    return res.status(500).json({ error: 'pdf engine unavailable', detail: String(e.message || e) });
+  }
   const chunks = [], errs = [];
+  // Kill a hung Python process so the request never blocks forever.
+  const timer = setTimeout(() => { try { py.kill('SIGKILL'); } catch {} finish(() => res.status(504).json({ error: 'pdf generation timed out' })); }, 20000);
+  py.on('error', (e) => finish(() => { console.error('pdf spawn error:', e.message); res.status(500).json({ error: 'pdf engine unavailable (python3/reportlab missing?)' }); }));
   py.stdout.on('data', d => chunks.push(d));
   py.stderr.on('data', d => errs.push(d));
-  py.on('close', code => {
+  py.on('close', code => finish(() => {
     if (code !== 0) { console.error('pdf engine:', Buffer.concat(errs).toString()); return res.status(500).json({ error: 'pdf generation failed' }); }
-    const pdf = Buffer.concat(chunks);
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
-    res.send(pdf);
-  });
-  py.stdin.write(JSON.stringify(data));
-  py.stdin.end();
+    res.send(Buffer.concat(chunks));
+  }));
+  try { py.stdin.write(JSON.stringify(data)); py.stdin.end(); } catch { /* error event will fire */ }
 }
 app.get('/api/quotes/:id/pdf', (req, res) => {
   const q = db.quotes.find(x => x.id === req.params.id);

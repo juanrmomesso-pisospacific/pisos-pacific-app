@@ -611,7 +611,7 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
                     <span className="text-xs font-medium truncate">{s.id}</span>
                     <span className="tabular">{fmtMoney(s.contract_total ?? 0)}</span>
                   </div>
-                  <div className="text-[10px] text-muted-foreground">{s.status ?? ""} · {new Date(s.created_at).toLocaleDateString("es-AR")}</div>
+                  <div className="text-[10px] text-muted-foreground">{s.status ?? ""}{s.created_at ? ` · ${new Date(s.created_at).toLocaleDateString("es-AR")}` : ""}</div>
                 </div>
               ))}
             </div>

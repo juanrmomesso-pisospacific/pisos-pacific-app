@@ -32,6 +32,10 @@ const matches = read('vercel_sale_matches.json');      // venta_nro -> vercel qn
 const remap = read('sku_remap.json');
 const products = read('products.seed.json');
 const prodBySku = new Map(products.map((p) => [p.sku, p]));
+const clients = read('clients.seed.json');
+const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim();
+const clientByName = new Map(clients.map((c) => [norm(c.name), c]));
+const itemsNet = (items, discount_total) => round2(items.filter(it => it.product_id !== 'discount').reduce((a, it) => a + (Number(it.total) || 0), 0) - (Number(discount_total) || 0));
 
 const NOW = new Date().toISOString();
 const report = { generatedAt: NOW, recovered: 0, deleted: 0, enriched: 0, quotes: 0, missingSku: {}, dudosos: ['A0073→0000136 (Centauros/Casa Propia)', 'A0052→0000116 (Mapuches/Eslavonia)'] };
@@ -112,6 +116,11 @@ for (const [venta, qnum] of Object.entries(matches)) {
   const { items, discount_total } = buildItems(v.items);
   s.items = items;
   s.discount_total = discount_total;
+  // contract_total = real value from SKU items (the imported total_usd was sometimes the saldo/negative).
+  const net = itemsNet(items, discount_total);
+  s.contract_total = net;
+  const paid = round2(s.financial_position?.total_paid || 0);
+  s.financial_position = { total_invoiced: net, total_paid: paid, balance_due: round2(net - paid) };
   s.status = v.status || s.status;             // Vercel real pipeline status
   if (v.client_address) { s.title = v.client_address; s.client_address = v.client_address; }
   if (v.client_phone) s.client_phone = v.client_phone;
@@ -123,19 +132,24 @@ for (const [venta, qnum] of Object.entries(matches)) {
 }
 
 // ---- 4. Import Vercel quotes ----
+let quotesMatched = 0;
 const quotes = vquotes.map((q) => {
   const { items, discount_total } = buildItems(q.items);
+  // Vercel client_ids don't exist locally — re-link by client name.
+  const localClient = clientByName.get(norm(q.client_name));
+  if (localClient) quotesMatched++;
+  const price = round2(itemsNet(items, discount_total)) || round2(q.contract_total ?? q.price ?? 0);
   return {
     id: q.id || q.quote_number,
     quote_number: q.quote_number,
-    client_id: q.client_id || '',
+    client_id: localClient ? localClient.id : '',
     client_name: q.client_name || '',
     client_dni: q.client_dni || '', client_email: q.client_email || '', client_phone: q.client_phone || '', client_address: q.client_address || '',
     seller_name: q.seller_name || '', seller_phone: q.seller_phone || '',
     title: q.client_address || q.title || q.client_name || '',
     description: q.description || '',
     created_at: q.created_at || '',
-    price: round2(q.contract_total ?? q.price ?? 0),
+    price,
     has_iva: !!q.has_iva,
     items, discount_total,
     status: q.status || 'Enviado',
@@ -143,6 +157,7 @@ const quotes = vquotes.map((q) => {
   };
 });
 report.quotes = quotes.length;
+report.quotesClientLinked = quotesMatched;
 
 fs.writeFileSync(path.join(DATA, 'sales.seed.json'), JSON.stringify(kept, null, 2));
 fs.writeFileSync(path.join(DATA, 'quotes.seed.json'), JSON.stringify(quotes, null, 2));

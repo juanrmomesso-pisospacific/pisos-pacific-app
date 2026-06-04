@@ -2489,7 +2489,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Wineberg - Fede y Pili",
-    "contract_total": -10146,
+    "contract_total": 9190.63,
     "items": [
       {
         "product_id": "PROD-027",
@@ -2552,15 +2552,15 @@
     "comentarios": null,
     "payment_state": "Pendiente",
     "financial_position": {
-      "total_invoiced": -10146,
+      "total_invoiced": 9190.63,
       "total_paid": 0,
-      "balance_due": -10146
+      "balance_due": 9190.63
     },
     "stock_reserved": true,
     "stock_deducted": false,
     "seller_name": "",
     "payments": [],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 2953.3,
     "vercel_qnum": "A0047"
   },
@@ -3811,7 +3811,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Gurruchaga - Catalina - Blas",
-    "contract_total": 3393.2,
+    "contract_total": 5006.8,
     "items": [
       {
         "product_id": "PROD-027",
@@ -3854,9 +3854,9 @@
     "comentarios": null,
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": 3393.2,
+      "total_invoiced": 5006.8,
       "total_paid": 4200,
-      "balance_due": -806.8
+      "balance_due": 806.8
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -3869,7 +3869,7 @@
         "notes": "Saldo inicial migración"
       }
     ],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 423.2,
     "vercel_qnum": "A0046"
   },
@@ -4227,7 +4227,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Casa Propia",
-    "contract_total": 7380,
+    "contract_total": 18620.52,
     "items": [
       {
         "product_id": "PROD-010",
@@ -4260,9 +4260,9 @@
     "comentarios": null,
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": 7380,
+      "total_invoiced": 18620.52,
       "total_paid": 13000,
-      "balance_due": -5620
+      "balance_due": 5620.52
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -4275,7 +4275,7 @@
         "notes": "Saldo inicial migración"
       }
     ],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 4194.48,
     "vercel_qnum": "A0063"
   },
@@ -4340,7 +4340,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Tigre",
-    "contract_total": -977,
+    "contract_total": 4969,
     "items": [
       {
         "product_id": "PROD-028",
@@ -4383,9 +4383,9 @@
     "comentarios": null,
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": -977,
+      "total_invoiced": 4969,
       "total_paid": 2000,
-      "balance_due": -2977
+      "balance_due": 2969
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -4398,7 +4398,7 @@
         "notes": "Saldo inicial migración"
       }
     ],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 3555,
     "vercel_qnum": "A0045"
   },
@@ -4413,7 +4413,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra AGIRA",
-    "contract_total": 14800.997957,
+    "contract_total": 22004,
     "items": [
       {
         "product_id": "PROD-026",
@@ -4496,9 +4496,9 @@
     "comentarios": null,
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": 14800.997957,
-      "total_paid": 18402.49898,
-      "balance_due": -3601.501023
+      "total_invoiced": 22004,
+      "total_paid": 18402.5,
+      "balance_due": 3601.5
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -4511,7 +4511,7 @@
         "notes": "Saldo inicial migración"
       }
     ],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 5928,
     "vercel_qnum": "A0060"
   },
@@ -4626,7 +4626,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Levene 936 sin Escalera",
-    "contract_total": 8483,
+    "contract_total": 9317.51,
     "items": [
       {
         "product_id": "PROD-027",
@@ -4719,9 +4719,9 @@
     "comentarios": null,
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": 8483,
+      "total_invoiced": 9317.51,
       "total_paid": 7400,
-      "balance_due": 1083
+      "balance_due": 1917.51
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -4734,7 +4734,7 @@
         "notes": "Saldo inicial migración"
       }
     ],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 2079.49,
     "vercel_qnum": "A0062"
   },
@@ -4992,7 +4992,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Tortugas",
-    "contract_total": -1840,
+    "contract_total": 25381.99,
     "items": [
       {
         "product_id": "PROD-011",
@@ -5095,9 +5095,9 @@
     "comentarios": null,
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": -1840,
+      "total_invoiced": 25381.99,
       "total_paid": 10000,
-      "balance_due": -11840
+      "balance_due": 15381.99
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -5110,7 +5110,7 @@
         "notes": "Saldo inicial migración"
       }
     ],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 1603.01,
     "vercel_qnum": "A0061"
   },
@@ -5175,7 +5175,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Nuñez - Catalina",
-    "contract_total": 4740.8,
+    "contract_total": 5334.25,
     "items": [
       {
         "product_id": "PROD-027",
@@ -5288,9 +5288,9 @@
     "comentarios": null,
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": 4740.8,
+      "total_invoiced": 5334.25,
       "total_paid": 3700,
-      "balance_due": 1040.8
+      "balance_due": 1634.25
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -5303,7 +5303,7 @@
         "notes": "Saldo inicial migración"
       }
     ],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 327.75,
     "vercel_qnum": "A0043"
   },
@@ -5604,7 +5604,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Tortugas Country",
-    "contract_total": 7353,
+    "contract_total": 16242.83,
     "items": [
       {
         "product_id": "PROD-202",
@@ -5697,9 +5697,9 @@
     "comentarios": null,
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": 7353,
+      "total_invoiced": 16242.83,
       "total_paid": 11000,
-      "balance_due": -3647
+      "balance_due": 5242.83
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -5712,7 +5712,7 @@
         "notes": "Saldo inicial migración"
       }
     ],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 1155.2,
     "vercel_qnum": "A0058"
   },
@@ -5920,7 +5920,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Casa Pilar",
-    "contract_total": -2130,
+    "contract_total": 13090,
     "items": [
       {
         "product_id": "PROD-011",
@@ -5943,9 +5943,9 @@
     "comentarios": null,
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": -2130,
+      "total_invoiced": 13090,
       "total_paid": 5000,
-      "balance_due": -7130
+      "balance_due": 8090
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -5958,7 +5958,7 @@
         "notes": "Saldo inicial migración"
       }
     ],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 0,
     "vercel_qnum": "A0056"
   },
@@ -6023,7 +6023,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Reparación Obra - Quartier Lacroze 202",
-    "contract_total": -1673.09,
+    "contract_total": 1673.09,
     "items": [
       {
         "product_id": "PROD-033",
@@ -6066,15 +6066,15 @@
     "comentarios": null,
     "payment_state": "Pendiente",
     "financial_position": {
-      "total_invoiced": -1673.09,
+      "total_invoiced": 1673.09,
       "total_paid": 0,
-      "balance_due": -1673.09
+      "balance_due": 1673.09
     },
     "stock_reserved": true,
     "stock_deducted": false,
     "seller_name": "",
     "payments": [],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 0,
     "vercel_qnum": "A0055"
   },
@@ -6089,7 +6089,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Castaños Lote 190 - Planta Alta",
-    "contract_total": 3202,
+    "contract_total": 3167.16,
     "items": [
       {
         "product_id": "SERV-106",
@@ -6172,9 +6172,9 @@
     "comentarios": null,
     "payment_state": "Cobrado",
     "financial_position": {
-      "total_invoiced": 3202,
+      "total_invoiced": 3167.16,
       "total_paid": 3184.5,
-      "balance_due": 17.5
+      "balance_due": -17.34
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -6187,7 +6187,7 @@
         "notes": "Saldo inicial migración"
       }
     ],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 692.04,
     "vercel_qnum": "A0054"
   },
@@ -6202,7 +6202,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Mapuches",
-    "contract_total": -4889.3,
+    "contract_total": 3174.31,
     "items": [
       {
         "product_id": "PROD-027",
@@ -6245,15 +6245,15 @@
     "comentarios": null,
     "payment_state": "Cobrado",
     "financial_position": {
-      "total_invoiced": -4889.3,
+      "total_invoiced": 3174.31,
       "total_paid": 0,
-      "balance_due": -4889.3
+      "balance_due": 3174.31
     },
     "stock_reserved": true,
     "stock_deducted": false,
     "seller_name": "",
     "payments": [],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 242.79,
     "vercel_qnum": "A0052"
   },
@@ -6368,7 +6368,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Pando - Pilar",
-    "contract_total": -27258,
+    "contract_total": 27258,
     "items": [
       {
         "product_id": "PROD-010",
@@ -6451,15 +6451,15 @@
     "comentarios": null,
     "payment_state": "Pendiente",
     "financial_position": {
-      "total_invoiced": -27258,
+      "total_invoiced": 27258,
       "total_paid": 0,
-      "balance_due": -27258
+      "balance_due": 27258
     },
     "stock_reserved": true,
     "stock_deducted": false,
     "seller_name": "",
     "payments": [],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 1340,
     "vercel_qnum": "A0053"
   },
@@ -6474,7 +6474,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Centauros",
-    "contract_total": -3240,
+    "contract_total": 17240,
     "items": [
       {
         "product_id": "PROD-011",
@@ -6537,9 +6537,9 @@
     "comentarios": null,
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": -3240,
+      "total_invoiced": 17240,
       "total_paid": 7000,
-      "balance_due": -10240
+      "balance_due": 10240
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -6552,7 +6552,7 @@
         "notes": "Saldo inicial migración"
       }
     ],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 2400,
     "vercel_qnum": "A0051"
   },
@@ -6710,7 +6710,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Pilar",
-    "contract_total": -3470,
+    "contract_total": 3470.36,
     "items": [
       {
         "product_id": "PROD-021",
@@ -6773,15 +6773,15 @@
     "comentarios": null,
     "payment_state": "Pendiente",
     "financial_position": {
-      "total_invoiced": -3470,
+      "total_invoiced": 3470.36,
       "total_paid": 0,
-      "balance_due": -3470
+      "balance_due": 3470.36
     },
     "stock_reserved": true,
     "stock_deducted": false,
     "seller_name": "",
     "payments": [],
-    "source": "excel-import+vercel",
+    "source": "excel-import+vercel+vercel",
     "discount_total": 1822.24,
     "vercel_qnum": "M-260428-339"
   },
@@ -6839,7 +6839,7 @@
     "client_email": "victoria@pisospacific.com",
     "client_phone": "",
     "client_address": "Zona Norte - Confirmar",
-    "contract_total": 2248,
+    "contract_total": 2249.52,
     "items": [
       {
         "product_id": "PROD-027",
@@ -6882,9 +6882,9 @@
     "comentarios": "Subido",
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": 2248,
+      "total_invoiced": 2249.52,
       "total_paid": 0,
-      "balance_due": 2248
+      "balance_due": 2249.52
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -6949,7 +6949,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Casa Propia",
-    "contract_total": 5750,
+    "contract_total": 4625.04,
     "items": [
       {
         "product_id": "PROD-027",
@@ -6972,9 +6972,9 @@
     "comentarios": "Subido",
     "payment_state": "Pendiente",
     "financial_position": {
-      "total_invoiced": 5750,
+      "total_invoiced": 4625.04,
       "total_paid": 0,
-      "balance_due": 5750
+      "balance_due": 4625.04
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -6995,7 +6995,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Casa Propia - Emilio Mitre 331 - Martinez",
-    "contract_total": 3565,
+    "contract_total": 3565.05,
     "items": [
       {
         "product_id": "PROD-026",
@@ -7018,9 +7018,9 @@
     "comentarios": "Subido",
     "payment_state": "Pendiente",
     "financial_position": {
-      "total_invoiced": 3565,
+      "total_invoiced": 3565.05,
       "total_paid": 0,
-      "balance_due": 3565
+      "balance_due": 3565.05
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -7127,7 +7127,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Paraguay",
-    "contract_total": 3569,
+    "contract_total": 3568.5,
     "items": [
       {
         "product_id": "PROD-033",
@@ -7150,9 +7150,9 @@
     "comentarios": "Subido",
     "payment_state": "Cobrado",
     "financial_position": {
-      "total_invoiced": 3569,
+      "total_invoiced": 3568.5,
       "total_paid": 3569,
-      "balance_due": 0
+      "balance_due": -0.5
     },
     "stock_reserved": false,
     "stock_deducted": true,
@@ -7173,7 +7173,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Arenales y Parana",
-    "contract_total": 5166.27,
+    "contract_total": 5166.25,
     "items": [
       {
         "product_id": "PROD-007",
@@ -7256,9 +7256,9 @@
     "comentarios": "Subido",
     "payment_state": "Adelanto",
     "financial_position": {
-      "total_invoiced": 5166.27,
+      "total_invoiced": 5166.25,
       "total_paid": 4200,
-      "balance_due": 966.27
+      "balance_due": 966.25
     },
     "stock_reserved": true,
     "stock_deducted": false,
@@ -7279,7 +7279,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Av. Corrientes 5694",
-    "contract_total": 1026,
+    "contract_total": 1226,
     "items": [
       {
         "product_id": "PROD-033",
@@ -7312,9 +7312,9 @@
     "comentarios": null,
     "payment_state": "Pendiente",
     "financial_position": {
-      "total_invoiced": 1026,
+      "total_invoiced": 1226,
       "total_paid": 0,
-      "balance_due": 1026
+      "balance_due": 1226
     },
     "stock_reserved": false,
     "stock_deducted": true,
@@ -7775,7 +7775,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "Obra Highland",
-    "contract_total": 11913.23,
+    "contract_total": 11913.2,
     "items": [
       {
         "product_id": "PROD-028",
@@ -7818,9 +7818,9 @@
     "comentarios": null,
     "payment_state": "Cobrado",
     "financial_position": {
-      "total_invoiced": 11913.23,
+      "total_invoiced": 11913.2,
       "total_paid": 14415,
-      "balance_due": -2501.77
+      "balance_due": -2501.8
     },
     "stock_reserved": true,
     "stock_deducted": false,

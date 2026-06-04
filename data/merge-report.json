@@ -1,12 +1,13 @@
 {
-  "generatedAt": "2026-06-04T05:59:39.429Z",
+  "generatedAt": "2026-06-04T07:59:58.875Z",
   "recovered": 14,
-  "deleted": 20,
+  "deleted": 0,
   "enriched": 29,
   "quotes": 34,
   "missingSku": {},
   "dudosos": [
     "A0073→0000136 (Centauros/Casa Propia)",
     "A0052→0000116 (Mapuches/Eslavonia)"
-  ]
+  ],
+  "quotesClientLinked": 10
 }
