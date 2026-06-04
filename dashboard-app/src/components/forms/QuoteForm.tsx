@@ -73,6 +73,9 @@ export function QuoteForm({ open, onOpenChange, prefill, onCreated }: { open: bo
     if (r) { setExtraClients(prev => [...prev, r as Client]); setClientId((r as Client).id) }
   }
 
+  // Sellers load async — default to the first once available.
+  useEffect(() => { if (!seller && sellers.length) setSeller(sellers[0].name) }, [sellers.length])
+
   // Walk-in mode: when the user picks a client, copy its saved address as the default
   // (vendor can still override below). Skip in lead-driven mode (prefill controls address).
   useEffect(() => {

@@ -124,6 +124,15 @@ if (!Array.isArray(db.tasks)) db.tasks = [];
 }
 if (!db.settings.integrations) db.settings.integrations = {};
 if (!db.settings.integrations.mercadopago) db.settings.integrations.mercadopago = { enabled: false, access_token: '', public_key: '' };
+// Vendedores para los selectores (cotización/venta) — derivados de los usuarios vendor.
+if (!Array.isArray(db.settings.sellers) || db.settings.sellers.length === 0) {
+  const phones = { 'Juan Rodriguez Momesso': '15 5175 0087' };
+  db.settings.sellers = (db.users || [])
+    .filter(u => u.role === 'vendor' && u.seller_name)
+    .map(u => ({ name: u.seller_name, phone: phones[u.seller_name] || '' }));
+  fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
+  console.log(`Seeded ${db.settings.sellers.length} sellers into settings`);
+}
 if (!Array.isArray(db.conversations) || db.conversations.length === 0 || !Array.isArray(db.messages) || !Array.isArray(db.templates)) {
   try {
     const messagingSeed = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/messaging.seed.json'), 'utf8'));
