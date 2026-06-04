@@ -22,6 +22,12 @@ if (!fs.existsSync(SRC)) { console.error('No existe:', SRC); process.exit(1); }
 const wb = XLSX.readFile(SRC, { cellDates: true });
 
 const clean = (s) => { const v = String(s ?? '').trim(); return v === '' ? null : v; };
+// Normalizar variantes/typos de Tipo de Gasto a los valores canónicos del P&L.
+const EXPENSE_TYPE_FIX = {
+  'Personal': 'Gastos de Personal (HR y Mano de Obra)',
+  'Gastos de Flota/Vehiculos': 'Gastos de Flota/Vehículos',
+};
+const fixType = (t) => (t == null ? null : (EXPENSE_TYPE_FIX[t] || t));
 const num = (v) => (typeof v === 'number' && isFinite(v) ? v : null);
 const r2 = (n) => (n == null ? null : Math.round(n * 100) / 100);
 const toISO = (v) => {
@@ -79,7 +85,9 @@ const E = XLSX.utils.sheet_to_json(wb.Sheets['Egresos'], { header: 1, defval: nu
 for (const r of E.slice(1)) {
   if (!r || !clean(r[5])) continue;                      // sin medio de pago
   const caja = resolveCaja(r[5]);
-  const category = clean(r[2]);
+  const expense_type = fixType(clean(r[7]));
+  // Egresos sin categoría en la planilla son ajustes/movimientos → "Otros Gastos y Ajustes".
+  const category = clean(r[2]) || 'Otros Gastos y Ajustes';
   const usd = num(r[10]), ars = num(r[9]);
   if (usd == null && ars == null) continue;
   const reasons = [];
@@ -92,7 +100,7 @@ for (const r of E.slice(1)) {
     counterparty: clean(r[4]), counterparty_type: 'supplier', client_id: null, supplier_id: null,
     description: clean(r[3]), sale_ref: /^0+\d+$/.test(String(r[8] ?? '')) ? clean(r[8]) : null,
     currency: ars != null ? 'ARS' : 'USD', amount_ars: r2(ars), amount_usd: r2(usd), exchange_rate: num(r[11]),
-    fixed_variable: clean(r[6]), expense_type: clean(r[7]),
+    fixed_variable: clean(r[6]), expense_type,
     transfer: false, needs_review: reasons.length > 0, review_reason: reasons.join('; ') || null,
   });
   report.egresos++;
