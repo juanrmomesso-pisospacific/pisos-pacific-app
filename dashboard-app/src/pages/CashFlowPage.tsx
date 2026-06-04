@@ -40,6 +40,9 @@ function plLine(m: CashflowMovement): string {
   return m.expense_type || "Otros Gastos y Ajustes"
 }
 
+// Dimensión principal del libro: Tipo de Gasto (egresos) o rubro de venta (ingresos).
+const rubroOf = (m: CashflowMovement) => (m.flow === "Egreso" ? (m.expense_type || m.category) : m.category) || "—"
+
 export default function CashFlowPage() {
   const movements = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
   const cajas = useApi<Caja[]>("/api/cajas").data ?? []
@@ -259,19 +262,19 @@ function Gastos({ movements, year }: { movements: CashflowMovement[]; year: numb
 }
 
 // ============================ Libro (filtros + orden) ============================
-type SortKey = "date" | "flow" | "caja_name" | "category" | "counterparty" | "amount_usd"
+type SortKey = "date" | "flow" | "caja_name" | "rubro" | "counterparty" | "amount_usd"
 
 function Libro({ movements, cajas }: { movements: CashflowMovement[]; cajas: Caja[] }) {
   const [flow, setFlow] = useState("Todos")
   const [cajaId, setCajaId] = useState("Todas")
-  const [category, setCategory] = useState("Todas")
+  const [rubro, setRubro] = useState("Todos")
   const [q, setQ] = useState("")
   const [onlyReview, setOnlyReview] = useState(false)
   const [sortKey, setSortKey] = useState<SortKey>("date")
   const [sortDir, setSortDir] = useState<"asc" | "desc">("desc")
 
-  const categories = useMemo(
-    () => [...new Set(movements.map((m) => m.category).filter(Boolean) as string[])].sort(),
+  const rubros = useMemo(
+    () => [...new Set(movements.map(rubroOf).filter((r) => r !== "—"))].sort(),
     [movements],
   )
 
@@ -280,22 +283,22 @@ function Libro({ movements, cajas }: { movements: CashflowMovement[]; cajas: Caj
     const out = movements.filter((m) => {
       if (flow !== "Todos" && m.flow !== flow) return false
       if (cajaId !== "Todas" && m.caja_id !== cajaId) return false
-      if (category !== "Todas" && m.category !== category) return false
+      if (rubro !== "Todos" && rubroOf(m) !== rubro) return false
       if (onlyReview && !m.needs_review) return false
       if (needle) {
-        const hay = `${m.counterparty ?? ""} ${m.description ?? ""} ${m.category ?? ""} ${m.id}`.toLowerCase()
+        const hay = `${m.counterparty ?? ""} ${m.description ?? ""} ${rubroOf(m)} ${m.id}`.toLowerCase()
         if (!hay.includes(needle)) return false
       }
       return true
     })
     const dir = sortDir === "asc" ? 1 : -1
     return out.sort((a, b) => {
-      let av: string | number = a[sortKey] ?? ""
-      let bv: string | number = b[sortKey] ?? ""
-      if (sortKey === "amount_usd") { av = a.amount_usd ?? 0; bv = b.amount_usd ?? 0; return (av - bv) * dir }
+      if (sortKey === "amount_usd") return ((a.amount_usd ?? 0) - (b.amount_usd ?? 0)) * dir
+      const av = sortKey === "rubro" ? rubroOf(a) : (a[sortKey] ?? "")
+      const bv = sortKey === "rubro" ? rubroOf(b) : (b[sortKey] ?? "")
       return String(av).localeCompare(String(bv)) * dir
     })
-  }, [movements, flow, cajaId, category, q, onlyReview, sortKey, sortDir])
+  }, [movements, flow, cajaId, rubro, q, onlyReview, sortKey, sortDir])
 
   const reviewCount = useMemo(() => movements.filter((m) => m.needs_review).length, [movements])
   const shown = filtered.slice(0, 400)
@@ -326,9 +329,9 @@ function Libro({ movements, cajas }: { movements: CashflowMovement[]; cajas: Caj
             <option value="Todas">Todas las cajas</option>
             {cajas.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
           </select>
-          <select className={selectCls} value={category} onChange={(e) => setCategory(e.target.value)}>
-            <option value="Todas">Todas las categorías</option>
-            {categories.map((c) => <option key={c} value={c}>{c}</option>)}
+          <select className={selectCls} value={rubro} onChange={(e) => setRubro(e.target.value)}>
+            <option value="Todos">Todos los tipos</option>
+            {rubros.map((c) => <option key={c} value={c}>{c}</option>)}
           </select>
           <button
             onClick={() => setOnlyReview((v) => !v)}
@@ -350,7 +353,7 @@ function Libro({ movements, cajas }: { movements: CashflowMovement[]; cajas: Caj
               <SortHead k="date">Fecha</SortHead>
               <SortHead k="flow">Tipo</SortHead>
               <SortHead k="caja_name">Caja</SortHead>
-              <SortHead k="category">Categoría</SortHead>
+              <SortHead k="rubro">Tipo de gasto</SortHead>
               <SortHead k="counterparty">Motivo / Contraparte</SortHead>
               <SortHead k="amount_usd" right>USD</SortHead>
             </TableRow>
@@ -367,7 +370,7 @@ function Libro({ movements, cajas }: { movements: CashflowMovement[]; cajas: Caj
                   {m.caja_name || <span className="text-muted-foreground inline-flex items-center gap-1"><AlertTriangle className="h-3 w-3" />s/caja</span>}
                 </TableCell>
                 <TableCell className="text-xs text-muted-foreground max-w-[190px] truncate">
-                  {m.category || "—"}{m.subcategory ? <span className="opacity-60"> · {m.subcategory}</span> : null}
+                  {rubroOf(m)}{m.subcategory ? <span className="opacity-60"> · {m.subcategory}</span> : null}
                 </TableCell>
                 <TableCell className="text-xs max-w-[260px] truncate">
                   <div className="font-medium truncate">{m.counterparty || "—"}</div>

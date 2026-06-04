@@ -98,7 +98,7 @@ export default function GastosPage() {
               {rows.map((r) => (
                 <TableRow key={r.id} className="hover:bg-muted/30">
                   <TableCell className="text-xs text-muted-foreground tabular whitespace-nowrap">{r.date?.slice(0, 10)}</TableCell>
-                  <TableCell className="text-xs"><div>{r.expense_type || "—"}</div><div className="text-muted-foreground">{r.category}{r.subcategory ? ` · ${r.subcategory}` : ""}</div></TableCell>
+                  <TableCell className="text-xs"><div>{r.expense_type || "—"}</div>{r.subcategory ? <div className="text-muted-foreground">{r.subcategory}</div> : null}</TableCell>
                   <TableCell className="max-w-[320px] truncate"><div className="text-sm">{r.description || "—"}</div><div className="text-xs text-muted-foreground truncate">{r.counterparty}</div></TableCell>
                   <TableCell className="text-xs text-muted-foreground">{r.caja_name || "—"}</TableCell>
                   <TableCell><Badge variant="outline" className="text-[10px] font-normal">{r.fixed_variable || "—"}</Badge></TableCell>
