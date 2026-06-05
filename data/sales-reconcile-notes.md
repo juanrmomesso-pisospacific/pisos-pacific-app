@@ -93,3 +93,10 @@ Implementación: set contract_total = cashflow_paid (saldo 0; valor venta = cobr
   → agregar devolución -2075,15 (Caja General USD, 23/5, ref 0000116); contract = 3840,90 (saldo 0).
 - 0000012... (ya)
 - FALTA VALOR (contrato venía mal): 0000106 Ada Elflein (adelanto $2000, falta cobrar), 0000048 Michelle (falta cobrar), 0000079 Roble Gris (contrato negativo).
+
+## Sobrepagadas chicas — valores exactos del dueño (ronda 3)
+saldo 0 (valor=cobrado): 0000034(3500), 0000133(4576), 0000080(6060), 0000114(1938)
+valor exacto (queda saldo chico pendiente): 0000020(2673), 0000014(7364,80), 0000013(9416),
+  0000057(5216), 0000072(2974), 0000036(5071,50), 0000051(8757), 0000027(2453,85),
+  0000075(8744,20), 0000093(6036,80), 0000085(5511)
+RESULTADO: 0 sobrepagadas; pendiente de cobro = US$73.174 (30 ventas).
