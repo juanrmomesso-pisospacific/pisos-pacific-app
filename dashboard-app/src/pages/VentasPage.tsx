@@ -78,7 +78,11 @@ function DeliveryBadge({ value }: { value?: string | null }) {
   const done = value === "Finalizado"
   return <Badge variant="outline" className={cn("text-[10px] font-normal", done ? "text-muted-foreground" : "text-foreground border-foreground/30")}>{DELIVERY_LABEL[value] ?? value}</Badge>
 }
-const isDue = (s: Sale) => (s.financial_position?.balance_due ?? 0) > 0.5
+// Cobro/saldo: priorizar la conciliación del cashflow (ingresos linkeados a la venta);
+// caer a financial_position si la venta todavía no tiene cobros en el cashflow.
+const saldoDue = (s: Sale) => s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0
+const cobrado = (s: Sale) => s.cashflow_paid ?? s.financial_position?.total_paid ?? 0
+const isDue = (s: Sale) => saldoDue(s) > 0.5
 const isPendingDelivery = (s: Sale) => s.delivery_status !== "Finalizado"
 
 export default function VentasPage() {
@@ -120,7 +124,7 @@ export default function VentasPage() {
   // Pendientes: cobro (saldo > 0) y entrega (no finalizada, por sub-estado).
   const kpis = useMemo(() => {
     const due = sales.filter(isDue)
-    const dueTotal = due.reduce((a, s) => a + (s.financial_position?.balance_due ?? 0), 0)
+    const dueTotal = due.reduce((a, s) => a + saldoDue(s), 0)
     const acopiado = sales.filter((s) => s.delivery_status === "Acopiado").length
     const agendado = sales.filter((s) => s.delivery_status === "Agendado").length
     const sinEstado = sales.filter((s) => !s.delivery_status).length
@@ -209,7 +213,7 @@ function VentasTable({ rows }: { rows: Sale[] }) {
       </TableHeader>
       <TableBody>
         {rows.map((r) => {
-          const due = r.financial_position?.balance_due ?? 0
+          const due = saldoDue(r)
           return (
             <TableRow key={r.id}>
               <TableCell className="text-muted-foreground tabular">#{r.quote_number}</TableCell>
@@ -292,7 +296,7 @@ function VentasKanban({ rows }: { rows: Sale[] }) {
             </div>
             <div className="flex flex-col gap-2 p-2 min-h-[120px] max-h-[640px] overflow-y-auto">
               {list.length === 0 ? <div className="text-xs text-muted-foreground text-center py-6">Sin ventas</div> : list.map((r) => {
-                const due = r.financial_position?.balance_due ?? 0
+                const due = saldoDue(r)
                 const isDragging = draggingId === r.id
                 return (
                   <div
@@ -320,7 +324,7 @@ function VentasKanban({ rows }: { rows: Sale[] }) {
                     </div>
                     <div className="mt-1.5 flex items-center gap-1.5">
                       <DeliveryBadge value={r.delivery_status} />
-                      {isDue(r) ? <span className="text-[10px] text-foreground">· debe {fmtMoney(r.financial_position?.balance_due ?? 0)}</span> : null}
+                      {isDue(r) ? <span className="text-[10px] text-foreground">· debe {fmtMoney(saldoDue(r))}</span> : null}
                     </div>
                     {r.delivery_date && (
                       <div className="text-[10px] text-muted-foreground mt-0.5 inline-flex items-center gap-1">
@@ -365,8 +369,8 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
 
   if (!sale) return null
 
-  const due = sale.financial_position?.balance_due ?? 0
-  const paid = sale.financial_position?.total_paid ?? 0
+  const due = saldoDue(sale)
+  const paid = cobrado(sale)
   const isFirstSchedule = !sale.delivery_date
   const linkedQuote = quotes.find(q => q.id === sale.quote_id) ?? null
 

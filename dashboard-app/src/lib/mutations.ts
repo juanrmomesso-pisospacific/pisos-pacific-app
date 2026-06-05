@@ -1,21 +1,24 @@
 import { useState } from "react"
+import { errorMessage } from "./api"
 
 async function post<T = any>(url: string, body?: unknown): Promise<T> {
   const r = await fetch(url, {
     method: "POST",
+    credentials: "include",
     headers: { "Content-Type": "application/json" },
     body: body == null ? undefined : JSON.stringify(body),
   })
-  if (!r.ok) throw new Error(`${url} → ${r.status}`)
+  if (!r.ok) throw new Error(await errorMessage(r))
   return r.json()
 }
 async function patch<T = any>(url: string, body: unknown): Promise<T> {
   const r = await fetch(url, {
     method: "PATCH",
+    credentials: "include",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   })
-  if (!r.ok) throw new Error(`${url} → ${r.status}`)
+  if (!r.ok) throw new Error(await errorMessage(r))
   return r.json()
 }
 

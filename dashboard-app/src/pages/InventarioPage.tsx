@@ -148,7 +148,7 @@ function StockTable({ rows }: { rows: Product[] }) {
               <TableCell className="text-muted-foreground text-xs">{p.category}</TableCell>
               <TableCell className="text-right tabular text-muted-foreground">{fmtMoney(p.cost)}</TableCell>
               <TableCell className="text-right tabular">{fmtMoney(p.price)} <span className="text-xs text-muted-foreground">{p.currency}</span></TableCell>
-              <TableCell className="text-right tabular text-muted-foreground">+{Math.round((p.margin || 0))}%</TableCell>
+              <TableCell className="text-right tabular text-muted-foreground">{(() => { const m = Math.round(p.margin || 0); return (m > 0 ? "+" : "") + m + "%" })()}</TableCell>
               <TableCell className={cn("text-right tabular", out && "text-destructive font-medium")}>{fmtInt(stock)}</TableCell>
               <TableCell className="text-right tabular">
                 {reserved > 0

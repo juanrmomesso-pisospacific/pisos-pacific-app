@@ -311,7 +311,12 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
         <div className="flex items-center justify-between mb-1.5">
           <FieldLabel>Items</FieldLabel>
           <label className="flex items-center gap-1.5 text-xs text-muted-foreground cursor-pointer">
-            <input type="checkbox" checked={zoned} onChange={(e) => setZoned(e.target.checked)} />
+            <input type="checkbox" checked={zoned} onChange={(e) => {
+              const on = e.target.checked
+              setZoned(on)
+              // Al activar zonas, asignar los ítems sin zona a la primera (si no, desaparecen de la vista).
+              if (on) setItems(its => its.map(it => it.zone ? it : { ...it, zone: zones[0] }))
+            }} />
             Separar por zonas
           </label>
         </div>

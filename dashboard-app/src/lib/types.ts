@@ -62,6 +62,9 @@ export type Sale = {
   stock_reserved: boolean
   stock_deducted: boolean
   discount_total?: number     // suma de descuentos por ítem (sin IVA)
+  // Cobro real conciliado desde el cashflow (ingresos con este venta_nro)
+  cashflow_paid?: number
+  cashflow_balance_due?: number   // contract_total − cashflow_paid
   // Margen calculado por el backend (para dashboards)
   venta_neta?: number
   cogs?: number
