@@ -181,6 +181,17 @@ No hay **saldo de apertura** cargado en ninguna caja. Se cierra con un **ajuste 
   no registrados, porque además se le suman los cobros faltantes).
 - **Especial pendiente**: 0000007 (cobro $8.900 mal atribuido → 0000006, que ya está sobrepagada) — CONFIRMAR.
 
+### ✅ APLICADO (conciliación completa, 2026-06-05)
+- **Las 6 cajas coinciden EXACTO con el arqueo real** (total US$100.673), vía cobros faltantes +
+  ajustes de apertura por caja (fuera del P&L). `scripts/import-reconcile.mjs`.
+- **0000006/0000007 resueltas**: re-link del cobro $7.000 → 0000006 (valor con colocación US$26.000).
+- **53 ventas con saldo + 24 sobrepagadas revisadas una por una.** 0 sobrepagos. Cada venta con su
+  valor real (dato del dueño). Cobros faltantes y devoluciones/comisiones cargados.
+- **Pendiente de cobro real = US$73.174** (30 ventas).
+- **Chat WhatsApp mayo-junio**: totalmente reflejado (faltaban ~US$36). El gap restante de efectivo
+  (Caja General, ajuste −US$17.124) es acumulado/viejo, cerrado con el ajuste de apertura.
+- Detalle completo en [`data/sales-reconcile-notes.md`](data/sales-reconcile-notes.md).
+
 ---
 
 ## 7. Pendientes / próximas decisiones
