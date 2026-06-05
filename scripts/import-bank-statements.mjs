@@ -61,9 +61,38 @@ for (const [date, ars] of [['07', 200000], ['11', 100000], ['13', 200457], ['18'
 // Impuestos bancarios agrupados (Ley 25413 déb+créd + IVA + comisiones cheque)
 egr('31', 16871.81 + 204786.75 + 474.12 + (752.57 * 3) + (158.04 * 3), 'Banco de Comercio', 'Impuestos y Tasas', { category: 'Impuestos', fv: 'Fijo', desc: 'Impuestos bancarios mayo (Ley 25413 + IVA + comisiones)' });
 
+// ===================== BBVA (mixta) — abr-jun 2026 (CAJ-001) =====================
+// Cuenta mixta (negocio + personal). Solo se cargan los movimientos del NEGOCIO,
+// confirmados por el dueño. Lo personal (alquileres, comidas, tarjetas, sueldo) se omite.
+// Las tarjetas no se cargan: las compras ya están registradas (en BdC); el pago solo las salda.
+const BBVA = 'CAJ-001', BBVA_NAME = 'BBVA';
+const bIng = (dateISO, ars, counterparty, desc, sale = null) => out.push(mk('BBVA', {
+  date: dateISO + 'T00:00:00.000Z', flow: 'Ingreso', caja_id: BBVA, caja_name: BBVA_NAME,
+  category: 'Venta - No Pisos', subcategory: null, counterparty, counterparty_type: 'client',
+  client_id: null, supplier_id: null, description: desc, sale_ref: sale,
+  currency: 'ARS', amount_ars: ars, amount_usd: usd(ars), exchange_rate: TC,
+  fixed_variable: null, expense_type: null, transfer: false, needs_review: false, review_reason: null,
+}));
+const bEgr = (dateISO, ars, counterparty, desc, fv = 'Variable') => out.push(mk('BBVA', {
+  date: dateISO + 'T00:00:00.000Z', flow: 'Egreso', caja_id: BBVA, caja_name: BBVA_NAME,
+  category: 'Flota', subcategory: null, counterparty, counterparty_type: 'supplier',
+  client_id: null, supplier_id: null, description: desc, sale_ref: null,
+  currency: 'ARS', amount_ars: ars, amount_usd: usd(ars), exchange_rate: TC,
+  fixed_variable: fv, expense_type: 'Gastos de Flota/Vehículos', transfer: false, needs_review: false, review_reason: null,
+}));
+// Cobros del negocio (paneles / obras ACUDESIGN)
+bIng('2026-05-06', 157300.00, 'Venta Paneles', 'Venta de Paneles');
+bIng('2026-06-02', 849420.00, 'Arq. Ulises Salas', 'Obra ACUDESIGN - Paneles');
+bIng('2026-06-03', 6676809.98, 'AgroAlimentos', 'Obra ACUDESIGN - Paneles');
+bIng('2026-06-03', 550550.00, 'Tribucreativa', 'Obra ACUDESIGN - Paneles');
+// Gastos del negocio (flota)
+bEgr('2026-04-28', 134583.34, 'Sancor Seguros', 'Seguro auto Taos', 'Fijo');
+bEgr('2026-05-07', 65185.90, 'ARBA', 'Patente ARBA auto T-Cross');
+bEgr('2026-05-20', 137582.88, 'Sancor Seguros', 'Seguro auto Taos - Mayo', 'Fijo');
+
 // ============================================================================
 fs.writeFileSync(path.join(DATA, 'cashflow-bank-extra.seed.json'), JSON.stringify(out, null, 2));
 const ingN = out.filter((m) => m.flow === 'Ingreso').length, egrN = out.filter((m) => m.flow === 'Egreso').length, tr = out.filter((m) => m.transfer).length;
 const net = out.reduce((s, m) => s + (m.flow === 'Ingreso' ? 1 : -1) * (m.amount_usd || 0), 0);
 console.log(`cashflow-bank-extra.seed.json: ${out.length} movimientos (${ingN} ingresos, ${egrN} egresos, ${tr} transferencias)`);
-console.log(`impacto neto en el saldo de Banco de Comercio: US$ ${Math.round(net)}`);
+console.log(`impacto neto en los saldos (BdC + BBVA): US$ ${Math.round(net)}`);

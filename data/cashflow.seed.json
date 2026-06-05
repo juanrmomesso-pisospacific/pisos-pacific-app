@@ -50099,17 +50099,17 @@
     "counterparty_type": "supplier",
     "client_id": null,
     "supplier_id": null,
-    "description": "Sueldo Propio Cuentas",
+    "description": "Pago Jardín Filipa (giro a BBVA)",
     "sale_ref": null,
     "currency": "ARS",
-    "amount_ars": 1557607,
-    "amount_usd": 1112.58,
+    "amount_ars": 1157607,
+    "amount_usd": 826.86,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
     "expense_type": "Gastos de Personal (HR y Mano de Obra)",
     "transfer": false,
     "needs_review": false,
-    "review_reason": "Corregido s/resumen bancario (era 1.157.607)"
+    "review_reason": null
   },
   {
     "id": "MOV-02089",
