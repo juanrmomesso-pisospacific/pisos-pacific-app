@@ -27,6 +27,9 @@ export type SaleItem = {
   zone?: string               // zona/sección del presupuesto (ej. "Planta Baja")
   image?: string
   category?: string
+  disc_kind?: "pct" | "amount"  // descuento por ítem: tipo
+  disc_value?: number           // descuento por ítem: valor ingresado (% o $)
+  discount?: number             // descuento por ítem: monto resuelto en $ (sin IVA)
 }
 
 export type FinancialPosition = {

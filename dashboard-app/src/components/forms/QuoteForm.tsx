@@ -12,7 +12,7 @@ import type { Product, Quote } from "@/lib/types"
 
 type Settings = { sellers?: { name: string; phone?: string }[] }
 type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] }
-type LineItem = { product_id: string; sku: string; description: string; quantity: number; unit_price: number; category: string; zone?: string }
+type LineItem = { product_id: string; sku: string; description: string; quantity: number; unit_price: number; category: string; zone?: string; disc_kind?: "pct" | "amount"; disc_value?: number }
 
 export type QuotePrefill = {
   lead_id?: string
@@ -37,7 +37,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const isEdit = !!editQuote
   const editItems: LineItem[] = (editQuote?.items ?? [])
     .filter((it) => it.product_id !== "discount" && !/^descuento/i.test(it.description || ""))
-    .map((it) => ({ product_id: it.product_id || "", sku: it.sku, description: it.description, quantity: it.quantity, unit_price: it.unit_price, category: it.category || "", zone: it.zone }))
+    .map((it) => ({ product_id: it.product_id || "", sku: it.sku, description: it.description, quantity: it.quantity, unit_price: it.unit_price, category: it.category || "", zone: it.zone, disc_kind: it.disc_kind, disc_value: it.disc_value }))
 
   const [clientId, setClientId] = useState<string>(editQuote?.client_id ?? "")
   const [seller, setSeller] = useState<string>(editQuote?.seller_name ?? sellers[0]?.name ?? "")
@@ -46,11 +46,6 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const [internalNotes, setInternalNotes] = useState<string>(editQuote?.internal_notes ?? prefill?.internal_notes ?? "")
   const [hasIva, setHasIva] = useState<boolean>(editQuote?.has_iva ?? false)
   const [items, setItems] = useState<LineItem[]>(editItems)
-  // Preserve discount on edit: explicit value, or sum of any per-item discount lines (Vercel quotes).
-  const editDiscFromItems = (editQuote?.items ?? []).filter((it) => it.product_id === "discount" || /^descuento/i.test(it.description || "")).reduce((s, it) => s + Math.abs(it.total || 0), 0)
-  const [discountKind, setDiscountKind] = useState<"pct" | "amount">(editQuote?.discount_kind ?? (editDiscFromItems > 0 ? "amount" : "pct"))
-  const [discountValue, setDiscountValue] = useState<number>(editQuote?.discount_value ?? (editDiscFromItems > 0 ? Math.round(editDiscFromItems * 100) / 100 : 0))
-  const [discountReason, setDiscountReason] = useState<string>(editQuote?.internal_discount_reason ?? "")
   const [zoned, setZoned] = useState<boolean>(editQuote?.zoned ?? false)
   const [zones, setZones] = useState<string[]>(() => {
     const zs = [...new Set(editItems.map((i) => i.zone).filter(Boolean) as string[])]
@@ -126,12 +121,16 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
     setItems(matched)
   }, [open, products.length])
 
-  const subtotal = useMemo(() => items.reduce((s, i) => s + (i.quantity * i.unit_price), 0), [items])
-  const discountAmount = useMemo(() => {
-    if (discountValue <= 0) return 0
-    if (discountKind === "pct") return Math.min(subtotal, subtotal * discountValue / 100)
-    return Math.min(subtotal, discountValue)
-  }, [discountKind, discountValue, subtotal])
+  const itemGross = (it: LineItem) => (it.quantity || 0) * (it.unit_price || 0)
+  const itemDisc = (it: LineItem) => {
+    const g = itemGross(it)
+    if (!it.disc_value || it.disc_value <= 0) return 0
+    const amt = it.disc_kind === "amount" ? it.disc_value : g * it.disc_value / 100
+    return Math.min(g, Math.round(amt * 100) / 100)
+  }
+  const itemNet = (it: LineItem) => itemGross(it) - itemDisc(it)
+  const subtotal = useMemo(() => items.reduce((s, i) => s + itemGross(i), 0), [items])
+  const discountAmount = useMemo(() => items.reduce((s, i) => s + itemDisc(i), 0), [items])
   const subtotalAfterDiscount = Math.max(0, subtotal - discountAmount)
   const iva = hasIva ? subtotalAfterDiscount * IVA_RATE : 0
   const total = subtotalAfterDiscount + iva
@@ -173,11 +172,10 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       price: total,
       zoned: zoned,
       description: items.length === 1 ? items[0].description : `${items[0]?.description ?? ""} + ${items.length - 1} más`,
-      items: items.map(it => ({ ...it, total: it.quantity * it.unit_price, image: "", target_item_index: null })),
-      discount_kind: discountKind,
-      discount_value: discountAmount > 0 ? discountValue : 0,
-      discount_amount: discountAmount > 0 ? Math.round(discountAmount * 100) / 100 : 0,
-      internal_discount_reason: discountReason || "",
+      // item.total = bruto (qty×precio); item.discount = monto del descuento de ese ítem.
+      items: items.map(it => ({ ...it, total: itemGross(it), discount: itemDisc(it), image: "", target_item_index: null })),
+      discount_total: Math.round(discountAmount * 100) / 100,   // suma de descuentos por ítem (para margen y PDF)
+      discount_amount: Math.round(discountAmount * 100) / 100,
     }
     const r = isEdit
       ? await update.run("quotes", editQuote!.id, common)
@@ -233,8 +231,20 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
             <Input type="number" min={0} step="0.01" value={it.unit_price} onChange={(e) => updateItem(idx, { unit_price: Number(e.target.value) || 0 })} className="h-8" />
           </div>
           <div className="text-right text-xs tabular pt-2">
-            <span className="text-muted-foreground">Total: </span>{fmtMoney(it.quantity * it.unit_price)}
+            {itemDisc(it) > 0 ? (
+              <><span className="text-muted-foreground line-through mr-1">{fmtMoney(itemGross(it))}</span><span className="font-medium">{fmtMoney(itemNet(it))}</span></>
+            ) : (<><span className="text-muted-foreground">Total: </span>{fmtMoney(itemGross(it))}</>)}
           </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-[10px] uppercase tracking-wide text-muted-foreground">Descuento</span>
+          <div className="inline-flex rounded-md border border-input overflow-hidden">
+            <button type="button" onClick={() => updateItem(idx, { disc_kind: "pct" })} className={`px-2 h-7 text-xs ${(it.disc_kind ?? "pct") === "pct" ? "bg-foreground text-background" : "bg-transparent"}`}>%</button>
+            <button type="button" onClick={() => updateItem(idx, { disc_kind: "amount" })} className={`px-2 h-7 text-xs ${it.disc_kind === "amount" ? "bg-foreground text-background" : "bg-transparent"}`}>$</button>
+          </div>
+          <Input type="number" min={0} step="0.01" value={it.disc_value ?? ""} onChange={(e) => updateItem(idx, { disc_value: Math.max(0, Number(e.target.value) || 0) })} className="h-8 w-24" placeholder={(it.disc_kind ?? "pct") === "pct" ? "0 %" : "$ 0"} />
+          <span className="text-[10px] text-muted-foreground">(opcional)</span>
+          {itemDisc(it) > 0 && <span className="text-[11px] text-emerald-700 tabular ml-auto">−{fmtMoney(itemDisc(it))}</span>}
         </div>
       </div>
     )
@@ -319,7 +329,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
           <div className="space-y-3">
             {zones.map((zone, zi) => {
               const zoneItems = items.filter(it => it.zone === zone)
-              const zoneSub = zoneItems.reduce((s, it) => s + it.quantity * it.unit_price, 0)
+              const zoneSub = zoneItems.reduce((s, it) => s + itemNet(it), 0)
               return (
                 <div key={zi} className="rounded-md border border-border p-3 space-y-2 bg-muted/20">
                   <div className="flex items-center gap-2">
@@ -338,22 +348,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       </div>
 
       <div className="pt-2 space-y-2">
-        <div className="rounded-md border border-border p-3 space-y-2">
-          <div className="flex items-center justify-between gap-2">
-            <div className="text-sm font-medium">Descuento</div>
-            <div className="inline-flex rounded-md border border-input overflow-hidden">
-              <button type="button" onClick={() => setDiscountKind("pct")} className={`px-2 h-7 text-xs ${discountKind === "pct" ? "bg-foreground text-background" : "bg-transparent"}`}>%</button>
-              <button type="button" onClick={() => setDiscountKind("amount")} className={`px-2 h-7 text-xs ${discountKind === "amount" ? "bg-foreground text-background" : "bg-transparent"}`}>$</button>
-            </div>
-          </div>
-          <Input type="number" min={0} step="0.01" value={discountValue} onChange={(e) => setDiscountValue(Math.max(0, Number(e.target.value) || 0))} className="h-8" placeholder={discountKind === "pct" ? "0%" : "$ 0"} />
-          {discountAmount > 0 && (
-            <div className="text-[11px] text-muted-foreground tabular">
-              Descontado: <span className="text-foreground font-medium">{fmtMoney(discountAmount)}</span>{discountKind === "pct" ? ` (${discountValue}% sobre ${fmtMoney(subtotal)})` : ""}
-            </div>
-          )}
-          <Input value={discountReason} onChange={(e) => setDiscountReason(e.target.value)} placeholder="Motivo interno (no aparece en el PDF)" className="h-8 text-xs" />
-        </div>
+        <p className="text-[11px] text-muted-foreground">El descuento se carga <b>por ítem</b> (al lado del precio). Si un ítem no tiene descuento, no aparece en el presupuesto.</p>
         <label className="flex items-center gap-2 text-sm">
           <input type="checkbox" checked={hasIva} onChange={(e) => setHasIva(e.target.checked)} />
           Incluye IVA ({(IVA_RATE * 100).toFixed(0)}%)
@@ -362,7 +357,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
           <div className="flex justify-between"><span className="text-muted-foreground">Subtotal</span><span className="tabular">{fmtMoney(subtotal)}</span></div>
           {discountAmount > 0 && (
             <>
-              <div className="flex justify-between text-emerald-700"><span>Descuento{discountKind === "pct" ? ` (-${discountValue}%)` : ""}</span><span className="tabular">−{fmtMoney(discountAmount)}</span></div>
+              <div className="flex justify-between text-emerald-700"><span>Descuentos por ítem</span><span className="tabular">−{fmtMoney(discountAmount)}</span></div>
               <div className="flex justify-between"><span className="text-muted-foreground">Subtotal c/desc.</span><span className="tabular">{fmtMoney(subtotalAfterDiscount)}</span></div>
             </>
           )}
