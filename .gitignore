@@ -32,3 +32,7 @@ __pycache__/
 
 # Source spreadsheets (large; the generated *.seed.json is the committed source of truth)
 data/sources/
+
+# tooling de skills (npx skills add)
+.agents/
+skills-lock.json

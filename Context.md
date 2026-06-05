@@ -149,17 +149,37 @@ cashflow: [...cashflow.seed.json, ...cashflow-bank-extra, ...cashflow-mp-extra, 
 | Banco de Comercio - Cuenta USD | 0 |
 | **Total** | **96.477** |
 
-### Saldos REALES (que pasó el dueño, jun-2026) — para conciliar
-| Caja | Real | = US$@1400 | App | Diferencia |
+### Saldos REALES (arqueo del dueño, jun-2026) — para conciliar
+| Caja | Real | = US$@1400 | App | Real − App |
 |------|------|-----------|-----|-----------|
-| BBVA | $9.952.122 | 7.109 | 754 | +6.355 |
+| BBVA (mixta) | $9.952.122 | 7.109 | 754 | +6.355 |
 | BdC Cuenta Pesos | $46.411.012 | 33.151 | 28.075 | +5.076 |
 | BdC Cuenta USD | US$1.812 | 1.812 | 0 | +1.812 |
 | Mercado Pago | $4.698.605 | 3.356 | −606 | +3.962 |
+| **Caja General (efectivo)** | US$37.900 + $1.002.000 | 38.616 | 51.625 | **−13.009** |
+| Wise | _(pendiente)_ | — | 16.629 | — |
 
-La app está **por debajo** de la realidad: no hay **saldo de apertura** cargado (la app suma solo los
-movimientos desde 2025, no arranca del saldo real), la cuenta USD de BdC no tiene movimientos, y MP/efectivo
-histórico está incompleto. Se arregla con un **ajuste de conciliación** por caja (asiento de saldo, fuera del P&L).
+Patrón: en los **bancos/MP la app está por debajo** de la realidad (faltan saldos de apertura e ingresos);
+en el **efectivo (Caja General) la app está por ENCIMA** US$13.009 (gastos en efectivo que no se registraron).
+No hay **saldo de apertura** cargado en ninguna caja. Se cierra con un **ajuste de conciliación** por caja
+(asiento de saldo, fuera del P&L) y/o investigando los huecos.
+
+### Decisiones de conciliación (sesión grilling 2026-06-05)
+- **TC**: 1400 para consolidar pesos→USD.
+- **Saldos reales** (arqueo): Caja General US$37.900 + $1.002.000 (≈US$38.616); Wise coincide (US$16.629).
+- **Regla ventas↔ingresos**: el `contract_total` NO es confiable (incluye IVA / ajustes de obra / inflado).
+  Para Finalizado/Cobrado el **valor real de venta = lo cobrado** (cashflow), saldo 0. Detalle caso por caso
+  en [`data/sales-reconcile-notes.md`](data/sales-reconcile-notes.md).
+- **Cuentas por cobrar reales** (~US$56k): 0000098, 0000122, 0000112, 0000121, 0000086, 0000088, 0000092,
+  0000100, 0000124, 0000131, 0000078. El resto de las Finalizadas → saldo 0.
+- **Cobros faltantes a cargar** (→ Caja General, efectivo/USD): 0000107 US$5.350 (7/05), 0000132 US$605 (11/05),
+  0000120 US$1.789 (10/04) + egreso comisión Cami Fuks US$440 (Marketing/Ventas).
+- **BBVA** (mixta): se deja en su saldo real US$7.109; el excedente sobre el negocio (+US$6.355) entra como
+  **ajuste de apertura personal (Juan & Pipi), fuera del P&L**. No se mueve nada a Banco de Comercio.
+- **Método**: tras cargar los cobros faltantes, **ajuste de apertura por caja** (fuera del P&L) para que cada
+  caja = saldo real. Ojo: Caja General necesitará un ajuste NEGATIVO grande (~US$20k de gastos en efectivo
+  no registrados, porque además se le suman los cobros faltantes).
+- **Especial pendiente**: 0000007 (cobro $8.900 mal atribuido → 0000006, que ya está sobrepagada) — CONFIRMAR.
 
 ---
 
