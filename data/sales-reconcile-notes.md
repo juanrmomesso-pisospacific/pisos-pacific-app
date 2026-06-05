@@ -82,3 +82,14 @@ Implementación: set contract_total = cashflow_paid (saldo 0; valor venta = cobr
 - 22 ventas SOBREPAGADAS (cobrado > contrato, ~US$30k total): mismo patrón IVA, pero sin revisar.
   Las más grandes: 0000056 (-6103), 0000109 (-3944), 0000074 (-3310), 0000116 (-2742), 0000138 (-2502),
   0000106 (-2198). Revisar caso por caso (igual que las positivas) en otra sesión.
+
+## Sobrepagadas — grilling (2026-06-05, ronda 2)
+- 0000074 Hauston: agregaron zócalos → contract = cobrado (9039), saldo 0.
+- 0000012 Belgrano: valor = cobrado (4100), saldo 0.
+- 0000138 Highland: valor = cobrado (14415), saldo 0; AGREGAR egreso comisión Oppel US$1078 (Marketing/Ventas, ref 0000138).
+- 0000056 Oficinas Agustina Lando: valor real = 19000 → PENDIENTE (+6103). "revisar la venta".
+- 0000109 Praderas Conni: valor real = 12944 → PENDIENTE (+3944).
+- 0000116 Mapuches Estefy: cobró 5916,05 (27/3), DEVOLVIÓ 2075,15 (23/5, incl IVA, desde USD) por -35m2.
+  → agregar devolución -2075,15 (Caja General USD, 23/5, ref 0000116); contract = 3840,90 (saldo 0).
+- 0000012... (ya)
+- FALTA VALOR (contrato venía mal): 0000106 Ada Elflein (adelanto $2000, falta cobrar), 0000048 Michelle (falta cobrar), 0000079 Roble Gris (contrato negativo).

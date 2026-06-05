@@ -77,6 +77,31 @@
   {
     "id": "MOV-REC-004",
     "source": "reconcile",
+    "date": "2026-05-23T00:00:00.000Z",
+    "flow": "Ingreso",
+    "caja_id": "CAJ-005",
+    "caja_name": "Caja General",
+    "category": "Venta - Pisos",
+    "subcategory": null,
+    "counterparty": "Arq. Estefy",
+    "counterparty_type": "client",
+    "client_id": null,
+    "supplier_id": null,
+    "description": "Devolución 35m2 - Obra Mapuches",
+    "sale_ref": "0000116",
+    "currency": "USD",
+    "amount_ars": null,
+    "amount_usd": -2075.15,
+    "exchange_rate": null,
+    "fixed_variable": null,
+    "expense_type": null,
+    "transfer": false,
+    "needs_review": false,
+    "review_reason": null
+  },
+  {
+    "id": "MOV-REC-005",
+    "source": "reconcile",
     "date": "2026-04-10T00:00:00.000Z",
     "flow": "Egreso",
     "caja_id": "CAJ-005",
@@ -100,7 +125,32 @@
     "review_reason": null
   },
   {
-    "id": "MOV-REC-005",
+    "id": "MOV-REC-006",
+    "source": "reconcile",
+    "date": "2026-05-17T00:00:00.000Z",
+    "flow": "Egreso",
+    "caja_id": "CAJ-005",
+    "caja_name": "Caja General",
+    "category": "Comisiones",
+    "subcategory": null,
+    "counterparty": "Oppel",
+    "counterparty_type": "supplier",
+    "client_id": null,
+    "supplier_id": null,
+    "description": "Comisión Oppel - Obra Highland",
+    "sale_ref": "0000138",
+    "currency": "USD",
+    "amount_ars": null,
+    "amount_usd": 1078,
+    "exchange_rate": null,
+    "fixed_variable": "Variable",
+    "expense_type": "Marketing y Ventas",
+    "transfer": false,
+    "needs_review": false,
+    "review_reason": null
+  },
+  {
+    "id": "MOV-REC-007",
     "source": "reconcile",
     "date": "2026-06-05T00:00:00.000Z",
     "flow": "Ingreso",
@@ -125,7 +175,7 @@
     "review_reason": null
   },
   {
-    "id": "MOV-REC-006",
+    "id": "MOV-REC-008",
     "source": "reconcile",
     "date": "2026-06-05T00:00:00.000Z",
     "flow": "Ingreso",
@@ -150,7 +200,7 @@
     "review_reason": null
   },
   {
-    "id": "MOV-REC-007",
+    "id": "MOV-REC-009",
     "source": "reconcile",
     "date": "2026-06-05T00:00:00.000Z",
     "flow": "Ingreso",
@@ -175,7 +225,7 @@
     "review_reason": null
   },
   {
-    "id": "MOV-REC-008",
+    "id": "MOV-REC-010",
     "source": "reconcile",
     "date": "2026-06-05T00:00:00.000Z",
     "flow": "Ingreso",
@@ -200,7 +250,7 @@
     "review_reason": null
   },
   {
-    "id": "MOV-REC-009",
+    "id": "MOV-REC-011",
     "source": "reconcile",
     "date": "2026-06-05T00:00:00.000Z",
     "flow": "Egreso",
@@ -216,7 +266,7 @@
     "sale_ref": null,
     "currency": "USD",
     "amount_ars": null,
-    "amount_usd": 20313.24,
+    "amount_usd": 17160.09,
     "exchange_rate": null,
     "fixed_variable": null,
     "expense_type": "Otros Gastos y Ajustes",
