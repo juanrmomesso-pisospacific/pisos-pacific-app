@@ -100,3 +100,50 @@ valor exacto (queda saldo chico pendiente): 0000020(2673), 0000014(7364,80), 000
   0000057(5216), 0000072(2974), 0000036(5071,50), 0000051(8757), 0000027(2453,85),
   0000075(8744,20), 0000093(6036,80), 0000085(5511)
 RESULTADO: 0 sobrepagadas; pendiente de cobro = US$73.174 (30 ventas).
+
+## Ventas sin cobro / errores de signo (grilling 2026-06-05, ronda 4)
+Las 12 negativas = error de signo (qty×precio positivo, total quedó negativo). Valor real = absoluto.
+- 0000018 Agro Oficinas: valor US$4.768, SALDADA POR CANJE (contra alquiler del depósito) → no pending, sin cobro de caja.
+- 0000037 Oficinas PRG: igual que 0000018, US$4.440, canje alquiler.
+- 0000097 Escalera (Rosario Novillo): es parte de Obra Tortugas (con 0000098). Usar info app vieja = cotización A0061. BORRAR 0000097; 0000098 queda con el detalle (total neto US$25.382).
+- 0000049 Aspen (Pacific San Juan): ELIMINAR (no avanzó).
+
+## Ronda 4 — tanda 2 (fusiones)
+- 0000108: BORRAR. 0000107 (Francisco Rollo) es la venta única, ya cobrada $16.350. Corregir cliente → "Francisco Royo".
+- 0000105: BORRAR. 0000104 (Sebastián Gurruchaga) es única, cobrado $4.200.
+- 0000101: BORRAR. 0000100 (Nuñez / Estudio BOW) es única, valor $5.334. AGREGAR cobro US$1.634 el 3/5 → saldo 0. AGREGAR comisión egreso US$540 (Estudio BOW, 3/5, Marketing/Ventas) — compartida Nuñez+Gurruchaga.
+- 0000067 Scalabrini (GGYA): valor $1.395, PENDIENTE.
+
+## Ronda 4 — tanda 3
+- 0000123 La Plata (Lea Rodriguez): cobro US$939 + egreso sueldo Juan&Pipi US$939 (salió directo como sueldo). valor 939, saldo 0.
+- 0000081 Hall AgroAlimentos: cobro 755+IVA = US$913,55 → BBVA. contract=913,55, saldo 0.
+- 0000032 Dorrego: cobro 720+IVA = US$871,20 → BBVA. contract=871,20, saldo 0.
+- 0000068 Newman (Mariana): valor 246, PENDIENTE.
+NOTA: tras agregar cobros, re-correr import-reconcile.mjs (cajas = saldo real).
+
+## Ronda 4 — grupo B (positivas sin cobro)
+- 0000125 Pereyra: cobro $3.147.000 ARS @TC1385 = US$2.272,20 + comisión egreso $147.000 ARS = US$106,14 (arquitecta, Marketing/Ventas). contract=2272, saldo 0. (caja a confirmar; asumo MP/BdC)
+- 0000134 Suipacha (Connie Huergo): adelanto US$7.000 efectivo 7/5 (Caja General). valor 9132 → saldo US$2.132 pendiente.
+- 0000129 Chacabuco (Beatriz): cobro US$2.400 efectivo (Caja General), saldo 0.
+- 7 pendientes restantes: revisar una por una.
+
+## Ronda 4 — grupo B (cierre)
+- 0000135 Haras Capilla (Chloé): cobro $14.729.575,63 @1390 = US$10.597,54 → Banco de Comercio 1/06. valor 12861, saldo ~2263 pendiente.
+- 0000136 Centauros (Kike): PENDIENTE.
+- 0000137 Freire (Agustina Lando): adelanto US$2.100 efectivo 29/5 (Caja General). valor 2951, saldo ~851 pendiente.
+- 0000126, 0000127, 0000128, 0000052: PENDIENTE (sin cobro).
+
+## RESUMEN APLICACIÓN ronda 4
+BORRAR: 0000097, 0000108, 0000105, 0000101, 0000049
+SIGN-FLIP item.total+contract a positivo: 0000018,0000037,0000067,0000123,0000081,0000032,0000068
+CLIENTE: 0000107 → "Francisco Royo"
+CANJE (financial_position saldado, sin caja): 0000018 (4768), 0000037 (4440)
+COBROS a cashflow (+ re-correr reconcile):
+  0000100 US$1.634 (Caja General); 0000123 US$939 (Caja Gral) + egreso sueldo Juan&Pipi US$939
+  0000081 US$913,55 BBVA; 0000032 US$871,20 BBVA
+  0000125 US$2.272,20 BdC; 0000129 US$2.400 efectivo; 0000134 US$7.000 efectivo 7/5
+  0000135 US$10.597,54 BdC 1/06; 0000137 US$2.100 efectivo 29/5
+COMISIONES egreso: US$540 Estudio BOW (0000100); US$106,14 arq. Pereyra (0000125)
+CONTRACT=cobrado (saldo 0): 0000081(913,55),0000032(871,20),0000123(939),0000125(2272,20),0000129(2400)
+PENDIENTE: 0000067(1395),0000068(246),0000126,0000127,0000128,0000136,0000052,
+  y parciales 0000134(saldo 2132),0000135(saldo 2263),0000137(saldo 851)
