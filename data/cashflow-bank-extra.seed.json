@@ -83,11 +83,11 @@
     "caja_name": "Banco de Comercio - Cuenta Pesos",
     "category": "Venta - No Pisos",
     "subcategory": null,
-    "counterparty": "Cheque s/identificar",
+    "counterparty": "Venta Paneles",
     "counterparty_type": "client",
     "client_id": null,
     "supplier_id": null,
-    "description": "Acreditación cheque 000016404",
+    "description": "Cheque 000016404 — Venta de Paneles",
     "sale_ref": null,
     "currency": "ARS",
     "amount_ars": 941605,
@@ -96,8 +96,8 @@
     "fixed_variable": null,
     "expense_type": null,
     "transfer": false,
-    "needs_review": true,
-    "review_reason": "cheque sin cliente identificado"
+    "needs_review": false,
+    "review_reason": null
   },
   {
     "id": "MOV-BDC-005",
@@ -106,13 +106,13 @@
     "flow": "Ingreso",
     "caja_id": "CAJ-003",
     "caja_name": "Banco de Comercio - Cuenta Pesos",
-    "category": "Venta - No Pisos",
+    "category": "Venta - Pisos",
     "subcategory": null,
-    "counterparty": "Cheque s/identificar",
+    "counterparty": "AGIRA (Arq. Santiago — Proyecto Concreto)",
     "counterparty_type": "client",
     "client_id": null,
     "supplier_id": null,
-    "description": "Acreditación cheque 066098176",
+    "description": "Cheque 066098176 — Venta Pisos AGIRA",
     "sale_ref": null,
     "currency": "ARS",
     "amount_ars": 5025001.35,
@@ -121,8 +121,8 @@
     "fixed_variable": null,
     "expense_type": null,
     "transfer": false,
-    "needs_review": true,
-    "review_reason": "cheque sin cliente identificado"
+    "needs_review": false,
+    "review_reason": null
   },
   {
     "id": "MOV-BDC-006",
@@ -133,11 +133,11 @@
     "caja_name": "Banco de Comercio - Cuenta Pesos",
     "category": "Venta - No Pisos",
     "subcategory": null,
-    "counterparty": "Cheque s/identificar",
+    "counterparty": "SNF Argentina",
     "counterparty_type": "client",
     "client_id": null,
     "supplier_id": null,
-    "description": "Acreditación cheque 000000193",
+    "description": "Cheque 000000193 — Venta de Paneles",
     "sale_ref": null,
     "currency": "ARS",
     "amount_ars": 768275,
@@ -146,8 +146,8 @@
     "fixed_variable": null,
     "expense_type": null,
     "transfer": false,
-    "needs_review": true,
-    "review_reason": "cheque sin cliente identificado"
+    "needs_review": false,
+    "review_reason": null
   },
   {
     "id": "MOV-BDC-007",

@@ -46,9 +46,9 @@ const egr = (date, ars, counterparty, expense_type, opts = {}) => out.push(mk('B
 ing('05', 869022.00, 'Alessio Tiracchia', { category: 'Venta - Pisos', sale: '0000132', desc: 'Cobro venta Alessio' });
 ing('08', 6406774.03, 'Ailen FIEM S.A.', { category: 'Venta - Pisos', sale: '0000133', desc: 'Cobro venta FIEM (IB Proveedores)' });
 ing('11', 14000.00, 'Gabriela Esperanza', { desc: 'Crédito CREDIN (MercadoPago)' });
-ing('06', 941605.00, 'Cheque s/identificar', { desc: 'Acreditación cheque 000016404', review: 'cheque sin cliente identificado' });
-ing('08', 5025001.35, 'Cheque s/identificar', { desc: 'Acreditación cheque 066098176', review: 'cheque sin cliente identificado' });
-ing('14', 768275.00, 'Cheque s/identificar', { desc: 'Acreditación cheque 000000193', review: 'cheque sin cliente identificado' });
+ing('06', 941605.00, 'Venta Paneles', { desc: 'Cheque 000016404 — Venta de Paneles' });
+ing('08', 5025001.35, 'AGIRA (Arq. Santiago — Proyecto Concreto)', { category: 'Venta - Pisos', desc: 'Cheque 066098176 — Venta Pisos AGIRA' });
+ing('14', 768275.00, 'SNF Argentina', { desc: 'Cheque 000000193 — Venta de Paneles' });
 
 // Egreso real
 egr('29', 168000.00, 'Matias Trejo', 'Gastos de Instalaciones y Suministros', { category: 'Instalaciones', desc: 'Entrega Zócalos' });
