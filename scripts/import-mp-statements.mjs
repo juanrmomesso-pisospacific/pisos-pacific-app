@@ -56,12 +56,20 @@ for (const m of existing) {
 const peajeMonths = new Set();
 for (const m of existing) if (/ausol|ausa|aubasa|telepase|autopista|corredores viales|peaje/i.test((m.description || '') + (m.counterparty || ''))) peajeMonths.add((m.date || '').slice(0, 7));
 
+const PER = 'Gastos de Personal (HR y Mano de Obra)';
+const SUM = 'Gastos de Instalaciones y Suministros';
 const isPeaje = (t) => /ausol|\bausa\b|aubasa|telepase|autopista|au oeste|au del oeste|corredores viales|caminos del|\bpeaje/i.test(t);
 const STAFF = /\b(hugo|huguito|ramirez|oso|ariel|victor|leonardo|leo|maldo|fabian|fabián|martin|martín|mike)\b/i;
 const OWNER = /rodriguez\s+juan|juan\s+rodriguez|momesso|collado|\bpipi\b/i;       // retiros del dueño → personal
 const RETAIL = /carrefour|\bcoto\b|jumbo|\bdisco\b|\bdia\b|farmacia|chango|\bvea\b|starbucks|mcdonald|rappi|pedidosya|cabify|\buber\b/i; // consumo personal
+const norm = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+// Personas identificadas por el dueño → contraparte real + tipo.
+const NAME_MAP = {
+  'cristian adrian tevez': { cp: 'Oso', et: PER, cat: 'Mano de Obra', desc: 'Sueldo / jornal Oso' },
+  'gonzalez marina sofia': { cp: 'Via Cargo', et: SUM, cat: 'Insumos', desc: 'Flete / envíos Via Cargo' },
+};
 const stripName = (t) => t.replace(/^(Transferencia enviada|Transferencia recibida|Pago|Compra|Cobro)\s*/i, '').trim();
-const personal = (name, desc) => ({ kind: 'egreso', counterparty: 'Juan & Pipi', category: 'Sueldos', subcategory: 'Retiro/Personal', expense_type: 'Gastos de Personal (HR y Mano de Obra)', desc: 'Personal — ' + (name || desc) });
+const personal = (name, desc) => ({ kind: 'egreso', counterparty: 'Juan & Pipi', category: 'Sueldos', subcategory: 'Retiro/Personal', expense_type: PER, desc: 'Personal — ' + (name || desc) });
 
 function classify(m) {
   const t = m.type, name = stripName(t);
@@ -69,19 +77,27 @@ function classify(m) {
     if (/rendimiento/i.test(t)) return { kind: 'skip' };
     if (/ingreso de dinero|liquidaci[oó]n de dinero/i.test(t))
       return { kind: 'transfer', counterparty: 'MOV ENTRE CUENTAS', category: 'Otros Gastos y Ajustes', expense_type: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', desc: 'Fondeo Mercado Pago' };
+    if (/devoluci[oó]n/i.test(t))
+      return { kind: 'ingreso', counterparty: 'Mercado Libre', category: 'Otros', desc: t };  // reintegro de compra
     return { kind: 'ingreso', counterparty: name || 'Mercado Pago', category: 'Venta - No Pisos', desc: t || 'Ingreso MP', review: 'ingreso MP a clasificar' };
   }
   if (isPeaje(t)) return { kind: 'peaje' };
   if (/ARCA|AFIP|ARBA|rentas|DGR|\bimpuesto/i.test(t))
     return { kind: 'egreso', counterparty: 'ARCA', category: 'Impuestos', expense_type: 'Impuestos y Tasas', fv: 'Fijo', desc: t };
+  const mapped = NAME_MAP[norm(name)];
+  if (mapped) return { kind: 'egreso', counterparty: mapped.cp, category: mapped.cat, expense_type: mapped.et, desc: mapped.desc };
   if (OWNER.test(name)) return personal(name, t);
   if (RETAIL.test(t)) return personal(name, t);
+  if (/\beasy\b|sodimac|pinturer|ferreter/i.test(t))
+    return { kind: 'egreso', counterparty: 'EASY', category: 'Insumos', expense_type: SUM, desc: t };
+  if (/ceamse/i.test(t))
+    return { kind: 'egreso', counterparty: 'CEAMSE', category: 'Otros', expense_type: 'Otros Gastos y Ajustes', desc: 'CEAMSE — disposición de residuos' };
+  if (/mercado libre/i.test(t))
+    return { kind: 'egreso', counterparty: 'Mercado Libre', category: 'Insumos', expense_type: SUM, desc: t };
   if (/^Transferencia enviada/i.test(t)) {
-    if (STAFF.test(name)) return { kind: 'egreso', counterparty: name, category: 'Mano de Obra', expense_type: 'Gastos de Personal (HR y Mano de Obra)', desc: 'Transferencia ' + name };
+    if (STAFF.test(name)) return { kind: 'egreso', counterparty: name, category: 'Mano de Obra', expense_type: PER, desc: 'Transferencia ' + name };
     return { kind: 'egreso', counterparty: name, category: 'Otros', expense_type: null, desc: 'Transferencia ' + name, review: 'transferencia MP — ¿trabajador, proveedor o personal?' };
   }
-  if (/mercado libre/i.test(t))
-    return { kind: 'egreso', counterparty: 'Mercado Libre', category: 'Insumos', expense_type: 'Gastos de Instalaciones y Suministros', desc: t, review: 'compra Mercado Libre — confirmar (insumo vs personal)' };
   // Pago QR y otros
   return { kind: 'egreso', counterparty: name || t, category: 'Otros', expense_type: null, desc: t, review: 'pago MP a clasificar' };
 }
