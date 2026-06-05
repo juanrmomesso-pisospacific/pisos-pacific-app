@@ -68,6 +68,8 @@ const NAME_MAP = {
   'cristian adrian tevez': { cp: 'Oso', et: PER, cat: 'Mano de Obra', desc: 'Sueldo / jornal Oso' },
   'gonzalez marina sofia': { cp: 'Via Cargo', et: SUM, cat: 'Insumos', desc: 'Flete / envíos Via Cargo' },
 };
+// Amigos / gastos personales confirmados por el dueño → todo personal.
+const PERSONAL = /franco cafferata|oscar.*resburgo|andres bruno de luca|lil doctor|guido tasselli|gabriel.*avendano|rodrigo.*rosales|wc market plus|aeropuertos argentina|picca facundo/i;
 const stripName = (t) => t.replace(/^(Transferencia enviada|Transferencia recibida|Pago|Compra|Cobro)\s*/i, '').trim();
 const personal = (name, desc) => ({ kind: 'egreso', counterparty: 'Juan & Pipi', category: 'Sueldos', subcategory: 'Retiro/Personal', expense_type: PER, desc: 'Personal — ' + (name || desc) });
 
@@ -79,6 +81,8 @@ function classify(m) {
       return { kind: 'transfer', counterparty: 'MOV ENTRE CUENTAS', category: 'Otros Gastos y Ajustes', expense_type: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', desc: 'Fondeo Mercado Pago' };
     if (/devoluci[oó]n/i.test(t))
       return { kind: 'ingreso', counterparty: 'Mercado Libre', category: 'Otros', desc: t };  // reintegro de compra
+    if (PERSONAL.test(name) || PERSONAL.test(t))
+      return { kind: 'ingreso', counterparty: 'Juan & Pipi', category: 'Otros', desc: 'Personal — ' + (name || t) };
     return { kind: 'ingreso', counterparty: name || 'Mercado Pago', category: 'Venta - No Pisos', desc: t || 'Ingreso MP', review: 'ingreso MP a clasificar' };
   }
   if (isPeaje(t)) return { kind: 'peaje' };
@@ -86,6 +90,7 @@ function classify(m) {
     return { kind: 'egreso', counterparty: 'ARCA', category: 'Impuestos', expense_type: 'Impuestos y Tasas', fv: 'Fijo', desc: t };
   const mapped = NAME_MAP[norm(name)];
   if (mapped) return { kind: 'egreso', counterparty: mapped.cp, category: mapped.cat, expense_type: mapped.et, desc: mapped.desc };
+  if (PERSONAL.test(name) || PERSONAL.test(t)) return personal(name, t);
   if (OWNER.test(name)) return personal(name, t);
   if (RETAIL.test(t)) return personal(name, t);
   if (/\beasy\b|sodimac|pinturer|ferreter/i.test(t))
