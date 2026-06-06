@@ -65,6 +65,8 @@ export type Sale = {
   // Cobro real conciliado desde el cashflow (ingresos con este venta_nro)
   cashflow_paid?: number
   cashflow_balance_due?: number   // contract_total − cashflow_paid
+  // Remito armado en la inspección (m² de piso + terminaciones que agrega el inspector)
+  remito_items?: { description: string; quantity: number; unit: string }[]
   // Margen calculado por el backend (para dashboards)
   venta_neta?: number
   cogs?: number

@@ -866,11 +866,17 @@ app.get('/api/sales/:id/pdf', (req, res) => {
 });
 // Remito para el depósito: dirección de obra + materiales y cantidades, SIN precios.
 function remitoData(rec) {
-  const items = (rec.items || []).filter(it => it && it.product_id !== 'discount' && !/^descuento/i.test(it.description || ''));
-  const isService = (it) => /^SERV/i.test(it.sku || '') || /colocaci[oó]n|entrega|ajuste|medici[oó]n|reparaci[oó]n|servicio|mano de obra|flete/i.test(it.description || '');
-  const isFloor = (it) => { const p = db.products.find(pr => pr.sku === it.sku); return p ? !!p.stockTrack : false; };
-  const unit = (it) => isFloor(it) ? 'm²' : (/z[oó]calo|varilla|cuartaca[ñn]a|nariz|moldura|cubrecanto/i.test(it.description || '') ? 'ml' : 'u');
-  const rows = items.filter(it => !isService(it)).map(it => [it.description || it.sku || '', `${Number(it.quantity) || 0} ${unit(it)}`]);
+  // Si la inspección armó el remito (remito_items), se usa eso. Si no, se derivan de la venta.
+  let rows;
+  if (Array.isArray(rec.remito_items) && rec.remito_items.length) {
+    rows = rec.remito_items.map(it => [it.description || '', `${Number(it.quantity) || 0} ${it.unit || ''}`.trim()]);
+  } else {
+    const items = (rec.items || []).filter(it => it && it.product_id !== 'discount' && !/^descuento/i.test(it.description || ''));
+    const isService = (it) => /^SERV/i.test(it.sku || '') || /colocaci[oó]n|entrega|ajuste|medici[oó]n|reparaci[oó]n|servicio|mano de obra|flete/i.test(it.description || '');
+    const isFloor = (it) => { const p = db.products.find(pr => pr.sku === it.sku); return p ? !!p.stockTrack : false; };
+    const unit = (it) => isFloor(it) ? 'm²' : (/z[oó]calo|varilla|cuartaca[ñn]a|nariz|moldura|cubrecanto/i.test(it.description || '') ? 'ml' : 'u');
+    rows = items.filter(it => !isService(it)).map(it => [it.description || it.sku || '', `${Number(it.quantity) || 0} ${unit(it)}`]);
+  }
   const dlv = rec.delivery_date ? new Date(rec.delivery_date).toLocaleDateString('es-AR') + (rec.delivery_date_to && rec.delivery_date_to !== rec.delivery_date ? ' → ' + new Date(rec.delivery_date_to).toLocaleDateString('es-AR') : '') : '';
   return {
     doc_type: 'remito', fecha: new Date().toLocaleDateString('es-AR'),

@@ -133,8 +133,9 @@ export default function AgendaPage() {
 // -----------------------------------------------------------------------------
 
 function NewEventSheet({ open, onOpenChange, sales }: { open: boolean; onOpenChange: (o: boolean) => void; sales: Sale[] }) {
-  const settings = useApi<{ sellers?: { name: string }[] }>("/api/settings").data
+  const settings = useApi<{ sellers?: { name: string }[]; crews?: string[] }>("/api/settings").data
   const sellers = settings?.sellers ?? []
+  const crews = settings?.crews ?? []
   // Picker includes Entrega first — most common path from the agenda topbar.
   const PICKER: TaskType[] = ["entrega", ...TASK_TYPE_ORDER]
   const [type, setType] = useState<TaskType>("entrega")
@@ -277,11 +278,12 @@ function NewEventSheet({ open, onOpenChange, sales }: { open: boolean; onOpenCha
               </div>
               <div className="text-[10px] text-muted-foreground -mt-2">Para instalaciones que duran varios días, dejá "hasta".</div>
               <div>
-                <label className="text-sm font-medium block mb-1">Equipo / responsable</label>
+                <label className="text-sm font-medium block mb-1">Equipo de colocación</label>
                 <select value={seller} onChange={(e) => setSeller(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
                   <option value="">— Sin asignar —</option>
-                  {sellers.map(s => <option key={s.name} value={s.name}>{s.name}</option>)}
-                  <option value="Externo">Externo / colocador</option>
+                  {crews.map(c => <option key={c} value={c}>{c}</option>)}
+                  {seller && !crews.includes(seller) && seller !== "Externo" && <option value={seller}>{seller}</option>}
+                  <option value="Externo">Externo / otro</option>
                 </select>
               </div>
               <div>
@@ -307,7 +309,8 @@ function NewEventSheet({ open, onOpenChange, sales }: { open: boolean; onOpenCha
                   <label className="text-sm font-medium block mb-1">Responsable</label>
                   <select value={seller} onChange={(e) => setSeller(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
                     <option value="">— Sin asignar —</option>
-                    {sellers.map(s => <option key={s.name} value={s.name}>{s.name}</option>)}
+                    <optgroup label="Vendedores">{sellers.map(s => <option key={s.name} value={s.name}>{s.name}</option>)}</optgroup>
+                    <optgroup label="Equipos de colocación">{crews.map(c => <option key={c} value={c}>{c}</option>)}</optgroup>
                   </select>
                 </div>
               </div>

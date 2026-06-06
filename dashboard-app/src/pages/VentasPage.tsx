@@ -361,6 +361,9 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
   const [payAmount, setPayAmount] = useState<number>(0)
   const [payCaja, setPayCaja] = useState("")
   const [payDate, setPayDate] = useState("")
+  // Preparación del remito (inspección)
+  const [remitoItems, setRemitoItems] = useState<{ description: string; quantity: number; unit: string }[]>([])
+  const [remitoSaved, setRemitoSaved] = useState(false)
   const update = useAction(api.update)
   const txn = useAction(api.saleTransition)
   const createTask = useAction(api.create)
@@ -375,6 +378,8 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
     setPayAmount(0)
     setPayCaja("")
     setPayDate(new Date().toISOString().slice(0, 10))
+    setRemitoItems(sale.remito_items ?? [])
+    setRemitoSaved(false)
   }, [sale?.id])
 
   if (!sale) return null
@@ -434,6 +439,23 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
       fixed_variable: null, expense_type: null, transfer: false, needs_review: false, review_reason: null,
     })
     onClose(); refresh()
+  }
+
+  // Preparación del remito (inspección): parte de los m² de piso y se agregan terminaciones.
+  const FINISH_PRESETS = ["Varilla de terminación", "Cuartacaña", "Zócalo", "Perfil de transición", "Nariz de escalón", "Cinta doble faz", "Nylon / film", "Adhesivo"]
+  const prefillRemito = () => {
+    const isSvc = (it: any) => /^SERV/i.test(it.sku || "") || /colocaci|entrega|ajuste|medici|reparaci|servicio|mano de obra|flete/i.test(it.description || "")
+    const mats = (sale.items || []).filter((it) => it.product_id !== "discount" && !/^descuento/i.test(it.description || "") && !isSvc(it))
+    setRemitoItems(mats.map((it) => ({ description: it.description || it.sku || "", quantity: Number(it.quantity) || 0, unit: /z[oó]calo|varilla|cuartaca|nariz|moldura/i.test(it.description || "") ? "ml" : "m²" })))
+    setRemitoSaved(false)
+  }
+  const addRemitoRow = (preset?: string) => { setRemitoItems((r) => [...r, { description: preset || "", quantity: 0, unit: preset && /varilla|cuartaca|z[oó]calo|nariz|perfil/i.test(preset) ? "ml" : "u" }]); setRemitoSaved(false) }
+  const updateRemitoRow = (i: number, patch: Partial<{ description: string; quantity: number; unit: string }>) => { setRemitoItems((r) => r.map((x, idx) => idx === i ? { ...x, ...patch } : x)); setRemitoSaved(false) }
+  const removeRemitoRow = (i: number) => { setRemitoItems((r) => r.filter((_, idx) => idx !== i)); setRemitoSaved(false) }
+  const saveRemito = async () => {
+    const clean = remitoItems.filter((x) => x.description.trim())
+    const r = await update.run("sales", sale.id, { remito_items: clean })
+    if (r) setRemitoSaved(true)
   }
 
   return (
@@ -586,6 +608,36 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
                 ))}
               </div>
             )}
+          </DetailSection>
+        </div>
+
+        <div className="mt-6">
+          <DetailSection title="Preparación del remito (inspección)">
+            <p className="text-[11px] text-muted-foreground mb-2">Para el depósito: m² de piso + terminaciones (varillas, zócalos, cajas…) que define el inspector. Sin precios.</p>
+            {remitoItems.length === 0 ? (
+              <Button size="sm" variant="outline" onClick={prefillRemito}>Cargar materiales de la venta</Button>
+            ) : (
+              <div className="space-y-1.5">
+                {remitoItems.map((it, i) => (
+                  <div key={i} className="flex items-center gap-1.5">
+                    <Input value={it.description} onChange={(e) => updateRemitoRow(i, { description: e.target.value })} placeholder="Material" className="h-8 flex-1" />
+                    <Input type="number" min={0} step="0.1" value={it.quantity === 0 ? "" : it.quantity} placeholder="0" onChange={(e) => updateRemitoRow(i, { quantity: Number(e.target.value) || 0 })} className="h-8 w-20" />
+                    <select value={it.unit} onChange={(e) => updateRemitoRow(i, { unit: e.target.value })} className="h-8 rounded-md border border-input bg-transparent px-1 text-xs">
+                      {["m²", "ml", "u", "cajas", "bolsas", "rollos"].map(u => <option key={u} value={u}>{u}</option>)}
+                    </select>
+                    <Button type="button" size="icon" variant="ghost" className="h-8 w-8 shrink-0 text-muted-foreground" onClick={() => removeRemitoRow(i)}>✕</Button>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="flex flex-wrap gap-1 mt-2">
+              {FINISH_PRESETS.map(p => <button key={p} type="button" onClick={() => addRemitoRow(p)} className="text-[10px] border border-input rounded-full px-2 py-0.5 text-muted-foreground hover:text-foreground hover:border-foreground">+ {p}</button>)}
+              <button type="button" onClick={() => addRemitoRow()} className="text-[10px] border border-input rounded-full px-2 py-0.5 text-muted-foreground hover:text-foreground hover:border-foreground">+ Otro</button>
+            </div>
+            <div className="flex items-center gap-2 mt-3">
+              <Button size="sm" onClick={saveRemito} disabled={update.busy}>{update.busy ? "Guardando…" : remitoSaved ? "Guardado ✓" : "Guardar remito"}</Button>
+              <Button size="sm" variant="outline" onClick={() => window.open(`/api/sales/${sale.id}/remito`, "_blank")}><Truck className="h-4 w-4" />Ver / imprimir remito</Button>
+            </div>
           </DetailSection>
         </div>
 

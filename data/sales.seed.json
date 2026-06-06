@@ -3408,7 +3408,7 @@
   {
     "id": "0000070",
     "quote_number": "0000070",
-    "title": "Ciro - Obra Sevilla",
+    "title": "Ciro - Obra Sevilla (Pisos + Escaleras)",
     "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
     "client_id": "CLI-040",
     "client_name": "Arq. Silvi Vanden Bosch",
@@ -3416,7 +3416,7 @@
     "client_email": "",
     "client_phone": "",
     "client_address": "",
-    "contract_total": 15742.1,
+    "contract_total": 30668.36,
     "items": [
       {
         "product_id": null,
@@ -3425,6 +3425,15 @@
         "quantity": 160,
         "unit_price": 81.3125,
         "total": 18474.2,
+        "category": ""
+      },
+      {
+        "product_id": null,
+        "sku": "",
+        "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+        "quantity": 60,
+        "unit_price": 116.5333333,
+        "total": 22860.513884,
         "category": ""
       }
     ],
@@ -4019,56 +4028,6 @@
     "stock_deducted": true,
     "seller_name": "",
     "payments": [],
-    "source": "excel-import"
-  },
-  {
-    "id": "0000082",
-    "quote_number": "0000082",
-    "title": "Ciro  Obra Sevilla - Escaleras + Adicional",
-    "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
-    "client_id": "CLI-040",
-    "client_name": "Arq. Silvi Vanden Bosch",
-    "client_dni": "",
-    "client_email": "",
-    "client_phone": "",
-    "client_address": "",
-    "contract_total": 14926.26,
-    "items": [
-      {
-        "product_id": null,
-        "sku": "",
-        "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
-        "quantity": 60,
-        "unit_price": 116.5333333,
-        "total": 22860.513884,
-        "category": ""
-      }
-    ],
-    "status": "Confirmado",
-    "delivery_status": "Acopiado",
-    "created_at": "2025-12-15T00:00:00.000Z",
-    "fecha_pendiente": false,
-    "has_iva": true,
-    "condicion": "Facturado",
-    "factura": "00002-00000072",
-    "comentarios": null,
-    "payment_state": "Cobrado",
-    "financial_position": {
-      "total_invoiced": 22860.513884,
-      "total_paid": 14926.25694,
-      "balance_due": 7934.256944
-    },
-    "stock_reserved": true,
-    "stock_deducted": false,
-    "seller_name": "",
-    "payments": [
-      {
-        "ts": "2025-12-15T00:00:00.000Z",
-        "amount": 14926.25694,
-        "method": "import",
-        "notes": "Saldo inicial migración"
-      }
-    ],
     "source": "excel-import"
   },
   {
