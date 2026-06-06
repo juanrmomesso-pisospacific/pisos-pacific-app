@@ -509,6 +509,9 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
               {sale.delivery_date && (
                 <Button variant="outline" onClick={clearEntrega} disabled={update.busy}>Limpiar fecha</Button>
               )}
+              <Button variant="outline" className="ml-auto" onClick={() => window.open(`/api/sales/${sale.id}/remito`, "_blank")}>
+                <Truck className="h-4 w-4" />Remito depósito
+              </Button>
             </div>
           </div>
         </div>

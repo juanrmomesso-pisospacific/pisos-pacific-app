@@ -864,6 +864,26 @@ app.get('/api/sales/:id/pdf', (req, res) => {
   if (!s) return res.sendStatus(404);
   renderPdf(presupuestoData(s), res, `Presupuesto_${(s.client_name || 'Pacific').replace(/[^\w]+/g, '_')}.pdf`);
 });
+// Remito para el depósito: dirección de obra + materiales y cantidades, SIN precios.
+function remitoData(rec) {
+  const items = (rec.items || []).filter(it => it && it.product_id !== 'discount' && !/^descuento/i.test(it.description || ''));
+  const isService = (it) => /^SERV/i.test(it.sku || '') || /colocaci[oó]n|entrega|ajuste|medici[oó]n|reparaci[oó]n|servicio|mano de obra|flete/i.test(it.description || '');
+  const isFloor = (it) => { const p = db.products.find(pr => pr.sku === it.sku); return p ? !!p.stockTrack : false; };
+  const unit = (it) => isFloor(it) ? 'm²' : (/z[oó]calo|varilla|cuartaca[ñn]a|nariz|moldura|cubrecanto/i.test(it.description || '') ? 'ml' : 'u');
+  const rows = items.filter(it => !isService(it)).map(it => [it.description || it.sku || '', `${Number(it.quantity) || 0} ${unit(it)}`]);
+  const dlv = rec.delivery_date ? new Date(rec.delivery_date).toLocaleDateString('es-AR') + (rec.delivery_date_to && rec.delivery_date_to !== rec.delivery_date ? ' → ' + new Date(rec.delivery_date_to).toLocaleDateString('es-AR') : '') : '';
+  return {
+    doc_type: 'remito', fecha: new Date().toLocaleDateString('es-AR'),
+    cliente: rec.client_name || '', obra: rec.title || rec.client_address || '',
+    direccion: rec.client_address || '', equipo: rec.delivery_crew || '', entrega: dlv,
+    obs: rec.delivery_notes || '', rows, template: rec.pdf_template || db.settings.pdf_template || 'clasico',
+  };
+}
+app.get('/api/sales/:id/remito', (req, res) => {
+  const s = db.sales.find(x => x.id === req.params.id);
+  if (!s) return res.sendStatus(404);
+  renderPdf(remitoData(s), res, `Remito_${(s.client_name || 'Pacific').replace(/[^\w]+/g, '_')}.pdf`);
+});
 
 // ---------- Brand logos (committed in assets/branding/) ----------
 const BRANDING = path.join(__dirname, 'assets/branding');

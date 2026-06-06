@@ -142,11 +142,80 @@ R    = W - 18 * mm       # borde derecho
 CW   = R - L             # ancho útil
 
 
+def _remito(data: dict) -> bytes:
+    """Remito para el depósito: dirección de obra + materiales y cantidades, SIN precios."""
+    buf = io.BytesIO()
+    c = canvas.Canvas(buf, pagesize=A4)
+    logo_w = 58 * mm
+    logo_h = logo_w / (1022 / 306)
+    c.drawImage(LOGO_PATH, L, H - 8*mm - logo_h, width=logo_w, height=logo_h, mask="auto")
+    c.setFillColor(INK); c.setFont("Helvetica-Bold", FS_BODY)
+    c.drawRightString(R, H - 13*mm, data.get("fecha", ""))
+    c.setStrokeColor(RULE); c.setLineWidth(0.8)
+    c.line(L, H - 8*mm - logo_h - 3*mm, R, H - 8*mm - logo_h - 3*mm)
+    y = H - 8*mm - logo_h - 9*mm
+    # Eyebrow + badge "SIN VALORES"
+    c.setFillColor(MUTED); c.setFont("Helvetica", FS_LABEL); c._charSpace = 2
+    c.drawString(L, y, "REMITO  ·  PREPARACIÓN DE ENTREGA"); c._charSpace = 0
+    badge = "SIN VALORES"
+    c.setFont("Helvetica-Bold", FS_LABEL)
+    tw = c.stringWidth(badge, "Helvetica-Bold", FS_LABEL); bw, bh = tw + 7*mm, 5.2*mm
+    c.setStrokeColor(INK); c.setLineWidth(0.8)
+    c.roundRect(R - bw, y - 1.4*mm, bw, bh, 1.2*mm, fill=0, stroke=1)
+    c.setFillColor(INK); c._charSpace = 0.5
+    c.drawCentredString(R - bw/2, y + 0.4*mm, badge); c._charSpace = 0
+    y -= 8 * mm
+    c.setFillColor(INK); c.setFont("Helvetica-Bold", 18)
+    c.drawString(L, y, data.get("obra") or data.get("cliente", "")); y -= 9 * mm
+    # Datos
+    for label, val in [("CLIENTE", data.get("cliente")), ("DIRECCIÓN DE OBRA", data.get("direccion")),
+                       ("EQUIPO DE COLOCACIÓN", data.get("equipo")), ("FECHA DE ENTREGA", data.get("entrega"))]:
+        c.setFillColor(MUTED); c.setFont("Helvetica", FS_LABEL); c._charSpace = 1.2
+        c.drawString(L, y, label); c._charSpace = 0
+        c.setFillColor(INK); c.setFont("Helvetica-Bold", FS_BODY)
+        c.drawString(L + 42*mm, y, val or "—"); y -= 6 * mm
+    y -= 2 * mm
+    c.setStrokeColor(RULE); c.setLineWidth(0.6); c.line(L, y, R, y); y -= 8 * mm
+    # Tabla: MATERIAL | CANTIDAD (sin precios)
+    c.setFillColor(BGCOL); c.rect(L, y - 5.5*mm, CW, 5.5*mm, fill=1, stroke=0)
+    c.setFillColor(MUTED); c.setFont("Helvetica", FS_LABEL); c._charSpace = 1
+    c.drawString(L + 3*mm, y - 3.6*mm, "MATERIAL")
+    c.drawRightString(R - 3*mm, y - 3.6*mm, "CANTIDAD"); c._charSpace = 0
+    y -= 5.5 * mm
+    for row in data.get("rows", []):
+        desc, cant = (row + ["", ""])[:2]
+        c.setFillColor(WHITE); c.rect(L, y - 7*mm, CW, 7*mm, fill=1, stroke=0)
+        c.setFillColor(INK); c.setFont("Helvetica", FS_BODY)
+        txt = str(desc)
+        while c.stringWidth(txt, "Helvetica", FS_BODY) > CW * 0.72 and len(txt) > 4:
+            txt = txt[:-2]
+        c.drawString(L + 3*mm, y - 4.7*mm, txt + ("…" if txt != str(desc) else ""))
+        c.setFont("Helvetica-Bold", FS_BODY)
+        c.drawRightString(R - 3*mm, y - 4.7*mm, str(cant))
+        c.setStrokeColor(RULE); c.setLineWidth(0.3); c.line(L, y - 7*mm, R, y - 7*mm)
+        y -= 7 * mm
+    y -= 8 * mm
+    if data.get("obs"):
+        c.setFillColor(MUTED); c.setFont("Helvetica", FS_LABEL); c.drawString(L, y, "NOTAS")
+        c.setFillColor(MID); c.setFont("Helvetica", FS_BODY); c.drawString(L + 18*mm, y, str(data["obs"])); y -= 6 * mm
+    # Firmas + footer
+    c.setFillColor(MUTED); c.setFont("Helvetica", FS_LABEL)
+    c.drawString(L, 24*mm, "Preparado por: __________________")
+    c.drawString(L + CW*0.55, 24*mm, "Recibido: __________________")
+    c.setStrokeColor(RULE); c.setLineWidth(0.6); c.line(L, 16*mm, R, 16*mm)
+    c.drawString(L, 12*mm, "pisospacific.com")
+    c.drawRightString(R, 12*mm, data.get("fecha", ""))
+    c.showPage(); c.save()
+    return buf.getvalue()
+
+
 def generate_pdf(data: dict) -> bytes:
     """
     Genera el presupuesto y devuelve los bytes del PDF.
     Ver docstring del módulo para la estructura completa de `data`.
     """
+    if data.get("doc_type") == "remito":
+        return _remito(data)
     buf = io.BytesIO()
     c = canvas.Canvas(buf, pagesize=A4)
 
