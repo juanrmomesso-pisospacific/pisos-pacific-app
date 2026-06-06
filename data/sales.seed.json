@@ -322,7 +322,7 @@
         "category": ""
       }
     ],
-    "status": "En proceso",
+    "status": "Finalizado",
     "delivery_status": null,
     "created_at": "2025-02-17T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -2253,7 +2253,7 @@
         "category": ""
       }
     ],
-    "status": "En proceso",
+    "status": "Finalizado",
     "delivery_status": null,
     "created_at": "2025-08-06T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -2544,7 +2544,7 @@
         "category": "Zócalo"
       }
     ],
-    "status": "En proceso",
+    "status": "Finalizado",
     "delivery_status": "Acopiado",
     "created_at": "2025-08-29T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -2564,7 +2564,10 @@
     "payments": [],
     "source": "excel-import+vercel+vercel",
     "discount_total": 2953.3,
-    "vercel_qnum": "A0047"
+    "vercel_qnum": "A0047",
+    "delivery_date": "2026-05-12",
+    "delivery_date_to": "2026-05-15",
+    "delivery_crew": "Hugo Ramirez"
   },
   {
     "id": "0000053",
@@ -2739,7 +2742,7 @@
         "category": ""
       }
     ],
-    "status": "En proceso",
+    "status": "Confirmado",
     "delivery_status": "Acopiado",
     "created_at": "2025-09-15T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -3282,7 +3285,7 @@
         "category": ""
       }
     ],
-    "status": "En proceso",
+    "status": "Finalizado",
     "delivery_status": null,
     "created_at": "2025-10-23T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -3425,7 +3428,7 @@
         "category": ""
       }
     ],
-    "status": "En proceso",
+    "status": "Confirmado",
     "delivery_status": "Acopiado",
     "created_at": "2025-11-06T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -4041,7 +4044,7 @@
         "category": ""
       }
     ],
-    "status": "En proceso",
+    "status": "Confirmado",
     "delivery_status": "Acopiado",
     "created_at": "2025-12-15T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -4375,7 +4378,7 @@
         "category": "Servicio"
       }
     ],
-    "status": "Programado",
+    "status": "En proceso",
     "delivery_status": "Acopiado",
     "created_at": "2026-01-05T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -4488,7 +4491,7 @@
         "category": "Servicio"
       }
     ],
-    "status": "Programado",
+    "status": "Finalizado",
     "delivery_status": "Agendado",
     "created_at": "2026-01-05T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -5439,7 +5442,7 @@
         "category": ""
       }
     ],
-    "status": "En proceso",
+    "status": "Programado",
     "delivery_status": "Acopiado",
     "created_at": "2026-03-09T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -5612,7 +5615,7 @@
         "category": ""
       }
     ],
-    "status": "En proceso",
+    "status": "Confirmado",
     "delivery_status": "Acopiado",
     "created_at": "2026-03-12T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -5992,7 +5995,7 @@
         "category": "Servicio"
       }
     ],
-    "status": "Programado",
+    "status": "Finalizado",
     "delivery_status": "Acopiado",
     "created_at": "2026-03-24T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -6019,7 +6022,10 @@
     ],
     "source": "excel-import+vercel+vercel",
     "discount_total": 692.04,
-    "vercel_qnum": "A0054"
+    "vercel_qnum": "A0054",
+    "delivery_date": "2026-05-19",
+    "delivery_date_to": "2026-05-22",
+    "delivery_crew": "Gastón Aguilera"
   },
   {
     "id": "0000116",
@@ -6409,7 +6415,7 @@
         "category": ""
       }
     ],
-    "status": "En proceso",
+    "status": "Finalizado",
     "delivery_status": "Acopiado",
     "created_at": "2026-04-08T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -6593,7 +6599,7 @@
         "category": "Servicio"
       }
     ],
-    "status": "Programado",
+    "status": "En proceso",
     "delivery_status": "Acopiado",
     "created_at": "2026-04-15T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -6705,7 +6711,7 @@
         "category": ""
       }
     ],
-    "status": "En proceso",
+    "status": "Confirmado",
     "delivery_status": "Acopiado",
     "created_at": "2026-04-23T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -6901,7 +6907,10 @@
     "payments": [],
     "source": "planilla-reciente+vercel",
     "discount_total": 1400,
-    "vercel_qnum": "A0042"
+    "vercel_qnum": "A0042",
+    "delivery_date": "2026-05-06",
+    "delivery_date_to": "2026-05-06",
+    "delivery_crew": "Hugo Ramirez"
   },
   {
     "id": "0000130",
@@ -7089,7 +7098,7 @@
         "category": "Servicio"
       }
     ],
-    "status": "Finalizado",
+    "status": "Confirmado",
     "delivery_status": "Finalizado",
     "created_at": "2026-05-01T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -7195,7 +7204,7 @@
         "category": "Servicio"
       }
     ],
-    "status": "Confirmado",
+    "status": "Finalizado",
     "delivery_status": "Acopiado",
     "created_at": "2026-05-01T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -7311,7 +7320,10 @@
     "payments": [],
     "source": "planilla-reciente+vercel",
     "discount_total": 2522.16,
-    "vercel_qnum": "A0071"
+    "vercel_qnum": "A0071",
+    "delivery_date": "2026-05-05",
+    "delivery_date_to": "2026-05-16",
+    "delivery_crew": "Gastón Aguilera"
   },
   {
     "id": "0000135",
@@ -7529,7 +7541,7 @@
         "category": "Servicio"
       }
     ],
-    "status": "Programado",
+    "status": "Finalizado",
     "delivery_status": "Acopiado",
     "created_at": "2026-05-01T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -7549,7 +7561,10 @@
     "payments": [],
     "source": "planilla-reciente+vercel",
     "discount_total": 0,
-    "vercel_qnum": "A0074"
+    "vercel_qnum": "A0074",
+    "delivery_date": "2026-05-22",
+    "delivery_date_to": "2026-05-29",
+    "delivery_crew": "Ariel Noruega"
   },
   {
     "id": "0000138",
@@ -7595,7 +7610,7 @@
         "category": "Servicio"
       }
     ],
-    "status": "Confirmado",
+    "status": "Finalizado",
     "delivery_status": "Acopiado",
     "created_at": "2026-05-22T00:00:00.000Z",
     "fecha_pendiente": false,
@@ -7615,6 +7630,9 @@
     "payments": [],
     "source": "planilla-reciente+vercel",
     "discount_total": 934.8,
-    "vercel_qnum": "A0077"
+    "vercel_qnum": "A0077",
+    "delivery_date": "2026-06-02",
+    "delivery_date_to": "2026-06-04",
+    "delivery_crew": "Ariel Noruega"
   }
 ]
