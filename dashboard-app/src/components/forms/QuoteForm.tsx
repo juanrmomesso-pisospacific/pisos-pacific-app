@@ -224,11 +224,11 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
         <div className="grid grid-cols-3 gap-2 items-end">
           <div>
             <div className="text-[10px] uppercase tracking-wide text-muted-foreground mb-0.5">Cantidad</div>
-            <Input type="number" min={0} step="0.1" value={it.quantity} onChange={(e) => updateItem(idx, { quantity: Number(e.target.value) || 0 })} className="h-8" />
+            <Input type="number" min={0} step="0.1" value={it.quantity === 0 ? "" : it.quantity} placeholder="0" onChange={(e) => updateItem(idx, { quantity: Number(e.target.value) || 0 })} className="h-8" />
           </div>
           <div>
             <div className="text-[10px] uppercase tracking-wide text-muted-foreground mb-0.5">Precio unit.</div>
-            <Input type="number" min={0} step="0.01" value={it.unit_price} onChange={(e) => updateItem(idx, { unit_price: Number(e.target.value) || 0 })} className="h-8" />
+            <Input type="number" min={0} step="0.01" value={it.unit_price === 0 ? "" : it.unit_price} placeholder="0" onChange={(e) => updateItem(idx, { unit_price: Number(e.target.value) || 0 })} className="h-8" />
           </div>
           <div className="text-right text-xs tabular pt-2">
             {itemDisc(it) > 0 ? (

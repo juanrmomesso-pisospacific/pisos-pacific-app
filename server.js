@@ -133,6 +133,9 @@ if (!db.settings.integrations.mercadopago) db.settings.integrations.mercadopago 
     changed = true;
   }
   for (const s of db.settings.sellers) { if (phones[s.name] && s.phone !== phones[s.name]) { s.phone = phones[s.name]; changed = true; } }
+  // Equipos de colocación activos (responsables a quienes se les paga).
+  const crews = ['Hugo Ramirez', 'Gastón Aguilera', 'Ariel Noruega', 'Fabián Ortiz'];
+  if (JSON.stringify(db.settings.crews || []) !== JSON.stringify(crews)) { db.settings.crews = crews; changed = true; }
   if (changed) { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); console.log(`Synced ${db.settings.sellers.length} sellers into settings`); }
 }
 if (!Array.isArray(db.conversations) || db.conversations.length === 0 || !Array.isArray(db.messages) || !Array.isArray(db.templates)) {

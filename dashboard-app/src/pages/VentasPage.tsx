@@ -15,7 +15,7 @@ import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney, cn } from "@/lib/utils"
 import { openPacificPdf } from "@/lib/pdf"
-import type { Sale, Quote } from "@/lib/types"
+import type { Sale, Quote, Caja, CashflowMovement } from "@/lib/types"
 
 const STATUSES = ["Confirmado", "Programado", "En proceso", "Finalizado"] as const
 type SaleStatus = (typeof STATUSES)[number]
@@ -348,16 +348,23 @@ function VentasKanban({ rows }: { rows: Sale[] }) {
 // SaleDetailSheet — click card → full sale view with editable Entrega section
 // -----------------------------------------------------------------------------
 function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => void }) {
-  const settings = useApi<{ sellers?: { name: string }[] }>("/api/settings").data
-  const sellers = settings?.sellers ?? []
+  const settings = useApi<{ sellers?: { name: string }[]; crews?: string[] }>("/api/settings").data
+  const crews = settings?.crews ?? []
   const quotes = useApi<Quote[]>("/api/quotes").data ?? []
+  const cajas = useApi<Caja[]>("/api/cajas").data ?? []
+  const cashflow = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
   const [dateFrom, setDateFrom] = useState("")
   const [dateTo, setDateTo] = useState("")
   const [crew, setCrew] = useState("")
   const [notes, setNotes] = useState("")
+  // Registrar cobro
+  const [payAmount, setPayAmount] = useState<number>(0)
+  const [payCaja, setPayCaja] = useState("")
+  const [payDate, setPayDate] = useState("")
   const update = useAction(api.update)
   const txn = useAction(api.saleTransition)
   const createTask = useAction(api.create)
+  const createMov = useAction(api.create)
 
   useEffect(() => {
     if (!sale) return
@@ -365,6 +372,9 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
     setDateTo(sale.delivery_date_to ? sale.delivery_date_to.slice(0, 10) : "")
     setCrew(sale.delivery_crew ?? "")
     setNotes(sale.delivery_notes ?? "")
+    setPayAmount(0)
+    setPayCaja("")
+    setPayDate(new Date().toISOString().slice(0, 10))
   }, [sale?.id])
 
   if (!sale) return null
@@ -405,6 +415,24 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
   const clearEntrega = async () => {
     if (!confirm("¿Limpiar la fecha de entrega? Las tareas de medición / informe ya creadas siguen en la agenda — moveles la fecha o cancelálas desde ahí.")) return
     await update.run("sales", sale.id, { delivery_date: "", delivery_date_to: "", delivery_crew: "", delivery_notes: "" })
+    onClose(); refresh()
+  }
+
+  // Cobros: ingresos del cashflow linkeados a esta venta (la misma fuente que usa el saldo).
+  const cobros = cashflow.filter(m => m.flow === "Ingreso" && m.sale_ref === sale.quote_number)
+    .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+  const registrarCobro = async () => {
+    if (payAmount <= 0 || !payCaja) return
+    const caja = cajas.find(c => c.id === payCaja)
+    await createMov.run("cashflow", {
+      flow: "Ingreso", date: (payDate || new Date().toISOString().slice(0, 10)) + "T00:00:00.000Z",
+      caja_id: payCaja, caja_name: caja?.name ?? "",
+      category: "Venta - Pisos", subcategory: null,
+      counterparty: sale.client_name, counterparty_type: "client",
+      description: `Cobro - ${sale.title || sale.client_name}`, sale_ref: sale.quote_number,
+      currency: "USD", amount_ars: null, amount_usd: Math.round(payAmount * 100) / 100, exchange_rate: null,
+      fixed_variable: null, expense_type: null, transfer: false, needs_review: false, review_reason: null,
+    })
     onClose(); refresh()
   }
 
@@ -456,15 +484,16 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
             </div>
             <div className="text-[10px] text-muted-foreground -mt-1">Para instalaciones de varios días dejá "hasta". Al guardar: se agrega a Agenda + crea la Medición previa (−2 días). El Remito se genera cuando la medición esté completa.</div>
             <div>
-              <label className="text-xs font-medium block mb-1">Equipo / responsable</label>
-              {sellers.length > 0 ? (
+              <label className="text-xs font-medium block mb-1">Equipo de colocación</label>
+              {crews.length > 0 ? (
                 <select value={crew} onChange={(e) => setCrew(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
                   <option value="">— Sin asignar —</option>
-                  {sellers.map(s => <option key={s.name} value={s.name}>{s.name}</option>)}
-                  <option value="Externo">Externo / colocador</option>
+                  {crews.map(c => <option key={c} value={c}>{c}</option>)}
+                  {crew && !crews.includes(crew) && crew !== "Externo" && <option value={crew}>{crew}</option>}
+                  <option value="Externo">Externo / otro</option>
                 </select>
               ) : (
-                <Input value={crew} onChange={(e) => setCrew(e.target.value)} placeholder="Juan + Mariano" />
+                <Input value={crew} onChange={(e) => setCrew(e.target.value)} placeholder="Equipo" />
               )}
             </div>
             <div>
@@ -511,21 +540,51 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
           </DetailSection>
         </div>
 
-        {(sale.payments?.length ?? 0) > 0 && (
-          <div className="mt-6">
-            <DetailSection title={`Pagos (${sale.payments!.length})`}>
-              <div className="space-y-1.5">
-                {sale.payments!.map((p: any, i) => (
-                  <div key={i} className="rounded-md border border-border px-2 py-1.5 flex items-center justify-between text-xs gap-2">
-                    <span>{p.ts ? new Date(p.ts).toLocaleDateString("es-AR") : "—"}</span>
-                    <span className="text-muted-foreground">{p.method ?? ""}</span>
-                    <span className="tabular">{fmtMoney(p.amount)}</span>
+        <div className="mt-6">
+          <DetailSection title="Cobros">
+            <div className="flex items-center justify-between text-sm mb-2">
+              <span className="text-muted-foreground">Cobrado <b className="text-foreground tabular">{fmtMoney(paid)}</b> de {fmtMoney(sale.contract_total)}</span>
+              <span className={cn("tabular font-medium", due > 0.5 ? "text-amber-700" : "text-emerald-700")}>{due > 0.5 ? `Saldo ${fmtMoney(due)}` : "Saldado ✓"}</span>
+            </div>
+            {due > 0.5 && (
+              <div className="rounded-md border border-border p-2.5 space-y-2 bg-muted/20">
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Monto (US$)</div>
+                    <div className="flex gap-1">
+                      <Input type="number" min={0} step="0.01" value={payAmount === 0 ? "" : payAmount} placeholder="0" onChange={(e) => setPayAmount(Number(e.target.value) || 0)} className="h-8" />
+                      <Button type="button" variant="outline" size="sm" className="h-8 px-2 text-xs shrink-0" onClick={() => setPayAmount(Math.round(due * 100) / 100)}>Todo</Button>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Fecha</div>
+                    <Input type="date" value={payDate} onChange={(e) => setPayDate(e.target.value)} className="h-8" />
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Caja</div>
+                  <select value={payCaja} onChange={(e) => setPayCaja(e.target.value)} className="h-8 w-full rounded-md border border-input bg-transparent px-2 text-sm">
+                    <option value="">— Elegí la caja —</option>
+                    {cajas.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+                  </select>
+                </div>
+                <Button size="sm" onClick={registrarCobro} disabled={createMov.busy || payAmount <= 0 || !payCaja}>{createMov.busy ? "Registrando…" : "Registrar cobro"}</Button>
+                {createMov.error && <div className="text-[11px] text-destructive">{createMov.error}</div>}
+              </div>
+            )}
+            {cobros.length > 0 && (
+              <div className="space-y-1.5 mt-2">
+                {cobros.map((m) => (
+                  <div key={m.id} className="rounded-md border border-border px-2 py-1.5 flex items-center justify-between text-xs gap-2">
+                    <span>{m.date ? new Date(m.date).toLocaleDateString("es-AR") : "—"}</span>
+                    <span className="text-muted-foreground truncate">{m.caja_name}</span>
+                    <span className="tabular">{fmtMoney(m.amount_usd || 0)}</span>
                   </div>
                 ))}
               </div>
-            </DetailSection>
-          </div>
-        )}
+            )}
+          </DetailSection>
+        </div>
 
         {linkedQuote && (
           <div className="mt-6">
