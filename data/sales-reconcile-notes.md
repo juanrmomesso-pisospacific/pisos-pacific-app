@@ -147,3 +147,10 @@ COMISIONES egreso: US$540 Estudio BOW (0000100); US$106,14 arq. Pereyra (0000125
 CONTRACT=cobrado (saldo 0): 0000081(913,55),0000032(871,20),0000123(939),0000125(2272,20),0000129(2400)
 PENDIENTE: 0000067(1395),0000068(246),0000126,0000127,0000128,0000136,0000052,
   y parciales 0000134(saldo 2132),0000135(saldo 2263),0000137(saldo 851)
+
+## Gastos extra de la planilla (2026-06-06)
+23 egresos nuevos (últimas 4 semanas, may-jun) detectados por dedup contra lo ya cargado
+desde la pestaña Egresos de la Google Sheet → data/cashflow-vf-extra.seed.json (US$7.288:
+Caja General 7.152, MP 35, BdC 101). Colocadores (Ariel/Hugo/Gastón), fletes (Charly/Matías), Oso.
+Tras agregarlos se re-corrió import-reconcile.mjs: el ajuste de apertura de Caja General bajó
+de -29.718 a -22.566 (los gastos "salen de la conciliación"); las 6 cajas siguen = saldo real.

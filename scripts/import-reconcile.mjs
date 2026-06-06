@@ -90,7 +90,8 @@ egr2('2026-05-15', 106.14, 'Arq. Manuela Pereyra', 'CAJ-003', 'Marketing y Venta
 const load = (f) => { try { return JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8')); } catch { return []; } };
 const all = [
   ...load('cashflow.seed.json'), ...load('cashflow-bank-extra.seed.json'),
-  ...load('cashflow-mp-extra.seed.json'), ...load('cashflow-cash-extra.seed.json'), ...out,
+  ...load('cashflow-mp-extra.seed.json'), ...load('cashflow-cash-extra.seed.json'),
+  ...load('cashflow-vf-extra.seed.json'), ...out,
 ];
 const bal = {};
 for (const m of all) {
