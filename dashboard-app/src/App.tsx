@@ -10,7 +10,6 @@ import InventarioPage from "@/pages/InventarioPage"
 import CotizacionesPage from "@/pages/CotizacionesPage"
 import VentasPage from "@/pages/VentasPage"
 import AgendaPage from "@/pages/AgendaPage"
-import GastosPage from "@/pages/GastosPage"
 import ClientesPage from "@/pages/ClientesPage"
 import LoginPage from "@/pages/LoginPage"
 import AuditPage from "@/pages/AuditPage"
@@ -43,7 +42,7 @@ function Gate() {
                 <Route path="/cotizaciones" element={<CotizacionesPage />} />
                 <Route path="/ventas" element={<VentasPage />} />
                 <Route path="/agenda" element={<AgendaPage />} />
-                <Route path="/gastos" element={<GastosPage />} />
+                <Route path="/gastos" element={<Navigate to="/cashflow" replace />} />
                 <Route path="/cashflow" element={<CashFlowPage />} />
                 <Route path="/cajas" element={<CajasPage />} />
                 <Route path="/clientes" element={<ClientesPage />} />

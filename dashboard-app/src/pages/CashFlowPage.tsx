@@ -82,7 +82,7 @@ export default function CashFlowPage() {
         <Button size="sm" onClick={() => setOpenNew(true)}><Plus className="h-4 w-4" />Nuevo movimiento</Button>
       </TopbarActions>
       <CashflowForm open={openNew} onOpenChange={setOpenNew} cajas={cajas} />
-      <p className="text-xs text-muted-foreground">Análisis financiero: resultado, estructura de gastos y libro completo (ingresos + egresos). Para cargar egresos del día a día usá <b>Gastos y Pagos</b>.</p>
+      <p className="text-xs text-muted-foreground">Toda la plata en un lugar: resultado (P&amp;L), estructura de gastos, gasto por proveedor y libro completo (ingresos + egresos). Para cargar un movimiento usá <b>Nuevo movimiento</b>.</p>
       <Tabs defaultValue="pnl">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <TabsList className="h-8">
