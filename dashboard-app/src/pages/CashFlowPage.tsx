@@ -43,17 +43,37 @@ function plLine(m: CashflowMovement): string {
 // Dimensión principal del libro: Tipo de Gasto (egresos) o rubro de venta (ingresos).
 const rubroOf = (m: CashflowMovement) => (m.flow === "Egreso" ? (m.expense_type || m.category) : m.category) || "—"
 
+// Período dinámico → rango [from, to] en YYYY-MM-DD.
+type Range = { from: string; to: string }
+const PRESETS: { key: string; label: string }[] = [
+  { key: "m3", label: "Últimos 3 meses" }, { key: "m6", label: "Últimos 6 meses" },
+  { key: "m12", label: "Últimos 12 meses" }, { key: "ytd", label: "Este año" },
+  { key: "all", label: "Todo" }, { key: "custom", label: "Rango…" },
+]
+function computeRange(preset: string, movements: CashflowMovement[], cFrom: string, cTo: string): Range {
+  const iso = (d: Date) => d.toISOString().slice(0, 10)
+  const days = movements.map((m) => m.date?.slice(0, 10)).filter(Boolean).sort() as string[]
+  const minD = days[0] ?? "2024-01-01", maxD = days[days.length - 1] ?? iso(new Date())
+  const now = new Date()
+  const backMonths = (n: number) => { const d = new Date(now.getFullYear(), now.getMonth() - (n - 1), 1); return iso(d) }
+  switch (preset) {
+    case "m3": return { from: backMonths(3), to: maxD }
+    case "m6": return { from: backMonths(6), to: maxD }
+    case "m12": return { from: backMonths(12), to: maxD }
+    case "ytd": return { from: iso(new Date(now.getFullYear(), 0, 1)), to: maxD }
+    case "custom": return { from: cFrom || minD, to: cTo || maxD }
+    default: return { from: minD, to: maxD }
+  }
+}
+
 export default function CashFlowPage() {
   const movements = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
   const cajas = useApi<Caja[]>("/api/cajas").data ?? []
 
-  const years = useMemo(() => {
-    const s = new Set<number>()
-    for (const m of movements) if (m.date) s.add(Number(m.date.slice(0, 4)))
-    return [...s].sort((a, b) => b - a)
-  }, [movements])
-  const [year, setYear] = useState<number | null>(null)
-  const activeYear = year ?? years[0] ?? 2025
+  const [preset, setPreset] = useState("m12")
+  const [cFrom, setCFrom] = useState("")
+  const [cTo, setCTo] = useState("")
+  const range = useMemo(() => computeRange(preset, movements, cFrom, cTo), [preset, movements, cFrom, cTo])
   const [openNew, setOpenNew] = useState(false)
 
   return (
@@ -70,67 +90,80 @@ export default function CashFlowPage() {
             <TabsTrigger value="gastos">Gastos (Fijo/Variable)</TabsTrigger>
             <TabsTrigger value="libro">Libro</TabsTrigger>
           </TabsList>
-          <select className={selectCls} value={activeYear} onChange={(e) => setYear(Number(e.target.value))}>
-            {years.map((y) => <option key={y} value={y}>{y}</option>)}
-          </select>
+          <div className="flex items-center gap-2 flex-wrap">
+            <select className={selectCls} value={preset} onChange={(e) => setPreset(e.target.value)}>
+              {PRESETS.map((p) => <option key={p.key} value={p.key}>{p.label}</option>)}
+            </select>
+            {preset === "custom" && (
+              <>
+                <input type="date" className={selectCls} value={cFrom} onChange={(e) => setCFrom(e.target.value)} />
+                <span className="text-xs text-muted-foreground">a</span>
+                <input type="date" className={selectCls} value={cTo} onChange={(e) => setCTo(e.target.value)} />
+              </>
+            )}
+          </div>
         </div>
 
         <TabsContent value="pnl" className="mt-4">
-          <PnL movements={movements} year={activeYear} />
+          <PnL movements={movements} range={range} />
         </TabsContent>
         <TabsContent value="gastos" className="mt-4">
-          <Gastos movements={movements} year={activeYear} />
+          <Gastos movements={movements} range={range} />
         </TabsContent>
         <TabsContent value="libro" className="mt-4">
-          <Libro movements={movements} cajas={cajas} />
+          <Libro movements={movements} cajas={cajas} range={range} />
         </TabsContent>
       </Tabs>
     </div>
   )
 }
+const monthLabel = (mk: string) => MONTHS[Number(mk.slice(5, 7)) - 1] + " " + mk.slice(2, 4)
+const inRange = (m: CashflowMovement, r: Range) => { const d = m.date?.slice(0, 10); return !!d && d >= r.from && d <= r.to }
 
 // ============================ Estado de Resultados ============================
-type PnlRow = { label: string; vals: number[]; total: number; kind: "detail" | "subtotal" | "total" | "margin" | "section" }
+type PnlRow = { label: string; vals: Record<string, number>; total: number; kind: "detail" | "subtotal" | "total" | "margin" | "section" }
 
-function PnL({ movements, year }: { movements: CashflowMovement[]; year: number }) {
+function PnL({ movements, range }: { movements: CashflowMovement[]; range: Range }) {
   const { rows, months, transferCount, transferNet } = useMemo(() => {
-    const lines: Record<string, number[]> = {}
-    const monthsSet = new Set<number>()
+    const lines: Record<string, Record<string, number>> = {}
+    const monthsSet = new Set<string>()
     let transferCount = 0, transferNet = 0
     for (const m of movements) {
-      if (!m.date || Number(m.date.slice(0, 4)) !== year) continue
+      if (!inRange(m, range)) continue
       if (m.transfer) { transferCount++; transferNet += (m.amount_usd || 0) * (m.flow === "Ingreso" ? 1 : -1); continue }
-      const mi = Number(m.date.slice(5, 7)) - 1
-      monthsSet.add(mi)
+      const mk = m.date!.slice(0, 7)
+      monthsSet.add(mk)
       const v = (m.amount_usd || 0) * (m.flow === "Ingreso" ? 1 : -1)
       const line = plLine(m)
-      ;(lines[line] ??= Array(12).fill(0))[mi] += v
+      ;(lines[line] ??= {})[mk] = (lines[line][mk] || 0) + v
     }
-    const get = (n: string) => lines[n] ?? Array(12).fill(0)
-    const sum = (names: string[]) => { const a = Array(12).fill(0); for (const n of names) get(n).forEach((v, i) => (a[i] += v)); return a }
-    const tot = (a: number[]) => a.reduce((s, v) => s + v, 0)
+    const months = [...monthsSet].sort()
+    const get = (n: string) => lines[n] ?? {}
+    const sum = (names: string[]) => { const a: Record<string, number> = {}; for (const mk of months) { a[mk] = 0; for (const n of names) a[mk] += get(n)[mk] || 0 } return a }
+    const tot = (a: Record<string, number>) => months.reduce((s, mk) => s + (a[mk] || 0), 0)
+    const fill = (o: Record<string, number>) => Object.fromEntries(months.map((mk) => [mk, o[mk] || 0]))
 
     const ingresos = sum(REVENUE)
     const grossProfit = REVENUE.concat(COGS_LINES); const gp = sum(grossProfit)
     const ebitArr = grossProfit.concat(OPEX); const ebit = sum(ebitArr)
     const netArr = ebitArr.concat(BELOW); const net = sum(netArr)
-    const marginRow = (label: string, arr: number[]): PnlRow => ({
+    const marginRow = (label: string, arr: Record<string, number>): PnlRow => ({
       label, kind: "margin",
-      vals: arr.map((v, i) => (ingresos[i] ? v / ingresos[i] : NaN)),
+      vals: Object.fromEntries(months.map((mk) => [mk, ingresos[mk] ? arr[mk] / ingresos[mk] : NaN])),
       total: tot(ingresos) ? tot(arr) / tot(ingresos) : NaN,
     })
-    const line = (label: string): PnlRow => ({ label, kind: "detail", vals: get(label), total: tot(get(label)) })
-    const subtotal = (label: string, arr: number[]): PnlRow => ({ label, kind: "subtotal", vals: arr, total: tot(arr) })
-    const total = (label: string, arr: number[]): PnlRow => ({ label, kind: "total", vals: arr, total: tot(arr) })
+    const line = (label: string): PnlRow => ({ label, kind: "detail", vals: fill(get(label)), total: tot(get(label)) })
+    const subtotal = (label: string, arr: Record<string, number>): PnlRow => ({ label, kind: "subtotal", vals: arr, total: tot(arr) })
+    const total = (label: string, arr: Record<string, number>): PnlRow => ({ label, kind: "total", vals: arr, total: tot(arr) })
 
     const rows: PnlRow[] = [
-      { label: "Ingresos por venta", kind: "section", vals: [], total: 0 },
+      { label: "Ingresos por venta", kind: "section", vals: {}, total: 0 },
       ...REVENUE.map(line),
       subtotal("Ingresos Totales", ingresos),
       ...COGS_LINES.map(line),
       total("Ganancia Bruta", gp),
       marginRow("Margen Bruto", gp),
-      { label: "Gastos operativos", kind: "section", vals: [], total: 0 },
+      { label: "Gastos operativos", kind: "section", vals: {}, total: 0 },
       ...OPEX.map(line),
       total("Ganancia Operacional (EBIT)", ebit),
       marginRow("Margen Operacional", ebit),
@@ -138,11 +171,10 @@ function PnL({ movements, year }: { movements: CashflowMovement[]; year: number 
       total("Ganancia Neta", net),
       marginRow("Margen Neto", net),
     ]
-    const months = [...monthsSet].sort((a, b) => a - b)
     return { rows, months, transferCount, transferNet }
-  }, [movements, year])
+  }, [movements, range])
 
-  if (!months.length) return <Card className="p-8 text-center text-sm text-muted-foreground">Sin movimientos en {year}.</Card>
+  if (!months.length) return <Card className="p-8 text-center text-sm text-muted-foreground">Sin movimientos en el período.</Card>
 
   return (
     <>
@@ -151,8 +183,8 @@ function PnL({ movements, year }: { movements: CashflowMovement[]; year: number 
         <TableHeader>
           <TableRow>
             <TableHead className="sticky left-0 bg-card min-w-[230px]">Concepto</TableHead>
-            {months.map((mi) => <TableHead key={mi} className="text-right tabular">{MONTHS[mi]}</TableHead>)}
-            <TableHead className="text-right tabular font-semibold">Total {year}</TableHead>
+            {months.map((mk) => <TableHead key={mk} className="text-right tabular">{monthLabel(mk)}</TableHead>)}
+            <TableHead className="text-right tabular font-semibold">Total</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -186,7 +218,7 @@ function PnL({ movements, year }: { movements: CashflowMovement[]; year: number 
                   isMargin && "pl-6 italic text-muted-foreground text-xs",
                   isBold && "font-semibold",
                 )}>{r.label}</TableCell>
-                {months.map((mi) => cell(r.vals[mi], String(mi)))}
+                {months.map((mk) => cell(r.vals[mk] ?? (r.kind === "margin" ? NaN : 0), mk))}
                 {cell(r.total, "total")}
               </TableRow>
             )
@@ -204,12 +236,12 @@ function PnL({ movements, year }: { movements: CashflowMovement[]; year: number 
 }
 
 // ============================ Gastos Fijo/Variable ============================
-function Gastos({ movements, year }: { movements: CashflowMovement[]; year: number }) {
+function Gastos({ movements, range }: { movements: CashflowMovement[]; range: Range }) {
   const { rows, totals } = useMemo(() => {
     const byType: Record<string, { Fijo: number; Variable: number; Mixto: number; total: number }> = {}
     const totals = { Fijo: 0, Variable: 0, Mixto: 0, total: 0 }
     for (const m of movements) {
-      if (m.flow !== "Egreso" || m.transfer || !m.date || Number(m.date.slice(0, 4)) !== year) continue
+      if (m.flow !== "Egreso" || m.transfer || !inRange(m, range)) continue
       const type = m.expense_type || "Otros Gastos y Ajustes"
       const fv = (m.fixed_variable === "Fijo" || m.fixed_variable === "Variable" || m.fixed_variable === "Mixto") ? m.fixed_variable : "Variable"
       const amt = m.amount_usd || 0
@@ -219,9 +251,9 @@ function Gastos({ movements, year }: { movements: CashflowMovement[]; year: numb
     }
     const rows = Object.entries(byType).map(([type, v]) => ({ type, ...v })).sort((a, b) => b.total - a.total)
     return { rows, totals }
-  }, [movements, year])
+  }, [movements, range])
 
-  if (!rows.length) return <Card className="p-8 text-center text-sm text-muted-foreground">Sin egresos en {year}.</Card>
+  if (!rows.length) return <Card className="p-8 text-center text-sm text-muted-foreground">Sin egresos en el período.</Card>
 
   return (
     <Card className="overflow-hidden py-0">
@@ -232,7 +264,7 @@ function Gastos({ movements, year }: { movements: CashflowMovement[]; year: numb
             <TableHead className="text-right">Fijo</TableHead>
             <TableHead className="text-right">Variable</TableHead>
             <TableHead className="text-right">Mixto</TableHead>
-            <TableHead className="text-right font-semibold">Total {year}</TableHead>
+            <TableHead className="text-right font-semibold">Total</TableHead>
             <TableHead className="text-right">% del total</TableHead>
           </TableRow>
         </TableHeader>
@@ -264,7 +296,7 @@ function Gastos({ movements, year }: { movements: CashflowMovement[]; year: numb
 // ============================ Libro (filtros + orden) ============================
 type SortKey = "date" | "flow" | "caja_name" | "rubro" | "counterparty" | "amount_usd"
 
-function Libro({ movements, cajas }: { movements: CashflowMovement[]; cajas: Caja[] }) {
+function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; cajas: Caja[]; range: Range }) {
   const [flow, setFlow] = useState("Todos")
   const [cajaId, setCajaId] = useState("Todas")
   const [rubro, setRubro] = useState("Todos")
@@ -281,6 +313,7 @@ function Libro({ movements, cajas }: { movements: CashflowMovement[]; cajas: Caj
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase()
     const out = movements.filter((m) => {
+      if (!inRange(m, range)) return false
       if (flow !== "Todos" && m.flow !== flow) return false
       if (cajaId !== "Todas" && m.caja_id !== cajaId) return false
       if (rubro !== "Todos" && rubroOf(m) !== rubro) return false
@@ -298,7 +331,7 @@ function Libro({ movements, cajas }: { movements: CashflowMovement[]; cajas: Caj
       const bv = sortKey === "rubro" ? rubroOf(b) : (b[sortKey] ?? "")
       return String(av).localeCompare(String(bv)) * dir
     })
-  }, [movements, flow, cajaId, rubro, q, onlyReview, sortKey, sortDir])
+  }, [movements, range, flow, cajaId, rubro, q, onlyReview, sortKey, sortDir])
 
   const reviewCount = useMemo(() => movements.filter((m) => m.needs_review).length, [movements])
   const shown = filtered.slice(0, 400)
