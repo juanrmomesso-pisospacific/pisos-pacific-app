@@ -10,12 +10,13 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { SaleRowActions } from "@/components/RowActions"
 import { SaleForm } from "@/components/forms/SaleForm"
+import { SearchPicker } from "@/components/SearchPicker"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney, cn } from "@/lib/utils"
 import { openPacificPdf } from "@/lib/pdf"
-import type { Sale, Quote, Caja, CashflowMovement } from "@/lib/types"
+import type { Sale, Quote, Caja, CashflowMovement, Product } from "@/lib/types"
 
 const STATUSES = ["Confirmado", "Programado", "En proceso", "Finalizado"] as const
 type SaleStatus = (typeof STATUSES)[number]
@@ -353,6 +354,7 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
   const quotes = useApi<Quote[]>("/api/quotes").data ?? []
   const cajas = useApi<Caja[]>("/api/cajas").data ?? []
   const cashflow = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
+  const products = useApi<Product[]>("/api/products").data ?? []
   const [dateFrom, setDateFrom] = useState("")
   const [dateTo, setDateTo] = useState("")
   const [crew, setCrew] = useState("")
@@ -363,6 +365,7 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
   const [payDate, setPayDate] = useState("")
   // Preparación del remito (inspección)
   const [remitoItems, setRemitoItems] = useState<{ description: string; quantity: number; unit: string }[]>([])
+  const [remitoConfirmed, setRemitoConfirmed] = useState(false)
   const [remitoSaved, setRemitoSaved] = useState(false)
   const update = useAction(api.update)
   const txn = useAction(api.saleTransition)
@@ -379,6 +382,7 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
     setPayCaja("")
     setPayDate(new Date().toISOString().slice(0, 10))
     setRemitoItems(sale.remito_items ?? [])
+    setRemitoConfirmed(!!sale.remito_confirmed)
     setRemitoSaved(false)
   }, [sale?.id])
 
@@ -450,13 +454,19 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
     setRemitoSaved(false)
   }
   const addRemitoRow = (preset?: string) => { setRemitoItems((r) => [...r, { description: preset || "", quantity: 0, unit: preset && /varilla|cuartaca|z[oó]calo|nariz|perfil/i.test(preset) ? "ml" : "u" }]); setRemitoSaved(false) }
+  const addRemitoProduct = (productId: string) => {
+    const p = products.find((x) => x.id === productId); if (!p) return
+    const unit = p.stockTrack ? "m²" : (/z[oó]calo|varilla|cuartaca|nariz|moldura|perfil/i.test(p.name) ? "ml" : "u")
+    setRemitoItems((r) => [...r, { description: p.name, quantity: 0, unit }]); setRemitoSaved(false)
+  }
   const updateRemitoRow = (i: number, patch: Partial<{ description: string; quantity: number; unit: string }>) => { setRemitoItems((r) => r.map((x, idx) => idx === i ? { ...x, ...patch } : x)); setRemitoSaved(false) }
   const removeRemitoRow = (i: number) => { setRemitoItems((r) => r.filter((_, idx) => idx !== i)); setRemitoSaved(false) }
   const saveRemito = async () => {
     const clean = remitoItems.filter((x) => x.description.trim())
-    const r = await update.run("sales", sale.id, { remito_items: clean })
+    const r = await update.run("sales", sale.id, { remito_items: clean, remito_confirmed: remitoConfirmed })
     if (r) setRemitoSaved(true)
   }
+  const remitoPickerItems = products.filter((p) => p.active !== false).map((p) => ({ id: p.id, label: p.name, sub: p.sku, keywords: p.category }))
 
   return (
     <Sheet open={!!sale} onOpenChange={(o) => !o && onClose()}>
@@ -612,11 +622,13 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
         </div>
 
         <div className="mt-6">
-          <DetailSection title="Preparación del remito (inspección)">
+          <DetailSection title={`Preparación del remito (inspección)${remitoConfirmed ? " ✓" : ""}`}>
             <p className="text-[11px] text-muted-foreground mb-2">Para el depósito: m² de piso + terminaciones (varillas, zócalos, cajas…) que define el inspector. Sin precios.</p>
-            {remitoItems.length === 0 ? (
-              <Button size="sm" variant="outline" onClick={prefillRemito}>Cargar materiales de la venta</Button>
-            ) : (
+            <div className="flex items-center gap-2 mb-2">
+              <div className="flex-1"><SearchPicker items={remitoPickerItems} placeholder="Buscar producto del inventario para agregar…" onPick={addRemitoProduct} /></div>
+              {remitoItems.length === 0 && <Button size="sm" variant="outline" className="shrink-0" onClick={prefillRemito}>Cargar de la venta</Button>}
+            </div>
+            {remitoItems.length > 0 && (
               <div className="space-y-1.5">
                 {remitoItems.map((it, i) => (
                   <div key={i} className="flex items-center gap-1.5">
@@ -634,7 +646,11 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
               {FINISH_PRESETS.map(p => <button key={p} type="button" onClick={() => addRemitoRow(p)} className="text-[10px] border border-input rounded-full px-2 py-0.5 text-muted-foreground hover:text-foreground hover:border-foreground">+ {p}</button>)}
               <button type="button" onClick={() => addRemitoRow()} className="text-[10px] border border-input rounded-full px-2 py-0.5 text-muted-foreground hover:text-foreground hover:border-foreground">+ Otro</button>
             </div>
-            <div className="flex items-center gap-2 mt-3">
+            <label className="flex items-center gap-2 text-xs mt-3 cursor-pointer">
+              <input type="checkbox" checked={remitoConfirmed} onChange={(e) => { setRemitoConfirmed(e.target.checked); setRemitoSaved(false) }} />
+              Confirmado por inspección <span className="text-muted-foreground">(versión final para el depósito)</span>
+            </label>
+            <div className="flex items-center gap-2 mt-2">
               <Button size="sm" onClick={saveRemito} disabled={update.busy}>{update.busy ? "Guardando…" : remitoSaved ? "Guardado ✓" : "Guardar remito"}</Button>
               <Button size="sm" variant="outline" onClick={() => window.open(`/api/sales/${sale.id}/remito`, "_blank")}><Truck className="h-4 w-4" />Ver / imprimir remito</Button>
             </div>

@@ -67,6 +67,7 @@ export type Sale = {
   cashflow_balance_due?: number   // contract_total − cashflow_paid
   // Remito armado en la inspección (m² de piso + terminaciones que agrega el inspector)
   remito_items?: { description: string; quantity: number; unit: string }[]
+  remito_confirmed?: boolean   // versión final confirmada por inspección (para el depósito)
   // Margen calculado por el backend (para dashboards)
   venta_neta?: number
   cogs?: number

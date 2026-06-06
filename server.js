@@ -882,7 +882,8 @@ function remitoData(rec) {
     doc_type: 'remito', fecha: new Date().toLocaleDateString('es-AR'),
     cliente: rec.client_name || '', obra: rec.title || rec.client_address || '',
     direccion: rec.client_address || '', equipo: rec.delivery_crew || '', entrega: dlv,
-    obs: rec.delivery_notes || '', rows, template: rec.pdf_template || db.settings.pdf_template || 'clasico',
+    obs: [rec.remito_confirmed ? 'CONFIRMADO POR INSPECCIÓN' : '', rec.delivery_notes || ''].filter(Boolean).join(' · '),
+    rows, template: rec.pdf_template || db.settings.pdf_template || 'clasico',
   };
 }
 app.get('/api/sales/:id/remito', (req, res) => {
