@@ -88,6 +88,7 @@ export default function CashFlowPage() {
           <TabsList className="h-8">
             <TabsTrigger value="pnl">Estado de Resultados</TabsTrigger>
             <TabsTrigger value="gastos">Gastos (Fijo/Variable)</TabsTrigger>
+            <TabsTrigger value="proveedores">Por proveedor</TabsTrigger>
             <TabsTrigger value="libro">Libro</TabsTrigger>
           </TabsList>
           <div className="flex items-center gap-2 flex-wrap">
@@ -109,6 +110,9 @@ export default function CashFlowPage() {
         </TabsContent>
         <TabsContent value="gastos" className="mt-4">
           <Gastos movements={movements} range={range} />
+        </TabsContent>
+        <TabsContent value="proveedores" className="mt-4">
+          <Proveedores movements={movements} range={range} />
         </TabsContent>
         <TabsContent value="libro" className="mt-4">
           <Libro movements={movements} cajas={cajas} range={range} />
@@ -290,6 +294,66 @@ function Gastos({ movements, range }: { movements: CashflowMovement[]; range: Ra
         </TableBody>
       </Table>
     </Card>
+  )
+}
+
+// ============================ Por proveedor ============================
+function Proveedores({ movements, range }: { movements: CashflowMovement[]; range: Range }) {
+  const [q, setQ] = useState("")
+  const { rows, total } = useMemo(() => {
+    const by: Record<string, { n: number; total: number; types: Record<string, number> }> = {}
+    let total = 0
+    for (const m of movements) {
+      if (m.flow !== "Egreso" || m.transfer || !inRange(m, range)) continue
+      const cp = (m.counterparty || "").trim() || "—"
+      const r = (by[cp] ??= { n: 0, total: 0, types: {} })
+      const amt = m.amount_usd || 0
+      r.n++; r.total += amt; total += amt
+      const t = m.expense_type || "Otros"; r.types[t] = (r.types[t] || 0) + amt
+    }
+    const rows = Object.entries(by)
+      .map(([cp, v]) => ({ cp, n: v.n, total: v.total, topType: Object.entries(v.types).sort((a, b) => b[1] - a[1])[0]?.[0] ?? "—" }))
+      .sort((a, b) => b.total - a.total)
+    return { rows, total }
+  }, [movements, range])
+  const needle = q.trim().toLowerCase()
+  const shown = needle ? rows.filter((r) => r.cp.toLowerCase().includes(needle)) : rows
+
+  if (!rows.length) return <Card className="p-8 text-center text-sm text-muted-foreground">Sin egresos en el período.</Card>
+  return (
+    <>
+      <div className="flex items-center justify-between gap-3 mb-3">
+        <div className="text-xs text-muted-foreground">{shown.length} proveedores · total pagado {money(total)}</div>
+        <div className="relative w-full sm:w-64">
+          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+          <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar proveedor…" className="pl-8 h-8" />
+        </div>
+      </div>
+      <Card className="overflow-hidden py-0">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Proveedor / Destinatario</TableHead>
+              <TableHead className="text-right">Pagos</TableHead>
+              <TableHead>Tipo principal</TableHead>
+              <TableHead className="text-right font-semibold">Total pagado</TableHead>
+              <TableHead className="text-right">% del total</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {shown.map((r) => (
+              <TableRow key={r.cp} className="hover:bg-muted/30">
+                <TableCell className="font-medium max-w-[280px] truncate">{r.cp}</TableCell>
+                <TableCell className="text-right tabular text-muted-foreground">{r.n}</TableCell>
+                <TableCell className="text-xs text-muted-foreground">{r.topType}</TableCell>
+                <TableCell className="text-right tabular font-semibold">{money(r.total)}</TableCell>
+                <TableCell className="text-right tabular text-muted-foreground">{total ? pct(r.total / total) : "—"}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </Card>
+    </>
   )
 }
 
