@@ -18,6 +18,9 @@ type EventKind = "delivery" | "container" | "medicion" | "remito" | "visita" | "
 type Event = { ts: number; date: string; kind: EventKind; title: string; subtitle: string; meta?: string; crew?: string; taskId?: string; saleId?: string; status?: string; task?: Task; dayIndex?: number; totalDays?: number }
 type View = "lista" | "calendario"
 
+// Etiqueta para reconocer una venta: obra primero, después cliente y nº.
+const saleLabel = (s: Sale) => `${s.title || s.client_name} · ${s.client_name} · #${s.quote_number}`
+
 const WEEKDAYS = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"]
 
 const KIND_STYLE: Record<EventKind, { label: string; icon: React.ComponentType<{ className?: string }>; bg: string; border: string; dot: string; text: string }> = {
@@ -69,8 +72,8 @@ export default function AgendaPage() {
           ts: +d,
           date: dStr,
           kind: "delivery",
-          title: s.client_name,
-          subtitle: `${s.status} · #${s.quote_number} · ${s.description}${totalDays > 1 ? ` · día ${i + 1}/${totalDays}` : ""}`,
+          title: s.title || s.client_name,
+          subtitle: `${s.client_name} · ${s.status} · #${s.quote_number}${s.delivery_crew ? ` · ${s.delivery_crew}` : ""}${totalDays > 1 ? ` · día ${i + 1}/${totalDays}` : ""}`,
           meta: fmtMoney(s.contract_total),
           crew: s.delivery_crew,
           saleId: s.id,
@@ -255,12 +258,12 @@ function NewEventSheet({ open, onOpenChange, sales }: { open: boolean; onOpenCha
                   <option value="">— Elegí una venta —</option>
                   {unscheduledSales.length > 0 && (
                     <optgroup label="Sin entrega programada">
-                      {unscheduledSales.map(s => <option key={s.id} value={s.id}>{s.client_name} · #{s.quote_number} · {fmtMoney(s.contract_total)}</option>)}
+                      {unscheduledSales.map(s => <option key={s.id} value={s.id}>{saleLabel(s)} · {fmtMoney(s.contract_total)}</option>)}
                     </optgroup>
                   )}
                   {linkableSales.filter(s => s.delivery_date).length > 0 && (
                     <optgroup label="Ya programadas (reprogramar)">
-                      {linkableSales.filter(s => s.delivery_date).map(s => <option key={s.id} value={s.id}>{s.client_name} · #{s.quote_number} · {new Date(s.delivery_date!).toLocaleDateString("es-AR")}</option>)}
+                      {linkableSales.filter(s => s.delivery_date).map(s => <option key={s.id} value={s.id}>{saleLabel(s)} · {new Date(s.delivery_date!).toLocaleDateString("es-AR")}</option>)}
                     </optgroup>
                   )}
                 </select>
@@ -318,7 +321,7 @@ function NewEventSheet({ open, onOpenChange, sales }: { open: boolean; onOpenCha
                 <label className="text-sm font-medium block mb-1">Venta vinculada <span className="text-muted-foreground font-normal">(opcional)</span></label>
                 <select value={saleId} onChange={(e) => setSaleId(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
                   <option value="">— Ninguna —</option>
-                  {linkableSales.map(s => <option key={s.id} value={s.id}>{s.client_name} · #{s.quote_number}</option>)}
+                  {linkableSales.map(s => <option key={s.id} value={s.id}>{saleLabel(s)}</option>)}
                 </select>
               </div>
               <div>
