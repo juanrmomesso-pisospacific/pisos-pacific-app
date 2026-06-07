@@ -1,19 +1,21 @@
 import { createContext, useContext, useMemo, useState } from "react"
-import { presetRange, type PresetId, type Range } from "@/lib/period"
+import { presetRange, DEFAULT_PRESET, type PresetId, type Range } from "@/lib/period"
 
 type PeriodCtx = {
   presetId: PresetId
   customFrom: string | null
   customTo: string | null
+  isDefault: boolean
   setPreset: (id: PresetId) => void
   setCustom: (from: string, to: string) => void
+  reset: () => void
   range: Range
 }
 
 const Ctx = createContext<PeriodCtx | null>(null)
 
 export function PeriodProvider({ children }: { children: React.ReactNode }) {
-  const [presetId, setPresetId] = useState<PresetId>("month")
+  const [presetId, setPresetId] = useState<PresetId>(DEFAULT_PRESET)
   const [customFrom, setCustomFrom] = useState<string | null>(null)
   const [customTo, setCustomTo] = useState<string | null>(null)
 
@@ -30,8 +32,10 @@ export function PeriodProvider({ children }: { children: React.ReactNode }) {
     presetId,
     customFrom,
     customTo,
+    isDefault: presetId === DEFAULT_PRESET,
     setPreset: (id) => setPresetId(id),
     setCustom: (f, t) => { setCustomFrom(f); setCustomTo(t); setPresetId("custom") },
+    reset: () => { setPresetId(DEFAULT_PRESET); setCustomFrom(null); setCustomTo(null) },
     range,
   }
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>

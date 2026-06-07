@@ -9,6 +9,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@
 import { Badge } from "@/components/ui/badge"
 import { useApi } from "@/lib/api"
 import { usePeriod } from "@/contexts/PeriodContext"
+import { QuickPeriod } from "@/components/QuickPeriod"
 import { useRole } from "@/contexts/RoleContext"
 import { inRange, fmtRange, lastNMonths } from "@/lib/period"
 import { fmtMoney } from "@/lib/utils"
@@ -116,7 +117,10 @@ function FunnelReport() {
 
   return (
     <div className="space-y-4 md:space-y-6">
-      <div className="text-xs text-muted-foreground">Período: {fmtRange(range)} {sellerScope ? `· Vendedor: ${sellerScope}` : "· Todos los vendedores"}</div>
+      <div className="flex items-center justify-between flex-wrap gap-2">
+        <div className="text-xs text-muted-foreground">Período: {fmtRange(range)} {sellerScope ? `· Vendedor: ${sellerScope}` : "· Todos los vendedores"}</div>
+        <QuickPeriod />
+      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         <Kpi icon={Users}        label="Leads"       value={data.kpis.leadsTotal.toString()} />

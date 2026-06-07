@@ -4,31 +4,20 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@
 import { Badge } from "@/components/ui/badge"
 import { ArrowUp, ArrowDown, Minus, LineChart, BarChart3 } from "lucide-react"
 import { useApi } from "@/lib/api"
+import { usePeriod } from "@/contexts/PeriodContext"
+import { QuickPeriod } from "@/components/QuickPeriod"
 import { fmtMoney, fmtInt, cn } from "@/lib/utils"
 import type { Sale, CashflowMovement, Product } from "@/lib/types"
 
-// ---- Período dinámico ----
+// ---- Período (filtro global) ----
 type Range = { from: string; to: string }
-const PRESETS = [
-  { key: "m1", label: "Este mes", months: 1 }, { key: "m3", label: "3 meses", months: 3 },
-  { key: "m6", label: "6 meses", months: 6 }, { key: "m12", label: "12 meses", months: 12 },
-  { key: "ytd", label: "Año", months: 0 }, { key: "all", label: "Todo", months: -1 },
-]
-const iso = (d: Date) => d.toISOString().slice(0, 10)
-function rangeFor(preset: string, minDate: string, maxDate: string): Range {
-  const now = new Date()
-  if (preset === "all") return { from: minDate, to: maxDate }
-  if (preset === "ytd") return { from: iso(new Date(now.getFullYear(), 0, 1)), to: maxDate }
-  const p = PRESETS.find(x => x.key === preset)!
-  const d = new Date(now.getFullYear(), now.getMonth() - (p.months - 1), 1)
-  return { from: iso(d), to: maxDate }
-}
+const ymd = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
 function prevRange(r: Range): Range {
   const from = new Date(r.from + "T12:00:00"), to = new Date(r.to + "T12:00:00")
   const len = Math.max(1, Math.round((+to - +from) / 86400000) + 1)
   const pTo = new Date(from); pTo.setDate(pTo.getDate() - 1)
   const pFrom = new Date(pTo); pFrom.setDate(pFrom.getDate() - len + 1)
-  return { from: iso(pFrom), to: iso(pTo) }
+  return { from: ymd(pFrom), to: ymd(pTo) }
 }
 
 // Desde esta fecha la cobertura de costos por venta es completa (backfill 2026).
@@ -50,19 +39,15 @@ export default function DashboardPage() {
   const sales = useApi<Sale[]>("/api/sales").data ?? []
   const cashflow = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
   const products = useApi<Product[]>("/api/products").data ?? []
-  const [preset, setPreset] = useState("m6")
+  const { range: gRange } = usePeriod()
   const [chartMode, setChartMode] = useState<"line" | "bar">(() => (typeof window !== "undefined" && window.localStorage.getItem("dash:chart") === "bar") ? "bar" : "line")
   const setChart = (m: "line" | "bar") => { setChartMode(m); if (typeof window !== "undefined") window.localStorage.setItem("dash:chart", m) }
 
-  const minMax = useMemo(() => {
-    const ds = [...sales.map(saleDate), ...cashflow.map(m => (m.date || "").slice(0, 10))].filter(Boolean).sort()
-    return { min: ds[0] || "2024-01-01", max: ds[ds.length - 1] || iso(new Date()) }
-  }, [sales, cashflow])
   // Cobertura de costos completa desde acá → el análisis devengado no va más atrás
   // (antes el costo no está cargado y el margen/neto pierde sentido).
-  const rawRange = useMemo(() => rangeFor(preset, minMax.min, minMax.max), [preset, minMax])
-  const clamped = rawRange.from < DEVENGADO_DESDE
-  const range = useMemo(() => ({ from: clamped ? DEVENGADO_DESDE : rawRange.from, to: rawRange.to }), [rawRange, clamped])
+  const rawFrom = ymd(gRange.from), to = ymd(gRange.to)
+  const clamped = rawFrom < DEVENGADO_DESDE
+  const range = useMemo(() => ({ from: clamped ? DEVENGADO_DESDE : rawFrom, to }), [rawFrom, to, clamped])
   const prev = useMemo(() => prevRange(range), [range])
 
   // Producto piso (m²): por stockTrack y activo. Mapa sku→producto.
@@ -183,14 +168,10 @@ export default function DashboardPage() {
       {/* Período */}
       <div className="flex items-center justify-between flex-wrap gap-2">
         <div className="text-sm text-muted-foreground">
-          Performance · {range.from} a {range.to}
+          Performance · {gRange.label} · {range.from} a {range.to}
           {clamped && <span className="ml-2 text-[11px] text-amber-600">· análisis devengado desde ene-2026 (cobertura de costos)</span>}
         </div>
-        <div className="flex gap-1">
-          {PRESETS.map(p => (
-            <button key={p.key} onClick={() => setPreset(p.key)} className={cn("h-8 px-3 text-xs rounded-md border", preset === p.key ? "bg-foreground text-background border-foreground" : "border-input text-muted-foreground hover:text-foreground")}>{p.label}</button>
-          ))}
-        </div>
+        <QuickPeriod />
       </div>
 
       {/* KPIs */}

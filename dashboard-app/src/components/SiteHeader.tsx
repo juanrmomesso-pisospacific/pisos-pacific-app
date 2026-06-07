@@ -25,7 +25,7 @@ const TITLES: Record<string, string> = {
 }
 
 // Which routes should show the global period selector?
-const PERIOD_ROUTES = new Set(["/dashboard", "/reportes"])
+const PERIOD_ROUTES = new Set(["/dashboard", "/reportes", "/cashflow"])
 // Which routes get the dashboard-only threshold settings panel?
 const DASHBOARD_ROUTES = new Set(["/dashboard"])
 

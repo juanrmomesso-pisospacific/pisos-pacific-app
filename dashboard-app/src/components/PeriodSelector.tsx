@@ -1,26 +1,37 @@
-import { Calendar } from "lucide-react"
+import { Calendar, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator, DropdownMenuLabel } from "@/components/ui/dropdown-menu"
 import { usePeriod } from "@/contexts/PeriodContext"
 import { PRESET_LABELS, fmtRange, type PresetId } from "@/lib/period"
+import { cn } from "@/lib/utils"
 
-const ORDER: PresetId[] = ["month", "lastMonth", "quarter", "ytd", "lastYear"]
+const ROLLING: PresetId[] = ["month", "lastMonth", "quarter", "last3", "last6", "last12"]
+const CALENDAR: PresetId[] = ["ytd", "lastYear", "all"]
 
 export function PeriodSelector() {
-  const { presetId, range, setPreset, setCustom, customFrom, customTo } = usePeriod()
+  const { presetId, range, setPreset, setCustom, customFrom, customTo, isDefault, reset } = usePeriod()
+  const isCustom = presetId === "custom"
 
   return (
+    <div className="inline-flex items-center gap-1">
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="default" size="sm" className="gap-2">
+        {/* Custom = filtro "raro" → acento ámbar para que sea imposible no verlo */}
+        <Button variant={isCustom ? "outline" : "default"} size="sm" className={cn("gap-2", isCustom && "border-amber-500 text-amber-700 bg-amber-50 hover:bg-amber-100")}>
           <Calendar className="h-3.5 w-3.5" />
-          <span>{presetId === "custom" ? "Custom" : PRESET_LABELS[presetId]}</span>
-          <span className="text-primary-foreground/70 text-xs ml-1">· {fmtRange(range)}</span>
+          <span>{PRESET_LABELS[presetId]}</span>
+          <span className={cn("text-xs ml-1", isCustom ? "text-amber-700/80" : "text-primary-foreground/70")}>· {fmtRange(range)}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-72">
         <DropdownMenuLabel>Período</DropdownMenuLabel>
-        {ORDER.map((id) => (
+        {ROLLING.map((id) => (
+          <DropdownMenuItem key={id} onClick={() => setPreset(id)} className={presetId === id ? "bg-accent" : ""}>
+            {PRESET_LABELS[id]}
+          </DropdownMenuItem>
+        ))}
+        <DropdownMenuSeparator />
+        {CALENDAR.map((id) => (
           <DropdownMenuItem key={id} onClick={() => setPreset(id)} className={presetId === id ? "bg-accent" : ""}>
             {PRESET_LABELS[id]}
           </DropdownMenuItem>
@@ -50,5 +61,12 @@ export function PeriodSelector() {
         </div>
       </DropdownMenuContent>
     </DropdownMenu>
+    {/* Reset visible cuando el filtro NO es el default → para no olvidarse un filtro puesto */}
+    {!isDefault && (
+      <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-foreground" title="Volver a Este mes" onClick={reset}>
+        <X className="h-4 w-4" />
+      </Button>
+    )}
+    </div>
   )
 }

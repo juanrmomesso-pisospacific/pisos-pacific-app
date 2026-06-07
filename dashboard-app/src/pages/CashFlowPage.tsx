@@ -10,6 +10,8 @@ import { Plus } from "lucide-react"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { CashflowForm } from "@/components/forms/CashflowForm"
 import { useApi } from "@/lib/api"
+import { usePeriod } from "@/contexts/PeriodContext"
+import { QuickPeriod } from "@/components/QuickPeriod"
 import { cn } from "@/lib/utils"
 import type { CashflowMovement, Caja } from "@/lib/types"
 
@@ -43,37 +45,15 @@ function plLine(m: CashflowMovement): string {
 // Dimensión principal del libro: Tipo de Gasto (egresos) o rubro de venta (ingresos).
 const rubroOf = (m: CashflowMovement) => (m.flow === "Egreso" ? (m.expense_type || m.category) : m.category) || "—"
 
-// Período dinámico → rango [from, to] en YYYY-MM-DD.
+// Período → rango [from, to] en YYYY-MM-DD (viene del filtro GLOBAL).
 type Range = { from: string; to: string }
-const PRESETS: { key: string; label: string }[] = [
-  { key: "m3", label: "Últimos 3 meses" }, { key: "m6", label: "Últimos 6 meses" },
-  { key: "m12", label: "Últimos 12 meses" }, { key: "ytd", label: "Este año" },
-  { key: "all", label: "Todo" }, { key: "custom", label: "Rango…" },
-]
-function computeRange(preset: string, movements: CashflowMovement[], cFrom: string, cTo: string): Range {
-  const iso = (d: Date) => d.toISOString().slice(0, 10)
-  const days = movements.map((m) => m.date?.slice(0, 10)).filter(Boolean).sort() as string[]
-  const minD = days[0] ?? "2024-01-01", maxD = days[days.length - 1] ?? iso(new Date())
-  const now = new Date()
-  const backMonths = (n: number) => { const d = new Date(now.getFullYear(), now.getMonth() - (n - 1), 1); return iso(d) }
-  switch (preset) {
-    case "m3": return { from: backMonths(3), to: maxD }
-    case "m6": return { from: backMonths(6), to: maxD }
-    case "m12": return { from: backMonths(12), to: maxD }
-    case "ytd": return { from: iso(new Date(now.getFullYear(), 0, 1)), to: maxD }
-    case "custom": return { from: cFrom || minD, to: cTo || maxD }
-    default: return { from: minD, to: maxD }
-  }
-}
+const ymd = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
 
 export default function CashFlowPage() {
   const movements = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
   const cajas = useApi<Caja[]>("/api/cajas").data ?? []
-
-  const [preset, setPreset] = useState("m12")
-  const [cFrom, setCFrom] = useState("")
-  const [cTo, setCTo] = useState("")
-  const range = useMemo(() => computeRange(preset, movements, cFrom, cTo), [preset, movements, cFrom, cTo])
+  const { range: gRange } = usePeriod()
+  const range = useMemo<Range>(() => ({ from: ymd(gRange.from), to: ymd(gRange.to) }), [gRange])
   const [openNew, setOpenNew] = useState(false)
 
   return (
@@ -91,18 +71,7 @@ export default function CashFlowPage() {
             <TabsTrigger value="proveedores">Por proveedor</TabsTrigger>
             <TabsTrigger value="libro">Libro</TabsTrigger>
           </TabsList>
-          <div className="flex items-center gap-2 flex-wrap">
-            <select className={selectCls} value={preset} onChange={(e) => setPreset(e.target.value)}>
-              {PRESETS.map((p) => <option key={p.key} value={p.key}>{p.label}</option>)}
-            </select>
-            {preset === "custom" && (
-              <>
-                <input type="date" className={selectCls} value={cFrom} onChange={(e) => setCFrom(e.target.value)} />
-                <span className="text-xs text-muted-foreground">a</span>
-                <input type="date" className={selectCls} value={cTo} onChange={(e) => setCTo(e.target.value)} />
-              </>
-            )}
-          </div>
+          <QuickPeriod />
         </div>
 
         <TabsContent value="pnl" className="mt-4">

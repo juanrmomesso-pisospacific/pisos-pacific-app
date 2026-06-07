@@ -1,4 +1,6 @@
-export type PresetId = "month" | "lastMonth" | "quarter" | "ytd" | "lastYear" | "custom"
+export type PresetId = "month" | "lastMonth" | "quarter" | "last3" | "last6" | "last12" | "ytd" | "lastYear" | "all" | "custom"
+
+export const DEFAULT_PRESET: PresetId = "month"
 
 export type Range = { from: Date; to: Date; label: string }
 
@@ -6,14 +8,20 @@ export const PRESET_LABELS: Record<PresetId, string> = {
   month: "Este mes",
   lastMonth: "Mes pasado",
   quarter: "Este trimestre",
+  last3: "Últimos 3 meses",
+  last6: "Últimos 6 meses",
+  last12: "Últimos 12 meses",
   ytd: "Este año",
   lastYear: "Año pasado",
+  all: "Todo",
   custom: "Custom",
 }
 
 export function presetRange(id: PresetId, today = new Date()): Range {
   const d = new Date(today); d.setHours(0,0,0,0)
   let from: Date, to: Date
+  // Rolling = desde el 1° del mes (N−1) meses atrás hasta hoy.
+  const rolling = (n: number): [Date, Date] => [new Date(d.getFullYear(), d.getMonth() - (n - 1), 1), new Date(d)]
   switch (id) {
     case "month":     from = new Date(d.getFullYear(), d.getMonth(), 1);     to = new Date(d.getFullYear(), d.getMonth()+1, 0); break
     case "lastMonth": from = new Date(d.getFullYear(), d.getMonth()-1, 1);   to = new Date(d.getFullYear(), d.getMonth(), 0);   break
@@ -23,8 +31,12 @@ export function presetRange(id: PresetId, today = new Date()): Range {
       to = new Date(d.getFullYear(), q*3+3, 0)
       break
     }
+    case "last3":     [from, to] = rolling(3);  break
+    case "last6":     [from, to] = rolling(6);  break
+    case "last12":    [from, to] = rolling(12); break
     case "ytd":       from = new Date(d.getFullYear(), 0, 1);                 to = new Date(d.getFullYear(), 11, 31); break
     case "lastYear":  from = new Date(d.getFullYear()-1, 0, 1);               to = new Date(d.getFullYear()-1, 11, 31); break
+    case "all":       from = new Date(2000, 0, 1);                            to = new Date(d); break
     default:          from = new Date(d.getFullYear(), d.getMonth(), 1);     to = new Date(d.getFullYear(), d.getMonth()+1, 0); break
   }
   to.setHours(23, 59, 59, 999)
