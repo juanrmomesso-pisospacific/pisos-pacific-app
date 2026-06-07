@@ -111,8 +111,8 @@ export function SaleRowActions({ sale }: { sale: Sale }) {
 
 // ---------- T-Calendar — Programar entrega drawer (entrega + optional medición + remito) ----------
 function ScheduleDeliveryDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChange: (o: boolean) => void; sale: Sale }) {
-  const settings = useApi<{ sellers?: { name: string }[] }>("/api/settings").data
-  const sellers = settings?.sellers ?? []
+  const settings = useApi<{ sellers?: { name: string }[]; crews?: string[] }>("/api/settings").data
+  const crews = settings?.crews ?? []
   const [dateFrom, setDateFrom] = useState<string>(sale.delivery_date ? sale.delivery_date.slice(0, 10) : "")
   const [dateTo, setDateTo]     = useState<string>(sale.delivery_date_to ? sale.delivery_date_to.slice(0, 10) : "")
   const [crew, setCrew] = useState<string>(sale.delivery_crew ?? "")
@@ -197,15 +197,16 @@ function ScheduleDeliveryDrawer({ open, onOpenChange, sale }: { open: boolean; o
             <div className="text-[10px] text-muted-foreground mt-1">El Remito se crea automáticamente al completar la medición.</div>
           </div>
           <div>
-            <label className="text-sm font-medium block mb-1">Equipo / responsable (opcional)</label>
-            {sellers.length > 0 ? (
+            <label className="text-sm font-medium block mb-1">Equipo de colocación <span className="text-muted-foreground font-normal">(opcional)</span></label>
+            {crews.length > 0 ? (
               <select value={crew} onChange={(e) => setCrew(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
                 <option value="">— Sin asignar —</option>
-                {sellers.map(s => <option key={s.name} value={s.name}>{s.name}</option>)}
-                <option value="Externo">Externo / colocador</option>
+                {crews.map(c => <option key={c} value={c}>{c}</option>)}
+                {crew && !crews.includes(crew) && crew !== "Externo" && <option value={crew}>{crew}</option>}
+                <option value="Externo">Externo / otro</option>
               </select>
             ) : (
-              <Input value={crew} onChange={(e) => setCrew(e.target.value)} placeholder="Juan + Mariano / Externo" />
+              <Input value={crew} onChange={(e) => setCrew(e.target.value)} placeholder="Equipo" />
             )}
           </div>
           <div>

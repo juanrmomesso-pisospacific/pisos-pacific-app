@@ -263,28 +263,47 @@ function Kpi({ label, value, sub, delta }: { label: string; value: string; sub?:
 
 function FactChart({ data }: { data: { mk: string; fact: number; m2: number }[] }) {
   if (data.length === 0) return <div className="text-sm text-muted-foreground py-10 text-center">Sin datos en el período</div>
-  const W = 600, H = 200, padB = 24, padL = 4, padR = 4
+  const W = 760, H = 260, padTop = 26, padB = 30, padL = 10, padR = 10
+  const plotH = H - padTop - padB
   const maxF = Math.max(1, ...data.map(d => d.fact))
   const maxM2 = Math.max(1, ...data.map(d => d.m2))
-  const bw = (W - padL - padR) / data.length
-  const monthLbl = (mk: string) => ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"][Number(mk.slice(5, 7)) - 1] + " " + mk.slice(2, 4)
-  const linePts = data.map((d, i) => [padL + bw * i + bw / 2, (H - padB) - (d.m2 / maxM2) * (H - padB - 10)] as [number, number])
+  const slot = (W - padL - padR) / data.length
+  const monthLbl = (mk: string) => ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"][Number(mk.slice(5, 7)) - 1] + " " + mk.slice(2, 4)
+  const k = (n: number) => n >= 1000 ? Math.round(n / 1000) + "k" : Math.round(n).toString()
+  const yM = (v: number) => padTop + plotH - (v / maxM2) * plotH
+  const cx = (i: number) => padL + slot * i + slot / 2
+  const linePts = data.map((d, i) => [cx(i), yM(d.m2)] as [number, number])
+  const ACCENT = "#e4a368"
   return (
     <div className="overflow-x-auto">
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ minWidth: data.length * 48 }}>
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ minWidth: data.length * 64 }}>
+        {/* gridlines suaves */}
+        {[0.25, 0.5, 0.75, 1].map((g, i) => (
+          <line key={i} x1={padL} x2={W - padR} y1={padTop + plotH * (1 - g)} y2={padTop + plotH * (1 - g)} className="stroke-border" strokeWidth={0.5} strokeDasharray="2 3" />
+        ))}
+        {/* barras facturación + valor arriba */}
         {data.map((d, i) => {
-          const h = (d.fact / maxF) * (H - padB - 10)
+          const bw = Math.min(38, slot * 0.5)
+          const x = cx(i) - bw / 2
+          const h = (d.fact / maxF) * plotH
           return <g key={i}>
-            <rect x={padL + bw * i + bw * 0.15} y={(H - padB) - h} width={bw * 0.7} height={h} rx={2} className="fill-foreground/80" />
-            <text x={padL + bw * i + bw / 2} y={H - 8} textAnchor="middle" className="fill-muted-foreground" style={{ fontSize: 9 }}>{monthLbl(d.mk)}</text>
+            <rect x={x} y={padTop + plotH - h} width={bw} height={h} rx={3} fill="currentColor" className="text-foreground/85" />
+            <text x={cx(i)} y={padTop + plotH - h - 6} textAnchor="middle" className="fill-foreground font-medium" style={{ fontSize: 10 }}>US$ {k(d.fact)}</text>
+            <text x={cx(i)} y={H - 10} textAnchor="middle" className="fill-muted-foreground" style={{ fontSize: 10 }}>{monthLbl(d.mk)}</text>
           </g>
         })}
-        <polyline points={linePts.map(p => p.join(",")).join(" ")} fill="none" stroke="#e4a368" strokeWidth={2} />
-        {linePts.map((p, i) => <circle key={i} cx={p[0]} cy={p[1]} r={2.5} fill="#e4a368" />)}
+        {/* línea m² + puntos + valor */}
+        <polyline points={linePts.map(p => p.join(",")).join(" ")} fill="none" stroke={ACCENT} strokeWidth={2} />
+        {data.map((d, i) => (
+          <g key={i}>
+            <circle cx={linePts[i][0]} cy={linePts[i][1]} r={3} fill={ACCENT} stroke="white" strokeWidth={1} />
+            <text x={linePts[i][0]} y={linePts[i][1] - 7} textAnchor="middle" style={{ fontSize: 9, fill: ACCENT, fontWeight: 600 }}>{Math.round(d.m2)} m²</text>
+          </g>
+        ))}
       </svg>
-      <div className="flex items-center gap-4 text-[10px] text-muted-foreground mt-1 px-1">
-        <span className="inline-flex items-center gap-1"><span className="inline-block h-2 w-2 rounded-sm bg-foreground/80" />Facturación (US$)</span>
-        <span className="inline-flex items-center gap-1"><span className="inline-block h-2 w-3" style={{ background: "#e4a368" }} />m² de piso</span>
+      <div className="flex items-center gap-4 text-[11px] text-muted-foreground mt-1 px-1">
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-foreground/85" />Facturación (US$)</span>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block h-0.5 w-4 rounded" style={{ background: ACCENT }} />m² de piso vendidos</span>
       </div>
     </div>
   )

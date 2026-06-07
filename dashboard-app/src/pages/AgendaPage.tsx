@@ -432,7 +432,7 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
     const r = e.currentTarget.getBoundingClientRect()
     return Math.max(0, Math.min(6, Math.floor((e.clientX - r.left) / (r.width / 7))))
   }
-  const HEADER_H = 24, LANE_H = 22
+  const HEADER_H = 30, LANE_H = 22
 
   const focusedEvents = focused ? eventsByDate.get(focused) ?? [] : []
 
