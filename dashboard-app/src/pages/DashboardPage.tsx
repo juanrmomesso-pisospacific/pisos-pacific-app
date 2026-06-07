@@ -2,7 +2,7 @@ import { useMemo, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
-import { ArrowUp, ArrowDown, Minus, AreaChart, BarChart3 } from "lucide-react"
+import { ArrowUp, ArrowDown, Minus, LineChart, BarChart3 } from "lucide-react"
 import { useApi } from "@/lib/api"
 import { fmtMoney, fmtInt, cn } from "@/lib/utils"
 import type { Sale, CashflowMovement, Product } from "@/lib/types"
@@ -51,8 +51,8 @@ export default function DashboardPage() {
   const cashflow = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
   const products = useApi<Product[]>("/api/products").data ?? []
   const [preset, setPreset] = useState("m6")
-  const [chartMode, setChartMode] = useState<"area" | "stack">(() => (typeof window !== "undefined" && window.localStorage.getItem("dash:chart") === "stack") ? "stack" : "area")
-  const setChart = (m: "area" | "stack") => { setChartMode(m); if (typeof window !== "undefined") window.localStorage.setItem("dash:chart", m) }
+  const [chartMode, setChartMode] = useState<"line" | "bar">(() => (typeof window !== "undefined" && window.localStorage.getItem("dash:chart") === "bar") ? "bar" : "line")
+  const setChart = (m: "line" | "bar") => { setChartMode(m); if (typeof window !== "undefined") window.localStorage.setItem("dash:chart", m) }
 
   const minMax = useMemo(() => {
     const ds = [...sales.map(saleDate), ...cashflow.map(m => (m.date || "").slice(0, 10))].filter(Boolean).sort()
@@ -204,16 +204,19 @@ export default function DashboardPage() {
       {/* Facturación + volumen | P&L */}
       <div className="grid grid-cols-1 @4xl/main:grid-cols-3 gap-4">
         <Card className="@4xl/main:col-span-2 p-4">
-          <div className="flex items-center justify-between mb-1">
-            <div className="text-sm font-medium">Facturación y volumen (m² piso) por mes</div>
-            <div className="inline-flex items-center gap-0.5 rounded-md border border-border p-0.5">
-              <button onClick={() => setChart("area")} title="Área + volumen"
-                className={cn("h-6 w-6 inline-flex items-center justify-center rounded", chartMode === "area" ? "bg-muted text-foreground" : "text-muted-foreground hover:text-foreground")}>
-                <AreaChart className="h-3.5 w-3.5" />
+          <div className="flex items-start justify-between mb-1">
+            <div>
+              <div className="text-sm font-medium">Facturación y volumen por mes</div>
+              <div className="text-[11px] text-muted-foreground">Facturación en US$ · volumen en m² de piso</div>
+            </div>
+            <div className="inline-flex items-center gap-0.5 rounded-[10px] bg-muted/60 p-[3px]">
+              <button onClick={() => setChart("line")} title="Líneas"
+                className={cn("h-7 w-8 inline-flex items-center justify-center rounded-lg transition", chartMode === "line" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground")}>
+                <LineChart className="h-4 w-4" />
               </button>
-              <button onClick={() => setChart("stack")} title="Composición por categoría"
-                className={cn("h-6 w-6 inline-flex items-center justify-center rounded", chartMode === "stack" ? "bg-muted text-foreground" : "text-muted-foreground hover:text-foreground")}>
-                <BarChart3 className="h-3.5 w-3.5" />
+              <button onClick={() => setChart("bar")} title="Barras"
+                className={cn("h-7 w-8 inline-flex items-center justify-center rounded-lg transition", chartMode === "bar" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground")}>
+                <BarChart3 className="h-4 w-4" />
               </button>
             </div>
           </div>
@@ -277,86 +280,133 @@ function Kpi({ label, value, sub, delta }: { label: string; value: string; sub?:
 }
 
 type ChartRow = { mk: string; fact: number; m2: number; piso: number; servicio: number; extras: number }
-// Paleta cálida (madera), acorde a la estética de la app.
-const C_PISO = "#403a34", C_SERV = "#9b7a4f", C_EXTRAS = "#cdbb9b", C_M2 = "#e4a368"
-function FactChart({ data, mode }: { data: ChartRow[]; mode: "area" | "stack" }) {
+// Tokens del handoff: tinta + naranja para volumen.
+const C_FACT = "#222222", C_M2 = "#E08A3C", C_GRID = "#ededed"
+const niceMax = (v: number) => {
+  if (v <= 0) return 1
+  const rough = v * 1.08, mag = Math.pow(10, Math.floor(Math.log10(rough))), n = rough / mag
+  const step = n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10
+  return step * mag
+}
+const smoothPath = (pts: [number, number][]) => {
+  if (pts.length < 2) return pts.length ? `M ${pts[0][0]} ${pts[0][1]}` : ""
+  let d = `M ${pts[0][0]} ${pts[0][1]}`
+  for (let i = 0; i < pts.length - 1; i++) {
+    const [x0, y0] = pts[i], [x1, y1] = pts[i + 1], mx = (x0 + x1) / 2
+    d += ` C ${mx} ${y0} ${mx} ${y1} ${x1} ${y1}`
+  }
+  return d
+}
+const fmtUSDk = (v: number) => "US$ " + (v >= 1000 ? Math.round(v / 1000) + "k" : Math.round(v).toString())
+const fmtM2 = (v: number) => Math.round(v).toLocaleString("es-AR") + " m²"
+const tickUSD = (v: number) => v === 0 ? "0" : v >= 1000 ? (Math.round(v / 100) / 10) + "k" : Math.round(v).toString()
+
+function FactChart({ data, mode }: { data: ChartRow[]; mode: "line" | "bar" }) {
+  const [visible, setVisible] = useState<{ fact: boolean; m2: boolean }>({ fact: true, m2: true })
+  const [hover, setHover] = useState<number | null>(null)
   if (data.length === 0) return <div className="text-sm text-muted-foreground py-10 text-center">Sin datos en el período</div>
-  const W = 760, H = 260, padTop = 26, padB = 30, padL = 10, padR = 10
-  const plotH = H - padTop - padB
-  const slot = (W - padL - padR) / data.length
-  const cx = (i: number) => padL + slot * i + slot / 2
-  const stackTotal = (d: ChartRow) => (d.piso + d.servicio + d.extras) || d.fact
-  const maxF = Math.max(1, ...data.map(d => mode === "stack" ? stackTotal(d) : d.fact))
-  const maxM2 = Math.max(1, ...data.map(d => d.m2))
-  const yF = (v: number) => padTop + plotH - (v / maxF) * plotH
-  const yM = (v: number) => padTop + plotH - (v / maxM2) * plotH
+
+  const W = 800, H = 360, M = { top: 28, right: 54, bottom: 40, left: 54 }
+  const iw = W - M.left - M.right, ih = H - M.top - M.bottom, base = M.top + ih
+  const n = data.length
+  const maxFact = niceMax(Math.max(...data.map(d => d.fact)))
+  const maxM2 = niceMax(Math.max(...data.map(d => d.m2)))
+  const x = (i: number) => n === 1 ? M.left + iw / 2 : M.left + iw * (i / (n - 1))
+  const xBand = (i: number) => M.left + iw * ((i + 0.5) / n)
+  const yF = (v: number) => M.top + ih * (1 - v / maxFact)
+  const yM = (v: number) => M.top + ih * (1 - v / maxM2)
   const monthLbl = (mk: string) => ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"][Number(mk.slice(5, 7)) - 1] + " " + mk.slice(2, 4)
-  const k = (n: number) => n >= 1000 ? Math.round(n / 1000) + "k" : Math.round(n).toString()
-  const m2Pts = data.map((d, i) => [cx(i), yM(d.m2)] as [number, number])
-  const factPts = data.map((d, i) => [cx(i), yF(d.fact)] as [number, number])
-  const base = padTop + plotH
-  const areaPath = `M ${factPts[0][0]},${base} ` + factPts.map(p => `L ${p[0]},${p[1]}`).join(" ") + ` L ${factPts[factPts.length - 1][0]},${base} Z`
+  const factPts = data.map((d, i) => [x(i), yF(d.fact)] as [number, number])
+  const m2Pts = data.map((d, i) => [x(i), yM(d.m2)] as [number, number])
+
+  const toggle = (s: "fact" | "m2") => setVisible(v => {
+    if (v[s] && !(s === "fact" ? v.m2 : v.fact)) return v // guard: al menos una visible
+    return { ...v, [s]: !v[s] }
+  })
+  const hoveredX = hover == null ? 0 : (mode === "bar" ? xBand(hover) : x(hover))
+  const tipLeft = Math.max(8, Math.min(92, (hoveredX / W) * 100))
 
   return (
-    <div className="overflow-x-auto">
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ minWidth: data.length * 64 }}>
-        {[0.25, 0.5, 0.75, 1].map((g, i) => (
-          <line key={i} x1={padL} x2={W - padR} y1={padTop + plotH * (1 - g)} y2={padTop + plotH * (1 - g)} className="stroke-border" strokeWidth={0.5} strokeDasharray="2 3" />
+    <div className="relative mt-2">
+      <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" className="w-full" style={{ height: "auto", overflow: "visible" }}>
+        {/* gridlines + ejes */}
+        {[0, 1, 2, 3, 4].map(g => {
+          const gy = M.top + ih * g / 4
+          return <line key={g} x1={M.left} x2={M.left + iw} y1={gy} y2={gy} stroke={C_GRID} strokeWidth={1} strokeDasharray={g === 4 ? undefined : "3 4"} />
+        })}
+        {[0, 1, 2, 3, 4].map(g => (
+          <text key={g} x={M.left - 12} y={M.top + ih * g / 4 + 4} textAnchor="end" style={{ fontSize: 12, fill: "#9a9a9a" }}>{tickUSD(maxFact * (1 - g / 4))}</text>
         ))}
+        {[0, 1, 2, 3, 4].map(g => (
+          <text key={g} x={M.left + iw + 12} y={M.top + ih * g / 4 + 4} textAnchor="start" style={{ fontSize: 12, fill: C_M2 }}>{Math.round(maxM2 * (1 - g / 4))}</text>
+        ))}
+        {data.map((d, i) => <text key={i} x={mode === "bar" ? xBand(i) : x(i)} y={H - 14} textAnchor="middle" style={{ fontSize: 13, fill: "#6b6b6b" }}>{monthLbl(d.mk)}</text>)}
 
-        {mode === "area" ? (
-          <>
-            <path d={areaPath} fill={C_PISO} fillOpacity={0.12} />
-            <polyline points={factPts.map(p => p.join(",")).join(" ")} fill="none" stroke={C_PISO} strokeWidth={2} />
-            {data.map((d, i) => (
-              <g key={i}>
-                <circle cx={factPts[i][0]} cy={factPts[i][1]} r={3} fill={C_PISO} stroke="white" strokeWidth={1} />
-                <text x={factPts[i][0]} y={factPts[i][1] - 8} textAnchor="middle" className="fill-foreground font-medium" style={{ fontSize: 10 }}>US$ {k(d.fact)}</text>
-              </g>
-            ))}
-          </>
-        ) : (
+        {/* series */}
+        {mode === "line" ? (<>
+          {visible.fact && <>
+            <defs><linearGradient id="gF" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor={C_FACT} stopOpacity={0.10} /><stop offset="100%" stopColor={C_FACT} stopOpacity={0} /></linearGradient></defs>
+            <path d={`${smoothPath(factPts)} L ${factPts[n - 1][0]} ${base} L ${factPts[0][0]} ${base} Z`} fill="url(#gF)" />
+            <path d={smoothPath(factPts)} fill="none" stroke={C_FACT} strokeWidth={2.5} strokeLinecap="round" />
+          </>}
+          {visible.m2 && <path d={smoothPath(m2Pts)} fill="none" stroke={C_M2} strokeWidth={2.5} strokeDasharray="1 7" strokeLinecap="round" strokeLinejoin="round" />}
+          {data.map((d, i) => <g key={i}>
+            {visible.fact && <circle cx={x(i)} cy={yF(d.fact)} r={3.5} fill="#fff" stroke={C_FACT} strokeWidth={2} />}
+            {visible.m2 && <circle cx={x(i)} cy={yM(d.m2)} r={3.5} fill="#fff" stroke={C_M2} strokeWidth={2} />}
+          </g>)}
+        </>) : (
           data.map((d, i) => {
-            const bw = Math.min(40, slot * 0.56)
-            const x = cx(i) - bw / 2
-            let yTop = base
-            const segs = [["piso", d.piso, C_PISO], ["servicio", d.servicio, C_SERV], ["extras", d.extras, C_EXTRAS]] as const
-            const total = stackTotal(d)
-            return (
-              <g key={i}>
-                {segs.map(([key, val, col]) => {
-                  if (val <= 0) return null
-                  const h = (val / maxF) * plotH
-                  yTop -= h
-                  return <rect key={key} x={x} y={yTop} width={bw} height={h} fill={col} rx={1.5} />
-                })}
-                <text x={cx(i)} y={yF(total) - 6} textAnchor="middle" className="fill-foreground font-medium" style={{ fontSize: 10 }}>US$ {k(total)}</text>
-              </g>
-            )
+            const bw = iw / n, inner = bw - bw * 0.30 * 2
+            const cx = xBand(i)
+            const both = visible.fact && visible.m2
+            const out: React.ReactNode[] = []
+            const roundBar = (bx: number, by: number, bwd: number, h: number, fill: string, op = 1) => {
+              const r = Math.max(0, Math.min(4, bwd / 2, h))
+              return <path key={fill + bx} d={`M ${bx} ${by + h} L ${bx} ${by + r} Q ${bx} ${by} ${bx + r} ${by} L ${bx + bwd - r} ${by} Q ${bx + bwd} ${by} ${bx + bwd} ${by + r} L ${bx + bwd} ${by + h} Z`} fill={fill} opacity={op} />
+            }
+            if (both) {
+              const half = inner / 2 - 2
+              if (visible.fact) out.push(roundBar(cx - half - 1, yF(d.fact), half, base - yF(d.fact), C_FACT))
+              if (visible.m2) out.push(roundBar(cx + 1, yM(d.m2), half, base - yM(d.m2), C_M2, 0.92))
+            } else if (visible.fact) out.push(roundBar(cx - inner / 2, yF(d.fact), inner, base - yF(d.fact), C_FACT))
+            else if (visible.m2) out.push(roundBar(cx - inner / 2, yM(d.m2), inner, base - yM(d.m2), C_M2, 0.92))
+            return <g key={i}>{out}</g>
           })
         )}
 
-        {/* mes labels */}
-        {data.map((d, i) => <text key={i} x={cx(i)} y={H - 10} textAnchor="middle" className="fill-muted-foreground" style={{ fontSize: 10 }}>{monthLbl(d.mk)}</text>)}
+        {/* hover: crosshair + puntos agrandados (line) */}
+        {hover != null && mode === "line" && <>
+          <line x1={x(hover)} x2={x(hover)} y1={M.top} y2={base} stroke="#cfcfcf" strokeWidth={1} strokeDasharray="3 3" />
+          {visible.fact && <circle cx={x(hover)} cy={yF(data[hover].fact)} r={5} fill={C_FACT} />}
+          {visible.m2 && <circle cx={x(hover)} cy={yM(data[hover].m2)} r={5} fill={C_M2} />}
+        </>}
 
-        {/* línea de m² (volumen) — overlay en ambos modos */}
-        <polyline points={m2Pts.map(p => p.join(",")).join(" ")} fill="none" stroke={C_M2} strokeWidth={2} strokeDasharray={mode === "stack" ? "4 3" : undefined} />
-        {data.map((d, i) => (
-          <g key={i}>
-            <circle cx={m2Pts[i][0]} cy={m2Pts[i][1]} r={3} fill={C_M2} stroke="white" strokeWidth={1} />
-            <text x={m2Pts[i][0]} y={m2Pts[i][1] - 7} textAnchor="middle" style={{ fontSize: 9, fill: C_M2, fontWeight: 600 }}>{Math.round(d.m2)} m²</text>
-          </g>
-        ))}
+        {/* zonas de hover */}
+        {data.map((_, i) => {
+          const zw = iw / n
+          return <rect key={i} x={M.left + zw * i} y={M.top} width={zw} height={ih} fill="transparent"
+            onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(h => h === i ? null : h)} style={{ cursor: "pointer" }} />
+        })}
       </svg>
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-muted-foreground mt-1 px-1">
-        {mode === "area" ? (
-          <span className="inline-flex items-center gap-1.5"><span className="inline-block h-0.5 w-4 rounded" style={{ background: C_PISO }} />Facturación (US$)</span>
-        ) : (<>
-          <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: C_PISO }} />Piso</span>
-          <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: C_SERV }} />Servicio</span>
-          <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: C_EXTRAS }} />Extras</span>
-        </>)}
-        <span className="inline-flex items-center gap-1.5"><span className="inline-block h-0.5 w-4 rounded" style={{ background: C_M2 }} />m² de piso vendidos</span>
+
+      {/* tooltip */}
+      {hover != null && (
+        <div className="absolute pointer-events-none z-10 rounded-[11px] px-3 py-2.5 whitespace-nowrap"
+          style={{ left: `${tipLeft}%`, top: 0, transform: "translate(-50%, -104%)", background: "#1f1f1f", color: "#fff", fontSize: 12.5, lineHeight: 1.5, boxShadow: "0 8px 24px rgba(0,0,0,.18)" }}>
+          <div className="font-semibold mb-1" style={{ fontSize: 12 }}>{monthLbl(data[hover].mk)}</div>
+          {visible.fact && <div className="flex items-center gap-2"><span className="inline-block h-2 w-2 rounded-full" style={{ background: C_FACT, outline: "1px solid #555" }} />Facturación<span className="ml-auto pl-3.5 font-semibold">{fmtUSDk(data[hover].fact)}</span></div>}
+          {visible.m2 && <div className="flex items-center gap-2"><span className="inline-block h-2 w-2 rounded-full" style={{ background: C_M2 }} />Volumen<span className="ml-auto pl-3.5 font-semibold">{fmtM2(data[hover].m2)}</span></div>}
+        </div>
+      )}
+
+      {/* leyenda clickeable */}
+      <div className="flex items-center gap-6 mt-4 pt-3 border-t border-border text-sm" style={{ color: "#6b6b6b" }}>
+        <button onClick={() => toggle("fact")} className={cn("inline-flex items-center gap-2 transition-opacity", !visible.fact && "opacity-35")}>
+          <span className="inline-block h-[3px] w-[18px] rounded" style={{ background: C_FACT }} />Facturación (US$)
+        </button>
+        <button onClick={() => toggle("m2")} className={cn("inline-flex items-center gap-2 transition-opacity", !visible.m2 && "opacity-35")}>
+          <span className="inline-block h-[3px] w-[18px] rounded" style={{ background: `repeating-linear-gradient(90deg, ${C_M2} 0 5px, transparent 5px 8px)` }} />m² de piso vendidos
+        </button>
       </div>
     </div>
   )
