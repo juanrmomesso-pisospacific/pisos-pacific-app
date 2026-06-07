@@ -86,7 +86,7 @@ export default function CashFlowPage() {
       <Tabs defaultValue="pnl">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <TabsList className="h-8">
-            <TabsTrigger value="pnl">Estado de Resultados</TabsTrigger>
+            <TabsTrigger value="pnl">Análisis Financiero (Caja)</TabsTrigger>
             <TabsTrigger value="gastos">Gastos (Fijo/Variable)</TabsTrigger>
             <TabsTrigger value="proveedores">Por proveedor</TabsTrigger>
             <TabsTrigger value="libro">Libro</TabsTrigger>
@@ -106,6 +106,7 @@ export default function CashFlowPage() {
         </div>
 
         <TabsContent value="pnl" className="mt-4">
+          <p className="text-[11px] text-muted-foreground mb-3">Solo <b>caja</b>: ingresos y egresos reales del período (incluye Paneles y otros no-venta). El COGS es por <b>compra de inventario</b> (no devengado), por eso el margen mensual puede ser irregular. El margen por venta (devengado, costo bloqueado) está en el <b>Dashboard</b>.</p>
           <PnL movements={movements} range={range} />
         </TabsContent>
         <TabsContent value="gastos" className="mt-4">

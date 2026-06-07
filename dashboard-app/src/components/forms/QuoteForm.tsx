@@ -12,7 +12,7 @@ import type { Product, Quote } from "@/lib/types"
 
 type Settings = { sellers?: { name: string; phone?: string }[] }
 type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] }
-type LineItem = { product_id: string; sku: string; description: string; quantity: number; unit_price: number; category: string; zone?: string; disc_kind?: "pct" | "amount"; disc_value?: number }
+type LineItem = { product_id: string; sku: string; description: string; quantity: number; unit_price: number; category: string; cost?: number; zone?: string; disc_kind?: "pct" | "amount"; disc_value?: number }
 
 export type QuotePrefill = {
   lead_id?: string
@@ -37,7 +37,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const isEdit = !!editQuote
   const editItems: LineItem[] = (editQuote?.items ?? [])
     .filter((it) => it.product_id !== "discount" && !/^descuento/i.test(it.description || ""))
-    .map((it) => ({ product_id: it.product_id || "", sku: it.sku, description: it.description, quantity: it.quantity, unit_price: it.unit_price, category: it.category || "", zone: it.zone, disc_kind: it.disc_kind, disc_value: it.disc_value }))
+    .map((it) => ({ product_id: it.product_id || "", sku: it.sku, description: it.description, quantity: it.quantity, unit_price: it.unit_price, cost: it.cost, category: it.category || "", zone: it.zone, disc_kind: it.disc_kind, disc_value: it.disc_value }))
 
   const [clientId, setClientId] = useState<string>(editQuote?.client_id ?? "")
   const [seller, setSeller] = useState<string>(editQuote?.seller_name ?? sellers[0]?.name ?? "")
@@ -68,7 +68,8 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   function addProduct(productId: string, zone?: string) {
     const p = products.find(x => x.id === productId)
     if (!p) return
-    setItems(prev => [...prev, { product_id: p.id, sku: p.sku, description: p.name, quantity: 1, unit_price: p.price, category: p.category, zone }])
+    // Costo BLOQUEADO al momento de agregar (snapshot del catálogo) → margen estable.
+    setItems(prev => [...prev, { product_id: p.id, sku: p.sku, description: p.name, quantity: 1, unit_price: p.price, cost: Number(p.cost) || 0, category: p.category, zone }])
   }
   function addZone() { setZones(prev => [...prev, `Zona ${prev.length + 1}`]) }
   function renameZone(idx: number, name: string) {

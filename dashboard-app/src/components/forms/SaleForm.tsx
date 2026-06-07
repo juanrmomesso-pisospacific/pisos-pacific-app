@@ -9,7 +9,7 @@ import { fmtMoney } from "@/lib/utils"
 import type { Product } from "@/lib/types"
 
 type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] }
-type LineItem = { product_id: string; sku: string; description: string; quantity: number; unit_price: number; category: string }
+type LineItem = { product_id: string; sku: string; description: string; quantity: number; unit_price: number; category: string; cost?: number }
 
 export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: (o: boolean) => void }) {
   const clients = useApi<Client[]>("/api/clients").data ?? []
@@ -32,7 +32,7 @@ export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
   function removeItem(idx: number) { setItems(items.filter((_, i) => i !== idx)) }
   function pickProduct(idx: number, productId: string) {
     const p = products.find(x => x.id === productId); if (!p) return
-    updateItem(idx, { product_id: p.id, sku: p.sku, description: p.name, unit_price: p.price, category: p.category })
+    updateItem(idx, { product_id: p.id, sku: p.sku, description: p.name, unit_price: p.price, cost: Number(p.cost) || 0, category: p.category })
   }
 
   async function submit() {

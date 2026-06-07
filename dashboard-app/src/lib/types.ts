@@ -74,6 +74,8 @@ export type Sale = {
   margin?: number
   margin_pct?: number | null
   has_sku_detail?: boolean
+  // Desglose por categoría para el P&L híbrido (rev = ingreso, cost = costo bloqueado)
+  margin_bd?: { piso: { rev: number; cost: number }; servicio: { rev: number; cost: number }; extras: { rev: number; cost: number } }
   // Optional: many sales include seller name (sometimes empty)
   seller_name?: string
   delivery_date?: string           // start of the delivery window (back-compat — same as delivery_date_from)

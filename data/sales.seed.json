@@ -4257,13 +4257,14 @@
     "contract_total": 1109.97,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-033",
+        "sku": "PROD-033",
         "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
         "quantity": 26,
         "unit_price": 35.84615385,
-        "total": 1287.9451561,
-        "category": ""
+        "total": 932.0000001,
+        "category": "Pisos H2O",
+        "cost": 16.13
       }
     ],
     "status": "Finalizado",
@@ -4493,13 +4494,14 @@
     "contract_total": 3450,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-027",
+        "sku": "PROD-027",
         "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
         "quantity": 61,
         "unit_price": 42.45639344,
-        "total": 4310.16,
-        "category": ""
+        "total": 2589.83999984,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -4543,13 +4545,14 @@
     "contract_total": 1800.16,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-028",
+        "sku": "PROD-028",
         "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
         "quantity": 45,
         "unit_price": 36,
-        "total": 1980.3131405,
-        "category": ""
+        "total": 1620,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -4716,13 +4719,14 @@
     "contract_total": 6036.8,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-026",
+        "sku": "PROD-026",
         "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
         "quantity": 132,
         "unit_price": 45.73333333,
-        "total": 5963.2,
-        "category": ""
+        "total": 6036.79999956,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -4766,13 +4770,14 @@
     "contract_total": 5524.26,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-190",
+        "sku": "PROD-190",
         "description": "H2O HD XL - Aspen 7mm x 23cm x 1,50m",
         "quantity": 45,
         "unit_price": 47.57777778,
-        "total": 8907.531946,
-        "category": ""
+        "total": 2141.0000001,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -4816,13 +4821,14 @@
     "contract_total": 11556.84,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-028",
+        "sku": "PROD-028",
         "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
         "quantity": 192.5,
         "unit_price": 47.4961039,
-        "total": 13970.678058,
-        "category": ""
+        "total": 9143.00000075,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -4866,13 +4872,14 @@
     "contract_total": 1078.382,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-026",
+        "sku": "PROD-026",
         "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
         "quantity": 27,
         "unit_price": 38.22592593,
-        "total": 1078.382,
-        "category": ""
+        "total": 1032.10000011,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -5049,13 +5056,14 @@
     "contract_total": 2716,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-028",
+        "sku": "PROD-028",
         "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
         "quantity": 52,
         "unit_price": 48.69230769,
-        "total": 2900,
-        "category": ""
+        "total": 2531.99999988,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -5242,13 +5250,14 @@
     "contract_total": 7548.75,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-028",
+        "sku": "PROD-028",
         "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
         "quantity": 90,
         "unit_price": 51.97777778,
-        "total": 10419.508896,
-        "category": ""
+        "total": 4678.0000002,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -5292,13 +5301,14 @@
     "contract_total": 2200,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-202",
+        "sku": "PROD-202",
         "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
         "quantity": 60,
         "unit_price": 36.66666667,
-        "total": 2200,
-        "category": ""
+        "total": 2200.0000001999997,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -5342,13 +5352,14 @@
     "contract_total": 4200,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-026",
+        "sku": "PROD-026",
         "description": "H2O HD XL - Natural Oak 7mm x 23cm x 1,50m",
         "quantity": 34,
         "unit_price": 45.52941176,
-        "total": 6852,
-        "category": ""
+        "total": 1547.99999984,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -5392,13 +5403,14 @@
     "contract_total": 4198.4,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-027",
+        "sku": "PROD-027",
         "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
         "quantity": 87,
         "unit_price": 48.25747126,
-        "total": -198.4,
-        "category": ""
+        "total": 4198.39999962,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Programado",
@@ -5565,13 +5577,14 @@
     "contract_total": 12944,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-190",
+        "sku": "PROD-190",
         "description": "H2O HD XL - Aspen 7mm x 23cm x 1,50m",
         "quantity": 255,
         "unit_price": 50.76078431,
-        "total": 5056,
-        "category": ""
+        "total": 12943.99999905,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Confirmado",
@@ -5615,13 +5628,14 @@
     "contract_total": 2167.66,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-007",
+        "sku": "PROD-007",
         "description": "Madera - 12 cm Roble / Veta Tallada",
         "quantity": 45,
         "unit_price": 40,
-        "total": 2535.3191485,
-        "category": ""
+        "total": 1800,
+        "category": "Pisos de Madera",
+        "cost": 36
       }
     ],
     "status": "Finalizado",
@@ -5665,13 +5679,14 @@
     "contract_total": 2457.14285757,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-007",
+        "sku": "PROD-007",
         "description": "Madera - 12 cm Roble / Veta Tallada",
         "quantity": 40,
         "unit_price": 60,
-        "total": 2457.14285757,
-        "category": ""
+        "total": 2400,
+        "category": "Pisos de Madera",
+        "cost": 36
       }
     ],
     "status": "Finalizado",
@@ -5768,13 +5783,14 @@
     "contract_total": 787.66,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-033",
+        "sku": "PROD-033",
         "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
         "quantity": 2.196,
         "unit_price": 302.1174863,
-        "total": 911.8671206,
-        "category": ""
+        "total": 663.4499999148001,
+        "category": "Pisos H2O",
+        "cost": 16.13
       }
     ],
     "status": "Finalizado",
@@ -6066,13 +6082,14 @@
     "contract_total": 2422,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-036",
+        "sku": "PROD-036",
         "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
         "quantity": 35,
         "unit_price": 57.2,
-        "total": 2842,
-        "category": ""
+        "total": 2002,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -6116,13 +6133,14 @@
     "contract_total": 6119.71,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-028",
+        "sku": "PROD-028",
         "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
         "quantity": 55,
         "unit_price": 65.07454545,
-        "total": 5082.32,
-        "category": ""
+        "total": 3579.0999997500003,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -6365,13 +6383,14 @@
     "contract_total": 939,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-028",
+        "sku": "PROD-028",
         "description": "H2O HD XL - Notte 7mm x 23cm x 1,50m",
         "quantity": 18,
         "unit_price": 52.17777778,
-        "total": 939.2,
-        "category": ""
+        "total": 939.20000004,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -6408,13 +6427,14 @@
     "contract_total": 2500,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-202",
+        "sku": "PROD-202",
         "description": "H2O HD XL - Roble Clásico 7mm x 23cm x 1,50m",
         "quantity": 51,
         "unit_price": 45.58823529,
-        "total": 2675,
-        "category": ""
+        "total": 2324.99999979,
+        "category": "Pisos H2O",
+        "cost": 16.33
       }
     ],
     "status": "Finalizado",
@@ -6458,13 +6478,14 @@
     "contract_total": 2919,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-007",
+        "sku": "PROD-007",
         "description": "Madera - 12 cm Roble / Veta Tallada",
         "quantity": 48.86465,
         "unit_price": 59.73643523,
-        "total": 2919,
-        "category": ""
+        "total": 2918.999999761619,
+        "category": "Pisos de Madera",
+        "cost": 36
       }
     ],
     "status": "Finalizado",
@@ -6660,14 +6681,14 @@
     "contract_total": 2300,
     "items": [
       {
-        "product_id": null,
-        "sku": "",
+        "product_id": "PROD-027",
+        "sku": "PROD-027",
         "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
         "quantity": 92,
         "unit_price": 25,
         "total": 2300,
-        "cost": 0,
-        "category": ""
+        "cost": 16.33,
+        "category": "Pisos H2O"
       }
     ],
     "status": "Confirmado",

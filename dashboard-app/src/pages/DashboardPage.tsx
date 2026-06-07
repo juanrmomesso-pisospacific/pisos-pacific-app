@@ -35,11 +35,12 @@ const saleDate = (s: Sale) => (s.created_at || "").slice(0, 10)
 const billed = (s: Sale) => (s.venta_neta != null ? s.venta_neta : s.contract_total) || 0
 const inRange = (d: string, r: Range) => !!d && d >= r.from && d <= r.to
 
-// Líneas de gasto del P&L (orden), desde la planilla/cashflow. COGS de producto va arriba (ventas).
+// Gastos operativos del P&L (de Admin para abajo). Instalaciones/Suministros se trata
+// aparte: la mano de obra de colocación ya está en el costo de servicio; los materiales
+// van como "Insumos grales. colocación" en el bloque de costos.
 const OPEX_ORDER = [
-  "Gastos de Instalaciones y Suministros", "Gastos de Personal (HR y Mano de Obra)",
-  "Gastos de Flota/Vehículos", "Marketing y Ventas", "Gastos Administrativos",
-  "Impuestos y Tasas", "Depreciación y Amortización", "Otros Gastos y Ajustes",
+  "Gastos Administrativos", "Gastos de Personal (HR y Mano de Obra)", "Marketing y Ventas",
+  "Gastos de Flota/Vehículos", "Depreciación y Amortización", "Impuestos y Tasas", "Otros Gastos y Ajustes",
 ]
 
 export default function DashboardPage() {
@@ -58,26 +59,33 @@ export default function DashboardPage() {
   // Producto piso (m²): por stockTrack y activo. Mapa sku→producto.
   const prodBySku = useMemo(() => { const m = new Map<string, Product>(); for (const p of products) m.set(p.sku, p); return m }, [products])
   const isPisoItem = (sku?: string) => { const p = sku ? prodBySku.get(sku) : undefined; return !!p && !!p.stockTrack && p.active !== false }
+  // Colocadores: su mano de obra ya está en el costo de servicio → se excluye del opex.
+  const settings = useApi<{ installers?: string[] }>("/api/settings").data
+  const installerSet = useMemo(() => new Set((settings?.installers ?? []).map(x => x.trim())), [settings])
 
-  // ---- Métricas por período ----
+  // ---- Métricas por período (alineadas al P&L híbrido) ----
   const metrics = (r: Range) => {
     const inP = sales.filter(s => inRange(saleDate(s), r) && s.status !== "Cancelado")
     const fact = inP.reduce((a, s) => a + billed(s), 0)
-    const detailed = inP.filter(s => s.has_sku_detail && s.cogs != null)
-    const ventaNetaDet = detailed.reduce((a, s) => a + (s.venta_neta || 0), 0)
-    const cogs = detailed.reduce((a, s) => a + (s.cogs || 0), 0)
-    const grossProfit = ventaNetaDet - cogs
-    const grossPct = ventaNetaDet ? grossProfit / ventaNetaDet : NaN
-    // m² de piso vendidos
-    const m2 = inP.reduce((a, s) => a + (s.items || []).filter(it => isPisoItem(it.sku)).reduce((x, it) => x + (Number(it.quantity) || 0), 0), 0)
-    // gastos del período (cashflow, sin transferencias ni COGS de producto)
+    const detailed = inP.filter(s => s.has_sku_detail && s.margin_bd)
+    // Bruto "obra completo" = ingresos (piso+servicio+extras) − costos bloqueados − insumos generales de colocación.
+    let ingV = 0, costV = 0
+    for (const s of detailed) for (const k of ["piso", "servicio", "extras"] as const) { ingV += s.margin_bd![k].rev; costV += s.margin_bd![k].cost }
     const opex = cashflow.filter(m => m.flow === "Egreso" && !m.transfer && inRange((m.date || "").slice(0, 10), r) && (m.expense_type || "") !== "COGS")
-    const opexTotal = opex.reduce((a, m) => a + (m.amount_usd || 0), 0)
+    let insumosColoc = 0, opexTotal = 0
+    for (const m of opex) {
+      if (installerSet.has((m.counterparty || "").trim())) continue
+      if ((m.expense_type || "") === "Gastos de Instalaciones y Suministros") insumosColoc += m.amount_usd || 0
+      else opexTotal += m.amount_usd || 0
+    }
+    const grossProfit = ingV - costV - insumosColoc
+    const grossPct = ingV ? grossProfit / ingV : NaN
+    const m2 = inP.reduce((a, s) => a + (s.items || []).filter(it => isPisoItem(it.sku)).reduce((x, it) => x + (Number(it.quantity) || 0), 0), 0)
     const neto = grossProfit - opexTotal
     return { fact, grossProfit, grossPct, m2, opexTotal, neto, count: inP.length, detailedCount: detailed.length, opex }
   }
-  const cur = useMemo(() => metrics(range), [sales, cashflow, products, range])
-  const pre = useMemo(() => metrics(prev), [sales, cashflow, products, prev])
+  const cur = useMemo(() => metrics(range), [sales, cashflow, products, range, installerSet])
+  const pre = useMemo(() => metrics(prev), [sales, cashflow, products, prev, installerSet])
 
   // Pendiente de cobro (no depende del período: estado actual)
   const pendiente = useMemo(() => {
@@ -99,15 +107,30 @@ export default function DashboardPage() {
     return [...m.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([mk, v]) => ({ mk, ...v }))
   }, [sales, range, products])
 
-  // ---- P&L compacto ----
+  // ---- P&L híbrido (devengado): ingresos/costos por categoría desde ventas; opex desde cashflow ----
   const pnl = useMemo(() => {
+    // Ingresos y costos por categoría (Piso/Servicio/Extras) desde ventas con costo bloqueado.
+    const cat = { piso: { rev: 0, cost: 0 }, servicio: { rev: 0, cost: 0 }, extras: { rev: 0, cost: 0 } }
+    for (const s of sales) {
+      if (!inRange(saleDate(s), range) || s.status === "Cancelado" || !s.margin_bd) continue
+      for (const k of ["piso", "servicio", "extras"] as const) {
+        cat[k].rev += s.margin_bd[k].rev; cat[k].cost += s.margin_bd[k].cost
+      }
+    }
+    // Egresos del cashflow del período. Colocadores (installerSet) → ya en costo de servicio, se excluyen.
     const opexBy: Record<string, number> = {}
-    for (const m of cur.opex) { const t = m.expense_type || "Otros Gastos y Ajustes"; opexBy[t] = (opexBy[t] || 0) + (m.amount_usd || 0) }
-    const detailed = sales.filter(s => inRange(saleDate(s), range) && s.status !== "Cancelado" && s.has_sku_detail && s.cogs != null)
-    const ingresos = detailed.reduce((a, s) => a + (s.venta_neta || 0), 0)
-    const cogs = detailed.reduce((a, s) => a + (s.cogs || 0), 0)
-    return { ingresos, cogs, bruta: ingresos - cogs, opexBy }
-  }, [cur, sales, range])
+    let insumosColoc = 0
+    for (const m of cur.opex) {
+      const cp = (m.counterparty || "").trim()
+      if (installerSet.has(cp)) continue // mano de obra de colocación: ya está en Costo Servicio
+      const t = m.expense_type || "Otros Gastos y Ajustes"
+      if (t === "Gastos de Instalaciones y Suministros") { insumosColoc += m.amount_usd || 0; continue }
+      opexBy[t] = (opexBy[t] || 0) + (m.amount_usd || 0)
+    }
+    const ingresos = cat.piso.rev + cat.servicio.rev + cat.extras.rev
+    const costos = cat.piso.cost + cat.servicio.cost + cat.extras.cost + insumosColoc
+    return { cat, insumosColoc, ingresos, costos, bruta: ingresos - costos, opexBy }
+  }, [cur, sales, range, installerSet])
 
   // ---- Top productos PISO vendidos ----
   const topPisos = useMemo(() => {
@@ -172,7 +195,8 @@ export default function DashboardPage() {
           <FactChart data={byMonth} />
         </Card>
         <Card className="p-4">
-          <div className="text-sm font-medium mb-2">Estado de resultados</div>
+          <div className="text-sm font-medium">Estado de resultados (devengado)</div>
+          <div className="text-[10px] text-muted-foreground mb-1">Por ventas con costo bloqueado. La vista de caja está en CashFlow → Análisis Financiero.</div>
           <PnlMini pnl={pnl} />
         </Card>
       </div>
@@ -207,7 +231,7 @@ export default function DashboardPage() {
         <ObraTable title="Márgenes más bajos (obra)" rows={porObra.bottom} />
       </div>
       <div className="text-[11px] text-muted-foreground pb-4">
-        Margen bruto y P&L (parte superior) sobre ventas con costo bloqueado al confirmar; gastos desde la planilla/cashflow. Productos inactivos excluidos.
+        <b>P&amp;L devengado:</b> ingresos y costos (Piso/Servicio/Extras) desde ventas con costo bloqueado al confirmar; insumos generales de colocación y gastos desde la planilla/cashflow. La mano de obra de colocadores ya está en el costo de servicio (no se cuenta dos veces). Productos inactivos excluidos. Para el resultado de caja completo (incluye Paneles): CashFlow → Análisis Financiero.
       </div>
     </div>
   )
@@ -256,22 +280,37 @@ function FactChart({ data }: { data: { mk: string; fact: number; m2: number }[] 
   )
 }
 
-function PnlMini({ pnl }: { pnl: { ingresos: number; cogs: number; bruta: number; opexBy: Record<string, number> } }) {
+type Pnl = {
+  cat: { piso: { rev: number; cost: number }; servicio: { rev: number; cost: number }; extras: { rev: number; cost: number } }
+  insumosColoc: number; ingresos: number; costos: number; bruta: number; opexBy: Record<string, number>
+}
+function PnlMini({ pnl }: { pnl: Pnl }) {
   const opexTotal = OPEX_ORDER.reduce((a, t) => a + (pnl.opexBy[t] || 0), 0)
   const neto = pnl.bruta - opexTotal
-  const Line = ({ l, v, bold, muted }: { l: string; v: number; bold?: boolean; muted?: boolean }) => (
-    <div className={cn("flex justify-between py-0.5 text-xs", bold && "font-semibold border-t border-border pt-1 mt-0.5", muted && "text-muted-foreground")}>
+  const brutoPct = pnl.ingresos ? pnl.bruta / pnl.ingresos : NaN
+  const netoPct = pnl.ingresos ? neto / pnl.ingresos : NaN
+  const Line = ({ l, v, bold, muted, indent }: { l: string; v: number; bold?: boolean; muted?: boolean; indent?: boolean }) => (
+    <div className={cn("flex justify-between py-0.5 text-xs", bold && "font-semibold border-t border-border pt-1 mt-0.5", muted && "text-muted-foreground", indent && "pl-2")}>
       <span>{l}</span><span className="tabular">{fmtMoney(v)}</span>
     </div>
   )
+  const Head = ({ l }: { l: string }) => <div className="text-[10px] uppercase tracking-wide text-muted-foreground mt-2 mb-0.5">{l}</div>
   return (
     <div>
-      <Line l="Ingresos por ventas" v={pnl.ingresos} />
-      <Line l="(−) Costo de productos" v={-pnl.cogs} muted />
-      <Line l="Ganancia bruta" v={pnl.bruta} bold />
-      <div className="text-[10px] uppercase tracking-wide text-muted-foreground mt-2 mb-0.5">Gastos</div>
-      {OPEX_ORDER.filter(t => pnl.opexBy[t]).map(t => <Line key={t} l={t.replace("Gastos de ", "").replace(" (HR y Mano de Obra)", "")} v={-(pnl.opexBy[t] || 0)} muted />)}
-      <Line l="Resultado neto" v={neto} bold />
+      <Head l="Ingresos por venta" />
+      <Line l="Piso" v={pnl.cat.piso.rev} indent />
+      <Line l="Servicio (colocación)" v={pnl.cat.servicio.rev} indent />
+      <Line l="Extras" v={pnl.cat.extras.rev} indent />
+      <Line l="Ingresos totales" v={pnl.ingresos} bold />
+      <Head l="Costos" />
+      <Line l="Costo piso" v={-pnl.cat.piso.cost} muted indent />
+      <Line l="Costo servicio" v={-pnl.cat.servicio.cost} muted indent />
+      <Line l="Costo extras" v={-pnl.cat.extras.cost} muted indent />
+      <Line l="Insumos grales. colocación" v={-pnl.insumosColoc} muted indent />
+      <Line l={`Ganancia bruta · ${isFinite(brutoPct) ? (brutoPct * 100).toFixed(0) + "%" : "—"}`} v={pnl.bruta} bold />
+      <Head l="Gastos" />
+      {OPEX_ORDER.filter(t => pnl.opexBy[t]).map(t => <Line key={t} l={t.replace("Gastos de ", "").replace(" (HR y Mano de Obra)", "")} v={-(pnl.opexBy[t] || 0)} muted indent />)}
+      <Line l={`Resultado neto · ${isFinite(netoPct) ? (netoPct * 100).toFixed(0) + "%" : "—"}`} v={neto} bold />
     </div>
   )
 }

@@ -136,6 +136,9 @@ if (!db.settings.integrations.mercadopago) db.settings.integrations.mercadopago 
   // Equipos de colocación activos (responsables a quienes se les paga).
   const crews = ['Hugo Ramirez', 'Gastón Aguilera', 'Ariel Noruega', 'Fabián Ortiz'];
   if (JSON.stringify(db.settings.crews || []) !== JSON.stringify(crews)) { db.settings.crews = crews; changed = true; }
+  // Colocadores (mano de obra): se excluyen del opex del P&L híbrido (ya están en el costo del servicio).
+  const installers = [...crews, 'Oso'];
+  if (JSON.stringify(db.settings.installers || []) !== JSON.stringify(installers)) { db.settings.installers = installers; changed = true; }
   if (changed) { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); console.log(`Synced ${db.settings.sellers.length} sellers into settings`); }
 }
 if (!Array.isArray(db.conversations) || db.conversations.length === 0 || !Array.isArray(db.messages) || !Array.isArray(db.templates)) {
@@ -257,20 +260,48 @@ app.get('/api/products', (_, res) => {
   res.json(db.products.map(p => ({ ...p, committed: p.stockTrack ? Math.round((committed[p.sku] || 0) * 100) / 100 : 0 })));
 });
 
+// Categoría de un ítem de venta para el P&L híbrido: piso | servicio | extras.
+function itemPnlCategory(it) {
+  const p = it.sku ? db.products.find(x => x.sku === it.sku) : null;
+  if (p) {
+    if (p.stockTrack) return 'piso';
+    if (/servicio/i.test(p.category || '')) return 'servicio';
+    return 'extras';
+  }
+  // Ad-hoc (sin producto en catálogo): inferir por sku/descripción.
+  const t = `${it.sku || ''} ${it.description || ''}`;
+  if (/^SERV|colocaci|entrega|retiro|ajuste|medici|servicio|mano de obra|reparaci/i.test(t)) return 'servicio';
+  return 'extras';
+}
+
 // Margin per sale (for dashboards): venta_neta = Σ(item.total) − discount_total; COGS = Σ(qty × item.cost locked).
+// breakdown: ingreso y costo por categoría (piso/servicio/extras) para el P&L híbrido.
 function saleMargin(s) {
   let net = 0, cogs = 0, hasSku = false;
+  const bd = { piso: { rev: 0, cost: 0 }, servicio: { rev: 0, cost: 0 }, extras: { rev: 0, cost: 0 } };
   for (const it of s.items || []) {
     if (!it || it.product_id === 'discount') continue;
-    net += Number(it.total) || 0;
-    cogs += (Number(it.quantity) || 0) * (Number(it.cost) || 0);
+    const rev = Number(it.total) || 0;
+    const c = (Number(it.quantity) || 0) * (Number(it.cost) || 0);
+    net += rev;
+    cogs += c;
+    const cat = itemPnlCategory(it);
+    bd[cat].rev += rev; bd[cat].cost += c;
     if (it.sku) hasSku = true;
   }
   // Sin detalle SKU no hay costo real → margen no calculable (evita un 100% engañoso en dashboards).
   if (!hasSku) return { venta_neta: null, cogs: null, margin: null, margin_pct: null, has_sku_detail: false };
   net -= Number(s.discount_total) || 0;
+  // El descuento global se imputa proporcionalmente al ingreso de piso (es lo que más se descuenta).
+  if (bd.piso.rev > 0) bd.piso.rev = Math.round((bd.piso.rev - (Number(s.discount_total) || 0)) * 100) / 100;
+  const r2 = (n) => Math.round(n * 100) / 100;
+  const margin_bd = {
+    piso: { rev: r2(bd.piso.rev), cost: r2(bd.piso.cost) },
+    servicio: { rev: r2(bd.servicio.rev), cost: r2(bd.servicio.cost) },
+    extras: { rev: r2(bd.extras.rev), cost: r2(bd.extras.cost) },
+  };
   const margin = net - cogs;
-  return { venta_neta: Math.round(net * 100) / 100, cogs: Math.round(cogs * 100) / 100, margin: Math.round(margin * 100) / 100, margin_pct: net ? Math.round((margin / net) * 1000) / 10 : null, has_sku_detail: true };
+  return { venta_neta: Math.round(net * 100) / 100, cogs: Math.round(cogs * 100) / 100, margin: Math.round(margin * 100) / 100, margin_pct: net ? Math.round((margin / net) * 1000) / 10 : null, has_sku_detail: true, margin_bd };
 }
 app.get('/api/sales',    (_, res) => {
   // Reconcile each sale's collected amount from cashflow income lines tagged with its venta_nro.
