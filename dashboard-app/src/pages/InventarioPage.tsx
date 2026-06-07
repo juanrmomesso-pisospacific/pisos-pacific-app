@@ -9,15 +9,37 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { useApi } from "@/lib/api"
+import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney, fmtInt, cn } from "@/lib/utils"
 import type { Product } from "@/lib/types"
 
 // Stock-tracked categories — pisos + deck
 const STOCK_CATEGORIES = ["Pisos H2O", "Pisos de Madera", "Deck"] as const
 const STOCK_FILTERS    = ["Todas", ...STOCK_CATEGORIES] as const
-// Everything else lives in Extras (no stock tracking)
-const EXTRAS_CATEGORIES = ["Zócalo", "Servicio", "Extras"] as const
+// Everything else lives in Extras (no stock tracking) — zócalos, terminaciones, servicios
+const EXTRAS_CATEGORIES = ["Zócalos", "Terminaciones", "Servicio", "Extras"] as const
 const EXTRAS_FILTERS    = ["Todas", ...EXTRAS_CATEGORIES] as const
+
+// Toggle activo/inactivo — los inactivos no ensucian dashboard ni alertas de stock.
+function ActiveToggle({ p }: { p: Product }) {
+  const update = useAction(api.update)
+  const active = p.active !== false
+  return (
+    <button
+      type="button"
+      disabled={update.busy}
+      onClick={async (e) => { e.stopPropagation(); const r = await update.run("products", p.id, { active: !active }); if (r) refresh() }}
+      className={cn(
+        "inline-flex items-center gap-1.5 rounded-full px-2 h-6 text-[10px] border transition-colors",
+        active ? "border-emerald-500/40 text-emerald-700 hover:bg-emerald-50" : "border-border text-muted-foreground hover:bg-muted",
+      )}
+      title={active ? "Activo — click para desactivar" : "Inactivo — click para activar"}
+    >
+      <span className={cn("inline-block h-1.5 w-1.5 rounded-full", active ? "bg-emerald-500" : "bg-muted-foreground/40")} />
+      {active ? "Activo" : "Inactivo"}
+    </button>
+  )
+}
 
 type View = "inventario" | "extras"
 
@@ -131,6 +153,7 @@ function StockTable({ rows }: { rows: Product[] }) {
           <TableHead className="text-right">Cotizado</TableHead>
           <TableHead className="text-right">Disponible</TableHead>
           <TableHead>Estado</TableHead>
+          <TableHead>Activo</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -142,7 +165,7 @@ function StockTable({ rows }: { rows: Product[] }) {
           const oversold = available < 0
           const lowFree = available > 0 && available <= 5
           return (
-            <TableRow key={p.id}>
+            <TableRow key={p.id} className={cn(p.active === false && "opacity-50")}>
               <TableCell className="text-muted-foreground tabular text-xs">{p.sku}</TableCell>
               <TableCell className="max-w-[360px] truncate">{p.name}</TableCell>
               <TableCell className="text-muted-foreground text-xs">{p.category}</TableCell>
@@ -165,6 +188,7 @@ function StockTable({ rows }: { rows: Product[] }) {
                       ? <Badge variant="outline" className="text-[10px] border-amber-500/50 text-amber-700">Cotizado · {fmtInt(reserved)}</Badge>
                       : <Badge variant="muted" className="text-[10px]">OK</Badge>}
               </TableCell>
+              <TableCell><ActiveToggle p={p} /></TableCell>
             </TableRow>
           )
         })}
@@ -184,19 +208,19 @@ function ExtrasTable({ rows }: { rows: Product[] }) {
           <TableHead className="text-right">Costo</TableHead>
           <TableHead className="text-right">Precio</TableHead>
           <TableHead className="text-right">Margen</TableHead>
-          <TableHead>Estado</TableHead>
+          <TableHead>Activo</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {rows.map((p) => (
-          <TableRow key={p.id}>
+          <TableRow key={p.id} className={cn(p.active === false && "opacity-50")}>
             <TableCell className="text-muted-foreground tabular text-xs">{p.sku}</TableCell>
             <TableCell className="max-w-[360px] truncate">{p.name}</TableCell>
             <TableCell className="text-muted-foreground text-xs">{p.category}</TableCell>
             <TableCell className="text-right tabular text-muted-foreground">{fmtMoney(p.cost)}</TableCell>
             <TableCell className="text-right tabular">{fmtMoney(p.price)} <span className="text-xs text-muted-foreground">{p.currency}</span></TableCell>
-            <TableCell className="text-right tabular text-muted-foreground">+{Math.round((p.margin || 0))}%</TableCell>
-            <TableCell>{p.active === false ? <Badge variant="muted" className="text-[10px]">Inactivo</Badge> : <Badge variant="outline" className="text-[10px]">Disponible</Badge>}</TableCell>
+            <TableCell className="text-right tabular text-muted-foreground">{(() => { const m = Math.round(p.margin || 0); return (m > 0 ? "+" : "") + m + "%" })()}</TableCell>
+            <TableCell><ActiveToggle p={p} /></TableCell>
           </TableRow>
         ))}
       </TableBody>
