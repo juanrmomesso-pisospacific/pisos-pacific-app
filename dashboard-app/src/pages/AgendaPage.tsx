@@ -401,6 +401,39 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
   const cells = useMemo(() => daysGrid(cursor), [cursor])
   const monthLabel = cursor.toLocaleDateString("es-AR", { month: "long", year: "numeric" })
 
+  // Semanas con barras multi-día: cada evento se recorta a la semana y se le asigna un
+  // carril, así un rango ocupa una barra continua de inicio a fin. El alto crece solo.
+  const dayDiff = (a: string, b: string) => Math.round((+new Date(a + "T12:00:00") - +new Date(b + "T12:00:00")) / 86400000)
+  const weeks = useMemo(() => {
+    const out: { days: typeof cells; segs: { e: Event; col: number; span: number; lane: number; hasStart: boolean; hasEnd: boolean }[]; lanes: number }[] = []
+    for (let w = 0; w < 6; w++) {
+      const days = cells.slice(w * 7, w * 7 + 7)
+      const ws = days[0].key, we = days[6].key
+      const segs: { e: Event; col: number; span: number; lane: number; hasStart: boolean; hasEnd: boolean }[] = []
+      for (const e of events) {
+        const sk = e.date.slice(0, 10), ek = (e.endDate || e.date).slice(0, 10)
+        if (ek < ws || sk > we) continue
+        const segStart = sk < ws ? ws : sk, segEnd = ek > we ? we : ek
+        segs.push({ e, col: dayDiff(segStart, ws), span: dayDiff(segEnd, segStart) + 1, lane: 0, hasStart: sk >= ws, hasEnd: ek <= we })
+      }
+      segs.sort((a, b) => a.col - b.col || b.span - a.span)
+      const laneEnd: number[] = []
+      for (const s of segs) {
+        let lane = 0
+        while (lane < laneEnd.length && laneEnd[lane] >= s.col) lane++
+        laneEnd[lane] = s.col + s.span - 1
+        s.lane = lane
+      }
+      out.push({ days, segs, lanes: laneEnd.length })
+    }
+    return out
+  }, [cells, events])
+  const colFromX = (e: React.DragEvent) => {
+    const r = e.currentTarget.getBoundingClientRect()
+    return Math.max(0, Math.min(6, Math.floor((e.clientX - r.left) / (r.width / 7))))
+  }
+  const HEADER_H = 24, LANE_H = 22
+
   const focusedEvents = focused ? eventsByDate.get(focused) ?? [] : []
 
   // Containers have external ETAs and aren't draggable
@@ -464,93 +497,72 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
       <div className="grid grid-cols-7 border-b border-border bg-muted/40">
         {WEEKDAYS.map((w) => <div key={w} className="px-2 py-2 text-[11px] uppercase tracking-wide text-muted-foreground font-medium border-r border-border last:border-r-0">{w}</div>)}
       </div>
-      <div className="grid grid-cols-7 grid-rows-6">
-        {cells.map((c, i) => {
-          const isToday = c.date.getTime() === today.getTime()
-          const list = eventsByDate.get(c.key) ?? []
-          const isDropTarget = draggingKey != null && dragOverDate === c.key
+      <div className="flex flex-col">
+        {weeks.map((wk, wi) => {
+          const minH = Math.max(96, HEADER_H + wk.lanes * LANE_H + 8)
           return (
-            <button
-              type="button"
-              key={c.key + i}
-              onClick={() => list.length > 0 && setFocused(c.key)}
-              onDragOver={(e) => { if (draggingKey) { e.preventDefault(); setDragOverDate(c.key) } }}
-              onDragLeave={() => setDragOverDate(prev => prev === c.key ? null : prev)}
-              onDrop={(e) => handleDrop(c.key, e)}
-              className={cn(
-                "relative text-left min-h-[100px] p-2 border-r border-b border-border last:border-r-0 [&:nth-child(7n)]:border-r-0 transition-colors",
-                !c.inMonth && "bg-muted/20 text-muted-foreground",
-                list.length > 0 && "hover:bg-accent cursor-pointer",
-                list.length === 0 && "cursor-default",
-                isDropTarget && "ring-2 ring-primary ring-inset bg-primary/5"
-              )}
+            <div key={wi} className="relative border-b border-border last:border-b-0"
+              style={{ minHeight: minH }}
+              onDragOver={(e) => { if (!draggingKey) return; e.preventDefault(); setDragOverDate(wk.days[colFromX(e)].key) }}
+              onDragLeave={() => setDragOverDate(null)}
+              onDrop={(e) => handleDrop(wk.days[colFromX(e)].key, e)}
             >
-              <div className="flex items-center justify-between mb-1">
-                <span className={cn(
-                  "text-xs tabular",
-                  isToday && "inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-primary-foreground font-medium",
-                  !isToday && !c.inMonth && "text-muted-foreground/60",
-                )}>{c.date.getDate()}</span>
-                {list.length > 0 && <span className="text-[10px] text-muted-foreground">{list.length}</span>}
-              </div>
-              <div className="flex flex-col gap-1">
-                {list.slice(0, 4).map((e, k) => {
-                  const st = KIND_STYLE[e.kind]
-                  const Icon = st.icon
-                  const evKey = e.taskId ?? e.saleId ?? `${e.date}-${k}`
-                  const canDrag = isDraggable(e)
-                  const isRange = e.kind === "delivery" && (e.totalDays ?? 1) > 1
+              {/* Fondo: celdas de día (bordes, número, hoy, drop highlight, click → detalle) */}
+              <div className="grid grid-cols-7 absolute inset-0">
+                {wk.days.map((c, ci) => {
+                  const isToday = c.date.getTime() === today.getTime()
+                  const isOver = draggingKey != null && dragOverDate === c.key
                   return (
-                    <div
-                      key={k}
-                      draggable={canDrag}
-                      onDragStart={(ev) => {
-                        if (!canDrag) return
-                        ev.stopPropagation()
-                        ev.dataTransfer.setData("text/event", JSON.stringify({ action: "move", kind: e.kind, saleId: e.saleId, taskId: e.taskId, fromDate: c.key, dayIndex: 0 }))
-                        ev.dataTransfer.effectAllowed = "move"
-                        setDraggingKey(evKey)
-                      }}
-                      onDragEnd={() => { setDraggingKey(null); setDragOverDate(null) }}
-                      onClick={(ev) => {
-                        ev.stopPropagation()
-                        if (e.task && e.kind === "medicion") setMedicionTask(e.task)
-                        else if (e.task && e.kind === "remito") setInformeTask(e.task)
-                      }}
-                      className={cn(
-                        "text-[10px] truncate h-5 leading-none rounded px-1.5 border flex items-center gap-1",
-                        st.bg, st.border, st.text,
-                        canDrag && "cursor-grab active:cursor-grabbing",
-                        draggingKey === evKey && "opacity-50 ring-1 ring-primary",
-                      )}
-                      title={isRange ? `${e.subtitle} · arrastrá para mover · grippy para extender` : canDrag ? "Arrastrá para reprogramar" : "Container — ETA externa, no editable"}
+                    <div key={ci}
+                      onClick={() => { if ((eventsByDate.get(c.key) ?? []).length) setFocused(c.key) }}
+                      className={cn("border-r border-border last:border-r-0 p-1.5 cursor-pointer transition-colors",
+                        !c.inMonth && "bg-muted/20", isOver && "bg-primary/5 ring-1 ring-primary ring-inset")}
                     >
-                      <Icon className="h-2.5 w-2.5 shrink-0" />
-                      <span className="truncate">{e.title}</span>
-                      {isRange && <span className="text-[9px] opacity-60 shrink-0">{e.totalDays}d</span>}
-                      {e.kind === "delivery" && e.saleId && (
-                        <span
-                          draggable
-                          onDragStart={(ev) => {
-                            ev.stopPropagation()
-                            ev.dataTransfer.setData("text/event", JSON.stringify({ action: "resize-end", kind: "delivery", saleId: e.saleId, fromDate: e.date }))
-                            ev.dataTransfer.effectAllowed = "move"
-                            setDraggingKey(evKey + ":resize")
-                          }}
-                          onDragEnd={() => { setDraggingKey(null); setDragOverDate(null) }}
-                          onClick={(ev) => ev.stopPropagation()}
-                          className="ml-auto -mr-0.5 px-0.5 rounded cursor-ew-resize opacity-60 hover:opacity-100 hover:bg-black/10"
-                          title="Arrastrá al día final para extender el rango"
-                        >
-                          <GripVertical className="h-2.5 w-2.5" />
-                        </span>
-                      )}
+                      <span className={cn("text-xs tabular",
+                        isToday && "inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-primary-foreground font-medium",
+                        !isToday && !c.inMonth && "text-muted-foreground/60")}>{c.date.getDate()}</span>
                     </div>
                   )
                 })}
-                {list.length > 4 && <div className="text-[10px] text-muted-foreground px-1.5">+{list.length - 4} más</div>}
               </div>
-            </button>
+              {/* Barras de eventos (overlay absoluto, multi-día contiguo) */}
+              {wk.segs.map((s, si) => {
+                const e = s.e
+                const st = KIND_STYLE[e.kind]
+                const Icon = st.icon
+                const canDrag = isDraggable(e)
+                const evKey = e.taskId ?? e.saleId ?? `${e.date}-${wi}-${si}`
+                const showResize = e.kind === "delivery" && !!e.saleId && s.hasEnd
+                return (
+                  <div key={si} className="absolute px-0.5" style={{ left: `${(s.col / 7) * 100}%`, width: `${(s.span / 7) * 100}%`, top: HEADER_H + s.lane * LANE_H }}>
+                    <div
+                      draggable={canDrag}
+                      onDragStart={(ev) => { if (!canDrag) return; ev.stopPropagation(); ev.dataTransfer.setData("text/event", JSON.stringify({ action: "move", kind: e.kind, saleId: e.saleId, taskId: e.taskId, fromDate: e.date.slice(0, 10), dayIndex: 0 })); ev.dataTransfer.effectAllowed = "move"; setDraggingKey(evKey) }}
+                      onDragEnd={() => { setDraggingKey(null); setDragOverDate(null) }}
+                      onClick={(ev) => { ev.stopPropagation(); if (e.task && e.kind === "medicion") setMedicionTask(e.task); else if (e.task && e.kind === "remito") setInformeTask(e.task); else if (e.saleId) setFocused(e.date.slice(0, 10)) }}
+                      className={cn("h-5 leading-none border flex items-center gap-1 text-[10px] px-1.5",
+                        st.bg, st.border, st.text,
+                        s.hasStart ? "rounded-l-md" : "rounded-l-none border-l-0", s.hasEnd ? "rounded-r-md" : "rounded-r-none border-r-0",
+                        canDrag && "cursor-grab active:cursor-grabbing", draggingKey === evKey && "opacity-50 ring-1 ring-primary")}
+                      title={canDrag ? `${e.subtitle} · arrastrá para mover${showResize ? " · grip para extender" : ""}` : "Container — ETA externa, no editable"}
+                    >
+                      {!s.hasStart && <span className="opacity-50">‹</span>}
+                      <Icon className="h-2.5 w-2.5 shrink-0" />
+                      <span className="truncate flex-1">{e.title}</span>
+                      {showResize && (
+                        <span draggable
+                          onDragStart={(ev) => { ev.stopPropagation(); ev.dataTransfer.setData("text/event", JSON.stringify({ action: "resize-end", kind: "delivery", saleId: e.saleId, fromDate: e.date.slice(0, 10) })); ev.dataTransfer.effectAllowed = "move"; setDraggingKey(evKey + ":resize") }}
+                          onDragEnd={() => { setDraggingKey(null); setDragOverDate(null) }}
+                          onClick={(ev) => ev.stopPropagation()}
+                          className="-mr-0.5 px-0.5 rounded cursor-ew-resize opacity-50 hover:opacity-100 hover:bg-black/10"
+                          title="Arrastrá al día final para extender el rango"><GripVertical className="h-2.5 w-2.5" /></span>
+                      )}
+                      {!s.hasEnd && <span className="opacity-50">›</span>}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
           )
         })}
       </div>
