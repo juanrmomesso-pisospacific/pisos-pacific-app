@@ -137,7 +137,8 @@ if (!db.settings.integrations.mercadopago) db.settings.integrations.mercadopago 
   const crews = ['Hugo Ramirez', 'Gastón Aguilera', 'Ariel Noruega', 'Fabián Ortiz'];
   if (JSON.stringify(db.settings.crews || []) !== JSON.stringify(crews)) { db.settings.crews = crews; changed = true; }
   // Colocadores (mano de obra): se excluyen del opex del P&L híbrido (ya están en el costo del servicio).
-  const installers = [...crews, 'Oso'];
+  // Oso y Maldo NO son colocadores (depósito/personal) → quedan en Gastos de Personal.
+  const installers = [...crews];
   if (JSON.stringify(db.settings.installers || []) !== JSON.stringify(installers)) { db.settings.installers = installers; changed = true; }
   if (changed) { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); console.log(`Synced ${db.settings.sellers.length} sellers into settings`); }
 }

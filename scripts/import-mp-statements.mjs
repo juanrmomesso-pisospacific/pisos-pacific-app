@@ -59,13 +59,14 @@ for (const m of existing) if (/ausol|ausa|aubasa|telepase|autopista|corredores v
 const PER = 'Gastos de Personal (HR y Mano de Obra)';
 const SUM = 'Gastos de Instalaciones y Suministros';
 const isPeaje = (t) => /ausol|\bausa\b|aubasa|telepase|autopista|au oeste|au del oeste|corredores viales|caminos del|\bpeaje/i.test(t);
-const STAFF = /\b(hugo|huguito|ramirez|oso|ariel|victor|leonardo|leo|maldo|fabian|fabián|martin|martín|mike)\b/i;
+// Colocadores (van a Instalaciones). Oso/Maldo NO están (son depósito/personal → PER via NAME_MAP/genérico).
+const STAFF = /\b(hugo|huguito|ramirez|ariel|victor|leonardo|leo|fabian|fabián|martin|martín|mike)\b/i;
 const OWNER = /rodriguez\s+juan|juan\s+rodriguez|momesso|collado|\bpipi\b/i;       // retiros del dueño → personal
 const RETAIL = /carrefour|\bcoto\b|jumbo|\bdisco\b|\bdia\b|farmacia|chango|\bvea\b|starbucks|mcdonald|rappi|pedidosya|cabify|\buber\b/i; // consumo personal
 const norm = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
 // Personas identificadas por el dueño → contraparte real + tipo.
 const NAME_MAP = {
-  'cristian adrian tevez': { cp: 'Oso', et: SUM, cat: 'Mano de Obra', desc: 'Jornal Oso (colocación)' },
+  'cristian adrian tevez': { cp: 'Oso', et: PER, cat: 'Mano de Obra', desc: 'Jornal Oso (depósito/personal)' },
   'gonzalez marina sofia': { cp: 'Via Cargo', et: SUM, cat: 'Insumos', desc: 'Flete / envíos Via Cargo' },
 };
 // Amigos / gastos personales confirmados por el dueño → todo personal.
