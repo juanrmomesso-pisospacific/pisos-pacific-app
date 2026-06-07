@@ -93,9 +93,13 @@ const all = [
   ...load('cashflow-mp-extra.seed.json'), ...load('cashflow-cash-extra.seed.json'),
   ...load('cashflow-vf-extra.seed.json'), ...load('cashflow-tarjeta-extra.seed.json'), ...out,
 ];
-const bal = {};
+// Movimientos POSTERIORES al arqueo: son plata real que entra/sale DESPUÉS del saldo
+// que dio el dueño, así que mueven el saldo y NO se compensan con el ajuste de apertura
+// (el ajuste se calcula como si no existieran; ellos quedan "encima" y bajan/suben la caja).
+const POST_ARQUEO = new Set(['tarjeta-bbva']);
+const bal = {};          // base para el ajuste (excluye lo posterior al arqueo)
 for (const m of all) {
-  if (!m.caja_id) continue;
+  if (!m.caja_id || POST_ARQUEO.has(m.source)) continue;
   bal[m.caja_id] = (bal[m.caja_id] || 0) + (m.flow === 'Ingreso' ? 1 : -1) * (m.amount_usd || 0);
 }
 
