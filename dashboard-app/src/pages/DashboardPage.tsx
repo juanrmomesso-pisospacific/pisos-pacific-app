@@ -31,6 +31,9 @@ function prevRange(r: Range): Range {
   return { from: iso(pFrom), to: iso(pTo) }
 }
 
+// Desde esta fecha la cobertura de costos por venta es completa (backfill 2026).
+// Antes: solo ventas con SKU tenían costo → el P&L devengado no cierra. Es histórico (ver caja).
+const DEVENGADO_DESDE = "2026-01-01"
 const saleDate = (s: Sale) => (s.created_at || "").slice(0, 10)
 const billed = (s: Sale) => (s.venta_neta != null ? s.venta_neta : s.contract_total) || 0
 const inRange = (d: string, r: Range) => !!d && d >= r.from && d <= r.to
@@ -53,7 +56,11 @@ export default function DashboardPage() {
     const ds = [...sales.map(saleDate), ...cashflow.map(m => (m.date || "").slice(0, 10))].filter(Boolean).sort()
     return { min: ds[0] || "2024-01-01", max: ds[ds.length - 1] || iso(new Date()) }
   }, [sales, cashflow])
-  const range = useMemo(() => rangeFor(preset, minMax.min, minMax.max), [preset, minMax])
+  // Cobertura de costos completa desde acá → el análisis devengado no va más atrás
+  // (antes el costo no está cargado y el margen/neto pierde sentido).
+  const rawRange = useMemo(() => rangeFor(preset, minMax.min, minMax.max), [preset, minMax])
+  const clamped = rawRange.from < DEVENGADO_DESDE
+  const range = useMemo(() => ({ from: clamped ? DEVENGADO_DESDE : rawRange.from, to: rawRange.to }), [rawRange, clamped])
   const prev = useMemo(() => prevRange(range), [range])
 
   // Producto piso (m²): por stockTrack y activo. Mapa sku→producto.
@@ -172,7 +179,10 @@ export default function DashboardPage() {
     <div className="px-4 lg:px-6 space-y-4">
       {/* Período */}
       <div className="flex items-center justify-between flex-wrap gap-2">
-        <div className="text-sm text-muted-foreground">Performance · {range.from} a {range.to}</div>
+        <div className="text-sm text-muted-foreground">
+          Performance · {range.from} a {range.to}
+          {clamped && <span className="ml-2 text-[11px] text-amber-600">· análisis devengado desde ene-2026 (cobertura de costos)</span>}
+        </div>
         <div className="flex gap-1">
           {PRESETS.map(p => (
             <button key={p.key} onClick={() => setPreset(p.key)} className={cn("h-8 px-3 text-xs rounded-md border", preset === p.key ? "bg-foreground text-background border-foreground" : "border-input text-muted-foreground hover:text-foreground")}>{p.label}</button>

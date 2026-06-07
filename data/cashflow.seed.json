@@ -10170,7 +10170,7 @@
     "amount_usd": 1300,
     "exchange_rate": 1190,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -11010,7 +11010,7 @@
     "amount_usd": 900,
     "exchange_rate": 1180,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -11466,7 +11466,7 @@
     "amount_usd": 23.44,
     "exchange_rate": 1280,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -11826,7 +11826,7 @@
     "amount_usd": 23.17,
     "exchange_rate": 1295,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -12066,7 +12066,7 @@
     "amount_usd": 3.83,
     "exchange_rate": 1305,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -12426,7 +12426,7 @@
     "amount_usd": 9.16,
     "exchange_rate": 1310,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -12618,7 +12618,7 @@
     "amount_usd": 600,
     "exchange_rate": 1310,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -13266,7 +13266,7 @@
     "amount_usd": 15.15,
     "exchange_rate": 1320,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -13482,7 +13482,7 @@
     "amount_usd": 3.76,
     "exchange_rate": 1330,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -13578,7 +13578,7 @@
     "amount_usd": 30.08,
     "exchange_rate": 1330,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -13986,7 +13986,7 @@
     "amount_usd": 25.37,
     "exchange_rate": 1340,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -14370,7 +14370,7 @@
     "amount_usd": 44.61,
     "exchange_rate": 1345,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -14538,7 +14538,7 @@
     "amount_usd": 4.46,
     "exchange_rate": 1345,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -14610,7 +14610,7 @@
     "amount_usd": 44.61,
     "exchange_rate": 1345,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -15018,7 +15018,7 @@
     "amount_usd": 600,
     "exchange_rate": 1340,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -15354,7 +15354,7 @@
     "amount_usd": 51.09,
     "exchange_rate": 1370,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -15906,7 +15906,7 @@
     "amount_usd": 21.9,
     "exchange_rate": 1370,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -16074,7 +16074,7 @@
     "amount_usd": 6.9,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -16674,7 +16674,7 @@
     "amount_usd": 7.14,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -17202,7 +17202,7 @@
     "amount_usd": 7.14,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -17322,7 +17322,7 @@
     "amount_usd": 172.14,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -17442,7 +17442,7 @@
     "amount_usd": 21.28,
     "exchange_rate": 1410,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -17802,7 +17802,7 @@
     "amount_usd": 14.49,
     "exchange_rate": 1380,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -17922,7 +17922,7 @@
     "amount_usd": 27.59,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -18498,7 +18498,7 @@
     "amount_usd": 0,
     "exchange_rate": null,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -18786,7 +18786,7 @@
     "amount_usd": 22.76,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -18810,7 +18810,7 @@
     "amount_usd": 700,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -19146,7 +19146,7 @@
     "amount_usd": 34.48,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -19290,7 +19290,7 @@
     "amount_usd": 27.59,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -19338,7 +19338,7 @@
     "amount_usd": 13.79,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -19362,7 +19362,7 @@
     "amount_usd": 6.9,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -19506,7 +19506,7 @@
     "amount_usd": 21.43,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -19722,7 +19722,7 @@
     "amount_usd": 35.71,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -19866,7 +19866,7 @@
     "amount_usd": 35.71,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -20322,7 +20322,7 @@
     "amount_usd": 6.9,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -20538,7 +20538,7 @@
     "amount_usd": 13.33,
     "exchange_rate": 1500,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -20562,7 +20562,7 @@
     "amount_usd": 13.33,
     "exchange_rate": 1500,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -20634,7 +20634,7 @@
     "amount_usd": 103.33,
     "exchange_rate": 1500,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -21090,7 +21090,7 @@
     "amount_usd": 13.33,
     "exchange_rate": 1500,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -21306,7 +21306,7 @@
     "amount_usd": 20.27,
     "exchange_rate": 1480,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -21546,7 +21546,7 @@
     "amount_usd": 48.28,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -21570,7 +21570,7 @@
     "amount_usd": 27.59,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -21738,7 +21738,7 @@
     "amount_usd": 17.24,
     "exchange_rate": 1450,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -21978,7 +21978,7 @@
     "amount_usd": 31.69,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -22410,7 +22410,7 @@
     "amount_usd": 56.34,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -22434,7 +22434,7 @@
     "amount_usd": 600,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -22458,7 +22458,7 @@
     "amount_usd": 56.34,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -22698,7 +22698,7 @@
     "amount_usd": 14.08,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -22914,7 +22914,7 @@
     "amount_usd": 14.13,
     "exchange_rate": 1415,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -23058,7 +23058,7 @@
     "amount_usd": 14.13,
     "exchange_rate": 1415,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -23226,7 +23226,7 @@
     "amount_usd": 13.99,
     "exchange_rate": 1430,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -23610,7 +23610,7 @@
     "amount_usd": 28.07,
     "exchange_rate": 1425,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -23994,7 +23994,7 @@
     "amount_usd": 7.04,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -24162,7 +24162,7 @@
     "amount_usd": 21.13,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -24354,7 +24354,7 @@
     "amount_usd": 28.17,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -24402,7 +24402,7 @@
     "amount_usd": 169.01,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -24498,7 +24498,7 @@
     "amount_usd": 28.17,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -24642,7 +24642,7 @@
     "amount_usd": 7.04,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -24666,7 +24666,7 @@
     "amount_usd": 21.13,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -24834,7 +24834,7 @@
     "amount_usd": 27.87,
     "exchange_rate": 1435,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -24858,7 +24858,7 @@
     "amount_usd": 6.97,
     "exchange_rate": 1435,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -25002,7 +25002,7 @@
     "amount_usd": 20.91,
     "exchange_rate": 1435,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -25338,7 +25338,7 @@
     "amount_usd": 35.09,
     "exchange_rate": 1425,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -25722,7 +25722,7 @@
     "amount_usd": 7.02,
     "exchange_rate": 1425,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -26010,7 +26010,7 @@
     "amount_usd": 7.09,
     "exchange_rate": 1410,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -26178,7 +26178,7 @@
     "amount_usd": 6.99,
     "exchange_rate": 1430,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -26418,7 +26418,7 @@
     "amount_usd": 147.37,
     "exchange_rate": 1425,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -26754,7 +26754,7 @@
     "amount_usd": 7.02,
     "exchange_rate": 1425,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -26802,7 +26802,7 @@
     "amount_usd": 41.81,
     "exchange_rate": 1435,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -26898,7 +26898,7 @@
     "amount_usd": 800,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -26922,7 +26922,7 @@
     "amount_usd": 348.43,
     "exchange_rate": 1435,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -27066,7 +27066,7 @@
     "amount_usd": 6.97,
     "exchange_rate": 1435,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -27570,7 +27570,7 @@
     "amount_usd": 146.34,
     "exchange_rate": 1435,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -28050,7 +28050,7 @@
     "amount_usd": 6.94,
     "exchange_rate": 1440,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -28290,7 +28290,7 @@
     "amount_usd": 6.94,
     "exchange_rate": 1440,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -28506,7 +28506,7 @@
     "amount_usd": 6.71,
     "exchange_rate": 1490,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -28722,7 +28722,7 @@
     "amount_usd": 6.71,
     "exchange_rate": 1490,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -28938,7 +28938,7 @@
     "amount_usd": 74.32,
     "exchange_rate": 1480,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -28962,7 +28962,7 @@
     "amount_usd": 67.57,
     "exchange_rate": 1480,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -29394,7 +29394,7 @@
     "amount_usd": 6.76,
     "exchange_rate": 1480,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -29538,7 +29538,7 @@
     "amount_usd": 207.36,
     "exchange_rate": 1495,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -29946,7 +29946,7 @@
     "amount_usd": 6.54,
     "exchange_rate": 1530,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -30138,7 +30138,7 @@
     "amount_usd": 130.72,
     "exchange_rate": 1530,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -30378,7 +30378,7 @@
     "amount_usd": 6.54,
     "exchange_rate": 1530,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -30546,7 +30546,7 @@
     "amount_usd": 6.64,
     "exchange_rate": 1505,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -30786,7 +30786,7 @@
     "amount_usd": 6.64,
     "exchange_rate": 1505,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -31026,7 +31026,7 @@
     "amount_usd": 6.64,
     "exchange_rate": 1505,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -31050,7 +31050,7 @@
     "amount_usd": 25.25,
     "exchange_rate": 1504.950495,
     "fixed_variable": "Variable",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -31074,7 +31074,7 @@
     "amount_usd": 13.29,
     "exchange_rate": 1505,
     "fixed_variable": "Variable",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -31218,7 +31218,7 @@
     "amount_usd": 43.33,
     "exchange_rate": 1500,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -31410,7 +31410,7 @@
     "amount_usd": 96.67,
     "exchange_rate": 1500,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -31578,7 +31578,7 @@
     "amount_usd": 6.67,
     "exchange_rate": 1500,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -31626,7 +31626,7 @@
     "amount_usd": 6.67,
     "exchange_rate": 1500,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -31890,7 +31890,7 @@
     "amount_usd": 6.67,
     "exchange_rate": 1500,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -32346,7 +32346,7 @@
     "amount_usd": 6.67,
     "exchange_rate": 1500,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -32370,7 +32370,7 @@
     "amount_usd": 600,
     "exchange_rate": 1500,
     "fixed_variable": "Variable",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -33042,7 +33042,7 @@
     "amount_usd": 133.78,
     "exchange_rate": 1495,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -33402,7 +33402,7 @@
     "amount_usd": 13.38,
     "exchange_rate": 1495,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -33474,7 +33474,7 @@
     "amount_usd": 6.64,
     "exchange_rate": 1505,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -33618,7 +33618,7 @@
     "amount_usd": 6.69,
     "exchange_rate": 1495,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -33738,7 +33738,7 @@
     "amount_usd": 13.38,
     "exchange_rate": 1495,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -33954,7 +33954,7 @@
     "amount_usd": 13.47,
     "exchange_rate": 1485,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -34074,7 +34074,7 @@
     "amount_usd": 114.48,
     "exchange_rate": 1485,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -34314,7 +34314,7 @@
     "amount_usd": 6.76,
     "exchange_rate": 1480,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -34434,7 +34434,7 @@
     "amount_usd": 13.51,
     "exchange_rate": 1480,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -34770,7 +34770,7 @@
     "amount_usd": 13.65,
     "exchange_rate": 1465.201465,
     "fixed_variable": "Variable",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -34794,7 +34794,7 @@
     "amount_usd": 13.65,
     "exchange_rate": 1465.201465,
     "fixed_variable": "Variable",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -34938,7 +34938,7 @@
     "amount_usd": 650,
     "exchange_rate": 1465,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -35634,7 +35634,7 @@
     "amount_usd": 14.04,
     "exchange_rate": 1425,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -35874,7 +35874,7 @@
     "amount_usd": 7.07,
     "exchange_rate": 1415,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -35970,7 +35970,7 @@
     "amount_usd": 7.07,
     "exchange_rate": 1415,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -36090,7 +36090,7 @@
     "amount_usd": 6.99,
     "exchange_rate": 1430,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -36234,7 +36234,7 @@
     "amount_usd": 6.99,
     "exchange_rate": 1430,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -36858,7 +36858,7 @@
     "amount_usd": 20.98,
     "exchange_rate": 1430,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -37002,7 +37002,7 @@
     "amount_usd": 13.99,
     "exchange_rate": 1430,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -37098,7 +37098,7 @@
     "amount_usd": 140.85,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -37314,7 +37314,7 @@
     "amount_usd": 7.07,
     "exchange_rate": 1415,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -37482,7 +37482,7 @@
     "amount_usd": 21.2,
     "exchange_rate": 1415,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -37746,7 +37746,7 @@
     "amount_usd": 7.04,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -37818,7 +37818,7 @@
     "amount_usd": 7.04,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -37842,7 +37842,7 @@
     "amount_usd": 133.8,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -38178,7 +38178,7 @@
     "amount_usd": 21.13,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -38442,7 +38442,7 @@
     "amount_usd": 21.13,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -38514,7 +38514,7 @@
     "amount_usd": 900,
     "exchange_rate": 1420,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -38538,7 +38538,7 @@
     "amount_usd": 35.21,
     "exchange_rate": 1420,
     "fixed_variable": "Variable",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -38706,7 +38706,7 @@
     "amount_usd": 42.7,
     "exchange_rate": 1405,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -39546,7 +39546,7 @@
     "amount_usd": 14.23,
     "exchange_rate": 1405,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -39570,7 +39570,7 @@
     "amount_usd": 42.7,
     "exchange_rate": 1405,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -39666,7 +39666,7 @@
     "amount_usd": 7.12,
     "exchange_rate": 1405,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -39834,7 +39834,7 @@
     "amount_usd": 14.23,
     "exchange_rate": 1405,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -39978,7 +39978,7 @@
     "amount_usd": 14.18,
     "exchange_rate": 1410.437236,
     "fixed_variable": "Variable",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -40002,7 +40002,7 @@
     "amount_usd": 131.67,
     "exchange_rate": 1405,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -40314,7 +40314,7 @@
     "amount_usd": 56.74,
     "exchange_rate": 1410,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -40338,7 +40338,7 @@
     "amount_usd": 85.11,
     "exchange_rate": 1410,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -41010,7 +41010,7 @@
     "amount_usd": 14.18,
     "exchange_rate": 1410,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -41154,7 +41154,7 @@
     "amount_usd": 14.18,
     "exchange_rate": 1410,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -41178,7 +41178,7 @@
     "amount_usd": 7.09,
     "exchange_rate": 1410,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -41586,7 +41586,7 @@
     "amount_usd": 28.37,
     "exchange_rate": 1410,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -41754,7 +41754,7 @@
     "amount_usd": 14.18,
     "exchange_rate": 1410,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -41802,7 +41802,7 @@
     "amount_usd": 14.18,
     "exchange_rate": 1410,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -41946,7 +41946,7 @@
     "amount_usd": 136.2,
     "exchange_rate": 1395,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -42090,7 +42090,7 @@
     "amount_usd": 28.67,
     "exchange_rate": 1395,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -43098,7 +43098,7 @@
     "amount_usd": 14.29,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -43434,7 +43434,7 @@
     "amount_usd": 14.29,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -43458,7 +43458,7 @@
     "amount_usd": 42.86,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -44082,7 +44082,7 @@
     "amount_usd": 14.29,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -45234,7 +45234,7 @@
     "amount_usd": 72.33,
     "exchange_rate": 1382.5,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -45258,7 +45258,7 @@
     "amount_usd": 650,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -45858,7 +45858,7 @@
     "amount_usd": 50.54,
     "exchange_rate": 1385,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -46002,7 +46002,7 @@
     "amount_usd": 14.44,
     "exchange_rate": 1385,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -47034,7 +47034,7 @@
     "amount_usd": 14.44,
     "exchange_rate": 1385,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -47058,7 +47058,7 @@
     "amount_usd": 57.76,
     "exchange_rate": 1385,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -48186,7 +48186,7 @@
     "amount_usd": 157.14,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -48954,7 +48954,7 @@
     "amount_usd": 14.29,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -49242,7 +49242,7 @@
     "amount_usd": 28.57,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -49410,7 +49410,7 @@
     "amount_usd": 50,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -49698,7 +49698,7 @@
     "amount_usd": 114.29,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -49722,7 +49722,7 @@
     "amount_usd": 600,
     "exchange_rate": 1395,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -49746,7 +49746,7 @@
     "amount_usd": 77,
     "exchange_rate": 1395,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -50058,7 +50058,7 @@
     "amount_usd": 21.43,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -50202,7 +50202,7 @@
     "amount_usd": 14.34,
     "exchange_rate": 1394.700139,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -50298,7 +50298,7 @@
     "amount_usd": 14.34,
     "exchange_rate": 1394.700139,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -50322,7 +50322,7 @@
     "amount_usd": 35.84,
     "exchange_rate": 1395.089286,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -50346,7 +50346,7 @@
     "amount_usd": 14.34,
     "exchange_rate": 1395,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -50658,7 +50658,7 @@
     "amount_usd": 129.5,
     "exchange_rate": 1390,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -51186,7 +51186,7 @@
     "amount_usd": 35.84,
     "exchange_rate": 1395,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -51498,7 +51498,7 @@
     "amount_usd": 814.29,
     "exchange_rate": 1400,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -51762,7 +51762,7 @@
     "amount_usd": 69.93,
     "exchange_rate": 1430,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -51786,7 +51786,7 @@
     "amount_usd": 34.97,
     "exchange_rate": 1430,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null
@@ -51810,7 +51810,7 @@
     "amount_usd": 314.69,
     "exchange_rate": 1430,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null

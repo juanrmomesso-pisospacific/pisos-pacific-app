@@ -65,7 +65,7 @@ const RETAIL = /carrefour|\bcoto\b|jumbo|\bdisco\b|\bdia\b|farmacia|chango|\bvea
 const norm = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
 // Personas identificadas por el dueño → contraparte real + tipo.
 const NAME_MAP = {
-  'cristian adrian tevez': { cp: 'Oso', et: PER, cat: 'Mano de Obra', desc: 'Sueldo / jornal Oso' },
+  'cristian adrian tevez': { cp: 'Oso', et: SUM, cat: 'Mano de Obra', desc: 'Jornal Oso (colocación)' },
   'gonzalez marina sofia': { cp: 'Via Cargo', et: SUM, cat: 'Insumos', desc: 'Flete / envíos Via Cargo' },
 };
 // Amigos / gastos personales confirmados por el dueño → todo personal.
@@ -100,7 +100,7 @@ function classify(m) {
   if (/mercado libre/i.test(t))
     return { kind: 'egreso', counterparty: 'Mercado Libre', category: 'Insumos', expense_type: SUM, desc: t };
   if (/^Transferencia enviada/i.test(t)) {
-    if (STAFF.test(name)) return { kind: 'egreso', counterparty: name, category: 'Mano de Obra', expense_type: PER, desc: 'Transferencia ' + name };
+    if (STAFF.test(name)) return { kind: 'egreso', counterparty: name, category: 'Mano de Obra', expense_type: SUM, desc: 'Transferencia ' + name };
     return { kind: 'egreso', counterparty: name, category: 'Otros', expense_type: null, desc: 'Transferencia ' + name, review: 'transferencia MP — ¿trabajador, proveedor o personal?' };
   }
   // Pago QR y otros

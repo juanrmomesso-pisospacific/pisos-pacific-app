@@ -319,7 +319,7 @@
     "amount_usd": 34.96503497,
     "exchange_rate": 1430,
     "fixed_variable": "Fijo",
-    "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+    "expense_type": "Gastos de Instalaciones y Suministros",
     "transfer": false,
     "needs_review": false,
     "review_reason": null

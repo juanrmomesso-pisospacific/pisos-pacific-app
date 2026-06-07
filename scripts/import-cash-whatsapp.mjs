@@ -53,16 +53,16 @@ const ADM = 'Gastos Administrativos';
 // ---- mayo 2026 ----
 e('2026-05-07', 29000,   'Ferretería',   SUM, 'Ferretería varios (efectivo)',            { category: 'Insumos' });
 u('2026-05-07', 2000,    'Alquiler',     ADM, 'Alquiler (efectivo)',                      { category: 'Alquiler', fv: 'Fijo' });
-e('2026-05-11', 2245000, 'Gastón',       PER, 'Obra Conni Suipacha — retiro alfombra, colocación m2 y nivelación', { category: 'Mano de Obra' });
+e('2026-05-11', 2245000, 'Gastón',       SUM, 'Obra Conni Suipacha — retiro alfombra, colocación m2 y nivelación', { category: 'Mano de Obra' });
 e('2026-05-13', 40000,   'Registro Internacional', ADM, 'Registro internacional (efectivo)', { category: 'Administrativos' });
 e('2026-05-13', 60000,   'Juan & Pipi',  PER, 'Sueldo Juan & Pipi (efectivo)',            { category: 'Sueldos', sub: 'Retiro/Personal' });
 e('2026-05-14', 375000,  'Mapei',        SUM, 'Masa Mapei (efectivo)',                    { category: 'Insumos' });
-e('2026-05-07', 10000,   'Ariel',        PER, 'Comida equipo (Ariel) — efectivo',         { category: 'Mano de Obra' });
+e('2026-05-07', 10000,   'Ariel',        SUM, 'Comida equipo (Ariel) — efectivo',         { category: 'Mano de Obra' });
 e('2026-05-12', 40000,   'YPF',          'Gastos de Flota/Vehículos', 'Nafta Clark/autoelevador — efectivo', { category: 'Flota' });
 e('2026-05-29', 168000,  'Matías',       SUM, 'Flete (efectivo)',                         { category: 'Insumos' });
 e('2026-05-29', 714000,  'José',         SUM, 'Mantas protección pisos (efectivo)',       { category: 'Insumos' });
 // ---- junio 2026 ----
-e('2026-06-04', 200000,  'Hugo',         PER, 'Pintar zócalos Belgrano (efectivo)',       { category: 'Mano de Obra' });
+e('2026-06-04', 200000,  'Hugo',         SUM, 'Pintar zócalos Belgrano (efectivo)',       { category: 'Mano de Obra' });
 
 fs.writeFileSync(path.join(DATA, 'cashflow-cash-extra.seed.json'), JSON.stringify(out, null, 2));
 const usdTot = out.reduce((s, m) => s + (m.amount_usd || 0), 0);
