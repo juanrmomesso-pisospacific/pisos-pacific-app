@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { Search, LayoutGrid, Rows3, Plus, Check, CalendarDays, Truck, Info, CalendarClock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -13,7 +13,7 @@ import { SaleForm } from "@/components/forms/SaleForm"
 import { SearchPicker } from "@/components/SearchPicker"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { useApi } from "@/lib/api"
-import { api, useAction, refresh } from "@/lib/mutations"
+import { api, useAction } from "@/lib/mutations"
 import { fmtMoney, cn } from "@/lib/utils"
 import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote, Caja, CashflowMovement, Product } from "@/lib/types"
@@ -87,7 +87,19 @@ const isDue = (s: Sale) => saldoDue(s) > 0.5
 const isPendingDelivery = (s: Sale) => s.delivery_status !== "Finalizado"
 
 export default function VentasPage() {
-  const sales = useApi<Sale[]>("/api/sales").data ?? []
+  const salesApi = useApi<Sale[]>("/api/sales")
+  const sales = salesApi.data ?? []
+  const refetchSales = salesApi.refetch
+  const sweptRef = useRef(false)
+  // Conexión agenda → ventas: una venta Programada cuya entrega ya empezó pasa a "En proceso".
+  useEffect(() => {
+    if (sweptRef.current || sales.length === 0) return
+    const today = new Date().toISOString().slice(0, 10)
+    const due = sales.filter(s => s.status === "Programado" && s.delivery_date && s.delivery_date.slice(0, 10) <= today)
+    if (due.length === 0) return
+    sweptRef.current = true
+    Promise.all(due.map(s => api.saleTransition(s.id, "En proceso").catch(() => null))).then(() => refetchSales())
+  }, [sales])
   const [filter, setFilter] = useState<"Todas" | (typeof STATUSES)[number]>("Todas")
   const [quick, setQuick] = useState<"none" | "cobro" | "entrega">("none")
   const [q, setQ] = useState("")
@@ -189,7 +201,7 @@ export default function VentasPage() {
         {view === "tabla" ? (
           <Card className="overflow-hidden py-0"><VentasTable rows={filtered} /></Card>
         ) : (
-          <VentasKanban rows={filtered} />
+          <VentasKanban rows={filtered} onChanged={refetchSales} />
         )}
       </div>
       <SaleForm open={openNew} onOpenChange={setOpenNew} />
@@ -233,7 +245,7 @@ function VentasTable({ rows }: { rows: Sale[] }) {
   )
 }
 
-function VentasKanban({ rows }: { rows: Sale[] }) {
+function VentasKanban({ rows, onChanged }: { rows: Sale[]; onChanged: () => void }) {
   const [draggingId, setDraggingId] = useState<string | null>(null)
   const [dragOver, setDragOver] = useState<SaleStatus | null>(null)
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -253,8 +265,10 @@ function VentasKanban({ rows }: { rows: Sale[] }) {
     if (!id) return
     const sale = rows.find(s => s.id === id)
     if (!sale || sale.status === status) return
+    // Programado requiere fecha de colocación: si no la tiene, abrir el detalle para cargarla.
+    if (status === "Programado" && !sale.delivery_date) { setSelectedId(id); return }
     const r = await txn.run(id, status)
-    if (r) refresh()
+    if (r) onChanged()  // refetch suave, sin recargar la página
   }
 
   return (
@@ -340,7 +354,7 @@ function VentasKanban({ rows }: { rows: Sale[] }) {
         )
       })}
     </div>
-    <SaleDetailSheet sale={selected} onClose={() => setSelectedId(null)} />
+    <SaleDetailSheet sale={selected} onClose={() => setSelectedId(null)} onChanged={onChanged} />
     </TooltipProvider>
   )
 }
@@ -348,7 +362,7 @@ function VentasKanban({ rows }: { rows: Sale[] }) {
 // -----------------------------------------------------------------------------
 // SaleDetailSheet — click card → full sale view with editable Entrega section
 // -----------------------------------------------------------------------------
-function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => void }) {
+function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onClose: () => void; onChanged: () => void }) {
   const settings = useApi<{ sellers?: { name: string }[]; crews?: string[] }>("/api/settings").data
   const crews = settings?.crews ?? []
   const quotes = useApi<Quote[]>("/api/quotes").data ?? []
@@ -402,7 +416,10 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
       delivery_crew: crew || undefined,
       delivery_notes: notes || undefined,
     })
-    if (sale.status === "Confirmado") await txn.run(sale.id, "Programado")
+    // Conexión agenda → ventas: fecha futura → Programado; fecha de hoy/pasada → En proceso.
+    const today = new Date().toISOString().slice(0, 10)
+    if (dateFrom <= today) { if (sale.status === "Confirmado" || sale.status === "Programado") await txn.run(sale.id, "En proceso") }
+    else if (sale.status === "Confirmado") await txn.run(sale.id, "Programado")
     if (isFirstSchedule) {
       const now = new Date().toISOString()
       const m = new Date(dateFrom); m.setDate(m.getDate() - 2)
@@ -418,13 +435,13 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
       })
       // Remito is created automatically when the Medición is marked complete (see /agenda).
     }
-    onClose(); refresh()
+    onClose(); onChanged()
   }
 
   const clearEntrega = async () => {
     if (!confirm("¿Limpiar la fecha de entrega? Las tareas de medición / informe ya creadas siguen en la agenda — moveles la fecha o cancelálas desde ahí.")) return
     await update.run("sales", sale.id, { delivery_date: "", delivery_date_to: "", delivery_crew: "", delivery_notes: "" })
-    onClose(); refresh()
+    onClose(); onChanged()
   }
 
   // Cobros: ingresos del cashflow linkeados a esta venta (la misma fuente que usa el saldo).
@@ -442,7 +459,7 @@ function SaleDetailSheet({ sale, onClose }: { sale: Sale | null; onClose: () => 
       currency: "USD", amount_ars: null, amount_usd: Math.round(payAmount * 100) / 100, exchange_rate: null,
       fixed_variable: null, expense_type: null, transfer: false, needs_review: false, review_reason: null,
     })
-    onClose(); refresh()
+    onClose(); onChanged()
   }
 
   // Preparación del remito (inspección): parte de los m² de piso y se agregan terminaciones.

@@ -14,18 +14,20 @@ async function getJSON<T>(url: string): Promise<T> {
   return r.json() as Promise<T>
 }
 
-export function useApi<T>(url: string): { data: T | null; loading: boolean; error: Error | null } {
+export function useApi<T>(url: string): { data: T | null; loading: boolean; error: Error | null; refetch: () => void } {
   const [data, setData] = useState<T | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<Error | null>(null)
+  const [nonce, setNonce] = useState(0)
   useEffect(() => {
     let cancelled = false
     getJSON<T>(url)
       .then((d) => { if (!cancelled) { setData(d); setLoading(false) } })
       .catch((e) => { if (!cancelled) { setError(e); setLoading(false) } })
     return () => { cancelled = true }
-  }, [url])
-  return { data, loading, error }
+  }, [url, nonce])
+  // refetch: re-pide los datos sin recargar la página (evita el flash/scroll del reload).
+  return { data, loading, error, refetch: () => setNonce((n) => n + 1) }
 }
 
 export { getJSON }
