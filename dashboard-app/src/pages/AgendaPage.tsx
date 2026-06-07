@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react"
-import { Calendar, Ship, ChevronLeft, ChevronRight, List, CalendarDays, Wrench, Building, PhoneCall, CircleDot, FileCheck2, Plus, GripVertical } from "lucide-react"
+import { Calendar, Ship, ChevronLeft, ChevronRight, List, CalendarDays, Wrench, Building, PhoneCall, CircleDot, FileCheck2, Plus, GripVertical, Users } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -16,7 +16,7 @@ import { type Task, type TaskType, TASK_TYPE_LABEL, TASK_TYPE_ORDER } from "@/li
 
 type EventKind = "delivery" | "container" | "medicion" | "remito" | "visita" | "seguimiento" | "otro"
 type Event = { ts: number; date: string; kind: EventKind; title: string; subtitle: string; meta?: string; crew?: string; taskId?: string; saleId?: string; status?: string; task?: Task; dayIndex?: number; totalDays?: number }
-type View = "lista" | "calendario"
+type View = "lista" | "calendario" | "equipos"
 
 // Etiqueta para reconocer una venta: obra primero, después cliente y nº.
 const saleLabel = (s: Sale) => `${s.title || s.client_name} · ${s.client_name} · #${s.quote_number}`
@@ -117,14 +117,17 @@ export default function AgendaPage() {
         <Tabs value={view} onValueChange={(v) => setView(v as View)}>
           <TabsList className="h-8">
             <TabsTrigger value="calendario" className="gap-1.5"><CalendarDays className="h-3.5 w-3.5" />Calendario</TabsTrigger>
+            <TabsTrigger value="equipos" className="gap-1.5"><Users className="h-3.5 w-3.5" />Equipos</TabsTrigger>
             <TabsTrigger value="lista" className="gap-1.5"><List className="h-3.5 w-3.5" />Lista</TabsTrigger>
           </TabsList>
         </Tabs>
         <Button size="sm" onClick={() => setNewOpen(true)}><Plus className="h-4 w-4" />Programar</Button>
       </TopbarActions>
       <div className="px-4 lg:px-6 space-y-3">
-        <EventLegend />
-        {view === "calendario" ? <CalendarView events={events} sales={sales} tasks={tasks} /> : <ListView events={events} />}
+        {view !== "equipos" && <EventLegend />}
+        {view === "calendario" ? <CalendarView events={events} sales={sales} tasks={tasks} />
+          : view === "equipos" ? <TeamsView sales={sales} />
+          : <ListView events={events} />}
       </div>
       <NewEventSheet open={newOpen} onOpenChange={setNewOpen} sales={sales} />
     </>
@@ -394,6 +397,40 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
     return m
   }, [events])
 
+  // Carriles: cada evento (rango multi-día o suelto) ocupa la MISMA fila en todos
+  // los días que toca, así los rangos se ven contiguos y no "partidos".
+  const laneByDate = useMemo(() => {
+    const groupKey = (e: Event) => e.saleId ? `s:${e.saleId}` : e.taskId ? `t:${e.taskId}` : `x:${e.date.slice(0, 10)}:${e.kind}:${e.title}`
+    const groups = new Map<string, { key: string; start: string; end: string; byDate: Map<string, Event> }>()
+    for (const e of events) {
+      const dk = e.date.slice(0, 10), gk = groupKey(e)
+      let g = groups.get(gk)
+      if (!g) { g = { key: gk, start: dk, end: dk, byDate: new Map() }; groups.set(gk, g) }
+      g.byDate.set(dk, e)
+      if (dk < g.start) g.start = dk
+      if (dk > g.end) g.end = dk
+    }
+    const sorted = [...groups.values()].sort((a, b) => a.start.localeCompare(b.start) || b.end.localeCompare(a.end))
+    const laneEnds: string[] = []
+    const laneOf = new Map<string, number>()
+    for (const g of sorted) {
+      let lane = 0
+      while (lane < laneEnds.length && laneEnds[lane] >= g.start) lane++
+      laneEnds[lane] = g.end
+      laneOf.set(g.key, lane)
+    }
+    // Por fecha: array de carriles (índice = lane) con el evento de ese día (o undefined).
+    const laneByDate = new Map<string, (Event | undefined)[]>()
+    for (const g of groups.values()) {
+      const lane = laneOf.get(g.key)!
+      for (const [dk, e] of g.byDate) {
+        if (!laneByDate.has(dk)) laneByDate.set(dk, [])
+        laneByDate.get(dk)![lane] = e
+      }
+    }
+    return laneByDate
+  }, [events])
+
   const cells = useMemo(() => daysGrid(cursor), [cursor])
   const monthLabel = cursor.toLocaleDateString("es-AR", { month: "long", year: "numeric" })
 
@@ -490,10 +527,16 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
                 {list.length > 0 && <span className="text-[10px] text-muted-foreground">{list.length}</span>}
               </div>
               <div className="flex flex-col gap-1">
-                {list.slice(0, 3).map((e, k) => {
+                {(() => {
+                const MAX = 3
+                const cellLanes = (laneByDate.get(c.key) ?? []).slice(0, MAX)
+                let shownCount = 0
+                const nodes = cellLanes.map((e, lane) => {
+                  if (!e) return <div key={`sp-${lane}`} className="h-[17px]" aria-hidden />
+                  shownCount++
                   const st = KIND_STYLE[e.kind]
                   const Icon = st.icon
-                  const evKey = e.taskId ?? e.saleId ?? `${e.date}-${k}`
+                  const evKey = e.taskId ?? e.saleId ?? `${e.date}-${lane}`
                   const canDrag = isDraggable(e)
                   // Multi-day delivery range — render each day as a connected segment
                   const isRange = e.kind === "delivery" && (e.totalDays ?? 1) > 1
@@ -503,7 +546,7 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
                   const showResize = e.kind === "delivery" && e.saleId && (isLast || !isRange)
                   return (
                     <div
-                      key={k}
+                      key={lane}
                       draggable={canDrag}
                       onDragStart={(ev) => {
                         if (!canDrag) return
@@ -555,8 +598,10 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
                       )}
                     </div>
                   )
-                })}
-                {list.length > 3 && <div className="text-[10px] text-muted-foreground px-1.5">+{list.length - 3} más</div>}
+                })
+                const hidden = list.length - shownCount
+                return <>{nodes}{hidden > 0 && <div className="text-[10px] text-muted-foreground px-1.5">+{hidden} más</div>}</>
+                })()}
               </div>
             </button>
           )
@@ -592,6 +637,103 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
 
       <MedicionFormSheet task={medicionTask} sale={medicionTask?.sale_id ? sales.find(s => s.id === medicionTask.sale_id) ?? null : null} allTasks={tasks} onClose={() => setMedicionTask(null)} />
       <InformeFormSheet task={informeTask} sale={informeTask?.sale_id ? sales.find(s => s.id === informeTask.sale_id) ?? null : null} onClose={() => setInformeTask(null)} />
+    </Card>
+  )
+}
+
+// -----------------------------------------------------------------------------
+// TeamsView — disponibilidad semanal de equipos de colocación
+// -----------------------------------------------------------------------------
+function startOfWeek(d: Date) { const x = new Date(d); x.setHours(0, 0, 0, 0); const dow = (x.getDay() + 6) % 7; x.setDate(x.getDate() - dow); return x }
+function TeamsView({ sales }: { sales: Sale[] }) {
+  const settings = useApi<{ crews?: string[] }>("/api/settings").data
+  const crews = settings?.crews ?? []
+  const today = new Date(); today.setHours(0, 0, 0, 0)
+  const [weekStart, setWeekStart] = useState(startOfWeek(today))
+  const days = useMemo(() => Array.from({ length: 7 }, (_, i) => { const d = new Date(weekStart); d.setDate(weekStart.getDate() + i); return d }), [weekStart])
+  const dayKey = (d: Date) => d.toISOString().slice(0, 10)
+  const weekFrom = dayKey(days[0]), weekTo = dayKey(days[6])
+
+  // Filas: equipos definidos + un "Sin asignar / Externo" para colocaciones sin equipo de la lista.
+  const rows = useMemo(() => [...crews, "Sin asignar / Externo"], [crews])
+  const rowFor = (s: Sale) => (s.delivery_crew && crews.includes(s.delivery_crew)) ? s.delivery_crew : "Sin asignar / Externo"
+
+  // Colocaciones (ventas con entrega) que tocan esta semana.
+  const placements = useMemo(() => sales.filter(s => {
+    if (!s.delivery_date) return false
+    const from = s.delivery_date.slice(0, 10)
+    const to = (s.delivery_date_to && s.delivery_date_to >= from ? s.delivery_date_to : from).slice(0, 10)
+    return from <= weekTo && to >= weekFrom
+  }), [sales, weekFrom, weekTo])
+
+  const cellSales = (crew: string, d: Date) => {
+    const k = dayKey(d)
+    return placements.filter(s => {
+      if (rowFor(s) !== crew) return false
+      const from = s.delivery_date!.slice(0, 10)
+      const to = (s.delivery_date_to && s.delivery_date_to >= from ? s.delivery_date_to : from).slice(0, 10)
+      return from <= k && k <= to
+    })
+  }
+  const busyDays = (crew: string) => days.filter(d => cellSales(crew, d).length > 0).length
+  const isWeekend = (d: Date) => { const w = d.getDay(); return w === 0 || w === 6 }
+  const label = days[0].toLocaleDateString("es-AR", { day: "numeric", month: "short" }) + " – " + days[6].toLocaleDateString("es-AR", { day: "numeric", month: "short", year: "numeric" })
+
+  return (
+    <Card className="p-0 overflow-hidden gap-0">
+      <div className="flex items-center justify-between px-4 lg:px-6 py-3 border-b border-border">
+        <div className="text-base font-medium capitalize serif">Semana {label}</div>
+        <div className="flex items-center gap-1">
+          <Button variant="ghost" size="icon" onClick={() => setWeekStart(d => { const x = new Date(d); x.setDate(x.getDate() - 7); return x })}><ChevronLeft className="h-4 w-4" /></Button>
+          <Button variant="outline" size="sm" onClick={() => setWeekStart(startOfWeek(new Date()))} className="h-8">Esta semana</Button>
+          <Button variant="ghost" size="icon" onClick={() => setWeekStart(d => { const x = new Date(d); x.setDate(x.getDate() + 7); return x })}><ChevronRight className="h-4 w-4" /></Button>
+        </div>
+      </div>
+      <div className="overflow-x-auto">
+        <div className="min-w-[860px]">
+          {/* Header de días */}
+          <div className="grid border-b border-border bg-muted/40" style={{ gridTemplateColumns: "150px repeat(7, 1fr)" }}>
+            <div className="px-3 py-2 text-[11px] uppercase tracking-wide text-muted-foreground font-medium border-r border-border">Equipo</div>
+            {days.map((d, i) => (
+              <div key={i} className={cn("px-2 py-2 text-[11px] border-r border-border last:border-r-0", isWeekend(d) && "bg-muted/30")}>
+                <div className="uppercase tracking-wide text-muted-foreground">{WEEKDAYS[i]}</div>
+                <div className={cn("tabular", d.getTime() === today.getTime() ? "font-semibold text-foreground" : "text-muted-foreground")}>{d.getDate()}</div>
+              </div>
+            ))}
+          </div>
+          {/* Filas de equipos */}
+          {rows.map((crew, ri) => {
+            const busy = busyDays(crew)
+            const isUnassigned = crew === "Sin asignar / Externo"
+            return (
+              <div key={ri} className="grid border-b border-border last:border-b-0" style={{ gridTemplateColumns: "150px repeat(7, 1fr)" }}>
+                <div className="px-3 py-2 border-r border-border flex flex-col justify-center">
+                  <div className={cn("text-sm font-medium truncate", isUnassigned && "text-muted-foreground")}>{crew}</div>
+                  {!isUnassigned && (
+                    <div className="text-[10px] text-muted-foreground">{busy === 0 ? "libre toda la semana" : `${busy}/7 días ocupado · ${7 - busy} libre${7 - busy === 1 ? "" : "s"}`}</div>
+                  )}
+                </div>
+                {days.map((d, di) => {
+                  const list = cellSales(crew, d)
+                  return (
+                    <div key={di} className={cn("min-h-[60px] p-1.5 border-r border-border last:border-r-0 space-y-1", isWeekend(d) && "bg-muted/20", list.length === 0 && !isUnassigned && !isWeekend(d) && "bg-emerald-50/40")}>
+                      {list.map(s => (
+                        <div key={s.id} className="text-[10px] rounded bg-amber-100/70 border border-amber-300/60 text-amber-900 px-1.5 py-1 leading-tight" title={`${saleLabel(s)}${s.client_address ? " · " + s.client_address : ""}`}>
+                          <div className="font-medium truncate">{s.title || s.client_name}</div>
+                          <div className="truncate opacity-70">{s.client_name}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )
+                })}
+              </div>
+            )
+          })}
+        </div>
+      </div>
+      <div className="px-4 lg:px-6 py-2.5 border-t border-border text-[11px] text-muted-foreground">
+        Verde = día libre del equipo. Asigná el equipo desde la venta o al programar la entrega.
+      </div>
     </Card>
   )
 }
