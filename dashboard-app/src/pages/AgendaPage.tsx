@@ -15,7 +15,7 @@ import type { Sale, Container } from "@/lib/types"
 import { type Task, type TaskType, TASK_TYPE_LABEL, TASK_TYPE_ORDER } from "@/lib/tasks"
 
 type EventKind = "delivery" | "container" | "medicion" | "remito" | "visita" | "seguimiento" | "otro"
-type Event = { ts: number; date: string; kind: EventKind; title: string; subtitle: string; meta?: string; crew?: string; taskId?: string; saleId?: string; status?: string; task?: Task; dayIndex?: number; totalDays?: number }
+type Event = { ts: number; date: string; kind: EventKind; title: string; subtitle: string; meta?: string; crew?: string; taskId?: string; saleId?: string; status?: string; task?: Task; dayIndex?: number; totalDays?: number; endDate?: string }
 type View = "lista" | "calendario" | "equipos"
 
 // Etiqueta para reconocer una venta: obra primero, después cliente y nº.
@@ -61,26 +61,26 @@ export default function AgendaPage() {
       if (!s.delivery_date) continue
       const startStr = s.delivery_date.slice(0, 10)
       const endStr   = s.delivery_date_to && s.delivery_date_to >= startStr ? s.delivery_date_to : startStr
-      // Span the range — one event per day so the multi-day install is visible across cells.
       const start = new Date(startStr + "T12:00:00")
       const end   = new Date(endStr   + "T12:00:00")
       const totalDays = Math.max(1, Math.round((+end - +start) / 86400000) + 1)
-      for (let i = 0; i < totalDays && i < 60; i++) {
-        const d = new Date(start); d.setDate(start.getDate() + i)
-        const dStr = d.toISOString().slice(0, 10)
-        out.push({
-          ts: +d,
-          date: dStr,
-          kind: "delivery",
-          title: s.title || s.client_name,
-          subtitle: `${s.client_name} · ${s.status} · #${s.quote_number}${s.delivery_crew ? ` · ${s.delivery_crew}` : ""}${totalDays > 1 ? ` · día ${i + 1}/${totalDays}` : ""}`,
-          meta: fmtMoney(s.contract_total),
-          crew: s.delivery_crew,
-          saleId: s.id,
-          dayIndex: i,
-          totalDays,
-        })
-      }
+      // Un solo chip en el día de inicio (el rango se muestra en el chip). La ocupación
+      // día por día se ve en la vista Equipos — esto evita barras escalonadas en el mes.
+      const range = totalDays > 1
+        ? `${start.toLocaleDateString("es-AR", { day: "numeric", month: "short" })} – ${end.toLocaleDateString("es-AR", { day: "numeric", month: "short" })} · ${totalDays} días`
+        : ""
+      out.push({
+        ts: +start,
+        date: startStr,
+        kind: "delivery",
+        title: s.title || s.client_name,
+        subtitle: `${s.client_name} · ${s.status} · #${s.quote_number}${s.delivery_crew ? ` · ${s.delivery_crew}` : ""}${range ? ` · ${range}` : ""}`,
+        meta: range || fmtMoney(s.contract_total),
+        crew: s.delivery_crew,
+        saleId: s.id,
+        endDate: endStr,
+        totalDays,
+      })
     }
     for (const c of containers) {
       if (c.status === "received") continue
@@ -397,39 +397,6 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
     return m
   }, [events])
 
-  // Carriles: cada evento (rango multi-día o suelto) ocupa la MISMA fila en todos
-  // los días que toca, así los rangos se ven contiguos y no "partidos".
-  const laneByDate = useMemo(() => {
-    const groupKey = (e: Event) => e.saleId ? `s:${e.saleId}` : e.taskId ? `t:${e.taskId}` : `x:${e.date.slice(0, 10)}:${e.kind}:${e.title}`
-    const groups = new Map<string, { key: string; start: string; end: string; byDate: Map<string, Event> }>()
-    for (const e of events) {
-      const dk = e.date.slice(0, 10), gk = groupKey(e)
-      let g = groups.get(gk)
-      if (!g) { g = { key: gk, start: dk, end: dk, byDate: new Map() }; groups.set(gk, g) }
-      g.byDate.set(dk, e)
-      if (dk < g.start) g.start = dk
-      if (dk > g.end) g.end = dk
-    }
-    const sorted = [...groups.values()].sort((a, b) => a.start.localeCompare(b.start) || b.end.localeCompare(a.end))
-    const laneEnds: string[] = []
-    const laneOf = new Map<string, number>()
-    for (const g of sorted) {
-      let lane = 0
-      while (lane < laneEnds.length && laneEnds[lane] >= g.start) lane++
-      laneEnds[lane] = g.end
-      laneOf.set(g.key, lane)
-    }
-    // Por fecha: array de carriles (índice = lane) con el evento de ese día (o undefined).
-    const laneByDate = new Map<string, (Event | undefined)[]>()
-    for (const g of groups.values()) {
-      const lane = laneOf.get(g.key)!
-      for (const [dk, e] of g.byDate) {
-        if (!laneByDate.has(dk)) laneByDate.set(dk, [])
-        laneByDate.get(dk)![lane] = e
-      }
-    }
-    return laneByDate
-  }, [events])
 
   const cells = useMemo(() => daysGrid(cursor), [cursor])
   const monthLabel = cursor.toLocaleDateString("es-AR", { month: "long", year: "numeric" })
@@ -527,31 +494,20 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
                 {list.length > 0 && <span className="text-[10px] text-muted-foreground">{list.length}</span>}
               </div>
               <div className="flex flex-col gap-1">
-                {(() => {
-                const MAX = 4
-                const cellLanes = (laneByDate.get(c.key) ?? []).slice(0, MAX)
-                let shownCount = 0
-                const nodes = cellLanes.map((e, lane) => {
-                  if (!e) return <div key={`sp-${lane}`} className="h-5" aria-hidden />
-                  shownCount++
+                {list.slice(0, 4).map((e, k) => {
                   const st = KIND_STYLE[e.kind]
                   const Icon = st.icon
-                  const evKey = e.taskId ?? e.saleId ?? `${e.date}-${lane}`
+                  const evKey = e.taskId ?? e.saleId ?? `${e.date}-${k}`
                   const canDrag = isDraggable(e)
-                  // Multi-day delivery range — render each day as a connected segment
                   const isRange = e.kind === "delivery" && (e.totalDays ?? 1) > 1
-                  const isFirst = isRange && e.dayIndex === 0
-                  const isLast  = isRange && e.dayIndex === (e.totalDays ?? 1) - 1
-                  const isMiddle = isRange && !isFirst && !isLast
-                  const showResize = e.kind === "delivery" && e.saleId && (isLast || !isRange)
                   return (
                     <div
-                      key={lane}
+                      key={k}
                       draggable={canDrag}
                       onDragStart={(ev) => {
                         if (!canDrag) return
                         ev.stopPropagation()
-                        ev.dataTransfer.setData("text/event", JSON.stringify({ action: "move", kind: e.kind, saleId: e.saleId, taskId: e.taskId, fromDate: c.key, dayIndex: e.dayIndex ?? 0 }))
+                        ev.dataTransfer.setData("text/event", JSON.stringify({ action: "move", kind: e.kind, saleId: e.saleId, taskId: e.taskId, fromDate: c.key, dayIndex: 0 }))
                         ev.dataTransfer.effectAllowed = "move"
                         setDraggingKey(evKey)
                       }}
@@ -562,46 +518,37 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
                         else if (e.task && e.kind === "remito") setInformeTask(e.task)
                       }}
                       className={cn(
-                        "text-[10px] truncate h-5 leading-none border flex items-center gap-1 relative z-10",
+                        "text-[10px] truncate h-5 leading-none rounded px-1.5 border flex items-center gap-1",
                         st.bg, st.border, st.text,
                         canDrag && "cursor-grab active:cursor-grabbing",
                         draggingKey === evKey && "opacity-50 ring-1 ring-primary",
-                        // Single-day default
-                        !isRange && "rounded px-1.5",
-                        // Multi-day connected styling — overlap 1px past cell padding to hide the cell border seam
-                        isFirst  && "rounded-l-md pl-1.5 pr-1 -mr-[9px] border-r-0",
-                        isMiddle && "px-1.5 -mx-[9px] border-l-0 border-r-0",
-                        isLast   && "rounded-r-md pl-1 pr-1.5 -ml-[9px] border-l-0",
                       )}
-                      title={isRange ? `Día ${(e.dayIndex ?? 0) + 1} de ${e.totalDays} · Arrastrá para mover · grippy para extender` : canDrag ? "Arrastrá para reprogramar" : "Container — ETA externa, no editable"}
+                      title={isRange ? `${e.subtitle} · arrastrá para mover · grippy para extender` : canDrag ? "Arrastrá para reprogramar" : "Container — ETA externa, no editable"}
                     >
-                      {(!isRange || isFirst) && <Icon className="h-2.5 w-2.5 shrink-0" />}
-                      {(!isRange || isFirst) && <span className="truncate">{e.title}</span>}
-                      {isMiddle && <span className="truncate opacity-60">·</span>}
-                      {isLast && <span className="truncate opacity-60">·</span>}
-                      {showResize && (
+                      <Icon className="h-2.5 w-2.5 shrink-0" />
+                      <span className="truncate">{e.title}</span>
+                      {isRange && <span className="text-[9px] opacity-60 shrink-0">{e.totalDays}d</span>}
+                      {e.kind === "delivery" && e.saleId && (
                         <span
                           draggable
                           onDragStart={(ev) => {
                             ev.stopPropagation()
-                            ev.dataTransfer.setData("text/event", JSON.stringify({ action: "resize-end", kind: "delivery", saleId: e.saleId, fromDate: c.key }))
+                            ev.dataTransfer.setData("text/event", JSON.stringify({ action: "resize-end", kind: "delivery", saleId: e.saleId, fromDate: e.date }))
                             ev.dataTransfer.effectAllowed = "move"
                             setDraggingKey(evKey + ":resize")
                           }}
                           onDragEnd={() => { setDraggingKey(null); setDragOverDate(null) }}
                           onClick={(ev) => ev.stopPropagation()}
-                          className={cn("ml-auto -mr-0.5 px-0.5 rounded cursor-ew-resize opacity-60 hover:opacity-100 hover:bg-black/10")}
-                          title="Arrastrá para extender el rango (hasta)"
+                          className="ml-auto -mr-0.5 px-0.5 rounded cursor-ew-resize opacity-60 hover:opacity-100 hover:bg-black/10"
+                          title="Arrastrá al día final para extender el rango"
                         >
                           <GripVertical className="h-2.5 w-2.5" />
                         </span>
                       )}
                     </div>
                   )
-                })
-                const hidden = list.length - shownCount
-                return <>{nodes}{hidden > 0 && <div className="text-[10px] text-muted-foreground px-1.5">+{hidden} más</div>}</>
-                })()}
+                })}
+                {list.length > 4 && <div className="text-[10px] text-muted-foreground px-1.5">+{list.length - 4} más</div>}
               </div>
             </button>
           )
