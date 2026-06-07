@@ -91,7 +91,7 @@ const load = (f) => { try { return JSON.parse(fs.readFileSync(path.join(DATA, f)
 const all = [
   ...load('cashflow.seed.json'), ...load('cashflow-bank-extra.seed.json'),
   ...load('cashflow-mp-extra.seed.json'), ...load('cashflow-cash-extra.seed.json'),
-  ...load('cashflow-vf-extra.seed.json'), ...out,
+  ...load('cashflow-vf-extra.seed.json'), ...load('cashflow-tarjeta-extra.seed.json'), ...out,
 ];
 const bal = {};
 for (const m of all) {

@@ -2822,11 +2822,11 @@
     "name": "Varilla L Acero Inox 6mm",
     "category": "Terminaciones",
     "rawCategory": "Terminaciones",
-    "price": 0,
-    "cost": 0,
+    "price": 13.32,
+    "cost": 8.88,
     "currency": "USD",
     "active": true,
-    "margin": 0,
+    "margin": 50,
     "stock": 0,
     "reservedStock": 0,
     "subLine": "Varilla L INOX",
@@ -2839,8 +2839,7 @@
     "stockCodeLegacy": null,
     "createdAt": "2026-06-06T17:28:48.485Z",
     "updatedAt": "2026-06-06T17:28:48.485Z",
-    "placeholderPrice": true,
-    "note": "sin dato DecoTurner — completar"
+    "placeholderPrice": true
   },
   {
     "id": "VAR-SPC-PLANA",
