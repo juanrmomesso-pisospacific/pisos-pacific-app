@@ -528,11 +528,11 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
               </div>
               <div className="flex flex-col gap-1">
                 {(() => {
-                const MAX = 3
+                const MAX = 4
                 const cellLanes = (laneByDate.get(c.key) ?? []).slice(0, MAX)
                 let shownCount = 0
                 const nodes = cellLanes.map((e, lane) => {
-                  if (!e) return <div key={`sp-${lane}`} className="h-[17px]" aria-hidden />
+                  if (!e) return <div key={`sp-${lane}`} className="h-5" aria-hidden />
                   shownCount++
                   const st = KIND_STYLE[e.kind]
                   const Icon = st.icon
@@ -562,7 +562,7 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
                         else if (e.task && e.kind === "remito") setInformeTask(e.task)
                       }}
                       className={cn(
-                        "text-[10px] truncate py-0.5 border flex items-center gap-1 relative z-10",
+                        "text-[10px] truncate h-5 leading-none border flex items-center gap-1 relative z-10",
                         st.bg, st.border, st.text,
                         canDrag && "cursor-grab active:cursor-grabbing",
                         draggingKey === evKey && "opacity-50 ring-1 ring-primary",
