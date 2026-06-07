@@ -596,8 +596,8 @@ function AgingReport() {
                   return (
                     <TableRow key={r.sale.id}>
                       <TableCell>
-                        <Link to="/ventas" className="text-sm font-medium hover:underline">{r.sale.id}</Link>
-                        <div className="text-[10px] text-muted-foreground">{new Date(r.sale.created_at).toLocaleDateString("es-AR")}</div>
+                        <Link to="/ventas" className="text-sm font-medium hover:underline">#{r.sale.quote_number ?? r.sale.id}</Link>
+                        <div className="text-[10px] text-muted-foreground">{r.sale.created_at ? new Date(r.sale.created_at).toLocaleDateString("es-AR") : "—"}</div>
                       </TableCell>
                       <TableCell className="text-sm">{r.sale.client_name}</TableCell>
                       <TableCell className="text-xs text-muted-foreground">{r.sale.seller_name ?? "—"}</TableCell>
@@ -607,7 +607,7 @@ function AgingReport() {
                       <TableCell className="text-right tabular text-xs text-muted-foreground">{r.expectedAt.toLocaleDateString("es-AR")}</TableCell>
                       <TableCell className="text-right">
                         <Badge variant={overdue ? "destructive" : "muted"} className="tabular text-[11px]">
-                          {overdue ? `+${r.daysPast}` : r.daysPast === 0 ? "hoy" : `${r.daysPast}`}
+                          {r.daysPast > 0 ? `+${r.daysPast}d` : r.daysPast === 0 ? "hoy" : `${r.daysPast}d`}
                         </Badge>
                       </TableCell>
                     </TableRow>

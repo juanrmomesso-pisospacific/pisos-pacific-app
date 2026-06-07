@@ -422,7 +422,7 @@ function PaymentDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChan
             <Input type="number" min={0} value={amount} onChange={(e) => setAmount(Number(e.target.value) || 0)} />
             <div className="mt-2 flex gap-1">
               {[due, due/2, due/4].filter(v => v > 0).map((v, i) => (
-                <Button key={i} type="button" size="sm" variant="outline" className="h-7 text-xs" onClick={() => setAmount(Math.round(v))}>{fmtMoney(v)}</Button>
+                <Button key={i} type="button" size="sm" variant="outline" className="h-7 text-xs" onClick={() => setAmount(Math.round(v * 100) / 100)}>{fmtMoney(v)}</Button>
               ))}
             </div>
           </div>

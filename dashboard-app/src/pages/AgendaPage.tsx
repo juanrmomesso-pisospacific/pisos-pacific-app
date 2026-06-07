@@ -83,14 +83,15 @@ export default function AgendaPage() {
       })
     }
     for (const c of containers) {
-      if (c.status === "received") continue
+      if (c.status === "received" || !c.eta) continue
+      const items = Array.isArray(c.items) ? c.items : []
       out.push({
         ts: +new Date(c.eta),
         date: c.eta,
         kind: "container",
         title: `${c.id} · ${c.vessel}`,
-        subtitle: `${c.supplier} · ${c.items.length} SKUs`,
-        meta: c.items.reduce((s, i) => s + i.quantity, 0).toLocaleString("es-AR") + " m²",
+        subtitle: `${c.supplier} · ${items.length} SKUs`,
+        meta: items.reduce((s, i) => s + (Number(i.quantity) || 0), 0).toLocaleString("es-AR") + " m²",
       })
     }
     for (const t of tasks) {

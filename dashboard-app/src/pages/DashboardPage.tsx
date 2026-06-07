@@ -279,7 +279,7 @@ const smoothPath = (pts: [number, number][]) => {
   return d
 }
 const fmtUSDk = (v: number) => "US$ " + (v >= 1000 ? Math.round(v / 1000) + "k" : Math.round(v).toString())
-const fmtM2 = (v: number) => Math.round(v).toLocaleString("es-AR") + " m²"
+const fmtM2 = (v: number) => (isFinite(v) ? Math.round(v).toLocaleString("es-AR") : "0") + " m²"
 const tickUSD = (v: number) => v === 0 ? "0" : v >= 1000 ? (Math.round(v / 100) / 10) + "k" : Math.round(v).toString()
 
 function FactChart({ data, mode }: { data: ChartRow[]; mode: "line" | "bar" }) {

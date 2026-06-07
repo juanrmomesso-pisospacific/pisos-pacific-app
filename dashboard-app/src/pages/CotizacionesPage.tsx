@@ -36,8 +36,8 @@ export default function CotizacionesPage() {
   }, [quotes, filter, q])
 
   const counts = useMemo(() => {
-    const c: Record<string, number> = { Todas: quotes.length, Borrador: 0, Enviado: 0, Aceptado: 0 }
-    const reverse: Record<string, string> = { DRAFT: "Borrador", SENT: "Enviado", ACCEPTED: "Aceptado" }
+    const c: Record<string, number> = { Todas: quotes.length, Borrador: 0, Enviado: 0, Aceptado: 0, Rechazado: 0 }
+    const reverse: Record<string, string> = { DRAFT: "Borrador", SENT: "Enviado", ACCEPTED: "Aceptado", REJECTED: "Rechazado" }
     for (const q of quotes) {
       const key = reverse[q.status] ?? q.status
       c[key] = (c[key] || 0) + 1
