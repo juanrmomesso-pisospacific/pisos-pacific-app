@@ -36,3 +36,6 @@ data/sources/
 # tooling de skills (npx skills add)
 .agents/
 skills-lock.json
+
+# Backups locales de db.json
+data/db.json.bak-*

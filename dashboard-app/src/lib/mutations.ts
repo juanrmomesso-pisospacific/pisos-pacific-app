@@ -47,6 +47,9 @@ export const api = {
   // MercadoPago — T6.A
   paymentLinkCreate:   (saleId: string, amount?: number) => post(`/api/sales/${saleId}/payment-link`, amount != null ? { amount } : undefined),
   paymentLinkSimulate: (linkId: string) => post(`/api/payment-links/${linkId}/simulate-paid`),
+  // Importar extractos (MP / BBVA / Banco de Comercio)
+  importParse:  (source: string, data_base64: string) => post(`/api/import/parse`, { source, data_base64 }),
+  importCommit: (movements: any[]) => post(`/api/import/commit`, { movements }),
   // Generic CRUD
   create: (entity: string, body: any) => post(`/api/${entity}`, body),
   update: (entity: string, id: string, body: any) => patch(`/api/${entity}/${id}`, body),

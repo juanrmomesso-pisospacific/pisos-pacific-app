@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
 import { spawn } from 'node:child_process';
+import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -134,7 +135,7 @@ if (!db.settings.integrations.mercadopago) db.settings.integrations.mercadopago 
   }
   for (const s of db.settings.sellers) { if (phones[s.name] && s.phone !== phones[s.name]) { s.phone = phones[s.name]; changed = true; } }
   // Equipos de colocación activos (responsables a quienes se les paga).
-  const crews = ['Hugo Ramirez', 'Gastón Aguilera', 'Ariel Noruega', 'Fabián Ortiz'];
+  const crews = ['Hugo Ramirez', 'Gastón Aguilera', 'Ariel Ernesto Garcia', 'Fabián Ortiz'];
   if (JSON.stringify(db.settings.crews || []) !== JSON.stringify(crews)) { db.settings.crews = crews; changed = true; }
   // Colocadores (mano de obra): se excluyen del opex del P&L híbrido (ya están en el costo del servicio).
   // Oso y Maldo NO son colocadores (depósito/personal) → quedan en Gastos de Personal.
@@ -526,6 +527,37 @@ app.patch('/api/leads/:id', (req, res) => {
     save();
     res.sendStatus(204);
   });
+});
+
+// ---------- Importar extractos (MP / BBVA / Banco de Comercio) ----------
+// parse: decodifica el archivo, clasifica y deduplica contra el cashflow vivo,
+// y devuelve un preview (NO inserta). commit: inserta los movimientos elegidos.
+app.post('/api/import/parse', (req, res) => {
+  try {
+    const { source, data_base64 } = req.body || {};
+    if (!source || !IMPORT_CAJA[source]) return res.status(400).json({ error: 'fuente inválida (mp | bbva | bdc)' });
+    if (!data_base64) return res.status(400).json({ error: 'falta el archivo' });
+    const buffer = Buffer.from(String(data_base64), 'base64');
+    const { movements, report } = parseStatement({ source, buffer, existing: db.cashflow });
+    res.json({ movements, report });
+  } catch (e) {
+    res.status(400).json({ error: e.message || 'no se pudo leer el archivo' });
+  }
+});
+app.post('/api/import/commit', (req, res) => {
+  const movs = Array.isArray(req.body?.movements) ? req.body.movements : null;
+  if (!movs || !movs.length) return res.status(400).json({ error: 'no hay movimientos para importar' });
+  const inserted = [];
+  let seq = 0;
+  for (const m of movs) {
+    const { _dupe, _idx, id: _drop, ...rest } = m;
+    const id = `MOV-IMP-${Date.now().toString(36)}-${String(++seq).padStart(3, '0')}`;
+    const row = { ...rest, id };
+    db.cashflow.push(row);
+    inserted.push(row);
+  }
+  save();
+  res.json({ inserted: inserted.length });
 });
 
 // Canonicalize quote/sale status (data uses English; UI uses Spanish — accept both)

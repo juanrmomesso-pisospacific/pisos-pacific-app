@@ -1,0 +1,28 @@
+{
+  "_comment": "Mapa canónico de contrapartes → proveedor App + clasificación. Lo usa el importador (import/statements.mjs) para auto-mapear, y scripts/apply-counterparty-map.mjs para backfill. byCuit (bancos, robusto) tiene prioridad; luego byName por nombre normalizado EXACTO. personal:true → counterparty 'Juan & Pipi', category 'Sueldos', expense_type personal.",
+  "PER": "Gastos de Personal (HR y Mano de Obra)",
+  "SUM": "Gastos de Instalaciones y Suministros",
+  "byCuit": {
+    "30718370511": { "supplier": "Viem Distribuidora", "counterparty": "Viem Distribuidora", "category": "Insumos", "expense_type": "Gastos de Instalaciones y Suministros" },
+    "20356570600": { "supplier": "Elias Cirigliano", "counterparty": "Elias Cirigliano", "category": "Insumos", "expense_type": "Gastos de Instalaciones y Suministros", "note": "cintas / film de embalaje" },
+    "27322237265": { "supplier": "Matias Flete", "counterparty": "Matias Flete", "category": "Logística", "expense_type": "Gastos de Instalaciones y Suministros" },
+    "30528951712": { "supplier": "Soda Belen", "counterparty": "Soda Belen", "category": "Otros", "expense_type": "Otros Gastos y Ajustes", "note": "agua depósito" }
+  },
+  "byName": [
+    { "match": ["ariel noruega", "ariel ernesto garcia", "ariel"], "supplier": "Ariel Ernesto Garcia", "counterparty": "Ariel Ernesto Garcia", "category": "Mano de Obra", "expense_type": "Gastos de Instalaciones y Suministros", "kind": "colocador" },
+    { "match": ["charly flete", "fletes charly", "carlos romualdo vera", "carlos vera"], "supplier": "Carlos Vera", "counterparty": "Carlos Vera", "category": "Logística", "expense_type": "Gastos de Instalaciones y Suministros", "note": "Fletes Charly" },
+    { "match": ["matias gabriel trejo", "matias trejo", "matias", "matías"], "supplier": "Matias Flete", "counterparty": "Matias Flete", "category": "Logística", "expense_type": "Gastos de Instalaciones y Suministros" },
+    { "match": ["via cargo", "gonzalez marina sofia", "gonzalez marina"], "supplier": "Via Cargo", "counterparty": "Via Cargo", "category": "Logística", "expense_type": "Gastos de Instalaciones y Suministros", "note": "flete / envíos" },
+    { "match": ["logistica ar", "logística ar"], "supplier": "Logistica AR", "counterparty": "Logistica AR", "category": "Logística", "expense_type": "Gastos de Instalaciones y Suministros" },
+    { "match": ["jose alejandro ovejero", "ovejero"], "supplier": "Jose Ovejero", "counterparty": "Jose Ovejero", "category": "Mano de Obra", "expense_type": "Gastos de Instalaciones y Suministros", "note": "equipo Ariel — préstamo" },
+    { "match": ["enrique sebastian armando cabrera", "enrique sebastián armando cabrera", "enrique cabrera"], "supplier": "Enrique Cabrera", "counterparty": "Enrique Cabrera", "category": "Flota", "expense_type": "Gastos de Flota/Vehículos", "note": "mecánico autoelevador" },
+    { "match": ["patricio gabriel borassi", "borassi"], "supplier": "Borassi", "counterparty": "Borassi", "category": "Administración", "expense_type": "Gastos Administrativos", "note": "contador" },
+    { "match": ["comex cargo srl", "comex"], "supplier": "COMEX", "counterparty": "COMEX", "category": "Logística", "expense_type": "COGS", "note": "flete de importación = costo de mercadería (COGS)" },
+    { "match": ["viem distribuidora", "viem distribuidora s r l", "viem distribuidora srl"], "supplier": "Viem Distribuidora", "counterparty": "Viem Distribuidora", "category": "Insumos", "expense_type": "Gastos de Instalaciones y Suministros" },
+    { "match": ["elias cirigliano", "elias federico cirigliano"], "supplier": "Elias Cirigliano", "counterparty": "Elias Cirigliano", "category": "Insumos", "expense_type": "Gastos de Instalaciones y Suministros", "note": "cintas / film" },
+    { "match": ["merpago*laferre", "laferre", "merpago laferre"], "supplier": "Laferre", "counterparty": "Laferre", "category": "Insumos", "expense_type": "Gastos de Instalaciones y Suministros", "note": "ferretería" },
+    { "match": ["nic lu srl", "niclusrl017", "con qr niclusrl017", "nic lu"], "counterparty": "Nic Lu SRL", "category": "Otros", "expense_type": "Otros Gastos y Ajustes", "note": "no recurrente" },
+    { "match": ["flip s r l", "flip srl", "flip"], "personal": true, "note": "colegio hija (personal)" },
+    { "match": ["rochino pastas", "rochino"], "personal": true, "note": "consumo personal" }
+  ]
+}
