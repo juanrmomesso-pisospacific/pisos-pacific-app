@@ -9,6 +9,7 @@ import { spawn } from 'node:child_process';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { syncMp } from './import/mp-api.mjs';
 import { handleInbound, sendOutbound } from './integrations/meta.mjs';
+import { syncGmailLeads } from './integrations/gmail.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -82,10 +83,17 @@ const db = (() => {
       console.warn(`Could not parse db.json — re-seeding: ${e.message}`);
     }
   }
-  const fresh = seedFromDump();
+  // Primer arranque sin DB: si hay un snapshot commiteado (data/db.bootstrap.json),
+  // usarlo (datos reales en producción sin subir nada a mano). Si no, seedear.
+  const BOOT = path.join(__dirname, 'data/db.bootstrap.json');
+  let fresh;
+  if (fs.existsSync(BOOT)) {
+    try { fresh = JSON.parse(fs.readFileSync(BOOT, 'utf8')); console.log('Bootstrapped db from data/db.bootstrap.json'); }
+    catch (e) { console.warn(`db.bootstrap.json inválido (${e.message}) — seedeando`); }
+  }
+  if (!fresh) { fresh = seedFromDump(); console.log('Seeded db.json from clone-source dump'); }
   fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
   fs.writeFileSync(DB_PATH, JSON.stringify(fresh, null, 2));
-  console.log(`Seeded db.json from clone-source dump`);
   return fresh;
 })();
 
@@ -425,6 +433,12 @@ app.post('/api/conversations/:id/read', (req, res) => {
   res.json(conv);
 });
 app.get('/api/templates', (_, res) => res.json(db.templates));
+
+// Traer leads desde Gmail (info@pisospacific.com) — requiere GOOGLE_* + GMAIL_REFRESH_TOKEN.
+app.post('/api/integrations/gmail/sync', async (_req, res) => {
+  try { res.json(await syncGmailLeads(db, save)); }
+  catch (e) { res.status(400).json({ error: e.message || 'no se pudo sincronizar Gmail' }); }
+});
 
 // Webhook stubs — Meta posts here when integration goes live.
 // For now: Meta verification challenge handler + a no-op POST that just logs.
