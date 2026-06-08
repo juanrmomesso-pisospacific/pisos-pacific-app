@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Upload, FileSpreadsheet, AlertTriangle, CheckCircle2 } from "lucide-react"
 import { api } from "@/lib/mutations"
@@ -14,14 +15,16 @@ type Mov = {
 type Report = { source: string; caja: string; total: number; nuevos: number; duplicados: number; revisar: number; ingresos: number; egresos: number }
 
 const SOURCES = [
-  { id: "mp", label: "Mercado Pago", hint: "Reporte “Todas las transacciones” (.xlsx)" },
+  { id: "mp-api", label: "Mercado Pago (API)", hint: "Sincronización automática — sin archivo" },
+  { id: "mp", label: "Mercado Pago (archivo)", hint: "Reporte “Todas las transacciones” (.xlsx)" },
   { id: "bbva", label: "Banco Francés (BBVA)", hint: "Export “Últimos movimientos” (.xlsx)" },
   { id: "bdc", label: "Banco de Comercio", hint: "Extracto de movimientos (.xlsx)" },
 ]
 const money = (n: number) => (n ? (n < 0 ? "-$ " : "$ ") + Math.abs(Math.round(n)).toLocaleString("es-AR") : "—")
 
 export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: boolean; onOpenChange: (o: boolean) => void; onDone: () => void }) {
-  const [source, setSource] = useState<string>("mp")
+  const [source, setSource] = useState<string>("mp-api")
+  const [days, setDays] = useState<number>(45)
   const [filename, setFilename] = useState<string>("")
   const [movs, setMovs] = useState<Mov[] | null>(null)
   const [report, setReport] = useState<Report | null>(null)
@@ -46,6 +49,16 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
       const { movements, report } = await api.importParse(source, b64)
       setMovs(movements); setReport(report)
       setSel(new Set(movements.filter((m: Mov) => !m._dupe).map((m: Mov) => m._idx)))  // nuevos pre-seleccionados
+    } catch (e: any) { setError(e?.message ?? String(e)); setMovs(null); setReport(null) }
+    finally { setBusy(false) }
+  }
+
+  async function mpSync() {
+    setError(null); setDone(null); setBusy(true); setFilename("")
+    try {
+      const { movements, report } = await api.importMpSync(days)
+      setMovs(movements); setReport(report)
+      setSel(new Set(movements.filter((m: Mov) => !m._dupe).map((m: Mov) => m._idx)))
     } catch (e: any) { setError(e?.message ?? String(e)); setMovs(null); setReport(null) }
     finally { setBusy(false) }
   }
@@ -86,17 +99,35 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
             ))}
           </div>
 
-          {/* Paso 2: archivo */}
-          <div>
-            <input ref={fileRef} type="file" accept=".xlsx,.xls,.csv" className="hidden"
-              onChange={(e) => { const f = e.target.files?.[0]; if (f) onFile(f); e.target.value = "" }} />
-            <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()} disabled={busy}>
-              <Upload className="h-4 w-4" />{busy && !report ? "Leyendo…" : "Elegir archivo"}
-            </Button>
-            {filename ? <span className="ml-2 text-xs text-muted-foreground inline-flex items-center gap-1"><FileSpreadsheet className="h-3.5 w-3.5" />{filename}</span> : null}
-          </div>
+          {/* Paso 2: API (mp-api) o archivo */}
+          {source === "mp-api" ? (
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-muted-foreground">Últimos</span>
+              <Input type="number" value={days} min={1} max={365} onChange={(e) => setDays(Number(e.target.value) || 45)} className="h-8 w-20" />
+              <span className="text-xs text-muted-foreground">días</span>
+              <Button variant="outline" size="sm" onClick={mpSync} disabled={busy}>
+                <Upload className="h-4 w-4" />{busy && !report ? "Sincronizando…" : "Sincronizar con MP"}
+              </Button>
+            </div>
+          ) : (
+            <div>
+              <input ref={fileRef} type="file" accept=".xlsx,.xls,.csv" className="hidden"
+                onChange={(e) => { const f = e.target.files?.[0]; if (f) onFile(f); e.target.value = "" }} />
+              <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()} disabled={busy}>
+                <Upload className="h-4 w-4" />{busy && !report ? "Leyendo…" : "Elegir archivo"}
+              </Button>
+              {filename ? <span className="ml-2 text-xs text-muted-foreground inline-flex items-center gap-1"><FileSpreadsheet className="h-3.5 w-3.5" />{filename}</span> : null}
+            </div>
+          )}
 
-          {source !== "mp" && (
+          {source === "mp-api" && (
+            <div className="flex items-start gap-2 rounded-md border border-sky-300/60 bg-sky-50 dark:bg-sky-950/20 p-2.5 text-[11px] text-sky-800 dark:text-sky-300">
+              <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+              <span>La API de MP no envía el nombre de la contraparte: los movimientos entran por monto/fecha (peajes agrupados) y quedan <b>“a revisar”</b> para que les pongas nombre. Para nombres completos usá el reporte por archivo/email.</span>
+            </div>
+          )}
+
+          {(source === "bbva" || source === "bdc") && (
             <div className="flex items-start gap-2 rounded-md border border-amber-300/60 bg-amber-50 dark:bg-amber-950/20 p-2.5 text-[11px] text-amber-800 dark:text-amber-300">
               <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
               <span>El formato de {SOURCES.find((s) => s.id === source)?.label} todavía no está 100% validado: todos los movimientos entran marcados <b>“a revisar”</b> para que verifiques signo y clasificación. Si algo se ve mal, mandame este archivo y afino el parser.</span>

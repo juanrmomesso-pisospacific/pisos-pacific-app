@@ -49,6 +49,7 @@ export const api = {
   paymentLinkSimulate: (linkId: string) => post(`/api/payment-links/${linkId}/simulate-paid`),
   // Importar extractos (MP / BBVA / Banco de Comercio)
   importParse:  (source: string, data_base64: string) => post(`/api/import/parse`, { source, data_base64 }),
+  importMpSync: (days: number) => post(`/api/import/mp-sync`, { days }),
   importCommit: (movements: any[]) => post(`/api/import/commit`, { movements }),
   // Generic CRUD
   create: (entity: string, body: any) => post(`/api/${entity}`, body),

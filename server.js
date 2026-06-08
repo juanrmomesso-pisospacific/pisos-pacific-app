@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
 import { spawn } from 'node:child_process';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
+import { syncMp } from './import/mp-api.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -542,6 +543,18 @@ app.post('/api/import/parse', (req, res) => {
     res.json({ movements, report });
   } catch (e) {
     res.status(400).json({ error: e.message || 'no se pudo leer el archivo' });
+  }
+});
+// Sincronizar con MP por API (OAuth) — baja el ledger, dedup, devuelve preview (NO inserta).
+app.post('/api/import/mp-sync', async (req, res) => {
+  try {
+    const days = Math.min(Math.max(Number(req.body?.days) || 45, 1), 365);
+    const to = new Date();
+    const from = new Date(to.getTime() - days * 86400000);
+    const { movements, report } = await syncMp({ from, to, existing: db.cashflow });
+    res.json({ movements, report });
+  } catch (e) {
+    res.status(400).json({ error: e.message || 'no se pudo sincronizar con MP' });
   }
 });
 app.post('/api/import/commit', (req, res) => {
