@@ -1,0 +1,30 @@
+# Deploy en Render (render.com). Web service Node + disco persistente para la DB.
+# El disco se monta en /var/data para NO tapar las seeds del repo (data/*.seed.json).
+# Tras el primer deploy, subí tu db.json actual a /var/data/db.json (ver LAUNCH.md),
+# o dejá que seedee de las *.seed.json y corré los scripts de fix.
+services:
+  - type: web
+    name: pisos-pacific
+    runtime: node
+    plan: starter            # starter tiene disco persistente; free NO persiste disco
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/auth/me
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: DB_PATH
+        value: /var/data/db.json
+      - key: META_VERIFY_TOKEN
+        sync: false          # lo cargás en el dashboard de Render
+      - key: WHATSAPP_TOKEN
+        sync: false
+      - key: WHATSAPP_PHONE_ID
+        sync: false
+      - key: IG_TOKEN
+        sync: false
+    disk:
+      name: pisos-data
+      mountPath: /var/data
+      sizeGB: 1

@@ -4,7 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "cd dashboard-app && npm install && npm run build",
     "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

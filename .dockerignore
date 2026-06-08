@@ -1,0 +1,9 @@
+node_modules
+dashboard-app/node_modules
+dashboard-app/dist
+.git
+data/db.json
+data/db.json.bak*
+data/sources
+*.log
+.DS_Store

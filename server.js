@@ -8,6 +8,7 @@ import bcrypt from 'bcryptjs';
 import { spawn } from 'node:child_process';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { syncMp } from './import/mp-api.mjs';
+import { handleInbound, sendOutbound } from './integrations/meta.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -18,7 +19,9 @@ app.use(express.json({ limit: '20mb' }));
 app.use(cookieParser());
 
 // ---------- Disk-backed db (loads db.json, seeds from dump on first run) ----------
-const DB_PATH = path.join(__dirname, 'data/db.json');
+// DB en disco. En producción, apuntá DB_PATH a un disco persistente (ej. /var/data/db.json)
+// para no tapar las seeds del repo (data/*.seed.json).
+const DB_PATH = process.env.DB_PATH || path.join(__dirname, 'data/db.json');
 
 function seedFromDump() {
   // The core business dump (products/sales/quotes/clients/expenses + settings) lives in an
@@ -385,19 +388,27 @@ app.get('/api/conversations/:id/messages', (req, res) => {
   const msgs = db.messages.filter(m => m.conversation_id === req.params.id).sort((a, b) => a.ts.localeCompare(b.ts));
   res.json(msgs);
 });
-app.post('/api/conversations/:id/messages', (req, res) => {
+app.post('/api/conversations/:id/messages', async (req, res) => {
   const conv = db.conversations.find(c => c.id === req.params.id);
   if (!conv) return res.sendStatus(404);
   const body = String(req.body?.body ?? '').trim();
   if (!body) return res.status(400).json({ error: 'empty body' });
+  // Envío real por Meta si el canal lo soporta; si faltan tokens, se guarda local.
+  let delivery = { sent: true, local: true };
+  if (conv.channel === 'whatsapp' || conv.channel === 'instagram') {
+    try { delivery = await sendOutbound(conv.channel, conv.contact_id, body); }
+    catch (e) { delivery = { sent: false, reason: e.message }; }
+  }
+  const tokensMissing = delivery.reason && /faltan/i.test(delivery.reason);
   const msg = {
     id: `m-${Date.now()}-${Math.random().toString(36).slice(2,6)}`,
     conversation_id: conv.id,
     direction: 'out',
     body,
     ts: new Date().toISOString(),
-    status: 'sent',
+    status: delivery.sent ? 'sent' : (tokensMissing ? 'sent' : 'failed'),
     template_name: req.body?.template_name ?? undefined,
+    ...(delivery.sent || tokensMissing ? {} : { error: delivery.reason }),
   };
   db.messages.push(msg);
   conv.last_message_at = msg.ts;
@@ -427,7 +438,10 @@ app.get('/api/whatsapp/webhook', (req, res) => {
   }
   res.sendStatus(403);
 });
-app.post('/api/whatsapp/webhook',  (req, res) => { console.log('[whatsapp:inbound]', JSON.stringify(req.body).slice(0, 400)); res.sendStatus(200); });
+app.post('/api/whatsapp/webhook',  (req, res) => {
+  try { handleInbound(db, save, 'whatsapp', req.body); } catch (e) { console.warn('[whatsapp:inbound] error', e.message); }
+  res.sendStatus(200);
+});
 app.get ('/api/instagram/webhook', (req, res) => {
   const mode = req.query['hub.mode'];
   const token = req.query['hub.verify_token'];
@@ -437,7 +451,10 @@ app.get ('/api/instagram/webhook', (req, res) => {
   }
   res.sendStatus(403);
 });
-app.post('/api/instagram/webhook', (req, res) => { console.log('[instagram:inbound]', JSON.stringify(req.body).slice(0, 400)); res.sendStatus(200); });
+app.post('/api/instagram/webhook', (req, res) => {
+  try { handleInbound(db, save, 'instagram', req.body); } catch (e) { console.warn('[instagram:inbound] error', e.message); }
+  res.sendStatus(200);
+});
 app.get('/api/settings', (_, res) => res.json(db.settings));
 app.patch('/api/settings', (req, res) => {
   const incoming = req.body ?? {};
