@@ -1,6 +1,6 @@
 export type PresetId = "month" | "lastMonth" | "quarter" | "last3" | "last6" | "last12" | "ytd" | "lastYear" | "all" | "custom"
 
-export const DEFAULT_PRESET: PresetId = "month"
+export const DEFAULT_PRESET: PresetId = "last3"
 
 export type Range = { from: Date; to: Date; label: string }
 
