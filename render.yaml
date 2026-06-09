@@ -9,7 +9,7 @@ services:
     plan: starter            # starter tiene disco persistente; free NO persiste disco
     buildCommand: npm install && npm run build
     startCommand: npm start
-    healthCheckPath: /api/auth/me
+    healthCheckPath: /healthz
     autoDeploy: true
     envVars:
       - key: NODE_VERSION

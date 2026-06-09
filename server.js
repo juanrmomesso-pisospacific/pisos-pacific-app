@@ -19,6 +19,9 @@ const app = express();
 app.use(express.json({ limit: '20mb' }));
 app.use(cookieParser());
 
+// Health check público (Render/uptime) — 200 sin auth.
+app.get('/healthz', (_req, res) => res.status(200).send('ok'));
+
 // ---------- Disk-backed db (loads db.json, seeds from dump on first run) ----------
 // DB en disco. En producción, apuntá DB_PATH a un disco persistente (ej. /var/data/db.json)
 // para no tapar las seeds del repo (data/*.seed.json).
