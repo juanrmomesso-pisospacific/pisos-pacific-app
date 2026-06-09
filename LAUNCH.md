@@ -16,21 +16,13 @@ Branch: `feature/data-import-cashflow` · commits locales listos (ver `git log`)
 
 ---
 
-## 1) Mercado Pago — client_secret nuevo (5 min) ⚠️ BLOQUEANTE del sync
-MP **rotó** el client_secret cuando tocamos la config OAuth, así que el sync dejó de mintear token.
-1. Panel MP → **Tus integraciones → PacificApp → Credenciales de producción**.
-2. Copiá el **Client Secret** actual (y verificá el Client ID `7108477716725096`).
-3. Actualizá el archivo local (gitignored):
-   ```bash
-   # editá data/sources/.mp-oauth.json y reemplazá "client_secret"
-   ```
-4. Probá:
-   ```bash
-   node scripts/sync-mp.mjs   # o desde la app: CashFlow → Importar extracto → "Mercado Pago (API)"
-   ```
-   Si `users/me` y `payments/search` dan 200, quedó. *(El OAuth `client_credentials` YA funcionó antes con esta cuenta; solo cambió el secret.)*
+## 1) Mercado Pago — ✅ YA FUNCIONA (local)
+Cargaste el client_id `4818908689453036` + secret correctos en `data/sources/.mp-oauth.json` y el sync OAuth quedó andando (probado: dedup OK, peajes agrupados, rendimientos filtrados).
+- Usalo en: **CashFlow → Importar extracto → "Mercado Pago (API)"**.
+- ⚠️ **Ojo UX:** MP tarda **varios minutos** en generar el reporte. El botón poolea ~5 min; si sigue, dale "Sincronizar" de nuevo y al rato aparece. La data viene **sin nombres** (limitación de la API) → los movimientos quedan "a revisar" para etiquetar.
+- **Para producción:** el `.mp-oauth.json` está gitignored → cargá las credenciales como **env vars** en el host: `MP_CLIENT_ID=4818908689453036`, `MP_CLIENT_SECRET=...`.
 
-**Opcional (nombres completos automáticos):** en MP → Informes → "Todas las transacciones", programá envío por **email a info@pisospacific.com**. Eso permite levantarlo del Gmail con nombres (la API no manda nombres). Si lo activás, avisame y armo el fetch del adjunto.
+**Recomendado (nombres completos + automático):** en MP → Informes → "Todas las transacciones", programá envío por **email a info@pisospacific.com**. La API no manda nombres, pero ese reporte sí; con Gmail conectado (§5) lo levanto solo y entra con nombres/clasificación. Si lo activás, avisame y armo el fetch del adjunto (es la mejor versión).
 
 ---
 
@@ -112,6 +104,7 @@ Cargalas en el host (Render dashboard / docker -e):
 | Var | Para qué |
 |---|---|
 | `DB_PATH=/var/data/db.json` | DB persistente (ya en render.yaml) |
+| `MP_CLIENT_ID`, `MP_CLIENT_SECRET` | Sincronizar con MP por API |
 | `META_VERIFY_TOKEN` | handshake de webhooks Meta |
 | `WHATSAPP_TOKEN`, `WHATSAPP_PHONE_ID` | enviar WhatsApp |
 | `IG_TOKEN` | responder DMs de Instagram |

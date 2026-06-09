@@ -16,6 +16,10 @@ services:
         value: "22"
       - key: DB_PATH
         value: /var/data/db.json
+      - key: MP_CLIENT_ID
+        sync: false          # 4818908689453036
+      - key: MP_CLIENT_SECRET
+        sync: false
       - key: META_VERIFY_TOKEN
         sync: false          # lo cargás en el dashboard de Render
       - key: WHATSAPP_TOKEN

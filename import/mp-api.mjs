@@ -22,8 +22,12 @@ const MP = 'CAJ-002', MP_NAME = 'Mercado Pago';
 const r2 = (n) => (n == null ? null : Math.round(n * 100) / 100);
 
 function creds() {
+  // Producción: env vars MP_CLIENT_ID / MP_CLIENT_SECRET. Local: data/sources/.mp-oauth.json (gitignored).
+  if (process.env.MP_CLIENT_ID && process.env.MP_CLIENT_SECRET) {
+    return { client_id: process.env.MP_CLIENT_ID, client_secret: process.env.MP_CLIENT_SECRET };
+  }
   const f = path.join(__dirname, '..', 'data', 'sources', '.mp-oauth.json');
-  if (!fs.existsSync(f)) throw new Error('Faltan credenciales MP en data/sources/.mp-oauth.json');
+  if (!fs.existsSync(f)) throw new Error('Faltan credenciales MP (env MP_CLIENT_ID/MP_CLIENT_SECRET o data/sources/.mp-oauth.json)');
   const { client_id, client_secret } = JSON.parse(fs.readFileSync(f, 'utf8'));
   if (!client_id || !client_secret) throw new Error('client_id/client_secret incompletos');
   return { client_id, client_secret };
