@@ -9,6 +9,7 @@ import { createRequire } from 'node:module';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { reportStats } from './report-stats.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(path.join(__dirname, '..', 'dashboard-app', 'package.json'));
@@ -148,7 +149,7 @@ function parseBank(rows, source) {
       counterparty: flow === 'Ingreso' ? m.desc : (c.counterparty || m.desc),
       description: c.description_override || m.desc,
       currency: m.cur, amount_ars: r2(amount_ars), amount_usd: r2(amount_usd),
-      fixed_variable: c.fixed_variable || 'Variable', expense_type: flow === 'Ingreso' ? null : (c.expense_type || null),
+      fixed_variable: c.fixed_variable || 'Variable', expense_type: flow === 'Egreso' ? (c.expense_type ?? null) : null,
       transfer: !!c.transfer, needs_review: true, review_reason: 'extracto bancario importado — verificar clasificación y signo',
     });
   });
@@ -264,14 +265,5 @@ export function parseStatement({ source, buffer, existing = [] }) {
     for (let o = -3; o <= 3; o++) { const x = new Date(base); x.setDate(x.getDate() + o); seen.add(k(x.toISOString().slice(0, 10), m.amount_ars)); }
   }
   movements = movements.map((m, i) => ({ ...m, _idx: i, _dupe: seen.has(k(m.date.slice(0, 10), m.amount_ars)) }));
-
-  const report = {
-    source, caja: CAJA[source].name, total: movements.length,
-    nuevos: movements.filter((m) => !m._dupe).length,
-    duplicados: movements.filter((m) => m._dupe).length,
-    revisar: movements.filter((m) => !m._dupe && m.needs_review).length,
-    ingresos: movements.filter((m) => !m._dupe && m.flow === 'Ingreso').length,
-    egresos: movements.filter((m) => !m._dupe && m.flow === 'Egreso').length,
-  };
-  return { movements, report };
+  return { movements, report: reportStats(movements, { source, caja: CAJA[source].name }) };
 }

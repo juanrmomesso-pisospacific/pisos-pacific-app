@@ -4,19 +4,15 @@
 //      GMAIL_FROM (opcional, default info@pisospacific.com)
 // Si no está configurado, isMailerConfigured()=false y send() tira error claro.
 
-const OAUTH = 'https://oauth2.googleapis.com/token';
+import { refreshGoogleToken } from './google-oauth.mjs';
+
 const SEND = 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send';
 
 export function isMailerConfigured() {
   return !!(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET && process.env.GMAIL_SEND_REFRESH_TOKEN);
 }
 
-async function accessToken() {
-  const r = await fetch(OAUTH, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ client_id: process.env.GOOGLE_CLIENT_ID, client_secret: process.env.GOOGLE_CLIENT_SECRET, refresh_token: process.env.GMAIL_SEND_REFRESH_TOKEN, grant_type: 'refresh_token' }) });
-  const j = await r.json();
-  if (!j.access_token) throw new Error('no se pudo refrescar token de envío Gmail: ' + JSON.stringify(j).slice(0, 160));
-  return j.access_token;
-}
+const accessToken = () => refreshGoogleToken(process.env.GMAIL_SEND_REFRESH_TOKEN);
 
 const b64url = (s) => Buffer.from(s).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 

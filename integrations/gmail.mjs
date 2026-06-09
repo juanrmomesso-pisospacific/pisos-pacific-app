@@ -8,18 +8,12 @@
 //   GMAIL_MP_REFRESH_TOKEN   (refresh token de infoacudesign@gmail.com — reportes de MP)
 //   GMAIL_QUERY (opcional)
 
-const OAUTH = 'https://oauth2.googleapis.com/token';
+import { refreshGoogleToken } from './google-oauth.mjs';
+
 const GMAIL = 'https://gmail.googleapis.com/gmail/v1/users/me';
 
-// Mintea access token a partir de un refresh token (default = el de leads).
-async function accessToken(refreshToken = process.env.GMAIL_REFRESH_TOKEN) {
-  const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = process.env;
-  if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET || !refreshToken) throw new Error('faltan GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / refresh token');
-  const r = await fetch(OAUTH, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ client_id: GOOGLE_CLIENT_ID, client_secret: GOOGLE_CLIENT_SECRET, refresh_token: refreshToken, grant_type: 'refresh_token' }) });
-  const j = await r.json();
-  if (!j.access_token) throw new Error('no se pudo refrescar token Gmail: ' + JSON.stringify(j).slice(0, 160));
-  return j.access_token;
-}
+// Access token a partir de un refresh token (default = el de leads).
+const accessToken = (refreshToken = process.env.GMAIL_REFRESH_TOKEN) => refreshGoogleToken(refreshToken);
 
 const parseFrom = (raw) => {
   const m = String(raw || '').match(/^\s*"?([^"<]*?)"?\s*<([^>]+)>/);
@@ -35,9 +29,12 @@ export async function syncGmailLeads(db, save) {
   const list = await (await fetch(`${GMAIL}/messages?maxResults=25&q=${encodeURIComponent(q)}`, { headers: H })).json();
   const ids = (list.messages || []).map((m) => m.id);
   const existingEmails = new Set((db.leads || []).map((l) => String(l.email || '').toLowerCase()).filter(Boolean));
+  // Detalle de cada mail en paralelo (no en serie).
+  const msgs = await Promise.all(ids.map((id) =>
+    fetch(`${GMAIL}/messages/${id}?format=metadata&metadataHeaders=From&metadataHeaders=Subject&metadataHeaders=Date`, { headers: H }).then((r) => r.json())));
   let created = 0;
-  for (const id of ids) {
-    const msg = await (await fetch(`${GMAIL}/messages/${id}?format=metadata&metadataHeaders=From&metadataHeaders=Subject&metadataHeaders=Date`, { headers: H })).json();
+  for (const msg of msgs) {
+    const id = msg.id;
     const headers = Object.fromEntries((msg.payload?.headers || []).map((h) => [h.name.toLowerCase(), h.value]));
     const { name, email } = parseFrom(headers.from);
     if (!email || existingEmails.has(email)) continue;

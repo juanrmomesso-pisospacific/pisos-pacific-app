@@ -11,6 +11,7 @@ import { createRequire } from 'node:module';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { reportStats } from './report-stats.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(path.join(__dirname, '..', 'dashboard-app', 'package.json'));
@@ -44,15 +45,20 @@ export async function mintToken() {
 const iso = (d) => d.toISOString().slice(0, 19) + 'Z';
 async function jget(url, at) { const r = await fetch(url, { headers: { Authorization: `Bearer ${at}` } }); const t = await r.text(); try { return { s: r.status, v: JSON.parse(t), t } } catch { return { s: r.status, v: t, t } } }
 
+// Crea un settlement report para [from,to] y devuelve su id (el "jobId").
+async function createReport(at, from, to) {
+  const cr = await fetch(`${API}/v1/account/settlement_report`, { method: 'POST', headers: { Authorization: `Bearer ${at}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ begin_date: iso(from), end_date: iso(to) }) });
+  const crj = await cr.json().catch(() => ({}));
+  if (cr.status >= 300 || !crj.id) throw new Error('No se pudo crear el reporte MP: ' + cr.status + ' ' + JSON.stringify(crj).slice(0, 160));
+  return crj.id;
+}
+
 // Genera + descarga el settlement report para [from,to]. Devuelve filas crudas.
 // Matchea el reporte por el id que devuelve el POST (no agarra uno viejo). Maneja
 // xlsx/csv y headers en español o inglés. Si no está listo a tiempo, tira un error
 // claro para reintentar (los reportes pueden tardar unos minutos).
 async function fetchSettlement(at, from, to) {
-  const cr = await fetch(`${API}/v1/account/settlement_report`, { method: 'POST', headers: { Authorization: `Bearer ${at}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ begin_date: iso(from), end_date: iso(to) }) });
-  const crj = await cr.json().catch(() => ({}));
-  if (cr.status >= 300 || !crj.id) throw new Error('No se pudo crear el reporte MP: ' + cr.status + ' ' + JSON.stringify(crj).slice(0, 160));
-  const myId = crj.id;
+  const myId = await createReport(at, from, to);
   // poll por MI reporte (por id) hasta que tenga file_name
   let fileName = null;
   for (let i = 0; i < 45 && !fileName; i++) {
@@ -100,10 +106,7 @@ export async function startMpReport({ days = 45 } = {}) {
   const at = await mintToken();
   const to = new Date();
   const from = new Date(to.getTime() - days * 86400000);
-  const cr = await fetch(`${API}/v1/account/settlement_report`, { method: 'POST', headers: { Authorization: `Bearer ${at}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ begin_date: iso(from), end_date: iso(to) }) });
-  const crj = await cr.json().catch(() => ({}));
-  if (cr.status >= 300 || !crj.id) throw new Error('No se pudo crear el reporte MP: ' + cr.status + ' ' + JSON.stringify(crj).slice(0, 160));
-  return { jobId: crj.id };
+  return { jobId: await createReport(at, from, to) };
 }
 
 // poll: si el reporte (jobId) está listo, lo baja y devuelve el preview; si no, {ready:false}.
@@ -151,7 +154,7 @@ function buildMovements({ raw, existing = [] }) {
       client_id: null, supplier_id: null,
       description: `MP API · ${m.tipo} · ${m.medio} · op ${m.source_id}`, sale_ref: null,
       currency: 'ARS', amount_ars: r2(abs), amount_usd: r2(abs / TC), exchange_rate: TC,
-      fixed_variable: 'Variable', expense_type: flow === 'Egreso' ? null : null,
+      fixed_variable: 'Variable', expense_type: null,
       transfer: false, needs_review: true,
       review_reason: 'sync MP API — sin nombre, asociar/clasificar',
       source: 'mp-api', mp_op_id: m.source_id,
@@ -170,13 +173,5 @@ function buildMovements({ raw, existing = [] }) {
 
   // dedup + flags
   const out = movements.map((m, i) => ({ ...m, _idx: i, _dupe: seen.has(k(m.date.slice(0, 10), m.amount_ars)) }));
-  const report = {
-    source: 'mp-api', caja: MP_NAME, total: out.length,
-    nuevos: out.filter((m) => !m._dupe).length,
-    duplicados: out.filter((m) => m._dupe).length,
-    revisar: out.filter((m) => !m._dupe && m.needs_review).length,
-    ingresos: out.filter((m) => !m._dupe && m.flow === 'Ingreso').length,
-    egresos: out.filter((m) => !m._dupe && m.flow === 'Egreso').length,
-  };
-  return { movements: out, report };
+  return { movements: out, report: reportStats(out, { source: 'mp-api', caja: MP_NAME }) };
 }

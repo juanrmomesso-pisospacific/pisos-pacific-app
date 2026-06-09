@@ -5,6 +5,7 @@ import { SidebarMenuButton } from "@/components/ui/sidebar"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { FormError } from "@/components/FormError"
 import { useAuth } from "@/contexts/AuthContext"
 
 function ChangePasswordSheet({ open, onOpenChange }: { open: boolean; onOpenChange: (o: boolean) => void }) {
@@ -41,7 +42,7 @@ function ChangePasswordSheet({ open, onOpenChange }: { open: boolean; onOpenChan
             <div><label className="text-sm font-medium block mb-1">Contraseña actual</label><Input type="password" value={current} onChange={(e) => setCurrent(e.target.value)} autoComplete="current-password" /></div>
             <div><label className="text-sm font-medium block mb-1">Nueva contraseña</label><Input type="password" value={next} onChange={(e) => setNext(e.target.value)} autoComplete="new-password" /></div>
             <div><label className="text-sm font-medium block mb-1">Repetir nueva</label><Input type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} autoComplete="new-password" /></div>
-            {error ? <div className="text-xs text-destructive">{error}</div> : null}
+            <FormError>{error}</FormError>
             <div className="flex justify-end gap-2 pt-2">
               <Button variant="outline" size="sm" onClick={() => onOpenChange(false)}>Cancelar</Button>
               <Button size="sm" onClick={submit} disabled={busy}>{busy ? "Guardando…" : "Cambiar"}</Button>

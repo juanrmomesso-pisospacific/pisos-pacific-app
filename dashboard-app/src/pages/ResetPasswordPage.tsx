@@ -3,6 +3,7 @@ import { useTheme } from "@/contexts/ThemeContext"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { FormError } from "@/components/FormError"
 
 export default function ResetPasswordPage() {
   const { effectiveDark } = useTheme()
@@ -56,7 +57,7 @@ export default function ResetPasswordPage() {
                     <label className="text-sm font-medium block mb-1">Repetir contraseña</label>
                     <Input type="password" required value={pw2} onChange={(e) => setPw2(e.target.value)} placeholder="••••••••" autoComplete="new-password" />
                   </div>
-                  {error ? <div className="text-xs text-destructive bg-destructive/5 border border-destructive/20 rounded-md px-3 py-2">{error}</div> : null}
+                  <FormError>{error}</FormError>
                   <Button type="submit" className="w-full" disabled={busy}>{busy ? "Guardando…" : "Guardar contraseña"}</Button>
                 </form>
               )}

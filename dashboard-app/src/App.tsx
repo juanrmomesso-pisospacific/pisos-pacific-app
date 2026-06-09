@@ -28,7 +28,7 @@ function Gate() {
     return <div className="min-h-screen flex items-center justify-center text-sm text-muted-foreground">Cargando…</div>
   }
   if (state.status === "anon") {
-    if (typeof window !== "undefined" && window.location.pathname === "/reset") return <ResetPasswordPage />
+    if (window.location.pathname === "/reset") return <ResetPasswordPage />
     return <LoginPage />
   }
   return (

@@ -244,6 +244,8 @@ app.get('/api/auth/me', (req, res) => {
   res.json({ user: publicUser(u) });
 });
 
+const setPassword = (u, pw) => { u.password_hash = bcrypt.hashSync(String(pw), 10); };
+
 // Cambiar contraseña (autenticado).
 app.post('/api/auth/change-password', (req, res) => {
   const u = sessionUser(req);
@@ -251,7 +253,7 @@ app.post('/api/auth/change-password', (req, res) => {
   const { current, new: next } = req.body ?? {};
   if (!bcrypt.compareSync(String(current ?? ''), u.password_hash)) return res.status(400).json({ error: 'La contraseña actual es incorrecta' });
   if (!next || String(next).length < 6) return res.status(400).json({ error: 'La nueva contraseña debe tener al menos 6 caracteres' });
-  u.password_hash = bcrypt.hashSync(String(next), 10);
+  setPassword(u, next);
   save();
   res.json({ ok: true });
 });
@@ -285,7 +287,7 @@ app.post('/api/auth/reset-password', (req, res) => {
   if (!password || String(password).length < 6) return res.status(400).json({ error: 'La contraseña debe tener al menos 6 caracteres' });
   const u = db.users.find(x => x.id === entry.userId);
   if (!u) return res.status(400).json({ error: 'Usuario no encontrado' });
-  u.password_hash = bcrypt.hashSync(String(password), 10);
+  setPassword(u, password);
   delete db.password_resets[token];
   save();
   res.json({ ok: true });
@@ -491,35 +493,21 @@ app.post('/api/integrations/gmail/sync', async (_req, res) => {
   catch (e) { res.status(400).json({ error: e.message || 'no se pudo sincronizar Gmail' }); }
 });
 
-// Webhook stubs — Meta posts here when integration goes live.
-// For now: Meta verification challenge handler + a no-op POST that just logs.
-app.get('/api/whatsapp/webhook', (req, res) => {
-  // Meta verification handshake
-  const mode = req.query['hub.mode'];
-  const token = req.query['hub.verify_token'];
-  const challenge = req.query['hub.challenge'];
-  if (mode === 'subscribe' && token && token === process.env.META_VERIFY_TOKEN) {
-    return res.status(200).send(challenge);
+// Webhooks de Meta (WhatsApp / Instagram): GET = verificación, POST = mensaje entrante.
+const metaVerify = (req, res) => {
+  if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === process.env.META_VERIFY_TOKEN) {
+    return res.status(200).send(req.query['hub.challenge']);
   }
   res.sendStatus(403);
-});
-app.post('/api/whatsapp/webhook',  (req, res) => {
-  try { handleInbound(db, save, 'whatsapp', req.body); } catch (e) { console.warn('[whatsapp:inbound] error', e.message); }
+};
+const metaInbound = (channel) => (req, res) => {
+  try { handleInbound(db, save, channel, req.body); } catch (e) { console.warn(`[${channel}:inbound] error`, e.message); }
   res.sendStatus(200);
-});
-app.get ('/api/instagram/webhook', (req, res) => {
-  const mode = req.query['hub.mode'];
-  const token = req.query['hub.verify_token'];
-  const challenge = req.query['hub.challenge'];
-  if (mode === 'subscribe' && token && token === process.env.META_VERIFY_TOKEN) {
-    return res.status(200).send(challenge);
-  }
-  res.sendStatus(403);
-});
-app.post('/api/instagram/webhook', (req, res) => {
-  try { handleInbound(db, save, 'instagram', req.body); } catch (e) { console.warn('[instagram:inbound] error', e.message); }
-  res.sendStatus(200);
-});
+};
+for (const ch of ['whatsapp', 'instagram']) {
+  app.get(`/api/${ch}/webhook`, metaVerify);
+  app.post(`/api/${ch}/webhook`, metaInbound(ch));
+}
 app.get('/api/settings', (_, res) => res.json(db.settings));
 app.patch('/api/settings', (req, res) => {
   const incoming = req.body ?? {};
