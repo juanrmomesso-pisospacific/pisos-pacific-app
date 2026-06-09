@@ -10,6 +10,7 @@ import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { startMpReport, getMpReport } from './import/mp-api.mjs';
 import { handleInbound, sendOutbound } from './integrations/meta.mjs';
 import { syncGmailLeads, fetchLatestMpReport } from './integrations/gmail.mjs';
+import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -241,6 +242,53 @@ app.get('/api/auth/me', (req, res) => {
   const u = sessionUser(req);
   if (!u) return res.status(401).json({ error: 'unauthorized' });
   res.json({ user: publicUser(u) });
+});
+
+// Cambiar contraseña (autenticado).
+app.post('/api/auth/change-password', (req, res) => {
+  const u = sessionUser(req);
+  if (!u) return res.status(401).json({ error: 'unauthorized' });
+  const { current, new: next } = req.body ?? {};
+  if (!bcrypt.compareSync(String(current ?? ''), u.password_hash)) return res.status(400).json({ error: 'La contraseña actual es incorrecta' });
+  if (!next || String(next).length < 6) return res.status(400).json({ error: 'La nueva contraseña debe tener al menos 6 caracteres' });
+  u.password_hash = bcrypt.hashSync(String(next), 10);
+  save();
+  res.json({ ok: true });
+});
+
+// Olvidé mi contraseña → genera token y manda email con link de reseteo.
+if (!db.password_resets) db.password_resets = {};
+app.post('/api/auth/forgot-password', async (req, res) => {
+  const email = String(req.body?.email ?? '').toLowerCase().trim();
+  const u = db.users.find(x => x.email.toLowerCase() === email);
+  // Respuesta genérica siempre (no revelar si el email existe).
+  if (u) {
+    const token = crypto.randomBytes(24).toString('hex');
+    db.password_resets[token] = { userId: u.id, expires: Date.now() + 60 * 60 * 1000 }; // 1h
+    save();
+    const base = process.env.APP_URL || `${req.headers['x-forwarded-proto'] || 'https'}://${req.get('host')}`;
+    const link = `${base}/reset?token=${token}`;
+    try {
+      await sendMail({ to: u.email, subject: 'Recuperar tu contraseña — Pisos Pacific', html: `<p>Hola ${u.name || ''},</p><p>Para crear una nueva contraseña, entrá a este link (vence en 1 hora):</p><p><a href="${link}">${link}</a></p><p>Si no pediste esto, ignorá este mail.</p>` });
+    } catch (e) {
+      console.warn('[forgot-password] no se pudo enviar email:', e.message, '| link:', link);
+    }
+  }
+  res.json({ ok: true, mailer: isMailerConfigured() });
+});
+
+// Resetear contraseña con el token del email.
+app.post('/api/auth/reset-password', (req, res) => {
+  const { token, password } = req.body ?? {};
+  const entry = db.password_resets?.[token];
+  if (!entry || entry.expires < Date.now()) return res.status(400).json({ error: 'El link venció o no es válido. Pedí uno nuevo.' });
+  if (!password || String(password).length < 6) return res.status(400).json({ error: 'La contraseña debe tener al menos 6 caracteres' });
+  const u = db.users.find(x => x.id === entry.userId);
+  if (!u) return res.status(400).json({ error: 'Usuario no encontrado' });
+  u.password_hash = bcrypt.hashSync(String(password), 10);
+  delete db.password_resets[token];
+  save();
+  res.json({ ok: true });
 });
 
 // Gate all /api/* except the auth endpoints and the public webhooks (Meta/MP call them).
@@ -1027,7 +1075,7 @@ app.get('/LogoPacificSmallDark.png', (_, res) => res.sendFile(path.join(BRANDING
 // All "owned" SPA routes serve the same index.html and let react-router take over.
 const DASHBOARD_DIST = path.join(__dirname, 'dashboard-app/dist');
 app.use('/assets', express.static(path.join(DASHBOARD_DIST, 'assets')));
-const SPA_ROUTES = ['/', '/dashboard', '/inventario', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow'];
+const SPA_ROUTES = ['/', '/reset', '/dashboard', '/inventario', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow'];
 for (const r of SPA_ROUTES) {
   app.get(r, (_, res) => res.sendFile(path.join(DASHBOARD_DIST, 'index.html')));
 }

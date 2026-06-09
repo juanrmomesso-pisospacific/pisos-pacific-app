@@ -12,6 +12,7 @@ import VentasPage from "@/pages/VentasPage"
 import AgendaPage from "@/pages/AgendaPage"
 import ClientesPage from "@/pages/ClientesPage"
 import LoginPage from "@/pages/LoginPage"
+import ResetPasswordPage from "@/pages/ResetPasswordPage"
 import AuditPage from "@/pages/AuditPage"
 import LeadsPage from "@/pages/LeadsPage"
 import MensajesPage from "@/pages/MensajesPage"
@@ -26,7 +27,10 @@ function Gate() {
   if (state.status === "loading") {
     return <div className="min-h-screen flex items-center justify-center text-sm text-muted-foreground">Cargando…</div>
   }
-  if (state.status === "anon") return <LoginPage />
+  if (state.status === "anon") {
+    if (typeof window !== "undefined" && window.location.pathname === "/reset") return <ResetPasswordPage />
+    return <LoginPage />
+  }
   return (
     <RoleProvider>
       <PeriodProvider>
