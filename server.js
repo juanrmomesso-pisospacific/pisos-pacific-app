@@ -9,7 +9,7 @@ import { spawn } from 'node:child_process';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { startMpReport, getMpReport } from './import/mp-api.mjs';
 import { handleInbound, sendOutbound } from './integrations/meta.mjs';
-import { syncGmailLeads } from './integrations/gmail.mjs';
+import { syncGmailLeads, fetchLatestMpReport } from './integrations/gmail.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -583,6 +583,16 @@ app.post('/api/import/mp-sync/start', async (req, res) => {
     const days = Math.min(Math.max(Number(req.body?.days) || 45, 1), 365);
     res.json(await startMpReport({ days }));
   } catch (e) { res.status(400).json({ error: e.message || 'no se pudo iniciar la sync con MP' }); }
+});
+// Importar el reporte de MP que llega por email a infoacudesign@gmail.com (CON nombres).
+// Baja el adjunto del Gmail, lo pasa por el importador 'mp' (mismo formato que el .xlsx manual).
+app.post('/api/import/mp-email', async (_req, res) => {
+  try {
+    const r = await fetchLatestMpReport();
+    if (!r.found) return res.json({ found: false, candidates: r.candidates, error: 'No encontré un reporte de MP con adjunto. Revisá que el reporte se mande adjunto (no link) a infoacudesign@gmail.com.' });
+    const { movements, report } = parseStatement({ source: 'mp', buffer: r.buffer, existing: db.cashflow });
+    res.json({ found: true, filename: r.filename, subject: r.subject, movements, report });
+  } catch (e) { res.status(400).json({ error: e.message || 'no se pudo importar el reporte de MP por email' }); }
 });
 app.post('/api/import/mp-sync/result', async (req, res) => {
   try {
