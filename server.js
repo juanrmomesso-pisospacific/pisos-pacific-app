@@ -7,7 +7,7 @@ import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
 import { spawn } from 'node:child_process';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
-import { syncMp } from './import/mp-api.mjs';
+import { startMpReport, getMpReport } from './import/mp-api.mjs';
 import { handleInbound, sendOutbound } from './integrations/meta.mjs';
 import { syncGmailLeads } from './integrations/gmail.mjs';
 
@@ -576,17 +576,19 @@ app.post('/api/import/parse', (req, res) => {
     res.status(400).json({ error: e.message || 'no se pudo leer el archivo' });
   }
 });
-// Sincronizar con MP por API (OAuth) — baja el ledger, dedup, devuelve preview (NO inserta).
-app.post('/api/import/mp-sync', async (req, res) => {
+// Sincronizar con MP por API (OAuth). Async: los reportes tardan minutos.
+//  start → crea el reporte y devuelve jobId; result → cuando está listo, da el preview.
+app.post('/api/import/mp-sync/start', async (req, res) => {
   try {
     const days = Math.min(Math.max(Number(req.body?.days) || 45, 1), 365);
-    const to = new Date();
-    const from = new Date(to.getTime() - days * 86400000);
-    const { movements, report } = await syncMp({ from, to, existing: db.cashflow });
-    res.json({ movements, report });
-  } catch (e) {
-    res.status(400).json({ error: e.message || 'no se pudo sincronizar con MP' });
-  }
+    res.json(await startMpReport({ days }));
+  } catch (e) { res.status(400).json({ error: e.message || 'no se pudo iniciar la sync con MP' }); }
+});
+app.post('/api/import/mp-sync/result', async (req, res) => {
+  try {
+    if (!req.body?.jobId) return res.status(400).json({ error: 'falta jobId' });
+    res.json(await getMpReport({ jobId: req.body.jobId, existing: db.cashflow }));
+  } catch (e) { res.status(400).json({ error: e.message || 'no se pudo obtener el reporte MP' }); }
 });
 app.post('/api/import/commit', (req, res) => {
   const movs = Array.isArray(req.body?.movements) ? req.body.movements : null;

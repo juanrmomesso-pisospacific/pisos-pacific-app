@@ -30,11 +30,12 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
   const [report, setReport] = useState<Report | null>(null)
   const [sel, setSel] = useState<Set<number>>(new Set())
   const [busy, setBusy] = useState(false)
+  const [syncing, setSyncing] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [done, setDone] = useState<number | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
 
-  const reset = () => { setFilename(""); setMovs(null); setReport(null); setSel(new Set()); setError(null); setDone(null) }
+  const reset = () => { setFilename(""); setMovs(null); setReport(null); setSel(new Set()); setError(null); setDone(null); setSyncing(null) }
   const close = (o: boolean) => { if (!o) reset(); onOpenChange(o) }
 
   async function onFile(file: File) {
@@ -54,13 +55,24 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
   }
 
   async function mpSync() {
-    setError(null); setDone(null); setBusy(true); setFilename("")
+    setError(null); setDone(null); setBusy(true); setFilename(""); setSyncing("Creando reporte en MP…")
     try {
-      const { movements, report } = await api.importMpSync(days)
-      setMovs(movements); setReport(report)
-      setSel(new Set(movements.filter((m: Mov) => !m._dupe).map((m: Mov) => m._idx)))
+      const { jobId } = await api.importMpStart(days)
+      // los reportes de MP tardan minutos: poll cada 8s hasta ~5 min
+      const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+      for (let i = 0; i < 40; i++) {
+        await sleep(8000)
+        setSyncing(`Generando reporte… (${(i + 1) * 8}s)`)
+        const r = await api.importMpResult(jobId)
+        if (r.ready) {
+          setMovs(r.movements); setReport(r.report)
+          setSel(new Set(r.movements.filter((m: Mov) => !m._dupe).map((m: Mov) => m._idx)))
+          setSyncing(null); setBusy(false); return
+        }
+      }
+      setError("El reporte de MP sigue generándose. Probá de nuevo en un par de minutos.")
     } catch (e: any) { setError(e?.message ?? String(e)); setMovs(null); setReport(null) }
-    finally { setBusy(false) }
+    finally { setSyncing(null); setBusy(false) }
   }
 
   async function commit() {
@@ -106,7 +118,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
               <Input type="number" value={days} min={1} max={365} onChange={(e) => setDays(Number(e.target.value) || 45)} className="h-8 w-20" />
               <span className="text-xs text-muted-foreground">días</span>
               <Button variant="outline" size="sm" onClick={mpSync} disabled={busy}>
-                <Upload className="h-4 w-4" />{busy && !report ? "Sincronizando…" : "Sincronizar con MP"}
+                <Upload className="h-4 w-4" />{syncing ? syncing : "Sincronizar con MP"}
               </Button>
             </div>
           ) : (
