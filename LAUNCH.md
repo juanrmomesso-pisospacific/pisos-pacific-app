@@ -108,7 +108,8 @@ Cargalas en el host (Render dashboard / docker -e):
 | `META_VERIFY_TOKEN` | handshake de webhooks Meta |
 | `WHATSAPP_TOKEN`, `WHATSAPP_PHONE_ID` | enviar WhatsApp |
 | `IG_TOKEN` | responder DMs de Instagram |
-| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN` | Gmail → Leads |
+| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN` | Gmail → Leads (info@pisospacific.com) |
+| `GMAIL_MP_REFRESH_TOKEN` | Gmail de infoacudesign@gmail.com → reporte de MP por email (con nombres) |
 
 > Login app: `info@pisospacific.com` / `admin123` → **cambiá la contraseña** post-deploy (usuarios en `db.json`).
 
