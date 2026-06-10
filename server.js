@@ -723,19 +723,31 @@ app.post('/api/import/mp-sync/result', async (req, res) => {
 // Corre solo (al arrancar y cada 6h, con guard de 20h → 1×/día): genera el reporte
 // por API, espera a que esté listo, deduplica e inserta los movimientos nuevos.
 // Los peajes entran clasificados; lo demás queda "a revisar" (la API no trae nombres).
+let mpSyncRunning = false;
 async function mpAutoSync() {
+  if (mpSyncRunning) return;
+  mpSyncRunning = true;
   try {
     const last = db.settings.mp_last_sync ? Date.parse(db.settings.mp_last_sync) : 0;
     if (Date.now() - last < 20 * 3600e3) return;
-    console.log('[mp-auto] iniciando sync…');
-    const { jobId } = await startMpReport({ days: 30 });
+    // Retomar un reporte pendiente de una corrida anterior (MP tarda 10-20 min en generarlos)
+    let jobId = db.settings.mp_pending_job;
+    if (!jobId) {
+      console.log('[mp-auto] iniciando sync…');
+      ({ jobId } = await startMpReport({ days: 30 }));
+      db.settings.mp_pending_job = jobId;
+      save();
+    } else {
+      console.log('[mp-auto] retomando reporte pendiente', jobId);
+    }
     let result = null;
-    for (let i = 0; i < 60; i++) {                       // hasta ~10 min
+    for (let i = 0; i < 60; i++) {                       // hasta ~10 min por corrida
       await new Promise((r) => setTimeout(r, 10000));
       result = await getMpReport({ jobId, existing: db.cashflow });
       if (result.ready) break;
     }
-    if (!result?.ready) { console.warn('[mp-auto] el reporte no estuvo listo; reintento en la próxima corrida'); return; }
+    if (!result?.ready) { console.warn('[mp-auto] el reporte sigue generándose; lo retomo en la próxima corrida'); return; }
+    db.settings.mp_pending_job = null;
     const nuevos = result.movements.filter((m) => !m._dupe);
     let seq = 0;
     for (const m of nuevos) {
@@ -746,6 +758,7 @@ async function mpAutoSync() {
     save();
     console.log(`[mp-auto] ok: +${nuevos.length} nuevos (${result.report.duplicados} ya cargados, ${result.report.revisar} a revisar)`);
   } catch (e) { console.warn('[mp-auto] error:', e.message); }
+  finally { mpSyncRunning = false; }
 }
 setTimeout(mpAutoSync, 90 * 1000);     // al arrancar (si no corrió en las últimas 20h)
 setInterval(mpAutoSync, 6 * 3600e3);   // re-chequeo periódico
