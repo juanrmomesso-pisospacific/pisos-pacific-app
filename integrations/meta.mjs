@@ -95,10 +95,12 @@ async function sendWhatsApp(to, text) {
   return r.ok ? { sent: true, id: j.messages?.[0]?.id } : { sent: false, reason: JSON.stringify(j).slice(0, 200) };
 }
 
+// Instagram con login de Instagram (tokens IGAA…) usa graph.instagram.com, no graph.facebook.com.
+const IG_GRAPH = 'https://graph.instagram.com/v21.0';
 async function sendInstagram(to, text) {
   const token = process.env.IG_TOKEN;
   if (!token) return { sent: false, reason: 'falta IG_TOKEN' };
-  const r = await fetch(`${GRAPH}/me/messages?access_token=${token}`, {
+  const r = await fetch(`${IG_GRAPH}/me/messages?access_token=${encodeURIComponent(token)}`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ recipient: { id: to }, message: { text } }),
   });
