@@ -23,6 +23,37 @@ app.use(cookieParser());
 // Health check público (Render/uptime) — 200 sin auth.
 app.get('/healthz', (_req, res) => res.status(200).send('ok'));
 
+// Política de privacidad (requerida por Meta para pasar la app a Live). Pública.
+app.get('/privacy', (_req, res) => {
+  res.set('Content-Type', 'text/html; charset=utf-8').send(`<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidad — Pisos Pacific</title>
+<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#1a1a1a;line-height:1.6}h1{font-size:1.6rem}h2{font-size:1.1rem;margin-top:1.8rem}small{color:#666}a{color:#0b66c3}</style>
+</head><body>
+<h1>Política de Privacidad — Pisos Pacific</h1>
+<small>Última actualización: junio 2026</small>
+<p>Pisos Pacific (“nosotros”) opera una herramienta interna de gestión que recibe y administra los mensajes y consultas que las personas nos envían por <strong>Instagram, Facebook y WhatsApp</strong>, con el fin de atender consultas comerciales y gestionar pedidos de presupuesto.</p>
+<h2>Qué datos tratamos</h2>
+<ul>
+<li>Nombre de usuario o nombre público y el <strong>contenido de los mensajes</strong> que nos enviás por Instagram/Facebook/WhatsApp.</li>
+<li>Datos de contacto que vos nos compartas voluntariamente (teléfono, email, dirección de la obra).</li>
+</ul>
+<h2>Para qué los usamos</h2>
+<ul>
+<li>Responder tus consultas y enviarte presupuestos.</li>
+<li>Gestionar tu pedido como contacto/lead dentro de nuestra herramienta interna.</li>
+</ul>
+<h2>Con quién los compartimos</h2>
+<p>No vendemos ni alquilamos tus datos. Solo los procesamos en nuestra propia herramienta y en los servicios de Meta (Instagram/Facebook/WhatsApp) necesarios para recibir y responder los mensajes.</p>
+<h2>Conservación</h2>
+<p>Conservamos los datos el tiempo necesario para atender tu consulta y cumplir obligaciones legales/contables.</p>
+<h2>Tus derechos y eliminación de datos</h2>
+<p>Podés pedir acceder, corregir o <strong>eliminar tus datos</strong> en cualquier momento escribiéndonos a <a href="mailto:info@pisospacific.com">info@pisospacific.com</a>. Procesamos los pedidos de eliminación dentro de los 30 días.</p>
+<h2>Contacto</h2>
+<p>Pisos Pacific — <a href="mailto:info@pisospacific.com">info@pisospacific.com</a></p>
+</body></html>`);
+});
+
 // ---------- Disk-backed db (loads db.json, seeds from dump on first run) ----------
 // DB en disco. En producción, apuntá DB_PATH a un disco persistente (ej. /var/data/db.json)
 // para no tapar las seeds del repo (data/*.seed.json).
