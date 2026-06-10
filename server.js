@@ -330,6 +330,7 @@ app.use('/api', (req, res, next) => {
   if (req.path.startsWith('/whatsapp/webhook')) return next();
   if (req.path.startsWith('/instagram/webhook')) return next();
   if (req.path.startsWith('/mp/webhook')) return next();
+  if (req.path === '/integrations/google/callback') return next();   // Google redirige acá (code one-time)
   if (req.path.startsWith('/payment-links/') && req.path.endsWith('/simulate-paid')) return next();
   return requireAuth(req, res, next);
 });
@@ -522,6 +523,54 @@ app.get('/api/templates', (_, res) => res.json(db.templates));
 app.post('/api/integrations/gmail/sync', async (_req, res) => {
   try { res.json(await syncGmailLeads(db, save)); }
   catch (e) { res.status(400).json({ error: e.message || 'no se pudo sincronizar Gmail' }); }
+});
+
+// ---------- Conexión Google OAuth (Gmail) — autorizar desde el navegador ----------
+// Cuentas: 'pacific' (info@pisospacific.com → leads + envío) · 'acudesign' (reportes MP).
+// Flujo: GET /api/integrations/google/connect?account=pacific → consentimiento Google →
+// callback guarda el refresh_token en db.settings y lo hidrata a process.env.
+const GOOGLE_ACCOUNTS = {
+  pacific:   { scopes: 'https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send', envs: ['GMAIL_REFRESH_TOKEN', 'GMAIL_SEND_REFRESH_TOKEN'], hint: 'info@pisospacific.com' },
+  acudesign: { scopes: 'https://www.googleapis.com/auth/gmail.readonly', envs: ['GMAIL_MP_REFRESH_TOKEN'], hint: 'infoacudesign@gmail.com' },
+};
+const googleRedirect = (req) => `${process.env.APP_URL || `${req.headers['x-forwarded-proto'] || 'https'}://${req.get('host')}`}/api/integrations/google/callback`;
+// Hidratar env desde db (tokens guardados por el callback en arranques previos).
+{
+  const saved = db.settings?.integrations?.google || {};
+  for (const [acct, cfg] of Object.entries(GOOGLE_ACCOUNTS)) {
+    const tok = saved[acct]?.refresh_token;
+    if (tok) for (const env of cfg.envs) if (!process.env[env]) process.env[env] = tok;
+  }
+}
+app.get('/api/integrations/google/connect', (req, res) => {
+  const acct = GOOGLE_ACCOUNTS[req.query.account];
+  if (!acct) return res.status(400).send('account inválida (pacific | acudesign)');
+  if (!process.env.GOOGLE_CLIENT_ID) return res.status(400).send('Falta GOOGLE_CLIENT_ID en el entorno');
+  const u = new URL('https://accounts.google.com/o/oauth2/v2/auth');
+  u.search = new URLSearchParams({
+    client_id: process.env.GOOGLE_CLIENT_ID, redirect_uri: googleRedirect(req),
+    response_type: 'code', access_type: 'offline', prompt: 'consent',
+    scope: acct.scopes, state: req.query.account, login_hint: acct.hint,
+  });
+  res.redirect(u.toString());
+});
+app.get('/api/integrations/google/callback', async (req, res) => {
+  try {
+    const acct = GOOGLE_ACCOUNTS[req.query.state];
+    if (!acct || !req.query.code) return res.status(400).send('callback inválido');
+    const r = await fetch('https://oauth2.googleapis.com/token', {
+      method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ code: req.query.code, client_id: process.env.GOOGLE_CLIENT_ID, client_secret: process.env.GOOGLE_CLIENT_SECRET, redirect_uri: googleRedirect(req), grant_type: 'authorization_code' }),
+    });
+    const j = await r.json();
+    if (!j.refresh_token) return res.status(400).send('Google no devolvió refresh_token: ' + JSON.stringify(j).slice(0, 200));
+    db.settings.integrations = db.settings.integrations || {};
+    db.settings.integrations.google = db.settings.integrations.google || {};
+    db.settings.integrations.google[req.query.state] = { refresh_token: j.refresh_token, connected_at: new Date().toISOString() };
+    for (const env of acct.envs) process.env[env] = j.refresh_token;
+    save();
+    res.set('Content-Type', 'text/html; charset=utf-8').send(`<h2>✓ Cuenta ${acct.hint} conectada.</h2><p>Ya podés cerrar esta pestaña.</p>`);
+  } catch (e) { res.status(500).send('Error: ' + e.message); }
 });
 
 // Webhooks de Meta (WhatsApp / Instagram): GET = verificación, POST = mensaje entrante.
