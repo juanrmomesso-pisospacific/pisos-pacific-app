@@ -44,6 +44,8 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const [title, setTitle] = useState<string>(editQuote?.title ?? prefill?.title ?? "")
   const [address, setAddress] = useState<string>(editQuote?.client_address ?? prefill?.client_address ?? "")
   const [internalNotes, setInternalNotes] = useState<string>(editQuote?.internal_notes ?? prefill?.internal_notes ?? "")
+  const [publicNotes, setPublicNotes] = useState<string>((editQuote as any)?.public_notes ?? "")
+  const [paymentTerms, setPaymentTerms] = useState<string>((editQuote as any)?.payment_terms ?? "Anticipo 80% · Conforme 20%")
   const [hasIva, setHasIva] = useState<boolean>(editQuote?.has_iva ?? false)
   const [items, setItems] = useState<LineItem[]>(editItems)
   const [zoned, setZoned] = useState<boolean>(editQuote?.zoned ?? false)
@@ -166,6 +168,8 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       client_phone: clientPhone,
       client_address: clientAddr,
       internal_notes: internalNotes,
+      public_notes: publicNotes,
+      payment_terms: paymentTerms,
       seller_name: seller,
       seller_phone,
       title: title || clientName,
@@ -372,6 +376,16 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
         </div>
       </div>
 
+      <div>
+        <FieldLabel>Observaciones (aparecen en el PDF)</FieldLabel>
+        <textarea value={publicNotes} onChange={(e) => setPublicNotes(e.target.value)} rows={2}
+          placeholder="Ej.: Colocación s/ piso nivelado. Demasía 10% incluida."
+          className="w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring" />
+      </div>
+      <div>
+        <FieldLabel>Forma de pago (aparece en el PDF)</FieldLabel>
+        <Input value={paymentTerms} onChange={(e) => setPaymentTerms(e.target.value)} />
+      </div>
       <div>
         <FieldLabel>Notas internas (opcional)</FieldLabel>
         <Input value={internalNotes} onChange={(e) => setInternalNotes(e.target.value)} />

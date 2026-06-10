@@ -107,7 +107,7 @@ export async function presupuestoPdf(data) {
     : [{ name: 'Detalle', sub: data.subtotal, rows: data.rows || [] }];
   const hasIva = data.has_iva && data.iva && !/^US\$ ?0(,00)?$/.test(data.iva);
   const terms = [
-    { k: 'Forma de pago', v: 'Anticipo 80% · Conforme 20%' },
+    { k: 'Forma de pago', v: data.forma_pago || 'Anticipo 80% · Conforme 20%' },
     { k: 'Valores', v: 'Dólares billete, promedio dos puntas' },
     { k: 'Vigencia', v: `${data.vigencia_dias || 10} días corridos desde la emisión` },
     { k: 'Garantía', v: 'Válida si la instalación la realiza Pisos Pacific' },

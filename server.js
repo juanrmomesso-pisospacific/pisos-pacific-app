@@ -719,6 +719,43 @@ app.post('/api/import/mp-sync/result', async (req, res) => {
     res.json(await getMpReport({ jobId: req.body.jobId, existing: db.cashflow }));
   } catch (e) { res.status(400).json({ error: e.message || 'no se pudo obtener el reporte MP' }); }
 });
+// ---------- Sync automático diario de Mercado Pago ----------
+// Corre solo (al arrancar y cada 6h, con guard de 20h → 1×/día): genera el reporte
+// por API, espera a que esté listo, deduplica e inserta los movimientos nuevos.
+// Los peajes entran clasificados; lo demás queda "a revisar" (la API no trae nombres).
+async function mpAutoSync() {
+  try {
+    const last = db.settings.mp_last_sync ? Date.parse(db.settings.mp_last_sync) : 0;
+    if (Date.now() - last < 20 * 3600e3) return;
+    console.log('[mp-auto] iniciando sync…');
+    const { jobId } = await startMpReport({ days: 30 });
+    let result = null;
+    for (let i = 0; i < 60; i++) {                       // hasta ~10 min
+      await new Promise((r) => setTimeout(r, 10000));
+      result = await getMpReport({ jobId, existing: db.cashflow });
+      if (result.ready) break;
+    }
+    if (!result?.ready) { console.warn('[mp-auto] el reporte no estuvo listo; reintento en la próxima corrida'); return; }
+    const nuevos = result.movements.filter((m) => !m._dupe);
+    let seq = 0;
+    for (const m of nuevos) {
+      const { _dupe, _idx, id: _drop, ...rest } = m;
+      db.cashflow.push({ ...rest, id: `MOV-MPAUTO-${Date.now().toString(36)}-${String(++seq).padStart(3, '0')}` });
+    }
+    db.settings.mp_last_sync = new Date().toISOString();
+    save();
+    console.log(`[mp-auto] ok: +${nuevos.length} nuevos (${result.report.duplicados} ya cargados, ${result.report.revisar} a revisar)`);
+  } catch (e) { console.warn('[mp-auto] error:', e.message); }
+}
+setTimeout(mpAutoSync, 90 * 1000);     // al arrancar (si no corrió en las últimas 20h)
+setInterval(mpAutoSync, 6 * 3600e3);   // re-chequeo periódico
+// Disparo manual (para probar o forzar): corre en background.
+app.post('/api/import/mp-sync/auto-run', (_req, res) => {
+  db.settings.mp_last_sync = null;
+  mpAutoSync();
+  res.json({ started: true });
+});
+
 app.post('/api/import/commit', (req, res) => {
   const movs = Array.isArray(req.body?.movements) ? req.body.movements : null;
   if (!movs || !movs.length) return res.status(400).json({ error: 'no hay movimientos para importar' });
@@ -979,6 +1016,8 @@ function convertQuoteToSale(q) {
     title: q.title,
     description: q.description,
     internal_notes: q.internal_notes ?? '',
+    public_notes: q.public_notes ?? '',
+    payment_terms: q.payment_terms ?? '',
     client_name: q.client_name,
     client_dni: q.client_dni,
     client_email: q.client_email ?? '',
@@ -1050,6 +1089,7 @@ function presupuestoData(rec) {
     numero: rec.quote_number || rec.id || '',
     vence: venceDate.toLocaleDateString('es-AR'),
     has_iva: !!rec.has_iva,
+    forma_pago: rec.payment_terms || 'Anticipo 80% · Conforme 20%',
     vendedor: sellerPhone ? `${rec.seller_name || ''} · ${sellerPhone}` : (rec.seller_name || ''),
     vendedor_short: rec.seller_name || '',
     cliente: rec.client_name || '',
@@ -1076,6 +1116,11 @@ function presupuestoData(rec) {
   if (!hasItemDisc && discount > 0) rows.push(['Descuento', '—', '—', '-' + usdFmt(discount)]);
   return { ...base, mode: 'single', rows };
 }
+// Nombre de archivo seguro para Content-Disposition: sin acentos ni caracteres ilegales.
+function pdfFilename(...parts) {
+  const clean = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[\\/:*?"<>|]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return parts.map(clean).filter(Boolean).join(' - ') + '.pdf';
+}
 function renderPdf(data, res, filename) {
   generatePdf(data)
     .then((buf) => {
@@ -1091,12 +1136,12 @@ function renderPdf(data, res, filename) {
 app.get('/api/quotes/:id/pdf', (req, res) => {
   const q = db.quotes.find(x => x.id === req.params.id);
   if (!q) return res.sendStatus(404);
-  renderPdf(presupuestoData(q), res, `Presupuesto_${(q.client_name || 'Pacific').replace(/[^\w]+/g, '_')}.pdf`);
+  renderPdf(presupuestoData(q), res, pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name));
 });
 app.get('/api/sales/:id/pdf', (req, res) => {
   const s = db.sales.find(x => x.id === req.params.id);
   if (!s) return res.sendStatus(404);
-  renderPdf(presupuestoData(s), res, `Presupuesto_${(s.client_name || 'Pacific').replace(/[^\w]+/g, '_')}.pdf`);
+  renderPdf(presupuestoData(s), res, pdfFilename(`Presupuesto N${s.quote_number || s.id}`, s.title, s.client_name));
 });
 // Remito para el depósito: dirección de obra + materiales y cantidades, SIN precios.
 function remitoData(rec) {
@@ -1123,7 +1168,7 @@ function remitoData(rec) {
 app.get('/api/sales/:id/remito', (req, res) => {
   const s = db.sales.find(x => x.id === req.params.id);
   if (!s) return res.sendStatus(404);
-  renderPdf(remitoData(s), res, `Remito_${(s.client_name || 'Pacific').replace(/[^\w]+/g, '_')}.pdf`);
+  renderPdf(remitoData(s), res, pdfFilename(`Remito N${s.quote_number || s.id}`, s.title, s.client_name));
 });
 
 // ---------- Brand logos (committed in assets/branding/) ----------
