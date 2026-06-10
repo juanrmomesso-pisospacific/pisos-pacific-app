@@ -20,6 +20,7 @@ data/db.json.bak
 # ...but keep the committed brand logos + the PDF engine logo
 !assets/branding/*.png
 !pdf/*.png
+!pdf/assets/*.png
 .playwright-mcp/
 
 # Python (PDF engine)
