@@ -5,12 +5,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
-import { spawn } from 'node:child_process';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { startMpReport, getMpReport } from './import/mp-api.mjs';
 import { handleInbound, sendOutbound } from './integrations/meta.mjs';
 import { syncGmailLeads, fetchLatestMpReport } from './integrations/gmail.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
+import { generatePdf } from './pdf/render.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -993,8 +993,14 @@ function presupuestoData(rec) {
   // Resumen del proyecto: m² de pisos (productos con stock), cantidad de ambientes e ítems.
   const isFloor = (it) => { const p = db.products.find(pr => pr.sku === it.sku); return p ? !!p.stockTrack : false; };
   const m2 = items.filter(isFloor).reduce((s, it) => s + (Number(it.quantity) || 0), 0);
+  const validDays = rec.valid_days || 10;
+  const venceDate = new Date(rec.created_at ? new Date(rec.created_at) : new Date());
+  venceDate.setDate(venceDate.getDate() + validDays);
   const base = {
     fecha,
+    numero: rec.quote_number || rec.id || '',
+    vence: venceDate.toLocaleDateString('es-AR'),
+    has_iva: !!rec.has_iva,
     vendedor: sellerPhone ? `${rec.seller_name || ''} · ${sellerPhone}` : (rec.seller_name || ''),
     vendedor_short: rec.seller_name || '',
     cliente: rec.client_name || '',
@@ -1022,27 +1028,16 @@ function presupuestoData(rec) {
   return { ...base, mode: 'single', rows };
 }
 function renderPdf(data, res, filename) {
-  let done = false;
-  const finish = (fn) => { if (done) return; done = true; clearTimeout(timer); fn(); };
-  let py;
-  try {
-    py = spawn('python3', [path.join(__dirname, 'pdf', 'run_pdf.py')], { cwd: __dirname });
-  } catch (e) {
-    return res.status(500).json({ error: 'pdf engine unavailable', detail: String(e.message || e) });
-  }
-  const chunks = [], errs = [];
-  // Kill a hung Python process so the request never blocks forever.
-  const timer = setTimeout(() => { try { py.kill('SIGKILL'); } catch {} finish(() => res.status(504).json({ error: 'pdf generation timed out' })); }, 20000);
-  py.on('error', (e) => finish(() => { console.error('pdf spawn error:', e.message); res.status(500).json({ error: 'pdf engine unavailable (python3/reportlab missing?)' }); }));
-  py.stdout.on('data', d => chunks.push(d));
-  py.stderr.on('data', d => errs.push(d));
-  py.on('close', code => finish(() => {
-    if (code !== 0) { console.error('pdf engine:', Buffer.concat(errs).toString()); return res.status(500).json({ error: 'pdf generation failed' }); }
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
-    res.send(Buffer.concat(chunks));
-  }));
-  try { py.stdin.write(JSON.stringify(data)); py.stdin.end(); } catch { /* error event will fire */ }
+  generatePdf(data)
+    .then((buf) => {
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
+      res.send(buf);
+    })
+    .catch((e) => {
+      console.error('pdf engine:', e.message);
+      res.status(500).json({ error: 'pdf generation failed', detail: String(e.message || e) });
+    });
 }
 app.get('/api/quotes/:id/pdf', (req, res) => {
   const q = db.quotes.find(x => x.id === req.params.id);

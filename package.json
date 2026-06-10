@@ -13,6 +13,7 @@
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "pdfkit": "^0.19.0"
   }
 }
