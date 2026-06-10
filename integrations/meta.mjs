@@ -11,12 +11,25 @@
 
 const GRAPH = 'https://graph.facebook.com/v21.0';
 
+// Resuelve el @usuario de una cuenta de Instagram a partir de su ID (best-effort).
+async function igUsername(igId) {
+  const token = process.env.IG_TOKEN;
+  if (!token) return null;
+  try {
+    const r = await fetch(`https://graph.instagram.com/v21.0/${igId}?fields=username,name&access_token=${encodeURIComponent(token)}`);
+    const j = await r.json();
+    return j.username ? '@' + j.username : (j.name || null);
+  } catch { return null; }
+}
+
 // ---------- ENTRANTE ----------
 // Devuelve {conversation, message} o null si el payload no trae un mensaje de texto.
-export function handleInbound(db, save, channel, payload) {
+export async function handleInbound(db, save, channel, payload) {
   const parsed = channel === 'whatsapp' ? parseWhatsApp(payload) : parseInstagram(payload);
   if (!parsed) return null;
-  const { contactId, contactName, text, ts } = parsed;
+  const { contactId, text, ts } = parsed;
+  // Instagram solo manda el ID → resolvemos el @usuario por API.
+  const contactName = parsed.contactName || (channel === 'instagram' ? await igUsername(contactId) : null);
 
   let conv = db.conversations.find((c) => c.channel === channel && c.contact_id === contactId);
   if (!conv) {
@@ -73,6 +86,7 @@ function parseInstagram(payload) {
     const e = payload?.entry?.[0]?.messaging?.[0];
     const text = e?.message?.text;
     if (!e || !text) return null;
+    if (e.message?.is_echo) return null;   // eco de nuestros propios mensajes salientes
     return { contactId: e.sender?.id, contactName: null, text, ts: e.timestamp ? new Date(Number(e.timestamp)).toISOString() : new Date().toISOString() };
   } catch { return null; }
 }
