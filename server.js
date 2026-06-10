@@ -533,7 +533,7 @@ const metaVerify = (req, res) => {
 };
 const metaInbound = (channel) => (req, res) => {
   res.sendStatus(200);   // ack rápido a Meta; procesamos en background
-  Promise.resolve(handleInbound(db, save, channel, req.body)).catch((e) => console.warn(`[${channel}:inbound] error`, e.message));
+  handleInbound(db, save, channel, req.body).catch((e) => console.warn(`[${channel}:inbound] error`, e.message));
 };
 for (const ch of ['whatsapp', 'instagram']) {
   app.get(`/api/${ch}/webhook`, metaVerify);

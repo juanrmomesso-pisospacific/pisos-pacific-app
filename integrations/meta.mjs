@@ -28,10 +28,12 @@ export async function handleInbound(db, save, channel, payload) {
   const parsed = channel === 'whatsapp' ? parseWhatsApp(payload) : parseInstagram(payload);
   if (!parsed) return null;
   const { contactId, text, ts } = parsed;
-  // Instagram solo manda el ID → resolvemos el @usuario por API.
-  const contactName = parsed.contactName || (channel === 'instagram' ? await igUsername(contactId) : null);
-
   let conv = db.conversations.find((c) => c.channel === channel && c.contact_id === contactId);
+  // Resolver el nombre solo si hace falta: conversación nueva, o nombre todavía sin resolver
+  // (Instagram solo manda el ID → buscamos el @usuario por API una sola vez).
+  const needName = !conv || conv.contact_name === conv.contact_id;
+  const contactName = needName ? (parsed.contactName || (channel === 'instagram' ? await igUsername(contactId) : null)) : null;
+
   if (!conv) {
     conv = {
       id: `conv-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
@@ -49,7 +51,7 @@ export async function handleInbound(db, save, channel, payload) {
       notes: `Lead automático desde ${channel}`, status: 'New', assigned_seller: '',
       created_at: ts, last_touch_at: ts,
     });
-  } else if (contactName && conv.contact_name === conv.contact_id) {
+  } else if (contactName) {
     conv.contact_name = contactName;
   }
 
