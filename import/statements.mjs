@@ -264,6 +264,25 @@ export function parseStatement({ source, buffer, existing = [] }) {
     const base = new Date(dd);
     for (let o = -3; o <= 3; o++) { const x = new Date(base); x.setDate(x.getDate() + o); seen.add(k(x.toISOString().slice(0, 10), m.amount_ars)); }
   }
-  movements = movements.map((m, i) => ({ ...m, _idx: i, _dupe: seen.has(k(m.date.slice(0, 10), m.amount_ars)) }));
+  // Enriquecimiento (solo MP): el auto-sync por API inserta movimientos SIN nombre.
+  // Si una fila del archivo (con nombre) matchea uno de esos, no es duplicado: se
+  // actualiza ese movimiento con nombre + clasificación (_enrich = id existente).
+  const unnamed = new Map();
+  if (source === 'mp') {
+    for (const m of sameCaja) {
+      if (m.source !== 'mp-api') continue;
+      if (!(m.needs_review || /sin nombre/i.test(m.counterparty || ''))) continue;
+      const dd = (m.date || '').slice(0, 10); if (!dd || m.amount_ars == null) continue;
+      const base = new Date(dd);
+      for (let o = -3; o <= 3; o++) { const x = new Date(base); x.setDate(x.getDate() + o); const key = k(x.toISOString().slice(0, 10), m.amount_ars); if (!unnamed.has(key)) unnamed.set(key, m.id); }
+    }
+  }
+  const claimed = new Set();
+  movements = movements.map((m, i) => {
+    const key = k(m.date.slice(0, 10), m.amount_ars);
+    const enrichId = unnamed.get(key);
+    if (enrichId && !claimed.has(enrichId)) { claimed.add(enrichId); return { ...m, _idx: i, _dupe: false, _enrich: enrichId }; }
+    return { ...m, _idx: i, _dupe: seen.has(key) };
+  });
   return { movements, report: reportStats(movements, { source, caja: CAJA[source].name }) };
 }

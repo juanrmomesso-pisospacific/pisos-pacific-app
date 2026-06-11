@@ -8,11 +8,11 @@ import { api } from "@/lib/mutations"
 import { cn } from "@/lib/utils"
 
 type Mov = {
-  _idx: number; _dupe: boolean; date: string; flow: string; description: string
+  _idx: number; _dupe: boolean; _enrich?: string; date: string; flow: string; description: string
   counterparty: string; currency: string; amount_ars: number; amount_usd: number
   category: string; expense_type: string | null; needs_review: boolean
 }
-type Report = { source: string; caja: string; total: number; nuevos: number; duplicados: number; revisar: number; ingresos: number; egresos: number }
+type Report = { source: string; caja: string; total: number; nuevos: number; duplicados: number; revisar: number; ingresos: number; egresos: number; actualizan?: number }
 
 const SOURCES = [
   { id: "mp-api", label: "Mercado Pago (API)", hint: "Sincronización automática — sin archivo" },
@@ -32,7 +32,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
   const [busy, setBusy] = useState(false)
   const [syncing, setSyncing] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const [done, setDone] = useState<number | null>(null)
+  const [done, setDone] = useState<string | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
 
   const reset = () => { setFilename(""); setMovs(null); setReport(null); setSel(new Set()); setError(null); setDone(null); setSyncing(null) }
@@ -81,7 +81,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
     try {
       const chosen = movs.filter((m) => sel.has(m._idx))
       const r = await api.importCommit(chosen)
-      setDone(r.inserted); setMovs(null); setReport(null); setSel(new Set())
+      setDone(`${r.inserted} nuevos${r.enriched ? ` · ${r.enriched} actualizados con nombre` : ""}`); setMovs(null); setReport(null); setSel(new Set())
       onDone()
     } catch (e: any) { setError(e?.message ?? String(e)) }
     finally { setBusy(false) }
@@ -135,7 +135,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
           {source === "mp-api" && (
             <div className="flex items-start gap-2 rounded-md border border-sky-300/60 bg-sky-50 dark:bg-sky-950/20 p-2.5 text-[11px] text-sky-800 dark:text-sky-300">
               <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
-              <span>La API de MP no envía el nombre de la contraparte: los movimientos entran por monto/fecha (peajes agrupados) y quedan <b>“a revisar”</b> para que les pongas nombre. Para nombres completos usá el reporte por archivo/email.</span>
+              <span>La API de MP no envía nombres: los movimientos entran por monto/fecha (peajes ya clasificados) y quedan <b>“a revisar”</b>. Para ponerles nombre de una: bajá “Todas las transacciones” del panel de MP y subilo en <b>Mercado Pago (archivo)</b> — los movimientos sin nombre se actualizan solos.</span>
             </div>
           )}
 
@@ -149,7 +149,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
           {error ? <div className="text-xs text-destructive">{error}</div> : null}
           {done != null ? (
             <div className="flex items-center gap-2 rounded-md border border-emerald-300/60 bg-emerald-50 dark:bg-emerald-950/20 p-3 text-sm text-emerald-700 dark:text-emerald-300">
-              <CheckCircle2 className="h-4 w-4" />Se importaron {done} movimientos al cashflow.
+              <CheckCircle2 className="h-4 w-4" />Importado: {done}.
             </div>
           ) : null}
 
@@ -160,6 +160,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
                 <Badge variant="secondary">{report.caja}</Badge>
                 <span className="text-muted-foreground">{report.total} en el archivo ·</span>
                 <span className="text-emerald-600 font-medium">{report.nuevos} nuevos</span>
+                {report.actualizan ? <span className="text-sky-600 font-medium">· {report.actualizan} actualizan nombre</span> : null}
                 <span className="text-muted-foreground">· {report.duplicados} ya cargados ·</span>
                 <span className="text-amber-600">{report.revisar} a revisar</span>
               </div>
@@ -186,6 +187,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
                             <div className="truncate">{m.description}</div>
                             <div className="flex gap-1 mt-0.5">
                               {m._dupe ? <Badge variant="outline" className="text-[9px]">ya cargado</Badge> : null}
+                              {m._enrich ? <Badge variant="outline" className="text-[9px] border-sky-400 text-sky-600">actualiza nombre</Badge> : null}
                               {m.needs_review && !m._dupe ? <Badge variant="outline" className="text-[9px] border-amber-400 text-amber-600">a revisar</Badge> : null}
                             </div>
                           </td>

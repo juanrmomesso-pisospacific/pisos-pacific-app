@@ -793,17 +793,32 @@ app.post('/api/import/mp-sync/auto-run', (_req, res) => {
 app.post('/api/import/commit', (req, res) => {
   const movs = Array.isArray(req.body?.movements) ? req.body.movements : null;
   if (!movs || !movs.length) return res.status(400).json({ error: 'no hay movimientos para importar' });
-  const inserted = [];
-  let seq = 0;
+  let inserted = 0, enriched = 0, seq = 0;
   for (const m of movs) {
-    const { _dupe, _idx, id: _drop, ...rest } = m;
-    const id = `MOV-IMP-${Date.now().toString(36)}-${String(++seq).padStart(3, '0')}`;
-    const row = { ...rest, id };
-    db.cashflow.push(row);
-    inserted.push(row);
+    const { _dupe, _idx, _enrich, id: _drop, ...rest } = m;
+    if (_enrich) {
+      // Actualiza el movimiento sin nombre del auto-sync con el nombre + clasificación.
+      const i = db.cashflow.findIndex((x) => x.id === _enrich);
+      if (i >= 0) {
+        const keep = db.cashflow[i];
+        db.cashflow[i] = {
+          ...keep,
+          counterparty: rest.counterparty, counterparty_type: rest.counterparty_type,
+          category: rest.category, subcategory: rest.subcategory,
+          expense_type: rest.expense_type, description: rest.description,
+          fixed_variable: rest.fixed_variable, transfer: rest.transfer,
+          needs_review: rest.needs_review, review_reason: rest.review_reason,
+        };
+        enriched++;
+        continue;
+      }
+      // si el original ya no existe, cae a insertar
+    }
+    db.cashflow.push({ ...rest, id: `MOV-IMP-${Date.now().toString(36)}-${String(++seq).padStart(3, '0')}` });
+    inserted++;
   }
   save();
-  res.json({ inserted: inserted.length });
+  res.json({ inserted, enriched });
 });
 
 // Canonicalize quote/sale status (data uses English; UI uses Spanish — accept both)
