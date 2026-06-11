@@ -144,16 +144,7 @@ function save() {
 
 // Backfill collections added after the first seed so existing db.json files keep working.
 if (!Array.isArray(db.leads)) db.leads = [];
-// One-shot website-leads seed (matches the cotiza form schema). Idempotent: skipped
-// once any lead with source === "Web" exists.
-if (!db.leads.some(l => l.source === "Web")) {
-  try {
-    const webLeads = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/leads.seed.json'), 'utf8'));
-    db.leads.push(...webLeads);
-    fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
-    console.log(`Seeded ${webLeads.length} website leads into db.json`);
-  } catch (e) { console.warn('Website leads seed missing or invalid:', e.message); }
-}
+// (El seed demo de leads web fue retirado: los leads reales entran solos desde Gmail.)
 if (!Array.isArray(db.payment_links)) db.payment_links = [];
 if (!Array.isArray(db.tasks)) db.tasks = [];
 // One-shot rename: legacy task titles using "Informe de obra" → "Remito"
@@ -531,8 +522,8 @@ app.post('/api/conversations/:id/read', (req, res) => {
 app.get('/api/templates', (_, res) => res.json(db.templates));
 
 // Traer leads desde Gmail (info@pisospacific.com) — requiere GOOGLE_* + GMAIL_REFRESH_TOKEN.
-app.post('/api/integrations/gmail/sync', async (_req, res) => {
-  try { res.json(await syncGmailLeads(db, save)); }
+app.post('/api/integrations/gmail/sync', async (req, res) => {
+  try { res.json(await syncGmailLeads(db, save, req.body?.query)); }
   catch (e) { res.status(400).json({ error: e.message || 'no se pudo sincronizar Gmail' }); }
 });
 

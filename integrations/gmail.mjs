@@ -35,7 +35,7 @@ function walkParts(part, out = { atts: [], text: '' }) {
 // Limpia los caracteres invisibles que algunos mailers meten (͏ ­ ​ etc.).
 const cleanText = (s) => String(s || '').replace(/[͏​­ ‌‍]/g, '').replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
 
-const ROBOT = /no[._-]?reply|noreply|notification|mailer-daemon|do[._-]?not[._-]?reply|security@|notice@|@email\.|@communications\.|@business-updates\.|@mail\.instagram|businessprofile/i;
+const ROBOT = /no[._-]?reply|noreply|notification|mailer-daemon|do[._-]?not[._-]?reply|security@|notice@|invoice|statements?@|billing|facturaci|envios?\d*@|@email\.|@communications\.|@business-updates\.|@mail\.|businessprofile/i;
 const CONSULTA = /presupuesto|cotizaci|consulta|pedido/i;
 
 // Parsea el formulario web de Framer: "Nombre: X\nEmail: y\nDireccion: …\nM2: …\nRadio: …"
@@ -58,11 +58,11 @@ function parseFramerForm(text) {
 
 // Sincroniza el inbox → leads + conversaciones de canal email. Idempotente
 // (gmail_seen_ids + dedup de leads por email). db/save = la DB viva del server.
-export async function syncGmailLeads(db, save) {
+export async function syncGmailLeads(db, save, customQuery) {
   const at = await accessToken();
-  const q = process.env.GMAIL_QUERY || 'in:inbox newer_than:14d -category:promotions -category:social';
+  const q = customQuery || process.env.GMAIL_QUERY || 'in:inbox newer_than:14d -category:promotions -category:social';
   const H = { Authorization: `Bearer ${at}` };
-  const list = await (await fetch(`${GMAIL}/messages?maxResults=40&q=${encodeURIComponent(q)}`, { headers: H })).json();
+  const list = await (await fetch(`${GMAIL}/messages?maxResults=60&q=${encodeURIComponent(q)}`, { headers: H })).json();
   const ids = (list.messages || []).map((m) => m.id);
 
   db.settings.gmail_seen_ids = db.settings.gmail_seen_ids || [];
@@ -118,7 +118,7 @@ export async function syncGmailLeads(db, save) {
         id: `conv-email-${msg.id.slice(0, 12)}`,
         channel: 'email', contact_id: contact.email, contact_name: contact.name,
         linked_client_name: null, status: 'open', unread_count: 0,
-        last_message_at: ts, last_message_preview: '', email_subject: subject,
+        last_message_at: '', last_message_preview: '', email_subject: subject,   // ts queda al sumar el 1er mensaje
       };
       db.conversations.push(conv);
       convs++;
