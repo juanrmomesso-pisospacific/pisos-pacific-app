@@ -109,10 +109,11 @@ export async function presupuestoPdf(data) {
   const AVAIL = PAGE.h - bodyTop - 24;              // alto disponible del cuerpo
   const GAP = 13;
 
-  // Normalización de datos → secciones
+  // Normalización de datos → secciones. Sin multizonas no se muestra el subtotal
+  // del encabezado (sería redundante con el total de abajo).
   const sections = data.mode === 'sections'
     ? (data.sections || []).map((s) => ({ name: s.title, sub: s.subtotal_val, rows: s.rows }))
-    : [{ name: 'Detalle', sub: data.subtotal, rows: data.rows || [] }];
+    : [{ name: 'Detalle', sub: null, rows: data.rows || [] }];
   const hasIva = data.has_iva && data.iva && !/^US\$ ?0(,00)?$/.test(data.iva);
   const terms = [
     { k: 'Forma de pago', v: data.forma_pago || 'Anticipo 80% · Conforme 20%' },
@@ -124,7 +125,17 @@ export async function presupuestoPdf(data) {
   const isDisc = (r) => /^descuento/i.test(String(r[0] || ''));
 
   // ---- bloques: cada uno mide (draw=false) o dibuja (draw=true) y devuelve su alto ----
+  // Anchos de columna adaptables: los del diseño (56/70/84) son mínimos; si un monto
+  // es más ancho (ej. US$ 300.000,00), la columna crece y la descripción cede espacio.
+  const measure = (font, size, s) => { doc.font(font).fontSize(size); return doc.widthOfString(String(s ?? '')); };
   const GRID = { q: 56, u: 70, t: 84, gap: 8 };
+  for (const sec of sections) {
+    for (const r of sec.rows || []) {
+      GRID.q = Math.max(GRID.q, measure('reg', 12, String(r[1] ?? '').replace(/\bm2\b/g, 'm²')) + 2);
+      GRID.u = Math.max(GRID.u, measure('reg', 12, r[2]) + 2);
+      GRID.t = Math.max(GRID.t, measure('semi', 12, isFree(r) ? 'Bonificado' : r[3]) + 2);
+    }
+  }
 
   const blockParties = (draw, w, y0) => {
     const colW = (w - 18) / 2;
@@ -160,7 +171,7 @@ export async function presupuestoPdf(data) {
       // head
       if (draw) {
         line(doc, String(sec.name || '').toUpperCase(), 0, y, { font: 'bold', size: 11, color: C.wood, cs: 1.54 });
-        line(doc, String(sec.sub || ''), w, y, { font: 'semi', size: 12.5, color: C.ink, align: 'right' });
+        if (sec.sub) line(doc, String(sec.sub), w, y, { font: 'semi', size: 12.5, color: C.ink, align: 'right' });
       }
       y += 12.5 * 1.25 + 5;
       if (draw) hline(doc, 0, y, w, C.wood, 1);
