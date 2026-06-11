@@ -483,17 +483,12 @@ app.post('/api/conversations/:id/messages', async (req, res) => {
   if (!conv) return res.sendStatus(404);
   const body = String(req.body?.body ?? '').trim();
   if (!body) return res.status(400).json({ error: 'empty body' });
-  // Envío real según canal (Meta o Gmail); si faltan tokens, se guarda local.
+  // Envío real según canal (sendOutbound despacha Meta o Gmail); sin tokens → queda local.
   let delivery = { sent: true, local: true };
-  if (conv.channel === 'whatsapp' || conv.channel === 'instagram') {
-    try { delivery = await sendOutbound(conv.channel, conv.contact_id, body); }
-    catch (e) { delivery = { sent: false, reason: e.message }; }
-  } else if (conv.channel === 'email') {
-    try {
-      const subject = conv.email_subject ? `Re: ${conv.email_subject.replace(/^re:\s*/i, '')}` : 'Pisos Pacific';
-      delivery = await sendMail({ to: conv.contact_id, subject, text: body });
-    } catch (e) { delivery = { sent: false, reason: e.message }; }
-  }
+  try {
+    const subject = conv.email_subject ? `Re: ${conv.email_subject.replace(/^re:\s*/i, '')}` : undefined;
+    delivery = await sendOutbound(conv.channel, conv.contact_id, body, { subject });
+  } catch (e) { delivery = { sent: false, reason: e.message }; }
   const tokensMissing = delivery.reason && /faltan/i.test(delivery.reason);
   const msg = {
     id: `m-${Date.now()}-${Math.random().toString(36).slice(2,6)}`,

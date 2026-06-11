@@ -75,6 +75,7 @@ export async function syncGmailLeads(db, save, customQuery) {
     fetch(`${GMAIL}/messages/${id}?format=full`, { headers: H }).then((r) => r.json()).catch(() => null)));
 
   let leads = 0, convs = 0;
+  const convByEmail = new Map(db.conversations.filter((c) => c.channel === 'email').map((c) => [c.contact_id, c]));
   for (const msg of msgs) {
     if (!msg?.id) continue;
     seen.add(msg.id);
@@ -112,7 +113,7 @@ export async function syncGmailLeads(db, save, customQuery) {
     }
 
     // --- Conversación de canal email ---
-    let conv = db.conversations.find((c) => c.channel === 'email' && c.contact_id === contact.email);
+    let conv = convByEmail.get(contact.email);
     if (!conv) {
       conv = {
         id: `conv-email-${msg.id.slice(0, 12)}`,
@@ -121,18 +122,19 @@ export async function syncGmailLeads(db, save, customQuery) {
         last_message_at: '', last_message_preview: '', email_subject: subject,   // ts queda al sumar el 1er mensaje
       };
       db.conversations.push(conv);
+      convByEmail.set(contact.email, conv);
       convs++;
     }
-    const preview = form
+    const msgBody = form
       ? `${form.notes}${form.address ? ' · ' + form.address : ''}`
       : body.slice(0, 1500);
     db.messages.push({
       id: `m-email-${msg.id.slice(0, 12)}`, conversation_id: conv.id,
-      direction: 'in', body: `✉️ ${subject}\n\n${form ? preview : body.slice(0, 1500)}`, ts, status: 'received',
+      direction: 'in', body: `✉️ ${subject}\n\n${msgBody}`, ts, status: 'received',
     });
     if (ts > (conv.last_message_at || '')) {
       conv.last_message_at = ts;
-      conv.last_message_preview = (form ? preview : body).slice(0, 140);
+      conv.last_message_preview = msgBody.slice(0, 140);
     }
     conv.unread_count = (conv.unread_count || 0) + 1;
     if (conv.status === 'closed') conv.status = 'open';

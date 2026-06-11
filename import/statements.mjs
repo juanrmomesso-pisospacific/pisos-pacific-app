@@ -10,6 +10,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { reportStats } from './report-stats.mjs';
+import { dedupKey, windowKeys } from './dedup.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(path.join(__dirname, '..', 'dashboard-app', 'package.json'));
@@ -256,30 +257,23 @@ export function parseStatement({ source, buffer, existing = [] }) {
   const sameCaja = existing.filter((m) => m.caja_id === CAJA[source].id);
   let movements = source === 'mp' ? parseMP(rows, sameCaja) : parseBank(rows, source);
 
-  // dedup contra lo ya cargado en esa caja: fecha ±3 + |monto ARS| redondeado
-  const k = (d, a) => d + '|' + Math.round(Math.abs(a || 0));
+  // Una sola pasada sobre lo ya cargado: claves de dedup (fecha ±3 + |monto|) y,
+  // para MP, índice de movimientos SIN nombre del auto-sync (candidatos a enriquecer).
+  // Contrato _enrich: el commit del server actualiza counterparty(+type), category,
+  // subcategory, expense_type, description, fixed_variable, transfer y needs_review.
   const seen = new Set();
+  const unnamed = new Map();
   for (const m of sameCaja) {
     const dd = (m.date || '').slice(0, 10); if (!dd || m.amount_ars == null) continue;
-    const base = new Date(dd);
-    for (let o = -3; o <= 3; o++) { const x = new Date(base); x.setDate(x.getDate() + o); seen.add(k(x.toISOString().slice(0, 10), m.amount_ars)); }
-  }
-  // Enriquecimiento (solo MP): el auto-sync por API inserta movimientos SIN nombre.
-  // Si una fila del archivo (con nombre) matchea uno de esos, no es duplicado: se
-  // actualiza ese movimiento con nombre + clasificación (_enrich = id existente).
-  const unnamed = new Map();
-  if (source === 'mp') {
-    for (const m of sameCaja) {
-      if (m.source !== 'mp-api') continue;
-      if (!(m.needs_review || /sin nombre/i.test(m.counterparty || ''))) continue;
-      const dd = (m.date || '').slice(0, 10); if (!dd || m.amount_ars == null) continue;
-      const base = new Date(dd);
-      for (let o = -3; o <= 3; o++) { const x = new Date(base); x.setDate(x.getDate() + o); const key = k(x.toISOString().slice(0, 10), m.amount_ars); if (!unnamed.has(key)) unnamed.set(key, m.id); }
+    const enrichable = source === 'mp' && m.source === 'mp-api' && (m.needs_review || /sin nombre/i.test(m.counterparty || ''));
+    for (const key of windowKeys(dd, m.amount_ars)) {
+      seen.add(key);
+      if (enrichable && !unnamed.has(key)) unnamed.set(key, m.id);
     }
   }
   const claimed = new Set();
   movements = movements.map((m, i) => {
-    const key = k(m.date.slice(0, 10), m.amount_ars);
+    const key = dedupKey(m.date.slice(0, 10), m.amount_ars);
     const enrichId = unnamed.get(key);
     if (enrichId && !claimed.has(enrichId)) { claimed.add(enrichId); return { ...m, _idx: i, _dupe: false, _enrich: enrichId }; }
     return { ...m, _idx: i, _dupe: seen.has(key) };

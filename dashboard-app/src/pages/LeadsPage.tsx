@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react"
-import { Plus, Search, LayoutGrid, Rows3, MoreHorizontal, Phone, Mail, UserPlus, Globe, MessageCircle, AtSign, MessageSquare, ExternalLink, Download, Clock } from "lucide-react"
+import { Plus, Search, LayoutGrid, Rows3, MoreHorizontal, Phone, Mail, UserPlus, MessageSquare, ExternalLink, Download, Clock } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -14,7 +14,7 @@ import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { type Lead, type LeadStatus, STATUS_ORDER, STATUS_LABEL } from "@/lib/leads"
 import { cn } from "@/lib/utils"
-import { type Conversation } from "@/lib/messaging"
+import { type Conversation, channelIcon } from "@/lib/messaging"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { openPacificPdf } from "@/lib/pdf"
 import { fmtMoney } from "@/lib/utils"
@@ -220,7 +220,7 @@ function LeadsTable({ rows, onOpen, convByLeadId, quotesByLeadId }: { rows: Lead
 
 function SourceCell({ source, hasConv }: { source: string; hasConv: boolean }) {
   const s = source.toLowerCase()
-  const Icon = s === "whatsapp" ? MessageCircle : s === "instagram" ? AtSign : s === "web" ? Globe : s === "email" ? Mail : null
+  const Icon = channelIcon(s)
   return (
     <span className="inline-flex items-center gap-1">
       {Icon ? <Icon className="h-3 w-3" /> : null}
@@ -232,7 +232,7 @@ function SourceCell({ source, hasConv }: { source: string; hasConv: boolean }) {
 
 function LeadCard({ lead, onOpen, hasConversation, convId, quotesCount, isDragging, onDragStart, onDragEnd }: { lead: Lead; onOpen: (id: string) => void; hasConversation: boolean; convId?: string; quotesCount: number; isDragging?: boolean; onDragStart?: (id: string) => void; onDragEnd?: () => void }) {
   const src = (lead.source ?? "").toLowerCase()
-  const SourceIcon = src === "whatsapp" ? MessageCircle : src === "instagram" ? AtSign : src === "web" ? Globe : src === "email" ? Mail : null
+  const SourceIcon = channelIcon(src)
   return (
     <div
       role="button"

@@ -12,6 +12,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { reportStats } from './report-stats.mjs';
+import { dedupKey, windowKeys } from './dedup.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(path.join(__dirname, '..', 'dashboard-app', 'package.json'));
@@ -138,9 +139,11 @@ export function parseSettlementBuffer(buffer, existing = []) {
 function buildMovements({ raw, existing = [] }) {
   // índice de lo ya cargado en MP: fecha±3 + |monto ARS|
   const sameCaja = existing.filter((m) => m.caja_id === MP);
-  const k = (d, a) => d + '|' + Math.round(Math.abs(a || 0));
   const seen = new Set();
-  for (const m of sameCaja) { const dd = (m.date || '').slice(0, 10); if (!dd || m.amount_ars == null) continue; const b = new Date(dd); for (let o = -3; o <= 3; o++) { const x = new Date(b); x.setDate(x.getDate() + o); seen.add(k(x.toISOString().slice(0, 10), m.amount_ars)); } }
+  for (const m of sameCaja) {
+    const dd = (m.date || '').slice(0, 10); if (!dd || m.amount_ars == null) continue;
+    for (const key of windowKeys(dd, m.amount_ars)) seen.add(key);
+  }
 
   const peajeByDay = {};
   const movements = [];
@@ -178,6 +181,6 @@ function buildMovements({ raw, existing = [] }) {
   }
 
   // dedup + flags
-  const out = movements.map((m, i) => ({ ...m, _idx: i, _dupe: seen.has(k(m.date.slice(0, 10), m.amount_ars)) }));
+  const out = movements.map((m, i) => ({ ...m, _idx: i, _dupe: seen.has(dedupKey(m.date.slice(0, 10), m.amount_ars)) }));
   return { movements: out, report: reportStats(out, { source: 'mp-api', caja: MP_NAME }) };
 }

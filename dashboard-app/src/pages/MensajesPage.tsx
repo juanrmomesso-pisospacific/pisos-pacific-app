@@ -9,7 +9,7 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 import { useApi, getJSON } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { useAuth } from "@/contexts/AuthContext"
-import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, relativeTime, EMOJIS } from "@/lib/messaging"
+import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, EMOJIS } from "@/lib/messaging"
 import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_LABEL as LEAD_STATUS_LABEL } from "@/lib/leads"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
@@ -143,7 +143,7 @@ function ConversationList({
 }
 
 function ConversationRow({ conv, lead, selected, onClick }: { conv: Conversation; lead?: Lead; selected: boolean; onClick: () => void }) {
-  const ChannelIcon = conv.channel === "whatsapp" ? MessageCircle : conv.channel === "email" ? Mail : AtSign
+  const ChannelIcon = channelIcon(conv.channel) ?? AtSign
   return (
     <button
       type="button"
@@ -294,7 +294,7 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
 }
 
 function ThreadHeader({ conversation }: { conversation: Conversation }) {
-  const ChannelIcon = conversation.channel === "whatsapp" ? MessageCircle : conversation.channel === "email" ? Mail : AtSign
+  const ChannelIcon = channelIcon(conversation.channel) ?? AtSign
   return (
     <div className="px-4 py-2.5 border-b border-border flex items-center gap-3 shrink-0 bg-background">
       <div className="h-9 w-9 rounded-full bg-muted flex items-center justify-center shrink-0">

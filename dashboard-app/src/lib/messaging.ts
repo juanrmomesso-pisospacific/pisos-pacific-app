@@ -47,3 +47,8 @@ export function relativeTime(iso: string): string {
 }
 
 export const EMOJIS = ["👍", "🙏", "💪", "🔥", "✨", "🙌", "❤️", "✅", "📍", "📦", "📐", "🛠️", "😊", "😀", "🎉", "👋"]
+
+// Ícono por canal/origen (Mensajes y Leads comparten esta lógica).
+import { MessageCircle, AtSign, Mail, Globe } from "lucide-react"
+export const channelIcon = (s: string) =>
+  s === "whatsapp" ? MessageCircle : s === "instagram" ? AtSign : s === "email" ? Mail : s === "web" ? Globe : null

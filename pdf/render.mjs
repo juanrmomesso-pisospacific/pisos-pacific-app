@@ -109,11 +109,12 @@ export async function presupuestoPdf(data) {
   const AVAIL = PAGE.h - bodyTop - 24;              // alto disponible del cuerpo
   const GAP = 13;
 
-  // Normalización de datos → secciones. Sin multizonas no se muestra el subtotal
-  // del encabezado (sería redundante con el total de abajo).
+  // Normalización de datos → secciones (m2→m² acá, una sola vez). Sin multizonas
+  // no se muestra el subtotal del encabezado (sería redundante con el total de abajo).
+  const normRows = (rows) => (rows || []).map((r) => [r[0], String(r[1] ?? '').replace(/\bm2\b/g, 'm²'), r[2], r[3]]);
   const sections = data.mode === 'sections'
-    ? (data.sections || []).map((s) => ({ name: s.title, sub: s.subtotal_val, rows: s.rows }))
-    : [{ name: 'Detalle', sub: null, rows: data.rows || [] }];
+    ? (data.sections || []).map((s) => ({ name: s.title, sub: s.subtotal_val, rows: normRows(s.rows) }))
+    : [{ name: 'Detalle', sub: null, rows: normRows(data.rows) }];
   const hasIva = data.has_iva && data.iva && !/^US\$ ?0(,00)?$/.test(data.iva);
   const terms = [
     { k: 'Forma de pago', v: data.forma_pago || 'Anticipo 80% · Conforme 20%' },
@@ -131,7 +132,7 @@ export async function presupuestoPdf(data) {
   const GRID = { q: 56, u: 70, t: 84, gap: 8 };
   for (const sec of sections) {
     for (const r of sec.rows || []) {
-      GRID.q = Math.max(GRID.q, measure('reg', 12, String(r[1] ?? '').replace(/\bm2\b/g, 'm²')) + 2);
+      GRID.q = Math.max(GRID.q, measure('reg', 12, r[1]) + 2);
       GRID.u = Math.max(GRID.u, measure('reg', 12, r[2]) + 2);
       GRID.t = Math.max(GRID.t, measure('semi', 12, isFree(r) ? 'Bonificado' : r[3]) + 2);
     }
@@ -189,7 +190,7 @@ export async function presupuestoPdf(data) {
       }
       // filas
       for (const r of sec.rows || []) {
-        const [d, q, u, t] = [String(r[0] ?? ''), String(r[1] ?? '').replace(/\bm2\b/g, 'm²'), String(r[2] ?? ''), String(r[3] ?? '')];
+        const [d, q, u, t] = [String(r[0] ?? ''), String(r[1] ?? ''), String(r[2] ?? ''), String(r[3] ?? '')];
         y += 4;
         doc.font('reg').fontSize(12);
         const dh = doc.heightOfString(d, { width: dW });
