@@ -45,6 +45,8 @@ export type Sale = {
   title: string
   description: string
   internal_notes?: string
+  public_notes?: string
+  payment_terms?: string
   client_name: string
   client_dni: string
   client_email: string
@@ -104,6 +106,8 @@ export type Quote = {
   client_phone?: string
   client_address?: string
   internal_notes?: string
+  public_notes?: string
+  payment_terms?: string
   seller_name: string
   seller_phone: string
   created_at: string

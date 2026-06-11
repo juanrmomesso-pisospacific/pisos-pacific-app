@@ -70,6 +70,26 @@ function para(doc, str, x, y, w, { font = 'reg', size = 12, color = C.ink, draw 
 const hline = (doc, x1, y, x2, color = C.hair, lw = 1) =>
   doc.moveTo(x1, y).lineTo(x2, y).lineWidth(lw).strokeColor(color).stroke();
 
+// Banda oscura superior (común a presupuesto y remito): lockup + título + meta.
+// meta = [{ t, hot }] — los "hot" van en semibold blanco pleno. Devuelve la altura.
+function drawMasthead(doc, title, meta = []) {
+  const MH = 82, R = PAGE.w - PADX;
+  doc.rect(0, 0, PAGE.w, MH).fill(C.ink);
+  doc.image(ASSET('pacific_lockup_arg_white.png'), PADX, 22, { height: 38 });
+  line(doc, title, R, 25, { font: 'semi', size: 12, color: '#ffffff', cs: 2.4, align: 'right', opacity: 0.9 });
+  let mx = R;
+  for (let i = meta.length - 1; i >= 0; i--) {
+    const m = meta[i];
+    doc.font(m.hot ? 'semi' : 'reg').fontSize(11.5);
+    const w = doc.widthOfString(m.t);
+    mx -= w;
+    doc.fillColor('#ffffff').fillOpacity(m.hot ? 1 : 0.7).text(m.t, mx, 47, { lineBreak: false });
+    mx -= 18;
+  }
+  doc.fillOpacity(1);
+  return MH;
+}
+
 // ===================== PRESUPUESTO — Cabezal oscuro =====================
 // data = salida de presupuestoData() en server.js (strings ya formateados es-AR).
 export async function presupuestoPdf(data) {
@@ -77,30 +97,12 @@ export async function presupuestoPdf(data) {
   doc.save();
   doc.scale(PX);                                    // espacio px de diseño
 
-  // --- 1. Masthead (banda oscura, full bleed, 82px de alto) ---
-  const MH = 82;
-  doc.rect(0, 0, PAGE.w, MH).fill(C.ink);
-  doc.image(ASSET('pacific_lockup_arg_white.png'), PADX, 22, { height: 38 });
-  const R = PAGE.w - PADX;
-  line(doc, 'PRESUPUESTO PRELIMINAR', R, 25, { font: 'semi', size: 12, color: '#ffffff', cs: 2.4, align: 'right', opacity: 0.9 });
-  // meta: N° · Emisión · Vence (vence resaltado)
-  const meta = [
-    { t: `N° ${data.numero || '—'}`, hot: false },
-    { t: `Emisión ${data.fecha || ''}`, hot: false },
+  // --- 1. Masthead (banda oscura, full bleed) ---
+  const MH = drawMasthead(doc, 'PRESUPUESTO PRELIMINAR', [
+    { t: `N° ${data.numero || '—'}` },
+    { t: `Emisión ${data.fecha || ''}` },
     { t: `Vence ${data.vence || ''}`, hot: true },
-  ];
-  doc.font('reg').fontSize(11.5);
-  let mx = R;
-  for (let i = meta.length - 1; i >= 0; i--) {
-    const m = meta[i];
-    const f = m.hot ? 'semi' : 'reg';
-    doc.font(f).fontSize(11.5);
-    const w = doc.widthOfString(m.t);
-    mx -= w;
-    doc.fillColor('#ffffff').fillOpacity(m.hot ? 1 : 0.7).text(m.t, mx, 47, { lineBreak: false });
-    mx -= 18;
-  }
-  doc.fillOpacity(1);
+  ]);
 
   // --- 2. Cuerpo con auto-fit a una página ---
   const bodyTop = MH + 22;
@@ -271,11 +273,8 @@ export async function remitoPdf(data) {
   doc.save();
   doc.scale(PX);
 
-  const MH = 82, R = PAGE.w - PADX;
-  doc.rect(0, 0, PAGE.w, MH).fill(C.ink);
-  doc.image(ASSET('pacific_lockup_arg_white.png'), PADX, 22, { height: 38 });
-  line(doc, 'REMITO · PREPARACIÓN DE ENTREGA', R, 25, { font: 'semi', size: 12, color: '#ffffff', cs: 2.4, align: 'right', opacity: 0.9 });
-  line(doc, `Emisión ${data.fecha || ''}`, R, 47, { size: 11.5, color: '#ffffff', opacity: 0.7, align: 'right' });
+  const R = PAGE.w - PADX;
+  const MH = drawMasthead(doc, 'REMITO · PREPARACIÓN DE ENTREGA', [{ t: `Emisión ${data.fecha || ''}` }]);
 
   let y = MH + 26;
   // Badge SIN VALORES

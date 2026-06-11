@@ -1119,7 +1119,6 @@ function presupuestoData(rec) {
     cliente: rec.client_name || '',
     obra: rec.title || rec.client_address || '',
     obs: rec.public_notes || '',
-    template: rec.pdf_template || db.settings.pdf_template || 'clasico',
     resumen: { m2: Math.round(m2 * 10) / 10, ambientes: (rec.zoned && zones.length) ? zones.length : 1, items: items.length },
     vigencia_dias: rec.valid_days || 10,
     subtotal: usdFmt(net),
@@ -1186,7 +1185,7 @@ function remitoData(rec) {
     cliente: rec.client_name || '', obra: rec.title || rec.client_address || '',
     direccion: rec.client_address || '', equipo: rec.delivery_crew || '', entrega: dlv,
     obs: [rec.remito_confirmed ? 'CONFIRMADO POR INSPECCIÓN' : '', rec.delivery_notes || ''].filter(Boolean).join(' · '),
-    rows, template: rec.pdf_template || db.settings.pdf_template || 'clasico',
+    rows,
   };
 }
 app.get('/api/sales/:id/remito', (req, res) => {
