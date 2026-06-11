@@ -128,6 +128,12 @@ export async function syncMp({ from, to, existing = [] }) {
   return buildMovements({ raw, existing });
 }
 
+// Parsea un settlement YA descargado (ej.: adjunto del email programado de MP,
+// que usa este formato — no el account_statement con nombres).
+export function parseSettlementBuffer(buffer, existing = []) {
+  return buildMovements({ raw: parseReportBuffer(buffer), existing });
+}
+
 // Clasifica + deduplica filas crudas → {movements, report}. existing = db.cashflow.
 function buildMovements({ raw, existing = [] }) {
   // índice de lo ya cargado en MP: fecha±3 + |monto ARS|

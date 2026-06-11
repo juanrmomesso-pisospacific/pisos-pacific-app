@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
-import { startMpReport, getMpReport } from './import/mp-api.mjs';
+import { startMpReport, getMpReport, parseSettlementBuffer } from './import/mp-api.mjs';
 import { handleInbound, sendOutbound } from './integrations/meta.mjs';
 import { syncGmailLeads, fetchLatestMpReport } from './integrations/gmail.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
@@ -312,6 +312,12 @@ app.post('/api/auth/forgot-password', async (req, res) => {
 
 // Resetear contraseña con el token del email.
 app.post('/api/auth/reset-password', (req, res) => {
+  // Purga de tokens vencidos (no se acumulan entre pedidos).
+  let purged = false;
+  for (const [t, e] of Object.entries(db.password_resets || {})) {
+    if (e.expires < Date.now()) { delete db.password_resets[t]; purged = true; }
+  }
+  if (purged) save();
   const { token, password } = req.body ?? {};
   const entry = db.password_resets?.[token];
   if (!entry || entry.expires < Date.now()) return res.status(400).json({ error: 'El link venció o no es válido. Pedí uno nuevo.' });
@@ -709,7 +715,12 @@ app.post('/api/import/mp-email', async (_req, res) => {
   try {
     const r = await fetchLatestMpReport();
     if (!r.found) return res.json({ found: false, candidates: r.candidates, error: 'No encontré un reporte de MP con adjunto. Revisá que el reporte se mande adjunto (no link) a infoacudesign@gmail.com.' });
-    const { movements, report } = parseStatement({ source: 'mp', buffer: r.buffer, existing: db.cashflow });
+    // El email programado de MP adjunta el formato settlement (sin nombres); el
+    // account_statement manual (con nombres, RELEASE_DATE) también se acepta.
+    const isAccountStatement = /account_statement/i.test(r.filename || '');
+    const { movements, report } = isAccountStatement
+      ? parseStatement({ source: 'mp', buffer: r.buffer, existing: db.cashflow })
+      : parseSettlementBuffer(r.buffer, db.cashflow);
     res.json({ found: true, filename: r.filename, subject: r.subject, movements, report });
   } catch (e) { res.status(400).json({ error: e.message || 'no se pudo importar el reporte de MP por email' }); }
 });

@@ -26,15 +26,21 @@ const C = {
 const PADX = 30;                          // padding horizontal de página
 const BODY_W = PAGE.w - PADX * 2;         // 660
 
+// Fuentes en memoria (se leen del disco una sola vez, no por PDF).
+import fs from 'node:fs';
+const FONT_BUFS = {
+  reg: fs.readFileSync(FONT('inter-400.otf')),
+  semi: fs.readFileSync(FONT('inter-600.otf')),
+  bold: fs.readFileSync(FONT('inter-700.otf')),
+};
+
 function newDoc() {
   const doc = new PDFDocument({ size: 'A4', margin: 0 });
   // Anula la auto-paginación de pdfkit: dibujamos con transforms (scale) que pdfkit
   // no contempla al decidir saltos de página. El MediaBox A4 ya quedó fijado al crear
   // la página; agrandar height solo afecta maxY() (el chequeo de desborde).
   doc.page.height = 1e6;
-  doc.registerFont('reg', FONT('inter-400.otf'));
-  doc.registerFont('semi', FONT('inter-600.otf'));
-  doc.registerFont('bold', FONT('inter-700.otf'));
+  for (const [name, buf] of Object.entries(FONT_BUFS)) doc.registerFont(name, buf);
   return doc;
 }
 const toBuffer = (doc) => new Promise((resolve, reject) => {
@@ -293,11 +299,20 @@ export async function remitoPdf(data) {
   line(doc, 'CANTIDAD', R, y, { font: 'semi', size: 8.5, color: C.ink3, cs: 1.19, align: 'right' });
   y += 8.5 * 1.25 + 5;
   hline(doc, PADX, y, R, C.wood, 1); y += 6;
-  for (const row of data.rows || []) {
-    const [d, qt] = [String(row[0] ?? ''), String(row[1] ?? '')];
+  // Filas con tope: descripción máx. 2 líneas (con …) y corte antes del área de firmas.
+  const rows = data.rows || [];
+  const yLimit = PAGE.h - 130;                       // no pisar firmas/footer
+  const maxDescH = 12 * 1.25 * 2;                    // 2 líneas
+  for (let i = 0; i < rows.length; i++) {
+    if (y > yLimit - 30 && i < rows.length - 1) {
+      line(doc, `… y ${rows.length - i} ítems más (ver venta en la app)`, PADX, y, { size: 11, color: C.ink3 });
+      y += 20;
+      break;
+    }
+    const [d, qt] = [String(rows[i][0] ?? ''), String(rows[i][1] ?? '')];
     doc.font('reg').fontSize(12);
-    const dh = doc.heightOfString(d, { width: BODY_W - 140 });
-    para(doc, d, PADX, y, BODY_W - 140, { size: 12, color: C.ink });
+    const dh = Math.min(doc.heightOfString(d, { width: BODY_W - 140 }), maxDescH);
+    doc.fillColor(C.ink).text(d, PADX, y, { width: BODY_W - 140, height: maxDescH, ellipsis: true });
     line(doc, qt, R, y, { font: 'semi', size: 12, color: C.ink, align: 'right' });
     y += Math.max(dh, 15) + 5;
     hline(doc, PADX, y, R, C.hair, 1); y += 5;
