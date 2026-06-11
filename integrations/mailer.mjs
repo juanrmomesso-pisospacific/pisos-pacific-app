@@ -15,6 +15,8 @@ export function isMailerConfigured() {
 const accessToken = () => refreshGoogleToken(process.env.GMAIL_SEND_REFRESH_TOKEN);
 
 const b64url = (s) => Buffer.from(s).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+// RFC 2047: los headers con no-ASCII (ñ, —, acentos) van como =?UTF-8?B?…?=
+const encHeader = (s) => (/[^\x20-\x7e]/.test(s) ? `=?UTF-8?B?${Buffer.from(s, 'utf8').toString('base64')}?=` : s);
 
 export async function sendMail({ to, subject, html, text }) {
   if (!isMailerConfigured()) throw new Error('mailer no configurado (faltan GOOGLE_CLIENT_ID/SECRET + GMAIL_SEND_REFRESH_TOKEN)');
@@ -24,11 +26,12 @@ export async function sendMail({ to, subject, html, text }) {
   const mime = [
     `From: Pisos Pacific <${from}>`,
     `To: ${to}`,
-    `Subject: ${subject}`,
+    `Subject: ${encHeader(subject)}`,
     'MIME-Version: 1.0',
     `Content-Type: ${html ? 'text/html' : 'text/plain'}; charset=UTF-8`,
+    'Content-Transfer-Encoding: base64',
     '',
-    body,
+    Buffer.from(body, 'utf8').toString('base64'),
   ].join('\r\n');
   const r = await fetch(SEND, { method: 'POST', headers: { Authorization: `Bearer ${at}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ raw: b64url(mime) }) });
   const j = await r.json().catch(() => ({}));

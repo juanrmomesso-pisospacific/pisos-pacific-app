@@ -40,6 +40,11 @@ export async function syncGmailLeads(db, save) {
     if (!email || existingEmails.has(email)) continue;
     // ignorar correos internos / propios
     if (/pisospacific\.com$/i.test(email)) continue;
+    // Notificaciones automáticas (Google Ads, PayPal, Meta, etc.) NO son leads…
+    const isRobot = /no[._-]?reply|noreply|notification|mailer-daemon|do[._-]?not[._-]?reply|security@|notice@|@email\.|@communications\.|@business-updates\.|@mail\.instagram|businessprofile/i.test(email);
+    // …salvo que el asunto sea una consulta real reenviada (ej. formulario web de Framer).
+    const isConsulta = /presupuesto|cotizaci|consulta|pedido/i.test(headers.subject || '');
+    if (isRobot && !isConsulta) continue;
     existingEmails.add(email);
     const ts = headers.date ? new Date(headers.date).toISOString() : new Date().toISOString();
     db.leads.push({
