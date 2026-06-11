@@ -1,4 +1,4 @@
-export type Channel = "whatsapp" | "instagram"
+export type Channel = "whatsapp" | "instagram" | "email"
 
 export type Conversation = {
   id: string
@@ -33,7 +33,7 @@ export type Template = {
   body: string
 }
 
-export const CHANNEL_LABEL: Record<Channel, string> = { whatsapp: "WhatsApp", instagram: "Instagram" }
+export const CHANNEL_LABEL: Record<Channel, string> = { whatsapp: "WhatsApp", instagram: "Instagram", email: "Email" }
 
 export function relativeTime(iso: string): string {
   const t = new Date(iso).getTime()

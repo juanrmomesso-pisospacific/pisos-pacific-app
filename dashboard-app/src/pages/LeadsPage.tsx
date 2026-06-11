@@ -220,7 +220,7 @@ function LeadsTable({ rows, onOpen, convByLeadId, quotesByLeadId }: { rows: Lead
 
 function SourceCell({ source, hasConv }: { source: string; hasConv: boolean }) {
   const s = source.toLowerCase()
-  const Icon = s === "whatsapp" ? MessageCircle : s === "instagram" ? AtSign : s === "web" ? Globe : null
+  const Icon = s === "whatsapp" ? MessageCircle : s === "instagram" ? AtSign : s === "web" ? Globe : s === "email" ? Mail : null
   return (
     <span className="inline-flex items-center gap-1">
       {Icon ? <Icon className="h-3 w-3" /> : null}
@@ -232,7 +232,7 @@ function SourceCell({ source, hasConv }: { source: string; hasConv: boolean }) {
 
 function LeadCard({ lead, onOpen, hasConversation, convId, quotesCount, isDragging, onDragStart, onDragEnd }: { lead: Lead; onOpen: (id: string) => void; hasConversation: boolean; convId?: string; quotesCount: number; isDragging?: boolean; onDragStart?: (id: string) => void; onDragEnd?: () => void }) {
   const src = (lead.source ?? "").toLowerCase()
-  const SourceIcon = src === "whatsapp" ? MessageCircle : src === "instagram" ? AtSign : src === "web" ? Globe : null
+  const SourceIcon = src === "whatsapp" ? MessageCircle : src === "instagram" ? AtSign : src === "web" ? Globe : src === "email" ? Mail : null
   return (
     <div
       role="button"

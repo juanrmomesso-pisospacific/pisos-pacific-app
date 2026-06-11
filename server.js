@@ -492,11 +492,16 @@ app.post('/api/conversations/:id/messages', async (req, res) => {
   if (!conv) return res.sendStatus(404);
   const body = String(req.body?.body ?? '').trim();
   if (!body) return res.status(400).json({ error: 'empty body' });
-  // Envío real por Meta si el canal lo soporta; si faltan tokens, se guarda local.
+  // Envío real según canal (Meta o Gmail); si faltan tokens, se guarda local.
   let delivery = { sent: true, local: true };
   if (conv.channel === 'whatsapp' || conv.channel === 'instagram') {
     try { delivery = await sendOutbound(conv.channel, conv.contact_id, body); }
     catch (e) { delivery = { sent: false, reason: e.message }; }
+  } else if (conv.channel === 'email') {
+    try {
+      const subject = conv.email_subject ? `Re: ${conv.email_subject.replace(/^re:\s*/i, '')}` : 'Pisos Pacific';
+      delivery = await sendMail({ to: conv.contact_id, subject, text: body });
+    } catch (e) { delivery = { sent: false, reason: e.message }; }
   }
   const tokensMissing = delivery.reason && /faltan/i.test(delivery.reason);
   const msg = {
@@ -773,6 +778,20 @@ async function mpAutoSync() {
 }
 setTimeout(mpAutoSync, 90 * 1000);     // al arrancar (si no corrió en las últimas 20h)
 setInterval(mpAutoSync, 6 * 3600e3);   // re-chequeo periódico
+
+// ---------- Sync automático de Gmail (leads + conversaciones email) ----------
+let gmailSyncRunning = false;
+async function gmailAutoSync() {
+  if (gmailSyncRunning || !process.env.GMAIL_REFRESH_TOKEN) return;
+  gmailSyncRunning = true;
+  try {
+    const r = await syncGmailLeads(db, save);
+    if (r.leads || r.conversaciones) console.log(`[gmail-auto] +${r.leads} leads, +${r.conversaciones} conversaciones (${r.nuevos} mails nuevos)`);
+  } catch (e) { console.warn('[gmail-auto] error:', e.message); }
+  finally { gmailSyncRunning = false; }
+}
+setTimeout(gmailAutoSync, 60 * 1000);
+setInterval(gmailAutoSync, 15 * 60e3);   // cada 15 min
 // Disparo manual (para probar o forzar): corre en background.
 app.post('/api/import/mp-sync/auto-run', (_req, res) => {
   db.settings.mp_last_sync = null;

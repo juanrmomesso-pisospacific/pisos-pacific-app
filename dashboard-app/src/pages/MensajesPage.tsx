@@ -122,10 +122,11 @@ function ConversationList({
           <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar conversación…" className="pl-8 h-8" />
         </div>
         <Tabs value={channelFilter} onValueChange={(v) => setChannelFilter(v as ChannelFilter)}>
-          <TabsList className="h-8 w-full grid grid-cols-3">
+          <TabsList className="h-8 w-full grid grid-cols-4">
             <TabsTrigger value="all" className="text-xs">Todas</TabsTrigger>
             <TabsTrigger value="whatsapp" className="text-xs gap-1"><MessageCircle className="h-3 w-3" />WA</TabsTrigger>
             <TabsTrigger value="instagram" className="text-xs gap-1"><AtSign className="h-3 w-3" />IG</TabsTrigger>
+            <TabsTrigger value="email" className="text-xs gap-1"><Mail className="h-3 w-3" />Mail</TabsTrigger>
           </TabsList>
         </Tabs>
         <div className="text-[11px] text-muted-foreground">{conversations.length} de {total} conversaciones</div>
@@ -142,7 +143,7 @@ function ConversationList({
 }
 
 function ConversationRow({ conv, lead, selected, onClick }: { conv: Conversation; lead?: Lead; selected: boolean; onClick: () => void }) {
-  const ChannelIcon = conv.channel === "whatsapp" ? MessageCircle : AtSign
+  const ChannelIcon = conv.channel === "whatsapp" ? MessageCircle : conv.channel === "email" ? Mail : AtSign
   return (
     <button
       type="button"
@@ -293,7 +294,7 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
 }
 
 function ThreadHeader({ conversation }: { conversation: Conversation }) {
-  const ChannelIcon = conversation.channel === "whatsapp" ? MessageCircle : AtSign
+  const ChannelIcon = conversation.channel === "whatsapp" ? MessageCircle : conversation.channel === "email" ? Mail : AtSign
   return (
     <div className="px-4 py-2.5 border-b border-border flex items-center gap-3 shrink-0 bg-background">
       <div className="h-9 w-9 rounded-full bg-muted flex items-center justify-center shrink-0">
@@ -449,7 +450,7 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
       ? conversation.contact_id
       : (linkedClient?.phones?.[0] ?? ""),
     email: linkedClient?.emails?.[0] ?? "",
-    source: conversation.channel === "whatsapp" ? "WhatsApp" : "Instagram",
+    source: conversation.channel === "whatsapp" ? "WhatsApp" : conversation.channel === "email" ? "Email" : "Instagram",
     status: "New",
     address: linkedClient?.addresses?.[0] ?? "",
     notes: [
