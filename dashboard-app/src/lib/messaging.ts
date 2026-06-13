@@ -19,8 +19,10 @@ export type Message = {
   direction: "in" | "out"
   body: string
   ts: string
-  status?: "sent" | "delivered" | "read"
+  status?: "sent" | "delivered" | "read" | "received"
   template_name?: string
+  wa_id?: string            // id de mensaje de WhatsApp (dedup de echoes en Coexistence)
+  via?: "wa-app"            // "wa-app" = respondido desde la app de WhatsApp del celular
 }
 
 export type Template = {

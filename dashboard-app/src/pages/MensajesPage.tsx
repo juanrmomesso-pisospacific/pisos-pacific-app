@@ -31,11 +31,13 @@ type Client = {
 type ChannelFilter = "all" | Channel
 
 export default function MensajesPage() {
-  const conversations = useApi<Conversation[]>("/api/conversations").data ?? []
+  // Auto-refresh: la lista de conversaciones y los leads se repiden solos cada 8s
+  // (aparecen mensajes/conversaciones nuevos sin recargar la página).
+  const conversations = useApi<Conversation[]>("/api/conversations", { pollMs: 8000 }).data ?? []
   const templates = useApi<Template[]>("/api/templates").data ?? []
   const clients = useApi<Client[]>("/api/clients").data ?? []
   const sales = useApi<Sale[]>("/api/sales").data ?? []
-  const leads = useApi<Lead[]>("/api/leads").data ?? []
+  const leads = useApi<Lead[]>("/api/leads", { pollMs: 8000 }).data ?? []
   const quotes = useApi<Quote[]>("/api/quotes").data ?? []
   const leadById = useMemo(() => {
     const m = new Map<string, Lead>()
@@ -196,20 +198,39 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
   const [composerError, setComposerError] = useState<string | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
   const taRef = useRef<HTMLTextAreaElement>(null)
+  const lastIdRef = useRef<string | null>(null)   // último mensaje conocido (para detectar nuevos al pollear)
 
   // Load messages whenever the selected conversation changes
   useEffect(() => {
-    setMessages([])
+    setMessages([]); lastIdRef.current = null
     if (!conversation) return
     let cancelled = false
     setLoading(true)
     getJSON<Message[]>(`/api/conversations/${conversation.id}/messages`)
-      .then((d) => { if (!cancelled) setMessages(d) })
+      .then((d) => { if (!cancelled) { setMessages(d); lastIdRef.current = d[d.length - 1]?.id ?? null } })
       .catch(() => {})
       .finally(() => { if (!cancelled) setLoading(false) })
     // Mark as read (fire-and-forget)
     fetch(`/api/conversations/${conversation.id}/read`, { method: "POST" }).catch(() => {})
     return () => { cancelled = true }
+  }, [conversation?.id])
+
+  // Auto-refresh: pollea los mensajes de la conversación abierta cada 5s. Solo actualiza
+  // (y reposiciona el scroll) cuando llega un mensaje nuevo → no molesta mientras leés/escribís.
+  useEffect(() => {
+    if (!conversation) return
+    const cid = conversation.id
+    const tick = () => getJSON<Message[]>(`/api/conversations/${cid}/messages`)
+      .then((d) => {
+        const last = d[d.length - 1]?.id ?? null
+        if (last === lastIdRef.current) return   // nada nuevo
+        lastIdRef.current = last
+        setMessages(d)
+        fetch(`/api/conversations/${cid}/read`, { method: "POST" }).catch(() => {})   // ya está abierta → leída
+      })
+      .catch(() => {})
+    const id = setInterval(tick, 5000)
+    return () => clearInterval(id)
   }, [conversation?.id])
 
   useEffect(() => {
@@ -237,6 +258,7 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
       if (!r.ok) throw new Error(`${r.status}`)
       const msg = (await r.json()) as Message
       setMessages(prev => [...prev, msg])
+      lastIdRef.current = msg.id
       setDraft("")
     } catch (e: any) {
       setComposerError(e?.message ?? "Error")

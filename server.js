@@ -498,6 +498,7 @@ app.post('/api/conversations/:id/messages', async (req, res) => {
     ts: new Date().toISOString(),
     status: delivery.sent ? 'sent' : (tokensMissing ? 'sent' : 'failed'),
     template_name: req.body?.template_name ?? undefined,
+    ...(delivery.id ? { wa_id: delivery.id } : {}),
     ...(delivery.sent || tokensMissing ? {} : { error: delivery.reason }),
   };
   db.messages.push(msg);

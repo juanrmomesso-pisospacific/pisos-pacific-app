@@ -8,6 +8,11 @@
 //   IG_TOKEN                (page access token, para responder DMs de Instagram)
 //   META_VERIFY_TOKEN       (string que elegís; se usa en el handshake del webhook)
 // El entrante funciona sin tokens (Meta postea al webhook). El saliente los necesita.
+//
+// COEXISTENCE: el mismo número se usa en la app de WhatsApp Business del celular Y en la
+// Cloud API a la vez. Cuando el dueño responde desde el celular, Meta manda un webhook
+// `smb_message_echoes` → lo espejamos en la conversación como mensaje SALIENTE para que el
+// dashboard quede sincronizado con lo que se contesta desde el teléfono.
 
 const GRAPH = 'https://graph.facebook.com/v21.0';
 
@@ -25,6 +30,12 @@ async function igUsername(igId) {
 // ---------- ENTRANTE ----------
 // Devuelve {conversation, message} o null si el payload no trae un mensaje de texto.
 export async function handleInbound(db, save, channel, payload) {
+  // Coexistence: mensajes que el negocio mandó desde la app de WhatsApp del celular llegan
+  // como "message echoes" → se espejan como salientes (no crean lead ni cuentan como no leído).
+  if (channel === 'whatsapp') {
+    const echo = parseWhatsAppEcho(payload);
+    if (echo) return mirrorOutbound(db, save, channel, echo);
+  }
   const parsed = channel === 'whatsapp' ? parseWhatsApp(payload) : parseInstagram(payload);
   if (!parsed) return null;
   const { contactId, text, ts } = parsed;
@@ -81,6 +92,49 @@ function parseWhatsApp(payload) {
       ts: m.timestamp ? new Date(Number(m.timestamp) * 1000).toISOString() : new Date().toISOString(),
     };
   } catch { return null; }
+}
+
+// Coexistence: parsea el echo de un mensaje que el negocio envió desde la app del celular.
+// `to` = teléfono del cliente al que se le respondió; `text.body` = contenido.
+function parseWhatsAppEcho(payload) {
+  try {
+    const m = payload?.entry?.[0]?.changes?.[0]?.value?.message_echoes?.[0];
+    if (!m || m.type !== 'text') return null;
+    return {
+      contactId: m.to,
+      text: m.text?.body || '',
+      ts: m.timestamp ? new Date(Number(m.timestamp) * 1000).toISOString() : new Date().toISOString(),
+      waId: m.id,
+    };
+  } catch { return null; }
+}
+
+// Inserta un mensaje saliente espejado (respuesta desde el celular). Deduplica por wa_id
+// para tolerar reintentos del webhook. Si la conversación no existe (el negocio escribió
+// primero desde el cel), la crea sin generar lead.
+function mirrorOutbound(db, save, channel, { contactId, text, ts, waId }) {
+  if (waId && db.messages.some((m) => m.wa_id === waId)) return null;
+  let conv = db.conversations.find((c) => c.channel === channel && c.contact_id === contactId);
+  if (!conv) {
+    conv = {
+      id: `conv-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+      channel, contact_id: contactId, contact_name: contactId,
+      linked_client_name: null, status: 'open', unread_count: 0,
+      last_message_at: ts, last_message_preview: '',
+    };
+    db.conversations.push(conv);
+  }
+  const msg = {
+    id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+    conversation_id: conv.id, direction: 'out', body: text, ts, status: 'sent',
+    wa_id: waId, via: 'wa-app',
+  };
+  db.messages.push(msg);
+  conv.last_message_at = ts;
+  conv.last_message_preview = text.slice(0, 140);
+  conv.unread_count = 0;   // responder (desde donde sea) deja la conversación al día
+  save();
+  return { conversation: conv, message: msg };
 }
 
 function parseInstagram(payload) {
