@@ -6,9 +6,10 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
-import { Plus } from "lucide-react"
+import { Plus, Wallet } from "lucide-react"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { CashflowForm } from "@/components/forms/CashflowForm"
+import { CashQuickForm } from "@/components/forms/CashQuickForm"
 import { ImportStatementDialog } from "@/components/ImportStatementDialog"
 import { Upload } from "lucide-react"
 import { useApi } from "@/lib/api"
@@ -58,15 +59,18 @@ export default function CashFlowPage() {
   const { range: gRange } = usePeriod()
   const range = useMemo<Range>(() => ({ from: ymd(gRange.from), to: ymd(gRange.to) }), [gRange])
   const [openNew, setOpenNew] = useState(false)
+  const [openCash, setOpenCash] = useState(false)
   const [openImport, setOpenImport] = useState(false)
 
   return (
     <div className="px-4 lg:px-6 space-y-4">
       <TopbarActions>
         <Button variant="outline" size="sm" onClick={() => setOpenImport(true)}><Upload className="h-4 w-4" />Importar extracto</Button>
+        <Button variant="outline" size="sm" onClick={() => setOpenCash(true)}><Wallet className="h-4 w-4" />Gasto en efectivo</Button>
         <Button size="sm" onClick={() => setOpenNew(true)}><Plus className="h-4 w-4" />Nuevo movimiento</Button>
       </TopbarActions>
       <CashflowForm open={openNew} onOpenChange={setOpenNew} cajas={cajas} />
+      <CashQuickForm open={openCash} onOpenChange={setOpenCash} cajas={cajas} />
       <ImportStatementDialog open={openImport} onOpenChange={setOpenImport} onDone={cfApi.refetch} />
       <p className="text-xs text-muted-foreground">Toda la plata en un lugar: resultado (P&amp;L), estructura de gastos, gasto por proveedor y libro completo (ingresos + egresos). Para cargar un movimiento usá <b>Nuevo movimiento</b>.</p>
       <Tabs defaultValue="pnl">

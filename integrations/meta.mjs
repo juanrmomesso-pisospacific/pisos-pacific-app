@@ -14,6 +14,8 @@
 // `smb_message_echoes` → lo espejamos en la conversación como mensaje SALIENTE para que el
 // dashboard quede sincronizado con lo que se contesta desde el teléfono.
 
+import { parseCashCommand, inferType, normalizePhone } from '../import/cash-parse.mjs';
+
 const GRAPH = 'https://graph.facebook.com/v21.0';
 
 // Resuelve el @usuario de una cuenta de Instagram a partir de su ID (best-effort).
@@ -35,6 +37,9 @@ export async function handleInbound(db, save, channel, payload) {
   if (channel === 'whatsapp') {
     const echo = parseWhatsAppEcho(payload);
     if (echo) return mirrorOutbound(db, save, channel, echo);
+    // Reporte de gastos del equipo (allowlist): se rutea a Caja General, NUNCA crea lead/conversación.
+    const m = payload?.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
+    if (m && isAllowed(db, m.from)) return handleCashReport(db, save, m.from, m.text?.body || '');
   }
   const parsed = channel === 'whatsapp' ? parseWhatsApp(payload) : parseInstagram(payload);
   if (!parsed) return null;
@@ -135,6 +140,95 @@ function mirrorOutbound(db, save, channel, { contactId, text, ts, waId }) {
   conv.unread_count = 0;   // responder (desde donde sea) deja la conversación al día
   save();
   return { conversation: conv, message: msg };
+}
+
+// ---------- REPORTE DE GASTOS POR WHATSAPP (allowlist del equipo) ----------
+// Teléfonos habilitados: env CASH_ALLOWLIST (csv) + db.settings.cash_allowlist. Match por últimos 10 dígitos.
+function isAllowed(db, from) {
+  const norm = normalizePhone(from);
+  if (!norm) return false;
+  const fromDb = db.settings?.cash_allowlist || [];
+  const fromEnv = (process.env.CASH_ALLOWLIST || '').split(',');
+  const set = new Set([...fromDb, ...fromEnv].map(normalizePhone).filter(Boolean));
+  return set.has(norm);
+}
+
+// Cotización Blue cacheada 1h (para convertir ARS→USD del gasto). Fallback 1400.
+let _blue = { v: 1400, at: 0 };
+async function blueRate() {
+  if (Date.now() - _blue.at < 3600_000) return _blue.v;
+  try {
+    const r = await fetch('https://dolarapi.com/v1/dolares/blue');
+    const j = await r.json();
+    const v = Math.round((Number(j.compra) + Number(j.venta)) / 2);
+    if (v > 0) _blue = { v, at: Date.now() };
+  } catch { /* mantener último/fallback */ }
+  return _blue.v;
+}
+
+const fmtNum = (n) => Number(n).toLocaleString('es-AR');
+
+// Conversación que repregunta hasta tener monto + descripción, registra en CAJ-005 y permite cancelar.
+// Devuelve el texto de respuesta (también lo envía por WhatsApp). NUNCA crea lead ni conversación.
+async function handleCashReport(db, save, from, rawText) {
+  db.settings = db.settings || {};
+  const sessions = db.settings.cash_sessions = db.settings.cash_sessions || {};
+  const norm = normalizePhone(from);
+  const text = String(rawText || '').trim();
+  const reply = async (msg) => { try { await sendOutbound('whatsapp', from, msg); } catch { /* envío best-effort */ } return msg; };
+  let s = sessions[norm] || {};
+
+  if (/^\s*cancelar\b/i.test(text)) {
+    if (s.last_mov_id) {
+      const i = db.cashflow.findIndex((x) => x.id === s.last_mov_id);
+      if (i >= 0) db.cashflow.splice(i, 1);
+      delete sessions[norm]; save();
+      return reply('🗑️ Listo, borré el último gasto.');
+    }
+    delete sessions[norm]; save();
+    return reply('Cancelado. Cuando quieras: *gasto 29000 ferretería*');
+  }
+
+  if (s.last_mov_id) s = {};   // ya registró antes → nuevo mensaje arranca sesión limpia
+
+  if (s.amount && !s.description) {
+    s.description = text.replace(/^\s*gasto\b[:\s]*/i, '').trim();   // esperaba descripción
+  } else {
+    const p = parseCashCommand(text);
+    if (!s.amount && p.amount) { s.amount = p.amount; s.currency = p.currency || 'ARS'; }
+    if (!s.description && p.description) s.description = p.description;
+  }
+
+  if (!s.amount) {
+    sessions[norm] = s; save();
+    return reply('¿Cuánto gastaste? Ej: *29000 ferretería* (agregá "usd" si fue en dólares).');
+  }
+  if (!s.description) {
+    sessions[norm] = s; save();
+    return reply(`Anoté $${fmtNum(s.amount)}${s.currency === 'USD' ? ' USD' : ''}. ¿En qué fue el gasto? (descripción)`);
+  }
+
+  const currency = s.currency || 'ARS';
+  const rate = await blueRate();
+  const usd = currency === 'USD' ? s.amount : +(s.amount / rate).toFixed(2);
+  const expense_type = inferType(s.description);
+  const mov = {
+    id: `mov-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+    date: new Date().toISOString(),
+    flow: 'Egreso', caja_id: 'CAJ-005', caja_name: 'Caja General',
+    category: null, subcategory: null,
+    counterparty: null, counterparty_type: 'supplier', client_id: null, supplier_id: null,
+    description: s.description, sale_ref: null,
+    currency, amount_ars: currency === 'USD' ? null : s.amount, amount_usd: usd,
+    exchange_rate: currency === 'USD' ? null : rate,
+    fixed_variable: 'Variable', expense_type,
+    transfer: false, needs_review: false, review_reason: null,
+    source: 'efectivo-whatsapp',
+  };
+  db.cashflow.push(mov);
+  sessions[norm] = { last_mov_id: mov.id, ts: Date.now() };
+  save();
+  return reply(`✅ Registrado en Caja General: $${fmtNum(s.amount)}${currency === 'USD' ? ' USD' : ''} · ${s.description} · ${expense_type}.\n(Si está mal, respondé *cancelar*.)`);
 }
 
 function parseInstagram(payload) {

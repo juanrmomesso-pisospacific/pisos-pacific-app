@@ -127,6 +127,7 @@ _Actualizado: 2026-06-13. Producción deployada y verificada (healthz 200, webho
 - Instagram DMs entrantes/salientes funcionando (app Live).
 - **WhatsApp conectado (cloud-only) y probado ida/vuelta** (Frente 1). Ver fila WhatsApp en §4 y memoria `whatsapp-integration`.
 - **Auto-refresh de Mensajes** (polling, sin recargar) — probado con Playwright E2E.
+- **Frente 2 — Efectivo:** form "Gasto en efectivo" + ajustes a "Nuevo movimiento" (Tipo de Gasto primero → cascada Categoría/Sub vía `lib/cashflow.ts`; Proveedor/Cliente buscable con crear-nuevo). **Bot de gastos por WhatsApp** (`import/cash-parse.mjs` + `handleCashReport` en meta.mjs): teléfonos en `CASH_ALLOWLIST` reportan `gasto 29000 ferretería` al número del negocio → conversación que repregunta → registra en Caja General (CAJ-005), `cancelar` deshace; **nunca** crea lead/conversación de cliente. Probado E2E.
 - Gmail dual conectado: leads por email + canal Mails en Mensajes (29 leads web reales) + recuperación de contraseña.
 - PDF nuevo (Cabezal Oscuro) con todos los pedidos del dueño.
 - Filtro de período global unificado.
@@ -137,6 +138,6 @@ _Actualizado: 2026-06-13. Producción deployada y verificada (healthz 200, webho
 - **Rutina mensual MP**: bajar "Todas las transacciones" del panel y subirla en CashFlow → Importar extracto → Mercado Pago (archivo) → enriquece los movimientos sin nombre (hoy hay 4).
 
 **Próximos pasos** (roadmap completo en el plan aprobado)
-1. Resto de frentes del roadmap: efectivo separado (Frente 2), Mensajes templates/orden (Frente 3), banco de imágenes (Frente 4), vista simple Ventas (Frente 5), testear inspección (Frente 6).
+1. Resto de frentes del roadmap: Mensajes templates/orden (Frente 3), banco de imágenes (Frente 4), vista simple Ventas (Frente 5), testear inspección (Frente 6). [Frente 1 WhatsApp ✅ · Frente 2 Efectivo ✅]
 2. **WhatsApp**: si el saliente alguna vez falla por billing, agregar método de pago a la WABA. Token IG/WA pueden vencer → automatizar refresh.
 3. Backlog viejo (Context.md §7): cuenta BdC USD sin movimientos; selector de plantillas PDF en UI; dashboard de márgenes; disparar imports desde mails del banco.
