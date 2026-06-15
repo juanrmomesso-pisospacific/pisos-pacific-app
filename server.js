@@ -8,7 +8,7 @@ import bcrypt from 'bcryptjs';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { startMpReport, getMpReport, parseSettlementBuffer } from './import/mp-api.mjs';
 import { getBlueRate } from './import/fx.mjs';
-import { handleInbound, sendOutbound } from './integrations/meta.mjs';
+import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integrations/meta.mjs';
 import { syncGmailLeads, fetchLatestMpReport } from './integrations/gmail.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 import { generatePdf } from './pdf/render.mjs';
@@ -1207,6 +1207,43 @@ app.get('/api/sales/:id/pdf', (req, res) => {
   const s = db.sales.find(x => x.id === req.params.id);
   if (!s) return res.sendStatus(404);
   renderPdf(presupuestoData(s), res, pdfFilename(`Presupuesto N${s.quote_number || s.id}`, s.title, s.client_name));
+});
+
+// ---------- Compartir presupuesto (WhatsApp PDF + link público para Instagram) ----------
+// Link público (sin login) al PDF de la cotización; protegido por un token aleatorio.
+app.get('/p/q/:id/:token', (req, res) => {
+  const q = db.quotes.find(x => x.id === req.params.id);
+  if (!q || !q.share_token || q.share_token !== req.params.token) return res.sendStatus(404);
+  renderPdf(presupuestoData(q), res, pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name));
+});
+const appBase = (req) => process.env.APP_URL || `${req.headers['x-forwarded-proto'] || 'https'}://${req.get('host')}`;
+const toWa = (phone) => { const d = String(phone || '').replace(/\D/g, ''); if (!d) return ''; if (d.startsWith('54')) return d; if (d.length <= 10) return '549' + d; return d; };
+// Genera (si falta) el link público y, opcional, manda el PDF por WhatsApp al cliente.
+app.post('/api/quotes/:id/share', async (req, res) => {
+  const q = db.quotes.find(x => x.id === req.params.id);
+  if (!q) return res.sendStatus(404);
+  if (!q.share_token) { q.share_token = crypto.randomBytes(12).toString('hex'); save(); }
+  const link = `${appBase(req)}/p/q/${q.id}/${q.share_token}`;
+  let whatsapp = null;
+  if (req.body?.whatsapp) {
+    const to = toWa(q.client_phone);
+    if (!to) whatsapp = { sent: false, reason: 'el cliente no tiene teléfono cargado' };
+    else try {
+      const buf = await generatePdf(presupuestoData(q));
+      const filename = pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name);
+      whatsapp = await sendWhatsAppDocument(to, buf, filename, `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`);
+      if (whatsapp.sent) {   // reflejarlo en la conversación si existe
+        const conv = db.conversations.find(c => c.channel === 'whatsapp' && String(c.contact_id || '').replace(/\D/g, '').endsWith(to.slice(-8)));
+        if (conv) {
+          const ts = new Date().toISOString();
+          db.messages.push({ id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, conversation_id: conv.id, direction: 'out', body: `📄 ${filename} (enviado)`, ts, status: 'sent', wa_id: whatsapp.id });
+          conv.last_message_at = ts; conv.last_message_preview = '📄 Presupuesto enviado'; conv.unread_count = 0;
+        }
+        save();
+      }
+    } catch (e) { whatsapp = { sent: false, reason: e.message }; }
+  }
+  res.json({ link, whatsapp });
 });
 // Remito para el depósito: dirección de obra + materiales y cantidades, SIN precios.
 function remitoData(rec) {

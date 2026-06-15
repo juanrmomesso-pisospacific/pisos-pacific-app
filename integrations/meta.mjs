@@ -259,6 +259,27 @@ async function sendWhatsApp(to, text) {
   return r.ok ? { sent: true, id: j.messages?.[0]?.id } : { sent: false, reason: JSON.stringify(j).slice(0, 200) };
 }
 
+// Envía un PDF (u otro documento) por WhatsApp: sube el media y manda el mensaje 'document'.
+export async function sendWhatsAppDocument(to, buffer, filename, caption) {
+  const token = process.env.WHATSAPP_TOKEN, phoneId = process.env.WHATSAPP_PHONE_ID;
+  if (!token || !phoneId) return { sent: false, reason: 'faltan WHATSAPP_TOKEN / WHATSAPP_PHONE_ID' };
+  try {
+    const fd = new FormData();
+    fd.append('messaging_product', 'whatsapp');
+    fd.append('type', 'application/pdf');
+    fd.append('file', new Blob([buffer], { type: 'application/pdf' }), filename || 'documento.pdf');
+    const up = await fetch(`${GRAPH}/${phoneId}/media`, { method: 'POST', headers: { Authorization: `Bearer ${token}` }, body: fd });
+    const uj = await up.json().catch(() => ({}));
+    if (!uj.id) return { sent: false, reason: 'no se pudo subir el PDF: ' + JSON.stringify(uj).slice(0, 160) };
+    const r = await fetch(`${GRAPH}/${phoneId}/messages`, {
+      method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messaging_product: 'whatsapp', to, type: 'document', document: { id: uj.id, filename, caption } }),
+    });
+    const j = await r.json().catch(() => ({}));
+    return r.ok ? { sent: true, id: j.messages?.[0]?.id } : { sent: false, reason: JSON.stringify(j).slice(0, 200) };
+  } catch (e) { return { sent: false, reason: e.message }; }
+}
+
 // Instagram con login de Instagram (tokens IGAA…) usa graph.instagram.com, no graph.facebook.com.
 const IG_GRAPH = 'https://graph.instagram.com/v21.0';
 async function sendInstagram(to, text) {

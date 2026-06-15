@@ -46,6 +46,15 @@ export function QuoteRowActions({ quote }: { quote: Quote }) {
     if (r) refresh()
   }
   const handlePdf = () => openPacificPdf("quotes", quote.id)
+  const share = useAction(api.quoteShare)
+  const shareWa = async () => {
+    const r = await share.run(quote.id, true)
+    if (r) alert(r.whatsapp?.sent ? "✓ Presupuesto enviado por WhatsApp" : "No se pudo enviar por WhatsApp: " + (r.whatsapp?.reason || "revisá el teléfono del cliente") + (r.link ? "\n\nLink para compartir a mano:\n" + r.link : ""))
+  }
+  const copyLink = async () => {
+    const r = await share.run(quote.id, false)
+    if (r?.link) { try { await navigator.clipboard.writeText(r.link) } catch { /* sin permiso de portapapeles */ }; alert("Link del presupuesto (pegalo en el DM de Instagram):\n\n" + r.link) }
+  }
 
   return (
     <DropdownMenu>
@@ -60,6 +69,8 @@ export function QuoteRowActions({ quote }: { quote: Quote }) {
         {convertable && <DropdownMenuItem onClick={handleConvert}><FileSignature className="h-3.5 w-3.5 mr-2" />Convertir a venta</DropdownMenuItem>}
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handlePdf}><FileText className="h-3.5 w-3.5 mr-2" />Generar PDF</DropdownMenuItem>
+        <DropdownMenuItem onClick={shareWa} disabled={share.busy}><Send className="h-3.5 w-3.5 mr-2" />Compartir por WhatsApp</DropdownMenuItem>
+        <DropdownMenuItem onClick={copyLink} disabled={share.busy}><LinkIcon className="h-3.5 w-3.5 mr-2" />Copiar link (Instagram)</DropdownMenuItem>
         <DropdownMenuItem onClick={() => navigate(chatPath({ name: quote.client_name, phone: quote.client_phone, email: quote.client_email }))}><MessageCircle className="h-3.5 w-3.5 mr-2" />Abrir chat</DropdownMenuItem>
         <DropdownMenuItem onClick={handleDuplicate}><Files className="h-3.5 w-3.5 mr-2" />Duplicar</DropdownMenuItem>
         {renewable && <DropdownMenuItem onClick={handleRenew}><RefreshCw className="h-3.5 w-3.5 mr-2" />Renovar vigencia</DropdownMenuItem>}
