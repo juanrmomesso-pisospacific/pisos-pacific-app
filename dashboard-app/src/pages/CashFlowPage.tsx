@@ -338,7 +338,7 @@ function Proveedores({ movements, range }: { movements: CashflowMovement[]; rang
 }
 
 // ============================ Libro (filtros + orden) ============================
-type SortKey = "date" | "flow" | "caja_name" | "rubro" | "counterparty" | "amount_usd"
+type SortKey = "date" | "flow" | "caja_name" | "rubro" | "counterparty" | "amount_ars" | "amount_usd"
 
 function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; cajas: Caja[]; range: Range }) {
   const [flow, setFlow] = useState("Todos")
@@ -370,7 +370,8 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
     })
     const dir = sortDir === "asc" ? 1 : -1
     return out.sort((a, b) => {
-      if (sortKey === "amount_usd") return ((a.amount_usd ?? 0) - (b.amount_usd ?? 0)) * dir
+      if (sortKey === "amount_ars") return ((a.amount_ars ?? 0) - (b.amount_ars ?? 0)) * dir
+    if (sortKey === "amount_usd") return ((a.amount_usd ?? 0) - (b.amount_usd ?? 0)) * dir
       const av = sortKey === "rubro" ? rubroOf(a) : (a[sortKey] ?? "")
       const bv = sortKey === "rubro" ? rubroOf(b) : (b[sortKey] ?? "")
       return String(av).localeCompare(String(bv)) * dir
@@ -382,7 +383,7 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
 
   const toggleSort = (k: SortKey) => {
     if (sortKey === k) setSortDir((d) => (d === "asc" ? "desc" : "asc"))
-    else { setSortKey(k); setSortDir(k === "amount_usd" || k === "date" ? "desc" : "asc") }
+    else { setSortKey(k); setSortDir(k === "amount_usd" || k === "amount_ars" || k === "date" ? "desc" : "asc") }
   }
   const SortHead = ({ k, children, right }: { k: SortKey; children: React.ReactNode; right?: boolean }) => (
     <TableHead className={right ? "text-right" : undefined}>
@@ -432,6 +433,7 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
               <SortHead k="caja_name">Caja</SortHead>
               <SortHead k="rubro">Tipo de gasto</SortHead>
               <SortHead k="counterparty">Motivo / Contraparte</SortHead>
+              <SortHead k="amount_ars" right>ARS</SortHead>
               <SortHead k="amount_usd" right>USD</SortHead>
             </TableRow>
           </TableHeader>
@@ -452,6 +454,9 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
                 <TableCell className="text-xs max-w-[260px] truncate">
                   <div className="font-medium truncate">{m.counterparty || "—"}</div>
                   {m.description ? <div className="text-[11px] text-muted-foreground truncate">{m.description}</div> : null}
+                </TableCell>
+                <TableCell className={cn("text-right tabular whitespace-nowrap", m.flow === "Egreso" && "text-muted-foreground")}>
+                  {m.amount_ars ? (m.flow === "Egreso" ? "-" : "") + money(m.amount_ars).replace("-", "") : "—"}
                 </TableCell>
                 <TableCell className={cn("text-right tabular whitespace-nowrap", m.flow === "Egreso" && "text-muted-foreground")}>
                   {m.flow === "Egreso" ? "-" : ""}{money(m.amount_usd || 0).replace("-", "")}

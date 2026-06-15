@@ -13,13 +13,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { reportStats } from './report-stats.mjs';
 import { dedupKey, windowKeys } from './dedup.mjs';
+import { lastBlue } from './fx.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(path.join(__dirname, '..', 'dashboard-app', 'package.json'));
 const XLSX = require('xlsx');
 
 const API = 'https://api.mercadopago.com';
-const TC = 1400;
 const MP = 'CAJ-002', MP_NAME = 'Mercado Pago';
 const r2 = (n) => (n == null ? null : Math.round(n * 100) / 100);
 
@@ -137,6 +137,7 @@ export function parseSettlementBuffer(buffer, existing = []) {
 
 // Clasifica + deduplica filas crudas → {movements, report}. existing = db.cashflow.
 function buildMovements({ raw, existing = [] }) {
+  const TC = lastBlue();   // TC Blue en vivo (refrescado por el server antes de llamar)
   // índice de lo ya cargado en MP: fecha±3 + |monto ARS|
   const sameCaja = existing.filter((m) => m.caja_id === MP);
   const seen = new Set();
@@ -156,14 +157,16 @@ function buildMovements({ raw, existing = [] }) {
     if (flow === 'Egreso' && isPeajeAmount(abs)) { peajeByDay[m.date] = (peajeByDay[m.date] || 0) + abs; continue; }
     movements.push({
       date: m.date + 'T00:00:00.000Z', flow, caja_id: MP, caja_name: MP_NAME,
-      category: flow === 'Ingreso' ? 'Venta - No Pisos' : 'Otros',
+      // S4: egresos sin nombre van a un bucket claro (no 'Otros' con expense_type null),
+      // así quedan contados en el P&L y son fáciles de filtrar hasta clasificarlos.
+      category: flow === 'Ingreso' ? 'Venta - No Pisos' : 'Sin clasificar',
       subcategory: null,
       counterparty: flow === 'Ingreso' ? 'Cobro MP (sin nombre)' : 'Pago MP (sin nombre)',
       counterparty_type: flow === 'Ingreso' ? 'client' : 'supplier',
       client_id: null, supplier_id: null,
       description: `MP API · ${m.tipo} · ${m.medio} · op ${m.source_id}`, sale_ref: null,
       currency: 'ARS', amount_ars: r2(abs), amount_usd: r2(abs / TC), exchange_rate: TC,
-      fixed_variable: 'Variable', expense_type: null,
+      fixed_variable: 'Variable', expense_type: flow === 'Ingreso' ? null : 'Otros Gastos y Ajustes',
       transfer: false, needs_review: true,
       review_reason: 'sync MP API — sin nombre, asociar/clasificar',
       source: 'mp-api', mp_op_id: m.source_id,

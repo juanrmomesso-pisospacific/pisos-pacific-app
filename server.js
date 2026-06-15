@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { startMpReport, getMpReport, parseSettlementBuffer } from './import/mp-api.mjs';
+import { getBlueRate } from './import/fx.mjs';
 import { handleInbound, sendOutbound } from './integrations/meta.mjs';
 import { syncGmailLeads, fetchLatestMpReport } from './integrations/gmail.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
@@ -681,12 +682,13 @@ app.patch('/api/leads/:id', (req, res) => {
 // ---------- Importar extractos (MP / BBVA / Banco de Comercio) ----------
 // parse: decodifica el archivo, clasifica y deduplica contra el cashflow vivo,
 // y devuelve un preview (NO inserta). commit: inserta los movimientos elegidos.
-app.post('/api/import/parse', (req, res) => {
+app.post('/api/import/parse', async (req, res) => {
   try {
     const { source, data_base64 } = req.body || {};
     if (!source || !IMPORT_CAJA[source]) return res.status(400).json({ error: 'fuente inválida (mp | bbva | bdc)' });
     if (!data_base64) return res.status(400).json({ error: 'falta el archivo' });
     const buffer = Buffer.from(String(data_base64), 'base64');
+    await getBlueRate();   // refresca el TC Blue para la conversión ARS→USD
     const { movements, report } = parseStatement({ source, buffer, existing: db.cashflow });
     res.json({ movements, report });
   } catch (e) {
@@ -709,6 +711,7 @@ app.post('/api/import/mp-email', async (_req, res) => {
     if (!r.found) return res.json({ found: false, candidates: r.candidates, error: 'No encontré un reporte de MP con adjunto. Revisá que el reporte se mande adjunto (no link) a infoacudesign@gmail.com.' });
     // El email programado de MP adjunta el formato settlement (sin nombres); el
     // account_statement manual (con nombres, RELEASE_DATE) también se acepta.
+    await getBlueRate();   // refresca el TC Blue
     const isAccountStatement = /account_statement/i.test(r.filename || '');
     const { movements, report } = isAccountStatement
       ? parseStatement({ source: 'mp', buffer: r.buffer, existing: db.cashflow })
@@ -719,6 +722,7 @@ app.post('/api/import/mp-email', async (_req, res) => {
 app.post('/api/import/mp-sync/result', async (req, res) => {
   try {
     if (!req.body?.jobId) return res.status(400).json({ error: 'falta jobId' });
+    await getBlueRate();   // refresca el TC Blue para la conversión ARS→USD
     res.json(await getMpReport({ jobId: req.body.jobId, existing: db.cashflow }));
   } catch (e) { res.status(400).json({ error: e.message || 'no se pudo obtener el reporte MP' }); }
 });
@@ -743,6 +747,7 @@ async function mpAutoSync() {
     } else {
       console.log('[mp-auto] retomando reporte pendiente', jobId);
     }
+    await getBlueRate();   // refresca el TC Blue para la conversión ARS→USD
     let result = null;
     for (let i = 0; i < 60; i++) {                       // hasta ~10 min por corrida
       await new Promise((r) => setTimeout(r, 10000));

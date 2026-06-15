@@ -15,6 +15,7 @@
 // dashboard quede sincronizado con lo que se contesta desde el teléfono.
 
 import { parseCashCommand, inferType, normalizePhone } from '../import/cash-parse.mjs';
+import { getBlueRate } from '../import/fx.mjs';
 
 const GRAPH = 'https://graph.facebook.com/v21.0';
 
@@ -153,19 +154,6 @@ function isAllowed(db, from) {
   return set.has(norm);
 }
 
-// Cotización Blue cacheada 1h (para convertir ARS→USD del gasto). Fallback 1400.
-let _blue = { v: 1400, at: 0 };
-async function blueRate() {
-  if (Date.now() - _blue.at < 3600_000) return _blue.v;
-  try {
-    const r = await fetch('https://dolarapi.com/v1/dolares/blue');
-    const j = await r.json();
-    const v = Math.round((Number(j.compra) + Number(j.venta)) / 2);
-    if (v > 0) _blue = { v, at: Date.now() };
-  } catch { /* mantener último/fallback */ }
-  return _blue.v;
-}
-
 const fmtNum = (n) => Number(n).toLocaleString('es-AR');
 
 // Conversación que repregunta hasta tener monto + descripción, registra en CAJ-005 y permite cancelar.
@@ -209,7 +197,7 @@ async function handleCashReport(db, save, from, rawText) {
   }
 
   const currency = s.currency || 'ARS';
-  const rate = await blueRate();
+  const rate = await getBlueRate();
   const usd = currency === 'USD' ? s.amount : +(s.amount / rate).toFixed(2);
   const expense_type = inferType(s.description);
   const mov = {

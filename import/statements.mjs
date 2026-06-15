@@ -11,12 +11,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { reportStats } from './report-stats.mjs';
 import { dedupKey, windowKeys } from './dedup.mjs';
+import { lastBlue } from './fx.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(path.join(__dirname, '..', 'dashboard-app', 'package.json'));
 const XLSX = require('xlsx');
 
-const TC = 1400;
 const r2 = (n) => (n == null ? null : Math.round(n * 100) / 100);
 const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
 
@@ -127,6 +127,7 @@ function findBankColumns(rows) {
 // (en el export negativo = crédito/pago, ej. "SU PAGO EN PESOS"). Todo queda needs_review
 // hasta validar el formato real de cada banco.
 function parseBank(rows, source) {
+  const TC = lastBlue();
   const cols = findBankColumns(rows);
   if (!cols) throw new Error('No se reconoció el encabezado del extracto (esperaba columnas de Fecha, Descripción y Monto/Débito-Crédito).');
   const out = [];
@@ -193,6 +194,7 @@ function classifyMP(m) {
 }
 
 function parseMP(rows, existing) {
+  const TC = lastBlue();
   const num = (s) => { if (s == null) return null; const v = parseFloat(String(s).replace(/\./g, '').replace(',', '.')); return isNaN(v) ? null : v; };
   const hi = rows.findIndex((r) => r && r[0] === 'RELEASE_DATE');
   if (hi < 0) throw new Error('No se reconoció el extracto de Mercado Pago (falta el encabezado RELEASE_DATE).');
@@ -219,6 +221,7 @@ function parseMP(rows, existing) {
       amount_ars: r2(Math.abs(m.amt)), amount_usd: r2(Math.abs(m.amt) / TC),
       fixed_variable: c.fv || 'Variable', expense_type: c.expense_type || null,
       transfer: c.kind === 'transfer', needs_review: !!c.review, review_reason: c.review || null,
+      mp_op_id: m.ref || null,   // S1: id de operación para matchear el enriquecimiento de forma exacta
     }));
   }
   for (const [date, sum] of Object.entries(peajeByDay).sort()) {
@@ -242,9 +245,10 @@ function baseMov(source, o) {
     category: o.category, subcategory: o.subcategory ?? null,
     counterparty: o.counterparty, counterparty_type: o.flow === 'Ingreso' ? 'client' : 'supplier',
     client_id: null, supplier_id: null, description: o.description, sale_ref: null,
-    currency: o.currency, amount_ars: o.amount_ars, amount_usd: o.amount_usd, exchange_rate: TC,
+    currency: o.currency, amount_ars: o.amount_ars, amount_usd: o.amount_usd, exchange_rate: lastBlue(),
     fixed_variable: o.fixed_variable ?? 'Variable', expense_type: o.expense_type ?? null,
     transfer: !!o.transfer, needs_review: !!o.needs_review, review_reason: o.review_reason ?? null,
+    ...(o.mp_op_id ? { mp_op_id: o.mp_op_id } : {}),
   };
   return applyCpMap(rec, o.counterparty, o.cuit);
 }
@@ -262,10 +266,12 @@ export function parseStatement({ source, buffer, existing = [] }) {
   // Contrato _enrich: el commit del server actualiza counterparty(+type), category,
   // subcategory, expense_type, description, fixed_variable, transfer y needs_review.
   const seen = new Set();
-  const unnamed = new Map();
+  const unnamed = new Map();        // fallback: windowKey (fecha±3 + monto) → id
+  const unnamedById = new Map();    // S1: op-id exacto → id (preferido, sin colisiones)
   for (const m of sameCaja) {
     const dd = (m.date || '').slice(0, 10); if (!dd || m.amount_ars == null) continue;
     const enrichable = source === 'mp' && m.source === 'mp-api' && (m.needs_review || /sin nombre/i.test(m.counterparty || ''));
+    if (enrichable && m.mp_op_id) unnamedById.set(String(m.mp_op_id), m.id);
     for (const key of windowKeys(dd, m.amount_ars)) {
       seen.add(key);
       if (enrichable && !unnamed.has(key)) unnamed.set(key, m.id);
@@ -274,7 +280,9 @@ export function parseStatement({ source, buffer, existing = [] }) {
   const claimed = new Set();
   movements = movements.map((m, i) => {
     const key = dedupKey(m.date.slice(0, 10), m.amount_ars);
-    const enrichId = unnamed.get(key);
+    // S1: primero match EXACTO por id de operación; si no, fallback fecha±3 + monto.
+    let enrichId = m.mp_op_id ? unnamedById.get(String(m.mp_op_id)) : null;
+    if (!enrichId || claimed.has(enrichId)) enrichId = unnamed.get(key);
     if (enrichId && !claimed.has(enrichId)) { claimed.add(enrichId); return { ...m, _idx: i, _dupe: false, _enrich: enrichId }; }
     return { ...m, _idx: i, _dupe: seen.has(key) };
   });
