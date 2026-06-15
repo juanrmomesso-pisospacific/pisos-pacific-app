@@ -21,6 +21,11 @@ async function patch<T = any>(url: string, body: unknown): Promise<T> {
   if (!r.ok) throw new Error(await errorMessage(r))
   return r.json()
 }
+async function del(url: string): Promise<boolean> {
+  const r = await fetch(url, { method: "DELETE", credentials: "include" })
+  if (!r.ok) throw new Error(await errorMessage(r))
+  return true
+}
 
 export function useAction<TArgs extends any[], TResult>(fn: (...args: TArgs) => Promise<TResult>) {
   const [busy, setBusy] = useState(false)
@@ -55,6 +60,7 @@ export const api = {
   // Generic CRUD
   create: (entity: string, body: any) => post(`/api/${entity}`, body),
   update: (entity: string, id: string, body: any) => patch(`/api/${entity}/${id}`, body),
+  remove: (entity: string, id: string) => del(`/api/${entity}/${id}`),
 }
 
 /** Reload the page after a successful mutation so all useApi() hooks refetch. Crude but reliable. */

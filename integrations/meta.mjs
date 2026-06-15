@@ -179,14 +179,19 @@ async function handleCashReport(db, save, from, rawText) {
 
   if (s.last_mov_id) s = {};   // ya registró antes → nuevo mensaje arranca sesión limpia
 
-  if (s.amount && !s.description) {
-    s.description = text.replace(/^\s*gasto\b[:\s]*/i, '').trim();   // esperaba descripción
-  } else {
+  // Consumir el mensaje en el primer campo que falta: monto → descripción → proveedor.
+  if (!s.amount) {
     const p = parseCashCommand(text);
-    if (!s.amount && p.amount) { s.amount = p.amount; s.currency = p.currency || 'ARS'; }
-    if (!s.description && p.description) s.description = p.description;
+    if (p.amount) { s.amount = p.amount; s.currency = p.currency || 'ARS'; }
+    if (!s.description && p.description) s.description = p.description;   // primer mensaje combinado
+  } else if (!s.description) {
+    s.description = text.replace(/^\s*gasto\b[:\s]*/i, '').trim();
+  } else if (s.counterparty === undefined) {
+    const ans = text.trim();
+    s.counterparty = /^(ninguno|ningun|nadie|no|-+|n\/?a|s\/?d)$/i.test(ans) ? null : (ans || null);
   }
 
+  // Preguntar el primer campo que siga faltando.
   if (!s.amount) {
     sessions[norm] = s; save();
     return reply('¿Cuánto gastaste? Ej: *29000 ferretería* (agregá "usd" si fue en dólares).');
@@ -194,6 +199,10 @@ async function handleCashReport(db, save, from, rawText) {
   if (!s.description) {
     sessions[norm] = s; save();
     return reply(`Anoté $${fmtNum(s.amount)}${s.currency === 'USD' ? ' USD' : ''}. ¿En qué fue el gasto? (descripción)`);
+  }
+  if (s.counterparty === undefined) {
+    sessions[norm] = s; save();
+    return reply('¿A qué proveedor/quién se lo pagó? (nombre, o respondé *ninguno*)');
   }
 
   const currency = s.currency || 'ARS';
@@ -205,7 +214,7 @@ async function handleCashReport(db, save, from, rawText) {
     date: new Date().toISOString(),
     flow: 'Egreso', caja_id: 'CAJ-005', caja_name: 'Caja General',
     category: null, subcategory: null,
-    counterparty: null, counterparty_type: 'supplier', client_id: null, supplier_id: null,
+    counterparty: s.counterparty || null, counterparty_type: 'supplier', client_id: null, supplier_id: null,
     description: s.description, sale_ref: null,
     currency, amount_ars: currency === 'USD' ? null : s.amount, amount_usd: usd,
     exchange_rate: currency === 'USD' ? null : rate,
@@ -216,7 +225,7 @@ async function handleCashReport(db, save, from, rawText) {
   db.cashflow.push(mov);
   sessions[norm] = { last_mov_id: mov.id, ts: Date.now() };
   save();
-  return reply(`✅ Registrado en Caja General: $${fmtNum(s.amount)}${currency === 'USD' ? ' USD' : ''} · ${s.description} · ${expense_type}.\n(Si está mal, respondé *cancelar*.)`);
+  return reply(`✅ Registrado en Caja General: $${fmtNum(s.amount)}${currency === 'USD' ? ' USD' : ''} · ${s.description}${s.counterparty ? ' · ' + s.counterparty : ''} · ${expense_type}.\n(Si está mal, respondé *cancelar*.)`);
 }
 
 function parseInstagram(payload) {

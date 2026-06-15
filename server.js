@@ -218,6 +218,20 @@ for (const [key, file] of [['cajas','cajas.seed.json'],['suppliers','suppliers.s
   }
 }
 
+// S2: reglas de clasificación editables + que aprenden. Se siembran 1 vez desde
+// counterparty-map.json (legacy) y a partir de ahí viven en la DB (editables por UI + auto-aprendidas).
+if (!Array.isArray(db.cp_rules)) {
+  db.cp_rules = [];
+  try {
+    const raw = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'counterparty-map.json'), 'utf8'));
+    let n = 0;
+    for (const [cuit, e] of Object.entries(raw.byCuit || {}))
+      db.cp_rules.push({ id: `cpr-seed-${++n}`, match: e.counterparty ? [e.counterparty] : [], cuit, counterparty: e.counterparty || null, category: e.category || null, expense_type: e.expense_type || null, personal: false, source: 'seed', note: e.note || null });
+    for (const e of raw.byName || [])
+      db.cp_rules.push({ id: `cpr-seed-${++n}`, match: e.match || [], cuit: null, counterparty: e.counterparty || null, category: e.category || null, expense_type: e.expense_type || null, personal: !!e.personal, source: 'seed', note: e.note || null });
+  } catch { /* sin mapa legacy: arranca vacío */ }
+}
+
 console.log(`Loaded: ${db.products.length} products, ${db.quotes.length} quotes, ${db.sales.length} sales, ${db.clients.length} clients, ${db.expenses.length} expenses, ${db.containers.length} containers, ${db.users.length} users`);
 console.log(`Business data: ${db.cajas.length} cajas, ${db.categories.length} categorías, ${db.suppliers.length} proveedores, ${db.cashflow.length} movimientos cashflow`);
 
@@ -657,7 +671,8 @@ app.patch('/api/leads/:id', (req, res) => {
   res.json({ ...db.leads[i], auto_sale_id: createdSale?.id });
 });
 
-['products','sales','quotes','clients','expenses','leads','conversations','tasks','cajas','suppliers','categories','cashflow'].forEach(name => {
+app.get('/api/cp_rules', (_, res) => res.json(db.cp_rules || []));
+['products','sales','quotes','clients','expenses','leads','conversations','tasks','cajas','suppliers','categories','cashflow','cp_rules'].forEach(name => {
   app.post(`/api/${name}`, (req, res) => {
     const id = req.body.id ?? `local-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
     const row = { id, ...req.body };
@@ -689,7 +704,7 @@ app.post('/api/import/parse', async (req, res) => {
     if (!data_base64) return res.status(400).json({ error: 'falta el archivo' });
     const buffer = Buffer.from(String(data_base64), 'base64');
     await getBlueRate();   // refresca el TC Blue para la conversión ARS→USD
-    const { movements, report } = parseStatement({ source, buffer, existing: db.cashflow });
+    const { movements, report } = parseStatement({ source, buffer, existing: db.cashflow, rules: db.cp_rules });
     res.json({ movements, report });
   } catch (e) {
     res.status(400).json({ error: e.message || 'no se pudo leer el archivo' });
@@ -714,7 +729,7 @@ app.post('/api/import/mp-email', async (_req, res) => {
     await getBlueRate();   // refresca el TC Blue
     const isAccountStatement = /account_statement/i.test(r.filename || '');
     const { movements, report } = isAccountStatement
-      ? parseStatement({ source: 'mp', buffer: r.buffer, existing: db.cashflow })
+      ? parseStatement({ source: 'mp', buffer: r.buffer, existing: db.cashflow, rules: db.cp_rules })
       : parseSettlementBuffer(r.buffer, db.cashflow);
     res.json({ found: true, filename: r.filename, subject: r.subject, movements, report });
   } catch (e) { res.status(400).json({ error: e.message || 'no se pudo importar el reporte de MP por email' }); }

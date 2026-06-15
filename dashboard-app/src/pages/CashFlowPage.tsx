@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react"
-import { Search, ChevronUp, ChevronDown, ChevronsUpDown, AlertTriangle } from "lucide-react"
+import { Search, ChevronUp, ChevronDown, ChevronsUpDown, AlertTriangle, Tag } from "lucide-react"
+import { ClassifyMovementForm } from "@/components/forms/ClassifyMovementForm"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -348,6 +349,7 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
   const [onlyReview, setOnlyReview] = useState(false)
   const [sortKey, setSortKey] = useState<SortKey>("date")
   const [sortDir, setSortDir] = useState<"asc" | "desc">("desc")
+  const [classify, setClassify] = useState<CashflowMovement | null>(null)
 
   const rubros = useMemo(
     () => [...new Set(movements.map(rubroOf).filter((r) => r !== "—"))].sort(),
@@ -435,6 +437,7 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
               <SortHead k="counterparty">Motivo / Contraparte</SortHead>
               <SortHead k="amount_ars" right>ARS</SortHead>
               <SortHead k="amount_usd" right>USD</SortHead>
+              <TableHead></TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -461,11 +464,17 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
                 <TableCell className={cn("text-right tabular whitespace-nowrap", m.flow === "Egreso" && "text-muted-foreground")}>
                   {m.flow === "Egreso" ? "-" : ""}{money(m.amount_usd || 0).replace("-", "")}
                 </TableCell>
+                <TableCell className="text-right">
+                  <Button variant="ghost" size="icon" className="h-7 w-7" title="Clasificar / asignar proveedor" onClick={() => setClassify(m)}>
+                    <Tag className={cn("h-3.5 w-3.5", m.needs_review ? "text-amber-500" : "text-muted-foreground")} />
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </Card>
+      <ClassifyMovementForm mov={classify} open={!!classify} onOpenChange={(o) => { if (!o) setClassify(null) }} />
     </div>
   )
 }

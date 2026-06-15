@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { useApi } from "@/lib/api"
+import { RulesManager } from "@/components/RulesManager"
 import { useAction, refresh } from "@/lib/mutations"
 
 type MpSettings = { enabled: boolean; access_token: string; public_key: string }
@@ -34,6 +35,7 @@ export default function ConfiguracionPage() {
           <MercadoPagoSection mp={settings?.integrations?.mercadopago} />
         </CardContent>
       </Card>
+      <RulesManager />
     </div>
   )
 }

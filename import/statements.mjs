@@ -20,14 +20,30 @@ const XLSX = require('xlsx');
 const r2 = (n) => (n == null ? null : Math.round(n * 100) / 100);
 const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
 
-// Mapa canónico de contrapartes (data/counterparty-map.json): auto-mapea nombre/CUIT
-// → proveedor + clasificación. Si matchea, el movimiento queda "conocido" (no a revisar).
-let CPMAP = { PER: 'Gastos de Personal (HR y Mano de Obra)', byCuit: {}, byNameIdx: new Map() };
+// Reglas de clasificación: auto-mapean nombre/CUIT → proveedor + clasificación.
+// Fuente: db.cp_rules (editables + aprendidas), pasadas a parseStatement. Fallback: el
+// archivo legacy data/counterparty-map.json. Si una regla matchea, el movimiento queda "conocido".
+const PER_DEFAULT = 'Gastos de Personal (HR y Mano de Obra)';
+let CPMAP = { PER: PER_DEFAULT, byCuit: {}, byNameIdx: new Map() };
+
+// Construye los índices (byCuit, byName) desde un array plano de reglas (db.cp_rules).
+function buildCpmap(rules) {
+  const byCuit = {}, idx = new Map();
+  for (const r of rules || []) {
+    if (r.cuit) byCuit[String(r.cuit).replace(/\D/g, '')] = r;
+    for (const m of (r.match || [])) if (m) idx.set(norm(m), r);
+  }
+  return { PER: PER_DEFAULT, byCuit, byNameIdx: idx };
+}
+// parseStatement llama a esto con db.cp_rules antes de parsear.
+export function setRules(rules) { if (Array.isArray(rules) && rules.length) CPMAP = buildCpmap(rules); }
+
+// Fallback: cargar el archivo legacy si nadie setea reglas de la DB.
 try {
   const raw = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'counterparty-map.json'), 'utf8'));
   const idx = new Map();
   for (const e of raw.byName || []) for (const m of e.match) idx.set(norm(m), e);
-  CPMAP = { PER: raw.PER, byCuit: raw.byCuit || {}, byNameIdx: idx };
+  CPMAP = { PER: raw.PER || PER_DEFAULT, byCuit: raw.byCuit || {}, byNameIdx: idx };
 } catch { /* sin mapa: el importador usa solo sus reglas internas */ }
 
 // Aplica el mapa a un record ya armado (mutándolo). cuit opcional (bancos).
@@ -165,7 +181,8 @@ const NAME_MAP = {
   'cristian adrian tevez': { cp: 'Oso', et: PER, cat: 'Mano de Obra', desc: 'Jornal Oso (depósito/personal)' },
   'gonzalez marina sofia': { cp: 'Via Cargo', et: SUM, cat: 'Insumos', desc: 'Flete / envíos Via Cargo' },
 };
-const stripName = (t) => t.replace(/^(Transferencia enviada|Transferencia recibida|Pago|Compra|Cobro)\s*/i, '').trim();
+// Saca el prefijo de tipo y el conector "a"/"de" → deja el nombre limpio para matchear reglas.
+const stripName = (t) => t.replace(/^(Transferencia (enviada|recibida)|Pago|Compra|Cobro)\s*(a|de)?\s+/i, '').trim();
 const mpPersonal = (name, desc) => ({ kind: 'egreso', counterparty: 'Juan & Pipi', category: 'Sueldos', subcategory: 'Retiro/Personal', expense_type: PER, desc: 'Personal — ' + (name || desc) });
 function classifyMP(m) {
   const t = m.type, name = stripName(t);
@@ -255,8 +272,9 @@ function baseMov(source, o) {
 
 // ===================== API del módulo =====================
 // Devuelve { movements, report }. movements traen _dupe (ya en el cashflow) y _idx.
-export function parseStatement({ source, buffer, existing = [] }) {
+export function parseStatement({ source, buffer, existing = [], rules = null }) {
   if (!CAJA[source]) throw new Error(`Fuente desconocida: ${source}`);
+  setRules(rules);   // usa las reglas de la DB (editables/aprendidas); si no hay, queda el fallback del archivo
   const rows = readSheet(buffer);
   const sameCaja = existing.filter((m) => m.caja_id === CAJA[source].id);
   let movements = source === 'mp' ? parseMP(rows, sameCaja) : parseBank(rows, source);
