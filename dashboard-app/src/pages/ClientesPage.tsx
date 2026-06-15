@@ -1,15 +1,18 @@
 import { useMemo, useState } from "react"
-import { Plus, Search, ArrowUp, ArrowDown, ChevronsUpDown } from "lucide-react"
+import { Plus, Search, ArrowUp, ArrowDown, ChevronsUpDown, MessageCircle } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { useApi } from "@/lib/api"
 import { fmtMoney, cn } from "@/lib/utils"
+import { findConvId } from "@/lib/chat"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { ClientForm } from "@/components/forms/ClientForm"
-import type { Sale } from "@/lib/types"
+import type { Sale, Quote } from "@/lib/types"
 
 type Client = {
   id: string
@@ -94,6 +97,7 @@ export default function ClientesPage() {
   }
 
   const [openNew, setOpenNew] = useState(false)
+  const [selected, setSelected] = useState<Row | null>(null)
 
   return (
     <>
@@ -127,7 +131,7 @@ export default function ClientesPage() {
               {rows.length === 0 ? (
                 <TableRow><TableCell colSpan={6} className="text-center text-sm text-muted-foreground py-8">Sin clientes para mostrar</TableCell></TableRow>
               ) : rows.map((c) => (
-                <TableRow key={c.id}>
+                <TableRow key={c.id} className="cursor-pointer hover:bg-muted/30" onClick={() => setSelected(c)}>
                   <TableCell>
                     <div className="font-medium">{c.name}</div>
                     {c.addresses?.[0] ? <div className="text-xs text-muted-foreground truncate max-w-[280px]">{c.addresses[0]}</div> : null}
@@ -145,6 +149,70 @@ export default function ClientesPage() {
         </Card>
       </div>
       <ClientForm open={openNew} onOpenChange={setOpenNew} />
+      <ClientDetailSheet client={selected} onClose={() => setSelected(null)} />
     </>
+  )
+}
+
+// Detalle del cliente: sus cotizaciones + ventas + acceso al chat.
+function ClientDetailSheet({ client, onClose }: { client: (Row & { phones?: string[]; emails?: string[] }) | null; onClose: () => void }) {
+  const quotes = useApi<Quote[]>("/api/quotes").data ?? []
+  const sales = useApi<Sale[]>("/api/sales").data ?? []
+  const conversations = useApi<any[]>("/api/conversations").data ?? []
+  const navigate = useNavigate()
+  const name = client?.name || ""
+  const myQuotes = useMemo(() => quotes.filter(q => (q.client_name || "").trim() === name.trim()), [quotes, name])
+  const mySales = useMemo(() => sales.filter(s => (s.client_name || "").trim() === name.trim()), [sales, name])
+  const openChat = () => {
+    const id = findConvId(conversations, { phone: client?.phones?.[0], email: client?.emails?.[0], name })
+    navigate(id ? `/mensajes?conv=${id}` : "/mensajes")
+  }
+  return (
+    <Sheet open={!!client} onOpenChange={(o) => !o && onClose()}>
+      <SheetContent className="!max-w-lg w-full overflow-y-auto">
+        <SheetHeader>
+          <div className="flex items-center justify-between gap-3 pr-8">
+            <div>
+              <SheetTitle>{name}</SheetTitle>
+              <SheetDescription>{client?.contacto || "—"}</SheetDescription>
+            </div>
+            <Button variant="outline" size="sm" onClick={openChat}><MessageCircle className="h-4 w-4" />Chat</Button>
+          </div>
+        </SheetHeader>
+
+        <div className="mt-6 space-y-4">
+          <div>
+            <div className="text-sm font-medium mb-2">Cotizaciones ({myQuotes.length})</div>
+            {myQuotes.length === 0 ? <div className="text-xs text-muted-foreground">Sin cotizaciones.</div> : (
+              <div className="divide-y divide-border rounded-md border border-border">
+                {myQuotes.map(q => (
+                  <div key={q.id} className="flex items-center gap-2 px-3 py-2 text-sm">
+                    <span className="text-muted-foreground tabular">#{q.quote_number}</span>
+                    <span className="flex-1 truncate">{q.title || q.description || "—"}</span>
+                    <Badge variant="outline" className="text-[10px]">{q.status}</Badge>
+                    <span className="tabular text-muted-foreground">{fmtMoney(q.price || 0)}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <div>
+            <div className="text-sm font-medium mb-2">Ventas ({mySales.length})</div>
+            {mySales.length === 0 ? <div className="text-xs text-muted-foreground">Sin ventas.</div> : (
+              <div className="divide-y divide-border rounded-md border border-border">
+                {mySales.map(s => (
+                  <div key={s.id} className="flex items-center gap-2 px-3 py-2 text-sm">
+                    <span className="text-muted-foreground tabular">#{s.quote_number}</span>
+                    <span className="flex-1 truncate">{s.title || s.description || "—"}</span>
+                    <Badge variant="outline" className="text-[10px]">{s.status}</Badge>
+                    <span className="tabular text-muted-foreground">{fmtMoney(s.contract_total || 0)}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </SheetContent>
+    </Sheet>
   )
 }

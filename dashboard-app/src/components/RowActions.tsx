@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { MoreHorizontal, Check, DollarSign, Send, ThumbsUp, X, FileSignature, Truck, Loader, CheckCheck, FileText, Receipt, Link as LinkIcon, Copy, ExternalLink, CalendarClock, RefreshCw, Files } from "lucide-react"
+import { MoreHorizontal, Check, DollarSign, Send, ThumbsUp, X, FileSignature, Truck, Loader, CheckCheck, FileText, Receipt, Link as LinkIcon, Copy, ExternalLink, CalendarClock, RefreshCw, Files, MessageCircle } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -12,7 +13,17 @@ import { fmtMoney } from "@/lib/utils"
 import type { Quote, Sale } from "@/lib/types"
 
 // ---------- Quote row actions ----------
+// Link al historial de chat de un contacto (lo resuelve MensajesPage por client/phone/email).
+function chatPath(who: { name?: string; phone?: string; email?: string }) {
+  const p = new URLSearchParams()
+  if (who.name) p.set("client", who.name)
+  if (who.phone) p.set("phone", who.phone)
+  if (who.email) p.set("email", who.email)
+  return `/mensajes?${p.toString()}`
+}
+
 export function QuoteRowActions({ quote }: { quote: Quote }) {
+  const navigate = useNavigate()
   const txn = useAction(api.quoteTransition)
   const conv = useAction(api.quoteConvert)
   const update = useAction(api.update)
@@ -49,6 +60,7 @@ export function QuoteRowActions({ quote }: { quote: Quote }) {
         {convertable && <DropdownMenuItem onClick={handleConvert}><FileSignature className="h-3.5 w-3.5 mr-2" />Convertir a venta</DropdownMenuItem>}
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handlePdf}><FileText className="h-3.5 w-3.5 mr-2" />Generar PDF</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => navigate(chatPath({ name: quote.client_name, phone: quote.client_phone, email: quote.client_email }))}><MessageCircle className="h-3.5 w-3.5 mr-2" />Abrir chat</DropdownMenuItem>
         <DropdownMenuItem onClick={handleDuplicate}><Files className="h-3.5 w-3.5 mr-2" />Duplicar</DropdownMenuItem>
         {renewable && <DropdownMenuItem onClick={handleRenew}><RefreshCw className="h-3.5 w-3.5 mr-2" />Renovar vigencia</DropdownMenuItem>}
         <DropdownMenuSeparator />
@@ -61,6 +73,7 @@ export function QuoteRowActions({ quote }: { quote: Quote }) {
 
 // ---------- Sale row actions ----------
 export function SaleRowActions({ sale }: { sale: Sale }) {
+  const navigate = useNavigate()
   const txn = useAction(api.saleTransition)
   const [payOpen, setPayOpen] = useState(false)
   const [gastosOpen, setGastosOpen] = useState(false)
@@ -87,6 +100,7 @@ export function SaleRowActions({ sale }: { sale: Sale }) {
           <DropdownMenuItem onClick={() => handle("Programado")}><Truck className="h-3.5 w-3.5 mr-2" />Marcar programada</DropdownMenuItem>
           <DropdownMenuItem onClick={() => handle("En proceso")}><Loader className="h-3.5 w-3.5 mr-2" />En proceso</DropdownMenuItem>
           <DropdownMenuItem onClick={() => handle("Finalizado")}><CheckCheck className="h-3.5 w-3.5 mr-2" />Finalizar (descontar stock)</DropdownMenuItem>
+          <DropdownMenuItem onClick={() => navigate(chatPath({ name: sale.client_name, phone: sale.client_phone, email: sale.client_email }))}><MessageCircle className="h-3.5 w-3.5 mr-2" />Abrir chat</DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handlePdf}><FileText className="h-3.5 w-3.5 mr-2" />Generar PDF</DropdownMenuItem>
           <DropdownMenuItem onClick={() => setGastosOpen(true)}><Receipt className="h-3.5 w-3.5 mr-2" />Gastos asociados</DropdownMenuItem>

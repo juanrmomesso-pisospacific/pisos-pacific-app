@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Search, LayoutGrid, Rows3, Plus, Check, CalendarDays, Truck, Info, CalendarClock } from "lucide-react"
+import { Search, LayoutGrid, Rows3, Plus, Check, CalendarDays, Truck, Info, CalendarClock, ArrowUp, ArrowDown, ChevronsUpDown, MessageCircle } from "lucide-react"
+import { useNavigate } from "react-router-dom"
+import { findConvId } from "@/lib/chat"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -209,23 +211,49 @@ export default function VentasPage() {
   )
 }
 
+type VSortKey = "quote_number" | "client_name" | "status" | "created_at" | "contract_total" | "saldo"
 function VentasTable({ rows }: { rows: Sale[] }) {
+  const [sortKey, setSortKey] = useState<VSortKey>("created_at")
+  const [sortDir, setSortDir] = useState<"asc" | "desc">("desc")
+  const sortBy = (k: VSortKey) => { if (sortKey === k) setSortDir(d => d === "asc" ? "desc" : "asc"); else { setSortKey(k); setSortDir(k === "client_name" || k === "status" ? "asc" : "desc") } }
+  const sorted = useMemo(() => {
+    const dir = sortDir === "asc" ? 1 : -1
+    return [...rows].sort((a, b) => {
+      if (sortKey === "client_name") return (a.client_name || "").localeCompare(b.client_name || "") * dir
+      if (sortKey === "status") return (a.status || "").localeCompare(b.status || "") * dir
+      if (sortKey === "created_at") return (a.created_at || "").localeCompare(b.created_at || "") * dir
+      if (sortKey === "quote_number") return String(a.quote_number || "").localeCompare(String(b.quote_number || ""), undefined, { numeric: true }) * dir
+      if (sortKey === "contract_total") return ((a.contract_total || 0) - (b.contract_total || 0)) * dir
+      if (sortKey === "saldo") return (saldoDue(a) - saldoDue(b)) * dir
+      return 0
+    })
+  }, [rows, sortKey, sortDir])
+  const SortH = ({ k, children, align }: { k: VSortKey; children: React.ReactNode; align?: "right" }) => {
+    const Icon = sortKey !== k ? ChevronsUpDown : sortDir === "asc" ? ArrowUp : ArrowDown
+    return (
+      <TableHead className={cn(align === "right" && "text-right")}>
+        <button onClick={() => sortBy(k)} className={cn("inline-flex items-center gap-1 hover:text-foreground", sortKey === k ? "text-foreground" : "text-muted-foreground")}>
+          {align === "right" && <Icon className="h-3 w-3" />}{children}{align !== "right" && <Icon className="h-3 w-3" />}
+        </button>
+      </TableHead>
+    )
+  }
   return (
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>#</TableHead>
-          <TableHead>Cliente</TableHead>
-          <TableHead>Estado</TableHead>
+          <SortH k="quote_number">#</SortH>
+          <SortH k="client_name">Cliente</SortH>
+          <SortH k="status">Estado</SortH>
           <TableHead>Entrega</TableHead>
-          <TableHead>Fecha</TableHead>
-          <TableHead className="text-right">Total</TableHead>
-          <TableHead className="text-right">Saldo</TableHead>
+          <SortH k="created_at">Fecha</SortH>
+          <SortH k="contract_total" align="right">Total</SortH>
+          <SortH k="saldo" align="right">Saldo</SortH>
           <TableHead className="text-right">Acciones</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {rows.map((r) => {
+        {sorted.map((r) => {
           const due = saldoDue(r)
           return (
             <TableRow key={r.id}>
@@ -385,6 +413,13 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   const txn = useAction(api.saleTransition)
   const createTask = useAction(api.create)
   const createMov = useAction(api.create)
+  const conversations = useApi<any[]>("/api/conversations").data ?? []
+  const navigate = useNavigate()
+  const openChat = () => {
+    if (!sale) return
+    const id = findConvId(conversations, { phone: sale.client_phone, email: sale.client_email, name: sale.client_name })
+    navigate(id ? `/mensajes?conv=${id}` : "/mensajes")
+  }
 
   useEffect(() => {
     if (!sale) return
@@ -498,6 +533,7 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
                 {" · "}<DeliveryBadge value={sale.delivery_status} />
               </SheetDescription>
             </div>
+            <Button variant="outline" size="sm" onClick={openChat}><MessageCircle className="h-4 w-4" />Chat</Button>
           </div>
         </SheetHeader>
 
@@ -506,6 +542,8 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
           <Tile label="Cobrado" value={fmtMoney(paid)} />
           <Tile label="Saldo" value={fmtMoney(due)} highlight={due > 0} />
         </div>
+
+        <IvaEditor sale={sale} onChanged={onChanged} />
 
         {/* Entrega — primary section */}
         <div className="mt-6 rounded-lg border border-border">
@@ -687,6 +725,45 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
         )}
       </SheetContent>
     </Sheet>
+  )
+}
+
+// Editor de IVA de la venta: sin IVA / IVA 21% / monto fijo (parcial). Recalcula el total.
+function IvaEditor({ sale, onChanged }: { sale: Sale; onChanged: () => void }) {
+  const upd = useAction(api.update)
+  const net = useMemo(() => {
+    const items = (sale.items || []).filter((it: any) => it.product_id !== "discount" && !/^descuento/i.test(it.description || ""))
+    const gross = items.reduce((s: number, it: any) => s + (Number(it.total) || 0), 0)
+    return Math.max(0, gross - (Number(sale.discount_total) || 0))
+  }, [sale])
+  const initMode: "none" | "full" | "fixed" = sale.iva_mode ?? (sale.has_iva ? "full" : "none")
+  const [mode, setMode] = useState<"none" | "full" | "fixed">(initMode)
+  const [fixed, setFixed] = useState<number>(sale.iva_amount ?? 0)
+  const iva = mode === "none" ? 0 : mode === "full" ? Math.round(net * 0.21) : (Number(fixed) || 0)
+  const total = Math.round(net + iva)
+  const dirty = mode !== initMode || (mode === "fixed" && iva !== (sale.iva_amount ?? 0)) || total !== Math.round(sale.contract_total || 0)
+  const save = async () => {
+    const r = await upd.run("sales", sale.id, { iva_mode: mode, iva_amount: iva, has_iva: mode !== "none", contract_total: total })
+    if (r) onChanged()
+  }
+  const Opt = ({ m, label }: { m: "none" | "full" | "fixed"; label: string }) => (
+    <button type="button" onClick={() => setMode(m)} className={cn("px-2.5 h-8 rounded-md border text-xs", mode === m ? "border-foreground bg-foreground text-background" : "border-border")}>{label}</button>
+  )
+  return (
+    <div className="mt-3 rounded-lg border border-border p-3 space-y-2">
+      <div className="flex items-center gap-2 flex-wrap">
+        <span className="text-xs font-medium mr-1">IVA</span>
+        <Opt m="none" label="Sin IVA" /><Opt m="full" label="IVA 21%" /><Opt m="fixed" label="Monto fijo" />
+        {mode === "fixed" && (
+          <Input type="number" min={0} value={fixed || ""} onChange={(e) => setFixed(Number(e.target.value))} placeholder="IVA $" className="h-8 w-28" />
+        )}
+        <Button size="sm" className="ml-auto" onClick={save} disabled={!dirty || upd.busy}>{upd.busy ? "Guardando…" : "Aplicar"}</Button>
+      </div>
+      <div className="text-[11px] text-muted-foreground tabular">
+        Neto {fmtMoney(net)} · IVA {fmtMoney(iva)} · <b>Total {fmtMoney(total)}</b>
+      </div>
+      {upd.error && <div className="text-[11px] text-destructive">{upd.error}</div>}
+    </div>
   )
 }
 

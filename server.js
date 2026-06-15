@@ -1095,6 +1095,7 @@ function convertQuoteToSale(q) {
     status: 'Confirmado',
     created_at: new Date().toISOString(),
     has_iva: q.has_iva ?? false,
+    iva_mode: (q.has_iva ?? false) ? 'full' : 'none',   // la venta arranca igual que la cotización; editable después
     financial_position: { total_invoiced: 0, total_paid: 0, balance_due: q.price },
     stock_reserved: q.status === 'Enviado' || q.status === 'Aceptado' || q.status === 'SENT' || q.status === 'ACCEPTED',
     stock_deducted: false,

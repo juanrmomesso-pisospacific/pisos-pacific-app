@@ -11,6 +11,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { useAuth } from "@/contexts/AuthContext"
 import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, EMOJIS } from "@/lib/messaging"
 import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_LABEL as LEAD_STATUS_LABEL } from "@/lib/leads"
+import { findConvId } from "@/lib/chat"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
 import { fmtMoney } from "@/lib/utils"
@@ -71,6 +72,15 @@ export default function MensajesPage() {
   useEffect(() => {
     if (convFromUrl && convFromUrl !== selectedId) setSelectedId(convFromUrl)
   }, [convFromUrl])
+
+  // Abrir el chat de un contacto desde otra página: /mensajes?client=…&phone=…&email=…
+  useEffect(() => {
+    if (convFromUrl || !conversations.length) return
+    const client = searchParams.get("client"), phone = searchParams.get("phone"), email = searchParams.get("email")
+    if (!client && !phone && !email) return
+    const id = findConvId(conversations, { name: client ?? undefined, phone: phone ?? undefined, email: email ?? undefined })
+    if (id) setSelectedId(id)
+  }, [conversations, convFromUrl])
 
   // When the user picks a row manually, keep the URL in sync so refresh works
   const handleSelect = (id: string) => {

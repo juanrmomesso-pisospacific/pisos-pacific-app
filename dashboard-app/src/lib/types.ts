@@ -60,6 +60,8 @@ export type Sale = {
   payment_state?: string                                            // Cobrado | Adelanto | Pendiente
   created_at: string
   has_iva: boolean
+  iva_mode?: "none" | "full" | "fixed"   // sin IVA / IVA 21% / monto fijo (parcial)
+  iva_amount?: number                     // IVA en $ (resuelto; editable si mode='fixed')
   financial_position: FinancialPosition
   stock_reserved: boolean
   stock_deducted: boolean

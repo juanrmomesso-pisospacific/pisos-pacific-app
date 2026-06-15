@@ -46,7 +46,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const [internalNotes, setInternalNotes] = useState<string>(editQuote?.internal_notes ?? prefill?.internal_notes ?? "")
   const [publicNotes, setPublicNotes] = useState<string>(editQuote?.public_notes ?? "")
   const [paymentTerms, setPaymentTerms] = useState<string>(editQuote?.payment_terms ?? "Anticipo 80% · Conforme 20%")
-  const [hasIva, setHasIva] = useState<boolean>(editQuote?.has_iva ?? false)
+  const [hasIva, setHasIva] = useState<boolean>(editQuote?.has_iva ?? true)   // las cotizaciones salen siempre con IVA por defecto
   const [items, setItems] = useState<LineItem[]>(editItems)
   const [zoned, setZoned] = useState<boolean>(editQuote?.zoned ?? false)
   const [zones, setZones] = useState<string[]>(() => {
