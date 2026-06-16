@@ -602,20 +602,22 @@ app.post('/api/conversations/:id/share-quote', async (req, res) => {
   const link = `${appBase(req)}/p/q/${q.id}/${q.share_token}`;
   const filename = pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name);
   const caption = `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`;
+  const greeting = `Hola${q.client_name ? ' ' + String(q.client_name).split(' ')[0] : ''}, te comparto el presupuesto adjunto. Cualquier consulta quedo a disposición.`;
   let delivery;
   try {
     if (conv.channel === 'whatsapp') {
       const buf = await generatePdf(presupuestoData(q));
       delivery = await sendWhatsAppDocument(toWa(conv.contact_id), buf, filename, caption);
     } else if (conv.channel === 'email') {
-      const html = emailHtml(`Hola, te comparto el presupuesto.\n\nLo podés ver/descargar acá:\n${link}`, signatureFor(req.user));
-      delivery = await sendOutbound('email', conv.contact_id, `Te comparto el presupuesto: ${link}`, { subject: caption, html });
+      const buf = await generatePdf(presupuestoData(q));
+      const html = emailHtml(greeting, signatureFor(req.user));
+      delivery = await sendOutbound('email', conv.contact_id, greeting, { subject: caption, html, attachments: [{ filename, content: buf, contentType: 'application/pdf' }] });
     } else {
       delivery = await sendOutbound(conv.channel, conv.contact_id, `Te comparto el presupuesto:\n${link}`, {});
     }
   } catch (e) { delivery = { sent: false, reason: e.message }; }
   const ts = new Date().toISOString();
-  const body = conv.channel === 'whatsapp' ? `📄 ${filename} (enviado)` : `📄 Presupuesto: ${link}`;
+  const body = conv.channel === 'instagram' ? `📄 Presupuesto: ${link}` : `📄 ${filename} (enviado)`;
   const tokensMissing = delivery?.reason && /faltan/i.test(delivery.reason);
   db.messages.push({
     id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, conversation_id: conv.id,
@@ -648,8 +650,8 @@ app.post('/api/conversations/:id/send-file', async (req, res) => {
     if (conv.channel === 'whatsapp' && isPdf) {
       delivery = await sendWhatsAppDocument(toWa(conv.contact_id), buf, safe, '');
     } else if (conv.channel === 'email') {
-      const html = emailHtml(`Te comparto un archivo:\n${url}`, signatureFor(req.user));
-      delivery = await sendOutbound('email', conv.contact_id, `Archivo: ${url}`, { subject: 'Pisos Pacific — archivo adjunto', html });
+      const html = emailHtml('Te comparto un archivo adjunto. Cualquier consulta quedo a disposición.', signatureFor(req.user));
+      delivery = await sendOutbound('email', conv.contact_id, 'Archivo adjunto', { subject: 'Pisos Pacific — archivo adjunto', html, attachments: [{ filename: safe, content: buf, contentType: content_type || 'application/octet-stream' }] });
     } else {
       delivery = await sendOutbound(conv.channel, conv.contact_id, `Te comparto un archivo:\n${url}`, {});
     }
@@ -1383,8 +1385,11 @@ app.post('/api/quotes/:id/share', async (req, res) => {
     const to = q.client_email;
     if (!to) email = { sent: false, reason: 'el cliente no tiene email cargado' };
     else try {
-      const html = emailHtml(`Hola, te comparto el presupuesto.\n\nLo podés ver/descargar acá:\n${link}`, signatureFor(req.user));
-      email = await sendOutbound('email', to, `Te comparto el presupuesto: ${link}`, { subject: `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`, html });
+      const buf = await generatePdf(presupuestoData(q));
+      const filename = pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name);
+      const greeting = `Hola${q.client_name ? ' ' + String(q.client_name).split(' ')[0] : ''}, te comparto el presupuesto adjunto. Cualquier consulta quedo a disposición.`;
+      const html = emailHtml(greeting, signatureFor(req.user));
+      email = await sendOutbound('email', to, greeting, { subject: `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`, html, attachments: [{ filename, content: buf, contentType: 'application/pdf' }] });
     } catch (e) { email = { sent: false, reason: e.message }; }
   }
   res.json({ link, whatsapp, email });

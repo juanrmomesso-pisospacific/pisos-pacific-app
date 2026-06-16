@@ -545,7 +545,7 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
     phone: conversation.channel === "whatsapp"
       ? conversation.contact_id
       : (linkedClient?.phones?.[0] ?? ""),
-    email: linkedClient?.emails?.[0] ?? "",
+    email: conversation.channel === "email" ? conversation.contact_id : (linkedClient?.emails?.[0] ?? ""),
     source: conversation.channel === "whatsapp" ? "WhatsApp" : conversation.channel === "email" ? "Email" : "Instagram",
     status: "New",
     address: linkedClient?.addresses?.[0] ?? "",
