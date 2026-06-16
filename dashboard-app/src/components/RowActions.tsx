@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { openPacificPdf } from "@/lib/pdf"
+import { quoteShareMessage } from "@/lib/chat"
 import { fmtMoney } from "@/lib/utils"
 import type { Quote, Sale } from "@/lib/types"
 
@@ -47,8 +48,7 @@ export function QuoteRowActions({ quote }: { quote: Quote }) {
   }
   const handlePdf = () => openPacificPdf("quotes", quote.id)
   const share = useAction(api.quoteShare)
-  const firstName = (quote.client_name || "").split(" ")[0]
-  const defaultShareMsg = `Hola${firstName ? " " + firstName : ""}, te comparto el presupuesto N${quote.quote_number} adjunto. Cualquier consulta quedo a disposición.`
+  const defaultShareMsg = quoteShareMessage(quote)
   const shareWa = async () => {
     const message = window.prompt("Mensaje para el cliente (WhatsApp):", defaultShareMsg)
     if (message === null) return

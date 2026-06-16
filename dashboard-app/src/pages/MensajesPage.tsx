@@ -11,7 +11,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { useAuth } from "@/contexts/AuthContext"
 import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, EMOJIS } from "@/lib/messaging"
 import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_LABEL as LEAD_STATUS_LABEL } from "@/lib/leads"
-import { findConvId } from "@/lib/chat"
+import { findConvId, digits, quoteShareMessage } from "@/lib/chat"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
 import { fmtMoney } from "@/lib/utils"
@@ -588,17 +588,18 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
   const leadSales = linkedLead && leadSaleIds.size > 0 ? sales.filter(s => leadSaleIds.has(s.id)) : []
 
   // Cotizaciones del contacto (no solo del lead): por lead, cliente vinculado, teléfono o email.
-  const _digits = (s?: string) => (s || "").replace(/\D/g, "")
-  const convPhone = conversation.channel === "whatsapp" ? _digits(conversation.contact_id) : ""
-  const convEmail = conversation.channel === "email" ? conversation.contact_id.toLowerCase() : ""
-  const convNames = [conversation.linked_client_name, linkedLead?.name, conversation.contact_name].filter(Boolean).map(s => (s as string).toLowerCase())
-  const contactQuotes = quotes.filter(q => {
-    if (linkedLead && q.lead_id === linkedLead.id) return true
-    if (q.client_name && convNames.includes(q.client_name.toLowerCase())) return true
-    if (convPhone.length >= 8 && _digits(q.client_phone).endsWith(convPhone.slice(-8))) return true
-    if (convEmail && (q.client_email || "").toLowerCase() === convEmail) return true
-    return false
-  })
+  const contactQuotes = useMemo(() => {
+    const convPhone = conversation.channel === "whatsapp" ? digits(conversation.contact_id) : ""
+    const convEmail = conversation.channel === "email" ? conversation.contact_id.toLowerCase() : ""
+    const convNames = [conversation.linked_client_name, linkedLead?.name, conversation.contact_name].filter(Boolean).map(s => (s as string).toLowerCase())
+    return quotes.filter(q => {
+      if (linkedLead && q.lead_id === linkedLead.id) return true
+      if (q.client_name && convNames.includes(q.client_name.toLowerCase())) return true
+      if (convPhone.length >= 8 && digits(q.client_phone).endsWith(convPhone.slice(-8))) return true
+      if (convEmail && (q.client_email || "").toLowerCase() === convEmail) return true
+      return false
+    })
+  }, [quotes, conversation, linkedLead])
 
   const handleQuoteCreated = async (q: Quote) => {
     // Auto-generate the branded PDF so the vendor can drag it straight into the chat
@@ -731,7 +732,7 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
         {contactQuotes.length > 0 && (
           <Section title={`Compartir presupuesto (${contactQuotes.length})`}>
             <div className="space-y-1.5">
-              {contactQuotes.map(q => <LeadQuoteRow key={q.id} quote={q} conversation={conversation} linkedLead={linkedLead} />)}
+              {contactQuotes.map(q => <LeadQuoteRow key={q.id} quote={q} conversation={conversation} />)}
             </div>
           </Section>
         )}
@@ -840,8 +841,7 @@ function LeadSaleRow({ sale }: { sale: Sale }) {
   )
 }
 
-function LeadQuoteRow({ quote, conversation, linkedLead }: { quote: Quote; conversation: Conversation; linkedLead?: Lead | null }) {
-  void linkedLead
+function LeadQuoteRow({ quote, conversation }: { quote: Quote; conversation: Conversation }) {
   const sentLabels = new Set(["Enviado", "SENT"])
   const acceptedLabels = new Set(["Aceptado", "ACCEPTED"])
   const status = quote.status
@@ -856,8 +856,7 @@ function LeadQuoteRow({ quote, conversation, linkedLead }: { quote: Quote; conve
   // email manda el link en el cuerpo (+ firma); Instagram manda el link. Queda en el chat.
   const [sharing, setSharing] = useState(false)
   const [composing, setComposing] = useState(false)
-  const firstName = (quote.client_name || "").split(" ")[0]
-  const defaultMsg = `Hola${firstName ? " " + firstName : ""}, te comparto el presupuesto N${quote.quote_number} adjunto. Cualquier consulta quedo a disposición.`
+  const defaultMsg = quoteShareMessage(quote)
   const [msg, setMsg] = useState(defaultMsg)
   const shareLabel = conversation.channel === "whatsapp" ? "Enviar PDF" : conversation.channel === "email" ? "Enviar por mail" : "Enviar link"
   const handleShare = async () => {

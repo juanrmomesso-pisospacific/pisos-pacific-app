@@ -119,7 +119,7 @@ Env vars completas: `LAUNCH.md` §6. Secretos: nunca en el código ni en este ar
 
 ## 7. Estado actual y próximos pasos
 
-_Actualizado: 2026-06-13. Producción deployada y verificada (healthz 200, webhook WA OK). Roadmap de 6 frentes aprobado en `~/.claude/plans/majestic-sniffing-gray.md`._
+_Actualizado: 2026-06-16. Producción deployada y verificada (healthz 200, webhook WA OK). Roadmap de 6 frentes aprobado en `~/.claude/plans/majestic-sniffing-gray.md`._
 
 **Terminado y verificado en prod**
 - Lanzamiento completo: GitHub + Render + bootstrap de datos reales.
@@ -141,7 +141,8 @@ _Actualizado: 2026-06-13. Producción deployada y verificada (healthz 200, webho
 - Gmail dual conectado: leads por email + canal Mails en Mensajes (29 leads web reales) + recuperación de contraseña.
 - PDF nuevo (Cabezal Oscuro) con todos los pedidos del dueño.
 - Filtro de período global unificado.
-- Seguridad de login. Dos pasadas de `/simplify` + `/code-review` high + sweep E2E (14 páginas OK).
+- Seguridad de login. Tres pasadas de `/simplify` + `/code-review` high + sweep E2E (14 páginas OK).
+- **Limpieza (`/simplify` 16/6):** saludo por defecto del presupuesto en una sola fuente por lado (`defaultQuoteMessage` en server.js, `quoteShareMessage` en `lib/chat.ts`) — antes 4 copias que habían divergido (server sin número vs front con número); ahora el mail = lo que se ve en el textarea. PDF en `/api/quotes/:id/share` se genera una vez (no dos cuando WhatsApp+email). `contactQuotes` memoizado en ContactPanel; `digits` exportado y reusado; prop muerta `linkedLead` quitada de `LeadQuoteRow`. _Pendientes recomendados (van con test local antes de deploy): unificar la triplicación de los endpoints de envío (`shareQuoteVia`/`recordOutbound`), centralizar el dedup de leads del front (`/api/leads/duplicates` reusando `findLeadMatch`), y `signatureFor` por campo de usuario en vez de string-match._
 
 **A medias / rutinas del dueño**
 - **Cambiar contraseñas**: admin sigue `admin123`; juan/vicky débiles (menú usuario → Cambiar contraseña).

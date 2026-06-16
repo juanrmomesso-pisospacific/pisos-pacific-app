@@ -520,6 +520,11 @@ function signatureFor(user) {
   if (email.startsWith('victoria@') || /\b(victoria|vicky)\b/.test(idstr)) return FIRMAS.victoria || '';
   return FIRMAS.juan || '';   // default (info@ = Juan)
 }
+// Saludo por defecto al compartir un presupuesto (igual que el prefill del front). Una sola fuente.
+function defaultQuoteMessage(q) {
+  const firstName = q?.client_name ? ' ' + String(q.client_name).split(' ')[0] : '';
+  return `Hola${firstName}, te comparto el presupuesto N${q?.quote_number || q?.id} adjunto. Cualquier consulta quedo a disposición.`;
+}
 const escHtml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 function emailHtml(body, sig) {
   const bodyHtml = escHtml(body).replace(/\n/g, '<br>');
@@ -602,8 +607,7 @@ app.post('/api/conversations/:id/share-quote', async (req, res) => {
   const link = `${appBase(req)}/p/q/${q.id}/${q.share_token}`;
   const filename = pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name);
   const caption = `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`;
-  const greeting = `Hola${q.client_name ? ' ' + String(q.client_name).split(' ')[0] : ''}, te comparto el presupuesto adjunto. Cualquier consulta quedo a disposición.`;
-  const message = String(req.body?.message || '').trim() || greeting;   // mensaje editable por el usuario
+  const message = String(req.body?.message || '').trim() || defaultQuoteMessage(q);   // mensaje editable por el usuario
   let delivery;
   try {
     if (conv.channel === 'whatsapp') {
@@ -1362,15 +1366,14 @@ app.post('/api/quotes/:id/share', async (req, res) => {
   if (!q) return res.sendStatus(404);
   if (!q.share_token) { q.share_token = crypto.randomBytes(12).toString('hex'); save(); }
   const link = `${appBase(req)}/p/q/${q.id}/${q.share_token}`;
-  const greeting = `Hola${q.client_name ? ' ' + String(q.client_name).split(' ')[0] : ''}, te comparto el presupuesto adjunto. Cualquier consulta quedo a disposición.`;
-  const message = String(req.body?.message || '').trim() || greeting;
+  const message = String(req.body?.message || '').trim() || defaultQuoteMessage(q);
+  const filename = pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name);
+  const buf = (req.body?.whatsapp || req.body?.email) ? await generatePdf(presupuestoData(q)) : null;
   let whatsapp = null;
   if (req.body?.whatsapp) {
     const to = toWa(q.client_phone);
     if (!to) whatsapp = { sent: false, reason: 'el cliente no tiene teléfono cargado' };
     else try {
-      const buf = await generatePdf(presupuestoData(q));
-      const filename = pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name);
       whatsapp = await sendWhatsAppDocument(to, buf, filename, message);
       if (whatsapp.sent) {   // reflejarlo en la conversación si existe
         const conv = db.conversations.find(c => c.channel === 'whatsapp' && String(c.contact_id || '').replace(/\D/g, '').endsWith(to.slice(-8)));
@@ -1388,8 +1391,6 @@ app.post('/api/quotes/:id/share', async (req, res) => {
     const to = q.client_email;
     if (!to) email = { sent: false, reason: 'el cliente no tiene email cargado' };
     else try {
-      const buf = await generatePdf(presupuestoData(q));
-      const filename = pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name);
       const html = emailHtml(message, signatureFor(req.user));
       email = await sendOutbound('email', to, message, { subject: `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`, html, attachments: [{ filename, content: buf, contentType: 'application/pdf' }] });
     } catch (e) { email = { sent: false, reason: e.message }; }
