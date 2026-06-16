@@ -59,6 +59,9 @@ app.get('/privacy', (_req, res) => {
 // DB en disco. En producción, apuntá DB_PATH a un disco persistente (ej. /var/data/db.json)
 // para no tapar las seeds del repo (data/*.seed.json).
 const DB_PATH = process.env.DB_PATH || path.join(__dirname, 'data/db.json');
+// Archivos subidos (PDF/imágenes que se mandan a clientes desde el chat). En el mismo disco persistente que la DB.
+const UPLOAD_DIR = process.env.UPLOAD_DIR || path.join(path.dirname(DB_PATH), 'uploads');
+try { fs.mkdirSync(UPLOAD_DIR, { recursive: true }); } catch { /* ya existe */ }
 
 function seedFromDump() {
   // The core business dump (products/sales/quotes/clients/expenses + settings) lives in an
@@ -585,6 +588,44 @@ app.post('/api/conversations/:id/share-quote', async (req, res) => {
   if (/borrador|draft/i.test(q.status || '')) q.status = 'Enviado';
   save();
   res.json({ ok: !!(delivery?.sent || tokensMissing), channel: conv.channel, link, delivery });
+});
+// Subir un archivo (PDF/imagen) desde la compu y mandarlo al cliente por el canal de la conversación.
+app.post('/api/conversations/:id/send-file', async (req, res) => {
+  const conv = db.conversations.find(c => c.id === req.params.id);
+  if (!conv) return res.sendStatus(404);
+  const { data_base64, filename, content_type } = req.body || {};
+  if (!data_base64) return res.status(400).json({ error: 'falta el archivo' });
+  const okType = /pdf|image\//i.test(content_type || '') || /\.(pdf|png|jpe?g|webp)$/i.test(filename || '');
+  if (!okType) return res.status(400).json({ error: 'solo PDF o imágenes' });
+  let buf;
+  try { buf = Buffer.from(String(data_base64), 'base64'); } catch { return res.status(400).json({ error: 'archivo inválido' }); }
+  if (buf.length > 16 * 1024 * 1024) return res.status(400).json({ error: 'archivo muy grande (máx 16MB)' });
+  const safe = String(filename || 'archivo').replace(/[^\w.\-]+/g, '_').slice(-60) || 'archivo';
+  const stored = `${crypto.randomBytes(8).toString('hex')}-${safe}`;
+  try { fs.writeFileSync(path.join(UPLOAD_DIR, stored), buf); } catch (e) { return res.status(500).json({ error: 'no se pudo guardar: ' + e.message }); }
+  const url = `${appBase(req)}/uploads/${stored}`;
+  const isPdf = /pdf/i.test(content_type || '') || /\.pdf$/i.test(safe);
+  let delivery;
+  try {
+    if (conv.channel === 'whatsapp' && isPdf) {
+      delivery = await sendWhatsAppDocument(toWa(conv.contact_id), buf, safe, '');
+    } else if (conv.channel === 'email') {
+      const html = emailHtml(`Te comparto un archivo:\n${url}`, signatureFor(req.user));
+      delivery = await sendOutbound('email', conv.contact_id, `Archivo: ${url}`, { subject: 'Pisos Pacific — archivo adjunto', html });
+    } else {
+      delivery = await sendOutbound(conv.channel, conv.contact_id, `Te comparto un archivo:\n${url}`, {});
+    }
+  } catch (e) { delivery = { sent: false, reason: e.message }; }
+  const ts = new Date().toISOString();
+  const tokensMissing = delivery?.reason && /faltan/i.test(delivery.reason);
+  db.messages.push({
+    id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, conversation_id: conv.id,
+    direction: 'out', body: `📎 ${safe}`, ts, status: delivery?.sent ? 'sent' : (tokensMissing ? 'sent' : 'failed'),
+    ...(delivery?.id ? { wa_id: delivery.id } : {}),
+  });
+  conv.last_message_at = ts; conv.last_message_preview = `📎 ${safe}`; conv.unread_count = 0;
+  save();
+  res.json({ ok: !!(delivery?.sent || tokensMissing), url, delivery });
 });
 app.get('/api/templates', (_, res) => res.json(db.templates));
 
@@ -1299,7 +1340,16 @@ app.post('/api/quotes/:id/share', async (req, res) => {
       }
     } catch (e) { whatsapp = { sent: false, reason: e.message }; }
   }
-  res.json({ link, whatsapp });
+  let email = null;
+  if (req.body?.email) {
+    const to = q.client_email;
+    if (!to) email = { sent: false, reason: 'el cliente no tiene email cargado' };
+    else try {
+      const html = emailHtml(`Hola, te comparto el presupuesto.\n\nLo podés ver/descargar acá:\n${link}`, signatureFor(req.user));
+      email = await sendOutbound('email', to, `Te comparto el presupuesto: ${link}`, { subject: `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`, html });
+    } catch (e) { email = { sent: false, reason: e.message }; }
+  }
+  res.json({ link, whatsapp, email });
 });
 // Remito para el depósito: dirección de obra + materiales y cantidades, SIN precios.
 function remitoData(rec) {
@@ -1332,6 +1382,8 @@ app.get('/api/sales/:id/remito', (req, res) => {
 // ---------- Brand logos (committed in assets/branding/) ----------
 // Assets públicos de la firma de email (los clientes de correo los bajan sin login).
 app.use('/firma', express.static(path.join(__dirname, 'assets/firma')));
+// Archivos subidos que se comparten con clientes (links públicos, nombres aleatorios).
+app.use('/uploads', express.static(UPLOAD_DIR));
 const BRANDING = path.join(__dirname, 'assets/branding');
 app.get('/LogoPacific.png',          (_, res) => res.sendFile(path.join(BRANDING, 'LogoPacific.png')));
 app.get('/LogoPacificSmall.png',     (_, res) => res.sendFile(path.join(BRANDING, 'LogoPacificSmall.png')));

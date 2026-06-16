@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Search, Send, Smile, FileText, Phone, Mail, ExternalLink, MoreHorizontal, UserCircle2, MessageCircle, AtSign, Sparkles, ChevronRight } from "lucide-react"
+import { Search, Send, Smile, FileText, Phone, Mail, ExternalLink, MoreHorizontal, UserCircle2, MessageCircle, AtSign, Sparkles, ChevronRight, Paperclip } from "lucide-react"
 import { Link, useSearchParams } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -209,6 +209,24 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
   const scrollRef = useRef<HTMLDivElement>(null)
   const taRef = useRef<HTMLTextAreaElement>(null)
   const lastIdRef = useRef<string | null>(null)   // último mensaje conocido (para detectar nuevos al pollear)
+  const [uploading, setUploading] = useState(false)
+  const [dragOver, setDragOver] = useState(false)
+
+  // Enviar un archivo (PDF/imagen) al cliente por el canal de la conversación. Aparece en el chat al pollear.
+  const sendFile = async (file: File) => {
+    if (!conversation || !file) return
+    if (!/pdf|image\//i.test(file.type) && !/\.(pdf|png|jpe?g|webp)$/i.test(file.name)) { alert("Solo PDF o imágenes."); return }
+    setUploading(true)
+    try {
+      const dataUrl: string = await new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result)); r.onerror = rej; r.readAsDataURL(file) })
+      const r = await fetch(`/api/conversations/${conversation.id}/send-file`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data_base64: dataUrl.split(",")[1], filename: file.name, content_type: file.type }),
+      })
+      const j = await r.json().catch(() => ({}))
+      if (!j.ok) alert("No se pudo enviar el archivo: " + (j.delivery?.reason || j.error || "error") + (j.url ? "\n\nLink:\n" + j.url : ""))
+    } catch (e: any) { alert("Error: " + String(e?.message || e)) } finally { setUploading(false) }
+  }
 
   // Load messages whenever the selected conversation changes
   useEffect(() => {
@@ -286,7 +304,17 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
   const availableTemplates = templates.filter(t => t.channel === conversation.channel && t.status === "approved")
 
   return (
-    <section className="flex flex-col border-y border-border bg-background overflow-hidden min-h-0">
+    <section
+      className="relative flex flex-col border-y border-border bg-background overflow-hidden min-h-0"
+      onDragOver={(e) => { e.preventDefault(); if (!dragOver) setDragOver(true) }}
+      onDragLeave={(e) => { if (e.currentTarget === e.target) setDragOver(false) }}
+      onDrop={(e) => { e.preventDefault(); setDragOver(false); const f = e.dataTransfer.files?.[0]; if (f) sendFile(f) }}
+    >
+      {(dragOver || uploading) && (
+        <div className="absolute inset-0 z-10 flex items-center justify-center bg-background/85 border-2 border-dashed border-primary rounded-md m-2 text-sm text-muted-foreground pointer-events-none">
+          {uploading ? "Enviando archivo…" : "Soltá el PDF o imagen para enviarlo al cliente"}
+        </div>
+      )}
       <ThreadHeader conversation={conversation} />
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-1 bg-muted/20">
         {loading ? (
@@ -320,6 +348,7 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
         onPickTemplate={(t) => insertText(t.body)}
         onPickEmoji={(e) => insertText(e)}
         taRef={taRef}
+        onFile={sendFile}
       />
     </section>
   )
@@ -364,7 +393,7 @@ function Bubble({ msg }: { msg: Message }) {
 }
 
 function Composer({
-  draft, setDraft, onSend, sending, error, templates, onPickTemplate, onPickEmoji, taRef,
+  draft, setDraft, onSend, sending, error, templates, onPickTemplate, onPickEmoji, taRef, onFile,
 }: {
   draft: string
   setDraft: (s: string) => void
@@ -375,7 +404,9 @@ function Composer({
   onPickTemplate: (t: Template) => void
   onPickEmoji: (e: string) => void
   taRef: React.RefObject<HTMLTextAreaElement | null>
+  onFile: (f: File) => void
 }) {
+  const fileRef = useRef<HTMLInputElement>(null)
   const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault()
@@ -387,6 +418,10 @@ function Composer({
       {error && <div className="px-4 py-1.5 text-xs text-destructive">Error al enviar: {error}</div>}
       <div className="flex items-end gap-2 p-3">
         <div className="flex gap-1">
+          <input ref={fileRef} type="file" accept="application/pdf,image/*" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) onFile(f); e.currentTarget.value = "" }} />
+          <Button variant="ghost" size="icon" className="h-9 w-9" type="button" title="Adjuntar PDF o imagen" onClick={() => fileRef.current?.click()}>
+            <Paperclip className="h-4 w-4" />
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="h-9 w-9" type="button" disabled={templates.length === 0}>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { MoreHorizontal, Check, DollarSign, Send, ThumbsUp, X, FileSignature, Truck, Loader, CheckCheck, FileText, Receipt, Link as LinkIcon, Copy, ExternalLink, CalendarClock, RefreshCw, Files, MessageCircle } from "lucide-react"
+import { MoreHorizontal, Check, DollarSign, Send, ThumbsUp, X, FileSignature, Truck, Loader, CheckCheck, FileText, Receipt, Link as LinkIcon, Copy, ExternalLink, CalendarClock, RefreshCw, Files, MessageCircle, Mail } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -48,11 +48,15 @@ export function QuoteRowActions({ quote }: { quote: Quote }) {
   const handlePdf = () => openPacificPdf("quotes", quote.id)
   const share = useAction(api.quoteShare)
   const shareWa = async () => {
-    const r = await share.run(quote.id, true)
+    const r = await share.run(quote.id, { whatsapp: true })
     if (r) alert(r.whatsapp?.sent ? "✓ Presupuesto enviado por WhatsApp" : "No se pudo enviar por WhatsApp: " + (r.whatsapp?.reason || "revisá el teléfono del cliente") + (r.link ? "\n\nLink para compartir a mano:\n" + r.link : ""))
   }
+  const shareEmail = async () => {
+    const r = await share.run(quote.id, { email: true })
+    if (r) alert(r.email?.sent ? "✓ Presupuesto enviado por email" : "No se pudo enviar por email: " + (r.email?.reason || "revisá el email del cliente") + (r.link ? "\n\nLink para compartir a mano:\n" + r.link : ""))
+  }
   const copyLink = async () => {
-    const r = await share.run(quote.id, false)
+    const r = await share.run(quote.id, {})
     if (r?.link) { try { await navigator.clipboard.writeText(r.link) } catch { /* sin permiso de portapapeles */ }; alert("Link del presupuesto (pegalo en el DM de Instagram):\n\n" + r.link) }
   }
 
@@ -70,6 +74,7 @@ export function QuoteRowActions({ quote }: { quote: Quote }) {
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handlePdf}><FileText className="h-3.5 w-3.5 mr-2" />Generar PDF</DropdownMenuItem>
         <DropdownMenuItem onClick={shareWa} disabled={share.busy}><Send className="h-3.5 w-3.5 mr-2" />Compartir por WhatsApp</DropdownMenuItem>
+        <DropdownMenuItem onClick={shareEmail} disabled={share.busy}><Mail className="h-3.5 w-3.5 mr-2" />Enviar por email</DropdownMenuItem>
         <DropdownMenuItem onClick={copyLink} disabled={share.busy}><LinkIcon className="h-3.5 w-3.5 mr-2" />Copiar link (Instagram)</DropdownMenuItem>
         <DropdownMenuItem onClick={() => navigate(chatPath({ name: quote.client_name, phone: quote.client_phone, email: quote.client_email }))}><MessageCircle className="h-3.5 w-3.5 mr-2" />Abrir chat</DropdownMenuItem>
         <DropdownMenuItem onClick={handleDuplicate}><Files className="h-3.5 w-3.5 mr-2" />Duplicar</DropdownMenuItem>

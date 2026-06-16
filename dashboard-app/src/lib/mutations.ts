@@ -42,7 +42,7 @@ export const api = {
   quoteTransition: (id: string, status: string) => post(`/api/quotes/${id}/transition`, { status }),
   quoteConvert:    (id: string) => post(`/api/quotes/${id}/convert`),
   quoteDuplicate:  (id: string) => post(`/api/quotes/${id}/duplicate`),
-  quoteShare:      (id: string, whatsapp: boolean) => post(`/api/quotes/${id}/share`, { whatsapp }),
+  quoteShare:      (id: string, opts: { whatsapp?: boolean; email?: boolean }) => post(`/api/quotes/${id}/share`, opts),
   // Sale actions
   saleTransition:  (id: string, status: string) => post(`/api/sales/${id}/transition`, { status }),
   salePayment:     (id: string, amount: number, method?: string, notes?: string) =>
