@@ -16,6 +16,7 @@
 
 import { parseCashCommand, inferType, normalizePhone } from '../import/cash-parse.mjs';
 import { getBlueRate } from '../import/fx.mjs';
+import { findLeadMatch } from './lead-match.mjs';
 
 const GRAPH = 'https://graph.facebook.com/v21.0';
 
@@ -55,19 +56,28 @@ export async function handleInbound(db, save, channel, payload) {
     conv = {
       id: `conv-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
       channel, contact_id: contactId, contact_name: contactName || contactId,
-      linked_client_name: null, status: 'open', unread_count: 0,
+      linked_client_name: null, linked_lead_id: null, status: 'open', unread_count: 0,
       last_message_at: ts, last_message_preview: '',
     };
     db.conversations.push(conv);
-    // lead nuevo desde un primer contacto entrante
-    db.leads.push({
-      id: `lead-${channel}-${Date.now()}`, name: contactName || contactId,
-      email: '', phone: channel === 'whatsapp' ? contactId : '',
-      source: channel === 'whatsapp' ? 'WhatsApp' : 'Instagram',
-      address: '', approx_m2: null, needs_placement: null, interested_products: [],
-      notes: `Lead automático desde ${channel}`, status: 'New', assigned_seller: '',
-      created_at: ts, last_touch_at: ts,
-    });
+    // Reusar un lead existente (mismo teléfono/email/nombre) en vez de duplicar; si no hay, crear.
+    const who = { name: contactName || contactId, phone: channel === 'whatsapp' ? contactId : '', email: '' };
+    const match = findLeadMatch(db.leads, who);
+    if (match) {
+      conv.linked_lead_id = match.id;
+      match.last_touch_at = ts;
+    } else {
+      const lead = {
+        id: `lead-${channel}-${Date.now()}`, name: contactName || contactId,
+        email: '', phone: channel === 'whatsapp' ? contactId : '',
+        source: channel === 'whatsapp' ? 'WhatsApp' : 'Instagram',
+        address: '', approx_m2: null, needs_placement: null, interested_products: [],
+        notes: `Lead automático desde ${channel}`, status: 'New', assigned_seller: '',
+        created_at: ts, last_touch_at: ts,
+      };
+      db.leads.push(lead);
+      conv.linked_lead_id = lead.id;
+    }
   } else if (contactName) {
     conv.contact_name = contactName;
   }

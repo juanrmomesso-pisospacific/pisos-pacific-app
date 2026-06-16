@@ -50,18 +50,27 @@ export default function MensajesPage() {
   const convFromUrl = searchParams.get("conv")
   const [channelFilter, setChannelFilter] = useState<ChannelFilter>("all")
   const [q, setQ] = useState("")
+  const [onlyUnread, setOnlyUnread] = useState(false)
+  const [sellerFilter, setSellerFilter] = useState("")   // "" todos · "__none__" sin asignar · nombre
   const [selectedId, setSelectedId] = useState<string | null>(convFromUrl)
+
+  // Vendedor asignado de una conversación = el del lead vinculado.
+  const sellerOf = (c: Conversation) => (c.linked_lead_id ? leadById.get(c.linked_lead_id)?.assigned_seller : "") || ""
+  const sellers = useMemo(() => [...new Set(leads.map(l => l.assigned_seller).filter(Boolean) as string[])].sort(), [leads])
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase()
     return conversations.filter(c => {
       if (channelFilter !== "all" && c.channel !== channelFilter) return false
+      if (onlyUnread && (c.unread_count ?? 0) <= 0) return false
+      if (sellerFilter === "__none__" && sellerOf(c)) return false
+      if (sellerFilter && sellerFilter !== "__none__" && sellerOf(c) !== sellerFilter) return false
       if (!needle) return true
       return c.contact_name.toLowerCase().includes(needle)
         || c.contact_id.toLowerCase().includes(needle)
         || (c.last_message_preview ?? "").toLowerCase().includes(needle)
     })
-  }, [conversations, channelFilter, q])
+  }, [conversations, channelFilter, q, onlyUnread, sellerFilter, leadById])
 
   // Default-select the first conversation when the list arrives
   useEffect(() => {
@@ -102,6 +111,11 @@ export default function MensajesPage() {
         q={q}
         setQ={setQ}
         leadById={leadById}
+        onlyUnread={onlyUnread}
+        setOnlyUnread={setOnlyUnread}
+        sellerFilter={sellerFilter}
+        setSellerFilter={setSellerFilter}
+        sellers={sellers}
       />
       <Thread conversation={selected} templates={templates} />
       <ContactPanel conversation={selected} clients={clients} sales={sales} leads={leads} leadById={leadById} quotes={quotes} />
@@ -115,6 +129,7 @@ export default function MensajesPage() {
 
 function ConversationList({
   conversations, total, selectedId, onSelect, channelFilter, setChannelFilter, q, setQ, leadById,
+  onlyUnread, setOnlyUnread, sellerFilter, setSellerFilter, sellers,
 }: {
   conversations: Conversation[]
   total: number
@@ -125,6 +140,11 @@ function ConversationList({
   q: string
   setQ: (s: string) => void
   leadById: Map<string, Lead>
+  onlyUnread: boolean
+  setOnlyUnread: (b: boolean) => void
+  sellerFilter: string
+  setSellerFilter: (s: string) => void
+  sellers: string[]
 }) {
   return (
     <aside className="flex flex-col border border-border rounded-l-lg bg-card overflow-hidden">
@@ -132,6 +152,14 @@ function ConversationList({
         <div className="relative">
           <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
           <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar conversación…" className="pl-8 h-8" />
+        </div>
+        <div className="flex items-center gap-2">
+          <Button variant={onlyUnread ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => setOnlyUnread(!onlyUnread)}>No leídos</Button>
+          <select value={sellerFilter} onChange={(e) => setSellerFilter(e.target.value)} className="h-7 flex-1 rounded-md border border-input bg-transparent px-2 text-xs">
+            <option value="">Todos los vendedores</option>
+            <option value="__none__">Sin asignar</option>
+            {sellers.map((s) => <option key={s} value={s}>{s}</option>)}
+          </select>
         </div>
         <Tabs value={channelFilter} onValueChange={(v) => setChannelFilter(v as ChannelFilter)}>
           <TabsList className="h-8 w-full grid grid-cols-4">
@@ -408,7 +436,8 @@ function Composer({
 }) {
   const fileRef = useRef<HTMLInputElement>(null)
   const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === "Enter" && !e.shiftKey) {
+    // Enter = salto de línea; Shift+Enter = enviar (para no mandar sin querer).
+    if (e.key === "Enter" && e.shiftKey) {
       e.preventDefault()
       onSend()
     }
@@ -461,7 +490,7 @@ function Composer({
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={onKeyDown}
-          placeholder="Escribí un mensaje…"
+          placeholder="Escribí un mensaje… (Shift+Enter para enviar)"
           rows={3}
           className="flex-1 resize-y min-h-[72px] max-h-[60vh] rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
         />

@@ -58,6 +58,32 @@ export default function LeadsPage() {
 
   const selectedLead = selectedLeadId ? leads.find(l => l.id === selectedLeadId) ?? null : null
 
+  // Detección de leads duplicados (mismo nombre completo, email o teléfono).
+  const [mergingKey, setMergingKey] = useState<string | null>(null)
+  const dupGroups = useMemo(() => {
+    const nrm = (s?: string) => (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim()
+    const dig = (s?: string) => (s || "").replace(/\D/g, "")
+    const keyOf = (l: Lead) => {
+      const nm = nrm(l.name)
+      if (nm.length >= 5 && nm.includes(" ")) return "n:" + nm
+      if (l.email) return "e:" + nrm(l.email)
+      if (dig(l.phone).length >= 8) return "p:" + dig(l.phone).slice(-8)
+      return "id:" + l.id
+    }
+    const m = new Map<string, Lead[]>()
+    for (const l of leads) { const k = keyOf(l); const a = m.get(k) || []; a.push(l); m.set(k, a) }
+    return [...m.entries()].filter(([, g]) => g.length >= 2)
+  }, [leads])
+  const score = (l: Lead) => (l.email ? 2 : 0) + (l.phone ? 1 : 0) + ((l.notes || "").length > 40 ? 1 : 0)
+  const mergeGroup = async (key: string, group: Lead[]) => {
+    const target = [...group].sort((a, b) => score(b) - score(a))[0]
+    setMergingKey(key)
+    try {
+      for (const l of group) if (l.id !== target.id) await fetch(`/api/leads/${l.id}/merge`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ into: target.id }) })
+      refresh()
+    } catch (e: any) { alert("Error al unificar: " + String(e?.message || e)); setMergingKey(null) }
+  }
+
   return (
     <>
       <TopbarActions>
@@ -79,6 +105,20 @@ export default function LeadsPage() {
             </div>
           </div>
         </div>
+        {dupGroups.length > 0 && (
+          <Card className="border-amber-300 bg-amber-50/50 p-3 space-y-2">
+            <div className="text-xs font-medium text-amber-800">Posibles duplicados ({dupGroups.length}) — mismo nombre, email o teléfono</div>
+            {dupGroups.map(([key, group]) => (
+              <div key={key} className="flex items-center justify-between gap-2 text-sm">
+                <div className="min-w-0 truncate">
+                  <span className="font-medium">{group[0].name}</span>
+                  <span className="text-xs text-muted-foreground"> · {group.length} leads · {[...new Set(group.map(g => g.source))].join(", ")}</span>
+                </div>
+                <Button size="sm" variant="outline" className="h-7 text-xs shrink-0" disabled={mergingKey === key} onClick={() => mergeGroup(key, group)}>{mergingKey === key ? "Unificando…" : "Unificar"}</Button>
+              </div>
+            ))}
+          </Card>
+        )}
         {leads.length === 0 ? (
           <Card className="px-6 py-10 text-center text-muted-foreground text-sm">
             Sin leads todavía. <button className="underline text-foreground" onClick={() => setOpenNew(true)}>Crear el primero</button>

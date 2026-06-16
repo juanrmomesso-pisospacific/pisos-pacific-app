@@ -10,6 +10,7 @@
 // de info@pisospacific.com), GMAIL_MP_REFRESH_TOKEN (infoacudesign, reportes MP).
 
 import { refreshGoogleToken } from './google-oauth.mjs';
+import { findLeadMatch } from './lead-match.mjs';
 
 const GMAIL = 'https://gmail.googleapis.com/gmail/v1/users/me';
 
@@ -97,10 +98,10 @@ export async function syncGmailLeads(db, save, customQuery) {
       ? { name: form.name, email: form.email }
       : { name: sender.name, email: sender.email };
 
-    // --- Lead (si no existe) ---
-    if (!leadEmails.has(contact.email)) {
-      leadEmails.add(contact.email);
-      db.leads.push({
+    // --- Lead: reusar uno existente (email/teléfono/nombre) en vez de duplicar ---
+    let lead = findLeadMatch(db.leads, { name: contact.name, email: contact.email, phone: form?.phone });
+    if (!lead) {
+      lead = {
         id: `lead-email-${msg.id.slice(0, 12)}`,
         name: contact.name, email: contact.email, phone: form?.phone || '',
         source: form ? 'Web' : 'Email',
@@ -108,9 +109,11 @@ export async function syncGmailLeads(db, save, customQuery) {
         needs_placement: form?.needs_placement ?? null, interested_products: [],
         notes: form ? form.notes : `Email: ${subject} — ${body.slice(0, 180)}`,
         status: 'New', assigned_seller: '', created_at: ts, last_touch_at: ts,
-      });
+      };
+      db.leads.push(lead);
+      leadEmails.add(contact.email);
       leads++;
-    }
+    } else { lead.last_touch_at = ts; }
 
     // --- Conversación de canal email ---
     let conv = convByEmail.get(contact.email);
@@ -118,13 +121,13 @@ export async function syncGmailLeads(db, save, customQuery) {
       conv = {
         id: `conv-email-${msg.id.slice(0, 12)}`,
         channel: 'email', contact_id: contact.email, contact_name: contact.name,
-        linked_client_name: null, status: 'open', unread_count: 0,
+        linked_client_name: null, linked_lead_id: lead.id, status: 'open', unread_count: 0,
         last_message_at: '', last_message_preview: '', email_subject: subject,   // ts queda al sumar el 1er mensaje
       };
       db.conversations.push(conv);
       convByEmail.set(contact.email, conv);
       convs++;
-    }
+    } else if (!conv.linked_lead_id) { conv.linked_lead_id = lead.id; }
     const msgBody = form
       ? `${form.notes}${form.address ? ' · ' + form.address : ''}`
       : body.slice(0, 1500);

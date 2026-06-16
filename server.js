@@ -577,6 +577,23 @@ app.post('/api/conversations/:id/read', (req, res) => {
 });
 // Compartir un presupuesto EN esta conversación: WhatsApp → PDF como documento;
 // email → link en el cuerpo + firma; Instagram → link como mensaje. Queda registrado en el chat.
+// Unificar leads duplicados: re-apunta conversaciones/cotizaciones al lead destino,
+// completa campos faltantes y borra el duplicado.
+app.post('/api/leads/:id/merge', (req, res) => {
+  const src = db.leads.find(l => l.id === req.params.id);
+  const tgt = db.leads.find(l => l.id === req.body?.into);
+  if (!src || !tgt || src.id === tgt.id) return res.status(400).json({ error: 'leads inválidos para unificar' });
+  for (const c of db.conversations) if (c.linked_lead_id === src.id) c.linked_lead_id = tgt.id;
+  for (const q of db.quotes) if (q.lead_id === src.id) q.lead_id = tgt.id;
+  for (const k of ['email', 'phone', 'address', 'approx_m2', 'needs_placement', 'assigned_seller', 'source']) if (!tgt[k] && src[k]) tgt[k] = src[k];
+  tgt.interested_products = [...new Set([...(tgt.interested_products || []), ...(src.interested_products || [])])];
+  if (src.notes && !(tgt.notes || '').includes(src.notes)) tgt.notes = [tgt.notes, src.notes].filter(Boolean).join(' · ');
+  const order = ['New', 'Contacted', 'Quoted', 'Won', 'Lost'];
+  if (order.indexOf(src.status) > order.indexOf(tgt.status) && src.status !== 'Lost') tgt.status = src.status;
+  db.leads = db.leads.filter(l => l.id !== src.id);
+  save();
+  res.json({ ok: true, into: tgt.id });
+});
 app.post('/api/conversations/:id/share-quote', async (req, res) => {
   const conv = db.conversations.find(c => c.id === req.params.id);
   const q = db.quotes.find(x => x.id === req.body?.quote_id);
