@@ -81,7 +81,7 @@ function seedFromDump() {
   const seedUsers = [
     { id: 'u-admin', email: 'info@pisospacific.com', name: 'Admin User',                password: 'admin123', role: 'admin',  seller_name: '' },
     { id: 'u-juan',  email: 'juan@pisospacific.com', name: 'Juan Rodriguez Momesso',    password: 'juan',     role: 'vendor', seller_name: 'Juan Rodriguez Momesso' },
-    { id: 'u-vicky', email: 'victoria@pisospacific.com',name: 'Victoria Gonzalez Collado', password: 'vicky',    role: 'vendor', seller_name: 'Victoria Gonzalez Collado' },
+    { id: 'u-vicky', email: 'victoria@pisospacific.com',name: 'Victoria Gonzalez Collado', password: 'vicky',    role: 'admin', seller_name: 'Victoria Gonzalez Collado' },
   ].map(u => ({ id: u.id, email: u.email, name: u.name, role: u.role, seller_name: u.seller_name, password_hash: bcrypt.hashSync(u.password, 10) }));
   const messagingSeed = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/messaging.seed.json'), 'utf8'));
   // Business data imported from PisosPacific_DataApp_v1.xlsx (scripts/import-excel.mjs).
@@ -172,7 +172,7 @@ if (!db.settings.integrations.mercadopago) db.settings.integrations.mercadopago 
   const phones = { 'Juan Rodriguez Momesso': '+54 11 51750097', 'Victoria Gonzalez Collado': '+54 11 36982222' };
   let changed = false;
   if (!Array.isArray(db.settings.sellers) || db.settings.sellers.length === 0) {
-    db.settings.sellers = (db.users || []).filter(u => u.role === 'vendor' && u.seller_name).map(u => ({ name: u.seller_name, phone: phones[u.seller_name] || '' }));
+    db.settings.sellers = (db.users || []).filter(u => u.seller_name).map(u => ({ name: u.seller_name, phone: phones[u.seller_name] || '' }));
     changed = true;
   }
   for (const s of db.settings.sellers) { if (phones[s.name] && s.phone !== phones[s.name]) { s.phone = phones[s.name]; changed = true; } }
@@ -203,7 +203,7 @@ if (!Array.isArray(db.users) || db.users.length === 0) {
   const seedUsers = [
     { id: 'u-admin', email: 'info@pisospacific.com', name: 'Admin User',                password: 'admin123', role: 'admin',  seller_name: '' },
     { id: 'u-juan',  email: 'juan@pisospacific.com', name: 'Juan Rodriguez Momesso',    password: 'juan',     role: 'vendor', seller_name: 'Juan Rodriguez Momesso' },
-    { id: 'u-vicky', email: 'victoria@pisospacific.com',name: 'Victoria Gonzalez Collado', password: 'vicky',    role: 'vendor', seller_name: 'Victoria Gonzalez Collado' },
+    { id: 'u-vicky', email: 'victoria@pisospacific.com',name: 'Victoria Gonzalez Collado', password: 'vicky',    role: 'admin', seller_name: 'Victoria Gonzalez Collado' },
   ].map(u => ({ id: u.id, email: u.email, name: u.name, role: u.role, seller_name: u.seller_name, password_hash: bcrypt.hashSync(u.password, 10) }));
   db.users = seedUsers;
   db.sessions = db.sessions ?? {};
@@ -219,10 +219,18 @@ if (!db.settings.victoria_access) {
   const existing = db.users.find(u => (u.email || '').toLowerCase() === 'victoria@pisospacific.com');
   const old = db.users.find(u => u.id === 'u-vicky' || (u.email || '').toLowerCase() === 'vicky@pisospacific.com');
   if (!existing && old) { old.email = 'victoria@pisospacific.com'; old.password_hash = bcrypt.hashSync('pacific2026', 10); }
-  else if (!existing && !old) { db.users.push({ id: 'u-victoria', email: 'victoria@pisospacific.com', name: 'Victoria Gonzalez Collado', role: 'vendor', seller_name: 'Victoria Gonzalez Collado', password_hash: bcrypt.hashSync('pacific2026', 10) }); }
+  else if (!existing && !old) { db.users.push({ id: 'u-victoria', email: 'victoria@pisospacific.com', name: 'Victoria Gonzalez Collado', role: 'admin', seller_name: 'Victoria Gonzalez Collado', password_hash: bcrypt.hashSync('pacific2026', 10) }); }
   db.settings.victoria_access = true;
   try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* se persiste igual en el próximo save */ }
   console.log('Acceso de Victoria activado (victoria@pisospacific.com)');
+}
+// Victoria con acceso total (ve todas las ventas) → role admin (una sola vez).
+if (!db.settings.victoria_admin) {
+  const v = db.users.find(u => (u.email || '').toLowerCase() === 'victoria@pisospacific.com');
+  if (v) v.role = 'admin';
+  db.settings.victoria_admin = true;
+  try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* se persiste en el próximo save */ }
+  console.log('Victoria → admin (acceso total)');
 }
 
 // Backfill the imported business collections (cajas/suppliers/categories/cashflow) on
