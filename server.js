@@ -551,6 +551,41 @@ app.post('/api/conversations/:id/read', (req, res) => {
   save();
   res.json(conv);
 });
+// Compartir un presupuesto EN esta conversación: WhatsApp → PDF como documento;
+// email → link en el cuerpo + firma; Instagram → link como mensaje. Queda registrado en el chat.
+app.post('/api/conversations/:id/share-quote', async (req, res) => {
+  const conv = db.conversations.find(c => c.id === req.params.id);
+  const q = db.quotes.find(x => x.id === req.body?.quote_id);
+  if (!conv || !q) return res.sendStatus(404);
+  if (!q.share_token) q.share_token = crypto.randomBytes(12).toString('hex');
+  const link = `${appBase(req)}/p/q/${q.id}/${q.share_token}`;
+  const filename = pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name);
+  const caption = `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`;
+  let delivery;
+  try {
+    if (conv.channel === 'whatsapp') {
+      const buf = await generatePdf(presupuestoData(q));
+      delivery = await sendWhatsAppDocument(toWa(conv.contact_id), buf, filename, caption);
+    } else if (conv.channel === 'email') {
+      const html = emailHtml(`Hola, te comparto el presupuesto.\n\nLo podés ver/descargar acá:\n${link}`, signatureFor(req.user));
+      delivery = await sendOutbound('email', conv.contact_id, `Te comparto el presupuesto: ${link}`, { subject: caption, html });
+    } else {
+      delivery = await sendOutbound(conv.channel, conv.contact_id, `Te comparto el presupuesto:\n${link}`, {});
+    }
+  } catch (e) { delivery = { sent: false, reason: e.message }; }
+  const ts = new Date().toISOString();
+  const body = conv.channel === 'whatsapp' ? `📄 ${filename} (enviado)` : `📄 Presupuesto: ${link}`;
+  const tokensMissing = delivery?.reason && /faltan/i.test(delivery.reason);
+  db.messages.push({
+    id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, conversation_id: conv.id,
+    direction: 'out', body, ts, status: delivery?.sent ? 'sent' : (tokensMissing ? 'sent' : 'failed'),
+    template_name: 'presupuesto', ...(delivery?.id ? { wa_id: delivery.id } : {}),
+  });
+  conv.last_message_at = ts; conv.last_message_preview = `📄 ${filename}`; conv.unread_count = 0;
+  if (/borrador|draft/i.test(q.status || '')) q.status = 'Enviado';
+  save();
+  res.json({ ok: !!(delivery?.sent || tokensMissing), channel: conv.channel, link, delivery });
+});
 app.get('/api/templates', (_, res) => res.json(db.templates));
 
 // Traer leads desde Gmail (info@pisospacific.com) — requiere GOOGLE_* + GMAIL_REFRESH_TOKEN.

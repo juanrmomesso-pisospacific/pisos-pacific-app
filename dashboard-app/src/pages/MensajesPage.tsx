@@ -523,6 +523,19 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
   const leadSaleIds = new Set(leadQuotes.map(q => q.sale_id).filter(Boolean) as string[])
   const leadSales = linkedLead && leadSaleIds.size > 0 ? sales.filter(s => leadSaleIds.has(s.id)) : []
 
+  // Cotizaciones del contacto (no solo del lead): por lead, cliente vinculado, teléfono o email.
+  const _digits = (s?: string) => (s || "").replace(/\D/g, "")
+  const convPhone = conversation.channel === "whatsapp" ? _digits(conversation.contact_id) : ""
+  const convEmail = conversation.channel === "email" ? conversation.contact_id.toLowerCase() : ""
+  const convNames = [conversation.linked_client_name, linkedLead?.name, conversation.contact_name].filter(Boolean).map(s => (s as string).toLowerCase())
+  const contactQuotes = quotes.filter(q => {
+    if (linkedLead && q.lead_id === linkedLead.id) return true
+    if (q.client_name && convNames.includes(q.client_name.toLowerCase())) return true
+    if (convPhone.length >= 8 && _digits(q.client_phone).endsWith(convPhone.slice(-8))) return true
+    if (convEmail && (q.client_email || "").toLowerCase() === convEmail) return true
+    return false
+  })
+
   const handleQuoteCreated = async (q: Quote) => {
     // Auto-generate the branded PDF so the vendor can drag it straight into the chat
     try {
@@ -651,10 +664,10 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
           </Section>
         )}
 
-        {linkedLead && leadQuotes.length > 0 && (
-          <Section title={`Cotizaciones del lead (${leadQuotes.length})`}>
+        {contactQuotes.length > 0 && (
+          <Section title={`Compartir presupuesto (${contactQuotes.length})`}>
             <div className="space-y-1.5">
-              {leadQuotes.map(q => <LeadQuoteRow key={q.id} quote={q} conversation={conversation} linkedLead={linkedLead} />)}
+              {contactQuotes.map(q => <LeadQuoteRow key={q.id} quote={q} conversation={conversation} linkedLead={linkedLead} />)}
             </div>
           </Section>
         )}
@@ -775,41 +788,33 @@ function LeadQuoteRow({ quote, conversation, linkedLead }: { quote: Quote; conve
     refresh()
   }
 
-  // Compartir por WhatsApp: posts the message INTO the current conversation thread (no external tab).
-  // Once Meta API is wired (T6.D) the outbound message + PDF attachment relays to the client.
-  // For now we also still download the PDF so the vendor has it handy in case they need to forward manually.
-  const firstName = (quote.client_name || "").split(" ")[0] || ""
-  const messageBody = `Hola${firstName ? " " + firstName : ""}, te paso la cotización #${quote.quote_number} por ${fmtMoney(quote.price ?? 0)}.\n\nLa adjunto en PDF. Cualquier consulta acá estoy. Gracias!`
-
-  const handleWhatsApp = async () => {
-    // Send message into the thread
+  // Compartir el presupuesto EN esta conversación: WhatsApp manda el PDF como documento;
+  // email manda el link en el cuerpo (+ firma); Instagram manda el link. Queda en el chat.
+  const [sharing, setSharing] = useState(false)
+  const shareLabel = conversation.channel === "whatsapp" ? "Enviar PDF" : conversation.channel === "email" ? "Enviar por mail" : "Enviar link"
+  const handleShare = async () => {
+    setSharing(true)
     try {
-      await fetch(`/api/conversations/${conversation.id}/messages`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ body: messageBody }),
+      const r = await fetch(`/api/conversations/${conversation.id}/share-quote`, {
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ quote_id: quote.id }),
       })
-    } catch { /* ignore */ }
-    // Download PDF so the vendor can forward it via WhatsApp Web until Meta API is wired
-    openPacificPdf("quotes", quote.id)
-    // Auto-advance status to Enviado (only from Borrador/DRAFT)
-    if (!sentLabels.has(status) && !acceptedLabels.has(status)) {
-      try { await fetch(`/api/quotes/${quote.id}/transition`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status: "Enviado" }) }) } catch { /* ignore */ }
-    }
-    refresh()
+      const j = await r.json().catch(() => ({}))
+      if (j.ok) refresh()
+      else alert("No se pudo enviar el presupuesto: " + (j.delivery?.reason || "revisá la conexión del canal") + (j.link ? "\n\nLink para compartir a mano:\n" + j.link : ""))
+    } catch (e: any) { alert("Error: " + String(e?.message || e)) } finally { setSharing(false) }
   }
 
   return (
     <div className="rounded-md border border-border px-2 py-1.5">
       <div className="flex items-center justify-between gap-2 mb-1">
-        <span className="text-xs font-medium truncate">#{quote.quote_number}</span>
+        <span className="text-xs font-medium truncate">#{quote.quote_number}{quote.title ? ` · ${quote.title}` : ""}</span>
         <span className="tabular text-xs">{fmtMoney(quote.price ?? 0)}</span>
       </div>
       <div className="flex items-center justify-between gap-2 flex-wrap">
         <Badge variant={variant as any} className="text-[10px]">{status}</Badge>
         <div className="flex gap-2">
           <button type="button" onClick={handlePdf} className="text-[10px] text-primary hover:underline">PDF</button>
-          <button type="button" onClick={handleWhatsApp} className="text-[10px] text-emerald-600 hover:underline" title="Manda el mensaje en este mismo chat + descarga el PDF para adjuntar">Compartir en chat</button>
+          <button type="button" onClick={handleShare} disabled={sharing} className="text-[10px] text-emerald-600 hover:underline disabled:opacity-50" title="Manda el presupuesto al cliente por este canal y lo registra en el chat">{sharing ? "Enviando…" : shareLabel}</button>
           {!sentLabels.has(status) && !acceptedLabels.has(status) && (
             <button type="button" onClick={markSent} className="text-[10px] text-muted-foreground hover:underline">Marcar enviada</button>
           )}
