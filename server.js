@@ -18,7 +18,7 @@ const ROOT = path.resolve(__dirname, '..');
 const CLONE = path.join(ROOT, 'clone-source');
 
 const app = express();
-app.use(express.json({ limit: '20mb' }));
+app.use(express.json({ limit: '20mb', verify: (req, _res, buf) => { req.rawBody = buf; } }));
 app.use(cookieParser());
 
 // Health check público (Render/uptime) — 200 sin auth.
@@ -294,6 +294,11 @@ function requireAuth(req, res, next) {
   const u = sessionUser(req);
   if (!u) return res.status(401).json({ error: 'unauthorized' });
   req.user = u;
+  next();
+}
+// Solo admin: protege escrituras sensibles (finanzas, reglas, settings, imports).
+function requireAdmin(req, res, next) {
+  if (req.user?.role !== 'admin') return res.status(403).json({ error: 'solo admin' });
   next();
 }
 
@@ -690,7 +695,7 @@ app.post('/api/conversations/:id/send-file', async (req, res) => {
 app.get('/api/templates', (_, res) => res.json(db.templates));
 
 // Traer leads desde Gmail (info@pisospacific.com) — requiere GOOGLE_* + GMAIL_REFRESH_TOKEN.
-app.post('/api/integrations/gmail/sync', async (req, res) => {
+app.post('/api/integrations/gmail/sync', requireAdmin, async (req, res) => {
   try { res.json(await syncGmailLeads(db, save, req.body?.query)); }
   catch (e) { res.status(400).json({ error: e.message || 'no se pudo sincronizar Gmail' }); }
 });
@@ -782,7 +787,22 @@ const metaVerify = (req, res) => {
   }
   res.sendStatus(403);
 };
+// Verifica la firma X-Hub-Signature-256 de Meta contra META_APP_SECRET.
+// Si el secret no está configurado, deja pasar pero avisa (no romper el webhook
+// hasta que se cargue el env). Una vez configurado, rechaza payloads no firmados.
+function metaSignatureOk(req) {
+  const secret = process.env.META_APP_SECRET;
+  if (!secret) { console.warn('[webhook] META_APP_SECRET sin configurar — firma NO verificada'); return true; }
+  const sig = req.get('x-hub-signature-256') || '';
+  if (!sig.startsWith('sha256=') || !req.rawBody) return false;
+  const expected = 'sha256=' + crypto.createHmac('sha256', secret).update(req.rawBody).digest('hex');
+  try {
+    const a = Buffer.from(sig), b = Buffer.from(expected);
+    return a.length === b.length && crypto.timingSafeEqual(a, b);
+  } catch { return false; }
+}
 const metaInbound = (channel) => (req, res) => {
+  if (!metaSignatureOk(req)) return res.sendStatus(403);   // firma inválida → no procesar
   res.sendStatus(200);   // ack rápido a Meta; procesamos en background
   handleInbound(db, save, channel, req.body).catch((e) => console.warn(`[${channel}:inbound] error`, e.message));
 };
@@ -791,7 +811,7 @@ for (const ch of ['whatsapp', 'instagram']) {
   app.post(`/api/${ch}/webhook`, metaInbound(ch));
 }
 app.get('/api/settings', (_, res) => res.json(db.settings));
-app.patch('/api/settings', (req, res) => {
+app.patch('/api/settings', requireAdmin, (req, res) => {
   const incoming = req.body ?? {};
   db.settings = { ...db.settings, ...incoming, dashboardThresholds: { ...db.settings.dashboardThresholds, ...(incoming.dashboardThresholds ?? {}) }, updatedAt: new Date().toISOString() };
   save();
@@ -861,22 +881,25 @@ app.patch('/api/leads/:id', (req, res) => {
 });
 
 app.get('/api/cp_rules', (_, res) => res.json(db.cp_rules || []));
+// Entidades financieras/config: escritura solo admin (un vendedor no toca caja ni reglas).
+const ADMIN_ONLY_WRITE = new Set(['cashflow', 'cajas', 'cp_rules', 'categories', 'expenses']);
 ['products','sales','quotes','clients','expenses','leads','conversations','tasks','cajas','suppliers','categories','cashflow','cp_rules'].forEach(name => {
-  app.post(`/api/${name}`, (req, res) => {
+  const guard = ADMIN_ONLY_WRITE.has(name) ? [requireAdmin] : [];
+  app.post(`/api/${name}`, ...guard, (req, res) => {
     const id = req.body.id ?? `local-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
     const row = { id, ...req.body };
     db[name].push(row);
     save();
     res.json(row);
   });
-  app.patch(`/api/${name}/:id`, (req, res) => {
+  app.patch(`/api/${name}/:id`, ...guard, (req, res) => {
     const i = db[name].findIndex(x => x.id === req.params.id);
     if (i < 0) return res.sendStatus(404);
     db[name][i] = { ...db[name][i], ...req.body };
     save();
     res.json(db[name][i]);
   });
-  app.delete(`/api/${name}/:id`, (req, res) => {
+  app.delete(`/api/${name}/:id`, ...guard, (req, res) => {
     db[name] = db[name].filter(x => x.id !== req.params.id);
     save();
     res.sendStatus(204);
@@ -886,7 +909,7 @@ app.get('/api/cp_rules', (_, res) => res.json(db.cp_rules || []));
 // ---------- Importar extractos (MP / BBVA / Banco de Comercio) ----------
 // parse: decodifica el archivo, clasifica y deduplica contra el cashflow vivo,
 // y devuelve un preview (NO inserta). commit: inserta los movimientos elegidos.
-app.post('/api/import/parse', async (req, res) => {
+app.post('/api/import/parse', requireAdmin, async (req, res) => {
   try {
     const { source, data_base64 } = req.body || {};
     if (!source || !IMPORT_CAJA[source]) return res.status(400).json({ error: 'fuente inválida (mp | bbva | bdc)' });
@@ -901,7 +924,7 @@ app.post('/api/import/parse', async (req, res) => {
 });
 // Sincronizar con MP por API (OAuth). Async: los reportes tardan minutos.
 //  start → crea el reporte y devuelve jobId; result → cuando está listo, da el preview.
-app.post('/api/import/mp-sync/start', async (req, res) => {
+app.post('/api/import/mp-sync/start', requireAdmin, async (req, res) => {
   try {
     const days = Math.min(Math.max(Number(req.body?.days) || 45, 1), 365);
     res.json(await startMpReport({ days }));
@@ -909,7 +932,7 @@ app.post('/api/import/mp-sync/start', async (req, res) => {
 });
 // Importar el reporte de MP que llega por email a infoacudesign@gmail.com (CON nombres).
 // Baja el adjunto del Gmail, lo pasa por el importador 'mp' (mismo formato que el .xlsx manual).
-app.post('/api/import/mp-email', async (_req, res) => {
+app.post('/api/import/mp-email', requireAdmin, async (_req, res) => {
   try {
     const r = await fetchLatestMpReport();
     if (!r.found) return res.json({ found: false, candidates: r.candidates, error: 'No encontré un reporte de MP con adjunto. Revisá que el reporte se mande adjunto (no link) a infoacudesign@gmail.com.' });
@@ -923,7 +946,7 @@ app.post('/api/import/mp-email', async (_req, res) => {
     res.json({ found: true, filename: r.filename, subject: r.subject, movements, report });
   } catch (e) { res.status(400).json({ error: e.message || 'no se pudo importar el reporte de MP por email' }); }
 });
-app.post('/api/import/mp-sync/result', async (req, res) => {
+app.post('/api/import/mp-sync/result', requireAdmin, async (req, res) => {
   try {
     if (!req.body?.jobId) return res.status(400).json({ error: 'falta jobId' });
     await getBlueRate();   // refresca el TC Blue para la conversión ARS→USD
@@ -995,7 +1018,7 @@ app.post('/api/import/mp-sync/auto-run', (_req, res) => {
   res.json({ started: true });
 });
 
-app.post('/api/import/commit', (req, res) => {
+app.post('/api/import/commit', requireAdmin, (req, res) => {
   const movs = Array.isArray(req.body?.movements) ? req.body.movements : null;
   if (!movs || !movs.length) return res.status(400).json({ error: 'no hay movimientos para importar' });
   let inserted = 0, enriched = 0, seq = 0;
@@ -1157,6 +1180,9 @@ app.get('/api/payment-links/:id', (req, res) => {
 app.post('/api/payment-links/:id/simulate-paid', (req, res) => {
   const l = db.payment_links.find(x => x.id === req.params.id);
   if (!l) return res.sendStatus(404);
+  // Solo links en modo demo (mock) se pueden marcar pagados a mano. Los 'live'
+  // registran cobros reales SOLO por el webhook de MP (este endpoint es público).
+  if (l.mode !== 'mock') return res.status(403).json({ error: 'solo links en modo demo' });
   if (l.status === 'paid') return res.json(l);
   const s = db.sales.find(x => x.id === l.sale_id);
   if (!s) return res.sendStatus(404);
