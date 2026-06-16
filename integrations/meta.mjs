@@ -244,7 +244,7 @@ import { sendMail } from './mailer.mjs';
 export async function sendOutbound(channel, to, text, opts = {}) {
   if (channel === 'whatsapp') return sendWhatsApp(to, text);
   if (channel === 'instagram') return sendInstagram(to, text);
-  if (channel === 'email') return sendMail({ to, subject: opts.subject || 'Pisos Pacific', text });
+  if (channel === 'email') return sendMail({ to, subject: opts.subject || 'Pisos Pacific', text, html: opts.html });
   return { sent: false, reason: 'canal sin envío automático' };
 }
 

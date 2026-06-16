@@ -427,8 +427,8 @@ function Composer({
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={onKeyDown}
           placeholder="Escribí un mensaje…"
-          rows={1}
-          className="flex-1 resize-none min-h-9 max-h-32 rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+          rows={3}
+          className="flex-1 resize-y min-h-[72px] max-h-[60vh] rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
         />
         <Button size="icon" className="h-9 w-9 shrink-0" onClick={onSend} disabled={sending || !draft.trim()}>
           <Send className="h-4 w-4" />

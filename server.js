@@ -484,6 +484,24 @@ app.get('/api/cajas/balances', (_, res) => {
   const unassigned = db.cashflow.filter(m => !m.caja_id).length;
   res.json({ balances, unassigned_movements: unassigned });
 });
+// Firmas de email (HTML email-safe del handoff). Se elige según el usuario que responde.
+const FIRMAS = {};
+try {
+  FIRMAS.juan = fs.readFileSync(path.join(__dirname, 'assets/firma/firma-juan.html'), 'utf8');
+  FIRMAS.victoria = fs.readFileSync(path.join(__dirname, 'assets/firma/firma-victoria.html'), 'utf8');
+} catch { /* sin firmas cargadas */ }
+function signatureFor(user) {
+  const email = (user?.email || '').toLowerCase();
+  const idstr = `${user?.name || ''} ${user?.seller_name || ''}`.toLowerCase();
+  if (email.startsWith('victoria@') || /\b(victoria|vicky)\b/.test(idstr)) return FIRMAS.victoria || '';
+  return FIRMAS.juan || '';   // default (info@ = Juan)
+}
+const escHtml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+function emailHtml(body, sig) {
+  const bodyHtml = escHtml(body).replace(/\n/g, '<br>');
+  return `<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#2a2723;">${bodyHtml}</div>` + (sig ? `<br><br>${sig}` : '');
+}
+
 app.get('/api/conversations', (_, res) => {
   // Ship the conversations sorted by most-recent-message-first for free
   const sorted = [...db.conversations].sort((a, b) => (b.last_message_at ?? '').localeCompare(a.last_message_at ?? ''));
@@ -502,7 +520,10 @@ app.post('/api/conversations/:id/messages', async (req, res) => {
   let delivery = { sent: true, local: true };
   try {
     const subject = conv.email_subject ? `Re: ${conv.email_subject.replace(/^re:\s*/i, '')}` : undefined;
-    delivery = await sendOutbound(conv.channel, conv.contact_id, body, { subject });
+    // Email a cliente: arma HTML con el cuerpo + la firma del usuario que responde.
+    const opts = { subject };
+    if (conv.channel === 'email') opts.html = emailHtml(body, signatureFor(req.user));
+    delivery = await sendOutbound(conv.channel, conv.contact_id, body, opts);
   } catch (e) { delivery = { sent: false, reason: e.message }; }
   const tokensMissing = delivery.reason && /faltan/i.test(delivery.reason);
   const msg = {
@@ -1274,6 +1295,8 @@ app.get('/api/sales/:id/remito', (req, res) => {
 });
 
 // ---------- Brand logos (committed in assets/branding/) ----------
+// Assets públicos de la firma de email (los clientes de correo los bajan sin login).
+app.use('/firma', express.static(path.join(__dirname, 'assets/firma')));
 const BRANDING = path.join(__dirname, 'assets/branding');
 app.get('/LogoPacific.png',          (_, res) => res.sendFile(path.join(BRANDING, 'LogoPacific.png')));
 app.get('/LogoPacificSmall.png',     (_, res) => res.sendFile(path.join(BRANDING, 'LogoPacificSmall.png')));
