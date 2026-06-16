@@ -439,7 +439,24 @@ function Bubble({ msg }: { msg: Message }) {
             Plantilla · {msg.template_name}
           </div>
         )}
-        <div className="text-sm whitespace-pre-wrap break-words">{msg.body}</div>
+        {msg.media_url && msg.media_type === "image" && (
+          <a href={msg.media_url} target="_blank" rel="noreferrer">
+            <img src={msg.media_url} alt="Foto" className="rounded-md max-h-64 max-w-full mb-1 object-cover" />
+          </a>
+        )}
+        {msg.media_url && msg.media_type === "video" && (
+          <video src={msg.media_url} controls className="rounded-md max-h-64 max-w-full mb-1" />
+        )}
+        {msg.media_url && msg.media_type === "audio" && (
+          <audio src={msg.media_url} controls className="mb-1 w-full" />
+        )}
+        {/* el texto/placeholder se oculta cuando ya mostramos la media visual */}
+        {!(msg.media_url && (msg.media_type === "image" || msg.media_type === "video" || msg.media_type === "audio")) && (
+          <div className="text-sm whitespace-pre-wrap break-words">{msg.body}</div>
+        )}
+        {msg.media_url && msg.media_type === "file" && (
+          <a href={msg.media_url} target="_blank" rel="noreferrer" className="text-xs underline">Abrir adjunto</a>
+        )}
         <div className={`text-[10px] mt-1 ${isOut ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
           {new Date(msg.ts).toLocaleTimeString("es-AR", { hour: "2-digit", minute: "2-digit" })}
           {isOut && msg.status ? ` · ${msg.status}` : ""}

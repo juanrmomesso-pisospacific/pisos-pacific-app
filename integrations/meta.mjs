@@ -85,6 +85,7 @@ export async function handleInbound(db, save, channel, payload) {
   const msg = {
     id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
     conversation_id: conv.id, direction: 'in', body: text, ts, status: 'received',
+    ...(parsed.media ? { media: parsed.media } : {}),   // descriptor temporal; server.js baja y guarda
   };
   db.messages.push(msg);
   conv.last_message_at = ts;
@@ -116,10 +117,13 @@ function parseWhatsApp(payload) {
     if (!m) return null;   // p. ej. payloads de 'statuses' (entregado/leído) no traen messages
     const contact = value?.contacts?.[0];
     const text = m.type === 'text' ? (m.text?.body || '') : waMediaLabel(m);
+    // Media de WhatsApp: viene como id → se resuelve/baja con el token (en server.js).
+    const mediaNode = m.image || m.video || m.audio || m.document || m.sticker;
+    const media = (mediaNode?.id) ? { source: 'wa-id', mediaId: mediaNode.id, mime: mediaNode.mime_type || '', kind: m.type } : null;
     return {
       contactId: m.from,
       contactName: contact?.profile?.name || null,
-      text,
+      text, media,
       ts: m.timestamp ? new Date(Number(m.timestamp) * 1000).toISOString() : new Date().toISOString(),
     };
   } catch { return null; }
@@ -259,23 +263,24 @@ function parseInstagram(payload) {
     if (!e || e.message?.is_echo) return null;   // sin evento, o eco de nuestros propios salientes
     const m = e.message;
     let text = m?.text || '';
-    // Fotos/videos/audios/historias compartidas: aparecen como attachments sin texto.
-    // OJO: las URL de IG son temporales (expiran) → sirven solo en el momento.
+    let media = null;
+    // Fotos/videos/audios/historias compartidas: vienen como attachments con una URL
+    // pública (firmada, TEMPORAL) → se baja y guarda en server.js para que quede en el chat.
     if (!text && Array.isArray(m?.attachments) && m.attachments.length) {
       const a = m.attachments[0];
       const url = a?.payload?.url || '';
-      const label = a.type === 'image' ? '📷 Foto'
+      text = a.type === 'image' ? '📷 Foto'
         : a.type === 'video' ? '🎥 Video'
         : a.type === 'audio' ? '🎤 Audio'
         : a.type === 'share' ? '🔗 Publicación compartida'
         : a.type === 'story_mention' ? '📲 Te mencionó en una historia'
         : a.type === 'story_reply' ? '💬 Respuesta a tu historia'
-        : '📎 Adjunto';
-      text = url ? `${label}\n${url}` : label;
+        : (url ? '📷 Foto' : '📎 Adjunto');   // si hay URL, asumimos imagen (IG manda fotos así)
+      if (url) media = { source: 'ig-url', url, kind: a.type || 'image' };
     }
     if (!text && e.reaction) text = `↩️ Reaccionó: ${e.reaction.emoji || ''}`;
     if (!text || !e.sender?.id) return null;
-    return { contactId: e.sender.id, contactName: null, text, ts: e.timestamp ? new Date(Number(e.timestamp)).toISOString() : new Date().toISOString() };
+    return { contactId: e.sender.id, contactName: null, text, media, ts: e.timestamp ? new Date(Number(e.timestamp)).toISOString() : new Date().toISOString() };
   } catch { return null; }
 }
 

@@ -805,10 +805,42 @@ function metaSignatureOk(req, channel) {
   // NO perder DMs hasta confirmar por logs que IG firma igual; después se vuelve a bloquear.
   return channel === 'instagram';
 }
+// Baja la media de un mensaje entrante (descriptor msg.media) y la guarda en UPLOAD_DIR
+// para que quede permanente en el chat (las URLs de IG/WhatsApp son temporales).
+const EXT_BY_MIME = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'image/gif': 'gif', 'video/mp4': 'mp4', 'audio/mpeg': 'mp3', 'audio/ogg': 'ogg', 'audio/aac': 'aac', 'application/pdf': 'pdf' };
+async function persistInboundMedia(result) {
+  const msg = result?.message; const md = msg?.media;
+  if (!md) return;
+  try {
+    let buf, mime;
+    if (md.source === 'ig-url' && md.url) {
+      const r = await fetch(md.url, { signal: AbortSignal.timeout(20000) });
+      if (!r.ok) throw new Error('IG media ' + r.status);
+      mime = r.headers.get('content-type') || ''; buf = Buffer.from(await r.arrayBuffer());
+    } else if (md.source === 'wa-id' && md.mediaId) {
+      const token = process.env.WHATSAPP_TOKEN;
+      const meta = await (await fetch(`https://graph.facebook.com/v21.0/${md.mediaId}`, { headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(15000) })).json();
+      if (!meta.url) throw new Error('WA media sin url');
+      const r = await fetch(meta.url, { headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(20000) });
+      mime = meta.mime_type || r.headers.get('content-type') || ''; buf = Buffer.from(await r.arrayBuffer());
+    } else return;
+    if (!buf?.length) throw new Error('media vacía');
+    if (buf.length > 25 * 1024 * 1024) throw new Error('media muy grande');
+    const ext = EXT_BY_MIME[(mime || '').split(';')[0].trim()] || 'bin';
+    const stored = `${crypto.randomBytes(8).toString('hex')}.${ext}`;
+    fs.writeFileSync(path.join(UPLOAD_DIR, stored), buf);
+    msg.media_url = `/uploads/${stored}`;
+    msg.media_type = /^image\//.test(mime) ? 'image' : /^video\//.test(mime) ? 'video' : /^audio\//.test(mime) ? 'audio' : 'file';
+    delete msg.media;
+    save();
+  } catch (e) { console.warn('[media:inbound] no se pudo guardar:', e.message); delete msg.media; }
+}
 const metaInbound = (channel) => (req, res) => {
   if (!metaSignatureOk(req, channel)) return res.sendStatus(403);   // firma inválida → no procesar
   res.sendStatus(200);   // ack rápido a Meta; procesamos en background
-  handleInbound(db, save, channel, req.body).catch((e) => console.warn(`[${channel}:inbound] error`, e.message));
+  handleInbound(db, save, channel, req.body)
+    .then((result) => persistInboundMedia(result))
+    .catch((e) => console.warn(`[${channel}:inbound] error`, e.message));
 };
 for (const ch of ['whatsapp', 'instagram']) {
   app.get(`/api/${ch}/webhook`, metaVerify);
