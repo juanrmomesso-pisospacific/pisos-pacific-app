@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { useApi } from "@/lib/api"
 import { RulesManager } from "@/components/RulesManager"
 import { useAction, refresh } from "@/lib/mutations"
+import { useAuth } from "@/contexts/AuthContext"
 
 type MpSettings = { enabled: boolean; access_token: string; public_key: string }
 type Settings = { integrations?: { mercadopago?: MpSettings } }
@@ -23,6 +24,8 @@ async function patchSettings(body: Partial<Settings>): Promise<Settings> {
 
 export default function ConfiguracionPage() {
   const settings = useApi<Settings>("/api/settings").data
+  const { state } = useAuth()
+  const isAdmin = state.status === "ready" && state.user.role === "admin"
 
   return (
     <div className="px-4 lg:px-6 space-y-4 md:space-y-6 max-w-3xl">
@@ -36,7 +39,73 @@ export default function ConfiguracionPage() {
         </CardContent>
       </Card>
       <RulesManager />
+      {isAdmin && <EmailCleanupSection />}
     </div>
+  )
+}
+
+// Mantenimiento de la bandeja de email: revincula conversaciones a su lead y marca
+// "Contactado" los que ya respondimos por Gmail. Hace un preview antes de aplicar.
+function EmailCleanupSection() {
+  const [preview, setPreview] = useState<any>(null)
+  const [busy, setBusy] = useState(false)
+  const [done, setDone] = useState<any>(null)
+  const [error, setError] = useState<string | null>(null)
+
+  const run = async (commit: boolean) => {
+    setBusy(true); setError(null)
+    try {
+      const r = await fetch("/api/admin/cleanup-email-leads", {
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ commit }),
+      })
+      const j = await r.json()
+      if (!r.ok || j.error) throw new Error(j.error || `${r.status}`)
+      if (commit) { setDone(j); setPreview(null) } else setPreview(j)
+    } catch (e: any) { setError(e?.message || "error") } finally { setBusy(false) }
+  }
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Limpiar bandeja de email</CardTitle>
+        <CardDescription>
+          Revincula las conversaciones de email a su lead y marca como <b>Contactado</b> a los que ya respondiste
+          desde Gmail (lee tu carpeta Enviados). No pisa los que ya están Cotizado/Ganado.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-3">
+        {error && <div className="text-sm text-destructive flex items-center gap-1.5"><AlertCircle className="h-4 w-4" />{error}</div>}
+        {!preview && !done && (
+          <Button variant="outline" size="sm" disabled={busy} onClick={() => run(false)}>{busy ? "Revisando…" : "Previsualizar"}</Button>
+        )}
+        {preview && (
+          <div className="space-y-3">
+            <div className="text-sm text-muted-foreground">
+              Encontrados <b className="text-foreground">{preview.sent_recipients}</b> destinatarios en Enviados.
+              Se revincularán <b className="text-foreground">{preview.relinked}</b> conversaciones y se marcarán
+              <b className="text-foreground"> {preview.contacted}</b> leads como Contactado.
+              {preview.gmail_error && <span className="block text-amber-600 mt-1">⚠ No se pudo leer Gmail Enviados ({preview.gmail_error}); solo se revinculará.</span>}
+            </div>
+            {preview.contacted_names?.length > 0 && (
+              <div className="text-xs text-muted-foreground max-h-32 overflow-y-auto border border-border rounded-md p-2">
+                {preview.contacted_names.join(" · ")}
+              </div>
+            )}
+            <div className="flex gap-2">
+              <Button size="sm" disabled={busy} onClick={() => run(true)}>{busy ? "Aplicando…" : "Aplicar cambios"}</Button>
+              <Button variant="ghost" size="sm" disabled={busy} onClick={() => setPreview(null)}>Cancelar</Button>
+            </div>
+          </div>
+        )}
+        {done && (
+          <div className="text-sm text-emerald-700 flex items-center gap-1.5">
+            <CheckCircle2 className="h-4 w-4" />
+            Listo: {done.relinked} conversaciones revinculadas, {done.contacted} leads marcados como Contactado.
+            <Button variant="link" size="sm" className="px-1" onClick={() => { setDone(null); refresh() }}>Actualizar</Button>
+          </div>
+        )}
+      </CardContent>
+    </Card>
   )
 }
 

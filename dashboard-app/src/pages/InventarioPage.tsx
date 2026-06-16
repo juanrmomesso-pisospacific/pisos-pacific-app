@@ -156,7 +156,7 @@ export default function InventarioPage() {
     <>
       <TopbarActions>
         <Button variant="outline" size="sm" onClick={onExport} title="Descargar planilla CSV para control de stock"><Download className="h-4 w-4" />Exportar</Button>
-        <Button variant="outline" size="sm"><Upload className="h-4 w-4" />Importar</Button>
+        <Button variant="outline" size="sm" disabled title="Próximamente — importar stock desde archivo"><Upload className="h-4 w-4" />Importar</Button>
         <Button size="sm" onClick={() => setOpenNew(true)}><Plus className="h-4 w-4" />Nuevo Ítem</Button>
       </TopbarActions>
 

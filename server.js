@@ -9,7 +9,7 @@ import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { startMpReport, getMpReport, parseSettlementBuffer } from './import/mp-api.mjs';
 import { getBlueRate } from './import/fx.mjs';
 import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integrations/meta.mjs';
-import { syncGmailLeads, fetchLatestMpReport } from './integrations/gmail.mjs';
+import { syncGmailLeads, fetchLatestMpReport, listSentRecipients } from './integrations/gmail.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 import { generatePdf } from './pdf/render.mjs';
 
@@ -119,7 +119,13 @@ const db = (() => {
       console.log(`Loaded db.json (${(fs.statSync(DB_PATH).size / 1024).toFixed(0)} KB)`);
       return loaded;
     } catch (e) {
-      console.warn(`Could not parse db.json — re-seeding: ${e.message}`);
+      // La DB existe pero no parsea (truncada/corrupta). NUNCA re-seedear encima:
+      // eso borraría los datos reales. Respaldar y abortar el arranque para que un
+      // humano lo recupere (Render mantiene viva la versión anterior si no levanta).
+      const bak = `${DB_PATH}.corrupt-${Date.now()}`;
+      try { fs.copyFileSync(DB_PATH, bak); } catch { /* noop */ }
+      console.error(`FATAL: db.json no parsea (${e.message}). Respaldo en ${bak}. Abortando para no pisar datos reales.`);
+      throw new Error('db.json corrupto — arranque abortado para proteger los datos');
     }
   }
   // Primer arranque sin DB: si hay un snapshot commiteado (data/db.bootstrap.json),
@@ -137,13 +143,22 @@ const db = (() => {
 })();
 
 let saveTimer = null;
+function flushSave() {
+  if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
+  // Escritura atómica: escribir a .tmp y renombrar (rename es atómico en el mismo FS).
+  // Evita dejar un db.json truncado si el proceso muere a mitad del write.
+  const tmp = `${DB_PATH}.tmp`;
+  fs.writeFileSync(tmp, JSON.stringify(db, null, 2));
+  fs.renameSync(tmp, DB_PATH);
+}
 function save() {
   // Debounce writes so a burst of mutations only writes once
   if (saveTimer) clearTimeout(saveTimer);
-  saveTimer = setTimeout(() => {
-    fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
-    saveTimer = null;
-  }, 50);
+  saveTimer = setTimeout(flushSave, 50);
+}
+// Flush pendiente antes de salir (deploys de Render mandan SIGTERM) → no perder los últimos cambios.
+for (const sig of ['SIGTERM', 'SIGINT']) {
+  process.on(sig, () => { try { flushSave(); } catch { /* noop */ } process.exit(0); });
 }
 
 // Backfill collections added after the first seed so existing db.json files keep working.
@@ -678,6 +693,38 @@ app.get('/api/templates', (_, res) => res.json(db.templates));
 app.post('/api/integrations/gmail/sync', async (req, res) => {
   try { res.json(await syncGmailLeads(db, save, req.body?.query)); }
   catch (e) { res.status(400).json({ error: e.message || 'no se pudo sincronizar Gmail' }); }
+});
+
+// Limpieza de la bandeja de email (admin): (1) revincula conversaciones de email a su
+// lead por coincidencia de email, (2) marca "Contactado" los leads (en New) a los que ya
+// les escribimos desde Gmail (carpeta Enviados) y limpia su contador de no-leídos.
+// Por defecto es dry-run (preview); con { commit: true } aplica los cambios.
+app.post('/api/admin/cleanup-email-leads', async (req, res) => {
+  if (req.user?.role !== 'admin') return res.status(403).json({ error: 'solo admin' });
+  const commit = req.body?.commit === true;
+  try {
+    let sent = new Set(), gmailError = null;
+    try { sent = await listSentRecipients({ max: req.body?.max || 800 }); }
+    catch (e) { gmailError = e.message || 'no se pudo leer Gmail Enviados'; }
+    const leadByEmail = new Map();
+    for (const l of db.leads) { const e = String(l.email || '').toLowerCase(); if (e && !leadByEmail.has(e)) leadByEmail.set(e, l); }
+
+    const relinked = [], contacted = [];
+    for (const c of db.conversations) {
+      if (c.channel !== 'email') continue;
+      const email = String(c.contact_id || '').toLowerCase();
+      const lead = leadByEmail.get(email);
+      // (1) revincular conversación → lead
+      if (lead && c.linked_lead_id !== lead.id) { if (commit) c.linked_lead_id = lead.id; relinked.push(email); }
+      // (2) ya respondido por Gmail → Contactado + limpiar no-leídos
+      if (email && sent.has(email)) {
+        if (lead && lead.status === 'New') { if (commit) lead.status = 'Contacted'; contacted.push(lead.name || email); }
+        if ((c.unread_count || 0) > 0 && commit) c.unread_count = 0;
+      }
+    }
+    if (commit && (relinked.length || contacted.length)) save();
+    res.json({ ok: true, commit, gmail_error: gmailError, sent_recipients: sent.size, relinked: relinked.length, contacted: contacted.length, contacted_names: contacted.slice(0, 80) });
+  } catch (e) { res.status(400).json({ error: e.message || 'falló la limpieza' }); }
 });
 
 // ---------- Conexión Google OAuth (Gmail) — autorizar desde el navegador ----------

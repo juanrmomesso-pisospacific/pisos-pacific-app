@@ -51,6 +51,7 @@ export default function MensajesPage() {
   const [channelFilter, setChannelFilter] = useState<ChannelFilter>("all")
   const [q, setQ] = useState("")
   const [onlyUnread, setOnlyUnread] = useState(false)
+  const [showClosed, setShowClosed] = useState(false)
   const [sellerFilter, setSellerFilter] = useState("")   // "" todos · "__none__" sin asignar · nombre
   const [selectedId, setSelectedId] = useState<string | null>(convFromUrl)
 
@@ -61,6 +62,7 @@ export default function MensajesPage() {
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase()
     return conversations.filter(c => {
+      if (c.status === "closed" && !showClosed) return false   // cerradas ocultas salvo toggle
       if (channelFilter !== "all" && c.channel !== channelFilter) return false
       if (onlyUnread && (c.unread_count ?? 0) <= 0) return false
       if (sellerFilter === "__none__" && sellerOf(c)) return false
@@ -69,8 +71,13 @@ export default function MensajesPage() {
       return c.contact_name.toLowerCase().includes(needle)
         || c.contact_id.toLowerCase().includes(needle)
         || (c.last_message_preview ?? "").toLowerCase().includes(needle)
+    }).sort((a, b) => {
+      // No leídas primero; dentro de cada grupo, por fecha de último mensaje desc.
+      const ua = (a.unread_count ?? 0) > 0 ? 1 : 0, ub = (b.unread_count ?? 0) > 0 ? 1 : 0
+      if (ua !== ub) return ub - ua
+      return (b.last_message_at ?? "").localeCompare(a.last_message_at ?? "")
     })
-  }, [conversations, channelFilter, q, onlyUnread, sellerFilter, leadById])
+  }, [conversations, channelFilter, q, onlyUnread, showClosed, sellerFilter, leadById])
 
   // Default-select the first conversation when the list arrives
   useEffect(() => {
@@ -113,6 +120,8 @@ export default function MensajesPage() {
         leadById={leadById}
         onlyUnread={onlyUnread}
         setOnlyUnread={setOnlyUnread}
+        showClosed={showClosed}
+        setShowClosed={setShowClosed}
         sellerFilter={sellerFilter}
         setSellerFilter={setSellerFilter}
         sellers={sellers}
@@ -129,7 +138,7 @@ export default function MensajesPage() {
 
 function ConversationList({
   conversations, total, selectedId, onSelect, channelFilter, setChannelFilter, q, setQ, leadById,
-  onlyUnread, setOnlyUnread, sellerFilter, setSellerFilter, sellers,
+  onlyUnread, setOnlyUnread, showClosed, setShowClosed, sellerFilter, setSellerFilter, sellers,
 }: {
   conversations: Conversation[]
   total: number
@@ -142,6 +151,8 @@ function ConversationList({
   leadById: Map<string, Lead>
   onlyUnread: boolean
   setOnlyUnread: (b: boolean) => void
+  showClosed: boolean
+  setShowClosed: (b: boolean) => void
   sellerFilter: string
   setSellerFilter: (s: string) => void
   sellers: string[]
@@ -155,6 +166,7 @@ function ConversationList({
         </div>
         <div className="flex items-center gap-2">
           <Button variant={onlyUnread ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => setOnlyUnread(!onlyUnread)}>No leídos</Button>
+          <Button variant={showClosed ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => setShowClosed(!showClosed)}>{showClosed ? "Cerradas" : "Abiertas"}</Button>
           <select value={sellerFilter} onChange={(e) => setSellerFilter(e.target.value)} className="h-7 flex-1 rounded-md border border-input bg-transparent px-2 text-xs">
             <option value="">Todos los vendedores</option>
             <option value="__none__">Sin asignar</option>
@@ -384,18 +396,40 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
 
 function ThreadHeader({ conversation }: { conversation: Conversation }) {
   const ChannelIcon = channelIcon(conversation.channel) ?? AtSign
+  const isClosed = conversation.status === "closed"
+  const patchConv = async (body: Partial<Conversation>) => {
+    try {
+      await fetch(`/api/conversations/${conversation.id}`, {
+        method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+      })
+      refresh()
+    } catch { /* ignore */ }
+  }
   return (
     <div className="px-4 py-2.5 border-b border-border flex items-center gap-3 shrink-0 bg-background">
       <div className="h-9 w-9 rounded-full bg-muted flex items-center justify-center shrink-0">
         <UserCircle2 className="h-5 w-5 text-muted-foreground" />
       </div>
       <div className="flex-1 min-w-0">
-        <div className="text-sm font-medium truncate">{conversation.contact_name}</div>
+        <div className="text-sm font-medium truncate flex items-center gap-2">
+          {conversation.contact_name}
+          {isClosed && <Badge variant="muted" className="text-[10px]">Cerrada</Badge>}
+        </div>
         <div className="text-[11px] text-muted-foreground flex items-center gap-1.5">
           <ChannelIcon className="h-3 w-3" />{CHANNEL_LABEL[conversation.channel]} · {conversation.contact_id}
         </div>
       </div>
-      <Button variant="ghost" size="icon" className="h-8 w-8"><MoreHorizontal className="h-4 w-4" /></Button>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Opciones de la conversación"><MoreHorizontal className="h-4 w-4" /></Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end">
+          <DropdownMenuItem onClick={() => patchConv({ unread_count: 1 })}>Marcar como no leída</DropdownMenuItem>
+          {isClosed
+            ? <DropdownMenuItem onClick={() => patchConv({ status: "open" })}>Reabrir conversación</DropdownMenuItem>
+            : <DropdownMenuItem onClick={() => patchConv({ status: "closed" })}>Cerrar / archivar</DropdownMenuItem>}
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   )
 }

@@ -148,6 +148,36 @@ export async function syncGmailLeads(db, save, customQuery) {
   return { scanned: ids.length, nuevos: newIds.length, leads, conversaciones: convs };
 }
 
+// Junta los destinatarios (To/Cc) de la carpeta ENVIADOS → set de emails a los
+// que ya les escribimos desde Gmail. Sirve para marcar "Contactado" leads viejos
+// que respondimos por Gmail antes de que existiera la plataforma.
+export async function listSentRecipients({ max = 800 } = {}) {
+  const at = await accessToken();
+  const H = { Authorization: `Bearer ${at}` };
+  const recipients = new Set();
+  let pageToken = '', fetched = 0;
+  do {
+    const url = `${GMAIL}/messages?maxResults=100&q=${encodeURIComponent('in:sent')}` + (pageToken ? `&pageToken=${pageToken}` : '');
+    const list = await (await fetch(url, { headers: H })).json();
+    const ids = (list.messages || []).map((m) => m.id);
+    const metas = await Promise.all(ids.map((id) =>
+      fetch(`${GMAIL}/messages/${id}?format=metadata&metadataHeaders=To&metadataHeaders=Cc`, { headers: H })
+        .then((r) => r.json()).catch(() => null)));
+    for (const m of metas) {
+      const hs = Object.fromEntries((m?.payload?.headers || []).map((h) => [h.name.toLowerCase(), h.value]));
+      for (const field of ['to', 'cc']) {
+        for (const e of String(hs[field] || '').match(/[\w.+-]+@[\w.-]+\.\w+/g) || []) {
+          const em = e.toLowerCase();
+          if (!/pisospacific\.com$/i.test(em)) recipients.add(em);
+        }
+      }
+    }
+    fetched += ids.length;
+    pageToken = list.nextPageToken;
+  } while (pageToken && fetched < max);
+  return recipients;
+}
+
 // ---- Reporte de MP por email (cuenta infoacudesign@gmail.com) ----
 // Busca el mail de MP con el reporte adjunto (xlsx/csv) y devuelve el buffer.
 // Nota: el reporte programado de MP suele llegar con LINK (sin adjunto) → found:false.
