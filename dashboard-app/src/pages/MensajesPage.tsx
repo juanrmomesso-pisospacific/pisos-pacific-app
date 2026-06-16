@@ -588,18 +588,18 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
   const leadSales = linkedLead && leadSaleIds.size > 0 ? sales.filter(s => leadSaleIds.has(s.id)) : []
 
   // Cotizaciones del contacto (no solo del lead): por lead, cliente vinculado, teléfono o email.
-  const contactQuotes = useMemo(() => {
-    const convPhone = conversation.channel === "whatsapp" ? digits(conversation.contact_id) : ""
-    const convEmail = conversation.channel === "email" ? conversation.contact_id.toLowerCase() : ""
-    const convNames = [conversation.linked_client_name, linkedLead?.name, conversation.contact_name].filter(Boolean).map(s => (s as string).toLowerCase())
-    return quotes.filter(q => {
+  // OJO: cálculo plano (no useMemo) — este bloque corre después del early-return de arriba,
+  // así que un hook acá rompería las reglas de hooks (cuenta de hooks variable).
+  const convPhone = conversation.channel === "whatsapp" ? digits(conversation.contact_id) : ""
+  const convEmail = conversation.channel === "email" ? conversation.contact_id.toLowerCase() : ""
+  const convNames = [conversation.linked_client_name, linkedLead?.name, conversation.contact_name].filter(Boolean).map(s => (s as string).toLowerCase())
+  const contactQuotes = quotes.filter(q => {
       if (linkedLead && q.lead_id === linkedLead.id) return true
       if (q.client_name && convNames.includes(q.client_name.toLowerCase())) return true
       if (convPhone.length >= 8 && digits(q.client_phone).endsWith(convPhone.slice(-8))) return true
       if (convEmail && (q.client_email || "").toLowerCase() === convEmail) return true
       return false
-    })
-  }, [quotes, conversation, linkedLead])
+  })
 
   const handleQuoteCreated = async (q: Quote) => {
     // Auto-generate the branded PDF so the vendor can drag it straight into the chat
