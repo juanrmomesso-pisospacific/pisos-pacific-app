@@ -855,17 +855,21 @@ function LeadQuoteRow({ quote, conversation, linkedLead }: { quote: Quote; conve
   // Compartir el presupuesto EN esta conversación: WhatsApp manda el PDF como documento;
   // email manda el link en el cuerpo (+ firma); Instagram manda el link. Queda en el chat.
   const [sharing, setSharing] = useState(false)
+  const [composing, setComposing] = useState(false)
+  const firstName = (quote.client_name || "").split(" ")[0]
+  const defaultMsg = `Hola${firstName ? " " + firstName : ""}, te comparto el presupuesto N${quote.quote_number} adjunto. Cualquier consulta quedo a disposición.`
+  const [msg, setMsg] = useState(defaultMsg)
   const shareLabel = conversation.channel === "whatsapp" ? "Enviar PDF" : conversation.channel === "email" ? "Enviar por mail" : "Enviar link"
   const handleShare = async () => {
     setSharing(true)
     try {
       const r = await fetch(`/api/conversations/${conversation.id}/share-quote`, {
-        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ quote_id: quote.id }),
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ quote_id: quote.id, message: msg.trim() }),
       })
       const j = await r.json().catch(() => ({}))
       if (j.ok) refresh()
-      else alert("No se pudo enviar el presupuesto: " + (j.delivery?.reason || "revisá la conexión del canal") + (j.link ? "\n\nLink para compartir a mano:\n" + j.link : ""))
-    } catch (e: any) { alert("Error: " + String(e?.message || e)) } finally { setSharing(false) }
+      else { alert("No se pudo enviar el presupuesto: " + (j.delivery?.reason || "revisá la conexión del canal") + (j.link ? "\n\nLink para compartir a mano:\n" + j.link : "")); setSharing(false) }
+    } catch (e: any) { alert("Error: " + String(e?.message || e)); setSharing(false) }
   }
 
   return (
@@ -878,12 +882,23 @@ function LeadQuoteRow({ quote, conversation, linkedLead }: { quote: Quote; conve
         <Badge variant={variant as any} className="text-[10px]">{status}</Badge>
         <div className="flex gap-2">
           <button type="button" onClick={handlePdf} className="text-[10px] text-primary hover:underline">PDF</button>
-          <button type="button" onClick={handleShare} disabled={sharing} className="text-[10px] text-emerald-600 hover:underline disabled:opacity-50" title="Manda el presupuesto al cliente por este canal y lo registra en el chat">{sharing ? "Enviando…" : shareLabel}</button>
+          <button type="button" onClick={() => { setMsg(defaultMsg); setComposing(c => !c) }} className="text-[10px] text-emerald-600 hover:underline">{shareLabel}</button>
           {!sentLabels.has(status) && !acceptedLabels.has(status) && (
             <button type="button" onClick={markSent} className="text-[10px] text-muted-foreground hover:underline">Marcar enviada</button>
           )}
         </div>
       </div>
+      {composing && (
+        <div className="mt-2 space-y-1.5">
+          <textarea value={msg} onChange={(e) => setMsg(e.target.value)} rows={3}
+            className="w-full resize-y rounded-md border border-input bg-transparent px-2 py-1.5 text-xs"
+            placeholder="Mensaje para el cliente…" />
+          <div className="flex items-center justify-end gap-2">
+            <button type="button" onClick={() => setComposing(false)} className="text-[10px] text-muted-foreground hover:underline">Cancelar</button>
+            <Button size="sm" className="h-7 text-xs" disabled={sharing || !msg.trim()} onClick={handleShare}>{sharing ? "Enviando…" : "Enviar con el PDF"}</Button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

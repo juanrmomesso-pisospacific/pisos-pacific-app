@@ -603,21 +603,22 @@ app.post('/api/conversations/:id/share-quote', async (req, res) => {
   const filename = pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name);
   const caption = `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`;
   const greeting = `Hola${q.client_name ? ' ' + String(q.client_name).split(' ')[0] : ''}, te comparto el presupuesto adjunto. Cualquier consulta quedo a disposición.`;
+  const message = String(req.body?.message || '').trim() || greeting;   // mensaje editable por el usuario
   let delivery;
   try {
     if (conv.channel === 'whatsapp') {
       const buf = await generatePdf(presupuestoData(q));
-      delivery = await sendWhatsAppDocument(toWa(conv.contact_id), buf, filename, caption);
+      delivery = await sendWhatsAppDocument(toWa(conv.contact_id), buf, filename, message);
     } else if (conv.channel === 'email') {
       const buf = await generatePdf(presupuestoData(q));
-      const html = emailHtml(greeting, signatureFor(req.user));
-      delivery = await sendOutbound('email', conv.contact_id, greeting, { subject: caption, html, attachments: [{ filename, content: buf, contentType: 'application/pdf' }] });
+      const html = emailHtml(message, signatureFor(req.user));
+      delivery = await sendOutbound('email', conv.contact_id, message, { subject: caption, html, attachments: [{ filename, content: buf, contentType: 'application/pdf' }] });
     } else {
-      delivery = await sendOutbound(conv.channel, conv.contact_id, `Te comparto el presupuesto:\n${link}`, {});
+      delivery = await sendOutbound(conv.channel, conv.contact_id, `${message}\n${link}`, {});
     }
   } catch (e) { delivery = { sent: false, reason: e.message }; }
   const ts = new Date().toISOString();
-  const body = conv.channel === 'instagram' ? `📄 Presupuesto: ${link}` : `📄 ${filename} (enviado)`;
+  const body = `${message}\n📄 ${filename}`;
   const tokensMissing = delivery?.reason && /faltan/i.test(delivery.reason);
   db.messages.push({
     id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, conversation_id: conv.id,
@@ -1361,6 +1362,8 @@ app.post('/api/quotes/:id/share', async (req, res) => {
   if (!q) return res.sendStatus(404);
   if (!q.share_token) { q.share_token = crypto.randomBytes(12).toString('hex'); save(); }
   const link = `${appBase(req)}/p/q/${q.id}/${q.share_token}`;
+  const greeting = `Hola${q.client_name ? ' ' + String(q.client_name).split(' ')[0] : ''}, te comparto el presupuesto adjunto. Cualquier consulta quedo a disposición.`;
+  const message = String(req.body?.message || '').trim() || greeting;
   let whatsapp = null;
   if (req.body?.whatsapp) {
     const to = toWa(q.client_phone);
@@ -1368,7 +1371,7 @@ app.post('/api/quotes/:id/share', async (req, res) => {
     else try {
       const buf = await generatePdf(presupuestoData(q));
       const filename = pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name);
-      whatsapp = await sendWhatsAppDocument(to, buf, filename, `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`);
+      whatsapp = await sendWhatsAppDocument(to, buf, filename, message);
       if (whatsapp.sent) {   // reflejarlo en la conversación si existe
         const conv = db.conversations.find(c => c.channel === 'whatsapp' && String(c.contact_id || '').replace(/\D/g, '').endsWith(to.slice(-8)));
         if (conv) {
@@ -1387,9 +1390,8 @@ app.post('/api/quotes/:id/share', async (req, res) => {
     else try {
       const buf = await generatePdf(presupuestoData(q));
       const filename = pdfFilename(`Presupuesto N${q.quote_number || q.id}`, q.title, q.client_name);
-      const greeting = `Hola${q.client_name ? ' ' + String(q.client_name).split(' ')[0] : ''}, te comparto el presupuesto adjunto. Cualquier consulta quedo a disposición.`;
-      const html = emailHtml(greeting, signatureFor(req.user));
-      email = await sendOutbound('email', to, greeting, { subject: `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`, html, attachments: [{ filename, content: buf, contentType: 'application/pdf' }] });
+      const html = emailHtml(message, signatureFor(req.user));
+      email = await sendOutbound('email', to, message, { subject: `Presupuesto Pisos Pacific${q.title ? ' — ' + q.title : ''}`, html, attachments: [{ filename, content: buf, contentType: 'application/pdf' }] });
     } catch (e) { email = { sent: false, reason: e.message }; }
   }
   res.json({ link, whatsapp, email });
