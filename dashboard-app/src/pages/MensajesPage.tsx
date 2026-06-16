@@ -71,12 +71,7 @@ export default function MensajesPage() {
       return c.contact_name.toLowerCase().includes(needle)
         || c.contact_id.toLowerCase().includes(needle)
         || (c.last_message_preview ?? "").toLowerCase().includes(needle)
-    }).sort((a, b) => {
-      // No leídas primero; dentro de cada grupo, por fecha de último mensaje desc.
-      const ua = (a.unread_count ?? 0) > 0 ? 1 : 0, ub = (b.unread_count ?? 0) > 0 ? 1 : 0
-      if (ua !== ub) return ub - ua
-      return (b.last_message_at ?? "").localeCompare(a.last_message_at ?? "")
-    })
+    }).sort((a, b) => (b.last_message_at ?? "").localeCompare(a.last_message_at ?? ""))   // más nuevo primero (estable)
   }, [conversations, channelFilter, q, onlyUnread, showClosed, sellerFilter, leadById])
 
   // Default-select the first conversation when the list arrives
