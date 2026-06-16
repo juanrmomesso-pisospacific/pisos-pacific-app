@@ -95,16 +95,31 @@ export async function handleInbound(db, save, channel, payload) {
   return { conversation: conv, message: msg };
 }
 
+// Etiqueta legible para mensajes que NO son texto (foto, audio, doc, etc.) — así el
+// mensaje aparece en el hilo en vez de descartarse.
+function waMediaLabel(m) {
+  switch (m.type) {
+    case 'image':    return '📷 Foto' + (m.image?.caption ? ': ' + m.image.caption : '');
+    case 'document': return '📄 ' + (m.document?.filename || 'Documento') + (m.document?.caption ? ' — ' + m.document.caption : '');
+    case 'audio':    return '🎤 Audio';
+    case 'video':    return '🎥 Video' + (m.video?.caption ? ': ' + m.video.caption : '');
+    case 'sticker':  return '🩷 Sticker';
+    case 'location': return '📍 Ubicación' + (m.location?.name ? ': ' + m.location.name : '');
+    case 'contacts': return '👤 Contacto compartido';
+    default:         return `📎 Mensaje (${m.type})`;
+  }
+}
 function parseWhatsApp(payload) {
   try {
     const value = payload?.entry?.[0]?.changes?.[0]?.value;
     const m = value?.messages?.[0];
-    if (!m || m.type !== 'text') return null;
+    if (!m) return null;   // p. ej. payloads de 'statuses' (entregado/leído) no traen messages
     const contact = value?.contacts?.[0];
+    const text = m.type === 'text' ? (m.text?.body || '') : waMediaLabel(m);
     return {
       contactId: m.from,
       contactName: contact?.profile?.name || null,
-      text: m.text?.body || '',
+      text,
       ts: m.timestamp ? new Date(Number(m.timestamp) * 1000).toISOString() : new Date().toISOString(),
     };
   } catch { return null; }
@@ -241,10 +256,26 @@ async function handleCashReport(db, save, from, rawText) {
 function parseInstagram(payload) {
   try {
     const e = payload?.entry?.[0]?.messaging?.[0];
-    const text = e?.message?.text;
-    if (!e || !text) return null;
-    if (e.message?.is_echo) return null;   // eco de nuestros propios mensajes salientes
-    return { contactId: e.sender?.id, contactName: null, text, ts: e.timestamp ? new Date(Number(e.timestamp)).toISOString() : new Date().toISOString() };
+    if (!e || e.message?.is_echo) return null;   // sin evento, o eco de nuestros propios salientes
+    const m = e.message;
+    let text = m?.text || '';
+    // Fotos/videos/audios/historias compartidas: aparecen como attachments sin texto.
+    // OJO: las URL de IG son temporales (expiran) → sirven solo en el momento.
+    if (!text && Array.isArray(m?.attachments) && m.attachments.length) {
+      const a = m.attachments[0];
+      const url = a?.payload?.url || '';
+      const label = a.type === 'image' ? '📷 Foto'
+        : a.type === 'video' ? '🎥 Video'
+        : a.type === 'audio' ? '🎤 Audio'
+        : a.type === 'share' ? '🔗 Publicación compartida'
+        : a.type === 'story_mention' ? '📲 Te mencionó en una historia'
+        : a.type === 'story_reply' ? '💬 Respuesta a tu historia'
+        : '📎 Adjunto';
+      text = url ? `${label}\n${url}` : label;
+    }
+    if (!text && e.reaction) text = `↩️ Reaccionó: ${e.reaction.emoji || ''}`;
+    if (!text || !e.sender?.id) return null;
+    return { contactId: e.sender.id, contactName: null, text, ts: e.timestamp ? new Date(Number(e.timestamp)).toISOString() : new Date().toISOString() };
   } catch { return null; }
 }
 

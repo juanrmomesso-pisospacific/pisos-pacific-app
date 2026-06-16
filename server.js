@@ -790,19 +790,23 @@ const metaVerify = (req, res) => {
 // Verifica la firma X-Hub-Signature-256 de Meta contra META_APP_SECRET.
 // Si el secret no está configurado, deja pasar pero avisa (no romper el webhook
 // hasta que se cargue el env). Una vez configurado, rechaza payloads no firmados.
-function metaSignatureOk(req) {
+function metaSignatureOk(req, channel) {
   const secret = process.env.META_APP_SECRET;
   if (!secret) { console.warn('[webhook] META_APP_SECRET sin configurar — firma NO verificada'); return true; }
   const sig = req.get('x-hub-signature-256') || '';
-  if (!sig.startsWith('sha256=') || !req.rawBody) return false;
-  const expected = 'sha256=' + crypto.createHmac('sha256', secret).update(req.rawBody).digest('hex');
-  try {
-    const a = Buffer.from(sig), b = Buffer.from(expected);
-    return a.length === b.length && crypto.timingSafeEqual(a, b);
-  } catch { return false; }
+  let valid = false;
+  if (sig.startsWith('sha256=') && req.rawBody) {
+    const expected = 'sha256=' + crypto.createHmac('sha256', secret).update(req.rawBody).digest('hex');
+    try { const a = Buffer.from(sig), b = Buffer.from(expected); valid = a.length === b.length && crypto.timingSafeEqual(a, b); } catch { /* noop */ }
+  }
+  if (valid) return true;
+  console.warn(`[webhook] ${channel} firma ${sig ? 'INVÁLIDA' : 'AUSENTE'} (sig=${sig ? sig.slice(0, 20) : 'ninguna'})`);
+  // WhatsApp: firma confirmada OK → se bloquea (403). Instagram: log-only (diagnóstico) para
+  // NO perder DMs hasta confirmar por logs que IG firma igual; después se vuelve a bloquear.
+  return channel === 'instagram';
 }
 const metaInbound = (channel) => (req, res) => {
-  if (!metaSignatureOk(req)) return res.sendStatus(403);   // firma inválida → no procesar
+  if (!metaSignatureOk(req, channel)) return res.sendStatus(403);   // firma inválida → no procesar
   res.sendStatus(200);   // ack rápido a Meta; procesamos en background
   handleInbound(db, save, channel, req.body).catch((e) => console.warn(`[${channel}:inbound] error`, e.message));
 };

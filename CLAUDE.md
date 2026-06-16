@@ -152,7 +152,7 @@ _Actualizado: 2026-06-16. Producción deployada y verificada (healthz 200, webho
 - **Rutina mensual MP**: bajar "Todas las transacciones" del panel y subirla en CashFlow → Importar extracto → Mercado Pago (archivo) → enriquece los movimientos sin nombre (hoy hay 4).
 
 **Seguridad backend — HECHO (16/6, commit del batch de seguridad):**
-- ✅ Webhooks de Meta validan `X-Hub-Signature-256` (HMAC con `META_APP_SECRET`). **`META_APP_SECRET` ya está cargado en Render y la verificación está ACTIVA en prod** (16/6): POST sin firma → 403, con firma válida de Meta → 200. (Si el env se borrara, el código deja pasar con warning para no romper el webhook.)
+- ✅ Webhooks de Meta validan `X-Hub-Signature-256` (HMAC con `META_APP_SECRET`, cargado en Render). **WhatsApp: enforce** (sin firma válida → 403, confirmado). **Instagram: log-only (diagnóstico)** desde 16/6 — la firma se calcula y loguea pero NO bloquea, porque al activar el enforce se cortaron los DMs entrantes de IG (probable que IG no mande el header igual que WhatsApp; pendiente confirmar por logs `[webhook] instagram firma ...` con un DM de prueba y, si firma OK, volver a enforce en `metaSignatureOk`). Si `META_APP_SECRET` se borra, todo pasa con warning.
 - ✅ `/api/payment-links/:id/simulate-paid` solo funciona para links `mode:'mock'` (los `live` solo se cobran por el webhook de MP).
 - ✅ Control de rol: `requireAdmin` gatea escrituras financieras/config — CRUD de `cashflow/cajas/cp_rules/categories/expenses`, `PATCH /api/settings`, todos los `/api/import/*` y `gmail/sync`. Un vendedor NO puede tocar caja/reglas/imports pero SÍ crea cotizaciones/leads/clientes. Probado (admin 200 / vendor 403). El bot de efectivo por WhatsApp (CASH_ALLOWLIST) no usa sesión → sigue andando.
 
