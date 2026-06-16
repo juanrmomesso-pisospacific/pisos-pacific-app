@@ -814,8 +814,20 @@ async function persistInboundMedia(result) {
   try {
     let buf, mime;
     if (md.source === 'ig-url' && md.url) {
-      const r = await fetch(md.url, { signal: AbortSignal.timeout(20000) });
-      if (!r.ok) throw new Error('IG media ' + r.status);
+      const token = process.env.IG_TOKEN;
+      // La CDN de IG (lookaside.fbsbx.com) suele requerir el token de acceso. Probamos
+      // con token y, si falla, sin token. Logueamos la URL real para diagnóstico.
+      const attempts = [
+        token ? { headers: { Authorization: `Bearer ${token}` } } : null,
+        {},
+        token ? { url: md.url + (md.url.includes('?') ? '&' : '?') + 'access_token=' + encodeURIComponent(token) } : null,
+      ].filter(Boolean);
+      let r;
+      for (const a of attempts) {
+        r = await fetch(a.url || md.url, { headers: a.headers || {}, redirect: 'follow', signal: AbortSignal.timeout(20000) });
+        if (r.ok) break;
+      }
+      if (!r || !r.ok) { console.warn(`[media:inbound] IG media ${r?.status} url=${String(md.url).slice(0, 200)}`); throw new Error('IG media ' + (r?.status || '?')); }
       mime = r.headers.get('content-type') || ''; buf = Buffer.from(await r.arrayBuffer());
     } else if (md.source === 'wa-id' && md.mediaId) {
       const token = process.env.WHATSAPP_TOKEN;
