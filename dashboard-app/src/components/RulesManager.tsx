@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { EXPENSE_TYPES } from "@/lib/cashflow"
+import { useConfirm } from "@/components/ui/confirm"
 
 type Rule = {
   id: string; match?: string[]; cuit?: string | null; counterparty?: string | null
@@ -19,6 +20,7 @@ const inputSel = "h-9 w-full rounded-md border border-input bg-transparent px-3 
 export function RulesManager() {
   const rules = useApi<Rule[]>("/api/cp_rules").data ?? []
   const del = useAction(api.remove)
+  const confirm = useConfirm()
   const create = useAction(api.create)
   const [adding, setAdding] = useState(false)
   const [n, setN] = useState({ match: "", counterparty: "", category: "", expense_type: "Gastos de Instalaciones y Suministros" })
@@ -32,7 +34,10 @@ export function RulesManager() {
     setN({ match: "", counterparty: "", category: "", expense_type: "Gastos de Instalaciones y Suministros" })
     setAdding(false); refresh()
   }
-  async function remove(id: string) { await del.run("cp_rules", id); refresh() }
+  async function remove(id: string) {
+    if (!(await confirm({ title: "Borrar regla", description: "Se elimina esta regla de clasificación. No afecta movimientos ya cargados.", confirmLabel: "Borrar", destructive: true }))) return
+    await del.run("cp_rules", id); refresh()
+  }
 
   const sorted = [...rules].sort((a, b) => (a.counterparty || "").localeCompare(b.counterparty || ""))
 

@@ -16,6 +16,7 @@ import { type Lead, type LeadStatus, STATUS_ORDER, STATUS_LABEL } from "@/lib/le
 import { cn } from "@/lib/utils"
 import { type Conversation, channelIcon } from "@/lib/messaging"
 import { LeadForm } from "@/components/forms/LeadForm"
+import { useConfirm } from "@/components/ui/confirm"
 import { openPacificPdf } from "@/lib/pdf"
 import { fmtMoney } from "@/lib/utils"
 import type { Quote } from "@/lib/types"
@@ -60,6 +61,7 @@ export default function LeadsPage() {
 
   // Detección de leads duplicados (mismo nombre completo, email o teléfono).
   const [mergingKey, setMergingKey] = useState<string | null>(null)
+  const confirm = useConfirm()
   const dupGroups = useMemo(() => {
     const nrm = (s?: string) => (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim()
     const dig = (s?: string) => (s || "").replace(/\D/g, "")
@@ -77,6 +79,14 @@ export default function LeadsPage() {
   const score = (l: Lead) => (l.email ? 2 : 0) + (l.phone ? 1 : 0) + ((l.notes || "").length > 40 ? 1 : 0)
   const mergeGroup = async (key: string, group: Lead[]) => {
     const target = [...group].sort((a, b) => score(b) - score(a))[0]
+    const others = group.filter((l) => l.id !== target.id)
+    const ok = await confirm({
+      title: "Unificar leads",
+      description: `Se van a fusionar ${group.length} leads en uno: "${target.name}" (${target.email || target.phone || "sin contacto"}). Los otros (${others.map((l) => l.name).join(", ")}) se eliminan y sus conversaciones/cotizaciones pasan al primero. No se puede deshacer.`,
+      confirmLabel: "Unificar",
+      destructive: true,
+    })
+    if (!ok) return
     setMergingKey(key)
     try {
       for (const l of group) if (l.id !== target.id) await fetch(`/api/leads/${l.id}/merge`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ into: target.id }) })

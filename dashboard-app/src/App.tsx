@@ -4,6 +4,7 @@ import { AuthProvider, useAuth } from "@/contexts/AuthContext"
 import { RoleProvider } from "@/contexts/RoleContext"
 import { PeriodProvider } from "@/contexts/PeriodContext"
 import { TopbarActionsProvider } from "@/contexts/TopbarActionsContext"
+import { ConfirmProvider } from "@/components/ui/confirm"
 import { Layout } from "@/components/Layout"
 import DashboardPage from "@/pages/DashboardPage"
 import InventarioPage from "@/pages/InventarioPage"
@@ -35,6 +36,7 @@ function Gate() {
     <RoleProvider>
       <PeriodProvider>
         <TopbarActionsProvider>
+         <ConfirmProvider>
           <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <Routes>
               <Route element={<Layout />}>
@@ -58,6 +60,7 @@ function Gate() {
               </Route>
             </Routes>
           </BrowserRouter>
+         </ConfirmProvider>
         </TopbarActionsProvider>
       </PeriodProvider>
     </RoleProvider>
