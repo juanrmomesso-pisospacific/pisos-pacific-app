@@ -557,8 +557,11 @@ function PaymentDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChan
 }
 
 // Helper component for status badge consistency
+// Traduce estados en inglés de cotizaciones a español (los de ventas ya vienen en español).
+export function statusLabel(status: string): string {
+  return status === "DRAFT" ? "Borrador" : status === "SENT" ? "Enviado" : status === "ACCEPTED" ? "Aceptado" : status === "REJECTED" ? "Rechazado" : status
+}
 export function StatusBadge({ status }: { status: string }) {
-  const variant = (status === "Cancelado" || status === "REJECTED") ? "destructive" : "outline"
-  const label = status === "DRAFT" ? "Borrador" : status === "SENT" ? "Enviado" : status === "ACCEPTED" ? "Aceptado" : status === "REJECTED" ? "Rechazado" : status
-  return <Badge variant={variant as any}>{label}</Badge>
+  const variant = (status === "Cancelado" || status === "REJECTED" || status === "Rechazado") ? "destructive" : "outline"
+  return <Badge variant={variant as any}>{statusLabel(status)}</Badge>
 }

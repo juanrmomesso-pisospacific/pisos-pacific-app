@@ -4,6 +4,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@
 import { Badge } from "@/components/ui/badge"
 import { ArrowUp, ArrowDown, Minus, LineChart, BarChart3 } from "lucide-react"
 import { useApi } from "@/lib/api"
+import { DataState } from "@/components/ui/data-state"
 import { usePeriod } from "@/contexts/PeriodContext"
 import { QuickPeriod } from "@/components/QuickPeriod"
 import { fmtMoney, fmtInt, cn } from "@/lib/utils"
@@ -36,7 +37,8 @@ const OPEX_ORDER = [
 ]
 
 export default function DashboardPage() {
-  const sales = useApi<Sale[]>("/api/sales").data ?? []
+  const salesApi = useApi<Sale[]>("/api/sales")
+  const sales = salesApi.data ?? []
   const cashflow = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
   const products = useApi<Product[]>("/api/products").data ?? []
   const { range: gRange } = usePeriod()
@@ -164,6 +166,7 @@ export default function DashboardPage() {
   const delta = (c: number, p: number) => p === 0 ? null : { pct: (c - p) / Math.abs(p), up: c >= p }
 
   return (
+   <DataState loading={salesApi.loading} error={salesApi.error} hasData={sales.length > 0} onRetry={salesApi.refetch}>
     <div className="px-4 lg:px-6 space-y-4">
       {/* Período */}
       <div className="flex items-center justify-between flex-wrap gap-2">
@@ -243,6 +246,7 @@ export default function DashboardPage() {
         <b>P&amp;L devengado:</b> ingresos y costos (Piso/Servicio/Extras) desde ventas con costo bloqueado al confirmar; insumos generales de colocación y gastos desde la planilla/cashflow. La mano de obra de colocadores ya está en el costo de servicio (no se cuenta dos veces). Productos inactivos excluidos. Para el resultado de caja completo (incluye Paneles): CashFlow → Análisis Financiero.
       </div>
     </div>
+   </DataState>
   )
 }
 

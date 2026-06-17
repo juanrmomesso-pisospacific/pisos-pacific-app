@@ -12,6 +12,7 @@ import { useAuth } from "@/contexts/AuthContext"
 import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, EMOJIS } from "@/lib/messaging"
 import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_LABEL as LEAD_STATUS_LABEL } from "@/lib/leads"
 import { findConvId, digits, quoteShareMessage } from "@/lib/chat"
+import { statusLabel } from "@/components/RowActions"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
 import { fmtMoney } from "@/lib/utils"
@@ -429,6 +430,7 @@ function ThreadHeader({ conversation }: { conversation: Conversation }) {
   )
 }
 
+const DELIVERY_LABEL: Record<string, string> = { sent: "enviado", delivered: "entregado", read: "leído", received: "recibido", failed: "no enviado" }
 function Bubble({ msg }: { msg: Message }) {
   const isOut = msg.direction === "out"
   return (
@@ -459,7 +461,7 @@ function Bubble({ msg }: { msg: Message }) {
         )}
         <div className={`text-[10px] mt-1 ${isOut ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
           {new Date(msg.ts).toLocaleTimeString("es-AR", { hour: "2-digit", minute: "2-digit" })}
-          {isOut && msg.status ? ` · ${msg.status}` : ""}
+          {isOut && msg.status ? ` · ${DELIVERY_LABEL[msg.status] ?? msg.status}` : ""}
         </div>
       </div>
     </div>
@@ -924,7 +926,7 @@ function LeadQuoteRow({ quote, conversation }: { quote: Quote; conversation: Con
         <span className="tabular text-xs">{fmtMoney(quote.price ?? 0)}</span>
       </div>
       <div className="flex items-center justify-between gap-2 flex-wrap">
-        <Badge variant={variant as any} className="text-[10px]">{status}</Badge>
+        <Badge variant={variant as any} className="text-[10px]">{statusLabel(status)}</Badge>
         <div className="flex gap-2">
           <button type="button" onClick={handlePdf} className="text-[10px] text-primary hover:underline">PDF</button>
           <button type="button" onClick={() => { setMsg(defaultMsg); setComposing(c => !c) }} className="text-[10px] text-emerald-600 hover:underline">{shareLabel}</button>

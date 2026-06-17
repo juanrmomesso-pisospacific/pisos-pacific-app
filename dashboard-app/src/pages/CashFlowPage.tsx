@@ -14,6 +14,7 @@ import { CashQuickForm } from "@/components/forms/CashQuickForm"
 import { ImportStatementDialog } from "@/components/ImportStatementDialog"
 import { Upload } from "lucide-react"
 import { useApi } from "@/lib/api"
+import { DataState } from "@/components/ui/data-state"
 import { usePeriod } from "@/contexts/PeriodContext"
 import { QuickPeriod } from "@/components/QuickPeriod"
 import { cn } from "@/lib/utils"
@@ -64,6 +65,7 @@ export default function CashFlowPage() {
   const [openImport, setOpenImport] = useState(false)
 
   return (
+   <DataState loading={cfApi.loading} error={cfApi.error} hasData={movements.length > 0} onRetry={cfApi.refetch}>
     <div className="px-4 lg:px-6 space-y-4">
       <TopbarActions>
         <Button variant="outline" size="sm" onClick={() => setOpenImport(true)}><Upload className="h-4 w-4" />Importar extracto</Button>
@@ -100,6 +102,7 @@ export default function CashFlowPage() {
         </TabsContent>
       </Tabs>
     </div>
+   </DataState>
   )
 }
 const monthLabel = (mk: string) => MONTHS[Number(mk.slice(5, 7)) - 1] + " " + mk.slice(2, 4)

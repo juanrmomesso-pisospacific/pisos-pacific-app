@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
+import { statusLabel } from "@/components/RowActions"
 import { useApi } from "@/lib/api"
 import { fmtMoney, cn } from "@/lib/utils"
 import { findConvId } from "@/lib/chat"
@@ -189,7 +190,7 @@ function ClientDetailSheet({ client, onClose }: { client: (Row & { phones?: stri
                   <div key={q.id} className="flex items-center gap-2 px-3 py-2 text-sm">
                     <span className="text-muted-foreground tabular">#{q.quote_number}</span>
                     <span className="flex-1 truncate">{q.title || q.description || "—"}</span>
-                    <Badge variant="outline" className="text-[10px]">{q.status}</Badge>
+                    <Badge variant="outline" className="text-[10px]">{statusLabel(q.status)}</Badge>
                     <span className="tabular text-muted-foreground">{fmtMoney(q.price || 0)}</span>
                   </div>
                 ))}
@@ -204,7 +205,7 @@ function ClientDetailSheet({ client, onClose }: { client: (Row & { phones?: stri
                   <div key={s.id} className="flex items-center gap-2 px-3 py-2 text-sm">
                     <span className="text-muted-foreground tabular">#{s.quote_number}</span>
                     <span className="flex-1 truncate">{s.title || s.description || "—"}</span>
-                    <Badge variant="outline" className="text-[10px]">{s.status}</Badge>
+                    <Badge variant="outline" className="text-[10px]">{statusLabel(s.status)}</Badge>
                     <span className="tabular text-muted-foreground">{fmtMoney(s.contract_total || 0)}</span>
                   </div>
                 ))}

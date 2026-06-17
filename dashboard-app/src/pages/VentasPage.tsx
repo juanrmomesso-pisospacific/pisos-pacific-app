@@ -15,6 +15,7 @@ import { SaleForm } from "@/components/forms/SaleForm"
 import { SearchPicker } from "@/components/SearchPicker"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { useApi } from "@/lib/api"
+import { DataState } from "@/components/ui/data-state"
 import { api, useAction } from "@/lib/mutations"
 import { fmtMoney, cn } from "@/lib/utils"
 import { openPacificPdf } from "@/lib/pdf"
@@ -154,6 +155,7 @@ export default function VentasPage() {
       <TopbarActions>
         <Button size="sm" onClick={() => setOpenNew(true)}><Plus className="h-4 w-4" />Agregar venta</Button>
       </TopbarActions>
+     <DataState loading={salesApi.loading} error={salesApi.error} hasData={sales.length > 0} onRetry={refetchSales}>
       <div className="px-4 lg:px-6 space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <button onClick={() => setQuick(quick === "cobro" ? "none" : "cobro")} className={cn("text-left", quick === "cobro" && "ring-2 ring-foreground rounded-lg")}>
@@ -206,6 +208,7 @@ export default function VentasPage() {
           <VentasKanban rows={filtered} onChanged={refetchSales} />
         )}
       </div>
+     </DataState>
       <SaleForm open={openNew} onOpenChange={setOpenNew} />
     </>
   )

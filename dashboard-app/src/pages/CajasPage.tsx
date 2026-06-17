@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { Wallet, Landmark, Banknote } from "lucide-react"
 import { useApi } from "@/lib/api"
+import { DataState } from "@/components/ui/data-state"
 import type { CajaBalance } from "@/lib/types"
 
 type BalancesResponse = { balances: CajaBalance[]; unassigned_movements: number }
@@ -13,10 +14,11 @@ const iconFor = (type: string) =>
   /banco/i.test(type) ? Landmark : /efectivo/i.test(type) ? Banknote : Wallet
 
 export default function CajasPage() {
-  const data = useApi<BalancesResponse>("/api/cajas/balances").data
+  const { data, loading, error, refetch } = useApi<BalancesResponse>("/api/cajas/balances")
   const balances = data?.balances ?? []
 
   return (
+   <DataState loading={loading} error={error} hasData={balances.length > 0} onRetry={refetch}>
     <div className="px-4 lg:px-6 space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {balances.map((b) => {
@@ -76,5 +78,6 @@ export default function CajasPage() {
         Saldos derivados sumando los movimientos del CashFlow (Ingresos − Egresos), <b>consolidados en USD</b> (el negocio se maneja en USD). La columna ARS es referencia para las cuentas en pesos.
       </p>
     </div>
+   </DataState>
   )
 }
