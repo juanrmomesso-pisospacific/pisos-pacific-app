@@ -11,7 +11,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { openPacificPdf } from "@/lib/pdf"
 import { quoteShareMessage } from "@/lib/chat"
 import { useConfirm } from "@/components/ui/confirm"
-import { fmtMoney } from "@/lib/utils"
+import { fmtMoney, cn } from "@/lib/utils"
 import type { Quote, Sale } from "@/lib/types"
 
 // ---------- Quote row actions ----------
@@ -53,26 +53,10 @@ export function QuoteRowActions({ quote }: { quote: Quote }) {
     if (r) refresh()
   }
   const handlePdf = () => openPacificPdf("quotes", quote.id)
-  const share = useAction(api.quoteShare)
-  const defaultShareMsg = quoteShareMessage(quote)
-  const shareWa = async () => {
-    const message = window.prompt("Mensaje para el cliente (WhatsApp):", defaultShareMsg)
-    if (message === null) return
-    const r = await share.run(quote.id, { whatsapp: true, message })
-    if (r) alert(r.whatsapp?.sent ? "✓ Presupuesto enviado por WhatsApp" : "No se pudo enviar por WhatsApp: " + (r.whatsapp?.reason || "revisá el teléfono del cliente") + (r.link ? "\n\nLink para compartir a mano:\n" + r.link : ""))
-  }
-  const shareEmail = async () => {
-    const message = window.prompt("Mensaje para el cliente (email):", defaultShareMsg)
-    if (message === null) return
-    const r = await share.run(quote.id, { email: true, message })
-    if (r) alert(r.email?.sent ? "✓ Presupuesto enviado por email" : "No se pudo enviar por email: " + (r.email?.reason || "revisá el email del cliente") + (r.link ? "\n\nLink para compartir a mano:\n" + r.link : ""))
-  }
-  const copyLink = async () => {
-    const r = await share.run(quote.id, {})
-    if (r?.link) { try { await navigator.clipboard.writeText(r.link) } catch { /* sin permiso de portapapeles */ }; alert("Link del presupuesto (pegalo en el DM de Instagram):\n\n" + r.link) }
-  }
+  const [shareOpen, setShareOpen] = useState(false)
 
   return (
+   <>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" className="h-8 w-8"><MoreHorizontal className="h-4 w-4" /></Button>
@@ -85,9 +69,7 @@ export function QuoteRowActions({ quote }: { quote: Quote }) {
         {convertable && <DropdownMenuItem onClick={handleConvert}><FileSignature className="h-3.5 w-3.5 mr-2" />Convertir a venta</DropdownMenuItem>}
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handlePdf}><FileText className="h-3.5 w-3.5 mr-2" />Generar PDF</DropdownMenuItem>
-        <DropdownMenuItem onClick={shareWa} disabled={share.busy}><Send className="h-3.5 w-3.5 mr-2" />Compartir por WhatsApp</DropdownMenuItem>
-        <DropdownMenuItem onClick={shareEmail} disabled={share.busy}><Mail className="h-3.5 w-3.5 mr-2" />Enviar por email</DropdownMenuItem>
-        <DropdownMenuItem onClick={copyLink} disabled={share.busy}><LinkIcon className="h-3.5 w-3.5 mr-2" />Copiar link (Instagram)</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setShareOpen(true)}><Send className="h-3.5 w-3.5 mr-2" />Compartir / enviar presupuesto</DropdownMenuItem>
         <DropdownMenuItem onClick={() => navigate(chatPath({ name: quote.client_name, phone: quote.client_phone, email: quote.client_email }))}><MessageCircle className="h-3.5 w-3.5 mr-2" />Abrir chat</DropdownMenuItem>
         <DropdownMenuItem onClick={handleDuplicate}><Files className="h-3.5 w-3.5 mr-2" />Duplicar</DropdownMenuItem>
         {renewable && <DropdownMenuItem onClick={handleRenew}><RefreshCw className="h-3.5 w-3.5 mr-2" />Renovar vigencia</DropdownMenuItem>}
@@ -96,6 +78,69 @@ export function QuoteRowActions({ quote }: { quote: Quote }) {
         <DropdownMenuItem className="text-destructive" onClick={handleReject}><X className="h-3.5 w-3.5 mr-2" />Rechazar</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+    <ShareQuoteSheet quote={quote} open={shareOpen} onOpenChange={setShareOpen} />
+   </>
+  )
+}
+
+// ---------- Compartir / enviar presupuesto (Sheet con mensaje editable + link copiable) ----------
+function ShareQuoteSheet({ quote, open, onOpenChange }: { quote: Quote; open: boolean; onOpenChange: (o: boolean) => void }) {
+  const share = useAction(api.quoteShare)
+  const [msg, setMsg] = useState("")
+  const [link, setLink] = useState("")
+  const [result, setResult] = useState<{ ok: boolean; text: string } | null>(null)
+
+  useEffect(() => {
+    if (!open) return
+    setMsg(quoteShareMessage(quote)); setResult(null)
+    // traer el link público una vez (sin enviar nada)
+    share.run(quote.id, {}).then((r) => { if (r?.link) setLink(r.link) })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open])
+
+  const send = async (channel: "whatsapp" | "email") => {
+    const r = await share.run(quote.id, { [channel]: true, message: msg.trim() })
+    if (!r) { setResult({ ok: false, text: "No se pudo conectar" }); return }
+    if (r.link) setLink(r.link)
+    const res = channel === "whatsapp" ? r.whatsapp : r.email
+    setResult(res?.sent
+      ? { ok: true, text: `✓ Enviado por ${channel === "whatsapp" ? "WhatsApp" : "email"}` }
+      : { ok: false, text: "No se pudo enviar: " + (res?.reason || (channel === "whatsapp" ? "revisá el teléfono del cliente" : "revisá el email del cliente")) })
+  }
+  const copy = async () => {
+    if (!link) return
+    try { await navigator.clipboard.writeText(link) } catch { /* sin permiso */ }
+    setResult({ ok: true, text: "Link copiado — pegalo en el DM de Instagram" })
+  }
+
+  return (
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle>Compartir presupuesto</SheetTitle>
+          <SheetDescription>#{quote.quote_number} · {quote.client_name}</SheetDescription>
+        </SheetHeader>
+        <div className="mt-6 space-y-4">
+          <div>
+            <label className="text-xs text-muted-foreground">Mensaje para el cliente</label>
+            <textarea value={msg} onChange={(e) => setMsg(e.target.value)} rows={4}
+              className="mt-1 w-full resize-y rounded-md border border-input bg-transparent p-2 text-sm" />
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Button size="sm" disabled={share.busy} onClick={() => send("whatsapp")}><Send className="h-3.5 w-3.5" />WhatsApp</Button>
+            <Button size="sm" variant="outline" disabled={share.busy} onClick={() => send("email")}><Mail className="h-3.5 w-3.5" />Email</Button>
+          </div>
+          {result && <div className={cn("text-sm", result.ok ? "text-emerald-600" : "text-destructive")}>{result.text}</div>}
+          <div className="border-t border-border pt-3">
+            <label className="text-xs text-muted-foreground">Link público (Instagram, o compartir a mano)</label>
+            <div className="mt-1 flex gap-2">
+              <Input readOnly value={link} placeholder={share.busy ? "generando…" : ""} className="text-xs" onFocus={(e) => e.currentTarget.select()} />
+              <Button size="sm" variant="outline" disabled={!link} onClick={copy}><Copy className="h-3.5 w-3.5" />Copiar</Button>
+            </div>
+          </div>
+        </div>
+      </SheetContent>
+    </Sheet>
   )
 }
 
