@@ -787,12 +787,12 @@ const metaVerify = (req, res) => {
   }
   res.sendStatus(403);
 };
-// Verifica la firma X-Hub-Signature-256 de Meta contra META_APP_SECRET.
-// Si el secret no está configurado, deja pasar pero avisa (no romper el webhook
-// hasta que se cargue el env). Una vez configurado, rechaza payloads no firmados.
+// Verifica la firma X-Hub-Signature-256 de Meta. WhatsApp firma con META_APP_SECRET;
+// Instagram firma con SU PROPIO secret (IG_APP_SECRET) → distinto al de la app.
 function metaSignatureOk(req, channel) {
-  const secret = process.env.META_APP_SECRET;
-  if (!secret) { console.warn('[webhook] META_APP_SECRET sin configurar — firma NO verificada'); return true; }
+  const igSecret = process.env.IG_APP_SECRET;
+  const secret = channel === 'instagram' ? (igSecret || process.env.META_APP_SECRET) : process.env.META_APP_SECRET;
+  if (!secret) { console.warn(`[webhook] ${channel} sin app secret — firma NO verificada`); return true; }
   const sig = req.get('x-hub-signature-256') || '';
   let valid = false;
   if (sig.startsWith('sha256=') && req.rawBody) {
@@ -801,9 +801,10 @@ function metaSignatureOk(req, channel) {
   }
   if (valid) return true;
   console.warn(`[webhook] ${channel} firma ${sig ? 'INVÁLIDA' : 'AUSENTE'} (sig=${sig ? sig.slice(0, 20) : 'ninguna'})`);
-  // WhatsApp: firma confirmada OK → se bloquea (403). Instagram: log-only (diagnóstico) para
-  // NO perder DMs hasta confirmar por logs que IG firma igual; después se vuelve a bloquear.
-  return channel === 'instagram';
+  // WhatsApp: enforce (403). Instagram: enforce SOLO si está cargado su secret propio
+  // (IG_APP_SECRET); si no, log-only para no perder DMs.
+  if (channel === 'instagram' && !igSecret) return true;
+  return false;
 }
 // Baja la media de un mensaje entrante (descriptor msg.media) y la guarda en UPLOAD_DIR
 // para que quede permanente en el chat (las URLs de IG/WhatsApp son temporales).
