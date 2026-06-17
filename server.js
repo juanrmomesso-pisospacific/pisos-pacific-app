@@ -9,7 +9,7 @@ import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { startMpReport, getMpReport, parseSettlementBuffer } from './import/mp-api.mjs';
 import { getBlueRate } from './import/fx.mjs';
 import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integrations/meta.mjs';
-import { syncGmailLeads, fetchLatestMpReport, listSentRecipients } from './integrations/gmail.mjs';
+import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients } from './integrations/gmail.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 import { generatePdf } from './pdf/render.mjs';
 
@@ -696,7 +696,7 @@ app.get('/api/templates', (_, res) => res.json(db.templates));
 
 // Traer leads desde Gmail (info@pisospacific.com) — requiere GOOGLE_* + GMAIL_REFRESH_TOKEN.
 app.post('/api/integrations/gmail/sync', requireAdmin, async (req, res) => {
-  try { res.json(await syncGmailLeads(db, save, req.body?.query)); }
+  try { const leads = await syncGmailLeads(db, save, req.body?.query); const sent = await syncGmailSent(db, save); res.json({ ...leads, salientes: sent.espejados }); }
   catch (e) { res.status(400).json({ error: e.message || 'no se pudo sincronizar Gmail' }); }
 });
 
@@ -1055,6 +1055,8 @@ async function gmailAutoSync() {
   try {
     const r = await syncGmailLeads(db, save);
     if (r.leads || r.conversaciones) console.log(`[gmail-auto] +${r.leads} leads, +${r.conversaciones} conversaciones (${r.nuevos} mails nuevos)`);
+    const s = await syncGmailSent(db, save);   // espeja salientes en conversaciones existentes
+    if (s.espejados) console.log(`[gmail-auto] +${s.espejados} salientes espejados`);
   } catch (e) { console.warn('[gmail-auto] error:', e.message); }
   finally { gmailSyncRunning = false; }
 }

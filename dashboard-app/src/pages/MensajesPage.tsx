@@ -13,6 +13,7 @@ import { type Conversation, type Message, type Template, type Channel, CHANNEL_L
 import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_LABEL as LEAD_STATUS_LABEL } from "@/lib/leads"
 import { findConvId, digits, quoteShareMessage } from "@/lib/chat"
 import { statusLabel } from "@/components/RowActions"
+import { SearchPicker } from "@/components/SearchPicker"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
 import { fmtMoney } from "@/lib/utils"
@@ -557,7 +558,16 @@ function Composer({
 function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }: { conversation: Conversation | null; clients: Client[]; sales: Sale[]; leads: Lead[]; leadById: Map<string, Lead>; quotes: Quote[] }) {
   const [newLeadOpen, setNewLeadOpen] = useState(false)
   const [newQuoteOpen, setNewQuoteOpen] = useState(false)
-  void leads
+  const [linkPickerOpen, setLinkPickerOpen] = useState(false)
+  const linkExistingLead = async (leadId: string) => {
+    if (!conversation) return
+    try {
+      await fetch(`/api/conversations/${conversation.id}`, {
+        method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ linked_lead_id: leadId }),
+      })
+      setLinkPickerOpen(false); refresh()
+    } catch { /* ignore */ }
+  }
   const { state: authState } = useAuth()
   const currentUser = authState.status === "ready" ? authState.user : null
   const settings = useApi<{ sellers?: { name: string }[] }>("/api/settings").data
@@ -825,8 +835,20 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
         </Button>
         {!linkedClient && !linkedLead && (
           <>
+            {linkPickerOpen ? (
+              <SearchPicker
+                autoFocus
+                placeholder="Buscar lead por nombre, email o teléfono…"
+                items={leads.map((l) => ({ id: l.id, label: l.name, sub: l.email || l.phone || "", keywords: `${l.email || ""} ${l.phone || ""}` }))}
+                onPick={linkExistingLead}
+              />
+            ) : (
+              <Button className="w-full" size="sm" variant="outline" onClick={() => setLinkPickerOpen(true)}>
+                <Sparkles className="h-3.5 w-3.5" />Vincular a lead existente
+              </Button>
+            )}
             <Button className="w-full" size="sm" onClick={() => setNewLeadOpen(true)}>
-              <Sparkles className="h-3.5 w-3.5" />Crear lead
+              <Sparkles className="h-3.5 w-3.5" />Crear lead nuevo
             </Button>
             <Button asChild variant="outline" className="w-full" size="sm">
               <Link to="/clientes">

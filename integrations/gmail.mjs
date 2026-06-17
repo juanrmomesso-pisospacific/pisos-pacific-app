@@ -148,6 +148,57 @@ export async function syncGmailLeads(db, save, customQuery) {
   return { scanned: ids.length, nuevos: newIds.length, leads, conversaciones: convs };
 }
 
+// Espeja los emails que MANDAMOS (carpeta Enviados) como mensajes salientes en las
+// conversaciones de email existentes → así se ve el hilo completo (lo que respondiste
+// directo desde Gmail, no solo desde la app). NO crea conversaciones nuevas.
+// Dedup: por id de Gmail (gmail_sent_seen_ids) + heurística de tiempo para no duplicar
+// los mails que la app ya registró al enviarlos (mailer también deja copia en Enviados).
+export async function syncGmailSent(db, save, customQuery) {
+  const at = await accessToken();
+  const q = customQuery || 'in:sent newer_than:90d';
+  const H = { Authorization: `Bearer ${at}` };
+  const list = await (await fetch(`${GMAIL}/messages?maxResults=80&q=${encodeURIComponent(q)}`, { headers: H })).json();
+  const ids = (list.messages || []).map((m) => m.id);
+
+  db.settings.gmail_sent_seen_ids = db.settings.gmail_sent_seen_ids || [];
+  const seen = new Set(db.settings.gmail_sent_seen_ids);
+  const newIds = ids.filter((id) => !seen.has(id));
+  const convByEmail = new Map(db.conversations.filter((c) => c.channel === 'email').map((c) => [String(c.contact_id || '').toLowerCase(), c]));
+  // tiempos de salientes ya registrados por conversación (para no duplicar los de la app)
+  const outTimes = new Map();
+  for (const m of db.messages) if (m.direction === 'out') { const a = outTimes.get(m.conversation_id) || []; a.push(Date.parse(m.ts)); outTimes.set(m.conversation_id, a); }
+
+  const msgs = await Promise.all(newIds.map((id) =>
+    fetch(`${GMAIL}/messages/${id}?format=full`, { headers: H }).then((r) => r.json()).catch(() => null)));
+
+  let mirrored = 0;
+  for (const msg of msgs) {
+    if (!msg?.id) continue;
+    seen.add(msg.id);
+    const headers = Object.fromEntries((msg.payload?.headers || []).map((h) => [h.name.toLowerCase(), h.value]));
+    const toEmail = (String(headers.to || '').match(/[\w.+-]+@[\w.-]+\.\w+/) || [''])[0].toLowerCase();
+    if (!toEmail || /pisospacific\.com$/i.test(toEmail)) continue;
+    const conv = convByEmail.get(toEmail);
+    if (!conv) continue;   // solo espejamos en conversaciones existentes
+    const ts = headers.date ? new Date(headers.date).toISOString() : new Date().toISOString();
+    // ¿ya hay un saliente de la app a ~este horario? → es el mismo mail, no duplicar
+    if ((outTimes.get(conv.id) || []).some((t) => Math.abs(t - Date.parse(ts)) < 3 * 60 * 1000)) continue;
+    const { text } = walkParts(msg.payload);
+    const subject = headers.subject || '';
+    const body = (cleanText(text) || msg.snippet || '').slice(0, 1500);
+    db.messages.push({
+      id: `m-emailout-${msg.id.slice(0, 12)}`, conversation_id: conv.id,
+      direction: 'out', body: `✉️ ${subject}\n\n${body}`.trim(), ts, status: 'sent',
+    });
+    (outTimes.get(conv.id) || outTimes.set(conv.id, []).get(conv.id)).push(Date.parse(ts));
+    if (ts > (conv.last_message_at || '')) { conv.last_message_at = ts; conv.last_message_preview = body.slice(0, 140); }
+    mirrored++;
+  }
+  db.settings.gmail_sent_seen_ids = [...seen].slice(-1500);
+  if (mirrored) save();
+  return { scanned: ids.length, nuevos: newIds.length, espejados: mirrored };
+}
+
 // Junta los destinatarios (To/Cc) de la carpeta ENVIADOS → set de emails a los
 // que ya les escribimos desde Gmail. Sirve para marcar "Contactado" leads viejos
 // que respondimos por Gmail antes de que existiera la plataforma.
