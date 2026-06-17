@@ -447,6 +447,12 @@ app.post('/api/inventory/reconcile', requireAdmin, (req, res) => {
   const commit = req.body?.commit === true;
   const committed = committedBySku();
   const bySku = new Map(db.products.map(p => [p.sku, p]));
+  // Libro mayor por SKU (suma de movimientos físicos) → para que el conteo también lo sane.
+  const ledger = {};
+  for (const m of db.stock_movements || []) {
+    if (!m.sku || !PHYSICAL_MOVE_TYPES.has(m.type)) continue;
+    ledger[m.sku] = (ledger[m.sku] || 0) + (Number(m.qty) || 0);
+  }
   const stamp = new Date().toISOString().slice(0, 10);
   const out = []; let applied = 0;
   for (const r of rows) {
@@ -457,12 +463,16 @@ app.post('/api/inventory/reconcile', requireAdmin, (req, res) => {
     const stock = Number(p.stock) || 0;
     const comm = r2(committed[p.sku] || 0);
     const diff = r2(physical - stock);
+    // El movimiento lleva el LIBRO MAYOR al físico (no solo el stock), así un conteo
+    // también sana desajustes históricos del libro (stock≠libro previo).
+    const ledgerBase = (p.sku in ledger) ? ledger[p.sku] : stock;
+    const ledgerDelta = r2(physical - ledgerBase);
     const flags = [];
     if (diff > 0) flags.push('sobra'); else if (diff < 0) flags.push('falta');
     if (physical - comm < -0.5) flags.push('físico<reservado');
-    if (commit && diff !== 0) {
+    if (commit && (diff !== 0 || ledgerDelta !== 0)) {
       p.stock = physical;
-      movement('stock_count', `conciliacion-${stamp}`, p.id, p.sku, diff);
+      if (ledgerDelta !== 0) movement('stock_count', `conciliacion-${stamp}`, p.id, p.sku, ledgerDelta);
       applied++;
     }
     out.push({ sku: p.sku, name: p.name, stock, physical, diff, committed: comm, available_after: r2(physical - comm), flags });
