@@ -130,7 +130,7 @@ export default function InventarioPage() {
   const onExport = () => {
     const today = new Date().toISOString().slice(0, 10)
     if (isStockView) {
-      const headers = ["SKU", "Nombre", "Categoría", "Stock sistema (m²)", "Cotizado (m²)", "Disponible (m²)", "Conteo físico", "Diferencia", "Observaciones"]
+      const headers = ["SKU", "Nombre", "Categoría", "Stock sistema (m²)", "Reservado (m²)", "Disponible (m²)", "Conteo físico", "Diferencia", "Observaciones"]
       const body = sorted.map(p => [p.sku, p.name, p.category, Number(p.stock) || 0, reservedOf(p), availableOf(p), "", "", ""])
       downloadCSV(`control-stock-${today}.csv`, headers, body)
     } else {
@@ -200,7 +200,7 @@ export default function InventarioPage() {
       <div className="px-4 lg:px-6 grid grid-cols-2 @xl/main:grid-cols-4 gap-3">
         <SummaryTile label="Productos con stock" value={fmtInt(summary.stockCount)} />
         <SummaryTile label="m² disponibles"      value={fmtInt(summary.totalStock - summary.totalReserved)} />
-        <SummaryTile label="m² cotizados"        value={fmtInt(summary.totalReserved)} />
+        <SummaryTile label="m² reservados"        value={fmtInt(summary.totalReserved)} />
         <SummaryTile label="Extras (sin stock)"  value={fmtInt(summary.extrasCount)} />
       </div>
 
@@ -256,7 +256,7 @@ function StockTable({ rows, ...sp }: { rows: Product[] } & SortProps) {
           <SortHead k="price" align="right" {...sp}>Precio</SortHead>
           <SortHead k="margin" align="right" {...sp}>Margen</SortHead>
           <SortHead k="stock" align="right" {...sp}>Stock</SortHead>
-          <SortHead k="committed" align="right" {...sp}>Cotizado</SortHead>
+          <SortHead k="committed" align="right" {...sp}>Reservado</SortHead>
           <SortHead k="available" align="right" {...sp}>Disponible</SortHead>
           <TableHead>Estado</TableHead>
           <TableHead>Activo</TableHead>
@@ -289,9 +289,9 @@ function StockTable({ rows, ...sp }: { rows: Product[] } & SortProps) {
                 {out
                   ? <Badge variant="destructive" className="text-[10px]">Sin stock</Badge>
                   : oversold
-                    ? <Badge variant="destructive" className="text-[10px]">Sobre-cotizado</Badge>
+                    ? <Badge variant="destructive" className="text-[10px]">Sobre-vendido</Badge>
                     : reserved > 0
-                      ? <Badge variant="outline" className="text-[10px] border-amber-500/50 text-amber-700">Cotizado · {fmtInt(reserved)}</Badge>
+                      ? <Badge variant="outline" className="text-[10px] border-amber-500/50 text-amber-700">Reservado · {fmtInt(reserved)}</Badge>
                       : <Badge variant="muted" className="text-[10px]">OK</Badge>}
               </TableCell>
               <TableCell><ActiveToggle p={p} /></TableCell>
@@ -348,7 +348,7 @@ type ReconRow = { sku: string; name?: string; stock: number; physical: number; d
 type ReconResult = { commit: boolean; applied: number; count: number; rows: ReconRow[] }
 type AuditRow = { sku: string; name: string; stock: number; committed: number; available: number; reservedStock: number; ledger_expected: number | null; flags: string[] }
 type AuditResult = { checked: number; issues: number; rows: AuditRow[] }
-const FLAG_LABEL: Record<string, string> = { sobra: "Sobra", falta: "Falta", "físico<reservado": "Físico < reservado", "sobre-cotizado": "Sobre-cotizado", "stock≠libro": "Stock ≠ libro mayor" }
+const FLAG_LABEL: Record<string, string> = { sobra: "Sobra", falta: "Falta", "físico<reservado": "Físico < reservado", "sobre-cotizado": "Sobre-vendido", "stock≠libro": "Stock ≠ libro mayor" }
 
 function ReconcileSheet({ result, onClose }: { result: ReconResult | null; onClose: () => void }) {
   const confirm = useConfirm()
@@ -421,7 +421,7 @@ function AuditSheet({ result, onClose }: { result: AuditResult | null; onClose: 
               <TableHeader><TableRow>
                 <TableHead>SKU / Nombre</TableHead>
                 <TableHead className="text-right">Stock</TableHead>
-                <TableHead className="text-right">Cotizado</TableHead>
+                <TableHead className="text-right">Reservado</TableHead>
                 <TableHead className="text-right">Libro mayor</TableHead>
                 <TableHead>Problema</TableHead>
               </TableRow></TableHeader>
@@ -439,7 +439,7 @@ function AuditSheet({ result, onClose }: { result: AuditResult | null; onClose: 
             </Table>
           </div>
         )}
-        <p className="mt-3 text-[11px] text-muted-foreground"><b>Sobre-cotizado</b>: hay más m² en ventas no finalizadas que stock físico (revisar cantidades o ventas a finalizar). <b>Stock ≠ libro mayor</b>: el stock no coincide con la suma de movimientos (hubo un cambio sin registrar).</p>
+        <p className="mt-3 text-[11px] text-muted-foreground"><b>Sobre-vendido</b>: hay más m² en ventas no finalizadas que stock físico (revisar cantidades o ventas a finalizar). <b>Stock ≠ libro mayor</b>: el stock no coincide con la suma de movimientos (hubo un cambio sin registrar).</p>
       </SheetContent>
     </Sheet>
   )
