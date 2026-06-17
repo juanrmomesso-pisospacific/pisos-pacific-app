@@ -404,7 +404,7 @@ function findProductByItem(it) {
 function committedBySku() {
   const m = {};
   for (const s of db.sales) {
-    if (s.status === 'Finalizado') continue;
+    if (s.status === 'Finalizado' || s.status === 'Cancelado') continue;   // ni entregadas ni canceladas reservan
     for (const it of s.items || []) { if (it && it.sku) m[it.sku] = (m[it.sku] || 0) + (Number(it.quantity) || 0); }
   }
   return m;
@@ -413,6 +413,62 @@ app.get('/api/products', (_, res) => {
   const committed = committedBySku();
   // Only meaningful for stock-tracked products (floors); services/extras carry no stock.
   res.json(db.products.map(p => ({ ...p, committed: p.stockTrack ? Math.round((committed[p.sku] || 0) * 100) / 100 : 0 })));
+});
+
+// ---------- Auditoría de inventario (admin) ----------
+const r2 = (n) => Math.round((Number(n) || 0) * 100) / 100;
+// Movimientos que afectan el stock FÍSICO (no la reserva) → libro mayor del stock.
+const PHYSICAL_MOVE_TYPES = new Set(['initial_import', 'container_receive', 'sale_deduct', 'manual_adjustment', 'stock_count', 'sale_cancel_restock']);
+// Diagnóstico read-only: cuenta de cada producto contra el libro mayor + sobre-cotizados.
+app.get('/api/inventory/audit', requireAdmin, (_req, res) => {
+  const committed = committedBySku();
+  const ledger = {};
+  for (const m of db.stock_movements || []) {
+    if (!m.sku || !PHYSICAL_MOVE_TYPES.has(m.type)) continue;
+    ledger[m.sku] = (ledger[m.sku] || 0) + (Number(m.qty) || 0);
+  }
+  const rows = [];
+  for (const p of db.products) {
+    if (!p.stockTrack) continue;
+    const stock = Number(p.stock) || 0;
+    const comm = r2(committed[p.sku] || 0);
+    const reserved = Number(p.reservedStock) || 0;
+    const expected = (p.sku in ledger) ? r2(ledger[p.sku]) : null;
+    const flags = [];
+    if (stock - comm < -0.5) flags.push('sobre-cotizado');   // ventas reservadas > stock físico
+    if (expected !== null && Math.abs(expected - stock) > 0.5) flags.push('stock≠libro');   // cambio sin registrar
+    if (flags.length) rows.push({ sku: p.sku, name: p.name, stock, committed: comm, available: r2(stock - comm), reservedStock: reserved, ledger_expected: expected, flags });
+  }
+  res.json({ checked: db.products.filter(p => p.stockTrack).length, issues: rows.length, rows });
+});
+// Conciliación con el conteo físico (CSV de ida y vuelta). Dry-run por defecto; commit aplica.
+app.post('/api/inventory/reconcile', requireAdmin, (req, res) => {
+  const rows = Array.isArray(req.body?.rows) ? req.body.rows : [];
+  const commit = req.body?.commit === true;
+  const committed = committedBySku();
+  const bySku = new Map(db.products.map(p => [p.sku, p]));
+  const stamp = new Date().toISOString().slice(0, 10);
+  const out = []; let applied = 0;
+  for (const r of rows) {
+    const p = bySku.get(String(r.sku));
+    if (!p) { out.push({ sku: r.sku, error: 'SKU no encontrado' }); continue; }
+    const physical = Number(r.physical);
+    if (!Number.isFinite(physical)) continue;   // fila sin conteo cargado → se ignora
+    const stock = Number(p.stock) || 0;
+    const comm = r2(committed[p.sku] || 0);
+    const diff = r2(physical - stock);
+    const flags = [];
+    if (diff > 0) flags.push('sobra'); else if (diff < 0) flags.push('falta');
+    if (physical - comm < -0.5) flags.push('físico<reservado');
+    if (commit && diff !== 0) {
+      p.stock = physical;
+      movement('stock_count', `conciliacion-${stamp}`, p.id, p.sku, diff);
+      applied++;
+    }
+    out.push({ sku: p.sku, name: p.name, stock, physical, diff, committed: comm, available_after: r2(physical - comm), flags });
+  }
+  if (commit && applied) save();
+  res.json({ commit, applied, count: out.length, rows: out });
 });
 
 // Categoría de un ítem de venta para el P&L híbrido: piso | servicio | extras.
@@ -905,6 +961,23 @@ app.post('/api/containers/:id/receive', (req, res) => {
 app.get('/api/stock_movements', (_, res) => res.json(db.stock_movements));
 
 // ---------- Generic CRUD (POST/PATCH/DELETE) with persistence ----------
+// Special-case: editar un producto que cambia `stock` deja un movimiento de auditoría
+// (si no, el stock "salta" sin rastro y el libro mayor no cuadra). Va antes del CRUD genérico.
+app.patch('/api/products/:id', (req, res) => {
+  const i = db.products.findIndex(x => x.id === req.params.id);
+  if (i < 0) return res.sendStatus(404);
+  const before = db.products[i];
+  const hasStock = Object.prototype.hasOwnProperty.call(req.body || {}, 'stock');
+  const oldStock = Number(before.stock) || 0;
+  db.products[i] = { ...before, ...req.body };
+  if (hasStock) {
+    const newStock = Number(db.products[i].stock) || 0;
+    const delta = Math.round((newStock - oldStock) * 100) / 100;
+    if (delta !== 0) movement('manual_adjustment', `edit-${req.user?.email || 'admin'}`, before.id, before.sku, delta);
+  }
+  save();
+  res.json(db.products[i]);
+});
 // Special-case: lead transition to Won auto-converts the most recent eligible quote into a sale.
 // Runs BEFORE the generic PATCH below so it takes precedence for /api/leads/:id.
 app.patch('/api/leads/:id', (req, res) => {
@@ -1167,6 +1240,17 @@ app.post('/api/sales/:id/transition', (req, res) => {
       movement('sale_cancel_release', s.id, p.id, p.sku, -qty);
     }
     s.stock_reserved = false;
+  }
+  // Cancelar una venta YA finalizada → devolver el stock físico que se había descontado
+  // (si no, el depósito tiene más de lo que figura para siempre).
+  if (next === 'Cancelado' && s.stock_deducted) {
+    for (const it of (s.items || [])) {
+      const p = findProductByItem(it); if (!p) continue;
+      const qty = Number(it.quantity) || 0;
+      p.stock = (Number(p.stock) || 0) + qty;
+      movement('sale_cancel_restock', s.id, p.id, p.sku, qty);
+    }
+    s.stock_deducted = false;
   }
 
   s.status = next;

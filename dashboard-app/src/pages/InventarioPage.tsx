@@ -1,7 +1,8 @@
-import { useMemo, useState } from "react"
-import { Plus, Download, Upload, Search, ArrowUp, ArrowDown, ChevronsUpDown } from "lucide-react"
+import { useMemo, useRef, useState } from "react"
+import { Plus, Download, Upload, Search, ArrowUp, ArrowDown, ChevronsUpDown, ShieldAlert } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { ProductForm } from "@/components/forms/ProductForm"
 import { Card } from "@/components/ui/card"
@@ -10,8 +11,9 @@ import { Badge } from "@/components/ui/badge"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
+import { useConfirm } from "@/components/ui/confirm"
 import { fmtMoney, fmtInt, cn } from "@/lib/utils"
-import { downloadCSV } from "@/lib/export"
+import { downloadCSV, parseCSV } from "@/lib/export"
 import type { Product } from "@/lib/types"
 
 // Stock-tracked categories — pisos + deck
@@ -152,13 +154,48 @@ export default function InventarioPage() {
 
   const [openNew, setOpenNew] = useState(false)
 
+  // Conciliación por CSV de ida y vuelta + diagnóstico de inconsistencias.
+  const fileRef = useRef<HTMLInputElement>(null)
+  const [recon, setRecon] = useState<ReconResult | null>(null)
+  const [audit, setAudit] = useState<AuditResult | null>(null)
+  const [busy, setBusy] = useState(false)
+
+  const onImportFile = async (file: File) => {
+    setBusy(true)
+    try {
+      const text = await file.text()
+      const parsed = parseCSV(text)
+      const rows = parsed
+        .map(r => ({ sku: r["SKU"], physical: Number((r["Conteo físico"] ?? "").replace(",", ".")) }))
+        .filter(r => r.sku && Number.isFinite(r.physical))
+      if (!rows.length) { alert('No encontré filas con "Conteo físico" cargado en el CSV.'); return }
+      const res = await fetch("/api/inventory/reconcile", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ rows, commit: false }) })
+      const j = await res.json()
+      if (!res.ok || j.error) throw new Error(j.error || `${res.status}`)
+      setRecon(j)
+    } catch (e: any) { alert("No se pudo leer el CSV: " + (e?.message || e)) } finally { setBusy(false); if (fileRef.current) fileRef.current.value = "" }
+  }
+  const runDiagnostic = async () => {
+    setBusy(true)
+    try {
+      const res = await fetch("/api/inventory/audit")
+      const j = await res.json()
+      if (!res.ok || j.error) throw new Error(j.error || `${res.status}`)
+      setAudit(j)
+    } catch (e: any) { alert("No se pudo correr el diagnóstico: " + (e?.message || e)) } finally { setBusy(false) }
+  }
+
   return (
     <>
       <TopbarActions>
+        <Button variant="outline" size="sm" onClick={runDiagnostic} disabled={busy} title="Detectar inconsistencias de stock"><ShieldAlert className="h-4 w-4" />Diagnóstico</Button>
         <Button variant="outline" size="sm" onClick={onExport} title="Descargar planilla CSV para control de stock"><Download className="h-4 w-4" />Exportar</Button>
-        <Button variant="outline" size="sm" disabled title="Próximamente — importar stock desde archivo"><Upload className="h-4 w-4" />Importar</Button>
+        <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()} disabled={busy} title="Importar el CSV con la columna 'Conteo físico' completada"><Upload className="h-4 w-4" />Importar conteo</Button>
+        <input ref={fileRef} type="file" accept=".csv,text/csv" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) onImportFile(f) }} />
         <Button size="sm" onClick={() => setOpenNew(true)}><Plus className="h-4 w-4" />Nuevo Ítem</Button>
       </TopbarActions>
+      <ReconcileSheet result={recon} onClose={() => setRecon(null)} />
+      <AuditSheet result={audit} onClose={() => setAudit(null)} />
 
       <div className="px-4 lg:px-6 grid grid-cols-2 @xl/main:grid-cols-4 gap-3">
         <SummaryTile label="Productos con stock" value={fmtInt(summary.stockCount)} />
@@ -303,5 +340,107 @@ function SummaryTile({ label, value, small }: { label: string; value: React.Reac
       <div className="text-[11px] uppercase tracking-wide text-muted-foreground">{label}</div>
       <div className={small ? "text-xs text-muted-foreground" : "text-xl font-semibold serif tabular"}>{value}</div>
     </Card>
+  )
+}
+
+// ---------- Conciliación de stock (CSV de ida y vuelta) ----------
+type ReconRow = { sku: string; name?: string; stock: number; physical: number; diff: number; committed: number; available_after: number; flags: string[]; error?: string }
+type ReconResult = { commit: boolean; applied: number; count: number; rows: ReconRow[] }
+type AuditRow = { sku: string; name: string; stock: number; committed: number; available: number; reservedStock: number; ledger_expected: number | null; flags: string[] }
+type AuditResult = { checked: number; issues: number; rows: AuditRow[] }
+const FLAG_LABEL: Record<string, string> = { sobra: "Sobra", falta: "Falta", "físico<reservado": "Físico < reservado", "sobre-cotizado": "Sobre-cotizado", "stock≠libro": "Stock ≠ libro mayor" }
+
+function ReconcileSheet({ result, onClose }: { result: ReconResult | null; onClose: () => void }) {
+  const confirm = useConfirm()
+  const [busy, setBusy] = useState(false)
+  if (!result) return null
+  const changed = result.rows.filter(r => !r.error && r.diff !== 0)
+  const apply = async () => {
+    if (!(await confirm({ title: "Aplicar ajustes de stock", description: `Se ajusta el stock de ${changed.length} producto(s) al conteo físico. Queda registrado en el historial de movimientos (auditoría).`, confirmLabel: "Aplicar ajustes" }))) return
+    setBusy(true)
+    try {
+      const res = await fetch("/api/inventory/reconcile", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ rows: changed.map(r => ({ sku: r.sku, physical: r.physical })), commit: true }) })
+      const j = await res.json()
+      if (!res.ok || j.error) throw new Error(j.error || `${res.status}`)
+      onClose(); refresh()
+    } catch (e: any) { alert("No se pudo aplicar: " + (e?.message || e)); setBusy(false) }
+  }
+  return (
+    <Sheet open onOpenChange={(o) => !o && onClose()}>
+      <SheetContent className="!max-w-3xl w-full overflow-y-auto">
+        <SheetHeader>
+          <SheetTitle>Conciliación de stock</SheetTitle>
+          <SheetDescription>{changed.length} con diferencia · {result.count} productos en el archivo</SheetDescription>
+        </SheetHeader>
+        <div className="mt-4 overflow-x-auto">
+          <Table>
+            <TableHeader><TableRow>
+              <TableHead>SKU / Nombre</TableHead>
+              <TableHead className="text-right">Sistema</TableHead>
+              <TableHead className="text-right">Físico</TableHead>
+              <TableHead className="text-right">Diferencia</TableHead>
+              <TableHead className="text-right">Reservado</TableHead>
+              <TableHead>Alertas</TableHead>
+            </TableRow></TableHeader>
+            <TableBody>
+              {result.rows.filter(r => r.error || r.diff !== 0).map(r => (
+                <TableRow key={r.sku}>
+                  <TableCell><div className="text-xs text-muted-foreground tabular">{r.sku}</div><div className="truncate max-w-[220px]">{r.name || (r.error ? <span className="text-destructive">{r.error}</span> : "")}</div></TableCell>
+                  <TableCell className="text-right tabular">{r.error ? "—" : fmtInt(r.stock)}</TableCell>
+                  <TableCell className="text-right tabular">{r.error ? "—" : fmtInt(r.physical)}</TableCell>
+                  <TableCell className={cn("text-right tabular font-medium", r.diff > 0 && "text-emerald-600", r.diff < 0 && "text-destructive")}>{r.error ? "—" : (r.diff > 0 ? "+" : "") + fmtInt(r.diff)}</TableCell>
+                  <TableCell className="text-right tabular text-muted-foreground">{r.error ? "—" : fmtInt(r.committed)}</TableCell>
+                  <TableCell className="space-x-1">{(r.flags || []).map(f => <Badge key={f} variant="outline" className={cn("text-[10px]", (f === "físico<reservado") && "border-destructive/50 text-destructive")}>{FLAG_LABEL[f] || f}</Badge>)}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+        {changed.length === 0
+          ? <div className="mt-4 text-sm text-emerald-700">✓ Todo coincide con el conteo físico — no hay ajustes que aplicar.</div>
+          : <div className="mt-4 flex items-center gap-2"><Button size="sm" disabled={busy} onClick={apply}>{busy ? "Aplicando…" : `Aplicar ${changed.length} ajuste(s)`}</Button><Button size="sm" variant="ghost" onClick={onClose}>Cancelar</Button></div>}
+      </SheetContent>
+    </Sheet>
+  )
+}
+
+function AuditSheet({ result, onClose }: { result: AuditResult | null; onClose: () => void }) {
+  if (!result) return null
+  return (
+    <Sheet open onOpenChange={(o) => !o && onClose()}>
+      <SheetContent className="!max-w-3xl w-full overflow-y-auto">
+        <SheetHeader>
+          <SheetTitle>Diagnóstico de inventario</SheetTitle>
+          <SheetDescription>{result.issues} inconsistencia(s) sobre {result.checked} productos con stock</SheetDescription>
+        </SheetHeader>
+        {result.issues === 0 ? (
+          <div className="mt-4 text-sm text-emerald-700">✓ Sin inconsistencias detectadas.</div>
+        ) : (
+          <div className="mt-4 overflow-x-auto">
+            <Table>
+              <TableHeader><TableRow>
+                <TableHead>SKU / Nombre</TableHead>
+                <TableHead className="text-right">Stock</TableHead>
+                <TableHead className="text-right">Cotizado</TableHead>
+                <TableHead className="text-right">Libro mayor</TableHead>
+                <TableHead>Problema</TableHead>
+              </TableRow></TableHeader>
+              <TableBody>
+                {result.rows.map(r => (
+                  <TableRow key={r.sku}>
+                    <TableCell><div className="text-xs text-muted-foreground tabular">{r.sku}</div><div className="truncate max-w-[220px]">{r.name}</div></TableCell>
+                    <TableCell className="text-right tabular">{fmtInt(r.stock)}</TableCell>
+                    <TableCell className="text-right tabular text-amber-600">{fmtInt(r.committed)}</TableCell>
+                    <TableCell className="text-right tabular text-muted-foreground">{r.ledger_expected == null ? "—" : fmtInt(r.ledger_expected)}</TableCell>
+                    <TableCell className="space-x-1">{r.flags.map(f => <Badge key={f} variant="outline" className="text-[10px] border-destructive/50 text-destructive">{FLAG_LABEL[f] || f}</Badge>)}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        )}
+        <p className="mt-3 text-[11px] text-muted-foreground"><b>Sobre-cotizado</b>: hay más m² en ventas no finalizadas que stock físico (revisar cantidades o ventas a finalizar). <b>Stock ≠ libro mayor</b>: el stock no coincide con la suma de movimientos (hubo un cambio sin registrar).</p>
+      </SheetContent>
+    </Sheet>
   )
 }
