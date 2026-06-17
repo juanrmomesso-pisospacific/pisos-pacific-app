@@ -5,6 +5,7 @@
 // Si no está configurado, isMailerConfigured()=false y send() tira error claro.
 
 import { refreshGoogleToken } from './google-oauth.mjs';
+import { withTimeout } from './http.mjs';
 
 const SEND = 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send';
 
@@ -42,7 +43,7 @@ export async function sendMail({ to, subject, html, text, attachments }) {
   } else {
     mime = [...baseHeaders, ctype, 'Content-Transfer-Encoding: base64', '', bodyB64].join('\r\n');
   }
-  const r = await fetch(SEND, { method: 'POST', headers: { Authorization: `Bearer ${at}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ raw: b64url(mime) }) });
+  const r = await fetch(SEND, withTimeout({ method: 'POST', headers: { Authorization: `Bearer ${at}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ raw: b64url(mime) }) }));
   const j = await r.json().catch(() => ({}));
   if (!r.ok) throw new Error('Gmail send falló: ' + JSON.stringify(j).slice(0, 200));
   return { sent: true, id: j.id };

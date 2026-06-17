@@ -14,6 +14,7 @@ import { fileURLToPath } from 'node:url';
 import { reportStats } from './report-stats.mjs';
 import { dedupKey, windowKeys } from './dedup.mjs';
 import { lastBlue } from './fx.mjs';
+import { withTimeout } from '../integrations/http.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(path.join(__dirname, '..', 'dashboard-app', 'package.json'));
@@ -37,18 +38,18 @@ function creds() {
 
 export async function mintToken() {
   const { client_id, client_secret } = creds();
-  const r = await fetch(`${API}/oauth/token`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ client_id, client_secret, grant_type: 'client_credentials' }) });
+  const r = await fetch(`${API}/oauth/token`, withTimeout({ method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ client_id, client_secret, grant_type: 'client_credentials' }) }));
   const j = await r.json();
   if (!j.access_token) throw new Error('No se pudo mintear token MP: ' + JSON.stringify(j).slice(0, 200));
   return j.access_token;
 }
 
 const iso = (d) => d.toISOString().slice(0, 19) + 'Z';
-async function jget(url, at) { const r = await fetch(url, { headers: { Authorization: `Bearer ${at}` } }); const t = await r.text(); try { return { s: r.status, v: JSON.parse(t), t } } catch { return { s: r.status, v: t, t } } }
+async function jget(url, at) { const r = await fetch(url, withTimeout({ headers: { Authorization: `Bearer ${at}` } })); const t = await r.text(); try { return { s: r.status, v: JSON.parse(t), t } } catch { return { s: r.status, v: t, t } } }
 
 // Crea un settlement report para [from,to] y devuelve su id (el "jobId").
 async function createReport(at, from, to) {
-  const cr = await fetch(`${API}/v1/account/settlement_report`, { method: 'POST', headers: { Authorization: `Bearer ${at}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ begin_date: iso(from), end_date: iso(to) }) });
+  const cr = await fetch(`${API}/v1/account/settlement_report`, withTimeout({ method: 'POST', headers: { Authorization: `Bearer ${at}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ begin_date: iso(from), end_date: iso(to) }) }));
   const crj = await cr.json().catch(() => ({}));
   if (cr.status >= 300 || !crj.id) throw new Error('No se pudo crear el reporte MP: ' + cr.status + ' ' + JSON.stringify(crj).slice(0, 160));
   return crj.id;
@@ -70,7 +71,7 @@ async function fetchSettlement(at, from, to) {
     if (mine) fileName = mine.file_name;
   }
   if (!fileName) throw new Error('El reporte de MP se está generando (puede tardar unos minutos). Probá "Sincronizar" de nuevo en un ratito.');
-  const dl = await fetch(`${API}/v1/account/settlement_report/${fileName}`, { headers: { Authorization: `Bearer ${at}` } });
+  const dl = await fetch(`${API}/v1/account/settlement_report/${fileName}`, withTimeout({ headers: { Authorization: `Bearer ${at}` } }));
   const buf = Buffer.from(await dl.arrayBuffer());
   return parseReportBuffer(buf);
 }
@@ -117,7 +118,7 @@ export async function getMpReport({ jobId, existing = [] }) {
   const arr = Array.isArray(ls.v) ? ls.v : (ls.v.results || []);
   const mine = arr.find((x) => String(x.id) === String(jobId) && x.file_name);
   if (!mine) return { ready: false };
-  const dl = await fetch(`${API}/v1/account/settlement_report/${mine.file_name}`, { headers: { Authorization: `Bearer ${at}` } });
+  const dl = await fetch(`${API}/v1/account/settlement_report/${mine.file_name}`, withTimeout({ headers: { Authorization: `Bearer ${at}` } }));
   const raw = parseReportBuffer(Buffer.from(await dl.arrayBuffer()));
   return { ready: true, ...buildMovements({ raw, existing }) };
 }

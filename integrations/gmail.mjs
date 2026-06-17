@@ -11,6 +11,7 @@
 
 import { refreshGoogleToken } from './google-oauth.mjs';
 import { findLeadMatch } from './lead-match.mjs';
+import { withTimeout } from './http.mjs';
 
 const GMAIL = 'https://gmail.googleapis.com/gmail/v1/users/me';
 
@@ -63,7 +64,7 @@ export async function syncGmailLeads(db, save, customQuery) {
   const at = await accessToken();
   const q = customQuery || process.env.GMAIL_QUERY || 'in:inbox newer_than:14d -category:promotions -category:social';
   const H = { Authorization: `Bearer ${at}` };
-  const list = await (await fetch(`${GMAIL}/messages?maxResults=60&q=${encodeURIComponent(q)}`, { headers: H })).json();
+  const list = await (await fetch(`${GMAIL}/messages?maxResults=60&q=${encodeURIComponent(q)}`, withTimeout({ headers: H }))).json();
   const ids = (list.messages || []).map((m) => m.id);
 
   db.settings.gmail_seen_ids = db.settings.gmail_seen_ids || [];
@@ -73,7 +74,7 @@ export async function syncGmailLeads(db, save, customQuery) {
 
   // Detalle de los mails nuevos en paralelo.
   const msgs = await Promise.all(newIds.map((id) =>
-    fetch(`${GMAIL}/messages/${id}?format=full`, { headers: H }).then((r) => r.json()).catch(() => null)));
+    fetch(`${GMAIL}/messages/${id}?format=full`, withTimeout({ headers: H })).then((r) => r.json()).catch(() => null)));
 
   let leads = 0, convs = 0;
   const convByEmail = new Map(db.conversations.filter((c) => c.channel === 'email').map((c) => [c.contact_id, c]));
@@ -157,7 +158,7 @@ export async function syncGmailSent(db, save, customQuery) {
   const at = await accessToken();
   const q = customQuery || 'in:sent newer_than:90d';
   const H = { Authorization: `Bearer ${at}` };
-  const list = await (await fetch(`${GMAIL}/messages?maxResults=80&q=${encodeURIComponent(q)}`, { headers: H })).json();
+  const list = await (await fetch(`${GMAIL}/messages?maxResults=80&q=${encodeURIComponent(q)}`, withTimeout({ headers: H }))).json();
   const ids = (list.messages || []).map((m) => m.id);
 
   db.settings.gmail_sent_seen_ids = db.settings.gmail_sent_seen_ids || [];
@@ -169,7 +170,7 @@ export async function syncGmailSent(db, save, customQuery) {
   for (const m of db.messages) if (m.direction === 'out') { const a = outTimes.get(m.conversation_id) || []; a.push(Date.parse(m.ts)); outTimes.set(m.conversation_id, a); }
 
   const msgs = await Promise.all(newIds.map((id) =>
-    fetch(`${GMAIL}/messages/${id}?format=full`, { headers: H }).then((r) => r.json()).catch(() => null)));
+    fetch(`${GMAIL}/messages/${id}?format=full`, withTimeout({ headers: H })).then((r) => r.json()).catch(() => null)));
 
   let mirrored = 0;
   for (const msg of msgs) {
@@ -209,10 +210,10 @@ export async function listSentRecipients({ max = 800 } = {}) {
   let pageToken = '', fetched = 0;
   do {
     const url = `${GMAIL}/messages?maxResults=100&q=${encodeURIComponent('in:sent')}` + (pageToken ? `&pageToken=${pageToken}` : '');
-    const list = await (await fetch(url, { headers: H })).json();
+    const list = await (await fetch(url, withTimeout({ headers: H }))).json();
     const ids = (list.messages || []).map((m) => m.id);
     const metas = await Promise.all(ids.map((id) =>
-      fetch(`${GMAIL}/messages/${id}?format=metadata&metadataHeaders=To&metadataHeaders=Cc`, { headers: H })
+      fetch(`${GMAIL}/messages/${id}?format=metadata&metadataHeaders=To&metadataHeaders=Cc`, withTimeout({ headers: H }))
         .then((r) => r.json()).catch(() => null)));
     for (const m of metas) {
       const hs = Object.fromEntries((m?.payload?.headers || []).map((h) => [h.name.toLowerCase(), h.value]));
@@ -236,18 +237,18 @@ export async function fetchLatestMpReport({ query } = {}) {
   const at = await accessToken(process.env.GMAIL_MP_REFRESH_TOKEN);
   const H = { Authorization: `Bearer ${at}` };
   const q = query || 'from:(mercadopago.com OR mercadolibre.com) (reporte OR informe OR report OR transacciones OR liquidaci OR conciliar) newer_than:30d';
-  const list = await (await fetch(`${GMAIL}/messages?maxResults=15&q=${encodeURIComponent(q)}`, { headers: H })).json();
+  const list = await (await fetch(`${GMAIL}/messages?maxResults=15&q=${encodeURIComponent(q)}`, withTimeout({ headers: H }))).json();
   const ids = (list.messages || []).map((m) => m.id);
   const candidates = [];
   for (const id of ids) {
-    const msg = await (await fetch(`${GMAIL}/messages/${id}?format=full`, { headers: H })).json();
+    const msg = await (await fetch(`${GMAIL}/messages/${id}?format=full`, withTimeout({ headers: H }))).json();
     const headers = Object.fromEntries((msg.payload?.headers || []).map((h) => [h.name.toLowerCase(), h.value]));
     const { atts } = walkParts(msg.payload);
     const files = atts.filter((a) => /\.(xlsx|xls|csv)$/i.test(a.filename));
     candidates.push({ id, subject: headers.subject, date: headers.date, attachments: files.map((a) => a.filename), hasFile: files.length > 0 });
     if (files.length) {
       const a = files[0];
-      const att = await (await fetch(`${GMAIL}/messages/${id}/attachments/${a.attachmentId}`, { headers: H })).json();
+      const att = await (await fetch(`${GMAIL}/messages/${id}/attachments/${a.attachmentId}`, withTimeout({ headers: H }))).json();
       return { found: true, buffer: b64urlToBuf(att.data), filename: a.filename, subject: headers.subject, date: headers.date };
     }
   }

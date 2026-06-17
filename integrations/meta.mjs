@@ -17,6 +17,7 @@
 import { parseCashCommand, inferType, normalizePhone } from '../import/cash-parse.mjs';
 import { getBlueRate } from '../import/fx.mjs';
 import { findLeadMatch } from './lead-match.mjs';
+import { withTimeout } from './http.mjs';
 
 const GRAPH = 'https://graph.facebook.com/v21.0';
 
@@ -25,7 +26,7 @@ async function igUsername(igId) {
   const token = process.env.IG_TOKEN;
   if (!token) return null;
   try {
-    const r = await fetch(`https://graph.instagram.com/v21.0/${igId}?fields=username,name&access_token=${encodeURIComponent(token)}`);
+    const r = await fetch(`https://graph.instagram.com/v21.0/${igId}?fields=username,name&access_token=${encodeURIComponent(token)}`, withTimeout());
     const j = await r.json();
     return j.username ? '@' + j.username : (j.name || null);
   } catch { return null; }
@@ -39,6 +40,35 @@ export async function handleInbound(db, save, channel, payload) {
   if (channel === 'whatsapp') {
     const echo = parseWhatsAppEcho(payload);
     if (echo) return mirrorOutbound(db, save, channel, echo);
+    // Recibos de entrega: actualizar el estado del saliente (enviado→entregado→leído).
+    const statuses = payload?.entry?.[0]?.changes?.[0]?.value?.statuses;
+    if (Array.isArray(statuses) && statuses.length) {
+      const rank = { sent: 1, delivered: 2, read: 3 };
+      let changed = false;
+      for (const st of statuses) {
+        const m = db.messages.find((x) => x.wa_id === st.id);
+        if (!m) continue;
+        if (st.status === 'failed') { if (m.status !== 'failed') { m.status = 'failed'; changed = true; } }
+        else if ((rank[st.status] || 0) > (rank[m.status] || 0)) { m.status = st.status; changed = true; }
+      }
+      if (changed) save();
+      return null;
+    }
+  }
+  // Anti-duplicados: Meta REINTENTA los webhooks → no procesar el mismo mensaje dos veces
+  // (evita doble gasto de efectivo o mensaje repetido). Chequeo+marca son síncronos (sin await
+  // en el medio) → a prueba de reintentos concurrentes. Va antes del bot de efectivo y del alta.
+  const inId = channel === 'whatsapp'
+    ? payload?.entry?.[0]?.changes?.[0]?.value?.messages?.[0]?.id
+    : payload?.entry?.[0]?.messaging?.[0]?.message?.mid;
+  if (inId) {
+    db.settings = db.settings || {};
+    const seen = db.settings.inbound_seen_ids = db.settings.inbound_seen_ids || [];
+    if (seen.includes(inId)) return null;
+    seen.push(inId);
+    if (seen.length > 2000) db.settings.inbound_seen_ids = seen.slice(-2000);
+  }
+  if (channel === 'whatsapp') {
     // Reporte de gastos del equipo (allowlist): se rutea a Caja General, NUNCA crea lead/conversación.
     const m = payload?.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
     if (m && isAllowed(db, m.from)) return handleCashReport(db, save, m.from, m.text?.body || '');
@@ -297,10 +327,10 @@ export async function sendOutbound(channel, to, text, opts = {}) {
 async function sendWhatsApp(to, text) {
   const token = process.env.WHATSAPP_TOKEN, phoneId = process.env.WHATSAPP_PHONE_ID;
   if (!token || !phoneId) return { sent: false, reason: 'faltan WHATSAPP_TOKEN / WHATSAPP_PHONE_ID' };
-  const r = await fetch(`${GRAPH}/${phoneId}/messages`, {
+  const r = await fetch(`${GRAPH}/${phoneId}/messages`, withTimeout({
     method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({ messaging_product: 'whatsapp', to, type: 'text', text: { body: text } }),
-  });
+  }));
   const j = await r.json().catch(() => ({}));
   return r.ok ? { sent: true, id: j.messages?.[0]?.id } : { sent: false, reason: JSON.stringify(j).slice(0, 200) };
 }
@@ -314,13 +344,13 @@ export async function sendWhatsAppDocument(to, buffer, filename, caption) {
     fd.append('messaging_product', 'whatsapp');
     fd.append('type', 'application/pdf');
     fd.append('file', new Blob([buffer], { type: 'application/pdf' }), filename || 'documento.pdf');
-    const up = await fetch(`${GRAPH}/${phoneId}/media`, { method: 'POST', headers: { Authorization: `Bearer ${token}` }, body: fd });
+    const up = await fetch(`${GRAPH}/${phoneId}/media`, withTimeout({ method: 'POST', headers: { Authorization: `Bearer ${token}` }, body: fd }));
     const uj = await up.json().catch(() => ({}));
     if (!uj.id) return { sent: false, reason: 'no se pudo subir el PDF: ' + JSON.stringify(uj).slice(0, 160) };
-    const r = await fetch(`${GRAPH}/${phoneId}/messages`, {
+    const r = await fetch(`${GRAPH}/${phoneId}/messages`, withTimeout({
       method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ messaging_product: 'whatsapp', to, type: 'document', document: { id: uj.id, filename, caption } }),
-    });
+    }));
     const j = await r.json().catch(() => ({}));
     return r.ok ? { sent: true, id: j.messages?.[0]?.id } : { sent: false, reason: JSON.stringify(j).slice(0, 200) };
   } catch (e) { return { sent: false, reason: e.message }; }
@@ -331,10 +361,10 @@ const IG_GRAPH = 'https://graph.instagram.com/v21.0';
 async function sendInstagram(to, text) {
   const token = process.env.IG_TOKEN;
   if (!token) return { sent: false, reason: 'falta IG_TOKEN' };
-  const r = await fetch(`${IG_GRAPH}/me/messages?access_token=${encodeURIComponent(token)}`, {
+  const r = await fetch(`${IG_GRAPH}/me/messages?access_token=${encodeURIComponent(token)}`, withTimeout({
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ recipient: { id: to }, message: { text } }),
-  });
+  }));
   const j = await r.json().catch(() => ({}));
   return r.ok ? { sent: true, id: j.message_id } : { sent: false, reason: JSON.stringify(j).slice(0, 200) };
 }

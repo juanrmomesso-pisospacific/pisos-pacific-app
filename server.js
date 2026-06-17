@@ -1500,7 +1500,9 @@ app.post('/api/quotes/:id/share', async (req, res) => {
     else try {
       whatsapp = await sendWhatsAppDocument(to, buf, filename, message);
       if (whatsapp.sent) {   // reflejarlo en la conversación si existe
-        const conv = db.conversations.find(c => c.channel === 'whatsapp' && String(c.contact_id || '').replace(/\D/g, '').endsWith(to.slice(-8)));
+        // Match por número completo normalizado (no por 8 dígitos: dos clientes podrían compartirlos).
+        const toDigits = String(to).replace(/\D/g, '');
+        const conv = db.conversations.find(c => { if (c.channel !== 'whatsapp') return false; const d = String(c.contact_id || '').replace(/\D/g, ''); return d === toDigits || (d.length >= 10 && toDigits.length >= 10 && d.slice(-10) === toDigits.slice(-10)); });
         if (conv) {
           const ts = new Date().toISOString();
           db.messages.push({ id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, conversation_id: conv.id, direction: 'out', body: `📄 ${filename} (enviado)`, ts, status: 'sent', wa_id: whatsapp.id });
