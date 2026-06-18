@@ -80,6 +80,7 @@ export default function CashFlowPage() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <TabsList className="h-8">
             <TabsTrigger value="pnl">Análisis Financiero (Caja)</TabsTrigger>
+            <TabsTrigger value="flujo">Flujo de fondos</TabsTrigger>
             <TabsTrigger value="gastos">Gastos (Fijo/Variable)</TabsTrigger>
             <TabsTrigger value="proveedores">Por proveedor</TabsTrigger>
             <TabsTrigger value="libro">Libro</TabsTrigger>
@@ -90,6 +91,9 @@ export default function CashFlowPage() {
         <TabsContent value="pnl" className="mt-4">
           <p className="text-[11px] text-muted-foreground mb-3">Solo <b>caja</b>: ingresos y egresos reales del período (incluye Paneles y otros no-venta). El COGS es por <b>compra de inventario</b> (no devengado), por eso el margen mensual puede ser irregular. El margen por venta (devengado, costo bloqueado) está en el <b>Dashboard</b>.</p>
           <PnL movements={movements} range={range} />
+        </TabsContent>
+        <TabsContent value="flujo" className="mt-4">
+          <FlujoDeFondos movements={movements} range={range} />
         </TabsContent>
         <TabsContent value="gastos" className="mt-4">
           <Gastos movements={movements} range={range} />
@@ -219,6 +223,90 @@ function PnL({ movements, range }: { movements: CashflowMovement[]; range: Range
         Se excluyeron {transferCount} movimientos entre cuentas (transferencias / cambios de moneda, neto {money(transferNet)}) — no afectan el resultado, pero sí los saldos de caja.
       </p>
     ) : null}
+    </>
+  )
+}
+
+// ============================ Flujo de fondos (directo) ============================
+// Flujo de caja real del período: entradas (cobros) − salidas (pagos), consolidado en
+// USD, con columnas por mes. Excluye transferencias entre cuentas (netean los saldos).
+// Reconcilia: saldo inicial + flujo neto + transferencias = saldo final.
+function FlujoDeFondos({ movements, range }: { movements: CashflowMovement[]; range: Range }) {
+  const data = useMemo(() => {
+    const ingresoLines: Record<string, Record<string, number>> = {}
+    const egresoLines: Record<string, Record<string, number>> = {}
+    const monthsSet = new Set<string>()
+    let transfersNet = 0, saldoInicial = 0
+    for (const m of movements) {
+      const d = m.date?.slice(0, 10); if (!d) continue
+      const v = (m.amount_usd || 0) * (m.flow === "Ingreso" ? 1 : -1)
+      if (d < range.from) { saldoInicial += v; continue }   // antes del período → arma el saldo inicial
+      if (d > range.to) continue
+      if (m.transfer) { transfersNet += v; continue }        // transferencias: no son flujo
+      const mk = d.slice(0, 7); monthsSet.add(mk)
+      if (m.flow === "Ingreso") { const k = m.category || "Otros ingresos"; (ingresoLines[k] ??= {})[mk] = (ingresoLines[k][mk] || 0) + v }
+      else { const k = m.expense_type || m.category || "Otros gastos"; (egresoLines[k] ??= {})[mk] = (egresoLines[k][mk] || 0) + v }
+    }
+    const months = [...monthsSet].sort()
+    const tot = (o: Record<string, number>) => months.reduce((s, mk) => s + (o[mk] || 0), 0)
+    const fill = (o: Record<string, number>) => Object.fromEntries(months.map((mk) => [mk, o[mk] || 0]))
+    const sumLines = (lines: Record<string, Record<string, number>>) => { const a: Record<string, number> = {}; for (const mk of months) { a[mk] = 0; for (const k in lines) a[mk] += lines[k][mk] || 0 } return a }
+    const ingTotal = sumLines(ingresoLines), egrTotal = sumLines(egresoLines)
+    const neto = Object.fromEntries(months.map((mk) => [mk, (ingTotal[mk] || 0) + (egrTotal[mk] || 0)]))
+    const flujoNeto = tot(neto), saldoFinal = saldoInicial + flujoNeto + transfersNet
+    const rows: PnlRow[] = [{ label: "Entradas (cobros)", kind: "section", vals: {}, total: 0 }]
+    for (const k of Object.keys(ingresoLines).sort((a, b) => tot(ingresoLines[b]) - tot(ingresoLines[a]))) rows.push({ label: k, kind: "detail", vals: fill(ingresoLines[k]), total: tot(ingresoLines[k]) })
+    rows.push({ label: "Total entradas", kind: "subtotal", vals: ingTotal, total: tot(ingTotal) })
+    rows.push({ label: "Salidas (pagos)", kind: "section", vals: {}, total: 0 })
+    for (const k of Object.keys(egresoLines).sort((a, b) => tot(egresoLines[a]) - tot(egresoLines[b]))) rows.push({ label: k, kind: "detail", vals: fill(egresoLines[k]), total: tot(egresoLines[k]) })
+    rows.push({ label: "Total salidas", kind: "subtotal", vals: egrTotal, total: tot(egrTotal) })
+    rows.push({ label: "Flujo neto del período", kind: "total", vals: neto, total: flujoNeto })
+    return { rows, months, saldoInicial, flujoNeto, transfersNet, saldoFinal }
+  }, [movements, range])
+
+  if (!data.months.length) return <Card className="p-8 text-center text-sm text-muted-foreground">Sin movimientos en el período.</Card>
+  const { rows, months } = data
+  return (
+    <>
+    <Card className="overflow-x-auto py-0">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="sticky left-0 bg-card min-w-[230px]">Concepto</TableHead>
+            {months.map((mk) => <TableHead key={mk} className="text-right tabular">{monthLabel(mk)}</TableHead>)}
+            <TableHead className="text-right tabular font-semibold">Total</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {rows.map((r, idx) => {
+            if (r.kind === "section") return (
+              <TableRow key={idx} className="border-0 hover:bg-transparent">
+                <TableCell colSpan={months.length + 2} className="pt-4 pb-1 text-[11px] uppercase tracking-wide text-muted-foreground">{r.label}</TableCell>
+              </TableRow>
+            )
+            const isBold = r.kind === "total" || r.kind === "subtotal"
+            const cell = (v: number, key: string) => (
+              <TableCell key={key} className={cn("text-right tabular whitespace-nowrap", v < 0 && !isBold && "text-muted-foreground", isBold && "font-semibold")}>{money(v)}</TableCell>
+            )
+            return (
+              <TableRow key={idx} className={cn(isBold && "border-t border-border font-semibold", "hover:bg-muted/30")}>
+                <TableCell className={cn("sticky left-0 bg-card", r.kind === "detail" && "pl-6 text-muted-foreground text-xs", isBold && "font-semibold")}>{r.label}</TableCell>
+                {months.map((mk) => cell(r.vals[mk] ?? 0, mk))}
+                {cell(r.total, "total")}
+              </TableRow>
+            )
+          })}
+        </TableBody>
+      </Table>
+    </Card>
+    <Card className="p-4 mt-3 max-w-md space-y-1 text-sm">
+      <div className="text-[11px] uppercase tracking-wide text-muted-foreground mb-1">Reconciliación de caja (USD · todas las cuentas)</div>
+      <div className="flex justify-between"><span className="text-muted-foreground">Saldo inicial</span><span className="tabular">{money(data.saldoInicial)}</span></div>
+      <div className="flex justify-between"><span className="text-muted-foreground">Flujo neto del período</span><span className="tabular">{money(data.flujoNeto)}</span></div>
+      {data.transfersNet ? <div className="flex justify-between text-muted-foreground"><span>Transferencias netas entre cuentas</span><span className="tabular">{money(data.transfersNet)}</span></div> : null}
+      <div className="flex justify-between border-t border-border pt-1"><span className="font-semibold">Saldo final</span><b className="tabular">{money(data.saldoFinal)}</b></div>
+    </Card>
+    <p className="text-[11px] text-muted-foreground mt-2">Flujo de fondos <b>directo</b>: entradas y salidas reales de caja del período, consolidado en USD. Las transferencias entre cuentas no son flujo (netean en los saldos). <b>Inversión y Financiación</b> todavía no se separan (préstamos, aportes/retiros y bienes de uso no se etiquetan aún) — para eso ver el flujo indirecto en el roadmap.</p>
     </>
   )
 }
