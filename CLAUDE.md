@@ -173,7 +173,12 @@ _Actualizado: 2026-06-16. Producción deployada y verificada (healthz 200, webho
 - **Indirecto (método contable, parte de la ganancia devengada): NO sale completo hoy.** Faltan, en orden de importancia: (1) **Cuentas por pagar** a proveedores (hoy solo se registra el pago en efectivo, no la deuda devengada → `expenses` está vacío); (2) **bienes de uso + amortización** como registro contable (hoy "Depreciación y Amortización" se carga como egreso de caja, conceptualmente mal); (3) marcar **préstamos/aportes/retiros** para la sección Financiación; (4) **snapshots históricos** de cobrar/inventario/pagar (la DB guarda solo la foto actual → para los "Δ" del indirecto hay que reconstruir o empezar a snapshotear). Piezas que SÍ hay: ganancia aproximable (Σ `contract_total` − costos), cuentas por cobrar (ventas con `balance_due`), inventario (stock×costo).
 - Cuando se encare: empezar por el **directo** (entrega valor solo); el indirecto recién después de sumar cuentas por pagar + bienes de uso.
 
-**Próximos pasos** (roadmap completo en el plan aprobado)
-1. Resto de frentes del roadmap: Mensajes templates/orden (Frente 3), banco de imágenes (Frente 4), vista simple Ventas (Frente 5), testear inspección (Frente 6). [Frente 1 WhatsApp ✅ · Frente 2 Efectivo ✅]
-2. **WhatsApp**: si el saliente alguna vez falla por billing, agregar método de pago a la WABA. Token IG/WA pueden vencer → automatizar refresh.
-3. Backlog viejo (Context.md §7): cuenta BdC USD sin movimientos; selector de plantillas PDF en UI; dashboard de márgenes; disparar imports desde mails del banco.
+**Próximos pasos (al 18/6 — para arrancar fresco)**
+1. **Flujo de fondos DIRECTO** (alto valor, datos listos — ver sección "Flujo de fondos" arriba). El indirecto va después y necesita: cuentas por pagar + bienes de uso/amortización.
+2. **Features pendientes:** banco de imágenes de productos · vista simple de Ventas (cards mobile) · testear formulario de inspección · plantillas de Mensajes.
+3. **Seguridad-resto:** filtrar GET ventas/cotizaciones por `seller_name` para no-admin + ocultar la navegación financiera a vendedores en el front (backend ya da 403).
+4. **Inventario:** PROD-201 → seguimiento por **partida/lote** (2 partidas del mismo producto). Zócalos: el costo USD es **foto al blue 1475 (18/6)** → reajustar si el dólar se mueve. Deck (PROD-039/043) y MDF 6cm desactivados (reactivar si se vuelven a vender).
+5. **Correctitud menor:** reconciliación de cobros `sale_ref` vs `quote_number`; cola para inbound a prueba de fallos totales.
+6. **Operativo del dueño:** cambiar contraseñas (admin sigue `admin123`); WhatsApp/IG tokens pueden vencer → automatizar refresh; rutina mensual MP (importar export con nombres).
+
+**Hecho reciente (jun-2026):** Instagram 100% (firma IG con `IG_APP_SECRET` + fotos) · Mensajes Tanda 2/3 (UX, confirmación de email, espejado de Gmail enviados, vincular a lead) · Correctitud P1 (timeouts, dedup inbound, estado de entrega) · Seguridad backend (firma webhooks, roles, simulate-paid) · DB atómica · Inventario auditoría+conciliación física aplicada · zócalos MDF/madera actualizados.
