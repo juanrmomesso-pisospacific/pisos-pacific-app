@@ -177,7 +177,7 @@ _Actualizado: 2026-06-16. Producción deployada y verificada (healthz 200, webho
 
 **Próximos pasos (al 18/6 — para arrancar fresco)**
 1. **Flujo de fondos DIRECTO** (alto valor, datos listos — ver sección "Flujo de fondos" arriba). El indirecto va después y necesita: cuentas por pagar + bienes de uso/amortización.
-2. **Features pendientes:** banco de imágenes de productos · vista simple de Ventas (cards mobile) · testear formulario de inspección · plantillas de Mensajes.
+2. **Features pendientes:** banco de imágenes de productos (espera el Drive del dueño) · testear formulario de inspección · plantillas de Mensajes. [✅ vista simple de Ventas (Tarjetas) hecha 18/6 · ✅ flujo de fondos directo hecho 18/6]
 3. **Seguridad-resto:** filtrar GET ventas/cotizaciones por `seller_name` para no-admin + ocultar la navegación financiera a vendedores en el front (backend ya da 403).
 4. **Inventario:** PROD-201 → seguimiento por **partida/lote** (2 partidas del mismo producto). Zócalos: el costo USD es **foto al blue 1475 (18/6)** → reajustar si el dólar se mueve. Deck (PROD-039/043) y MDF 6cm desactivados (reactivar si se vuelven a vender).
 5. **Correctitud menor:** reconciliación de cobros `sale_ref` vs `quote_number`; cola para inbound a prueba de fallos totales.

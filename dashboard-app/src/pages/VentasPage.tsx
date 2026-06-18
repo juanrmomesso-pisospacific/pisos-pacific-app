@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Search, LayoutGrid, Rows3, Plus, Check, CalendarDays, Truck, Info, CalendarClock, ArrowUp, ArrowDown, ChevronsUpDown, MessageCircle } from "lucide-react"
+import { Search, LayoutGrid, Rows3, Smartphone, Plus, Check, CalendarDays, Truck, Info, CalendarClock, ArrowUp, ArrowDown, ChevronsUpDown, MessageCircle } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { findConvId } from "@/lib/chat"
 import { Button } from "@/components/ui/button"
@@ -73,7 +73,7 @@ const STATUS_COLOR: Record<SaleStatus, { bar: string; tint: string; icon: string
   },
 }
 
-type View = "tabla" | "kanban"
+type View = "tabla" | "cards" | "kanban"
 
 // Delivery status (avance de obra) — what is delivered vs pending.
 const DELIVERY_LABEL: Record<string, string> = { Finalizado: "Finalizado", Acopiado: "Acopiado", Agendado: "Agendado" }
@@ -110,7 +110,7 @@ export default function VentasPage() {
   const [view, setView] = useState<View>(() => {
     if (typeof window === "undefined") return "kanban"
     const saved = window.localStorage.getItem("ventas:view")
-    return (saved === "tabla" || saved === "kanban") ? saved : "kanban"
+    return (saved === "tabla" || saved === "kanban" || saved === "cards") ? saved : "kanban"
   })
   const setViewPersist = (v: View) => {
     setView(v)
@@ -193,6 +193,7 @@ export default function VentasPage() {
             <Tabs value={view} onValueChange={(v) => setViewPersist(v as View)}>
               <TabsList className="h-8">
                 <TabsTrigger value="tabla" className="gap-1.5"><Rows3 className="h-3.5 w-3.5" />Tabla</TabsTrigger>
+                <TabsTrigger value="cards" className="gap-1.5"><Smartphone className="h-3.5 w-3.5" />Tarjetas</TabsTrigger>
                 <TabsTrigger value="kanban" className="gap-1.5"><LayoutGrid className="h-3.5 w-3.5" />Kanban</TabsTrigger>
               </TabsList>
             </Tabs>
@@ -204,6 +205,8 @@ export default function VentasPage() {
         </div>
         {view === "tabla" ? (
           <Card className="overflow-hidden py-0"><VentasTable rows={filtered} /></Card>
+        ) : view === "cards" ? (
+          <VentasCards rows={filtered} onChanged={refetchSales} />
         ) : (
           <VentasKanban rows={filtered} onChanged={refetchSales} />
         )}
@@ -273,6 +276,49 @@ function VentasTable({ rows }: { rows: Sale[] }) {
         })}
       </TableBody>
     </Table>
+  )
+}
+
+// Vista simple en tarjetas (cómoda en móvil). Tap → abre el detalle de la venta.
+function VentasCards({ rows, onChanged }: { rows: Sale[]; onChanged: () => void }) {
+  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const selected = selectedId ? rows.find((s) => s.id === selectedId) ?? null : null
+  return (
+    <>
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
+      {rows.length === 0 ? (
+        <div className="text-sm text-muted-foreground col-span-full text-center py-10">Sin ventas</div>
+      ) : rows.map((s) => {
+        const due = saldoDue(s)
+        return (
+          <div key={s.id} onClick={() => setSelectedId(s.id)} className="rounded-lg border border-border bg-card p-3 hover:bg-accent transition-colors cursor-pointer" title="Ver detalle">
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
+                <div className="font-medium truncate">{s.client_name}</div>
+                <div className="text-[10px] text-muted-foreground tabular">#{s.quote_number}{s.created_at ? ` · ${new Date(s.created_at).toLocaleDateString("es-AR")}` : ""}</div>
+              </div>
+              <div onClick={(e) => e.stopPropagation()}><SaleRowActions sale={s} /></div>
+            </div>
+            {(s.title || s.description) ? <div className="text-xs text-muted-foreground line-clamp-1 mt-1">{s.title || s.description}</div> : null}
+            <div className="flex items-center justify-between gap-2 mt-2">
+              <Badge variant="outline" className="text-[10px]">{s.status}</Badge>
+              <DeliveryBadge value={s.delivery_status} />
+            </div>
+            <div className="flex items-center justify-between mt-2 text-sm">
+              <span className="tabular font-medium">{fmtMoney(s.contract_total)}</span>
+              {due > 0.5 ? <Badge variant="outline" className="text-[10px]">Saldo {fmtMoney(due)}</Badge> : <span className="text-[11px] text-emerald-700">Saldado ✓</span>}
+            </div>
+            {s.delivery_date ? (
+              <div className="text-[10px] text-muted-foreground mt-1.5 inline-flex items-center gap-1">
+                <CalendarDays className="h-2.5 w-2.5" />Entrega {new Date(s.delivery_date).toLocaleDateString("es-AR")}
+              </div>
+            ) : null}
+          </div>
+        )
+      })}
+    </div>
+    <SaleDetailSheet sale={selected} onClose={() => setSelectedId(null)} onChanged={onChanged} />
+    </>
   )
 }
 
