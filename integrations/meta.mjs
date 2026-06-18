@@ -55,6 +55,31 @@ export async function handleInbound(db, save, channel, payload) {
       return null;
     }
   }
+  // Instagram: "eco" de un mensaje que mandó el negocio (incluido desde la app del celular)
+  // → espejarlo como SALIENTE en la conversación. Dedup: por mid ya registrado (lo mandó la
+  // plataforma) o por un saliente reciente con el mismo texto (±2 min) para no duplicar.
+  if (channel === 'instagram') {
+    const e = payload?.entry?.[0]?.messaging?.[0];
+    if (e?.message?.is_echo) {
+      const mid = e.message.mid;
+      const toId = e.recipient?.id;
+      const text = e.message.text || (Array.isArray(e.message.attachments) && e.message.attachments.length ? '📎 Adjunto' : '');
+      console.log('[ig:echo]', JSON.stringify({ mid, toId, text: text.slice(0, 60) }));
+      if (!text || !toId) return null;
+      if (mid && db.messages.some((m) => m.wa_id === mid)) return null;   // ya lo registró la plataforma
+      const conv = db.conversations.find((c) => c.channel === 'instagram' && c.contact_id === toId);
+      if (!conv) return null;
+      const ts = e.timestamp ? new Date(Number(e.timestamp)).toISOString() : new Date().toISOString();
+      const tms = Date.parse(ts);
+      const dup = db.messages.some((m) => m.conversation_id === conv.id && m.direction === 'out' && (m.body || '') === text && Math.abs(Date.parse(m.ts) - tms) < 2 * 60 * 1000);
+      if (dup) return null;   // saliente equivalente reciente (lo mandó la app) → no duplicar
+      const msg = { id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, conversation_id: conv.id, direction: 'out', body: text, ts, status: 'sent', wa_id: mid, via: 'ig-app' };
+      db.messages.push(msg);
+      conv.last_message_at = ts; conv.last_message_preview = text.slice(0, 140); conv.unread_count = 0;
+      save();
+      return { conversation: conv, message: msg };
+    }
+  }
   // Anti-duplicados: Meta REINTENTA los webhooks → no procesar el mismo mensaje dos veces
   // (evita doble gasto de efectivo o mensaje repetido). Chequeo+marca son síncronos (sin await
   // en el medio) → a prueba de reintentos concurrentes. Va antes del bot de efectivo y del alta.

@@ -22,7 +22,7 @@ export type Message = {
   status?: "sent" | "delivered" | "read" | "received"
   template_name?: string
   wa_id?: string            // id de mensaje de WhatsApp (dedup de echoes en Coexistence)
-  via?: "wa-app"            // "wa-app" = respondido desde la app de WhatsApp del celular
+  via?: "wa-app" | "ig-app" // respondido desde la app del celular (WhatsApp / Instagram)
   media_url?: string        // adjunto entrante ya descargado (/uploads/…)
   media_type?: "image" | "video" | "audio" | "file"
 }
