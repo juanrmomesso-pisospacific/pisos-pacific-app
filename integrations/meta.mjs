@@ -64,7 +64,6 @@ export async function handleInbound(db, save, channel, payload) {
       const mid = e.message.mid;
       const toId = e.recipient?.id;
       const text = e.message.text || (Array.isArray(e.message.attachments) && e.message.attachments.length ? '📎 Adjunto' : '');
-      console.log('[ig:echo]', JSON.stringify({ mid, toId, text: text.slice(0, 60) }));
       if (!text || !toId) return null;
       if (mid && db.messages.some((m) => m.wa_id === mid)) return null;   // ya lo registró la plataforma
       const conv = db.conversations.find((c) => c.channel === 'instagram' && c.contact_id === toId);
