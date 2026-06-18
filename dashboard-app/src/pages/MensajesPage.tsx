@@ -14,6 +14,7 @@ import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_L
 import { findConvId, digits, quoteShareMessage } from "@/lib/chat"
 import { statusLabel } from "@/components/RowActions"
 import { SearchPicker } from "@/components/SearchPicker"
+import { useConfirm } from "@/components/ui/confirm"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
 import { fmtMoney } from "@/lib/utils"
@@ -238,6 +239,7 @@ function ConversationRow({ conv, lead, selected, onClick }: { conv: Conversation
 // -----------------------------------------------------------------------------
 
 function Thread({ conversation, templates }: { conversation: Conversation | null; templates: Template[] }) {
+  const confirm = useConfirm()
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(false)
   const [draft, setDraft] = useState("")
@@ -313,6 +315,15 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
   const handleSend = async () => {
     const body = draft.trim()
     if (!body || sending) return
+    // Email: confirmar antes de enviar (con Shift+Enter se escapaban mails sin querer).
+    if (conversation.channel === "email") {
+      const ok = await confirm({
+        title: "Enviar email",
+        description: `Se va a enviar el email a ${conversation.contact_id}. ¿Confirmás?`,
+        confirmLabel: "Enviar email",
+      })
+      if (!ok) return
+    }
     setSending(true); setComposerError(null)
     try {
       const r = await fetch(`/api/conversations/${conversation.id}/messages`, {
