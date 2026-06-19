@@ -115,7 +115,7 @@ const TRANSFER = /mov entre cuentas|transferencia a cuenta propia|cuenta propia|
 function classifyBank(desc) {
   const t = norm(desc);
   if (TRANSFER.test(t)) return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', expense_type: 'Otros Gastos y Ajustes', counterparty: 'MOV ENTRE CUENTAS' };
-  if (/arca|afip|arba|rentas|dgr|sircreb|iibb|ley 25413|impuesto|comision|iva/i.test(t)) return { category: 'Impuestos', expense_type: 'Impuestos y Tasas', fixed_variable: 'Fijo', counterparty: 'Impuestos / Banco' };
+  if (/arca|afip|arba|rentas|dgr|sircreb|iibb|ley 25413|impuesto|comision|iva|i\.v\.a/i.test(t)) return { category: 'Impuestos', expense_type: 'Impuestos y Tasas', fixed_variable: 'Fijo', counterparty: 'Impuestos / Banco' };
   if (isPeaje(t) || FLOTA.test(t)) return { category: 'Flota', expense_type: 'Gastos de Flota/Vehículos', counterparty: desc };
   if (MKT.test(t)) return { category: 'Marketing', expense_type: 'Gastos de Marketing y Comerciales', counterparty: desc };
   if (RETAIL.test(t)) return { category: 'Otros', expense_type: PER, counterparty: 'Juan & Pipi', description_override: 'Personal — ' + desc };
@@ -130,11 +130,14 @@ function findBankColumns(rows) {
     const find = (re) => r.findIndex((c) => re.test(c));
     const cFecha = find(/fecha/);
     const cMonto = find(/^monto$|importe|^valor$/);
-    const cDeb = find(/debito|d[eé]bito|debe/);
-    const cCred = find(/credito|cr[eé]dito|haber/);
-    const cDesc = find(/movimiento|descrip|detalle|concepto|referencia/);
+    // Columna combinada de dirección ("Débito/Crédito" como texto), con Monto positivo aparte.
+    const cDir = find(/d[eé]bito\s*\/\s*cr[eé]dito|debe\s*\/\s*haber|^d\/c$/);
+    // Columnas separadas de monto débito / crédito (otros bancos).
+    const cDeb = find(/^d[eé]bitos?$|^debe$/);
+    const cCred = find(/^cr[eé]ditos?$|^haber$/);
+    const cDesc = find(/movimiento|descrip|detalle|concepto|referencia|tipo de transferencia|tipo de transf|transacci/);
     if (cFecha >= 0 && (cMonto >= 0 || (cDeb >= 0 && cCred >= 0)) && cDesc >= 0)
-      return { headerRow: i, cFecha, cDesc, cMonto, cDeb, cCred };
+      return { headerRow: i, cFecha, cDesc, cMonto, cDeb, cCred, cDir };
   }
   return null;
 }
@@ -152,7 +155,15 @@ function parseBank(rows, source) {
     const date = parseDate(r[cols.cFecha]); if (!date) continue;
     const desc = String(r[cols.cDesc] || '').trim(); if (!desc) continue;
     let cur = 'ARS', val = null;
-    if (cols.cMonto >= 0) { const m = parseMoney(r[cols.cMonto]); if (!m) continue; cur = m.cur; val = m.val; }
+    if (cols.cMonto >= 0) {
+      const m = parseMoney(r[cols.cMonto]); if (!m) continue; cur = m.cur; val = m.val;
+      // Si el signo viene en una columna de texto "Débito/Crédito" (Monto positivo), aplicarlo.
+      if (cols.cDir >= 0) {
+        const dir = norm(r[cols.cDir]);
+        if (/credito/.test(dir)) val = -Math.abs(val);        // crédito → Ingreso
+        else if (/debito/.test(dir)) val = Math.abs(val);      // débito → Egreso
+      }
+    }
     else { const d = parseMoney(r[cols.cDeb]), c = parseMoney(r[cols.cCred]); val = (d?.val ? Math.abs(d.val) : 0) - (c?.val ? Math.abs(c.val) : 0); }
     if (val == null || val === 0) continue;
     out.push({ date, desc, cur, val });
