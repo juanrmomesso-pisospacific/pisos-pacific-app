@@ -32,9 +32,16 @@ export type Template = {
   name: string
   category: "UTILITY" | "MARKETING" | "AUTHENTICATION"
   language: string
-  channel: Channel
+  channel: Channel | "all"      // "all" = sirve en cualquier canal (respuesta rápida)
   status: "approved" | "pending" | "rejected"
   body: string
+}
+
+// Completa los placeholders de una plantilla con datos del contacto al insertarla.
+// {{1}} y {nombre} → primer nombre del contacto; los demás {{n}} quedan para completar a mano.
+export function fillTemplate(body: string, contactName?: string): string {
+  const first = (contactName || "").replace(/^@/, "").trim().split(/\s+/)[0] || ""
+  return (body || "").replace(/\{\{1\}\}/g, first).replace(/\{nombre\}/gi, first)
 }
 
 export const CHANNEL_LABEL: Record<Channel, string> = { whatsapp: "WhatsApp", instagram: "Instagram", email: "Email" }

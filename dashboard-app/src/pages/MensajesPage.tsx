@@ -9,7 +9,7 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 import { useApi, getJSON } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { useAuth } from "@/contexts/AuthContext"
-import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, EMOJIS } from "@/lib/messaging"
+import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, EMOJIS, fillTemplate } from "@/lib/messaging"
 import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_LABEL as LEAD_STATUS_LABEL } from "@/lib/leads"
 import { findConvId, digits, quoteShareMessage } from "@/lib/chat"
 import { statusLabel } from "@/components/RowActions"
@@ -348,8 +348,8 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
     setTimeout(() => taRef.current?.focus(), 0)
   }
 
-  // Only templates matching this conversation's channel + approved
-  const availableTemplates = templates.filter(t => t.channel === conversation.channel && t.status === "approved")
+  // Plantillas aprobadas del canal de la conversación (o las marcadas "Todos")
+  const availableTemplates = templates.filter(t => (t.channel === conversation.channel || t.channel === "all") && t.status === "approved")
 
   return (
     <section
@@ -393,7 +393,7 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
         sending={sending}
         error={composerError}
         templates={availableTemplates}
-        onPickTemplate={(t) => insertText(t.body)}
+        onPickTemplate={(t) => insertText(fillTemplate(t.body, conversation.contact_name))}
         onPickEmoji={(e) => insertText(e)}
         taRef={taRef}
         onFile={sendFile}

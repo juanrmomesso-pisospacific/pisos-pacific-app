@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { useApi } from "@/lib/api"
 import { RulesManager } from "@/components/RulesManager"
+import { TemplateManager } from "@/components/TemplateManager"
 import { useAction, refresh } from "@/lib/mutations"
 import { useAuth } from "@/contexts/AuthContext"
 
@@ -38,6 +39,7 @@ export default function ConfiguracionPage() {
           <MercadoPagoSection mp={settings?.integrations?.mercadopago} />
         </CardContent>
       </Card>
+      <TemplateManager />
       <RulesManager />
       {isAdmin && <EmailCleanupSection />}
     </div>

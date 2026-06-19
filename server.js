@@ -1015,7 +1015,7 @@ app.patch('/api/leads/:id', (req, res) => {
 app.get('/api/cp_rules', (_, res) => res.json(db.cp_rules || []));
 // Entidades financieras/config: escritura solo admin (un vendedor no toca caja ni reglas).
 const ADMIN_ONLY_WRITE = new Set(['cashflow', 'cajas', 'cp_rules', 'categories', 'expenses']);
-['products','sales','quotes','clients','expenses','leads','conversations','tasks','cajas','suppliers','categories','cashflow','cp_rules'].forEach(name => {
+['products','sales','quotes','clients','expenses','leads','conversations','tasks','cajas','suppliers','categories','cashflow','cp_rules','templates'].forEach(name => {
   const guard = ADMIN_ONLY_WRITE.has(name) ? [requireAdmin] : [];
   app.post(`/api/${name}`, ...guard, (req, res) => {
     const id = req.body.id ?? `local-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
