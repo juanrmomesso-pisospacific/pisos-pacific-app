@@ -11,8 +11,9 @@ type Mov = {
   _idx: number; _dupe: boolean; _enrich?: string; date: string; flow: string; description: string
   counterparty: string; currency: string; amount_ars: number; amount_usd: number
   category: string; expense_type: string | null; needs_review: boolean
+  _maybe?: boolean; _maybe_ref?: { date: string; description: string; caja_name?: string }
 }
-type Report = { source: string; caja: string; total: number; nuevos: number; duplicados: number; revisar: number; ingresos: number; egresos: number; actualizan?: number }
+type Report = { source: string; caja: string; total: number; nuevos: number; duplicados: number; revisar: number; ingresos: number; egresos: number; actualizan?: number; posibles?: number }
 
 const SOURCES = [
   { id: "mp-api", label: "Mercado Pago (API)", hint: "Sincronización automática — sin archivo" },
@@ -49,7 +50,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
       })
       const { movements, report } = await api.importParse(source, b64)
       setMovs(movements); setReport(report)
-      setSel(new Set(movements.filter((m: Mov) => !m._dupe).map((m: Mov) => m._idx)))  // nuevos pre-seleccionados
+      setSel(new Set(movements.filter((m: Mov) => !m._dupe && !m._maybe).map((m: Mov) => m._idx)))  // nuevos pre-seleccionados
     } catch (e: any) { setError(e?.message ?? String(e)); setMovs(null); setReport(null) }
     finally { setBusy(false) }
   }
@@ -66,7 +67,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
         const r = await api.importMpResult(jobId)
         if (r.ready) {
           setMovs(r.movements); setReport(r.report)
-          setSel(new Set(r.movements.filter((m: Mov) => !m._dupe).map((m: Mov) => m._idx)))
+          setSel(new Set(r.movements.filter((m: Mov) => !m._dupe && !m._maybe).map((m: Mov) => m._idx)))
           setSyncing(null); setBusy(false); return
         }
       }
@@ -163,7 +164,14 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
                 {report.actualizan ? <span className="text-sky-600 font-medium">· {report.actualizan} actualizan nombre</span> : null}
                 <span className="text-muted-foreground">· {report.duplicados} ya cargados ·</span>
                 <span className="text-amber-600">{report.revisar} a revisar</span>
+                {report.posibles ? <span className="text-orange-600 font-medium">· {report.posibles} posibles duplicados</span> : null}
               </div>
+              {report.posibles ? (
+                <div className="flex items-start gap-2 rounded-md border border-orange-300/60 bg-orange-50 dark:bg-orange-950/20 p-2 text-[11px] text-orange-800 dark:text-orange-300">
+                  <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+                  <span><b>{report.posibles}</b> movimiento(s) coinciden en monto y fecha (±10 días) con algo ya cargado — quizá lo cargaste a mano. Quedan <b>sin tildar</b>; revisá la fila (dice a qué se parece) y tildalos solo si querés cargarlos igual.</span>
+                </div>
+              ) : null}
               <div className="flex items-center gap-2 text-xs">
                 <Button variant="ghost" size="sm" className="h-7" onClick={() => setSel(new Set(allNew.map((m) => m._idx)))}>Todos los nuevos</Button>
                 <Button variant="ghost" size="sm" className="h-7" onClick={() => setSel(new Set(movs!.map((m) => m._idx)))}>Todos</Button>
@@ -180,16 +188,22 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
                     </thead>
                     <tbody>
                       {movs!.map((m) => (
-                        <tr key={m._idx} className={cn("border-t", m._dupe && "opacity-50", sel.has(m._idx) && "bg-primary/5")}>
+                        <tr key={m._idx} className={cn("border-t", m._dupe && "opacity-50", m._maybe && !sel.has(m._idx) && "bg-orange-50/60 dark:bg-orange-950/10", sel.has(m._idx) && "bg-primary/5")}>
                           <td className="p-2"><input type="checkbox" checked={sel.has(m._idx)} onChange={() => toggle(m._idx)} /></td>
                           <td className="p-2 whitespace-nowrap tabular-nums">{m.date.slice(0, 10)}</td>
                           <td className="p-2 max-w-[260px]">
                             <div className="truncate">{m.description}</div>
-                            <div className="flex gap-1 mt-0.5">
+                            <div className="flex flex-wrap gap-1 mt-0.5">
                               {m._dupe ? <Badge variant="outline" className="text-[9px]">ya cargado</Badge> : null}
+                              {m._maybe && !m._dupe ? <Badge variant="outline" className="text-[9px] border-orange-400 text-orange-600">posible duplicado</Badge> : null}
                               {m._enrich ? <Badge variant="outline" className="text-[9px] border-sky-400 text-sky-600">actualiza nombre</Badge> : null}
                               {m.needs_review && !m._dupe ? <Badge variant="outline" className="text-[9px] border-amber-400 text-amber-600">a revisar</Badge> : null}
                             </div>
+                            {m._maybe && m._maybe_ref ? (
+                              <div className="text-[10px] text-orange-700/80 dark:text-orange-400/80 mt-0.5 truncate">
+                                ≈ ya cargado {m._maybe_ref.date}{m._maybe_ref.caja_name ? ` · ${m._maybe_ref.caja_name}` : ""}{m._maybe_ref.description ? ` · ${m._maybe_ref.description}` : ""}
+                              </div>
+                            ) : null}
                           </td>
                           <td className="p-2 text-muted-foreground">{m.flow === "Ingreso" ? "Ingreso" : (m.expense_type || m.category)}</td>
                           <td className={cn("p-2 text-right tabular-nums whitespace-nowrap", m.flow === "Ingreso" ? "text-emerald-600" : "")}>

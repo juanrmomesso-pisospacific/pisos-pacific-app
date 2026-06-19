@@ -315,5 +315,33 @@ export function parseStatement({ source, buffer, existing = [], rules = null }) 
     if (enrichId && !claimed.has(enrichId)) { claimed.add(enrichId); return { ...m, _idx: i, _dupe: false, _enrich: enrichId }; }
     return { ...m, _idx: i, _dupe: seen.has(key) };
   });
+
+  // Análisis de POSIBLES duplicados (fuzzy): un movimiento que NO es dupe duro pero
+  // cuyo |monto| + flujo coinciden con algo ya cargado dentro de ±10 días — en
+  // CUALQUIER caja — probablemente ya se cargó a mano (ej: un cobro registrado
+  // manualmente con otra fecha o en otra cuenta). No se bloquea: se señala para que
+  // el usuario decida (la UI no lo pre-selecciona y muestra a qué se parece).
+  const byAmt = new Map();
+  for (const m of existing) {
+    const dd = (m.date || '').slice(0, 10); if (!dd || m.amount_ars == null) continue;
+    const amt = Math.round(Math.abs(m.amount_ars)); if (!amt) continue;
+    if (!byAmt.has(amt)) byAmt.set(amt, []);
+    byAmt.get(amt).push({ date: dd, description: m.description || m.counterparty || '', caja_name: m.caja_name || m.caja_id || '', flow: m.flow });
+  }
+  const DAY = 86400000;
+  movements = movements.map((m) => {
+    if (m._dupe || m._enrich) return m;
+    const amt = Math.round(Math.abs(m.amount_ars || 0)); if (!amt) return m;
+    const cands = byAmt.get(amt); if (!cands) return m;
+    const t = new Date(m.date.slice(0, 10)).getTime();
+    let best = null, bestDiff = Infinity;
+    for (const c of cands) {
+      if (c.flow !== m.flow) continue;
+      const diff = Math.abs(new Date(c.date).getTime() - t) / DAY;
+      if (diff <= 10 && diff < bestDiff) { best = c; bestDiff = diff; }
+    }
+    return best ? { ...m, _maybe: true, _maybe_ref: { date: best.date, description: best.description, caja_name: best.caja_name } } : m;
+  });
+
   return { movements, report: reportStats(movements, { source, caja: CAJA[source].name }) };
 }
