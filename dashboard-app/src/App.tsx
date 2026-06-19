@@ -8,6 +8,7 @@ import { ConfirmProvider } from "@/components/ui/confirm"
 import { Layout } from "@/components/Layout"
 import DashboardPage from "@/pages/DashboardPage"
 import InventarioPage from "@/pages/InventarioPage"
+import GaleriaPage from "@/pages/GaleriaPage"
 import CotizacionesPage from "@/pages/CotizacionesPage"
 import VentasPage from "@/pages/VentasPage"
 import AgendaPage from "@/pages/AgendaPage"
@@ -45,6 +46,7 @@ function Gate() {
                 <Route path="/mensajes" element={<MensajesPage />} />
                 <Route path="/leads" element={<LeadsPage />} />
                 <Route path="/inventario" element={<InventarioPage />} />
+                <Route path="/galeria" element={<GaleriaPage />} />
                 <Route path="/cotizaciones" element={<CotizacionesPage />} />
                 <Route path="/ventas" element={<VentasPage />} />
                 <Route path="/agenda" element={<AgendaPage />} />

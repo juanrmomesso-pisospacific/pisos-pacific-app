@@ -10,6 +10,7 @@ import { startMpReport, getMpReport, parseSettlementBuffer } from './import/mp-a
 import { getBlueRate } from './import/fx.mjs';
 import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integrations/meta.mjs';
 import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients } from './integrations/gmail.mjs';
+import { listFolder as driveListFolder, getFileMedia as driveGetFile, driveConfigured } from './integrations/drive.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 import { generatePdf } from './pdf/render.mjs';
 
@@ -803,7 +804,7 @@ app.post('/api/admin/cleanup-email-leads', async (req, res) => {
 // Flujo: GET /api/integrations/google/connect?account=pacific → consentimiento Google →
 // callback guarda el refresh_token en db.settings y lo hidrata a process.env.
 const GOOGLE_ACCOUNTS = {
-  pacific:   { scopes: 'https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send', envs: ['GMAIL_REFRESH_TOKEN', 'GMAIL_SEND_REFRESH_TOKEN'], hint: 'info@pisospacific.com' },
+  pacific:   { scopes: 'https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.send https://www.googleapis.com/auth/drive.readonly', envs: ['GMAIL_REFRESH_TOKEN', 'GMAIL_SEND_REFRESH_TOKEN', 'GDRIVE_REFRESH_TOKEN'], hint: 'info@pisospacific.com' },
   acudesign: { scopes: 'https://www.googleapis.com/auth/gmail.readonly', envs: ['GMAIL_MP_REFRESH_TOKEN'], hint: 'infoacudesign@gmail.com' },
 };
 const googleRedirect = (req) => `${process.env.APP_URL || `${req.headers['x-forwarded-proto'] || 'https'}://${req.get('host')}`}/api/integrations/google/callback`;
@@ -969,6 +970,35 @@ app.post('/api/containers/:id/receive', (req, res) => {
   res.json(c);
 });
 app.get('/api/stock_movements', (_, res) => res.json(db.stock_movements));
+
+// ---------- Banco de imágenes (Google Drive, solo lectura) ----------
+const DRIVE_ROOT = process.env.DRIVE_ROOT_FOLDER || '1GttGPDMj120WiYPgCimclfsLFwopV107';
+const DRIVE_CACHE = path.join(UPLOAD_DIR, 'drive-cache');
+app.get('/api/drive/status', (_req, res) => res.json({ connected: driveConfigured(), root: DRIVE_ROOT }));
+app.get('/api/drive/folder', async (req, res) => {
+  if (!driveConfigured()) return res.status(400).json({ error: 'Drive no conectado' });
+  try { res.json(await driveListFolder(req.query.id || DRIVE_ROOT)); }
+  catch (e) { res.status(400).json({ error: e.message || 'no se pudo listar' }); }
+});
+// Proxy de archivos del Drive (privado) con caché en disco. Sirve para <img src>.
+app.get('/api/drive/file/:id', async (req, res) => {
+  if (!driveConfigured()) return res.sendStatus(404);
+  const id = String(req.params.id).replace(/[^\w-]/g, '');
+  if (!id) return res.sendStatus(400);
+  try {
+    fs.mkdirSync(DRIVE_CACHE, { recursive: true });
+    const binPath = path.join(DRIVE_CACHE, id + '.bin'), metaPath = path.join(DRIVE_CACHE, id + '.json');
+    if (fs.existsSync(binPath) && fs.existsSync(metaPath)) {
+      const { mime } = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      res.set('Content-Type', mime); res.set('Cache-Control', 'private, max-age=86400');
+      return res.send(fs.readFileSync(binPath));
+    }
+    const { buf, mime } = await driveGetFile(id);
+    try { fs.writeFileSync(binPath, buf); fs.writeFileSync(metaPath, JSON.stringify({ mime })); } catch { /* caché best-effort */ }
+    res.set('Content-Type', mime); res.set('Cache-Control', 'private, max-age=86400');
+    res.send(buf);
+  } catch (e) { console.warn('[drive:file]', e.message); res.status(404).send('no media'); }
+});
 
 // ---------- Generic CRUD (POST/PATCH/DELETE) with persistence ----------
 // Special-case: editar un producto que cambia `stock` deja un movimiento de auditoría
@@ -1661,7 +1691,7 @@ app.get('/LogoPacificSmallDark.png', (_, res) => res.sendFile(path.join(BRANDING
 // All "owned" SPA routes serve the same index.html and let react-router take over.
 const DASHBOARD_DIST = path.join(__dirname, 'dashboard-app/dist');
 app.use('/assets', express.static(path.join(DASHBOARD_DIST, 'assets')));
-const SPA_ROUTES = ['/', '/reset', '/dashboard', '/inventario', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow'];
+const SPA_ROUTES = ['/', '/reset', '/dashboard', '/inventario', '/galeria', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow'];
 for (const r of SPA_ROUTES) {
   app.get(r, (_, res) => res.sendFile(path.join(DASHBOARD_DIST, 'index.html')));
 }

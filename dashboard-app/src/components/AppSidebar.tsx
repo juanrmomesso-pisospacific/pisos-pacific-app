@@ -1,4 +1,4 @@
-import { LayoutGrid, Package, FileText, TrendingUp, Calendar, Users, Settings, History, Sparkles, MessageSquare, BarChart3, ArrowRightLeft, Wallet, Truck } from "lucide-react"
+import { LayoutGrid, Package, FileText, TrendingUp, Calendar, Users, Settings, History, Sparkles, MessageSquare, BarChart3, ArrowRightLeft, Wallet, Truck, Images } from "lucide-react"
 import { Link, useLocation } from "react-router-dom"
 import {
   Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupLabel, SidebarGroupContent,
@@ -18,6 +18,7 @@ const NAV_OPERACION: NavItem[] = [
   { label: "Ventas", href: "/ventas", icon: TrendingUp },
   { label: "Agenda", href: "/agenda", icon: Calendar },
   { label: "Inventario", href: "/inventario", icon: Package },
+  { label: "Galería", href: "/galeria", icon: Images },
 ]
 const NAV_ADMIN: NavItem[] = [
   { label: "CashFlow / Gastos", href: "/cashflow", icon: ArrowRightLeft },
