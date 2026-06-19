@@ -41,6 +41,14 @@ export async function getThumb(fileId, size = 400) {
   return { buf: Buffer.from(await r.arrayBuffer()), mime: r.headers.get('content-type') || 'image/jpeg' };
 }
 
+// Busca la primera imagen dentro de una carpeta (recursivo, acotado) → portada del producto.
+export async function findFirstImage(folderId, depth = 2) {
+  const { folders, images } = await listFolder(folderId);
+  if (images.length) return images[0].id;
+  if (depth > 0) for (const f of folders.slice(0, 12)) { const id = await findFirstImage(f.id, depth - 1); if (id) return id; }
+  return null;
+}
+
 // Descarga los bytes de un archivo (para el proxy con caché).
 export async function getFileMedia(fileId) {
   const token = await accessToken();

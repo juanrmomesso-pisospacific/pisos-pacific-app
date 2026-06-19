@@ -12,6 +12,8 @@ export type Product = {
   reservedStock: number
   committed?: number          // m² comprometidos en ventas no finalizadas (derivado)
   stockTrack?: boolean        // true para pisos (se trackea stock); false servicios/extras
+  drive_folder_id?: string    // carpeta del Drive con las fotos del producto (banco de imágenes)
+  drive_cover_id?: string     // imagen de portada (primera foto de la carpeta)
   createdAt: string
   updatedAt: string
 }

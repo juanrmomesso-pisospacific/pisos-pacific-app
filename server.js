@@ -10,7 +10,7 @@ import { startMpReport, getMpReport, parseSettlementBuffer } from './import/mp-a
 import { getBlueRate } from './import/fx.mjs';
 import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integrations/meta.mjs';
 import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients } from './integrations/gmail.mjs';
-import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb as driveGetThumb, driveConfigured } from './integrations/drive.mjs';
+import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb as driveGetThumb, findFirstImage as driveFirstImage, driveConfigured } from './integrations/drive.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 import { generatePdf } from './pdf/render.mjs';
 
@@ -979,6 +979,12 @@ app.get('/api/drive/folder', async (req, res) => {
   if (!driveConfigured()) return res.status(400).json({ error: 'Drive no conectado' });
   try { res.json(await driveListFolder(req.query.id || DRIVE_ROOT)); }
   catch (e) { res.status(400).json({ error: e.message || 'no se pudo listar' }); }
+});
+// Primera imagen de una carpeta (para fijar la portada de un producto al vincularlo).
+app.get('/api/drive/first-image', async (req, res) => {
+  if (!driveConfigured() || !req.query.folder) return res.status(400).json({ error: 'falta carpeta' });
+  try { res.json({ id: await driveFirstImage(String(req.query.folder)) }); }
+  catch (e) { res.status(400).json({ error: e.message }); }
 });
 // Miniatura (liviana) con caché — para grillas/galería y fotos de producto.
 app.get('/api/drive/thumb/:id', async (req, res) => {

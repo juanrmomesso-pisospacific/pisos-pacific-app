@@ -1,5 +1,5 @@
-import { useMemo, useRef, useState } from "react"
-import { Plus, Download, Upload, Search, ArrowUp, ArrowDown, ChevronsUpDown, ShieldAlert } from "lucide-react"
+import { useMemo, useRef, useState, useEffect } from "react"
+import { Plus, Download, Upload, Search, ArrowUp, ArrowDown, ChevronsUpDown, ShieldAlert, Image as ImageIcon, Folder, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
@@ -9,7 +9,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
-import { useApi } from "@/lib/api"
+import { useApi, getJSON } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { useConfirm } from "@/components/ui/confirm"
 import { fmtMoney, fmtInt, cn } from "@/lib/utils"
@@ -245,10 +245,13 @@ export default function InventarioPage() {
 }
 
 function StockTable({ rows, ...sp }: { rows: Product[] } & SortProps) {
+  const [photoProduct, setPhotoProduct] = useState<Product | null>(null)
   return (
+   <>
     <Table>
       <TableHeader>
         <TableRow>
+          <TableHead className="w-12">Foto</TableHead>
           <SortHead k="sku" {...sp}>SKU</SortHead>
           <SortHead k="name" {...sp}>Nombre</SortHead>
           <SortHead k="category" {...sp}>Categoría</SortHead>
@@ -272,6 +275,14 @@ function StockTable({ rows, ...sp }: { rows: Product[] } & SortProps) {
           const lowFree = available > 0 && available <= 5
           return (
             <TableRow key={p.id} className={cn(p.active === false && "opacity-50")}>
+              <TableCell>
+                <button type="button" onClick={() => setPhotoProduct(p)} title="Fotos del producto"
+                  className="block h-9 w-9 rounded-md overflow-hidden border border-border bg-muted hover:ring-2 hover:ring-foreground/20">
+                  {p.drive_cover_id
+                    ? <img src={`/api/drive/thumb/${p.drive_cover_id}`} alt="" loading="lazy" className="h-full w-full object-cover" />
+                    : <ImageIcon className="h-4 w-4 m-auto text-muted-foreground/50" />}
+                </button>
+              </TableCell>
               <TableCell className="text-muted-foreground tabular text-xs">{p.sku}</TableCell>
               <TableCell className="max-w-[360px] truncate">{p.name}</TableCell>
               <TableCell className="text-muted-foreground text-xs">{p.category}</TableCell>
@@ -300,6 +311,81 @@ function StockTable({ rows, ...sp }: { rows: Product[] } & SortProps) {
         })}
       </TableBody>
     </Table>
+    <ProductPhotosSheet product={photoProduct} onClose={() => setPhotoProduct(null)} />
+   </>
+  )
+}
+
+// Fotos de un producto desde el Drive: navega carpetas y permite vincular la carpeta del producto.
+type DriveFolderData = { folders: { id: string; name: string }[]; images: { id: string; name: string }[] }
+function ProductPhotosSheet({ product, onClose }: { product: Product | null; onClose: () => void }) {
+  const [stack, setStack] = useState<{ id: string; name: string }[]>([])
+  const [data, setData] = useState<DriveFolderData | null>(null)
+  const [loading, setLoading] = useState(false)
+  const [busy, setBusy] = useState(false)
+  useEffect(() => {
+    if (!product) { setStack([]); setData(null); return }
+    if (product.drive_folder_id) setStack([{ id: product.drive_folder_id, name: "Fotos del producto" }])
+    else getJSON<{ root: string }>("/api/drive/status").then((s) => setStack([{ id: s.root, name: "Banco de imágenes" }])).catch(() => setStack([]))
+  }, [product?.id])
+  const current = stack[stack.length - 1]
+  useEffect(() => {
+    if (!product || !current) { setData(null); return }
+    let cancelled = false; setLoading(true)
+    getJSON<DriveFolderData>(`/api/drive/folder?id=${encodeURIComponent(current.id)}`)
+      .then((d) => { if (!cancelled) setData(d) }).catch(() => { if (!cancelled) setData(null) }).finally(() => { if (!cancelled) setLoading(false) })
+    return () => { cancelled = true }
+  }, [product?.id, current?.id])
+  const linkHere = async () => {
+    if (!product || !current) return
+    setBusy(true)
+    try {
+      const fi = await getJSON<{ id: string | null }>(`/api/drive/first-image?folder=${encodeURIComponent(current.id)}`).catch(() => ({ id: null }))
+      await fetch(`/api/products/${product.id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ drive_folder_id: current.id, drive_cover_id: fi.id || null }) })
+      onClose(); refresh()
+    } catch { setBusy(false) }
+  }
+  return (
+    <Sheet open={!!product} onOpenChange={(o) => !o && onClose()}>
+      <SheetContent className="!max-w-2xl w-full overflow-y-auto">
+        <SheetHeader>
+          <SheetTitle className="truncate">Fotos · {product?.name}</SheetTitle>
+          <SheetDescription>{product?.drive_folder_id ? "Carpeta vinculada. Navegá y elegí otra para cambiarla." : "Elegí la carpeta del Drive con las fotos de este producto."}</SheetDescription>
+        </SheetHeader>
+        <div className="mt-4 flex items-center gap-1 flex-wrap text-sm">
+          {stack.map((c, i) => (
+            <span key={c.id} className="flex items-center gap-1">
+              {i > 0 && <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />}
+              <button onClick={() => setStack((s) => s.slice(0, i + 1))} className={i === stack.length - 1 ? "font-medium" : "text-muted-foreground hover:text-foreground"}>{c.name}</button>
+            </span>
+          ))}
+        </div>
+        <div className="mt-2"><Button size="sm" disabled={busy || !current} onClick={linkHere}>{busy ? "Guardando…" : "Usar esta carpeta para el producto"}</Button></div>
+        {loading && <div className="mt-4 text-sm text-muted-foreground">Cargando…</div>}
+        {data && (
+          <div className="mt-4 space-y-3">
+            {data.folders.length > 0 && (
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {data.folders.map((f) => (
+                  <button key={f.id} onClick={() => setStack((s) => [...s, { id: f.id, name: f.name }])} className="flex items-center gap-2 rounded-md border border-border px-3 py-2 text-left hover:bg-accent">
+                    <Folder className="h-4 w-4 text-amber-500 shrink-0" /><span className="text-sm truncate">{f.name}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+            {data.images.length > 0 ? (
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                {data.images.map((im) => (
+                  <a key={im.id} href={`/api/drive/file/${im.id}`} target="_blank" rel="noreferrer" className="block aspect-square overflow-hidden rounded-md border border-border bg-muted">
+                    <img src={`/api/drive/thumb/${im.id}`} alt={im.name} loading="lazy" className="h-full w-full object-cover" />
+                  </a>
+                ))}
+              </div>
+            ) : data.folders.length === 0 ? <div className="text-sm text-muted-foreground py-6 text-center">Esta carpeta no tiene imágenes.</div> : null}
+          </div>
+        )}
+      </SheetContent>
+    </Sheet>
   )
 }
 
