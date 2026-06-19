@@ -29,6 +29,18 @@ export async function listFolder(folderId) {
   };
 }
 
+// Miniatura del archivo (liviana, ~pocos KB) — usa el thumbnailLink de Drive, que
+// se sirve con el mismo token. Para grillas/galería sin bajar el original.
+export async function getThumb(fileId, size = 400) {
+  const token = await accessToken();
+  const meta = await (await fetch(`${API}/files/${fileId}?fields=thumbnailLink&supportsAllDrives=true`, withTimeout({ headers: { Authorization: `Bearer ${token}` } }))).json();
+  if (!meta.thumbnailLink) throw new Error('sin thumbnail');
+  const url = /=s\d+$/.test(meta.thumbnailLink) ? meta.thumbnailLink.replace(/=s\d+$/, `=s${size}`) : meta.thumbnailLink;
+  const r = await fetch(url, withTimeout({ headers: { Authorization: `Bearer ${token}` } }, 15000));
+  if (!r.ok) throw new Error('thumb ' + r.status);
+  return { buf: Buffer.from(await r.arrayBuffer()), mime: r.headers.get('content-type') || 'image/jpeg' };
+}
+
 // Descarga los bytes de un archivo (para el proxy con caché).
 export async function getFileMedia(fileId) {
   const token = await accessToken();

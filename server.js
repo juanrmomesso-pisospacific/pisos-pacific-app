@@ -10,7 +10,7 @@ import { startMpReport, getMpReport, parseSettlementBuffer } from './import/mp-a
 import { getBlueRate } from './import/fx.mjs';
 import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integrations/meta.mjs';
 import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients } from './integrations/gmail.mjs';
-import { listFolder as driveListFolder, getFileMedia as driveGetFile, driveConfigured } from './integrations/drive.mjs';
+import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb as driveGetThumb, driveConfigured } from './integrations/drive.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 import { generatePdf } from './pdf/render.mjs';
 
@@ -979,6 +979,25 @@ app.get('/api/drive/folder', async (req, res) => {
   if (!driveConfigured()) return res.status(400).json({ error: 'Drive no conectado' });
   try { res.json(await driveListFolder(req.query.id || DRIVE_ROOT)); }
   catch (e) { res.status(400).json({ error: e.message || 'no se pudo listar' }); }
+});
+// Miniatura (liviana) con caché — para grillas/galería y fotos de producto.
+app.get('/api/drive/thumb/:id', async (req, res) => {
+  if (!driveConfigured()) return res.sendStatus(404);
+  const id = String(req.params.id).replace(/[^\w-]/g, '');
+  if (!id) return res.sendStatus(400);
+  try {
+    fs.mkdirSync(DRIVE_CACHE, { recursive: true });
+    const binPath = path.join(DRIVE_CACHE, id + '.thumb.bin'), metaPath = path.join(DRIVE_CACHE, id + '.thumb.json');
+    if (fs.existsSync(binPath) && fs.existsSync(metaPath)) {
+      const { mime } = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      res.set('Content-Type', mime); res.set('Cache-Control', 'private, max-age=604800');
+      return res.send(fs.readFileSync(binPath));
+    }
+    const { buf, mime } = await driveGetThumb(id);
+    try { fs.writeFileSync(binPath, buf); fs.writeFileSync(metaPath, JSON.stringify({ mime })); } catch { /* best-effort */ }
+    res.set('Content-Type', mime); res.set('Cache-Control', 'private, max-age=604800');
+    res.send(buf);
+  } catch (e) { console.warn('[drive:thumb]', e.message); res.status(404).send('no thumb'); }
 });
 // Proxy de archivos del Drive (privado) con caché en disco. Sirve para <img src>.
 app.get('/api/drive/file/:id', async (req, res) => {

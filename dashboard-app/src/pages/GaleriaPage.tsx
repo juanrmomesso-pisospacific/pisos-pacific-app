@@ -88,7 +88,7 @@ export default function GaleriaPage() {
               {data.images.map((img) => (
                 <a key={img.id} href={`/api/drive/file/${img.id}`} target="_blank" rel="noreferrer" title={img.name}
                   className="group relative block aspect-square overflow-hidden rounded-md border border-border bg-muted">
-                  <img src={`/api/drive/file/${img.id}`} alt={img.name} loading="lazy" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
+                  <img src={`/api/drive/thumb/${img.id}`} alt={img.name} loading="lazy" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
                   <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-1.5 pb-1 pt-4 text-[10px] text-white truncate opacity-0 group-hover:opacity-100">{img.name}</span>
                   <ExternalLink className="absolute right-1 top-1 h-3.5 w-3.5 text-white opacity-0 group-hover:opacity-100 drop-shadow" />
                 </a>
