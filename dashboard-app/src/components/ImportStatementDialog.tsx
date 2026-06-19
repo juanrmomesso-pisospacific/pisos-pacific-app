@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -22,6 +22,10 @@ const SOURCES = [
   { id: "bdc", label: "Banco de Comercio", hint: "Extracto de movimientos (.xlsx)" },
 ]
 const money = (n: number) => (n ? (n < 0 ? "-$ " : "$ ") + Math.abs(Math.round(n)).toLocaleString("es-AR") : "—")
+const fmtDate = (d: string) => { const [y, m, dd] = d.split("-"); return `${dd}/${m}/${y}` }
+// el id de la tarjeta de caja → la clave que devuelve /api/import/last (mp-api comparte caja con mp)
+const LAST_KEY: Record<string, string> = { "mp-api": "mp", mp: "mp", bbva: "bbva", bdc: "bdc" }
+type LastInfo = Record<string, { caja: string; last: string | null; count: number }>
 
 export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: boolean; onOpenChange: (o: boolean) => void; onDone: () => void }) {
   const [source, setSource] = useState<string>("mp-api")
@@ -34,7 +38,15 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
   const [syncing, setSyncing] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [done, setDone] = useState<string | null>(null)
+  const [last, setLast] = useState<LastInfo | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
+
+  // al abrir, traigo el último movimiento cargado de cada caja (para saber desde
+  // qué fecha bajar el resumen y no recargar fechas ya importadas)
+  useEffect(() => {
+    if (!open) return
+    api.importLast().then(setLast).catch(() => setLast(null))
+  }, [open, done])
 
   const reset = () => { setFilename(""); setMovs(null); setReport(null); setSel(new Set()); setError(null); setDone(null); setSyncing(null) }
   const close = (o: boolean) => { if (!o) reset(); onOpenChange(o) }
@@ -103,14 +115,30 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
         <div className="mt-5 space-y-4 overflow-y-auto max-h-[calc(100vh-180px)] pb-4 px-1">
           {/* Paso 1: caja */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            {SOURCES.map((s) => (
+            {SOURCES.map((s) => {
+              const li = last?.[LAST_KEY[s.id]]
+              return (
               <button key={s.id} onClick={() => { setSource(s.id); reset() }}
                 className={cn("text-left rounded-lg border p-3 transition", source === s.id ? "border-primary ring-1 ring-primary bg-primary/5" : "border-input hover:bg-muted/50")}>
                 <div className="text-sm font-medium">{s.label}</div>
                 <div className="text-[11px] text-muted-foreground mt-0.5">{s.hint}</div>
+                {li ? (
+                  <div className="text-[10px] mt-1.5 pt-1.5 border-t border-border/60">
+                    {li.last
+                      ? <span className="text-emerald-600 dark:text-emerald-400">Último cargado: <b>{fmtDate(li.last)}</b></span>
+                      : <span className="text-muted-foreground">Sin movimientos cargados</span>}
+                    {li.count ? <span className="text-muted-foreground"> · {li.count}</span> : null}
+                  </div>
+                ) : null}
               </button>
-            ))}
+            )})}
           </div>
+
+          {last?.[LAST_KEY[source]]?.last ? (
+            <div className="text-[11px] text-muted-foreground -mt-1">
+              Tip: bajá el resumen <b>desde el {fmtDate(last[LAST_KEY[source]].last!)}</b> en adelante. Si se pisan fechas no pasa nada — se detectan los duplicados y posibles duplicados.
+            </div>
+          ) : null}
 
           {/* Paso 2: API (mp-api) o archivo */}
           {source === "mp-api" ? (

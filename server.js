@@ -1096,6 +1096,22 @@ const ADMIN_ONLY_WRITE = new Set(['cashflow', 'cajas', 'cp_rules', 'categories',
 // ---------- Importar extractos (MP / BBVA / Banco de Comercio) ----------
 // parse: decodifica el archivo, clasifica y deduplica contra el cashflow vivo,
 // y devuelve un preview (NO inserta). commit: inserta los movimientos elegidos.
+// Último movimiento cargado por caja de importación (mp/bbva/bdc) → para que el
+// usuario sepa desde qué fecha bajar el resumen y no recargue/duplique fechas.
+app.get('/api/import/last', requireAdmin, (_req, res) => {
+  const out = {};
+  for (const [src, c] of Object.entries(IMPORT_CAJA)) {
+    let last = null, count = 0;
+    for (const m of db.cashflow) {
+      if (m.caja_id !== c.id) continue;
+      count++;
+      const d = (m.date || '').slice(0, 10);
+      if (d && (!last || d > last)) last = d;
+    }
+    out[src] = { caja: c.name, last, count };
+  }
+  res.json(out);
+});
 app.post('/api/import/parse', requireAdmin, async (req, res) => {
   try {
     const { source, data_base64 } = req.body || {};

@@ -21,6 +21,11 @@ async function patch<T = any>(url: string, body: unknown): Promise<T> {
   if (!r.ok) throw new Error(await errorMessage(r))
   return r.json()
 }
+async function get<T = any>(url: string): Promise<T> {
+  const r = await fetch(url, { credentials: "include" })
+  if (!r.ok) throw new Error(await errorMessage(r))
+  return r.json()
+}
 async function del(url: string): Promise<boolean> {
   const r = await fetch(url, { method: "DELETE", credentials: "include" })
   if (!r.ok) throw new Error(await errorMessage(r))
@@ -58,6 +63,7 @@ export const api = {
   importMpStart:  (days: number) => post(`/api/import/mp-sync/start`, { days }),
   importMpResult: (jobId: number | string) => post(`/api/import/mp-sync/result`, { jobId }),
   importCommit: (movements: any[]) => post(`/api/import/commit`, { movements }),
+  importLast:   () => get(`/api/import/last`),
   // Generic CRUD
   create: (entity: string, body: any) => post(`/api/${entity}`, body),
   update: (entity: string, id: string, body: any) => patch(`/api/${entity}/${id}`, body),
