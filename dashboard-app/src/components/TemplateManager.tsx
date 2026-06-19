@@ -30,13 +30,14 @@ export function TemplateManager() {
   const [name, setName] = useState("")
   const [channel, setChannel] = useState("all")
   const [body, setBody] = useState("")
+  const [keywords, setKeywords] = useState("")
 
-  const reset = () => { setEditId(null); setName(""); setChannel("all"); setBody("") }
-  const startEdit = (t: Template) => { setEditId(t.id); setName(t.name); setChannel(t.channel); setBody(t.body) }
+  const reset = () => { setEditId(null); setName(""); setChannel("all"); setBody(""); setKeywords("") }
+  const startEdit = (t: Template) => { setEditId(t.id); setName(t.name); setChannel(t.channel); setBody(t.body); setKeywords(t.keywords || "") }
 
   const save = async () => {
     if (!name.trim() || !body.trim()) return
-    const payload = { name: name.trim(), channel, body: body.trim(), status: "approved", category: "UTILITY", language: "es_AR" }
+    const payload = { name: name.trim(), channel, body: body.trim(), keywords: keywords.trim(), status: "approved", category: "UTILITY", language: "es_AR" }
     const r = editId ? await update.run("templates", editId, payload) : await create.run("templates", payload)
     if (r) { reset(); refresh() }
   }
@@ -62,6 +63,7 @@ export function TemplateManager() {
           </div>
           <textarea value={body} onChange={(e) => setBody(e.target.value)} rows={3} placeholder="Texto del mensaje… (ej: Hola {nombre}, gracias por tu consulta!)"
             className="w-full resize-y rounded-md border border-input bg-transparent p-2 text-sm" />
+          <Input value={keywords} onChange={(e) => setKeywords(e.target.value)} placeholder="Palabras clave para sugerirla (ej: precio, presupuesto, cuánto sale)" />
           <div className="flex items-center gap-2">
             <Button size="sm" disabled={create.busy || update.busy || !name.trim() || !body.trim()} onClick={save}>
               {editId ? <><Pencil className="h-3.5 w-3.5" />Guardar cambios</> : <><Plus className="h-3.5 w-3.5" />Agregar plantilla</>}
@@ -80,6 +82,7 @@ export function TemplateManager() {
               <div className="flex-1 min-w-0">
                 <div className="font-medium truncate flex items-center gap-2">{t.name}<Badge variant="outline" className="text-[10px] shrink-0">{channelLabel(t.channel)}</Badge></div>
                 <div className="text-[11px] text-muted-foreground whitespace-pre-line line-clamp-2">{t.body}</div>
+                {t.keywords ? <div className="text-[10px] text-muted-foreground mt-0.5">🔑 {t.keywords}</div> : null}
               </div>
               <Button variant="ghost" size="icon" className="h-7 w-7 shrink-0" onClick={() => startEdit(t)} title="Editar"><Pencil className="h-3.5 w-3.5 text-muted-foreground" /></Button>
               <Button variant="ghost" size="icon" className="h-7 w-7 shrink-0" onClick={() => remove(t)} title="Borrar"><Trash2 className="h-3.5 w-3.5 text-muted-foreground" /></Button>

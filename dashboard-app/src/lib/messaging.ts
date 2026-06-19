@@ -35,6 +35,29 @@ export type Template = {
   channel: Channel | "all"      // "all" = sirve en cualquier canal (respuesta rápida)
   status: "approved" | "pending" | "rejected"
   body: string
+  keywords?: string             // disparadores (csv) para sugerir según el mensaje recibido
+}
+
+// Sugerencias: según el último mensaje del cliente, rankea las plantillas más relevantes
+// (palabras clave fuertes + coincidencia de palabras con el nombre/cuerpo). Devuelve top N.
+const normTxt = (s?: string) => (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+const STOPWORDS = new Set(["hola","buenas","gracias","para","como","que","con","los","las","una","por","del","sobre","quiero","necesito","tienen","tenes","hay","pero","esta","este","muy","mas"])
+export function suggestTemplates(templates: Template[], lastInbound: string, channel: Channel, max = 3): Template[] {
+  const text = normTxt(lastInbound)
+  if (!text) return []
+  const words = new Set(text.split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !STOPWORDS.has(w)))
+  return templates
+    .filter((t) => (t.channel === channel || t.channel === "all") && t.status === "approved")
+    .map((t) => {
+      let score = 0
+      for (const k of (t.keywords || "").split(",").map((x) => normTxt(x.trim())).filter(Boolean)) if (text.includes(k)) score += 3
+      for (const w of normTxt(t.name + " " + t.body).split(/[^a-z0-9]+/)) if (w.length > 3 && !STOPWORDS.has(w) && words.has(w)) score += 1
+      return { t, score }
+    })
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, max)
+    .map((x) => x.t)
 }
 
 // Completa los placeholders de una plantilla con datos del contacto al insertarla.
