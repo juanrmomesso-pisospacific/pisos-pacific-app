@@ -7,9 +7,11 @@ export function Layout() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <SidebarInset>
+      <SidebarInset className="min-w-0">
         <SiteHeader />
-        <main className="@container/main flex flex-1 flex-col gap-4 py-4 md:gap-6 md:py-6">
+        {/* min-w-0 + overflow-x-hidden: el contenido ancho (tablas) scrollea en su propio
+            contenedor en vez de empujar la columna más allá del viewport en móvil */}
+        <main className="@container/main flex flex-1 flex-col gap-4 py-4 md:gap-6 md:py-6 min-w-0 overflow-x-hidden">
           <Outlet />
         </main>
       </SidebarInset>

@@ -20,7 +20,8 @@ export function PeriodSelector() {
         <Button variant={isCustom ? "outline" : "default"} size="sm" className={cn("gap-2", isCustom && "border-amber-500 text-amber-700 bg-amber-50 hover:bg-amber-100")}>
           <Calendar className="h-3.5 w-3.5" />
           <span>{PRESET_LABELS[presetId]}</span>
-          <span className={cn("text-xs ml-1", isCustom ? "text-amber-700/80" : "text-primary-foreground/70")}>· {fmtRange(range)}</span>
+          {/* el rango de fechas ocupa mucho: se oculta en móvil (queda solo el preset) */}
+          <span className={cn("text-xs ml-1 hidden sm:inline", isCustom ? "text-amber-700/80" : "text-primary-foreground/70")}>· {fmtRange(range)}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-72">

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Search, Send, Smile, FileText, Phone, Mail, ExternalLink, MoreHorizontal, UserCircle2, MessageCircle, AtSign, Sparkles, ChevronRight, Paperclip } from "lucide-react"
+import { Search, Send, Smile, FileText, Phone, Mail, ExternalLink, MoreHorizontal, UserCircle2, MessageCircle, AtSign, Sparkles, ChevronRight, ChevronLeft, Paperclip, Info } from "lucide-react"
 import { Link, useSearchParams } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -17,7 +17,7 @@ import { SearchPicker } from "@/components/SearchPicker"
 import { useConfirm } from "@/components/ui/confirm"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
-import { fmtMoney } from "@/lib/utils"
+import { fmtMoney, cn } from "@/lib/utils"
 import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote } from "@/lib/types"
 
@@ -57,6 +57,7 @@ export default function MensajesPage() {
   const [showClosed, setShowClosed] = useState(false)
   const [sellerFilter, setSellerFilter] = useState("")   // "" todos · "__none__" sin asignar · nombre
   const [selectedId, setSelectedId] = useState<string | null>(convFromUrl)
+  const [showContact, setShowContact] = useState(false)   // móvil: panel de ficha como overlay
 
   // Vendedor asignado de una conversación = el del lead vinculado.
   const sellerOf = (c: Conversation) => (c.linked_lead_id ? leadById.get(c.linked_lead_id)?.assigned_seller : "") || ""
@@ -77,9 +78,12 @@ export default function MensajesPage() {
     }).sort((a, b) => (b.last_message_at ?? "").localeCompare(a.last_message_at ?? ""))   // más nuevo primero (estable)
   }, [conversations, channelFilter, q, onlyUnread, showClosed, sellerFilter, leadById])
 
-  // Default-select the first conversation when the list arrives
+  // Default-select the first conversation when the list arrives — SOLO en desktop.
+  // En móvil queremos ver primero la lista (single-pane); auto-seleccionar saltearía
+  // directo al chat. (chequeo puntual al montar/llegar la lista, no reactivo a resize)
   useEffect(() => {
-    if (selectedId == null && filtered.length > 0) setSelectedId(filtered[0].id)
+    const isDesktop = typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches
+    if (isDesktop && selectedId == null && filtered.length > 0) setSelectedId(filtered[0].id)
   }, [filtered, selectedId])
 
   // When the URL changes (someone clicks a lead → /mensajes?conv=…) re-sync the selection
@@ -104,9 +108,20 @@ export default function MensajesPage() {
 
   const selected = conversations.find(c => c.id === selectedId) ?? null
 
+  // Móvil (single-pane): volver del chat a la lista. En desktop el grid muestra los 3 a la vez.
+  const clearSelection = () => {
+    setSelectedId(null)
+    setShowContact(false)
+    setSearchParams(prev => { prev.delete("conv"); return prev }, { replace: true })
+  }
+
+  // En desktop (lg) cada panel es item directo del grid y se muestra siempre (lg:flex).
+  // En móvil mostramos UNO solo: lista si no hay conversación, el chat si hay; la ficha
+  // (ContactPanel) se abre como overlay con el botón ⓘ del header del chat.
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr_320px] gap-0 px-4 lg:px-6 min-h-0 overflow-hidden h-[calc(100svh-5.5rem)] md:h-[calc(100svh-6.5rem)]">
       <ConversationList
+        className={cn("lg:flex", selectedId ? "hidden" : "flex")}
         conversations={filtered}
         total={conversations.length}
         selectedId={selectedId}
@@ -124,8 +139,23 @@ export default function MensajesPage() {
         setSellerFilter={setSellerFilter}
         sellers={sellers}
       />
-      <Thread conversation={selected} templates={templates} />
-      <ContactPanel conversation={selected} clients={clients} sales={sales} leads={leads} leadById={leadById} quotes={quotes} />
+      <Thread
+        className={cn("lg:flex", selectedId && !showContact ? "flex" : "hidden")}
+        conversation={selected}
+        templates={templates}
+        onBack={clearSelection}
+        onShowContact={() => setShowContact(true)}
+      />
+      <ContactPanel
+        className={cn("lg:flex", showContact ? "flex" : "hidden")}
+        conversation={selected}
+        clients={clients}
+        sales={sales}
+        leads={leads}
+        leadById={leadById}
+        quotes={quotes}
+        onClose={() => setShowContact(false)}
+      />
     </div>
   )
 }
@@ -136,10 +166,11 @@ export default function MensajesPage() {
 
 function ConversationList({
   conversations, total, selectedId, onSelect, channelFilter, setChannelFilter, q, setQ, leadById,
-  onlyUnread, setOnlyUnread, showClosed, setShowClosed, sellerFilter, setSellerFilter, sellers,
+  onlyUnread, setOnlyUnread, showClosed, setShowClosed, sellerFilter, setSellerFilter, sellers, className,
 }: {
   conversations: Conversation[]
   total: number
+  className?: string
   selectedId: string | null
   onSelect: (id: string) => void
   channelFilter: ChannelFilter
@@ -156,7 +187,7 @@ function ConversationList({
   sellers: string[]
 }) {
   return (
-    <aside className="flex flex-col border border-border rounded-l-lg bg-card overflow-hidden">
+    <aside className={cn("flex-col border border-border rounded-l-lg bg-card overflow-hidden", className)}>
       <div className="p-3 border-b border-border space-y-3 shrink-0">
         <div className="relative">
           <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
@@ -238,7 +269,7 @@ function ConversationRow({ conv, lead, selected, onClick }: { conv: Conversation
 // CENTER — thread + composer
 // -----------------------------------------------------------------------------
 
-function Thread({ conversation, templates }: { conversation: Conversation | null; templates: Template[] }) {
+function Thread({ conversation, templates, className, onBack, onShowContact }: { conversation: Conversation | null; templates: Template[]; className?: string; onBack?: () => void; onShowContact?: () => void }) {
   const confirm = useConfirm()
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(false)
@@ -306,7 +337,7 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
 
   if (!conversation) {
     return (
-      <section className="flex items-center justify-center border-y border-border bg-muted/20 text-sm text-muted-foreground">
+      <section className={cn("items-center justify-center border-y border-border bg-muted/20 text-sm text-muted-foreground", className)}>
         Seleccioná una conversación
       </section>
     )
@@ -357,7 +388,7 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
 
   return (
     <section
-      className="relative flex flex-col border-y border-border bg-background overflow-hidden min-h-0"
+      className={cn("relative flex-col border-y border-border bg-background overflow-hidden min-h-0", className)}
       onDragOver={(e) => { e.preventDefault(); if (!dragOver) setDragOver(true) }}
       onDragLeave={(e) => { if (e.currentTarget === e.target) setDragOver(false) }}
       onDrop={(e) => { e.preventDefault(); setDragOver(false); const f = e.dataTransfer.files?.[0]; if (f) sendFile(f) }}
@@ -367,7 +398,7 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
           {uploading ? "Enviando archivo…" : "Soltá el PDF o imagen para enviarlo al cliente"}
         </div>
       )}
-      <ThreadHeader conversation={conversation} />
+      <ThreadHeader conversation={conversation} onBack={onBack} onShowContact={onShowContact} />
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-1 bg-muted/20">
         {loading ? (
           <div className="text-xs text-muted-foreground text-center py-10">Cargando…</div>
@@ -418,7 +449,7 @@ function Thread({ conversation, templates }: { conversation: Conversation | null
   )
 }
 
-function ThreadHeader({ conversation }: { conversation: Conversation }) {
+function ThreadHeader({ conversation, onBack, onShowContact }: { conversation: Conversation; onBack?: () => void; onShowContact?: () => void }) {
   const ChannelIcon = channelIcon(conversation.channel) ?? AtSign
   const isClosed = conversation.status === "closed"
   const patchConv = async (body: Partial<Conversation>) => {
@@ -431,6 +462,11 @@ function ThreadHeader({ conversation }: { conversation: Conversation }) {
   }
   return (
     <div className="px-4 py-2.5 border-b border-border flex items-center gap-3 shrink-0 bg-background">
+      {onBack && (
+        <Button variant="ghost" size="icon" className="h-8 w-8 -ml-1 lg:hidden" aria-label="Volver a la lista" onClick={onBack}>
+          <ChevronLeft className="h-5 w-5" />
+        </Button>
+      )}
       <div className="h-9 w-9 rounded-full bg-muted flex items-center justify-center shrink-0">
         <UserCircle2 className="h-5 w-5 text-muted-foreground" />
       </div>
@@ -443,6 +479,11 @@ function ThreadHeader({ conversation }: { conversation: Conversation }) {
           <ChannelIcon className="h-3 w-3" />{CHANNEL_LABEL[conversation.channel]} · {conversation.contact_id}
         </div>
       </div>
+      {onShowContact && (
+        <Button variant="ghost" size="icon" className="h-8 w-8 lg:hidden" aria-label="Ver ficha del contacto" onClick={onShowContact}>
+          <Info className="h-4 w-4" />
+        </Button>
+      )}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Opciones de la conversación"><MoreHorizontal className="h-4 w-4" /></Button>
@@ -582,7 +623,7 @@ function Composer({
 // RIGHT — contact panel
 // -----------------------------------------------------------------------------
 
-function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }: { conversation: Conversation | null; clients: Client[]; sales: Sale[]; leads: Lead[]; leadById: Map<string, Lead>; quotes: Quote[] }) {
+function ContactPanel({ conversation, clients, sales, leads, leadById, quotes, className, onClose }: { conversation: Conversation | null; clients: Client[]; sales: Sale[]; leads: Lead[]; leadById: Map<string, Lead>; quotes: Quote[]; className?: string; onClose?: () => void }) {
   const [newLeadOpen, setNewLeadOpen] = useState(false)
   const [newQuoteOpen, setNewQuoteOpen] = useState(false)
   const [linkPickerOpen, setLinkPickerOpen] = useState(false)
@@ -613,7 +654,7 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
   }
 
   if (!conversation) {
-    return <aside className="border border-border rounded-r-lg bg-card" />
+    return <aside className={cn("border border-border rounded-r-lg bg-card", className)} />
   }
 
   const linkedClient = conversation.linked_client_name
@@ -710,7 +751,12 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes }:
 
   return (
     <>
-    <aside className="flex flex-col border border-border rounded-r-lg bg-card overflow-hidden">
+    <aside className={cn("flex-col border border-border rounded-r-lg bg-card overflow-hidden", className)}>
+      {onClose && (
+        <div className="lg:hidden p-2 border-b border-border shrink-0">
+          <Button variant="ghost" size="sm" className="h-8" onClick={onClose}><ChevronLeft className="h-4 w-4" />Volver al chat</Button>
+        </div>
+      )}
       <div className="p-4 border-b border-border flex flex-col items-center text-center shrink-0">
         <div className="h-14 w-14 rounded-full bg-muted flex items-center justify-center mb-2">
           <UserCircle2 className="h-8 w-8 text-muted-foreground" />

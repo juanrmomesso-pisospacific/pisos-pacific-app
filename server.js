@@ -1732,6 +1732,9 @@ app.get('/LogoPacificSmallDark.png', (_, res) => res.sendFile(path.join(BRANDING
 // All "owned" SPA routes serve the same index.html and let react-router take over.
 const DASHBOARD_DIST = path.join(__dirname, 'dashboard-app/dist');
 app.use('/assets', express.static(path.join(DASHBOARD_DIST, 'assets')));
+// Archivos de public/ que Vite copia a la raíz del dist (PWA: manifest, íconos, favicon).
+// index:false → no auto-sirve index.html en '/'; si el archivo no existe, sigue al SPA.
+app.use(express.static(DASHBOARD_DIST, { index: false, maxAge: '1h' }));
 const SPA_ROUTES = ['/', '/reset', '/dashboard', '/inventario', '/galeria', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow'];
 for (const r of SPA_ROUTES) {
   app.get(r, (_, res) => res.sendFile(path.join(DASHBOARD_DIST, 'index.html')));

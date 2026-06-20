@@ -78,7 +78,7 @@ export default function CashFlowPage() {
       <p className="text-xs text-muted-foreground">Toda la plata en un lugar: resultado (P&amp;L), estructura de gastos, gasto por proveedor y libro completo (ingresos + egresos). Para cargar un movimiento usá <b>Nuevo movimiento</b>.</p>
       <Tabs defaultValue="pnl">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <TabsList className="h-8">
+          <TabsList className="h-8 max-w-full overflow-x-auto justify-start">
             <TabsTrigger value="pnl">Análisis Financiero (Caja)</TabsTrigger>
             <TabsTrigger value="flujo">Flujo de fondos</TabsTrigger>
             <TabsTrigger value="gastos">Gastos (Fijo/Variable)</TabsTrigger>
