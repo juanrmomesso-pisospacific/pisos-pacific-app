@@ -1166,6 +1166,29 @@ app.post('/api/suppliers/merge', requireAdmin, (req, res) => {
   res.json({ merged: true, into: { id: to.id, name: to.name }, movements: movs.length, rules: rules.length });
 });
 
+// Corrección one-time: el importador de BBVA (source 'bbva-upload') invirtió el signo
+// (el "Importe" positivo del extracto es ACREDITACIÓN/INGRESO, no egreso). Da vuelta el
+// flow de esos movimientos. Idempotente (flag bbva_sign_fixed). Dry-run por defecto.
+app.post('/api/admin/fix-bbva-signs', requireAdmin, (req, res) => {
+  const commit = !!req.body?.commit;
+  const targets = db.cashflow.filter((m) => m.source === 'bbva-upload' && !m.bbva_sign_fixed);
+  const toIngreso = targets.filter((m) => m.flow === 'Egreso').length;
+  const toEgreso = targets.filter((m) => m.flow === 'Ingreso').length;
+  if (!commit) return res.json({ total: targets.length, toIngreso, toEgreso });
+  for (const m of targets) {
+    const nf = m.flow === 'Ingreso' ? 'Egreso' : 'Ingreso';
+    m.flow = nf;
+    m.counterparty_type = nf === 'Ingreso' ? 'client' : 'supplier';
+    if (nf === 'Ingreso') { m.expense_type = null; m.supplier_id = null; }
+    else { m.client_id = null; }
+    m.needs_review = true;
+    m.review_reason = 'corrección de signo BBVA (Importe positivo = ingreso)';
+    m.bbva_sign_fixed = true;
+  }
+  save();
+  res.json({ fixed: targets.length, toIngreso, toEgreso });
+});
+
 app.get('/api/cp_rules', (_, res) => res.json(db.cp_rules || []));
 // Entidades financieras/config: escritura solo admin (un vendedor no toca caja ni reglas).
 const ADMIN_ONLY_WRITE = new Set(['cashflow', 'cajas', 'cp_rules', 'categories', 'expenses']);

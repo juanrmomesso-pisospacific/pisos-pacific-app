@@ -163,6 +163,10 @@ function parseBank(rows, source) {
         if (/credito/.test(dir)) val = -Math.abs(val);        // crédito → Ingreso
         else if (/debito/.test(dir)) val = Math.abs(val);      // débito → Egreso
       }
+      // BBVA: el "Importe" trae el signo del banco (positivo = acreditación/INGRESO, el
+      // saldo SUBE; negativo = débito/EGRESO). La convención general de abajo es monto>0 →
+      // Egreso, así que para BBVA invertimos el signo del Importe.  (BdC usa cDir, no entra acá.)
+      else if (source === 'bbva') val = -val;
     }
     else { const d = parseMoney(r[cols.cDeb]), c = parseMoney(r[cols.cCred]); val = (d?.val ? Math.abs(d.val) : 0) - (c?.val ? Math.abs(c.val) : 0); }
     if (val == null || val === 0) continue;
