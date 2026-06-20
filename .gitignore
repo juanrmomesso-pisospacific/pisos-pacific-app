@@ -21,6 +21,8 @@ data/db.json.bak
 !assets/branding/*.png
 !pdf/*.png
 !pdf/assets/*.png
+# ...y los íconos PWA (public/ del dashboard)
+!dashboard-app/public/*.png
 .playwright-mcp/
 
 # Python (PDF engine)
