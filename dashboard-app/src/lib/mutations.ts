@@ -64,6 +64,9 @@ export const api = {
   importMpResult: (jobId: number | string) => post(`/api/import/mp-sync/result`, { jobId }),
   importCommit: (movements: any[]) => post(`/api/import/commit`, { movements }),
   importLast:   () => get(`/api/import/last`),
+  suppliersReview:     () => get(`/api/suppliers/review`),
+  supplierRegisterLink: (body: { name?: string; supplier_id?: string; learn?: boolean; commit?: boolean }) => post(`/api/suppliers/register-link`, body),
+  supplierMerge:       (body: { from_id: string; to_id: string; commit?: boolean }) => post(`/api/suppliers/merge`, body),
   // Generic CRUD
   create: (entity: string, body: any) => post(`/api/${entity}`, body),
   update: (entity: string, id: string, body: any) => patch(`/api/${entity}/${id}`, body),

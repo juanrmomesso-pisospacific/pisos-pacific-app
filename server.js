@@ -1091,6 +1091,81 @@ app.get('/api/suppliers/match', (req, res) => {
   res.json({ match: match || null, suggestions });
 });
 
+// Revisión de proveedores: (a) "sin registrar" = contrapartes de egresos que NO son un
+// proveedor cargado (y no son conceptos tipo impuesto/peaje/transfer), con sugerencias
+// de a cuál vincular; (b) "duplicados" = proveedores cargados muy parecidos entre sí.
+app.get('/api/suppliers/review', requireAdmin, (_req, res) => {
+  // (a) sin registrar
+  const agg = new Map();   // normSup → { name, count, total_usd }
+  for (const m of db.cashflow) {
+    if (m.flow !== 'Egreso' || m.transfer) continue;
+    const cp = (m.counterparty || '').trim();
+    if (!cp || isNonSupplier(cp)) continue;
+    if (findSupplierMatch(db.suppliers, cp)) continue;   // ya existe como proveedor
+    const k = normSup(cp);
+    const cur = agg.get(k) || { name: cp, count: 0, total_usd: 0 };
+    cur.count += 1; cur.total_usd += m.amount_usd || 0;
+    agg.set(k, cur);
+  }
+  const unregistered = [...agg.values()]
+    .map((u) => ({ ...u, suggestions: suggestSuppliers(db.suppliers, u.name, 4).map((s) => ({ id: s.id, name: s.name })) }))
+    .sort((a, b) => b.count - a.count);
+  // (b) duplicados entre proveedores cargados (cada uno contra el resto)
+  const dups = [], seen = new Set();
+  for (const s of db.suppliers) {
+    if (seen.has(s.id)) continue;
+    const near = suggestSuppliers(db.suppliers, s.name, 6).filter((o) => o.id !== s.id && !seen.has(o.id));
+    if (near.length) {
+      const group = [s, ...near];
+      group.forEach((g) => seen.add(g.id));
+      dups.push(group.map((g) => ({ id: g.id, name: g.name, count: db.cashflow.filter((m) => m.supplier_id === g.id || normSup(m.counterparty) === normSup(g.name)).length })));
+    }
+  }
+  res.json({ unregistered, duplicates: dups });
+});
+
+// Registrar un proveedor (nuevo o existente) y VINCULARLO a todos los egresos con ese
+// nombre. {name, supplier_id?, learn?, commit}. Dry-run por defecto (devuelve cuántos).
+app.post('/api/suppliers/register-link', requireAdmin, (req, res) => {
+  const { name, supplier_id, learn, commit } = req.body || {};
+  if (!name && !supplier_id) return res.status(400).json({ error: 'falta name o supplier_id' });
+  let target = supplier_id ? db.suppliers.find((s) => s.id === supplier_id) : findSupplierMatch(db.suppliers, name);
+  const wouldCreate = !target;
+  const targetName = target ? target.name : String(name).trim();
+  const nk = normSup(name || targetName);
+  const affected = db.cashflow.filter((m) => m.flow === 'Egreso' && !m.transfer && normSup(m.counterparty) === nk);
+  if (!commit) return res.json({ target: target ? { id: target.id, name: target.name } : null, wouldCreate, targetName, affected: affected.length });
+  if (!target) {
+    target = { id: `PROV-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`, name: targetName, type: 'supplier', active: true, stock_code: null, category_default: null, notes: null };
+    db.suppliers.push(target);
+  }
+  for (const m of affected) { m.supplier_id = target.id; m.counterparty = target.name; m.counterparty_type = 'supplier'; }
+  if (learn && name && normSup(name) !== normSup(target.name)) {
+    db.cp_rules = db.cp_rules || [];
+    db.cp_rules.push({ id: `cpr-${Date.now().toString(36)}`, match: [String(name)], cuit: null, counterparty: target.name, category: null, expense_type: null, personal: false, source: 'learned', note: `Vinculado desde "${name}"` });
+  }
+  save();
+  res.json({ target: { id: target.id, name: target.name }, created: wouldCreate, linked: affected.length });
+});
+
+// Unificar dos proveedores: re-apunta movimientos (por supplier_id o por nombre) y reglas
+// del 'from' al 'to', y borra el 'from'. {from_id, to_id, commit}. Dry-run por defecto.
+app.post('/api/suppliers/merge', requireAdmin, (req, res) => {
+  const { from_id, to_id, commit } = req.body || {};
+  const from = db.suppliers.find((s) => s.id === from_id);
+  const to = db.suppliers.find((s) => s.id === to_id);
+  if (!from || !to || from_id === to_id) return res.status(400).json({ error: 'from/to inválidos' });
+  const fk = normSup(from.name);
+  const movs = db.cashflow.filter((m) => m.supplier_id === from_id || normSup(m.counterparty) === fk);
+  const rules = (db.cp_rules || []).filter((r) => normSup(r.counterparty) === fk);
+  if (!commit) return res.json({ from: { id: from.id, name: from.name }, to: { id: to.id, name: to.name }, movements: movs.length, rules: rules.length });
+  for (const m of movs) { m.supplier_id = to.id; m.counterparty = to.name; m.counterparty_type = m.flow === 'Ingreso' ? m.counterparty_type : 'supplier'; }
+  for (const r of rules) r.counterparty = to.name;
+  db.suppliers = db.suppliers.filter((s) => s.id !== from_id);
+  save();
+  res.json({ merged: true, into: { id: to.id, name: to.name }, movements: movs.length, rules: rules.length });
+});
+
 app.get('/api/cp_rules', (_, res) => res.json(db.cp_rules || []));
 // Entidades financieras/config: escritura solo admin (un vendedor no toca caja ni reglas).
 const ADMIN_ONLY_WRITE = new Set(['cashflow', 'cajas', 'cp_rules', 'categories', 'expenses']);
