@@ -12,6 +12,7 @@ import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integration
 import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients } from './integrations/gmail.mjs';
 import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb as driveGetThumb, findFirstImage as driveFirstImage, driveConfigured } from './integrations/drive.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
+import { findSupplierMatch, suggestSuppliers, normSup, isNonSupplier } from './integrations/supplier-match.mjs';
 import { generatePdf } from './pdf/render.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -1065,6 +1066,29 @@ app.patch('/api/leads/:id', (req, res) => {
   }
   save();
   res.json({ ...db.leads[i], auto_sale_id: createdSale?.id });
+});
+
+// Special-case: crear proveedor con DEDUP. Si ya existe uno con el mismo nombre
+// normalizado (sin importar mayúsculas/acentos/espacios), devuelve el existente en vez
+// de duplicar. Corre ANTES del POST genérico de abajo. Idempotente.
+app.post('/api/suppliers', (req, res) => {
+  const name = req.body?.name;
+  if (!name || !String(name).trim()) return res.status(400).json({ error: 'falta el nombre' });
+  const existing = findSupplierMatch(db.suppliers, name);
+  if (existing) return res.json({ ...existing, _existed: true });
+  const id = req.body.id ?? `PROV-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
+  const row = { id, type: 'supplier', active: true, stock_code: null, category_default: null, notes: null, ...req.body, name: String(name).trim() };
+  db.suppliers.push(row);
+  save();
+  res.json(row);
+});
+// Buscar coincidencias / sugerencias de proveedor para un nombre (para ofrecer opciones
+// "no existe → A/B/C o crear" sin duplicar). Devuelve match exacto + sugerencias parecidas.
+app.get('/api/suppliers/match', (req, res) => {
+  const q = String(req.query?.name || '');
+  const match = findSupplierMatch(db.suppliers, q);
+  const suggestions = suggestSuppliers(db.suppliers, q, 5).filter((s) => !match || s.id !== match.id);
+  res.json({ match: match || null, suggestions });
 });
 
 app.get('/api/cp_rules', (_, res) => res.json(db.cp_rules || []));

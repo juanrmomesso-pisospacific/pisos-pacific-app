@@ -17,6 +17,7 @@
 import { parseCashCommand, inferType, normalizePhone } from '../import/cash-parse.mjs';
 import { getBlueRate } from '../import/fx.mjs';
 import { findLeadMatch } from './lead-match.mjs';
+import { findSupplierMatch, suggestSuppliers } from './supplier-match.mjs';
 import { withTimeout } from './http.mjs';
 
 const GRAPH = 'https://graph.facebook.com/v21.0';
@@ -262,6 +263,24 @@ async function handleCashReport(db, save, from, rawText) {
 
   if (s.last_mov_id) s = {};   // ya registró antes → nuevo mensaje arranca sesión limpia
 
+  // Si estamos esperando que elija el proveedor entre opciones (A/B/C… / nuevo / ninguno).
+  if (s.cp_choosing) {
+    const a = text.trim().toLowerCase();
+    if (/^(ninguno|ningun|nadie|no|-+|n\/?a|s\/?d)$/i.test(a)) {
+      s.counterparty = null; s.supplier_id = null; s.cp_choosing = false;
+    } else if (/^(nuevo|nueva|crear|crea|cre)$/i.test(a)) {
+      const sup = findOrCreateSupplier(db, s.cp_typed);
+      s.counterparty = sup.name; s.supplier_id = sup.id; s.cp_choosing = false;
+    } else {
+      const opts = s.cp_options || [];
+      const idx = 'abcdefgh'.indexOf(a[0]);
+      const chosen = idx >= 0 && opts[idx] ? db.suppliers.find((x) => x.id === opts[idx]) : null;
+      if (chosen) { s.counterparty = chosen.name; s.supplier_id = chosen.id; s.cp_choosing = false; }
+      else { sessions[norm] = s; save(); return reply(cpOptionsMsg(s.cp_typed, s.cp_options, db)); }
+    }
+    s.cp_typed = undefined; s.cp_options = undefined;
+  }
+
   // Consumir el mensaje en el primer campo que falta: monto → descripción → proveedor.
   if (!s.amount) {
     const p = parseCashCommand(text);
@@ -269,9 +288,23 @@ async function handleCashReport(db, save, from, rawText) {
     if (!s.description && p.description) s.description = p.description;   // primer mensaje combinado
   } else if (!s.description) {
     s.description = text.replace(/^\s*gasto\b[:\s]*/i, '').trim();
-  } else if (s.counterparty === undefined) {
+  } else if (s.counterparty === undefined && !s.cp_choosing) {
     const ans = text.trim();
-    s.counterparty = /^(ninguno|ningun|nadie|no|-+|n\/?a|s\/?d)$/i.test(ans) ? null : (ans || null);
+    if (/^(ninguno|ningun|nadie|no|-+|n\/?a|s\/?d)$/i.test(ans)) {
+      s.counterparty = null; s.supplier_id = null;
+    } else {
+      const match = findSupplierMatch(db.suppliers, ans);
+      if (match) { s.counterparty = match.name; s.supplier_id = match.id; }   // existe exacto → usar
+      else {
+        // No existe: ofrecer opciones (parecidos) o crear nuevo → NO duplica sin que decida.
+        const sugg = suggestSuppliers(db.suppliers, ans, 5);
+        s.cp_choosing = true; s.cp_typed = ans; s.cp_options = sugg.map((x) => x.id);
+        sessions[norm] = s; save();
+        return reply(sugg.length
+          ? cpOptionsMsg(ans, s.cp_options, db)
+          : `No tengo a *${ans}* registrado ni encontré parecidos.\nRespondé *nuevo* para crearlo como proveedor, o *ninguno*.`);
+      }
+    }
   }
 
   // Preguntar el primer campo que siga faltando.
@@ -283,7 +316,7 @@ async function handleCashReport(db, save, from, rawText) {
     sessions[norm] = s; save();
     return reply(`Anoté $${fmtNum(s.amount)}${s.currency === 'USD' ? ' USD' : ''}. ¿En qué fue el gasto? (descripción)`);
   }
-  if (s.counterparty === undefined) {
+  if (s.counterparty === undefined && !s.cp_choosing) {
     sessions[norm] = s; save();
     return reply('¿A qué proveedor/quién se lo pagó? (nombre, o respondé *ninguno*)');
   }
@@ -297,7 +330,7 @@ async function handleCashReport(db, save, from, rawText) {
     date: new Date().toISOString(),
     flow: 'Egreso', caja_id: 'CAJ-005', caja_name: 'Caja General',
     category: null, subcategory: null,
-    counterparty: s.counterparty || null, counterparty_type: 'supplier', client_id: null, supplier_id: null,
+    counterparty: s.counterparty || null, counterparty_type: 'supplier', client_id: null, supplier_id: s.supplier_id || null,
     description: s.description, sale_ref: null,
     currency, amount_ars: currency === 'USD' ? null : s.amount, amount_usd: usd,
     exchange_rate: currency === 'USD' ? null : rate,
@@ -309,6 +342,25 @@ async function handleCashReport(db, save, from, rawText) {
   sessions[norm] = { last_mov_id: mov.id, ts: Date.now() };
   save();
   return reply(`✅ Registrado en Caja General: $${fmtNum(s.amount)}${currency === 'USD' ? ' USD' : ''} · ${s.description}${s.counterparty ? ' · ' + s.counterparty : ''} · ${expense_type}.\n(Si está mal, respondé *cancelar*.)`);
+}
+
+// Mensaje con las opciones de proveedor (A/B/C…) cuando el nombre tipeado no existe exacto.
+function cpOptionsMsg(typed, optionIds, db) {
+  const letters = 'ABCDEFGH';
+  const lines = (optionIds || []).map((id, i) => {
+    const s = db.suppliers.find((x) => x.id === id);
+    return s ? `${letters[i]}) ${s.name}` : null;
+  }).filter(Boolean);
+  return `No tengo a *${typed}* registrado. ¿Cuál es? Respondé la letra:\n${lines.join('\n')}\n\nO *nuevo* para crearlo como proveedor, o *ninguno*.`;
+}
+
+// Busca un proveedor por nombre normalizado; si no existe, lo crea (sin duplicar).
+function findOrCreateSupplier(db, name) {
+  const existing = findSupplierMatch(db.suppliers, name);
+  if (existing) return existing;
+  const sup = { id: `PROV-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`, name: String(name || '').trim(), type: 'supplier', active: true, stock_code: null, category_default: null, notes: null };
+  db.suppliers.push(sup);
+  return sup;
 }
 
 function parseInstagram(payload) {

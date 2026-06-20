@@ -35,19 +35,23 @@ export function SearchPicker({
     return () => document.removeEventListener("mousedown", onDoc)
   }, [])
 
+  // Normaliza para comparar sin importar mayúsculas/acentos/espacios → evita ofrecer
+  // "Crear" cuando ya existe (ej: "ferreteria" vs "Ferretería") y así no duplicar.
+  const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/\s+/g, " ").trim()
+
   const filtered = useMemo(() => {
-    const needle = q.trim().toLowerCase()
+    const needle = norm(q)
     if (!needle) return items.slice(0, 40)
     const terms = needle.split(/\s+/)
     return items
       .filter((it) => {
-        const hay = `${it.label} ${it.sub ?? ""} ${it.keywords ?? ""}`.toLowerCase()
+        const hay = norm(`${it.label} ${it.sub ?? ""} ${it.keywords ?? ""}`)
         return terms.every((t) => hay.includes(t))
       })
       .slice(0, 40)
   }, [items, q])
 
-  const exact = filtered.some((it) => it.label.toLowerCase() === q.trim().toLowerCase())
+  const exact = items.some((it) => norm(it.label) === norm(q))
   const showCreate = !!onCreate && q.trim().length > 1 && !exact
 
   function pick(id: string) { onPick(id); setQ(""); setOpen(false); setActive(0) }
