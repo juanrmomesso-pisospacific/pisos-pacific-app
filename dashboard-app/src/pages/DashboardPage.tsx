@@ -56,8 +56,21 @@ export default function DashboardPage() {
   const prodBySku = useMemo(() => { const m = new Map<string, Product>(); for (const p of products) m.set(p.sku, p); return m }, [products])
   const isPisoItem = (sku?: string) => { const p = sku ? prodBySku.get(sku) : undefined; return !!p && !!p.stockTrack && p.active !== false }
   // Colocadores: su mano de obra ya está en el costo de servicio → se excluye del opex.
+  // Match NORMALIZADO (sin mayúsculas/acentos) + por primer nombre cuando la contraparte es
+  // de una sola palabra (ej. "Hugo" matchea "Hugo Ramirez") → evita doble conteo por nombres
+  // que no coinciden exacto, que era la causa de que la mano de obra se contara dos veces.
   const settings = useApi<{ installers?: string[] }>("/api/settings").data
-  const installerSet = useMemo(() => new Set((settings?.installers ?? []).map(x => x.trim())), [settings])
+  const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/\s+/g, " ").trim()
+  const installerNorms = useMemo(() => (settings?.installers ?? []).map(norm).filter(Boolean), [settings])
+  const isInstaller = useMemo(() => {
+    const full = new Set(installerNorms)
+    const firsts = new Set(installerNorms.map(n => n.split(" ")[0]))   // primer nombre
+    return (cp?: string | null) => {
+      const n = norm(cp || ""); if (!n) return false
+      if (full.has(n)) return true
+      return !n.includes(" ") && firsts.has(n)   // contraparte de una sola palabra = primer nombre del colocador
+    }
+  }, [installerNorms])
 
   // ---- Métricas por período (alineadas al P&L híbrido) ----
   const metrics = (r: Range) => {
@@ -70,7 +83,7 @@ export default function DashboardPage() {
     const opex = cashflow.filter(m => m.flow === "Egreso" && !m.transfer && inRange((m.date || "").slice(0, 10), r) && (m.expense_type || "") !== "COGS")
     let insumosColoc = 0, opexTotal = 0
     for (const m of opex) {
-      if (installerSet.has((m.counterparty || "").trim())) continue
+      if (isInstaller(m.counterparty)) continue
       if ((m.expense_type || "") === "Gastos de Instalaciones y Suministros") insumosColoc += m.amount_usd || 0
       else opexTotal += m.amount_usd || 0
     }
@@ -80,8 +93,8 @@ export default function DashboardPage() {
     const neto = grossProfit - opexTotal
     return { fact, grossProfit, grossPct, m2, opexTotal, neto, count: inP.length, detailedCount: detailed.length, opex }
   }
-  const cur = useMemo(() => metrics(range), [sales, cashflow, products, range, installerSet])
-  const pre = useMemo(() => metrics(prev), [sales, cashflow, products, prev, installerSet])
+  const cur = useMemo(() => metrics(range), [sales, cashflow, products, range, isInstaller])
+  const pre = useMemo(() => metrics(prev), [sales, cashflow, products, prev, isInstaller])
 
   // Pendiente de cobro (no depende del período: estado actual)
   const pendiente = useMemo(() => {
@@ -119,7 +132,7 @@ export default function DashboardPage() {
     let insumosColoc = 0
     for (const m of cur.opex) {
       const cp = (m.counterparty || "").trim()
-      if (installerSet.has(cp)) continue // mano de obra de colocación: ya está en Costo Servicio
+      if (isInstaller(cp)) continue // mano de obra de colocación: ya está en Costo Servicio
       const t = m.expense_type || "Otros Gastos y Ajustes"
       if (t === "Gastos de Instalaciones y Suministros") { insumosColoc += m.amount_usd || 0; continue }
       opexBy[t] = (opexBy[t] || 0) + (m.amount_usd || 0)
@@ -127,7 +140,7 @@ export default function DashboardPage() {
     const ingresos = cat.piso.rev + cat.servicio.rev + cat.extras.rev
     const costos = cat.piso.cost + cat.servicio.cost + cat.extras.cost + insumosColoc
     return { cat, insumosColoc, ingresos, costos, bruta: ingresos - costos, opexBy }
-  }, [cur, sales, range, installerSet])
+  }, [cur, sales, range, isInstaller])
 
   // ---- Top productos PISO vendidos ----
   const topPisos = useMemo(() => {
