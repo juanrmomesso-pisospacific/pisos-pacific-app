@@ -1393,6 +1393,48 @@ async function gmailAutoSync() {
 }
 setTimeout(gmailAutoSync, 60 * 1000);
 setInterval(gmailAutoSync, 15 * 60e3);   // cada 15 min
+
+// ---------- Recordatorio semanal: subir extractos de los bancos ----------
+// Lunes ~9:00 ART (12:00 UTC). Email (confiable) + intento WhatsApp (best-effort, puede
+// no entregarse fuera de la ventana de 24h sin plantilla). Guard 1×/semana en db.settings.
+function lastLoadedDate(cajaName) {
+  let d = null;
+  for (const m of db.cashflow) { if (m.caja_name === cajaName) { const x = (m.date || '').slice(0, 10); if (x && (!d || x > d)) d = x; } }
+  return d ? d.split('-').reverse().join('/') : 'nunca';
+}
+async function weeklyUploadReminder() {
+  try {
+    db.settings = db.settings || {};
+    if (db.settings.weekly_reminder_enabled === false) return;
+    const now = new Date();
+    if (!(now.getUTCDay() === 1 && now.getUTCHours() >= 12)) return;   // lunes, ≥9 ART
+    const last = db.settings.last_weekly_reminder ? new Date(db.settings.last_weekly_reminder) : null;
+    if (last && (now - last) < 6 * 24 * 3600e3) return;                // ya se mandó esta semana
+    const bbva = lastLoadedDate('BBVA'), bdc = lastLoadedDate('Banco de Comercio - Cuenta Pesos');
+    const to = db.settings.reminder_email || 'info@pisospacific.com';
+    const html = `<p>Hola Juan,</p><p>Recordatorio semanal para mantener la caja al día — subí los extractos del banco:</p>`
+      + `<ul><li><b>Banco Francés (BBVA)</b> — último cargado: ${bbva}</li><li><b>Banco de Comercio</b> — último cargado: ${bdc}</li></ul>`
+      + `<p>Entrá a <b>CashFlow → Importar extracto</b> y subí desde esas fechas en adelante (si se pisan días, no pasa nada: se detectan los duplicados). <b>Mercado Pago</b> se sincroniza solo.</p>`;
+    try { await sendMail({ to, subject: '📥 Recordatorio: subí los extractos de la semana', html }); } catch (e) { console.warn('[weekly-reminder] email falló:', e.message); }
+    const phone = db.settings.reminder_phone || '+54 11 51750097';
+    try { await sendOutbound('whatsapp', phone, `📥 Recordatorio semanal: subí los extractos del banco (BBVA último ${bbva}, Banco de Comercio último ${bdc}). CashFlow → Importar extracto. MP se sincroniza solo.`); } catch { /* best-effort */ }
+    db.settings.last_weekly_reminder = now.toISOString();
+    save();
+    console.log('[weekly-reminder] enviado a', to);
+  } catch (e) { console.warn('[weekly-reminder] error:', e.message); }
+}
+setTimeout(weeklyUploadReminder, 150 * 1000);
+setInterval(weeklyUploadReminder, 60 * 60e3);   // chequea cada hora; dispara lunes 1×
+// Disparo manual para probar el recordatorio ahora.
+app.post('/api/admin/test-weekly-reminder', requireAdmin, async (_req, res) => {
+  const bbva = lastLoadedDate('BBVA'), bdc = lastLoadedDate('Banco de Comercio - Cuenta Pesos');
+  const to = db.settings?.reminder_email || 'info@pisospacific.com';
+  try {
+    await sendMail({ to, subject: '📥 (prueba) Recordatorio: subí los extractos de la semana',
+      html: `<p>Prueba del recordatorio semanal.</p><ul><li>BBVA — último: ${bbva}</li><li>Banco de Comercio — último: ${bdc}</li></ul>` });
+    res.json({ sent: true, to, bbva, bdc });
+  } catch (e) { res.status(400).json({ error: e.message }); }
+});
 // Disparo manual (para probar o forzar): corre en background.
 app.post('/api/import/mp-sync/auto-run', (_req, res) => {
   db.settings.mp_last_sync = null;
