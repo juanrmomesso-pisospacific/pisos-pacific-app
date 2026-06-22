@@ -1395,7 +1395,7 @@ setTimeout(gmailAutoSync, 60 * 1000);
 setInterval(gmailAutoSync, 15 * 60e3);   // cada 15 min
 
 // ---------- Recordatorio semanal: subir extractos de los bancos ----------
-// Lunes ~9:00 ART (12:00 UTC). Email (confiable) + intento WhatsApp (best-effort, puede
+// Viernes ~9:00 ART (12:00 UTC). Email (confiable) + intento WhatsApp (best-effort, puede
 // no entregarse fuera de la ventana de 24h sin plantilla). Guard 1×/semana en db.settings.
 function lastLoadedDate(cajaName) {
   let d = null;
@@ -1407,7 +1407,7 @@ async function weeklyUploadReminder() {
     db.settings = db.settings || {};
     if (db.settings.weekly_reminder_enabled === false) return;
     const now = new Date();
-    if (!(now.getUTCDay() === 1 && now.getUTCHours() >= 12)) return;   // lunes, ≥9 ART
+    if (!(now.getUTCDay() === 5 && now.getUTCHours() >= 12)) return;   // viernes, ≥9 ART
     const last = db.settings.last_weekly_reminder ? new Date(db.settings.last_weekly_reminder) : null;
     if (last && (now - last) < 6 * 24 * 3600e3) return;                // ya se mandó esta semana
     const bbva = lastLoadedDate('BBVA'), bdc = lastLoadedDate('Banco de Comercio - Cuenta Pesos');
