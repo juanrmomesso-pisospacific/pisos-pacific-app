@@ -70,6 +70,7 @@ export const api = {
   // Generic CRUD
   create: (entity: string, body: any) => post(`/api/${entity}`, body),
   update: (entity: string, id: string, body: any) => patch(`/api/${entity}/${id}`, body),
+  saleEditItems: (id: string, items: any[]) => patch(`/api/sales/${id}/edit-items`, { items }),
   remove: (entity: string, id: string) => del(`/api/${entity}/${id}`),
 }
 

@@ -1068,6 +1068,61 @@ app.patch('/api/leads/:id', (req, res) => {
   res.json({ ...db.leads[i], auto_sale_id: createdSale?.id });
 });
 
+// Editar los ítems de una venta que TODAVÍA NO se entregó (no Finalizada/Cancelada).
+// Recalcula total del contrato + saldo con la misma fórmula del sistema (neto = Σ ítems −
+// descuentos; IVA según el modo de la venta). El stock reservado y el margen se derivan solos.
+app.patch('/api/sales/:id/edit-items', requireAdmin, (req, res) => {
+  const s = db.sales.find((x) => x.id === req.params.id);
+  if (!s) return res.sendStatus(404);
+  if (s.status === 'Finalizado' || s.status === 'Cancelado')
+    return res.status(400).json({ error: 'No se puede editar una venta entregada o cancelada.' });
+  const items = Array.isArray(req.body?.items) ? req.body.items : null;
+  if (!items || !items.length) return res.status(400).json({ error: 'La venta necesita al menos un ítem.' });
+  const itemDisc = (it) => {
+    const g = (Number(it.quantity) || 0) * (Number(it.unit_price) || 0);
+    if (!it.disc_value || it.disc_value <= 0) return 0;
+    const amt = it.disc_kind === 'amount' ? Number(it.disc_value) : g * Number(it.disc_value) / 100;
+    return Math.min(g, Math.round(amt * 100) / 100);
+  };
+  const isReal = (it) => it.product_id !== 'discount' && !/^descuento/i.test(it.description || '');
+  const norm = items.map((it) => ({
+    ...it,
+    quantity: Number(it.quantity) || 0,
+    unit_price: Number(it.unit_price) || 0,
+    total: Math.round((Number(it.quantity) || 0) * (Number(it.unit_price) || 0) * 100) / 100,
+    discount: itemDisc(it),
+  }));
+  const real = norm.filter(isReal);
+  const gross = real.reduce((a, it) => a + (Number(it.total) || 0), 0);
+  // Descuento: si hay descuentos POR ÍTEM se recalculan; si no, se preserva el descuento a
+  // nivel venta (ventas migradas: el descuento no está en los ítems sino en discount_total).
+  const anyItemDisc = norm.some((it) => Number(it.disc_value) > 0);
+  const discount_total = anyItemDisc
+    ? Math.round(real.reduce((a, it) => a + (Number(it.discount) || 0), 0) * 100) / 100
+    : (Number(s.discount_total) || 0);
+  const net = Math.max(0, gross - discount_total);
+  // IVA: se PRESERVA el tratamiento real de la venta derivándolo del total original (la bandera
+  // has_iva/iva_mode puede estar inconsistente en datos migrados). factor ≈ 1.0 (sin IVA) o ≈ 1.21.
+  let contract_total;
+  if (s.iva_mode === 'fixed') {
+    contract_total = Math.round(net + (Number(s.iva_amount) || 0));
+  } else {
+    const origReal = (s.items || []).filter(isReal);
+    const origGross = origReal.reduce((a, it) => a + (Number(it.total) || 0), 0);
+    const origNet = Math.max(0, origGross - discount_total);
+    const origTotal = Number(s.contract_total) || origNet;
+    const factor = origNet > 0 ? origTotal / origNet : 1;
+    contract_total = Math.round(net * factor);
+  }
+  s.items = norm;
+  s.discount_total = discount_total;
+  s.contract_total = contract_total;
+  const paid = Number(s.financial_position?.total_paid) || 0;
+  s.financial_position = { total_invoiced: contract_total, total_paid: paid, balance_due: Math.max(0, contract_total - paid) };
+  save();
+  res.json(s);
+});
+
 // Special-case: crear proveedor con DEDUP. Si ya existe uno con el mismo nombre
 // normalizado (sin importar mayúsculas/acentos/espacios), devuelve el existente en vez
 // de duplicar. Corre ANTES del POST genérico de abajo. Idempotente.

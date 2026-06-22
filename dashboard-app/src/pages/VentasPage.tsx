@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Search, LayoutGrid, Rows3, Smartphone, Plus, Check, CalendarDays, Truck, Info, CalendarClock, ArrowUp, ArrowDown, ChevronsUpDown, MessageCircle } from "lucide-react"
+import { Search, LayoutGrid, Rows3, Smartphone, Plus, Check, CalendarDays, Truck, Info, CalendarClock, ArrowUp, ArrowDown, ChevronsUpDown, MessageCircle, Pencil, Trash2 } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { findConvId } from "@/lib/chat"
 import { Button } from "@/components/ui/button"
@@ -16,7 +16,9 @@ import { SearchPicker } from "@/components/SearchPicker"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { useApi } from "@/lib/api"
 import { DataState } from "@/components/ui/data-state"
-import { api, useAction } from "@/lib/mutations"
+import { useAuth } from "@/contexts/AuthContext"
+import { useConfirm } from "@/components/ui/confirm"
+import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney, cn } from "@/lib/utils"
 import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote, Caja, CashflowMovement, Product } from "@/lib/types"
@@ -458,6 +460,9 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   const [remitoItems, setRemitoItems] = useState<{ description: string; quantity: number; unit: string }[]>([])
   const [remitoConfirmed, setRemitoConfirmed] = useState(false)
   const [remitoSaved, setRemitoSaved] = useState(false)
+  const { state: authState } = useAuth()
+  const isAdmin = authState.user?.role === "admin"
+  const [editOpen, setEditOpen] = useState(false)
   const update = useAction(api.update)
   const txn = useAction(api.saleTransition)
   const createTask = useAction(api.create)
@@ -570,6 +575,7 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   const remitoPickerItems = products.filter((p) => p.active !== false).map((p) => ({ id: p.id, label: p.name, sub: p.sku, keywords: p.category }))
 
   return (
+    <>
     <Sheet open={!!sale} onOpenChange={(o) => !o && onClose()}>
       <SheetContent className="!max-w-2xl w-full overflow-y-auto">
         <SheetHeader>
@@ -676,6 +682,11 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
               ))}
               {(sale.items?.length ?? 0) > 6 && <div className="text-[10px] text-muted-foreground text-center">…y {(sale.items?.length ?? 0) - 6} ítems más</div>}
             </div>
+            {isAdmin && (
+              sale.status === "Finalizado" || sale.status === "Cancelado"
+                ? <div className="text-[10px] text-muted-foreground mt-2">No se puede editar: la venta ya está {sale.status === "Finalizado" ? "entregada" : "cancelada"}.</div>
+                : <Button variant="outline" size="sm" className="mt-2 h-7 w-full" onClick={() => setEditOpen(true)}><Pencil className="h-3.5 w-3.5" />Editar ítems</Button>
+            )}
           </DetailSection>
         </div>
 
@@ -772,6 +783,113 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
             </div>
           </div>
         )}
+      </SheetContent>
+    </Sheet>
+    <EditSaleItemsSheet sale={sale} products={products} open={editOpen} onOpenChange={setEditOpen} onChanged={onChanged} />
+    </>
+  )
+}
+
+// Editar ítems de una venta no entregada: cambiar cantidades/precios, quitar o agregar
+// ítems. Recalcula el total con la misma fórmula del sistema (neto − desc + IVA del modo).
+function EditSaleItemsSheet({ sale, products, open, onOpenChange, onChanged }: { sale: Sale | null; products: Product[]; open: boolean; onOpenChange: (o: boolean) => void; onChanged: () => void }) {
+  const confirm = useConfirm()
+  const save = useAction(api.saleEditItems)
+  const [items, setItems] = useState<any[]>([])
+  useEffect(() => { if (open && sale) setItems((sale.items ?? []).map((it) => ({ ...it }))) }, [open, sale])
+  if (!sale) return null
+
+  const isDiscountRow = (it: any) => it.product_id === "discount" || /^descuento/i.test(it.description || "")
+  const itemGross = (it: any) => (Number(it.quantity) || 0) * (Number(it.unit_price) || 0)
+  const itemDisc = (it: any) => {
+    const g = itemGross(it)
+    if (!it.disc_value || it.disc_value <= 0) return 0
+    const amt = it.disc_kind === "amount" ? Number(it.disc_value) : g * Number(it.disc_value) / 100
+    return Math.min(g, Math.round(amt * 100) / 100)
+  }
+  const real = items.filter((it) => !isDiscountRow(it))
+  const subtotal = real.reduce((s, it) => s + itemGross(it), 0)
+  // Mismo criterio que el backend: descuentos por ítem si los hay, si no preservar el de la venta.
+  const anyItemDisc = items.some((it) => Number(it.disc_value) > 0)
+  const discount = anyItemDisc ? real.reduce((s, it) => s + itemDisc(it), 0) : (Number(sale.discount_total) || 0)
+  const net = Math.max(0, subtotal - discount)
+  // IVA derivado del total original (preserva el tratamiento real, robusto a flags inconsistentes).
+  let total: number, iva: number
+  if (sale.iva_mode === "fixed") { iva = Number(sale.iva_amount) || 0; total = Math.round(net + iva) }
+  else {
+    const origReal = (sale.items ?? []).filter((it) => !isDiscountRow(it))
+    const origGross = origReal.reduce((s, it) => s + (Number(it.total) || 0), 0)
+    const origNet = Math.max(0, origGross - discount)
+    const origTotal = Number(sale.contract_total) || origNet
+    const factor = origNet > 0 ? origTotal / origNet : 1
+    total = Math.round(net * factor)
+    iva = total - net
+  }
+  const paid = sale.financial_position?.total_paid ?? 0
+  const newBalance = Math.max(0, total - paid)
+
+  const setQty = (i: number, v: number) => setItems(items.map((it, idx) => idx === i ? { ...it, quantity: v } : it))
+  const setPrice = (i: number, v: number) => setItems(items.map((it, idx) => idx === i ? { ...it, unit_price: v } : it))
+  const removeItem = (i: number) => setItems(items.filter((_, idx) => idx !== i))
+  const addProduct = (pid: string) => {
+    const p = products.find((x) => x.id === pid); if (!p) return
+    setItems([...items, { product_id: p.id, sku: p.sku, description: p.name, quantity: 1, unit_price: p.price, total: p.price, cost: p.cost, category: p.category }])
+  }
+
+  async function submit() {
+    if (!real.length) return
+    if (total < paid) {
+      const ok = await confirm({ title: "El total queda por debajo de lo cobrado", description: `El nuevo total (${fmtMoney(total)}) es menor que lo ya cobrado (${fmtMoney(paid)}). Quedaría saldo a favor del cliente. ¿Continuar?`, confirmLabel: "Sí, guardar", destructive: true })
+      if (!ok) return
+    }
+    const r = await save.run(sale!.id, items)
+    if (r) { onChanged(); refresh(); onOpenChange(false) }
+  }
+
+  const pickerItems = products.filter((p) => p.active !== false).map((p) => ({ id: p.id, label: p.name, sub: p.sku, keywords: p.category, hint: fmtMoney(p.price) }))
+
+  return (
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent className="!max-w-xl w-full overflow-y-auto">
+        <SheetHeader>
+          <SheetTitle>Editar ítems · {sale.client_name}</SheetTitle>
+          <SheetDescription>#{sale.quote_number} · {sale.status}. Cambiá cantidades/precios o quitá ítems; el total y el saldo se recalculan.</SheetDescription>
+        </SheetHeader>
+        <div className="mt-4 space-y-2">
+          {items.map((it, i) => isDiscountRow(it) ? null : (
+            <div key={i} className="rounded-md border border-border p-2 space-y-1.5">
+              <div className="flex items-center justify-between gap-2">
+                <div className="text-sm font-medium truncate">{it.description}</div>
+                <Button type="button" size="icon" variant="ghost" className="h-7 w-7 shrink-0 text-muted-foreground" onClick={() => removeItem(i)}><Trash2 className="h-3.5 w-3.5" /></Button>
+              </div>
+              <div className="flex items-end gap-2">
+                <label className="text-[10px] text-muted-foreground flex-1">Cantidad (m²)
+                  <Input type="number" min={0} step="0.01" value={it.quantity === 0 ? "" : it.quantity} onChange={(e) => setQty(i, Number(e.target.value) || 0)} className="h-8 mt-0.5" />
+                </label>
+                <label className="text-[10px] text-muted-foreground flex-1">Precio unit. (US$)
+                  <Input type="number" min={0} step="0.01" value={it.unit_price === 0 ? "" : it.unit_price} onChange={(e) => setPrice(i, Number(e.target.value) || 0)} className="h-8 mt-0.5" />
+                </label>
+                <div className="text-sm tabular shrink-0 pb-1.5 w-24 text-right">{fmtMoney(itemGross(it))}</div>
+              </div>
+            </div>
+          ))}
+          <div className="pt-1">
+            <div className="text-[10px] uppercase text-muted-foreground mb-1">Agregar producto</div>
+            <SearchPicker items={pickerItems} placeholder="Buscar producto…" onPick={addProduct} />
+          </div>
+        </div>
+        <div className="mt-4 rounded-lg border border-border p-3 text-sm space-y-1 tabular">
+          <div className="flex justify-between text-muted-foreground"><span>Subtotal</span><span>{fmtMoney(subtotal)}</span></div>
+          {discount > 0 && <div className="flex justify-between text-muted-foreground"><span>Descuentos</span><span>-{fmtMoney(discount)}</span></div>}
+          <div className="flex justify-between text-muted-foreground"><span>IVA{iva <= 0 ? " (sin IVA)" : ""}</span><span>{fmtMoney(iva)}</span></div>
+          <div className="flex justify-between font-semibold border-t border-border pt-1"><span>Total</span><span>{fmtMoney(total)}</span></div>
+          <div className="flex justify-between text-xs pt-1"><span className="text-muted-foreground">Antes: {fmtMoney(sale.contract_total)}</span><span className={cn(newBalance > 0.5 ? "text-amber-700" : "text-emerald-700")}>Nuevo saldo {fmtMoney(newBalance)}</span></div>
+        </div>
+        {save.error && <div className="text-xs text-destructive mt-2">{save.error}</div>}
+        <div className="mt-4 flex items-center justify-end gap-2">
+          <Button variant="outline" size="sm" onClick={() => onOpenChange(false)}>Cancelar</Button>
+          <Button size="sm" onClick={submit} disabled={save.busy || !real.length}>{save.busy ? "Guardando…" : "Guardar cambios"}</Button>
+        </div>
       </SheetContent>
     </Sheet>
   )
