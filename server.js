@@ -14,7 +14,6 @@ import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb a
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 import { findSupplierMatch, suggestSuppliers, normSup, isNonSupplier } from './integrations/supplier-match.mjs';
 import { touchConv } from './integrations/conv.mjs';
-import { suggestReply, aiConfigured } from './integrations/ai.mjs';
 import { generatePdf } from './pdf/render.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -762,28 +761,6 @@ app.post('/api/conversations/:id/read', (req, res) => {
   conv.unread_count = 0;
   save();
   res.json(conv);
-});
-// IA: ¿está configurada? (el front muestra el botón "Sugerir respuesta" solo si sí)
-app.get('/api/ai/status', (_req, res) => res.json({ configured: aiConfigured() }));
-// IA: redactar un borrador de respuesta para esta conversación (on-demand; no envía nada).
-app.post('/api/conversations/:id/suggest-reply', async (req, res) => {
-  const conv = db.conversations.find(c => c.id === req.params.id);
-  if (!conv) return res.sendStatus(404);
-  if (!aiConfigured()) return res.status(400).json({ error: 'IA no configurada (falta ANTHROPIC_API_KEY).' });
-  const msgs = db.messages.filter(m => m.conversation_id === conv.id)
-    .sort((a, b) => (a.ts || '').localeCompare(b.ts || '')).slice(-15)
-    .map(m => ({ direction: m.direction, body: String(m.body || '').slice(0, 600) }))
-    .filter(m => m.body);
-  // Contexto: lead vinculado + cotizaciones del contacto (para que la IA tenga datos reales).
-  let context = '';
-  const lead = conv.linked_lead_id ? db.leads.find(l => l.id === conv.linked_lead_id) : null;
-  if (lead) context += `Lead: ${lead.name || ''}${lead.interested_products?.length ? ' · interés: ' + lead.interested_products.join(', ') : ''}${lead.approx_m2 ? ' · ~' + lead.approx_m2 + ' m²' : ''}. `;
-  const qs = db.quotes.filter(q => (lead && q.lead_id === lead.id) || (conv.linked_client_name && q.client_name === conv.linked_client_name)).slice(-2);
-  for (const q of qs) context += `Cotización #${q.quote_number} (estado ${q.status}, total ${q.price}). `;
-  try {
-    const suggestion = await suggestReply({ messages: msgs, contact: conv.contact_name, context: context.trim() });
-    res.json({ suggestion });
-  } catch (e) { res.status(400).json({ error: e.message || 'no se pudo generar la sugerencia' }); }
 });
 // Compartir un presupuesto EN esta conversación: WhatsApp → PDF como documento;
 // email → link en el cuerpo + firma; Instagram → link como mensaje. Queda registrado en el chat.
