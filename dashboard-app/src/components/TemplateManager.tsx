@@ -12,6 +12,7 @@ import { type Template, CHANNEL_LABEL } from "@/lib/messaging"
 const inputSel = "h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm"
 const CHANNELS: { value: string; label: string }[] = [
   { value: "all", label: "Todos los canales" },
+  { value: "chat", label: "Chat (WhatsApp + Instagram)" },
   { value: "whatsapp", label: CHANNEL_LABEL.whatsapp },
   { value: "instagram", label: CHANNEL_LABEL.instagram },
   { value: "email", label: CHANNEL_LABEL.email },

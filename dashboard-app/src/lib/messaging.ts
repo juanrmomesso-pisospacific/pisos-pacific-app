@@ -14,6 +14,7 @@ export type Conversation = {
   last_message_direction?: "in" | "out"   // 'in' = última del cliente → PENDIENTE de responder
   last_inbound_at?: string
   last_outbound_at?: string
+  email_subject?: string   // asunto del hilo de email (para responder con "Re: …")
 }
 
 export type Message = {
@@ -35,10 +36,15 @@ export type Template = {
   name: string
   category: "UTILITY" | "MARKETING" | "AUTHENTICATION"
   language: string
-  channel: Channel | "all"      // "all" = sirve en cualquier canal (respuesta rápida)
+  channel: Channel | "all" | "chat"   // "all" = cualquier canal · "chat" = WhatsApp + Instagram (no email)
   status: "approved" | "pending" | "rejected"
   body: string
   keywords?: string             // disparadores (csv) para sugerir según el mensaje recibido
+}
+
+// ¿La plantilla aplica a este canal de conversación? "all" = todos; "chat" = WA/IG (no email).
+export function templateMatchesChannel(tChannel: Template["channel"], channel: Channel): boolean {
+  return tChannel === channel || tChannel === "all" || (tChannel === "chat" && (channel === "whatsapp" || channel === "instagram"))
 }
 
 // Sugerencias: según el último mensaje del cliente, rankea las plantillas más relevantes
@@ -50,7 +56,7 @@ export function suggestTemplates(templates: Template[], lastInbound: string, cha
   if (!text) return []
   const words = new Set(text.split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !STOPWORDS.has(w)))
   return templates
-    .filter((t) => (t.channel === channel || t.channel === "all") && t.status === "approved")
+    .filter((t) => templateMatchesChannel(t.channel, channel) && t.status === "approved")
     .map((t) => {
       let score = 0
       for (const k of (t.keywords || "").split(",").map((x) => normTxt(x.trim())).filter(Boolean)) if (text.includes(k)) score += 3

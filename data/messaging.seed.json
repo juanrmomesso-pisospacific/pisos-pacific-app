@@ -69,6 +69,126 @@
       "status": "approved",
       "keywords": "precio,presupuesto,cotizar,cotizacion,cuanto,sale,vale,m2,metros",
       "body": "Para pasarte el presupuesto necesito tres datos: los m² aproximados, la ubicación de la obra y qué piso te gustó. ¿Me los compartís y te lo armo?"
+    },
+    {
+      "id": "tpl-email-1",
+      "name": "email_pedir_datos",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "email",
+      "status": "approved",
+      "keywords": "presupuesto,cotizacion,consulta,pedido de presupuesto,solicitud,pagina web,info,informacion,interesa,m2,metros",
+      "body": "Hola {nombre}, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% impermeables\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos,"
+    },
+    {
+      "id": "tpl-email-2",
+      "name": "email_presupuesto_adjunto",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "email",
+      "status": "approved",
+      "keywords": "adjunto,te paso el presupuesto,enviar presupuesto,te envio,mando el presupuesto",
+      "body": "Hola {nombre}, ¿cómo estás?\n\nTe adjunto el presupuesto solicitado. Incluye la entrega en encomienda del producto palletizado.\n\nCualquier duda, no dudes en consultarnos.\nSaludos,"
+    },
+    {
+      "id": "tpl-email-3",
+      "name": "email_en_breve",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "email",
+      "status": "approved",
+      "keywords": "perfecto,dale,gracias,quedo a la espera,espero",
+      "body": "¡Perfecto! En breve te estaremos enviando el presupuesto.\n\nSaludos,"
+    },
+    {
+      "id": "tpl-email-4",
+      "name": "email_madera_vs_h2o",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "email",
+      "status": "approved",
+      "keywords": "diferencia,cual conviene,mascotas,perro,humedad,baño,cocina,madera o h2o,impermeable,losa radiante,recomiendan,recomendacion",
+      "body": "Hola {nombre}, te comento las diferencias entre nuestras dos líneas:\n\n• Línea H2O (SPC): 100% impermeable, con protección antiscratch y terminación mate muy realista. Ideal para zonas húmedas, mascotas o alto tránsito.\n• Colección Madera (prefinished): madera noble con laca y protección UV, la calidez y el valor de la madera real.\n\nSi querés, te armo ambos presupuestos para que puedas comparar.\nSaludos,"
+    },
+    {
+      "id": "tpl-email-5",
+      "name": "email_seguimiento",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "email",
+      "status": "approved",
+      "keywords": "",
+      "body": "Hola {nombre}, ¿cómo estás?\n\n¿Pudiste ver el presupuesto que te enviamos? Quedamos a disposición por cualquier consulta o ajuste que necesites.\n\nSaludos,"
+    },
+    {
+      "id": "tpl-email-6",
+      "name": "email_visita_showroom",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "email",
+      "status": "approved",
+      "keywords": "visita,showroom,muestras,ver,conocer,local,direccion",
+      "body": "Hola {nombre}, te invitamos a conocer las muestras en nuestro showroom así las ves y tocás en persona. Coordinamos el día que mejor te quede.\n\nSaludos,"
+    },
+    {
+      "id": "tpl-chat-1",
+      "name": "chat_precio_h2o",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "chat",
+      "status": "approved",
+      "keywords": "precio,cuanto,vale,sale,valor,m2,metros,h2o,cotizacion,presupuesto",
+      "body": "¡Hola {nombre}! 😊 El m² de nuestro piso H2O está USD 38 + IVA. Según la cantidad o si venís por una alianza tenemos descuentos. ¿Para cuántos m² sería?"
+    },
+    {
+      "id": "tpl-chat-2",
+      "name": "chat_calificar",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "chat",
+      "status": "approved",
+      "keywords": "hola,info,consulta,presupuesto,cotizar,cotizacion,interesa,proyecto,quiero,piso",
+      "body": "¡Hola {nombre}! ¿Qué colección te interesa, Madera o H2O? ¿Es con colocación y en qué zona es la obra? Así te coordino el presupuesto y el envío 😊"
+    },
+    {
+      "id": "tpl-chat-3",
+      "name": "chat_muestras",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "chat",
+      "status": "approved",
+      "keywords": "muestra,muestras,ver,tocar,mano,fisico",
+      "body": "Si querés, pasame la dirección y te mandamos muestras para que las veas en mano 📦 Los envíos los hacemos por Vía Cargo."
+    },
+    {
+      "id": "tpl-chat-4",
+      "name": "chat_envio_zona",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "chat",
+      "status": "approved",
+      "keywords": "envio,envian,mandan,llega,via cargo,zona,interior,bariloche,mar del plata,cordoba,flete",
+      "body": "Los envíos los hacemos por Vía Cargo a todo el país. Tenemos el depósito en San Isidro. ¿A qué zona sería la entrega?"
+    },
+    {
+      "id": "tpl-chat-5",
+      "name": "chat_stock_color",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "chat",
+      "status": "approved",
+      "keywords": "tienen,hay,stock,disponible,roble,claro,gris,smoke,eslavonia,color,ancho,natural",
+      "body": "¡Hola {nombre}! 😊 Sí, tenemos esa opción. ¿Querés que te pase fotos en obra terminada?"
+    },
+    {
+      "id": "tpl-chat-6",
+      "name": "chat_preparo_presupuesto",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "chat",
+      "status": "approved",
+      "keywords": "preparame,presupuesto,cotizar,pasame precio,cotizacion,armar",
+      "body": "¡Buenísimo! Te preparo el presupuesto. ¿Son m² netos o ya contemplás el desperdicio? ¿Es con colocación?"
     }
   ],
   "conversations": [

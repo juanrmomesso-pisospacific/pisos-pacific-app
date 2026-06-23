@@ -8,7 +8,7 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 import { useApi, getJSON } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { useAuth } from "@/contexts/AuthContext"
-import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, EMOJIS, fillTemplate, suggestTemplates } from "@/lib/messaging"
+import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, EMOJIS, fillTemplate, suggestTemplates, templateMatchesChannel } from "@/lib/messaging"
 import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_LABEL as LEAD_STATUS_LABEL } from "@/lib/leads"
 import { findConvId, digits, quoteShareMessage } from "@/lib/chat"
 import { statusLabel } from "@/components/RowActions"
@@ -334,6 +334,7 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(false)
   const [draft, setDraft] = useState("")
+  const [subject, setSubject] = useState("")   // asunto editable (solo email)
   const [sending, setSending] = useState(false)
   const [composerError, setComposerError] = useState<string | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -395,6 +396,14 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight
   }, [messages])
 
+  // Asunto por defecto al abrir un email: "Re: <asunto del hilo>".
+  useEffect(() => {
+    if (conversation?.channel === "email") {
+      const subj = conversation.email_subject?.replace(/^re:\s*/i, "") ?? ""
+      setSubject(subj ? `Re: ${subj}` : "")
+    } else setSubject("")
+  }, [conversation?.id])
+
   if (!conversation) {
     return (
       <section className={cn("items-center justify-center border-y border-border bg-muted/20 text-sm text-muted-foreground", className)}>
@@ -420,7 +429,7 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
       const r = await fetch(`/api/conversations/${conversation.id}/messages`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ body }),
+        body: JSON.stringify(conversation.channel === "email" ? { body, subject: subject.trim() } : { body }),
       })
       if (!r.ok) throw new Error(`${r.status}`)
       const msg = (await r.json()) as Message
@@ -438,8 +447,9 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
     setDraft(d => d + (d && !d.endsWith(" ") ? " " : "") + txt)
     setTimeout(() => taRef.current?.focus(), 0)
   }
-  // Plantillas aprobadas del canal de la conversación (o las marcadas "Todos")
-  const availableTemplates = templates.filter(t => (t.channel === conversation.channel || t.channel === "all") && t.status === "approved")
+  const isEmail = conversation.channel === "email"
+  // Plantillas aprobadas que aplican a este canal (incluye "Todos" y "Chat" para WA/IG)
+  const availableTemplates = templates.filter(t => templateMatchesChannel(t.channel, conversation.channel) && t.status === "approved")
   // Sugerencias interactivas: según el último mensaje recibido del cliente. (Consts planas,
   // no hooks — este bloque corre después del early-return de arriba.)
   const lastInbound = [...messages].reverse().find(m => m.direction === "in")?.body || ""
@@ -458,7 +468,7 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
         </div>
       )}
       <ThreadHeader conversation={conversation} onBack={onBack} onShowContact={onShowContact} />
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-1 bg-muted/20">
+      <div ref={scrollRef} className={cn("flex-1 overflow-y-auto px-4 py-4 bg-muted/20", isEmail ? "space-y-3" : "space-y-1")}>
         {loading ? (
           <div className="text-xs text-muted-foreground text-center py-10">Cargando…</div>
         ) : messages.length === 0 ? (
@@ -475,7 +485,7 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
                   </span>
                 </div>
               )}
-              <Bubble msg={m} />
+              {isEmail ? <EmailMessage msg={m} contactName={conversation.contact_name} /> : <Bubble msg={m} />}
             </div>
           )
         })}
@@ -503,6 +513,9 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
         onPickEmoji={(e) => insertText(e)}
         taRef={taRef}
         onFile={sendFile}
+        isEmail={isEmail}
+        subject={subject}
+        setSubject={setSubject}
       />
     </section>
   )
@@ -596,8 +609,48 @@ function Bubble({ msg }: { msg: Message }) {
   )
 }
 
+// Email como tarjeta legible (no globo de chat): remitente, fecha y cuerpo cómodo a todo el ancho,
+// con cuerpos largos colapsables. Para canal email.
+function EmailMessage({ msg, contactName }: { msg: Message; contactName: string }) {
+  const isOut = msg.direction === "out"
+  const [expanded, setExpanded] = useState(false)
+  const body = msg.body || ""
+  const long = body.length > 700
+  const shown = long && !expanded ? body.slice(0, 700) + "…" : body
+  return (
+    <div className={cn("rounded-lg border bg-card shadow-sm", isOut ? "border-primary/30" : "border-border")}>
+      <div className={cn("flex items-center justify-between gap-2 px-4 py-2 border-b rounded-t-lg", isOut ? "bg-primary/5 border-primary/20" : "bg-muted/40 border-border")}>
+        <div className="flex items-center gap-2 min-w-0">
+          <span className={cn("inline-flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-medium shrink-0", isOut ? "bg-primary text-primary-foreground" : "bg-muted-foreground/15 text-foreground")}>
+            {isOut ? "PP" : (contactName || "?").trim().charAt(0).toUpperCase()}
+          </span>
+          <span className="text-sm font-medium truncate">{isOut ? "Pisos Pacific" : contactName}</span>
+        </div>
+        <span className="text-[11px] text-muted-foreground shrink-0">
+          {new Date(msg.ts).toLocaleString("es-AR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
+          {isOut && msg.status ? ` · ${DELIVERY_LABEL[msg.status] ?? msg.status}` : ""}
+        </span>
+      </div>
+      <div className="px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap break-words text-foreground/90">
+        {shown}
+        {long && (
+          <button type="button" onClick={() => setExpanded(v => !v)} className="block mt-1 text-xs text-primary hover:underline">
+            {expanded ? "Ver menos" : "Ver más"}
+          </button>
+        )}
+        {msg.media_url && (
+          <a href={msg.media_url} target="_blank" rel="noreferrer" className="mt-2 inline-flex items-center gap-1 text-xs underline text-primary">
+            <Paperclip className="h-3 w-3" />Abrir adjunto
+          </a>
+        )}
+      </div>
+    </div>
+  )
+}
+
 function Composer({
   draft, setDraft, onSend, sending, error, templates, onPickTemplate, onPickEmoji, taRef, onFile,
+  isEmail, subject, setSubject,
 }: {
   draft: string
   setDraft: (s: string) => void
@@ -609,6 +662,9 @@ function Composer({
   onPickEmoji: (e: string) => void
   taRef: React.RefObject<HTMLTextAreaElement | null>
   onFile: (f: File) => void
+  isEmail?: boolean
+  subject?: string
+  setSubject?: (s: string) => void
 }) {
   const fileRef = useRef<HTMLInputElement>(null)
   const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -621,6 +677,12 @@ function Composer({
   return (
     <div className="border-t border-border bg-background shrink-0">
       {error && <div className="px-4 py-1.5 text-xs text-destructive">Error al enviar: {error}</div>}
+      {isEmail && (
+        <div className="px-3 pt-2 flex items-center gap-2">
+          <span className="text-[11px] text-muted-foreground shrink-0">Asunto</span>
+          <Input value={subject ?? ""} onChange={(e) => setSubject?.(e.target.value)} placeholder="Asunto del email" className="h-8 text-sm" />
+        </div>
+      )}
       <div className="flex items-end gap-2 p-3">
         <div className="flex gap-1">
           <input ref={fileRef} type="file" accept="application/pdf,image/*" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) onFile(f); e.currentTarget.value = "" }} />
@@ -666,9 +728,9 @@ function Composer({
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={onKeyDown}
-          placeholder="Escribí un mensaje… (Shift+Enter para enviar)"
-          rows={3}
-          className="flex-1 resize-y min-h-[72px] max-h-[60vh] rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+          placeholder={isEmail ? "Escribí el email… (Shift+Enter para enviar)" : "Escribí un mensaje… (Shift+Enter para enviar)"}
+          rows={isEmail ? 6 : 3}
+          className={cn("flex-1 resize-y max-h-[60vh] rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring", isEmail ? "min-h-[140px]" : "min-h-[72px]")}
         />
         <Button size="icon" className="h-9 w-9 shrink-0" onClick={onSend} disabled={sending || !draft.trim()}>
           <Send className="h-4 w-4" />

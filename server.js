@@ -226,13 +226,19 @@ if (Array.isArray(db.templates)) {
   try {
     const seedT = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/messaging.seed.json'), 'utf8')).templates || [];
     const byName = new Map(db.templates.map((t) => [t.name, t]));
-    let added = 0, kw = 0;
+    let added = 0, kw = 0, retag = 0;
     for (const s of seedT) {
       const ex = byName.get(s.name);
       if (!ex) { db.templates.push({ ...s, id: s.id || `tpl-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 5)}` }); added++; }
       else if (s.keywords && !ex.keywords) { ex.keywords = s.keywords; kw++; }
     }
-    if (added || kw) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill plantillas: +${added} nuevas, ${kw} con keywords`); }
+    // Las 2 plantillas genéricas viejas pasan de "all" a "chat" → no compiten en los mails
+    // con las plantillas de email nuevas (perfiles diferenciados). Idempotente.
+    for (const name of ['respuesta_consulta', 'pedir_datos_presupuesto']) {
+      const ex = byName.get(name);
+      if (ex && ex.channel === 'all') { ex.channel = 'chat'; retag++; }
+    }
+    if (added || kw || retag) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill plantillas: +${added} nuevas, ${kw} con keywords, ${retag} re-tag a chat`); }
   } catch (e) { console.warn('backfill plantillas:', e.message); }
 }
 
@@ -716,8 +722,17 @@ function defaultQuoteMessage(q) {
   return `Hola${firstName}, te comparto el presupuesto N${q?.quote_number || q?.id} adjunto. Cualquier consulta quedo a disposición.`;
 }
 const escHtml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const LINK_STYLE = 'color:#1d4ed8;text-decoration:underline;';
+// Hipervínculos en mails (solo email; el cuerpo ya viene HTML-escapado): las dos líneas de producto
+// linkean a la web, y cualquier URL pegada queda clickeable. No toca chat (WA/IG van como texto).
+function linkifyEmail(html) {
+  return html
+    .replace(/Colecci[oó]n\s+Madera/gi, `<a href="https://pisospacific.com/madera" style="${LINK_STYLE}">$&</a>`)
+    .replace(/L[ií]nea\s+H2O/gi, `<a href="https://pisospacific.com/h2o" style="${LINK_STYLE}">$&</a>`)
+    .replace(/(^|[\s(])((?:https?:\/\/|www\.)[^\s<)]+)/gi, (_m, pre, url) => `${pre}<a href="${/^https?:\/\//i.test(url) ? url : 'https://' + url}" style="${LINK_STYLE}">${url}</a>`);
+}
 function emailHtml(body, sig) {
-  const bodyHtml = escHtml(body).replace(/\n/g, '<br>');
+  const bodyHtml = linkifyEmail(escHtml(body).replace(/\n/g, '<br>'));
   return `<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#2a2723;">${bodyHtml}</div>` + (sig ? `<br><br>${sig}` : '');
 }
 
@@ -750,7 +765,8 @@ app.post('/api/conversations/:id/messages', async (req, res) => {
   // Envío real según canal (sendOutbound despacha Meta o Gmail); sin tokens → queda local.
   let delivery = { sent: true, local: true };
   try {
-    const subject = conv.email_subject ? `Re: ${conv.email_subject.replace(/^re:\s*/i, '')}` : undefined;
+    const override = String(req.body?.subject ?? '').trim();
+    const subject = override || (conv.email_subject ? `Re: ${conv.email_subject.replace(/^re:\s*/i, '')}` : undefined);
     // Email a cliente: arma HTML con el cuerpo + la firma del usuario que responde.
     const opts = { subject };
     if (conv.channel === 'email') opts.html = emailHtml(body, signatureFor(req.user));
