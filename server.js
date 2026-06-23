@@ -13,6 +13,7 @@ import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients 
 import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb as driveGetThumb, findFirstImage as driveFirstImage, driveConfigured } from './integrations/drive.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 import { findSupplierMatch, suggestSuppliers, normSup, isNonSupplier } from './integrations/supplier-match.mjs';
+import { normProd } from './integrations/product-match.mjs';
 import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
 
@@ -164,6 +165,8 @@ for (const sig of ['SIGTERM', 'SIGINT']) {
   process.on(sig, () => { try { flushSave(); } catch { /* noop */ } process.exit(0); });
 }
 
+// Depósito por defecto (gancho forward-compat para depósitos/distribuidores múltiples a futuro).
+const DEFAULT_WAREHOUSE = 'main';
 // Backfill collections added after the first seed so existing db.json files keep working.
 if (!Array.isArray(db.leads)) db.leads = [];
 // (El seed demo de leads web fue retirado: los leads reales entran solos desde Gmail.)
@@ -231,6 +234,21 @@ if (Array.isArray(db.templates)) {
     }
     if (added || kw) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill plantillas: +${added} nuevas, ${kw} con keywords`); }
   } catch (e) { console.warn('backfill plantillas:', e.message); }
+}
+
+// Depósitos + alias de productos (importación de contenedores). Gancho forward-compat:
+// todo contenedor/movimiento queda etiquetado con un depósito (default 'main' = Pacific) para
+// que depósitos/distribuidores múltiples a futuro no obliguen a rehacer el flujo. Idempotente.
+if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
+{
+  let changed = false;
+  if (!Array.isArray(db.settings.warehouses) || db.settings.warehouses.length === 0) {
+    db.settings.warehouses = [{ id: DEFAULT_WAREHOUSE, name: 'Depósito Pacific' }];
+    changed = true;
+  }
+  for (const c of db.containers || []) { if (c && c.warehouse_id == null) { c.warehouse_id = DEFAULT_WAREHOUSE; changed = true; } }
+  for (const m of db.stock_movements || []) { if (m && m.warehouse_id == null) { m.warehouse_id = DEFAULT_WAREHOUSE; changed = true; } }
+  if (changed) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log('Backfill depósitos: warehouse_id en containers/movimientos + depósito default'); }
 }
 
 // Backfill del estado de respuesta de las conversaciones (dirección del último mensaje +
@@ -434,9 +452,10 @@ app.use('/api', (req, res, next) => {
   return requireAuth(req, res, next);
 });
 
-// Helper: append a stock movement (kept short)
-function movement(type, ref, productId, sku, qty) {
-  db.stock_movements.push({ ts: new Date().toISOString(), type, ref, product_id: productId, sku, qty });
+// Helper: append a stock movement (kept short). warehouseId etiqueta el movimiento por depósito;
+// los callers actuales no lo pasan → quedan en 'main' por el default (sin cambios de comportamiento).
+function movement(type, ref, productId, sku, qty, warehouseId = DEFAULT_WAREHOUSE) {
+  db.stock_movements.push({ ts: new Date().toISOString(), type, ref, product_id: productId, sku, qty, warehouse_id: warehouseId });
 }
 function findProductByItem(it) {
   return db.products.find(p => p.id === it.product_id) || db.products.find(p => p.sku === it.sku);
@@ -1037,7 +1056,7 @@ app.get('/api/containers/:id', (req, res) => {
   res.json(c);
 });
 app.post('/api/containers', (req, res) => {
-  const c = { id: req.body.id ?? `local-${Date.now()}`, status: 'in_transit', items: [], ...req.body };
+  const c = { id: req.body.id ?? `local-${Date.now()}`, status: 'in_transit', items: [], warehouse_id: DEFAULT_WAREHOUSE, ...req.body };
   db.containers.push(c);
   save();
   res.json(c);
@@ -1049,22 +1068,70 @@ app.patch('/api/containers/:id', (req, res) => {
   save();
   res.json(db.containers[i]);
 });
+// "Nacionalizar" = acreditar los m² del contenedor al stock del depósito. Solo suma cantidad;
+// NO toca p.cost (el costo nacionalizado se gestiona aparte). Devuelve reporte de lo cargado y
+// lo ignorado (ítems sin producto asociado) en vez de descartarlos en silencio.
 app.post('/api/containers/:id/receive', (req, res) => {
   const c = db.containers.find(x => x.id === req.params.id);
   if (!c) return res.sendStatus(404);
   if (c.status === 'received') return res.status(409).json({ error: 'already received' });
+  const wh = c.warehouse_id || DEFAULT_WAREHOUSE;
+  const credited = [], skipped = [];
   for (const item of (c.items || [])) {
+    const qty = Number(item.quantity) || 0;
     const p = findProductByItem(item);
-    if (!p) continue;
-    p.stock = (Number(p.stock) || 0) + (Number(item.quantity) || 0);
-    movement('container_receive', c.id, p.id, p.sku, item.quantity);
+    if (!p) { skipped.push({ sku: item.sku || '', description: item.description || '', quantity: qty }); continue; }
+    p.stock = (Number(p.stock) || 0) + qty;
+    movement('container_receive', c.id, p.id, p.sku, qty, wh);
+    credited.push({ sku: p.sku, name: p.name, quantity: qty });
   }
   c.status = 'received';
   c.received_at = new Date().toISOString();
   save();
+  res.json({ container: c, credited, skipped });
+});
+// Adjuntar un documento al contenedor (invoice / packing / otro). Varios por contenedor.
+app.post('/api/containers/:id/documents', (req, res) => {
+  const c = db.containers.find(x => x.id === req.params.id);
+  if (!c) return res.sendStatus(404);
+  const { data_base64, filename, content_type, kind } = req.body || {};
+  if (!data_base64) return res.status(400).json({ error: 'falta el archivo' });
+  const okType = /pdf|image\/|sheet|excel|csv|officedocument/i.test(content_type || '') || /\.(pdf|png|jpe?g|webp|xlsx|xls|csv)$/i.test(filename || '');
+  if (!okType) return res.status(400).json({ error: 'tipo no soportado (PDF, imagen, Excel o CSV)' });
+  let buf;
+  try { buf = Buffer.from(String(data_base64), 'base64'); } catch { return res.status(400).json({ error: 'archivo inválido' }); }
+  if (buf.length > 16 * 1024 * 1024) return res.status(400).json({ error: 'archivo muy grande (máx 16MB)' });
+  const safe = String(filename || 'documento').replace(/[^\w.\-]+/g, '_').slice(-60) || 'documento';
+  const stored = `${crypto.randomBytes(8).toString('hex')}-${safe}`;
+  try { fs.writeFileSync(path.join(UPLOAD_DIR, stored), buf); } catch (e) { return res.status(500).json({ error: 'no se pudo guardar: ' + e.message }); }
+  if (!Array.isArray(c.documents)) c.documents = [];
+  const doc = { id: `doc-${crypto.randomBytes(4).toString('hex')}`, url: `${appBase(req)}/uploads/${stored}`, filename: safe, kind: ['invoice', 'packing', 'other'].includes(kind) ? kind : 'other', uploaded_at: new Date().toISOString() };
+  c.documents.push(doc);
+  save();
+  res.json({ container: c, document: doc });
+});
+app.delete('/api/containers/:id/documents/:docId', (req, res) => {
+  const c = db.containers.find(x => x.id === req.params.id);
+  if (!c) return res.sendStatus(404);
+  c.documents = (c.documents || []).filter(d => d.id !== req.params.docId);
+  save();
   res.json(c);
 });
 app.get('/api/stock_movements', (_, res) => res.json(db.stock_movements));
+// Alias de productos aprendidos (descripción del packing/invoice → producto). Upsert por alias
+// normalizado: la próxima importación resuelve ese nombre solo.
+app.get('/api/product-aliases', (_, res) => res.json(db.product_aliases || []));
+app.post('/api/product-aliases', (req, res) => {
+  const { description, product_id } = req.body || {};
+  const alias = normProd(description);
+  if (!alias || !product_id) return res.status(400).json({ error: 'falta descripción o producto' });
+  if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
+  const ex = db.product_aliases.find(a => a.alias === alias);
+  if (ex) { ex.product_id = product_id; ex.raw = String(description); }
+  else db.product_aliases.push({ id: `pa-${crypto.randomBytes(4).toString('hex')}`, alias, raw: String(description), product_id });
+  save();
+  res.json({ ok: true, alias });
+});
 
 // ---------- Banco de imágenes (Google Drive, solo lectura) ----------
 const DRIVE_ROOT = process.env.DRIVE_ROOT_FOLDER || '1GttGPDMj120WiYPgCimclfsLFwopV107';

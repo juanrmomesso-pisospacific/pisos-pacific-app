@@ -55,6 +55,9 @@ export const api = {
   // Container actions
   containerReceive: (id: string) => post(`/api/containers/${id}/receive`),
   containerCreate:  (body: any) => post(`/api/containers`, body),
+  containerAddDocument:    (id: string, body: { data_base64: string; filename: string; content_type: string; kind?: string }) => post(`/api/containers/${id}/documents`, body),
+  containerRemoveDocument: (id: string, docId: string) => del(`/api/containers/${id}/documents/${docId}`),
+  productAliasSave:        (description: string, product_id: string) => post(`/api/product-aliases`, { description, product_id }),
   // MercadoPago — T6.A
   paymentLinkCreate:   (saleId: string, amount?: number) => post(`/api/sales/${saleId}/payment-link`, amount != null ? { amount } : undefined),
   paymentLinkSimulate: (linkId: string) => post(`/api/payment-links/${linkId}/simulate-paid`),

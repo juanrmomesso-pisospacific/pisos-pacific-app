@@ -44,7 +44,7 @@ function ContainersDrawer({ containers, onReceive }: { containers: Container[]; 
                     <td className="py-1.5 text-muted-foreground">{it.sku}</td>
                     <td className="py-1.5">{it.description}</td>
                     <td className="py-1.5 text-right tabular">{fmtInt(it.quantity)}</td>
-                    <td className="py-1.5 text-right tabular text-muted-foreground">${it.unit_cost_usd.toFixed(2)}</td>
+                    <td className="py-1.5 text-right tabular text-muted-foreground">{it.unit_cost_usd != null ? `$${it.unit_cost_usd.toFixed(2)}` : "—"}</td>
                   </tr>
                 ))}
                 <tr className="font-medium"><td className="py-1.5"></td><td className="py-1.5">Total</td><td className="py-1.5 text-right tabular">{fmtInt(total)}</td><td></td></tr>

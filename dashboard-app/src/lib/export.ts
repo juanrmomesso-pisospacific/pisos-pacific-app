@@ -30,6 +30,16 @@ export function parseCSV(text: string): Record<string, string>[] {
   return clean.slice(1).map(r => Object.fromEntries(headers.map((h, i) => [h, (r[i] ?? "").trim()])))
 }
 
+// Lee un File y devuelve solo el base64 (sin el prefijo data:...;base64,). Para subir adjuntos.
+export function fileToBase64(file: File): Promise<string> {
+  return new Promise((res, rej) => {
+    const r = new FileReader()
+    r.onload = () => res(String(r.result).split(",")[1] || "")
+    r.onerror = rej
+    r.readAsDataURL(file)
+  })
+}
+
 export function downloadCSV(filename: string, headers: string[], rows: Cell[][]) {
   const csv = "\uFEFF" + [headers, ...rows].map(r => r.map(csvCell).join(",")).join("\r\n")
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" })

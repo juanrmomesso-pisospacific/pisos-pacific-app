@@ -202,8 +202,16 @@ export type ContainerItem = {
   sku: string
   description: string
   quantity: number
-  unit_cost_usd: number
+  unit_cost_usd?: number   // opcional: precio de invoice (NO costo nacionalizado, que va aparte)
   lot?: string
+}
+
+export type ContainerDocument = {
+  id: string
+  url: string
+  filename: string
+  kind: "invoice" | "packing" | "other"
+  uploaded_at: string
 }
 
 export type Container = {
@@ -215,5 +223,7 @@ export type Container = {
   eta: string
   received_at?: string
   items: ContainerItem[]
+  documents?: ContainerDocument[]
+  warehouse_id?: string
   notes?: string
 }

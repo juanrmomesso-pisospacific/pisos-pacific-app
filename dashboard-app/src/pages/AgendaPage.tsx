@@ -13,9 +13,11 @@ import { cn } from "@/lib/utils"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import type { Sale, Container } from "@/lib/types"
 import { type Task, type TaskType, TASK_TYPE_LABEL, TASK_TYPE_ORDER } from "@/lib/tasks"
+import { ContainerImportForm } from "@/components/forms/ContainerImportForm"
+import { ContainerDetailSheet } from "@/components/forms/ContainerDetailSheet"
 
 type EventKind = "delivery" | "container" | "medicion" | "remito" | "visita" | "seguimiento" | "otro"
-type Event = { ts: number; date: string; kind: EventKind; title: string; subtitle: string; meta?: string; crew?: string; taskId?: string; saleId?: string; status?: string; task?: Task; dayIndex?: number; totalDays?: number; endDate?: string }
+type Event = { ts: number; date: string; kind: EventKind; title: string; subtitle: string; meta?: string; crew?: string; taskId?: string; saleId?: string; containerId?: string; status?: string; task?: Task; dayIndex?: number; totalDays?: number; endDate?: string }
 type View = "lista" | "calendario" | "equipos"
 
 // Etiqueta para reconocer una venta: obra primero, después cliente y nº.
@@ -50,6 +52,8 @@ export default function AgendaPage() {
   const tasks = useApi<Task[]>("/api/tasks").data ?? []
   const [view, setView] = useState<View>("calendario")
   const [newOpen, setNewOpen] = useState(false)
+  const [containerOpen, setContainerOpen] = useState(false)
+  const [detailId, setDetailId] = useState<string | null>(null)
 
   const events = useMemo<Event[]>(() => {
     const out: Event[] = []
@@ -92,6 +96,7 @@ export default function AgendaPage() {
         title: `${c.id} · ${c.vessel}`,
         subtitle: `${c.supplier} · ${items.length} SKUs`,
         meta: items.reduce((s, i) => s + (Number(i.quantity) || 0), 0).toLocaleString("es-AR") + " m²",
+        containerId: c.id,
       })
     }
     for (const t of tasks) {
@@ -112,6 +117,8 @@ export default function AgendaPage() {
     return out.sort((a, b) => a.ts - b.ts)
   }, [sales, containers, tasks])
 
+  const detailContainer = useMemo(() => containers.find(c => c.id === detailId) ?? null, [containers, detailId])
+
   return (
     <>
       <TopbarActions>
@@ -122,15 +129,18 @@ export default function AgendaPage() {
             <TabsTrigger value="lista" className="gap-1.5"><List className="h-3.5 w-3.5" />Lista</TabsTrigger>
           </TabsList>
         </Tabs>
+        <Button size="sm" variant="outline" onClick={() => setContainerOpen(true)}><Ship className="h-4 w-4" />Container</Button>
         <Button size="sm" onClick={() => setNewOpen(true)}><Plus className="h-4 w-4" />Programar</Button>
       </TopbarActions>
       <div className="px-4 lg:px-6 space-y-3">
         {view !== "equipos" && <EventLegend />}
-        {view === "calendario" ? <CalendarView events={events} sales={sales} tasks={tasks} />
+        {view === "calendario" ? <CalendarView events={events} sales={sales} tasks={tasks} onOpenContainer={setDetailId} />
           : view === "equipos" ? <TeamsView sales={sales} />
-          : <ListView events={events} />}
+          : <ListView events={events} onOpenContainer={setDetailId} />}
       </div>
       <NewEventSheet open={newOpen} onOpenChange={setNewOpen} sales={sales} />
+      <ContainerImportForm open={containerOpen} onOpenChange={setContainerOpen} />
+      <ContainerDetailSheet container={detailContainer} onClose={() => setDetailId(null)} />
     </>
   )
 }
@@ -378,7 +388,7 @@ function daysGrid(month: Date): { date: Date; inMonth: boolean; key: string }[] 
   })
 }
 
-function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]; tasks: Task[] }) {
+function CalendarView({ events, sales, tasks, onOpenContainer }: { events: Event[]; sales: Sale[]; tasks: Task[]; onOpenContainer: (id: string) => void }) {
   const today = new Date(); today.setHours(0,0,0,0)
   const [cursor, setCursor] = useState(startOfMonth(today))
   const [focused, setFocused] = useState<string | null>(null)
@@ -540,7 +550,7 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
                       draggable={canDrag}
                       onDragStart={(ev) => { if (!canDrag) return; ev.stopPropagation(); ev.dataTransfer.setData("text/event", JSON.stringify({ action: "move", kind: e.kind, saleId: e.saleId, taskId: e.taskId, fromDate: e.date.slice(0, 10), dayIndex: 0 })); ev.dataTransfer.effectAllowed = "move"; setDraggingKey(evKey) }}
                       onDragEnd={() => { setDraggingKey(null); setDragOverDate(null) }}
-                      onClick={(ev) => { ev.stopPropagation(); if (e.task && e.kind === "medicion") setMedicionTask(e.task); else if (e.task && e.kind === "remito") setInformeTask(e.task); else if (e.saleId) setFocused(e.date.slice(0, 10)) }}
+                      onClick={(ev) => { ev.stopPropagation(); if (e.kind === "container" && e.containerId) onOpenContainer(e.containerId); else if (e.task && e.kind === "medicion") setMedicionTask(e.task); else if (e.task && e.kind === "remito") setInformeTask(e.task); else if (e.saleId) setFocused(e.date.slice(0, 10)) }}
                       className={cn("h-5 leading-none border flex items-center gap-1 text-[10px] px-1.5",
                         st.bg, st.border, st.text,
                         s.hasStart ? "rounded-l-md" : "rounded-l-none border-l-0", s.hasEnd ? "rounded-r-md" : "rounded-r-none border-r-0",
@@ -588,6 +598,9 @@ function CalendarView({ events, sales, tasks }: { events: Event[]; sales: Sale[]
                   <div className="text-xs text-muted-foreground">{e.subtitle}</div>
                   {e.crew && <div className="text-xs text-muted-foreground mt-1">Equipo: {e.crew}</div>}
                   {e.meta && <div className="text-xs tabular text-muted-foreground mt-1">{e.meta}</div>}
+                  {e.kind === "container" && e.containerId && (
+                    <Button size="sm" variant="outline" className="h-7 mt-2 text-xs" onClick={() => { onOpenContainer(e.containerId!); setFocused(null) }}>Ver container</Button>
+                  )}
                 </div>
               )
             })}
@@ -968,7 +981,7 @@ function InformeFormSheet({ task, sale, onClose }: { task: Task | null; sale: Sa
   )
 }
 
-function ListView({ events }: { events: Event[] }) {
+function ListView({ events, onOpenContainer }: { events: Event[]; onOpenContainer: (id: string) => void }) {
   const grouped = useMemo(() => {
     const m = new Map<string, Event[]>()
     for (const e of events) {
@@ -996,8 +1009,10 @@ function ListView({ events }: { events: Event[] }) {
             {items.map((e, i) => {
               const st = KIND_STYLE[e.kind]
               const Icon = st.icon
+              const clickable = e.kind === "container" && !!e.containerId
               return (
-                <div key={i} className="flex items-start gap-3 border-t border-border pt-3 first:border-t-0 first:pt-0">
+                <div key={i} className={cn("flex items-start gap-3 border-t border-border pt-3 first:border-t-0 first:pt-0", clickable && "cursor-pointer hover:bg-muted/40 -mx-2 px-2 rounded")}
+                  onClick={clickable ? () => onOpenContainer(e.containerId!) : undefined}>
                   <div className={cn("mt-0.5", st.text)}><Icon className="h-4 w-4" /></div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">

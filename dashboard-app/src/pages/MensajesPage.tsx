@@ -17,6 +17,7 @@ import { useConfirm } from "@/components/ui/confirm"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
 import { fmtMoney, cn } from "@/lib/utils"
+import { fileToBase64 } from "@/lib/export"
 import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote } from "@/lib/types"
 
@@ -347,10 +348,10 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
     if (!/pdf|image\//i.test(file.type) && !/\.(pdf|png|jpe?g|webp)$/i.test(file.name)) { alert("Solo PDF o imágenes."); return }
     setUploading(true)
     try {
-      const dataUrl: string = await new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result)); r.onerror = rej; r.readAsDataURL(file) })
+      const data_base64 = await fileToBase64(file)
       const r = await fetch(`/api/conversations/${conversation.id}/send-file`, {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data_base64: dataUrl.split(",")[1], filename: file.name, content_type: file.type }),
+        body: JSON.stringify({ data_base64, filename: file.name, content_type: file.type }),
       })
       const j = await r.json().catch(() => ({}))
       if (!j.ok) alert("No se pudo enviar el archivo: " + (j.delivery?.reason || j.error || "error") + (j.url ? "\n\nLink:\n" + j.url : ""))
