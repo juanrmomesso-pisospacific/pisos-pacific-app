@@ -144,7 +144,17 @@ export async function handleInbound(db, save, channel, payload) {
     ...(parsed.media ? { media: parsed.media } : {}),   // descriptor temporal; server.js baja y guarda
   };
   db.messages.push(msg);
+  // Anti-enterrado: si el entrante llega FUERA DE ORDEN (ts viejo — típico de un webhook
+  // demorado/reintentado por Meta durante un deploy), touchConv no lo subiría y quedaría
+  // enterrado en la bandeja. En vivo igual tiene que verse: lo surfaceamos por hora de LLEGADA
+  // y lo marcamos pendiente. El globo del chat sigue mostrando la hora real (msg.ts).
+  const surfaced = !conv.last_message_at || ts >= conv.last_message_at;
   touchConv(conv, 'in', ts, text);
+  if (!surfaced) {
+    conv.last_message_at = new Date().toISOString();
+    conv.last_message_preview = String(text).slice(0, 140);
+    conv.last_message_direction = 'in';
+  }
   conv.unread_count = (conv.unread_count || 0) + 1;
   if (conv.status === 'closed') conv.status = 'open';
   save();

@@ -1596,6 +1596,27 @@ app.post('/api/admin/test-weekly-reminder', requireAdmin, async (_req, res) => {
     res.json({ sent: true, to, bbva, bdc });
   } catch (e) { res.status(400).json({ error: e.message }); }
 });
+// Export read-only (admin) para analizar cómo respondemos por canal y armar plantillas de
+// sugerencia diferenciadas. Anonimizado: solo canal/dirección/cuerpo/fecha — sin id de contacto,
+// nombre, email ni id de conversación. Uso puntual de análisis.
+app.get('/api/admin/messages-export', requireAdmin, (_req, res) => {
+  const chOf = new Map((db.conversations || []).map(c => [c.id, c.channel]));
+  const byChannel = {};
+  const messages = [];
+  for (const m of db.messages || []) {
+    const channel = chOf.get(m.conversation_id);
+    if (!channel) continue;
+    byChannel[channel] = byChannel[channel] || { in: 0, out: 0 };
+    byChannel[channel][m.direction === 'out' ? 'out' : 'in']++;
+    const body = String(m.body || '').slice(0, 1500);
+    if (body) messages.push({ channel, direction: m.direction, body, ts: m.ts });
+  }
+  // Plantillas actuales (para comparar) + fuentes de leads (contexto del canal email).
+  const templates = (db.templates || []).map(t => ({ name: t.name, channel: t.channel, keywords: t.keywords || '', body: t.body }));
+  const leadSources = {};
+  for (const l of db.leads || []) leadSources[l.source || '—'] = (leadSources[l.source || '—'] || 0) + 1;
+  res.json({ byChannel, leadSources, totalMessages: messages.length, templates, messages });
+});
 // Disparo manual (para probar o forzar): corre en background.
 app.post('/api/import/mp-sync/auto-run', (_req, res) => {
   db.settings.mp_last_sync = null;
