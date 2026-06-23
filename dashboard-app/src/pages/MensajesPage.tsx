@@ -1,10 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Search, Send, Smile, FileText, Phone, Mail, ExternalLink, MoreHorizontal, UserCircle2, MessageCircle, AtSign, Sparkles, ChevronRight, ChevronLeft, Paperclip, Info, Wand2 } from "lucide-react"
+import { Search, Send, Smile, FileText, Phone, Mail, ExternalLink, MoreHorizontal, UserCircle2, AtSign, Sparkles, ChevronRight, ChevronLeft, Paperclip, Info, Wand2, Archive } from "lucide-react"
 import { Link, useSearchParams } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
 import { useApi, getJSON } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
@@ -37,7 +36,8 @@ type ChannelFilter = "all" | Channel
 export default function MensajesPage() {
   // Auto-refresh: la lista de conversaciones y los leads se repiden solos cada 8s
   // (aparecen mensajes/conversaciones nuevos sin recargar la página).
-  const conversations = useApi<Conversation[]>("/api/conversations", { pollMs: 8000 }).data ?? []
+  const convApi = useApi<Conversation[]>("/api/conversations", { pollMs: 8000 })
+  const conversations = convApi.data ?? []
   const templates = useApi<Template[]>("/api/templates").data ?? []
   const clients = useApi<Client[]>("/api/clients").data ?? []
   const sales = useApi<Sale[]>("/api/sales").data ?? []
@@ -131,6 +131,16 @@ export default function MensajesPage() {
     setSearchParams(prev => { prev.delete("conv"); return prev }, { replace: true })
   }
 
+  // "Ignorar": archiva la conversación (status closed) → desaparece de la lista (no es consulta:
+  // banco, proveedores, comex, etc.) y deja de contar como pendiente. Se ve con el toggle "Ignoradas".
+  const ignoreConv = async (id: string) => {
+    try {
+      await fetch(`/api/conversations/${id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status: "closed" }) })
+      if (selectedId === id) clearSelection()
+      convApi.refetch()
+    } catch { /* ignore */ }
+  }
+
   // En desktop (lg) cada panel es item directo del grid y se muestra siempre (lg:flex).
   // En móvil mostramos UNO solo: lista si no hay conversación, el chat si hay; la ficha
   // (ContactPanel) se abre como overlay con el botón ⓘ del header del chat.
@@ -142,6 +152,7 @@ export default function MensajesPage() {
         total={conversations.length}
         selectedId={selectedId}
         onSelect={handleSelect}
+        onIgnore={ignoreConv}
         channelFilter={channelFilter}
         setChannelFilter={setChannelFilter}
         q={q}
@@ -187,7 +198,7 @@ export default function MensajesPage() {
 // -----------------------------------------------------------------------------
 
 function ConversationList({
-  conversations, total, selectedId, onSelect, channelFilter, setChannelFilter, q, setQ, leadById,
+  conversations, total, selectedId, onSelect, onIgnore, channelFilter, setChannelFilter, q, setQ, leadById,
   onlyUnread, setOnlyUnread, onlyPending, setOnlyPending, onlyWaiting, setOnlyWaiting, pendingCount, waitingCount,
   showClosed, setShowClosed, sellerFilter, setSellerFilter, sellers, className,
 }: {
@@ -196,6 +207,7 @@ function ConversationList({
   className?: string
   selectedId: string | null
   onSelect: (id: string) => void
+  onIgnore: (id: string) => void
   channelFilter: ChannelFilter
   setChannelFilter: (c: ChannelFilter) => void
   q: string
@@ -217,7 +229,7 @@ function ConversationList({
 }) {
   return (
     <aside className={cn("flex-col border border-border rounded-l-lg bg-card overflow-hidden", className)}>
-      <div className="p-3 border-b border-border space-y-3 shrink-0">
+      <div className="p-3 border-b border-border space-y-2 shrink-0">
         <div className="relative">
           <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
           <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar conversación…" className="pl-8 h-8" />
@@ -227,46 +239,57 @@ function ConversationList({
             Pendientes{pendingCount > 0 ? ` (${pendingCount})` : ""}
           </Button>
           <Button variant={onlyWaiting ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => { setOnlyWaiting(!onlyWaiting); setOnlyPending(false) }} title="Esperando respuesta del cliente (+3 días)">
-            Esperando cliente{waitingCount > 0 ? ` (${waitingCount})` : ""}
+            Esperando{waitingCount > 0 ? ` (${waitingCount})` : ""}
           </Button>
           <Button variant={onlyUnread ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => setOnlyUnread(!onlyUnread)}>No leídos</Button>
-          <Button variant={showClosed ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => setShowClosed(!showClosed)}>{showClosed ? "Cerradas" : "Abiertas"}</Button>
-          <select value={sellerFilter} onChange={(e) => setSellerFilter(e.target.value)} className="h-7 w-full rounded-md border border-input bg-transparent px-2 text-xs">
+          <Button variant={showClosed ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => setShowClosed(!showClosed)}>{showClosed ? "Ignoradas" : "Activas"}</Button>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <select value={channelFilter} onChange={(e) => setChannelFilter(e.target.value as ChannelFilter)} className="h-7 flex-1 rounded-md border border-input bg-transparent px-2 text-xs">
+            <option value="all">Todos los canales</option>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="instagram">Instagram</option>
+            <option value="email">Email</option>
+          </select>
+          <select value={sellerFilter} onChange={(e) => setSellerFilter(e.target.value)} className="h-7 flex-1 rounded-md border border-input bg-transparent px-2 text-xs">
             <option value="">Todos los vendedores</option>
             <option value="__none__">Sin asignar</option>
             {sellers.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
         </div>
-        <Tabs value={channelFilter} onValueChange={(v) => setChannelFilter(v as ChannelFilter)}>
-          <TabsList className="h-8 w-full grid grid-cols-4">
-            <TabsTrigger value="all" className="text-xs">Todas</TabsTrigger>
-            <TabsTrigger value="whatsapp" className="text-xs gap-1"><MessageCircle className="h-3 w-3" />WA</TabsTrigger>
-            <TabsTrigger value="instagram" className="text-xs gap-1"><AtSign className="h-3 w-3" />IG</TabsTrigger>
-            <TabsTrigger value="email" className="text-xs gap-1"><Mail className="h-3 w-3" />Mail</TabsTrigger>
-          </TabsList>
-        </Tabs>
         <div className="text-[11px] text-muted-foreground">{conversations.length} de {total} conversaciones</div>
       </div>
       <div className="flex-1 overflow-y-auto">
         {conversations.length === 0 ? (
           <div className="text-xs text-muted-foreground text-center py-10">Sin conversaciones</div>
         ) : conversations.map((c) => (
-          <ConversationRow key={c.id} conv={c} lead={c.linked_lead_id ? leadById.get(c.linked_lead_id) : undefined} selected={c.id === selectedId} onClick={() => onSelect(c.id)} />
+          <ConversationRow key={c.id} conv={c} lead={c.linked_lead_id ? leadById.get(c.linked_lead_id) : undefined} selected={c.id === selectedId} onClick={() => onSelect(c.id)} onIgnore={onIgnore} />
         ))}
       </div>
     </aside>
   )
 }
 
-function ConversationRow({ conv, lead, selected, onClick }: { conv: Conversation; lead?: Lead; selected: boolean; onClick: () => void }) {
+function ConversationRow({ conv, lead, selected, onClick, onIgnore }: { conv: Conversation; lead?: Lead; selected: boolean; onClick: () => void; onIgnore: (id: string) => void }) {
   const ChannelIcon = channelIcon(conv.channel) ?? AtSign
   const pending = conv.last_message_direction === "in" && conv.status !== "closed"   // espera nuestra respuesta
   return (
-    <button
-      type="button"
+    <div
+      role="button"
+      tabIndex={0}
       onClick={onClick}
-      className={cn("w-full text-left px-3 py-2.5 border-b border-border transition-colors min-w-0", pending && "border-l-2 border-l-amber-400", selected ? "bg-accent" : "hover:bg-accent/50")}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onClick() } }}
+      className={cn("group relative w-full cursor-pointer text-left px-3 py-2.5 border-b border-border transition-colors min-w-0", pending && "border-l-2 border-l-amber-400", selected ? "bg-accent" : "hover:bg-accent/50")}
     >
+      {/* Ignorar (archivar): saca la conversación de la lista. Hover en desktop, visible en móvil. */}
+      <button
+        type="button"
+        title="Ignorar (archivar) — no es una consulta"
+        onClick={(e) => { e.stopPropagation(); onIgnore(conv.id) }}
+        className="absolute right-1.5 bottom-1.5 z-10 h-6 w-6 rounded-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-background opacity-60 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity"
+      >
+        <Archive className="h-3.5 w-3.5" />
+      </button>
       <div className="flex items-start gap-2 min-w-0">
         <div className="h-8 w-8 shrink-0 rounded-full bg-muted flex items-center justify-center">
           <UserCircle2 className="h-5 w-5 text-muted-foreground" />
@@ -276,7 +299,6 @@ function ConversationRow({ conv, lead, selected, onClick }: { conv: Conversation
             <div className="flex items-center gap-1.5 min-w-0">
               <ChannelIcon className="h-3 w-3 shrink-0 text-muted-foreground" />
               <span className="text-sm font-medium truncate">{conv.contact_name}</span>
-              {pending && <Badge className="h-4 px-1.5 text-[9px] shrink-0 rounded-full bg-amber-500 hover:bg-amber-500 text-white border-transparent">Pendiente</Badge>}
             </div>
             <span className="text-[10px] text-muted-foreground shrink-0">{relativeTime(conv.last_message_at)}</span>
           </div>
@@ -298,7 +320,7 @@ function ConversationRow({ conv, lead, selected, onClick }: { conv: Conversation
           ) : null}
         </div>
       </div>
-    </button>
+    </div>
   )
 }
 
