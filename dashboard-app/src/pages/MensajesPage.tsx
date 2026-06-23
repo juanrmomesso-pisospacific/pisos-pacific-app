@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Search, Send, Smile, FileText, Phone, Mail, ExternalLink, MoreHorizontal, UserCircle2, MessageCircle, AtSign, Sparkles, ChevronRight, ChevronLeft, Paperclip, Info } from "lucide-react"
+import { Search, Send, Smile, FileText, Phone, Mail, ExternalLink, MoreHorizontal, UserCircle2, MessageCircle, AtSign, Sparkles, ChevronRight, ChevronLeft, Paperclip, Info, Wand2 } from "lucide-react"
 import { Link, useSearchParams } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -318,6 +318,8 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
   const lastIdRef = useRef<string | null>(null)   // último mensaje conocido (para detectar nuevos al pollear)
   const [uploading, setUploading] = useState(false)
   const [dragOver, setDragOver] = useState(false)
+  const [suggesting, setSuggesting] = useState(false)
+  const aiEnabled = useApi<{ configured: boolean }>("/api/ai/status").data?.configured ?? false
 
   // Enviar un archivo (PDF/imagen) al cliente por el canal de la conversación. Aparece en el chat al pollear.
   const sendFile = async (file: File) => {
@@ -415,6 +417,16 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
     setDraft(d => d + (d && !d.endsWith(" ") ? " " : "") + txt)
     setTimeout(() => taRef.current?.focus(), 0)
   }
+  // IA: redacta un borrador y lo pone en el composer para editar y enviar (no envía).
+  const onSuggest = async () => {
+    if (!conversation || suggesting) return
+    setSuggesting(true); setComposerError(null)
+    try {
+      const r = await api.suggestReply(conversation.id)
+      if (r?.suggestion) { setDraft(r.suggestion); setTimeout(() => taRef.current?.focus(), 0) }
+    } catch (e: any) { setComposerError(e?.message ?? "No se pudo generar la sugerencia") }
+    finally { setSuggesting(false) }
+  }
 
   // Plantillas aprobadas del canal de la conversación (o las marcadas "Todos")
   const availableTemplates = templates.filter(t => (t.channel === conversation.channel || t.channel === "all") && t.status === "approved")
@@ -481,6 +493,9 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
         onPickEmoji={(e) => insertText(e)}
         taRef={taRef}
         onFile={sendFile}
+        aiEnabled={aiEnabled}
+        onSuggest={onSuggest}
+        suggesting={suggesting}
       />
     </section>
   )
@@ -576,6 +591,7 @@ function Bubble({ msg }: { msg: Message }) {
 
 function Composer({
   draft, setDraft, onSend, sending, error, templates, onPickTemplate, onPickEmoji, taRef, onFile,
+  aiEnabled, onSuggest, suggesting,
 }: {
   draft: string
   setDraft: (s: string) => void
@@ -587,6 +603,9 @@ function Composer({
   onPickEmoji: (e: string) => void
   taRef: React.RefObject<HTMLTextAreaElement | null>
   onFile: (f: File) => void
+  aiEnabled?: boolean
+  onSuggest?: () => void
+  suggesting?: boolean
 }) {
   const fileRef = useRef<HTMLInputElement>(null)
   const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -605,6 +624,11 @@ function Composer({
           <Button variant="ghost" size="icon" className="h-9 w-9" type="button" title="Adjuntar PDF o imagen" onClick={() => fileRef.current?.click()}>
             <Paperclip className="h-4 w-4" />
           </Button>
+          {aiEnabled && (
+            <Button variant="ghost" size="icon" className="h-9 w-9" type="button" title="Sugerir respuesta (IA)" disabled={suggesting} onClick={onSuggest}>
+              <Wand2 className={cn("h-4 w-4", suggesting && "animate-pulse text-amber-500")} />
+            </Button>
+          )}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="h-9 w-9" type="button" disabled={templates.length === 0}>

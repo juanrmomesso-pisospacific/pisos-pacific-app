@@ -14,6 +14,7 @@ import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb a
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 import { findSupplierMatch, suggestSuppliers, normSup, isNonSupplier } from './integrations/supplier-match.mjs';
 import { touchConv } from './integrations/conv.mjs';
+import { suggestReply, aiConfigured } from './integrations/ai.mjs';
 import { generatePdf } from './pdf/render.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -214,6 +215,23 @@ if (!Array.isArray(db.conversations) || db.conversations.length === 0 || !Array.
   } catch (e) {
     console.warn('messaging seed missing or invalid:', e.message);
   }
+}
+
+// Backfill de plantillas: completar keywords faltantes + sumar plantillas nuevas del seed
+// (prod ya tiene las plantillas SIN keywords → por eso las sugerencias casi no disparaban).
+// Idempotente: solo agrega lo que falta.
+if (Array.isArray(db.templates)) {
+  try {
+    const seedT = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/messaging.seed.json'), 'utf8')).templates || [];
+    const byName = new Map(db.templates.map((t) => [t.name, t]));
+    let added = 0, kw = 0;
+    for (const s of seedT) {
+      const ex = byName.get(s.name);
+      if (!ex) { db.templates.push({ ...s, id: s.id || `tpl-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 5)}` }); added++; }
+      else if (s.keywords && !ex.keywords) { ex.keywords = s.keywords; kw++; }
+    }
+    if (added || kw) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill plantillas: +${added} nuevas, ${kw} con keywords`); }
+  } catch (e) { console.warn('backfill plantillas:', e.message); }
 }
 
 // Backfill del estado de respuesta de las conversaciones (dirección del último mensaje +
@@ -744,6 +762,28 @@ app.post('/api/conversations/:id/read', (req, res) => {
   conv.unread_count = 0;
   save();
   res.json(conv);
+});
+// IA: ¿está configurada? (el front muestra el botón "Sugerir respuesta" solo si sí)
+app.get('/api/ai/status', (_req, res) => res.json({ configured: aiConfigured() }));
+// IA: redactar un borrador de respuesta para esta conversación (on-demand; no envía nada).
+app.post('/api/conversations/:id/suggest-reply', async (req, res) => {
+  const conv = db.conversations.find(c => c.id === req.params.id);
+  if (!conv) return res.sendStatus(404);
+  if (!aiConfigured()) return res.status(400).json({ error: 'IA no configurada (falta ANTHROPIC_API_KEY).' });
+  const msgs = db.messages.filter(m => m.conversation_id === conv.id)
+    .sort((a, b) => (a.ts || '').localeCompare(b.ts || '')).slice(-15)
+    .map(m => ({ direction: m.direction, body: String(m.body || '').slice(0, 600) }))
+    .filter(m => m.body);
+  // Contexto: lead vinculado + cotizaciones del contacto (para que la IA tenga datos reales).
+  let context = '';
+  const lead = conv.linked_lead_id ? db.leads.find(l => l.id === conv.linked_lead_id) : null;
+  if (lead) context += `Lead: ${lead.name || ''}${lead.interested_products?.length ? ' · interés: ' + lead.interested_products.join(', ') : ''}${lead.approx_m2 ? ' · ~' + lead.approx_m2 + ' m²' : ''}. `;
+  const qs = db.quotes.filter(q => (lead && q.lead_id === lead.id) || (conv.linked_client_name && q.client_name === conv.linked_client_name)).slice(-2);
+  for (const q of qs) context += `Cotización #${q.quote_number} (estado ${q.status}, total ${q.price}). `;
+  try {
+    const suggestion = await suggestReply({ messages: msgs, contact: conv.contact_name, context: context.trim() });
+    res.json({ suggestion });
+  } catch (e) { res.status(400).json({ error: e.message || 'no se pudo generar la sugerencia' }); }
 });
 // Compartir un presupuesto EN esta conversación: WhatsApp → PDF como documento;
 // email → link en el cuerpo + firma; Instagram → link como mensaje. Queda registrado en el chat.
