@@ -2,11 +2,12 @@ import { LayoutGrid, Package, FileText, TrendingUp, Calendar, Users, Settings, H
 import { Link, useLocation } from "react-router-dom"
 import {
   Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupLabel, SidebarGroupContent,
-  SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarMenuButton,
+  SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarMenuBadge,
   SidebarMenuSub, SidebarMenuSubItem, SidebarMenuSubButton, SidebarRail
 } from "@/components/ui/sidebar"
 import { NavUser } from "@/components/NavUser"
 import { useTheme } from "@/contexts/ThemeContext"
+import { useApi } from "@/lib/api"
 
 type NavItem = { label: string; href: string; icon: React.ComponentType<{ className?: string }>; sub?: { label: string; href: string; icon: React.ComponentType<{ className?: string }> }[] }
 
@@ -37,7 +38,7 @@ function isActive(href: string, pathname: string) {
   return pathname.startsWith(href)
 }
 
-function NavGroup({ label, items }: { label: string; items: NavItem[] }) {
+function NavGroup({ label, items, badges }: { label: string; items: NavItem[]; badges?: Record<string, number> }) {
   const { pathname } = useLocation()
   return (
     <SidebarGroup>
@@ -46,6 +47,7 @@ function NavGroup({ label, items }: { label: string; items: NavItem[] }) {
         <SidebarMenu>
           {items.map((item) => {
             const active = isActive(item.href, pathname)
+            const badge = badges?.[item.href]
             return (
               <SidebarMenuItem key={item.href}>
                 <SidebarMenuButton asChild isActive={active} tooltip={item.label}>
@@ -54,6 +56,7 @@ function NavGroup({ label, items }: { label: string; items: NavItem[] }) {
                     <span>{item.label}</span>
                   </Link>
                 </SidebarMenuButton>
+                {badge ? <SidebarMenuBadge className="bg-amber-500 text-white">{badge}</SidebarMenuBadge> : null}
                 {item.sub && active ? (
                   <SidebarMenuSub>
                     {item.sub.map((s) => (
@@ -81,6 +84,9 @@ export function AppSidebar() {
   const { effectiveDark } = useTheme()
   const fullLogo = effectiveDark ? "/LogoPacific.png" : "/LogoPacificDark.png"
   const smallLogo = effectiveDark ? "/LogoPacificSmall.png" : "/LogoPacificSmallDark.png"
+  // Pendientes de responder → badge en "Mensajes" (visible desde cualquier página)
+  const pending = useApi<{ pending: number }>("/api/conversations/stats", { pollMs: 30000 }).data?.pending ?? 0
+  const badges = { "/mensajes": pending }
   return (
     <Sidebar variant="floating" collapsible="icon">
       <SidebarHeader>
@@ -90,7 +96,7 @@ export function AppSidebar() {
         </Link>
       </SidebarHeader>
       <SidebarContent>
-        <NavGroup label="Operación" items={NAV_OPERACION} />
+        <NavGroup label="Operación" items={NAV_OPERACION} badges={badges} />
         <NavGroup label="Administración" items={NAV_ADMIN} />
         <NavGroup label="Sistema" items={NAV_SISTEMA} />
       </SidebarContent>

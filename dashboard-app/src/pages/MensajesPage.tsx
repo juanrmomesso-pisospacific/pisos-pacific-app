@@ -54,6 +54,8 @@ export default function MensajesPage() {
   const [channelFilter, setChannelFilter] = useState<ChannelFilter>("all")
   const [q, setQ] = useState("")
   const [onlyUnread, setOnlyUnread] = useState(false)
+  const [onlyPending, setOnlyPending] = useState(false)   // esperan NUESTRA respuesta (última 'in')
+  const [onlyWaiting, setOnlyWaiting] = useState(false)   // esperan al cliente (última 'out' hace ≥3d)
   const [showClosed, setShowClosed] = useState(false)
   const [sellerFilter, setSellerFilter] = useState("")   // "" todos · "__none__" sin asignar · nombre
   const [selectedId, setSelectedId] = useState<string | null>(convFromUrl)
@@ -63,20 +65,34 @@ export default function MensajesPage() {
   const sellerOf = (c: Conversation) => (c.linked_lead_id ? leadById.get(c.linked_lead_id)?.assigned_seller : "") || ""
   const sellers = useMemo(() => [...new Set(leads.map(l => l.assigned_seller).filter(Boolean) as string[])].sort(), [leads])
 
+  // Pendiente = última del cliente (no se resetea al abrir, solo al responder).
+  const isPending = (c: Conversation) => c.last_message_direction === "in" && c.status !== "closed"
+  const waitCutoff = useMemo(() => new Date(Date.now() - 3 * 86400e3).toISOString(), [])
+  const isWaiting = (c: Conversation) => c.last_message_direction === "out" && c.status !== "closed" && (c.last_outbound_at ?? c.last_message_at ?? "") < waitCutoff
+  const pendingCount = useMemo(() => conversations.filter(isPending).length, [conversations])
+  const waitingCount = useMemo(() => conversations.filter(isWaiting).length, [conversations, waitCutoff])
+
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase()
     return conversations.filter(c => {
       if (c.status === "closed" && !showClosed) return false   // cerradas ocultas salvo toggle
       if (channelFilter !== "all" && c.channel !== channelFilter) return false
       if (onlyUnread && (c.unread_count ?? 0) <= 0) return false
+      if (onlyPending && !isPending(c)) return false
+      if (onlyWaiting && !isWaiting(c)) return false
       if (sellerFilter === "__none__" && sellerOf(c)) return false
       if (sellerFilter && sellerFilter !== "__none__" && sellerOf(c) !== sellerFilter) return false
       if (!needle) return true
       return c.contact_name.toLowerCase().includes(needle)
         || c.contact_id.toLowerCase().includes(needle)
         || (c.last_message_preview ?? "").toLowerCase().includes(needle)
-    }).sort((a, b) => (b.last_message_at ?? "").localeCompare(a.last_message_at ?? ""))   // más nuevo primero (estable)
-  }, [conversations, channelFilter, q, onlyUnread, showClosed, sellerFilter, leadById])
+    }).sort((a, b) => {
+      // Pendientes (esperan nuestra respuesta) primero; dentro, más nuevo primero.
+      const pa = isPending(a) ? 1 : 0, pb = isPending(b) ? 1 : 0
+      if (pa !== pb) return pb - pa
+      return (b.last_message_at ?? "").localeCompare(a.last_message_at ?? "")
+    })
+  }, [conversations, channelFilter, q, onlyUnread, onlyPending, onlyWaiting, showClosed, sellerFilter, leadById, waitCutoff])
 
   // Default-select the first conversation when the list arrives — SOLO en desktop.
   // En móvil queremos ver primero la lista (single-pane); auto-seleccionar saltearía
@@ -133,6 +149,12 @@ export default function MensajesPage() {
         leadById={leadById}
         onlyUnread={onlyUnread}
         setOnlyUnread={setOnlyUnread}
+        onlyPending={onlyPending}
+        setOnlyPending={setOnlyPending}
+        onlyWaiting={onlyWaiting}
+        setOnlyWaiting={setOnlyWaiting}
+        pendingCount={pendingCount}
+        waitingCount={waitingCount}
         showClosed={showClosed}
         setShowClosed={setShowClosed}
         sellerFilter={sellerFilter}
@@ -166,7 +188,8 @@ export default function MensajesPage() {
 
 function ConversationList({
   conversations, total, selectedId, onSelect, channelFilter, setChannelFilter, q, setQ, leadById,
-  onlyUnread, setOnlyUnread, showClosed, setShowClosed, sellerFilter, setSellerFilter, sellers, className,
+  onlyUnread, setOnlyUnread, onlyPending, setOnlyPending, onlyWaiting, setOnlyWaiting, pendingCount, waitingCount,
+  showClosed, setShowClosed, sellerFilter, setSellerFilter, sellers, className,
 }: {
   conversations: Conversation[]
   total: number
@@ -180,6 +203,12 @@ function ConversationList({
   leadById: Map<string, Lead>
   onlyUnread: boolean
   setOnlyUnread: (b: boolean) => void
+  onlyPending: boolean
+  setOnlyPending: (b: boolean) => void
+  onlyWaiting: boolean
+  setOnlyWaiting: (b: boolean) => void
+  pendingCount: number
+  waitingCount: number
   showClosed: boolean
   setShowClosed: (b: boolean) => void
   sellerFilter: string
@@ -193,10 +222,16 @@ function ConversationList({
           <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
           <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar conversación…" className="pl-8 h-8" />
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-1.5">
+          <Button variant={onlyPending ? "default" : "outline"} size="sm" className={cn("h-7 text-xs px-2", !onlyPending && pendingCount > 0 && "border-amber-400 text-amber-700")} onClick={() => { setOnlyPending(!onlyPending); setOnlyWaiting(false) }}>
+            Pendientes{pendingCount > 0 ? ` (${pendingCount})` : ""}
+          </Button>
+          <Button variant={onlyWaiting ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => { setOnlyWaiting(!onlyWaiting); setOnlyPending(false) }} title="Esperando respuesta del cliente (+3 días)">
+            Esperando cliente{waitingCount > 0 ? ` (${waitingCount})` : ""}
+          </Button>
           <Button variant={onlyUnread ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => setOnlyUnread(!onlyUnread)}>No leídos</Button>
           <Button variant={showClosed ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => setShowClosed(!showClosed)}>{showClosed ? "Cerradas" : "Abiertas"}</Button>
-          <select value={sellerFilter} onChange={(e) => setSellerFilter(e.target.value)} className="h-7 flex-1 rounded-md border border-input bg-transparent px-2 text-xs">
+          <select value={sellerFilter} onChange={(e) => setSellerFilter(e.target.value)} className="h-7 w-full rounded-md border border-input bg-transparent px-2 text-xs">
             <option value="">Todos los vendedores</option>
             <option value="__none__">Sin asignar</option>
             {sellers.map((s) => <option key={s} value={s}>{s}</option>)}
@@ -225,11 +260,12 @@ function ConversationList({
 
 function ConversationRow({ conv, lead, selected, onClick }: { conv: Conversation; lead?: Lead; selected: boolean; onClick: () => void }) {
   const ChannelIcon = channelIcon(conv.channel) ?? AtSign
+  const pending = conv.last_message_direction === "in" && conv.status !== "closed"   // espera nuestra respuesta
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`w-full text-left px-3 py-2.5 border-b border-border transition-colors min-w-0 ${selected ? "bg-accent" : "hover:bg-accent/50"}`}
+      className={cn("w-full text-left px-3 py-2.5 border-b border-border transition-colors min-w-0", pending && "border-l-2 border-l-amber-400", selected ? "bg-accent" : "hover:bg-accent/50")}
     >
       <div className="flex items-start gap-2 min-w-0">
         <div className="h-8 w-8 shrink-0 rounded-full bg-muted flex items-center justify-center">
@@ -240,6 +276,7 @@ function ConversationRow({ conv, lead, selected, onClick }: { conv: Conversation
             <div className="flex items-center gap-1.5 min-w-0">
               <ChannelIcon className="h-3 w-3 shrink-0 text-muted-foreground" />
               <span className="text-sm font-medium truncate">{conv.contact_name}</span>
+              {pending && <Badge className="h-4 px-1.5 text-[9px] shrink-0 rounded-full bg-amber-500 hover:bg-amber-500 text-white border-transparent">Pendiente</Badge>}
             </div>
             <span className="text-[10px] text-muted-foreground shrink-0">{relativeTime(conv.last_message_at)}</span>
           </div>

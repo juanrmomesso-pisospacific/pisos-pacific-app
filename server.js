@@ -13,6 +13,7 @@ import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients 
 import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb as driveGetThumb, findFirstImage as driveFirstImage, driveConfigured } from './integrations/drive.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 import { findSupplierMatch, suggestSuppliers, normSup, isNonSupplier } from './integrations/supplier-match.mjs';
+import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -213,6 +214,29 @@ if (!Array.isArray(db.conversations) || db.conversations.length === 0 || !Array.
   } catch (e) {
     console.warn('messaging seed missing or invalid:', e.message);
   }
+}
+
+// Backfill del estado de respuesta de las conversaciones (dirección del último mensaje +
+// timestamps por dirección). Idempotente: solo completa las que no lo tienen todavía
+// (de ahí en más lo mantiene touchConv en cada escritura). "Pendiente" = última 'in'.
+if (Array.isArray(db.conversations) && Array.isArray(db.messages)) {
+  const lastMsg = new Map(), lastIn = new Map(), lastOut = new Map();
+  for (const m of db.messages) {
+    const cid = m.conversation_id, ts = m.ts || '';
+    if (!cid || !ts) continue;
+    if (!lastMsg.has(cid) || ts >= lastMsg.get(cid).ts) lastMsg.set(cid, { ts, dir: m.direction });
+    if (m.direction === 'in') { if (!lastIn.has(cid) || ts > lastIn.get(cid)) lastIn.set(cid, ts); }
+    else { if (!lastOut.has(cid) || ts > lastOut.get(cid)) lastOut.set(cid, ts); }
+  }
+  let n = 0;
+  for (const c of db.conversations) {
+    if (c.last_message_direction) continue;   // ya tiene estado → la mantiene touchConv
+    const lm = lastMsg.get(c.id);
+    if (lm) { c.last_message_direction = lm.dir; n++; }
+    if (lastIn.has(c.id)) c.last_inbound_at = lastIn.get(c.id);
+    if (lastOut.has(c.id)) c.last_outbound_at = lastOut.get(c.id);
+  }
+  if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill reply-state: ${n} conversaciones`); }
 }
 
 // Ensure auth state exists on older db.json files (for users who seeded before auth landed)
@@ -666,6 +690,18 @@ app.get('/api/conversations', (_, res) => {
   const sorted = [...db.conversations].sort((a, b) => (b.last_message_at ?? '').localeCompare(a.last_message_at ?? ''));
   res.json(sorted);
 });
+// Resumen para el badge del nav / triage: cuántas esperan NUESTRA respuesta (última 'in')
+// y cuántas esperan al cliente (última 'out' hace ≥3 días). Excluye cerradas.
+app.get('/api/conversations/stats', (_req, res) => {
+  const cutoff = new Date(Date.now() - 3 * 86400e3).toISOString();
+  let pending = 0, waiting_client = 0;
+  for (const c of db.conversations) {
+    if (c.status === 'closed') continue;
+    if (c.last_message_direction === 'in') pending++;
+    else if (c.last_message_direction === 'out' && (c.last_outbound_at || c.last_message_at || '') < cutoff) waiting_client++;
+  }
+  res.json({ pending, waiting_client });
+});
 app.get('/api/conversations/:id/messages', (req, res) => {
   const msgs = db.messages.filter(m => m.conversation_id === req.params.id).sort((a, b) => a.ts.localeCompare(b.ts));
   res.json(msgs);
@@ -697,8 +733,7 @@ app.post('/api/conversations/:id/messages', async (req, res) => {
     ...(delivery.sent || tokensMissing ? {} : { error: delivery.reason }),
   };
   db.messages.push(msg);
-  conv.last_message_at = msg.ts;
-  conv.last_message_preview = body.slice(0, 140);
+  touchConv(conv, 'out', msg.ts, body);
   conv.unread_count = 0;  // reading + sending clears the unread count
   save();
   res.json(msg);
@@ -759,7 +794,7 @@ app.post('/api/conversations/:id/share-quote', async (req, res) => {
     direction: 'out', body, ts, status: delivery?.sent ? 'sent' : (tokensMissing ? 'sent' : 'failed'),
     template_name: 'presupuesto', ...(delivery?.id ? { wa_id: delivery.id } : {}),
   });
-  conv.last_message_at = ts; conv.last_message_preview = `📄 ${filename}`; conv.unread_count = 0;
+  touchConv(conv, 'out', ts, `📄 ${filename}`); conv.unread_count = 0;
   if (/borrador|draft/i.test(q.status || '')) q.status = 'Enviado';
   save();
   res.json({ ok: !!(delivery?.sent || tokensMissing), channel: conv.channel, link, delivery });
@@ -798,7 +833,7 @@ app.post('/api/conversations/:id/send-file', async (req, res) => {
     direction: 'out', body: `📎 ${safe}`, ts, status: delivery?.sent ? 'sent' : (tokensMissing ? 'sent' : 'failed'),
     ...(delivery?.id ? { wa_id: delivery.id } : {}),
   });
-  conv.last_message_at = ts; conv.last_message_preview = `📎 ${safe}`; conv.unread_count = 0;
+  touchConv(conv, 'out', ts, `📎 ${safe}`); conv.unread_count = 0;
   save();
   res.json({ ok: !!(delivery?.sent || tokensMissing), url, delivery });
 });
@@ -1932,7 +1967,7 @@ app.post('/api/quotes/:id/share', async (req, res) => {
         if (conv) {
           const ts = new Date().toISOString();
           db.messages.push({ id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, conversation_id: conv.id, direction: 'out', body: `📄 ${filename} (enviado)`, ts, status: 'sent', wa_id: whatsapp.id });
-          conv.last_message_at = ts; conv.last_message_preview = '📄 Presupuesto enviado'; conv.unread_count = 0;
+          touchConv(conv, 'out', ts, '📄 Presupuesto enviado'); conv.unread_count = 0;
         }
         save();
       }

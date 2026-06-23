@@ -12,6 +12,7 @@
 import { refreshGoogleToken } from './google-oauth.mjs';
 import { findLeadMatch } from './lead-match.mjs';
 import { withTimeout } from './http.mjs';
+import { touchConv } from './conv.mjs';
 
 const GMAIL = 'https://gmail.googleapis.com/gmail/v1/users/me';
 
@@ -136,10 +137,7 @@ export async function syncGmailLeads(db, save, customQuery) {
       id: `m-email-${msg.id.slice(0, 12)}`, conversation_id: conv.id,
       direction: 'in', body: `✉️ ${subject}\n\n${msgBody}`, ts, status: 'received',
     });
-    if (ts > (conv.last_message_at || '')) {
-      conv.last_message_at = ts;
-      conv.last_message_preview = msgBody.slice(0, 140);
-    }
+    touchConv(conv, 'in', ts, msgBody);
     conv.unread_count = (conv.unread_count || 0) + 1;
     if (conv.status === 'closed') conv.status = 'open';
   }
@@ -192,7 +190,7 @@ export async function syncGmailSent(db, save, customQuery) {
       direction: 'out', body: `✉️ ${subject}\n\n${body}`.trim(), ts, status: 'sent',
     });
     (outTimes.get(conv.id) || outTimes.set(conv.id, []).get(conv.id)).push(Date.parse(ts));
-    if (ts > (conv.last_message_at || '')) { conv.last_message_at = ts; conv.last_message_preview = body.slice(0, 140); }
+    touchConv(conv, 'out', ts, body);
     mirrored++;
   }
   db.settings.gmail_sent_seen_ids = [...seen].slice(-1500);

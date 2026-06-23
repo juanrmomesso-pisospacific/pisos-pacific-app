@@ -11,6 +11,9 @@ export type Conversation = {
   unread_count: number
   last_message_at: string
   last_message_preview?: string
+  last_message_direction?: "in" | "out"   // 'in' = última del cliente → PENDIENTE de responder
+  last_inbound_at?: string
+  last_outbound_at?: string
 }
 
 export type Message = {

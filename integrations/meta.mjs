@@ -18,6 +18,7 @@ import { parseCashCommand, inferType, normalizePhone } from '../import/cash-pars
 import { getBlueRate } from '../import/fx.mjs';
 import { findLeadMatch } from './lead-match.mjs';
 import { findSupplierMatch, suggestSuppliers } from './supplier-match.mjs';
+import { touchConv } from './conv.mjs';
 import { withTimeout } from './http.mjs';
 
 const GRAPH = 'https://graph.facebook.com/v21.0';
@@ -75,7 +76,7 @@ export async function handleInbound(db, save, channel, payload) {
       if (dup) return null;   // saliente equivalente reciente (lo mandó la app) → no duplicar
       const msg = { id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, conversation_id: conv.id, direction: 'out', body: text, ts, status: 'sent', wa_id: mid, via: 'ig-app' };
       db.messages.push(msg);
-      conv.last_message_at = ts; conv.last_message_preview = text.slice(0, 140); conv.unread_count = 0;
+      touchConv(conv, 'out', ts, text); conv.unread_count = 0;
       save();
       return { conversation: conv, message: msg };
     }
@@ -143,8 +144,7 @@ export async function handleInbound(db, save, channel, payload) {
     ...(parsed.media ? { media: parsed.media } : {}),   // descriptor temporal; server.js baja y guarda
   };
   db.messages.push(msg);
-  conv.last_message_at = ts;
-  conv.last_message_preview = text.slice(0, 140);
+  touchConv(conv, 'in', ts, text);
   conv.unread_count = (conv.unread_count || 0) + 1;
   if (conv.status === 'closed') conv.status = 'open';
   save();
