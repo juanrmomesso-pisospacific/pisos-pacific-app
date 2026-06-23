@@ -235,7 +235,7 @@ function ConversationList({
           <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar conversación…" className="pl-8 h-8" />
         </div>
         <div className="flex flex-wrap items-center gap-1.5">
-          <Button variant={onlyPending ? "default" : "outline"} size="sm" className={cn("h-7 text-xs px-2", !onlyPending && pendingCount > 0 && "border-amber-400 text-amber-700")} onClick={() => { setOnlyPending(!onlyPending); setOnlyWaiting(false) }}>
+          <Button variant={onlyPending ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => { setOnlyPending(!onlyPending); setOnlyWaiting(false) }}>
             Pendientes{pendingCount > 0 ? ` (${pendingCount})` : ""}
           </Button>
           <Button variant={onlyWaiting ? "default" : "outline"} size="sm" className="h-7 text-xs px-2" onClick={() => { setOnlyWaiting(!onlyWaiting); setOnlyPending(false) }} title="Esperando respuesta del cliente (+3 días)">
