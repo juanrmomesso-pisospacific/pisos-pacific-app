@@ -1422,6 +1422,22 @@ app.post('/api/cashflow/bulk-assign-supplier', requireAdmin, (req, res) => {
   res.json({ supplier: { id: target.id, name: target.name }, created: wouldCreate, assigned: affected.length, cleared_review: clearedReview });
 });
 
+// Marcar EN MASA como transferencia (fuera del P&L, queda en saldo de caja) los movimientos cuya
+// contraparte/descripción matchea alguno de los patrones, y sacarlos de la revisión. Para el ruido
+// recurrente de extractos (interés, DPF, pagos de tarjeta, etc.). {patterns:[], commit?}. Dry-run.
+app.post('/api/cashflow/bulk-mark-transfer', requireAdmin, (req, res) => {
+  const patterns = (Array.isArray(req.body?.patterns) ? req.body.patterns : []).map((p) => normSup(p)).filter(Boolean);
+  if (!patterns.length) return res.status(400).json({ error: 'faltan patterns' });
+  const hit = (m) => { const hay = normSup(m.counterparty) + ' ' + normSup(m.description); return patterns.some((p) => hay.includes(p)); };
+  const affected = db.cashflow.filter((m) => !m.transfer && hit(m));
+  const byCp = {}; for (const m of affected) byCp[m.counterparty || '(vacío)'] = (byCp[m.counterparty || '(vacío)'] || 0) + 1;
+  if (req.body?.commit !== true) return res.json({ affected: affected.length, would_clear_review: affected.filter((m) => m.needs_review).length, counterparties: byCp });
+  let cleared = 0;
+  for (const m of affected) { m.transfer = true; if (m.needs_review) { m.needs_review = false; m.review_reason = null; cleared++; } }
+  save();
+  res.json({ marked: affected.length, cleared_review: cleared });
+});
+
 // Unificar dos proveedores: re-apunta movimientos (por supplier_id o por nombre) y reglas
 // del 'from' al 'to', y borra el 'from'. {from_id, to_id, commit}. Dry-run por defecto.
 app.post('/api/suppliers/merge', requireAdmin, (req, res) => {

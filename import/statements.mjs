@@ -111,9 +111,13 @@ const RETAIL = /carrefour|\bcoto\b|jumbo|\bdisco\b|\bdia\b|farmacia|chango|\bvea
 const FLOTA = /ypf|appypf|shell|axion|puma|nafta|combust|gnc|estacion|sancor seguros|patente|peaje/i;
 const MKT = /google|facebk|facebook|meta\b|instagram|framer|ads|tiktok/i;
 const TRANSFER = /mov entre cuentas|transferencia a cuenta propia|cuenta propia|debin|su pago en pesos|pago de tarjeta|pago tarjeta visa/i;
+// Resultado financiero / plazo fijo: NO es operación (fuera del P&L, como el interés de MP que se
+// filtra). Interés del banco ("Remuneración de Saldo", "Intereses Ganados") y DPF (plazo fijo).
+const FINANCIAL = /remuneraci[oó]n de saldo|intereses ganados|\bdpf\b|plazo fijo/i;
 
 function classifyBank(desc) {
   const t = norm(desc);
+  if (FINANCIAL.test(t)) return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: 'Resultado financiero', expense_type: 'Otros Gastos y Ajustes', counterparty: /dpf|plazo fijo/.test(t) ? 'Plazo fijo (DPF)' : 'Interés bancario', no_review: true };
   if (TRANSFER.test(t)) return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', expense_type: 'Otros Gastos y Ajustes', counterparty: 'MOV ENTRE CUENTAS' };
   if (/arca|afip|arba|rentas|dgr|sircreb|iibb|ley 25413|impuesto|comision|iva|i\.v\.a/i.test(t)) return { category: 'Impuestos', expense_type: 'Impuestos y Tasas', fixed_variable: 'Fijo', counterparty: 'Impuestos / Banco' };
   if (isPeaje(t) || FLOTA.test(t)) return { category: 'Flota', expense_type: 'Gastos de Flota/Vehículos', counterparty: desc };
@@ -183,7 +187,8 @@ function parseBank(rows, source) {
       description: c.description_override || m.desc,
       currency: m.cur, amount_ars: r2(amount_ars), amount_usd: r2(amount_usd),
       fixed_variable: c.fixed_variable || 'Variable', expense_type: flow === 'Egreso' ? (c.expense_type ?? null) : null,
-      transfer: !!c.transfer, needs_review: true, review_reason: 'extracto bancario importado — verificar clasificación y signo',
+      // Las clasificaciones de alta confianza (interés/DPF) no van a revisión; el resto sí.
+      transfer: !!c.transfer, needs_review: !c.no_review, review_reason: c.no_review ? null : 'extracto bancario importado — verificar clasificación y signo',
     });
   });
 }
