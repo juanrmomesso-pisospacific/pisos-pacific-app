@@ -205,9 +205,19 @@ defecto): asigna find-or-create del proveedor a TODOS los egresos cuya `category
 y opcionalmente los saca de la revisión (`needs_review=false`) — para no clasificar uno por uno.
 **Aplicado en prod:** los **372 gastos de Impuestos → proveedor ARCA** (205 salieron de la revisión; la
 cola de egresos pasó de 240 a 35). Los gastos de tarjeta (comercios Meta/Google/YPF/Volkswagen/Framer/
-Claude) ya estaban bien clasificados con su comercio. Lo que queda en la revisión (35) son mayormente
-**transferencias / pagos de tarjeta / DPF** ("PAGO DE TARJETA VISA", "CUENTA VISA NRO…", "COMPENSACION DE
-FONDOS", "Constitución DPF") — candidatos a marcarse `transfer` (fuera del P&L), los revisa el dueño.
+Claude) ya estaban bien clasificados con su comercio.
+
+**Interés bancario + DPF = transferencia (financiero, fuera del P&L) — convención + automático (24/6):**
+"Remuneración de Saldo", "Intereses Ganados" y DPF/plazo fijo (Constitución/Cancelación/Decremento) NO
+son operaciones (igual que el interés de MP que ya se filtra). **Parser** (`import/statements.mjs`,
+regex `FINANCIAL` en `classifyBank`): las futuras importaciones los marcan `transfer:true` + `no_review`
+solas (el resto del extracto sigue yendo a revisión). **Existentes:** endpoint admin
+`POST /api/cashflow/bulk-mark-transfer {patterns, commit?}` (dry-run) — aplicado: 37 marcados (33
+"Remuneración de Saldo" + 2 "Intereses Ganados" + 2 DPF), 35 salieron de revisión (cola 88 → 53).
+**Lo que queda en revisión (53) lo revisa el dueño** (su criterio): egresos = pagos de tarjeta /
+"CUENTA VISA NRO…" / "COMPENSACION DE FONDOS" → `transfer`; ingresos = transferencias entrantes (¿cobro
+de cliente o entre cuentas?), "Cobro MP (sin nombre)" (asociar venta), cheques. Herramientas reusables:
+`bulk-assign-supplier` (categoría→proveedor) y `bulk-mark-transfer` (patrón→transferencia), ambas dry-run.
 
 **Journey Lead → Cotización → Cliente arreglado (24/6):** Tres problemas resueltos. **(1) El @usuario de IG ya no llega al presupuesto:** al cotizar un lead, `QuoteForm` ahora tiene el **nombre del cliente editable** (precarga el del lead, antes era solo-lectura) con **aviso** si parece @usuario/id (`looksLikeHandle` en `lib/leads.ts`); ese nombre es el que va al PDF/WhatsApp/archivo. **(2) Dedup de clientes:** `POST /api/clients` ahora deduplica (nuevo `integrations/client-match.mjs` `findClientMatch` por email/teléfono/nombre completo, espejo de `lead-match.mjs`) — devuelve el existente (`_existed`) en vez de duplicar, para TODOS los lugares que crean cliente (QuoteForm "+Crear", Cashflow, ClientForm). **(3) Un lead se vuelve Cliente al concretar la venta:** `convertQuoteToSale` (server.js) hace **find-or-create del cliente** (deduplicado) y setea `sale.client_id` + completa datos faltantes; se **quitó el "Convertir a cliente" manual** de `LeadsPage` (ensuciaba). Cotizar NO crea cliente. Verificado: build + smoke (dedup por email, convert crea 1 cliente con client_id) + Playwright (nombre editable + aviso que desaparece, sin pageerror). **PENDIENTE Fase 2 (diseñada, no hecha):** limpieza asistida de los duplicados/`@usuario` que YA existen en prod (`/api/clients/review` + `/merge` + UI en ClientesPage, como la de proveedores). Plan en `~/.claude/plans/ancient-stargazing-yao.md`.
 
