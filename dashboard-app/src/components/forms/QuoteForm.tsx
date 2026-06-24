@@ -9,6 +9,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney } from "@/lib/utils"
 import { SearchPicker } from "@/components/SearchPicker"
 import type { Product, Quote } from "@/lib/types"
+import { looksLikeHandle } from "@/lib/leads"
 
 type Settings = { sellers?: { name: string; phone?: string }[] }
 type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] }
@@ -40,6 +41,8 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
     .map((it) => ({ product_id: it.product_id || "", sku: it.sku, description: it.description, quantity: it.quantity, unit_price: it.unit_price, cost: it.cost, category: it.category || "", zone: it.zone, disc_kind: it.disc_kind, disc_value: it.disc_value }))
 
   const [clientId, setClientId] = useState<string>(editQuote?.client_id ?? "")
+  // Nombre del cliente para el presupuesto (editable en modo lead-driven; precarga el del lead).
+  const [clientName, setClientName] = useState<string>(editQuote?.client_name ?? prefill?.client_name ?? "")
   const [seller, setSeller] = useState<string>(editQuote?.seller_name ?? sellers[0]?.name ?? "")
   const [title, setTitle] = useState<string>(editQuote?.title ?? prefill?.title ?? "")
   const [address, setAddress] = useState<string>(editQuote?.client_address ?? prefill?.client_address ?? "")
@@ -152,7 +155,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
 
     // Resolve client info from either the dropdown selection or the prefill payload.
     // Address always comes from the vendor-editable field below (defaults to client's saved address).
-    const clientName    = isLeadDriven ? prefill!.client_name           : client!.name
+    const resolvedName  = isLeadDriven ? clientName.trim()              : client!.name
     const clientId_     = isLeadDriven ? ""                             : client!.id
     const clientDni     = isLeadDriven ? ""                             : client!.dni
     const clientEmail   = isLeadDriven ? (prefill!.client_email ?? "")   : (client!.emails?.[0] ?? "")
@@ -162,7 +165,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
     // Editable fields (shared by create + edit). Explicit discount values so editing can clear it.
     const common: Partial<Quote> & Record<string, any> = {
       client_id: clientId_,
-      client_name: clientName,
+      client_name: resolvedName,
       client_dni: clientDni,
       client_email: clientEmail,
       client_phone: clientPhone,
@@ -172,7 +175,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       payment_terms: paymentTerms,
       seller_name: seller,
       seller_phone,
-      title: title || clientName,
+      title: title || resolvedName,
       has_iva: hasIva,
       price: total,
       zoned: zoned,
@@ -192,7 +195,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
     }
   }
 
-  const canSubmit = (isLeadDriven || !!client) && items.length > 0 && items.every(i => i.product_id && i.quantity > 0)
+  const canSubmit = (isLeadDriven ? clientName.trim().length > 0 : !!client) && items.length > 0 && items.every(i => i.product_id && i.quantity > 0)
 
   const productPickerItems = products.filter(p => p.active !== false).map(p => {
     const av = (Number(p.stock) || 0) - (Number(p.committed ?? p.reservedStock) || 0)
@@ -262,12 +265,18 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       onSubmit={submit} busy={create.busy || update.busy} error={create.error || update.error || (!canSubmit ? "Completá vendedor, cliente e items" : "")}
       submitLabel={!canSubmit ? "Completá los campos" : isEdit ? "Guardar cambios" : "Crear cotización"}>
       {isLeadDriven ? (
-        <div className="rounded-md border border-border bg-muted/40 p-3 space-y-1.5">
+        <div className="rounded-md border border-border bg-muted/40 p-3 space-y-2">
           <div className="flex items-center justify-between">
             <div className="text-[10px] uppercase tracking-wide text-muted-foreground">Cliente del lead</div>
             {prefill!.source && <Badge variant="muted" className="text-[10px] gap-1"><Sparkles className="h-2.5 w-2.5 text-amber-500" />{prefill!.source}</Badge>}
           </div>
-          <div className="text-sm font-medium">{prefill!.client_name}</div>
+          <div>
+            <FieldLabel>Nombre del cliente (sale en el presupuesto)</FieldLabel>
+            <Input value={clientName} onChange={(e) => setClientName(e.target.value)} placeholder="Nombre real del cliente" />
+            {looksLikeHandle(clientName) && (
+              <div className="text-[11px] text-amber-600 mt-1">⚠️ Parece un usuario de Instagram o un id — poné el nombre real del cliente para el presupuesto.</div>
+            )}
+          </div>
           <div className="text-[11px] text-muted-foreground space-y-0.5">
             {prefill!.client_phone && <div>📞 {prefill!.client_phone}</div>}
             {prefill!.client_email && <div>✉️ {prefill!.client_email}</div>}

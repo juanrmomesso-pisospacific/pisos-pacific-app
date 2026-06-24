@@ -13,6 +13,7 @@ import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients 
 import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb as driveGetThumb, findFirstImage as driveFirstImage, driveConfigured } from './integrations/drive.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
 import { findSupplierMatch, suggestSuppliers, normSup, isNonSupplier } from './integrations/supplier-match.mjs';
+import { findClientMatch } from './integrations/client-match.mjs';
 import { normProd } from './integrations/product-match.mjs';
 import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
@@ -1314,6 +1315,21 @@ app.post('/api/suppliers', (req, res) => {
   save();
   res.json(row);
 });
+// Special-case: crear cliente con DEDUP (por email / teléfono / nombre completo exacto). Si ya
+// existe, devuelve el existente (_existed) en vez de duplicar. Corre ANTES del POST genérico.
+app.post('/api/clients', (req, res) => {
+  const name = req.body?.name;
+  if (!name || !String(name).trim()) return res.status(400).json({ error: 'falta el nombre' });
+  const emails = Array.isArray(req.body.emails) ? req.body.emails : [];
+  const phones = Array.isArray(req.body.phones) ? req.body.phones : [];
+  const existing = findClientMatch(db.clients, { name, email: emails[0], phone: phones[0] });
+  if (existing) return res.json({ ...existing, _existed: true });
+  const id = req.body.id ?? `CLI-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
+  const row = { id, type: 'client', active: true, dni: '', emails: [], phones: [], addresses: [], notes: null, ...req.body, name: String(name).trim(), updated_at: new Date().toISOString() };
+  db.clients.push(row);
+  save();
+  res.json(row);
+});
 // Buscar coincidencias / sugerencias de proveedor para un nombre (para ofrecer opciones
 // "no existe → A/B/C o crear" sin duplicar). Devuelve match exacto + sugerencias parecidas.
 app.get('/api/suppliers/match', (req, res) => {
@@ -1921,6 +1937,31 @@ app.post('/api/quotes/:id/duplicate', (req, res) => {
 // Returns the sale (or null if already converted / quote not found).
 function convertQuoteToSale(q) {
   if (!q || q.sale_id) return null;
+  // CLIENTE: al concretar la venta es cuando un lead "se vuelve cliente". Find-or-create
+  // deduplicado (por email/teléfono/nombre). Si la cotización ya tenía client_id (walk-in), se respeta.
+  let clientId = q.client_id || '';
+  if (!clientId) {
+    const match = findClientMatch(db.clients, { name: q.client_name, email: q.client_email, phone: q.client_phone });
+    if (match) clientId = match.id;
+    else {
+      const c = {
+        id: `CLI-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`, type: 'client', active: true,
+        name: String(q.client_name || '').trim() || 'Cliente', dni: q.client_dni || '',
+        emails: q.client_email ? [q.client_email] : [], phones: q.client_phone ? [q.client_phone] : [],
+        addresses: q.client_address ? [q.client_address] : [], notes: null, updated_at: new Date().toISOString(),
+      };
+      db.clients.push(c);
+      clientId = c.id;
+    }
+    q.client_id = clientId;   // backref en la cotización
+  }
+  // Completar datos faltantes del cliente desde la cotización (sin pisar lo que ya tiene).
+  const cli = db.clients.find(c => c.id === clientId);
+  if (cli) {
+    if (q.client_email && !(cli.emails || []).some(e => String(e).toLowerCase() === String(q.client_email).toLowerCase())) cli.emails = [...(cli.emails || []), q.client_email];
+    if (q.client_phone && !(cli.phones || []).length) cli.phones = [q.client_phone];
+    if (q.client_address && !(cli.addresses || []).length) cli.addresses = [q.client_address];
+  }
   const saleId = `local-sale-${Date.now()}-${Math.random().toString(36).slice(2,6)}`;
   const sale = {
     id: saleId,
@@ -1931,6 +1972,7 @@ function convertQuoteToSale(q) {
     internal_notes: q.internal_notes ?? '',
     public_notes: q.public_notes ?? '',
     payment_terms: q.payment_terms ?? '',
+    client_id: clientId,
     client_name: q.client_name,
     client_dni: q.client_dni,
     client_email: q.client_email ?? '',

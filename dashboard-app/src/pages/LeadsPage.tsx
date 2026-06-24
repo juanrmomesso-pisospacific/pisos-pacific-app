@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react"
-import { Plus, Search, LayoutGrid, Rows3, MoreHorizontal, Phone, Mail, UserPlus, MessageSquare, ExternalLink, Download, Clock } from "lucide-react"
+import { Plus, Search, LayoutGrid, Rows3, MoreHorizontal, Phone, Mail, MessageSquare, ExternalLink, Download, Clock } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -503,26 +503,13 @@ function DetailRow({ label, value }: { label: string; value: string }) {
 function LeadRowActions({ lead, convId }: { lead: Lead; convId?: string }) {
   const navigate = useNavigate()
   const update = useAction(api.update)
-  const createClient = useAction(api.create)
 
   const handleAdvance = async (next: LeadStatus) => {
     const r = await update.run("leads", lead.id, { status: next, last_touch_at: new Date().toISOString() })
     if (r) refresh()
   }
-  const handleConvert = async () => {
-    const client = await createClient.run("clients", {
-      name: lead.name,
-      dni: "",
-      type: "client",
-      emails: lead.email ? [lead.email] : [],
-      phones: lead.phone ? [lead.phone] : [],
-      addresses: lead.address ? [lead.address] : [],
-      updated_at: new Date().toISOString(),
-    })
-    if (!client) return
-    await update.run("leads", lead.id, { status: "Won", last_touch_at: new Date().toISOString() })
-    refresh()
-  }
+  // (El "Convertir a cliente" manual se quitó: un lead se vuelve cliente al concretar la venta —
+  //  marcar "Ganado" convierte la última cotización en venta y crea/asocia el cliente, deduplicado.)
   const handleChat  = () => convId ? navigate(`/mensajes?conv=${convId}`) : navigate("/mensajes")
   const handleEmail = () => {
     if (!lead.email) return
@@ -552,7 +539,6 @@ function LeadRowActions({ lead, convId }: { lead: Lead; convId?: string }) {
         {lead.phone && <DropdownMenuItem onClick={handleCall}><Phone className="h-3.5 w-3.5 mr-2" />Llamar</DropdownMenuItem>}
         {(convId || lead.email || lead.phone) && <DropdownMenuSeparator />}
         {next && <DropdownMenuItem onClick={() => handleAdvance(next)}><ExternalLink className="h-3.5 w-3.5 mr-2" />Avanzar a {STATUS_LABEL[next]}</DropdownMenuItem>}
-        <DropdownMenuItem onClick={handleConvert}><UserPlus className="h-3.5 w-3.5 mr-2" />Convertir a cliente</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-destructive" onClick={() => handleAdvance("Lost")}>Marcar perdido</DropdownMenuItem>
       </DropdownMenuContent>
