@@ -1396,6 +1396,32 @@ app.post('/api/suppliers/register-link', requireAdmin, (req, res) => {
   res.json({ target: { id: target.id, name: target.name }, created: wouldCreate, linked: affected.length });
 });
 
+// Asignar EN MASA un proveedor a todos los egresos de una categoría/tipo de gasto (ej: todos los
+// "Impuestos" → ARCA), y opcionalmente sacarlos de la revisión. Para no cargar uno por uno.
+// {category, supplier_name, clear_review?, commit?}. Dry-run por defecto.
+app.post('/api/cashflow/bulk-assign-supplier', requireAdmin, (req, res) => {
+  const { category, supplier_name, clear_review = true, commit } = req.body || {};
+  if (!category || !supplier_name) return res.status(400).json({ error: 'falta category o supplier_name' });
+  const ck = normSup(category);
+  const affected = db.cashflow.filter((m) => m.flow === 'Egreso' && !m.transfer &&
+    (normSup(m.category).includes(ck) || normSup(m.expense_type).includes(ck)));
+  const byCp = {}; for (const m of affected) byCp[m.counterparty || '(vacío)'] = (byCp[m.counterparty || '(vacío)'] || 0) + 1;
+  let target = findSupplierMatch(db.suppliers, supplier_name);
+  const wouldCreate = !target;
+  if (!commit) return res.json({ affected: affected.length, supplier: target ? target.name : `(crear) ${supplier_name}`, would_clear_review: clear_review ? affected.filter(m => m.needs_review).length : 0, counterparties: byCp });
+  if (!target) {
+    target = { id: `PROV-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`, name: String(supplier_name).trim(), type: 'supplier', active: true, stock_code: null, category_default: null, notes: null };
+    db.suppliers.push(target);
+  }
+  let clearedReview = 0;
+  for (const m of affected) {
+    m.supplier_id = target.id; m.counterparty = target.name; m.counterparty_type = 'supplier';
+    if (clear_review && m.needs_review) { m.needs_review = false; m.review_reason = null; clearedReview++; }
+  }
+  save();
+  res.json({ supplier: { id: target.id, name: target.name }, created: wouldCreate, assigned: affected.length, cleared_review: clearedReview });
+});
+
 // Unificar dos proveedores: re-apunta movimientos (por supplier_id o por nombre) y reglas
 // del 'from' al 'to', y borra el 'from'. {from_id, to_id, commit}. Dry-run por defecto.
 app.post('/api/suppliers/merge', requireAdmin, (req, res) => {
