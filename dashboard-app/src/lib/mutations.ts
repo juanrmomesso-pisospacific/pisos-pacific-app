@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { errorMessage } from "./api"
+import { errorMessage, triggerGlobalRefresh } from "./api"
 
 async function post<T = any>(url: string, body?: unknown): Promise<T> {
   const r = await fetch(url, {
@@ -80,4 +80,6 @@ export const api = {
 }
 
 /** Reload the page after a successful mutation so all useApi() hooks refetch. Crude but reliable. */
-export function refresh() { window.location.reload() }
+// Refresh suave: re-pide los datos a todos los useApi (sin recargar la página → sin flash ni
+// pérdida de scroll/estado). Antes hacía window.location.reload().
+export function refresh() { triggerGlobalRefresh() }

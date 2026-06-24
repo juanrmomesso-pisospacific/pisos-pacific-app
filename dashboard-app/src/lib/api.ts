@@ -14,6 +14,11 @@ async function getJSON<T>(url: string): Promise<T> {
   return r.json() as Promise<T>
 }
 
+// Bus de "refresh suave": refresh() (mutations.ts) avisa a TODOS los useApi para que re-pidan
+// sus datos, sin recargar la página (antes hacía window.location.reload → flash + perdía scroll).
+const refreshListeners = new Set<() => void>()
+export function triggerGlobalRefresh() { refreshListeners.forEach((fn) => fn()) }
+
 // opts.pollMs: re-pide los datos cada N ms (auto-refresh sin recargar la página).
 export function useApi<T>(url: string, opts?: { pollMs?: number }): { data: T | null; loading: boolean; error: Error | null; refetch: () => void } {
   const [data, setData] = useState<T | null>(null)
@@ -34,6 +39,12 @@ export function useApi<T>(url: string, opts?: { pollMs?: number }): { data: T | 
     const id = setInterval(() => setNonce((n) => n + 1), pollMs)
     return () => clearInterval(id)
   }, [pollMs])
+  // Refresh global suave: se suscribe al bus → cuando alguien guarda, re-pide sin recargar.
+  useEffect(() => {
+    const onRefresh = () => setNonce((n) => n + 1)
+    refreshListeners.add(onRefresh)
+    return () => { refreshListeners.delete(onRefresh) }
+  }, [])
   // refetch: re-pide los datos sin recargar la página (evita el flash/scroll del reload).
   return { data, loading, error, refetch: () => setNonce((n) => n + 1) }
 }
