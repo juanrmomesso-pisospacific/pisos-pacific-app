@@ -37,7 +37,8 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   })
   const [amount, setAmount] = useState("")   // monto editable, en la moneda nativa del movimiento
   const [saleId, setSaleId] = useState("")   // venta vinculada (cobro), solo ingresos
-  const [transfer, setTransfer] = useState(false)  // movimiento entre cuentas (fuera del P&L)
+  const [transfer, setTransfer] = useState(false)  // fuera del P&L (transferencia / no operativo)
+  const [outNote, setOutNote] = useState("")       // concepto cuando se marca fuera del P&L
   // re-sync cuando cambia el movimiento abierto
   const [seen, setSeen] = useState<string | null>(null)
   if (mov && mov.id !== seen) {
@@ -52,6 +53,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
     setAmount(String(cur === "USD" ? (mov.amount_usd ?? 0) : (mov.amount_ars ?? 0)))
     setSaleId(mov.linked_sale_id || "")
     setTransfer(!!mov.transfer)
+    setOutNote(mov.transfer ? (mov.category || "") : "")
   }
   const patch = (p: Partial<typeof v>) => setV((prev) => ({ ...prev, ...p }))
   const confirm = useConfirm()
@@ -100,13 +102,14 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
         amount_usd: cur === "USD" ? n : Math.round((n / rate) * 100) / 100,
       })
     }
-    // Transferencia entre cuentas: fuera del P&L pero cuenta para el saldo de la caja. Limpia
-    // cualquier vínculo a venta/clasificación de gasto (no es ni cobro ni gasto). Marcar ambas patas.
+    // Fuera del P&L (transferencia entre cuentas o ingreso/gasto no operativo: alquiler, plata ajena al
+    // negocio, etc.): no entra al P&L pero cuenta para el saldo de la caja. Limpia el vínculo a
+    // venta/clasificación de gasto (no es ni cobro ni gasto). Si es transferencia, marcar ambas patas.
     if (transfer) {
       await update.run("cashflow", mov.id, {
         transfer: true, needs_review: false, review_reason: null,
         sale_ref: null, linked_sale_id: null, counterparty_type: null,
-        category: "Transferencia entre cuentas", subcategory: null, expense_type: null,
+        category: outNote.trim() || "Fuera del P&L", subcategory: null, expense_type: null,
       })
     } else if (transferChanged) {
       // Se desmarcó: vuelve a contar en el P&L.
@@ -169,14 +172,23 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
         {amountChanged && cur === "USD" && <FieldHint>≈ ARS {(Math.abs(Number(amount) || 0) * rate).toLocaleString("es-AR", { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
       </div>
 
-      {/* Transferencia entre cuentas: ni venta ni gasto — fuera del P&L, pero cuenta para el saldo de la caja. */}
-      <label className="flex items-start gap-2 rounded-md border border-border p-2 text-sm">
-        <input type="checkbox" className="mt-0.5" checked={transfer} onChange={(e) => setTransfer(e.target.checked)} />
-        <span>
-          <b>Es un movimiento entre cuentas (transferencia)</b>
-          <FieldHint>No es venta ni gasto: sale del P&amp;L pero sigue contando para el saldo de la caja. Acordate de marcar también la otra pata (ej. el egreso en BBVA).</FieldHint>
-        </span>
-      </label>
+      {/* Fuera del P&L: transferencia entre cuentas o ingreso/gasto no operativo (alquiler, plata ajena
+          al negocio, etc.). Sale del P&L pero cuenta para el saldo de la caja. */}
+      <div className="rounded-md border border-border p-2 space-y-1.5">
+        <label className="flex items-start gap-2 text-sm">
+          <input type="checkbox" className="mt-0.5" checked={transfer} onChange={(e) => setTransfer(e.target.checked)} />
+          <span>
+            <b>Fuera del P&amp;L (transferencia o {isEgreso ? "gasto" : "ingreso"} no operativo)</b>
+            <FieldHint>No es {isEgreso ? "un gasto del negocio" : "una venta"}: sale del P&amp;L pero sigue contando para el saldo de la caja. Para transferencias entre cuentas, marcá también la otra pata (ej. el egreso en BBVA).</FieldHint>
+          </span>
+        </label>
+        {transfer && (
+          <div>
+            <FieldLabel>Concepto</FieldLabel>
+            <Input value={outNote} onChange={(e) => setOutNote(e.target.value)} placeholder={isEgreso ? "Ej. Transferencia entre cuentas" : "Ej. Alquiler, transferencia entre cuentas…"} />
+          </div>
+        )}
+      </div>
 
       {/* Ingreso: ¿es el cobro de una venta? Asociarla actualiza su saldo (registro único, sin duplicar). */}
       {!isEgreso && !transfer && (
