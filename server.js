@@ -1649,13 +1649,18 @@ async function weeklyUploadReminder() {
     const last = db.settings.last_weekly_reminder ? new Date(db.settings.last_weekly_reminder) : null;
     if (last && (now - last) < 6 * 24 * 3600e3) return;                // ya se mandó esta semana
     const bbva = lastLoadedDate('BBVA'), bdc = lastLoadedDate('Banco de Comercio - Cuenta Pesos');
+    // MP: los movimientos entran solos por API, pero SIN nombre (la API no lo da). Los nombres
+    // salen del export manual "Todas las transacciones" → recordarlo SEMANAL (no mensual) para que
+    // no se acumulen sin asignar. Mostramos cuántos MP están sin nombre esperando ese export.
+    const mpPend = (db.cashflow || []).filter(m => m.source === 'mp-api' && /sin nombre/i.test(m.counterparty || '')).length;
     const to = db.settings.reminder_email || 'info@pisospacific.com';
-    const html = `<p>Hola Juan,</p><p>Recordatorio semanal para mantener la caja al día — subí los extractos del banco:</p>`
-      + `<ul><li><b>Banco Francés (BBVA)</b> — último cargado: ${bbva}</li><li><b>Banco de Comercio</b> — último cargado: ${bdc}</li></ul>`
-      + `<p>Entrá a <b>CashFlow → Importar extracto</b> y subí desde esas fechas en adelante (si se pisan días, no pasa nada: se detectan los duplicados). <b>Mercado Pago</b> se sincroniza solo.</p>`;
-    try { await sendMail({ to, subject: '📥 Recordatorio: subí los extractos de la semana', html }); } catch (e) { console.warn('[weekly-reminder] email falló:', e.message); }
+    const html = `<p>Hola Juan,</p><p>Recordatorio semanal para mantener la caja al día:</p>`
+      + `<ul><li><b>Banco Francés (BBVA)</b> — último cargado: ${bbva}</li><li><b>Banco de Comercio</b> — último cargado: ${bdc}</li>`
+      + `<li><b>Mercado Pago</b> — exportá <i>"Todas las transacciones"</i> de la semana${mpPend ? ` (hay <b>${mpPend}</b> movimientos de MP sin nombre esperando)` : ''}</li></ul>`
+      + `<p>Entrá a <b>CashFlow → Importar extracto</b> y subí desde esas fechas en adelante (si se pisan días, no pasa nada: se detectan los duplicados). El de MP les completa los nombres solo.</p>`;
+    try { await sendMail({ to, subject: '📥 Recordatorio: subí extractos + export de MP de la semana', html }); } catch (e) { console.warn('[weekly-reminder] email falló:', e.message); }
     const phone = db.settings.reminder_phone || '+54 11 51750097';
-    try { await sendOutbound('whatsapp', phone, `📥 Recordatorio semanal: subí los extractos del banco (BBVA último ${bbva}, Banco de Comercio último ${bdc}). CashFlow → Importar extracto. MP se sincroniza solo.`); } catch { /* best-effort */ }
+    try { await sendOutbound('whatsapp', phone, `📥 Recordatorio semanal: subí los extractos (BBVA último ${bbva}, Banco de Comercio último ${bdc}) y el export "Todas las transacciones" de MP${mpPend ? ` (${mpPend} de MP sin nombre)` : ''}. CashFlow → Importar extracto.`); } catch { /* best-effort */ }
     db.settings.last_weekly_reminder = now.toISOString();
     save();
     console.log('[weekly-reminder] enviado a', to);

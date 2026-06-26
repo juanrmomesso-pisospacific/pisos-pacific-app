@@ -62,8 +62,8 @@ var TARIFAS = [
   ['Otros',          '— Otro (monto manual) —',                       '—',       0,     'escribí el Precio a mano en la fila'],
 ];
 
-// ====== Colocadores iniciales (editables en Resumen) ======
-var COLOCADORES = ['Hugo', 'Ariel', 'Fabián', 'Victor'];
+// ====== Colocadores iniciales (mismos nombres que en la app; editables en Resumen) ======
+var COLOCADORES = ['Hugo Ramirez', 'Ariel Ernesto Garcia', 'Gastón Aguilera', 'Fabián Ortiz', 'Victor'];
 
 // ====================================================================
 //  MENÚ
@@ -229,6 +229,12 @@ function buildLiquidacion_(ss) {
     .setAllowInvalid(false).build();
   sh.getRange(first, 5, n, 1).setDataValidation(tareaVals);
 
+  // Fecha y Fecha de pago → calendario (datepicker al doble clic)
+  var fechaVal = SpreadsheetApp.newDataValidation().requireDate()
+    .setAllowInvalid(false).setHelpText('Elegí una fecha del calendario').build();
+  sh.getRange(first, 1, n, 1).setDataValidation(fechaVal);    // Fecha
+  sh.getRange(first, 10, n, 1).setDataValidation(fechaVal);   // Fecha de pago
+
   // Bandas + bordes
   banding_(sh, first, lastRow, 11);
   gridBorders_(sh.getRange(3, 1, n + 1, 11));
@@ -279,6 +285,8 @@ function agregarFilas() {
   sh.getRange(first, 3, add, 1).copyTo(sh.getRange(first, 3, add, 1), SpreadsheetApp.CopyPasteType.PASTE_DATA_VALIDATION, false);
   sh.getRange(4, 3, 1, 1).copyTo(sh.getRange(first, 3, add, 1), SpreadsheetApp.CopyPasteType.PASTE_DATA_VALIDATION, false);
   sh.getRange(4, 5, 1, 1).copyTo(sh.getRange(first, 5, add, 1), SpreadsheetApp.CopyPasteType.PASTE_DATA_VALIDATION, false);
+  sh.getRange(4, 1, 1, 1).copyTo(sh.getRange(first, 1, add, 1), SpreadsheetApp.CopyPasteType.PASTE_DATA_VALIDATION, false);
+  sh.getRange(4, 10, 1, 1).copyTo(sh.getRange(first, 10, add, 1), SpreadsheetApp.CopyPasteType.PASTE_DATA_VALIDATION, false);
   sh.getRange(first, 9, add, 1).insertCheckboxes();
   SpreadsheetApp.getActiveSpreadsheet().toast('Se agregaron ' + add + ' filas.');
 }
