@@ -11,7 +11,7 @@ type Mov = {
   _idx: number; _dupe: boolean; _enrich?: string; date: string; flow: string; description: string
   counterparty: string; currency: string; amount_ars: number; amount_usd: number
   category: string; expense_type: string | null; needs_review: boolean
-  _maybe?: boolean; _maybe_ref?: { date: string; description: string; caja_name?: string }
+  _maybe?: boolean; _maybe_ref?: { date: string; description: string; caja_name?: string; sale_ref?: string | null }
 }
 type Report = { source: string; caja: string; total: number; nuevos: number; duplicados: number; revisar: number; ingresos: number; egresos: number; actualizan?: number; posibles?: number }
 
@@ -223,13 +223,15 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
                             <div className="truncate">{m.description}</div>
                             <div className="flex flex-wrap gap-1 mt-0.5">
                               {m._dupe ? <Badge variant="outline" className="text-[9px]">ya cargado</Badge> : null}
-                              {m._maybe && !m._dupe ? <Badge variant="outline" className="text-[9px] border-orange-400 text-orange-600">posible duplicado</Badge> : null}
+                              {m._maybe && !m._dupe ? <Badge variant="outline" className="text-[9px] border-orange-400 text-orange-600">{m._maybe_ref?.sale_ref ? "ya cobrado en venta" : "posible duplicado"}</Badge> : null}
                               {m._enrich ? <Badge variant="outline" className="text-[9px] border-sky-400 text-sky-600">actualiza nombre</Badge> : null}
                               {m.needs_review && !m._dupe ? <Badge variant="outline" className="text-[9px] border-amber-400 text-amber-600">a revisar</Badge> : null}
                             </div>
                             {m._maybe && m._maybe_ref ? (
                               <div className="text-[10px] text-orange-700/80 dark:text-orange-400/80 mt-0.5 truncate">
-                                ≈ ya cargado {m._maybe_ref.date}{m._maybe_ref.caja_name ? ` · ${m._maybe_ref.caja_name}` : ""}{m._maybe_ref.description ? ` · ${m._maybe_ref.description}` : ""}
+                                {m._maybe_ref.sale_ref
+                                  ? `↔ ya registrado como cobro de la venta #${m._maybe_ref.sale_ref} — no lo cargues (sería duplicado)`
+                                  : `≈ ya cargado ${m._maybe_ref.date}${m._maybe_ref.caja_name ? ` · ${m._maybe_ref.caja_name}` : ""}${m._maybe_ref.description ? ` · ${m._maybe_ref.description}` : ""}`}
                               </div>
                             ) : null}
                           </td>

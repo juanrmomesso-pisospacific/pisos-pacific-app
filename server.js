@@ -1964,34 +1964,21 @@ app.post('/api/sales/:id/payment', (req, res) => {
   save();
   res.json(s);
 });
-// Linkear un MOVIMIENTO de caja (cobro que entró por banco/MP) a una VENTA: lo clasifica como ese
-// cobro Y le actualiza el saldo a la venta. Así el cobro se registra UNA sola vez (el movimiento del
-// banco es la fuente) y no se duplica con una carga manual en Ventas. Idempotente: si ya estaba
-// linkeado a otra venta, revierte el pago anterior antes de aplicar el nuevo.
-function applyPayment(sale, deltaUsd) {
-  sale.financial_position = sale.financial_position || { total_invoiced: sale.contract_total || 0, total_paid: 0, balance_due: sale.contract_total || 0 };
-  sale.financial_position.total_paid = Math.max(0, (Number(sale.financial_position.total_paid) || 0) + deltaUsd);
-  sale.financial_position.balance_due = Math.max(0, (Number(sale.contract_total) || 0) - sale.financial_position.total_paid);
-}
+// Linkear un MOVIMIENTO de caja (cobro que entró por banco/MP) a una VENTA: le pone el sale_ref y lo
+// clasifica como cobro. El saldo de la venta se DERIVA de los movimientos con sale_ref (ver GET
+// /api/sales: cashflow_paid = Σ amount_usd), así que no hay que tocar financial_position — el cobro
+// queda registrado UNA sola vez (el movimiento es la fuente). Pasá sale_id:null para desvincular.
 app.post('/api/cashflow/:id/link-sale', requireAdmin, (req, res) => {
   const m = db.cashflow.find(x => x.id === req.params.id);
   if (!m) return res.sendStatus(404);
-  const saleId = req.body?.sale_id || null;   // null = desvincular
-  const amountUsd = Math.abs(Number(m.amount_usd) || 0);
-  // Revertir el pago de la venta anterior si estaba linkeado a otra.
-  if (m.linked_sale_id && m.linked_sale_id !== saleId) {
-    const prev = db.sales.find(s => s.id === m.linked_sale_id);
-    if (prev) applyPayment(prev, -(Number(m.linked_amount_usd) || 0));
-  }
+  const saleId = req.body?.sale_id || null;
   if (!saleId) {
-    m.linked_sale_id = null; m.linked_amount_usd = 0; m.sale_ref = null;
+    m.linked_sale_id = null; m.sale_ref = null;
     save(); return res.json({ movement: m, sale: null });
   }
   const sale = db.sales.find(s => s.id === saleId);
   if (!sale) return res.status(404).json({ error: 'venta no encontrada' });
-  // Aplicar el pago solo si cambió el vínculo (idempotente).
-  if (m.linked_sale_id !== saleId) applyPayment(sale, amountUsd);
-  m.linked_sale_id = saleId; m.linked_amount_usd = amountUsd;
+  m.linked_sale_id = saleId;
   m.sale_ref = sale.quote_number || sale.id;
   m.counterparty = sale.client_name || m.counterparty; m.counterparty_type = 'client';
   m.category = m.category && /venta/i.test(m.category) ? m.category : 'Venta - Pisos';

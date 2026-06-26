@@ -340,26 +340,30 @@ export function parseStatement({ source, buffer, existing = [], rules = null }) 
   // CUALQUIER caja — probablemente ya se cargó a mano (ej: un cobro registrado
   // manualmente con otra fecha o en otra cuenta). No se bloquea: se señala para que
   // el usuario decida (la UI no lo pre-selecciona y muestra a qué se parece).
-  const byAmt = new Map();
+  // Índice de lo ya cargado: guardamos monto ARS, monto USD, fecha, flujo, caja y sale_ref. Matcheamos
+  // por ARS o por USD (±2% / ±$2) — un COBRO registrado a mano en Ventas puede haber quedado en otra
+  // moneda (ej. $0 ARS / US$X) y por eso no matcheaba solo por ARS. Si el match tiene sale_ref, es un
+  // cobro de venta ya cargado → se avisa para no duplicar.
+  const idx = [];
   for (const m of existing) {
-    const dd = (m.date || '').slice(0, 10); if (!dd || m.amount_ars == null) continue;
-    const amt = Math.round(Math.abs(m.amount_ars)); if (!amt) continue;
-    if (!byAmt.has(amt)) byAmt.set(amt, []);
-    byAmt.get(amt).push({ date: dd, description: m.description || m.counterparty || '', caja_name: m.caja_name || m.caja_id || '', flow: m.flow });
+    const dd = (m.date || '').slice(0, 10); if (!dd) continue;
+    idx.push({ date: dd, ars: Math.round(Math.abs(m.amount_ars || 0)), usd: Math.abs(Number(m.amount_usd) || 0), flow: m.flow, description: m.description || m.counterparty || '', caja_name: m.caja_name || m.caja_id || '', sale_ref: m.sale_ref || null });
   }
   const DAY = 86400000;
   movements = movements.map((m) => {
     if (m._dupe || m._enrich) return m;
-    const amt = Math.round(Math.abs(m.amount_ars || 0)); if (!amt) return m;
-    const cands = byAmt.get(amt); if (!cands) return m;
+    const ars = Math.round(Math.abs(m.amount_ars || 0)), usd = Math.abs(Number(m.amount_usd) || 0);
     const t = new Date(m.date.slice(0, 10)).getTime();
     let best = null, bestDiff = Infinity;
-    for (const c of cands) {
+    for (const c of idx) {
       if (c.flow !== m.flow) continue;
       const diff = Math.abs(new Date(c.date).getTime() - t) / DAY;
-      if (diff <= 10 && diff < bestDiff) { best = c; bestDiff = diff; }
+      if (diff > 10 || diff >= bestDiff) continue;
+      const arsMatch = ars && c.ars && c.ars === ars;
+      const usdMatch = usd && c.usd && Math.abs(c.usd - usd) <= Math.max(2, usd * 0.02);
+      if (arsMatch || usdMatch) { best = c; bestDiff = diff; }
     }
-    return best ? { ...m, _maybe: true, _maybe_ref: { date: best.date, description: best.description, caja_name: best.caja_name } } : m;
+    return best ? { ...m, _maybe: true, _maybe_ref: { date: best.date, description: best.description, caja_name: best.caja_name, sale_ref: best.sale_ref } } : m;
   });
 
   return { movements, report: reportStats(movements, { source, caja: CAJA[source].name }) };
