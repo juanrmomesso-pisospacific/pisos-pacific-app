@@ -251,7 +251,7 @@ function buildLiquidacion_(ss) {
   sh.setColumnWidth(4, 200); sh.setColumnWidth(5, 300); sh.setColumnWidth(6, 80);
   sh.setColumnWidth(7, 120); sh.setColumnWidth(8, 130); sh.setColumnWidth(9, 70);
   sh.setColumnWidth(10, 110); sh.setColumnWidth(11, 200);
-  sh.setFrozenRows(3); sh.setFrozenColumns(1);
+  sh.setFrozenRows(3);
 }
 
 // ====================================================================

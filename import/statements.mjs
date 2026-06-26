@@ -111,12 +111,17 @@ const RETAIL = /carrefour|\bcoto\b|jumbo|\bdisco\b|\bdia\b|farmacia|chango|\bvea
 const FLOTA = /ypf|appypf|shell|axion|puma|nafta|combust|gnc|estacion|sancor seguros|patente|peaje/i;
 const MKT = /google|facebk|facebook|meta\b|instagram|framer|ads|tiktok/i;
 const TRANSFER = /mov entre cuentas|transferencia a cuenta propia|cuenta propia|debin|su pago en pesos|pago de tarjeta|pago tarjeta visa/i;
+// Ruido recurrente de extractos que SIEMPRE es transferencia (pago del resumen de tarjeta /
+// movimiento entre cuentas): se auto-clasifica y auto-limpia (los gastos reales son los cargos
+// itemizados de la tarjeta, ya registrados). "Pago con débito" NO entra (es una compra real).
+const CARD_NOISE = /pago de servicios tarjeta|cuenta visa nro|cuenta mastercard nro|pago de tarjeta visa|compensaci[oó]n de fondos/i;
 // Resultado financiero / plazo fijo: NO es operación (fuera del P&L, como el interés de MP que se
 // filtra). Interés del banco ("Remuneración de Saldo", "Intereses Ganados") y DPF (plazo fijo).
 const FINANCIAL = /remuneraci[oó]n de saldo|intereses ganados|\bdpf\b|plazo fijo/i;
 
 function classifyBank(desc) {
   const t = norm(desc);
+  if (CARD_NOISE.test(t)) return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', expense_type: 'Otros Gastos y Ajustes', counterparty: 'MOV ENTRE CUENTAS', no_review: true };
   if (FINANCIAL.test(t)) {
     const isDpf = /dpf|plazo fijo/.test(t);
     // Interés: auto-limpio (no necesita 2da pata). DPF: queda en revisión para registrar también

@@ -224,7 +224,11 @@ rendimiento financiero a BdC. Así el capital del DPF se ve (no queda invisible)
 CAJ-007 creada + constitución de 5.000.000 ARS (15-abr) registrada (caja muestra 5M). **Parser**
 (`import/statements.mjs`, regex `FINANCIAL` en `classifyBank`): el interés se auto-clasifica + auto-limpia;
 el **DPF queda en revisión** con razón "registrar también la pata en la caja Plazo Fijo" (la 2da pata se
-agrega a mano — los DPF son infrecuentes). **Existentes (interés):** endpoint admin
+agrega a mano — los DPF son infrecuentes). **Pagos de tarjeta + compensación de fondos** ("PAGO DE
+SERVICIOS TARJETA", "CUENTA VISA/MASTERCARD NRO", "PAGO DE TARJETA VISA", "COMPENSACION DE FONDOS") =
+transferencia siempre (regex `CARD_NOISE`, auto-limpio) — los gastos reales son los cargos itemizados de
+la tarjeta, ya registrados. El endpoint `bulk-mark-transfer` ahora toma `only_review` (default true) → no
+pisa clasificaciones ya hechas. **Existentes (interés):** endpoint admin
 `POST /api/cashflow/bulk-mark-transfer {patterns, commit?}` (dry-run) — aplicado: 37 marcados (33
 "Remuneración de Saldo" + 2 "Intereses Ganados" + 2 DPF), 35 salieron de revisión (cola 88 → 53).
 **Lo que queda en revisión (53) lo revisa el dueño** (su criterio): egresos = pagos de tarjeta /
