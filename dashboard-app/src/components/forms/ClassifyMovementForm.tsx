@@ -1,6 +1,10 @@
 import { useMemo, useState } from "react"
+import { Trash2 } from "lucide-react"
 import { FormSheet, FieldLabel, FieldHint } from "./FormSheet"
 import { SearchPicker } from "@/components/SearchPicker"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { useConfirm } from "@/components/ui/confirm"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import type { Category, Supplier, CashflowMovement } from "@/lib/types"
@@ -20,11 +24,16 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   const originalName = mov?.counterparty || ""
   const learnable = !isUnnamed(originalName)
 
+  // Moneda nativa del movimiento + tipo de cambio (para recalcular la otra moneda al editar el monto).
+  const cur = (mov?.currency || "ARS").toUpperCase()
+  const rate = mov?.exchange_rate || (mov?.amount_ars && mov?.amount_usd ? mov.amount_ars / mov.amount_usd : 1470)
+
   const [v, setV] = useState({
     counterparty: "", supplier_id: "", client_id: "",
     category: "", subcategory: "", expense_type: "Gastos de Instalaciones y Suministros",
     learn: true,
   })
+  const [amount, setAmount] = useState("")   // monto editable, en la moneda nativa del movimiento
   // re-sync cuando cambia el movimiento abierto
   const [seen, setSeen] = useState<string | null>(null)
   if (mov && mov.id !== seen) {
@@ -36,8 +45,13 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
       category: mov.category || "", subcategory: mov.subcategory || "",
       expense_type: mov.expense_type || "Gastos de Instalaciones y Suministros", learn: true,
     })
+    setAmount(String(cur === "USD" ? (mov.amount_usd ?? 0) : (mov.amount_ars ?? 0)))
   }
   const patch = (p: Partial<typeof v>) => setV((prev) => ({ ...prev, ...p }))
+  const confirm = useConfirm()
+  const remove = useAction(api.remove)
+  const origAmount = mov ? (cur === "USD" ? (mov.amount_usd ?? 0) : (mov.amount_ars ?? 0)) : 0
+  const amountChanged = Number(amount) !== origAmount && amount.trim() !== ""
 
   const catMap = useMemo(() => {
     const m = new Map<string, Set<string>>()
@@ -67,16 +81,27 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   }
 
   async function submit() {
-    if (!mov || !v.counterparty) return
-    await update.run("cashflow", mov.id, {
-      counterparty: v.counterparty, counterparty_type: isEgreso ? "supplier" : "client",
-      supplier_id: v.supplier_id || null, client_id: v.client_id || null,
-      category: v.category || null, subcategory: v.subcategory || null,
-      expense_type: isEgreso ? v.expense_type : null,
-      needs_review: false, review_reason: null,
-    })
+    if (!mov || (!v.counterparty && !amountChanged)) return
+    const body: Record<string, any> = {}
+    // Corregir el monto (recalcula la otra moneda con el TC del movimiento).
+    if (amountChanged) {
+      const n = Math.abs(Number(amount)) || 0
+      body.amount_ars = cur === "USD" ? Math.round(n * rate * 100) / 100 : n
+      body.amount_usd = cur === "USD" ? n : Math.round((n / rate) * 100) / 100
+    }
+    // Clasificación (solo si se eligió contraparte).
+    if (v.counterparty) {
+      Object.assign(body, {
+        counterparty: v.counterparty, counterparty_type: isEgreso ? "supplier" : "client",
+        supplier_id: v.supplier_id || null, client_id: v.client_id || null,
+        category: v.category || null, subcategory: v.subcategory || null,
+        expense_type: isEgreso ? v.expense_type : null,
+        needs_review: false, review_reason: null,
+      })
+    }
+    await update.run("cashflow", mov.id, body)
     // Aprender la regla: el nombre ORIGINAL (crudo) → la clasificación elegida.
-    if (v.learn && learnable) {
+    if (v.learn && learnable && v.counterparty) {
       await createRule.run("cp_rules", {
         match: [originalName], cuit: null, counterparty: v.counterparty,
         category: v.category || null, expense_type: isEgreso ? v.expense_type : null,
@@ -86,6 +111,18 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
     onOpenChange(false); refresh()
   }
 
+  async function handleDelete() {
+    if (!mov) return
+    const ok = await confirm({
+      title: "Eliminar movimiento",
+      description: `Se va a eliminar "${mov.description || mov.counterparty || "este movimiento"}" (${mov.flow} · $${(mov.amount_ars ?? 0).toLocaleString("es-AR")}). Afecta el saldo de la caja. Esta acción no se puede deshacer.`,
+      confirmLabel: "Eliminar", destructive: true,
+    })
+    if (!ok) return
+    const r = await remove.run("cashflow", mov.id)
+    if (r !== null) { onOpenChange(false); refresh() }
+  }
+
   const cpItems = (isEgreso ? suppliers : clients).map((x: any) => ({ id: x.id, label: x.name }))
   const pickCp = (id: string) => {
     const f: any = (isEgreso ? suppliers : clients).find((x: any) => x.id === id)
@@ -93,13 +130,20 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   }
 
   return (
-    <FormSheet open={open} onOpenChange={onOpenChange} title="Clasificar movimiento" onSubmit={submit} busy={update.busy} error={update.error} submitLabel="Guardar">
+    <FormSheet open={open} onOpenChange={onOpenChange} title="Editar / clasificar movimiento" onSubmit={submit} busy={update.busy || remove.busy} error={update.error || remove.error} submitLabel="Guardar">
       {mov ? (
         <div className="rounded-md bg-muted/40 px-3 py-2 text-xs">
           <div className="font-medium">{mov.description || mov.counterparty || "—"}</div>
-          <div className="text-muted-foreground">{mov.flow} · {mov.caja_name} · ${(mov.amount_ars ?? 0).toLocaleString("es-AR")}</div>
+          <div className="text-muted-foreground">{mov.flow} · {mov.caja_name} · {mov.date ? new Date(mov.date).toLocaleDateString("es-AR") : ""}</div>
         </div>
       ) : null}
+
+      <div>
+        <FieldLabel>Monto ({cur})</FieldLabel>
+        <Input type="number" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="0" />
+        {amountChanged && cur === "ARS" && <FieldHint>≈ USD {(Math.abs(Number(amount) || 0) / rate).toLocaleString("es-AR", { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
+        {amountChanged && cur === "USD" && <FieldHint>≈ ARS {(Math.abs(Number(amount) || 0) * rate).toLocaleString("es-AR", { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
+      </div>
 
       <div>
         <FieldLabel>{isEgreso ? "Proveedor" : "Cliente"}</FieldLabel>
@@ -153,6 +197,12 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
       ) : (
         <FieldHint>Este movimiento no tiene nombre de contraparte, así que no se puede aprender una regla (solo se clasifica este).</FieldHint>
       )}
+
+      <div className="pt-2 border-t border-border">
+        <Button type="button" variant="ghost" className="w-full text-destructive hover:text-destructive hover:bg-destructive/10" onClick={handleDelete} disabled={remove.busy}>
+          <Trash2 className="h-4 w-4 mr-1" />Eliminar movimiento
+        </Button>
+      </div>
     </FormSheet>
   )
 }

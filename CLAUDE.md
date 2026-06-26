@@ -199,6 +199,13 @@ _Actualizado: 2026-06-19. Producción deployada y verificada (healthz 200, webho
 5. **Correctitud menor:** reconciliación de cobros `sale_ref` vs `quote_number`; cola para inbound a prueba de fallos totales.
 6. **Operativo del dueño:** cambiar contraseñas (admin sigue `admin123`); WhatsApp/IG tokens pueden vencer → automatizar refresh; rutina mensual MP (importar export con nombres).
 
+**CashFlow — editar monto + eliminar movimiento en el Libro (26/6):** El Libro solo dejaba
+**clasificar** (no editar monto ni borrar) aunque el backend ya soportaba PATCH/DELETE (admin). El
+`ClassifyMovementForm` (ahora "Editar / clasificar movimiento") suma: **campo Monto editable** (en la
+moneda nativa; recalcula la otra moneda con el TC del movimiento) y botón **"Eliminar movimiento"** con
+confirmación (`useConfirm`). El submit manda solo lo que cambió (monto y/o clasificación). Para gastos
+mal cargados. Verificado con Playwright (campo Monto precargado + eliminar, sin pageerror).
+
 **CashFlow — asignación masiva de proveedor + Impuestos→ARCA (24/6):** Nuevo endpoint admin
 `POST /api/cashflow/bulk-assign-supplier {category, supplier_name, clear_review?, commit?}` (dry-run por
 defecto): asigna find-or-create del proveedor a TODOS los egresos cuya `category`/`expense_type` matchea

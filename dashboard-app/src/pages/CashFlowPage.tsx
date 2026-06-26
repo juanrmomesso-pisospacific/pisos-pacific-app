@@ -556,7 +556,7 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
                   {m.flow === "Egreso" ? "-" : ""}{money(m.amount_usd || 0).replace("-", "")}
                 </TableCell>
                 <TableCell className="text-right">
-                  <Button variant="ghost" size="icon" className="h-7 w-7" title="Clasificar / asignar proveedor" onClick={() => setClassify(m)}>
+                  <Button variant="ghost" size="icon" className="h-7 w-7" title="Editar / clasificar / eliminar" onClick={() => setClassify(m)}>
                     <Tag className={cn("h-3.5 w-3.5", m.needs_review ? "text-amber-500" : "text-muted-foreground")} />
                   </Button>
                 </TableCell>
