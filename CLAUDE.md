@@ -207,11 +207,17 @@ y opcionalmente los saca de la revisión (`needs_review=false`) — para no clas
 cola de egresos pasó de 240 a 35). Los gastos de tarjeta (comercios Meta/Google/YPF/Volkswagen/Framer/
 Claude) ya estaban bien clasificados con su comercio.
 
-**Interés bancario + DPF = transferencia (financiero, fuera del P&L) — convención + automático (24/6):**
-"Remuneración de Saldo", "Intereses Ganados" y DPF/plazo fijo (Constitución/Cancelación/Decremento) NO
-son operaciones (igual que el interés de MP que ya se filtra). **Parser** (`import/statements.mjs`,
-regex `FINANCIAL` en `classifyBank`): las futuras importaciones los marcan `transfer:true` + `no_review`
-solas (el resto del extracto sigue yendo a revisión). **Existentes:** endpoint admin
+**Interés bancario + Plazo Fijo/DPF = fuera del P&L — convención + automático (24-26/6):**
+"Remuneración de Saldo", "Intereses Ganados" = **rendimiento financiero** (NO operación, igual que el
+interés de MP que se filtra) → `transfer:true`, auto-limpio de la revisión. **Plazo Fijo (DPF) = ahorro,
+NO gasto:** tiene **caja propia "Plazo Fijo BdC" (CAJ-007)** y se registra en **DOS patas** (ambas
+`transfer:true`, fuera del P&L): constitución = Egreso en BdC Pesos + **Ingreso en Plazo Fijo** (entra el
+capital); cancelación = Ingreso en BdC (vuelve el capital) + Egreso en Plazo Fijo; el **interés** va como
+rendimiento financiero a BdC. Así el capital del DPF se ve (no queda invisible). **Aplicado:** caja
+CAJ-007 creada + constitución de 5.000.000 ARS (15-abr) registrada (caja muestra 5M). **Parser**
+(`import/statements.mjs`, regex `FINANCIAL` en `classifyBank`): el interés se auto-clasifica + auto-limpia;
+el **DPF queda en revisión** con razón "registrar también la pata en la caja Plazo Fijo" (la 2da pata se
+agrega a mano — los DPF son infrecuentes). **Existentes (interés):** endpoint admin
 `POST /api/cashflow/bulk-mark-transfer {patterns, commit?}` (dry-run) — aplicado: 37 marcados (33
 "Remuneración de Saldo" + 2 "Intereses Ganados" + 2 DPF), 35 salieron de revisión (cola 88 → 53).
 **Lo que queda en revisión (53) lo revisa el dueño** (su criterio): egresos = pagos de tarjeta /

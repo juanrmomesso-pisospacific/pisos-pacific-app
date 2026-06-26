@@ -117,7 +117,12 @@ const FINANCIAL = /remuneraci[oó]n de saldo|intereses ganados|\bdpf\b|plazo fij
 
 function classifyBank(desc) {
   const t = norm(desc);
-  if (FINANCIAL.test(t)) return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: 'Resultado financiero', expense_type: 'Otros Gastos y Ajustes', counterparty: /dpf|plazo fijo/.test(t) ? 'Plazo fijo (DPF)' : 'Interés bancario', no_review: true };
+  if (FINANCIAL.test(t)) {
+    const isDpf = /dpf|plazo fijo/.test(t);
+    // Interés: auto-limpio (no necesita 2da pata). DPF: queda en revisión para registrar también
+    // la pata en la caja "Plazo Fijo BdC" (constitución = entra capital; cancelación = sale).
+    return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: isDpf ? 'Plazo fijo' : 'Resultado financiero', expense_type: 'Otros Gastos y Ajustes', counterparty: isDpf ? 'Plazo fijo (DPF)' : 'Interés bancario', no_review: !isDpf, review_reason: isDpf ? 'plazo fijo — registrar también la pata en la caja Plazo Fijo' : null };
+  }
   if (TRANSFER.test(t)) return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', expense_type: 'Otros Gastos y Ajustes', counterparty: 'MOV ENTRE CUENTAS' };
   if (/arca|afip|arba|rentas|dgr|sircreb|iibb|ley 25413|impuesto|comision|iva|i\.v\.a/i.test(t)) return { category: 'Impuestos', expense_type: 'Impuestos y Tasas', fixed_variable: 'Fijo', counterparty: 'Impuestos / Banco' };
   if (isPeaje(t) || FLOTA.test(t)) return { category: 'Flota', expense_type: 'Gastos de Flota/Vehículos', counterparty: desc };
@@ -187,8 +192,8 @@ function parseBank(rows, source) {
       description: c.description_override || m.desc,
       currency: m.cur, amount_ars: r2(amount_ars), amount_usd: r2(amount_usd),
       fixed_variable: c.fixed_variable || 'Variable', expense_type: flow === 'Egreso' ? (c.expense_type ?? null) : null,
-      // Las clasificaciones de alta confianza (interés/DPF) no van a revisión; el resto sí.
-      transfer: !!c.transfer, needs_review: !c.no_review, review_reason: c.no_review ? null : 'extracto bancario importado — verificar clasificación y signo',
+      // Interés: no va a revisión (no_review). DPF y el resto sí (con su razón).
+      transfer: !!c.transfer, needs_review: !c.no_review, review_reason: c.no_review ? null : (c.review_reason || 'extracto bancario importado — verificar clasificación y signo'),
     });
   });
 }
