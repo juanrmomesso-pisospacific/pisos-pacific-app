@@ -185,6 +185,8 @@ export type CashflowMovement = {
   transfer?: boolean          // inter-account movement / FX swap — excluded from P&L
   needs_review: boolean
   review_reason?: string | null
+  linked_sale_id?: string | null    // cobro vinculado a una venta (actualiza su saldo)
+  linked_amount_usd?: number
 }
 
 export type CajaBalance = {

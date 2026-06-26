@@ -199,6 +199,19 @@ _Actualizado: 2026-06-19. Producción deployada y verificada (healthz 200, webho
 5. **Correctitud menor:** reconciliación de cobros `sale_ref` vs `quote_number`; cola para inbound a prueba de fallos totales.
 6. **Operativo del dueño:** cambiar contraseñas (admin sigue `admin123`); WhatsApp/IG tokens pueden vencer → automatizar refresh; rutina SEMANAL MP (importar export con nombres — ahora en el recordatorio de los viernes).
 
+**CashFlow — linkear cobro → venta desde el Libro (evita duplicar cobros) (26/6):** Problema de fondo:
+un cobro por transferencia/banco/MP entra por el extracto/sync, y si además se carga a mano (como
+movimiento de caja o cobro manual) se **duplica**. Regla definida con el dueño: **el movimiento importado
+es la única fuente de la plata; el cobro de la venta es una clasificación sobre ese movimiento** (el
+endpoint `POST /api/sales/:id/payment` NO crea movimiento de caja, así que registrar el pago en Ventas
+solo no duplica — el duplicado venía de cargar el cobro a mano en el cashflow). **Nuevo:** `POST
+/api/cashflow/:id/link-sale {sale_id}` (admin, idempotente: revierte el pago anterior si se re-vincula)
+clasifica el movimiento como cobro de esa venta Y le actualiza `financial_position.total_paid`/`balance_due`.
+En el `ClassifyMovementForm` (Libro), para **ingresos** aparece "¿Es el cobro de una venta?" → buscador de
+ventas (cliente/nº + saldo); al asociar, registra el cobro UNA sola vez y la venta queda paga con plata
+**confirmada por el banco**. Verificado (link/idempotencia/unlink). Proceso: cobros por transferencia/MP →
+clasificar/linkear el movimiento importado; efectivo → carga manual (Caja General).
+
 **CashFlow — editar monto + eliminar movimiento en el Libro (26/6):** El Libro solo dejaba
 **clasificar** (no editar monto ni borrar) aunque el backend ya soportaba PATCH/DELETE (admin). El
 `ClassifyMovementForm` (ahora "Editar / clasificar movimiento") suma: **campo Monto editable** (en la

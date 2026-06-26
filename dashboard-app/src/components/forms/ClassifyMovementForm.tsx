@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button"
 import { useConfirm } from "@/components/ui/confirm"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
-import type { Category, Supplier, CashflowMovement } from "@/lib/types"
+import type { Category, Supplier, CashflowMovement, Sale } from "@/lib/types"
 import { EXPENSE_TYPES, categoriesForType } from "@/lib/cashflow"
+import { fmtMoney } from "@/lib/utils"
 
 type ClientLite = { id: string; name: string }
 const inputSel = "h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm"
@@ -20,6 +21,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   const categories = useApi<Category[]>("/api/categories").data ?? []
   const suppliers = useApi<Supplier[]>("/api/suppliers").data ?? []
   const clients = useApi<ClientLite[]>("/api/clients").data ?? []
+  const sales = useApi<Sale[]>("/api/sales").data ?? []
   const isEgreso = mov?.flow !== "Ingreso"
   const originalName = mov?.counterparty || ""
   const learnable = !isUnnamed(originalName)
@@ -34,6 +36,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
     learn: true,
   })
   const [amount, setAmount] = useState("")   // monto editable, en la moneda nativa del movimiento
+  const [saleId, setSaleId] = useState("")   // venta vinculada (cobro), solo ingresos
   // re-sync cuando cambia el movimiento abierto
   const [seen, setSeen] = useState<string | null>(null)
   if (mov && mov.id !== seen) {
@@ -46,6 +49,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
       expense_type: mov.expense_type || "Gastos de Instalaciones y Suministros", learn: true,
     })
     setAmount(String(cur === "USD" ? (mov.amount_usd ?? 0) : (mov.amount_ars ?? 0)))
+    setSaleId(mov.linked_sale_id || "")
   }
   const patch = (p: Partial<typeof v>) => setV((prev) => ({ ...prev, ...p }))
   const confirm = useConfirm()
@@ -70,6 +74,8 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   const update = useAction(api.update)
   const createRule = useAction(api.create)
   const createSup = useAction(api.create)
+  const link = useAction(api.linkMovementToSale)
+  const linkedSale = sales.find((s) => s.id === saleId) || null
 
   async function createSupplier(name: string) {
     const r = await createSup.run("suppliers", { name, type: "supplier", active: true, stock_code: null, category_default: null, notes: null })
@@ -80,33 +86,37 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
     if (r) patch({ counterparty: (r as ClientLite).name, client_id: (r as ClientLite).id, supplier_id: "" })
   }
 
+  const linkChanged = !isEgreso && saleId !== (mov?.linked_sale_id || "")
   async function submit() {
-    if (!mov || (!v.counterparty && !amountChanged)) return
-    const body: Record<string, any> = {}
-    // Corregir el monto (recalcula la otra moneda con el TC del movimiento).
+    if (!mov || (!v.counterparty && !amountChanged && !linkChanged)) return
+    // Corregir el monto primero (recalcula la otra moneda con el TC del movimiento).
     if (amountChanged) {
       const n = Math.abs(Number(amount)) || 0
-      body.amount_ars = cur === "USD" ? Math.round(n * rate * 100) / 100 : n
-      body.amount_usd = cur === "USD" ? n : Math.round((n / rate) * 100) / 100
+      await update.run("cashflow", mov.id, {
+        amount_ars: cur === "USD" ? Math.round(n * rate * 100) / 100 : n,
+        amount_usd: cur === "USD" ? n : Math.round((n / rate) * 100) / 100,
+      })
     }
-    // Clasificación (solo si se eligió contraparte).
-    if (v.counterparty) {
-      Object.assign(body, {
+    // Cobro vinculado a una venta: el endpoint clasifica el movimiento Y actualiza el saldo de la
+    // venta (registro único, sin duplicar con una carga manual en Ventas).
+    if (!isEgreso && (saleId || linkChanged)) {
+      await link.run(mov.id, saleId || null)
+    } else if (v.counterparty) {
+      await update.run("cashflow", mov.id, {
         counterparty: v.counterparty, counterparty_type: isEgreso ? "supplier" : "client",
         supplier_id: v.supplier_id || null, client_id: v.client_id || null,
         category: v.category || null, subcategory: v.subcategory || null,
         expense_type: isEgreso ? v.expense_type : null,
         needs_review: false, review_reason: null,
       })
-    }
-    await update.run("cashflow", mov.id, body)
-    // Aprender la regla: el nombre ORIGINAL (crudo) → la clasificación elegida.
-    if (v.learn && learnable && v.counterparty) {
-      await createRule.run("cp_rules", {
-        match: [originalName], cuit: null, counterparty: v.counterparty,
-        category: v.category || null, expense_type: isEgreso ? v.expense_type : null,
-        personal: false, source: "learned", note: `Aprendida al clasificar "${originalName}"`,
-      })
+      // Aprender la regla: el nombre ORIGINAL (crudo) → la clasificación elegida.
+      if (v.learn && learnable) {
+        await createRule.run("cp_rules", {
+          match: [originalName], cuit: null, counterparty: v.counterparty,
+          category: v.category || null, expense_type: isEgreso ? v.expense_type : null,
+          personal: false, source: "learned", note: `Aprendida al clasificar "${originalName}"`,
+        })
+      }
     }
     onOpenChange(false); refresh()
   }
@@ -130,7 +140,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   }
 
   return (
-    <FormSheet open={open} onOpenChange={onOpenChange} title="Editar / clasificar movimiento" onSubmit={submit} busy={update.busy || remove.busy} error={update.error || remove.error} submitLabel="Guardar">
+    <FormSheet open={open} onOpenChange={onOpenChange} title="Editar / clasificar movimiento" onSubmit={submit} busy={update.busy || remove.busy || link.busy} error={update.error || remove.error || link.error} submitLabel="Guardar">
       {mov ? (
         <div className="rounded-md bg-muted/40 px-3 py-2 text-xs">
           <div className="font-medium">{mov.description || mov.counterparty || "—"}</div>
@@ -145,6 +155,27 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
         {amountChanged && cur === "USD" && <FieldHint>≈ ARS {(Math.abs(Number(amount) || 0) * rate).toLocaleString("es-AR", { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
       </div>
 
+      {/* Ingreso: ¿es el cobro de una venta? Asociarla actualiza su saldo (registro único, sin duplicar). */}
+      {!isEgreso && (
+        <div className="rounded-md border border-border p-2 space-y-1.5">
+          <FieldLabel>¿Es el cobro de una venta?</FieldLabel>
+          {linkedSale ? (
+            <div className="flex items-center justify-between border border-emerald-500/30 bg-emerald-500/10 rounded-md px-3 h-9 text-sm">
+              <span className="truncate">{linkedSale.client_name} · #{linkedSale.quote_number}</span>
+              <button type="button" className="text-xs text-muted-foreground hover:text-foreground shrink-0" onClick={() => setSaleId("")}>quitar</button>
+            </div>
+          ) : (
+            <SearchPicker
+              items={sales.map((s) => ({ id: s.id, label: s.client_name || s.title || s.id, sub: `#${s.quote_number} · saldo ${fmtMoney(s.financial_position?.balance_due ?? 0)}`, keywords: `${s.client_name || ""} ${s.quote_number || ""} ${s.title || ""}` }))}
+              placeholder="Buscar venta por cliente o número…"
+              onPick={setSaleId}
+            />
+          )}
+          {linkedSale && <FieldHint>Saldo actual {fmtMoney(linkedSale.financial_position?.balance_due ?? 0)} — al asociar se descuenta este cobro (≈ US${Math.round(mov?.amount_usd ?? 0)}).</FieldHint>}
+        </div>
+      )}
+
+      {!(!isEgreso && saleId) && (<>
       <div>
         <FieldLabel>{isEgreso ? "Proveedor" : "Cliente"}</FieldLabel>
         {v.counterparty ? (
@@ -197,6 +228,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
       ) : (
         <FieldHint>Este movimiento no tiene nombre de contraparte, así que no se puede aprender una regla (solo se clasifica este).</FieldHint>
       )}
+      </>)}
 
       <div className="pt-2 border-t border-border">
         <Button type="button" variant="ghost" className="w-full text-destructive hover:text-destructive hover:bg-destructive/10" onClick={handleDelete} disabled={remove.busy}>

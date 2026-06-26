@@ -88,15 +88,32 @@ function buildMenu_() {
 // ====================================================================
 function setup() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  buildResumen_(ss);      // primero: define la lista de colocadores que usan los desplegables
-  buildTarifario_(ss);
-  buildLiquidacion_(ss);
-  // borrar la "Hoja 1" por defecto si quedó vacía
-  var def = ss.getSheetByName('Hoja 1') || ss.getSheetByName('Sheet1') || ss.getSheetByName('Hoja1');
-  if (def && ss.getSheets().length > 3) { try { ss.deleteSheet(def); } catch (e) {} }
+  // Las fórmulas se escriben en formato US (comas como separador). En locales con
+  // separador ';' (es_AR) eso da "Error de análisis de fórmula". Solución: escribir
+  // con el locale en en_US y al final restaurar el original — las fórmulas quedan
+  // guardadas y válidas igual (el locale solo cambia cómo se MUESTRAN).
+  var prevLocale = ss.getSpreadsheetLocale();
+  withUsLocale_(ss, function () {
+    buildResumen_(ss);      // primero: define la lista de colocadores que usan los desplegables
+    buildTarifario_(ss);
+    buildLiquidacion_(ss);
+    // borrar la "Hoja 1" por defecto si quedó vacía
+    var def = ss.getSheetByName('Hoja 1') || ss.getSheetByName('Sheet1') || ss.getSheetByName('Hoja1');
+    if (def && ss.getSheets().length > 3) { try { ss.deleteSheet(def); } catch (e) {} }
+  }, prevLocale);
   ss.setActiveSheet(ss.getSheetByName('Liquidación'));
   buildMenu_();
   SpreadsheetApp.getUi().alert('✅ Planilla lista.\n\nPestañas: Tarifario · Liquidación · Resumen.\nEmpezá a cargar en Liquidación; el Resumen se actualiza solo.');
+}
+
+// Corre fn() con la planilla en locale en_US (para que las fórmulas con comas
+// se parseen) y SIEMPRE restaura el locale original al terminar.
+function withUsLocale_(ss, fn, prevLocale) {
+  prevLocale = prevLocale || ss.getSpreadsheetLocale();
+  ss.setSpreadsheetLocale('en_US');
+  SpreadsheetApp.flush();
+  try { fn(); }
+  finally { ss.setSpreadsheetLocale(prevLocale); SpreadsheetApp.flush(); }
 }
 
 // ---------- TARIFARIO ----------
@@ -278,9 +295,11 @@ function agregarFilas() {
     fPre.push(['=IF($E' + r + '="","",IFERROR(VLOOKUP($E' + r + ',Tarifario!$B$4:$D,3,FALSE),""))']);
     fImp.push(['=IF($E' + r + '="","",IF($F' + r + '="",$G' + r + ',$F' + r + '*$G' + r + '))']);
   }
-  sh.getRange(first, 2, add, 1).setFormulas(fSem);
-  sh.getRange(first, 7, add, 1).setFormulas(fPre);
-  sh.getRange(first, 8, add, 1).setFormulas(fImp);
+  withUsLocale_(ss, function () {
+    sh.getRange(first, 2, add, 1).setFormulas(fSem);
+    sh.getRange(first, 7, add, 1).setFormulas(fPre);
+    sh.getRange(first, 8, add, 1).setFormulas(fImp);
+  });
   sh.getRange(4, 1, 1, 11).copyTo(sh.getRange(first, 1, add, 11), SpreadsheetApp.CopyPasteType.PASTE_FORMAT, false);
   sh.getRange(first, 3, add, 1).copyTo(sh.getRange(first, 3, add, 1), SpreadsheetApp.CopyPasteType.PASTE_DATA_VALIDATION, false);
   sh.getRange(4, 3, 1, 1).copyTo(sh.getRange(first, 3, add, 1), SpreadsheetApp.CopyPasteType.PASTE_DATA_VALIDATION, false);
