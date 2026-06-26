@@ -1424,12 +1424,15 @@ app.post('/api/cashflow/bulk-assign-supplier', requireAdmin, (req, res) => {
 
 // Marcar EN MASA como transferencia (fuera del P&L, queda en saldo de caja) los movimientos cuya
 // contraparte/descripción matchea alguno de los patrones, y sacarlos de la revisión. Para el ruido
-// recurrente de extractos (interés, DPF, pagos de tarjeta, etc.). {patterns:[], commit?}. Dry-run.
+// recurrente de extractos (interés, DPF, pagos de tarjeta, etc.). {patterns:[], only_review?, commit?}.
+// only_review (default true): toca SOLO lo que está en revisión → no pisa clasificaciones ya hechas
+// (ej. un movimiento ya marcado ARCA cuya descripción contiene "cuenta visa"). Dry-run por defecto.
 app.post('/api/cashflow/bulk-mark-transfer', requireAdmin, (req, res) => {
   const patterns = (Array.isArray(req.body?.patterns) ? req.body.patterns : []).map((p) => normSup(p)).filter(Boolean);
   if (!patterns.length) return res.status(400).json({ error: 'faltan patterns' });
+  const onlyReview = req.body?.only_review !== false;
   const hit = (m) => { const hay = normSup(m.counterparty) + ' ' + normSup(m.description); return patterns.some((p) => hay.includes(p)); };
-  const affected = db.cashflow.filter((m) => !m.transfer && hit(m));
+  const affected = db.cashflow.filter((m) => !m.transfer && (!onlyReview || m.needs_review) && hit(m));
   const byCp = {}; for (const m of affected) byCp[m.counterparty || '(vacío)'] = (byCp[m.counterparty || '(vacío)'] || 0) + 1;
   if (req.body?.commit !== true) return res.json({ affected: affected.length, would_clear_review: affected.filter((m) => m.needs_review).length, counterparties: byCp });
   let cleared = 0;
