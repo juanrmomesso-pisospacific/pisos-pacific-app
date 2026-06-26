@@ -1432,7 +1432,8 @@ app.post('/api/cashflow/bulk-mark-transfer', requireAdmin, (req, res) => {
   if (!patterns.length) return res.status(400).json({ error: 'faltan patterns' });
   const onlyReview = req.body?.only_review !== false;
   const hit = (m) => { const hay = normSup(m.counterparty) + ' ' + normSup(m.description); return patterns.some((p) => hay.includes(p)); };
-  const affected = db.cashflow.filter((m) => !m.transfer && (!onlyReview || m.needs_review) && hit(m));
+  // No excluir los que ya son transfer: pueden estar igual trabados en revisión y hay que limpiarlos.
+  const affected = db.cashflow.filter((m) => (!onlyReview || m.needs_review) && hit(m));
   const byCp = {}; for (const m of affected) byCp[m.counterparty || '(vacío)'] = (byCp[m.counterparty || '(vacío)'] || 0) + 1;
   if (req.body?.commit !== true) return res.json({ affected: affected.length, would_clear_review: affected.filter((m) => m.needs_review).length, counterparties: byCp });
   let cleared = 0;
