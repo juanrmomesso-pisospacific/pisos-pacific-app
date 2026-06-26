@@ -37,6 +37,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   })
   const [amount, setAmount] = useState("")   // monto editable, en la moneda nativa del movimiento
   const [saleId, setSaleId] = useState("")   // venta vinculada (cobro), solo ingresos
+  const [transfer, setTransfer] = useState(false)  // movimiento entre cuentas (fuera del P&L)
   // re-sync cuando cambia el movimiento abierto
   const [seen, setSeen] = useState<string | null>(null)
   if (mov && mov.id !== seen) {
@@ -50,6 +51,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
     })
     setAmount(String(cur === "USD" ? (mov.amount_usd ?? 0) : (mov.amount_ars ?? 0)))
     setSaleId(mov.linked_sale_id || "")
+    setTransfer(!!mov.transfer)
   }
   const patch = (p: Partial<typeof v>) => setV((prev) => ({ ...prev, ...p }))
   const confirm = useConfirm()
@@ -87,8 +89,9 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   }
 
   const linkChanged = !isEgreso && saleId !== (mov?.linked_sale_id || "")
+  const transferChanged = transfer !== !!mov?.transfer
   async function submit() {
-    if (!mov || (!v.counterparty && !amountChanged && !linkChanged)) return
+    if (!mov || (!v.counterparty && !amountChanged && !linkChanged && !transferChanged)) return
     // Corregir el monto primero (recalcula la otra moneda con el TC del movimiento).
     if (amountChanged) {
       const n = Math.abs(Number(amount)) || 0
@@ -97,9 +100,20 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
         amount_usd: cur === "USD" ? n : Math.round((n / rate) * 100) / 100,
       })
     }
-    // Cobro vinculado a una venta: el endpoint clasifica el movimiento Y actualiza el saldo de la
-    // venta (registro único, sin duplicar con una carga manual en Ventas).
-    if (!isEgreso && (saleId || linkChanged)) {
+    // Transferencia entre cuentas: fuera del P&L pero cuenta para el saldo de la caja. Limpia
+    // cualquier vínculo a venta/clasificación de gasto (no es ni cobro ni gasto). Marcar ambas patas.
+    if (transfer) {
+      await update.run("cashflow", mov.id, {
+        transfer: true, needs_review: false, review_reason: null,
+        sale_ref: null, linked_sale_id: null, counterparty_type: null,
+        category: "Transferencia entre cuentas", subcategory: null, expense_type: null,
+      })
+    } else if (transferChanged) {
+      // Se desmarcó: vuelve a contar en el P&L.
+      await update.run("cashflow", mov.id, { transfer: false })
+    } else if (!isEgreso && (saleId || linkChanged)) {
+      // Cobro vinculado a una venta: el endpoint clasifica el movimiento Y actualiza el saldo de la
+      // venta (registro único, sin duplicar con una carga manual en Ventas).
       await link.run(mov.id, saleId || null)
     } else if (v.counterparty) {
       await update.run("cashflow", mov.id, {
@@ -155,8 +169,17 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
         {amountChanged && cur === "USD" && <FieldHint>≈ ARS {(Math.abs(Number(amount) || 0) * rate).toLocaleString("es-AR", { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
       </div>
 
+      {/* Transferencia entre cuentas: ni venta ni gasto — fuera del P&L, pero cuenta para el saldo de la caja. */}
+      <label className="flex items-start gap-2 rounded-md border border-border p-2 text-sm">
+        <input type="checkbox" className="mt-0.5" checked={transfer} onChange={(e) => setTransfer(e.target.checked)} />
+        <span>
+          <b>Es un movimiento entre cuentas (transferencia)</b>
+          <FieldHint>No es venta ni gasto: sale del P&amp;L pero sigue contando para el saldo de la caja. Acordate de marcar también la otra pata (ej. el egreso en BBVA).</FieldHint>
+        </span>
+      </label>
+
       {/* Ingreso: ¿es el cobro de una venta? Asociarla actualiza su saldo (registro único, sin duplicar). */}
-      {!isEgreso && (
+      {!isEgreso && !transfer && (
         <div className="rounded-md border border-border p-2 space-y-1.5">
           <FieldLabel>¿Es el cobro de una venta?</FieldLabel>
           {linkedSale ? (
@@ -175,7 +198,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
         </div>
       )}
 
-      {!(!isEgreso && saleId) && (<>
+      {!transfer && !(!isEgreso && saleId) && (<>
       <div>
         <FieldLabel>{isEgreso ? "Proveedor" : "Cliente"}</FieldLabel>
         {v.counterparty ? (
