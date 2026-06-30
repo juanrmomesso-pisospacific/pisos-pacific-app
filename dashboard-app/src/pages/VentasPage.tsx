@@ -78,7 +78,9 @@ const STATUS_COLOR: Record<SaleStatus, { bar: string; tint: string; icon: string
 type View = "tabla" | "cards" | "kanban"
 
 // Delivery status (avance de obra) — what is delivered vs pending.
-const DELIVERY_LABEL: Record<string, string> = { Finalizado: "Finalizado", Acopiado: "Acopiado", Agendado: "Agendado" }
+// "Acopiado" (estado histórico de la planilla + el que setea la entrega de material) = material
+// entregado pero SIN colocar → se muestra como "Entregado". "Finalizado" = colocado/obra cerrada.
+const DELIVERY_LABEL: Record<string, string> = { Finalizado: "Finalizado", Acopiado: "Entregado", Entregado: "Entregado", Agendado: "Agendado" }
 function DeliveryBadge({ value }: { value?: string | null }) {
   if (!value) return <span className="text-[10px] text-muted-foreground">Sin estado</span>
   const done = value === "Finalizado"
@@ -171,7 +173,7 @@ export default function VentasPage() {
             <Card className="p-4">
               <div className="text-xs text-muted-foreground">Pendiente de entrega</div>
               <div className="text-2xl font-semibold tabular">{kpis.pendEntrega}</div>
-              <div className="text-[11px] text-muted-foreground">{kpis.agendado} agendadas · {kpis.acopiado} acopiadas · {kpis.sinEstado} s/estado</div>
+              <div className="text-[11px] text-muted-foreground">{kpis.agendado} agendadas · {kpis.acopiado} entregadas · {kpis.sinEstado} s/estado</div>
             </Card>
           </button>
           <Card className="p-4">
@@ -206,7 +208,7 @@ export default function VentasPage() {
           </div>
         </div>
         {view === "tabla" ? (
-          <Card className="overflow-hidden py-0"><VentasTable rows={filtered} /></Card>
+          <Card className="overflow-hidden py-0"><VentasTable rows={filtered} onChanged={refetchSales} /></Card>
         ) : view === "cards" ? (
           <VentasCards rows={filtered} onChanged={refetchSales} />
         ) : (
@@ -220,9 +222,11 @@ export default function VentasPage() {
 }
 
 type VSortKey = "quote_number" | "client_name" | "status" | "created_at" | "contract_total" | "saldo"
-function VentasTable({ rows }: { rows: Sale[] }) {
+function VentasTable({ rows, onChanged }: { rows: Sale[]; onChanged: () => void }) {
   const [sortKey, setSortKey] = useState<VSortKey>("created_at")
   const [sortDir, setSortDir] = useState<"asc" | "desc">("desc")
+  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const selected = selectedId ? rows.find((s) => s.id === selectedId) ?? null : null
   const sortBy = (k: VSortKey) => { if (sortKey === k) setSortDir(d => d === "asc" ? "desc" : "asc"); else { setSortKey(k); setSortDir(k === "client_name" || k === "status" ? "asc" : "desc") } }
   const sorted = useMemo(() => {
     const dir = sortDir === "asc" ? 1 : -1
@@ -247,6 +251,7 @@ function VentasTable({ rows }: { rows: Sale[] }) {
     )
   }
   return (
+    <>
     <Table>
       <TableHeader>
         <TableRow>
@@ -264,7 +269,7 @@ function VentasTable({ rows }: { rows: Sale[] }) {
         {sorted.map((r) => {
           const due = saldoDue(r)
           return (
-            <TableRow key={r.id}>
+            <TableRow key={r.id} onClick={() => setSelectedId(r.id)} className="cursor-pointer">
               <TableCell className="text-muted-foreground tabular">#{r.quote_number}</TableCell>
               <TableCell><div className="truncate max-w-[280px]">{r.client_name}</div><div className="text-xs text-muted-foreground line-clamp-1">{r.description}</div></TableCell>
               <TableCell><Badge variant="outline">{r.status}</Badge></TableCell>
@@ -272,12 +277,14 @@ function VentasTable({ rows }: { rows: Sale[] }) {
               <TableCell className="text-xs text-muted-foreground">{r.created_at ? new Date(r.created_at).toLocaleDateString("es-AR") : "—"}</TableCell>
               <TableCell className="text-right tabular">{fmtMoney(r.contract_total)}</TableCell>
               <TableCell className={`text-right tabular ${due > 0 ? "text-foreground font-medium" : "text-muted-foreground"}`}>{fmtMoney(due)}</TableCell>
-              <TableCell className="text-right"><SaleRowActions sale={r} /></TableCell>
+              <TableCell className="text-right"><div onClick={(e) => e.stopPropagation()}><SaleRowActions sale={r} /></div></TableCell>
             </TableRow>
           )
         })}
       </TableBody>
     </Table>
+    <SaleDetailSheet sale={selected} onClose={() => setSelectedId(null)} onChanged={onChanged} />
+    </>
   )
 }
 
