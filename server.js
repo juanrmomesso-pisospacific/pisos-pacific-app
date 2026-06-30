@@ -1879,7 +1879,8 @@ app.post('/api/sales/:id/deliver-material', requireAdmin, (req, res) => {
                 items: lines.map(ln => ({ sku: ln.sku, product_id: ln.product_id, quantity: ln.quantity })) };
   s.material_deliveries = [...(s.material_deliveries || []), rec];
   s.material_delivery_date = s.material_delivery_date || date;   // fecha de la 1ra entrega
-  if (!s.delivery_status || s.delivery_status === 'Agendado') s.delivery_status = 'Acopiado';
+  // OJO: la entrega de material NO toca el estado de COLOCACIÓN (status/delivery_date) — son dos ejes
+  // independientes. El estado de material se deriva de material_deliveries + stock_deducted.
   // ¿quedó TODO entregado? → marcar stock_deducted (el guard de Finalizar no lo vuelve a descontar).
   const after = deliveredBySku(s);
   const fully = (s.items || []).every(it => {
@@ -1910,7 +1911,7 @@ app.post('/api/sales/:id/undo-material-delivery', requireAdmin, (req, res) => {
   }
   s.material_deliveries = list.filter((_, i) => i !== idx);
   s.stock_deducted = false;   // ya no está todo entregado
-  if (!s.material_deliveries.length) { s.material_delivery_date = null; if (s.delivery_status === 'Acopiado') s.delivery_status = 'Agendado'; }
+  if (!s.material_deliveries.length) s.material_delivery_date = null;
   save();
   res.json(s);
 });

@@ -77,21 +77,29 @@ const STATUS_COLOR: Record<SaleStatus, { bar: string; tint: string; icon: string
 
 type View = "tabla" | "cards" | "kanban"
 
-// Delivery status (avance de obra) — what is delivered vs pending.
-// "Acopiado" (estado histórico de la planilla + el que setea la entrega de material) = material
-// entregado pero SIN colocar → se muestra como "Entregado". "Finalizado" = colocado/obra cerrada.
-const DELIVERY_LABEL: Record<string, string> = { Finalizado: "Finalizado", Acopiado: "Entregado", Entregado: "Entregado", Agendado: "Agendado" }
-function DeliveryBadge({ value }: { value?: string | null }) {
-  if (!value) return <span className="text-[10px] text-muted-foreground">Sin estado</span>
-  const done = value === "Finalizado"
-  return <Badge variant="outline" className={cn("text-[10px] font-normal", done ? "text-muted-foreground" : "text-foreground border-foreground/30")}>{DELIVERY_LABEL[value] ?? value}</Badge>
+// ENTREGA DE MATERIAL (¿salió el piso del depósito?) — eje INDEPENDIENTE de la colocación (esa es el
+// `status`: Confirmado→Programado→En proceso→Finalizado + la fecha de colocación). Se deriva de las
+// entregas registradas + señales heredadas de la planilla. "full"=todo entregado, "partial"=entregas
+// parciales, "none"=nada todavía.
+function materialState(s: Sale): "full" | "partial" | "none" {
+  if (s.stock_deducted) return "full"                              // entregas completas o finalización descontaron todo
+  if ((s.material_deliveries?.length ?? 0) > 0) return "partial"   // entregas parciales registradas
+  // Legado (planilla, sin registro de entregas): "Acopiado"/"Finalizado" o venta finalizada = material entregado.
+  if (s.status === "Finalizado" || s.delivery_status === "Acopiado" || s.delivery_status === "Finalizado") return "full"
+  return "none"
+}
+const MATERIAL_LABEL: Record<string, string> = { full: "Entregado", partial: "Parcial", none: "Sin entregar" }
+function MaterialBadge({ sale }: { sale: Sale }) {
+  const st = materialState(sale)
+  if (st === "none") return <span className="text-[10px] text-muted-foreground">Sin entregar</span>
+  return <Badge variant="outline" className={cn("text-[10px] font-normal", st === "full" ? "text-muted-foreground" : "text-amber-700 border-amber-400/40")}>{MATERIAL_LABEL[st]}</Badge>
 }
 // Cobro/saldo: priorizar la conciliación del cashflow (ingresos linkeados a la venta);
 // caer a financial_position si la venta todavía no tiene cobros en el cashflow.
 const saldoDue = (s: Sale) => s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0
 const cobrado = (s: Sale) => s.cashflow_paid ?? s.financial_position?.total_paid ?? 0
 const isDue = (s: Sale) => saldoDue(s) > 0.5
-const isPendingDelivery = (s: Sale) => s.delivery_status !== "Finalizado"
+const isPendingDelivery = (s: Sale) => s.status !== "Cancelado" && materialState(s) !== "full"
 
 export default function VentasPage() {
   const salesApi = useApi<Sale[]>("/api/sales")
@@ -141,15 +149,15 @@ export default function VentasPage() {
     return c
   }, [sales])
 
-  // Pendientes: cobro (saldo > 0) y entrega (no finalizada, por sub-estado).
+  // Pendientes: cobro (saldo > 0) y material a entregar (eje independiente de la colocación).
   const kpis = useMemo(() => {
     const due = sales.filter(isDue)
     const dueTotal = due.reduce((a, s) => a + saldoDue(s), 0)
-    const acopiado = sales.filter((s) => s.delivery_status === "Acopiado").length
-    const agendado = sales.filter((s) => s.delivery_status === "Agendado").length
-    const sinEstado = sales.filter((s) => !s.delivery_status).length
-    const finalizadas = sales.filter((s) => s.delivery_status === "Finalizado").length
-    return { dueCount: due.length, dueTotal, acopiado, agendado, sinEstado, finalizadas, pendEntrega: acopiado + agendado + sinEstado }
+    const active = sales.filter((s) => s.status !== "Cancelado")
+    const matPartial = active.filter((s) => materialState(s) === "partial").length
+    const matNone = active.filter((s) => materialState(s) === "none").length
+    const finalizadas = sales.filter((s) => s.status === "Finalizado").length   // colocadas / obra cerrada
+    return { dueCount: due.length, dueTotal, matPartial, matNone, finalizadas, pendMaterial: matPartial + matNone }
   }, [sales])
 
   const [openNew, setOpenNew] = useState(false)
@@ -171,9 +179,9 @@ export default function VentasPage() {
           </button>
           <button onClick={() => setQuick(quick === "entrega" ? "none" : "entrega")} className={cn("text-left", quick === "entrega" && "ring-2 ring-foreground rounded-lg")}>
             <Card className="p-4">
-              <div className="text-xs text-muted-foreground">Pendiente de entrega</div>
-              <div className="text-2xl font-semibold tabular">{kpis.pendEntrega}</div>
-              <div className="text-[11px] text-muted-foreground">{kpis.agendado} agendadas · {kpis.acopiado} entregadas · {kpis.sinEstado} s/estado</div>
+              <div className="text-xs text-muted-foreground">Material a entregar</div>
+              <div className="text-2xl font-semibold tabular">{kpis.pendMaterial}</div>
+              <div className="text-[11px] text-muted-foreground">{kpis.matNone} sin entregar · {kpis.matPartial} parcial</div>
             </Card>
           </button>
           <Card className="p-4">
@@ -258,7 +266,7 @@ function VentasTable({ rows, onChanged }: { rows: Sale[]; onChanged: () => void 
           <SortH k="quote_number">#</SortH>
           <SortH k="client_name">Cliente</SortH>
           <SortH k="status">Estado</SortH>
-          <TableHead>Entrega</TableHead>
+          <TableHead>Material</TableHead>
           <SortH k="created_at">Fecha</SortH>
           <SortH k="contract_total" align="right">Total</SortH>
           <SortH k="saldo" align="right">Saldo</SortH>
@@ -273,7 +281,7 @@ function VentasTable({ rows, onChanged }: { rows: Sale[]; onChanged: () => void 
               <TableCell className="text-muted-foreground tabular">#{r.quote_number}</TableCell>
               <TableCell><div className="truncate max-w-[280px]">{r.client_name}</div><div className="text-xs text-muted-foreground line-clamp-1">{r.description}</div></TableCell>
               <TableCell><Badge variant="outline">{r.status}</Badge></TableCell>
-              <TableCell><DeliveryBadge value={r.delivery_status} /></TableCell>
+              <TableCell><MaterialBadge sale={r} /></TableCell>
               <TableCell className="text-xs text-muted-foreground">{r.created_at ? new Date(r.created_at).toLocaleDateString("es-AR") : "—"}</TableCell>
               <TableCell className="text-right tabular">{fmtMoney(r.contract_total)}</TableCell>
               <TableCell className={`text-right tabular ${due > 0 ? "text-foreground font-medium" : "text-muted-foreground"}`}>{fmtMoney(due)}</TableCell>
@@ -311,7 +319,7 @@ function VentasCards({ rows, onChanged }: { rows: Sale[]; onChanged: () => void 
             {(s.title || s.description) ? <div className="text-xs text-muted-foreground line-clamp-1 mt-1">{s.title || s.description}</div> : null}
             <div className="flex items-center justify-between gap-2 mt-2">
               <Badge variant="outline" className="text-[10px]">{s.status}</Badge>
-              <DeliveryBadge value={s.delivery_status} />
+              <MaterialBadge sale={s} />
             </div>
             <div className="flex items-center justify-between mt-2 text-sm">
               <span className="tabular font-medium">{fmtMoney(s.contract_total)}</span>
@@ -319,7 +327,7 @@ function VentasCards({ rows, onChanged }: { rows: Sale[]; onChanged: () => void 
             </div>
             {s.delivery_date ? (
               <div className="text-[10px] text-muted-foreground mt-1.5 inline-flex items-center gap-1">
-                <CalendarDays className="h-2.5 w-2.5" />Entrega {new Date(s.delivery_date).toLocaleDateString("es-AR")}
+                <CalendarDays className="h-2.5 w-2.5" />Colocación {new Date(s.delivery_date).toLocaleDateString("es-AR")}
               </div>
             ) : null}
           </div>
@@ -424,12 +432,12 @@ function VentasKanban({ rows, onChanged }: { rows: Sale[]; onChanged: () => void
                       {due > 0 ? <Badge variant="outline" className="text-[10px]">Saldo {fmtMoney(due)}</Badge> : <span className="text-muted-foreground tabular">{r.created_at ? new Date(r.created_at).toLocaleDateString("es-AR") : "—"}</span>}
                     </div>
                     <div className="mt-1.5 flex items-center gap-1.5">
-                      <DeliveryBadge value={r.delivery_status} />
+                      <MaterialBadge sale={r} />
                       {isDue(r) ? <span className="text-[10px] text-foreground">· debe {fmtMoney(saldoDue(r))}</span> : null}
                     </div>
                     {r.delivery_date && (
                       <div className="text-[10px] text-muted-foreground mt-0.5 inline-flex items-center gap-1">
-                        <CalendarDays className="h-2.5 w-2.5" />Entrega {new Date(r.delivery_date).toLocaleDateString("es-AR")}{r.delivery_date_to && r.delivery_date_to !== r.delivery_date ? ` → ${new Date(r.delivery_date_to).toLocaleDateString("es-AR")}` : ""}
+                        <CalendarDays className="h-2.5 w-2.5" />Colocación {new Date(r.delivery_date).toLocaleDateString("es-AR")}{r.delivery_date_to && r.delivery_date_to !== r.delivery_date ? ` → ${new Date(r.delivery_date_to).toLocaleDateString("es-AR")}` : ""}
                       </div>
                     )}
                   </div>
@@ -593,7 +601,7 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
               <SheetDescription>
                 #{sale.quote_number} · {sale.created_at ? new Date(sale.created_at).toLocaleDateString("es-AR") : "sin fecha"}
                 {" · "}<Badge variant="outline" className="text-[10px]">{sale.status}</Badge>
-                {" · "}<DeliveryBadge value={sale.delivery_status} />
+                {" · "}<MaterialBadge sale={sale} />
               </SheetDescription>
             </div>
             <Button variant="outline" size="sm" onClick={openChat}><MessageCircle className="h-4 w-4" />Chat</Button>
