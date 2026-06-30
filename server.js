@@ -469,12 +469,26 @@ function findProductByItem(it) {
 }
 
 // ---------- Mock REST endpoints ----------
-// Committed stock per SKU = qty in non-finalized sales (material reservado, sin entregar).
+// m² ya entregados de una venta por SKU (suma de las entregas de material parciales).
+function deliveredBySku(s) {
+  const m = {};
+  for (const d of (s.material_deliveries || [])) {
+    for (const it of (d.items || [])) { if (it && it.sku) m[it.sku] = (m[it.sku] || 0) + (Number(it.quantity) || 0); }
+  }
+  return m;
+}
+// Committed stock per SKU = qty PENDIENTE DE ENTREGAR en ventas no finalizadas (material reservado, aún
+// en el depósito). Lo ya entregado salió físicamente del stock → no se cuenta como reserva.
 function committedBySku() {
   const m = {};
   for (const s of db.sales) {
     if (s.status === 'Finalizado' || s.status === 'Cancelado') continue;   // ni entregadas ni canceladas reservan
-    for (const it of s.items || []) { if (it && it.sku) m[it.sku] = (m[it.sku] || 0) + (Number(it.quantity) || 0); }
+    const delivered = deliveredBySku(s);
+    for (const it of s.items || []) {
+      if (!it || !it.sku) continue;
+      const pending = Math.max(0, (Number(it.quantity) || 0) - (delivered[it.sku] || 0));
+      if (pending > 0) m[it.sku] = (m[it.sku] || 0) + pending;
+    }
   }
   return m;
 }
@@ -1783,42 +1797,120 @@ app.post('/api/sales/:id/transition', (req, res) => {
   const prev = s.status;
   if (prev === next) return res.json(s);
 
-  // Entering Finalizado → deduct from stock, clear reservation
+  // Entering Finalizado → deduct from stock lo que FALTE entregar (lo ya entregado por
+  // entregas de material parciales ya se descontó) y limpiar la reserva.
   if (next === 'Finalizado' && !s.stock_deducted) {
+    const delivered = deliveredBySku(s);
     for (const it of (s.items || [])) {
       const p = findProductByItem(it); if (!p) continue;
-      const qty = Number(it.quantity) || 0;
-      p.stock = Math.max(0, (Number(p.stock) || 0) - qty);
-      if (s.stock_reserved) p.reservedStock = Math.max(0, (Number(p.reservedStock) || 0) - qty);
-      movement('sale_deduct', s.id, p.id, p.sku, -qty);
+      const remaining = Math.max(0, (Number(it.quantity) || 0) - (delivered[it.sku] || 0));
+      if (remaining <= 0) continue;
+      p.stock = Math.max(0, (Number(p.stock) || 0) - remaining);
+      if (s.stock_reserved) p.reservedStock = Math.max(0, (Number(p.reservedStock) || 0) - remaining);
+      movement('sale_deduct', s.id, p.id, p.sku, -remaining);
     }
     s.stock_reserved = false;
     s.stock_deducted = true;
   }
 
-  // Cancelling a non-finalized sale → release reservation
-  if (next === 'Cancelado' && s.stock_reserved && !s.stock_deducted) {
+  // Cancelar: devolver al depósito lo que salió físicamente (entregas de material + finalización)
+  // y liberar la reserva del resto. Un solo bloque que cubre los 3 casos: finalizada,
+  // parcialmente entregada (no finalizada) y solo reservada.
+  if (next === 'Cancelado') {
+    const delivered = deliveredBySku(s);
     for (const it of (s.items || [])) {
       const p = findProductByItem(it); if (!p) continue;
-      const qty = Number(it.quantity) || 0;
-      p.reservedStock = Math.max(0, (Number(p.reservedStock) || 0) - qty);
-      movement('sale_cancel_release', s.id, p.id, p.sku, -qty);
+      const ordered = Number(it.quantity) || 0;
+      const out = s.stock_deducted ? ordered : (delivered[it.sku] || 0);   // físico que salió del stock
+      const reservedPortion = Math.max(0, ordered - out);                   // lo que solo estaba reservado
+      if (out > 0) {
+        p.stock = (Number(p.stock) || 0) + out;
+        movement('sale_cancel_restock', s.id, p.id, p.sku, out);
+      }
+      if (s.stock_reserved && reservedPortion > 0) {
+        p.reservedStock = Math.max(0, (Number(p.reservedStock) || 0) - reservedPortion);
+        movement('sale_cancel_release', s.id, p.id, p.sku, -reservedPortion);
+      }
     }
     s.stock_reserved = false;
-  }
-  // Cancelar una venta YA finalizada → devolver el stock físico que se había descontado
-  // (si no, el depósito tiene más de lo que figura para siempre).
-  if (next === 'Cancelado' && s.stock_deducted) {
-    for (const it of (s.items || [])) {
-      const p = findProductByItem(it); if (!p) continue;
-      const qty = Number(it.quantity) || 0;
-      p.stock = (Number(p.stock) || 0) + qty;
-      movement('sale_cancel_restock', s.id, p.id, p.sku, qty);
-    }
     s.stock_deducted = false;
   }
 
   s.status = next;
+  save();
+  res.json(s);
+});
+
+// ---------- Entrega de material (descuenta stock SIN finalizar la venta) ----------
+// El piso se entrega a la obra antes de colocarlo: el material sale del depósito pero la venta sigue
+// abierta hasta la colocación. Soporta entregas PARCIALES (entregar parte y el resto después).
+// body: { items?: [{sku, quantity}], date?, note? }. Sin items → entrega todo lo pendiente.
+app.post('/api/sales/:id/deliver-material', requireAdmin, (req, res) => {
+  const s = db.sales.find(x => x.id === req.params.id);
+  if (!s) return res.sendStatus(404);
+  if (s.status === 'Cancelado') return res.status(409).json({ error: 'la venta está cancelada' });
+  if (s.stock_deducted) return res.status(409).json({ error: 'ya se entregó todo el material de esta venta' });
+  const date = (req.body?.date || new Date().toISOString().slice(0, 10));
+  const note = req.body?.note || null;
+  const reqItems = Array.isArray(req.body?.items) ? req.body.items : null;
+  const delivered = deliveredBySku(s);
+  const lines = [];
+  for (const it of (s.items || [])) {
+    if (!it || !it.sku) continue;
+    const p = findProductByItem(it); if (!p || !p.stockTrack) continue;   // solo pisos con stock
+    const pending = r2((Number(it.quantity) || 0) - (delivered[it.sku] || 0));
+    if (pending <= 0) continue;
+    let qty = pending;
+    if (reqItems) {
+      const r = reqItems.find(x => String(x.sku) === String(it.sku));
+      if (!r) continue;
+      qty = Math.min(pending, Math.max(0, Number(r.quantity) || 0));
+    }
+    if (qty <= 0) continue;
+    lines.push({ p, sku: it.sku, product_id: p.id, quantity: r2(qty) });
+  }
+  if (!lines.length) return res.status(400).json({ error: 'no hay material pendiente para entregar' });
+  for (const ln of lines) {
+    ln.p.stock = Math.max(0, (Number(ln.p.stock) || 0) - ln.quantity);
+    if (s.stock_reserved) ln.p.reservedStock = Math.max(0, (Number(ln.p.reservedStock) || 0) - ln.quantity);
+    movement('sale_deduct', s.id, ln.p.id, ln.p.sku, -ln.quantity);
+  }
+  const rec = { id: 'DEL-' + Date.now().toString(36), date, note, by: req.user?.name || req.user?.email || null,
+                items: lines.map(ln => ({ sku: ln.sku, product_id: ln.product_id, quantity: ln.quantity })) };
+  s.material_deliveries = [...(s.material_deliveries || []), rec];
+  s.material_delivery_date = s.material_delivery_date || date;   // fecha de la 1ra entrega
+  if (!s.delivery_status || s.delivery_status === 'Agendado') s.delivery_status = 'Acopiado';
+  // ¿quedó TODO entregado? → marcar stock_deducted (el guard de Finalizar no lo vuelve a descontar).
+  const after = deliveredBySku(s);
+  const fully = (s.items || []).every(it => {
+    if (!it || !it.sku) return true;
+    const p = findProductByItem(it); if (!p || !p.stockTrack) return true;
+    return (after[it.sku] || 0) + 1e-6 >= (Number(it.quantity) || 0);
+  });
+  if (fully) { s.stock_deducted = true; s.stock_reserved = false; }
+  save();
+  res.json(s);
+});
+
+// Deshacer una entrega de material (error de carga) → devuelve el stock físico.
+app.post('/api/sales/:id/undo-material-delivery', requireAdmin, (req, res) => {
+  const s = db.sales.find(x => x.id === req.params.id);
+  if (!s) return res.sendStatus(404);
+  const list = s.material_deliveries || [];
+  if (!list.length) return res.status(404).json({ error: 'no hay entregas para deshacer' });
+  const delId = req.body?.delivery_id;
+  const idx = delId ? list.findIndex(d => d.id === delId) : list.length - 1;   // por defecto, la última
+  if (idx < 0) return res.status(404).json({ error: 'entrega no encontrada' });
+  const rec = list[idx];
+  for (const ln of (rec.items || [])) {
+    const p = db.products.find(x => x.id === ln.product_id) || db.products.find(x => x.sku === ln.sku);
+    if (!p) continue;
+    p.stock = (Number(p.stock) || 0) + (Number(ln.quantity) || 0);
+    movement('sale_cancel_restock', s.id, p.id, p.sku, Number(ln.quantity) || 0);
+  }
+  s.material_deliveries = list.filter((_, i) => i !== idx);
+  s.stock_deducted = false;   // ya no está todo entregado
+  if (!s.material_deliveries.length) { s.material_delivery_date = null; if (s.delivery_status === 'Acopiado') s.delivery_status = 'Agendado'; }
   save();
   res.json(s);
 });

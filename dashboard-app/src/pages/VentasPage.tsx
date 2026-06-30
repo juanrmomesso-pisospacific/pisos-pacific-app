@@ -463,6 +463,7 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   const { state: authState } = useAuth()
   const isAdmin = authState.user?.role === "admin"
   const [editOpen, setEditOpen] = useState(false)
+  const [deliverOpen, setDeliverOpen] = useState(false)
   const update = useAction(api.update)
   const txn = useAction(api.saleTransition)
   const createTask = useAction(api.create)
@@ -600,11 +601,14 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
 
         <IvaEditor sale={sale} onChanged={onChanged} />
 
-        {/* Entrega — primary section */}
+        {/* Entrega de material — descuenta stock SIN finalizar la venta (entrega antes de colocar) */}
+        <MaterialDeliveryPanel sale={sale} products={products} isAdmin={isAdmin} onOpen={() => setDeliverOpen(true)} onChanged={onChanged} />
+
+        {/* Colocación — agenda + equipo + medición/remito (no toca stock) */}
         <div className="mt-6 rounded-lg border border-border">
           <div className="px-4 py-2 border-b border-border flex items-center gap-2">
             <CalendarClock className="h-4 w-4 text-muted-foreground" />
-            <div className="text-sm font-medium">Entrega</div>
+            <div className="text-sm font-medium">Colocación</div>
             {sale.delivery_date && (
               <Badge variant="muted" className="text-[10px] ml-auto">
                 {sale.delivery_date_to && sale.delivery_date_to !== sale.delivery_date
@@ -616,7 +620,7 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
           <div className="p-4 space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="text-xs font-medium block mb-1">Entrega desde</label>
+                <label className="text-xs font-medium block mb-1">Colocación desde</label>
                 <Input type="date" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
               </div>
               <div>
@@ -786,7 +790,156 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
       </SheetContent>
     </Sheet>
     <EditSaleItemsSheet sale={sale} products={products} open={editOpen} onOpenChange={setEditOpen} onChanged={onChanged} />
+    <DeliverMaterialSheet sale={sale} products={products} open={deliverOpen} onOpenChange={setDeliverOpen} onChanged={onChanged} />
     </>
+  )
+}
+
+// Suma de m² ya entregados por SKU (desde el log de entregas de material de la venta).
+function deliveredBySku(sale: Sale): Record<string, number> {
+  const m: Record<string, number> = {}
+  for (const d of sale.material_deliveries ?? [])
+    for (const it of d.items ?? []) if (it.sku) m[it.sku] = (m[it.sku] ?? 0) + (Number(it.quantity) || 0)
+  return m
+}
+// Ítems de la venta que llevan stock (pisos): ordenado / entregado / pendiente.
+function materialLines(sale: Sale, products: Product[]) {
+  const delivered = deliveredBySku(sale)
+  const bySku = new Map(products.map((p) => [p.sku, p]))
+  return (sale.items ?? [])
+    .filter((it) => it.sku && bySku.get(it.sku)?.stockTrack)
+    .map((it) => {
+      const ordered = Number(it.quantity) || 0
+      const deliv = delivered[it.sku] ?? 0
+      return { sku: it.sku, description: it.description || it.sku, ordered, delivered: deliv, pending: Math.max(0, Math.round((ordered - deliv) * 100) / 100) }
+    })
+}
+
+// Panel resumen de entrega de material en el detalle de la venta.
+function MaterialDeliveryPanel({ sale, products, isAdmin, onOpen, onChanged }: { sale: Sale; products: Product[]; isAdmin: boolean; onOpen: () => void; onChanged: () => void }) {
+  const confirm = useConfirm()
+  const undo = useAction(api.undoMaterialDelivery)
+  const lines = materialLines(sale, products)
+  if (lines.length === 0) return null   // venta sin pisos (solo servicios/extras) → no aplica
+  const totalOrdered = lines.reduce((a, l) => a + l.ordered, 0)
+  const totalDelivered = lines.reduce((a, l) => a + l.delivered, 0)
+  const totalPending = lines.reduce((a, l) => a + l.pending, 0)
+  const deliveries = sale.material_deliveries ?? []
+  const closed = sale.status === "Cancelado"
+  const fmtM2 = (n: number) => `${Math.round(n * 100) / 100} m²`
+  const undoLast = async () => {
+    const ok = await confirm({ title: "Deshacer última entrega", description: "Devuelve al depósito el material de la última entrega registrada. Esta acción no se puede deshacer.", confirmLabel: "Deshacer", destructive: true })
+    if (!ok) return
+    const r = await undo.run(sale.id)
+    if (r) onChanged()
+  }
+  return (
+    <div className="mt-6 rounded-lg border border-border">
+      <div className="px-4 py-2 border-b border-border flex items-center gap-2">
+        <Truck className="h-4 w-4 text-muted-foreground" />
+        <div className="text-sm font-medium">Entrega de material</div>
+        <Badge variant={totalPending <= 0.01 ? "muted" : "outline"} className="text-[10px] ml-auto">
+          {totalDelivered <= 0.01 ? "Sin entregar" : totalPending <= 0.01 ? "Entregado ✓" : `${fmtM2(totalDelivered)} de ${fmtM2(totalOrdered)}`}
+        </Badge>
+      </div>
+      <div className="p-4 space-y-3">
+        <p className="text-[11px] text-muted-foreground -mt-1">Descuenta el stock cuando el piso sale del depósito, aunque la venta no esté finalizada (la colocación puede ser después). Soporta entregas parciales.</p>
+        {totalDelivered > 0.01 && (
+          <div className="space-y-1.5">
+            {lines.map((l) => (
+              <div key={l.sku} className="flex items-center justify-between text-xs gap-2">
+                <span className="truncate text-muted-foreground">{l.description}</span>
+                <span className="tabular shrink-0">{fmtM2(l.delivered)}<span className="text-muted-foreground"> / {fmtM2(l.ordered)}</span>{l.pending > 0.01 && <span className="text-amber-700"> · faltan {fmtM2(l.pending)}</span>}</span>
+              </div>
+            ))}
+          </div>
+        )}
+        {deliveries.length > 0 && (
+          <div className="space-y-1 border-t border-border pt-2">
+            {deliveries.map((d) => (
+              <div key={d.id} className="flex items-center justify-between text-[11px] text-muted-foreground gap-2">
+                <span>{d.date ? new Date(d.date).toLocaleDateString("es-AR") : "—"}{d.note ? ` · ${d.note}` : ""}</span>
+                <span className="tabular shrink-0">{fmtM2(d.items.reduce((a, it) => a + (Number(it.quantity) || 0), 0))}</span>
+              </div>
+            ))}
+          </div>
+        )}
+        {isAdmin && !closed && (
+          <div className="flex items-center gap-2 pt-1">
+            <Button size="sm" onClick={onOpen} disabled={totalPending <= 0.01}>
+              <Truck className="h-4 w-4" />{totalPending <= 0.01 ? "Todo entregado" : totalDelivered > 0.01 ? "Entregar el resto" : "Entregar material"}
+            </Button>
+            {deliveries.length > 0 && <Button size="sm" variant="outline" onClick={undoLast} disabled={undo.busy}>{undo.busy ? "…" : "Deshacer última"}</Button>}
+          </div>
+        )}
+        {!isAdmin && <p className="text-[10px] text-muted-foreground">Solo un administrador puede registrar entregas de material.</p>}
+      </div>
+    </div>
+  )
+}
+
+// Form de entrega de material (parcial): por defecto entrega todo lo pendiente; el usuario puede ajustar cantidades.
+function DeliverMaterialSheet({ sale, products, open, onOpenChange, onChanged }: { sale: Sale | null; products: Product[]; open: boolean; onOpenChange: (o: boolean) => void; onChanged: () => void }) {
+  const deliver = useAction(api.deliverMaterial)
+  const [date, setDate] = useState("")
+  const [note, setNote] = useState("")
+  const [qty, setQty] = useState<Record<string, number>>({})
+  const lines = useMemo(() => (sale ? materialLines(sale, products).filter((l) => l.pending > 0.01) : []), [sale, products])
+  useEffect(() => {
+    if (!open || !sale) return
+    setDate(new Date().toISOString().slice(0, 10))
+    setNote("")
+    setQty(Object.fromEntries(materialLines(sale, products).filter((l) => l.pending > 0.01).map((l) => [l.sku, l.pending])))   // default: todo lo pendiente
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, sale?.id])
+  const submit = async () => {
+    if (!sale) return
+    const items = lines.map((l) => ({ sku: l.sku, quantity: Math.min(l.pending, Math.max(0, Number(qty[l.sku]) || 0)) })).filter((x) => x.quantity > 0)
+    if (!items.length) return
+    const r = await deliver.run(sale.id, { items, date: date || undefined, note: note || undefined })
+    if (r) { onOpenChange(false); onChanged() }
+  }
+  const totalToDeliver = lines.reduce((a, l) => a + Math.min(l.pending, Math.max(0, Number(qty[l.sku]) || 0)), 0)
+  return (
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent className="!max-w-lg w-full overflow-y-auto">
+        <SheetHeader>
+          <SheetTitle>Entregar material</SheetTitle>
+          <SheetDescription>{sale ? `#${sale.quote_number} · ${sale.client_name}` : ""} — descuenta del stock. La venta sigue abierta hasta la colocación.</SheetDescription>
+        </SheetHeader>
+        <div className="mt-6 space-y-4">
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="text-xs font-medium block mb-1">Fecha de entrega</label>
+              <Input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+            </div>
+            <div>
+              <label className="text-xs font-medium block mb-1">Nota <span className="text-muted-foreground font-normal">(opcional)</span></label>
+              <Input value={note} onChange={(e) => setNote(e.target.value)} placeholder="Remito 0012, chofer…" />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <div className="text-xs font-medium">Material a entregar (m²)</div>
+            {lines.length === 0 ? (
+              <p className="text-sm text-muted-foreground">No hay material pendiente de entregar.</p>
+            ) : lines.map((l) => (
+              <div key={l.sku} className="flex items-center gap-2">
+                <div className="min-w-0 flex-1">
+                  <div className="truncate text-sm">{l.description}</div>
+                  <div className="text-[10px] text-muted-foreground">{l.sku} · pendiente {Math.round(l.pending * 100) / 100} m²{l.delivered > 0.01 ? ` · ya entregado ${Math.round(l.delivered * 100) / 100}` : ""}</div>
+                </div>
+                <Input type="number" min={0} max={l.pending} step="0.01" value={qty[l.sku] ?? ""} onChange={(e) => setQty((q) => ({ ...q, [l.sku]: Number(e.target.value) || 0 }))} className="h-9 w-24 shrink-0" />
+              </div>
+            ))}
+          </div>
+          {deliver.error && <div className="text-[11px] text-destructive">{deliver.error}</div>}
+          <div className="flex items-center gap-2 pt-2 border-t border-border">
+            <Button onClick={submit} disabled={deliver.busy || totalToDeliver <= 0.01}>{deliver.busy ? "Entregando…" : `Entregar ${Math.round(totalToDeliver * 100) / 100} m²`}</Button>
+            <Button variant="outline" onClick={() => onOpenChange(false)}>Cancelar</Button>
+          </div>
+        </div>
+      </SheetContent>
+    </Sheet>
   )
 }
 

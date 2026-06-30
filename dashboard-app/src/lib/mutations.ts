@@ -77,6 +77,8 @@ export const api = {
   create: (entity: string, body: any) => post(`/api/${entity}`, body),
   update: (entity: string, id: string, body: any) => patch(`/api/${entity}/${id}`, body),
   saleEditItems: (id: string, items: any[]) => patch(`/api/sales/${id}/edit-items`, { items }),
+  deliverMaterial: (id: string, body: { items?: { sku: string; quantity: number }[]; date?: string; note?: string }) => post(`/api/sales/${id}/deliver-material`, body),
+  undoMaterialDelivery: (id: string, delivery_id?: string) => post(`/api/sales/${id}/undo-material-delivery`, delivery_id ? { delivery_id } : undefined),
   remove: (entity: string, id: string) => del(`/api/${entity}/${id}`),
 }
 

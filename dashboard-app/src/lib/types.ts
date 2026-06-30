@@ -34,6 +34,14 @@ export type SaleItem = {
   discount?: number             // descuento por ítem: monto resuelto en $ (sin IVA)
 }
 
+export type MaterialDelivery = {
+  id: string
+  date: string
+  note?: string | null
+  by?: string | null
+  items: { sku: string; product_id?: string; quantity: number }[]
+}
+
 export type FinancialPosition = {
   total_invoiced: number
   total_paid: number
@@ -71,6 +79,10 @@ export type Sale = {
   // Cobro real conciliado desde el cashflow (ingresos con este venta_nro)
   cashflow_paid?: number
   cashflow_balance_due?: number   // contract_total − cashflow_paid
+  // Entregas de material: el piso sale del depósito (descuenta stock) ANTES de colocarlo; la venta
+  // sigue abierta hasta la colocación. Soporta entregas parciales.
+  material_deliveries?: MaterialDelivery[]
+  material_delivery_date?: string | null   // fecha de la 1ra entrega de material (atajo para la planilla)
   // Remito armado en la inspección (m² de piso + terminaciones que agrega el inspector)
   remito_items?: { description: string; quantity: number; unit: string }[]
   remito_confirmed?: boolean   // versión final confirmada por inspección (para el depósito)
