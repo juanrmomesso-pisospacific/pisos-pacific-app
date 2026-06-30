@@ -153,7 +153,6 @@ export function SaleRowActions({ sale }: { sale: Sale }) {
   const [linkOpen, setLinkOpen] = useState(false)
   const [scheduleOpen, setScheduleOpen] = useState(false)
   const due = sale.financial_position?.balance_due ?? 0
-  const canSchedule = sale.status !== "Cancelado" && sale.status !== "Finalizado"
   const confirm = useConfirm()
 
   const handle = async (next: string) => { const r = await txn.run(sale.id, next); if (r) refresh() }
@@ -176,12 +175,20 @@ export function SaleRowActions({ sale }: { sale: Sale }) {
         <DropdownMenuContent align="end" className="w-56">
           <DropdownMenuLabel>Venta #{sale.quote_number}</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          {canSchedule && (
-            <DropdownMenuItem onClick={() => setScheduleOpen(true)}><CalendarClock className="h-3.5 w-3.5 mr-2" />Programar entrega{sale.delivery_date ? " · editar" : ""}</DropdownMenuItem>
+          {/* Acciones de estado: solo las que aplican al estado actual. Una venta ya Finalizada o
+              Cancelada no vuelve a ofrecer "Finalizar" (era confuso y se clickeaba de más). */}
+          {sale.status === "Finalizado" ? (
+            <DropdownMenuItem disabled><CheckCheck className="h-3.5 w-3.5 mr-2" />Finalizada · stock descontado</DropdownMenuItem>
+          ) : sale.status === "Cancelado" ? (
+            <DropdownMenuItem disabled><X className="h-3.5 w-3.5 mr-2" />Cancelada</DropdownMenuItem>
+          ) : (
+            <>
+              <DropdownMenuItem onClick={() => setScheduleOpen(true)}><CalendarClock className="h-3.5 w-3.5 mr-2" />Programar entrega{sale.delivery_date ? " · editar" : ""}</DropdownMenuItem>
+              {sale.status !== "Programado" && <DropdownMenuItem onClick={() => handle("Programado")}><Truck className="h-3.5 w-3.5 mr-2" />Marcar programada</DropdownMenuItem>}
+              {sale.status !== "En proceso" && <DropdownMenuItem onClick={() => handle("En proceso")}><Loader className="h-3.5 w-3.5 mr-2" />En proceso</DropdownMenuItem>}
+              <DropdownMenuItem onClick={handleFinalize}><CheckCheck className="h-3.5 w-3.5 mr-2" />Finalizar (colocada / obra cerrada)</DropdownMenuItem>
+            </>
           )}
-          <DropdownMenuItem onClick={() => handle("Programado")}><Truck className="h-3.5 w-3.5 mr-2" />Marcar programada</DropdownMenuItem>
-          <DropdownMenuItem onClick={() => handle("En proceso")}><Loader className="h-3.5 w-3.5 mr-2" />En proceso</DropdownMenuItem>
-          <DropdownMenuItem onClick={handleFinalize}><CheckCheck className="h-3.5 w-3.5 mr-2" />Finalizar (descontar stock)</DropdownMenuItem>
           <DropdownMenuItem onClick={() => navigate(chatPath({ name: sale.client_name, phone: sale.client_phone, email: sale.client_email }))}><MessageCircle className="h-3.5 w-3.5 mr-2" />Abrir chat</DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handlePdf}><FileText className="h-3.5 w-3.5 mr-2" />Generar PDF</DropdownMenuItem>
@@ -193,8 +200,12 @@ export function SaleRowActions({ sale }: { sale: Sale }) {
               <DropdownMenuItem onClick={() => setLinkOpen(true)}><LinkIcon className="h-3.5 w-3.5 mr-2" />Link de pago MP</DropdownMenuItem>
             </>
           )}
-          <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-destructive" onClick={handleCancel}><X className="h-3.5 w-3.5 mr-2" />Cancelar</DropdownMenuItem>
+          {sale.status !== "Cancelado" && (
+            <>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem className="text-destructive" onClick={handleCancel}><X className="h-3.5 w-3.5 mr-2" />Cancelar{sale.status === "Finalizado" ? " (devuelve stock)" : ""}</DropdownMenuItem>
+            </>
+          )}
         </DropdownMenuContent>
       </DropdownMenu>
       <PaymentDrawer open={payOpen} onOpenChange={setPayOpen} sale={sale} />
