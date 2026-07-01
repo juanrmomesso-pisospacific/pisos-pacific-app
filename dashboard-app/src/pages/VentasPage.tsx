@@ -78,14 +78,13 @@ const STATUS_COLOR: Record<SaleStatus, { bar: string; tint: string; icon: string
 type View = "tabla" | "cards" | "kanban"
 
 // ENTREGA DE MATERIAL (¿salió el piso del depósito?) — eje INDEPENDIENTE de la colocación (esa es el
-// `status`: Confirmado→Programado→En proceso→Finalizado + la fecha de colocación). Se deriva de las
-// entregas registradas + señales heredadas de la planilla. "full"=todo entregado, "partial"=entregas
-// parciales, "none"=nada todavía.
+// `status`: Confirmado→Programado→En proceso→Finalizado + la fecha de colocación). Se deriva SOLO de
+// señales REALES: stock físicamente descontado (entregas de material o finalización) o venta finalizada.
+// NO se usa el `delivery_status` heredado de la planilla ("Acopiado") porque NO es confiable —había
+// ventas Confirmadas marcadas "Acopiado" sin entrega real. "full"=todo entregado, "partial"=parcial.
 function materialState(s: Sale): "full" | "partial" | "none" {
-  if (s.stock_deducted) return "full"                              // entregas completas o finalización descontaron todo
-  if ((s.material_deliveries?.length ?? 0) > 0) return "partial"   // entregas parciales registradas
-  // Legado (planilla, sin registro de entregas): "Acopiado"/"Finalizado" o venta finalizada = material entregado.
-  if (s.status === "Finalizado" || s.delivery_status === "Acopiado" || s.delivery_status === "Finalizado") return "full"
+  if (s.stock_deducted || s.status === "Finalizado") return "full"   // stock descontado (entrega/finalización) o venta finalizada
+  if ((s.material_deliveries?.length ?? 0) > 0) return "partial"      // entregas parciales registradas
   return "none"
 }
 const MATERIAL_LABEL: Record<string, string> = { full: "Entregado", partial: "Parcial", none: "Sin entregar" }
