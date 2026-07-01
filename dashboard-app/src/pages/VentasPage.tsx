@@ -590,6 +590,14 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   }
   const remitoPickerItems = products.filter((p) => p.active !== false).map((p) => ({ id: p.id, label: p.name, sub: p.sku, keywords: p.category }))
 
+  // Resumen de COLOCACIÓN (eje distinto del material): finalizada / agendada (fecha + equipo) / sin agendar.
+  const fmtD = (d?: string) => (d ? new Date(d).toLocaleDateString("es-AR") : "")
+  const colocText = sale.status === "Finalizado"
+    ? "Finalizada"
+    : sale.delivery_date
+      ? `Agendada · ${fmtD(sale.delivery_date)}${sale.delivery_date_to && sale.delivery_date_to !== sale.delivery_date ? ` → ${fmtD(sale.delivery_date_to)}` : ""}${sale.delivery_crew ? ` · ${sale.delivery_crew}` : ""}`
+      : "Sin agendar"
+
   return (
     <>
     <Sheet open={!!sale} onOpenChange={(o) => !o && onClose()}>
@@ -601,12 +609,23 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
               <SheetDescription>
                 #{sale.quote_number} · {sale.created_at ? new Date(sale.created_at).toLocaleDateString("es-AR") : "sin fecha"}
                 {" · "}<Badge variant="outline" className="text-[10px]">{sale.status}</Badge>
-                {" · "}<MaterialBadge sale={sale} />
               </SheetDescription>
             </div>
             <Button variant="outline" size="sm" onClick={openChat}><MessageCircle className="h-4 w-4" />Chat</Button>
           </div>
         </SheetHeader>
+
+        {/* Dos ejes independientes, visibles al abrir: ¿se entregó el material? / ¿colocación agendada? */}
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          <div className="rounded-md border border-border px-3 py-2">
+            <div className="text-[10px] uppercase tracking-wide text-muted-foreground">Material</div>
+            <div className="mt-0.5"><MaterialBadge sale={sale} /></div>
+          </div>
+          <div className="rounded-md border border-border px-3 py-2">
+            <div className="text-[10px] uppercase tracking-wide text-muted-foreground">Colocación</div>
+            <div className="mt-0.5 text-xs">{colocText}</div>
+          </div>
+        </div>
 
         <div className="mt-6 grid grid-cols-3 gap-2 text-xs">
           <Tile label="Total" value={fmtMoney(sale.contract_total)} />
