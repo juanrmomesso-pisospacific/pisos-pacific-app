@@ -522,7 +522,20 @@ app.get('/api/inventory/audit', requireAdmin, (_req, res) => {
     if (expected !== null && Math.abs(expected - stock) > 0.5) flags.push('stock≠libro');   // cambio sin registrar
     if (flags.length) rows.push({ sku: p.sku, name: p.name, stock, committed: comm, available: r2(stock - comm), reservedStock: reserved, ledger_expected: expected, flags });
   }
-  res.json({ checked: db.products.filter(p => p.stockTrack).length, issues: rows.length, rows });
+  // Ventas ACTIVAS con líneas de piso SIN producto vinculado → NO reservan stock (hay que asociarlas
+  // o cerrar la venta). Se excluyen servicios/descuentos (que legítimamente no llevan producto).
+  const SVC_RX = /colocaci|entrega|ajuste|medici|reparaci|servicio|mano de obra|flete|descuento|adicional|visita/i;
+  const unlinked = [];
+  for (const s of db.sales) {
+    if (s.status === 'Finalizado' || s.status === 'Cancelado') continue;
+    for (const it of (s.items || [])) {
+      const qty = Number(it.quantity) || 0;
+      if (qty <= 0 || it.sku || it.product_id) continue;
+      if (/^SERV/i.test(it.sku || '') || SVC_RX.test(it.description || '')) continue;
+      unlinked.push({ sale_id: s.id, quote_number: s.quote_number, client_name: s.client_name, status: s.status, description: it.description || '', quantity: r2(qty) });
+    }
+  }
+  res.json({ checked: db.products.filter(p => p.stockTrack).length, issues: rows.length, rows, unlinked });
 });
 // Conciliación con el conteo físico (CSV de ida y vuelta). Dry-run por defecto; commit aplica.
 app.post('/api/inventory/reconcile', requireAdmin, (req, res) => {

@@ -433,7 +433,8 @@ function SummaryTile({ label, value, small }: { label: string; value: React.Reac
 type ReconRow = { sku: string; name?: string; stock: number; physical: number; diff: number; committed: number; available_after: number; flags: string[]; error?: string }
 type ReconResult = { commit: boolean; applied: number; count: number; rows: ReconRow[] }
 type AuditRow = { sku: string; name: string; stock: number; committed: number; available: number; reservedStock: number; ledger_expected: number | null; flags: string[] }
-type AuditResult = { checked: number; issues: number; rows: AuditRow[] }
+type UnlinkedLine = { sale_id: string; quote_number: string; client_name: string; status: string; description: string; quantity: number }
+type AuditResult = { checked: number; issues: number; rows: AuditRow[]; unlinked?: UnlinkedLine[] }
 const FLAG_LABEL: Record<string, string> = { sobra: "Sobra", falta: "Falta", "físico<reservado": "Físico < reservado", "sobre-cotizado": "Sobre-vendido", "stock≠libro": "Stock ≠ libro mayor" }
 
 function ReconcileSheet({ result, onClose }: { result: ReconResult | null; onClose: () => void }) {
@@ -492,16 +493,17 @@ function ReconcileSheet({ result, onClose }: { result: ReconResult | null; onClo
 
 function AuditSheet({ result, onClose }: { result: AuditResult | null; onClose: () => void }) {
   if (!result) return null
+  const unlinked = result.unlinked ?? []
   return (
     <Sheet open onOpenChange={(o) => !o && onClose()}>
       <SheetContent className="!max-w-3xl w-full overflow-y-auto">
         <SheetHeader>
           <SheetTitle>Diagnóstico de inventario</SheetTitle>
-          <SheetDescription>{result.issues} inconsistencia(s) sobre {result.checked} productos con stock</SheetDescription>
+          <SheetDescription>{result.issues} inconsistencia(s) sobre {result.checked} productos con stock{unlinked.length ? ` · ${unlinked.length} línea(s) de venta sin producto` : ""}</SheetDescription>
         </SheetHeader>
-        {result.issues === 0 ? (
+        {result.issues === 0 && unlinked.length === 0 ? (
           <div className="mt-4 text-sm text-emerald-700">✓ Sin inconsistencias detectadas.</div>
-        ) : (
+        ) : result.issues === 0 ? null : (
           <div className="mt-4 overflow-x-auto">
             <Table>
               <TableHeader><TableRow>
@@ -525,7 +527,33 @@ function AuditSheet({ result, onClose }: { result: AuditResult | null; onClose: 
             </Table>
           </div>
         )}
-        <p className="mt-3 text-[11px] text-muted-foreground"><b>Sobre-vendido</b>: hay más m² en ventas no finalizadas que stock físico (revisar cantidades o ventas a finalizar). <b>Stock ≠ libro mayor</b>: el stock no coincide con la suma de movimientos (hubo un cambio sin registrar).</p>
+        {unlinked.length > 0 && (
+          <div className="mt-6">
+            <div className="text-sm font-medium mb-1">Ventas activas con líneas sin producto ({unlinked.length})</div>
+            <p className="text-[11px] text-muted-foreground mb-2">Estas líneas de piso NO reservan stock porque no están vinculadas a un producto. Abrí la venta → "Editar ítems" para asociar el producto (o finalizá/cancelá la venta si ya está cerrada).</p>
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader><TableRow>
+                  <TableHead>Venta</TableHead>
+                  <TableHead>Descripción</TableHead>
+                  <TableHead className="text-right">Cant.</TableHead>
+                  <TableHead>Estado</TableHead>
+                </TableRow></TableHeader>
+                <TableBody>
+                  {unlinked.map((u, i) => (
+                    <TableRow key={u.sale_id + i}>
+                      <TableCell><div className="tabular text-muted-foreground">#{u.quote_number}</div><div className="truncate max-w-[160px]">{u.client_name}</div></TableCell>
+                      <TableCell><div className="truncate max-w-[280px]">{u.description}</div></TableCell>
+                      <TableCell className="text-right tabular">{fmtInt(u.quantity)}</TableCell>
+                      <TableCell><Badge variant="outline" className="text-[10px]">{u.status}</Badge></TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+        )}
+        <p className="mt-3 text-[11px] text-muted-foreground"><b>Sobre-vendido</b>: hay más m² en ventas no finalizadas que stock físico (revisar cantidades o ventas a finalizar). <b>Stock ≠ libro mayor</b>: el stock no coincide con la suma de movimientos (hubo un cambio sin registrar). <b>Líneas sin producto</b>: ventas cuyo piso no está asociado a un SKU → no reservan stock.</p>
       </SheetContent>
     </Sheet>
   )
