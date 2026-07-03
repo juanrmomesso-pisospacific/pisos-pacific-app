@@ -24,11 +24,20 @@ function prevRange(r: Range): Range {
 // Desde esta fecha la cobertura de costos por venta es completa (backfill 2026).
 // Antes: solo ventas con SKU tenían costo → el P&L devengado no cierra. Es histórico (ver caja).
 const DEVENGADO_DESDE = "2026-01-01"
-// Fecha de la venta en la ZONA LOCAL (no el slice del ISO UTC). El rango del período se arma con
-// fechas locales (ymd de Dates locales); si acá tomáramos el slice del ISO en UTC, una venta creada
-// a la tarde/noche en ARG (UTC−3) queda fechada un día adelante y se sale del tope del rango rolling
-// (cuyo `to` es "hoy" local) — aparecía en "Este mes" pero no en "Últimos 3 meses".
-const saleDate = (s: Sale) => { const iso = s.created_at || ""; if (!iso) return ""; const t = new Date(iso); return isNaN(+t) ? iso.slice(0, 10) : ymd(t) }
+// Fecha de calendario de la venta, robusta a dos formatos de `created_at`:
+//  · NOMINAL (importada/migrada): sin hora o medianoche UTC exacta ("2026-05-01T00:00:00.000Z") →
+//    es una fecha de calendario, se toma TAL CUAL (mayo 1 = mayo). Convertirla a local la correría
+//    a abril 30 (ARG es UTC−3) y falsearía el volumen/facturación por mes.
+//  · TIMESTAMP REAL (con hora, ej. "2026-07-01T02:30Z" = 30-jun 23:30 ARG) → fecha LOCAL, así una
+//    venta creada a la tarde/noche cae en su mes real y no se corre un día por el UTC (era el bug
+//    de "aparece en Este mes pero no en Últimos 3 meses").
+const saleDate = (s: Sale) => {
+  const iso = s.created_at || ""
+  if (!iso) return ""
+  if (!iso.includes("T") || /T00:00:00(\.0+)?Z?$/.test(iso)) return iso.slice(0, 10)
+  const t = new Date(iso)
+  return isNaN(+t) ? iso.slice(0, 10) : ymd(t)
+}
 const billed = (s: Sale) => (s.venta_neta != null ? s.venta_neta : s.contract_total) || 0
 const inRange = (d: string, r: Range) => !!d && d >= r.from && d <= r.to
 
