@@ -92,8 +92,9 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
 
   const linkChanged = !isEgreso && saleId !== (mov?.linked_sale_id || "")
   const transferChanged = transfer !== !!mov?.transfer
+  const categoryChanged = (v.category !== (mov?.category || "")) || (v.subcategory !== (mov?.subcategory || ""))
   async function submit() {
-    if (!mov || (!v.counterparty && !amountChanged && !linkChanged && !transferChanged)) return
+    if (!mov || (!v.counterparty && !amountChanged && !linkChanged && !transferChanged && !categoryChanged)) return
     // Corregir el monto primero (recalcula la otra moneda con el TC del movimiento).
     if (amountChanged) {
       const n = Math.abs(Number(amount)) || 0
@@ -118,19 +119,21 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
       // Cobro vinculado a una venta: el endpoint clasifica el movimiento Y actualiza el saldo de la
       // venta (registro único, sin duplicar con una carga manual en Ventas).
       await link.run(mov.id, saleId || null)
-    } else if (v.counterparty) {
+    } else if (v.counterparty || categoryChanged) {
+      // Clasificar: se puede guardar solo la categoría/subcategoría (ej. "Ingreso Otros / Paneles")
+      // aunque no haya contraparte. La contraparte se setea únicamente si se eligió una.
       await update.run("cashflow", mov.id, {
-        counterparty: v.counterparty, counterparty_type: isEgreso ? "supplier" : "client",
-        supplier_id: v.supplier_id || null, client_id: v.client_id || null,
+        ...(v.counterparty ? { counterparty: v.counterparty, counterparty_type: isEgreso ? "supplier" : "client", supplier_id: v.supplier_id || null, client_id: v.client_id || null } : {}),
         category: v.category || null, subcategory: v.subcategory || null,
         expense_type: isEgreso ? v.expense_type : null,
         needs_review: false, review_reason: null,
       })
-      // Aprender la regla: el nombre ORIGINAL (crudo) → la clasificación elegida.
+      // Aprender la regla: el nombre ORIGINAL (crudo) → la clasificación elegida (incluye subcategoría;
+      // sirve para ingresos también, ej. "CRÉDITO POR CREDIN" → Ingreso Otros / Paneles).
       if (v.learn && learnable) {
         await createRule.run("cp_rules", {
-          match: [originalName], cuit: null, counterparty: v.counterparty,
-          category: v.category || null, expense_type: isEgreso ? v.expense_type : null,
+          match: [originalName], cuit: null, counterparty: v.counterparty || null,
+          category: v.category || null, subcategory: v.subcategory || null, expense_type: isEgreso ? v.expense_type : null,
           personal: false, source: "learned", note: `Aprendida al clasificar "${originalName}"`,
         })
       }

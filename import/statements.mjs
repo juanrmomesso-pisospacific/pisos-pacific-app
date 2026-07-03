@@ -58,7 +58,10 @@ function applyCpMap(rec, rawName, cuit) {
     return rec;
   }
   if (e.counterparty) rec.counterparty = e.counterparty;
-  if (rec.flow === 'Egreso') { if (e.category) rec.category = e.category; if (e.expense_type) rec.expense_type = e.expense_type; }
+  // Categoría/subcategoría de la regla aplican a ambos flujos (ingresos incluidos, ej. Paneles).
+  if (e.category) rec.category = e.category;
+  if (e.subcategory) rec.subcategory = e.subcategory;
+  if (rec.flow === 'Egreso' && e.expense_type) rec.expense_type = e.expense_type;
   rec.needs_review = false; rec.review_reason = null;   // contraparte conocida
   return rec;
 }
