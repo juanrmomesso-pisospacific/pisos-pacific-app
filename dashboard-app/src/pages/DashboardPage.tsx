@@ -24,7 +24,11 @@ function prevRange(r: Range): Range {
 // Desde esta fecha la cobertura de costos por venta es completa (backfill 2026).
 // Antes: solo ventas con SKU tenían costo → el P&L devengado no cierra. Es histórico (ver caja).
 const DEVENGADO_DESDE = "2026-01-01"
-const saleDate = (s: Sale) => (s.created_at || "").slice(0, 10)
+// Fecha de la venta en la ZONA LOCAL (no el slice del ISO UTC). El rango del período se arma con
+// fechas locales (ymd de Dates locales); si acá tomáramos el slice del ISO en UTC, una venta creada
+// a la tarde/noche en ARG (UTC−3) queda fechada un día adelante y se sale del tope del rango rolling
+// (cuyo `to` es "hoy" local) — aparecía en "Este mes" pero no en "Últimos 3 meses".
+const saleDate = (s: Sale) => { const iso = s.created_at || ""; if (!iso) return ""; const t = new Date(iso); return isNaN(+t) ? iso.slice(0, 10) : ymd(t) }
 const billed = (s: Sale) => (s.venta_neta != null ? s.venta_neta : s.contract_total) || 0
 const inRange = (d: string, r: Range) => !!d && d >= r.from && d <= r.to
 

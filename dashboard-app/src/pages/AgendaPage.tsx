@@ -14,6 +14,7 @@ import type { Sale, Container, Product } from "@/lib/types"
 import { type Task, type TaskType, TASK_TYPE_LABEL, TASK_TYPE_ORDER } from "@/lib/tasks"
 import { ContainerImportForm } from "@/components/forms/ContainerImportForm"
 import { ContainerDetailSheet } from "@/components/forms/ContainerDetailSheet"
+import { SearchPicker } from "@/components/SearchPicker"
 import {
   WEEKDAYS, CREW_FALLBACK, crewColor, crewInitials, EVENT_COLORS, ESTADO_COLOR, MATERIAL_COLOR, MATERIAL_LABEL,
   tint, startOfMonth, addMonths, addDays, dayKey, startOfWeek, weekDays, daysGrid, isToday,
@@ -562,7 +563,7 @@ function ObraCardModal({ sale, products, tasks, onClose, onReprogramar, onMedici
           )}
 
           <div className="grid grid-cols-4 gap-1.5 pt-1">
-            <Button variant="outline" size="sm" className="text-xs" onClick={() => onReprogramar(sale.id)}>Reprogramar</Button>
+            <Button variant="outline" size="sm" className="text-xs" onClick={() => onReprogramar(sale.id)}>Editar</Button>
             <Button variant="outline" size="sm" className="text-xs" disabled={!medicion} onClick={() => medicion && onMedicion(sale.id)}>Medición</Button>
             <Button variant="outline" size="sm" className="text-xs" disabled={!remito} onClick={() => remito && onRemito(sale.id)}>Remito</Button>
             <Button variant="outline" size="sm" className="text-xs" onClick={() => { onClose(); navigate("/ventas") }}>Ver venta</Button>
@@ -715,15 +716,30 @@ function NewEventSheet({ open, onOpenChange, sales, crews, presetSaleId }: { ope
 
   useEffect(() => {
     if (!open) return
-    if (presetSaleId) { setType("entrega"); setSaleId(presetSaleId) } else { setType("entrega"); setSaleId("") }
-    setTitle(""); setDate(new Date().toISOString().slice(0, 10)); setDateTo(""); setSeller(""); setNotes("")
+    setTitle("")
+    if (presetSaleId) {
+      // Editar la programación existente: pre-llenar con los valores actuales de la venta
+      // (equipo, fechas, notas) → se puede cambiar colocador, ajustar día o poner fecha "hasta".
+      const s = sales.find(x => x.id === presetSaleId)
+      setType("entrega"); setSaleId(presetSaleId)
+      setDate(s?.delivery_date ? s.delivery_date.slice(0, 10) : new Date().toISOString().slice(0, 10))
+      setDateTo(s?.delivery_date_to ? s.delivery_date_to.slice(0, 10) : "")
+      setSeller(s?.delivery_crew ?? "")
+      setNotes(s?.delivery_notes ?? "")
+    } else {
+      setType("entrega"); setSaleId(""); setDate(new Date().toISOString().slice(0, 10)); setDateTo(""); setSeller(""); setNotes("")
+    }
   }, [open, presetSaleId])
 
   const selectedSale = saleId ? sales.find(s => s.id === saleId) ?? null : null
   useEffect(() => { if (type !== "entrega" || !selectedSale || title) return; setTitle(`Entrega · ${selectedSale.client_name}`) }, [selectedSale?.id, type])
 
   const linkableSales = useMemo(() => sales.filter(s => ["Confirmado", "Programado", "En proceso"].includes(s.status)), [sales])
-  const unscheduledSales = useMemo(() => linkableSales.filter(s => !s.delivery_date), [linkableSales])
+  const saleItems = useMemo(() => linkableSales.map(s => ({
+    id: s.id, label: saleLabel(s),
+    sub: s.delivery_date ? `Programada · ${new Date(s.delivery_date).toLocaleDateString("es-AR")}` : "Sin entrega programada",
+    hint: fmtMoney(s.contract_total), keywords: `${s.client_name} ${s.quote_number} ${s.title || ""}`,
+  })), [linkableSales])
   const isEntrega = type === "entrega"
   const isCrewTask = type === "reparacion" || type === "ausencia"    // ocupan a un equipo, admiten rango
   const canSubmit = !!date && (isEntrega ? !!saleId : !!title)
@@ -750,7 +766,7 @@ function NewEventSheet({ open, onOpenChange, sales, crews, presetSaleId }: { ope
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent>
-        <SheetHeader><SheetTitle>Programar evento</SheetTitle><SheetDescription>Entrega, medición, reparación, ausencia u otra tarea</SheetDescription></SheetHeader>
+        <SheetHeader><SheetTitle>{presetSaleId ? "Editar programación" : "Programar evento"}</SheetTitle><SheetDescription>{presetSaleId ? "Cambiá el equipo, las fechas o las notas de la colocación" : "Entrega, medición, reparación, ausencia u otra tarea"}</SheetDescription></SheetHeader>
         <div className="mt-6 space-y-4">
           <div>
             <label className="text-xs font-medium block mb-1.5 uppercase tracking-wide text-muted-foreground">Tipo</label>
@@ -766,12 +782,15 @@ function NewEventSheet({ open, onOpenChange, sales, crews, presetSaleId }: { ope
           {isEntrega ? (
             <>
               <div>
-                <label className="text-sm font-medium block mb-1">Venta a entregar</label>
-                <select value={saleId} onChange={(e) => setSaleId(e.target.value)} className={selCls}>
-                  <option value="">— Elegí una venta —</option>
-                  {unscheduledSales.length > 0 && <optgroup label="Sin entrega programada">{unscheduledSales.map(s => <option key={s.id} value={s.id}>{saleLabel(s)} · {fmtMoney(s.contract_total)}</option>)}</optgroup>}
-                  {linkableSales.filter(s => s.delivery_date).length > 0 && <optgroup label="Ya programadas (reprogramar)">{linkableSales.filter(s => s.delivery_date).map(s => <option key={s.id} value={s.id}>{saleLabel(s)} · {new Date(s.delivery_date!).toLocaleDateString("es-AR")}</option>)}</optgroup>}
-                </select>
+                <label className="text-sm font-medium block mb-1">{presetSaleId ? "Editando la programación de" : "Venta a entregar"}</label>
+                {selectedSale ? (
+                  <div className="flex items-center justify-between border border-border rounded-md px-3 h-9 text-sm bg-muted/30">
+                    <span className="truncate">{saleLabel(selectedSale)}</span>
+                    {!presetSaleId && <button type="button" className="text-xs text-muted-foreground hover:text-foreground shrink-0 ml-2" onClick={() => setSaleId("")}>cambiar</button>}
+                  </div>
+                ) : (
+                  <SearchPicker items={saleItems} placeholder="Buscar venta por cliente o número…" onPick={setSaleId} />
+                )}
                 {selectedSale?.client_address && <div className="text-[10px] text-muted-foreground mt-1">📍 {selectedSale.client_address}</div>}
               </div>
               <div className="grid grid-cols-2 gap-3">
@@ -782,7 +801,7 @@ function NewEventSheet({ open, onOpenChange, sales, crews, presetSaleId }: { ope
                 <select value={seller} onChange={(e) => setSeller(e.target.value)} className={selCls}><option value="">— Sin asignar —</option>{crews.map(c => <option key={c} value={c}>{c}</option>)}{seller && !crews.includes(seller) && seller !== "Externo" && <option value={seller}>{seller}</option>}<option value="Externo">Externo / otro</option></select>
               </div>
               <div><label className="text-sm font-medium block mb-1">Notas de entrega</label><Input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Ascensor de carga, llaves con portero…" /></div>
-              <div className="text-[11px] text-muted-foreground rounded-md bg-muted/40 border border-border px-3 py-2">Al programar se pasa la venta a <strong>Programado</strong> y se crea la <strong>Medición previa</strong> (−2 días).</div>
+              {!presetSaleId && <div className="text-[11px] text-muted-foreground rounded-md bg-muted/40 border border-border px-3 py-2">Al programar se pasa la venta a <strong>Programado</strong> y se crea la <strong>Medición previa</strong> (−2 días).</div>}
             </>
           ) : (
             <>
@@ -809,7 +828,7 @@ function NewEventSheet({ open, onOpenChange, sales, crews, presetSaleId }: { ope
           )}
 
           <div className="flex items-center gap-2 pt-2">
-            <Button onClick={submit} disabled={create.busy || update.busy || txn.busy || !canSubmit}>{create.busy || update.busy || txn.busy ? "Guardando…" : isEntrega ? "Programar entrega" : "Programar"}</Button>
+            <Button onClick={submit} disabled={create.busy || update.busy || txn.busy || !canSubmit}>{create.busy || update.busy || txn.busy ? "Guardando…" : isEntrega ? (presetSaleId ? "Guardar cambios" : "Programar entrega") : "Programar"}</Button>
             {create.error && <span className="text-xs text-destructive">{create.error}</span>}
           </div>
         </div>
