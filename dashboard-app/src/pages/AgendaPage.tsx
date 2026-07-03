@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react"
-import { ChevronLeft, ChevronRight, Ship, Plus, GripVertical } from "lucide-react"
+import { ChevronLeft, ChevronRight, Ship, Plus, GripVertical, ChevronDown } from "lucide-react"
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
 import { useNavigate } from "react-router-dom"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -250,9 +251,29 @@ function FilterBar({ filters, setFilters, anyFilter, colocadorOptions, disenoOpt
         <div className={group}><span className={glabel}>Colocador</span>
           {colocadorOptions.map(c => <Chip key={c} label={c} count={countColocador(c)} color={crewColor(c)} active={filters.colocador === c} onClick={() => setFilters({ ...filters, colocador: filters.colocador === c ? null : c })} />)}
         </div>
+        {/* Diseño — desplegable y solo en desktop (hay muchos diseños → ocuparían mucho como chips) */}
         {disenoOptions.length > 0 && (
-          <div className={group}><span className={glabel}>Diseño</span>
-            {disenoOptions.map(d => <Chip key={d} label={d} count={countDiseno(d)} active={filters.diseno === d} onClick={() => setFilters({ ...filters, diseno: filters.diseno === d ? null : d })} />)}
+          <div className={cn(group, "hidden lg:flex")}><span className={glabel}>Diseño</span>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className={cn("inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs transition-colors max-w-[240px]",
+                  filters.diseno ? "border-transparent text-primary-foreground" : "border-border bg-background text-foreground hover:bg-accent")}
+                  style={filters.diseno ? { background: "var(--primary)" } : undefined}>
+                  <span className="truncate">{filters.diseno ?? "Todos los diseños"}</span>
+                  <ChevronDown className="h-3 w-3 opacity-60 shrink-0" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="max-h-72 w-64 overflow-y-auto">
+                <DropdownMenuItem onClick={() => setFilters({ ...filters, diseno: null })} className={cn(!filters.diseno && "bg-accent")}>Todos los diseños</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                {disenoOptions.map(d => (
+                  <DropdownMenuItem key={d} onClick={() => setFilters({ ...filters, diseno: d })} className={cn(filters.diseno === d && "bg-accent")}>
+                    <span className="flex-1 truncate">{d}</span>
+                    <span className="opacity-60 tabular ml-2">{countDiseno(d)}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         )}
         <div className={group}><span className={glabel}>Estado</span>
