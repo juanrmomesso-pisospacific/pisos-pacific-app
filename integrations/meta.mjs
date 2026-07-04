@@ -259,6 +259,9 @@ async function handleCashReport(db, save, from, rawText) {
   const text = String(rawText || '').trim();
   const reply = async (msg) => { try { await sendOutbound('whatsapp', from, msg); } catch { /* envío best-effort */ } return msg; };
   let s = sessions[norm] || {};
+  // TTL: una sesión incompleta y vieja (>60 min sin actividad) se descarta → no arrastra estado
+  // (evita que un mensaje nuevo se consuma como descripción/proveedor de un reporte abandonado).
+  if (s.ts && Date.now() - s.ts > 60 * 60 * 1000 && !s.last_mov_id) s = {};
 
   if (/^\s*cancelar\b/i.test(text)) {
     if (s.last_mov_id) {
@@ -272,6 +275,13 @@ async function handleCashReport(db, save, from, rawText) {
   }
 
   if (s.last_mov_id) s = {};   // ya registró antes → nuevo mensaje arranca sesión limpia
+
+  // Un gasto NUEVO explícito (empieza con "gasto" o es SOLO un monto, ej. "$970.000") reinicia una
+  // sesión a medio completar → así no se toma ese monto como la descripción o el proveedor de un
+  // reporte anterior abandonado (bug reportado: "$970.000" preguntaba "No tengo a $970.000 registrado").
+  const looksLikeNewExpense = /^\s*(gasto|gast[eé]|gaste)\b/i.test(text) || /^\s*\$?\s*\d[\d.,]*\s*(usd|u\$s|pesos?|ars)?\s*$/i.test(text);
+  if (looksLikeNewExpense && !s.cp_choosing && (s.amount || s.description)) s = {};
+  s.ts = Date.now();   // refrescar actividad (para el TTL)
 
   // Si estamos esperando que elija el proveedor entre opciones (A/B/C… / nuevo / ninguno).
   if (s.cp_choosing) {
