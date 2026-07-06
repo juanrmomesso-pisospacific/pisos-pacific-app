@@ -11,7 +11,7 @@ export function Layout() {
         <SiteHeader />
         {/* min-w-0 + overflow-x-hidden: el contenido ancho (tablas) scrollea en su propio
             contenedor en vez de empujar la columna más allá del viewport en móvil */}
-        <main className="@container/main flex flex-1 flex-col gap-4 py-4 md:gap-6 md:py-6 min-w-0 overflow-x-hidden">
+        <main className="@container/main flex flex-1 flex-col gap-4 py-4 md:gap-6 md:py-6 min-w-0 overflow-x-hidden pb-[calc(1rem+env(safe-area-inset-bottom))] md:pb-[calc(1.5rem+env(safe-area-inset-bottom))]">
           <Outlet />
         </main>
       </SidebarInset>

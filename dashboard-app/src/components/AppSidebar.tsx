@@ -89,7 +89,7 @@ export function AppSidebar() {
   const smallLogo = effectiveDark ? "/LogoPacificSmall.png" : "/LogoPacificSmallDark.png"
   return (
     <Sidebar variant="floating" collapsible="icon">
-      <SidebarHeader>
+      <SidebarHeader className="pt-[env(safe-area-inset-top)]">
         <Link to="/dashboard" className="flex items-center justify-center px-2 py-2">
           <img src={fullLogo} alt="Pisos Pacific" className="max-w-[150px] h-auto group-data-[collapsible=icon]:hidden" />
           <img src={smallLogo} alt="Pisos Pacific" className="h-7 w-auto hidden group-data-[collapsible=icon]:block" />
@@ -100,7 +100,7 @@ export function AppSidebar() {
         {admin.length > 0 && <NavGroup label="Administración" items={admin} />}
         {sistema.length > 0 && <NavGroup label="Sistema" items={sistema} />}
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="pb-[env(safe-area-inset-bottom)]">
         <SidebarMenu>
           <SidebarMenuItem>
             <NavUser />
