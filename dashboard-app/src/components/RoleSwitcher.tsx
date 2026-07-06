@@ -2,16 +2,18 @@ import { User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
 import { useRole } from "@/contexts/RoleContext"
+import { useAuth } from "@/contexts/AuthContext"
 import { useApi } from "@/lib/api"
 
 type SettingsResp = { sellers?: { name: string; phone?: string }[] }
 
 export function RoleSwitcher() {
   const { role, setRole, locked } = useRole()
+  const { state } = useAuth()
   const { data } = useApi<SettingsResp>("/api/settings")
   const sellers = data?.sellers ?? []
-  // Vendors can't switch role — they're locked to their own scope.
-  if (locked) return null
+  // Solo los admins pueden "ver como" (impersonar vendedor). Vendedores y logística no.
+  if (locked || (state.status === "ready" && state.user.role !== "admin")) return null
 
   return (
     <DropdownMenu>

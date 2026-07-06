@@ -407,6 +407,51 @@ app.post('/api/auth/change-password', (req, res) => {
   res.json({ ok: true });
 });
 
+// ---------- Gestión de usuarios / equipo (solo admin) ----------
+const VALID_ROLES = new Set(['admin', 'vendor', 'logistica']);
+app.get('/api/users', requireAuth, requireAdmin, (_req, res) => res.json(db.users.map(publicUser)));
+app.post('/api/users', requireAuth, requireAdmin, (req, res) => {
+  const { email, name, role, seller_name, password } = req.body ?? {};
+  const em = String(email || '').trim().toLowerCase();
+  if (!em || !/.+@.+\..+/.test(em)) return res.status(400).json({ error: 'email inválido' });
+  if (!name || !String(name).trim()) return res.status(400).json({ error: 'falta el nombre' });
+  if (!VALID_ROLES.has(role)) return res.status(400).json({ error: 'rol inválido' });
+  if (!password || String(password).length < 6) return res.status(400).json({ error: 'la contraseña debe tener al menos 6 caracteres' });
+  if (db.users.some(u => (u.email || '').toLowerCase() === em)) return res.status(409).json({ error: 'ya existe un usuario con ese email' });
+  const u = { id: 'u-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), email: em, name: String(name).trim(), role, seller_name: seller_name || '', password_hash: bcrypt.hashSync(String(password), 10) };
+  db.users.push(u); save();
+  res.json({ user: publicUser(u) });
+});
+app.patch('/api/users/:id', requireAuth, requireAdmin, (req, res) => {
+  const u = db.users.find(x => x.id === req.params.id);
+  if (!u) return res.sendStatus(404);
+  const { name, role, seller_name } = req.body ?? {};
+  if (role !== undefined) {
+    if (!VALID_ROLES.has(role)) return res.status(400).json({ error: 'rol inválido' });
+    if (u.role === 'admin' && role !== 'admin' && db.users.filter(x => x.role === 'admin').length <= 1) return res.status(400).json({ error: 'no podés dejar el sistema sin administradores' });
+    u.role = role;
+  }
+  if (name !== undefined && String(name).trim()) u.name = String(name).trim();
+  if (seller_name !== undefined) u.seller_name = seller_name || '';
+  save(); res.json({ user: publicUser(u) });
+});
+app.post('/api/users/:id/set-password', requireAuth, requireAdmin, (req, res) => {
+  const u = db.users.find(x => x.id === req.params.id);
+  if (!u) return res.sendStatus(404);
+  const pw = req.body?.password;
+  if (!pw || String(pw).length < 6) return res.status(400).json({ error: 'la contraseña debe tener al menos 6 caracteres' });
+  setPassword(u, pw); save(); res.json({ ok: true });
+});
+app.delete('/api/users/:id', requireAuth, requireAdmin, (req, res) => {
+  const u = db.users.find(x => x.id === req.params.id);
+  if (!u) return res.sendStatus(404);
+  if (u.id === req.user.id) return res.status(400).json({ error: 'no podés borrar tu propio usuario' });
+  if (u.role === 'admin' && db.users.filter(x => x.role === 'admin').length <= 1) return res.status(400).json({ error: 'no podés borrar el último administrador' });
+  db.users = db.users.filter(x => x.id !== u.id);
+  for (const [tok, s] of Object.entries(db.sessions || {})) if (s.userId === u.id) delete db.sessions[tok];
+  save(); res.json({ ok: true });
+});
+
 // Olvidé mi contraseña → genera token y manda email con link de reseteo.
 if (!db.password_resets) db.password_resets = {};
 app.post('/api/auth/forgot-password', async (req, res) => {

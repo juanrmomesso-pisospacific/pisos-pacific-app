@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { FormError } from "@/components/FormError"
 import { useAuth } from "@/contexts/AuthContext"
+import { ROLE_LABEL } from "@/lib/access"
 
 function ChangePasswordSheet({ open, onOpenChange }: { open: boolean; onOpenChange: (o: boolean) => void }) {
   const [current, setCurrent] = useState("")
@@ -79,7 +80,7 @@ export function NavUser() {
           </SidebarMenuButton>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" side="top" className="w-56">
-          <DropdownMenuLabel>{user?.role === "admin" ? "Administrador" : "Vendedor"}</DropdownMenuLabel>
+          <DropdownMenuLabel>{ROLE_LABEL[user?.role ?? ""] ?? "Vendedor"}</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={() => setOpenPw(true)}>
             <KeyRound className="h-4 w-4 mr-2" /> Cambiar contraseña

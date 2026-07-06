@@ -9,6 +9,9 @@ import { RulesManager } from "@/components/RulesManager"
 import { TemplateManager } from "@/components/TemplateManager"
 import { useAction, refresh } from "@/lib/mutations"
 import { useAuth } from "@/contexts/AuthContext"
+import { useConfirm } from "@/components/ui/confirm"
+import { ROLE_LABEL } from "@/lib/access"
+import { KeyRound, Trash2 } from "lucide-react"
 
 type MpSettings = { enabled: boolean; access_token: string; public_key: string }
 type Settings = { integrations?: { mercadopago?: MpSettings } }
@@ -39,10 +42,111 @@ export default function ConfiguracionPage() {
           <MercadoPagoSection mp={settings?.integrations?.mercadopago} />
         </CardContent>
       </Card>
+      {isAdmin && <UsersManager />}
       <TemplateManager />
       <RulesManager />
       {isAdmin && <EmailCleanupSection />}
     </div>
+  )
+}
+
+// Gestión de usuarios / equipo (solo admin): crear cuentas con rol, cambiar contraseña, eliminar.
+type TeamUser = { id: string; email: string; name: string; role: string; seller_name: string }
+const ROLE_OPTIONS = ["logistica", "vendor", "admin"] as const
+function UsersManager() {
+  const usersApi = useApi<TeamUser[]>("/api/users")
+  const users = usersApi.data ?? []
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [role, setRole] = useState<string>("logistica")
+  const [seller, setSeller] = useState("")
+  const [pw, setPw] = useState("")
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [ok, setOk] = useState<string | null>(null)
+  const confirm = useConfirm()
+
+  const create = async () => {
+    setBusy(true); setError(null); setOk(null)
+    try {
+      const r = await fetch("/api/users", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, role, seller_name: role === "vendor" ? seller : "", password: pw }),
+      })
+      const j = await r.json(); if (!r.ok || j.error) throw new Error(j.error || `${r.status}`)
+      setOk(`Usuario ${j.user.email} creado como ${ROLE_LABEL[role]}.`)
+      setName(""); setEmail(""); setSeller(""); setPw(""); setRole("logistica")
+      usersApi.refetch()
+    } catch (e: any) { setError(e?.message || "error") } finally { setBusy(false) }
+  }
+  const del = async (u: TeamUser) => {
+    if (!(await confirm({ title: "Eliminar usuario", description: `Se elimina el acceso de ${u.name} (${u.email}). Sus sesiones se cierran.`, confirmLabel: "Eliminar", destructive: true }))) return
+    const r = await fetch(`/api/users/${u.id}`, { method: "DELETE" })
+    const j = await r.json().catch(() => ({}))
+    if (!r.ok || j.error) { setError(j.error || "no se pudo borrar"); return }
+    setError(null); usersApi.refetch()
+  }
+  const resetPw = async (u: TeamUser) => {
+    const npw = window.prompt(`Nueva contraseña para ${u.name} (mínimo 6 caracteres):`)
+    if (!npw) return
+    const r = await fetch(`/api/users/${u.id}/set-password`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ password: npw }) })
+    const j = await r.json().catch(() => ({}))
+    if (!r.ok || j.error) setError(j.error || "error"); else { setError(null); setOk(`Contraseña de ${u.name} actualizada.`) }
+  }
+  const canSubmit = name.trim() && /.+@.+\..+/.test(email) && pw.length >= 6
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Usuarios del equipo</CardTitle>
+        <CardDescription>
+          Creá accesos con distintos permisos. <b>Logística / Entregas</b> solo ve Ventas, Cotizaciones, Leads,
+          Mensajes y Agenda (no Dashboard, Inventario ni Administración). <b>Vendedor</b> ve su propio scope.
+          <b> Administrador</b> ve todo.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        {error && <div className="text-sm text-destructive flex items-center gap-1.5"><AlertCircle className="h-4 w-4" />{error}</div>}
+        {ok && <div className="text-sm text-emerald-700 flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4" />{ok}</div>}
+
+        {/* Usuarios existentes */}
+        <div className="rounded-md border border-border divide-y divide-border">
+          {users.length === 0 && <div className="px-3 py-2 text-xs text-muted-foreground">Sin usuarios.</div>}
+          {users.map((u) => (
+            <div key={u.id} className="px-3 py-2 flex items-center justify-between gap-2 text-sm">
+              <div className="min-w-0">
+                <div className="truncate font-medium">{u.name} <span className="text-muted-foreground font-normal">· {u.email}</span></div>
+                <div className="text-[11px] text-muted-foreground">{ROLE_LABEL[u.role] ?? u.role}{u.seller_name ? ` · ${u.seller_name}` : ""}</div>
+              </div>
+              <div className="flex items-center gap-1 shrink-0">
+                <Button variant="ghost" size="icon" className="h-7 w-7" title="Cambiar contraseña" onClick={() => resetPw(u)}><KeyRound className="h-3.5 w-3.5" /></Button>
+                <Button variant="ghost" size="icon" className="h-7 w-7 text-destructive" title="Eliminar" onClick={() => del(u)}><Trash2 className="h-3.5 w-3.5" /></Button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Alta de usuario */}
+        <div className="rounded-md border border-border p-3 space-y-3">
+          <div className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Nuevo usuario</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div><label className="text-xs font-medium block mb-1">Nombre</label><Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nombre y apellido" /></div>
+            <div><label className="text-xs font-medium block mb-1">Email</label><Input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="persona@pisospacific.com" type="email" autoComplete="off" /></div>
+            <div>
+              <label className="text-xs font-medium block mb-1">Rol</label>
+              <select value={role} onChange={(e) => setRole(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
+                {ROLE_OPTIONS.map((r) => <option key={r} value={r}>{ROLE_LABEL[r]}</option>)}
+              </select>
+            </div>
+            {role === "vendor"
+              ? <div><label className="text-xs font-medium block mb-1">Nombre de vendedor <span className="text-muted-foreground font-normal">(para su scope)</span></label><Input value={seller} onChange={(e) => setSeller(e.target.value)} placeholder="Como figura en las ventas" /></div>
+              : <div><label className="text-xs font-medium block mb-1">Contraseña inicial</label><Input value={pw} onChange={(e) => setPw(e.target.value)} placeholder="mínimo 6 caracteres" type="text" autoComplete="off" /></div>}
+          </div>
+          {role === "vendor" && <div><label className="text-xs font-medium block mb-1">Contraseña inicial</label><Input value={pw} onChange={(e) => setPw(e.target.value)} placeholder="mínimo 6 caracteres" type="text" autoComplete="off" /></div>}
+          <Button onClick={create} disabled={busy || !canSubmit}>{busy ? "Creando…" : "Crear usuario"}</Button>
+        </div>
+      </CardContent>
+    </Card>
   )
 }
 

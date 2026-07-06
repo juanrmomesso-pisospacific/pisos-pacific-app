@@ -7,6 +7,8 @@ import {
 } from "@/components/ui/sidebar"
 import { NavUser } from "@/components/NavUser"
 import { useTheme } from "@/contexts/ThemeContext"
+import { useAuth } from "@/contexts/AuthContext"
+import { canAccess } from "@/lib/access"
 
 type NavItem = { label: string; href: string; icon: React.ComponentType<{ className?: string }>; sub?: { label: string; href: string; icon: React.ComponentType<{ className?: string }> }[] }
 
@@ -79,6 +81,10 @@ function NavGroup({ label, items }: { label: string; items: NavItem[] }) {
 
 export function AppSidebar() {
   const { effectiveDark } = useTheme()
+  const { state } = useAuth()
+  const role = state.status === "ready" ? state.user.role : undefined
+  const filt = (items: NavItem[]) => items.filter((i) => canAccess(role, i.href))
+  const operacion = filt(NAV_OPERACION), admin = filt(NAV_ADMIN), sistema = filt(NAV_SISTEMA)
   const fullLogo = effectiveDark ? "/LogoPacific.png" : "/LogoPacificDark.png"
   const smallLogo = effectiveDark ? "/LogoPacificSmall.png" : "/LogoPacificSmallDark.png"
   return (
@@ -90,9 +96,9 @@ export function AppSidebar() {
         </Link>
       </SidebarHeader>
       <SidebarContent>
-        <NavGroup label="Operación" items={NAV_OPERACION} />
-        <NavGroup label="Administración" items={NAV_ADMIN} />
-        <NavGroup label="Sistema" items={NAV_SISTEMA} />
+        {operacion.length > 0 && <NavGroup label="Operación" items={operacion} />}
+        {admin.length > 0 && <NavGroup label="Administración" items={admin} />}
+        {sistema.length > 0 && <NavGroup label="Sistema" items={sistema} />}
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>

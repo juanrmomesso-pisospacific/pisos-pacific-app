@@ -4,7 +4,7 @@ export type AuthUser = {
   id: string
   email: string
   name: string
-  role: "admin" | "vendor"
+  role: "admin" | "vendor" | "logistica"
   seller_name: string
 }
 
