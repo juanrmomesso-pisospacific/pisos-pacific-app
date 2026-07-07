@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { MoreHorizontal, Check, DollarSign, Send, ThumbsUp, X, FileSignature, Truck, Loader, CheckCheck, FileText, Receipt, Link as LinkIcon, Copy, ExternalLink, CalendarClock, RefreshCw, Files, MessageCircle, Mail } from "lucide-react"
+import { MoreHorizontal, Check, DollarSign, Send, ThumbsUp, X, FileSignature, Truck, Loader, CheckCheck, FileText, Receipt, Link as LinkIcon, Copy, ExternalLink, CalendarClock, RefreshCw, Files, MessageCircle, Mail, Share2 } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -89,14 +89,34 @@ function ShareQuoteSheet({ quote, open, onOpenChange }: { quote: Quote; open: bo
   const [msg, setMsg] = useState("")
   const [link, setLink] = useState("")
   const [result, setResult] = useState<{ ok: boolean; text: string } | null>(null)
+  const [pdfFile, setPdfFile] = useState<File | null>(null)   // pre-descargado para el share nativo
+  const pdfName = `Presupuesto ${quote.quote_number} - ${quote.client_name}.pdf`
 
   useEffect(() => {
     if (!open) return
-    setMsg(quoteShareMessage(quote)); setResult(null)
+    setMsg(quoteShareMessage(quote)); setResult(null); setPdfFile(null)
     // traer el link público una vez (sin enviar nada)
     share.run(quote.id, {}).then((r) => { if (r?.link) setLink(r.link) })
+    // pre-descargar el PDF del server → así el share nativo corre dentro del gesto del tap (clave en iOS)
+    fetch(`/api/quotes/${quote.id}/pdf`, { credentials: "include" })
+      .then((r) => (r.ok ? r.blob() : Promise.reject(new Error(String(r.status)))))
+      .then((b) => setPdfFile(new File([b], pdfName, { type: "application/pdf" })))
+      .catch(() => { /* el fallback abre el PDF igual */ })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open])
+
+  // Compartir el PDF con la hoja de compartir del teléfono (WhatsApp, Mail, AirDrop, etc.).
+  const nav = navigator as any
+  const canSharePdf = !!(pdfFile && nav.canShare && nav.canShare({ files: [pdfFile] }))
+  const sharePdf = async () => {
+    if (canSharePdf) {
+      try { await nav.share({ files: [pdfFile], title: `Presupuesto ${quote.quote_number}`, text: msg.trim() || undefined }) }
+      catch (e: any) { if (e?.name !== "AbortError") setResult({ ok: false, text: "No se pudo abrir el compartir" }) }
+    } else {
+      // Escritorio / sin Web Share de archivos → abrir el PDF (descargar/imprimir a mano).
+      openPacificPdf("quotes", quote.id)
+    }
+  }
 
   const send = async (channel: "whatsapp" | "email") => {
     const r = await share.run(quote.id, { [channel]: true, message: msg.trim() })
@@ -121,8 +141,15 @@ function ShareQuoteSheet({ quote, open, onOpenChange }: { quote: Quote; open: bo
           <SheetDescription>#{quote.quote_number} · {quote.client_name}</SheetDescription>
         </SheetHeader>
         <div className="mt-6 space-y-4">
-          <div>
-            <label className="text-xs text-muted-foreground">Mensaje para el cliente</label>
+          {/* Compartir el PDF desde el teléfono (share nativo): mandarlo por tu WhatsApp, mail, AirDrop… */}
+          <div className="rounded-md border border-border p-3 space-y-2">
+            <Button size="sm" className="w-full" disabled={!pdfFile} onClick={sharePdf}>
+              <Share2 className="h-3.5 w-3.5" />{pdfFile ? "Compartir PDF" : "Preparando PDF…"}
+            </Button>
+            <p className="text-[11px] text-muted-foreground">Abre el compartir del teléfono para mandarlo por tu WhatsApp, mail, etc. En la compu descarga/abre el PDF.</p>
+          </div>
+          <div className="border-t border-border pt-3">
+            <label className="text-xs text-muted-foreground">O enviarlo directo al cliente (desde el número/mail del negocio)</label>
             <textarea value={msg} onChange={(e) => setMsg(e.target.value)} rows={4}
               className="mt-1 w-full resize-y rounded-md border border-input bg-transparent p-2 text-sm" />
           </div>
