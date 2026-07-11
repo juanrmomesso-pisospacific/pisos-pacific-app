@@ -8,7 +8,7 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 import { useApi, getJSON } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { useAuth } from "@/contexts/AuthContext"
-import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, EMOJIS, fillTemplate, suggestTemplates, templateMatchesChannel } from "@/lib/messaging"
+import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, EMOJIS, fillTemplate, suggestTemplates, templateMatchesChannel, templateLabel } from "@/lib/messaging"
 import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_LABEL as LEAD_STATUS_LABEL } from "@/lib/leads"
 import { findConvId, digits, quoteShareMessage } from "@/lib/chat"
 import { statusLabel } from "@/components/RowActions"
@@ -187,6 +187,7 @@ export default function MensajesPage() {
       <Thread
         className={cn("lg:flex", selectedId && !showContact ? "flex" : "hidden")}
         conversation={selected}
+        lead={selected?.linked_lead_id ? leadById.get(selected.linked_lead_id) : undefined}
         templates={templates}
         onBack={clearSelection}
         onShowContact={() => setShowContact(true)}
@@ -384,7 +385,7 @@ function ConversationRow({ conv, lead, waiting, selected, onClick, onIgnore }: {
 // CENTER — thread + composer
 // -----------------------------------------------------------------------------
 
-function Thread({ conversation, templates, className, onBack, onShowContact }: { conversation: Conversation | null; templates: Template[]; className?: string; onBack?: () => void; onShowContact?: () => void }) {
+function Thread({ conversation, lead, templates, className, onBack, onShowContact }: { conversation: Conversation | null; lead?: Lead; templates: Template[]; className?: string; onBack?: () => void; onShowContact?: () => void }) {
   const confirm = useConfirm()
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(false)
@@ -505,10 +506,11 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
   const isEmail = conversation.channel === "email"
   // Plantillas aprobadas que aplican a este canal (incluye "Todos" y "Chat" para WA/IG)
   const availableTemplates = templates.filter(t => templateMatchesChannel(t.channel, conversation.channel) && t.status === "approved")
-  // Sugerencias interactivas: según el último mensaje recibido del cliente. (Consts planas,
-  // no hooks — este bloque corre después del early-return de arriba.)
+  // Sugerencias interactivas: último mensaje del cliente + ETAPA del lead vinculado (un lead
+  // Cotizado sugiere seguimiento/cierre aunque el cliente no haya escrito nada nuevo).
+  // (Consts planas, no hooks — este bloque corre después del early-return de arriba.)
   const lastInbound = [...messages].reverse().find(m => m.direction === "in")?.body || ""
-  const suggestions = suggestTemplates(availableTemplates, lastInbound, conversation.channel, 3)
+  const suggestions = suggestTemplates(availableTemplates, lastInbound, conversation.channel, { leadStatus: lead?.status, max: 3 })
 
   return (
     <section
@@ -552,7 +554,7 @@ function Thread({ conversation, templates, className, onBack, onShowContact }: {
             <button key={t.id} type="button" title={t.body}
               onClick={() => insertText(fillTemplate(t.body, conversation.contact_name))}
               className="text-[11px] rounded-full border border-border px-2 py-0.5 text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">
-              {t.name}
+              {templateLabel(t)}
             </button>
           ))}
         </div>

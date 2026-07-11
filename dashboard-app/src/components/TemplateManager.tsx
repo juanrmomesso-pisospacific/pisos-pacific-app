@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { useConfirm } from "@/components/ui/confirm"
-import { type Template, CHANNEL_LABEL } from "@/lib/messaging"
+import { type Template, CHANNEL_LABEL, STAGES, STAGE_LABEL } from "@/lib/messaging"
 
 const inputSel = "h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm"
 const CHANNELS: { value: string; label: string }[] = [
@@ -32,13 +32,14 @@ export function TemplateManager() {
   const [channel, setChannel] = useState("all")
   const [body, setBody] = useState("")
   const [keywords, setKeywords] = useState("")
+  const [stage, setStage] = useState("")
 
-  const reset = () => { setEditId(null); setName(""); setChannel("all"); setBody(""); setKeywords("") }
-  const startEdit = (t: Template) => { setEditId(t.id); setName(t.name); setChannel(t.channel); setBody(t.body); setKeywords(t.keywords || "") }
+  const reset = () => { setEditId(null); setName(""); setChannel("all"); setBody(""); setKeywords(""); setStage("") }
+  const startEdit = (t: Template) => { setEditId(t.id); setName(t.name); setChannel(t.channel); setBody(t.body); setKeywords(t.keywords || ""); setStage(t.stage || "") }
 
   const save = async () => {
     if (!name.trim() || !body.trim()) return
-    const payload = { name: name.trim(), channel, body: body.trim(), keywords: keywords.trim(), status: "approved", category: "UTILITY", language: "es_AR" }
+    const payload = { name: name.trim(), channel, body: body.trim(), keywords: keywords.trim(), stage: stage || null, status: "approved", category: "UTILITY", language: "es_AR" }
     const r = editId ? await update.run("templates", editId, payload) : await create.run("templates", payload)
     if (r) { reset(); refresh() }
   }
@@ -64,7 +65,13 @@ export function TemplateManager() {
           </div>
           <textarea value={body} onChange={(e) => setBody(e.target.value)} rows={3} placeholder="Texto del mensaje… (ej: Hola {nombre}, gracias por tu consulta!)"
             className="w-full resize-y rounded-md border border-input bg-transparent p-2 text-sm" />
-          <Input value={keywords} onChange={(e) => setKeywords(e.target.value)} placeholder="Palabras clave para sugerirla (ej: precio, presupuesto, cuánto sale)" />
+          <div className="flex flex-col sm:flex-row gap-2">
+            <Input value={keywords} onChange={(e) => setKeywords(e.target.value)} placeholder="Palabras clave para sugerirla (ej: precio, presupuesto, cuánto sale)" className="sm:flex-1" />
+            <select value={stage} onChange={(e) => setStage(e.target.value)} className={inputSel + " sm:w-52"} title="Etapa del proceso: se sugiere sola según el estado del lead (Nuevo→Consulta, Cotizado→Seguimiento/Cierre, Ganado→Cierre/Post-venta)">
+              <option value="">Sin etapa</option>
+              {STAGES.map((st) => <option key={st} value={st}>{STAGE_LABEL[st]}</option>)}
+            </select>
+          </div>
           <div className="flex items-center gap-2">
             <Button size="sm" disabled={create.busy || update.busy || !name.trim() || !body.trim()} onClick={save}>
               {editId ? <><Pencil className="h-3.5 w-3.5" />Guardar cambios</> : <><Plus className="h-3.5 w-3.5" />Agregar plantilla</>}
@@ -81,7 +88,7 @@ export function TemplateManager() {
           ) : templates.map((t) => (
             <div key={t.id} className="flex items-start gap-2 px-3 py-2 text-sm">
               <div className="flex-1 min-w-0">
-                <div className="font-medium truncate flex items-center gap-2">{t.name}<Badge variant="outline" className="text-[10px] shrink-0">{channelLabel(t.channel)}</Badge></div>
+                <div className="font-medium truncate flex items-center gap-2">{t.name}<Badge variant="outline" className="text-[10px] shrink-0">{channelLabel(t.channel)}</Badge>{t.stage ? <Badge variant="outline" className="text-[10px] shrink-0 text-amber-600 border-amber-300">{STAGE_LABEL[t.stage] ?? t.stage}</Badge> : null}</div>
                 <div className="text-[11px] text-muted-foreground whitespace-pre-line line-clamp-2">{t.body}</div>
                 {t.keywords ? <div className="text-[10px] text-muted-foreground mt-0.5">🔑 {t.keywords}</div> : null}
               </div>

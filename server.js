@@ -228,11 +228,14 @@ if (Array.isArray(db.templates)) {
   try {
     const seedT = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/messaging.seed.json'), 'utf8')).templates || [];
     const byName = new Map(db.templates.map((t) => [t.name, t]));
-    let added = 0, kw = 0, retag = 0;
+    let added = 0, kw = 0, retag = 0, st = 0;
     for (const s of seedT) {
       const ex = byName.get(s.name);
       if (!ex) { db.templates.push({ ...s, id: s.id || `tpl-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 5)}` }); added++; }
-      else if (s.keywords && !ex.keywords) { ex.keywords = s.keywords; kw++; }
+      else {
+        if (s.keywords && !ex.keywords) { ex.keywords = s.keywords; kw++; }
+        if (s.stage && !ex.stage) { ex.stage = s.stage; st++; }   // etapa del funnel (sugerencias por estado del lead)
+      }
     }
     // Las 2 plantillas genéricas viejas pasan de "all" a "chat" → no compiten en los mails
     // con las plantillas de email nuevas (perfiles diferenciados). Idempotente.
@@ -240,7 +243,7 @@ if (Array.isArray(db.templates)) {
       const ex = byName.get(name);
       if (ex && ex.channel === 'all') { ex.channel = 'chat'; retag++; }
     }
-    if (added || kw || retag) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill plantillas: +${added} nuevas, ${kw} con keywords, ${retag} re-tag a chat`); }
+    if (added || kw || retag || st) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill plantillas: +${added} nuevas, ${kw} con keywords, ${st} con etapa, ${retag} re-tag a chat`); }
   } catch (e) { console.warn('backfill plantillas:', e.message); }
 }
 

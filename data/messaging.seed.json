@@ -8,7 +8,8 @@
       "channel": "whatsapp",
       "status": "approved",
       "body": "Hola {{1}}, ya está lista tu cotización #{{2}}. Total: {{3}}. ¿La revisás cuando puedas? Gracias!",
-      "keywords": "cotizacion,presupuesto,precio,cotizar,cuanto,sale,vale"
+      "keywords": "cotizacion,presupuesto,precio,cotizar,cuanto,sale,vale",
+      "stage": "presupuesto"
     },
     {
       "id": "tpl-2",
@@ -18,7 +19,8 @@
       "channel": "whatsapp",
       "status": "approved",
       "body": "Hola {{1}}, te confirmamos la entrega para el {{2}} en {{3}}. Si necesitás reprogramar, avisanos.",
-      "keywords": "entrega,entregan,envio,enviar,cuando llega,fecha,coordinar"
+      "keywords": "entrega,entregan,envio,enviar,cuando llega,fecha,coordinar",
+      "stage": "cierre"
     },
     {
       "id": "tpl-3",
@@ -28,7 +30,8 @@
       "channel": "whatsapp",
       "status": "approved",
       "body": "Hola {{1}}, te recordamos que el saldo de tu compra #{{2}} es {{3}}. Cualquier consulta acá estamos.",
-      "keywords": "saldo,pago,pagar,debo,transferencia,abonar,seña,anticipo"
+      "keywords": "saldo,pago,pagar,debo,transferencia,abonar,seña,anticipo",
+      "stage": "cierre"
     },
     {
       "id": "tpl-4",
@@ -38,7 +41,8 @@
       "channel": "whatsapp",
       "status": "approved",
       "body": "Llegó el container con tu pedido {{1}}. Ya está disponible para coordinar entrega cuando quieras.",
-      "keywords": "llego,container,pedido,stock,disponible,mercaderia"
+      "keywords": "llego,container,pedido,stock,disponible,mercaderia",
+      "stage": "cierre"
     },
     {
       "id": "tpl-5",
@@ -48,7 +52,8 @@
       "channel": "whatsapp",
       "status": "approved",
       "body": "¡Bienvenido a Pisos Pacific! Soy {{1}} y voy a estar acompañándote. ¿En qué proyecto estás pensando?",
-      "keywords": ""
+      "keywords": "",
+      "stage": "consulta"
     },
     {
       "id": "tpl-6",
@@ -58,7 +63,8 @@
       "channel": "all",
       "status": "approved",
       "keywords": "hola,info,informacion,consulta,interesa,buscando,proyecto,piso,madera",
-      "body": "¡Hola {nombre}! Gracias por escribir a Pisos Pacific 😊 Contame qué estás buscando (producto, m² aproximados y zona de la obra) y te ayudo con todo."
+      "body": "¡Hola {nombre}! Gracias por escribir a Pisos Pacific 😊 Contame qué estás buscando (producto, m² aproximados y zona de la obra) y te ayudo con todo.",
+      "stage": "consulta"
     },
     {
       "id": "tpl-7",
@@ -68,7 +74,8 @@
       "channel": "all",
       "status": "approved",
       "keywords": "precio,presupuesto,cotizar,cotizacion,cuanto,sale,vale,m2,metros",
-      "body": "Para pasarte el presupuesto necesito tres datos: los m² aproximados, la ubicación de la obra y qué piso te gustó. ¿Me los compartís y te lo armo?"
+      "body": "Para pasarte el presupuesto necesito tres datos: los m² aproximados, la ubicación de la obra y qué piso te gustó. ¿Me los compartís y te lo armo?",
+      "stage": "consulta"
     },
     {
       "id": "tpl-email-1",
@@ -78,7 +85,8 @@
       "channel": "email",
       "status": "approved",
       "keywords": "presupuesto,cotizacion,consulta,pedido de presupuesto,solicitud,pagina web,info,informacion,interesa,m2,metros",
-      "body": "Hola {nombre}, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% impermeables\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos,"
+      "body": "Hola {nombre}, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% impermeables\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos,",
+      "stage": "consulta"
     },
     {
       "id": "tpl-email-2",
@@ -88,7 +96,8 @@
       "channel": "email",
       "status": "approved",
       "keywords": "adjunto,te paso el presupuesto,enviar presupuesto,te envio,mando el presupuesto",
-      "body": "Hola {nombre}, ¿cómo estás?\n\nTe adjunto el presupuesto solicitado. Incluye la entrega en encomienda del producto palletizado.\n\nCualquier duda, no dudes en consultarnos.\nSaludos,"
+      "body": "Hola {nombre}, ¿cómo estás?\n\nTe adjunto el presupuesto solicitado. Incluye la entrega en encomienda del producto palletizado.\n\nCualquier duda, no dudes en consultarnos.\nSaludos,",
+      "stage": "presupuesto"
     },
     {
       "id": "tpl-email-3",
@@ -98,7 +107,8 @@
       "channel": "email",
       "status": "approved",
       "keywords": "perfecto,dale,gracias,quedo a la espera,espero",
-      "body": "¡Perfecto! En breve te estaremos enviando el presupuesto.\n\nSaludos,"
+      "body": "¡Perfecto! En breve te estaremos enviando el presupuesto.\n\nSaludos,",
+      "stage": "presupuesto"
     },
     {
       "id": "tpl-email-4",
@@ -108,7 +118,8 @@
       "channel": "email",
       "status": "approved",
       "keywords": "diferencia,cual conviene,mascotas,perro,humedad,baño,cocina,madera o h2o,impermeable,losa radiante,recomiendan,recomendacion",
-      "body": "Hola {nombre}, te comento las diferencias entre nuestras dos líneas:\n\n• Línea H2O (SPC): 100% impermeable, con protección antiscratch y terminación mate muy realista. Ideal para zonas húmedas, mascotas o alto tránsito.\n• Colección Madera (prefinished): madera noble con laca y protección UV, la calidez y el valor de la madera real.\n\nSi querés, te armo ambos presupuestos para que puedas comparar.\nSaludos,"
+      "body": "Hola {nombre}, te comento las diferencias entre nuestras dos líneas:\n\n• Línea H2O (SPC): 100% impermeable, con protección antiscratch y terminación mate muy realista. Ideal para zonas húmedas, mascotas o alto tránsito.\n• Colección Madera (prefinished): madera noble con laca y protección UV, la calidez y el valor de la madera real.\n\nSi querés, te armo ambos presupuestos para que puedas comparar.\nSaludos,",
+      "stage": "consulta"
     },
     {
       "id": "tpl-email-5",
@@ -118,7 +129,8 @@
       "channel": "email",
       "status": "approved",
       "keywords": "",
-      "body": "Hola {nombre}, ¿cómo estás?\n\n¿Pudiste ver el presupuesto que te enviamos? Quedamos a disposición por cualquier consulta o ajuste que necesites.\n\nSaludos,"
+      "body": "Hola {nombre}, ¿cómo estás?\n\n¿Pudiste ver el presupuesto que te enviamos? Quedamos a disposición por cualquier consulta o ajuste que necesites.\n\nSaludos,",
+      "stage": "seguimiento"
     },
     {
       "id": "tpl-email-6",
@@ -128,7 +140,8 @@
       "channel": "email",
       "status": "approved",
       "keywords": "visita,showroom,muestras,ver,conocer,local,direccion",
-      "body": "Hola {nombre}, te invitamos a conocer las muestras en nuestro showroom así las ves y tocás en persona. Coordinamos el día que mejor te quede.\n\nSaludos,"
+      "body": "Hola {nombre}, te invitamos a conocer las muestras en nuestro showroom así las ves y tocás en persona. Coordinamos el día que mejor te quede.\n\nSaludos,",
+      "stage": "consulta"
     },
     {
       "id": "tpl-chat-1",
@@ -138,7 +151,8 @@
       "channel": "chat",
       "status": "approved",
       "keywords": "precio,cuanto,vale,sale,valor,m2,metros,h2o,cotizacion,presupuesto",
-      "body": "¡Hola {nombre}! 😊 El m² de nuestro piso H2O está USD 38 + IVA. Según la cantidad o si venís por una alianza tenemos descuentos. ¿Para cuántos m² sería?"
+      "body": "¡Hola {nombre}! 😊 El m² de nuestro piso H2O está USD 38 + IVA. Según la cantidad o si venís por una alianza tenemos descuentos. ¿Para cuántos m² sería?",
+      "stage": "consulta"
     },
     {
       "id": "tpl-chat-2",
@@ -148,7 +162,8 @@
       "channel": "chat",
       "status": "approved",
       "keywords": "hola,info,consulta,presupuesto,cotizar,cotizacion,interesa,proyecto,quiero,piso",
-      "body": "¡Hola {nombre}! ¿Qué colección te interesa, Madera o H2O? ¿Es con colocación y en qué zona es la obra? Así te coordino el presupuesto y el envío 😊"
+      "body": "¡Hola {nombre}! ¿Qué colección te interesa, Madera o H2O? ¿Es con colocación y en qué zona es la obra? Así te coordino el presupuesto y el envío 😊",
+      "stage": "consulta"
     },
     {
       "id": "tpl-chat-3",
@@ -158,7 +173,8 @@
       "channel": "chat",
       "status": "approved",
       "keywords": "muestra,muestras,ver,tocar,mano,fisico",
-      "body": "Si querés, pasame la dirección y te mandamos muestras para que las veas en mano 📦 Los envíos los hacemos por Vía Cargo."
+      "body": "Si querés, pasame la dirección y te mandamos muestras para que las veas en mano 📦 Los envíos los hacemos por Vía Cargo.",
+      "stage": "consulta"
     },
     {
       "id": "tpl-chat-4",
@@ -168,7 +184,8 @@
       "channel": "chat",
       "status": "approved",
       "keywords": "envio,envian,mandan,llega,via cargo,zona,interior,bariloche,mar del plata,cordoba,flete",
-      "body": "Los envíos los hacemos por Vía Cargo a todo el país. Tenemos el depósito en San Isidro. ¿A qué zona sería la entrega?"
+      "body": "Los envíos los hacemos por Vía Cargo a todo el país. Tenemos el depósito en San Isidro. ¿A qué zona sería la entrega?",
+      "stage": "consulta"
     },
     {
       "id": "tpl-chat-5",
@@ -178,7 +195,8 @@
       "channel": "chat",
       "status": "approved",
       "keywords": "tienen,hay,stock,disponible,roble,claro,gris,smoke,eslavonia,color,ancho,natural",
-      "body": "¡Hola {nombre}! 😊 Sí, tenemos esa opción. ¿Querés que te pase fotos en obra terminada?"
+      "body": "¡Hola {nombre}! 😊 Sí, tenemos esa opción. ¿Querés que te pase fotos en obra terminada?",
+      "stage": "consulta"
     },
     {
       "id": "tpl-chat-6",
@@ -188,7 +206,85 @@
       "channel": "chat",
       "status": "approved",
       "keywords": "preparame,presupuesto,cotizar,pasame precio,cotizacion,armar",
-      "body": "¡Buenísimo! Te preparo el presupuesto. ¿Son m² netos o ya contemplás el desperdicio? ¿Es con colocación?"
+      "body": "¡Buenísimo! Te preparo el presupuesto. ¿Son m² netos o ya contemplás el desperdicio? ¿Es con colocación?",
+      "stage": "presupuesto"
+    },
+    {
+      "category": "UTILITY",
+      "language": "es_AR",
+      "status": "approved",
+      "id": "tpl-chat-7",
+      "name": "chat_seguimiento",
+      "channel": "chat",
+      "stage": "seguimiento",
+      "keywords": "",
+      "body": "Hola {nombre}! ¿Cómo estás? ¿Pudiste ver el presupuesto que te pasé? Cualquier duda me decís y lo ajustamos 😊"
+    },
+    {
+      "category": "UTILITY",
+      "language": "es_AR",
+      "status": "approved",
+      "id": "tpl-chat-8",
+      "name": "chat_objecion_precio",
+      "channel": "chat",
+      "stage": "seguimiento",
+      "keywords": "caro,carisimo,precio alto,mas barato,otro presupuesto,me pasaron,pensando,pensarlo,comparar,presupuesto de otro",
+      "body": "Te entiendo {nombre}! Contame los m2 y tu presupuesto: tenemos descuentos por cantidad y lo vemos juntos. Ojo al comparar que sea el mismo espesor y calidad 😉"
+    },
+    {
+      "category": "UTILITY",
+      "language": "es_AR",
+      "status": "approved",
+      "id": "tpl-chat-9",
+      "name": "chat_cierre_sena",
+      "channel": "chat",
+      "stage": "cierre",
+      "keywords": "confirmo,avanzamos,avanzar,reservar,lo quiero,como sigo,como pago,como abono,datos,cbu,transferencia,seña,anticipo",
+      "body": "Genial {nombre}! 🎉 Para confirmar el pedido y reservar el material va un anticipo del 80% (el 20% restante conforme al finalizar). ¿Te paso los datos para la transferencia?"
+    },
+    {
+      "category": "UTILITY",
+      "language": "es_AR",
+      "status": "approved",
+      "id": "tpl-chat-10",
+      "name": "chat_postventa_gracias",
+      "channel": "chat",
+      "stage": "postventa",
+      "keywords": "quedo hermoso,quedo genial,terminaron,ya esta,instalado,me encanto,gracias por todo",
+      "body": "¡Gracias {nombre}! 🩷 ¿Nos mandás una foto de cómo quedó? Nos re sirve para las redes — y si nos etiquetás en Instagram, mejor todavía. ¡Gracias por elegirnos!"
+    },
+    {
+      "category": "UTILITY",
+      "language": "es_AR",
+      "status": "approved",
+      "id": "tpl-chat-11",
+      "name": "chat_reclamo",
+      "channel": "chat",
+      "stage": "postventa",
+      "keywords": "problema,reclamo,falla,fallado,rayado,raya,se levanto,levantado,hinchado,defecto,humedad,quedo mal,junta,separado",
+      "body": "Uy {nombre}, lamento eso 🙏 ¿Me mandás una foto y la dirección de la obra así lo vemos con el equipo? Lo revisamos y te damos una solución cuanto antes."
+    },
+    {
+      "category": "UTILITY",
+      "language": "es_AR",
+      "status": "approved",
+      "id": "tpl-email-7",
+      "name": "email_cierre_sena",
+      "channel": "email",
+      "stage": "cierre",
+      "keywords": "confirmo,avanzar,forma de pago,como abono,datos bancarios,cbu,transferencia,seña,anticipo",
+      "body": "Hola {nombre},\n\n¡Excelente! Para confirmar el pedido y reservar el material, la forma de pago es: anticipo del 80% y el 20% restante conforme de obra al finalizar.\n\nEn cuanto me confirmes te paso los datos para la transferencia. Cualquier duda quedo a disposición.\n\nSaludos,"
+    },
+    {
+      "category": "UTILITY",
+      "language": "es_AR",
+      "status": "approved",
+      "id": "tpl-email-8",
+      "name": "email_postventa",
+      "channel": "email",
+      "stage": "postventa",
+      "keywords": "terminado,quedo,conforme,gracias por todo",
+      "body": "Hola {nombre},\n\n¿Cómo quedó la obra? Esperamos que estés disfrutando tu piso nuevo.\n\nSi quedaste conforme, nos ayudaría muchísimo una reseña en Google o una foto de la obra terminada para nuestras redes.\n\n¡Gracias por confiar en Pisos Pacific!\n\nSaludos,"
     }
   ],
   "conversations": [
