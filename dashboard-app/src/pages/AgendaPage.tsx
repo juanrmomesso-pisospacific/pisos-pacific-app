@@ -25,7 +25,7 @@ import {
 // Modelo de evento unificado del calendario. Una OBRA = venta con delivery_date.
 // Reparación / Ausencia = tasks (ocupan a un equipo). Medición/Remito/Container = puntuales.
 // ---------------------------------------------------------------------------
-type EventKind = "obra" | "container" | "medicion" | "remito" | "visita" | "seguimiento" | "reparacion" | "ausencia" | "otro"
+type EventKind = "obra" | "container" | "medicion" | "remito" | "visita" | "seguimiento" | "reparacion" | "ausencia" | "todo" | "otro"
 type CalEvent = {
   id: string
   kind: EventKind
@@ -61,6 +61,7 @@ function taskKindToEventKind(t: TaskType): EventKind {
     case "seguimiento": return "seguimiento"
     case "reparacion": return "reparacion"
     case "ausencia": return "ausencia"
+    case "todo": return "todo"
     default: return "otro"
   }
 }
@@ -71,7 +72,7 @@ function eventColor(e: CalEvent): string {
 }
 const KIND_LABEL: Record<EventKind, string> = {
   obra: "Obra", container: "Container", medicion: "Medición", remito: "Remito",
-  visita: "Visita", seguimiento: "Seguimiento", reparacion: "Reparación", ausencia: "Ausencia", otro: "Otro",
+  visita: "Visita", seguimiento: "Seguimiento", reparacion: "Reparación", ausencia: "Ausencia", todo: "Tarea", otro: "Otro",
 }
 
 // ---- badges reutilizables ----
@@ -310,6 +311,7 @@ function MonthView({ events, sales, matches, onOpenObra, onOpenContainer, onOpen
       const ws = days[0].key, we = days[6].key
       const segs: { e: CalEvent; col: number; span: number; lane: number; hasStart: boolean; hasEnd: boolean }[] = []
       for (const e of events) {
+        if (e.kind === "todo") continue   // tareas del bot: solo en la vista Lista (no ensucian el mes)
         const sk = e.date, ek = e.endDate || e.date
         if (ek < ws || sk > we) continue
         const segStart = sk < ws ? ws : sk, segEnd = ek > we ? we : ek
@@ -437,7 +439,7 @@ function WeekView({ events, scope, matches, onOpenObra, onOpenContainer }: {
   const days = weekDays(base)
   const from = days[0], to = days[6]
   const heading = `${scope === "proxima" ? "Próxima semana" : "Esta semana"} · ${from.toLocaleDateString("es-AR", { day: "numeric", month: "short" })} → ${to.toLocaleDateString("es-AR", { day: "numeric", month: "short" })}`
-  const dayEvents = (d: Date) => { const k = dayKey(d); return events.filter(e => k >= e.date && k <= e.endDate) }
+  const dayEvents = (d: Date) => { const k = dayKey(d); return events.filter(e => e.kind !== "todo" && k >= e.date && k <= e.endDate) }   // tareas: solo en Lista
 
   return (
     <Card className="p-0 overflow-hidden gap-0">
@@ -683,7 +685,7 @@ function ListView({ events, matches, onOpenObra, onOpenContainer }: { events: Ca
                   <td className="px-3 py-2 whitespace-nowrap text-xs text-muted-foreground">{new Date(e.date + "T12:00:00").toLocaleDateString("es-AR", { day: "numeric", month: "short" })}{e.endDate !== e.date ? ` → ${new Date(e.endDate + "T12:00:00").toLocaleDateString("es-AR", { day: "numeric", month: "short" })}` : ""}</td>
                   <td className="px-3 py-2"><span className="inline-flex items-center gap-1.5" style={{ color }}><span className="inline-block h-2 w-2 rounded-full" style={{ background: color }} />{KIND_LABEL[e.kind]}</span></td>
                   <td className="px-3 py-2 text-xs">{e.crew || "—"}</td>
-                  <td className="px-3 py-2 text-xs">{e.designs?.length ? `${e.designs[0].design}${e.designs.length > 1 ? ` +${e.designs.length - 1}` : ""}${e.totalM2 ? ` · ${e.totalM2} m²` : ""}` : (e.detalle || "—")}</td>
+                  <td className="px-3 py-2 text-xs">{e.designs?.length ? `${e.designs[0].design}${e.designs.length > 1 ? ` +${e.designs.length - 1}` : ""}${e.totalM2 ? ` · ${e.totalM2} m²` : ""}` : (e.title || e.detalle || "—")}</td>
                   <td className="px-3 py-2 text-xs text-muted-foreground truncate max-w-[220px]">{e.address || "—"}</td>
                   <td className="px-3 py-2">{e.estado ? <EstadoBadge estado={e.estado} /> : "—"}</td>
                 </tr>

@@ -18,6 +18,7 @@ import { parseCashCommand, inferType, normalizePhone } from '../import/cash-pars
 import { getBlueRate } from '../import/fx.mjs';
 import { findLeadMatch } from './lead-match.mjs';
 import { findSupplierMatch, suggestSuppliers } from './supplier-match.mjs';
+import { handleTaskMessage } from './task-bot.mjs';
 import { touchConv } from './conv.mjs';
 import { withTimeout } from './http.mjs';
 
@@ -95,9 +96,18 @@ export async function handleInbound(db, save, channel, payload) {
     if (seen.length > 2000) db.settings.inbound_seen_ids = seen.slice(-2000);
   }
   if (channel === 'whatsapp') {
-    // Reporte de gastos del equipo (allowlist): se rutea a Caja General, NUNCA crea lead/conversación.
+    // Mensajes del EQUIPO (allowlist): NUNCA crean lead/conversación. Router: si es un gasto
+    // explícito o hay una carga de gasto en curso → bot de gastos (como siempre); todo lo demás
+    // va al bot de TAREAS (lenguaje natural — integrations/task-bot.mjs).
     const m = payload?.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
-    if (m && isAllowed(db, m.from)) return handleCashReport(db, save, m.from, m.text?.body || '');
+    if (m && isAllowed(db, m.from)) {
+      const text = m.text?.body || '';
+      if (isCashMessage(db, m.from, text)) return handleCashReport(db, save, m.from, text);
+      return handleTaskMessage(db, save, m.from, text, {
+        reply: (msg) => sendOutbound('whatsapp', m.from, msg).catch(() => { /* best-effort */ }),
+        handleExpense: () => handleCashReport(db, save, m.from, text),
+      });
+    }
   }
   const parsed = channel === 'whatsapp' ? parseWhatsApp(payload) : parseInstagram(payload);
   if (!parsed) return null;
@@ -252,6 +262,20 @@ const fmtNum = (n) => Number(n).toLocaleString('es-AR');
 
 // Conversación que repregunta hasta tener monto + descripción, registra en CAJ-005 y permite cancelar.
 // Devuelve el texto de respuesta (también lo envía por WhatsApp). NUNCA crea lead ni conversación.
+// Router equipo: ¿este mensaje es para el bot de GASTOS? (gasto explícito, solo-monto,
+// "cancelar" del último gasto, o una carga de gasto en curso). Lo demás → bot de tareas.
+export function isCashMessage(db, from, text) {
+  const t = String(text || '').trim();
+  if (/^\s*(gasto|gast[eé]|gaste)\b/i.test(t)) return true;                       // gasto explícito
+  if (/^\s*\$?\s*\d[\d.,]*\s*(usd|u\$s|pesos?|ars)?\s*$/i.test(t)) return true;   // solo un monto
+  const s = db.settings?.cash_sessions?.[normalizePhone(from)];
+  const fresh = s?.ts && Date.now() - s.ts < 5 * 60 * 1000;
+  const inProgress = fresh && !s.last_mov_id && (s.amount || s.description || s.cp_choosing);
+  if (inProgress) return true;                                                    // carga de gasto a medias
+  if (/^\s*cancelar\b/i.test(t) && fresh && s.last_mov_id) return true;           // deshacer el último gasto
+  return false;
+}
+
 async function handleCashReport(db, save, from, rawText) {
   db.settings = db.settings || {};
   const sessions = db.settings.cash_sessions = db.settings.cash_sessions || {};

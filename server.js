@@ -9,6 +9,7 @@ import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { startMpReport, getMpReport, parseSettlementBuffer } from './import/mp-api.mjs';
 import { getBlueRate } from './import/fx.mjs';
 import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integrations/meta.mjs';
+import { buildDailyDigest, todayArt } from './integrations/task-bot.mjs';
 import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients } from './integrations/gmail.mjs';
 import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb as driveGetThumb, findFirstImage as driveFirstImage, driveConfigured } from './integrations/drive.mjs';
 import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
@@ -1740,7 +1741,7 @@ async function weeklyUploadReminder() {
   } catch (e) { console.warn('[weekly-reminder] error:', e.message); }
 }
 setTimeout(weeklyUploadReminder, 150 * 1000);
-setInterval(weeklyUploadReminder, 60 * 60e3);   // chequea cada hora; dispara lunes 1×
+setInterval(weeklyUploadReminder, 60 * 60e3);   // chequea cada hora; dispara viernes 1×
 // Disparo manual para probar el recordatorio ahora.
 app.post('/api/admin/test-weekly-reminder', requireAdmin, async (_req, res) => {
   const bbva = lastLoadedDate('BBVA'), bdc = lastLoadedDate('Banco de Comercio - Cuenta Pesos');
@@ -1750,6 +1751,44 @@ app.post('/api/admin/test-weekly-reminder', requireAdmin, async (_req, res) => {
       html: `<p>Prueba del recordatorio semanal.</p><ul><li>BBVA — último: ${bbva}</li><li>Banco de Comercio — último: ${bdc}</li></ul>` });
     res.json({ sent: true, to, bbva, bdc });
   } catch (e) { res.status(400).json({ error: e.message }); }
+});
+
+// ---------- Resumen diario de TAREAS por WhatsApp (bot de tareas, integrations/task-bot.mjs) ----------
+// Cada mañana (~9 ART) le manda a cada vendedor SUS pendientes de hoy + vencidas. Si no tiene
+// nada, no se le manda (no molesta). Best-effort (ventana de 24h de WhatsApp sin plantilla).
+// Apagar con settings.daily_task_reminder_enabled=false.
+async function dailyTaskReminder() {
+  try {
+    db.settings = db.settings || {};
+    if (db.settings.daily_task_reminder_enabled === false) return;
+    const now = new Date();
+    if (now.getUTCHours() < 12) return;                 // ≥9:00 ART
+    const today = todayArt();
+    if (db.settings.last_daily_task_reminder === today) return;   // 1×/día
+    let sent = 0;
+    for (const s of db.settings.sellers || []) {
+      if (!s.phone) continue;
+      const digest = buildDailyDigest(db, s.name, s.phone);
+      if (!digest) continue;
+      try { await sendOutbound('whatsapp', s.phone, digest); sent++; } catch { /* best-effort */ }
+    }
+    db.settings.last_daily_task_reminder = today;
+    save();
+    if (sent) console.log('[daily-tasks] resumen enviado a', sent, 'vendedor(es)');
+  } catch (e) { console.warn('[daily-tasks] error:', e.message); }
+}
+setTimeout(dailyTaskReminder, 180 * 1000);
+setInterval(dailyTaskReminder, 60 * 60e3);
+// Prueba: arma los digests SIN mandar (dry-run); con {send:true} los manda de verdad.
+app.post('/api/admin/test-daily-tasks', requireAdmin, async (req, res) => {
+  const out = [];
+  for (const s of db.settings?.sellers || []) {
+    const digest = buildDailyDigest(db, s.name, req.body?.send === true ? s.phone : undefined);
+    if (!digest) continue;
+    out.push({ seller: s.name, phone: s.phone || null, digest });
+    if (req.body?.send === true && s.phone) { try { await sendOutbound('whatsapp', s.phone, digest); } catch { /* best-effort */ } }
+  }
+  res.json({ sellers: out.length, sent: req.body?.send === true, digests: out });
 });
 // Export read-only (admin) para analizar cómo respondemos por canal y armar plantillas de
 // sugerencia diferenciadas. Anonimizado: solo canal/dirección/cuerpo/fecha — sin id de contacto,

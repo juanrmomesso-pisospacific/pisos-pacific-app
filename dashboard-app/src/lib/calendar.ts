@@ -34,6 +34,7 @@ export const EVENT_COLORS: Record<string, string> = {
   remito: "#3C6E47",
   reparacion: "#B07A2B",
   ausencia: "#6B655D",
+  todo: "#7A746C",     // tarea/recordatorio del vendedor (bot de WhatsApp) — solo vista Lista
   obra: "#3D3935",   // fallback de obra sin equipo (ink-700)
 }
 

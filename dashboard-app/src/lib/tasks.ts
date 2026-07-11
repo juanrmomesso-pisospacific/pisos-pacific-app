@@ -1,4 +1,4 @@
-export type TaskType = "medicion" | "entrega" | "remito" | "visita" | "seguimiento" | "reparacion" | "ausencia" | "otro"
+export type TaskType = "medicion" | "entrega" | "remito" | "visita" | "seguimiento" | "reparacion" | "ausencia" | "todo" | "otro"
 export type TaskStatus = "pendiente" | "completada" | "cancelada"
 
 /** Captured during the on-site measurement visit. Stored on both task.medicion_data
@@ -39,10 +39,12 @@ export const TASK_TYPE_LABEL: Record<TaskType, string> = {
   seguimiento: "Seguimiento",
   reparacion: "Reparación",
   ausencia: "Ausencia",
+  todo: "Tarea",
   otro: "Otro",
 }
 
 // User-facing creation picker — visita + seguimiento removed; entrega is created via
 // Programar entrega flow on a Sale, not as an ad-hoc task. Reparación (posventa) y Ausencia
-// (vacaciones/franco) ocupan al equipo asignado en la vista de disponibilidad.
-export const TASK_TYPE_ORDER: TaskType[] = ["medicion", "reparacion", "ausencia", "remito", "otro"]
+// (vacaciones/franco) ocupan al equipo asignado en la vista de disponibilidad. "todo" =
+// tarea/recordatorio del vendedor (bot de WhatsApp o Programar) — solo visible en la vista Lista.
+export const TASK_TYPE_ORDER: TaskType[] = ["todo", "medicion", "reparacion", "ausencia", "remito", "otro"]
