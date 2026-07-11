@@ -262,17 +262,21 @@ const fmtNum = (n) => Number(n).toLocaleString('es-AR');
 
 // Conversación que repregunta hasta tener monto + descripción, registra en CAJ-005 y permite cancelar.
 // Devuelve el texto de respuesta (también lo envía por WhatsApp). NUNCA crea lead ni conversación.
+// Compartidos entre el router (isCashMessage) y handleCashReport — una sola fuente para que
+// el router y el bot de gastos no diverjan si se ajusta la regex o el TTL.
+const CASH_TTL_MS = 5 * 60 * 1000;
+const looksLikeNewExpense = (t) => /^\s*(gasto|gast[eé])\b/i.test(t) || /^\s*\$?\s*\d[\d.,]*\s*(usd|u\$s|pesos?|ars)?\s*$/i.test(t);
+const cashSessionFresh = (s) => !!(s?.ts && Date.now() - s.ts < CASH_TTL_MS);
+const cashInProgress = (s) => !!(s && !s.last_mov_id && (s.amount || s.description || s.cp_choosing));
+
 // Router equipo: ¿este mensaje es para el bot de GASTOS? (gasto explícito, solo-monto,
 // "cancelar" del último gasto, o una carga de gasto en curso). Lo demás → bot de tareas.
 export function isCashMessage(db, from, text) {
   const t = String(text || '').trim();
-  if (/^\s*(gasto|gast[eé]|gaste)\b/i.test(t)) return true;                       // gasto explícito
-  if (/^\s*\$?\s*\d[\d.,]*\s*(usd|u\$s|pesos?|ars)?\s*$/i.test(t)) return true;   // solo un monto
+  if (looksLikeNewExpense(t)) return true;                                    // gasto explícito o solo-monto
   const s = db.settings?.cash_sessions?.[normalizePhone(from)];
-  const fresh = s?.ts && Date.now() - s.ts < 5 * 60 * 1000;
-  const inProgress = fresh && !s.last_mov_id && (s.amount || s.description || s.cp_choosing);
-  if (inProgress) return true;                                                    // carga de gasto a medias
-  if (/^\s*cancelar\b/i.test(t) && fresh && s.last_mov_id) return true;           // deshacer el último gasto
+  if (cashSessionFresh(s) && cashInProgress(s)) return true;                  // carga de gasto a medias
+  if (/^\s*cancelar\b/i.test(t) && cashSessionFresh(s) && s.last_mov_id) return true;   // deshacer el último gasto
   return false;
 }
 
@@ -286,7 +290,7 @@ async function handleCashReport(db, save, from, rawText) {
   // TTL: una carga incompleta que quedó >5 min sin actividad se descarta y se avisa por el chat
   // (evita que un mensaje nuevo se consuma como descripción/proveedor de un reporte abandonado).
   let expiredNotice = false;
-  if (s.ts && !s.last_mov_id && (s.amount || s.description || s.cp_choosing) && Date.now() - s.ts > 5 * 60 * 1000) {
+  if (s.ts && cashInProgress(s) && !cashSessionFresh(s)) {
     expiredNotice = true; s = {};
   }
 
@@ -308,8 +312,7 @@ async function handleCashReport(db, save, from, rawText) {
   // Un gasto NUEVO explícito (empieza con "gasto" o es SOLO un monto, ej. "$970.000") reinicia una
   // sesión a medio completar → así no se toma ese monto como la descripción o el proveedor de un
   // reporte anterior abandonado (bug reportado: "$970.000" preguntaba "No tengo a $970.000 registrado").
-  const looksLikeNewExpense = /^\s*(gasto|gast[eé]|gaste)\b/i.test(text) || /^\s*\$?\s*\d[\d.,]*\s*(usd|u\$s|pesos?|ars)?\s*$/i.test(text);
-  if (looksLikeNewExpense && !s.cp_choosing && (s.amount || s.description)) s = {};
+  if (looksLikeNewExpense(text) && !s.cp_choosing && (s.amount || s.description)) s = {};
   s.ts = Date.now();   // refrescar actividad (para el TTL)
 
   // Si estamos esperando que elija el proveedor entre opciones (A/B/C… / nuevo / ninguno).

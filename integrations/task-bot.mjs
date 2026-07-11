@@ -29,26 +29,30 @@ function fmtDue(ymd) {
 }
 
 // Fallback sin IA: "hoy", "mañana", "pasado mañana", día de semana ("el jueves"), "15/7".
-const WEEKDAYS = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
+// Una sola regex por patrón (tolerante a acentos), que sirve para DETECTAR y para SACAR la
+// fecha del título — así no hay dos representaciones que mantener sincronizadas.
+const RELATIVE = [
+  [/\bpasado\s+ma[ñn]ana\b/i, 2],
+  [/\bma[ñn]ana\b/i, 1],
+  [/\bhoy\b/i, 0],
+];
+const WEEKDAY_RX = [/\b(el\s+)?domingo\b/i, /\b(el\s+)?lunes\b/i, /\b(el\s+)?martes\b/i, /\b(el\s+)?mi[eé]rcoles\b/i, /\b(el\s+)?jueves\b/i, /\b(el\s+)?viernes\b/i, /\b(el\s+)?s[aá]bado\b/i];
 export function parseDueDateSimple(text) {
-  const t = (text || '').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+  const t = String(text || '');
   const today = new Date(todayArt() + 'T12:00:00');
   const ymd = (d) => d.toISOString().slice(0, 10);
-  if (/\bpasado\s+manana\b/.test(t)) { const d = new Date(today); d.setDate(d.getDate() + 2); return { date: ymd(d), match: /pasado\s+mañana/i }; }
-  if (/\bmanana\b/.test(t)) { const d = new Date(today); d.setDate(d.getDate() + 1); return { date: ymd(d), match: /mañana/i }; }
-  if (/\bhoy\b/.test(t)) return { date: ymd(today), match: /\bhoy\b/i };
+  const plus = (n) => { const d = new Date(today); d.setDate(d.getDate() + n); return d; };
+  for (const [rx, days] of RELATIVE) if (rx.test(t)) return { date: ymd(plus(days)), match: rx };
   const dm = t.match(/\b(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?\b/);
   if (dm) {
     const year = dm[3] ? (dm[3].length === 2 ? 2000 + +dm[3] : +dm[3]) : today.getFullYear();
     const d = new Date(year, +dm[2] - 1, +dm[1], 12);
-    if (!isNaN(+d)) { if (!dm[3] && d < today) d.setFullYear(d.getFullYear() + 1); return { date: ymd(d), match: new RegExp(dm[0].replace(/\//g, '\\/')) }; }
+    if (!isNaN(+d)) { if (!dm[3] && d < today) d.setFullYear(d.getFullYear() + 1); return { date: ymd(d), match: new RegExp(dm[0]) }; }
   }
   for (let i = 0; i < 7; i++) {
-    if (new RegExp(`\\b(el\\s+)?${WEEKDAYS[i]}\\b`).test(t)) {
-      const d = new Date(today);
-      let diff = (i - d.getDay() + 7) % 7; if (diff === 0) diff = 7;   // próximo, no hoy
-      d.setDate(d.getDate() + diff);
-      return { date: ymd(d), match: new RegExp(`(el\\s+)?${WEEKDAYS[i]}`, 'i') };
+    if (WEEKDAY_RX[i].test(t)) {
+      const diff = ((i - today.getDay() + 7) % 7) || 7;   // próximo, no hoy
+      return { date: ymd(plus(diff)), match: WEEKDAY_RX[i] };
     }
   }
   return null;
@@ -121,7 +125,7 @@ function createTask(db, save, { title, due, sellerName, phoneNorm }) {
   db.tasks = db.tasks || [];
   db.tasks.push(t);
   const sessions = db.settings.task_sessions = db.settings.task_sessions || {};
-  sessions[phoneNorm] = { ...(sessions[phoneNorm] || {}), last_created: t.id, ts: Date.now() };
+  sessions[phoneNorm] = { ...(sessions[phoneNorm] || {}), last_created: t.id };
   save();
   return t;
 }
@@ -144,7 +148,7 @@ export async function handleTaskMessage(db, save, from, rawText, { reply, handle
   const listPending = () => {
     const pending = pendingTodos(db, sellerName, phoneNorm);
     if (!pending.length) return reply('No tenés tareas pendientes ✨');
-    sessions[phoneNorm] = { ...(sessions[phoneNorm] || {}), ids: pending.map((t) => t.id), ts: Date.now() };
+    sessions[phoneNorm] = { ...(sessions[phoneNorm] || {}), ids: pending.map((t) => t.id) };
     save();
     return reply(`Tenés ${pending.length} pendiente${pending.length === 1 ? '' : 's'}:\n${renderList(pending)}\n\nCompletá con *listo N*.`);
   };
@@ -185,7 +189,9 @@ export async function handleTaskMessage(db, save, from, rawText, { reply, handle
         if (t) { completeTask(db, save, t); return reply(`✔️ Completada: ${t.title}`); }
       }
       if (out.intent === 'create' && out.title) {
-        return confirmCreate(createTask(db, save, { title: out.title, due: out.due_date, sellerName, phoneNorm }));
+        // Solo aceptar la fecha de la IA si es YYYY-MM-DD válido (otra cosa → default hoy).
+        const due = /^\d{4}-\d{2}-\d{2}$/.test(out.due_date || '') ? out.due_date : null;
+        return confirmCreate(createTask(db, save, { title: out.title, due, sellerName, phoneNorm }));
       }
       return reply(HELP);
     } catch (e) {
@@ -215,7 +221,7 @@ export function buildDailyDigest(db, sellerName, phone) {
   if (phone) {
     const norm = normalizePhone(phone);
     const sessions = db.settings.task_sessions = db.settings.task_sessions || {};
-    sessions[norm] = { ...(sessions[norm] || {}), ids: todos.map((t) => t.id), ts: Date.now() };
+    sessions[norm] = { ...(sessions[norm] || {}), ids: todos.map((t) => t.id) };
   }
   let msg = `☀️ Buen día! Pendientes de hoy:`;
   if (todos.length) msg += `\n${renderList(todos)}`;

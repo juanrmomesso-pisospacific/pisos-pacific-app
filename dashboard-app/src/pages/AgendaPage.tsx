@@ -143,6 +143,8 @@ export default function AgendaPage() {
     }
     return out.sort((a, b) => a.ts - b.ts)
   }, [sales, containers, tasks, products])
+  // Eventos que van al CALENDARIO (Mes/Semana): todo menos las tareas del bot (esas solo en Lista).
+  const calendarEvents = useMemo(() => events.filter(e => e.kind !== "todo"), [events])
 
   // Opciones de filtro
   const disenoOptions = useMemo(() => designsInSales(sales.filter(s => s.delivery_date && s.status !== "Cancelado"), products), [sales, products])
@@ -198,8 +200,9 @@ export default function AgendaPage() {
           countDiseno={(d) => countFor(e => e.kind === "obra" && !!e.designs?.some(x => x.design === d))}
           countEstado={(st) => countFor(e => e.kind === "obra" && e.estado === st)}
         />
-        {activeView === "mes" && <MonthView events={events} sales={sales} matches={matches} onOpenObra={openObra} onOpenContainer={setDetailContainerId} onOpenMedicion={setMedicionTask} onOpenRemito={setInformeTask} />}
-        {activeView === "semana" && <WeekView events={events} scope={scope} matches={matches} onOpenObra={openObra} onOpenContainer={setDetailContainerId} />}
+        {/* Las tareas ("todo", bot de WhatsApp) NO van al calendario — solo a la vista Lista. */}
+        {activeView === "mes" && <MonthView events={calendarEvents} sales={sales} matches={matches} onOpenObra={openObra} onOpenContainer={setDetailContainerId} onOpenMedicion={setMedicionTask} onOpenRemito={setInformeTask} />}
+        {activeView === "semana" && <WeekView events={calendarEvents} scope={scope} matches={matches} onOpenObra={openObra} onOpenContainer={setDetailContainerId} />}
         {activeView === "equipos" && <TeamsView sales={sales} tasks={tasks} crews={crews} filters={filters} onOpenObra={openObra} />}
         {activeView === "lista" && <ListView events={events} matches={matches} onOpenObra={openObra} onOpenContainer={setDetailContainerId} />}
       </div>
@@ -311,7 +314,6 @@ function MonthView({ events, sales, matches, onOpenObra, onOpenContainer, onOpen
       const ws = days[0].key, we = days[6].key
       const segs: { e: CalEvent; col: number; span: number; lane: number; hasStart: boolean; hasEnd: boolean }[] = []
       for (const e of events) {
-        if (e.kind === "todo") continue   // tareas del bot: solo en la vista Lista (no ensucian el mes)
         const sk = e.date, ek = e.endDate || e.date
         if (ek < ws || sk > we) continue
         const segStart = sk < ws ? ws : sk, segEnd = ek > we ? we : ek
@@ -439,7 +441,7 @@ function WeekView({ events, scope, matches, onOpenObra, onOpenContainer }: {
   const days = weekDays(base)
   const from = days[0], to = days[6]
   const heading = `${scope === "proxima" ? "Próxima semana" : "Esta semana"} · ${from.toLocaleDateString("es-AR", { day: "numeric", month: "short" })} → ${to.toLocaleDateString("es-AR", { day: "numeric", month: "short" })}`
-  const dayEvents = (d: Date) => { const k = dayKey(d); return events.filter(e => e.kind !== "todo" && k >= e.date && k <= e.endDate) }   // tareas: solo en Lista
+  const dayEvents = (d: Date) => { const k = dayKey(d); return events.filter(e => k >= e.date && k <= e.endDate) }
 
   return (
     <Card className="p-0 overflow-hidden gap-0">
