@@ -139,7 +139,8 @@ export async function syncGmailLeads(db, save, customQuery) {
     });
     touchConv(conv, 'in', ts, msgBody);
     conv.unread_count = (conv.unread_count || 0) + 1;
-    if (conv.status === 'closed') conv.status = 'open';
+    // No reabrir las ignoradas a mano (bancos/robots): se registra el mail pero no vuelve a la bandeja.
+    if (conv.status === 'closed' && !conv.ignored) conv.status = 'open';
   }
 
   db.settings.gmail_seen_ids = [...seen].slice(-800);    // cap del historial

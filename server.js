@@ -817,15 +817,22 @@ app.get('/api/conversations', (_, res) => {
 });
 // Resumen para el badge del nav / triage: cuántas esperan NUESTRA respuesta (última 'in')
 // y cuántas esperan al cliente (última 'out' hace ≥3 días). Excluye cerradas.
+// Umbral configurable de "esperando cliente / se enfrió" (días sin respuesta del cliente).
+const waitingDays = () => Number(db.settings?.waiting_client_days) || 3;
 app.get('/api/conversations/stats', (_req, res) => {
-  const cutoff = new Date(Date.now() - 3 * 86400e3).toISOString();
-  let pending = 0, waiting_client = 0;
+  const days = waitingDays();
+  const cutoff = new Date(Date.now() - days * 86400e3).toISOString();
+  let pending = 0, waiting_client = 0, oldestPending = null;
   for (const c of db.conversations) {
     if (c.status === 'closed') continue;
-    if (c.last_message_direction === 'in') pending++;
+    if (c.last_message_direction === 'in') {
+      pending++;
+      const t = c.last_inbound_at || c.last_message_at || null;
+      if (t && (!oldestPending || t < oldestPending)) oldestPending = t;
+    }
     else if (c.last_message_direction === 'out' && (c.last_outbound_at || c.last_message_at || '') < cutoff) waiting_client++;
   }
-  res.json({ pending, waiting_client });
+  res.json({ pending, waiting_client, waiting_days: days, oldest_pending_at: oldestPending });
 });
 app.get('/api/conversations/:id/messages', (req, res) => {
   const msgs = db.messages.filter(m => m.conversation_id === req.params.id).sort((a, b) => a.ts.localeCompare(b.ts));
@@ -1824,6 +1831,66 @@ async function dailyTaskReminder() {
 }
 setTimeout(dailyTaskReminder, 180 * 1000);
 setInterval(dailyTaskReminder, 60 * 60e3);
+// ---------- Resumen diario de MENSAJES PENDIENTES por email (Fase 3 del triage) ----------
+// Cada mañana (~9 ART): mail a info@ con las conversaciones que esperan NUESTRA respuesta
+// (agrupadas por vendedor, la más vieja primero) + las que se enfriaron (sin respuesta del
+// cliente hace ≥N días). Apagar con settings.daily_pending_digest_enabled=false.
+function buildPendingDigest() {
+  const days = waitingDays();
+  const cutoff = new Date(Date.now() - days * 86400e3).toISOString();
+  const leadIdx = new Map((db.leads || []).map((l) => [l.id, l]));
+  const sellerOf = (c) => (c.linked_lead_id ? leadIdx.get(c.linked_lead_id)?.assigned_seller : '') || 'Sin asignar';
+  const ageDays = (iso) => iso ? Math.floor((Date.now() - Date.parse(iso)) / 86400e3) : 0;
+  const pend = [], cold = [];
+  for (const c of db.conversations || []) {
+    if (c.status === 'closed') continue;
+    if (c.last_message_direction === 'in') pend.push(c);
+    else if (c.last_message_direction === 'out' && (c.last_outbound_at || c.last_message_at || '') < cutoff) cold.push(c);
+  }
+  if (!pend.length && !cold.length) return null;
+  pend.sort((a, b) => String(a.last_inbound_at || '').localeCompare(String(b.last_inbound_at || '')));
+  cold.sort((a, b) => String(a.last_outbound_at || '').localeCompare(String(b.last_outbound_at || '')));
+  const bySeller = {};
+  for (const c of pend) (bySeller[sellerOf(c)] ||= []).push(c);
+  const li = (c, t) => `<li><b>${c.contact_name || c.contact_id}</b> (${c.channel}) — hace ${ageDays(t)} día(s): <i>${String(c.last_message_preview || '').slice(0, 90)}</i></li>`;
+  let html = `<p>Hola,</p><p><b>${pend.length}</b> conversación(es) esperan respuesta` +
+    (pend.length ? ` (la más vieja hace ${ageDays(pend[0].last_inbound_at)} día(s))` : '') +
+    (cold.length ? ` y <b>${cold.length}</b> se enfriaron (el cliente no contesta hace ≥${days} días)` : '') + `.</p>`;
+  for (const [seller, list] of Object.entries(bySeller)) {
+    html += `<p><b>${seller}</b> — ${list.length} pendiente(s):</p><ul>` + list.slice(0, 10).map((c) => li(c, c.last_inbound_at)).join('') + (list.length > 10 ? `<li>… y ${list.length - 10} más</li>` : '') + `</ul>`;
+  }
+  if (cold.length) html += `<p><b>Se enfriaron</b> (mandar un seguimiento):</p><ul>` + cold.slice(0, 10).map((c) => li(c, c.last_outbound_at)).join('') + (cold.length > 10 ? `<li>… y ${cold.length - 10} más</li>` : '') + `</ul>`;
+  html += `<p>Verlas en <a href="https://pisos-pacific.onrender.com/mensajes">Mensajes</a> (filtros "Pendientes" y "Esperando").</p>`;
+  return { html, pending: pend.length, cold: cold.length };
+}
+async function dailyPendingDigest() {
+  try {
+    db.settings = db.settings || {};
+    if (db.settings.daily_pending_digest_enabled === false) return;
+    const now = new Date();
+    if (now.getUTCHours() < 12) return;                 // ≥9:00 ART
+    const today = todayArt();
+    if (db.settings.last_daily_pending_digest === today) return;   // 1×/día
+    const digest = buildPendingDigest();
+    db.settings.last_daily_pending_digest = today;
+    if (!digest) { save(); return; }
+    const to = db.settings.reminder_email || 'info@pisospacific.com';
+    try { await sendMail({ to, subject: `📨 ${digest.pending} sin responder${digest.cold ? ` · ${digest.cold} enfriadas` : ''} — resumen diario de Mensajes`, html: digest.html }); console.log('[daily-pending] enviado a', to); } catch (e) { console.warn('[daily-pending] email falló:', e.message); }
+    save();
+  } catch (e) { console.warn('[daily-pending] error:', e.message); }
+}
+setTimeout(dailyPendingDigest, 210 * 1000);
+setInterval(dailyPendingDigest, 60 * 60e3);
+// Prueba: devuelve el digest (dry-run); con {send:true} lo manda por mail.
+app.post('/api/admin/test-daily-pending', requireAdmin, async (req, res) => {
+  const digest = buildPendingDigest();
+  if (!digest) return res.json({ pending: 0, cold: 0, note: 'sin pendientes ni enfriadas — no se mandaría nada' });
+  if (req.body?.send === true) {
+    try { await sendMail({ to: db.settings?.reminder_email || 'info@pisospacific.com', subject: `📨 (prueba) ${digest.pending} sin responder — resumen de Mensajes`, html: digest.html }); } catch (e) { return res.status(400).json({ error: e.message }); }
+  }
+  res.json({ pending: digest.pending, cold: digest.cold, sent: req.body?.send === true, html: digest.html });
+});
+
 // Prueba: arma los digests SIN mandar (dry-run); con {send:true} los manda de verdad.
 app.post('/api/admin/test-daily-tasks', requireAdmin, async (req, res) => {
   const out = [];
@@ -2521,7 +2588,7 @@ app.use('/assets', express.static(path.join(DASHBOARD_DIST, 'assets')));
 // Archivos de public/ que Vite copia a la raíz del dist (PWA: manifest, íconos, favicon).
 // index:false → no auto-sirve index.html en '/'; si el archivo no existe, sigue al SPA.
 app.use(express.static(DASHBOARD_DIST, { index: false, maxAge: '1h' }));
-const SPA_ROUTES = ['/', '/reset', '/dashboard', '/inventario', '/galeria', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow'];
+const SPA_ROUTES = ['/', '/login', '/reset', '/dashboard', '/inventario', '/galeria', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow'];
 for (const r of SPA_ROUTES) {
   app.get(r, (_, res) => res.sendFile(path.join(DASHBOARD_DIST, 'index.html')));
 }

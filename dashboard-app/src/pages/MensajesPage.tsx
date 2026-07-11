@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Search, Send, Smile, FileText, Phone, Mail, ExternalLink, MoreHorizontal, UserCircle2, AtSign, Sparkles, ChevronRight, ChevronLeft, Paperclip, Info, Archive } from "lucide-react"
+import { Search, Send, Smile, FileText, Phone, Mail, ExternalLink, MoreHorizontal, UserCircle2, AtSign, Sparkles, ChevronRight, ChevronLeft, Paperclip, Info, Archive, Clock3, Snowflake } from "lucide-react"
 import { Link, useSearchParams } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -68,13 +68,20 @@ export default function MensajesPage() {
 
   // Pendiente = última del cliente (no se resetea al abrir, solo al responder).
   const isPending = (c: Conversation) => c.last_message_direction === "in" && c.status !== "closed"
-  const waitCutoff = useMemo(() => new Date(Date.now() - 3 * 86400e3).toISOString(), [])
+  // Umbral de "se enfrió" configurable (settings.waiting_client_days, default 3) vía stats.
+  const stats = useApi<{ pending: number; waiting_client: number; waiting_days: number }>("/api/conversations/stats", { pollMs: 30000 }).data
+  const waitDays = stats?.waiting_days ?? 3
+  const waitCutoff = useMemo(() => new Date(Date.now() - waitDays * 86400e3).toISOString(), [waitDays])
   const isWaiting = (c: Conversation) => c.last_message_direction === "out" && c.status !== "closed" && (c.last_outbound_at ?? c.last_message_at ?? "") < waitCutoff
   const pendingCount = useMemo(() => conversations.filter(isPending).length, [conversations])
   const waitingCount = useMemo(() => conversations.filter(isWaiting).length, [conversations, waitCutoff])
+  // Sección de bandeja: lo urgente arriba y EL PENDIENTE MÁS VIEJO PRIMERO (antes el más
+  // nuevo tapaba al que llevaba días esperando). Luego enfriadas, luego al día (por fecha).
+  const sectionOf = (c: Conversation): "pend" | "wait" | "ok" => (isPending(c) ? "pend" : isWaiting(c) ? "wait" : "ok")
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase()
+    const rank = { pend: 0, wait: 1, ok: 2 }
     return conversations.filter(c => {
       if (c.status === "closed" && !showClosed) return false   // cerradas ocultas salvo toggle
       if (channelFilter !== "all" && c.channel !== channelFilter) return false
@@ -88,9 +95,10 @@ export default function MensajesPage() {
         || c.contact_id.toLowerCase().includes(needle)
         || (c.last_message_preview ?? "").toLowerCase().includes(needle)
     }).sort((a, b) => {
-      // Pendientes (esperan nuestra respuesta) primero; dentro, más nuevo primero.
-      const pa = isPending(a) ? 1 : 0, pb = isPending(b) ? 1 : 0
-      if (pa !== pb) return pb - pa
+      const sa = sectionOf(a), sb = sectionOf(b)
+      if (sa !== sb) return rank[sa] - rank[sb]
+      if (sa === "pend") return (a.last_inbound_at ?? a.last_message_at ?? "").localeCompare(b.last_inbound_at ?? b.last_message_at ?? "")   // más viejo primero
+      if (sa === "wait") return (a.last_outbound_at ?? a.last_message_at ?? "").localeCompare(b.last_outbound_at ?? b.last_message_at ?? "") // más enfriado primero
       return (b.last_message_at ?? "").localeCompare(a.last_message_at ?? "")
     })
   }, [conversations, channelFilter, q, onlyUnread, onlyPending, onlyWaiting, showClosed, sellerFilter, leadById, waitCutoff])
@@ -132,11 +140,12 @@ export default function MensajesPage() {
     setSearchParams(prev => { prev.delete("conv"); return prev }, { replace: true })
   }
 
-  // "Ignorar": archiva la conversación (status closed) → desaparece de la lista (no es consulta:
-  // banco, proveedores, comex, etc.) y deja de contar como pendiente. Se ve con el toggle "Ignoradas".
+  // "Ignorar": archiva la conversación (status closed + ignored) → desaparece de la lista (no es
+  // consulta: banco, proveedores, comex, etc.), deja de contar como pendiente y un entrante nuevo
+  // YA NO la reabre (antes el banco mandaba otro mail y volvía a la bandeja). Toggle "Ignoradas".
   const ignoreConv = async (id: string) => {
     try {
-      await fetch(`/api/conversations/${id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status: "closed" }) })
+      await fetch(`/api/conversations/${id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status: "closed", ignored: true }) })
       if (selectedId === id) clearSelection()
       convApi.refetch()
     } catch { /* ignore */ }
@@ -150,6 +159,8 @@ export default function MensajesPage() {
       <ConversationList
         className={cn("lg:flex", selectedId ? "hidden" : "flex")}
         conversations={filtered}
+        sectionOf={sectionOf}
+        showSections={!showClosed}
         total={conversations.length}
         selectedId={selectedId}
         onSelect={handleSelect}
@@ -198,12 +209,16 @@ export default function MensajesPage() {
 // LEFT — conversation list
 // -----------------------------------------------------------------------------
 
+const SECTION_LABEL = { pend: "Pendientes de respuesta", wait: "Esperando al cliente (enfriadas)", ok: "Al día" } as const
+
 function ConversationList({
-  conversations, total, selectedId, onSelect, onIgnore, channelFilter, setChannelFilter, q, setQ, leadById,
+  conversations, sectionOf, showSections, total, selectedId, onSelect, onIgnore, channelFilter, setChannelFilter, q, setQ, leadById,
   onlyUnread, setOnlyUnread, onlyPending, setOnlyPending, onlyWaiting, setOnlyWaiting, pendingCount, waitingCount,
   showClosed, setShowClosed, sellerFilter, setSellerFilter, sellers, className,
 }: {
   conversations: Conversation[]
+  sectionOf: (c: Conversation) => "pend" | "wait" | "ok"
+  showSections: boolean
   total: number
   className?: string
   selectedId: string | null
@@ -263,17 +278,44 @@ function ConversationList({
       <div className="flex-1 overflow-y-auto">
         {conversations.length === 0 ? (
           <div className="text-xs text-muted-foreground text-center py-10">Sin conversaciones</div>
-        ) : conversations.map((c) => (
-          <ConversationRow key={c.id} conv={c} lead={c.linked_lead_id ? leadById.get(c.linked_lead_id) : undefined} selected={c.id === selectedId} onClick={() => onSelect(c.id)} onIgnore={onIgnore} />
-        ))}
+        ) : (() => {
+          // Bandeja por secciones: Pendientes (más viejo primero) / Esperando cliente / Al día.
+          let prev: string | null = null
+          return conversations.map((c) => {
+            const sec = sectionOf(c)
+            const showHeader = showSections && sec !== prev && !(sec === "ok" && prev === null)
+            prev = sec
+            return (
+              <div key={c.id}>
+                {showHeader && (
+                  <div className="sticky top-0 z-[5] bg-card/95 backdrop-blur px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground border-b border-border">
+                    {SECTION_LABEL[sec]}
+                  </div>
+                )}
+                <ConversationRow conv={c} waiting={sec === "wait"} lead={c.linked_lead_id ? leadById.get(c.linked_lead_id) : undefined} selected={c.id === selectedId} onClick={() => onSelect(c.id)} onIgnore={onIgnore} />
+              </div>
+            )
+          })
+        })()}
       </div>
     </aside>
   )
 }
 
-function ConversationRow({ conv, lead, selected, onClick, onIgnore }: { conv: Conversation; lead?: Lead; selected: boolean; onClick: () => void; onIgnore: (id: string) => void }) {
+const agoLabel = (iso?: string) => {
+  if (!iso) return ""
+  const ms = Date.now() - new Date(iso).getTime()
+  if (isNaN(ms)) return ""
+  const d = Math.floor(ms / 86400e3)
+  if (d >= 1) return `hace ${d} día${d > 1 ? "s" : ""}`
+  const h = Math.floor(ms / 3600e3)
+  return h >= 1 ? `hace ${h} h` : "recién"
+}
+
+function ConversationRow({ conv, lead, waiting, selected, onClick, onIgnore }: { conv: Conversation; lead?: Lead; waiting?: boolean; selected: boolean; onClick: () => void; onIgnore: (id: string) => void }) {
   const ChannelIcon = channelIcon(conv.channel) ?? AtSign
   const pending = conv.last_message_direction === "in" && conv.status !== "closed"   // espera nuestra respuesta
+  const pendingDays = pending ? Math.floor((Date.now() - new Date(conv.last_inbound_at ?? conv.last_message_at).getTime()) / 86400e3) : 0
   return (
     <div
       role="button"
@@ -311,6 +353,19 @@ function ConversationRow({ conv, lead, selected, onClick, onIgnore }: { conv: Co
               <Badge variant="default" className="h-4 min-w-4 px-1 text-[10px] shrink-0 rounded-full">{conv.unread_count}</Badge>
             )}
           </div>
+          {pending ? (
+            <div className="mt-1">
+              <span className={`inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-[10px] font-medium ${pendingDays >= 2 ? "bg-red-100 text-red-700 dark:bg-red-950/40 dark:text-red-400" : "bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-400"}`}>
+                <Clock3 className="h-2.5 w-2.5" />Sin responder · {agoLabel(conv.last_inbound_at ?? conv.last_message_at)}
+              </span>
+            </div>
+          ) : waiting ? (
+            <div className="mt-1">
+              <span className="inline-flex items-center gap-1 rounded-full bg-sky-100 text-sky-700 dark:bg-sky-950/40 dark:text-sky-400 px-1.5 py-0.5 text-[10px] font-medium">
+                <Snowflake className="h-2.5 w-2.5" />Se enfrió · el cliente no contesta {agoLabel(conv.last_outbound_at ?? conv.last_message_at)}
+              </span>
+            </div>
+          ) : null}
           {conv.linked_client_name ? (
             <div className="text-[10px] text-muted-foreground mt-0.5 truncate">Cliente: {conv.linked_client_name}</div>
           ) : lead ? (
@@ -563,7 +618,7 @@ function ThreadHeader({ conversation, onBack, onShowContact }: { conversation: C
         <DropdownMenuContent align="end">
           <DropdownMenuItem onClick={() => patchConv({ unread_count: 1 })}>Marcar como no leída</DropdownMenuItem>
           {isClosed
-            ? <DropdownMenuItem onClick={() => patchConv({ status: "open" })}>Reabrir conversación</DropdownMenuItem>
+            ? <DropdownMenuItem onClick={() => patchConv({ status: "open", ignored: false })}>Reabrir conversación</DropdownMenuItem>
             : <DropdownMenuItem onClick={() => patchConv({ status: "closed" })}>Cerrar / archivar</DropdownMenuItem>}
         </DropdownMenuContent>
       </DropdownMenu>

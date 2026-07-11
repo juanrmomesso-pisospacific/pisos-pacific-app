@@ -2,12 +2,13 @@ import { LayoutGrid, Package, FileText, TrendingUp, Calendar, Users, Settings, H
 import { Link, useLocation } from "react-router-dom"
 import {
   Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupLabel, SidebarGroupContent,
-  SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarMenuButton,
+  SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarMenuBadge,
   SidebarMenuSub, SidebarMenuSubItem, SidebarMenuSubButton, SidebarRail
 } from "@/components/ui/sidebar"
 import { NavUser } from "@/components/NavUser"
 import { useTheme } from "@/contexts/ThemeContext"
 import { useAuth } from "@/contexts/AuthContext"
+import { useApi } from "@/lib/api"
 import { canAccess } from "@/lib/access"
 
 type NavItem = { label: string; href: string; icon: React.ComponentType<{ className?: string }>; sub?: { label: string; href: string; icon: React.ComponentType<{ className?: string }> }[] }
@@ -39,7 +40,7 @@ function isActive(href: string, pathname: string) {
   return pathname.startsWith(href)
 }
 
-function NavGroup({ label, items }: { label: string; items: NavItem[] }) {
+function NavGroup({ label, items, badges }: { label: string; items: NavItem[]; badges?: Record<string, number> }) {
   const { pathname } = useLocation()
   return (
     <SidebarGroup>
@@ -56,6 +57,11 @@ function NavGroup({ label, items }: { label: string; items: NavItem[] }) {
                     <span>{item.label}</span>
                   </Link>
                 </SidebarMenuButton>
+                {badges?.[item.href] ? (
+                  <SidebarMenuBadge className="rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400 font-semibold" title="Conversaciones que esperan respuesta">
+                    {badges[item.href]}
+                  </SidebarMenuBadge>
+                ) : null}
                 {item.sub && active ? (
                   <SidebarMenuSub>
                     {item.sub.map((s) => (
@@ -85,6 +91,9 @@ export function AppSidebar() {
   const role = state.status === "ready" ? state.user.role : undefined
   const filt = (items: NavItem[]) => items.filter((i) => canAccess(role, i.href))
   const operacion = filt(NAV_OPERACION), admin = filt(NAV_ADMIN), sistema = filt(NAV_SISTEMA)
+  // Badge de pendientes en "Mensajes" (visible desde cualquier página; refresca cada 60s).
+  const stats = useApi<{ pending: number }>("/api/conversations/stats", { pollMs: 60000 }).data
+  const badges = stats?.pending ? { "/mensajes": stats.pending } : undefined
   const fullLogo = effectiveDark ? "/LogoPacific.png" : "/LogoPacificDark.png"
   const smallLogo = effectiveDark ? "/LogoPacificSmall.png" : "/LogoPacificSmallDark.png"
   return (
@@ -96,7 +105,7 @@ export function AppSidebar() {
         </Link>
       </SidebarHeader>
       <SidebarContent>
-        {operacion.length > 0 && <NavGroup label="Operación" items={operacion} />}
+        {operacion.length > 0 && <NavGroup label="Operación" items={operacion} badges={badges} />}
         {admin.length > 0 && <NavGroup label="Administración" items={admin} />}
         {sistema.length > 0 && <NavGroup label="Sistema" items={sistema} />}
       </SidebarContent>

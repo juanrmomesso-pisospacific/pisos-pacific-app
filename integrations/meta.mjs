@@ -166,7 +166,9 @@ export async function handleInbound(db, save, channel, payload) {
     conv.last_message_direction = 'in';
   }
   conv.unread_count = (conv.unread_count || 0) + 1;
-  if (conv.status === 'closed') conv.status = 'open';
+  // Reabrir al recibir — SALVO que se haya ignorado a mano (banco/robots): el mensaje se
+  // registra igual pero la conversación no vuelve a la bandeja ni cuenta como pendiente.
+  if (conv.status === 'closed' && !conv.ignored) conv.status = 'open';
   save();
   return { conversation: conv, message: msg };
 }

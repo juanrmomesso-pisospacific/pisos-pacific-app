@@ -8,6 +8,7 @@ export type Conversation = {
   linked_client_name?: string
   linked_lead_id?: string
   status: "open" | "closed"
+  ignored?: boolean          // ignorada a mano (banco/robots): un entrante nuevo NO la reabre
   unread_count: number
   last_message_at: string
   last_message_preview?: string
