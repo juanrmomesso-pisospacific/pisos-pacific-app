@@ -20,6 +20,7 @@ import { useAuth } from "@/contexts/AuthContext"
 import { useConfirm } from "@/components/ui/confirm"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney, cn } from "@/lib/utils"
+import { materialState, MATERIAL_LABEL } from "@/lib/calendar"
 import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote, Caja, CashflowMovement, Product } from "@/lib/types"
 
@@ -77,17 +78,8 @@ const STATUS_COLOR: Record<SaleStatus, { bar: string; tint: string; icon: string
 
 type View = "tabla" | "cards" | "kanban"
 
-// ENTREGA DE MATERIAL (¿salió el piso del depósito?) — eje INDEPENDIENTE de la colocación (esa es el
-// `status`: Confirmado→Programado→En proceso→Finalizado + la fecha de colocación). Se deriva SOLO de
-// señales REALES: stock físicamente descontado (entregas de material o finalización) o venta finalizada.
-// NO se usa el `delivery_status` heredado de la planilla ("Acopiado") porque NO es confiable —había
-// ventas Confirmadas marcadas "Acopiado" sin entrega real. "full"=todo entregado, "partial"=parcial.
-function materialState(s: Sale): "full" | "partial" | "none" {
-  if (s.stock_deducted || s.status === "Finalizado") return "full"   // stock descontado (entrega/finalización) o venta finalizada
-  if ((s.material_deliveries?.length ?? 0) > 0) return "partial"      // entregas parciales registradas
-  return "none"
-}
-const MATERIAL_LABEL: Record<string, string> = { full: "Entregado", partial: "Parcial", none: "Sin entregar" }
+// ENTREGA DE MATERIAL (¿salió el piso del depósito?) — eje INDEPENDIENTE de la colocación.
+// `materialState`/`MATERIAL_LABEL` viven en `@/lib/calendar` (fuente única, compartida con la Agenda).
 function MaterialBadge({ sale }: { sale: Sale }) {
   const st = materialState(sale)
   if (st === "none") return <span className="text-[10px] text-muted-foreground">Sin entregar</span>

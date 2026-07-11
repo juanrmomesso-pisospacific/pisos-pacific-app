@@ -138,11 +138,9 @@ function UsersManager() {
                 {ROLE_OPTIONS.map((r) => <option key={r} value={r}>{ROLE_LABEL[r]}</option>)}
               </select>
             </div>
-            {role === "vendor"
-              ? <div><label className="text-xs font-medium block mb-1">Nombre de vendedor <span className="text-muted-foreground font-normal">(para su scope)</span></label><Input value={seller} onChange={(e) => setSeller(e.target.value)} placeholder="Como figura en las ventas" /></div>
-              : <div><label className="text-xs font-medium block mb-1">Contraseña inicial</label><Input value={pw} onChange={(e) => setPw(e.target.value)} placeholder="mínimo 6 caracteres" type="text" autoComplete="off" /></div>}
+            {role === "vendor" && <div><label className="text-xs font-medium block mb-1">Nombre de vendedor <span className="text-muted-foreground font-normal">(para su scope)</span></label><Input value={seller} onChange={(e) => setSeller(e.target.value)} placeholder="Como figura en las ventas" /></div>}
           </div>
-          {role === "vendor" && <div><label className="text-xs font-medium block mb-1">Contraseña inicial</label><Input value={pw} onChange={(e) => setPw(e.target.value)} placeholder="mínimo 6 caracteres" type="text" autoComplete="off" /></div>}
+          <div><label className="text-xs font-medium block mb-1">Contraseña inicial</label><Input value={pw} onChange={(e) => setPw(e.target.value)} placeholder="mínimo 6 caracteres" type="text" autoComplete="off" /></div>
           <Button onClick={create} disabled={busy || !canSubmit}>{busy ? "Creando…" : "Crear usuario"}</Button>
         </div>
       </CardContent>

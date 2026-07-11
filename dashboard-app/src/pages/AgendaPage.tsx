@@ -746,9 +746,9 @@ function NewEventSheet({ open, onOpenChange, sales, crews, presetSaleId }: { ope
 
   const submit = async () => {
     if (!canSubmit) return
+    const effectiveTo = dateTo && dateTo >= date ? dateTo : ""   // fecha "hasta" válida (rango) o vacío
     if (isEntrega && selectedSale) {
       const isFirstSchedule = !selectedSale.delivery_date
-      const effectiveTo = dateTo && dateTo >= date ? dateTo : ""
       await update.run("sales", selectedSale.id, { delivery_date: date, delivery_date_to: effectiveTo || undefined, delivery_crew: seller || undefined, delivery_notes: notes || undefined })
       if (selectedSale.status === "Confirmado") await txn.run(selectedSale.id, "Programado")
       if (isFirstSchedule) {
@@ -757,7 +757,6 @@ function NewEventSheet({ open, onOpenChange, sales, crews, presetSaleId }: { ope
       }
       onOpenChange(false); refresh(); return
     }
-    const effectiveTo = dateTo && dateTo >= date ? dateTo : ""
     const r = await create.run("tasks", { type, title, due_date: date, due_date_to: effectiveTo || undefined, assigned_seller: seller || undefined, status: "pendiente", sale_id: saleId || undefined, notes: notes || undefined, created_at: new Date().toISOString() })
     if (r) { onOpenChange(false); refresh() }
   }
