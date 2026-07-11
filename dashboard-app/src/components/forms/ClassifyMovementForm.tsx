@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { useConfirm } from "@/components/ui/confirm"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
-import type { Category, Supplier, CashflowMovement, Sale } from "@/lib/types"
+import type { Category, Supplier, CashflowMovement, Sale, Caja } from "@/lib/types"
 import { EXPENSE_TYPES, categoriesForType } from "@/lib/cashflow"
 import { fmtMoney } from "@/lib/utils"
 
@@ -22,8 +22,10 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   const suppliers = useApi<Supplier[]>("/api/suppliers").data ?? []
   const clients = useApi<ClientLite[]>("/api/clients").data ?? []
   const sales = useApi<Sale[]>("/api/sales").data ?? []
-  const isEgreso = mov?.flow !== "Ingreso"
-  const originalName = mov?.counterparty || ""
+  const cajas = useApi<Caja[]>("/api/cajas").data ?? []
+  // La regla se aprende sobre el descriptor CRUDO del extracto (raw_name): es el texto que va a
+  // volver a aparecer en la próxima importación. counterparty puede venir ya reescrito.
+  const originalName = mov?.raw_name || mov?.counterparty || ""
   const learnable = !isUnnamed(originalName)
 
   // Moneda nativa del movimiento + tipo de cambio (para recalcular la otra moneda al editar el monto).
@@ -39,6 +41,10 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   const [saleId, setSaleId] = useState("")   // venta vinculada (cobro), solo ingresos
   const [transfer, setTransfer] = useState(false)  // fuera del P&L (transferencia / no operativo)
   const [outNote, setOutNote] = useState("")       // concepto cuando se marca fuera del P&L
+  // Correcciones del movimiento en sí (el importador puede haber errado signo/caja/fecha).
+  const [flowV, setFlowV] = useState<"Ingreso" | "Egreso">("Egreso")
+  const [cajaV, setCajaV] = useState("")
+  const [dateV, setDateV] = useState("")
   // re-sync cuando cambia el movimiento abierto
   const [seen, setSeen] = useState<string | null>(null)
   if (mov && mov.id !== seen) {
@@ -54,12 +60,20 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
     setSaleId(mov.linked_sale_id || "")
     setTransfer(!!mov.transfer)
     setOutNote(mov.transfer ? (mov.category || "") : "")
+    setFlowV(mov.flow === "Ingreso" ? "Ingreso" : "Egreso")
+    setCajaV(mov.caja_id || "")
+    setDateV((mov.date || "").slice(0, 10))
   }
   const patch = (p: Partial<typeof v>) => setV((prev) => ({ ...prev, ...p }))
   const confirm = useConfirm()
   const remove = useAction(api.remove)
+  // isEgreso sigue el flujo EDITADO (si corregís Ingreso↔Egreso, cambia el form de clasificación).
+  const isEgreso = flowV !== "Ingreso"
   const origAmount = mov ? (cur === "USD" ? (mov.amount_usd ?? 0) : (mov.amount_ars ?? 0)) : 0
   const amountChanged = Number(amount) !== origAmount && amount.trim() !== ""
+  const flowChanged = mov ? flowV !== mov.flow : false
+  const cajaChanged = mov ? (cajaV && cajaV !== (mov.caja_id || "")) : false
+  const dateChanged = mov ? (dateV && dateV !== (mov.date || "").slice(0, 10)) : false
 
   const catMap = useMemo(() => {
     const m = new Map<string, Set<string>>()
@@ -93,15 +107,29 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   const linkChanged = !isEgreso && saleId !== (mov?.linked_sale_id || "")
   const transferChanged = transfer !== !!mov?.transfer
   const categoryChanged = (v.category !== (mov?.category || "")) || (v.subcategory !== (mov?.subcategory || ""))
+  const fixChanged = amountChanged || flowChanged || cajaChanged || dateChanged
   async function submit() {
-    if (!mov || (!v.counterparty && !amountChanged && !linkChanged && !transferChanged && !categoryChanged)) return
-    // Corregir el monto primero (recalcula la otra moneda con el TC del movimiento).
-    if (amountChanged) {
-      const n = Math.abs(Number(amount)) || 0
-      await update.run("cashflow", mov.id, {
-        amount_ars: cur === "USD" ? Math.round(n * rate * 100) / 100 : n,
-        amount_usd: cur === "USD" ? n : Math.round((n / rate) * 100) / 100,
-      })
+    if (!mov || (!v.counterparty && !fixChanged && !linkChanged && !transferChanged && !categoryChanged)) return
+    // Correcciones del movimiento (monto/flujo/caja/fecha) primero, en un solo PATCH.
+    if (fixChanged) {
+      const fix: Record<string, unknown> = {}
+      if (amountChanged) {
+        const n = Math.abs(Number(amount)) || 0
+        fix.amount_ars = cur === "USD" ? Math.round(n * rate * 100) / 100 : n
+        fix.amount_usd = cur === "USD" ? n : Math.round((n / rate) * 100) / 100
+      }
+      if (flowChanged) {
+        fix.flow = flowV
+        fix.counterparty_type = flowV === "Ingreso" ? "client" : "supplier"
+        if (flowV === "Ingreso") { fix.expense_type = null; fix.supplier_id = null }
+        else { fix.client_id = null; fix.sale_ref = null; fix.linked_sale_id = null }
+      }
+      if (cajaChanged) {
+        fix.caja_id = cajaV
+        fix.caja_name = cajas.find((c) => c.id === cajaV)?.name ?? cajaV
+      }
+      if (dateChanged) fix.date = `${dateV}T00:00:00.000Z`
+      await update.run("cashflow", mov.id, fix)
     }
     // Fuera del P&L (transferencia entre cuentas o ingreso/gasto no operativo: alquiler, plata ajena al
     // negocio, etc.): no entra al P&L pero cuenta para el saldo de la caja. Limpia el vínculo a
@@ -162,17 +190,39 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   return (
     <FormSheet open={open} onOpenChange={onOpenChange} title="Editar / clasificar movimiento" onSubmit={submit} busy={update.busy || remove.busy || link.busy} error={update.error || remove.error || link.error} submitLabel="Guardar">
       {mov ? (
-        <div className="rounded-md bg-muted/40 px-3 py-2 text-xs">
+        <div className="rounded-md bg-muted/40 px-3 py-2 text-xs space-y-0.5">
           <div className="font-medium">{mov.description || mov.counterparty || "—"}</div>
           <div className="text-muted-foreground">{mov.flow} · {mov.caja_name} · {mov.date ? new Date(mov.date).toLocaleDateString("es-AR") : ""}</div>
+          {mov.classified_by ? <div className="text-muted-foreground">Se clasificó solo: <span className="italic">{mov.classified_by}</span></div> : null}
+          {mov.needs_review && mov.review_reason ? <div className="text-amber-600 dark:text-amber-400">A revisar: {mov.review_reason}</div> : null}
         </div>
       ) : null}
 
-      <div>
-        <FieldLabel>Monto ({cur})</FieldLabel>
-        <Input type="number" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="0" />
-        {amountChanged && cur === "ARS" && <FieldHint>≈ USD {(Math.abs(Number(amount) || 0) / rate).toLocaleString("es-AR", { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
-        {amountChanged && cur === "USD" && <FieldHint>≈ ARS {(Math.abs(Number(amount) || 0) * rate).toLocaleString("es-AR", { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <FieldLabel>Monto ({cur})</FieldLabel>
+          <Input type="number" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="0" />
+          {amountChanged && cur === "ARS" && <FieldHint>≈ USD {(Math.abs(Number(amount) || 0) / rate).toLocaleString("es-AR", { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
+          {amountChanged && cur === "USD" && <FieldHint>≈ ARS {(Math.abs(Number(amount) || 0) * rate).toLocaleString("es-AR", { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
+        </div>
+        <div>
+          <FieldLabel>Fecha</FieldLabel>
+          <Input type="date" value={dateV} onChange={(e) => setDateV(e.target.value)} />
+        </div>
+        <div>
+          <FieldLabel>Ingreso / Egreso</FieldLabel>
+          <select value={flowV} onChange={(e) => setFlowV(e.target.value as "Ingreso" | "Egreso")} className={inputSel}>
+            <option value="Ingreso">Ingreso</option>
+            <option value="Egreso">Egreso</option>
+          </select>
+          {flowChanged && <FieldHint>Se corrige el signo: pasa a {flowV}.</FieldHint>}
+        </div>
+        <div>
+          <FieldLabel>Caja</FieldLabel>
+          <select value={cajaV} onChange={(e) => setCajaV(e.target.value)} className={inputSel}>
+            {cajas.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+          </select>
+        </div>
       </div>
 
       {/* Fuera del P&L: transferencia entre cuentas o ingreso/gasto no operativo (alquiler, plata ajena

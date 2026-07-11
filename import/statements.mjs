@@ -35,6 +35,28 @@ function buildCpmap(rules) {
   }
   return { PER: PER_DEFAULT, byCuit, byNameIdx: idx };
 }
+
+// Busca una regla por nombre: primero match exacto (normalizado) y después "contiene"
+// (la UI promete "si el nombre contiene…"). El contiene es POR PALABRA COMPLETA ("ariel"
+// no matchea dentro de "gabriel") y con clave de ≥4 caracteres, para que tokens cortos
+// no enganchen a cualquiera.
+const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function findRule(...texts) {
+  for (const t of texts) {
+    const k = norm(t);
+    if (!k) continue;
+    const exact = CPMAP.byNameIdx.get(k);
+    if (exact) return { rule: exact, key: k };
+  }
+  for (const t of texts) {
+    const hay = norm(t);
+    if (!hay) continue;
+    for (const [key, rule] of CPMAP.byNameIdx) {
+      if (key.length >= 4 && new RegExp(`(^|[^a-z0-9])${reEsc(key)}([^a-z0-9]|$)`).test(hay)) return { rule, key };
+    }
+  }
+  return null;
+}
 // parseStatement llama a esto con db.cp_rules antes de parsear.
 export function setRules(rules) { if (Array.isArray(rules) && rules.length) CPMAP = buildCpmap(rules); }
 
@@ -47,9 +69,15 @@ try {
 } catch { /* sin mapa: el importador usa solo sus reglas internas */ }
 
 // Aplica el mapa a un record ya armado (mutándolo). cuit opcional (bancos).
+// Matchea por CUIT (exacto), y por nombre contra contraparte cruda, contraparte
+// clasificada y descripción (exacto, o "contiene" con clave ≥5 chars — ver findRule).
 function applyCpMap(rec, rawName, cuit) {
-  const e = (cuit && CPMAP.byCuit[String(cuit).replace(/\D/g, '')]) || CPMAP.byNameIdx.get(norm(rawName)) || CPMAP.byNameIdx.get(norm(rec.counterparty));
-  if (!e) return rec;
+  const cuitKey = cuit && String(cuit).replace(/\D/g, '');
+  const byCuit = cuitKey && CPMAP.byCuit[cuitKey];
+  const found = byCuit ? { rule: byCuit, key: `CUIT ${cuitKey}` } : findRule(rawName, rec.counterparty, rec.description);
+  if (!found) return rec;
+  const e = found.rule;
+  rec.classified_by = `regla "${found.key}"${e.counterparty ? ` → ${e.counterparty}` : ''}${e.source === 'learned' ? ' (aprendida)' : ''}`;
   if (e.personal && rec.flow === 'Egreso') {
     rec.counterparty = 'Juan & Pipi'; rec.category = 'Sueldos'; rec.subcategory = 'Retiro/Personal';
     rec.expense_type = CPMAP.PER; rec.counterparty_type = 'supplier';
@@ -110,10 +138,14 @@ function readSheet(buffer) {
 const PER = 'Gastos de Personal (HR y Mano de Obra)';
 const SUM = 'Gastos de Instalaciones y Suministros';
 const isPeaje = (t) => /ausol|\bausa\b|aubasa|telepase|autopista|au oeste|au del oeste|corredores viales|caminos del|\bpeaje/i.test(t);
-const RETAIL = /carrefour|\bcoto\b|jumbo|\bdisco\b|\bdia\b|farmacia|chango|\bvea\b|starbucks|mcdonald|rappi|pedidosya|cabify|\buber\b|spotify|netflix|apple\.com/i;
+// OJO: "dia" (supermercado) NO está — como token matcheaba la palabra "día" de cualquier
+// descripción y mandaba gastos reales a Personal en silencio.
+const RETAIL = /carrefour|\bcoto\b|jumbo|\bdisco\b|supermercado dia\b|farmacia|chango|\bvea\b|starbucks|mcdonald|rappi|pedidosya|cabify|\buber\b|spotify|netflix|apple\.com/i;
 const FLOTA = /ypf|appypf|shell|axion|puma|nafta|combust|gnc|estacion|sancor seguros|patente|peaje/i;
 const MKT = /google|facebk|facebook|meta\b|instagram|framer|ads|tiktok/i;
-const TRANSFER = /mov entre cuentas|transferencia a cuenta propia|cuenta propia|debin|su pago en pesos|pago de tarjeta|pago tarjeta visa/i;
+// OJO: "debin" NO está — un DEBIN puede ser un cobro real de cliente; que caiga a
+// clasificación normal (queda a revisar) en vez de irse del P&L como transferencia.
+const TRANSFER = /mov entre cuentas|transferencia a cuenta propia|cuenta propia|su pago en pesos|pago de tarjeta|pago tarjeta visa/i;
 // Ruido recurrente de extractos que SIEMPRE es transferencia (pago del resumen de tarjeta /
 // movimiento entre cuentas): se auto-clasifica y auto-limpia (los gastos reales son los cargos
 // itemizados de la tarjeta, ya registrados). "Pago con débito" NO entra (es una compra real).
@@ -124,19 +156,19 @@ const FINANCIAL = /remuneraci[oó]n de saldo|intereses ganados|\bdpf\b|plazo fij
 
 function classifyBank(desc) {
   const t = norm(desc);
-  if (CARD_NOISE.test(t)) return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', expense_type: 'Otros Gastos y Ajustes', counterparty: 'MOV ENTRE CUENTAS', no_review: true };
+  if (CARD_NOISE.test(t)) return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', expense_type: 'Otros Gastos y Ajustes', counterparty: 'MOV ENTRE CUENTAS', no_review: true, why: 'pago de resumen de tarjeta / compensación → transferencia' };
   if (FINANCIAL.test(t)) {
     const isDpf = /dpf|plazo fijo/.test(t);
     // Interés: auto-limpio (no necesita 2da pata). DPF: queda en revisión para registrar también
     // la pata en la caja "Plazo Fijo BdC" (constitución = entra capital; cancelación = sale).
-    return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: isDpf ? 'Plazo fijo' : 'Resultado financiero', expense_type: 'Otros Gastos y Ajustes', counterparty: isDpf ? 'Plazo fijo (DPF)' : 'Interés bancario', no_review: !isDpf, review_reason: isDpf ? 'plazo fijo — registrar también la pata en la caja Plazo Fijo' : null };
+    return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: isDpf ? 'Plazo fijo' : 'Resultado financiero', expense_type: 'Otros Gastos y Ajustes', counterparty: isDpf ? 'Plazo fijo (DPF)' : 'Interés bancario', no_review: !isDpf, review_reason: isDpf ? 'plazo fijo — registrar también la pata en la caja Plazo Fijo' : null, why: isDpf ? 'plazo fijo → fuera del P&L' : 'interés bancario → fuera del P&L' };
   }
-  if (TRANSFER.test(t)) return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', expense_type: 'Otros Gastos y Ajustes', counterparty: 'MOV ENTRE CUENTAS' };
-  if (/arca|afip|arba|rentas|dgr|sircreb|iibb|ley 25413|impuesto|comision|iva|i\.v\.a/i.test(t)) return { category: 'Impuestos', expense_type: 'Impuestos y Tasas', fixed_variable: 'Fijo', counterparty: 'Impuestos / Banco' };
-  if (isPeaje(t) || FLOTA.test(t)) return { category: 'Flota', expense_type: 'Gastos de Flota/Vehículos', counterparty: desc };
-  if (MKT.test(t)) return { category: 'Marketing', expense_type: 'Gastos de Marketing y Comerciales', counterparty: desc };
-  if (RETAIL.test(t)) return { category: 'Otros', expense_type: PER, counterparty: 'Juan & Pipi', description_override: 'Personal — ' + desc };
-  if (/easy|sodimac|pinturer|ferreter|sanitarios/i.test(t)) return { category: 'Insumos', expense_type: SUM, counterparty: desc };
+  if (TRANSFER.test(t)) return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', expense_type: 'Otros Gastos y Ajustes', counterparty: 'MOV ENTRE CUENTAS', why: 'descripción de movimiento entre cuentas' };
+  if (/arca|afip|arba|rentas|dgr|sircreb|iibb|ley 25413|impuesto|comision|iva|i\.v\.a/i.test(t)) return { category: 'Impuestos', expense_type: 'Impuestos y Tasas', fixed_variable: 'Fijo', counterparty: 'Impuestos / Banco', why: 'impuesto/comisión bancaria' };
+  if (isPeaje(t) || FLOTA.test(t)) return { category: 'Flota', expense_type: 'Gastos de Flota/Vehículos', counterparty: desc, why: 'nafta/peaje/estación → Flota' };
+  if (MKT.test(t)) return { category: 'Marketing', expense_type: 'Gastos de Marketing y Comerciales', counterparty: desc, why: 'plataforma de publicidad → Marketing' };
+  if (RETAIL.test(t)) return { category: 'Otros', expense_type: PER, counterparty: 'Juan & Pipi', description_override: 'Personal — ' + desc, why: 'comercio retail → gasto personal (confirmar)' };
+  if (/easy|sodimac|pinturer|ferreter|sanitarios/i.test(t)) return { category: 'Insumos', expense_type: SUM, counterparty: desc, why: 'corralón/ferretería → Insumos' };
   return { category: 'Otros', expense_type: null, counterparty: desc };
 }
 
@@ -198,10 +230,12 @@ function parseBank(rows, source) {
       date: m.date, flow, category: c.category, subcategory: c.subcategory || null,
       counterparty: flow === 'Ingreso' ? m.desc : (c.counterparty || m.desc),
       description: c.description_override || m.desc,
+      raw_name: m.desc,   // descriptor crudo del banco: sobre esto se aprenden las reglas
       currency: m.cur, amount_ars: r2(amount_ars), amount_usd: r2(amount_usd),
       fixed_variable: c.fixed_variable || 'Variable', expense_type: flow === 'Egreso' ? (c.expense_type ?? null) : null,
       // Interés: no va a revisión (no_review). DPF y el resto sí (con su razón).
       transfer: !!c.transfer, needs_review: !c.no_review, review_reason: c.no_review ? null : (c.review_reason || 'extracto bancario importado — verificar clasificación y signo'),
+      classified_by: c.why || null,
     });
   });
 }
@@ -216,28 +250,33 @@ const NAME_MAP = {
 };
 // Saca el prefijo de tipo y el conector "a"/"de" → deja el nombre limpio para matchear reglas.
 const stripName = (t) => t.replace(/^(Transferencia (enviada|recibida)|Pago|Compra|Cobro)\s*(a|de)?\s+/i, '').trim();
-const mpPersonal = (name, desc) => ({ kind: 'egreso', counterparty: 'Juan & Pipi', category: 'Sueldos', subcategory: 'Retiro/Personal', expense_type: PER, desc: 'Personal — ' + (name || desc) });
+const mpPersonal = (name, desc, why, review) => ({ kind: 'egreso', counterparty: 'Juan & Pipi', category: 'Sueldos', subcategory: 'Retiro/Personal', expense_type: PER, desc: 'Personal — ' + (name || desc), why, review });
 function classifyMP(m) {
   const t = m.type, name = stripName(t);
   if (m.amt > 0) {
     if (/rendimiento/i.test(t)) return { kind: 'skip' };
-    if (/ingreso de dinero|liquidaci[oó]n de dinero/i.test(t)) return { kind: 'transfer', counterparty: 'MOV ENTRE CUENTAS', category: 'Otros Gastos y Ajustes', expense_type: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', desc: 'Fondeo Mercado Pago' };
-    if (/devoluci[oó]n/i.test(t)) return { kind: 'ingreso', counterparty: 'Mercado Libre', category: 'Otros', desc: t };
-    if (PERSONAL.test(name) || PERSONAL.test(t)) return { kind: 'ingreso', counterparty: 'Juan & Pipi', category: 'Otros', desc: 'Personal — ' + (name || t) };
+    if (/ingreso de dinero|liquidaci[oó]n de dinero/i.test(t)) return { kind: 'transfer', counterparty: 'MOV ENTRE CUENTAS', category: 'Otros Gastos y Ajustes', expense_type: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', desc: 'Fondeo Mercado Pago', why: 'ingreso de dinero propio → fondeo' };
+    if (/devoluci[oó]n/i.test(t)) return { kind: 'ingreso', counterparty: 'Mercado Libre', category: 'Otros', desc: t, why: 'devolución de ML' };
+    if (PERSONAL.test(name) || PERSONAL.test(t)) return { kind: 'ingreso', counterparty: 'Juan & Pipi', category: 'Otros', desc: 'Personal — ' + (name || t), why: 'contraparte de la lista personal' };
     return { kind: 'ingreso', counterparty: name || 'Mercado Pago', category: 'Venta - No Pisos', desc: t || 'Ingreso MP', review: 'ingreso MP a clasificar' };
   }
   if (isPeaje(t)) return { kind: 'peaje' };
-  if (/ARCA|AFIP|ARBA|rentas|DGR|\bimpuesto/i.test(t)) return { kind: 'egreso', counterparty: 'ARCA', category: 'Impuestos', expense_type: 'Impuestos y Tasas', fv: 'Fijo', desc: t };
+  if (/ARCA|AFIP|ARBA|rentas|DGR|\bimpuesto/i.test(t)) return { kind: 'egreso', counterparty: 'ARCA', category: 'Impuestos', expense_type: 'Impuestos y Tasas', fv: 'Fijo', desc: t, why: 'impuesto' };
   const mapped = NAME_MAP[norm(name)];
-  if (mapped) return { kind: 'egreso', counterparty: mapped.cp, category: mapped.cat, expense_type: mapped.et, desc: mapped.desc };
-  if (PERSONAL.test(name) || PERSONAL.test(t)) return mpPersonal(name, t);
-  if (OWNER.test(name)) return mpPersonal(name, t);
-  if (RETAIL.test(t)) return mpPersonal(name, t);
-  if (/\beasy\b|sodimac|pinturer|ferreter/i.test(t)) return { kind: 'egreso', counterparty: 'EASY', category: 'Insumos', expense_type: SUM, desc: t };
-  if (/ceamse/i.test(t)) return { kind: 'egreso', counterparty: 'CEAMSE', category: 'Otros', expense_type: 'Otros Gastos y Ajustes', desc: 'CEAMSE — disposición de residuos' };
-  if (/mercado libre/i.test(t)) return { kind: 'egreso', counterparty: 'Mercado Libre', category: 'Insumos', expense_type: SUM, desc: t };
+  if (mapped) return { kind: 'egreso', counterparty: mapped.cp, category: mapped.cat, expense_type: mapped.et, desc: mapped.desc, why: `nombre conocido: ${name}` };
+  if (PERSONAL.test(name) || PERSONAL.test(t)) return mpPersonal(name, t, 'contraparte de la lista personal');
+  if (OWNER.test(name)) return mpPersonal(name, t, 'transferencia a los dueños');
+  // Retail (super/apps/streaming): probablemente personal, pero puede ser un gasto real del
+  // negocio (un flete por Uber, compras para una obra) → queda a revisar, no se cuela solo.
+  if (RETAIL.test(t)) return mpPersonal(name, t, 'comercio retail → probable gasto personal', 'compra retail — ¿personal o del negocio?');
+  if (/\beasy\b|sodimac|pinturer|ferreter/i.test(t)) return { kind: 'egreso', counterparty: 'EASY', category: 'Insumos', expense_type: SUM, desc: t, why: 'corralón/ferretería → Insumos' };
+  if (/ceamse/i.test(t)) return { kind: 'egreso', counterparty: 'CEAMSE', category: 'Otros', expense_type: 'Otros Gastos y Ajustes', desc: 'CEAMSE — disposición de residuos', why: 'CEAMSE' };
+  if (/mercado libre/i.test(t)) return { kind: 'egreso', counterparty: 'Mercado Libre', category: 'Insumos', expense_type: SUM, desc: t, why: 'compra en Mercado Libre' };
   if (/^Transferencia enviada/i.test(t)) {
-    if (STAFF.test(name)) return { kind: 'egreso', counterparty: name, category: 'Mano de Obra', expense_type: SUM, desc: 'Transferencia ' + name };
+    // Nombre de pila suelto (Hugo, Martín, Leo…) → sugiere Mano de Obra pero QUEDA A REVISAR:
+    // el mismo nombre puede ser otra persona. Los colocadores recurrentes se limpian solos
+    // cuando existe una regla aprendida con el nombre completo (applyCpMap pisa esto).
+    if (STAFF.test(name)) return { kind: 'egreso', counterparty: name, category: 'Mano de Obra', expense_type: SUM, desc: 'Transferencia ' + name, why: 'nombre de pila de colocador conocido', review: 'nombre de pila coincide con un colocador — confirmar que es mano de obra' };
     return { kind: 'egreso', counterparty: name, category: 'Otros', expense_type: null, desc: 'Transferencia ' + name, review: 'transferencia MP — ¿trabajador, proveedor o personal?' };
   }
   return { kind: 'egreso', counterparty: name || t, category: 'Otros', expense_type: null, desc: t, review: 'pago MP a clasificar' };
@@ -268,9 +307,11 @@ function parseMP(rows, existing) {
     out.push(baseMov('mp', {
       date: parseDate(m.date), flow, category: c.category, subcategory: c.subcategory || null,
       counterparty: c.counterparty, description: c.desc, currency: 'ARS',
+      raw_name: stripName(m.type) || m.type,   // nombre crudo del extracto: sobre esto se aprenden reglas
       amount_ars: r2(Math.abs(m.amt)), amount_usd: r2(Math.abs(m.amt) / TC),
       fixed_variable: c.fv || 'Variable', expense_type: c.expense_type || null,
       transfer: c.kind === 'transfer', needs_review: !!c.review, review_reason: c.review || null,
+      classified_by: c.why || null,
       mp_op_id: m.ref || null,   // S1: id de operación para matchear el enriquecimiento de forma exacta
     }));
   }
@@ -298,9 +339,11 @@ function baseMov(source, o) {
     currency: o.currency, amount_ars: o.amount_ars, amount_usd: o.amount_usd, exchange_rate: lastBlue(),
     fixed_variable: o.fixed_variable ?? 'Variable', expense_type: o.expense_type ?? null,
     transfer: !!o.transfer, needs_review: !!o.needs_review, review_reason: o.review_reason ?? null,
+    ...(o.raw_name ? { raw_name: o.raw_name } : {}),
+    ...(o.classified_by ? { classified_by: o.classified_by } : {}),
     ...(o.mp_op_id ? { mp_op_id: o.mp_op_id } : {}),
   };
-  return applyCpMap(rec, o.counterparty, o.cuit);
+  return applyCpMap(rec, o.raw_name || o.counterparty, o.cuit);
 }
 
 // ===================== API del módulo =====================

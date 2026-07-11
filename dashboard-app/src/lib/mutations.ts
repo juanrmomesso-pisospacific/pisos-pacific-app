@@ -68,6 +68,7 @@ export const api = {
   importCommit: (movements: any[]) => post(`/api/import/commit`, { movements }),
   importLast:   () => get(`/api/import/last`),
   linkMovementToSale:  (movId: string, sale_id: string | null) => post(`/api/cashflow/${movId}/link-sale`, { sale_id }),
+  cashflowBulkUpdate:  (ids: string[], set: Record<string, unknown>) => post(`/api/cashflow/bulk-update`, { ids, set }),
   cajaReconcile:       (id: string, body: { real: number; currency: string; note?: string; commit?: boolean }) => post(`/api/cajas/${id}/reconcile`, body),
   cajasReconciliations: () => get(`/api/cajas/reconciliations`),
   suppliersReview:     () => get(`/api/suppliers/review`),

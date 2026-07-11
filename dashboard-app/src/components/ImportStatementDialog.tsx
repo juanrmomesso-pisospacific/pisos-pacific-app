@@ -11,6 +11,7 @@ type Mov = {
   _idx: number; _dupe: boolean; _enrich?: string; date: string; flow: string; description: string
   counterparty: string; currency: string; amount_ars: number; amount_usd: number
   category: string; expense_type: string | null; needs_review: boolean
+  review_reason?: string | null; classified_by?: string | null
   _maybe?: boolean; _maybe_ref?: { date: string; description: string; caja_name?: string; sale_ref?: string | null }
 }
 type Report = { source: string; caja: string; total: number; nuevos: number; duplicados: number; revisar: number; ingresos: number; egresos: number; actualizan?: number; posibles?: number }
@@ -225,7 +226,8 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
                               {m._dupe ? <Badge variant="outline" className="text-[9px]">ya cargado</Badge> : null}
                               {m._maybe && !m._dupe ? <Badge variant="outline" className="text-[9px] border-orange-400 text-orange-600">{m._maybe_ref?.sale_ref ? "ya cobrado en venta" : "posible duplicado"}</Badge> : null}
                               {m._enrich ? <Badge variant="outline" className="text-[9px] border-sky-400 text-sky-600">actualiza nombre</Badge> : null}
-                              {m.needs_review && !m._dupe ? <Badge variant="outline" className="text-[9px] border-amber-400 text-amber-600">a revisar</Badge> : null}
+                              {m.needs_review && !m._dupe ? <Badge variant="outline" className="text-[9px] border-amber-400 text-amber-600" title={m.review_reason || undefined}>a revisar</Badge> : null}
+                              {m.classified_by && !m._dupe ? <Badge variant="outline" className="text-[9px] text-muted-foreground" title={`Se clasificó solo: ${m.classified_by}`}>auto</Badge> : null}
                             </div>
                             {m._maybe && m._maybe_ref ? (
                               <div className="text-[10px] text-orange-700/80 dark:text-orange-400/80 mt-0.5 truncate">
@@ -235,7 +237,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
                               </div>
                             ) : null}
                           </td>
-                          <td className="p-2 text-muted-foreground">{m.flow === "Ingreso" ? "Ingreso" : (m.expense_type || m.category)}</td>
+                          <td className="p-2 text-muted-foreground" title={m.classified_by ? `Se clasificó solo: ${m.classified_by}` : undefined}>{m.flow === "Ingreso" ? "Ingreso" : (m.expense_type || m.category)}</td>
                           <td className={cn("p-2 text-right tabular-nums whitespace-nowrap", m.flow === "Ingreso" ? "text-emerald-600" : "")}>
                             {m.flow === "Ingreso" ? "+" : "-"}{money(m.amount_ars)}
                           </td>

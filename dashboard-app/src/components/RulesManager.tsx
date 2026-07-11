@@ -53,7 +53,7 @@ export function RulesManager() {
       <CardContent className="space-y-3">
         {adding && (
           <div className="grid grid-cols-1 sm:grid-cols-5 gap-2 items-end rounded-md border border-border p-3 bg-muted/20">
-            <div className="sm:col-span-1"><label className="text-xs">Si el nombre contiene</label><Input value={n.match} onChange={(e) => setN({ ...n, match: e.target.value })} placeholder="ej: matias trejo" /></div>
+            <div className="sm:col-span-1"><label className="text-xs" title="Coincide si el nombre/descripción del extracto contiene este texto (mín. 5 letras; más corto = coincidencia exacta)">Si el nombre contiene</label><Input value={n.match} onChange={(e) => setN({ ...n, match: e.target.value })} placeholder="ej: matias trejo" /></div>
             <div className="sm:col-span-1"><label className="text-xs">Proveedor</label><Input value={n.counterparty} onChange={(e) => setN({ ...n, counterparty: e.target.value })} placeholder="Matias Flete" /></div>
             <div className="sm:col-span-1"><label className="text-xs">Categoría</label><Input value={n.category} onChange={(e) => setN({ ...n, category: e.target.value })} placeholder="Logística" /></div>
             <div className="sm:col-span-1"><label className="text-xs">Tipo de gasto</label>

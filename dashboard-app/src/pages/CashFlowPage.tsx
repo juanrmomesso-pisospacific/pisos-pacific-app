@@ -14,6 +14,9 @@ import { CashQuickForm } from "@/components/forms/CashQuickForm"
 import { ImportStatementDialog } from "@/components/ImportStatementDialog"
 import { Upload } from "lucide-react"
 import { useApi } from "@/lib/api"
+import { api, useAction, refresh } from "@/lib/mutations"
+import { useConfirm } from "@/components/ui/confirm"
+import { SearchPicker } from "@/components/SearchPicker"
 import { DataState } from "@/components/ui/data-state"
 import { usePeriod } from "@/contexts/PeriodContext"
 import { QuickPeriod } from "@/components/QuickPeriod"
@@ -441,6 +444,11 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
   const [sortKey, setSortKey] = useState<SortKey>("date")
   const [sortDir, setSortDir] = useState<"asc" | "desc">("desc")
   const [classify, setClassify] = useState<CashflowMovement | null>(null)
+  // Multiselección para acciones en lote (marcar fuera del P&L / revisado / asignar proveedor).
+  const [selIds, setSelIds] = useState<Set<string>>(new Set())
+  const bulk = useAction(api.cashflowBulkUpdate)
+  const confirm = useConfirm()
+  const suppliers = useApi<{ id: string; name: string }[]>("/api/suppliers").data ?? []
 
   const rubros = useMemo(
     () => [...new Set(movements.map(rubroOf).filter((r) => r !== "—"))].sort(),
@@ -473,6 +481,16 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
 
   const reviewCount = useMemo(() => movements.filter((m) => m.needs_review).length, [movements])
   const shown = filtered.slice(0, 400)
+
+  const allShownSelected = shown.length > 0 && shown.every((m) => selIds.has(m.id))
+  const toggleAllShown = () => setSelIds(allShownSelected ? new Set() : new Set(shown.map((m) => m.id)))
+  const toggleSel = (id: string) => setSelIds((s) => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n })
+  async function bulkApply(set: Record<string, unknown>, label: string) {
+    const ok = await confirm({ title: label, description: `Se aplica a los ${selIds.size} movimientos seleccionados.`, confirmLabel: "Aplicar" })
+    if (!ok) return
+    const r = await bulk.run([...selIds], set)
+    if (r) { setSelIds(new Set()); refresh() }
+  }
 
   const toggleSort = (k: SortKey) => {
     if (sortKey === k) setSortDir((d) => (d === "asc" ? "desc" : "asc"))
@@ -517,10 +535,29 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
         </div>
       </div>
       <div className="text-xs text-muted-foreground">Mostrando {shown.length} de {filtered.length} movimientos</div>
+      {selIds.size > 0 && (
+        <div className="flex flex-wrap items-center gap-2 rounded-md border border-border bg-muted/40 px-3 py-2 text-xs">
+          <span className="font-medium shrink-0">{selIds.size} seleccionados:</span>
+          <Button size="sm" variant="outline" className="h-7 text-xs" disabled={bulk.busy} title="Transferencia entre cuentas o ingreso/gasto no operativo — sale del P&L, cuenta en la caja"
+            onClick={() => bulkApply({ transfer: true, needs_review: false, review_reason: null }, "Marcar fuera del P&L")}>Fuera del P&L</Button>
+          <Button size="sm" variant="outline" className="h-7 text-xs" disabled={bulk.busy} title="Los saca de la cola 'A revisar' sin cambiar la clasificación"
+            onClick={() => bulkApply({ needs_review: false, review_reason: null }, "Marcar revisados")}>Marcar revisados</Button>
+          <div className="w-56 min-w-40">
+            <SearchPicker
+              items={suppliers.map((s) => ({ id: s.id, label: s.name }))}
+              placeholder="Asignar proveedor a todos…"
+              onPick={(id) => { const s = suppliers.find((x) => x.id === id); if (s) bulkApply({ counterparty: s.name, supplier_id: s.id, counterparty_type: "supplier", needs_review: false, review_reason: null }, `Asignar proveedor "${s.name}"`) }}
+            />
+          </div>
+          {bulk.error ? <span className="text-destructive">{bulk.error}</span> : null}
+          <button className="ml-auto text-muted-foreground hover:text-foreground" onClick={() => setSelIds(new Set())}>Limpiar selección</button>
+        </div>
+      )}
       <Card className="overflow-hidden py-0">
         <Table>
           <TableHeader>
             <TableRow>
+              <TableHead className="w-8"><input type="checkbox" checked={allShownSelected} onChange={toggleAllShown} title="Seleccionar todos los visibles" /></TableHead>
               <SortHead k="date">Fecha</SortHead>
               <SortHead k="flow">Tipo</SortHead>
               <SortHead k="caja_name">Caja</SortHead>
@@ -533,7 +570,8 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
           </TableHeader>
           <TableBody>
             {shown.map((m) => (
-              <TableRow key={m.id} className={cn("hover:bg-muted/30", m.needs_review && "bg-muted/40")}>
+              <TableRow key={m.id} className={cn("hover:bg-muted/30", m.needs_review && "bg-muted/40", selIds.has(m.id) && "bg-primary/5")}>
+                <TableCell><input type="checkbox" checked={selIds.has(m.id)} onChange={() => toggleSel(m.id)} /></TableCell>
                 <TableCell className="text-xs text-muted-foreground tabular whitespace-nowrap">{fmtDate(m.date)}</TableCell>
                 <TableCell>
                   <Badge variant="outline" className="text-[10px] font-normal">{m.flow}</Badge>

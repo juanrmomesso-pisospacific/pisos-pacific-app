@@ -1515,6 +1515,30 @@ app.post('/api/cashflow/bulk-mark-transfer', requireAdmin, (req, res) => {
   res.json({ marked: affected.length, cleared_review: cleared });
 });
 
+// Edición EN LOTE por ids desde el Libro (multiselección): aplica el mismo set de campos
+// (whitelisteados) a todos los movimientos elegidos. {ids:[], set:{...}}. Sin dry-run: la UI
+// muestra qué se va a aplicar y a cuántos antes de llamar.
+const BULK_FIELDS = new Set(['transfer', 'category', 'subcategory', 'expense_type', 'counterparty', 'counterparty_type', 'supplier_id', 'client_id', 'needs_review', 'review_reason', 'fixed_variable']);
+app.post('/api/cashflow/bulk-update', requireAdmin, (req, res) => {
+  const ids = Array.isArray(req.body?.ids) ? req.body.ids : [];
+  const set = req.body?.set && typeof req.body.set === 'object' ? req.body.set : null;
+  if (!ids.length || !set) return res.status(400).json({ error: 'faltan ids o set' });
+  const patch = {};
+  for (const [k, v] of Object.entries(set)) if (BULK_FIELDS.has(k)) patch[k] = v;
+  if (!Object.keys(patch).length) return res.status(400).json({ error: 'ningún campo válido en set' });
+  let updated = 0;
+  for (const id of ids) {
+    const m = db.cashflow.find((x) => x.id === id);
+    if (!m) continue;
+    Object.assign(m, patch);
+    // Marcar fuera del P&L limpia el vínculo a venta (no es cobro) — mismo criterio que el form.
+    if (patch.transfer === true) { m.sale_ref = null; m.linked_sale_id = null; }
+    updated++;
+  }
+  save();
+  res.json({ updated });
+});
+
 // Unificar dos proveedores: re-apunta movimientos (por supplier_id o por nombre) y reglas
 // del 'from' al 'to', y borra el 'from'. {from_id, to_id, commit}. Dry-run por defecto.
 app.post('/api/suppliers/merge', requireAdmin, (req, res) => {
@@ -1827,7 +1851,7 @@ app.post('/api/import/commit', requireAdmin, (req, res) => {
   if (!movs || !movs.length) return res.status(400).json({ error: 'no hay movimientos para importar' });
   let inserted = 0, enriched = 0, seq = 0;
   for (const m of movs) {
-    const { _dupe, _idx, _enrich, id: _drop, ...rest } = m;
+    const { _dupe, _idx, _enrich, _maybe, _maybe_ref, id: _drop, ...rest } = m;
     if (_enrich) {
       // Actualiza el movimiento sin nombre del auto-sync con el nombre + clasificación.
       const i = db.cashflow.findIndex((x) => x.id === _enrich);
