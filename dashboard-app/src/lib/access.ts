@@ -1,7 +1,9 @@
 // Control de acceso por rol (navegación + rutas). Un rol restringido solo ve ciertas páginas;
-// admin y vendor no tienen restricción de navegación acá (el backend gatea las escrituras
-// sensibles con requireAdmin). El rol "logistica" coordina entregas/colocaciones: ve Ventas,
-// Cotizaciones, Leads, Mensajes y Agenda, y NADA más.
+// admin no tiene restricción (el backend además gatea las escrituras sensibles con requireAdmin).
+// "vendor" vende: ve el flujo comercial completo pero NO las páginas financieras/administrativas
+// (CashFlow, Cajas, Proveedores, Reportes, Movimientos, Configuración — el backend ya le daba 403
+// a las escrituras; esto además se las saca de la vista). El rol "logistica" coordina
+// entregas/colocaciones: ve Ventas, Cotizaciones, Leads, Mensajes y Agenda, y NADA más.
 
 export type Role = "admin" | "vendor" | "logistica"
 
@@ -11,8 +13,9 @@ export const ROLE_LABEL: Record<string, string> = {
   logistica: "Logística / Entregas",
 }
 
-// Rutas permitidas por rol RESTRINGIDO. Un rol que no está acá = acceso total (admin, vendor).
+// Rutas permitidas por rol RESTRINGIDO. Un rol que no está acá = acceso total (admin).
 const RESTRICTED_PATHS: Record<string, string[]> = {
+  vendor: ["/dashboard", "/mensajes", "/leads", "/cotizaciones", "/ventas", "/agenda", "/inventario", "/galeria", "/clientes"],
   logistica: ["/ventas", "/cotizaciones", "/leads", "/mensajes", "/agenda"],
 }
 // A dónde cae el usuario tras login / en rutas desconocidas.

@@ -1145,13 +1145,13 @@ app.get('/api/containers/:id', (req, res) => {
   if (!c) return res.sendStatus(404);
   res.json(c);
 });
-app.post('/api/containers', (req, res) => {
+app.post('/api/containers', requireAdmin, (req, res) => {
   const c = { id: req.body.id ?? `local-${Date.now()}`, status: 'in_transit', items: [], warehouse_id: DEFAULT_WAREHOUSE, ...req.body };
   db.containers.push(c);
   save();
   res.json(c);
 });
-app.patch('/api/containers/:id', (req, res) => {
+app.patch('/api/containers/:id', requireAdmin, (req, res) => {
   const i = db.containers.findIndex(x => x.id === req.params.id);
   if (i < 0) return res.sendStatus(404);
   db.containers[i] = { ...db.containers[i], ...req.body };
@@ -1161,7 +1161,7 @@ app.patch('/api/containers/:id', (req, res) => {
 // "Nacionalizar" = acreditar los m² del contenedor al stock del depósito. Solo suma cantidad;
 // NO toca p.cost (el costo nacionalizado se gestiona aparte). Devuelve reporte de lo cargado y
 // lo ignorado (ítems sin producto asociado) en vez de descartarlos en silencio.
-app.post('/api/containers/:id/receive', (req, res) => {
+app.post('/api/containers/:id/receive', requireAdmin, (req, res) => {
   const c = db.containers.find(x => x.id === req.params.id);
   if (!c) return res.sendStatus(404);
   if (c.status === 'received') return res.status(409).json({ error: 'already received' });
@@ -1181,7 +1181,7 @@ app.post('/api/containers/:id/receive', (req, res) => {
   res.json({ container: c, credited, skipped });
 });
 // Adjuntar un documento al contenedor (invoice / packing / otro). Varios por contenedor.
-app.post('/api/containers/:id/documents', (req, res) => {
+app.post('/api/containers/:id/documents', requireAdmin, (req, res) => {
   const c = db.containers.find(x => x.id === req.params.id);
   if (!c) return res.sendStatus(404);
   const { data_base64, filename, content_type, kind } = req.body || {};
@@ -1200,7 +1200,7 @@ app.post('/api/containers/:id/documents', (req, res) => {
   save();
   res.json({ container: c, document: doc });
 });
-app.delete('/api/containers/:id/documents/:docId', (req, res) => {
+app.delete('/api/containers/:id/documents/:docId', requireAdmin, (req, res) => {
   const c = db.containers.find(x => x.id === req.params.id);
   if (!c) return res.sendStatus(404);
   c.documents = (c.documents || []).filter(d => d.id !== req.params.docId);
@@ -1559,8 +1559,12 @@ app.post('/api/admin/fix-bbva-signs', requireAdmin, (req, res) => {
 app.get('/api/cp_rules', (_, res) => res.json(db.cp_rules || []));
 // Entidades financieras/config: escritura solo admin (un vendedor no toca caja ni reglas).
 const ADMIN_ONLY_WRITE = new Set(['cashflow', 'cajas', 'cp_rules', 'categories', 'expenses']);
+// Borrado destructivo solo admin: el DELETE genérico no restockea ni libera reservas,
+// así que borrar una venta/producto rompe el inventario si lo hace cualquiera.
+const ADMIN_ONLY_DELETE = new Set(['sales', 'products']);
 ['products','sales','quotes','clients','expenses','leads','conversations','tasks','cajas','suppliers','categories','cashflow','cp_rules','templates'].forEach(name => {
   const guard = ADMIN_ONLY_WRITE.has(name) ? [requireAdmin] : [];
+  const delGuard = (ADMIN_ONLY_WRITE.has(name) || ADMIN_ONLY_DELETE.has(name)) ? [requireAdmin] : [];
   app.post(`/api/${name}`, ...guard, (req, res) => {
     const id = req.body.id ?? `local-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
     const row = { id, ...req.body };
@@ -1575,7 +1579,7 @@ const ADMIN_ONLY_WRITE = new Set(['cashflow', 'cajas', 'cp_rules', 'categories',
     save();
     res.json(db[name][i]);
   });
-  app.delete(`/api/${name}/:id`, ...guard, (req, res) => {
+  app.delete(`/api/${name}/:id`, ...delGuard, (req, res) => {
     db[name] = db[name].filter(x => x.id !== req.params.id);
     save();
     res.sendStatus(204);
@@ -1812,7 +1816,7 @@ app.get('/api/admin/messages-export', requireAdmin, (_req, res) => {
   res.json({ byChannel, leadSources, totalMessages: messages.length, templates, messages });
 });
 // Disparo manual (para probar o forzar): corre en background.
-app.post('/api/import/mp-sync/auto-run', (_req, res) => {
+app.post('/api/import/mp-sync/auto-run', requireAdmin, (_req, res) => {
   db.settings.mp_last_sync = null;
   mpAutoSync();
   res.json({ started: true });
