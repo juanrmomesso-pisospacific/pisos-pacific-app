@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
-import { startMpReport, getMpReport, parseSettlementBuffer } from './import/mp-api.mjs';
+import { startMpReport, getMpReport, parseSettlementBuffer, backfillMpUserMap } from './import/mp-api.mjs';
 import { getBlueRate } from './import/fx.mjs';
 import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integrations/meta.mjs';
 import { buildDailyDigest, todayArt } from './integrations/task-bot.mjs';
@@ -1581,6 +1581,22 @@ app.post('/api/admin/fix-bbva-signs', requireAdmin, (req, res) => {
 });
 
 app.get('/api/cp_rules', (_, res) => res.json(db.cp_rules || []));
+
+// Aprende el mapa user id de MP → contraparte/clasificación cada vez que un movimiento de MP
+// con mp_user_id queda clasificado (a mano, por enriquecimiento del export o por link-sale).
+// El próximo sync diario clasifica solo los pagos de esa misma contraparte.
+function learnMpUser(m) {
+  if (!m || !m.mp_user_id || m.needs_review || m.transfer) return;
+  const name = m.counterparty || '';
+  if (!name || /sin nombre|mov entre cuentas/i.test(name)) return;
+  if (!db.settings.mp_user_map || typeof db.settings.mp_user_map !== 'object') db.settings.mp_user_map = {};
+  db.settings.mp_user_map[m.mp_user_id] = {
+    counterparty: name, counterparty_type: m.counterparty_type || null,
+    supplier_id: m.supplier_id || null, client_id: m.client_id || null,
+    category: m.category || null, subcategory: m.subcategory || null,
+    expense_type: m.expense_type || null, learned_at: new Date().toISOString(),
+  };
+}
 // Entidades financieras/config: escritura solo admin (un vendedor no toca caja ni reglas).
 const ADMIN_ONLY_WRITE = new Set(['cashflow', 'cajas', 'cp_rules', 'categories', 'expenses']);
 // Borrado destructivo solo admin: el DELETE genérico no restockea ni libera reservas,
@@ -1600,6 +1616,7 @@ const ADMIN_ONLY_DELETE = new Set(['sales', 'products']);
     const i = db[name].findIndex(x => x.id === req.params.id);
     if (i < 0) return res.sendStatus(404);
     db[name][i] = { ...db[name][i], ...req.body };
+    if (name === 'cashflow') learnMpUser(db[name][i]);
     save();
     res.json(db[name][i]);
   });
@@ -1670,7 +1687,7 @@ app.post('/api/import/mp-sync/result', requireAdmin, async (req, res) => {
   try {
     if (!req.body?.jobId) return res.status(400).json({ error: 'falta jobId' });
     await getBlueRate();   // refresca el TC Blue para la conversión ARS→USD
-    res.json(await getMpReport({ jobId: req.body.jobId, existing: db.cashflow }));
+    res.json(await getMpReport({ jobId: req.body.jobId, existing: db.cashflow, userMap: db.settings.mp_user_map || {} }));
   } catch (e) { res.status(400).json({ error: e.message || 'no se pudo obtener el reporte MP' }); }
 });
 // ---------- Sync automático diario de Mercado Pago ----------
@@ -1698,7 +1715,7 @@ async function mpAutoSync() {
     let result = null;
     for (let i = 0; i < 60; i++) {                       // hasta ~10 min por corrida
       await new Promise((r) => setTimeout(r, 10000));
-      result = await getMpReport({ jobId, existing: db.cashflow });
+      result = await getMpReport({ jobId, existing: db.cashflow, userMap: db.settings.mp_user_map || {} });
       if (result.ready) break;
     }
     if (!result?.ready) { console.warn('[mp-auto] el reporte sigue generándose; lo retomo en la próxima corrida'); return; }
@@ -1839,6 +1856,23 @@ app.get('/api/admin/messages-export', requireAdmin, (_req, res) => {
   for (const l of db.leads || []) leadSources[l.source || '—'] = (leadSources[l.source || '—'] || 0) + 1;
   res.json({ byChannel, leadSources, totalMessages: messages.length, templates, messages });
 });
+// Sembrar el mapa user id de MP → contraparte desde el HISTÓRICO ya clasificado (movimientos
+// de MP con mp_op_id y nombre real). Resuelve cada operación contra la API (throttled) — los
+// colocadores/proveedores recurrentes quedan aprendidos de una. Dry-run por defecto.
+app.post('/api/import/mp-backfill-usermap', requireAdmin, async (req, res) => {
+  try {
+    const commit = !!req.body?.commit;
+    const limit = Math.min(Number(req.body?.limit) || 400, 1000);
+    const candidates = db.cashflow.filter((m) =>
+      m.caja_id === 'CAJ-002' && m.mp_op_id && !m.needs_review && !m.transfer &&
+      m.counterparty && !/sin nombre|mov entre cuentas|peaje/i.test(m.counterparty));
+    if (!commit) return res.json({ candidates: candidates.length, map_size: Object.keys(db.settings.mp_user_map || {}).length, note: 'POST {commit:true} resuelve cada operación contra la API de MP y siembra el mapa' });
+    if (!db.settings.mp_user_map || typeof db.settings.mp_user_map !== 'object') db.settings.mp_user_map = {};
+    const r = await backfillMpUserMap({ movements: candidates.slice(0, limit), userMap: db.settings.mp_user_map });
+    save();
+    res.json(r);
+  } catch (e) { res.status(400).json({ error: e.message || 'backfill falló' }); }
+});
 // Disparo manual (para probar o forzar): corre en background.
 app.post('/api/import/mp-sync/auto-run', requireAdmin, (_req, res) => {
   db.settings.mp_last_sync = null;
@@ -1865,6 +1899,7 @@ app.post('/api/import/commit', requireAdmin, (req, res) => {
           fixed_variable: rest.fixed_variable, transfer: rest.transfer,
           needs_review: rest.needs_review, review_reason: rest.review_reason,
         };
+        learnMpUser(db.cashflow[i]);   // el export con nombre alimenta el mapa de user ids
         enriched++;
         continue;
       }
@@ -2201,6 +2236,7 @@ app.post('/api/cashflow/:id/link-sale', requireAdmin, (req, res) => {
   m.counterparty = sale.client_name || m.counterparty; m.counterparty_type = 'client';
   m.category = m.category && /venta/i.test(m.category) ? m.category : 'Venta - Pisos';
   m.needs_review = false; m.review_reason = null;
+  learnMpUser(m);   // si el movimiento vino del sync MP, aprende cliente ← user id
   save();
   res.json({ movement: m, sale });
 });

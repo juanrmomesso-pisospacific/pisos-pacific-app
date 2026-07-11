@@ -102,6 +102,129 @@ function parseReportBuffer(buf) {
 
 const isPeajeAmount = (a) => a < 6000;   // peajes AUSOL/AUSA suelen ser < $6k
 
+// ===================== Contrapartes por user id de MP =====================
+// La API no da el NOMBRE de la contraparte, pero /v1/payments/{op} sí da su user id
+// ESTABLE (collector en egresos, payer en ingresos). Con eso: (a) un mapa aprendido
+// user_id → contraparte/clasificación hace que los recurrentes entren clasificados;
+// (b) el nickname público del perfil sirve de nombre provisional; (c) los fondeos
+// propios (account_fund con payer = la cuenta) se marcan transferencia solos.
+let ME = null;
+async function myUserId(at) {
+  if (ME) return ME;
+  const r = await jget(`${API}/users/me`, at);
+  ME = r.v?.id != null ? String(r.v.id) : null;
+  return ME;
+}
+const payCache = new Map();   // op_id → info | null (cache del proceso)
+async function paymentInfo(at, opId) {
+  if (payCache.has(opId)) return payCache.get(opId);
+  const r = await jget(`${API}/v1/payments/${opId}`, at);
+  const v = r.s === 200 && r.v && typeof r.v === 'object' ? r.v : null;
+  const info = v ? {
+    operation_type: v.operation_type || null,
+    collector_id: v.collector?.id != null ? String(v.collector.id) : null,
+    payer_id: v.payer?.id != null ? String(v.payer.id) : null,
+  } : null;
+  payCache.set(opId, info);
+  return info;
+}
+const nickCache = new Map();
+async function nickname(at, userId) {
+  if (nickCache.has(userId)) return nickCache.get(userId);
+  const r = await jget(`${API}/users/${userId}`, at);
+  const nick = r.s === 200 ? (r.v?.nickname || null) : null;
+  nickCache.set(userId, nick);
+  return nick;
+}
+// "ADRIANCRISTIAN20220127174724" → "ADRIANCRISTIAN". Handles no-nombre (CBCFHGEDA51580) → null.
+function prettyNick(nick) {
+  if (!nick) return null;
+  const s = String(nick).replace(/\d{6,}$/, '').replace(/[-_.]+/g, ' ').trim();
+  return s.length >= 6 && /^[A-Za-z ]+$/.test(s) && /[aeiou]/i.test(s) ? s.toUpperCase() : null;
+}
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Enriquece movimientos nuevos del sync (con mp_op_id, en revisión) resolviendo la contraparte
+// por user id. Muta los movimientos. userMap = db.settings.mp_user_map (aprendido).
+export async function enrichWithMpUsers(movements, { userMap = {}, at = null } = {}) {
+  const targets = movements.filter((m) => !m._dupe && m.mp_op_id && m.needs_review);
+  const out = { resolved: 0, mapped: 0, funding: 0, named: 0 };
+  if (!targets.length) return out;
+  if (!at) at = await mintToken();
+  const me = await myUserId(at);
+  for (const m of targets) {
+    let info = null;
+    try { info = await paymentInfo(at, m.mp_op_id); } catch { /* transferencia bancaria: el op no es un payment */ }
+    if (!info) continue;
+    out.resolved++;
+    // Fondeo propio: ingreso account_fund donde el pagador es la propia cuenta → transferencia.
+    if (m.flow === 'Ingreso' && info.operation_type === 'account_fund' && me && info.payer_id === me) {
+      Object.assign(m, {
+        transfer: true, counterparty: 'MOV ENTRE CUENTAS', counterparty_type: null,
+        category: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', expense_type: null,
+        description: 'Fondeo Mercado Pago (cuenta propia)',
+        needs_review: false, review_reason: null, classified_by: 'fondeo propio (payer = la cuenta)',
+      });
+      out.funding++; continue;
+    }
+    const other = m.flow === 'Egreso' ? info.collector_id : info.payer_id;
+    if (!other || other === me) continue;
+    m.mp_user_id = other;
+    const known = userMap[other];
+    if (known?.counterparty) {
+      Object.assign(m, {
+        counterparty: known.counterparty,
+        counterparty_type: known.counterparty_type || m.counterparty_type,
+        supplier_id: known.supplier_id || null, client_id: known.client_id || null,
+        ...(known.category ? { category: known.category } : {}),
+        ...(known.subcategory ? { subcategory: known.subcategory } : {}),
+        ...(m.flow === 'Egreso' && known.expense_type ? { expense_type: known.expense_type } : {}),
+        needs_review: false, review_reason: null,
+        classified_by: `contraparte MP aprendida (user ${other})`,
+      });
+      out.mapped++;
+    } else {
+      // Nombre provisional desde el nickname público (suele ser el nombre real autogenerado).
+      const nice = prettyNick(await nickname(at, other).catch(() => null));
+      if (nice) {
+        m.counterparty = nice;
+        m.raw_name = nice;
+        m.review_reason = 'nombre estimado del perfil de MP — confirmar y clasificar';
+        m.classified_by = `nickname del perfil MP (user ${other})`;
+        out.named++;
+      }
+      await sleep(120);   // throttle suave solo cuando pegamos a la API
+    }
+  }
+  return out;
+}
+
+// Siembra el mapa desde el histórico YA clasificado (movimientos con mp_op_id y nombre real):
+// resuelve cada operación → user id y guarda su clasificación. Muta userMap y los movimientos.
+export async function backfillMpUserMap({ movements, userMap }) {
+  const at = await mintToken();
+  const me = await myUserId(at);
+  let resolved = 0, seeded = 0, notFound = 0;
+  for (const m of movements) {
+    let info = null;
+    try { info = await paymentInfo(at, m.mp_op_id); } catch { /* ignore */ }
+    if (!info) { notFound++; await sleep(80); continue; }
+    const other = m.flow === 'Egreso' ? info.collector_id : info.payer_id;
+    if (!other || other === me) { await sleep(80); continue; }
+    m.mp_user_id = other;
+    resolved++;
+    if (!userMap[other]) seeded++;
+    userMap[other] = {
+      counterparty: m.counterparty, counterparty_type: m.counterparty_type || null,
+      supplier_id: m.supplier_id || null, client_id: m.client_id || null,
+      category: m.category || null, subcategory: m.subcategory || null,
+      expense_type: m.expense_type || null, learned_at: new Date().toISOString(),
+    };
+    await sleep(120);
+  }
+  return { resolved, seeded, notFound, mapSize: Object.keys(userMap).length };
+}
+
 // ---- Patrón async (para la UI; los reportes tardan minutos) ----
 // start: crea el reporte y devuelve el jobId (id del reporte). No espera.
 export async function startMpReport({ days = 45 } = {}) {
@@ -112,7 +235,8 @@ export async function startMpReport({ days = 45 } = {}) {
 }
 
 // poll: si el reporte (jobId) está listo, lo baja y devuelve el preview; si no, {ready:false}.
-export async function getMpReport({ jobId, existing = [] }) {
+// userMap (db.settings.mp_user_map): enriquece por user id antes de devolver el preview.
+export async function getMpReport({ jobId, existing = [], userMap = {} }) {
   const at = await mintToken();
   const ls = await jget(`${API}/v1/account/settlement_report/list`, at);
   const arr = Array.isArray(ls.v) ? ls.v : (ls.v.results || []);
@@ -120,7 +244,9 @@ export async function getMpReport({ jobId, existing = [] }) {
   if (!mine) return { ready: false };
   const dl = await fetch(`${API}/v1/account/settlement_report/${mine.file_name}`, withTimeout({ headers: { Authorization: `Bearer ${at}` } }));
   const raw = parseReportBuffer(Buffer.from(await dl.arrayBuffer()));
-  return { ready: true, ...buildMovements({ raw, existing }) };
+  const { movements } = buildMovements({ raw, existing });
+  try { await enrichWithMpUsers(movements, { userMap, at }); } catch (e) { console.warn('[mp] enrich por user id falló (sigue sin nombres):', e.message); }
+  return { ready: true, movements, report: reportStats(movements, { source: 'mp-api', caja: MP_NAME }) };
 }
 
 // Sincrónico (para el CLI scripts/sync-mp.mjs): crea, espera y construye.

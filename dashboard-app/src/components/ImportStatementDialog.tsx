@@ -165,7 +165,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
           {source === "mp-api" && (
             <div className="flex items-start gap-2 rounded-md border border-sky-300/60 bg-sky-50 dark:bg-sky-950/20 p-2.5 text-[11px] text-sky-800 dark:text-sky-300">
               <AlertTriangle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
-              <span>La API de MP no envía nombres: los movimientos entran por monto/fecha (peajes ya clasificados) y quedan <b>“a revisar”</b>. Para ponerles nombre de una: bajá “Todas las transacciones” del panel de MP y subilo en <b>Mercado Pago (archivo)</b> — los movimientos sin nombre se actualizan solos.</span>
+              <span>El sync resuelve la contraparte por su <b>usuario de MP</b>: los recurrentes ya clasificados entran con nombre y clasificación solos; los nuevos entran con el nombre estimado del perfil (o “sin nombre”) y quedan <b>“a revisar”</b> — al clasificarlos una vez, la próxima entran solos. El export “Todas las transacciones” sigue sirviendo de red para transferencias bancarias.</span>
             </div>
           )}
 
