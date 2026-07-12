@@ -211,6 +211,8 @@ export type CajaBalance = {
   movements: number
   balance_usd: number
   balance_ars: number
+  anchor_date?: string | null
+  anchor_usd?: number | null
 }
 
 export type ContainerItem = {

@@ -727,23 +727,40 @@ app.get('/api/cashflow', (req, res) => {
 
 // Cajas: list, plus derived balances (sum of cashflow per caja & currency, USD-consolidated).
 app.get('/api/cajas', (_, res) => res.json(db.cajas));
+// Saldo de caja con ANCLA (saldo inicial): si la caja tiene anchor_date/anchor_usd (los fija
+// la conciliación), el saldo = ancla + movimientos POSTERIORES al día del ancla. Todo lo
+// fechado ≤ ancla queda congelado dentro del número real informado — así, borrar/corregir
+// movimientos viejos ya NO desancla el saldo (antes la conciliación era un ajuste sintético
+// que quedaba desactualizado con cada edición retroactiva: causa del "negativísimo" del 12/7).
+const movSign = (m) => ((m.flow || '').toLowerCase() === 'ingreso' ? 1 : -1);
+function cajaBalanceUsd(caja) {
+  const anchor = caja.anchor_date || null;
+  let usd = anchor ? (Number(caja.anchor_usd) || 0) : 0;
+  for (const m of db.cashflow) {
+    if (m.caja_id !== caja.id) continue;
+    if (anchor && String(m.date).slice(0, 10) <= anchor) continue;
+    usd += movSign(m) * (m.amount_usd || 0);
+  }
+  return Math.round(usd * 100) / 100;
+}
 app.get('/api/cajas/balances', (_, res) => {
-  const sign = (m) => ((m.flow || '').toLowerCase() === 'ingreso' ? 1 : -1);
   const balances = db.cajas.map(c => {
     const movs = db.cashflow.filter(m => m.caja_id === c.id);
-    const balance_usd = movs.reduce((s, m) => s + sign(m) * (m.amount_usd || 0), 0);
-    const balance_ars = movs.reduce((s, m) => s + sign(m) * (m.amount_ars || 0), 0);
+    const balance_ars = movs.reduce((s, m) => s + movSign(m) * (m.amount_ars || 0), 0);
     return { caja_id: c.id, name: c.name, type: c.type, currency: c.currency,
-             movements: movs.length, balance_usd: Math.round(balance_usd * 100) / 100, balance_ars: Math.round(balance_ars * 100) / 100 };
+             movements: movs.length, balance_usd: cajaBalanceUsd(c), balance_ars: Math.round(balance_ars * 100) / 100,
+             anchor_date: c.anchor_date || null, anchor_usd: c.anchor_usd ?? null };
   });
   const unassigned = db.cashflow.filter(m => !m.caja_id).length;
   res.json({ balances, unassigned_movements: unassigned });
 });
 
-// Conciliación manual de una caja a su saldo real. Calcula el ajuste (real − sistema en USD)
-// y lo registra como TRANSFERENCIA (corrige el saldo sin afectar el P&L). Dry-run por defecto.
-// Para cuentas en ARS, el real se convierte a USD al blue del momento (las cuentas no tienen
-// saldo inicial cargado → el balance se maneja consolidado en USD). Guarda historial.
+// Conciliación manual de una caja a su saldo real: FIJA EL ANCLA (saldo inicial) de la caja
+// al día de hoy. El saldo pasa a ser "ancla + movimientos posteriores" — inmune a ediciones/
+// borrados retroactivos (antes se registraba un ajuste sintético que se desactualizaba con
+// cada corrección del pasado). Conciliar DESPUÉS de subir los extractos del período (los
+// movimientos fechados hoy o antes quedan cubiertos por el ancla). Dry-run por defecto.
+// Para cuentas en ARS, el real se convierte a USD al blue del momento. Guarda historial.
 app.post('/api/cajas/:id/reconcile', requireAdmin, async (req, res) => {
   const caja = db.cajas.find(c => c.id === req.params.id);
   if (!caja) return res.sendStatus(404);
@@ -753,29 +770,17 @@ app.post('/api/cajas/:id/reconcile', requireAdmin, async (req, res) => {
   const note = req.body?.note || null;
   const blue = await getBlueRate();
   const realUsd = cur === 'USD' ? realNum : realNum / blue;
-  const sign = (m) => ((m.flow || '').toLowerCase() === 'ingreso' ? 1 : -1);
-  const sysUsd = db.cashflow.filter(m => m.caja_id === caja.id).reduce((s, m) => s + sign(m) * (m.amount_usd || 0), 0);
+  const sysUsd = cajaBalanceUsd(caja);
   const adjUsd = Math.round((realUsd - sysUsd) * 100) / 100;
   const r2v = (n) => Math.round(n * 100) / 100;
   if (!req.body?.commit) return res.json({ caja: caja.name, blue, sys_usd: r2v(sysUsd), real_usd: r2v(realUsd), adj_usd: adjUsd });
-  if (Math.abs(adjUsd) >= 0.01) {
-    const amtUsd = Math.abs(adjUsd);
-    db.cashflow.push({
-      id: `MOV-CONC-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 5)}`,
-      date: new Date().toISOString().slice(0, 10),
-      flow: adjUsd > 0 ? 'Ingreso' : 'Egreso',
-      caja_id: caja.id, caja_name: caja.name, category: 'Otros',
-      counterparty: 'Ajuste de conciliación', counterparty_type: null, client_id: null, supplier_id: null,
-      currency: cur, amount_ars: Math.round(amtUsd * blue), amount_usd: amtUsd,
-      exchange_rate: blue, fixed_variable: null, expense_type: null,
-      transfer: true, needs_review: false, review_reason: null, source: 'reconcile-manual',
-      description: `Conciliación al saldo real (${cur} ${realNum.toLocaleString('es-AR')})${note ? ' — ' + note : ''}`,
-    });
-  }
+  caja.anchor_date = new Date().toISOString().slice(0, 10);   // fin del día de hoy
+  caja.anchor_usd = r2v(realUsd);
+  caja.anchor_note = note || `Conciliado a ${cur} ${realNum.toLocaleString('es-AR')} (blue ${blue})`;
   db.reconciliations = db.reconciliations || [];
-  db.reconciliations.push({ caja_id: caja.id, caja_name: caja.name, ts: new Date().toISOString(), real: realNum, currency: cur, blue, real_usd: r2v(realUsd), sys_usd: r2v(sysUsd), adj_usd: adjUsd, note });
+  db.reconciliations.push({ caja_id: caja.id, caja_name: caja.name, ts: new Date().toISOString(), real: realNum, currency: cur, blue, real_usd: r2v(realUsd), sys_usd: r2v(sysUsd), adj_usd: adjUsd, note, anchored: true });
   save();
-  res.json({ ok: true, adj_usd: adjUsd, real_usd: r2v(realUsd) });
+  res.json({ ok: true, adj_usd: adjUsd, real_usd: r2v(realUsd), anchor_date: caja.anchor_date });
 });
 // Historial de conciliaciones (para mostrar la última por caja).
 app.get('/api/cajas/reconciliations', requireAdmin, (_req, res) => {

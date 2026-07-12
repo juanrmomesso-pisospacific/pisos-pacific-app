@@ -45,7 +45,7 @@ export default function CajasPage() {
         title: `Conciliar ${b.name}`,
         description: Math.abs(adj) < 0.01
           ? `El saldo del sistema (${usd(dry.sys_usd)}) ya coincide con el real. No hace falta ajuste.`
-          : `Sistema ${usd(dry.sys_usd)} → real ${usd(dry.real_usd)}.\nSe registrará un ajuste de ${adj > 0 ? "+" : ""}${usd(adj)} como transferencia (corrige el saldo, NO afecta el resultado).`,
+          : `Sistema ${usd(dry.sys_usd)} → real ${usd(dry.real_usd)} (diferencia ${adj > 0 ? "+" : ""}${usd(adj)}).\nSe fija el ANCLA de la caja al día de hoy: el saldo pasa a ser este valor real + los movimientos que entren después. No afecta el resultado (P&L).`,
         confirmLabel: "Conciliar",
       })
       if (!ok) { setBusy(null); return }
@@ -72,6 +72,7 @@ export default function CajasPage() {
               <div className={`text-2xl font-semibold tabular ${b.balance_usd >= 0 ? "text-foreground" : "text-rose-500"}`}>{usd(b.balance_usd)}</div>
               <div className="text-[11px] text-muted-foreground">
                 {b.movements} movimientos · {b.type}
+                {(b as any).anchor_date ? <> · anclada al {(b as any).anchor_date.split("-").reverse().join("/")}</> : null}
               </div>
             </Card>
           )
