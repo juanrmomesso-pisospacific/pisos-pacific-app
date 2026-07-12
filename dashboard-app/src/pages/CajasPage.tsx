@@ -16,7 +16,6 @@ type BalancesResponse = { balances: CajaBalance[]; unassigned_movements: number 
 type Recon = { caja_id: string; ts: string; real: number; currency: string; real_usd: number; sys_usd: number; adj_usd: number; note: string | null }
 
 const usd = (n: number) => "US$ " + Math.round(n).toLocaleString("es-AR")
-const ars = (n: number) => "$ " + Math.round(n).toLocaleString("es-AR")
 const iconFor = (type: string) =>
   /banco/i.test(type) ? Landmark : /efectivo/i.test(type) ? Banknote : Wallet
 const fmtDate = (ts: string) => { const d = ts.slice(0, 10).split("-"); return `${d[2]}/${d[1]}/${d[0]}` }
@@ -149,7 +148,6 @@ export default function CajasPage() {
               <TableHead>Moneda</TableHead>
               <TableHead className="text-right">Movimientos</TableHead>
               <TableHead className="text-right">Saldo USD</TableHead>
-              <TableHead className="text-right">Saldo ARS</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -160,7 +158,6 @@ export default function CajasPage() {
                 <TableCell><Badge variant="outline" className="text-[10px]">{b.currency}</Badge></TableCell>
                 <TableCell className="text-right tabular text-muted-foreground">{b.movements}</TableCell>
                 <TableCell className={`text-right tabular ${b.balance_usd < 0 ? "text-rose-500" : ""}`}>{usd(b.balance_usd)}</TableCell>
-                <TableCell className={`text-right tabular ${b.balance_ars < 0 ? "text-rose-500" : ""}`}>{ars(b.balance_ars)}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -174,7 +171,7 @@ export default function CajasPage() {
         </div>
       ) : null}
       <p className="text-[11px] text-muted-foreground">
-        Saldos derivados sumando los movimientos del CashFlow (Ingresos − Egresos), <b>consolidados en USD</b>. Las cuentas en pesos se convierten al dólar blue del momento (no tienen saldo inicial cargado). La <b>conciliación</b> registra la diferencia como transferencia: corrige el saldo sin afectar el resultado.
+        Saldos derivados sumando los movimientos del CashFlow (Ingresos − Egresos), <b>consolidados en USD</b>. Las cuentas en pesos se convierten al dólar blue del momento. <b>No se muestra un "saldo ARS"</b>: las cajas no tienen saldo inicial cargado, así que ese número acumulaba millones en negativo sin significar nada (el saldo confiable es el USD conciliado). La <b>conciliación</b> registra la diferencia como transferencia: corrige el saldo sin afectar el resultado.
       </p>
     </div>
    </DataState>

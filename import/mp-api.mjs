@@ -290,7 +290,7 @@ function buildMovements({ raw, existing = [] }) {
   const seen = new Set();
   for (const m of sameCaja) {
     const dd = (m.date || '').slice(0, 10); if (!dd || m.amount_ars == null) continue;
-    for (const key of windowKeys(dd, m.amount_ars)) seen.add(key);
+    for (const key of windowKeys(dd, m.amount_ars, m.flow)) seen.add(key);
   }
 
   const peajeByDay = {};
@@ -331,6 +331,6 @@ function buildMovements({ raw, existing = [] }) {
   }
 
   // dedup + flags
-  const out = movements.map((m, i) => ({ ...m, _idx: i, _dupe: seen.has(dedupKey(m.date.slice(0, 10), m.amount_ars)) }));
+  const out = movements.map((m, i) => ({ ...m, _idx: i, _dupe: seen.has(dedupKey(m.date.slice(0, 10), m.amount_ars, m.flow)) }));
   return { movements: out, report: reportStats(out, { source: 'mp-api', caja: MP_NAME }) };
 }

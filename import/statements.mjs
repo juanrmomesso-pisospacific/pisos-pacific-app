@@ -378,14 +378,14 @@ export function parseStatement({ source, buffer, existing = [], rules = null }) 
     const dd = (m.date || '').slice(0, 10); if (!dd || m.amount_ars == null) continue;
     const enrichable = source === 'mp' && m.source === 'mp-api' && (m.needs_review || /sin nombre/i.test(m.counterparty || ''));
     if (enrichable && m.mp_op_id) unnamedById.set(String(m.mp_op_id), m.id);
-    for (const key of windowKeys(dd, m.amount_ars)) {
+    for (const key of windowKeys(dd, m.amount_ars, m.flow)) {
       seen.add(key);
       if (enrichable && !unnamed.has(key)) unnamed.set(key, m.id);
     }
   }
   const claimed = new Set();
   movements = movements.map((m, i) => {
-    const key = dedupKey(m.date.slice(0, 10), m.amount_ars);
+    const key = dedupKey(m.date.slice(0, 10), m.amount_ars, m.flow);
     // S1: primero match EXACTO por id de operación; si no, fallback fecha±3 + monto.
     let enrichId = m.mp_op_id ? unnamedById.get(String(m.mp_op_id)) : null;
     if (!enrichId || claimed.has(enrichId)) enrichId = unnamed.get(key);
