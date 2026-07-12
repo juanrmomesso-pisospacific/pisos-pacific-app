@@ -1,7 +1,13 @@
 // Debug integral de Pisos Pacific con Playwright: recorre todas las páginas,
 // captura errores de consola, page errors y requests fallidos; screenshots.
-import { chromium } from 'playwright';
+// playwright vive solo en dashboard-app/node_modules → resolver desde ahí para
+// poder correr `node scripts/debug-e2e.mjs` desde la raíz del repo.
+import { createRequire } from 'node:module';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
+const require = createRequire(path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'dashboard-app', 'package.json'));
+const { chromium } = require('playwright');
 
 const BASE = 'http://localhost:4173';
 const PAGES = ['/dashboard', '/cotizaciones', '/ventas', '/agenda', '/inventario', '/cashflow', '/cajas', '/clientes', '/proveedores', '/leads', '/mensajes', '/reportes', '/movimientos', '/configuracion'];

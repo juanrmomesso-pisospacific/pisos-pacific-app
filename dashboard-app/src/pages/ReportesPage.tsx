@@ -8,6 +8,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import { useApi } from "@/lib/api"
+import { DataState } from "@/components/ui/data-state"
 import { usePeriod } from "@/contexts/PeriodContext"
 import { QuickPeriod } from "@/components/QuickPeriod"
 import { useRole } from "@/contexts/RoleContext"
@@ -19,7 +20,10 @@ import type { Quote, Sale, Product } from "@/lib/types"
 const ACTIVE_SALE_STATUSES = new Set(["Confirmado", "Programado", "En proceso", "Finalizado"])
 
 export default function ReportesPage() {
+  // Un fetch representativo gatea la página: en cold-start se ve "cargando", no "sin datos".
+  const salesApi = useApi<Sale[]>("/api/sales")
   return (
+    <DataState loading={salesApi.loading} error={salesApi.error} hasData={(salesApi.data?.length ?? 0) > 0} onRetry={salesApi.refetch}>
     <div className="px-4 lg:px-6">
       <Tabs defaultValue="funnel">
         <TabsList>
@@ -42,6 +46,7 @@ export default function ReportesPage() {
         </TabsContent>
       </Tabs>
     </div>
+    </DataState>
   )
 }
 

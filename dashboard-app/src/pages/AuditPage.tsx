@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { useApi } from "@/lib/api"
+import { DataState } from "@/components/ui/data-state"
 import { fmtInt } from "@/lib/utils"
 import type { Product } from "@/lib/types"
 
@@ -29,7 +30,8 @@ const TYPE_LABEL: Record<string, string> = {
 const TYPES = ["Todos", "container_receive", "quote_reserve", "quote_release", "sale_deduct", "sale_cancel_release"] as const
 
 export default function AuditPage() {
-  const movs = useApi<Movement[]>("/api/stock_movements").data ?? []
+  const movsApi = useApi<Movement[]>("/api/stock_movements")
+  const movs = movsApi.data ?? []
   const products = useApi<Product[]>("/api/products").data ?? []
   const [filter, setFilter] = useState<(typeof TYPES)[number]>("Todos")
   const [q, setQ] = useState("")
@@ -59,6 +61,7 @@ export default function AuditPage() {
   }, [rows])
 
   return (
+    <DataState loading={movsApi.loading} error={movsApi.error} hasData={movs.length > 0} onRetry={movsApi.refetch}>
     <div className="px-4 lg:px-6 space-y-4">
       <div className="text-xs text-muted-foreground -mb-2">
         {movs.length} movimientos · mostrando {rows.length} · entradas {fmtInt(totals.inMov)} m² · salidas {fmtInt(Math.abs(totals.outMov))} m² · neto {fmtInt(totals.net)} m²
@@ -109,5 +112,6 @@ export default function AuditPage() {
         </Table>
       </Card>
     </div>
+    </DataState>
   )
 }
