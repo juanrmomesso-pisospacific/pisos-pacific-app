@@ -110,6 +110,9 @@ export const CAJA = {
   bbva: { id: 'CAJ-001', name: 'BBVA' },
   bdc:  { id: 'CAJ-003', name: 'Banco de Comercio - Cuenta Pesos' },
 };
+// El extracto de BdC puede traer operaciones de la CUENTA USD (monto "USD …", ej. pagos
+// Comex): esas filas van a la caja de la cuenta en dólares, no a la de pesos.
+const BDC_USD = { id: 'CAJ-004', name: 'Banco de Comercio - Cuenta USD' };
 
 // ---- helpers de montos / fechas ----
 // "$ 1.234,56" / "USD 22,00" / "$ -2.363.645,60" → { cur, val }
@@ -239,6 +242,7 @@ function parseBank(rows, source) {
     const amount_ars = m.cur === 'ARS' ? Math.abs(m.val) : Math.abs(m.val) * TC;
     const amount_usd = m.cur === 'USD' ? Math.abs(m.val) : Math.abs(m.val) / TC;
     return baseMov(source, {
+      caja: source === 'bdc' && m.cur === 'USD' ? BDC_USD : null,
       date: m.date, flow, category: c.category, subcategory: c.subcategory || null,
       counterparty: flow === 'Ingreso' ? m.desc : (c.counterparty || m.desc),
       description: c.description_override || m.desc,
@@ -340,7 +344,7 @@ function parseMP(rows, existing) {
 
 // ---- record base (igual forma que el cashflow existente) ----
 function baseMov(source, o) {
-  const caja = CAJA[source];
+  const caja = o.caja || CAJA[source];
   const rec = {
     id: null, source: source + '-upload',
     date: o.date + 'T00:00:00.000Z', flow: o.flow,
@@ -364,7 +368,10 @@ export function parseStatement({ source, buffer, existing = [], rules = null }) 
   if (!CAJA[source]) throw new Error(`Fuente desconocida: ${source}`);
   setRules(rules);   // usa las reglas de la DB (editables/aprendidas); si no hay, queda el fallback del archivo
   const rows = readSheet(buffer);
-  const sameCaja = existing.filter((m) => m.caja_id === CAJA[source].id);
+  // bdc puede rutear filas a dos cajas (Pesos + Cuenta USD) → el índice de dedup cubre ambas
+  // y la clave lleva la caja (un monto igual en la otra cuenta NO es duplicado duro).
+  const cajaIds = new Set([CAJA[source].id, ...(source === 'bdc' ? [BDC_USD.id] : [])]);
+  const sameCaja = existing.filter((m) => cajaIds.has(m.caja_id));
   let movements = source === 'mp' ? parseMP(rows, sameCaja) : parseBank(rows, source);
 
   // Una sola pasada sobre lo ya cargado: claves de dedup (fecha ±3 + |monto|) y,
@@ -379,13 +386,14 @@ export function parseStatement({ source, buffer, existing = [], rules = null }) 
     const enrichable = source === 'mp' && m.source === 'mp-api' && (m.needs_review || /sin nombre/i.test(m.counterparty || ''));
     if (enrichable && m.mp_op_id) unnamedById.set(String(m.mp_op_id), m.id);
     for (const key of windowKeys(dd, m.amount_ars, m.flow)) {
-      seen.add(key);
-      if (enrichable && !unnamed.has(key)) unnamed.set(key, m.id);
+      const cajaKey = m.caja_id + '|' + key;
+      seen.add(cajaKey);
+      if (enrichable && !unnamed.has(cajaKey)) unnamed.set(cajaKey, m.id);
     }
   }
   const claimed = new Set();
   movements = movements.map((m, i) => {
-    const key = dedupKey(m.date.slice(0, 10), m.amount_ars, m.flow);
+    const key = m.caja_id + '|' + dedupKey(m.date.slice(0, 10), m.amount_ars, m.flow);
     // S1: primero match EXACTO por id de operación; si no, fallback fecha±3 + monto.
     let enrichId = m.mp_op_id ? unnamedById.get(String(m.mp_op_id)) : null;
     if (!enrichId || claimed.has(enrichId)) enrichId = unnamed.get(key);

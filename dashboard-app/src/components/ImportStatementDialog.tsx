@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils"
 
 type Mov = {
   _idx: number; _dupe: boolean; _enrich?: string; date: string; flow: string; description: string
+  caja_name?: string
   counterparty: string; currency: string; amount_ars: number; amount_usd: number
   category: string; expense_type: string | null; needs_review: boolean
   review_reason?: string | null; classified_by?: string | null
@@ -228,6 +229,7 @@ export function ImportStatementDialog({ open, onOpenChange, onDone }: { open: bo
                               {m._enrich ? <Badge variant="outline" className="text-[9px] border-sky-400 text-sky-600">actualiza nombre</Badge> : null}
                               {m.needs_review && !m._dupe ? <Badge variant="outline" className="text-[9px] border-amber-400 text-amber-600" title={m.review_reason || undefined}>a revisar</Badge> : null}
                               {m.classified_by && !m._dupe ? <Badge variant="outline" className="text-[9px] text-muted-foreground" title={`Se clasificó solo: ${m.classified_by}`}>auto</Badge> : null}
+                              {/Cuenta USD/.test(m.caja_name || "") ? <Badge variant="outline" className="text-[9px] border-emerald-400 text-emerald-600" title="Operación en dólares: va a la caja Banco de Comercio - Cuenta USD">Cuenta USD</Badge> : null}
                             </div>
                             {m._maybe && m._maybe_ref ? (
                               <div className="text-[10px] text-orange-700/80 dark:text-orange-400/80 mt-0.5 truncate">
