@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react"
-import { Plus, Search, LayoutGrid, Rows3, MoreHorizontal, Phone, Mail, MessageSquare, ExternalLink, Download, Clock } from "lucide-react"
+import { Plus, Search, LayoutGrid, Rows3, MoreHorizontal, Phone, Mail, MessageSquare, ExternalLink, Download, Clock, FileText } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -16,6 +16,7 @@ import { type Lead, type LeadStatus, STATUS_ORDER, STATUS_LABEL } from "@/lib/le
 import { cn } from "@/lib/utils"
 import { type Conversation, channelIcon } from "@/lib/messaging"
 import { LeadForm } from "@/components/forms/LeadForm"
+import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
 import { useConfirm } from "@/components/ui/confirm"
 import { openPacificPdf } from "@/lib/pdf"
 import { fmtMoney } from "@/lib/utils"
@@ -364,7 +365,15 @@ function AgeBadge({ lead }: { lead: Lead }) {
 function LeadDetailSheet({ lead, onClose, convId, leadQuotes }: { lead: Lead | null; onClose: () => void; convId?: string; leadQuotes: Quote[] }) {
   const navigate = useNavigate()
   const [pdfQuoteId, setPdfQuoteId] = useState<string | null>(null)
+  const [quoteOpen, setQuoteOpen] = useState(false)   // (hooks SIEMPRE antes del early-return)
   if (!lead) return null
+
+  // Cotizar directo desde el lead (mismo prefill que usa Mensajes: guarda lead_id, sin crear cliente).
+  const quotePrefill: QuotePrefill = {
+    lead_id: lead.id, client_name: lead.name, client_phone: lead.phone, client_email: lead.email,
+    client_address: lead.address, title: `Cotización ${lead.name}`, internal_notes: lead.notes,
+    source: lead.source, interested_products: lead.interested_products, approx_m2: lead.approx_m2,
+  }
 
   const quote = leadQuotes.find(q => q.id === pdfQuoteId) ?? leadQuotes[0] ?? null
   const totalEstimated = leadQuotes.reduce((sum, q) => sum + (q.price ?? 0), 0)
@@ -392,6 +401,7 @@ function LeadDetailSheet({ lead, onClose, convId, leadQuotes }: { lead: Lead | n
               </SheetDescription>
             </div>
             <div className="flex gap-2 mr-8">
+              <Button size="sm" onClick={() => setQuoteOpen(true)}><FileText className="h-3.5 w-3.5" />Nueva cotización</Button>
               {convId && (
                 <Button size="sm" variant="outline" onClick={handleOpenChat}><MessageSquare className="h-3.5 w-3.5" />Abrir chat</Button>
               )}
@@ -473,6 +483,7 @@ function LeadDetailSheet({ lead, onClose, convId, leadQuotes }: { lead: Lead | n
             </div>
           </div>
         )}
+        <QuoteForm open={quoteOpen} onOpenChange={setQuoteOpen} prefill={quotePrefill} />
       </SheetContent>
     </Sheet>
   )

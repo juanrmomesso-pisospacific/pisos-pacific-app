@@ -9,7 +9,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney } from "@/lib/utils"
 import { SearchPicker } from "@/components/SearchPicker"
 import type { Product, Quote } from "@/lib/types"
-import { looksLikeHandle } from "@/lib/leads"
+import { looksLikeHandle, type Lead } from "@/lib/leads"
 
 type Settings = { sellers?: { name: string; phone?: string }[] }
 type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] }
@@ -32,6 +32,7 @@ const IVA_RATE = 0.21
 
 export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }: { open: boolean; onOpenChange: (o: boolean) => void; prefill?: QuotePrefill; editQuote?: Quote; onCreated?: (q: Quote) => void | Promise<void> }) {
   const clients = useApi<Client[]>("/api/clients").data ?? []
+  const leads = useApi<Lead[]>("/api/leads").data ?? []
   const products = useApi<Product[]>("/api/products").data ?? []
   const settings = useApi<Settings>("/api/settings").data
   const sellers = settings?.sellers ?? []
@@ -68,7 +69,23 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const create = useAction(api.create)
   const update = useAction(api.update)
   const createClient = useAction(api.create)
-  const isLeadDriven = !!prefill
+  // Un lead también se puede COTIZAR desde acá: el buscador de cliente muestra leads (badge
+  // "lead"); al elegir uno, el form entra al mismo camino lead-driven que usa Mensajes
+  // (guarda lead_id, client_id vacío — el cliente se crea recién al concretar la venta).
+  const [pickedLead, setPickedLead] = useState<QuotePrefill | null>(null)
+  const effPrefill = prefill ?? pickedLead ?? undefined
+  const isLeadDriven = !!effPrefill
+  function pickLead(l: Lead) {
+    setClientId("")
+    setPickedLead({
+      lead_id: l.id, client_name: l.name, client_phone: l.phone, client_email: l.email,
+      client_address: l.address, title: `Cotización ${l.name}`, internal_notes: l.notes,
+      source: l.source, interested_products: l.interested_products, approx_m2: l.approx_m2,
+    })
+    setClientName(l.name)
+    if (l.address) setAddress(l.address)
+    if (!title) setTitle(`Cotización ${l.name}`)
+  }
 
   function addProduct(productId: string, zone?: string) {
     const p = products.find(x => x.id === productId)
@@ -104,7 +121,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   // Skipped if the vendor already added items manually.
   useEffect(() => {
     if (!open || !isLeadDriven || items.length > 0) return
-    const interests = prefill!.interested_products ?? []
+    const interests = effPrefill!.interested_products ?? []
     if (interests.length === 0 || products.length === 0) return
     const matched: LineItem[] = []
     const used = new Set<string>()
@@ -117,7 +134,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
     }
     if (matched.length === 0) return
     // If the lead has approx m², split across matched products
-    const m2 = prefill!.approx_m2
+    const m2 = effPrefill!.approx_m2
     if (m2 && matched.length > 0) {
       const each = Math.max(1, Math.round((m2 / matched.length) * 10) / 10)
       for (const m of matched) m.quantity = each
@@ -125,7 +142,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       for (const m of matched) m.quantity = 1
     }
     setItems(matched)
-  }, [open, products.length])
+  }, [open, products.length, effPrefill?.lead_id])
 
   const itemGross = (it: LineItem) => (it.quantity || 0) * (it.unit_price || 0)
   const itemDisc = (it: LineItem) => {
@@ -158,8 +175,8 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
     const resolvedName  = isLeadDriven ? clientName.trim()              : client!.name
     const clientId_     = isLeadDriven ? ""                             : client!.id
     const clientDni     = isLeadDriven ? ""                             : client!.dni
-    const clientEmail   = isLeadDriven ? (prefill!.client_email ?? "")   : (client!.emails?.[0] ?? "")
-    const clientPhone   = isLeadDriven ? (prefill!.client_phone ?? "")   : (client!.phones?.[0] ?? "")
+    const clientEmail   = isLeadDriven ? (effPrefill!.client_email ?? "")   : (client!.emails?.[0] ?? "")
+    const clientPhone   = isLeadDriven ? (effPrefill!.client_phone ?? "")   : (client!.phones?.[0] ?? "")
     const clientAddr    = address.trim()
 
     // Editable fields (shared by create + edit). Explicit discount values so editing can clear it.
@@ -187,7 +204,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
     }
     const r = isEdit
       ? await update.run("quotes", editQuote!.id, common)
-      : await create.run("quotes", { ...common, created_at: new Date().toISOString(), quote_number: `A${Math.floor(Math.random() * 9000 + 1000)}`, status: "DRAFT", lead_id: prefill?.lead_id })
+      : await create.run("quotes", { ...common, created_at: new Date().toISOString(), quote_number: `A${Math.floor(Math.random() * 9000 + 1000)}`, status: "DRAFT", lead_id: effPrefill?.lead_id })
     if (r) {
       onOpenChange(false)
       if (onCreated && !isEdit) await onCreated(r as Quote)
@@ -261,14 +278,19 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   return (
     <FormSheet open={open} onOpenChange={onOpenChange}
       title={isEdit ? `Editar cotización #${editQuote!.quote_number}` : isLeadDriven ? "Nueva cotización (desde lead)" : "Nueva Cotización"}
-      description={isEdit ? "Modificá items, descuento, zonas y datos" : isLeadDriven ? `Para ${prefill!.client_name}` : "Generar una cotización en borrador"}
+      description={isEdit ? "Modificá items, descuento, zonas y datos" : isLeadDriven ? `Para ${effPrefill!.client_name}` : "Generar una cotización en borrador"}
       onSubmit={submit} busy={create.busy || update.busy} error={create.error || update.error || (!canSubmit ? "Completá vendedor, cliente e items" : "")}
       submitLabel={!canSubmit ? "Completá los campos" : isEdit ? "Guardar cambios" : "Crear cotización"}>
       {isLeadDriven ? (
         <div className="rounded-md border border-border bg-muted/40 p-3 space-y-2">
           <div className="flex items-center justify-between">
             <div className="text-[10px] uppercase tracking-wide text-muted-foreground">Cliente del lead</div>
-            {prefill!.source && <Badge variant="muted" className="text-[10px] gap-1"><Sparkles className="h-2.5 w-2.5 text-amber-500" />{prefill!.source}</Badge>}
+            <div className="flex items-center gap-2">
+              {effPrefill!.source && <Badge variant="muted" className="text-[10px] gap-1"><Sparkles className="h-2.5 w-2.5 text-amber-500" />{effPrefill!.source}</Badge>}
+              {pickedLead && !prefill && (
+                <button type="button" className="text-[11px] text-muted-foreground hover:text-foreground" onClick={() => { setPickedLead(null); setClientName(""); setItems([]) }}>cambiar</button>
+              )}
+            </div>
           </div>
           <div>
             <FieldLabel>Nombre del cliente (sale en el presupuesto)</FieldLabel>
@@ -278,9 +300,9 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
             )}
           </div>
           <div className="text-[11px] text-muted-foreground space-y-0.5">
-            {prefill!.client_phone && <div>📞 {prefill!.client_phone}</div>}
-            {prefill!.client_email && <div>✉️ {prefill!.client_email}</div>}
-            {prefill!.client_address && <div>📍 {prefill!.client_address}</div>}
+            {effPrefill!.client_phone && <div>📞 {effPrefill!.client_phone}</div>}
+            {effPrefill!.client_email && <div>✉️ {effPrefill!.client_email}</div>}
+            {effPrefill!.client_address && <div>📍 {effPrefill!.client_address}</div>}
           </div>
         </div>
       ) : null}
@@ -295,9 +317,15 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
               </div>
             ) : (
               <SearchPicker
-                items={allClients.map(c => ({ id: c.id, label: c.name, sub: c.dni || undefined, keywords: (c.phones || []).join(" ") }))}
-                placeholder="Buscar cliente…"
-                onPick={setClientId}
+                items={[
+                  ...allClients.map(c => ({ id: c.id, label: c.name, sub: c.dni || undefined, keywords: (c.phones || []).join(" ") })),
+                  ...leads.filter(l => l.status !== "Won" && l.status !== "Lost").map(l => ({ id: `lead:${l.id}`, label: l.name, sub: `lead · ${l.source}`, keywords: `${l.phone || ""} ${l.email || ""}` })),
+                ]}
+                placeholder="Buscar cliente o lead…"
+                onPick={(id) => {
+                  if (id.startsWith("lead:")) { const l = leads.find(x => x.id === id.slice(5)); if (l) pickLead(l) }
+                  else setClientId(id)
+                }}
                 onCreate={createAndPickClient}
                 createLabel={(t) => `+ Crear cliente "${t}"`}
               />
