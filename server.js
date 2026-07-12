@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
-import { startMpReport, getMpReport, parseSettlementBuffer, backfillMpUserMap } from './import/mp-api.mjs';
+import { startMpReport, getMpReport, parseSettlementBuffer, backfillMpUserMap, mpUserEntry, MP_UNLEARNABLE, MP_CAJA_ID } from './import/mp-api.mjs';
 import { getBlueRate } from './import/fx.mjs';
 import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integrations/meta.mjs';
 import { buildDailyDigest, todayArt } from './integrations/task-bot.mjs';
@@ -822,20 +822,24 @@ app.get('/api/conversations', (_, res) => {
 // y cuántas esperan al cliente (última 'out' hace ≥3 días). Excluye cerradas.
 // Umbral configurable de "esperando cliente / se enfrió" (días sin respuesta del cliente).
 const waitingDays = () => Number(db.settings?.waiting_client_days) || 3;
-app.get('/api/conversations/stats', (_req, res) => {
+// ÚNICA definición de "pendiente / enfriada" del server: la consumen /stats (badge y
+// filtros de la UI) y el digest diario — si divergieran, los números no cuadrarían.
+function triageConversations() {
   const days = waitingDays();
   const cutoff = new Date(Date.now() - days * 86400e3).toISOString();
-  let pending = 0, waiting_client = 0, oldestPending = null;
-  for (const c of db.conversations) {
+  const pend = [], cold = [];
+  for (const c of db.conversations || []) {
     if (c.status === 'closed') continue;
-    if (c.last_message_direction === 'in') {
-      pending++;
-      const t = c.last_inbound_at || c.last_message_at || null;
-      if (t && (!oldestPending || t < oldestPending)) oldestPending = t;
-    }
-    else if (c.last_message_direction === 'out' && (c.last_outbound_at || c.last_message_at || '') < cutoff) waiting_client++;
+    if (c.last_message_direction === 'in') pend.push(c);
+    else if (c.last_message_direction === 'out' && (c.last_outbound_at || c.last_message_at || '') < cutoff) cold.push(c);
   }
-  res.json({ pending, waiting_client, waiting_days: days, oldest_pending_at: oldestPending });
+  pend.sort((a, b) => String(a.last_inbound_at || a.last_message_at || '').localeCompare(String(b.last_inbound_at || b.last_message_at || '')));
+  cold.sort((a, b) => String(a.last_outbound_at || a.last_message_at || '').localeCompare(String(b.last_outbound_at || b.last_message_at || '')));
+  return { days, pend, cold };
+}
+app.get('/api/conversations/stats', (_req, res) => {
+  const { days, pend, cold } = triageConversations();
+  res.json({ pending: pend.length, waiting_client: cold.length, waiting_days: days, oldest_pending_at: pend[0]?.last_inbound_at || null });
 });
 app.get('/api/conversations/:id/messages', (req, res) => {
   const msgs = db.messages.filter(m => m.conversation_id === req.params.id).sort((a, b) => a.ts.localeCompare(b.ts));
@@ -1536,17 +1540,21 @@ app.post('/api/cashflow/bulk-update', requireAdmin, (req, res) => {
   const patch = {};
   for (const [k, v] of Object.entries(set)) if (BULK_FIELDS.has(k)) patch[k] = v;
   if (!Object.keys(patch).length) return res.status(400).json({ error: 'ningún campo válido en set' });
-  let updated = 0;
+  let updated = 0, skipped = 0;
   for (const id of ids) {
     const m = db.cashflow.find((x) => x.id === id);
     if (!m) continue;
+    // Asignar proveedor en lote NO aplica a ingresos (un cobro de cliente quedaría
+    // reescrito como movimiento de proveedor): se saltean y se informa cuántos.
+    if (patch.counterparty_type === 'supplier' && m.flow === 'Ingreso') { skipped++; continue; }
     Object.assign(m, patch);
     // Marcar fuera del P&L limpia el vínculo a venta (no es cobro) — mismo criterio que el form.
     if (patch.transfer === true) { m.sale_ref = null; m.linked_sale_id = null; }
+    if (isClassifyPatch(patch)) learnMpUser(m);   // el lote también alimenta el mapa de MP
     updated++;
   }
   save();
-  res.json({ updated });
+  res.json({ updated, skipped_ingresos: skipped });
 });
 
 // Unificar dos proveedores: re-apunta movimientos (por supplier_id o por nombre) y reglas
@@ -1598,15 +1606,13 @@ app.get('/api/cp_rules', (_, res) => res.json(db.cp_rules || []));
 function learnMpUser(m) {
   if (!m || !m.mp_user_id || m.needs_review || m.transfer) return;
   const name = m.counterparty || '';
-  if (!name || /sin nombre|mov entre cuentas/i.test(name)) return;
+  if (!name || MP_UNLEARNABLE.test(name)) return;
   if (!db.settings.mp_user_map || typeof db.settings.mp_user_map !== 'object') db.settings.mp_user_map = {};
-  db.settings.mp_user_map[m.mp_user_id] = {
-    counterparty: name, counterparty_type: m.counterparty_type || null,
-    supplier_id: m.supplier_id || null, client_id: m.client_id || null,
-    category: m.category || null, subcategory: m.subcategory || null,
-    expense_type: m.expense_type || null, learned_at: new Date().toISOString(),
-  };
+  db.settings.mp_user_map[m.mp_user_id] = mpUserEntry(m);
 }
+// ¿Este PATCH es una CLASIFICACIÓN (setea contraparte/categoría)? Solo entonces se aprende:
+// una corrección parcial (ej. cambiar el signo) dejaría un snapshot a medias en el mapa.
+const isClassifyPatch = (body) => body && (body.counterparty !== undefined || body.category !== undefined);
 // Entidades financieras/config: escritura solo admin (un vendedor no toca caja ni reglas).
 const ADMIN_ONLY_WRITE = new Set(['cashflow', 'cajas', 'cp_rules', 'categories', 'expenses']);
 // Borrado destructivo solo admin: el DELETE genérico no restockea ni libera reservas,
@@ -1626,7 +1632,7 @@ const ADMIN_ONLY_DELETE = new Set(['sales', 'products']);
     const i = db[name].findIndex(x => x.id === req.params.id);
     if (i < 0) return res.sendStatus(404);
     db[name][i] = { ...db[name][i], ...req.body };
-    if (name === 'cashflow') learnMpUser(db[name][i]);
+    if (name === 'cashflow' && isClassifyPatch(req.body)) learnMpUser(db[name][i]);
     save();
     res.json(db[name][i]);
   });
@@ -1839,20 +1845,11 @@ setInterval(dailyTaskReminder, 60 * 60e3);
 // (agrupadas por vendedor, la más vieja primero) + las que se enfriaron (sin respuesta del
 // cliente hace ≥N días). Apagar con settings.daily_pending_digest_enabled=false.
 function buildPendingDigest() {
-  const days = waitingDays();
-  const cutoff = new Date(Date.now() - days * 86400e3).toISOString();
+  const { days, pend, cold } = triageConversations();
   const leadIdx = new Map((db.leads || []).map((l) => [l.id, l]));
   const sellerOf = (c) => (c.linked_lead_id ? leadIdx.get(c.linked_lead_id)?.assigned_seller : '') || 'Sin asignar';
   const ageDays = (iso) => iso ? Math.floor((Date.now() - Date.parse(iso)) / 86400e3) : 0;
-  const pend = [], cold = [];
-  for (const c of db.conversations || []) {
-    if (c.status === 'closed') continue;
-    if (c.last_message_direction === 'in') pend.push(c);
-    else if (c.last_message_direction === 'out' && (c.last_outbound_at || c.last_message_at || '') < cutoff) cold.push(c);
-  }
   if (!pend.length && !cold.length) return null;
-  pend.sort((a, b) => String(a.last_inbound_at || '').localeCompare(String(b.last_inbound_at || '')));
-  cold.sort((a, b) => String(a.last_outbound_at || '').localeCompare(String(b.last_outbound_at || '')));
   const bySeller = {};
   for (const c of pend) (bySeller[sellerOf(c)] ||= []).push(c);
   const li = (c, t) => `<li><b>${c.contact_name || c.contact_id}</b> (${c.channel}) — hace ${ageDays(t)} día(s): <i>${String(c.last_message_preview || '').slice(0, 90)}</i></li>`;
@@ -1932,11 +1929,14 @@ app.get('/api/admin/messages-export', requireAdmin, (_req, res) => {
 app.post('/api/import/mp-backfill-usermap', requireAdmin, async (req, res) => {
   try {
     const commit = !!req.body?.commit;
-    const limit = Math.min(Number(req.body?.limit) || 400, 1000);
+    // Tandas chicas: cada operación es un RTT a MP (~0.4s) y el request queda abierto —
+    // con más de ~150 el proxy de Render lo cortaría. Se re-llama hasta que candidates=0
+    // (los ya resueltos tienen mp_user_id y salen del universo).
+    const limit = Math.min(Number(req.body?.limit) || 100, 150);
     const candidates = db.cashflow.filter((m) =>
-      m.caja_id === 'CAJ-002' && m.mp_op_id && !m.needs_review && !m.transfer &&
-      m.counterparty && !/sin nombre|mov entre cuentas|peaje/i.test(m.counterparty));
-    if (!commit) return res.json({ candidates: candidates.length, map_size: Object.keys(db.settings.mp_user_map || {}).length, note: 'POST {commit:true} resuelve cada operación contra la API de MP y siembra el mapa' });
+      m.caja_id === MP_CAJA_ID && m.mp_op_id && !m.mp_user_id && !m.needs_review && !m.transfer &&
+      m.counterparty && !MP_UNLEARNABLE.test(m.counterparty));
+    if (!commit) return res.json({ candidates: candidates.length, map_size: Object.keys(db.settings.mp_user_map || {}).length, note: 'POST {commit:true} resuelve cada operación contra la API de MP y siembra el mapa (en tandas de `limit`; repetir hasta candidates=0)' });
     if (!db.settings.mp_user_map || typeof db.settings.mp_user_map !== 'object') db.settings.mp_user_map = {};
     const r = await backfillMpUserMap({ movements: candidates.slice(0, limit), userMap: db.settings.mp_user_map });
     save();

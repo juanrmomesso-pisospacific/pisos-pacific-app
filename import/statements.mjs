@@ -26,34 +26,43 @@ const norm = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-
 const PER_DEFAULT = 'Gastos de Personal (HR y Mano de Obra)';
 let CPMAP = { PER: PER_DEFAULT, byCuit: {}, byNameIdx: new Map() };
 
-// Construye los índices (byCuit, byName) desde un array plano de reglas (db.cp_rules).
+// Construye los índices (byCuit, byName, containsList) desde un array plano de reglas
+// (db.cp_rules). containsList: claves elegibles para "contiene", con la regex precompilada
+// (1 vez por clave, no por movimiento) y ordenadas por largo desc (la más específica gana).
 function buildCpmap(rules) {
-  const byCuit = {}, idx = new Map();
+  const byCuit = {}, idx = new Map(), containsList = [];
   for (const r of rules || []) {
     if (r.cuit) byCuit[String(r.cuit).replace(/\D/g, '')] = r;
-    for (const m of (r.match || [])) if (m) idx.set(norm(m), r);
+    for (const m of (r.match || [])) {
+      const key = norm(m);
+      if (!key) continue;
+      idx.set(key, r);
+      if (containsEligible(key)) containsList.push({ key, rule: r, re: new RegExp(`(^|[^a-z0-9])${reEsc(key)}([^a-z0-9]|$)`) });
+    }
   }
-  return { PER: PER_DEFAULT, byCuit, byNameIdx: idx };
+  containsList.sort((a, b) => b.key.length - a.key.length);
+  return { PER: PER_DEFAULT, byCuit, byNameIdx: idx, containsList };
 }
 
 // Busca una regla por nombre: primero match exacto (normalizado) y después "contiene"
-// (la UI promete "si el nombre contiene…"). El contiene es POR PALABRA COMPLETA ("ariel"
-// no matchea dentro de "gabriel") y con clave de ≥4 caracteres, para que tokens cortos
-// no enganchen a cualquiera.
+// (la UI promete "si el nombre contiene…"). Guardas del contiene, para que una regla no
+// enganche a cualquiera y reescriba/limpie un movimiento ajeno en silencio:
+//  - solo claves MULTI-PALABRA de ≥5 chars ("matias trejo" sí; "matias"/"ariel"/"flip" NO —
+//    un nombre de pila suelto matchearía "TRANSFERENCIA DE MATIAS GONZALEZ", que puede ser
+//    el cobro de un cliente; las claves de una palabra siguen siendo de match exacto);
+//  - por palabra completa ("ariel" no matchea dentro de "gabriel");
+//  - si varias reglas contienen, gana la clave MÁS LARGA (la más específica), no el orden
+//    de inserción del Map.
 const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const containsEligible = (key) => key.length >= 5 && key.includes(' ');
 function findRule(...texts) {
-  for (const t of texts) {
-    const k = norm(t);
-    if (!k) continue;
+  const hays = [...new Set(texts.map(norm).filter(Boolean))];   // en banco los 3 textos suelen ser el mismo
+  for (const k of hays) {
     const exact = CPMAP.byNameIdx.get(k);
     if (exact) return { rule: exact, key: k };
   }
-  for (const t of texts) {
-    const hay = norm(t);
-    if (!hay) continue;
-    for (const [key, rule] of CPMAP.byNameIdx) {
-      if (key.length >= 4 && new RegExp(`(^|[^a-z0-9])${reEsc(key)}([^a-z0-9]|$)`).test(hay)) return { rule, key };
-    }
+  for (const { key, rule, re } of (CPMAP.containsList || [])) {   // ya ordenadas: más específica primero
+    for (const hay of hays) if (re.test(hay)) return { rule, key };
   }
   return null;
 }
@@ -63,9 +72,11 @@ export function setRules(rules) { if (Array.isArray(rules) && rules.length) CPMA
 // Fallback: cargar el archivo legacy si nadie setea reglas de la DB.
 try {
   const raw = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'counterparty-map.json'), 'utf8'));
-  const idx = new Map();
-  for (const e of raw.byName || []) for (const m of e.match) idx.set(norm(m), e);
-  CPMAP = { PER: raw.PER || PER_DEFAULT, byCuit: raw.byCuit || {}, byNameIdx: idx };
+  const rules = [
+    ...(raw.byName || []),
+    ...Object.entries(raw.byCuit || {}).map(([cuit, r]) => ({ ...r, cuit })),
+  ];
+  CPMAP = { ...buildCpmap(rules), PER: raw.PER || PER_DEFAULT };
 } catch { /* sin mapa: el importador usa solo sus reglas internas */ }
 
 // Aplica el mapa a un record ya armado (mutándolo). cuit opcional (bancos).
@@ -143,9 +154,10 @@ const isPeaje = (t) => /ausol|\bausa\b|aubasa|telepase|autopista|au oeste|au del
 const RETAIL = /carrefour|\bcoto\b|jumbo|\bdisco\b|supermercado dia\b|farmacia|chango|\bvea\b|starbucks|mcdonald|rappi|pedidosya|cabify|\buber\b|spotify|netflix|apple\.com/i;
 const FLOTA = /ypf|appypf|shell|axion|puma|nafta|combust|gnc|estacion|sancor seguros|patente|peaje/i;
 const MKT = /google|facebk|facebook|meta\b|instagram|framer|ads|tiktok/i;
-// OJO: "debin" NO está — un DEBIN puede ser un cobro real de cliente; que caiga a
-// clasificación normal (queda a revisar) en vez de irse del P&L como transferencia.
-const TRANSFER = /mov entre cuentas|transferencia a cuenta propia|cuenta propia|su pago en pesos|pago de tarjeta|pago tarjeta visa/i;
+// "debin" queda: el DEBIN típico es la pata bancaria del fondeo de MP (banco→MP) y las
+// DOS patas deben quedar fuera del P&L de entrada (la de MP se marca sola). Igual queda
+// "a revisar": si en realidad es un cobro de cliente, se desmarca desde el Libro.
+const TRANSFER = /mov entre cuentas|transferencia a cuenta propia|cuenta propia|debin|su pago en pesos|pago de tarjeta|pago tarjeta visa/i;
 // Ruido recurrente de extractos que SIEMPRE es transferencia (pago del resumen de tarjeta /
 // movimiento entre cuentas): se auto-clasifica y auto-limpia (los gastos reales son los cargos
 // itemizados de la tarjeta, ya registrados). "Pago con débito" NO entra (es una compra real).

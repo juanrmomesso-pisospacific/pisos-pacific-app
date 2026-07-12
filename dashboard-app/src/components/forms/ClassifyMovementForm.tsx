@@ -143,11 +143,13 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
     } else if (transferChanged) {
       // Se desmarcó: vuelve a contar en el P&L.
       await update.run("cashflow", mov.id, { transfer: false })
-    } else if (!isEgreso && (saleId || linkChanged)) {
-      // Cobro vinculado a una venta: el endpoint clasifica el movimiento Y actualiza el saldo de la
-      // venta (registro único, sin duplicar con una carga manual en Ventas).
-      await link.run(mov.id, saleId || null)
-    } else if (v.counterparty || categoryChanged) {
+    } else {
+      // Cobro vinculado a una venta: solo si el vínculo CAMBIÓ (un saleId pre-cargado sin
+      // cambios no debe re-linkear — y antes se tragaba la edición de categoría de abajo).
+      if (!isEgreso && linkChanged) {
+        await link.run(mov.id, saleId || null)
+      }
+      if (v.counterparty || categoryChanged) {
       // Clasificar: se puede guardar solo la categoría/subcategoría (ej. "Ingreso Otros / Paneles")
       // aunque no haya contraparte. La contraparte se setea únicamente si se eligió una.
       await update.run("cashflow", mov.id, {
@@ -164,6 +166,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
           category: v.category || null, subcategory: v.subcategory || null, expense_type: isEgreso ? v.expense_type : null,
           personal: false, source: "learned", note: `Aprendida al clasificar "${originalName}"`,
         })
+      }
       }
     }
     onOpenChange(false); refresh()
@@ -224,6 +227,9 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
           </select>
         </div>
       </div>
+      {(cajaChanged || dateChanged) && (
+        <FieldHint>⚠️ Ojo: si cambiás la caja o corrés la fecha de un movimiento importado, la próxima importación del extracto puede no reconocerlo como duplicado (el dedup compara misma caja y fecha ±3 días) — no re-tildes esa fila al importar.</FieldHint>
+      )}
 
       {/* Fuera del P&L: transferencia entre cuentas o ingreso/gasto no operativo (alquiler, plata ajena
           al negocio, etc.). Sale del P&L pero cuenta para el saldo de la caja. */}

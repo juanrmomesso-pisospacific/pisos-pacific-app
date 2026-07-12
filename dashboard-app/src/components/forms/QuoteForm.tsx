@@ -9,7 +9,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney } from "@/lib/utils"
 import { SearchPicker } from "@/components/SearchPicker"
 import type { Product, Quote } from "@/lib/types"
-import { looksLikeHandle, type Lead } from "@/lib/leads"
+import { looksLikeHandle, leadToQuotePrefill, type Lead } from "@/lib/leads"
 
 type Settings = { sellers?: { name: string; phone?: string }[] }
 type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] }
@@ -77,15 +77,17 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const isLeadDriven = !!effPrefill
   function pickLead(l: Lead) {
     setClientId("")
-    setPickedLead({
-      lead_id: l.id, client_name: l.name, client_phone: l.phone, client_email: l.email,
-      client_address: l.address, title: `Cotización ${l.name}`, internal_notes: l.notes,
-      source: l.source, interested_products: l.interested_products, approx_m2: l.approx_m2,
-    })
+    setPickedLead(leadToQuotePrefill(l))
     setClientName(l.name)
     if (l.address) setAddress(l.address)
     if (!title) setTitle(`Cotización ${l.name}`)
   }
+  // Deshace TODO lo que pickLead sembró (también lo usa el cierre del sheet — si quedara
+  // colgado, la próxima "Nueva cotización" abriría en modo lead con el lead anterior).
+  function clearPickedLead() {
+    setPickedLead(null); setClientName(""); setTitle(""); setAddress(""); setItems([])
+  }
+  useEffect(() => { if (!open && pickedLead) clearPickedLead() }, [open])
 
   function addProduct(productId: string, zone?: string) {
     const p = products.find(x => x.id === productId)
@@ -288,7 +290,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
             <div className="flex items-center gap-2">
               {effPrefill!.source && <Badge variant="muted" className="text-[10px] gap-1"><Sparkles className="h-2.5 w-2.5 text-amber-500" />{effPrefill!.source}</Badge>}
               {pickedLead && !prefill && (
-                <button type="button" className="text-[11px] text-muted-foreground hover:text-foreground" onClick={() => { setPickedLead(null); setClientName(""); setItems([]) }}>cambiar</button>
+                <button type="button" className="text-[11px] text-muted-foreground hover:text-foreground" onClick={clearPickedLead}>cambiar</button>
               )}
             </div>
           </div>

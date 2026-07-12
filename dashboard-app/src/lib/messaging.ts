@@ -112,6 +112,18 @@ export function fillTemplate(body: string, contactName?: string): string {
 
 export const CHANNEL_LABEL: Record<Channel, string> = { whatsapp: "WhatsApp", instagram: "Instagram", email: "Email" }
 
+// "hace 3 días / hace 5 h / recién" — variante en palabras de relativeTime, para los chips
+// de pendiente/enfriada (y cualquier otro "hace cuánto" en prosa).
+export function agoLabel(iso?: string): string {
+  if (!iso) return ""
+  const ms = Date.now() - new Date(iso).getTime()
+  if (isNaN(ms)) return ""
+  const d = Math.floor(ms / 86400e3)
+  if (d >= 1) return `hace ${d} día${d > 1 ? "s" : ""}`
+  const h = Math.floor(ms / 3600e3)
+  return h >= 1 ? `hace ${h} h` : "recién"
+}
+
 export function relativeTime(iso: string): string {
   const t = new Date(iso).getTime()
   if (isNaN(t)) return ""

@@ -1,5 +1,22 @@
 export type LeadStatus = "New" | "Contacted" | "Quoted" | "Won" | "Lost"
 
+// Prefill de cotización desde un lead — ÚNICA definición del mapeo (la usan QuoteForm,
+// LeadsPage y MensajesPage; antes estaba copiada campo por campo en los tres).
+export function leadToQuotePrefill(l: Lead) {
+  return {
+    lead_id: l.id,
+    client_name: l.name,
+    client_phone: l.phone,
+    client_email: l.email,
+    client_address: l.address,
+    title: `Cotización ${l.name}`,
+    internal_notes: l.notes,
+    source: l.source,
+    interested_products: l.interested_products,
+    approx_m2: l.approx_m2,
+  }
+}
+
 export type Lead = {
   id: string
   name: string

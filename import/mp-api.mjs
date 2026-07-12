@@ -115,6 +115,8 @@ async function myUserId(at) {
   ME = r.v?.id != null ? String(r.v.id) : null;
   return ME;
 }
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// El throttle vive DENTRO de los fetchers (solo cuando hubo request real; un cache hit no duerme).
 const payCache = new Map();   // op_id → info | null (cache del proceso)
 async function paymentInfo(at, opId) {
   if (payCache.has(opId)) return payCache.get(opId);
@@ -126,6 +128,7 @@ async function paymentInfo(at, opId) {
     payer_id: v.payer?.id != null ? String(v.payer.id) : null,
   } : null;
   payCache.set(opId, info);
+  await sleep(100);
   return info;
 }
 const nickCache = new Map();
@@ -134,6 +137,7 @@ async function nickname(at, userId) {
   const r = await jget(`${API}/users/${userId}`, at);
   const nick = r.s === 200 ? (r.v?.nickname || null) : null;
   nickCache.set(userId, nick);
+  await sleep(100);
   return nick;
 }
 // "ADRIANCRISTIAN20220127174724" → "ADRIANCRISTIAN". Handles no-nombre (CBCFHGEDA51580) → null.
@@ -142,7 +146,20 @@ function prettyNick(nick) {
   const s = String(nick).replace(/\d{6,}$/, '').replace(/[-_.]+/g, ' ').trim();
   return s.length >= 6 && /^[A-Za-z ]+$/.test(s) && /[aeiou]/i.test(s) ? s.toUpperCase() : null;
 }
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Forma canónica de una entrada del mapa aprendido (user id → contraparte/clasificación).
+// Único lugar que define el shape: la usan learnMpUser (server) y el backfill.
+export function mpUserEntry(m) {
+  return {
+    counterparty: m.counterparty, counterparty_type: m.counterparty_type || null,
+    supplier_id: m.supplier_id || null, client_id: m.client_id || null,
+    category: m.category || null, subcategory: m.subcategory || null,
+    expense_type: m.expense_type || null, learned_at: new Date().toISOString(),
+  };
+}
+// Nombres que NO se aprenden (placeholders/ruido) — compartido por learnMpUser y el backfill.
+export const MP_UNLEARNABLE = /sin nombre|mov entre cuentas|peaje/i;
+export const MP_CAJA_ID = MP;
 
 // Enriquece movimientos nuevos del sync (con mp_op_id, en revisión) resolviendo la contraparte
 // por user id. Muta los movimientos. userMap = db.settings.mp_user_map (aprendido).
@@ -171,17 +188,26 @@ export async function enrichWithMpUsers(movements, { userMap = {}, at = null } =
     if (!other || other === me) continue;
     m.mp_user_id = other;
     const known = userMap[other];
-    if (known?.counterparty) {
+    if (known?.counterparty && m.flow === 'Egreso') {
       Object.assign(m, {
         counterparty: known.counterparty,
         counterparty_type: known.counterparty_type || m.counterparty_type,
         supplier_id: known.supplier_id || null, client_id: known.client_id || null,
         ...(known.category ? { category: known.category } : {}),
         ...(known.subcategory ? { subcategory: known.subcategory } : {}),
-        ...(m.flow === 'Egreso' && known.expense_type ? { expense_type: known.expense_type } : {}),
+        ...(known.expense_type ? { expense_type: known.expense_type } : {}),
         needs_review: false, review_reason: null,
         classified_by: `contraparte MP aprendida (user ${other})`,
       });
+      out.mapped++;
+    } else if (known?.counterparty) {
+      // INGRESO de una contraparte conocida: se pone el nombre pero QUEDA a revisar —
+      // un cobro tiene que pasar por "¿Es el cobro de una venta?" para vincular la venta
+      // (si se auto-limpiara, la venta quedaría con saldo impago sin que nadie lo vea).
+      m.counterparty = known.counterparty;
+      if (known.counterparty_type === 'client') { m.counterparty_type = 'client'; m.client_id = known.client_id || null; }
+      m.review_reason = `cobro de ${known.counterparty} — ¿asociar a una venta?`;
+      m.classified_by = `contraparte MP aprendida (user ${other})`;
       out.mapped++;
     } else {
       // Nombre provisional desde el nickname público (suele ser el nombre real autogenerado).
@@ -193,7 +219,6 @@ export async function enrichWithMpUsers(movements, { userMap = {}, at = null } =
         m.classified_by = `nickname del perfil MP (user ${other})`;
         out.named++;
       }
-      await sleep(120);   // throttle suave solo cuando pegamos a la API
     }
   }
   return out;
@@ -201,6 +226,7 @@ export async function enrichWithMpUsers(movements, { userMap = {}, at = null } =
 
 // Siembra el mapa desde el histórico YA clasificado (movimientos con mp_op_id y nombre real):
 // resuelve cada operación → user id y guarda su clasificación. Muta userMap y los movimientos.
+// (El throttle vive dentro de paymentInfo; los cache hits no duermen.)
 export async function backfillMpUserMap({ movements, userMap }) {
   const at = await mintToken();
   const me = await myUserId(at);
@@ -208,19 +234,13 @@ export async function backfillMpUserMap({ movements, userMap }) {
   for (const m of movements) {
     let info = null;
     try { info = await paymentInfo(at, m.mp_op_id); } catch { /* ignore */ }
-    if (!info) { notFound++; await sleep(80); continue; }
+    if (!info) { notFound++; continue; }
     const other = m.flow === 'Egreso' ? info.collector_id : info.payer_id;
-    if (!other || other === me) { await sleep(80); continue; }
+    if (!other || other === me) continue;
     m.mp_user_id = other;
     resolved++;
     if (!userMap[other]) seeded++;
-    userMap[other] = {
-      counterparty: m.counterparty, counterparty_type: m.counterparty_type || null,
-      supplier_id: m.supplier_id || null, client_id: m.client_id || null,
-      category: m.category || null, subcategory: m.subcategory || null,
-      expense_type: m.expense_type || null, learned_at: new Date().toISOString(),
-    };
-    await sleep(120);
+    userMap[other] = mpUserEntry(m);
   }
   return { resolved, seeded, notFound, mapSize: Object.keys(userMap).length };
 }

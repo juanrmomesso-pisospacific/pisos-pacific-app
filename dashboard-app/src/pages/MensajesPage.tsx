@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react"
+import { Fragment, useEffect, useMemo, useRef, useState } from "react"
 import { Search, Send, Smile, FileText, Phone, Mail, ExternalLink, MoreHorizontal, UserCircle2, AtSign, Sparkles, ChevronRight, ChevronLeft, Paperclip, Info, Archive, Clock3, Snowflake } from "lucide-react"
 import { Link, useSearchParams } from "react-router-dom"
 import { Button } from "@/components/ui/button"
@@ -8,8 +8,8 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 import { useApi, getJSON } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { useAuth } from "@/contexts/AuthContext"
-import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, EMOJIS, fillTemplate, suggestTemplates, templateMatchesChannel, templateLabel } from "@/lib/messaging"
-import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_LABEL as LEAD_STATUS_LABEL } from "@/lib/leads"
+import { type Conversation, type Message, type Template, type Channel, CHANNEL_LABEL, channelIcon, relativeTime, agoLabel, EMOJIS, fillTemplate, suggestTemplates, templateMatchesChannel, templateLabel } from "@/lib/messaging"
+import { type Lead, type LeadStatus, STATUS_ORDER as LEAD_STATUS_ORDER, STATUS_LABEL as LEAD_STATUS_LABEL, leadToQuotePrefill } from "@/lib/leads"
 import { findConvId, digits, quoteShareMessage } from "@/lib/chat"
 import { statusLabel } from "@/components/RowActions"
 import { SearchPicker } from "@/components/SearchPicker"
@@ -69,7 +69,7 @@ export default function MensajesPage() {
   // Pendiente = última del cliente (no se resetea al abrir, solo al responder).
   const isPending = (c: Conversation) => c.last_message_direction === "in" && c.status !== "closed"
   // Umbral de "se enfrió" configurable (settings.waiting_client_days, default 3) vía stats.
-  const stats = useApi<{ pending: number; waiting_client: number; waiting_days: number }>("/api/conversations/stats", { pollMs: 30000 }).data
+  const stats = useApi<{ pending: number; waiting_client: number; waiting_days: number }>("/api/conversations/stats").data
   const waitDays = stats?.waiting_days ?? 3
   const waitCutoff = useMemo(() => new Date(Date.now() - waitDays * 86400e3).toISOString(), [waitDays])
   const isWaiting = (c: Conversation) => c.last_message_direction === "out" && c.status !== "closed" && (c.last_outbound_at ?? c.last_message_at ?? "") < waitCutoff
@@ -108,7 +108,12 @@ export default function MensajesPage() {
   // directo al chat. (chequeo puntual al montar/llegar la lista, no reactivo a resize)
   useEffect(() => {
     const isDesktop = typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches
-    if (isDesktop && selectedId == null && filtered.length > 0) setSelectedId(filtered[0].id)
+    if (isDesktop && selectedId == null && filtered.length > 0) {
+      // La MÁS RECIENTE, no filtered[0]: con el orden por secciones el primero es el pendiente
+      // más viejo, y auto-abrirlo lo marcaría leído (unread_count=0) sin que nadie lo lea.
+      const mostRecent = filtered.reduce((a, b) => ((b.last_message_at ?? "") > (a.last_message_at ?? "") ? b : a))
+      setSelectedId(mostRecent.id)
+    }
   }, [filtered, selectedId])
 
   // When the URL changes (someone clicks a lead → /mensajes?conv=…) re-sync the selection
@@ -287,30 +292,20 @@ function ConversationList({
             const showHeader = showSections && sec !== prev && !(sec === "ok" && prev === null)
             prev = sec
             return (
-              <div key={c.id}>
+              <Fragment key={c.id}>
                 {showHeader && (
                   <div className="sticky top-0 z-[5] bg-card/95 backdrop-blur px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground border-b border-border">
                     {SECTION_LABEL[sec]}
                   </div>
                 )}
                 <ConversationRow conv={c} waiting={sec === "wait"} lead={c.linked_lead_id ? leadById.get(c.linked_lead_id) : undefined} selected={c.id === selectedId} onClick={() => onSelect(c.id)} onIgnore={onIgnore} />
-              </div>
+              </Fragment>
             )
           })
         })()}
       </div>
     </aside>
   )
-}
-
-const agoLabel = (iso?: string) => {
-  if (!iso) return ""
-  const ms = Date.now() - new Date(iso).getTime()
-  if (isNaN(ms)) return ""
-  const d = Math.floor(ms / 86400e3)
-  if (d >= 1) return `hace ${d} día${d > 1 ? "s" : ""}`
-  const h = Math.floor(ms / 3600e3)
-  return h >= 1 ? `hace ${h} h` : "recién"
 }
 
 function ConversationRow({ conv, lead, waiting, selected, onClick, onIgnore }: { conv: Conversation; lead?: Lead; waiting?: boolean; selected: boolean; onClick: () => void; onIgnore: (id: string) => void }) {
@@ -872,18 +867,7 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes, c
   }
 
   // Quote prefill from linked lead (button is disabled when no lead linked)
-  const quotePrefill: QuotePrefill | null = linkedLead ? {
-    lead_id: linkedLead.id,
-    client_name: linkedLead.name,
-    client_phone: linkedLead.phone,
-    client_email: linkedLead.email,
-    client_address: linkedLead.address,
-    title: `Cotización ${linkedLead.name}`,
-    internal_notes: linkedLead.notes,
-    source: linkedLead.source,
-    interested_products: linkedLead.interested_products,
-    approx_m2: linkedLead.approx_m2,
-  } : null
+  const quotePrefill: QuotePrefill | null = linkedLead ? leadToQuotePrefill(linkedLead) : null
 
   // Quotes already created for this lead — listed in a dedicated section below
   const leadQuotes = linkedLead ? quotes.filter(q => q.lead_id === linkedLead.id) : []

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Search, ChevronUp, ChevronDown, ChevronsUpDown, AlertTriangle, Tag } from "lucide-react"
 import { ClassifyMovementForm } from "@/components/forms/ClassifyMovementForm"
 import { Card } from "@/components/ui/card"
@@ -482,11 +482,15 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
   const reviewCount = useMemo(() => movements.filter((m) => m.needs_review).length, [movements])
   const shown = filtered.slice(0, 400)
 
+  // Cambiar filtros o período limpia la selección: si no, filas seleccionadas que YA NO se ven
+  // seguirían recibiendo la acción en lote (edición invisible).
+  useEffect(() => { setSelIds(new Set()) }, [flow, cajaId, rubro, q, onlyReview, range])
+
   const allShownSelected = shown.length > 0 && shown.every((m) => selIds.has(m.id))
   const toggleAllShown = () => setSelIds(allShownSelected ? new Set() : new Set(shown.map((m) => m.id)))
   const toggleSel = (id: string) => setSelIds((s) => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n })
-  async function bulkApply(set: Record<string, unknown>, label: string) {
-    const ok = await confirm({ title: label, description: `Se aplica a los ${selIds.size} movimientos seleccionados.`, confirmLabel: "Aplicar" })
+  async function bulkApply(set: Record<string, unknown>, label: string, extra?: string) {
+    const ok = await confirm({ title: label, description: `Se aplica a los ${selIds.size} movimientos seleccionados.${extra ? " " + extra : ""}`, confirmLabel: "Aplicar" })
     if (!ok) return
     const r = await bulk.run([...selIds], set)
     if (r) { setSelIds(new Set()); refresh() }
@@ -539,14 +543,17 @@ function Libro({ movements, cajas, range }: { movements: CashflowMovement[]; caj
         <div className="flex flex-wrap items-center gap-2 rounded-md border border-border bg-muted/40 px-3 py-2 text-xs">
           <span className="font-medium shrink-0">{selIds.size} seleccionados:</span>
           <Button size="sm" variant="outline" className="h-7 text-xs" disabled={bulk.busy} title="Transferencia entre cuentas o ingreso/gasto no operativo — sale del P&L, cuenta en la caja"
-            onClick={() => bulkApply({ transfer: true, needs_review: false, review_reason: null }, "Marcar fuera del P&L")}>Fuera del P&L</Button>
+            onClick={() => bulkApply({ transfer: true, needs_review: false, review_reason: null }, "Marcar fuera del P&L", "Si alguno estaba vinculado a una venta como cobro, se desvincula (la venta vuelve a mostrar ese saldo pendiente).")}>Fuera del P&L</Button>
           <Button size="sm" variant="outline" className="h-7 text-xs" disabled={bulk.busy} title="Los saca de la cola 'A revisar' sin cambiar la clasificación"
             onClick={() => bulkApply({ needs_review: false, review_reason: null }, "Marcar revisados")}>Marcar revisados</Button>
           <div className="w-56 min-w-40">
             <SearchPicker
               items={suppliers.map((s) => ({ id: s.id, label: s.name }))}
-              placeholder="Asignar proveedor a todos…"
-              onPick={(id) => { const s = suppliers.find((x) => x.id === id); if (s) bulkApply({ counterparty: s.name, supplier_id: s.id, counterparty_type: "supplier", needs_review: false, review_reason: null }, `Asignar proveedor "${s.name}"`) }}
+              placeholder="Asignar proveedor a los egresos…"
+              onPick={(id) => {
+                const s = suppliers.find((x) => x.id === id)
+                if (s) bulkApply({ counterparty: s.name, supplier_id: s.id, counterparty_type: "supplier", needs_review: false, review_reason: null }, `Asignar proveedor "${s.name}"`, "Se asigna SOLO a los egresos seleccionados (los ingresos se saltean — un cobro no es un pago a proveedor).")
+              }}
             />
           </div>
           {bulk.error ? <span className="text-destructive">{bulk.error}</span> : null}

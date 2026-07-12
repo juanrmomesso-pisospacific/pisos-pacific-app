@@ -12,7 +12,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
-import { type Lead, type LeadStatus, STATUS_ORDER, STATUS_LABEL } from "@/lib/leads"
+import { type Lead, type LeadStatus, STATUS_ORDER, STATUS_LABEL, leadToQuotePrefill } from "@/lib/leads"
 import { cn } from "@/lib/utils"
 import { type Conversation, channelIcon } from "@/lib/messaging"
 import { LeadForm } from "@/components/forms/LeadForm"
@@ -369,11 +369,7 @@ function LeadDetailSheet({ lead, onClose, convId, leadQuotes }: { lead: Lead | n
   if (!lead) return null
 
   // Cotizar directo desde el lead (mismo prefill que usa Mensajes: guarda lead_id, sin crear cliente).
-  const quotePrefill: QuotePrefill = {
-    lead_id: lead.id, client_name: lead.name, client_phone: lead.phone, client_email: lead.email,
-    client_address: lead.address, title: `Cotización ${lead.name}`, internal_notes: lead.notes,
-    source: lead.source, interested_products: lead.interested_products, approx_m2: lead.approx_m2,
-  }
+  const quotePrefill: QuotePrefill = leadToQuotePrefill(lead)
 
   const quote = leadQuotes.find(q => q.id === pdfQuoteId) ?? leadQuotes[0] ?? null
   const totalEstimated = leadQuotes.reduce((sum, q) => sum + (q.price ?? 0), 0)
