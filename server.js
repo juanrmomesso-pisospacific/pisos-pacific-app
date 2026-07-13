@@ -773,9 +773,39 @@ app.post('/api/cajas/:id/reconcile', requireAdmin, async (req, res) => {
   const sysUsd = cajaBalanceUsd(caja);
   const adjUsd = Math.round((realUsd - sysUsd) * 100) / 100;
   const r2v = (n) => Math.round(n * 100) / 100;
-  if (!req.body?.commit) return res.json({ caja: caja.name, blue, sys_usd: r2v(sysUsd), real_usd: r2v(realUsd), adj_usd: adjUsd });
+  // La conciliación es primero un CHEQUEO: la diferencia (real − sistema) es la señal de que
+  // falta registrar algo. Para encontrarlo, el dry-run devuelve además:
+  //  - diff_ars: comparación EN PESOS (ancla ARS + movimientos ARS posteriores vs real ARS) —
+  //    sin el ruido del tipo de cambio, la diferencia es plata faltante de verdad;
+  //  - missing_days: días hábiles sin NINGÚN movimiento en la caja desde el ancla (para
+  //    cuentas de banco casi siempre es "falta importar el extracto de esos días").
+  let sys_ars = null, diff_ars = null;
+  if (cur === 'ARS' && caja.anchor_ars != null && caja.anchor_date) {
+    let ars = Number(caja.anchor_ars) || 0;
+    for (const m of db.cashflow) {
+      if (m.caja_id !== caja.id || String(m.date).slice(0, 10) <= caja.anchor_date) continue;
+      ars += movSign(m) * (m.amount_ars || 0);
+    }
+    sys_ars = Math.round(ars);
+    diff_ars = Math.round(realNum - ars);
+  }
+  const missing_days = [];
+  {
+    const from = caja.anchor_date || new Date(Date.now() - 21 * 86400e3).toISOString().slice(0, 10);
+    const daysWith = new Set(db.cashflow.filter(m => m.caja_id === caja.id).map(m => String(m.date).slice(0, 10)));
+    const d = new Date(from + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + 1);
+    const today = new Date().toISOString().slice(0, 10);
+    while (d.toISOString().slice(0, 10) < today && missing_days.length < 12) {
+      const ds = d.toISOString().slice(0, 10);
+      const dow = d.getUTCDay();
+      if (dow !== 0 && dow !== 6 && !daysWith.has(ds)) missing_days.push(ds);
+      d.setUTCDate(d.getUTCDate() + 1);
+    }
+  }
+  if (!req.body?.commit) return res.json({ caja: caja.name, blue, sys_usd: r2v(sysUsd), real_usd: r2v(realUsd), adj_usd: adjUsd, sys_ars, diff_ars, missing_days });
   caja.anchor_date = new Date().toISOString().slice(0, 10);   // fin del día de hoy
   caja.anchor_usd = r2v(realUsd);
+  caja.anchor_ars = cur === 'ARS' ? realNum : null;   // ancla en moneda nativa → próxima conciliación compara en pesos, sin FX
   caja.anchor_note = note || `Conciliado a ${cur} ${realNum.toLocaleString('es-AR')} (blue ${blue})`;
   db.reconciliations = db.reconciliations || [];
   db.reconciliations.push({ caja_id: caja.id, caja_name: caja.name, ts: new Date().toISOString(), real: realNum, currency: cur, blue, real_usd: r2v(realUsd), sys_usd: r2v(sysUsd), adj_usd: adjUsd, note, anchored: true });

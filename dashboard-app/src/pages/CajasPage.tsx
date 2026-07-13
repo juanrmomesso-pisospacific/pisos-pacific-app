@@ -41,11 +41,21 @@ export default function CajasPage() {
     try {
       const dry: any = await api.cajaReconcile(b.caja_id, { real: r, currency })
       const adj = dry.adj_usd as number
+      // La diferencia ANTES de anclar es la señal de lo que falta registrar. Diagnóstico:
+      // diff_ars = diferencia exacta en pesos (sin ruido cambiario, si hay ancla ARS previa);
+      // missing_days = días hábiles sin movimientos (falta importar el extracto de esos días).
+      const partes: string[] = []
+      if (Math.abs(adj) < 0.01) partes.push(`El saldo del sistema (${usd(dry.sys_usd)}) ya coincide con el real. ✔ Todo registrado.`)
+      else {
+        partes.push(`Sistema ${usd(dry.sys_usd)} → real ${usd(dry.real_usd)} · diferencia ${adj > 0 ? "+" : ""}${usd(adj)}.`)
+        if (dry.diff_ars != null) partes.push(`En PESOS (sin efecto del tipo de cambio): faltan ${dry.diff_ars > 0 ? "registrar ingresos" : "registrar egresos"} por $ ${Math.abs(dry.diff_ars).toLocaleString("es-AR")}.`)
+        partes.push(`Si la diferencia no es chica, ANTES de conciliar buscá qué falta: subí los extractos pendientes o cargá el efectivo sin registrar — la diferencia queda guardada en el historial.`)
+      }
+      if (dry.missing_days?.length) partes.push(`⚠️ Días hábiles SIN movimientos en esta caja: ${dry.missing_days.map((d: string) => d.slice(5).split("-").reverse().join("/")).join(", ")} — probablemente falte importar el extracto de esos días.`)
+      partes.push(`Conciliar fija el ancla de hoy: el saldo pasa a ser el valor real + lo que entre después. No afecta el resultado (P&L).`)
       const ok = await confirm({
         title: `Conciliar ${b.name}`,
-        description: Math.abs(adj) < 0.01
-          ? `El saldo del sistema (${usd(dry.sys_usd)}) ya coincide con el real. No hace falta ajuste.`
-          : `Sistema ${usd(dry.sys_usd)} → real ${usd(dry.real_usd)} (diferencia ${adj > 0 ? "+" : ""}${usd(adj)}).\nSe fija el ANCLA de la caja al día de hoy: el saldo pasa a ser este valor real + los movimientos que entren después. No afecta el resultado (P&L).`,
+        description: partes.join("\n\n"),
         confirmLabel: "Conciliar",
       })
       if (!ok) { setBusy(null); return }
