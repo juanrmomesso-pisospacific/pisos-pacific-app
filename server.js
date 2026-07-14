@@ -192,7 +192,7 @@ if (!db.settings.integrations) db.settings.integrations = {};
 if (!db.settings.integrations.mercadopago) db.settings.integrations.mercadopago = { enabled: false, access_token: '', public_key: '' };
 // Vendedores para los selectores (cotización/venta) — derivados de los usuarios vendor.
 {
-  const phones = { 'Juan Rodriguez Momesso': '+54 11 51750097', 'Victoria Gonzalez Collado': '+54 11 36982222' };
+  const phones = { 'Juan Rodriguez Momesso': '+54 9 11 51750087', 'Victoria Gonzalez Collado': '+54 11 36982222' };
   let changed = false;
   if (!Array.isArray(db.settings.sellers) || db.settings.sellers.length === 0) {
     db.settings.sellers = (db.users || []).filter(u => u.seller_name).map(u => ({ name: u.seller_name, phone: phones[u.seller_name] || '' }));
@@ -1829,7 +1829,7 @@ async function weeklyUploadReminder() {
       + `<li><b>Mercado Pago</b> — exportá <i>"Todas las transacciones"</i> de la semana${mpPend ? ` (hay <b>${mpPend}</b> movimientos de MP sin nombre esperando)` : ''}</li></ul>`
       + `<p>Entrá a <b>CashFlow → Importar extracto</b> y subí desde esas fechas en adelante (si se pisan días, no pasa nada: se detectan los duplicados). El de MP les completa los nombres solo.</p>`;
     try { await sendMail({ to, subject: '📥 Recordatorio: subí extractos + export de MP de la semana', html }); } catch (e) { console.warn('[weekly-reminder] email falló:', e.message); }
-    const phone = db.settings.reminder_phone || '+54 11 51750097';
+    const phone = db.settings.reminder_phone || '+54 9 11 51750087';
     try { await sendOutbound('whatsapp', phone, `📥 Recordatorio semanal: subí los extractos (BBVA último ${bbva}, Banco de Comercio último ${bdc}) y el export "Todas las transacciones" de MP${mpPend ? ` (${mpPend} de MP sin nombre)` : ''}. CashFlow → Importar extracto.`); } catch { /* best-effort */ }
     db.settings.last_weekly_reminder = now.toISOString();
     save();
