@@ -9,7 +9,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@
 import { QuoteRowActions, StatusBadge } from "@/components/RowActions"
 import { QuoteForm } from "@/components/forms/QuoteForm"
 import { useApi } from "@/lib/api"
-import { fmtMoney } from "@/lib/utils"
+import { fmtMoney, appLocale } from "@/lib/utils"
 import { vigenciaState } from "@/lib/vigencia"
 import type { Quote } from "@/lib/types"
 
@@ -88,8 +88,8 @@ export default function CotizacionesPage() {
                   <TableCell><div className="truncate max-w-[280px]">{r.client_name}</div><div className="text-xs text-muted-foreground line-clamp-1">{r.description}</div></TableCell>
                   <TableCell className="text-xs text-muted-foreground">{r.seller_name}</TableCell>
                   <TableCell className="text-xs text-muted-foreground">
-                    {r.created_at ? new Date(r.created_at).toLocaleDateString("es-AR") : "—"}
-                    {r.renewed_at && <div className="text-[10px]">Renovada {new Date(r.renewed_at).toLocaleDateString("es-AR")}</div>}
+                    {r.created_at ? new Date(r.created_at).toLocaleDateString(appLocale()) : "—"}
+                    {r.renewed_at && <div className="text-[10px]">Renovada {new Date(r.renewed_at).toLocaleDateString(appLocale())}</div>}
                   </TableCell>
                   <TableCell><StatusBadge status={r.status} /></TableCell>
                   <TableCell><VigenciaBadge quote={r} /></TableCell>

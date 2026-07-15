@@ -13,7 +13,7 @@ import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { type Lead, type LeadStatus, STATUS_ORDER, STATUS_LABEL, leadToQuotePrefill } from "@/lib/leads"
-import { cn } from "@/lib/utils"
+import { cn, appLocale } from "@/lib/utils"
 import { type Conversation, channelIcon } from "@/lib/messaging"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
@@ -256,7 +256,7 @@ function LeadsTable({ rows, onOpen, convByLeadId, quotesByLeadId }: { rows: Lead
                   <span><Badge variant="outline" className="text-[10px] mr-1">{lq.length}</Badge>{fmtMoney(lqTotal)}</span>
                 ) : <span className="text-muted-foreground">—</span>}
               </TableCell>
-              <TableCell className="text-xs text-muted-foreground">{l.last_touch_at ? new Date(l.last_touch_at).toLocaleDateString("es-AR") : "—"}</TableCell>
+              <TableCell className="text-xs text-muted-foreground">{l.last_touch_at ? new Date(l.last_touch_at).toLocaleDateString(appLocale()) : "—"}</TableCell>
               <TableCell><Badge variant="outline">{STATUS_LABEL[l.status as LeadStatus] ?? l.status}</Badge></TableCell>
               <TableCell className="text-right" onClick={(e) => e.stopPropagation()}>
                 <LeadRowActions lead={l} convId={convByLeadId.get(l.id)} />

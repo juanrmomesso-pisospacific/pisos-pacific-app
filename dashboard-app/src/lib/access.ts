@@ -37,3 +37,22 @@ export function canAccess(role: string | undefined, path: string): boolean {
 export function landingPath(role?: string): string {
   return (role && LANDING[role]) || "/dashboard"
 }
+
+// ---- Módulos de la operación (producto multi-operación) ----
+// Rutas que pertenecen a un módulo OPCIONAL: si la operación no lo usa (settings.modules),
+// desaparecen de la nav y el AccessGuard las redirige. Las rutas sin entrada acá = núcleo
+// (Inventario, Cotizaciones, Ventas, Clientes, Mensajes+Leads, Movimientos, Configuración).
+const MODULE_OF_PATH: Record<string, string> = {
+  "/cashflow": "finanzas",
+  "/cajas": "finanzas",
+  "/proveedores": "finanzas",
+  "/agenda": "agenda",
+  "/galeria": "galeria",
+  "/reportes": "reportes",
+}
+/** ¿La operación tiene activo el módulo al que pertenece esta ruta? */
+export function pathModuleOn(modules: Record<string, boolean> | undefined, path: string): boolean {
+  const entry = Object.entries(MODULE_OF_PATH).find(([p]) => path === p || path.startsWith(p + "/"))
+  if (!entry) return true
+  return modules?.[entry[1]] !== false
+}

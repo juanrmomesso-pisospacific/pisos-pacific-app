@@ -13,6 +13,13 @@ export function isMailerConfigured() {
   return !!(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET && process.env.GMAIL_SEND_REFRESH_TOKEN);
 }
 
+// Identidad del remitente por config de la operación (el server la setea al boot y al
+// cambiar settings). Defaults = Pisos Pacific AR.
+let identity = { name: 'Pisos Pacific', from: '' };
+export function configureMailer({ name, from } = {}) {
+  identity = { name: name || 'Pisos Pacific', from: from || '' };
+}
+
 const accessToken = () => refreshGoogleToken(process.env.GMAIL_SEND_REFRESH_TOKEN);
 
 const b64url = (s) => Buffer.from(s).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
@@ -23,11 +30,11 @@ const encHeader = (s) => (/[^\x20-\x7e]/.test(s) ? `=?UTF-8?B?${Buffer.from(s, '
 export async function sendMail({ to, subject, html, text, attachments }) {
   if (!isMailerConfigured()) throw new Error('mailer no configurado (faltan GOOGLE_CLIENT_ID/SECRET + GMAIL_SEND_REFRESH_TOKEN)');
   const at = await accessToken();
-  const from = process.env.GMAIL_FROM || 'info@pisospacific.com';
+  const from = process.env.GMAIL_FROM || identity.from || 'info@pisospacific.com';
   const wrap = (s) => (s.match(/.{1,76}/g) || []).join('\r\n');   // base64 a 76 cols (MIME)
   const ctype = `Content-Type: ${html ? 'text/html' : 'text/plain'}; charset=UTF-8`;
   const bodyB64 = wrap(Buffer.from(html || text || '', 'utf8').toString('base64'));
-  const baseHeaders = [`From: Pisos Pacific <${from}>`, `To: ${to}`, `Subject: ${encHeader(subject)}`, 'MIME-Version: 1.0'];
+  const baseHeaders = [`From: ${encHeader(identity.name)} <${from}>`, `To: ${to}`, `Subject: ${encHeader(subject)}`, 'MIME-Version: 1.0'];
   let mime;
   if (attachments && attachments.length) {
     const bnd = 'pp_' + Math.random().toString(36).slice(2, 12);

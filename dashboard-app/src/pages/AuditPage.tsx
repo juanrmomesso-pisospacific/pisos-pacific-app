@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { useApi } from "@/lib/api"
 import { DataState } from "@/components/ui/data-state"
-import { fmtInt } from "@/lib/utils"
+import { fmtInt, appLocale } from "@/lib/utils"
 import type { Product } from "@/lib/types"
 
 type Movement = {
@@ -100,7 +100,7 @@ export default function AuditPage() {
               const isIn = m.qty >= 0
               return (
                 <TableRow key={i}>
-                  <TableCell className="text-xs text-muted-foreground tabular">{new Date(m.ts).toLocaleString("es-AR")}</TableCell>
+                  <TableCell className="text-xs text-muted-foreground tabular">{new Date(m.ts).toLocaleString(appLocale())}</TableCell>
                   <TableCell><Badge variant="outline" className="text-[10px]">{TYPE_LABEL[m.type] ?? m.type}</Badge></TableCell>
                   <TableCell><div className="text-sm truncate max-w-[280px]">{name}</div><div className="text-xs text-muted-foreground tabular">{m.sku}</div></TableCell>
                   <TableCell className="text-xs text-muted-foreground tabular">{m.ref}</TableCell>

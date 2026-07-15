@@ -8,7 +8,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@
 import { useApi } from "@/lib/api"
 import { api, refresh } from "@/lib/mutations"
 import { useConfirm } from "@/components/ui/confirm"
-import { cn } from "@/lib/utils"
+import { cn, appLocale } from "@/lib/utils"
 import type { Supplier, CashflowMovement } from "@/lib/types"
 
 type ReviewData = {
@@ -30,7 +30,7 @@ function SupplierReview() {
   const dups = review.duplicates ?? []
   if (!un.length && !dups.length) return null
 
-  const moneyUsd = (n: number) => (n ? "US$ " + Math.round(n).toLocaleString("es-AR") : "—")
+  const moneyUsd = (n: number) => (n ? "US$ " + Math.round(n).toLocaleString(appLocale()) : "—")
 
   async function linkTo(name: string, supplier_id: string | undefined, count: number, targetName: string) {
     const ok = await confirm({
@@ -136,7 +136,7 @@ function SupplierReview() {
   )
 }
 
-const usd = (n: number) => (n ? "US$ " + Math.round(n).toLocaleString("es-AR") : "—")
+const usd = (n: number) => (n ? "US$ " + Math.round(n).toLocaleString(appLocale()) : "—")
 const norm = (s?: string) => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/\s+/g, " ").trim()
 // Contrapartes que NO son proveedores (movimientos internos / personales).
 const NOT_SUPPLIER = /mov entre|ajuste concil|juan & pipi|^pipi$|cheque|s\/identificar/i

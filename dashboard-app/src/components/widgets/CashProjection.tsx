@@ -3,7 +3,7 @@ import { Bar, XAxis, YAxis, CartesianGrid, ReferenceLine, Line, ComposedChart } 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
 import { useApi } from "@/lib/api"
-import { fmtMoney } from "@/lib/utils"
+import { fmtMoney, appLocale } from "@/lib/utils"
 import type { Sale } from "@/lib/types"
 
 type Expense = { id: string; payment_date?: string; date?: string; amount?: number }
@@ -36,7 +36,7 @@ export function CashProjection() {
     })
     const buckets = weekStarts.map((from) => {
       const to = new Date(from); to.setDate(to.getDate() + 7)
-      return { from, to, label: from.toLocaleDateString("es-AR", { day: "numeric", month: "short" }), inflow: 0, outflow: 0 }
+      return { from, to, label: from.toLocaleDateString(appLocale(), { day: "numeric", month: "short" }), inflow: 0, outflow: 0 }
     })
 
     // Inflows: balance_due on sales, due ~30d after created (or explicit field)

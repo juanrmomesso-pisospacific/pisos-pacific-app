@@ -115,14 +115,18 @@ export async function presupuestoPdf(data) {
   const sections = data.mode === 'sections'
     ? (data.sections || []).map((s) => ({ name: s.title, sub: s.subtotal_val, rows: normRows(s.rows) }))
     : [{ name: 'Detalle', sub: null, rows: normRows(data.rows) }];
-  const hasIva = data.has_iva && data.iva && !/^US\$ ?0(,00)?$/.test(data.iva);
+  const hasIva = data.has_iva && data.iva && !/^US\$ ?0([.,]00)?$/.test(data.iva);
+  // Textos de empresa/país por config de la operación (data.empresa la manda el server).
+  const empresa = data.empresa || {};
+  const ivaLabel = data.iva_label || 'IVA 21%';
   const terms = [
     { k: 'Forma de pago', v: data.forma_pago || 'Anticipo 80% · Conforme 20%' },
-    { k: 'Valores', v: 'Dólares billete, promedio dos puntas' },
+    // ?? (no ||): un string vacío es una elección válida de la operación (blanquear el texto).
+    { k: 'Valores', v: empresa.fx_note ?? 'Dólares billete, promedio dos puntas' },
     { k: 'Vigencia', v: `${data.vigencia_dias || 10} días corridos desde la emisión` },
-    { k: 'Garantía', v: 'Válida si la instalación la realiza Pisos Pacific' },
+    { k: 'Garantía', v: empresa.warranty ?? 'Válida si la instalación la realiza Pisos Pacific' },
   ];
-  const isFree = (r) => /^US\$ ?0(,00)?$/.test(String(r[3] || '')) && !/^descuento/i.test(String(r[0] || ''));
+  const isFree = (r) => /^US\$ ?0([.,]00)?$/.test(String(r[3] || '')) && !/^descuento/i.test(String(r[0] || ''));
   const isDisc = (r) => /^descuento/i.test(String(r[0] || ''));
 
   // ---- bloques: cada uno mide (draw=false) o dibuja (draw=true) y devuelve su alto ----
@@ -213,7 +217,7 @@ export async function presupuestoPdf(data) {
     const tw = 320, x0 = w - tw;
     let y = y0;
     if (hasIva) {
-      for (const [lbl, val] of [['Subtotal general', data.subtotal], ['IVA 21%', data.iva]]) {
+      for (const [lbl, val] of [['Subtotal general', data.subtotal], [ivaLabel, data.iva]]) {
         if (draw) {
           line(doc, lbl, x0, y, { size: 12, color: C.ink2 });
           line(doc, String(val || ''), w, y, { font: 'semi', size: 12, color: C.ink, align: 'right' });
@@ -225,7 +229,7 @@ export async function presupuestoPdf(data) {
     if (draw) hline(doc, x0, y, w, C.ink, 1.5);
     y += 10;
     if (draw) {
-      line(doc, hasIva ? 'TOTAL C/IVA' : 'TOTAL', x0, y + 8, { font: 'semi', size: 10, color: C.ink2, cs: 1.6 });
+      line(doc, hasIva ? `TOTAL C/${ivaLabel.split(' ')[0]}` : 'TOTAL', x0, y + 8, { font: 'semi', size: 10, color: C.ink2, cs: 1.6 });
       line(doc, String(data.total || ''), w, y, { font: 'bold', size: 23, color: C.ink, align: 'right' });
     }
     y += 23 * 1.2;
@@ -251,8 +255,8 @@ export async function presupuestoPdf(data) {
     y += 13;
     if (draw) {
       line(doc, 'CONTACTO', 0, y, { font: 'semi', size: 8.5, color: C.ink3, cs: 1.02 });
-      line(doc, data.vendedor || 'Pisos Pacific', 0, y + 8.5 * 1.25 + 4, { font: 'semi', size: 12.5, color: C.ink });
-      line(doc, 'pisospacific.com', w, y + 8.5 * 1.25 + 4 + 2, { font: 'semi', size: 10.5, color: C.ink2, cs: 0.42, align: 'right' });
+      line(doc, data.vendedor || empresa.name || 'Pisos Pacific', 0, y + 8.5 * 1.25 + 4, { font: 'semi', size: 12.5, color: C.ink });
+      line(doc, empresa.web || 'pisospacific.com', w, y + 8.5 * 1.25 + 4 + 2, { font: 'semi', size: 10.5, color: C.ink2, cs: 0.42, align: 'right' });
     }
     y += 8.5 * 1.25 + 4 + 12.5 * 1.25;
     return y - y0;
@@ -338,7 +342,7 @@ export async function remitoPdf(data) {
   line(doc, 'Preparado por: __________________', PADX, fy, { size: 10.5, color: C.ink3 });
   line(doc, 'Recibido: __________________', PADX + BODY_W * 0.55, fy, { size: 10.5, color: C.ink3 });
   hline(doc, PADX, fy + 28, R, C.hair, 1);
-  line(doc, 'pisospacific.com', PADX, fy + 40, { font: 'semi', size: 10.5, color: C.ink2 });
+  line(doc, (data.empresa && data.empresa.web) || 'pisospacific.com', PADX, fy + 40, { font: 'semi', size: 10.5, color: C.ink2 });
   line(doc, data.fecha || '', R, fy + 40, { size: 10.5, color: C.ink3, align: 'right' });
 
   doc.restore();

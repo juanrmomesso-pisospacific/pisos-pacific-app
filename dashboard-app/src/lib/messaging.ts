@@ -1,3 +1,5 @@
+import { appLocale } from "@/lib/utils"
+
 export type Channel = "whatsapp" | "instagram" | "email"
 
 export type Conversation = {
@@ -132,7 +134,7 @@ export function relativeTime(iso: string): string {
   if (diffSec < 3600) return `${Math.floor(diffSec / 60)} min`
   if (diffSec < 86400) return `${Math.floor(diffSec / 3600)} h`
   if (diffSec < 86400 * 7) return `${Math.floor(diffSec / 86400)} d`
-  return new Date(iso).toLocaleDateString("es-AR", { day: "numeric", month: "short" })
+  return new Date(iso).toLocaleDateString(appLocale(), { day: "numeric", month: "short" })
 }
 
 export const EMOJIS = ["👍", "🙏", "💪", "🔥", "✨", "🙌", "❤️", "✅", "📍", "📦", "📐", "🛠️", "😊", "😀", "🎉", "👋"]

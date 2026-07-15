@@ -9,7 +9,8 @@ import { NavUser } from "@/components/NavUser"
 import { useTheme } from "@/contexts/ThemeContext"
 import { useAuth } from "@/contexts/AuthContext"
 import { useApi } from "@/lib/api"
-import { canAccess } from "@/lib/access"
+import { canAccess, pathModuleOn } from "@/lib/access"
+import { useModules } from "@/contexts/ConfigContext"
 
 type NavItem = { label: string; href: string; icon: React.ComponentType<{ className?: string }>; sub?: { label: string; href: string; icon: React.ComponentType<{ className?: string }> }[] }
 
@@ -89,7 +90,8 @@ export function AppSidebar() {
   const { effectiveDark } = useTheme()
   const { state } = useAuth()
   const role = state.status === "ready" ? state.user.role : undefined
-  const filt = (items: NavItem[]) => items.filter((i) => canAccess(role, i.href))
+  const modules = useModules()
+  const filt = (items: NavItem[]) => items.filter((i) => canAccess(role, i.href) && pathModuleOn(modules, i.href))
   const operacion = filt(NAV_OPERACION), admin = filt(NAV_ADMIN), sistema = filt(NAV_SISTEMA)
   // Badge de pendientes en "Mensajes" (visible desde cualquier página; refresca cada 60s).
   const stats = useApi<{ pending: number }>("/api/conversations/stats", { pollMs: 60000 }).data

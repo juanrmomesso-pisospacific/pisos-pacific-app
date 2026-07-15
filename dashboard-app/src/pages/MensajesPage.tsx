@@ -16,7 +16,7 @@ import { SearchPicker } from "@/components/SearchPicker"
 import { useConfirm } from "@/components/ui/confirm"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
-import { fmtMoney, cn } from "@/lib/utils"
+import { fmtMoney, cn, appLocale } from "@/lib/utils"
 import { fileToBase64 } from "@/lib/export"
 import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote } from "@/lib/types"
@@ -533,7 +533,7 @@ function Thread({ conversation, lead, templates, className, onBack, onShowContac
               {showDay && (
                 <div className="text-center my-2">
                   <span className="text-[10px] uppercase tracking-wide text-muted-foreground bg-background px-2 py-0.5 rounded-md border border-border">
-                    {new Date(m.ts).toLocaleDateString("es-AR", { day: "numeric", month: "long" })}
+                    {new Date(m.ts).toLocaleDateString(appLocale(), { day: "numeric", month: "long" })}
                   </span>
                 </div>
               )}
@@ -653,7 +653,7 @@ function Bubble({ msg }: { msg: Message }) {
           <a href={msg.media_url} target="_blank" rel="noreferrer" className="text-xs underline">Abrir adjunto</a>
         )}
         <div className={`text-[10px] mt-1 ${isOut ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-          {new Date(msg.ts).toLocaleTimeString("es-AR", { hour: "2-digit", minute: "2-digit" })}
+          {new Date(msg.ts).toLocaleTimeString(appLocale(), { hour: "2-digit", minute: "2-digit" })}
           {isOut && msg.status ? ` · ${DELIVERY_LABEL[msg.status] ?? msg.status}` : ""}
         </div>
       </div>
@@ -679,7 +679,7 @@ function EmailMessage({ msg, contactName }: { msg: Message; contactName: string 
           <span className="text-sm font-medium truncate">{isOut ? "Pisos Pacific" : contactName}</span>
         </div>
         <span className="text-[11px] text-muted-foreground shrink-0">
-          {new Date(msg.ts).toLocaleString("es-AR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
+          {new Date(msg.ts).toLocaleString(appLocale(), { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
           {isOut && msg.status ? ` · ${DELIVERY_LABEL[msg.status] ?? msg.status}` : ""}
         </span>
       </div>
@@ -1001,7 +1001,7 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes, c
               <Stat label="Ventas" value={clientSales.length.toString()} />
               <Stat label="Facturado" value={fmtMoney(totalBilled)} />
               <Stat label="Por cobrar" value={fmtMoney(totalDue)} highlight={totalDue > 0} />
-              <Stat label="Última" value={clientSales[0]?.created_at ? new Date(clientSales[0].created_at).toLocaleDateString("es-AR") : "—"} />
+              <Stat label="Última" value={clientSales[0]?.created_at ? new Date(clientSales[0].created_at).toLocaleDateString(appLocale()) : "—"} />
             </div>
           </Section>
         )}
@@ -1015,7 +1015,7 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes, c
                     <span className="text-xs font-medium truncate">{s.id}</span>
                     <span className="tabular">{fmtMoney(s.contract_total ?? 0)}</span>
                   </div>
-                  <div className="text-[10px] text-muted-foreground">{s.status ?? ""}{s.created_at ? ` · ${new Date(s.created_at).toLocaleDateString("es-AR")}` : ""}</div>
+                  <div className="text-[10px] text-muted-foreground">{s.status ?? ""}{s.created_at ? ` · ${new Date(s.created_at).toLocaleDateString(appLocale())}` : ""}</div>
                 </div>
               ))}
             </div>
@@ -1133,7 +1133,7 @@ function LeadSaleRow({ sale }: { sale: Sale }) {
       <div className="flex items-center justify-between gap-2 flex-wrap text-[10px]">
         <Badge variant={statusVariant as any} className="text-[10px]">{sale.status}</Badge>
         {sale.delivery_date ? (
-          <span className="text-muted-foreground">Entrega {new Date(sale.delivery_date).toLocaleDateString("es-AR")}</span>
+          <span className="text-muted-foreground">Entrega {new Date(sale.delivery_date).toLocaleDateString(appLocale())}</span>
         ) : (
           <span className="text-muted-foreground italic">Sin entrega programada</span>
         )}

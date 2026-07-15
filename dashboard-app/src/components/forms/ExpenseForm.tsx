@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react"
+import { appLocale } from "@/lib/utils"
 import { FormSheet, FieldLabel } from "./FormSheet"
 import { Input } from "@/components/ui/input"
 import { useApi } from "@/lib/api"
@@ -129,7 +130,7 @@ export function ExpenseForm({ open, onOpenChange }: { open: boolean; onOpenChang
                     className="w-full text-left px-3 py-2 text-sm hover:bg-muted/40 flex items-center justify-between"
                     onClick={() => { setV({ ...v, sale_reference: s.quote_number }); setSaleQuery("") }}>
                     <span>#{s.quote_number} · {s.client_name}</span>
-                    <span className="text-xs text-muted-foreground">{new Date(s.created_at).toLocaleDateString("es-AR")}</span>
+                    <span className="text-xs text-muted-foreground">{new Date(s.created_at).toLocaleDateString(appLocale())}</span>
                   </button>
                 ))}
               </div>

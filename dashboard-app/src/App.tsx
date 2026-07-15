@@ -2,7 +2,8 @@ import { lazy, Suspense } from "react"
 import { BrowserRouter, Routes, Route, Navigate, Outlet, useLocation } from "react-router-dom"
 import { ThemeProvider } from "@/contexts/ThemeContext"
 import { AuthProvider, useAuth } from "@/contexts/AuthContext"
-import { canAccess, landingPath } from "@/lib/access"
+import { canAccess, landingPath, pathModuleOn } from "@/lib/access"
+import { ConfigProvider, useModules } from "@/contexts/ConfigContext"
 import { RoleProvider } from "@/contexts/RoleContext"
 import { PeriodProvider } from "@/contexts/PeriodContext"
 import { TopbarActionsProvider } from "@/contexts/TopbarActionsContext"
@@ -33,12 +34,14 @@ function RoleLanding() {
   const role = state.status === "ready" ? state.user.role : undefined
   return <Navigate to={landingPath(role)} replace />
 }
-// Bloquea el acceso por URL a páginas fuera del rol (ej. logística → /cashflow → /agenda).
+// Bloquea el acceso por URL a páginas fuera del rol (ej. logística → /cashflow → /agenda)
+// o de módulos que esta operación no usa (ej. /cashflow en una instancia sin finanzas).
 function AccessGuard() {
   const { state } = useAuth()
   const { pathname } = useLocation()
   const role = state.status === "ready" ? state.user.role : undefined
-  if (!canAccess(role, pathname)) return <Navigate to={landingPath(role)} replace />
+  const modules = useModules()
+  if (!canAccess(role, pathname) || !pathModuleOn(modules, pathname)) return <Navigate to={landingPath(role)} replace />
   return <Outlet />
 }
 
@@ -52,6 +55,7 @@ function Gate() {
     return <LoginPage />
   }
   return (
+    <ConfigProvider>
     <RoleProvider>
       <PeriodProvider>
         <TopbarActionsProvider>
@@ -88,6 +92,7 @@ function Gate() {
         </TopbarActionsProvider>
       </PeriodProvider>
     </RoleProvider>
+    </ConfigProvider>
   )
 }
 

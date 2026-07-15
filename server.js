@@ -7,12 +7,12 @@ import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { startMpReport, getMpReport, parseSettlementBuffer, backfillMpUserMap, mpUserEntry, MP_UNLEARNABLE, MP_CAJA_ID } from './import/mp-api.mjs';
-import { getBlueRate } from './import/fx.mjs';
+import { getBlueRate, configureFx } from './import/fx.mjs';
 import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integrations/meta.mjs';
 import { buildDailyDigest, todayArt } from './integrations/task-bot.mjs';
 import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients } from './integrations/gmail.mjs';
 import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb as driveGetThumb, findFirstImage as driveFirstImage, driveConfigured } from './integrations/drive.mjs';
-import { sendMail, isMailerConfigured } from './integrations/mailer.mjs';
+import { sendMail, isMailerConfigured, configureMailer } from './integrations/mailer.mjs';
 import { findSupplierMatch, suggestSuppliers, normSup, isNonSupplier } from './integrations/supplier-match.mjs';
 import { findClientMatch } from './integrations/client-match.mjs';
 import { normProd } from './integrations/product-match.mjs';
@@ -118,6 +118,32 @@ function seedFromDump() {
   };
 }
 
+// Instancia NUEVA de otra operación/país (BOOTSTRAP=empty): arranca sin ningún dato de
+// Argentina — solo un admin inicial (BOOTSTRAP_ADMIN_EMAIL/PASSWORD) y settings mínimos.
+// El resto (empresa, impuesto, moneda, vendedores, módulos, catálogo) se carga desde la app.
+// bootstrap_mode='empty' además desactiva los backfills que re-siembran datos AR al boot.
+function seedEmpty() {
+  const email = process.env.BOOTSTRAP_ADMIN_EMAIL || 'admin@pacific.local';
+  const pass = process.env.BOOTSTRAP_ADMIN_PASSWORD || 'cambiame';
+  return {
+    products: [], sales: [], quotes: [], clients: [], expenses: [],
+    cajas: [], suppliers: [], categories: [], cashflow: [], containers: [],
+    leads: [], conversations: [], messages: [], templates: [],
+    stock_movements: [], payment_links: [], tasks: [], product_aliases: [], cp_rules: [],
+    users: [{ id: 'u-admin', email, name: 'Admin', role: 'admin', seller_name: '', password_hash: bcrypt.hashSync(pass, 10) }],
+    sessions: {},
+    settings: {
+      bootstrap_mode: 'empty',
+      victoria_access: true, victoria_admin: true,   // migraciones de usuarios AR: no aplican
+      sellers: [], crews: [], installers: [],
+      // Una operación nueva arranca con el NÚCLEO (Inventario/Cotizaciones/Ventas/Clientes/
+      // Mensajes+Leads) + Agenda; lo demás se activa desde Configuración → Operación.
+      modules: { finanzas: false, contenedores: false, agenda: true, galeria: false, reportes: false, dashboard_finanzas: false },
+      dashboardThresholds: { lateDeliveryDays: 7, overdueCobroDays: 30, conversionWindowDays: 30, lowStockUnits: 5 },
+    },
+  };
+}
+
 const db = (() => {
   if (fs.existsSync(DB_PATH)) {
     try {
@@ -134,11 +160,12 @@ const db = (() => {
       throw new Error('db.json corrupto — arranque abortado para proteger los datos');
     }
   }
-  // Primer arranque sin DB: si hay un snapshot commiteado (data/db.bootstrap.json),
-  // usarlo (datos reales en producción sin subir nada a mano). Si no, seedear.
+  // Primer arranque sin DB: BOOTSTRAP=empty (instancia nueva de otra operación) tiene
+  // prioridad; si no, snapshot commiteado (data/db.bootstrap.json) o seed del dump.
   const BOOT = path.join(__dirname, 'data/db.bootstrap.json');
   let fresh;
-  if (fs.existsSync(BOOT)) {
+  if (process.env.BOOTSTRAP === 'empty') { fresh = seedEmpty(); console.log('Bootstrapped EMPTY db (instancia nueva — sin datos AR)'); }
+  if (!fresh && fs.existsSync(BOOT)) {
     try { fresh = JSON.parse(fs.readFileSync(BOOT, 'utf8')); console.log('Bootstrapped db from data/db.bootstrap.json'); }
     catch (e) { console.warn(`db.bootstrap.json inválido (${e.message}) — seedeando`); }
   }
@@ -191,7 +218,8 @@ if (!Array.isArray(db.tasks)) db.tasks = [];
 if (!db.settings.integrations) db.settings.integrations = {};
 if (!db.settings.integrations.mercadopago) db.settings.integrations.mercadopago = { enabled: false, access_token: '', public_key: '' };
 // Vendedores para los selectores (cotización/venta) — derivados de los usuarios vendor.
-{
+// (Datos de la operación AR: una instancia bootstrap_mode='empty' carga los suyos por UI.)
+if (db.settings.bootstrap_mode !== 'empty') {
   const phones = { 'Juan Rodriguez Momesso': '+54 9 11 51750087', 'Victoria Gonzalez Collado': '+54 11 36982222' };
   let changed = false;
   if (!Array.isArray(db.settings.sellers) || db.settings.sellers.length === 0) {
@@ -208,7 +236,7 @@ if (!db.settings.integrations.mercadopago) db.settings.integrations.mercadopago 
   if (JSON.stringify(db.settings.installers || []) !== JSON.stringify(installers)) { db.settings.installers = installers; changed = true; }
   if (changed) { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); console.log(`Synced ${db.settings.sellers.length} sellers into settings`); }
 }
-if (!Array.isArray(db.conversations) || db.conversations.length === 0 || !Array.isArray(db.messages) || !Array.isArray(db.templates)) {
+if (db.settings.bootstrap_mode !== 'empty' && (!Array.isArray(db.conversations) || db.conversations.length === 0 || !Array.isArray(db.messages) || !Array.isArray(db.templates))) {
   try {
     const messagingSeed = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/messaging.seed.json'), 'utf8'));
     if (!Array.isArray(db.conversations) || db.conversations.length === 0) db.conversations = messagingSeed.conversations;
@@ -321,8 +349,9 @@ if (!db.settings.victoria_admin) {
 }
 
 // Backfill the imported business collections (cajas/suppliers/categories/cashflow) on
-// older db.json files. Each loads from its seed if missing or empty.
-for (const [key, file] of [['cajas','cajas.seed.json'],['suppliers','suppliers.seed.json'],['categories','categories.seed.json'],['cashflow','cashflow.seed.json']]) {
+// older db.json files. Each loads from its seed if missing or empty. Instancias nuevas
+// (bootstrap_mode='empty') quedan vacías a propósito — los seeds son datos de la operación AR.
+for (const [key, file] of (db.settings.bootstrap_mode === 'empty' ? [] : [['cajas','cajas.seed.json'],['suppliers','suppliers.seed.json'],['categories','categories.seed.json'],['cashflow','cashflow.seed.json']])) {
   if (!Array.isArray(db[key]) || db[key].length === 0) {
     try { db[key] = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', file), 'utf8')); }
     catch { if (!Array.isArray(db[key])) db[key] = []; }
@@ -342,6 +371,38 @@ if (!Array.isArray(db.cp_rules)) {
       db.cp_rules.push({ id: `cpr-seed-${++n}`, match: e.match || [], cuit: null, counterparty: e.counterparty || null, category: e.category || null, expense_type: e.expense_type || null, personal: !!e.personal, source: 'seed', note: e.note || null });
   } catch { /* sin mapa legacy: arranca vacío */ }
 }
+
+// ---------- Config de operación (producto multi-país/multi-operación, 15/7) ----------
+// Tres capas independientes: país (moneda/FX/impuesto/locale/teléfono), empresa (marca) y
+// módulos (qué partes de la app usa esta operación). Defaults = comportamiento AR actual.
+// Backfill idempotente: solo completa claves faltantes, nunca pisa lo editado.
+// REGLA: toda diferencia entre operaciones es configuración — nunca `if (país === ...)`.
+const CONFIG_DEFAULTS = {
+  company: { name: 'Pisos Pacific', web: 'pisospacific.com', email: 'info@pisospacific.com', warranty: 'Válida si la instalación la realiza Pisos Pacific', fx_note: 'Dólares billete, promedio dos puntas' },
+  tax: { rate: 0.21, label: 'IVA 21%' },
+  currency: { local: 'ARS', fx_provider: 'blue', fx_fallback: 1400, fx_rate: 1 },
+  locale: 'es-AR',
+  modules: { finanzas: true, contenedores: true, agenda: true, galeria: true, reportes: true, dashboard_finanzas: true },
+};
+{
+  let changed = false;
+  for (const [k, v] of Object.entries(CONFIG_DEFAULTS)) {
+    if (db.settings[k] == null) { db.settings[k] = v; changed = true; }
+    else if (typeof v === 'object' && !Array.isArray(v)) {
+      for (const [k2, v2] of Object.entries(v)) if (db.settings[k][k2] == null) { db.settings[k][k2] = v2; changed = true; }
+    }
+  }
+  if (changed) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* se persiste en el próximo save */ } console.log('Backfill config de operación (company/tax/currency/locale/modules)'); }
+}
+configureFx(db.settings.currency);
+configureMailer({ name: db.settings.company?.name, from: db.settings.company?.email });
+const moduleOn = (name) => db.settings.modules?.[name] !== false;
+const taxRate = () => Number(db.settings.tax?.rate ?? 0.21);
+const taxLabel = () => db.settings.tax?.label || 'IVA 21%';
+const companyCfg = () => ({ ...CONFIG_DEFAULTS.company, ...db.settings.company });
+// Gate por módulo: escrituras de un módulo apagado → 403 (las lecturas devuelven vacío para
+// que ninguna página/consumidor remoto se rompa; la nav del front ya no las muestra).
+const requireModule = (name) => (_req, res, next) => (moduleOn(name) ? next() : res.status(403).json({ error: `módulo ${name} desactivado en esta operación` }));
 
 console.log(`Loaded: ${db.products.length} products, ${db.quotes.length} quotes, ${db.sales.length} sales, ${db.clients.length} clients, ${db.expenses.length} expenses, ${db.containers.length} containers, ${db.users.length} users`);
 console.log(`Business data: ${db.cajas.length} cajas, ${db.categories.length} categorías, ${db.suppliers.length} proveedores, ${db.cashflow.length} movimientos cashflow`);
@@ -671,8 +732,11 @@ function saleMargin(s) {
 }
 app.get('/api/sales',    (_, res) => {
   // Reconcile each sale's collected amount from cashflow income lines tagged with its venta_nro.
+  // Con el módulo finanzas APAGADO los cobros van directo a financial_position (cobro manual en
+  // la venta) y el cashflow no es fuente: no derivar cashflow_paid o pisaría el saldo real con
+  // datos viejos del ledger (el front le da precedencia a cashflow_paid).
   const paidByRef = {};
-  for (const m of db.cashflow) {
+  if (moduleOn('finanzas')) for (const m of db.cashflow) {
     if (m.sale_ref && (m.flow || '').toLowerCase() === 'ingreso') {
       paidByRef[m.sale_ref] = (paidByRef[m.sale_ref] || 0) + (m.amount_usd || 0);
     }
@@ -700,6 +764,11 @@ app.get('/api/categories', (_, res) => res.json(db.categories));
 // Sourced from dolarapi.com (mirrors the blue shown on DolarHoy). Cached 15 min.
 let fxCache = null;
 app.get('/api/fx/blue', async (_, res) => {
+  // Operación con moneda local = USD (u otra tasa fija): no hay mercado que consultar.
+  if (db.settings.currency?.fx_provider === 'fixed') {
+    const r = Number(db.settings.currency.fx_rate) || 1;
+    return res.json({ compra: r, venta: r, promedio: r, source: 'Tipo de cambio fijo', updated_at: null, fetched_at: Date.now() });
+  }
   if (fxCache && Date.now() - fxCache.fetched_at < 15 * 60 * 1000) return res.json(fxCache);
   try {
     const r = await fetch('https://dolarapi.com/v1/dolares/blue', { signal: AbortSignal.timeout(8000) });
@@ -715,6 +784,7 @@ app.get('/api/fx/blue', async (_, res) => {
 
 // CashFlow ledger with optional filters: ?flow=&caja_id=&from=&to=&needs_review=true
 app.get('/api/cashflow', (req, res) => {
+  if (!moduleOn('finanzas')) return res.json([]);   // operación sin CashFlow: lecturas vacías
   const { flow, caja_id, from, to, needs_review } = req.query;
   let rows = db.cashflow;
   if (flow)        rows = rows.filter(m => (m.flow || '').toLowerCase() === String(flow).toLowerCase());
@@ -726,7 +796,7 @@ app.get('/api/cashflow', (req, res) => {
 });
 
 // Cajas: list, plus derived balances (sum of cashflow per caja & currency, USD-consolidated).
-app.get('/api/cajas', (_, res) => res.json(db.cajas));
+app.get('/api/cajas', (_, res) => res.json(moduleOn('finanzas') ? db.cajas : []));
 // Saldo de caja con ANCLA (saldo inicial): si la caja tiene anchor_date/anchor_usd (los fija
 // la conciliación), el saldo = ancla + movimientos POSTERIORES al día del ancla. Todo lo
 // fechado ≤ ancla queda congelado dentro del número real informado — así, borrar/corregir
@@ -744,6 +814,7 @@ function cajaBalanceUsd(caja) {
   return Math.round(usd * 100) / 100;
 }
 app.get('/api/cajas/balances', (_, res) => {
+  if (!moduleOn('finanzas')) return res.json({ balances: [], unassigned_movements: 0 });
   const balances = db.cajas.map(c => {
     const movs = db.cashflow.filter(m => m.caja_id === c.id);
     const balance_ars = movs.reduce((s, m) => s + movSign(m) * (m.amount_ars || 0), 0);
@@ -761,7 +832,7 @@ app.get('/api/cajas/balances', (_, res) => {
 // cada corrección del pasado). Conciliar DESPUÉS de subir los extractos del período (los
 // movimientos fechados hoy o antes quedan cubiertos por el ancla). Dry-run por defecto.
 // Para cuentas en ARS, el real se convierte a USD al blue del momento. Guarda historial.
-app.post('/api/cajas/:id/reconcile', requireAdmin, async (req, res) => {
+app.post('/api/cajas/:id/reconcile', requireModule('finanzas'), requireAdmin, async (req, res) => {
   const caja = db.cajas.find(c => c.id === req.params.id);
   if (!caja) return res.sendStatus(404);
   const realNum = Number(req.body?.real);
@@ -814,6 +885,8 @@ app.post('/api/cajas/:id/reconcile', requireAdmin, async (req, res) => {
 });
 // Historial de conciliaciones (para mostrar la última por caja).
 app.get('/api/cajas/reconciliations', requireAdmin, (_req, res) => {
+  // Lectura de módulo apagado → vacío (invariante: los GET de finanzas nunca rompen al front).
+  if (!moduleOn('finanzas')) return res.json({ reconciliations: [] });
   res.json({ reconciliations: (db.reconciliations || []).slice(-200).reverse() });
 });
 // Firmas de email (HTML email-safe del handoff). Se elige según el usuario que responde.
@@ -1180,27 +1253,45 @@ for (const ch of ['whatsapp', 'instagram']) {
   app.post(`/api/${ch}/webhook`, metaInbound(ch));
 }
 app.get('/api/settings', (_, res) => res.json(db.settings));
+// Config de la operación para el frontend (subset SEGURO de settings: sin tokens ni credenciales).
+app.get('/api/config', (_, res) => res.json({
+  company: companyCfg(),
+  tax: { rate: taxRate(), label: taxLabel() },
+  currency: { local: db.settings.currency?.local || 'ARS', fx_provider: db.settings.currency?.fx_provider || 'blue' },
+  locale: db.settings.locale || 'es-AR',
+  modules: { ...CONFIG_DEFAULTS.modules, ...db.settings.modules },
+}));
 app.patch('/api/settings', requireAdmin, (req, res) => {
   const incoming = req.body ?? {};
-  db.settings = { ...db.settings, ...incoming, dashboardThresholds: { ...db.settings.dashboardThresholds, ...(incoming.dashboardThresholds ?? {}) }, updatedAt: new Date().toISOString() };
+  // Merge profundo de los objetos de config (un PATCH parcial no debe borrar las demás claves).
+  const deep = {};
+  for (const k of ['dashboardThresholds', 'company', 'tax', 'currency', 'modules']) {
+    if (incoming[k] !== undefined) deep[k] = { ...db.settings[k], ...(incoming[k] ?? {}) };
+  }
+  // bootstrap_mode es load-bearing (evita que los backfills re-siembren datos AR en una
+  // instancia vacía en cada boot) → nunca se pisa/borra por PATCH.
+  delete incoming.bootstrap_mode;
+  db.settings = { ...db.settings, ...incoming, ...deep, updatedAt: new Date().toISOString() };
+  configureFx(db.settings.currency);   // el provider de FX puede haber cambiado
+  configureMailer({ name: db.settings.company?.name, from: db.settings.company?.email });
   save();
   res.json(db.settings);
 });
 
 // ---------- Containers + stock movements ----------
-app.get('/api/containers', (_, res) => res.json(db.containers));
+app.get('/api/containers', (_, res) => res.json(moduleOn('contenedores') ? db.containers : []));
 app.get('/api/containers/:id', (req, res) => {
   const c = db.containers.find(x => x.id === req.params.id);
   if (!c) return res.sendStatus(404);
   res.json(c);
 });
-app.post('/api/containers', requireAdmin, (req, res) => {
+app.post('/api/containers', requireModule('contenedores'), requireAdmin, (req, res) => {
   const c = { id: req.body.id ?? `local-${Date.now()}`, status: 'in_transit', items: [], warehouse_id: DEFAULT_WAREHOUSE, ...req.body };
   db.containers.push(c);
   save();
   res.json(c);
 });
-app.patch('/api/containers/:id', requireAdmin, (req, res) => {
+app.patch('/api/containers/:id', requireModule('contenedores'), requireAdmin, (req, res) => {
   const i = db.containers.findIndex(x => x.id === req.params.id);
   if (i < 0) return res.sendStatus(404);
   db.containers[i] = { ...db.containers[i], ...req.body };
@@ -1210,7 +1301,7 @@ app.patch('/api/containers/:id', requireAdmin, (req, res) => {
 // "Nacionalizar" = acreditar los m² del contenedor al stock del depósito. Solo suma cantidad;
 // NO toca p.cost (el costo nacionalizado se gestiona aparte). Devuelve reporte de lo cargado y
 // lo ignorado (ítems sin producto asociado) en vez de descartarlos en silencio.
-app.post('/api/containers/:id/receive', requireAdmin, (req, res) => {
+app.post('/api/containers/:id/receive', requireModule('contenedores'), requireAdmin, (req, res) => {
   const c = db.containers.find(x => x.id === req.params.id);
   if (!c) return res.sendStatus(404);
   if (c.status === 'received') return res.status(409).json({ error: 'already received' });
@@ -1230,7 +1321,7 @@ app.post('/api/containers/:id/receive', requireAdmin, (req, res) => {
   res.json({ container: c, credited, skipped });
 });
 // Adjuntar un documento al contenedor (invoice / packing / otro). Varios por contenedor.
-app.post('/api/containers/:id/documents', requireAdmin, (req, res) => {
+app.post('/api/containers/:id/documents', requireModule('contenedores'), requireAdmin, (req, res) => {
   const c = db.containers.find(x => x.id === req.params.id);
   if (!c) return res.sendStatus(404);
   const { data_base64, filename, content_type, kind } = req.body || {};
@@ -1249,7 +1340,7 @@ app.post('/api/containers/:id/documents', requireAdmin, (req, res) => {
   save();
   res.json({ container: c, document: doc });
 });
-app.delete('/api/containers/:id/documents/:docId', requireAdmin, (req, res) => {
+app.delete('/api/containers/:id/documents/:docId', requireModule('contenedores'), requireAdmin, (req, res) => {
   const c = db.containers.find(x => x.id === req.params.id);
   if (!c) return res.sendStatus(404);
   c.documents = (c.documents || []).filter(d => d.id !== req.params.docId);
@@ -1521,7 +1612,7 @@ app.post('/api/suppliers/register-link', requireAdmin, (req, res) => {
 // Asignar EN MASA un proveedor a todos los egresos de una categoría/tipo de gasto (ej: todos los
 // "Impuestos" → ARCA), y opcionalmente sacarlos de la revisión. Para no cargar uno por uno.
 // {category, supplier_name, clear_review?, commit?}. Dry-run por defecto.
-app.post('/api/cashflow/bulk-assign-supplier', requireAdmin, (req, res) => {
+app.post('/api/cashflow/bulk-assign-supplier', requireModule('finanzas'), requireAdmin, (req, res) => {
   const { category, supplier_name, clear_review = true, commit } = req.body || {};
   if (!category || !supplier_name) return res.status(400).json({ error: 'falta category o supplier_name' });
   const ck = normSup(category);
@@ -1549,7 +1640,7 @@ app.post('/api/cashflow/bulk-assign-supplier', requireAdmin, (req, res) => {
 // recurrente de extractos (interés, DPF, pagos de tarjeta, etc.). {patterns:[], only_review?, commit?}.
 // only_review (default true): toca SOLO lo que está en revisión → no pisa clasificaciones ya hechas
 // (ej. un movimiento ya marcado ARCA cuya descripción contiene "cuenta visa"). Dry-run por defecto.
-app.post('/api/cashflow/bulk-mark-transfer', requireAdmin, (req, res) => {
+app.post('/api/cashflow/bulk-mark-transfer', requireModule('finanzas'), requireAdmin, (req, res) => {
   const patterns = (Array.isArray(req.body?.patterns) ? req.body.patterns : []).map((p) => normSup(p)).filter(Boolean);
   if (!patterns.length) return res.status(400).json({ error: 'faltan patterns' });
   const onlyReview = req.body?.only_review !== false;
@@ -1568,7 +1659,7 @@ app.post('/api/cashflow/bulk-mark-transfer', requireAdmin, (req, res) => {
 // (whitelisteados) a todos los movimientos elegidos. {ids:[], set:{...}}. Sin dry-run: la UI
 // muestra qué se va a aplicar y a cuántos antes de llamar.
 const BULK_FIELDS = new Set(['transfer', 'category', 'subcategory', 'expense_type', 'counterparty', 'counterparty_type', 'supplier_id', 'client_id', 'needs_review', 'review_reason', 'fixed_variable']);
-app.post('/api/cashflow/bulk-update', requireAdmin, (req, res) => {
+app.post('/api/cashflow/bulk-update', requireModule('finanzas'), requireAdmin, (req, res) => {
   const ids = Array.isArray(req.body?.ids) ? req.body.ids : [];
   const set = req.body?.set && typeof req.body.set === 'object' ? req.body.set : null;
   if (!ids.length || !set) return res.status(400).json({ error: 'faltan ids o set' });
@@ -1613,7 +1704,7 @@ app.post('/api/suppliers/merge', requireAdmin, (req, res) => {
 // Corrección one-time: el importador de BBVA (source 'bbva-upload') invirtió el signo
 // (el "Importe" positivo del extracto es ACREDITACIÓN/INGRESO, no egreso). Da vuelta el
 // flow de esos movimientos. Idempotente (flag bbva_sign_fixed). Dry-run por defecto.
-app.post('/api/admin/fix-bbva-signs', requireAdmin, (req, res) => {
+app.post('/api/admin/fix-bbva-signs', requireModule('finanzas'), requireAdmin, (req, res) => {
   const commit = !!req.body?.commit;
   const targets = db.cashflow.filter((m) => m.source === 'bbva-upload' && !m.bbva_sign_fixed);
   const toIngreso = targets.filter((m) => m.flow === 'Egreso').length;
@@ -1653,9 +1744,13 @@ const ADMIN_ONLY_WRITE = new Set(['cashflow', 'cajas', 'cp_rules', 'categories',
 // Borrado destructivo solo admin: el DELETE genérico no restockea ni libera reservas,
 // así que borrar una venta/producto rompe el inventario si lo hace cualquiera.
 const ADMIN_ONLY_DELETE = new Set(['sales', 'products']);
+// Colecciones que pertenecen a un módulo opcional: sus escrituras dan 403 si la operación
+// no usa ese módulo (las lecturas devuelven vacío en sus GET dedicados).
+const MODULE_OF = { cashflow: 'finanzas', cajas: 'finanzas', cp_rules: 'finanzas' };
 ['products','sales','quotes','clients','expenses','leads','conversations','tasks','cajas','suppliers','categories','cashflow','cp_rules','templates'].forEach(name => {
-  const guard = ADMIN_ONLY_WRITE.has(name) ? [requireAdmin] : [];
-  const delGuard = (ADMIN_ONLY_WRITE.has(name) || ADMIN_ONLY_DELETE.has(name)) ? [requireAdmin] : [];
+  const modGuard = MODULE_OF[name] ? [requireModule(MODULE_OF[name])] : [];
+  const guard = [...modGuard, ...(ADMIN_ONLY_WRITE.has(name) ? [requireAdmin] : [])];
+  const delGuard = [...modGuard, ...((ADMIN_ONLY_WRITE.has(name) || ADMIN_ONLY_DELETE.has(name)) ? [requireAdmin] : [])];
   app.post(`/api/${name}`, ...guard, (req, res) => {
     const id = req.body.id ?? `local-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
     const row = { id, ...req.body };
@@ -1684,6 +1779,7 @@ const ADMIN_ONLY_DELETE = new Set(['sales', 'products']);
 // Último movimiento cargado por caja de importación (mp/bbva/bdc) → para que el
 // usuario sepa desde qué fecha bajar el resumen y no recargue/duplique fechas.
 app.get('/api/import/last', requireAdmin, (_req, res) => {
+  if (!moduleOn('finanzas')) return res.json({});   // lectura de módulo apagado → vacío
   const out = {};
   for (const [src, c] of Object.entries(IMPORT_CAJA)) {
     let last = null, count = 0;
@@ -1697,7 +1793,7 @@ app.get('/api/import/last', requireAdmin, (_req, res) => {
   }
   res.json(out);
 });
-app.post('/api/import/parse', requireAdmin, async (req, res) => {
+app.post('/api/import/parse', requireModule('finanzas'), requireAdmin, async (req, res) => {
   try {
     const { source, data_base64 } = req.body || {};
     if (!source || !IMPORT_CAJA[source]) return res.status(400).json({ error: 'fuente inválida (mp | bbva | bdc)' });
@@ -1712,7 +1808,7 @@ app.post('/api/import/parse', requireAdmin, async (req, res) => {
 });
 // Sincronizar con MP por API (OAuth). Async: los reportes tardan minutos.
 //  start → crea el reporte y devuelve jobId; result → cuando está listo, da el preview.
-app.post('/api/import/mp-sync/start', requireAdmin, async (req, res) => {
+app.post('/api/import/mp-sync/start', requireModule('finanzas'), requireAdmin, async (req, res) => {
   try {
     const days = Math.min(Math.max(Number(req.body?.days) || 45, 1), 365);
     res.json(await startMpReport({ days }));
@@ -1720,7 +1816,7 @@ app.post('/api/import/mp-sync/start', requireAdmin, async (req, res) => {
 });
 // Importar el reporte de MP que llega por email a infoacudesign@gmail.com (CON nombres).
 // Baja el adjunto del Gmail, lo pasa por el importador 'mp' (mismo formato que el .xlsx manual).
-app.post('/api/import/mp-email', requireAdmin, async (_req, res) => {
+app.post('/api/import/mp-email', requireModule('finanzas'), requireAdmin, async (_req, res) => {
   try {
     const r = await fetchLatestMpReport();
     if (!r.found) return res.json({ found: false, candidates: r.candidates, error: 'No encontré un reporte de MP con adjunto. Revisá que el reporte se mande adjunto (no link) a infoacudesign@gmail.com.' });
@@ -1734,7 +1830,7 @@ app.post('/api/import/mp-email', requireAdmin, async (_req, res) => {
     res.json({ found: true, filename: r.filename, subject: r.subject, movements, report });
   } catch (e) { res.status(400).json({ error: e.message || 'no se pudo importar el reporte de MP por email' }); }
 });
-app.post('/api/import/mp-sync/result', requireAdmin, async (req, res) => {
+app.post('/api/import/mp-sync/result', requireModule('finanzas'), requireAdmin, async (req, res) => {
   try {
     if (!req.body?.jobId) return res.status(400).json({ error: 'falta jobId' });
     await getBlueRate();   // refresca el TC Blue para la conversión ARS→USD
@@ -1747,6 +1843,7 @@ app.post('/api/import/mp-sync/result', requireAdmin, async (req, res) => {
 // Los peajes entran clasificados; lo demás queda "a revisar" (la API no trae nombres).
 let mpSyncRunning = false;
 async function mpAutoSync() {
+  if (!moduleOn('finanzas')) return;   // operación sin CashFlow: no hay sync de MP
   if (mpSyncRunning) return;
   mpSyncRunning = true;
   try {
@@ -1812,6 +1909,7 @@ function lastLoadedDate(cajaName) {
 }
 async function weeklyUploadReminder() {
   try {
+    if (!moduleOn('finanzas')) return;   // sin CashFlow no hay extractos que subir
     db.settings = db.settings || {};
     if (db.settings.weekly_reminder_enabled === false) return;
     const now = new Date();
@@ -1855,6 +1953,7 @@ app.post('/api/admin/test-weekly-reminder', requireAdmin, async (_req, res) => {
 // Apagar con settings.daily_task_reminder_enabled=false.
 async function dailyTaskReminder() {
   try {
+    if (!moduleOn('agenda')) return;   // bot de tareas = parte del módulo agenda
     db.settings = db.settings || {};
     if (db.settings.daily_task_reminder_enabled === false) return;
     const now = new Date();
@@ -1961,7 +2060,7 @@ app.get('/api/admin/messages-export', requireAdmin, (_req, res) => {
 // Sembrar el mapa user id de MP → contraparte desde el HISTÓRICO ya clasificado (movimientos
 // de MP con mp_op_id y nombre real). Resuelve cada operación contra la API (throttled) — los
 // colocadores/proveedores recurrentes quedan aprendidos de una. Dry-run por defecto.
-app.post('/api/import/mp-backfill-usermap', requireAdmin, async (req, res) => {
+app.post('/api/import/mp-backfill-usermap', requireModule('finanzas'), requireAdmin, async (req, res) => {
   try {
     const commit = !!req.body?.commit;
     // Tandas chicas: cada operación es un RTT a MP (~0.4s) y el request queda abierto —
@@ -1979,13 +2078,13 @@ app.post('/api/import/mp-backfill-usermap', requireAdmin, async (req, res) => {
   } catch (e) { res.status(400).json({ error: e.message || 'backfill falló' }); }
 });
 // Disparo manual (para probar o forzar): corre en background.
-app.post('/api/import/mp-sync/auto-run', requireAdmin, (_req, res) => {
+app.post('/api/import/mp-sync/auto-run', requireModule('finanzas'), requireAdmin, (_req, res) => {
   db.settings.mp_last_sync = null;
   mpAutoSync();
   res.json({ started: true });
 });
 
-app.post('/api/import/commit', requireAdmin, (req, res) => {
+app.post('/api/import/commit', requireModule('finanzas'), requireAdmin, (req, res) => {
   const movs = Array.isArray(req.body?.movements) ? req.body.movements : null;
   if (!movs || !movs.length) return res.status(400).json({ error: 'no hay movimientos para importar' });
   let inserted = 0, enriched = 0, seq = 0;
@@ -2318,7 +2417,9 @@ app.post('/api/sales/:id/payment', (req, res) => {
   s.financial_position.total_paid = (Number(s.financial_position.total_paid) || 0) + amount;
   s.financial_position.balance_due = Math.max(0, (Number(s.financial_position.balance_due) || s.contract_total || 0) - amount);
   s.payments = s.payments || [];
-  s.payments.push({ ts: new Date().toISOString(), amount, method: req.body?.method ?? '', notes: req.body?.notes ?? '' });
+  // date opcional (YYYY-MM-DD): fecha del cobro elegida por el usuario (operación sin finanzas).
+  const ts = /^\d{4}-\d{2}-\d{2}/.test(req.body?.date || '') ? `${String(req.body.date).slice(0, 10)}T00:00:00.000Z` : new Date().toISOString();
+  s.payments.push({ ts, amount, method: req.body?.method ?? '', notes: req.body?.notes ?? '' });
   save();
   res.json(s);
 });
@@ -2326,7 +2427,7 @@ app.post('/api/sales/:id/payment', (req, res) => {
 // clasifica como cobro. El saldo de la venta se DERIVA de los movimientos con sale_ref (ver GET
 // /api/sales: cashflow_paid = Σ amount_usd), así que no hay que tocar financial_position — el cobro
 // queda registrado UNA sola vez (el movimiento es la fuente). Pasá sale_id:null para desvincular.
-app.post('/api/cashflow/:id/link-sale', requireAdmin, (req, res) => {
+app.post('/api/cashflow/:id/link-sale', requireModule('finanzas'), requireAdmin, (req, res) => {
   const m = db.cashflow.find(x => x.id === req.params.id);
   if (!m) return res.sendStatus(404);
   const saleId = req.body?.sale_id || null;
@@ -2438,11 +2539,12 @@ app.post('/api/quotes/:id/convert', (req, res) => {
   res.json(sale);
 });
 
-// ---------- Presupuesto PDF (motor Pacific en pdf/pacific_pdf.py) ----------
-const IVA_RATE = 0.21;
-const usdFmt = (n) => 'US$ ' + Number(n || 0).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+// ---------- Presupuesto PDF (motor pdfkit en pdf/render.mjs) ----------
+// Tasa de impuesto por config de la operación (AR: IVA 21% · PA: ITBMS 7%).
+const usdFmt = (n) => 'US$ ' + Number(n || 0).toLocaleString(db.settings.locale || 'es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 function presupuestoData(rec) {
-  const fecha = rec.created_at ? new Date(rec.created_at).toLocaleDateString('es-AR') : new Date().toLocaleDateString('es-AR');
+  const loc = db.settings.locale || 'es-AR';
+  const fecha = rec.created_at ? new Date(rec.created_at).toLocaleDateString(loc) : new Date().toLocaleDateString(loc);
   const sellerPhone = (db.settings.sellers || []).find(s => s.name === rec.seller_name)?.phone || rec.seller_phone || '';
   const items = (rec.items || []).filter(it => it && it.product_id !== 'discount' && !/^descuento/i.test(it.description || ''));
   const lineTotal = (it) => Number(it.total) || (Number(it.quantity) || 0) * (Number(it.unit_price) || 0);
@@ -2464,7 +2566,7 @@ function presupuestoData(rec) {
   const gross = items.reduce((s, it) => s + lineTotal(it), 0);
   const discount = Number(rec.discount_total || rec.discount_amount || 0);
   const net = Math.max(0, gross - discount);
-  const iva = rec.has_iva ? net * IVA_RATE : 0;
+  const iva = rec.has_iva ? net * taxRate() : 0;
   const zones = [...new Set(items.map(it => it.zone).filter(Boolean))];
   // Resumen del proyecto: m² de pisos (productos con stock), cantidad de ambientes e ítems.
   const isFloor = (it) => { const p = db.products.find(pr => pr.sku === it.sku); return p ? !!p.stockTrack : false; };
@@ -2475,8 +2577,10 @@ function presupuestoData(rec) {
   const base = {
     fecha,
     numero: rec.quote_number || rec.id || '',
-    vence: venceDate.toLocaleDateString('es-AR'),
+    vence: venceDate.toLocaleDateString(db.settings.locale || 'es-AR'),
     has_iva: !!rec.has_iva,
+    iva_label: taxLabel(),
+    empresa: companyCfg(),
     forma_pago: rec.payment_terms || 'Anticipo 80% · Conforme 20%',
     vendedor: sellerPhone ? `${rec.seller_name || ''} · ${sellerPhone}` : (rec.seller_name || ''),
     vendedor_short: rec.seller_name || '',
@@ -2592,9 +2696,10 @@ function remitoData(rec) {
     const unit = (it) => isFloor(it) ? 'm²' : (/z[oó]calo|varilla|cuartaca[ñn]a|nariz|moldura|cubrecanto/i.test(it.description || '') ? 'ml' : 'u');
     rows = items.filter(it => !isService(it)).map(it => [it.description || it.sku || '', `${Number(it.quantity) || 0} ${unit(it)}`]);
   }
-  const dlv = rec.delivery_date ? new Date(rec.delivery_date).toLocaleDateString('es-AR') + (rec.delivery_date_to && rec.delivery_date_to !== rec.delivery_date ? ' → ' + new Date(rec.delivery_date_to).toLocaleDateString('es-AR') : '') : '';
+  const rloc = db.settings.locale || 'es-AR';
+  const dlv = rec.delivery_date ? new Date(rec.delivery_date).toLocaleDateString(rloc) + (rec.delivery_date_to && rec.delivery_date_to !== rec.delivery_date ? ' → ' + new Date(rec.delivery_date_to).toLocaleDateString(rloc) : '') : '';
   return {
-    doc_type: 'remito', fecha: new Date().toLocaleDateString('es-AR'),
+    doc_type: 'remito', fecha: new Date().toLocaleDateString(db.settings.locale || 'es-AR'), empresa: companyCfg(),
     cliente: rec.client_name || '', obra: rec.title || rec.client_address || '',
     direccion: rec.client_address || '', equipo: rec.delivery_crew || '', entrega: dlv,
     obs: [rec.remito_confirmed ? 'CONFIRMADO POR INSPECCIÓN' : '', rec.delivery_notes || ''].filter(Boolean).join(' · '),

@@ -8,7 +8,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "
 import { Input } from "@/components/ui/input"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
-import { fmtMoney, cn } from "@/lib/utils"
+import { fmtMoney, cn, appLocale } from "@/lib/utils"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import type { Sale, Container, Product } from "@/lib/types"
 import { type Task, type TaskType, TASK_TYPE_LABEL, TASK_TYPE_ORDER } from "@/lib/tasks"
@@ -132,7 +132,7 @@ export default function AgendaPage() {
       if (c.status === "received" || !c.eta) continue
       const items = Array.isArray(c.items) ? c.items : []
       const d = c.eta.slice(0, 10)
-      out.push({ id: "cont-" + c.id, kind: "container", date: d, endDate: d, ts: +new Date(c.eta), title: `${c.id} · ${c.vessel}`, containerId: c.id, detalle: `${c.supplier} · ${items.length} SKUs`, meta: items.reduce((s, i) => s + (Number(i.quantity) || 0), 0).toLocaleString("es-AR") + " m²" })
+      out.push({ id: "cont-" + c.id, kind: "container", date: d, endDate: d, ts: +new Date(c.eta), title: `${c.id} · ${c.vessel}`, containerId: c.id, detalle: `${c.supplier} · ${items.length} SKUs`, meta: items.reduce((s, i) => s + (Number(i.quantity) || 0), 0).toLocaleString(appLocale()) + " m²" })
     }
     for (const t of tasks) {
       if (t.status === "cancelada") continue
@@ -304,7 +304,7 @@ function MonthView({ events, sales, matches, onOpenObra, onOpenContainer, onOpen
   const update = useAction(api.update)
 
   const cells = useMemo(() => daysGrid(cursor), [cursor])
-  const monthLabel = cursor.toLocaleDateString("es-AR", { month: "long", year: "numeric" })
+  const monthLabel = cursor.toLocaleDateString(appLocale(), { month: "long", year: "numeric" })
   const dayDiff = (a: string, b: string) => Math.round((+new Date(a + "T12:00:00") - +new Date(b + "T12:00:00")) / 86400000)
 
   const weeks = useMemo(() => {
@@ -440,7 +440,7 @@ function WeekView({ events, scope, matches, onOpenObra, onOpenContainer }: {
   const base = scope === "proxima" ? addDays(startOfWeek(new Date()), 7) : startOfWeek(new Date())
   const days = weekDays(base)
   const from = days[0], to = days[6]
-  const heading = `${scope === "proxima" ? "Próxima semana" : "Esta semana"} · ${from.toLocaleDateString("es-AR", { day: "numeric", month: "short" })} → ${to.toLocaleDateString("es-AR", { day: "numeric", month: "short" })}`
+  const heading = `${scope === "proxima" ? "Próxima semana" : "Esta semana"} · ${from.toLocaleDateString(appLocale(), { day: "numeric", month: "short" })} → ${to.toLocaleDateString(appLocale(), { day: "numeric", month: "short" })}`
   const dayEvents = (d: Date) => { const k = dayKey(d); return events.filter(e => k >= e.date && k <= e.endDate) }
 
   return (
@@ -521,7 +521,7 @@ function ObraCardModal({ sale, products, tasks, onClose, onReprogramar, onMedici
   const medicion = tasks.find(t => t.type === "medicion" && t.sale_id === sale.id && t.status !== "cancelada")
   const remito = tasks.find(t => t.type === "remito" && t.sale_id === sale.id && t.status !== "cancelada")
   const md = sale.medicion_data
-  const rangeLabel = p ? (p.totalDays > 1 ? `${p.start.toLocaleDateString("es-AR", { day: "numeric", month: "short" })} → ${p.end.toLocaleDateString("es-AR", { day: "numeric", month: "short" })} · ${p.totalDays} días` : p.start.toLocaleDateString("es-AR", { weekday: "long", day: "numeric", month: "long" })) : "Sin fecha"
+  const rangeLabel = p ? (p.totalDays > 1 ? `${p.start.toLocaleDateString(appLocale(), { day: "numeric", month: "short" })} → ${p.end.toLocaleDateString(appLocale(), { day: "numeric", month: "short" })} · ${p.totalDays} días` : p.start.toLocaleDateString(appLocale(), { weekday: "long", day: "numeric", month: "long" })) : "Sin fecha"
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: "rgba(26,24,21,0.45)" }} onClick={onClose}>
@@ -611,7 +611,7 @@ function TeamsView({ sales, tasks, crews, filters, onOpenObra }: { sales: Sale[]
     return out
   }
   const busyDays = (crew: string) => days.filter(d => occFor(crew, d).length > 0).length
-  const label = days[0].toLocaleDateString("es-AR", { day: "numeric", month: "short" }) + " – " + days[6].toLocaleDateString("es-AR", { day: "numeric", month: "short", year: "numeric" })
+  const label = days[0].toLocaleDateString(appLocale(), { day: "numeric", month: "short" }) + " – " + days[6].toLocaleDateString(appLocale(), { day: "numeric", month: "short", year: "numeric" })
   const colocadorFilter = filters.colocador
 
   return (
@@ -684,7 +684,7 @@ function ListView({ events, matches, onOpenObra, onOpenContainer }: { events: Ca
               return (
                 <tr key={e.id} onClick={() => { if (e.kind === "obra" && e.sale) onOpenObra(e.sale.id); else if (e.kind === "container" && e.containerId) onOpenContainer(e.containerId) }}
                   className={cn("border-b border-border last:border-b-0", clickable && "cursor-pointer hover:bg-accent/40")} style={{ opacity: dim ? 0.4 : 1 }}>
-                  <td className="px-3 py-2 whitespace-nowrap text-xs text-muted-foreground">{new Date(e.date + "T12:00:00").toLocaleDateString("es-AR", { day: "numeric", month: "short" })}{e.endDate !== e.date ? ` → ${new Date(e.endDate + "T12:00:00").toLocaleDateString("es-AR", { day: "numeric", month: "short" })}` : ""}</td>
+                  <td className="px-3 py-2 whitespace-nowrap text-xs text-muted-foreground">{new Date(e.date + "T12:00:00").toLocaleDateString(appLocale(), { day: "numeric", month: "short" })}{e.endDate !== e.date ? ` → ${new Date(e.endDate + "T12:00:00").toLocaleDateString(appLocale(), { day: "numeric", month: "short" })}` : ""}</td>
                   <td className="px-3 py-2"><span className="inline-flex items-center gap-1.5" style={{ color }}><span className="inline-block h-2 w-2 rounded-full" style={{ background: color }} />{KIND_LABEL[e.kind]}</span></td>
                   <td className="px-3 py-2 text-xs">{e.crew || "—"}</td>
                   <td className="px-3 py-2 text-xs">{e.designs?.length ? `${e.designs[0].design}${e.designs.length > 1 ? ` +${e.designs.length - 1}` : ""}${e.totalM2 ? ` · ${e.totalM2} m²` : ""}` : (e.title || e.detalle || "—")}</td>
@@ -741,7 +741,7 @@ function NewEventSheet({ open, onOpenChange, sales, crews, presetSaleId }: { ope
   const linkableSales = useMemo(() => sales.filter(s => ["Confirmado", "Programado", "En proceso"].includes(s.status)), [sales])
   const saleItems = useMemo(() => linkableSales.map(s => ({
     id: s.id, label: saleLabel(s),
-    sub: s.delivery_date ? `Programada · ${new Date(s.delivery_date).toLocaleDateString("es-AR")}` : "Sin entrega programada",
+    sub: s.delivery_date ? `Programada · ${new Date(s.delivery_date).toLocaleDateString(appLocale())}` : "Sin entrega programada",
     hint: fmtMoney(s.contract_total), keywords: `${s.client_name} ${s.quote_number} ${s.title || ""}`,
   })), [linkableSales])
   const isEntrega = type === "entrega"
@@ -936,7 +936,7 @@ function InformeFormSheet({ task, sale, onClose }: { task: Task | null; sale: Sa
       <SheetContent>
         <SheetHeader><SheetTitle>Remito</SheetTitle><SheetDescription>{task.title}{sale ? ` · ${sale.client_address ?? ""}` : ""}</SheetDescription></SheetHeader>
         <div className="mt-6 space-y-4">
-          {sale && <div className="rounded-md border border-border p-3 bg-muted/40 text-xs space-y-0.5"><div className="font-medium text-sm">{sale.client_name}</div><div className="text-muted-foreground">Venta #{sale.quote_number} · {fmtMoney(sale.contract_total)}</div>{sale.delivery_date && <div className="text-muted-foreground">Entrega: {new Date(sale.delivery_date).toLocaleDateString("es-AR")}</div>}</div>}
+          {sale && <div className="rounded-md border border-border p-3 bg-muted/40 text-xs space-y-0.5"><div className="font-medium text-sm">{sale.client_name}</div><div className="text-muted-foreground">Venta #{sale.quote_number} · {fmtMoney(sale.contract_total)}</div>{sale.delivery_date && <div className="text-muted-foreground">Entrega: {new Date(sale.delivery_date).toLocaleDateString(appLocale())}</div>}</div>}
           {md ? (
             <div className="rounded-md border border-emerald-200 dark:border-emerald-900 bg-emerald-50/40 dark:bg-emerald-950/20 p-3 text-xs space-y-0.5">
               <div className="text-[10px] uppercase tracking-wide text-emerald-700 dark:text-emerald-400 font-medium">Datos de medición previa</div>

@@ -1,4 +1,5 @@
 import { Document, Page, Text, View, StyleSheet, pdf } from "@react-pdf/renderer"
+import { appLocale } from "@/lib/utils"
 
 // Pacific PDF engine (server-side, pdf/pacific_pdf.py) — opens the rendered presupuesto.
 export function openPacificPdf(kind: "quotes" | "sales", id: string) {
@@ -71,9 +72,9 @@ const s = StyleSheet.create({
   footer: { position: "absolute", bottom: 14, left: 32, right: 32, fontSize: 7, color: FAINT, textAlign: "center" },
 })
 
-const fmtNum = (n: number, decimals = 2) => (n || 0).toLocaleString("es-AR", { minimumFractionDigits: decimals, maximumFractionDigits: decimals })
+const fmtNum = (n: number, decimals = 2) => (n || 0).toLocaleString(appLocale(), { minimumFractionDigits: decimals, maximumFractionDigits: decimals })
 const fmtUsd = (n: number) => "US$" + fmtNum(n)
-const fmtQty = (n: number) => (n || 0).toLocaleString("es-AR", { maximumFractionDigits: 2 })
+const fmtQty = (n: number) => (n || 0).toLocaleString(appLocale(), { maximumFractionDigits: 2 })
 
 type DocItem = { sku?: string; description: string; quantity: number; unit_price: number; unit?: string }
 export type DocData = {
@@ -110,7 +111,7 @@ export function BusinessDoc({ d }: { d: DocData }) {
         {/* Top row — date/seller left, brand right */}
         <View style={s.topRow}>
           <View style={s.topLeftCol}>
-            <Text style={s.topLine}>{isRenewed ? "Renovada: " : "Fecha: "}{issued.toLocaleDateString("es-AR", { day: "numeric", month: "numeric", year: "numeric" })}</Text>
+            <Text style={s.topLine}>{isRenewed ? "Renovada: " : "Fecha: "}{issued.toLocaleDateString(appLocale(), { day: "numeric", month: "numeric", year: "numeric" })}</Text>
             <Text style={s.topLabel}>Contacto de Venta:</Text>
             <Text style={s.topLine}>{[d.seller, d.sellerPhone].filter(Boolean).join(" ")}</Text>
           </View>

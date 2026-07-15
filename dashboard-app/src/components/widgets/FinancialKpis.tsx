@@ -5,7 +5,7 @@ import { Sparkline } from "@/components/Sparkline"
 import { useApi } from "@/lib/api"
 import { usePeriod } from "@/contexts/PeriodContext"
 import { useRole } from "@/contexts/RoleContext"
-import { fmtMoney, fmtPct } from "@/lib/utils"
+import { fmtMoney, fmtPct, appLocale } from "@/lib/utils"
 import { fmtRange } from "@/lib/period"
 import { sparklineRevenue, withPriorComparison } from "@/data/financialKpis"
 import type { Product, Sale } from "@/lib/types"
@@ -22,7 +22,7 @@ function ConfirmedTable({ rows }: { rows: Sale[] }) {
           <tr key={r.id} className="border-b border-border/50">
             <td className="py-2 text-muted-foreground">#{r.quote_number}</td>
             <td className="py-2">{r.client_name}</td>
-            <td className="py-2 text-muted-foreground">{new Date(r.created_at).toLocaleDateString("es-AR")}</td>
+            <td className="py-2 text-muted-foreground">{new Date(r.created_at).toLocaleDateString(appLocale())}</td>
             <td className="py-2 text-right tabular">{fmtMoney(r.contract_total)}</td>
           </tr>
         ))}

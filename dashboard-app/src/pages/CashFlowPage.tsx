@@ -20,7 +20,7 @@ import { SearchPicker } from "@/components/SearchPicker"
 import { DataState } from "@/components/ui/data-state"
 import { usePeriod } from "@/contexts/PeriodContext"
 import { QuickPeriod } from "@/components/QuickPeriod"
-import { cn } from "@/lib/utils"
+import { cn, appLocale } from "@/lib/utils"
 import type { CashflowMovement, Caja } from "@/lib/types"
 
 const MONTHS = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
@@ -28,7 +28,7 @@ const selectCls =
   "h-8 rounded-md border border-input bg-transparent px-2 text-xs shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
 
 const money = (n: number) =>
-  n ? (n < 0 ? "-$ " : "$ ") + Math.abs(Math.round(n)).toLocaleString("es-AR") : "—"
+  n ? (n < 0 ? "-$ " : "$ ") + Math.abs(Math.round(n)).toLocaleString(appLocale()) : "—"
 const pct = (n: number) => (isFinite(n) ? (n * 100).toFixed(1) + "%" : "—")
 const fmtDate = (s: string | null) => (s ? s.slice(0, 10) : "—")
 

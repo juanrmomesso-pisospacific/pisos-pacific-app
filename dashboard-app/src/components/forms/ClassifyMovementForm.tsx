@@ -9,7 +9,7 @@ import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import type { Category, Supplier, CashflowMovement, Sale, Caja } from "@/lib/types"
 import { EXPENSE_TYPES, categoriesForType } from "@/lib/cashflow"
-import { fmtMoney } from "@/lib/utils"
+import { fmtMoney, appLocale } from "@/lib/utils"
 
 type ClientLite = { id: string; name: string }
 const inputSel = "h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm"
@@ -176,7 +176,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
     if (!mov) return
     const ok = await confirm({
       title: "Eliminar movimiento",
-      description: `Se va a eliminar "${mov.description || mov.counterparty || "este movimiento"}" (${mov.flow} · $${(mov.amount_ars ?? 0).toLocaleString("es-AR")}). Afecta el saldo de la caja. Esta acción no se puede deshacer.`,
+      description: `Se va a eliminar "${mov.description || mov.counterparty || "este movimiento"}" (${mov.flow} · $${(mov.amount_ars ?? 0).toLocaleString(appLocale())}). Afecta el saldo de la caja. Esta acción no se puede deshacer.`,
       confirmLabel: "Eliminar", destructive: true,
     })
     if (!ok) return
@@ -195,7 +195,7 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
       {mov ? (
         <div className="rounded-md bg-muted/40 px-3 py-2 text-xs space-y-0.5">
           <div className="font-medium">{mov.description || mov.counterparty || "—"}</div>
-          <div className="text-muted-foreground">{mov.flow} · {mov.caja_name} · {mov.date ? new Date(mov.date).toLocaleDateString("es-AR") : ""}</div>
+          <div className="text-muted-foreground">{mov.flow} · {mov.caja_name} · {mov.date ? new Date(mov.date).toLocaleDateString(appLocale()) : ""}</div>
           {mov.classified_by ? <div className="text-muted-foreground">Se clasificó solo: <span className="italic">{mov.classified_by}</span></div> : null}
           {mov.needs_review && mov.review_reason ? <div className="text-amber-600 dark:text-amber-400">A revisar: {mov.review_reason}</div> : null}
         </div>
@@ -205,8 +205,8 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
         <div>
           <FieldLabel>Monto ({cur})</FieldLabel>
           <Input type="number" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="0" />
-          {amountChanged && cur === "ARS" && <FieldHint>≈ USD {(Math.abs(Number(amount) || 0) / rate).toLocaleString("es-AR", { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
-          {amountChanged && cur === "USD" && <FieldHint>≈ ARS {(Math.abs(Number(amount) || 0) * rate).toLocaleString("es-AR", { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
+          {amountChanged && cur === "ARS" && <FieldHint>≈ USD {(Math.abs(Number(amount) || 0) / rate).toLocaleString(appLocale(), { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
+          {amountChanged && cur === "USD" && <FieldHint>≈ ARS {(Math.abs(Number(amount) || 0) * rate).toLocaleString(appLocale(), { maximumFractionDigits: 0 })} (TC {Math.round(rate)})</FieldHint>}
         </div>
         <div>
           <FieldLabel>Fecha</FieldLabel>

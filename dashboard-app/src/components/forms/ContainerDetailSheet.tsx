@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { useConfirm } from "@/components/ui/confirm"
 import { api, refresh } from "@/lib/mutations"
-import { fmtInt } from "@/lib/utils"
+import { fmtInt, appLocale } from "@/lib/utils"
 import { fileToBase64 } from "@/lib/export"
 import type { Container } from "@/lib/types"
 
@@ -63,7 +63,7 @@ export function ContainerDetailSheet({ container, onClose }: { container: Contai
           <SheetTitle className="flex items-center gap-2"><Ship className="h-4 w-4 text-blue-600" />{c.id} · {c.vessel}</SheetTitle>
           <SheetDescription>
             {c.supplier} · {STATUS_LABEL[c.status] ?? c.status}{c.eta ? ` · ETA ${c.eta.slice(0, 10)}` : ""}
-            {received && c.received_at ? ` · cargado ${new Date(c.received_at).toLocaleDateString("es-AR")}` : ""}
+            {received && c.received_at ? ` · cargado ${new Date(c.received_at).toLocaleDateString(appLocale())}` : ""}
           </SheetDescription>
         </SheetHeader>
 
@@ -132,7 +132,7 @@ export function ContainerDetailSheet({ container, onClose }: { container: Contai
           {/* Acción nacionalizar */}
           {received ? (
             <div className="flex items-center gap-2 text-sm text-emerald-700 rounded-md bg-emerald-500/10 border border-emerald-500/30 px-3 py-2">
-              <PackageCheck className="h-4 w-4" />Inventario ya cargado{c.received_at ? ` el ${new Date(c.received_at).toLocaleDateString("es-AR")}` : ""}.
+              <PackageCheck className="h-4 w-4" />Inventario ya cargado{c.received_at ? ` el ${new Date(c.received_at).toLocaleDateString(appLocale())}` : ""}.
             </div>
           ) : (
             <Button className="w-full" onClick={nationalize} disabled={busy || items.length === 0}>

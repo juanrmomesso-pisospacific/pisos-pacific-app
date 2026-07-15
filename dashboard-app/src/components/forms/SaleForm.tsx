@@ -7,6 +7,7 @@ import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney } from "@/lib/utils"
 import type { Product } from "@/lib/types"
+import { useConfig } from "@/contexts/ConfigContext"
 
 type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] }
 type LineItem = { product_id: string; sku: string; description: string; quantity: number; unit_price: number; category: string; cost?: number }
@@ -22,9 +23,10 @@ export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
   const [reserve, setReserve] = useState<boolean>(true)
   const create = useAction(api.create)
 
+  const { tax } = useConfig()   // impuesto por config de la operación
   const client = clients.find(c => c.id === clientId)
   const subtotal = useMemo(() => items.reduce((s, i) => s + (i.quantity * i.unit_price), 0), [items])
-  const iva = hasIva ? subtotal * 0.21 : 0
+  const iva = hasIva ? subtotal * tax.rate : 0
   const total = subtotal + iva
 
   function addItem() { setItems([...items, { product_id: "", sku: "", description: "", quantity: 1, unit_price: 0, category: "" }]) }
@@ -112,7 +114,7 @@ export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
         )}
       </div>
       <label className="flex items-center gap-2 text-sm pt-2">
-        <input type="checkbox" checked={hasIva} onChange={(e) => setHasIva(e.target.checked)} />Incluye IVA (21%)
+        <input type="checkbox" checked={hasIva} onChange={(e) => setHasIva(e.target.checked)} />Incluye {tax.label}
       </label>
       <label className="flex items-center gap-2 text-sm">
         <input type="checkbox" checked={reserve} onChange={(e) => setReserve(e.target.checked)} />Reservar stock al crear

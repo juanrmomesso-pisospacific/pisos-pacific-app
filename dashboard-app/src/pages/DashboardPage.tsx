@@ -7,8 +7,9 @@ import { useApi } from "@/lib/api"
 import { DataState } from "@/components/ui/data-state"
 import { usePeriod } from "@/contexts/PeriodContext"
 import { QuickPeriod } from "@/components/QuickPeriod"
-import { fmtMoney, fmtInt, cn } from "@/lib/utils"
+import { fmtMoney, fmtInt, cn, appLocale } from "@/lib/utils"
 import type { Sale, CashflowMovement, Product } from "@/lib/types"
+import { useModules, moduleOn } from "@/contexts/ConfigContext"
 
 // ---- Período (filtro global) ----
 type Range = { from: string; to: string }
@@ -50,6 +51,9 @@ const OPEX_ORDER = [
 ]
 
 export default function DashboardPage() {
+  // Bloques financieros (gastos/neto, que salen del cashflow) solo si la operación usa finanzas.
+  const modules = useModules()
+  const dashFinOn = moduleOn(modules, "dashboard_finanzas") && moduleOn(modules, "finanzas")
   const salesApi = useApi<Sale[]>("/api/sales")
   const sales = salesApi.data ?? []
   const cashflow = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
@@ -203,11 +207,13 @@ export default function DashboardPage() {
         <QuickPeriod />
       </div>
 
-      {/* KPIs */}
+      {/* KPIs — sin módulo finanzas no hay gastos de caja: "Resultado neto" no aplica → m² */}
       <div className="grid grid-cols-1 sm:grid-cols-2 @4xl/main:grid-cols-4 gap-3">
         <Kpi label="Facturación" value={fmtMoney(cur.fact)} sub={`${cur.count} ventas`} delta={delta(cur.fact, pre.fact)} />
         <Kpi label="Margen bruto" value={fmtMoney(cur.grossProfit)} sub={isFinite(cur.grossPct) ? `${(cur.grossPct * 100).toFixed(1)}% · ${cur.detailedCount} c/ costo` : "sin costo cargado"} delta={delta(cur.grossProfit, pre.grossProfit)} />
-        <Kpi label="Resultado neto" value={fmtMoney(cur.neto)} sub={`bruto − gastos (${fmtMoney(cur.opexTotal)})`} delta={delta(cur.neto, pre.neto)} />
+        {dashFinOn
+          ? <Kpi label="Resultado neto" value={fmtMoney(cur.neto)} sub={`bruto − gastos (${fmtMoney(cur.opexTotal)})`} delta={delta(cur.neto, pre.neto)} />
+          : <Kpi label="m² vendidos" value={fmtInt(cur.m2)} sub="m² de piso en el período" delta={delta(cur.m2, pre.m2)} />}
         <Kpi label="Pendiente de cobro" value={fmtMoney(pendiente.total)} sub={`${pendiente.count} ventas`} delta={null} />
       </div>
 
@@ -234,8 +240,8 @@ export default function DashboardPage() {
         </Card>
         <Card className="p-4">
           <div className="text-sm font-medium">Estado de resultados (devengado)</div>
-          <div className="text-[10px] text-muted-foreground mb-1">Por ventas con costo bloqueado. La vista de caja está en CashFlow → Análisis Financiero.</div>
-          <PnlMini pnl={pnl} />
+          <div className="text-[10px] text-muted-foreground mb-1">{dashFinOn ? "Por ventas con costo bloqueado. La vista de caja está en CashFlow → Análisis Financiero." : "Por ventas con costo bloqueado."}</div>
+          <PnlMini pnl={pnl} showOpex={dashFinOn} />
         </Card>
       </div>
 
@@ -268,9 +274,11 @@ export default function DashboardPage() {
         <ObraTable title="Mejores márgenes (obra)" rows={porObra.top} />
         <ObraTable title="Márgenes más bajos (obra)" rows={porObra.bottom} />
       </div>
-      <div className="text-[11px] text-muted-foreground pb-4">
-        <b>P&amp;L devengado:</b> ingresos y costos (Piso/Servicio/Extras) desde ventas con costo bloqueado al confirmar; insumos generales de colocación y gastos desde la planilla/cashflow. La mano de obra de colocadores ya está en el costo de servicio (no se cuenta dos veces). Productos inactivos excluidos. Para el resultado de caja completo (incluye Paneles): CashFlow → Análisis Financiero.
-      </div>
+      {dashFinOn && (
+        <div className="text-[11px] text-muted-foreground pb-4">
+          <b>P&amp;L devengado:</b> ingresos y costos (Piso/Servicio/Extras) desde ventas con costo bloqueado al confirmar; insumos generales de colocación y gastos desde la planilla/cashflow. La mano de obra de colocadores ya está en el costo de servicio (no se cuenta dos veces). Productos inactivos excluidos. Para el resultado de caja completo (incluye Paneles): CashFlow → Análisis Financiero.
+        </div>
+      )}
     </div>
    </DataState>
   )
@@ -309,7 +317,7 @@ const smoothPath = (pts: [number, number][]) => {
   return d
 }
 const fmtUSDk = (v: number) => "US$ " + (v >= 1000 ? Math.round(v / 1000) + "k" : Math.round(v).toString())
-const fmtM2 = (v: number) => (isFinite(v) ? Math.round(v).toLocaleString("es-AR") : "0") + " m²"
+const fmtM2 = (v: number) => (isFinite(v) ? Math.round(v).toLocaleString(appLocale()) : "0") + " m²"
 const tickUSD = (v: number) => v === 0 ? "0" : v >= 1000 ? (Math.round(v / 100) / 10) + "k" : Math.round(v).toString()
 
 function FactChart({ data, mode }: { data: ChartRow[]; mode: "line" | "bar" }) {
@@ -427,7 +435,9 @@ type Pnl = {
   cat: { piso: { rev: number; cost: number }; servicio: { rev: number; cost: number }; extras: { rev: number; cost: number } }
   insumosColoc: number; ingresos: number; costos: number; bruta: number; opexBy: Record<string, number>
 }
-function PnlMini({ pnl }: { pnl: Pnl }) {
+// showOpex=false (operación sin módulo finanzas): no hay gastos de caja cargados, así que el
+// estado corta en la ganancia bruta (mostrar "gastos $0 → neto=bruta" sería engañoso).
+function PnlMini({ pnl, showOpex = true }: { pnl: Pnl; showOpex?: boolean }) {
   const opexTotal = OPEX_ORDER.reduce((a, t) => a + (pnl.opexBy[t] || 0), 0)
   const neto = pnl.bruta - opexTotal
   const brutoPct = pnl.ingresos ? pnl.bruta / pnl.ingresos : NaN
@@ -451,9 +461,13 @@ function PnlMini({ pnl }: { pnl: Pnl }) {
       <Line l="Costo extras" v={-pnl.cat.extras.cost} muted indent />
       <Line l="Insumos grales. colocación" v={-pnl.insumosColoc} muted indent />
       <Line l={`Ganancia bruta · ${isFinite(brutoPct) ? (brutoPct * 100).toFixed(0) + "%" : "—"}`} v={pnl.bruta} bold />
-      <Head l="Gastos" />
-      {OPEX_ORDER.filter(t => pnl.opexBy[t]).map(t => <Line key={t} l={t.replace("Gastos de ", "").replace(" (HR y Mano de Obra)", "")} v={-(pnl.opexBy[t] || 0)} muted indent />)}
-      <Line l={`Resultado neto · ${isFinite(netoPct) ? (netoPct * 100).toFixed(0) + "%" : "—"}`} v={neto} bold />
+      {showOpex && (
+        <>
+          <Head l="Gastos" />
+          {OPEX_ORDER.filter(t => pnl.opexBy[t]).map(t => <Line key={t} l={t.replace("Gastos de ", "").replace(" (HR y Mano de Obra)", "")} v={-(pnl.opexBy[t] || 0)} muted indent />)}
+          <Line l={`Resultado neto · ${isFinite(netoPct) ? (netoPct * 100).toFixed(0) + "%" : "—"}`} v={neto} bold />
+        </>
+      )}
     </div>
   )
 }

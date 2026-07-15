@@ -17,7 +17,7 @@ services:
       - key: DB_PATH
         value: /var/data/db.json
       - key: MP_CLIENT_ID
-        sync: false          # 4818908689453036
+        sync: false          # se carga en el dashboard de Render
       - key: MP_CLIENT_SECRET
         sync: false
       - key: META_VERIFY_TOKEN

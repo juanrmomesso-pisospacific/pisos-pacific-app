@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Upload, FileSpreadsheet, AlertTriangle, CheckCircle2 } from "lucide-react"
 import { api } from "@/lib/mutations"
-import { cn } from "@/lib/utils"
+import { cn, appLocale } from "@/lib/utils"
 
 type Mov = {
   _idx: number; _dupe: boolean; _enrich?: string; date: string; flow: string; description: string
@@ -23,7 +23,7 @@ const SOURCES = [
   { id: "bbva", label: "Banco Francés (BBVA)", hint: "Export “Últimos movimientos” (.xlsx)" },
   { id: "bdc", label: "Banco de Comercio", hint: "Extracto de movimientos (.xlsx)" },
 ]
-const money = (n: number) => (n ? (n < 0 ? "-$ " : "$ ") + Math.abs(Math.round(n)).toLocaleString("es-AR") : "—")
+const money = (n: number) => (n ? (n < 0 ? "-$ " : "$ ") + Math.abs(Math.round(n)).toLocaleString(appLocale()) : "—")
 const fmtDate = (d: string) => { const [y, m, dd] = d.split("-"); return `${dd}/${m}/${y}` }
 // el id de la tarjeta de caja → la clave que devuelve /api/import/last (mp-api comparte caja con mp)
 const LAST_KEY: Record<string, string> = { "mp-api": "mp", mp: "mp", bbva: "bbva", bdc: "bdc" }

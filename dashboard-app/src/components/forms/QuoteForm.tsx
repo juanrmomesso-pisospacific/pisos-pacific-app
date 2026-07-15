@@ -10,6 +10,7 @@ import { fmtMoney } from "@/lib/utils"
 import { SearchPicker } from "@/components/SearchPicker"
 import type { Product, Quote } from "@/lib/types"
 import { looksLikeHandle, leadToQuotePrefill, type Lead } from "@/lib/leads"
+import { useConfig, taxWord } from "@/contexts/ConfigContext"
 
 type Settings = { sellers?: { name: string; phone?: string }[] }
 type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] }
@@ -28,9 +29,9 @@ export type QuotePrefill = {
   approx_m2?: number               // distributed across matched items as initial qty
 }
 
-const IVA_RATE = 0.21
-
 export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }: { open: boolean; onOpenChange: (o: boolean) => void; prefill?: QuotePrefill; editQuote?: Quote; onCreated?: (q: Quote) => void | Promise<void> }) {
+  const { tax } = useConfig()   // impuesto por config de la operación (AR: IVA 21% · PA: ITBMS 7%)
+  const IVA_RATE = tax.rate
   const clients = useApi<Client[]>("/api/clients").data ?? []
   const leads = useApi<Lead[]>("/api/leads").data ?? []
   const products = useApi<Product[]>("/api/products").data ?? []
@@ -400,7 +401,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
         <p className="text-[11px] text-muted-foreground">El descuento se carga <b>por ítem</b> (al lado del precio). Si un ítem no tiene descuento, no aparece en el presupuesto.</p>
         <label className="flex items-center gap-2 text-sm">
           <input type="checkbox" checked={hasIva} onChange={(e) => setHasIva(e.target.checked)} />
-          Incluye IVA ({(IVA_RATE * 100).toFixed(0)}%)
+          Incluye {tax.label}
         </label>
         <div className="bg-muted/50 rounded-md p-3 space-y-1 text-sm">
           <div className="flex justify-between"><span className="text-muted-foreground">Subtotal</span><span className="tabular">{fmtMoney(subtotal)}</span></div>
@@ -410,7 +411,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
               <div className="flex justify-between"><span className="text-muted-foreground">Subtotal c/desc.</span><span className="tabular">{fmtMoney(subtotalAfterDiscount)}</span></div>
             </>
           )}
-          {hasIva && <div className="flex justify-between"><span className="text-muted-foreground">IVA</span><span className="tabular">{fmtMoney(iva)}</span></div>}
+          {hasIva && <div className="flex justify-between"><span className="text-muted-foreground">{taxWord(tax.label)}</span><span className="tabular">{fmtMoney(iva)}</span></div>}
           <div className="flex justify-between font-medium pt-1 border-t border-border"><span>Total</span><span className="tabular">{fmtMoney(total)}</span></div>
         </div>
       </div>

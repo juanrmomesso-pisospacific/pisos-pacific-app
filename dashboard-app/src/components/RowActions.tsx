@@ -11,7 +11,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { openPacificPdf } from "@/lib/pdf"
 import { quoteShareMessage } from "@/lib/chat"
 import { useConfirm } from "@/components/ui/confirm"
-import { fmtMoney, cn } from "@/lib/utils"
+import { fmtMoney, cn, appLocale } from "@/lib/utils"
 import type { Quote, Sale } from "@/lib/types"
 
 // ---------- Quote row actions ----------
@@ -580,7 +580,7 @@ function PaymentDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChan
               <ul className="space-y-1.5">
                 {sale.payments.map((p: any, i: number) => (
                   <li key={i} className="flex items-center justify-between text-xs">
-                    <span>{new Date(p.ts).toLocaleDateString("es-AR")}</span>
+                    <span>{new Date(p.ts).toLocaleDateString(appLocale())}</span>
                     <span className="text-muted-foreground">{p.method}</span>
                     <span className="tabular">{fmtMoney(p.amount)}</span>
                   </li>

@@ -2,7 +2,7 @@ import { useMemo } from "react"
 import { Ship, FileText, TrendingUp, CheckCircle2 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { useApi } from "@/lib/api"
-import { fmtMoney } from "@/lib/utils"
+import { fmtMoney, appLocale } from "@/lib/utils"
 import type { Container, Quote, Sale } from "@/lib/types"
 
 type Event = { ts: string; type: "sale" | "quote" | "container" | "container_received"; title: string; subtitle: string; amount?: number; icon: React.ComponentType<{ className?: string }>; color: string }
@@ -16,7 +16,7 @@ function fmtAgo(iso: string): string {
   const m = Math.floor(s / 60); if (m < 60) return `${m}min`
   const h = Math.floor(m / 60); if (h < 24) return `${h}h`
   const d = Math.floor(h / 24); if (d < 7) return `${d}d`
-  return new Date(iso).toLocaleDateString("es-AR", { day: "numeric", month: "short" })
+  return new Date(iso).toLocaleDateString(appLocale(), { day: "numeric", month: "short" })
 }
 
 export function ActivityFeed({ max = 20 }: { max?: number }) {

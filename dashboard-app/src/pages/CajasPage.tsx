@@ -9,13 +9,13 @@ import { useApi } from "@/lib/api"
 import { DataState } from "@/components/ui/data-state"
 import { api, refresh } from "@/lib/mutations"
 import { useConfirm } from "@/components/ui/confirm"
-import { cn } from "@/lib/utils"
+import { cn, appLocale } from "@/lib/utils"
 import type { CajaBalance } from "@/lib/types"
 
 type BalancesResponse = { balances: CajaBalance[]; unassigned_movements: number }
 type Recon = { caja_id: string; ts: string; real: number; currency: string; real_usd: number; sys_usd: number; adj_usd: number; note: string | null }
 
-const usd = (n: number) => "US$ " + Math.round(n).toLocaleString("es-AR")
+const usd = (n: number) => "US$ " + Math.round(n).toLocaleString(appLocale())
 const iconFor = (type: string) =>
   /banco/i.test(type) ? Landmark : /efectivo/i.test(type) ? Banknote : Wallet
 const fmtDate = (ts: string) => { const d = ts.slice(0, 10).split("-"); return `${d[2]}/${d[1]}/${d[0]}` }
@@ -48,7 +48,7 @@ export default function CajasPage() {
       if (Math.abs(adj) < 0.01) partes.push(`El saldo del sistema (${usd(dry.sys_usd)}) ya coincide con el real. ✔ Todo registrado.`)
       else {
         partes.push(`Sistema ${usd(dry.sys_usd)} → real ${usd(dry.real_usd)} · diferencia ${adj > 0 ? "+" : ""}${usd(adj)}.`)
-        if (dry.diff_ars != null) partes.push(`En PESOS (sin efecto del tipo de cambio): faltan ${dry.diff_ars > 0 ? "registrar ingresos" : "registrar egresos"} por $ ${Math.abs(dry.diff_ars).toLocaleString("es-AR")}.`)
+        if (dry.diff_ars != null) partes.push(`En PESOS (sin efecto del tipo de cambio): faltan ${dry.diff_ars > 0 ? "registrar ingresos" : "registrar egresos"} por $ ${Math.abs(dry.diff_ars).toLocaleString(appLocale())}.`)
         partes.push(`Si la diferencia no es chica, ANTES de conciliar buscá qué falta: subí los extractos pendientes o cargá el efectivo sin registrar — la diferencia queda guardada en el historial.`)
       }
       if (dry.missing_days?.length) partes.push(`⚠️ Días hábiles SIN movimientos en esta caja: ${dry.missing_days.map((d: string) => d.slice(5).split("-").reverse().join("/")).join(", ")} — probablemente falte importar el extracto de esos días.`)
@@ -115,7 +115,7 @@ export default function CajasPage() {
                     <TableCell className="font-medium">{b.name}</TableCell>
                     <TableCell className={cn("text-right tabular", b.balance_usd < 0 && "text-rose-500")}>{usd(b.balance_usd)}</TableCell>
                     <TableCell className="text-[11px] text-muted-foreground whitespace-nowrap">
-                      {last ? <>{fmtDate(last.ts)} · real {last.currency} {Math.round(last.real).toLocaleString("es-AR")}</> : "—"}
+                      {last ? <>{fmtDate(last.ts)} · real {last.currency} {Math.round(last.real).toLocaleString(appLocale())}</> : "—"}
                     </TableCell>
                     <TableCell>
                       <div className="flex items-center gap-1 justify-end">

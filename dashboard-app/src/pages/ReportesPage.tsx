@@ -13,7 +13,7 @@ import { usePeriod } from "@/contexts/PeriodContext"
 import { QuickPeriod } from "@/components/QuickPeriod"
 import { useRole } from "@/contexts/RoleContext"
 import { inRange, fmtRange, lastNMonths } from "@/lib/period"
-import { fmtMoney } from "@/lib/utils"
+import { fmtMoney, appLocale } from "@/lib/utils"
 import { type Lead, STATUS_ORDER as LEAD_ORDER, STATUS_LABEL as LEAD_LABEL } from "@/lib/leads"
 import type { Quote, Sale, Product } from "@/lib/types"
 
@@ -602,14 +602,14 @@ function AgingReport() {
                     <TableRow key={r.sale.id}>
                       <TableCell>
                         <Link to="/ventas" className="text-sm font-medium hover:underline">#{r.sale.quote_number ?? r.sale.id}</Link>
-                        <div className="text-[10px] text-muted-foreground">{r.sale.created_at ? new Date(r.sale.created_at).toLocaleDateString("es-AR") : "—"}</div>
+                        <div className="text-[10px] text-muted-foreground">{r.sale.created_at ? new Date(r.sale.created_at).toLocaleDateString(appLocale()) : "—"}</div>
                       </TableCell>
                       <TableCell className="text-sm">{r.sale.client_name}</TableCell>
                       <TableCell className="text-xs text-muted-foreground">{r.sale.seller_name ?? "—"}</TableCell>
                       <TableCell className="text-right tabular text-sm">{fmtMoney(total)}</TableCell>
                       <TableCell className="text-right tabular text-sm">{fmtMoney(paid)}</TableCell>
                       <TableCell className="text-right tabular text-sm font-medium">{fmtMoney(due)}</TableCell>
-                      <TableCell className="text-right tabular text-xs text-muted-foreground">{r.expectedAt.toLocaleDateString("es-AR")}</TableCell>
+                      <TableCell className="text-right tabular text-xs text-muted-foreground">{r.expectedAt.toLocaleDateString(appLocale())}</TableCell>
                       <TableCell className="text-right">
                         <Badge variant={overdue ? "destructive" : "muted"} className="tabular text-[11px]">
                           {r.daysPast > 0 ? `+${r.daysPast}d` : r.daysPast === 0 ? "hoy" : `${r.daysPast}d`}
@@ -713,7 +713,7 @@ function MarginReport() {
         rev += Number(it.total) || qty * (Number(it.unit_price) || 0)
         cogs += costOf(it.product_id) * qty
       }
-      return { ym: m.ym, label: m.from.toLocaleDateString("es-AR", { month: "short" }), revenue: rev, cogs, margin: rev - cogs, marginPct: safePct(rev - cogs, rev) }
+      return { ym: m.ym, label: m.from.toLocaleDateString(appLocale(), { month: "short" }), revenue: rev, cogs, margin: rev - cogs, marginPct: safePct(rev - cogs, rev) }
     })
 
     return {

@@ -19,7 +19,8 @@ import { DataState } from "@/components/ui/data-state"
 import { useAuth } from "@/contexts/AuthContext"
 import { useConfirm } from "@/components/ui/confirm"
 import { api, useAction, refresh } from "@/lib/mutations"
-import { fmtMoney, cn } from "@/lib/utils"
+import { fmtMoney, cn, appLocale } from "@/lib/utils"
+import { useConfig, useModules, moduleOn, taxWord } from "@/contexts/ConfigContext"
 import { materialState, MATERIAL_LABEL } from "@/lib/calendar"
 import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote, Caja, CashflowMovement, Product } from "@/lib/types"
@@ -273,7 +274,7 @@ function VentasTable({ rows, onChanged }: { rows: Sale[]; onChanged: () => void 
               <TableCell><div className="truncate max-w-[280px]">{r.client_name}</div><div className="text-xs text-muted-foreground line-clamp-1">{r.description}</div></TableCell>
               <TableCell><Badge variant="outline">{r.status}</Badge></TableCell>
               <TableCell><MaterialBadge sale={r} /></TableCell>
-              <TableCell className="text-xs text-muted-foreground">{r.created_at ? new Date(r.created_at).toLocaleDateString("es-AR") : "—"}</TableCell>
+              <TableCell className="text-xs text-muted-foreground">{r.created_at ? new Date(r.created_at).toLocaleDateString(appLocale()) : "—"}</TableCell>
               <TableCell className="text-right tabular">{fmtMoney(r.contract_total)}</TableCell>
               <TableCell className={`text-right tabular ${due > 0 ? "text-foreground font-medium" : "text-muted-foreground"}`}>{fmtMoney(due)}</TableCell>
               <TableCell className="text-right"><div onClick={(e) => e.stopPropagation()}><SaleRowActions sale={r} /></div></TableCell>
@@ -303,7 +304,7 @@ function VentasCards({ rows, onChanged }: { rows: Sale[]; onChanged: () => void 
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">
                 <div className="font-medium truncate">{s.client_name}</div>
-                <div className="text-[10px] text-muted-foreground tabular">#{s.quote_number}{s.created_at ? ` · ${new Date(s.created_at).toLocaleDateString("es-AR")}` : ""}</div>
+                <div className="text-[10px] text-muted-foreground tabular">#{s.quote_number}{s.created_at ? ` · ${new Date(s.created_at).toLocaleDateString(appLocale())}` : ""}</div>
               </div>
               <div onClick={(e) => e.stopPropagation()}><SaleRowActions sale={s} /></div>
             </div>
@@ -318,7 +319,7 @@ function VentasCards({ rows, onChanged }: { rows: Sale[]; onChanged: () => void 
             </div>
             {s.delivery_date ? (
               <div className="text-[10px] text-muted-foreground mt-1.5 inline-flex items-center gap-1">
-                <CalendarDays className="h-2.5 w-2.5" />Colocación {new Date(s.delivery_date).toLocaleDateString("es-AR")}
+                <CalendarDays className="h-2.5 w-2.5" />Colocación {new Date(s.delivery_date).toLocaleDateString(appLocale())}
               </div>
             ) : null}
           </div>
@@ -420,7 +421,7 @@ function VentasKanban({ rows, onChanged }: { rows: Sale[]; onChanged: () => void
                     {r.description ? <div className="text-xs text-muted-foreground line-clamp-2 mt-1.5">{r.description}</div> : null}
                     <div className="flex items-center justify-between text-xs">
                       <span className="tabular text-foreground">{fmtMoney(r.contract_total)}</span>
-                      {due > 0 ? <Badge variant="outline" className="text-[10px]">Saldo {fmtMoney(due)}</Badge> : <span className="text-muted-foreground tabular">{r.created_at ? new Date(r.created_at).toLocaleDateString("es-AR") : "—"}</span>}
+                      {due > 0 ? <Badge variant="outline" className="text-[10px]">Saldo {fmtMoney(due)}</Badge> : <span className="text-muted-foreground tabular">{r.created_at ? new Date(r.created_at).toLocaleDateString(appLocale()) : "—"}</span>}
                     </div>
                     <div className="mt-1.5 flex items-center gap-1.5">
                       <MaterialBadge sale={r} />
@@ -428,7 +429,7 @@ function VentasKanban({ rows, onChanged }: { rows: Sale[]; onChanged: () => void
                     </div>
                     {r.delivery_date && (
                       <div className="text-[10px] text-muted-foreground mt-0.5 inline-flex items-center gap-1">
-                        <CalendarDays className="h-2.5 w-2.5" />Colocación {new Date(r.delivery_date).toLocaleDateString("es-AR")}{r.delivery_date_to && r.delivery_date_to !== r.delivery_date ? ` → ${new Date(r.delivery_date_to).toLocaleDateString("es-AR")}` : ""}
+                        <CalendarDays className="h-2.5 w-2.5" />Colocación {new Date(r.delivery_date).toLocaleDateString(appLocale())}{r.delivery_date_to && r.delivery_date_to !== r.delivery_date ? ` → ${new Date(r.delivery_date_to).toLocaleDateString(appLocale())}` : ""}
                       </div>
                     )}
                   </div>
@@ -468,12 +469,15 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   const [remitoSaved, setRemitoSaved] = useState(false)
   const { state: authState } = useAuth()
   const isAdmin = authState.user?.role === "admin"
+  const modules = useModules()
+  const finanzasOn = moduleOn(modules, "finanzas")
   const [editOpen, setEditOpen] = useState(false)
   const [deliverOpen, setDeliverOpen] = useState(false)
   const update = useAction(api.update)
   const txn = useAction(api.saleTransition)
   const createTask = useAction(api.create)
   const createMov = useAction(api.create)
+  const payDirect = useAction(api.salePayment)
   const conversations = useApi<any[]>("/api/conversations").data ?? []
   const navigate = useNavigate()
   const openChat = () => {
@@ -540,11 +544,25 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
     onClose(); onChanged()
   }
 
-  // Cobros: ingresos del cashflow linkeados a esta venta (la misma fuente que usa el saldo).
-  const cobros = cashflow.filter(m => m.flow === "Ingreso" && m.sale_ref === sale.quote_number)
-    .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+  // Cobros: con finanzas, ingresos del cashflow linkeados a esta venta (la fuente del saldo);
+  // sin finanzas, los pagos directos registrados en la venta (sale.payments) — si no, el cobro
+  // recién registrado no aparecería en el historial y parecería no guardado.
+  const cobros = finanzasOn
+    ? cashflow.filter(m => m.flow === "Ingreso" && m.sale_ref === sale.quote_number)
+        .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+    : ((sale.payments ?? []) as { ts?: string; amount: number; method?: string }[])
+        .map((p, i) => ({ id: `pay-${i}`, date: p.ts, caja_name: p.method || "Cobro directo", amount_usd: p.amount }))
+        .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
   const registrarCobro = async () => {
-    if (payAmount <= 0 || !payCaja) return
+    if (payAmount <= 0) return
+    // Operación SIN módulo finanzas: el cobro va directo a la venta (financial_position) —
+    // no hay extractos que dupliquen. Con finanzas, el cobro es un movimiento de caja.
+    if (!finanzasOn) {
+      const r = await payDirect.run(sale.id, Math.round(payAmount * 100) / 100, undefined, undefined, payDate || undefined)
+      if (r) { onClose(); onChanged() }
+      return
+    }
+    if (!payCaja) return
     const caja = cajas.find(c => c.id === payCaja)
     await createMov.run("cashflow", {
       flow: "Ingreso", date: (payDate || new Date().toISOString().slice(0, 10)) + "T00:00:00.000Z",
@@ -582,7 +600,7 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   const remitoPickerItems = products.filter((p) => p.active !== false).map((p) => ({ id: p.id, label: p.name, sub: p.sku, keywords: p.category }))
 
   // Resumen de COLOCACIÓN (eje distinto del material): finalizada / agendada (fecha + equipo) / sin agendar.
-  const fmtD = (d?: string) => (d ? new Date(d).toLocaleDateString("es-AR") : "")
+  const fmtD = (d?: string) => (d ? new Date(d).toLocaleDateString(appLocale()) : "")
   const colocText = sale.status === "Finalizado"
     ? "Finalizada"
     : sale.delivery_date
@@ -598,7 +616,7 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
             <div>
               <SheetTitle>{sale.client_name}</SheetTitle>
               <SheetDescription>
-                #{sale.quote_number} · {sale.created_at ? new Date(sale.created_at).toLocaleDateString("es-AR") : "sin fecha"}
+                #{sale.quote_number} · {sale.created_at ? new Date(sale.created_at).toLocaleDateString(appLocale()) : "sin fecha"}
                 {" · "}<Badge variant="outline" className="text-[10px]">{sale.status}</Badge>
               </SheetDescription>
             </div>
@@ -637,8 +655,8 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
             {sale.delivery_date && (
               <Badge variant="muted" className="text-[10px] ml-auto">
                 {sale.delivery_date_to && sale.delivery_date_to !== sale.delivery_date
-                  ? `${new Date(sale.delivery_date).toLocaleDateString("es-AR")} → ${new Date(sale.delivery_date_to).toLocaleDateString("es-AR")}`
-                  : `Programada · ${new Date(sale.delivery_date).toLocaleDateString("es-AR")}`}
+                  ? `${new Date(sale.delivery_date).toLocaleDateString(appLocale())} → ${new Date(sale.delivery_date_to).toLocaleDateString(appLocale())}`
+                  : `Programada · ${new Date(sale.delivery_date).toLocaleDateString(appLocale())}`}
               </Badge>
             )}
           </div>
@@ -740,22 +758,24 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
                     <Input type="date" value={payDate} onChange={(e) => setPayDate(e.target.value)} className="h-8" />
                   </div>
                 </div>
-                <div>
-                  <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Caja</div>
-                  <select value={payCaja} onChange={(e) => setPayCaja(e.target.value)} className="h-8 w-full rounded-md border border-input bg-transparent px-2 text-sm">
-                    <option value="">— Elegí la caja —</option>
-                    {cajas.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
-                  </select>
-                </div>
-                <Button size="sm" onClick={registrarCobro} disabled={createMov.busy || payAmount <= 0 || !payCaja}>{createMov.busy ? "Registrando…" : "Registrar cobro"}</Button>
-                {createMov.error && <div className="text-[11px] text-destructive">{createMov.error}</div>}
+                {finanzasOn && (
+                  <div>
+                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Caja</div>
+                    <select value={payCaja} onChange={(e) => setPayCaja(e.target.value)} className="h-8 w-full rounded-md border border-input bg-transparent px-2 text-sm">
+                      <option value="">— Elegí la caja —</option>
+                      {cajas.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+                    </select>
+                  </div>
+                )}
+                <Button size="sm" onClick={registrarCobro} disabled={createMov.busy || payDirect.busy || payAmount <= 0 || (finanzasOn && !payCaja)}>{createMov.busy || payDirect.busy ? "Registrando…" : "Registrar cobro"}</Button>
+                {(createMov.error || payDirect.error) && <div className="text-[11px] text-destructive">{createMov.error || payDirect.error}</div>}
               </div>
             )}
             {cobros.length > 0 && (
               <div className="space-y-1.5 mt-2">
                 {cobros.map((m) => (
                   <div key={m.id} className="rounded-md border border-border px-2 py-1.5 flex items-center justify-between text-xs gap-2">
-                    <span>{m.date ? new Date(m.date).toLocaleDateString("es-AR") : "—"}</span>
+                    <span>{m.date ? new Date(m.date).toLocaleDateString(appLocale()) : "—"}</span>
                     <span className="text-muted-foreground truncate">{m.caja_name}</span>
                     <span className="tabular">{fmtMoney(m.amount_usd || 0)}</span>
                   </div>
@@ -883,7 +903,7 @@ function MaterialDeliveryPanel({ sale, products, isAdmin, onOpen, onChanged }: {
           <div className="space-y-1 border-t border-border pt-2">
             {deliveries.map((d) => (
               <div key={d.id} className="flex items-center justify-between text-[11px] text-muted-foreground gap-2">
-                <span>{d.date ? new Date(d.date).toLocaleDateString("es-AR") : "—"}{d.note ? ` · ${d.note}` : ""}</span>
+                <span>{d.date ? new Date(d.date).toLocaleDateString(appLocale()) : "—"}{d.note ? ` · ${d.note}` : ""}</span>
                 <span className="tabular shrink-0">{fmtM2(d.items.reduce((a, it) => a + (Number(it.quantity) || 0), 0))}</span>
               </div>
             ))}
@@ -1073,8 +1093,11 @@ function EditSaleItemsSheet({ sale, products, open, onOpenChange, onChanged }: {
   )
 }
 
-// Editor de IVA de la venta: sin IVA / IVA 21% / monto fijo (parcial). Recalcula el total.
+// Editor de impuesto de la venta: sin impuesto / tasa completa / monto fijo (parcial).
+// Recalcula el total. Tasa y etiqueta por config de la operación (AR IVA 21% · PA ITBMS 7%).
 function IvaEditor({ sale, onChanged }: { sale: Sale; onChanged: () => void }) {
+  const { tax } = useConfig()
+  const word = taxWord(tax.label)
   const upd = useAction(api.update)
   const net = useMemo(() => {
     const items = (sale.items || []).filter((it: any) => it.product_id !== "discount" && !/^descuento/i.test(it.description || ""))
@@ -1084,7 +1107,7 @@ function IvaEditor({ sale, onChanged }: { sale: Sale; onChanged: () => void }) {
   const initMode: "none" | "full" | "fixed" = sale.iva_mode ?? (sale.has_iva ? "full" : "none")
   const [mode, setMode] = useState<"none" | "full" | "fixed">(initMode)
   const [fixed, setFixed] = useState<number>(sale.iva_amount ?? 0)
-  const iva = mode === "none" ? 0 : mode === "full" ? Math.round(net * 0.21) : (Number(fixed) || 0)
+  const iva = mode === "none" ? 0 : mode === "full" ? Math.round(net * tax.rate) : (Number(fixed) || 0)
   const total = Math.round(net + iva)
   const dirty = mode !== initMode || (mode === "fixed" && iva !== (sale.iva_amount ?? 0)) || total !== Math.round(sale.contract_total || 0)
   const save = async () => {
@@ -1097,15 +1120,15 @@ function IvaEditor({ sale, onChanged }: { sale: Sale; onChanged: () => void }) {
   return (
     <div className="mt-3 rounded-lg border border-border p-3 space-y-2">
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-xs font-medium mr-1">IVA</span>
-        <Opt m="none" label="Sin IVA" /><Opt m="full" label="IVA 21%" /><Opt m="fixed" label="Monto fijo" />
+        <span className="text-xs font-medium mr-1">{word}</span>
+        <Opt m="none" label={`Sin ${word}`} /><Opt m="full" label={tax.label} /><Opt m="fixed" label="Monto fijo" />
         {mode === "fixed" && (
-          <Input type="number" min={0} value={fixed || ""} onChange={(e) => setFixed(Number(e.target.value))} placeholder="IVA $" className="h-8 w-28" />
+          <Input type="number" min={0} value={fixed || ""} onChange={(e) => setFixed(Number(e.target.value))} placeholder={`${word} $`} className="h-8 w-28" />
         )}
         <Button size="sm" className="ml-auto" onClick={save} disabled={!dirty || upd.busy}>{upd.busy ? "Guardando…" : "Aplicar"}</Button>
       </div>
       <div className="text-[11px] text-muted-foreground tabular">
-        Neto {fmtMoney(net)} · IVA {fmtMoney(iva)} · <b>Total {fmtMoney(total)}</b>
+        Neto {fmtMoney(net)} · {word} {fmtMoney(iva)} · <b>Total {fmtMoney(total)}</b>
       </div>
       {upd.error && <div className="text-[11px] text-destructive">{upd.error}</div>}
     </div>

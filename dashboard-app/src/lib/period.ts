@@ -1,3 +1,5 @@
+import { appLocale } from "@/lib/utils"
+
 export type PresetId = "month" | "lastMonth" | "quarter" | "last3" | "last6" | "last12" | "ytd" | "lastYear" | "all" | "custom"
 
 export const DEFAULT_PRESET: PresetId = "last3"
@@ -51,7 +53,7 @@ export function priorRange(r: Range): Range {
 }
 
 export function fmtRange(r: Range): string {
-  const s = (d: Date) => d.toLocaleDateString("es-AR", { day: "numeric", month: "short", year: "numeric" })
+  const s = (d: Date) => d.toLocaleDateString(appLocale(), { day: "numeric", month: "short", year: "numeric" })
   return `${s(r.from)} → ${s(r.to)}`
 }
 

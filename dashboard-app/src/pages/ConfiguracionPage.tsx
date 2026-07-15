@@ -11,10 +11,20 @@ import { useAction, refresh } from "@/lib/mutations"
 import { useAuth } from "@/contexts/AuthContext"
 import { useConfirm } from "@/components/ui/confirm"
 import { ROLE_LABEL } from "@/lib/access"
+import { useModules, moduleOn } from "@/contexts/ConfigContext"
 import { KeyRound, Trash2 } from "lucide-react"
 
 type MpSettings = { enabled: boolean; access_token: string; public_key: string }
-type Settings = { integrations?: { mercadopago?: MpSettings } }
+type Seller = { name: string; phone?: string }
+type Settings = {
+  integrations?: { mercadopago?: MpSettings }
+  company?: { name?: string; web?: string; email?: string; warranty?: string; fx_note?: string }
+  tax?: { rate?: number; label?: string }
+  currency?: { local?: string; fx_provider?: string; fx_rate?: number }
+  locale?: string
+  sellers?: Seller[]
+  modules?: Record<string, boolean>
+}
 
 async function patchSettings(body: Partial<Settings>): Promise<Settings> {
   const r = await fetch("/api/settings", {
@@ -30,23 +40,152 @@ export default function ConfiguracionPage() {
   const settings = useApi<Settings>("/api/settings").data
   const { state } = useAuth()
   const isAdmin = state.status === "ready" && state.user.role === "admin"
+  const finanzasOn = moduleOn(useModules(), "finanzas")
 
   return (
     <div className="px-4 lg:px-6 space-y-4 md:space-y-6 max-w-3xl">
-      <Card>
-        <CardHeader>
-          <CardTitle>Integraciones</CardTitle>
-          <CardDescription>Conectá Pacific con los servicios externos que usan el día a día.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <MercadoPagoSection mp={settings?.integrations?.mercadopago} />
-        </CardContent>
-      </Card>
+      {isAdmin && settings && <OperationSection settings={settings} />}
+      {finanzasOn && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Integraciones</CardTitle>
+            <CardDescription>Conectá Pacific con los servicios externos que usan el día a día.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <MercadoPagoSection mp={settings?.integrations?.mercadopago} />
+          </CardContent>
+        </Card>
+      )}
       {isAdmin && <UsersManager />}
       <TemplateManager />
-      <RulesManager />
+      {finanzasOn && <RulesManager />}
       {isAdmin && <EmailCleanupSection />}
     </div>
+  )
+}
+
+// Configuración de la operación (multi-país): empresa (marca en PDF/mails), impuesto de las
+// ventas, vendedores y módulos activos. El socio de cada instancia la edita desde acá —
+// pedido del dueño (15/7): impuestos y vendedores cargables desde la app, sin tocar código.
+const MODULE_META: { key: string; label: string; desc: string }[] = [
+  { key: "finanzas", label: "Finanzas (CashFlow)", desc: "Libro diario, cajas, extractos, conciliación. Apagado: los cobros se registran directo en la venta." },
+  { key: "dashboard_finanzas", label: "Dashboard financiero", desc: "Gastos y resultado neto en el Dashboard (requiere Finanzas)." },
+  { key: "contenedores", label: "Contenedores", desc: "Importaciones que acreditan inventario al nacionalizar." },
+  { key: "agenda", label: "Agenda", desc: "Calendario de colocaciones, equipos y tareas." },
+  { key: "galeria", label: "Galería", desc: "Banco de imágenes (Google Drive)." },
+  { key: "reportes", label: "Reportes", desc: "Reportes avanzados." },
+]
+function OperationSection({ settings }: { settings: Settings }) {
+  const [company, setCompany] = useState({ name: "", web: "", email: "", ...settings.company })
+  const [taxLabel, setTaxLabel] = useState(settings.tax?.label ?? "IVA 21%")
+  const [taxPct, setTaxPct] = useState(Math.round(((settings.tax?.rate ?? 0.21) * 100) * 100) / 100)
+  const [curLocal, setCurLocal] = useState(settings.currency?.local ?? "ARS")
+  const [fxProvider, setFxProvider] = useState(settings.currency?.fx_provider ?? "blue")
+  const [locale, setLocale] = useState(settings.locale ?? "es-AR")
+  const [sellers, setSellers] = useState<Seller[]>(settings.sellers ?? [])
+  const [modules, setModules] = useState<Record<string, boolean>>({ ...settings.modules })
+  const [saving, setSaving] = useState(false)
+  const [msg, setMsg] = useState<string | null>(null)
+  const confirm = useConfirm()
+
+  const setSeller = (i: number, patch: Partial<Seller>) => setSellers(prev => prev.map((s, j) => (j === i ? { ...s, ...patch } : s)))
+  const save = async () => {
+    if (modules.finanzas === false && settings.modules?.finanzas !== false) {
+      const ok = await confirm({
+        title: "¿Apagar el módulo Finanzas?",
+        description: "CashFlow, Cajas y Proveedores desaparecen de la navegación y los cobros pasan a registrarse directo en la venta. Los datos NO se borran: al reactivarlo vuelve todo.",
+        confirmLabel: "Apagar Finanzas",
+      })
+      if (!ok) return
+    }
+    setSaving(true); setMsg(null)
+    try {
+      await patchSettings({
+        company,
+        tax: { label: taxLabel, rate: Math.max(0, Number(taxPct) || 0) / 100 },
+        currency: { local: curLocal.trim().toUpperCase() || "ARS", fx_provider: fxProvider, fx_rate: 1 },
+        locale: locale.trim() || "es-AR",
+        sellers: sellers.filter(s => s.name.trim()),
+        modules,
+      } as Partial<Settings>)
+      setMsg("Guardado ✓")
+      refresh()
+    } catch (e: any) { setMsg(`Error al guardar (${e?.message || e})`) }
+    finally { setSaving(false) }
+  }
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Operación</CardTitle>
+        <CardDescription>Empresa, impuesto, vendedores y módulos de esta instancia. Cada país/operación tiene su propia configuración.</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-5">
+        <div>
+          <div className="text-sm font-medium mb-2">Empresa (aparece en presupuestos y mails)</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <label className="text-xs space-y-1"><span className="text-muted-foreground">Nombre</span>
+              <Input value={company.name} onChange={(e) => setCompany({ ...company, name: e.target.value })} /></label>
+            <label className="text-xs space-y-1"><span className="text-muted-foreground">Web</span>
+              <Input value={company.web} onChange={(e) => setCompany({ ...company, web: e.target.value })} /></label>
+            <label className="text-xs space-y-1"><span className="text-muted-foreground">Email</span>
+              <Input value={company.email} onChange={(e) => setCompany({ ...company, email: e.target.value })} /></label>
+          </div>
+        </div>
+        <div>
+          <div className="text-sm font-medium mb-2">Impuesto de las ventas</div>
+          <div className="grid grid-cols-2 gap-2 max-w-sm">
+            <label className="text-xs space-y-1"><span className="text-muted-foreground">Etiqueta (ej. IVA 21% / ITBMS 7%)</span>
+              <Input value={taxLabel} onChange={(e) => setTaxLabel(e.target.value)} /></label>
+            <label className="text-xs space-y-1"><span className="text-muted-foreground">Tasa (%)</span>
+              <Input type="number" min={0} max={100} step="0.5" value={taxPct} onChange={(e) => setTaxPct(Number(e.target.value))} /></label>
+          </div>
+        </div>
+        <div>
+          <div className="text-sm font-medium mb-2">País y moneda</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <label className="text-xs space-y-1"><span className="text-muted-foreground">Moneda local</span>
+              <Input value={curLocal} onChange={(e) => setCurLocal(e.target.value)} placeholder="ARS / USD" /></label>
+            <label className="text-xs space-y-1"><span className="text-muted-foreground">Tipo de cambio a USD</span>
+              <select value={fxProvider} onChange={(e) => setFxProvider(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-2 text-sm">
+                <option value="blue">Dólar blue (Argentina)</option>
+                <option value="fixed">Fijo 1:1 (moneda local = USD)</option>
+              </select></label>
+            <label className="text-xs space-y-1"><span className="text-muted-foreground">Formato regional (locale)</span>
+              <Input value={locale} onChange={(e) => setLocale(e.target.value)} placeholder="es-AR / es-PA" /></label>
+          </div>
+        </div>
+        <div>
+          <div className="text-sm font-medium mb-2">Vendedores (selector de cotizaciones/ventas y bot de tareas)</div>
+          <div className="space-y-1.5">
+            {sellers.map((s, i) => (
+              <div key={i} className="flex gap-2 items-center">
+                <Input value={s.name} placeholder="Nombre" onChange={(e) => setSeller(i, { name: e.target.value })} className="flex-1" />
+                <Input value={s.phone ?? ""} placeholder="Teléfono (+507 …)" onChange={(e) => setSeller(i, { phone: e.target.value })} className="w-44" />
+                <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive shrink-0" title="Quitar" onClick={() => setSellers(prev => prev.filter((_, j) => j !== i))}><Trash2 className="h-3.5 w-3.5" /></Button>
+              </div>
+            ))}
+            <Button variant="outline" size="sm" onClick={() => setSellers(prev => [...prev, { name: "", phone: "" }])}>+ Agregar vendedor</Button>
+          </div>
+        </div>
+        <div>
+          <div className="text-sm font-medium mb-1">Módulos activos</div>
+          <div className="text-[11px] text-muted-foreground mb-2">El núcleo (Inventario, Cotizaciones, Ventas, Clientes, Mensajes y Leads) está siempre activo.</div>
+          <div className="space-y-1.5">
+            {MODULE_META.map((m) => (
+              <label key={m.key} className="flex items-start gap-2 text-sm">
+                <input type="checkbox" className="mt-0.5" checked={modules[m.key] !== false} onChange={(e) => setModules(prev => ({ ...prev, [m.key]: e.target.checked }))} />
+                <span><b className="font-medium">{m.label}</b> <span className="text-muted-foreground text-xs">— {m.desc}</span></span>
+              </label>
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center gap-3">
+          <Button onClick={save} disabled={saving}>{saving ? "Guardando…" : "Guardar cambios"}</Button>
+          {msg && <span className="text-xs text-muted-foreground">{msg}</span>}
+        </div>
+      </CardContent>
+    </Card>
   )
 }
 
