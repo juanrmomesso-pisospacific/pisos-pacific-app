@@ -129,7 +129,8 @@ Endpoint `/api/summary` de solo lectura por instancia (ventas, margen, y caja si
 ## Definiciones del dueño (15/7 — preguntas respondidas)
 1. **Marca en Panamá = Pacific** (mismo logo; cambian email/web/textos legales por config de empresa).
 2. **El socio vende Y coloca** → módulo `agenda` ON en PA.
-3. **Catálogo PA** (carga de datos en Fase 1, no código): Roble Clásico XL, Aspen XL, Natural Oak XL y Notte XL en **5,5mm** (no 6,5); zócalos Roble Clásico / Aspen / Notte / Natural Oak Pacific **2400×60×12mm**; los **servicios** (entrega, colocación, etc.) los cargan ellos como productos de servicio.
+3. **Catálogo PA — PRECARGADO POR NOSOTROS, editable por el socio (15/7)**: los 4 pisos XL en **5,5mm** + los 4 zócalos Pacific 2400×60×12mm viven en `data/catalogo.panama.json` y se siembran con `node scripts/seed-catalogo-panama.mjs <url> <admin> <pass>` (re-ejecutable, dedup por SKU — nunca pisa precios que el socio ya haya cargado). **Precios y costos van en 0 a propósito**: los carga el socio desde Inventario (sus precios son de ellos). Los **servicios** (entrega, colocación, etc.) los crean ellos desde la app.
+   **Dominio/costos (15/7)**: NO hace falta comprar dominio — la instancia PA usa el subdominio gratis de Render (`*.onrender.com`, con SSL), igual que hoy la AR. El único costo nuevo es el servicio Render Starter de la instancia (~US$7/mes, necesario por el disco persistente). Dominio propio = opcional a futuro (solo el registro, ~US$10-15/año, lo puede pagar el socio; en Render se agrega gratis).
 4. **Impuestos, vendedores, precios y costos editables desde la app por el socio** → la Fase 0 suma UI en Configuración para impuesto/empresa/vendedores (precios/costos ya son editables en Inventario).
 5. **Administración**: Pisos Pacific AR administra desde acá Y el socio tiene su propio usuario admin en su instancia (roles existentes alcanzan).
 6. Contenedores en PA: a confirmar cuando arranque la operación (el módulo queda disponible).

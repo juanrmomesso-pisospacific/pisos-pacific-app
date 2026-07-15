@@ -1,0 +1,13 @@
+{
+  "_comment": "Catálogo inicial de Pacific Panamá (definido por el dueño 15/7). Precios y costos en 0 A PROPÓSITO: los carga el socio desde Inventario (decisión: sus precios y costos son de ellos). Editable desde la app después de la precarga. Se siembra con scripts/seed-catalogo-panama.mjs (idempotente por SKU).",
+  "products": [
+    { "sku": "PA-XL-ROBLE",  "name": "H2O XL - Roble Clásico 5,5mm x 23cm x 1,50m", "category": "Pisos H2O", "price": 0, "cost": 0, "stock": 0, "stockTrack": true,  "active": true, "currency": "USD" },
+    { "sku": "PA-XL-ASPEN",  "name": "H2O XL - Aspen 5,5mm x 23cm x 1,50m",         "category": "Pisos H2O", "price": 0, "cost": 0, "stock": 0, "stockTrack": true,  "active": true, "currency": "USD" },
+    { "sku": "PA-XL-OAK",    "name": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",   "category": "Pisos H2O", "price": 0, "cost": 0, "stock": 0, "stockTrack": true,  "active": true, "currency": "USD" },
+    { "sku": "PA-XL-NOTTE",  "name": "H2O XL - Notte 5,5mm x 23cm x 1,50m",         "category": "Pisos H2O", "price": 0, "cost": 0, "stock": 0, "stockTrack": true,  "active": true, "currency": "USD" },
+    { "sku": "PA-ZOC-ROBLE", "name": "Zócalo Roble Clásico Pacific - 2400 x 60 x 12 mm", "category": "Zócalos", "price": 0, "cost": 0, "stock": 0, "stockTrack": false, "active": true, "currency": "USD" },
+    { "sku": "PA-ZOC-ASPEN", "name": "Zócalo Aspen Pacific - 2400 x 60 x 12 mm",         "category": "Zócalos", "price": 0, "cost": 0, "stock": 0, "stockTrack": false, "active": true, "currency": "USD" },
+    { "sku": "PA-ZOC-OAK",   "name": "Zócalo Natural Oak Pacific - 2400 x 60 x 12 mm",   "category": "Zócalos", "price": 0, "cost": 0, "stock": 0, "stockTrack": false, "active": true, "currency": "USD" },
+    { "sku": "PA-ZOC-NOTTE", "name": "Zócalo Notte Pacific - 2400 x 60 x 12 mm",         "category": "Zócalos", "price": 0, "cost": 0, "stock": 0, "stockTrack": false, "active": true, "currency": "USD" }
+  ]
+}
