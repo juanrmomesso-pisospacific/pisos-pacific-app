@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Ship, Plus, GripVertical, ChevronDown, Truck
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
 import { useNavigate } from "react-router-dom"
 import { saleMaterialsForRemito, looseUnit } from "@/lib/remito"
+import { useConfirm } from "@/components/ui/confirm"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
@@ -111,6 +112,7 @@ export default function AgendaPage() {
   const [modalSaleId, setModalSaleId] = useState<string | null>(null)
   const [detailContainerId, setDetailContainerId] = useState<string | null>(null)
   const [medicionTask, setMedicionTask] = useState<Task | null>(null)
+  const [editTask, setEditTask] = useState<Task | null>(null)   // reparación/ausencia/tarea suelta
   const [informeTask, setInformeTask] = useState<Task | null>(null)
 
   const activeView: "mes" | "semana" | "equipos" | "lista" =
@@ -202,10 +204,10 @@ export default function AgendaPage() {
           countEstado={(st) => countFor(e => e.kind === "obra" && e.estado === st)}
         />
         {/* Las tareas ("todo", bot de WhatsApp) NO van al calendario — solo a la vista Lista. */}
-        {activeView === "mes" && <MonthView events={calendarEvents} sales={sales} matches={matches} onOpenObra={openObra} onOpenContainer={setDetailContainerId} onOpenMedicion={setMedicionTask} onOpenRemito={setInformeTask} />}
-        {activeView === "semana" && <WeekView events={calendarEvents} scope={scope} matches={matches} onOpenObra={openObra} onOpenContainer={setDetailContainerId} />}
-        {activeView === "equipos" && <TeamsView sales={sales} tasks={tasks} crews={crews} filters={filters} onOpenObra={openObra} />}
-        {activeView === "lista" && <ListView events={events} matches={matches} onOpenObra={openObra} onOpenContainer={setDetailContainerId} />}
+        {activeView === "mes" && <MonthView events={calendarEvents} sales={sales} matches={matches} onOpenObra={openObra} onOpenContainer={setDetailContainerId} onOpenMedicion={setMedicionTask} onOpenRemito={setInformeTask} onOpenTask={setEditTask} />}
+        {activeView === "semana" && <WeekView events={calendarEvents} scope={scope} matches={matches} onOpenObra={openObra} onOpenContainer={setDetailContainerId} onOpenMedicion={setMedicionTask} onOpenRemito={setInformeTask} onOpenTask={setEditTask} />}
+        {activeView === "equipos" && <TeamsView sales={sales} tasks={tasks} crews={crews} filters={filters} onOpenObra={openObra} onOpenTask={setEditTask} />}
+        {activeView === "lista" && <ListView events={events} matches={matches} onOpenObra={openObra} onOpenContainer={setDetailContainerId} onOpenTask={setEditTask} />}
       </div>
 
       <ObraCardModal
@@ -215,6 +217,7 @@ export default function AgendaPage() {
       <NewEventSheet open={newOpen} onOpenChange={setNewOpen} sales={sales} crews={crews} presetSaleId={presetSaleId} />
       <ContainerImportForm open={containerImportOpen} onOpenChange={setContainerImportOpen} />
       <ContainerDetailSheet container={detailContainer} onClose={() => setDetailContainerId(null)} />
+      <EditTaskSheet task={editTask} crews={crews} onClose={() => setEditTask(null)} />
       <MedicionFormSheet task={medicionTask} sale={medicionTask?.sale_id ? sales.find(s => s.id === medicionTask.sale_id) ?? null : null} allTasks={tasks} onClose={() => setMedicionTask(null)} />
       <InformeFormSheet task={informeTask} sale={informeTask?.sale_id ? sales.find(s => s.id === informeTask.sale_id) ?? null : null} onClose={() => setInformeTask(null)} />
     </>
@@ -294,9 +297,9 @@ function FilterBar({ filters, setFilters, anyFilter, colocadorOptions, disenoOpt
 // ===========================================================================
 // Vista MES — celdas altas, barras multi-día con color de equipo + diseño
 // ===========================================================================
-function MonthView({ events, sales, matches, onOpenObra, onOpenContainer, onOpenMedicion, onOpenRemito }: {
+function MonthView({ events, sales, matches, onOpenObra, onOpenContainer, onOpenMedicion, onOpenRemito, onOpenTask }: {
   events: CalEvent[]; sales: Sale[]; matches: (e: CalEvent) => boolean
-  onOpenObra: (id?: string) => void; onOpenContainer: (id: string) => void; onOpenMedicion: (t: Task) => void; onOpenRemito: (t: Task) => void
+  onOpenObra: (id?: string) => void; onOpenContainer: (id: string) => void; onOpenMedicion: (t: Task) => void; onOpenRemito: (t: Task) => void; onOpenTask: (t: Task) => void
 }) {
   const today = new Date(); today.setHours(0, 0, 0, 0)
   const [cursor, setCursor] = useState(startOfMonth(today))
@@ -358,6 +361,7 @@ function MonthView({ events, sales, matches, onOpenObra, onOpenContainer, onOpen
     else if (e.kind === "container" && e.containerId) onOpenContainer(e.containerId)
     else if (e.kind === "medicion" && e.task) onOpenMedicion(e.task)
     else if (e.kind === "remito" && e.task) onOpenRemito(e.task)
+    else if (e.task) onOpenTask(e.task)   // reparación / ausencia / tarea suelta → editar
   }
 
   return (
@@ -435,8 +439,8 @@ function MonthView({ events, sales, matches, onOpenObra, onOpenContainer, onOpen
 // ===========================================================================
 // Vista SEMANA — tarjetas ricas de obra por día (esta / próxima semana)
 // ===========================================================================
-function WeekView({ events, scope, matches, onOpenObra, onOpenContainer }: {
-  events: CalEvent[]; scope: Scope; matches: (e: CalEvent) => boolean; onOpenObra: (id?: string) => void; onOpenContainer: (id: string) => void
+function WeekView({ events, scope, matches, onOpenObra, onOpenContainer, onOpenMedicion, onOpenRemito, onOpenTask }: {
+  events: CalEvent[]; scope: Scope; matches: (e: CalEvent) => boolean; onOpenObra: (id?: string) => void; onOpenContainer: (id: string) => void; onOpenMedicion: (t: Task) => void; onOpenRemito: (t: Task) => void; onOpenTask: (t: Task) => void
 }) {
   const base = scope === "proxima" ? addDays(startOfWeek(new Date()), 7) : startOfWeek(new Date())
   const days = weekDays(base)
@@ -477,15 +481,21 @@ function WeekView({ events, scope, matches, onOpenObra, onOpenContainer }: {
                 if (e.kind === "reparacion" || e.kind === "ausencia") {
                   const color = EVENT_COLORS[e.kind]
                   return (
-                    <div key={e.id} style={{ opacity: dim ? 0.33 : 1, borderLeft: `3px solid ${color}`, background: "var(--muted)" }} className="rounded-md px-2 py-1.5">
+                    <button key={e.id} onClick={() => e.task && onOpenTask(e.task)} style={{ opacity: dim ? 0.33 : 1, borderLeft: `3px solid ${color}`, background: "var(--muted)" }} className="block w-full text-left rounded-md px-2 py-1.5 hover:brightness-95 transition">
                       <div className="text-[12px]" style={{ color }}>{KIND_LABEL[e.kind]}</div>
                       <div className="text-[11px] text-muted-foreground truncate">{[e.crew, e.detalle].filter(Boolean).join(" · ")}</div>
-                    </div>
+                    </button>
                   )
                 }
                 const color = eventColor(e)
+                const clickPill = () => {
+                  if (e.kind === "container" && e.containerId) onOpenContainer(e.containerId)
+                  else if (e.kind === "medicion" && e.task) onOpenMedicion(e.task)
+                  else if (e.kind === "remito" && e.task) onOpenRemito(e.task)
+                  else if (e.task) onOpenTask(e.task)
+                }
                 return (
-                  <button key={e.id} onClick={() => e.containerId && onOpenContainer(e.containerId)} disabled={!e.containerId} style={{ opacity: dim ? 0.33 : 1, background: tint(color, 0.16), color }} className="block w-full text-left rounded-full px-2 py-1 text-[11px] truncate">
+                  <button key={e.id} onClick={clickPill} disabled={!e.containerId && !e.task} style={{ opacity: dim ? 0.33 : 1, background: tint(color, 0.16), color }} className="block w-full text-left rounded-full px-2 py-1 text-[11px] truncate">
                     {KIND_LABEL[e.kind]} · {e.title}
                   </button>
                 )
@@ -587,7 +597,7 @@ function ObraCardModal({ sale, products, tasks, onClose, onReprogramar, onMedici
 // ===========================================================================
 // Vista EQUIPOS — disponibilidad crew × semana (obras + reparación/ausencia)
 // ===========================================================================
-function TeamsView({ sales, tasks, crews, filters, onOpenObra }: { sales: Sale[]; tasks: Task[]; crews: string[]; filters: Filters; onOpenObra: (id?: string) => void }) {
+function TeamsView({ sales, tasks, crews, filters, onOpenObra, onOpenTask }: { sales: Sale[]; tasks: Task[]; crews: string[]; filters: Filters; onOpenObra: (id?: string) => void; onOpenTask: (t: Task) => void }) {
   const today = new Date(); today.setHours(0, 0, 0, 0)
   const [weekStart, setWeekStart] = useState(startOfWeek(today))
   const days = useMemo(() => weekDays(weekStart), [weekStart])
@@ -595,7 +605,7 @@ function TeamsView({ sales, tasks, crews, filters, onOpenObra }: { sales: Sale[]
   const rowFor = (crew?: string | null) => (crew && crews.includes(crew)) ? crew : "Sin asignar / Externo"
   const isWeekend = (d: Date) => { const w = d.getDay(); return w === 0 || w === 6 }
 
-  type Occ = { kind: "obra" | "reparacion" | "ausencia"; label: string; saleId?: string; color: string }
+  type Occ = { kind: "obra" | "reparacion" | "ausencia"; label: string; saleId?: string; color: string; task?: Task }
   const occFor = (crew: string, d: Date): Occ[] => {
     const k = dayKey(d)
     const out: Occ[] = []
@@ -612,7 +622,7 @@ function TeamsView({ sales, tasks, crews, filters, onOpenObra }: { sales: Sale[]
       const from = t.due_date.slice(0, 10)
       const to = (t.due_date_to && t.due_date_to >= from ? t.due_date_to : from).slice(0, 10)
       if (rowFor(t.assigned_seller) !== crew || k < from || k > to) continue
-      out.push({ kind: t.type, label: TASK_TYPE_LABEL[t.type], color: EVENT_COLORS[t.type] })
+      out.push({ kind: t.type, label: TASK_TYPE_LABEL[t.type], color: EVENT_COLORS[t.type], task: t })
     }
     return out
   }
@@ -653,7 +663,7 @@ function TeamsView({ sales, tasks, crews, filters, onOpenObra }: { sales: Sale[]
                     <div key={di} className={cn("min-h-[56px] p-1.5 border-l border-border space-y-1", isWeekend(d) && "bg-muted/20")} style={free ? { background: tint("#3C6E47", 0.12) } : undefined}>
                       {free && <div className="text-[11px]" style={{ color: "#3C6E47" }}>Libre</div>}
                       {list.map((o, oi) => (
-                        <button key={oi} disabled={!o.saleId} onClick={() => o.saleId && onOpenObra(o.saleId)} className="block w-full text-left text-[10px] rounded px-1.5 py-1 leading-tight truncate" style={{ background: tint(o.color, 0.16), color: o.color }} title={o.label}>{o.label}</button>
+                        <button key={oi} disabled={!o.saleId && !o.task} onClick={() => o.saleId ? onOpenObra(o.saleId) : o.task && onOpenTask(o.task)} className="block w-full text-left text-[10px] rounded px-1.5 py-1 leading-tight truncate" style={{ background: tint(o.color, 0.16), color: o.color }} title={o.label}>{o.label}</button>
                       ))}
                     </div>
                   )
@@ -671,7 +681,7 @@ function TeamsView({ sales, tasks, crews, filters, onOpenObra }: { sales: Sale[]
 // ===========================================================================
 // Vista LISTA — tabla plana de todos los eventos del período
 // ===========================================================================
-function ListView({ events, matches, onOpenObra, onOpenContainer }: { events: CalEvent[]; matches: (e: CalEvent) => boolean; onOpenObra: (id?: string) => void; onOpenContainer: (id: string) => void }) {
+function ListView({ events, matches, onOpenObra, onOpenContainer, onOpenTask }: { events: CalEvent[]; matches: (e: CalEvent) => boolean; onOpenObra: (id?: string) => void; onOpenContainer: (id: string) => void; onOpenTask: (t: Task) => void }) {
   const rows = useMemo(() => [...events].sort((a, b) => a.ts - b.ts), [events])
   return (
     <Card className="p-0 overflow-hidden gap-0">
@@ -686,9 +696,9 @@ function ListView({ events, matches, onOpenObra, onOpenContainer }: { events: Ca
             {rows.map(e => {
               const color = eventColor(e)
               const dim = !matches(e)
-              const clickable = (e.kind === "obra" && e.sale) || (e.kind === "container" && e.containerId)
+              const clickable = (e.kind === "obra" && e.sale) || (e.kind === "container" && e.containerId) || !!e.task
               return (
-                <tr key={e.id} onClick={() => { if (e.kind === "obra" && e.sale) onOpenObra(e.sale.id); else if (e.kind === "container" && e.containerId) onOpenContainer(e.containerId) }}
+                <tr key={e.id} onClick={() => { if (e.kind === "obra" && e.sale) onOpenObra(e.sale.id); else if (e.kind === "container" && e.containerId) onOpenContainer(e.containerId); else if (e.task) onOpenTask(e.task) }}
                   className={cn("border-b border-border last:border-b-0", clickable && "cursor-pointer hover:bg-accent/40")} style={{ opacity: dim ? 0.4 : 1 }}>
                   <td className="px-3 py-2 whitespace-nowrap text-xs text-muted-foreground">{new Date(e.date + "T12:00:00").toLocaleDateString(appLocale(), { day: "numeric", month: "short" })}{e.endDate !== e.date ? ` → ${new Date(e.endDate + "T12:00:00").toLocaleDateString(appLocale(), { day: "numeric", month: "short" })}` : ""}</td>
                   <td className="px-3 py-2"><span className="inline-flex items-center gap-1.5" style={{ color }}><span className="inline-block h-2 w-2 rounded-full" style={{ background: color }} />{KIND_LABEL[e.kind]}</span></td>
@@ -850,6 +860,75 @@ function NewEventSheet({ open, onOpenChange, sales, crews, presetSaleId }: { ope
 // MedicionFormSheet — registrar medición (preservado)
 // ===========================================================================
 type ExtraRow = { description: string; quantity: number; sku?: string }
+// ===========================================================================
+// EditTaskSheet — editar/completar/eliminar una tarea de agenda (reparación,
+// ausencia, tarea suelta). Antes estas tareas no se podían ni abrir: solo
+// arrastrar. Las obras siguen con su flujo propio (Editar → NewEventSheet).
+function EditTaskSheet({ task, crews, onClose }: { task: Task | null; crews: string[]; onClose: () => void }) {
+  const confirm = useConfirm()
+  const update = useAction(api.update)
+  const removeTask = useAction(api.remove)
+  const [title, setTitle] = useState("")
+  const [from, setFrom] = useState("")
+  const [to, setTo] = useState("")
+  const [crew, setCrew] = useState("")
+  const [notes, setNotes] = useState("")
+  useEffect(() => {
+    if (!task) return
+    setTitle(task.title || "")
+    setFrom((task.due_date || "").slice(0, 10))
+    setTo((task.due_date_to || "").slice(0, 10))
+    setCrew(task.assigned_seller || "")
+    setNotes(task.notes || "")
+  }, [task?.id])
+  if (!task) return null
+  const kindLabel = TASK_TYPE_LABEL[task.type] ?? "Tarea"
+  const isRange = task.type === "reparacion" || task.type === "ausencia"
+  const done = task.status === "completada"
+  const save = async () => {
+    if (!title.trim() || !from) return
+    const r = await update.run("tasks", task.id, { title: title.trim(), due_date: from, due_date_to: to && to >= from ? to : undefined, assigned_seller: crew || undefined, notes: notes || undefined })
+    if (r) { onClose(); refresh() }
+  }
+  const complete = async () => {
+    const r = await update.run("tasks", task.id, { status: "completada", completed_at: new Date().toISOString() })
+    if (r) { onClose(); refresh() }
+  }
+  const del = async () => {
+    if (!(await confirm({ title: `Eliminar ${kindLabel.toLowerCase()}`, description: `"${task.title}" se quita de la agenda. Esta acción no se puede deshacer.`, confirmLabel: "Eliminar", destructive: true }))) return
+    if (await removeTask.run("tasks", task.id)) { onClose(); refresh() }
+  }
+  return (
+    <Sheet open={!!task} onOpenChange={(o) => !o && onClose()}>
+      <SheetContent>
+        <SheetHeader><SheetTitle>Editar {kindLabel.toLowerCase()}</SheetTitle><SheetDescription>{done ? "Completada" : "Cambiá fechas, equipo o notas — o completala/eliminala."}</SheetDescription></SheetHeader>
+        <div className="mt-6 space-y-4">
+          <div><label className="text-sm font-medium block mb-1">Título</label><Input value={title} onChange={(e) => setTitle(e.target.value)} /></div>
+          <div className="grid grid-cols-2 gap-3">
+            <div><label className="text-sm font-medium block mb-1">{isRange ? "Desde" : "Fecha"}</label><Input type="date" value={from} onChange={(e) => setFrom(e.target.value)} /></div>
+            {isRange && <div><label className="text-sm font-medium block mb-1">Hasta <span className="text-muted-foreground font-normal">(opcional)</span></label><Input type="date" value={to} min={from || undefined} onChange={(e) => setTo(e.target.value)} /></div>}
+          </div>
+          <div>
+            <label className="text-sm font-medium block mb-1">{task.type === "ausencia" ? "Equipo ausente" : task.type === "reparacion" ? "Equipo que repara" : "Responsable"}</label>
+            <select value={crew} onChange={(e) => setCrew(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
+              <option value="">— Sin asignar —</option>
+              {crews.map((c) => <option key={c} value={c}>{c}</option>)}
+              {crew && !crews.includes(crew) && <option value={crew}>{crew}</option>}
+            </select>
+          </div>
+          <div><label className="text-sm font-medium block mb-1">Notas</label><Input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Detalles…" /></div>
+          <div className="flex items-center gap-2 pt-1 flex-wrap">
+            <Button onClick={save} disabled={update.busy || !title.trim() || !from}>{update.busy ? "Guardando…" : "Guardar cambios"}</Button>
+            {!done && <Button variant="outline" onClick={complete} disabled={update.busy}>Marcar completada</Button>}
+            <Button variant="outline" className="text-destructive" onClick={del} disabled={removeTask.busy}>Eliminar</Button>
+          </div>
+          {(update.error || removeTask.error) && <div className="text-xs text-destructive">{update.error || removeTask.error}</div>}
+        </div>
+      </SheetContent>
+    </Sheet>
+  )
+}
+
 function MedicionFormSheet({ task, sale, allTasks, onClose }: { task: Task | null; sale: Sale | null; allTasks: Task[]; onClose: () => void }) {
   const navigate = useNavigate()
   const [m2, setM2] = useState<number>(0)
