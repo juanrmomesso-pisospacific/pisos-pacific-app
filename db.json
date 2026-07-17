@@ -11,7 +11,7 @@
       "stockTrack": true,
       "active": true,
       "currency": "USD",
-      "reservedStock": 1300
+      "reservedStock": 0
     },
     {
       "id": "local-1784253275073-q3adc",
@@ -137,7 +137,7 @@
       "discount_amount": 0,
       "created_at": "2026-07-17T16:10:41.319Z",
       "quote_number": "A7927",
-      "status": "SENT",
+      "status": "REJECTED",
       "share_token": "e6780f9a380d9c7c180f1213"
     }
   ],
@@ -460,6 +460,15 @@
       "product_id": "local-1784253274235-lpmtl",
       "sku": "PA-XL-ROBLE",
       "qty": 1300,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-07-17T16:14:11.353Z",
+      "type": "quote_release",
+      "ref": "local-1784304641438-b9q3a",
+      "product_id": "local-1784253274235-lpmtl",
+      "sku": "PA-XL-ROBLE",
+      "qty": -1300,
       "warehouse_id": "main"
     }
   ],
