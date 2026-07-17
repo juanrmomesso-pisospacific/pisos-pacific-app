@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState, useEffect } from "react"
-import { Plus, Download, Upload, Search, ArrowUp, ArrowDown, ChevronsUpDown, ShieldAlert, Image as ImageIcon, Folder, ChevronRight } from "lucide-react"
+import { Plus, Download, Upload, Search, ArrowUp, ArrowDown, ChevronsUpDown, ShieldAlert, Image as ImageIcon, Folder, ChevronRight, Pencil } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
@@ -153,6 +153,7 @@ export default function InventarioPage() {
   }, [products])
 
   const [openNew, setOpenNew] = useState(false)
+  const [editing, setEditing] = useState<Product | null>(null)
 
   // Conciliación por CSV de ida y vuelta + diagnóstico de inconsistencias.
   const fileRef = useRef<HTMLInputElement>(null)
@@ -230,7 +231,7 @@ export default function InventarioPage() {
         </div>
 
         <Card className="overflow-hidden py-0">
-          {isStockView ? <StockTable rows={sorted} {...sortProps} /> : <ExtrasTable rows={sorted} {...sortProps} />}
+          {isStockView ? <StockTable rows={sorted} onEdit={setEditing} {...sortProps} /> : <ExtrasTable rows={sorted} onEdit={setEditing} {...sortProps} />}
         </Card>
 
         {!isStockView && (
@@ -240,11 +241,13 @@ export default function InventarioPage() {
         )}
       </div>
       <ProductForm open={openNew} onOpenChange={setOpenNew} />
+      {/* Edición (nombre/categoría/costo/precio) — key para remontar con el producto elegido */}
+      {editing && <ProductForm key={editing.id} open onOpenChange={(o) => { if (!o) setEditing(null) }} editProduct={editing} />}
     </>
   )
 }
 
-function StockTable({ rows, ...sp }: { rows: Product[] } & SortProps) {
+function StockTable({ rows, onEdit, ...sp }: { rows: Product[]; onEdit: (p: Product) => void } & SortProps) {
   const [photoProduct, setPhotoProduct] = useState<Product | null>(null)
   return (
    <>
@@ -263,6 +266,7 @@ function StockTable({ rows, ...sp }: { rows: Product[] } & SortProps) {
           <SortHead k="available" align="right" {...sp}>Disponible</SortHead>
           <TableHead>Estado</TableHead>
           <TableHead>Activo</TableHead>
+          <TableHead className="w-10" />
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -306,6 +310,9 @@ function StockTable({ rows, ...sp }: { rows: Product[] } & SortProps) {
                       : <Badge variant="muted" className="text-[10px]">OK</Badge>}
               </TableCell>
               <TableCell><ActiveToggle p={p} /></TableCell>
+              <TableCell>
+                <Button variant="ghost" size="icon" className="h-7 w-7" title="Editar (nombre, costo, precio)" onClick={() => onEdit(p)}><Pencil className="h-3.5 w-3.5" /></Button>
+              </TableCell>
             </TableRow>
           )
         })}
@@ -389,7 +396,7 @@ function ProductPhotosSheet({ product, onClose }: { product: Product | null; onC
   )
 }
 
-function ExtrasTable({ rows, ...sp }: { rows: Product[] } & SortProps) {
+function ExtrasTable({ rows, onEdit, ...sp }: { rows: Product[]; onEdit: (p: Product) => void } & SortProps) {
   return (
     <Table>
       <TableHeader>
@@ -401,6 +408,7 @@ function ExtrasTable({ rows, ...sp }: { rows: Product[] } & SortProps) {
           <SortHead k="price" align="right" {...sp}>Precio</SortHead>
           <SortHead k="margin" align="right" {...sp}>Margen</SortHead>
           <TableHead>Activo</TableHead>
+          <TableHead className="w-10" />
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -413,6 +421,9 @@ function ExtrasTable({ rows, ...sp }: { rows: Product[] } & SortProps) {
             <TableCell className="text-right tabular">{fmtMoney(p.price)} <span className="text-xs text-muted-foreground">{p.currency}</span></TableCell>
             <TableCell className="text-right tabular text-muted-foreground">{(() => { const m = Math.round(p.margin || 0); return (m > 0 ? "+" : "") + m + "%" })()}</TableCell>
             <TableCell><ActiveToggle p={p} /></TableCell>
+            <TableCell>
+              <Button variant="ghost" size="icon" className="h-7 w-7" title="Editar (nombre, costo, precio)" onClick={() => onEdit(p)}><Pencil className="h-3.5 w-3.5" /></Button>
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
