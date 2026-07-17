@@ -98,7 +98,47 @@
     }
   ],
   "sales": [],
-  "quotes": [],
+  "quotes": [
+    {
+      "id": "local-1784304641438-b9q3a",
+      "client_id": "CLI-mrp3m3cg-2kix",
+      "client_name": "Edifix",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Ariel Tesone",
+      "seller_phone": "",
+      "title": "Edifix",
+      "has_iva": true,
+      "price": 38948,
+      "zoned": false,
+      "description": "H2O XL - Roble Clásico 5,5mm x 23cm x 1,50m",
+      "items": [
+        {
+          "product_id": "local-1784253274235-lpmtl",
+          "sku": "PA-XL-ROBLE",
+          "description": "H2O XL - Roble Clásico 5,5mm x 23cm x 1,50m",
+          "quantity": 1300,
+          "unit_price": 28,
+          "cost": 0,
+          "category": "Pisos H2O",
+          "total": 36400,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "created_at": "2026-07-17T16:10:41.319Z",
+      "quote_number": "A7927",
+      "status": "DRAFT"
+    }
+  ],
   "clients": [
     {
       "id": "CLI-mrp3m3cg-2kix",
