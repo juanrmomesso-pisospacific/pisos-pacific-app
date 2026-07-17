@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react"
-import { ChevronLeft, ChevronRight, Ship, Plus, GripVertical, ChevronDown } from "lucide-react"
+import { ChevronLeft, ChevronRight, Ship, Plus, GripVertical, ChevronDown, Truck } from "lucide-react"
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
 import { useNavigate } from "react-router-dom"
+import { saleMaterialsForRemito, looseUnit } from "@/lib/remito"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
@@ -570,7 +571,7 @@ function ObraCardModal({ sale, products, tasks, onClose, onReprogramar, onMedici
             <Button variant="outline" size="sm" className="text-xs" onClick={() => onReprogramar(sale.id)}>Editar</Button>
             <Button variant="outline" size="sm" className="text-xs" disabled={!medicion} onClick={() => medicion && onMedicion(sale.id)}>Medición</Button>
             <Button variant="outline" size="sm" className="text-xs" disabled={!remito} onClick={() => remito && onRemito(sale.id)}>Remito</Button>
-            <Button variant="outline" size="sm" className="text-xs" onClick={() => { onClose(); navigate("/ventas") }}>Ver venta</Button>
+            <Button variant="outline" size="sm" className="text-xs" onClick={() => { onClose(); navigate(`/ventas?sale=${sale.id}`) }}>Ver venta</Button>
           </div>
         </div>
       </div>
@@ -845,6 +846,7 @@ function NewEventSheet({ open, onOpenChange, sales, crews, presetSaleId }: { ope
 // ===========================================================================
 type ExtraRow = { description: string; quantity: number; sku?: string }
 function MedicionFormSheet({ task, sale, allTasks, onClose }: { task: Task | null; sale: Sale | null; allTasks: Task[]; onClose: () => void }) {
+  const navigate = useNavigate()
   const [m2, setM2] = useState<number>(0)
   const [superficie, setSuperficie] = useState<string>("Contrapiso nuevo")
   const [observaciones, setObservaciones] = useState<string>("")
@@ -875,7 +877,14 @@ function MedicionFormSheet({ task, sale, allTasks, onClose }: { task: Task | nul
     const cleanExtras = extrasItems.filter(x => (x.description ?? "").trim() && (Number(x.quantity) || 0) > 0)
     const payload = { m2_medidos: m2 || undefined, m2_cotizados: quotedTotalM2 || undefined, superficie, observaciones: observaciones || undefined, extras_items: cleanExtras.length > 0 ? cleanExtras : undefined, recorded_at: new Date().toISOString(), recorded_by: task.assigned_seller }
     await update.run("tasks", task.id, { medicion_data: payload, status: markDone ? "completada" : task.status, completed_at: markDone ? new Date().toISOString() : undefined })
-    if (sale) await update.run("sales", sale.id, { medicion_data: payload })
+    if (sale) {
+      // La medición ARMA el remito: materiales de la venta + extras detectados. Solo si la
+      // venta aún no tiene un remito guardado (no pisa la lista curada del inspector).
+      const seedRemito = !(sale.remito_items?.length)
+        ? { remito_items: [...saleMaterialsForRemito(sale.items), ...cleanExtras.map(x => ({ description: x.description, quantity: Number(x.quantity) || 0, unit: looseUnit(x.description) }))] }
+        : {}
+      await update.run("sales", sale.id, { medicion_data: payload, ...seedRemito })
+    }
     if (markDone && sale && sale.delivery_date) {
       const existingRemito = allTasks.find(t => t.type === "remito" && t.sale_id === sale.id && t.status !== "cancelada")
       if (!existingRemito) await create.run("tasks", { type: "remito", title: `Remito · ${sale.client_name}`, due_date: sale.delivery_date_to || sale.delivery_date.slice(0, 10), assigned_seller: task.assigned_seller || sale.seller_name || undefined, status: "pendiente", sale_id: sale.id, notes: sale.client_address || "", created_at: new Date().toISOString() })
@@ -906,8 +915,12 @@ function MedicionFormSheet({ task, sale, allTasks, onClose }: { task: Task | nul
             {extrasItems.length === 0 ? <div className="text-[11px] text-muted-foreground italic border border-dashed border-border rounded-md p-2 text-center">Sin extras. Agregá zócalos, narices, ajustes, etc.</div> : <div className="space-y-2">{extrasItems.map((row, i) => <div key={i} className="grid grid-cols-[1fr_72px_28px] gap-1.5 items-center"><Input value={row.description} onChange={(e) => updateExtra(i, { description: e.target.value })} placeholder="Descripción del extra" className="h-8 text-xs" /><Input type="number" step="0.1" min={0} value={row.quantity} onChange={(e) => updateExtra(i, { quantity: Number(e.target.value) || 0 })} className="h-8 text-xs" /><button type="button" onClick={() => removeExtra(i)} className="h-8 w-7 inline-flex items-center justify-center text-muted-foreground hover:text-destructive" aria-label="Quitar">×</button></div>)}</div>}
           </div>
           <label className="flex items-center gap-2 text-xs text-muted-foreground"><input type="checkbox" checked={markDone} onChange={(e) => setMarkDone(e.target.checked)} />Marcar la medición como completada</label>
-          <div className="flex items-center gap-2 pt-1"><Button onClick={submit} disabled={update.busy}>{update.busy ? "Guardando…" : "Guardar medición"}</Button><Button variant="outline" onClick={onClose}>Cancelar</Button></div>
-          <div className="text-[11px] text-muted-foreground">Al guardar se crea automáticamente el Remito el día de la entrega.</div>
+          <div className="flex items-center gap-2 pt-1 flex-wrap">
+            <Button onClick={submit} disabled={update.busy}>{update.busy ? "Guardando…" : "Guardar medición"}</Button>
+            {sale && <Button variant="outline" onClick={() => { onClose(); navigate(`/ventas?sale=${sale.id}`) }}>Ver venta</Button>}
+            <Button variant="outline" onClick={onClose}>Cancelar</Button>
+          </div>
+          <div className="text-[11px] text-muted-foreground">Al guardar se arma el remito con los materiales de la venta + los extras, y se crea la tarea Remito para el día de la entrega.</div>
         </div>
       </SheetContent>
     </Sheet>
@@ -918,6 +931,7 @@ function MedicionFormSheet({ task, sale, allTasks, onClose }: { task: Task | nul
 // InformeFormSheet — remito / cierre (preservado)
 // ===========================================================================
 function InformeFormSheet({ task, sale, onClose }: { task: Task | null; sale: Sale | null; onClose: () => void }) {
+  const navigate = useNavigate()
   const [observaciones, setObservaciones] = useState<string>("")
   const [m2Entregados, setM2Entregados] = useState<number>(0)
   const [conformidad, setConformidad] = useState<boolean>(true)
@@ -950,7 +964,12 @@ function InformeFormSheet({ task, sale, onClose }: { task: Task | null; sale: Sa
           <div><label className="text-sm font-medium block mb-1">m² efectivamente entregados</label><Input type="number" step="0.1" min={0} value={m2Entregados} onChange={(e) => setM2Entregados(Number(e.target.value) || 0)} /></div>
           <div><label className="text-sm font-medium block mb-1">Observaciones de cierre</label><Input value={observaciones} onChange={(e) => setObservaciones(e.target.value)} placeholder="Detalles de la entrega/instalación" /></div>
           <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={conformidad} onChange={(e) => setConformidad(e.target.checked)} />Cliente firmó conformidad — finalizar venta (descontar stock)</label>
-          <div className="flex items-center gap-2 pt-1"><Button onClick={submit} disabled={update.busy || txn.busy}>{update.busy || txn.busy ? "Guardando…" : "Cerrar remito"}</Button><Button variant="outline" onClick={onClose}>Cancelar</Button></div>
+          <div className="flex items-center gap-2 pt-1 flex-wrap">
+            <Button onClick={submit} disabled={update.busy || txn.busy}>{update.busy || txn.busy ? "Guardando…" : "Cerrar remito"}</Button>
+            {sale && <Button variant="outline" onClick={() => window.open(`/api/sales/${sale.id}/remito`, "_blank")}><Truck className="h-4 w-4" />Ver / imprimir remito</Button>}
+            {sale && <Button variant="outline" onClick={() => { onClose(); navigate(`/ventas?sale=${sale.id}`) }}>Ver venta</Button>}
+            <Button variant="outline" onClick={onClose}>Cancelar</Button>
+          </div>
         </div>
       </SheetContent>
     </Sheet>

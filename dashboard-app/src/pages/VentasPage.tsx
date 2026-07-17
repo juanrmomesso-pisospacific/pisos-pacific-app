@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import { Search, LayoutGrid, Rows3, Smartphone, Plus, Check, CalendarDays, Truck, Info, CalendarClock, ArrowUp, ArrowDown, ChevronsUpDown, MessageCircle, Pencil, Trash2 } from "lucide-react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useSearchParams } from "react-router-dom"
 import { findConvId } from "@/lib/chat"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -22,6 +22,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney, cn, appLocale } from "@/lib/utils"
 import { useConfig, useModules, moduleOn, taxWord } from "@/contexts/ConfigContext"
 import { materialState, MATERIAL_LABEL } from "@/lib/calendar"
+import { saleMaterialsForRemito, looseUnit } from "@/lib/remito"
 import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote, Caja, CashflowMovement, Product } from "@/lib/types"
 
@@ -154,8 +155,18 @@ export default function VentasPage() {
 
   const [openNew, setOpenNew] = useState(false)
 
+  // Deep-link ?sale=<id>: abre el detalle de esa venta directo (lo usan la Agenda —
+  // "Ver venta" de la obra/medición/remito — y cualquier link externo).
+  const [searchParams, setSearchParams] = useSearchParams()
+  const linkedSale = useMemo(() => {
+    const id = searchParams.get("sale")
+    if (!id) return null
+    return sales.find((s) => s.id === id || s.quote_number === id) ?? null
+  }, [searchParams, sales])
+
   return (
     <>
+      {linkedSale && <SaleDetailSheet sale={linkedSale} onClose={() => setSearchParams({}, { replace: true })} onChanged={refetchSales} />}
       <TopbarActions>
         <Button size="sm" onClick={() => setOpenNew(true)}><Plus className="h-4 w-4" />Agregar venta</Button>
       </TopbarActions>
@@ -495,7 +506,10 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
     setPayAmount(0)
     setPayCaja("")
     setPayDate(new Date().toISOString().slice(0, 10))
-    setRemitoItems(sale.remito_items ?? [])
+    // El remito SIEMPRE parte de los materiales de la venta: si todavía no hay uno guardado,
+    // precargar pisos+terminaciones (el inspector ajusta/suma extras y guarda). Antes arrancaba
+    // vacío y el botón "Cargar de la venta" era opcional → remitos sin los pisos (bug 17/7).
+    setRemitoItems(sale.remito_items?.length ? sale.remito_items : saleMaterialsForRemito(sale.items))
     setRemitoConfirmed(!!sale.remito_confirmed)
     setRemitoSaved(false)
   }, [sale?.id])
@@ -579,12 +593,10 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   // Preparación del remito (inspección): parte de los m² de piso y se agregan terminaciones.
   const FINISH_PRESETS = ["Varilla de terminación", "Cuartacaña", "Zócalo", "Perfil de transición", "Nariz de escalón", "Cinta doble faz", "Nylon / film", "Adhesivo"]
   const prefillRemito = () => {
-    const isSvc = (it: any) => /^SERV/i.test(it.sku || "") || /colocaci|entrega|ajuste|medici|reparaci|servicio|mano de obra|flete/i.test(it.description || "")
-    const mats = (sale.items || []).filter((it) => it.product_id !== "discount" && !/^descuento/i.test(it.description || "") && !isSvc(it))
-    setRemitoItems(mats.map((it) => ({ description: it.description || it.sku || "", quantity: Number(it.quantity) || 0, unit: /z[oó]calo|varilla|cuartaca|nariz|moldura/i.test(it.description || "") ? "ml" : "m²" })))
+    setRemitoItems(saleMaterialsForRemito(sale.items))
     setRemitoSaved(false)
   }
-  const addRemitoRow = (preset?: string) => { setRemitoItems((r) => [...r, { description: preset || "", quantity: 0, unit: preset && /varilla|cuartaca|z[oó]calo|nariz|perfil/i.test(preset) ? "ml" : "u" }]); setRemitoSaved(false) }
+  const addRemitoRow = (preset?: string) => { setRemitoItems((r) => [...r, { description: preset || "", quantity: 0, unit: preset ? looseUnit(preset) : "u" }]); setRemitoSaved(false) }
   const addRemitoProduct = (productId: string) => {
     const p = products.find((x) => x.id === productId); if (!p) return
     const unit = p.stockTrack ? "m²" : (/z[oó]calo|varilla|cuartaca|nariz|moldura|perfil/i.test(p.name) ? "ml" : "u")
@@ -790,7 +802,7 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
             <p className="text-[11px] text-muted-foreground mb-2">Para el depósito: m² de piso + terminaciones (varillas, zócalos, cajas…) que define el inspector. Sin precios.</p>
             <div className="flex items-center gap-2 mb-2">
               <div className="flex-1"><SearchPicker items={remitoPickerItems} placeholder="Buscar producto del inventario para agregar…" onPick={addRemitoProduct} /></div>
-              {remitoItems.length === 0 && <Button size="sm" variant="outline" className="shrink-0" onClick={prefillRemito}>Cargar de la venta</Button>}
+              <Button size="sm" variant="outline" className="shrink-0" onClick={prefillRemito} title="Vuelve a los materiales de la venta (descarta los cambios de la lista)">Recargar de la venta</Button>
             </div>
             {remitoItems.length > 0 && (
               <div className="space-y-1.5">
