@@ -99,7 +99,20 @@
   ],
   "sales": [],
   "quotes": [],
-  "clients": [],
+  "clients": [
+    {
+      "id": "CLI-mrp3m3cg-2kix",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Edifix",
+      "updated_at": "2026-07-17T15:34:17.200Z"
+    }
+  ],
   "expenses": [],
   "cajas": [],
   "suppliers": [],
