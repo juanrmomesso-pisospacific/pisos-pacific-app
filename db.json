@@ -190,7 +190,8 @@
       "discount_amount": 0,
       "created_at": "2026-07-17T16:51:28.851Z",
       "quote_number": "A3667",
-      "status": "DRAFT"
+      "status": "DRAFT",
+      "share_token": "cae120480f0e2921303dbe24"
     }
   ],
   "clients": [
