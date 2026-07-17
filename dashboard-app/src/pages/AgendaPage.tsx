@@ -570,9 +570,14 @@ function ObraCardModal({ sale, products, tasks, onClose, onReprogramar, onMedici
           <div className="grid grid-cols-4 gap-1.5 pt-1">
             <Button variant="outline" size="sm" className="text-xs" onClick={() => onReprogramar(sale.id)}>Editar</Button>
             <Button variant="outline" size="sm" className="text-xs" disabled={!medicion} onClick={() => medicion && onMedicion(sale.id)}>Medición</Button>
-            <Button variant="outline" size="sm" className="text-xs" disabled={!remito} onClick={() => remito && onRemito(sale.id)}>Remito</Button>
+            {/* El remito DOCUMENTO siempre se puede ver (el PDF deriva de la venta aunque
+                nadie lo haya preparado); el CIERRE (tarea) es otra acción, solo si existe. */}
+            <Button variant="outline" size="sm" className="text-xs" onClick={() => window.open(`/api/sales/${sale.id}/remito`, "_blank")}>Ver remito</Button>
             <Button variant="outline" size="sm" className="text-xs" onClick={() => { onClose(); navigate(`/ventas?sale=${sale.id}`) }}>Ver venta</Button>
           </div>
+          {remito && remito.status !== "completada" && (
+            <Button variant="outline" size="sm" className="w-full text-xs" onClick={() => onRemito(sale.id)}>Cerrar remito (entrega y conformidad)</Button>
+          )}
         </div>
       </div>
     </div>
