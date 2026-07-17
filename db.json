@@ -170,7 +170,7 @@
       "name": "respuesta_consulta",
       "category": "UTILITY",
       "language": "es_AR",
-      "channel": "all",
+      "channel": "chat",
       "status": "approved",
       "keywords": "hola,info,informacion,consulta,interesa,buscando,proyecto,piso,madera",
       "body": "¡Hola {nombre}! Gracias por escribir a Pisos Pacific 😊 Contame qué estás buscando (producto, m² aproximados y zona de la obra) y te ayudo con todo.",
@@ -181,7 +181,7 @@
       "name": "pedir_datos_presupuesto",
       "category": "UTILITY",
       "language": "es_AR",
-      "channel": "all",
+      "channel": "chat",
       "status": "approved",
       "keywords": "precio,presupuesto,cotizar,cotizacion,cuanto,sale,vale,m2,metros",
       "body": "Para pasarte el presupuesto necesito tres datos: los m² aproximados, la ubicación de la obra y qué piso te gustó. ¿Me los compartís y te lo armo?",
@@ -424,6 +424,10 @@
     "lsYOJClm3ArmID1sIAqcVQB3WCmY-h-1": {
       "userId": "u-admin",
       "expires": 1785463222767
+    },
+    "EmOcwrgddFfzqOHjuOr2rHH6rZ3d0EWZ": {
+      "userId": "u-admin",
+      "expires": 1785463752909
     }
   },
   "settings": {
