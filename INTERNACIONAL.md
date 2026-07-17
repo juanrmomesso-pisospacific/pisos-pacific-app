@@ -112,6 +112,21 @@ Segundo servicio Render (mismo repo), disco/DB/envs propios, config país=PA + m
 ### Fase 2 — Integraciones Panamá
 WhatsApp +507 (cloud-only, phone number nuevo — puede convivir en la misma app Meta con WABA/phone_id propios en las envs de PA) · Instagram del socio · Gmail propio (leads + envío) · SIN Mercado Pago (no opera en PA). Si más adelante el socio adopta `finanzas`: parser del banco que use (Banco General/Banistmo/BAC) cuando haya extractos reales, mismo patrón que BdC.
 
+### Checklist: crear la instancia FREE de Panamá en Render (~10 min, la hace el dueño)
+1. **Token de GitHub** (una vez): github.com → Settings → Developer settings → **Fine-grained tokens** → Generate: Repository access = SOLO `pisos-pacific-app`; Permissions = **Contents: Read and write**; expiración 1 año (anotar renovación). Copiar el token.
+2. **Render** → New → **Web Service** → repo `pisos-pacific-app`, branch `main`.
+3. Name: `pacific-panama` (define la URL). Instance type: **Free**.
+4. Build: `npm install && npm run build` · Start: `npm start` · Health check path: `/healthz` (⚠️ NO /api/auth/me).
+5. Environment variables:
+   - `NODE_VERSION` = `22`
+   - `BOOTSTRAP` = `empty`
+   - `BOOTSTRAP_ADMIN_EMAIL` = email del socio (o `admin@pacificpanama` provisorio)
+   - `BOOTSTRAP_ADMIN_PASSWORD` = contraseña inicial (la cambia en la app)
+   - `DB_GITHUB_REPO` = `juanrmomesso-pisospacific/pisos-pacific-app`
+   - `DB_GITHUB_BRANCH` = `pa-data`
+   - `DB_GITHUB_TOKEN` = el token del paso 1
+6. Create. Al terminar el primer deploy: pasar la URL — de acá se sigue por chat (seed del catálogo + configuración del perfil Panamá por API + verificación).
+
 ### Fase 3 — Consolidado multi-operación (cuando el dueño lo pida)
 Endpoint `/api/summary` de solo lectura por instancia (ventas, margen, y caja si finanzas ON) + agregador liviano que consolida en USD. Sin unir bases.
 
@@ -130,7 +145,8 @@ Endpoint `/api/summary` de solo lectura por instancia (ventas, margen, y caja si
 1. **Marca en Panamá = Pacific** (mismo logo; cambian email/web/textos legales por config de empresa).
 2. **El socio vende Y coloca** → módulo `agenda` ON en PA.
 3. **Catálogo PA — PRECARGADO POR NOSOTROS, editable por el socio (15/7)**: los 4 pisos XL en **5,5mm** + los 4 zócalos Pacific 2400×60×12mm viven en `data/catalogo.panama.json` y se siembran con `node scripts/seed-catalogo-panama.mjs <url> <admin> <pass>` (re-ejecutable, dedup por SKU — nunca pisa precios que el socio ya haya cargado). **Precios y costos van en 0 a propósito**: los carga el socio desde Inventario (sus precios son de ellos). Los **servicios** (entrega, colocación, etc.) los crean ellos desde la app.
-   **Dominio/costos (15/7)**: NO hace falta comprar dominio — la instancia PA usa el subdominio gratis de Render (`*.onrender.com`, con SSL), igual que hoy la AR. El único costo nuevo es el servicio Render Starter de la instancia (~US$7/mes, necesario por el disco persistente). Dominio propio = opcional a futuro (solo el registro, ~US$10-15/año, lo puede pagar el socio; en Render se agrega gratis).
+   **Dominio/costos (15/7)**: NO hace falta comprar dominio — la instancia PA usa el subdominio gratis de Render (`*.onrender.com`, con SSL). Dominio propio = opcional a futuro (~US$10-15/año, lo puede pagar el socio).
+   **HOSTING PA = GRATIS (decisión del dueño 16/7)**: nada de plata. La instancia PA corre en el plan **FREE de Render** (sin disco persistente) como **herramienta de cotizaciones** ("solo las cotizaciones, que salgan lindas como están"). La persistencia se resuelve con la capa **`DB_GITHUB_REPO/BRANCH/TOKEN`** en server.js: al bootear restaura el `db.json` desde la rama huérfana **`pa-data`** del repo privado, y cada guardado lo pushea (debounced 10s + flush en SIGTERM; si el pull falla ABORTA para no pisar datos; valida el JSON antes de escribir). **100% inerte para AR** (sin esas envs no ejecuta nada — verificado: boot AR sin ninguna línea db-remote, ventas/cobros idénticos). Trade-offs aceptados: cold-start ~1 min tras 15 min de inactividad; uploads no persisten (cotizaciones no los usa). Si el socio después quiere "más como Argentina" (stock real, mensajes, etc.) → upgrade a Starter US$7/mes con disco, mismos datos (se sube el db.json de la rama pa-data al disco).
 4. **Impuestos, vendedores, precios y costos editables desde la app por el socio** → la Fase 0 suma UI en Configuración para impuesto/empresa/vendedores (precios/costos ya son editables en Inventario).
 5. **Administración**: Pisos Pacific AR administra desde acá Y el socio tiene su propio usuario admin en su instancia (roles existentes alcanzan).
 6. Contenedores en PA: a confirmar cuando arranque la operación (el módulo queda disponible).

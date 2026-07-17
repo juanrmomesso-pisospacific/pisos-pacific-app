@@ -69,6 +69,68 @@ const DB_PATH = process.env.DB_PATH || path.join(__dirname, 'data/db.json');
 const UPLOAD_DIR = process.env.UPLOAD_DIR || path.join(path.dirname(DB_PATH), 'uploads');
 try { fs.mkdirSync(UPLOAD_DIR, { recursive: true }); } catch { /* ya existe */ }
 
+// ---------- Persistencia REMOTA del db.json (instancias free de Render, sin disco) ----------
+// Solo se activa si el servicio define DB_GITHUB_REPO + DB_GITHUB_TOKEN. La instancia de
+// ARGENTINA no define estas envs → todo este bloque es INERTE para ella (carga y guardado
+// 100% locales, idénticos a siempre). Uso: la instancia gratis de Panamá guarda su db.json
+// en una rama de datos del repo privado (pull al bootear, push debounced al guardar).
+const DB_REMOTE = {
+  repo: process.env.DB_GITHUB_REPO || '',              // "owner/repo"
+  branch: process.env.DB_GITHUB_BRANCH || 'pa-data',   // rama huérfana de datos (NO main)
+  path: process.env.DB_GITHUB_PATH || 'db.json',
+  token: process.env.DB_GITHUB_TOKEN || '',
+};
+const dbRemoteOn = () => !!(DB_REMOTE.repo && DB_REMOTE.token);
+const GH_API = process.env.DB_GITHUB_API || 'https://api.github.com';   // override solo para tests
+const ghContentsUrl = () => `${GH_API}/repos/${DB_REMOTE.repo}/contents/${encodeURIComponent(DB_REMOTE.path)}`;
+const ghHeaders = (accept) => ({ Authorization: `token ${DB_REMOTE.token}`, 'User-Agent': 'pisos-pacific-app', Accept: accept });
+
+async function dbRemoteSha() {
+  const r = await fetch(`${ghContentsUrl()}?ref=${DB_REMOTE.branch}`, { headers: ghHeaders('application/vnd.github+json'), signal: AbortSignal.timeout(20000) });
+  if (r.status === 404) return null;                    // todavía no existe (primer boot)
+  if (!r.ok) throw new Error(`GitHub sha ${r.status}`);
+  return (await r.json()).sha || null;
+}
+async function dbRemotePull() {
+  const r = await fetch(`${ghContentsUrl()}?ref=${DB_REMOTE.branch}`, { headers: ghHeaders('application/vnd.github.raw'), signal: AbortSignal.timeout(30000) });
+  if (r.status === 404) { console.log('[db-remote] sin db.json remoto todavía (primer arranque) — se crea con el primer guardado'); return false; }
+  if (!r.ok) throw new Error(`GitHub pull ${r.status}`);
+  const body = await r.text();
+  JSON.parse(body);                                     // valida ANTES de escribir (nunca dejar un db.json roto)
+  fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
+  fs.writeFileSync(DB_PATH, body);
+  console.log(`[db-remote] db.json restaurado desde ${DB_REMOTE.repo}@${DB_REMOTE.branch} (${(body.length / 1024).toFixed(0)} KB)`);
+  return true;
+}
+let dbPushTimer = null, dbPushing = false, dbPushDirty = false;
+async function dbRemotePush() {
+  if (dbPushing) { dbPushDirty = true; return; }        // serializado: si hay uno en vuelo, re-push al terminar
+  dbPushing = true;
+  try {
+    const body = fs.readFileSync(DB_PATH, 'utf8');
+    const sha = await dbRemoteSha();
+    const r = await fetch(ghContentsUrl(), {
+      method: 'PUT', headers: ghHeaders('application/vnd.github+json'), signal: AbortSignal.timeout(30000),
+      body: JSON.stringify({ message: `db: guardado ${new Date().toISOString()}`, content: Buffer.from(body).toString('base64'), branch: DB_REMOTE.branch, ...(sha ? { sha } : {}) }),
+    });
+    if (!r.ok) throw new Error(`GitHub push ${r.status}`);
+  } finally {
+    dbPushing = false;
+    if (dbPushDirty) { dbPushDirty = false; dbRemotePush().catch((e) => console.warn('[db-remote] re-push:', e.message)); }
+  }
+}
+function scheduleRemotePush() {
+  if (!dbRemoteOn()) return;                            // AR: no-op
+  if (dbPushTimer) clearTimeout(dbPushTimer);
+  dbPushTimer = setTimeout(() => { dbPushTimer = null; dbRemotePush().catch((e) => console.warn('[db-remote] push:', e.message)); }, 10000);
+}
+// Restaurar al bootear SOLO si no hay db local (en una instancia free el disco arranca vacío
+// en cada boot; en cualquier instancia con disco el archivo local manda y no se pisa).
+if (dbRemoteOn() && !fs.existsSync(DB_PATH)) {
+  try { await dbRemotePull(); }
+  catch (e) { console.error(`[db-remote] FATAL: no pude restaurar el db.json remoto (${e.message}). Abortando para no arrancar con datos vacíos encima de datos reales.`); process.exit(1); }
+}
+
 function seedFromDump() {
   // The core business dump (products/sales/quotes/clients/expenses + settings) lives in an
   // un-committed clone-source/ dir on the original machine. Fall back to empty collections so
@@ -183,6 +245,7 @@ function flushSave() {
   const tmp = `${DB_PATH}.tmp`;
   fs.writeFileSync(tmp, JSON.stringify(db, null, 2));
   fs.renameSync(tmp, DB_PATH);
+  scheduleRemotePush();   // no-op sin DB_GITHUB_REPO (instancia AR)
 }
 function save() {
   // Debounce writes so a burst of mutations only writes once
@@ -190,8 +253,17 @@ function save() {
   saveTimer = setTimeout(flushSave, 50);
 }
 // Flush pendiente antes de salir (deploys de Render mandan SIGTERM) → no perder los últimos cambios.
+// Con persistencia remota activa, además se espera el push final (Render da ~30s de gracia).
 for (const sig of ['SIGTERM', 'SIGINT']) {
-  process.on(sig, () => { try { flushSave(); } catch { /* noop */ } process.exit(0); });
+  process.on(sig, () => {
+    try { flushSave(); } catch { /* noop */ }
+    if (dbRemoteOn()) {
+      dbRemotePush().catch(() => { /* best-effort */ }).finally(() => process.exit(0));
+      setTimeout(() => process.exit(0), 15000);   // tope: no colgar el shutdown
+    } else {
+      process.exit(0);
+    }
+  });
 }
 
 // Depósito por defecto (gancho forward-compat para depósitos/distribuidores múltiples a futuro).
