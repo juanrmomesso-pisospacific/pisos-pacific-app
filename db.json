@@ -153,6 +153,18 @@
       "notes": null,
       "name": "Edifix",
       "updated_at": "2026-07-17T15:34:17.200Z"
+    },
+    {
+      "id": "CLI-mrp6bkxr-1oli",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Desarrollo bahi",
+      "updated_at": "2026-07-17T16:50:05.631Z"
     }
   ],
   "expenses": [],
