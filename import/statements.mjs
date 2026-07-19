@@ -83,6 +83,10 @@ try {
 // Matchea por CUIT (exacto), y por nombre contra contraparte cruda, contraparte
 // clasificada y descripción (exacto, o "contiene" con clave ≥5 chars — ver findRule).
 function applyCpMap(rec, rawName, cuit) {
+  // Los movimientos ESTRUCTURALES del banco (pago de resumen de tarjeta, transferencias entre
+  // cuentas, interés/DPF) ya vienen decididos por classifyBank con transfer:true — una regla
+  // aprendida NUNCA debe pisarlos (pasó: "PAGO DE TARJETA VISA" → "Google/Marketing", 19/7).
+  if (rec.transfer) return rec;
   const cuitKey = cuit && String(cuit).replace(/\D/g, '');
   const byCuit = cuitKey && CPMAP.byCuit[cuitKey];
   const found = byCuit ? { rule: byCuit, key: `CUIT ${cuitKey}` } : findRule(rawName, rec.counterparty, rec.description);
@@ -164,14 +168,20 @@ const TRANSFER = /mov entre cuentas|transferencia a cuenta propia|cuenta propia|
 // Ruido recurrente de extractos que SIEMPRE es transferencia (pago del resumen de tarjeta /
 // movimiento entre cuentas): se auto-clasifica y auto-limpia (los gastos reales son los cargos
 // itemizados de la tarjeta, ya registrados). "Pago con débito" NO entra (es una compra real).
-const CARD_NOISE = /pago de servicios tarjeta|cuenta visa nro|cuenta mastercard nro|pago de tarjeta visa|compensaci[oó]n de fondos/i;
+const CARD_NOISE = /cuenta visa nro|cuenta mastercard nro|pago de tarjeta visa|pago de tarjeta mastercard|compensaci[oó]n de fondos/i;
+// "PAGO DE SERVICIOS TARJETA 17230770" es el canal de PAGOS/VEP de BBVA y es AMBIGUO: puede ser
+// un VEP de nacionalización (→ COGS), un VEP para cargar Google Ads (→ Marketing) o un pago de
+// resumen chico. Confirmado con el dueño 19/7 (el VEP de $40,6M era nacionalización, no tarjeta)
+// → SIEMPRE a revisión, nunca auto-transferencia ni auto-clasificación.
+const VEP_CHANNEL = /pago de servicios tarjeta/i;
 // Resultado financiero / plazo fijo: NO es operación (fuera del P&L, como el interés de MP que se
 // filtra). Interés del banco ("Remuneración de Saldo", "Intereses Ganados") y DPF (plazo fijo).
 const FINANCIAL = /remuneraci[oó]n de saldo|intereses ganados|\bdpf\b|plazo fijo/i;
 
 function classifyBank(desc) {
   const t = norm(desc);
-  if (CARD_NOISE.test(t)) return { transfer: true, category: 'Otros Gastos y Ajustes', subcategory: 'Ajuste', expense_type: 'Otros Gastos y Ajustes', counterparty: 'MOV ENTRE CUENTAS', no_review: true, why: 'pago de resumen de tarjeta / compensación → transferencia' };
+  if (VEP_CHANNEL.test(t)) return { review_reason: '¿VEP (nacionalización→COGS / carga Google Ads→Marketing) o pago de resumen de tarjeta?', why: 'canal de pagos/VEP de BBVA — ambiguo, decide el dueño' };
+  if (CARD_NOISE.test(t)) return { transfer: true, category: 'Pago de tarjeta (resumen)', subcategory: null, expense_type: null, counterparty: null, no_review: true, why: 'pago de resumen de tarjeta / compensación → transferencia' };
   if (FINANCIAL.test(t)) {
     const isDpf = /dpf|plazo fijo/.test(t);
     // Interés: auto-limpio (no necesita 2da pata). DPF: queda en revisión para registrar también
