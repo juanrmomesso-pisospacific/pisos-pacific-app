@@ -218,6 +218,18 @@
       "notes": null,
       "name": "Desarrollo bahi",
       "updated_at": "2026-07-17T16:50:05.631Z"
+    },
+    {
+      "id": "CLI-mrtpf5z2-ttb8",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Az developers",
+      "updated_at": "2026-07-20T20:55:50.270Z"
     }
   ],
   "expenses": [],
@@ -608,7 +620,8 @@
         "enabled": false,
         "access_token": "",
         "public_key": ""
-      }
+      },
+      "instagram": {}
     },
     "warehouses": [
       {
