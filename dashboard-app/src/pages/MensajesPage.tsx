@@ -506,6 +506,11 @@ function Thread({ conversation, lead, templates, className, onBack, onShowContac
   // (Consts planas, no hooks — este bloque corre después del early-return de arriba.)
   const lastInbound = [...messages].reverse().find(m => m.direction === "in")?.body || ""
   const suggestions = suggestTemplates(availableTemplates, lastInbound, conversation.channel, { leadStatus: lead?.status, max: 3 })
+  // Ventana de respuesta de Meta (24 hs desde el último ENTRANTE): fuera de ella, IG/WA
+  // rechazan el envío por API → avisar ANTES de que el vendedor escriba y le falle.
+  const lastInTs = conversation.last_inbound_at || [...messages].reverse().find(m => m.direction === "in")?.ts
+  const windowClosed = (conversation.channel === "instagram" || conversation.channel === "whatsapp")
+    && !!lastInTs && Date.now() - Date.parse(lastInTs) > 24 * 3600e3
 
   return (
     <section
@@ -542,6 +547,13 @@ function Thread({ conversation, lead, templates, className, onBack, onShowContac
           )
         })}
       </div>
+      {windowClosed && (
+        <div className="border-t border-amber-300/60 bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-[11px] text-amber-800 dark:text-amber-300">
+          ⏰ <b>Pasaron más de 24 hs del último mensaje del cliente</b> — {conversation.channel === "instagram"
+            ? "Instagram va a rechazar el envío desde acá. Respondele desde la app de Instagram del celular: la respuesta se espeja sola en este chat."
+            : "WhatsApp solo acepta plantillas aprobadas fuera de la ventana. Si el cliente vuelve a escribir, la ventana se reabre."}
+        </div>
+      )}
       {suggestions.length > 0 && (
         <div className="border-t border-border bg-background px-3 pt-2 flex flex-wrap items-center gap-1.5">
           <span className="text-[10px] text-muted-foreground inline-flex items-center gap-1"><Sparkles className="h-3 w-3 text-amber-500" />Sugerencias:</span>
@@ -654,7 +666,7 @@ function Bubble({ msg }: { msg: Message }) {
         )}
         <div className={`text-[10px] mt-1 ${isOut ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
           {new Date(msg.ts).toLocaleTimeString(appLocale(), { hour: "2-digit", minute: "2-digit" })}
-          {isOut && msg.status ? ` · ${DELIVERY_LABEL[msg.status] ?? msg.status}` : ""}
+          {isOut && msg.status ? ` · ${DELIVERY_LABEL[msg.status] ?? msg.status}${msg.status === "failed" && msg.error && /outside of allowed window/i.test(msg.error) ? " — ventana de 24h vencida" : ""}` : ""}
         </div>
       </div>
     </div>
@@ -680,7 +692,7 @@ function EmailMessage({ msg, contactName }: { msg: Message; contactName: string 
         </div>
         <span className="text-[11px] text-muted-foreground shrink-0">
           {new Date(msg.ts).toLocaleString(appLocale(), { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
-          {isOut && msg.status ? ` · ${DELIVERY_LABEL[msg.status] ?? msg.status}` : ""}
+          {isOut && msg.status ? ` · ${DELIVERY_LABEL[msg.status] ?? msg.status}${msg.status === "failed" && msg.error && /outside of allowed window/i.test(msg.error) ? " — ventana de 24h vencida" : ""}` : ""}
         </span>
       </div>
       <div className="px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap break-words text-foreground/90">

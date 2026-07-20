@@ -1053,8 +1053,12 @@ app.post('/api/conversations/:id/messages', async (req, res) => {
     ...(delivery.sent || tokensMissing ? {} : { error: delivery.reason }),
   };
   db.messages.push(msg);
-  touchConv(conv, 'out', msg.ts, body);
-  conv.unread_count = 0;  // reading + sending clears the unread count
+  // Un envío FALLIDO no cuenta como respuesta: la conversación sigue PENDIENTE en el triage
+  // (antes el fallido la marcaba "respondida" y el lead desaparecía del radar sin respuesta real).
+  if (msg.status !== 'failed') {
+    touchConv(conv, 'out', msg.ts, body);
+    conv.unread_count = 0;  // reading + sending clears the unread count
+  }
   save();
   res.json(msg);
 });

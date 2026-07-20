@@ -26,7 +26,8 @@ export type Message = {
   direction: "in" | "out"
   body: string
   ts: string
-  status?: "sent" | "delivered" | "read" | "received"
+  status?: "sent" | "delivered" | "read" | "received" | "failed"
+  error?: string            // razón del fallo de envío (ej. fuera de la ventana de 24h)
   template_name?: string
   wa_id?: string            // id de mensaje de WhatsApp (dedup de echoes en Coexistence)
   via?: "wa-app" | "ig-app" // respondido desde la app del celular (WhatsApp / Instagram)
