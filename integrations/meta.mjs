@@ -111,7 +111,12 @@ export async function handleInbound(db, save, channel, payload) {
   }
   const parsed = channel === 'whatsapp' ? parseWhatsApp(payload) : parseInstagram(payload);
   if (!parsed) return null;
-  const { contactId, text, ts } = parsed;
+  const { contactId, ts } = parsed;
+  // Atribución de campaña: si el mensaje vino de un anuncio (click-to-WhatsApp), dejarlo
+  // VISIBLE en el hilo — el vendedor sabe al toque qué anuncio trajo al cliente.
+  const text = parsed.referral
+    ? `${parsed.text}\n🎯 Vino del anuncio${parsed.referral.headline ? `: "${parsed.referral.headline}"` : ''}`
+    : parsed.text;
   let conv = db.conversations.find((c) => c.channel === channel && c.contact_id === contactId);
   // Resolver el nombre solo si hace falta: conversación nueva, o nombre todavía sin resolver
   // (Instagram solo manda el ID → buscamos el @usuario por API una sola vez).
@@ -147,13 +152,45 @@ export async function handleInbound(db, save, channel, payload) {
   } else if (contactName) {
     conv.contact_name = contactName;
   }
+  // Atribución de campaña en el LEAD: la fuente pasa de la genérica ("WhatsApp") al anuncio
+  // concreto. Vale también para conversaciones existentes (un contacto viejo que clickea el
+  // anuncio nuevo cuenta para la campaña). El ctwa_clid queda para cruzar con Meta Ads.
+  if (parsed.referral && conv.linked_lead_id) {
+    const lead = db.leads.find((l) => l.id === conv.linked_lead_id);
+    if (lead) {
+      const tag = `Anuncio${parsed.referral.headline ? ` — "${parsed.referral.headline}"` : ''} (${parsed.referral.source_type || 'ad'})`;
+      if (!lead.source || /^(whatsapp|instagram)$/i.test(lead.source)) lead.source = tag;
+      const nota = `[${ts.slice(0, 10)}] Click en anuncio: ${parsed.referral.headline || '(sin título)'}${parsed.referral.source_url ? ` · ${parsed.referral.source_url}` : ''}${parsed.referral.ctwa_clid ? ` · ctwa:${parsed.referral.ctwa_clid}` : ''}`;
+      if (!(lead.notes || '').includes(parsed.referral.ctwa_clid || nota)) lead.notes = [(lead.notes || ''), nota].filter(Boolean).join('\n');
+    }
+    conv.referral = parsed.referral;
+  }
 
   const msg = {
     id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
     conversation_id: conv.id, direction: 'in', body: text, ts, status: 'received',
     ...(parsed.media ? { media: parsed.media } : {}),   // descriptor temporal; server.js baja y guarda
+    ...(parsed.raw ? { raw: parsed.raw } : {}),         // crudo de tipos no soportados (diagnóstico)
   };
   db.messages.push(msg);
+  // Rescate de mensajes que Meta NO entrega por API (encuestas, fotos "ver una sola vez"):
+  // sin esto el hilo queda mudo y el lead se pierde. Auto-respuesta pidiendo el reenvío,
+  // 1 vez por día por conversación (throttle) y solo dentro de la ventana del entrante.
+  if (channel === 'whatsapp' && parsed.unsupported) {
+    const last = conv.last_unsupported_reply_at ? Date.parse(conv.last_unsupported_reply_at) : 0;
+    if (Date.now() - last > 24 * 3600e3) {
+      conv.last_unsupported_reply_at = new Date().toISOString();
+      const disculpa = '¡Hola! Me llegó tu mensaje pero WhatsApp no me deja abrirlo (suele pasar con encuestas o fotos de "ver una sola vez" 🙈). ¿Me lo reenviás como texto o foto común? ¡Gracias!';
+      sendOutbound('whatsapp', contactId, disculpa)
+        .then(() => {
+          // Registrar el saliente SIN touchConv: la conversación sigue PENDIENTE (el auto-reply
+          // no cuenta como respuesta del vendedor — el seguimiento humano sigue debido).
+          db.messages.push({ id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, conversation_id: conv.id, direction: 'out', body: disculpa, ts: new Date().toISOString(), status: 'sent', via: 'auto-unsupported' });
+          save();
+        })
+        .catch(() => { /* best-effort */ });
+    }
+  }
   // Anti-enterrado: si el entrante llega FUERA DE ORDEN (ts viejo — típico de un webhook
   // demorado/reintentado por Meta durante un deploy), touchConv no lo subiría y quedaría
   // enterrado en la bandeja. En vivo igual tiene que verse: lo surfaceamos por hora de LLEGADA
@@ -182,8 +219,23 @@ function waMediaLabel(m) {
     case 'audio':    return '🎤 Audio';
     case 'video':    return '🎥 Video' + (m.video?.caption ? ': ' + m.video.caption : '');
     case 'sticker':  return '🩷 Sticker';
-    case 'location': return '📍 Ubicación' + (m.location?.name ? ': ' + m.location.name : '');
-    case 'contacts': return '👤 Contacto compartido';
+    // Ubicación con link a Maps (útil para calificar por zona en campañas).
+    case 'location': {
+      const l = m.location || {};
+      const link = (l.latitude != null && l.longitude != null) ? ` https://maps.google.com/?q=${l.latitude},${l.longitude}` : '';
+      return '📍 Ubicación' + (l.name ? ': ' + l.name : '') + (l.address ? ` (${l.address})` : '') + link;
+    }
+    case 'contacts': {
+      const c = Array.isArray(m.contacts) ? m.contacts[0] : null;
+      const nm = c?.name?.formatted_name || '';
+      const ph = c?.phones?.[0]?.phone || '';
+      return '👤 Contacto compartido' + (nm ? `: ${nm}` : '') + (ph ? ` · ${ph}` : '');
+    }
+    // Respuestas a botones/listas (plantillas o mensajes interactivos): el texto elegido.
+    case 'interactive': return m.interactive?.button_reply?.title || m.interactive?.list_reply?.title || '📎 Respuesta interactiva';
+    case 'button':      return m.button?.text || '📎 Respuesta de botón';
+    // Meta NO entrega el contenido de estos tipos por API (encuestas, fotos "ver una sola vez").
+    case 'unsupported': return '📎 Mensaje que WhatsApp no entrega por API (encuesta / foto de una sola vez) — se le pidió al cliente que lo reenvíe';
     default:         return `📎 Mensaje (${m.type})`;
   }
 }
@@ -197,10 +249,16 @@ function parseWhatsApp(payload) {
     // Media de WhatsApp: viene como id → se resuelve/baja con el token (en server.js).
     const mediaNode = m.image || m.video || m.audio || m.document || m.sticker;
     const media = (mediaNode?.id) ? { source: 'wa-id', mediaId: mediaNode.id, mime: mediaNode.mime_type || '', kind: m.type } : null;
+    // Atribución de anuncios click-to-WhatsApp (campañas IG/FB): Meta manda `referral` en el
+    // PRIMER mensaje que llega desde el anuncio → de qué anuncio vino el lead.
+    const r = m.referral;
+    const referral = r ? { source_type: r.source_type || '', headline: r.headline || '', source_url: r.source_url || '', ctwa_clid: r.ctwa_clid || '' } : null;
     return {
       contactId: m.from,
       contactName: contact?.profile?.name || null,
-      text, media,
+      text, media, referral,
+      unsupported: m.type === 'unsupported',
+      raw: (m.type === 'unsupported' || !/^(text|image|document|audio|video|sticker|location|contacts|interactive|button|reaction)$/.test(m.type || '')) ? m : null,
       ts: m.timestamp ? new Date(Number(m.timestamp) * 1000).toISOString() : new Date().toISOString(),
     };
   } catch { return null; }
