@@ -192,6 +192,45 @@
       "quote_number": "A3667",
       "status": "REJECTED",
       "share_token": "cae120480f0e2921303dbe24"
+    },
+    {
+      "id": "local-1784581095109-22iae",
+      "client_id": "CLI-mrtpf5z2-ttb8",
+      "client_name": "Az developers",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Calle del este",
+      "internal_notes": "Ariel Tesone 6131-3662",
+      "public_notes": "Nada",
+      "payment_terms": "Anticipo 50% resto en la entreg",
+      "seller_name": "Ariel Tesone",
+      "seller_phone": "",
+      "title": " Costa del este ",
+      "has_iva": false,
+      "price": 36400,
+      "zoned": false,
+      "description": "H2O XL - Aspen 5,5mm x 23cm x 1,50m",
+      "items": [
+        {
+          "product_id": "local-1784253275073-q3adc",
+          "sku": "PA-XL-ASPEN",
+          "description": "H2O XL - Aspen 5,5mm x 23cm x 1,50m",
+          "quantity": 1300,
+          "unit_price": 28,
+          "cost": 0,
+          "category": "Pisos H2O",
+          "total": 36400,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "created_at": "2026-07-20T20:58:14.953Z",
+      "quote_number": "A2877",
+      "status": "DRAFT"
     }
   ],
   "clients": [
