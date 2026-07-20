@@ -8,7 +8,7 @@ import bcrypt from 'bcryptjs';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { startMpReport, getMpReport, parseSettlementBuffer, backfillMpUserMap, mpUserEntry, MP_UNLEARNABLE, MP_CAJA_ID } from './import/mp-api.mjs';
 import { getBlueRate, configureFx } from './import/fx.mjs';
-import { handleInbound, sendOutbound, sendWhatsAppDocument } from './integrations/meta.mjs';
+import { handleInbound, sendOutbound, sendWhatsAppDocument, refreshIgToken, createWaTemplate, listWaTemplates, sendWhatsAppTemplate } from './integrations/meta.mjs';
 import { buildDailyDigest, todayArt } from './integrations/task-bot.mjs';
 import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients } from './integrations/gmail.mjs';
 import { listFolder as driveListFolder, getFileMedia as driveGetFile, getThumb as driveGetThumb, findFirstImage as driveFirstImage, driveConfigured } from './integrations/drive.mjs';
@@ -1088,6 +1088,47 @@ app.post('/api/leads/:id/merge', (req, res) => {
   save();
   res.json({ ok: true, into: tgt.id });
 });
+// ---------- Plantillas de WhatsApp (fuera de la ventana de 24h) ----------
+// Crear/submit una plantilla en la WABA (queda PENDING hasta que Meta la apruebe). Se guarda
+// el cuerpo en db.settings.wa_templates para poder mostrar el texto real en el hilo al enviarla.
+app.post('/api/admin/wa-template', requireAdmin, async (req, res) => {
+  try {
+    const { name, body, category, language, example } = req.body || {};
+    if (!name || !body) return res.status(400).json({ error: 'faltan name/body' });
+    const r = await createWaTemplate({ name, body, category, language, example });
+    db.settings.wa_templates = db.settings.wa_templates || {};
+    db.settings.wa_templates[name] = body;
+    save();
+    res.json(r);
+  } catch (e) { res.status(400).json({ error: e.message }); }
+});
+app.get('/api/admin/wa-templates', requireAdmin, async (_req, res) => {
+  try { res.json(await listWaTemplates()); } catch (e) { res.status(400).json({ error: e.message }); }
+});
+// Enviar una plantilla aprobada en una conversación de WhatsApp (re-enganche fuera de ventana).
+// {{1}} se completa con el primer nombre del contacto. El hilo registra el texto real.
+app.post('/api/conversations/:id/send-template', async (req, res) => {
+  const conv = db.conversations.find(c => c.id === req.params.id);
+  if (!conv) return res.sendStatus(404);
+  if (conv.channel !== 'whatsapp') return res.status(400).json({ error: 'las plantillas son solo de WhatsApp' });
+  const name = req.body?.name || 'reenganche_consulta';
+  const firstName = String(conv.contact_name || '').trim().split(/\s+/)[0] || 'buenas';
+  const delivery = await sendWhatsAppTemplate(conv.contact_id, name, 'es_AR', [firstName]);
+  if (!delivery.sent) return res.status(400).json({ error: delivery.reason || 'no se pudo enviar la plantilla' });
+  const tpl = db.settings.wa_templates?.[name];
+  const body = tpl ? tpl.replace('{{1}}', firstName) : `📨 Plantilla "${name}" enviada`;
+  const msg = {
+    id: `m-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+    conversation_id: conv.id, direction: 'out', body, ts: new Date().toISOString(),
+    status: 'sent', template_name: name, ...(delivery.id ? { wa_id: delivery.id } : {}),
+  };
+  db.messages.push(msg);
+  touchConv(conv, 'out', msg.ts, body);
+  conv.unread_count = 0;
+  save();
+  res.json(msg);
+});
+
 app.post('/api/conversations/:id/share-quote', async (req, res) => {
   const conv = db.conversations.find(c => c.id === req.params.id);
   const q = db.quotes.find(x => x.id === req.body?.quote_id);
@@ -1974,6 +2015,55 @@ async function gmailAutoSync() {
 }
 setTimeout(gmailAutoSync, 60 * 1000);
 setInterval(gmailAutoSync, 15 * 60e3);   // cada 15 min
+
+// ---------- Renovación automática del token de Instagram (vence a los 60 días) ----------
+// Renueva 1×/semana canjeando el token vigente (db.settings primero, env como respaldo si
+// Juan lo renovó a mano en Render). El nuevo queda en db + process.env (los senders leen
+// env en cada llamada). Si falla cerca del vencimiento → alerta por mail. Requisito de
+// Meta: el token debe tener ≥24h para poder renovarse (por eso el reintento es diario).
+const IG_TOKEN_ENV = process.env.IG_TOKEN || '';   // valor original de Render (respaldo)
+{
+  const st = db.settings.integrations?.instagram;
+  if (st?.access_token && st?.refreshed_at) process.env.IG_TOKEN = st.access_token;   // el renovado es más fresco
+}
+let igRefreshRunning = false;
+async function igTokenAutoRefresh() {
+  if (igRefreshRunning) return;
+  igRefreshRunning = true;
+  try {
+    db.settings.integrations = db.settings.integrations || {};
+    const st = db.settings.integrations.instagram = db.settings.integrations.instagram || {};
+    const now = Date.now();
+    if (st.last_attempt_at && now - Date.parse(st.last_attempt_at) < 20 * 3600e3) return;   // máx 1 intento/día
+    if (st.refreshed_at && now - Date.parse(st.refreshed_at) < 7 * 24 * 3600e3) return;     // renovar 1×/semana
+    const candidates = [...new Set([st.access_token, IG_TOKEN_ENV].filter(Boolean))];
+    if (!candidates.length) return;   // Instagram no configurado
+    st.last_attempt_at = new Date().toISOString();
+    save();
+    let ok = null, lastErr = null;
+    for (const t of candidates) {
+      try { ok = await refreshIgToken(t); break; } catch (e) { lastErr = e; }
+    }
+    if (ok) {
+      st.access_token = ok.access_token;
+      st.refreshed_at = new Date().toISOString();
+      st.expires_at = new Date(now + ok.expires_in * 1000).toISOString();
+      process.env.IG_TOKEN = ok.access_token;
+      save();
+      console.log(`[ig-token] renovado ✓ (vence ${st.expires_at.slice(0, 10)})`);
+    } else {
+      console.warn('[ig-token] renovación falló:', lastErr?.message);
+      // Si además el vencimiento está cerca (o es desconocido), avisar por mail 1×/día.
+      const exp = st.expires_at ? Date.parse(st.expires_at) : null;
+      if ((!exp || exp - now < 10 * 24 * 3600e3) && isMailerConfigured()) {
+        const to = db.settings.reminder_email || 'info@pisospacific.com';
+        sendMail({ to, subject: '⚠️ El token de Instagram no se pudo renovar solo', html: `<p>La renovación automática del token de Instagram viene fallando: <b>${lastErr?.message || '?'}</b>.</p><p>${exp ? `El token vigente vence el <b>${st.expires_at.slice(0, 10)}</b>.` : 'No tengo fecha de vencimiento del token vigente.'} Si sigue fallando unos días, renovalo a mano (instructivo: Render → pisos-pacific → Environment → IG_TOKEN, y la URL de refresh de graph.instagram.com).</p>` }).catch(() => { /* best-effort */ });
+      }
+    }
+  } finally { igRefreshRunning = false; }
+}
+setTimeout(igTokenAutoRefresh, 120 * 1000);
+setInterval(igTokenAutoRefresh, 6 * 3600e3);
 
 // ---------- Recordatorio semanal: subir extractos de los bancos ----------
 // Viernes ~9:00 ART (12:00 UTC). Email (confiable) + intento WhatsApp (best-effort, puede

@@ -544,6 +544,49 @@ export async function sendWhatsAppDocument(to, buffer, filename, caption) {
   } catch (e) { return { sent: false, reason: e.message }; }
 }
 
+// Renovación del token de Instagram (vence a los 60 días): canjea el token vigente por uno
+// nuevo de 60 días. Requisito de Meta: el token debe tener ≥24h y NO estar vencido.
+export async function refreshIgToken(token) {
+  const r = await fetch(`https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${encodeURIComponent(token)}`, withTimeout());
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok || !j.access_token) throw new Error(j?.error?.message || `refresh falló (${r.status})`);
+  return { access_token: j.access_token, expires_in: Number(j.expires_in) || 5184000 };
+}
+
+// ---------- Plantillas de WhatsApp (Management API sobre la WABA) ----------
+// Las plantillas son la ÚNICA forma de escribirle a un cliente fuera de la ventana de 24h.
+const wabaId = () => process.env.WHATSAPP_WABA_ID || '1337819171010414';
+export async function createWaTemplate({ name, body, category = 'MARKETING', language = 'es_AR', example = [] }) {
+  const token = process.env.WHATSAPP_TOKEN;
+  if (!token) throw new Error('falta WHATSAPP_TOKEN');
+  const r = await fetch(`${GRAPH}/${wabaId()}/message_templates`, withTimeout({
+    method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, language, category, components: [{ type: 'BODY', text: body, ...(example.length ? { example: { body_text: [example] } } : {}) }] }),
+  }));
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j?.error?.error_user_msg || j?.error?.message || `crear plantilla falló (${r.status})`);
+  return j;   // { id, status: PENDING|APPROVED|REJECTED, category }
+}
+export async function listWaTemplates() {
+  const token = process.env.WHATSAPP_TOKEN;
+  if (!token) throw new Error('falta WHATSAPP_TOKEN');
+  const r = await fetch(`${GRAPH}/${wabaId()}/message_templates?fields=name,status,category,language&limit=50`, withTimeout({ headers: { Authorization: `Bearer ${token}` } }));
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j?.error?.message || `listar plantillas falló (${r.status})`);
+  return j.data || [];
+}
+export async function sendWhatsAppTemplate(to, name, language = 'es_AR', params = []) {
+  const token = process.env.WHATSAPP_TOKEN, phoneId = process.env.WHATSAPP_PHONE_ID;
+  if (!token || !phoneId) return { sent: false, reason: 'faltan WHATSAPP_TOKEN / WHATSAPP_PHONE_ID' };
+  const components = params.length ? [{ type: 'body', parameters: params.map((t) => ({ type: 'text', text: String(t) })) }] : [];
+  const r = await fetch(`${GRAPH}/${phoneId}/messages`, withTimeout({
+    method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messaging_product: 'whatsapp', to, type: 'template', template: { name, language: { code: language }, ...(components.length ? { components } : {}) } }),
+  }));
+  const j = await r.json().catch(() => ({}));
+  return r.ok ? { sent: true, id: j.messages?.[0]?.id } : { sent: false, reason: j?.error?.error_user_msg || j?.error?.message || JSON.stringify(j).slice(0, 200) };
+}
+
 // Instagram con login de Instagram (tokens IGAA…) usa graph.instagram.com, no graph.facebook.com.
 const IG_GRAPH = 'https://graph.instagram.com/v21.0';
 async function sendInstagram(to, text) {

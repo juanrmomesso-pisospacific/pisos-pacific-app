@@ -387,6 +387,7 @@ function Thread({ conversation, lead, templates, className, onBack, onShowContac
   const [draft, setDraft] = useState("")
   const [subject, setSubject] = useState("")   // asunto editable (solo email)
   const [sending, setSending] = useState(false)
+  const [sendingTpl, setSendingTpl] = useState(false)   // plantilla de re-enganche (WA fuera de ventana)
   const [composerError, setComposerError] = useState<string | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
   const taRef = useRef<HTMLTextAreaElement>(null)
@@ -548,10 +549,22 @@ function Thread({ conversation, lead, templates, className, onBack, onShowContac
         })}
       </div>
       {windowClosed && (
-        <div className="border-t border-amber-300/60 bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-[11px] text-amber-800 dark:text-amber-300">
-          ⏰ <b>Pasaron más de 24 hs del último mensaje del cliente</b> — {conversation.channel === "instagram"
+        <div className="border-t border-amber-300/60 bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-[11px] text-amber-800 dark:text-amber-300 flex items-center gap-2 flex-wrap">
+          <span>⏰ <b>Pasaron más de 24 hs del último mensaje del cliente</b> — {conversation.channel === "instagram"
             ? "Instagram va a rechazar el envío desde acá. Respondele desde la app de Instagram del celular: la respuesta se espeja sola en este chat."
-            : "WhatsApp solo acepta plantillas aprobadas fuera de la ventana. Si el cliente vuelve a escribir, la ventana se reabre."}
+            : "WhatsApp solo acepta plantillas aprobadas fuera de la ventana. Si el cliente vuelve a escribir, la ventana se reabre."}</span>
+          {conversation.channel === "whatsapp" && (
+            <button type="button" disabled={sendingTpl}
+              onClick={async () => {
+                setSendingTpl(true); setComposerError(null)
+                try { const r = await api.sendTemplate(conversation.id); if (r) setMessages(prev => [...prev, r as Message]) }
+                catch (e: any) { setComposerError(`Plantilla: ${e?.message || e}`) }
+                finally { setSendingTpl(false) }
+              }}
+              className="shrink-0 rounded-md border border-amber-400 bg-background px-2 py-1 text-[11px] font-medium hover:bg-amber-100 dark:hover:bg-amber-900/40 disabled:opacity-50">
+              {sendingTpl ? "Enviando…" : "📨 Enviar plantilla de re-enganche"}
+            </button>
+          )}
         </div>
       )}
       {suggestions.length > 0 && (

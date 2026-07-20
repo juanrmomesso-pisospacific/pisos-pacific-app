@@ -54,6 +54,8 @@ export const api = {
   // finanzas (no crea movimiento de caja; con finanzas el cobro se linkea desde el Libro).
   salePayment:     (id: string, amount: number, method?: string, notes?: string, date?: string) =>
     post(`/api/sales/${id}/payment`, { amount, method, notes, date }),
+  // Plantilla de WhatsApp (re-enganche fuera de la ventana de 24h)
+  sendTemplate:    (convId: string, name?: string) => post(`/api/conversations/${convId}/send-template`, { name }),
   // Container actions
   containerReceive: (id: string) => post(`/api/containers/${id}/receive`),
   containerCreate:  (body: any) => post(`/api/containers`, body),
