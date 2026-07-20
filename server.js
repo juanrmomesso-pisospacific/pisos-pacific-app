@@ -1105,6 +1105,20 @@ app.post('/api/admin/wa-template', requireAdmin, async (req, res) => {
 app.get('/api/admin/wa-templates', requireAdmin, async (_req, res) => {
   try { res.json(await listWaTemplates()); } catch (e) { res.status(400).json({ error: e.message }); }
 });
+// Diagnóstico de la cuenta de WhatsApp: estado del número, calidad y review de la WABA
+// (para distinguir problemas de facturación / límites / cuenta restringida).
+app.get('/api/admin/wa-status', requireAdmin, async (_req, res) => {
+  try {
+    const token = process.env.WHATSAPP_TOKEN;
+    const waba = process.env.WHATSAPP_WABA_ID || '1337819171010414';
+    const H = { Authorization: `Bearer ${token}` };
+    const [nums, acct] = await Promise.all([
+      fetch(`https://graph.facebook.com/v21.0/${waba}/phone_numbers?fields=display_phone_number,verified_name,quality_rating,status,messaging_limit_tier`, { headers: H, signal: AbortSignal.timeout(20000) }).then(r => r.json()),
+      fetch(`https://graph.facebook.com/v21.0/${waba}?fields=name,account_review_status,message_template_namespace`, { headers: H, signal: AbortSignal.timeout(20000) }).then(r => r.json()),
+    ]);
+    res.json({ waba: acct, phone_numbers: nums?.data || nums });
+  } catch (e) { res.status(400).json({ error: e.message }); }
+});
 // Enviar una plantilla aprobada en una conversación de WhatsApp (re-enganche fuera de ventana).
 // {{1}} se completa con el primer nombre del contacto. El hilo registra el texto real.
 app.post('/api/conversations/:id/send-template', async (req, res) => {

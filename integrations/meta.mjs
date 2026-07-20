@@ -51,7 +51,14 @@ export async function handleInbound(db, save, channel, payload) {
       for (const st of statuses) {
         const m = db.messages.find((x) => x.wa_id === st.id);
         if (!m) continue;
-        if (st.status === 'failed') { if (m.status !== 'failed') { m.status = 'failed'; changed = true; } }
+        if (st.status === 'failed') {
+          if (m.status !== 'failed') { m.status = 'failed'; changed = true; }
+          // Guardar POR QUÉ falló (Meta lo manda en errors[] y lo estábamos descartando —
+          // sin esto un fallo de facturación/límite de marketing es indistinguible).
+          const err = st.errors?.[0];
+          const detail = err ? `${err.code || ''} ${err.title || ''}${err.error_data?.details ? ' — ' + err.error_data.details : ''}`.trim() : null;
+          if (detail && m.error !== detail) { m.error = detail; changed = true; }
+        }
         else if ((rank[st.status] || 0) > (rank[m.status] || 0)) { m.status = st.status; changed = true; }
       }
       if (changed) save();
