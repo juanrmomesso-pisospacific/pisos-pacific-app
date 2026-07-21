@@ -157,7 +157,20 @@
       },
       "stock_reserved": false,
       "stock_deducted": false,
-      "seller_name": "Ariel Tesone"
+      "seller_name": "Ariel Tesone",
+      "remito_items": [
+        {
+          "description": "H2O XL - Roble Clásico 5,5mm x 23cm x 1,50m",
+          "quantity": 1300,
+          "unit": "m²"
+        },
+        {
+          "description": "Zócalo Roble Clásico Pacific - 2400 x 60 x 12 mm",
+          "quantity": 802,
+          "unit": "ml"
+        }
+      ],
+      "remito_confirmed": true
     }
   ],
   "quotes": [
