@@ -11,7 +11,7 @@
       "stockTrack": true,
       "active": true,
       "currency": "USD",
-      "reservedStock": 0
+      "reservedStock": 1300
     },
     {
       "id": "local-1784253275073-q3adc",
@@ -59,7 +59,8 @@
       "stock": 0,
       "stockTrack": false,
       "active": true,
-      "currency": "USD"
+      "currency": "USD",
+      "reservedStock": 802
     },
     {
       "id": "local-1784253275914-ib7b6",
@@ -98,7 +99,67 @@
       "currency": "USD"
     }
   ],
-  "sales": [],
+  "sales": [
+    {
+      "id": "local-sale-1784667848927-7ak3",
+      "quote_id": "local-1784667773517-gpawr",
+      "quote_number": "A8459",
+      "title": "Calle 50",
+      "description": "H2O XL - Roble Clásico 5,5mm x 23cm x 1,50m + 1 más",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Contado",
+      "client_id": "CLI-mrp6bkxr-1oli",
+      "client_name": "Desarrollo bahi",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Remodelación oficinas",
+      "contract_total": 39317,
+      "items": [
+        {
+          "product_id": "local-1784253274235-lpmtl",
+          "sku": "PA-XL-ROBLE",
+          "description": "H2O XL - Roble Clásico 5,5mm x 23cm x 1,50m",
+          "quantity": 1300,
+          "unit_price": 25,
+          "cost": 0,
+          "category": "Pisos H2O",
+          "total": 32500,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1784253275696-6at18",
+          "sku": "PA-ZOC-ROBLE",
+          "description": "Zócalo Roble Clásico Pacific - 2400 x 60 x 12 mm",
+          "quantity": 802,
+          "unit_price": 8.5,
+          "cost": 0,
+          "category": "Zócalos",
+          "total": 6817,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 0,
+      "status": "Confirmado",
+      "created_at": "2026-07-21T21:04:08.927Z",
+      "has_iva": false,
+      "iva_mode": "none",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 39317
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Ariel Tesone"
+    }
+  ],
   "quotes": [
     {
       "id": "local-1784304641438-b9q3a",
@@ -284,8 +345,9 @@
       "discount_amount": 0,
       "created_at": "2026-07-21T21:02:53.227Z",
       "quote_number": "A8459",
-      "status": "DRAFT",
-      "share_token": "eb7914ce2163552c7d5949c2"
+      "status": "Aceptado",
+      "share_token": "eb7914ce2163552c7d5949c2",
+      "sale_id": "local-sale-1784667848927-7ak3"
     }
   ],
   "clients": [
@@ -308,7 +370,9 @@
       "dni": "",
       "emails": [],
       "phones": [],
-      "addresses": [],
+      "addresses": [
+        "Remodelación oficinas"
+      ],
       "notes": null,
       "name": "Desarrollo bahi",
       "updated_at": "2026-07-17T16:50:05.631Z"
@@ -640,6 +704,24 @@
       "product_id": "local-1784253274235-lpmtl",
       "sku": "PA-XL-ROBLE",
       "qty": -1300,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-07-21T21:03:59.263Z",
+      "type": "quote_reserve",
+      "ref": "local-1784667773517-gpawr",
+      "product_id": "local-1784253274235-lpmtl",
+      "sku": "PA-XL-ROBLE",
+      "qty": 1300,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-07-21T21:03:59.263Z",
+      "type": "quote_reserve",
+      "ref": "local-1784667773517-gpawr",
+      "product_id": "local-1784253275696-6at18",
+      "sku": "PA-ZOC-ROBLE",
+      "qty": 802,
       "warehouse_id": "main"
     }
   ],
