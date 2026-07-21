@@ -284,7 +284,8 @@
       "discount_amount": 0,
       "created_at": "2026-07-21T21:02:53.227Z",
       "quote_number": "A8459",
-      "status": "DRAFT"
+      "status": "DRAFT",
+      "share_token": "eb7914ce2163552c7d5949c2"
     }
   ],
   "clients": [
@@ -741,7 +742,7 @@
     },
     "locale": "es-PA",
     "updatedAt": "2026-07-17T01:53:18.716Z",
-    "last_daily_pending_digest": "2026-07-20"
+    "last_daily_pending_digest": "2026-07-21"
   },
   "password_resets": {}
 }
