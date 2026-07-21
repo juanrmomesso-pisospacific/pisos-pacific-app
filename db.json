@@ -233,6 +233,58 @@
       "status": "REJECTED",
       "share_token": "b2ab7a7558cfca1f0fc3f0c0",
       "renewed_at": "2026-07-20T21:09:48.454Z"
+    },
+    {
+      "id": "local-1784667773517-gpawr",
+      "client_id": "CLI-mrp6bkxr-1oli",
+      "client_name": "Desarrollo bahi",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Remodelación oficinas",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Contado",
+      "seller_name": "Ariel Tesone",
+      "seller_phone": "",
+      "title": "Calle 50",
+      "has_iva": false,
+      "price": 39317,
+      "zoned": false,
+      "description": "H2O XL - Roble Clásico 5,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "local-1784253274235-lpmtl",
+          "sku": "PA-XL-ROBLE",
+          "description": "H2O XL - Roble Clásico 5,5mm x 23cm x 1,50m",
+          "quantity": 1300,
+          "unit_price": 25,
+          "cost": 0,
+          "category": "Pisos H2O",
+          "total": 32500,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1784253275696-6at18",
+          "sku": "PA-ZOC-ROBLE",
+          "description": "Zócalo Roble Clásico Pacific - 2400 x 60 x 12 mm",
+          "quantity": 802,
+          "unit_price": 8.5,
+          "cost": 0,
+          "category": "Zócalos",
+          "total": 6817,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "created_at": "2026-07-21T21:02:53.227Z",
+      "quote_number": "A8459",
+      "status": "DRAFT"
     }
   ],
   "clients": [
