@@ -160,6 +160,8 @@ Auditoría original (para referencia — TODO lo de abajo ya fue arreglado salvo
 
 **Bot de tareas — completar robusto sin IA (22/7, caso real):** "Listo 1, listo 2" y "Ya cumplí con todas" se convertían en TAREAS NUEVAS (el determinista solo aceptaba "listo N" exacto y la IA no rescató). La capa determinista ahora acepta varios números ("listo 1, 2" / "listos 1 y 3"), "listo todas" y frases ("ya cumplí/terminé/completé todas", "todas listas"); "listo" pelado pregunta cuáles. **Gotcha JS clave: `\b` NO matchea después de vocal acentuada** ("cumplí\b" nunca da — usar `\s`). Datos saneados en prod (2 tareas basura borradas, 5 to-dos de Juan completados). Recordatorio de diseño: el bot maneja SOLO type 'todo' del vendedor — mediciones/reparaciones se cierran en la Agenda (ofrecida la extensión al dueño). El gasto "no registrado" del mismo reporte era un falso alarma (filtros del Libro: estaba en Caja General, sin revisión).
 
+**Ventas — filtro por producto (22/7, pedido del dueño):** picker "Filtrar por producto…" en la toolbar → chip "Producto: X · N ventas · m² totales · **m² en ventas activas (reservados)**" (+quitar). Incluye productos INACTIVOS (ventas viejas referencian SKUs discontinuados; activos primero). Match por sku/product_id; los ítems sin vincular se encuentran por el buscador libre, que ahora también busca en descripción/SKU de los ítems. Combina con los filtros de estado/quick.
+
 **Terminado y verificado en prod**
 - Lanzamiento completo: GitHub + Render + bootstrap de datos reales.
 - MP 100% automático (sync diario + enriquecimiento retroactivo mensual). Probado: "+10 nuevos".
