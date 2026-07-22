@@ -156,13 +156,31 @@ export async function handleTaskMessage(db, save, from, rawText, { reply, handle
   // Atajos deterministas (sin IA)
   if (/^(ayuda|help)\b/i.test(text)) return reply(HELP);
   if (/^pendientes?$/i.test(text)) return listPending();
-  const done = text.match(/^(listo|hecho)\s*(\d+)$/i);
-  if (done) {
-    const ids = sessions[phoneNorm]?.ids || [];
-    const t = (db.tasks || []).find((x) => x.id === ids[+done[2] - 1] && x.status === 'pendiente');
-    if (!t) return reply('No encontré esa tarea — mandá *pendientes* para ver la lista numerada y después *listo N*.');
-    completeTask(db, save, t);
-    return reply(`✔️ Completada: ${t.title}`);
+  // Completar — robusto SIN IA (caso real 21/7: "Listo 1, listo 2" y "Ya cumplí con todas"
+  // se convertían en tareas nuevas). Acepta: "listo 2" · "listo 1, listo 2" · "listos 1 y 3" ·
+  // "listo todas" · "ya cumplí con todas" / "terminé todas" / "todas listas".
+  // OJO: \b no anda tras vocal acentuada en JS ("cumplí\b" nunca matchea) → se usa \s.
+  const wantsAll = /^(listos?|hech[oa]s?)\s+(todo|todas|todos)\b/i.test(text)
+    || /^(ya\s+)?(cumpl[íi]|termin[éeí]|complet[éeí])\s.*\btod[oa]s\b/i.test(text)
+    || /^tod[oa]s\s+(list[oa]s|hech[oa]s)\b/i.test(text);
+  const startsDone = /^(listos?|hech[oa]s?)\b/i.test(text);
+  if (wantsAll || startsDone) {
+    const pending = pendingTodos(db, sellerName, phoneNorm);
+    const ids = sessions[phoneNorm]?.ids?.length ? sessions[phoneNorm].ids : pending.map((t) => t.id);
+    let targets;
+    if (wantsAll) {
+      targets = pending;
+      if (!targets.length) return reply('No tenés tareas pendientes ✨');
+    } else {
+      const nums = (text.match(/\d+/g) || []).map(Number);
+      if (!nums.length) return reply('¿Cuáles? Mandá *pendientes* para ver la lista y después *listo N* (podés varias: *listo 1, 2*) o *listo todas*.');
+      targets = nums.map((n) => (db.tasks || []).find((x) => x.id === ids[n - 1] && x.status === 'pendiente')).filter(Boolean);
+      if (!targets.length) return reply('No encontré esas tareas — mandá *pendientes* para ver la lista numerada actual.');
+    }
+    for (const t of targets) completeTask(db, save, t);
+    return reply(targets.length === 1
+      ? `✔️ Completada: ${targets[0].title}`
+      : `✔️ Completadas (${targets.length}):\n${targets.map((t) => `· ${t.title}`).join('\n')}`);
   }
   if (/^borrar$/i.test(text)) {
     const id = sessions[phoneNorm]?.last_created;
