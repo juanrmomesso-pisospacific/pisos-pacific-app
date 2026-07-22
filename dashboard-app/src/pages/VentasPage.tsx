@@ -19,7 +19,7 @@ import { DataState } from "@/components/ui/data-state"
 import { useAuth } from "@/contexts/AuthContext"
 import { useConfirm } from "@/components/ui/confirm"
 import { api, useAction, refresh } from "@/lib/mutations"
-import { fmtMoney, cn, appLocale } from "@/lib/utils"
+import { fmtMoney, fmtInt, cn, appLocale } from "@/lib/utils"
 import { useConfig, useModules, moduleOn, taxWord } from "@/contexts/ConfigContext"
 import { materialState, MATERIAL_LABEL } from "@/lib/calendar"
 import { saleMaterialsForRemito, looseUnit } from "@/lib/remito"
@@ -111,6 +111,20 @@ export default function VentasPage() {
   const [filter, setFilter] = useState<"Todas" | (typeof STATUSES)[number]>("Todas")
   const [quick, setQuick] = useState<"none" | "cobro" | "entrega">("none")
   const [q, setQ] = useState("")
+  // Filtro por PRODUCTO: qué ventas incluyen tal piso (ej. "las reservas de Roble Eslavonia XL").
+  const products = useApi<Product[]>("/api/products").data ?? []
+  const [prodFilterId, setProdFilterId] = useState<string | null>(null)
+  const prodSel = prodFilterId ? products.find((p) => p.id === prodFilterId) ?? null : null
+  // Incluye también los INACTIVOS (las ventas viejas referencian SKUs discontinuados y es
+  // justo lo que se quiere consultar); activos primero.
+  const prodPickerItems = useMemo(
+    () => [...products]
+      .sort((a, b) => Number(b.active !== false) - Number(a.active !== false))
+      .map((p) => ({ id: p.id, label: p.name, sub: p.active === false ? `${p.sku} · inactivo` : p.sku, keywords: p.category })),
+    [products]
+  )
+  const itemMatchesProduct = (it: { sku?: string; product_id?: string }, p: Product) =>
+    (!!it.sku && it.sku === p.sku) || (!!it.product_id && it.product_id === p.id)
   // Default is kanban; persist user choice across reloads (e.g. after drag-drop's refresh())
   const [view, setView] = useState<View>(() => {
     if (typeof window === "undefined") return "kanban"
@@ -130,10 +144,26 @@ export default function VentasPage() {
         if (filter !== "Todas" && row.status !== filter) return false
         if (quick === "cobro" && !isDue(row)) return false
         if (quick === "entrega" && !isPendingDelivery(row)) return false
+        if (prodSel && !(row.items || []).some((it) => itemMatchesProduct(it, prodSel))) return false
         if (!needle) return true
-        return row.client_name.toLowerCase().includes(needle) || row.quote_number.toLowerCase().includes(needle)
+        // El buscador libre también entra a los ÍTEMS (producto por nombre o SKU).
+        return row.client_name.toLowerCase().includes(needle)
+          || row.quote_number.toLowerCase().includes(needle)
+          || (row.items || []).some((it) => (it.description || "").toLowerCase().includes(needle) || (it.sku || "").toLowerCase().includes(needle))
       })
-  }, [sales, filter, quick, q])
+  }, [sales, filter, quick, q, prodSel])
+  // m² del producto filtrado en las ventas visibles (y cuántos están en ventas ACTIVAS = reservas).
+  const prodStats = useMemo(() => {
+    if (!prodSel) return null
+    let m2 = 0, m2Active = 0
+    for (const s of filtered) for (const it of s.items || []) {
+      if (!itemMatchesProduct(it, prodSel)) continue
+      const qty = Number(it.quantity) || 0
+      m2 += qty
+      if (s.status !== "Finalizado" && s.status !== "Cancelado") m2Active += qty
+    }
+    return { m2, m2Active }
+  }, [filtered, prodSel])
 
   const counts = useMemo(() => {
     const c: Record<string, number> = { Todas: sales.length }
@@ -196,6 +226,13 @@ export default function VentasPage() {
         {quick !== "none" ? (
           <div className="text-xs text-muted-foreground">Filtro activo: <b>{quick === "cobro" ? "pendientes de cobro" : "pendientes de entrega"}</b> · <button className="underline" onClick={() => setQuick("none")}>quitar</button></div>
         ) : null}
+        {prodSel ? (
+          <div className="text-xs text-muted-foreground">
+            Producto: <b>{prodSel.name}</b> · {filtered.length} venta{filtered.length === 1 ? "" : "s"} · {fmtInt(prodStats?.m2 ?? 0)} m² totales
+            {(prodStats?.m2Active ?? 0) > 0 && <> · <span className="text-amber-700 font-medium">{fmtInt(prodStats!.m2Active)} m² en ventas activas (reservados)</span></>}
+            {" · "}<button className="underline" onClick={() => setProdFilterId(null)}>quitar</button>
+          </div>
+        ) : null}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap gap-1">
             {(["Todas", ...STATUSES] as const).map((s) => (
@@ -212,9 +249,12 @@ export default function VentasPage() {
                 <TabsTrigger value="kanban" className="gap-1.5"><LayoutGrid className="h-3.5 w-3.5" />Kanban</TabsTrigger>
               </TabsList>
             </Tabs>
+            <div className="w-full sm:w-56">
+              <SearchPicker items={prodPickerItems} placeholder="Filtrar por producto…" onPick={(id) => setProdFilterId(id)} />
+            </div>
             <div className="relative w-full sm:w-64">
               <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
-              <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar cliente o nº…" className="pl-8 h-8" />
+              <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar cliente, nº o producto…" className="pl-8 h-8" />
             </div>
           </div>
         </div>
