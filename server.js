@@ -2340,6 +2340,9 @@ app.post('/api/sales/:id/transition', (req, res) => {
   if (!next) return res.status(400).json({ error: 'invalid status' });
   const prev = s.status;
   if (prev === next) return res.json(s);
+  // Historial de estados: QUIÉN y CUÁNDO — forense para "¿por qué cambió el dashboard?"
+  // (26/7: una venta de junio cancelada bajó el volumen del mes y no había registro).
+  s.status_log = [...(s.status_log || []), { from: prev, to: next, at: new Date().toISOString(), by: sessionUser(req)?.name || null }];
 
   // Entering Finalizado → deduct from stock lo que FALTE entregar (lo ya entregado por
   // entregas de material parciales ya se descontó) y limpiar la reserva.
