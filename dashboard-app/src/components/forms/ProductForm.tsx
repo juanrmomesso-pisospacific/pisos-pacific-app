@@ -29,10 +29,15 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
     const cost = Number(v.cost) || 0
     const margin = cost > 0 ? Math.round(((price - cost) / cost) * 100) : 0
     if (isEdit) {
-      const r = await update.run("products", editProduct!.id, {
+      const body: Record<string, unknown> = {
         name: v.name, sku: v.sku, category: v.category, price, cost, currency: v.currency, margin,
+        stockTrack: !!v.stockTrack,
         updatedAt: new Date().toISOString(),
-      })
+      }
+      // Stock: solo si cambió (el server registra el delta como ajuste manual en la auditoría).
+      const newStock = Number(v.stock) || 0
+      if (v.stockTrack && newStock !== (Number(editProduct!.stock) || 0)) body.stock = newStock
+      const r = await update.run("products", editProduct!.id, body)
       if (r) { onOpenChange(false); refresh() }
       return
     }
@@ -90,6 +95,21 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
           </div>
         )}
       </div>
+      {isEdit && (
+        <div className="rounded-md border border-border p-3 space-y-2">
+          <label className="flex items-center gap-2 text-sm">
+            <input type="checkbox" checked={!!v.stockTrack} onChange={(e) => setV({ ...v, stockTrack: e.target.checked })} />
+            Controlar stock de este producto
+          </label>
+          {v.stockTrack && (
+            <div>
+              <FieldLabel>Stock físico</FieldLabel>
+              <Input type="number" min={0} step="0.1" value={v.stock ?? 0} onChange={(e) => setV({ ...v, stock: Number(e.target.value) })} />
+              <p className="text-[11px] text-muted-foreground mt-1">El cambio queda registrado como ajuste manual en Movimientos (auditoría).</p>
+            </div>
+          )}
+        </div>
+      )}
     </FormSheet>
   )
 }
