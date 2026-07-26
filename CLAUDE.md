@@ -164,6 +164,8 @@ Auditoría original (para referencia — TODO lo de abajo ya fue arreglado salvo
 
 **Dashboard "volumen que baja solo" (26/7) — NO era bug + `status_log`:** mayo 1.047→697 m² y junio 902→813 m² por DOS CANCELACIONES: **0000136 Kike Pedreira (350 m², mayo)** y **A7813 Malena (89 m², junio)** — AMBAS a propósito (confirmado por el dueño): la de Pedreira era un duplicado — la obra vive en la nueva **A0073 (23/7, Confirmada, US$18.483)** → esos metros se mudaron de mayo a julio. Las canceladas salen de facturación/volumen por diseño; el Dashboard calcula en vivo → cuando un mes histórico cambia, SIEMPRE cambió una venta. Refs de m² actualizadas: mayo 697 · junio 813 (si se reactiva Pedreira, mayo vuelve a 1.047). Nuevo: **`saleTransition` loguea `status_log` [{from,to,at,by}]** en cada cambio de estado — el próximo "¿quién canceló esto?" se responde desde la venta.
 
+**Inventario — stock editable desde el lápiz, con auditoría (26/7):** el form de edición de producto suma "Controlar stock" (activa `stockTrack` — caso narices Canada XL, que estaban sin control) + campo "Stock físico"; el stock viaja solo si cambió y el PATCH del server YA lo registraba como `manual_adjustment` (auditado). Verificado E2E con el ajuste apareciendo en Movimientos.
+
 **Terminado y verificado en prod**
 - Lanzamiento completo: GitHub + Render + bootstrap de datos reales.
 - MP 100% automático (sync diario + enriquecimiento retroactivo mensual). Probado: "+10 nuevos".
