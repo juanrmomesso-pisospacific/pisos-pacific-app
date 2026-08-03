@@ -10,6 +10,7 @@ import { QuickPeriod } from "@/components/QuickPeriod"
 import { fmtMoney, fmtInt, cn, appLocale } from "@/lib/utils"
 import type { Sale, CashflowMovement, Product } from "@/lib/types"
 import { useModules, moduleOn } from "@/contexts/ConfigContext"
+import { saldoDe, tieneSaldo } from "@/lib/sales"
 
 // ---- Período (filtro global) ----
 type Range = { from: string; to: string }
@@ -115,9 +116,8 @@ export default function DashboardPage() {
 
   // Pendiente de cobro (no depende del período: estado actual)
   const pendiente = useMemo(() => {
-    // Canceladas EXCLUIDAS: su saldo se anula con la venta (26/7: 3 canceladas metían US$27k fantasma acá).
-    const due = sales.filter(s => s.status !== "Cancelado" && (s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0) > 0.5)
-    return { total: due.reduce((a, s) => a + (s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0), 0), count: due.length }
+    const due = sales.filter(tieneSaldo)
+    return { total: due.reduce((a, s) => a + saldoDe(s), 0), count: due.length }
   }, [sales])
 
   // ---- Facturación + volumen por mes (con desglose por categoría para la vista apilada) ----

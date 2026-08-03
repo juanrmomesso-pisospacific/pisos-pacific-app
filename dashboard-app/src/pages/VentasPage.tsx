@@ -23,6 +23,7 @@ import { fmtMoney, fmtInt, cn, appLocale } from "@/lib/utils"
 import { useConfig, useModules, moduleOn, taxWord } from "@/contexts/ConfigContext"
 import { materialState, MATERIAL_LABEL } from "@/lib/calendar"
 import { saleMaterialsForRemito, looseUnit } from "@/lib/remito"
+import { cobradoDe, saldoDe, tieneSaldo } from "@/lib/sales"
 import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote, Caja, CashflowMovement, Product } from "@/lib/types"
 
@@ -89,10 +90,9 @@ function MaterialBadge({ sale }: { sale: Sale }) {
 }
 // Cobro/saldo: priorizar la conciliación del cashflow (ingresos linkeados a la venta);
 // caer a financial_position si la venta todavía no tiene cobros en el cashflow.
-const saldoDue = (s: Sale) => s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0
-const cobrado = (s: Sale) => s.cashflow_paid ?? s.financial_position?.total_paid ?? 0
-// Una venta CANCELADA nunca tiene saldo a cobrar (su deuda se anula con la venta).
-const isDue = (s: Sale) => s.status !== "Cancelado" && saldoDue(s) > 0.5
+const saldoDue = (s: Sale) => saldoDe(s)
+const cobrado = (s: Sale) => cobradoDe(s)
+const isDue = (s: Sale) => tieneSaldo(s)
 const isPendingDelivery = (s: Sale) => s.status !== "Cancelado" && materialState(s) !== "full"
 
 export default function VentasPage() {

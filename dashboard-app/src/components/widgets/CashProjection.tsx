@@ -1,4 +1,5 @@
 import { useMemo } from "react"
+import { saldoDe } from "@/lib/sales"
 import { Bar, XAxis, YAxis, CartesianGrid, ReferenceLine, Line, ComposedChart } from "recharts"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
@@ -41,9 +42,8 @@ export function CashProjection() {
 
     // Inflows: balance_due on sales, due ~30d after created (or explicit field)
     for (const s of sales) {
-      if (s.status === "Cancelado") continue   // una cancelada no proyecta cobros
-      const due = s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0
-      if (due <= 0) continue
+      const due = saldoDe(s)   // fórmula única (0 para canceladas)
+      if (due <= 0.5) continue
       const expected = (s as any).expected_payment_date
         ? new Date((s as any).expected_payment_date)
         : new Date(new Date(s.created_at).getTime() + DEFAULT_DAYS_TO_PAY * 86400000)

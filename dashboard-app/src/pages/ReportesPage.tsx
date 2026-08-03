@@ -8,6 +8,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import { useApi } from "@/lib/api"
+import { saldoDe } from "@/lib/sales"
 import { DataState } from "@/components/ui/data-state"
 import { usePeriod } from "@/contexts/PeriodContext"
 import { QuickPeriod } from "@/components/QuickPeriod"
@@ -500,9 +501,8 @@ function AgingReport() {
     const now = new Date(); now.setHours(0, 0, 0, 0)
     const rows: AgingRow[] = []
     for (const s of sales) {
-      if (s.status === "Cancelado") continue   // el saldo de una cancelada no se cobra
-      const due = s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0
-      if (due <= 0) continue
+      const due = saldoDe(s)   // fórmula única (0 para canceladas, derivado de total − cobrado)
+      if (due <= 0.5) continue
       if (sellerScope && s.seller_name !== sellerScope) continue
 
       const expectedISO = (s as any).expected_payment_date
@@ -516,7 +516,7 @@ function AgingReport() {
     // Buckets
     const byBucket = AGING_BUCKETS.map(b => {
       const items = rows.filter(r => r.bucket === b.key)
-      const amount = items.reduce((sum, r) => sum + (r.sale.cashflow_balance_due ?? r.sale.financial_position?.balance_due ?? 0), 0)
+      const amount = items.reduce((sum, r) => sum + saldoDe(r.sale), 0)
       return { ...b, count: items.length, amount }
     })
     const totalDue = byBucket.reduce((sum, b) => sum + b.amount, 0)
@@ -595,7 +595,7 @@ function AgingReport() {
               </TableHeader>
               <TableBody>
                 {data.rows.map((r) => {
-                  const due = r.sale.cashflow_balance_due ?? r.sale.financial_position?.balance_due ?? 0
+                  const due = saldoDe(r.sale)
                   const total = r.sale.contract_total ?? 0
                   const paid  = r.sale.financial_position?.total_paid ?? 0
                   const overdue = r.daysPast > 0
