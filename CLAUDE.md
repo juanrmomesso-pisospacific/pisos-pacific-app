@@ -166,6 +166,8 @@ Auditoría original (para referencia — TODO lo de abajo ya fue arreglado salvo
 
 **Inventario — stock editable desde el lápiz, con auditoría (26/7):** el form de edición de producto suma "Controlar stock" (activa `stockTrack` — caso narices Canada XL, que estaban sin control) + campo "Stock físico"; el stock viaja solo si cambió y el PATCH del server YA lo registraba como `manual_adjustment` (auditado). Verificado E2E con el ajuste apareciendo en Movimientos.
 
+**Agenda — scroll en los 4 sheets (3/8):** el `SheetContent` base NO scrollea (los FormSheet se lo agregan solos); los sheets crudos de la Agenda (Medición/Cerrar remito/Editar tarea/Programar) desbordaban en pantallas bajas y el Guardar quedaba inalcanzable → `overflow-y-auto` en los 4. Regla para sheets nuevos: usar FormSheet o acordarse del overflow.
+
 **Terminado y verificado en prod**
 - Lanzamiento completo: GitHub + Render + bootstrap de datos reales.
 - MP 100% automático (sync diario + enriquecimiento retroactivo mensual). Probado: "+10 nuevos".
