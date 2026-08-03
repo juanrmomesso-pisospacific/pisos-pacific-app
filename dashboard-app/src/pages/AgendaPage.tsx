@@ -784,7 +784,7 @@ function NewEventSheet({ open, onOpenChange, sales, crews, presetSaleId }: { ope
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent>
+      <SheetContent className="overflow-y-auto">
         <SheetHeader><SheetTitle>{presetSaleId ? "Editar programación" : "Programar evento"}</SheetTitle><SheetDescription>{presetSaleId ? "Cambiá el equipo, las fechas o las notas de la colocación" : "Entrega, medición, reparación, ausencia u otra tarea"}</SheetDescription></SheetHeader>
         <div className="mt-6 space-y-4">
           <div>
@@ -900,7 +900,7 @@ function EditTaskSheet({ task, crews, onClose }: { task: Task | null; crews: str
   }
   return (
     <Sheet open={!!task} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent>
+      <SheetContent className="overflow-y-auto">
         <SheetHeader><SheetTitle>Editar {kindLabel.toLowerCase()}</SheetTitle><SheetDescription>{done ? "Completada" : "Cambiá fechas, equipo o notas — o completala/eliminala."}</SheetDescription></SheetHeader>
         <div className="mt-6 space-y-4">
           <div><label className="text-sm font-medium block mb-1">Título</label><Input value={title} onChange={(e) => setTitle(e.target.value)} /></div>
@@ -977,7 +977,7 @@ function MedicionFormSheet({ task, sale, allTasks, onClose }: { task: Task | nul
   }
   return (
     <Sheet open={!!task} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent>
+      <SheetContent className="overflow-y-auto">
         <SheetHeader><SheetTitle>Registrar medición</SheetTitle><SheetDescription>{task.title}{sale ? ` · ${sale.client_address ?? ""}` : ""}</SheetDescription></SheetHeader>
         <div className="mt-6 space-y-4">
           {sale && <div className="rounded-md border border-border p-3 bg-muted/40 text-xs space-y-0.5"><div className="font-medium text-sm">{sale.client_name}</div>{sale.client_address && <div className="text-muted-foreground">📍 {sale.client_address}</div>}<div className="text-muted-foreground">Venta #{sale.quote_number} · {fmtMoney(sale.contract_total)}</div></div>}
@@ -1031,7 +1031,7 @@ function InformeFormSheet({ task, sale, onClose }: { task: Task | null; sale: Sa
   const md = sale?.medicion_data
   return (
     <Sheet open={!!task} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent>
+      <SheetContent className="overflow-y-auto">
         <SheetHeader><SheetTitle>Remito</SheetTitle><SheetDescription>{task.title}{sale ? ` · ${sale.client_address ?? ""}` : ""}</SheetDescription></SheetHeader>
         <div className="mt-6 space-y-4">
           {sale && <div className="rounded-md border border-border p-3 bg-muted/40 text-xs space-y-0.5"><div className="font-medium text-sm">{sale.client_name}</div><div className="text-muted-foreground">Venta #{sale.quote_number} · {fmtMoney(sale.contract_total)}</div>{sale.delivery_date && <div className="text-muted-foreground">Entrega: {new Date(sale.delivery_date).toLocaleDateString(appLocale())}</div>}</div>}
