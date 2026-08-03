@@ -168,6 +168,8 @@ Auditoría original (para referencia — TODO lo de abajo ya fue arreglado salvo
 
 **Agenda — scroll en los 4 sheets (3/8):** el `SheetContent` base NO scrollea (los FormSheet se lo agregan solos); los sheets crudos de la Agenda (Medición/Cerrar remito/Editar tarea/Programar) desbordaban en pantallas bajas y el Guardar quedaba inalcanzable → `overflow-y-auto` en los 4. Regla para sheets nuevos: usar FormSheet o acordarse del overflow.
 
+**Sistema de saldos — revisión profunda (3/8, pedido del dueño):** (1) **Canceladas nunca cuentan como pendiente de cobro** — se colaban en 4 lugares: KPI del Dashboard (US$27.178 fantasma de Sol Allende/Pedreira/Malena), isDue de Ventas, aging de Reportes y CashProjection → todos excluyen `Cancelado`. (2) **Fórmula única de saldo** en toda la app: `cashflow_balance_due ?? fp.balance_due` (Reportes/CashProjection miraban solo fp → números distintos por página). (3) **IvaEditor recalcula financial_position** al cambiar el IVA (antes congelaba el saldo viejo). (4) **Cobros duplicados pre-26/6 saneados**: borrados 3 manuales (Beto Baras ×2, Chloé "Haras Capilla") — quedó: Chloé saldo real 5.542 (a confirmar) y Beto Baras −465 (falta cargar el ítem del adicional, preguntado al dueño); Alessio 0000132 = 2 pagos reales confirmados. E2E: cancelar venta con saldo → KPI baja exacto.
+
 **Terminado y verificado en prod**
 - Lanzamiento completo: GitHub + Render + bootstrap de datos reales.
 - MP 100% automático (sync diario + enriquecimiento retroactivo mensual). Probado: "+10 nuevos".
