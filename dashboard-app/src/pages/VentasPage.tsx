@@ -91,7 +91,8 @@ function MaterialBadge({ sale }: { sale: Sale }) {
 // caer a financial_position si la venta todavía no tiene cobros en el cashflow.
 const saldoDue = (s: Sale) => s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0
 const cobrado = (s: Sale) => s.cashflow_paid ?? s.financial_position?.total_paid ?? 0
-const isDue = (s: Sale) => saldoDue(s) > 0.5
+// Una venta CANCELADA nunca tiene saldo a cobrar (su deuda se anula con la venta).
+const isDue = (s: Sale) => s.status !== "Cancelado" && saldoDue(s) > 0.5
 const isPendingDelivery = (s: Sale) => s.status !== "Cancelado" && materialState(s) !== "full"
 
 export default function VentasPage() {
@@ -1163,7 +1164,13 @@ function IvaEditor({ sale, onChanged }: { sale: Sale; onChanged: () => void }) {
   const total = Math.round(net + iva)
   const dirty = mode !== initMode || (mode === "fixed" && iva !== (sale.iva_amount ?? 0)) || total !== Math.round(sale.contract_total || 0)
   const save = async () => {
-    const r = await upd.run("sales", sale.id, { iva_mode: mode, iva_amount: iva, has_iva: mode !== "none", contract_total: total })
+    // También se recalcula financial_position: si solo cambiara contract_total, el saldo
+    // viejo quedaría congelado en las ventas cuyo cobrado no deriva del cashflow.
+    const paid = Number(sale.financial_position?.total_paid) || 0
+    const r = await upd.run("sales", sale.id, {
+      iva_mode: mode, iva_amount: iva, has_iva: mode !== "none", contract_total: total,
+      financial_position: { total_invoiced: total, total_paid: paid, balance_due: Math.max(0, total - paid) },
+    })
     if (r) onChanged()
   }
   const Opt = ({ m, label }: { m: "none" | "full" | "fixed"; label: string }) => (

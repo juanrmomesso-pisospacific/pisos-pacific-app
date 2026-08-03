@@ -115,7 +115,8 @@ export default function DashboardPage() {
 
   // Pendiente de cobro (no depende del período: estado actual)
   const pendiente = useMemo(() => {
-    const due = sales.filter(s => (s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0) > 0.5)
+    // Canceladas EXCLUIDAS: su saldo se anula con la venta (26/7: 3 canceladas metían US$27k fantasma acá).
+    const due = sales.filter(s => s.status !== "Cancelado" && (s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0) > 0.5)
     return { total: due.reduce((a, s) => a + (s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0), 0), count: due.length }
   }, [sales])
 

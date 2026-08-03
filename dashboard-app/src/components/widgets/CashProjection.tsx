@@ -41,7 +41,8 @@ export function CashProjection() {
 
     // Inflows: balance_due on sales, due ~30d after created (or explicit field)
     for (const s of sales) {
-      const due = s.financial_position?.balance_due ?? 0
+      if (s.status === "Cancelado") continue   // una cancelada no proyecta cobros
+      const due = s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0
       if (due <= 0) continue
       const expected = (s as any).expected_payment_date
         ? new Date((s as any).expected_payment_date)

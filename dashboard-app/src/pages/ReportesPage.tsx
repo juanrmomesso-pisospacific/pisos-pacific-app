@@ -500,7 +500,8 @@ function AgingReport() {
     const now = new Date(); now.setHours(0, 0, 0, 0)
     const rows: AgingRow[] = []
     for (const s of sales) {
-      const due = s.financial_position?.balance_due ?? 0
+      if (s.status === "Cancelado") continue   // el saldo de una cancelada no se cobra
+      const due = s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0
       if (due <= 0) continue
       if (sellerScope && s.seller_name !== sellerScope) continue
 
@@ -515,7 +516,7 @@ function AgingReport() {
     // Buckets
     const byBucket = AGING_BUCKETS.map(b => {
       const items = rows.filter(r => r.bucket === b.key)
-      const amount = items.reduce((sum, r) => sum + (r.sale.financial_position?.balance_due ?? 0), 0)
+      const amount = items.reduce((sum, r) => sum + (r.sale.cashflow_balance_due ?? r.sale.financial_position?.balance_due ?? 0), 0)
       return { ...b, count: items.length, amount }
     })
     const totalDue = byBucket.reduce((sum, b) => sum + b.amount, 0)
@@ -594,7 +595,7 @@ function AgingReport() {
               </TableHeader>
               <TableBody>
                 {data.rows.map((r) => {
-                  const due = r.sale.financial_position?.balance_due ?? 0
+                  const due = r.sale.cashflow_balance_due ?? r.sale.financial_position?.balance_due ?? 0
                   const total = r.sale.contract_total ?? 0
                   const paid  = r.sale.financial_position?.total_paid ?? 0
                   const overdue = r.daysPast > 0
