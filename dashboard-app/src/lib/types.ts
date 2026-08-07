@@ -111,6 +111,7 @@ export type Sale = {
     recorded_by?: string
   }
   payments?: { ts: string; amount: number; method?: string; notes?: string }[]
+  status_log?: { from: string; to: string; at: string; by?: string }[]   // transiciones de estado (desde jul-2026)
 }
 
 export type Quote = {

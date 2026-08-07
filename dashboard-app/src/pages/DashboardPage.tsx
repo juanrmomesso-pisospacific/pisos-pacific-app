@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Card } from "@/components/ui/card"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
@@ -8,9 +9,10 @@ import { DataState } from "@/components/ui/data-state"
 import { usePeriod } from "@/contexts/PeriodContext"
 import { QuickPeriod } from "@/components/QuickPeriod"
 import { fmtMoney, fmtInt, cn, appLocale } from "@/lib/utils"
-import type { Sale, CashflowMovement, Product } from "@/lib/types"
+import type { Sale, CashflowMovement, Product, Quote, CajaBalance } from "@/lib/types"
 import { useModules, moduleOn } from "@/contexts/ConfigContext"
-import { saldoDe, tieneSaldo } from "@/lib/sales"
+import { saldoDe, cobradoPct, cobranzaNivel, finalizadaEl, type CobranzaNivel } from "@/lib/sales"
+import { useAuth } from "@/contexts/AuthContext"
 
 // ---- Período (filtro global) ----
 type Range = { from: string; to: string }
@@ -21,6 +23,25 @@ function prevRange(r: Range): Range {
   const pTo = new Date(from); pTo.setDate(pTo.getDate() - 1)
   const pFrom = new Date(pTo); pFrom.setDate(pFrom.getDate() - len + 1)
   return { from: ymd(pFrom), to: ymd(pTo) }
+}
+// Comparativa honesta para períodos en curso: si el rango llega más allá de hoy (ej. "Este mes"
+// al día 6), el delta se calcula contra los MISMOS días transcurridos del período anterior —
+// comparar 6 días contra un mes completo daba siempre rojo. Para un mes calendario en curso,
+// el "anterior" son los mismos días del mes pasado (1 al N), no la ventana inmediata previa.
+function comparableRanges(r: Range, today: string): { cur: Range; prev: Range; partial: boolean } {
+  const effTo = r.to > today ? today : r.to
+  const cur = { from: r.from, to: effTo }
+  const partial = effTo < r.to
+  const from = new Date(r.from + "T12:00:00"), to = new Date(r.to + "T12:00:00")
+  const sameMonth = r.from.slice(0, 7) === r.to.slice(0, 7)
+  const isCalendarMonth = sameMonth && from.getDate() === 1 && to.getDate() === new Date(to.getFullYear(), to.getMonth() + 1, 0).getDate()
+  if (partial && isCalendarMonth) {
+    const pm = new Date(from.getFullYear(), from.getMonth() - 1, 1)
+    const lastDay = new Date(pm.getFullYear(), pm.getMonth() + 1, 0).getDate()
+    const day = Math.min(Number(effTo.slice(8, 10)), lastDay)
+    return { cur, prev: { from: ymd(pm), to: ymd(new Date(pm.getFullYear(), pm.getMonth(), day)) }, partial }
+  }
+  return { cur, prev: prevRange(cur), partial }
 }
 
 // Desde esta fecha la cobertura de costos por venta es completa (backfill 2026).
@@ -59,7 +80,13 @@ export default function DashboardPage() {
   const sales = salesApi.data ?? []
   const cashflow = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
   const products = useApi<Product[]>("/api/products").data ?? []
+  const quotes = useApi<Quote[]>("/api/quotes").data ?? []
+  // Saldos de caja: solo admin los ve (los vendedores tienen el resto del dashboard).
+  const { state: auth } = useAuth()
+  const isAdmin = auth.user?.role === "admin"
+  const cajaBalances = useApi<{ balances: CajaBalance[] }>("/api/cajas/balances").data?.balances ?? []
   const { range: gRange } = usePeriod()
+  const navigate = useNavigate()
   const [chartMode, setChartMode] = useState<"line" | "bar">(() => (typeof window !== "undefined" && window.localStorage.getItem("dash:chart") === "bar") ? "bar" : "line")
   const setChart = (m: "line" | "bar") => { setChartMode(m); if (typeof window !== "undefined") window.localStorage.setItem("dash:chart", m) }
 
@@ -68,7 +95,9 @@ export default function DashboardPage() {
   const rawFrom = ymd(gRange.from), to = ymd(gRange.to)
   const clamped = rawFrom < DEVENGADO_DESDE
   const range = useMemo(() => ({ from: clamped ? DEVENGADO_DESDE : rawFrom, to }), [rawFrom, to, clamped])
-  const prev = useMemo(() => prevRange(range), [range])
+  const today = ymd(new Date())
+  const cmp = useMemo(() => comparableRanges(range, today), [range, today])
+  const prev = cmp.prev
 
   // Producto piso (m²): por stockTrack y activo. Mapa sku→producto.
   const prodBySku = useMemo(() => { const m = new Map<string, Product>(); for (const p of products) m.set(p.sku, p); return m }, [products])
@@ -77,7 +106,12 @@ export default function DashboardPage() {
   // Match NORMALIZADO (sin mayúsculas/acentos) + por primer nombre cuando la contraparte es
   // de una sola palabra (ej. "Hugo" matchea "Hugo Ramirez") → evita doble conteo por nombres
   // que no coinciden exacto, que era la causa de que la mano de obra se contara dos veces.
-  const settings = useApi<{ installers?: string[] }>("/api/settings").data
+  const settings = useApi<{ installers?: string[]; anticipo_pct?: number; dashboardThresholds?: { overdueCobroDays?: number; conversionWindowDays?: number; lowStockUnits?: number } }>("/api/settings").data
+  // Umbrales del engranaje del header (ThresholdSettings): con defaults razonables.
+  const anticipoPct = settings?.anticipo_pct ?? 0.8
+  const overdueCobroDays = settings?.dashboardThresholds?.overdueCobroDays || 30
+  const conversionWindowDays = settings?.dashboardThresholds?.conversionWindowDays || 90
+  const lowStockUnits = settings?.dashboardThresholds?.lowStockUnits || 5
   const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/\s+/g, " ").trim()
   const installerNorms = useMemo(() => (settings?.installers ?? []).map(norm).filter(Boolean), [settings])
   const isInstaller = useMemo(() => {
@@ -109,16 +143,68 @@ export default function DashboardPage() {
     const grossPct = ingV ? grossProfit / ingV : NaN
     const m2 = inP.reduce((a, s) => a + (s.items || []).filter(it => isPisoItem(it.sku)).reduce((x, it) => x + (Number(it.quantity) || 0), 0), 0)
     const neto = grossProfit - opexTotal
-    return { fact, grossProfit, grossPct, m2, opexTotal, neto, count: inP.length, detailedCount: detailed.length, opex }
+    // Cobrado (caja) del período: ingresos reales de ventas — linkeados a una venta o
+    // clasificados como Venta. La brecha vs. facturación es la alerta temprana de cobranza.
+    const cobradoCaja = cashflow.reduce((a, m) => {
+      if (m.flow !== "Ingreso" || m.transfer || !inRange((m.date || "").slice(0, 10), r)) return a
+      if (!m.sale_ref && !(m.category || "").startsWith("Venta")) return a
+      return a + (m.amount_usd || 0)
+    }, 0)
+    // Cobertura de costos: qué parte de la facturación tiene costo bloqueado (honestidad del margen).
+    const factConCosto = detailed.reduce((a, s) => a + billed(s), 0)
+    return { fact, grossProfit, grossPct, m2, opexTotal, neto, cobradoCaja, factConCosto, count: inP.length, detailedCount: detailed.length, opex }
   }
   const cur = useMemo(() => metrics(range), [sales, cashflow, products, range, isInstaller])
   const pre = useMemo(() => metrics(prev), [sales, cashflow, products, prev, isInstaller])
 
-  // Pendiente de cobro (no depende del período: estado actual)
-  const pendiente = useMemo(() => {
-    const due = sales.filter(tieneSaldo)
-    return { total: due.reduce((a, s) => a + saldoDe(s), 0), count: due.length }
-  }, [sales])
+  // ---- Cobranzas por nivel de relevancia (no depende del período: estado actual) ----
+  // Regla del dueño (6/8): la antigüedad de la venta NO mide mora (hay obras que pagan el
+  // anticipo y colocan a +90 días). Prioriza estado de obra vs. cobrado — ver cobranzaNivel().
+  const cobranzas = useMemo(() => {
+    const por: Record<CobranzaNivel, { list: Sale[]; total: number }> = {
+      entregada: { list: [], total: 0 }, anticipo: { list: [], total: 0 }, esperando: { list: [], total: 0 },
+    }
+    for (const s of sales) {
+      const nivel = cobranzaNivel(s, anticipoPct)
+      if (!nivel) continue
+      por[nivel].list.push(s); por[nivel].total += saldoDe(s)
+    }
+    for (const k of Object.keys(por) as CobranzaNivel[]) por[k].list.sort((a, b) => saldoDe(b) - saldoDe(a))
+    const total = por.entregada.total + por.anticipo.total + por.esperando.total
+    const count = por.entregada.list.length + por.anticipo.list.length + por.esperando.list.length
+    // Top accionable: primero obra entregada sin cobrar, después anticipos incompletos.
+    const top = [...por.entregada.list, ...por.anticipo.list].slice(0, 8)
+    return { por, total, count, top }
+  }, [sales, anticipoPct])
+  const pendiente = { total: cobranzas.total, count: cobranzas.count }
+
+  // ---- Caja (solo admin + finanzas): saldo consolidado + neto del período ----
+  const caja = useMemo(() => {
+    const total = cajaBalances.reduce((a, b) => a + (b.balance_usd || 0), 0)
+    const porCaja = [...cajaBalances].filter(b => b.movements > 0 || Math.abs(b.balance_usd) > 0.5).sort((a, b) => b.balance_usd - a.balance_usd)
+    let inP = 0, outP = 0
+    for (const m of cashflow) {
+      if (m.transfer || !inRange((m.date || "").slice(0, 10), range)) continue
+      if (m.flow === "Ingreso") inP += m.amount_usd || 0; else outP += m.amount_usd || 0
+    }
+    return { total, porCaja, inP, outP, neto: inP - outP }
+  }, [cajaBalances, cashflow, range])
+
+  // ---- Embudo comercial: cotizaciones abiertas + conversión ----
+  const embudo = useMemo(() => {
+    const isOpen = (q: Quote) => ["SENT", "Enviado"].includes(q.status)
+    const isAccepted = (q: Quote) => ["ACCEPTED", "Aceptado"].includes(q.status)
+    const isDraft = (q: Quote) => ["DRAFT", "Borrador"].includes(q.status)
+    const abiertas = quotes.filter(isOpen)
+    const abiertasTotal = abiertas.reduce((a, q) => a + (Number(q.price) || 0), 0)
+    const cut = new Date(); cut.setDate(cut.getDate() - 7)
+    const frias = abiertas.filter(q => new Date(q.renewed_at || q.created_at) < cut)
+    // Conversión en la ventana configurable: aceptadas / emitidas (sin borradores).
+    const wCut = new Date(); wCut.setDate(wCut.getDate() - conversionWindowDays)
+    const emitidas = quotes.filter(q => !isDraft(q) && new Date(q.created_at) >= wCut)
+    const conv = emitidas.length ? emitidas.filter(isAccepted).length / emitidas.length : NaN
+    return { abiertas: abiertas.length, abiertasTotal, frias: frias.length, conv, emitidas: emitidas.length }
+  }, [quotes, conversionWindowDays])
 
   // ---- Facturación + volumen por mes (con desglose por categoría para la vista apilada) ----
   const byMonth = useMemo(() => {
@@ -178,13 +264,32 @@ export default function DashboardPage() {
     return [...agg.values()].sort((a, b) => b.m2 - a.m2).slice(0, 10)
   }, [sales, range, products])
 
-  // ---- Stock crítico (solo activos con stock) ----
-  const stockAlerts = useMemo(() => {
-    return products.filter(p => p.active !== false && p.stockTrack).map(p => {
+  // ---- Cobertura de stock (decisión de reposición: lead time de contenedor ~3-4 meses) ----
+  // Venta mensual promedio por SKU (últimos 90 días, independiente del período elegido) vs.
+  // disponible → meses de cobertura. Lo crítico (disponible ≤ umbral) entra siempre.
+  const stockCobertura = useMemo(() => {
+    const cut = new Date(); cut.setDate(cut.getDate() - 90)
+    const cutISO = ymd(cut)
+    const m2PorSku = new Map<string, number>()
+    for (const s of sales) {
+      if (s.status === "Cancelado" || saleDate(s) < cutISO) continue
+      for (const it of s.items || []) {
+        if (!it.sku || !isPisoItem(it.sku)) continue
+        m2PorSku.set(it.sku, (m2PorSku.get(it.sku) || 0) + (Number(it.quantity) || 0))
+      }
+    }
+    const rows = products.filter(p => p.active !== false && p.stockTrack).map(p => {
       const stock = Number(p.stock) || 0, reserved = Number(p.committed ?? p.reservedStock) || 0
-      return { p, stock, reserved, available: stock - reserved }
-    }).filter(x => x.available <= 5).sort((a, b) => a.available - b.available)
-  }, [products])
+      const available = stock - reserved
+      const mensual = (m2PorSku.get(p.sku) || 0) / 3
+      const meses = mensual > 0 ? Math.max(0, available) / mensual : Infinity
+      // Orden: sobre-vendidos primero (disponible ≤ 0 es lo más urgente, venda o no), después por cobertura.
+      const urgencia = available <= 0 ? available : meses
+      return { p, stock, reserved, available, mensual, meses, urgencia }
+    }).filter(x => x.mensual > 0 || x.available <= lowStockUnits)
+      .sort((a, b) => a.urgencia - b.urgencia)
+    return { rows: rows.slice(0, 10), criticos: rows.filter(x => x.available <= lowStockUnits).length }
+  }, [products, sales, lowStockUnits])
 
   // ---- Margen por obra (top y bottom) ----
   const porObra = useMemo(() => {
@@ -204,18 +309,27 @@ export default function DashboardPage() {
         <div className="text-sm text-muted-foreground">
           Performance · {gRange.label} · {range.from} a {range.to}
           {clamped && <span className="ml-2 text-[11px] text-amber-600">· análisis devengado desde ene-2026 (cobertura de costos)</span>}
+          {cmp.partial && <span className="ml-2 text-[11px]">· período en curso: Δ vs. mismos días del anterior</span>}
         </div>
         <QuickPeriod />
       </div>
 
-      {/* KPIs — sin módulo finanzas no hay gastos de caja: "Resultado neto" no aplica → m² */}
+      {/* KPIs — sin módulo finanzas no hay caja: "Resultado neto"/"Cobrado" no aplican → m² + pendiente */}
       <div className="grid grid-cols-1 sm:grid-cols-2 @4xl/main:grid-cols-4 gap-3">
-        <Kpi label="Facturación" value={fmtMoney(cur.fact)} sub={`${cur.count} ventas`} delta={delta(cur.fact, pre.fact)} />
-        <Kpi label="Margen bruto" value={fmtMoney(cur.grossProfit)} sub={isFinite(cur.grossPct) ? `${(cur.grossPct * 100).toFixed(1)}% · ${cur.detailedCount} c/ costo` : "sin costo cargado"} delta={delta(cur.grossProfit, pre.grossProfit)} />
+        <Kpi label="Facturación" value={fmtMoney(cur.fact)} sub={`${cur.count} ventas`} delta={delta(cur.fact, pre.fact)} onClick={() => navigate("/ventas")} />
+        <Kpi label="Margen bruto" value={fmtMoney(cur.grossProfit)}
+          sub={isFinite(cur.grossPct) ? `${(cur.grossPct * 100).toFixed(1)}% · costo en ${cur.fact ? Math.round(cur.factConCosto / cur.fact * 100) : 0}% de la fact.` : "sin costo cargado"}
+          warnSub={cur.fact > 0 && cur.factConCosto / cur.fact < 0.7}
+          delta={delta(cur.grossProfit, pre.grossProfit)} onClick={() => navigate("/reportes")} />
         {dashFinOn
           ? <Kpi label="Resultado neto" value={fmtMoney(cur.neto)} sub={`bruto − gastos (${fmtMoney(cur.opexTotal)})`} delta={delta(cur.neto, pre.neto)} />
           : <Kpi label="m² vendidos" value={fmtInt(cur.m2)} sub="m² de piso en el período" delta={delta(cur.m2, pre.m2)} />}
-        <Kpi label="Pendiente de cobro" value={fmtMoney(pendiente.total)} sub={`${pendiente.count} ventas`} delta={null} />
+        {dashFinOn
+          ? <Kpi label="Cobrado (caja)" value={fmtMoney(cur.cobradoCaja)}
+              sub={cur.fact > 0 ? `${Math.round(cur.cobradoCaja / cur.fact * 100)}% de lo facturado` : "cobros de ventas del período"}
+              warnSub={cur.fact > 0 && cur.cobradoCaja / cur.fact < 0.5}
+              delta={delta(cur.cobradoCaja, pre.cobradoCaja)} onClick={() => navigate("/cashflow")} />
+          : <Kpi label="Pendiente de cobro" value={fmtMoney(pendiente.total)} sub={`${pendiente.count} ventas`} delta={null} onClick={() => navigate("/ventas")} />}
       </div>
 
       {/* Facturación + volumen | P&L */}
@@ -246,7 +360,17 @@ export default function DashboardPage() {
         </Card>
       </div>
 
-      {/* Top pisos | Stock crítico */}
+      {/* Cobranzas por relevancia | Caja + Embudo */}
+      <div className="grid grid-cols-1 @4xl/main:grid-cols-3 gap-4">
+        <CobranzasCard cobranzas={cobranzas} overdueDays={overdueCobroDays} anticipoPct={anticipoPct}
+          onOpenSale={(id) => navigate(`/ventas?sale=${id}`)} />
+        <div className="space-y-4">
+          {dashFinOn && isAdmin && <CajaCard caja={caja} onClick={() => navigate("/cajas")} />}
+          <EmbudoCard embudo={embudo} windowDays={conversionWindowDays} onClick={() => navigate("/cotizaciones")} />
+        </div>
+      </div>
+
+      {/* Top pisos | Cobertura de stock */}
       <div className="grid grid-cols-1 @4xl/main:grid-cols-2 gap-4">
         <Card className="overflow-hidden py-0">
           <div className="px-4 py-3 text-sm font-medium border-b border-border">Productos PISO más vendidos</div>
@@ -259,14 +383,27 @@ export default function DashboardPage() {
           </Table>
         </Card>
         <Card className="overflow-hidden py-0">
-          <div className="px-4 py-3 text-sm font-medium border-b border-border flex items-center justify-between">Stock crítico <Badge variant="outline" className="text-[10px]">{stockAlerts.length}</Badge></div>
+          <div className="px-4 py-3 text-sm font-medium border-b border-border flex items-center justify-between">
+            <span>Cobertura de stock <span className="text-[11px] font-normal text-muted-foreground">· venta prom. últimos 90 días</span></span>
+            <Badge variant="outline" className={cn("text-[10px]", stockCobertura.criticos > 0 && "text-destructive border-destructive/40")}>{stockCobertura.criticos} críticos</Badge>
+          </div>
           <Table>
-            <TableHeader><TableRow><TableHead>Producto</TableHead><TableHead className="text-right">Stock</TableHead><TableHead className="text-right">Comprometido</TableHead><TableHead className="text-right">Disponible</TableHead></TableRow></TableHeader>
+            <TableHeader><TableRow><TableHead>Producto</TableHead><TableHead className="text-right">Disponible</TableHead><TableHead className="text-right">m²/mes</TableHead><TableHead className="text-right">Cobertura</TableHead></TableRow></TableHeader>
             <TableBody>
-              {stockAlerts.length === 0 ? <TableRow><TableCell colSpan={4} className="text-center text-sm text-muted-foreground py-6">Sin faltantes — todo OK</TableCell></TableRow>
-                : stockAlerts.map(({ p, stock, reserved, available }) => <TableRow key={p.id}><TableCell className="max-w-[240px] truncate">{p.name}</TableCell><TableCell className="text-right tabular">{fmtInt(stock)}</TableCell><TableCell className="text-right tabular text-amber-600">{fmtInt(reserved)}</TableCell><TableCell className={cn("text-right tabular font-medium", available < 0 ? "text-destructive" : "text-amber-600")}>{fmtInt(available)}</TableCell></TableRow>)}
+              {stockCobertura.rows.length === 0 ? <TableRow><TableCell colSpan={4} className="text-center text-sm text-muted-foreground py-6">Sin ventas recientes ni faltantes</TableCell></TableRow>
+                : stockCobertura.rows.map(({ p, available, mensual, meses }) => (
+                  <TableRow key={p.id}>
+                    <TableCell className="max-w-[240px] truncate">{p.name}</TableCell>
+                    <TableCell className={cn("text-right tabular", available <= 0 && "text-destructive font-medium")}>{fmtInt(available)}</TableCell>
+                    <TableCell className="text-right tabular text-muted-foreground">{mensual > 0 ? fmtInt(mensual) : "—"}</TableCell>
+                    <TableCell className={cn("text-right tabular font-medium", available < 0 ? "text-destructive" : !isFinite(meses) ? "text-muted-foreground" : meses < 2 ? "text-destructive" : meses < 4 ? "text-amber-600" : "text-muted-foreground")}>
+                      {available < 0 ? "sobre-vendido" : isFinite(meses) ? `${meses.toFixed(1)} m` : "sin venta"}
+                    </TableCell>
+                  </TableRow>
+                ))}
             </TableBody>
           </Table>
+          <div className="px-4 pb-3 text-[10px] text-muted-foreground">Cobertura = disponible ÷ venta mensual. Rojo &lt; 2 meses, ámbar &lt; 4 (lead time de reposición por contenedor).</div>
         </Card>
       </div>
 
@@ -285,16 +422,115 @@ export default function DashboardPage() {
   )
 }
 
-function Kpi({ label, value, sub, delta }: { label: string; value: string; sub?: string; delta: { pct: number; up: boolean } | null }) {
+function Kpi({ label, value, sub, delta, warnSub, onClick }: { label: string; value: string; sub?: string; delta: { pct: number; up: boolean } | null; warnSub?: boolean; onClick?: () => void }) {
   const Icon = delta == null ? Minus : delta.up ? ArrowUp : ArrowDown
   return (
-    <Card className="p-4 gap-1">
+    <Card className={cn("p-4 gap-1", onClick && "cursor-pointer transition-colors hover:bg-muted/40")} onClick={onClick}>
       <div className="text-[11px] uppercase tracking-wide text-muted-foreground flex items-center justify-between">
         {label}
         {delta != null && <span className={cn("inline-flex items-center gap-0.5 text-[10px]", delta.up ? "text-emerald-600" : "text-destructive")}><Icon className="h-3 w-3" />{Math.abs(delta.pct * 100).toFixed(0)}%</span>}
       </div>
       <div className="text-2xl font-semibold serif tabular">{value}</div>
-      {sub && <div className="text-[11px] text-muted-foreground">{sub}</div>}
+      {sub && <div className={cn("text-[11px]", warnSub ? "text-amber-600" : "text-muted-foreground")}>{sub}</div>}
+    </Card>
+  )
+}
+
+// ---- Cobranzas por relevancia ----
+const NIVEL_META: Record<CobranzaNivel, { dot: string; label: string; hint: string }> = {
+  entregada: { dot: "bg-destructive", label: "Obra entregada sin cobrar", hint: "colocamos y la plata está afuera — cobrar YA" },
+  anticipo:  { dot: "bg-amber-500",   label: "Anticipo incompleto",       hint: "confirmada (con stock reservado) sin el anticipo completo" },
+  esperando: { dot: "bg-muted-foreground/40", label: "Esperando obra",    hint: "anticipo pagado, falta el conforme — no es mora" },
+}
+type CobranzasData = { por: Record<CobranzaNivel, { list: Sale[]; total: number }>; total: number; count: number; top: Sale[] }
+
+function CobranzasCard({ cobranzas, overdueDays, anticipoPct, onOpenSale }: { cobranzas: CobranzasData; overdueDays: number; anticipoPct: number; onOpenSale: (id: string) => void }) {
+  const today = new Date()
+  const diasDesde = (iso: string | null) => iso ? Math.max(0, Math.round((+today - +new Date(iso + "T12:00:00")) / 86400000)) : null
+  return (
+    <Card className="@4xl/main:col-span-2 overflow-hidden py-0">
+      <div className="px-4 py-3 border-b border-border flex items-center justify-between flex-wrap gap-2">
+        <div className="text-sm font-medium">Cobranzas · <span className="tabular">{fmtMoney(cobranzas.total)}</span> <span className="text-muted-foreground font-normal">en {cobranzas.count} ventas</span></div>
+        <div className="flex items-center gap-3 text-[11px]">
+          {(Object.keys(NIVEL_META) as CobranzaNivel[]).map(k => (
+            <span key={k} className="inline-flex items-center gap-1.5" title={NIVEL_META[k].hint}>
+              <span className={cn("h-2 w-2 rounded-full", NIVEL_META[k].dot)} />
+              <span className="text-muted-foreground">{NIVEL_META[k].label}</span>
+              <span className="tabular font-medium">{fmtMoney(cobranzas.por[k].total)}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+      <Table>
+        <TableHeader><TableRow><TableHead>Obra</TableHead><TableHead>Situación</TableHead><TableHead className="text-right">Cobrado</TableHead><TableHead className="text-right">Saldo</TableHead></TableRow></TableHeader>
+        <TableBody>
+          {cobranzas.top.length === 0
+            ? <TableRow><TableCell colSpan={4} className="text-center text-sm text-muted-foreground py-6">Sin cobranzas urgentes — lo pendiente está esperando obra</TableCell></TableRow>
+            : cobranzas.top.map(s => {
+              const nivel = s.status === "Finalizado" ? "entregada" as const : "anticipo" as const
+              const fin = nivel === "entregada" ? finalizadaEl(s) : null
+              const dias = fin ? diasDesde(fin) : null
+              return (
+                <TableRow key={s.id} className="cursor-pointer" onClick={() => onOpenSale(s.id)}>
+                  <TableCell className="max-w-[260px] truncate">{s.title || s.client_name}</TableCell>
+                  <TableCell>
+                    <span className="inline-flex items-center gap-1.5 text-xs">
+                      <span className={cn("h-2 w-2 rounded-full shrink-0", NIVEL_META[nivel].dot)} />
+                      {nivel === "entregada"
+                        ? <span className={cn(dias != null && dias > overdueDays && "text-destructive font-medium")}>{dias != null ? `entregada hace ${dias} días` : "entregada"}</span>
+                        : <span className="text-muted-foreground">{s.status}</span>}
+                    </span>
+                  </TableCell>
+                  <TableCell className="text-right tabular text-muted-foreground">{Math.round(cobradoPct(s) * 100)}%</TableCell>
+                  <TableCell className="text-right tabular font-medium">{fmtMoney(saldoDe(s))}</TableCell>
+                </TableRow>
+              )
+            })}
+        </TableBody>
+      </Table>
+      {cobranzas.por.esperando.list.length > 0 && (
+        <div className="px-4 pb-3 text-[10px] text-muted-foreground">
+          + {cobranzas.por.esperando.list.length} ventas esperando obra ({fmtMoney(cobranzas.por.esperando.total)}) con el anticipo (≥{Math.round(anticipoPct * 100)}%) pagado — sin urgencia.
+        </div>
+      )}
+    </Card>
+  )
+}
+
+// ---- Caja ----
+type CajaData = { total: number; porCaja: CajaBalance[]; inP: number; outP: number; neto: number }
+function CajaCard({ caja, onClick }: { caja: CajaData; onClick: () => void }) {
+  return (
+    <Card className="p-4 gap-2 cursor-pointer transition-colors hover:bg-muted/40" onClick={onClick}>
+      <div className="text-[11px] uppercase tracking-wide text-muted-foreground">Caja consolidada</div>
+      <div className="text-2xl font-semibold serif tabular">{fmtMoney(caja.total)}</div>
+      <div className={cn("text-[11px]", caja.neto < 0 ? "text-destructive" : "text-emerald-600")}>
+        {caja.neto >= 0 ? "+" : ""}{fmtMoney(caja.neto)} neto del período <span className="text-muted-foreground">(↑{fmtMoney(caja.inP)} · ↓{fmtMoney(caja.outP)})</span>
+      </div>
+      <div className="mt-1 space-y-0.5">
+        {caja.porCaja.map(b => (
+          <div key={b.caja_id} className="flex justify-between text-xs">
+            <span className="text-muted-foreground truncate pr-2">{b.name}</span>
+            <span className={cn("tabular", b.balance_usd < 0 && "text-destructive")}>{fmtMoney(b.balance_usd)}</span>
+          </div>
+        ))}
+      </div>
+    </Card>
+  )
+}
+
+// ---- Embudo comercial ----
+type EmbudoData = { abiertas: number; abiertasTotal: number; frias: number; conv: number; emitidas: number }
+function EmbudoCard({ embudo, windowDays, onClick }: { embudo: EmbudoData; windowDays: number; onClick: () => void }) {
+  return (
+    <Card className="p-4 gap-2 cursor-pointer transition-colors hover:bg-muted/40" onClick={onClick}>
+      <div className="text-[11px] uppercase tracking-wide text-muted-foreground">Embudo comercial</div>
+      <div className="text-2xl font-semibold serif tabular">{fmtMoney(embudo.abiertasTotal)}</div>
+      <div className="text-[11px] text-muted-foreground">{embudo.abiertas} cotizaciones abiertas (enviadas sin respuesta)</div>
+      <div className="space-y-0.5 mt-1 text-xs">
+        <div className="flex justify-between"><span className="text-muted-foreground">Sin respuesta hace +7 días</span><span className={cn("tabular", embudo.frias > 0 && "text-amber-600 font-medium")}>{embudo.frias}</span></div>
+        <div className="flex justify-between"><span className="text-muted-foreground">Conversión últimos {windowDays} días</span><span className="tabular">{isFinite(embudo.conv) ? Math.round(embudo.conv * 100) + "%" : "—"}<span className="text-muted-foreground"> · {embudo.emitidas} emitidas</span></span></div>
+      </div>
     </Card>
   )
 }
