@@ -12,26 +12,32 @@ type Thresholds = {
   lowStockUnits: number
 }
 
-type SettingsResp = { dashboardThresholds?: Thresholds }
+type SettingsResp = { dashboardThresholds?: Thresholds; anticipo_pct?: number }
 
+const DEFAULT_THRESHOLDS: Thresholds = { lateDeliveryDays: 7, overdueCobroDays: 30, conversionWindowDays: 90, lowStockUnits: 5 }
+
+// lateDeliveryDays quedó sin consumidor (se conserva en settings) → no se muestra.
 const FIELDS: { key: keyof Thresholds; label: string; hint: string }[] = [
-  { key: "conversionWindowDays", label: "Ventana de conversión (días)", hint: "Período usado para calcular % de conversión y demanda reciente para alertas." },
-  { key: "overdueCobroDays",     label: "Días para considerar cobro vencido", hint: "Marca rojo los saldos abiertos cuya antigüedad supera este valor." },
-  { key: "lateDeliveryDays",     label: "Días para entrega tardía", hint: "Si la fecha de entrega supera estos días sin despachar, aparece como atrasada." },
-  { key: "lowStockUnits",        label: "Umbral de stock bajo", hint: "Cantidad mínima de m² antes de marcar un producto como stock bajo." },
+  { key: "overdueCobroDays",     label: "Días para considerar cobro vencido", hint: "En Cobranzas, una obra entregada sin cobrar se marca en rojo pasados estos días desde la finalización." },
+  { key: "conversionWindowDays", label: "Ventana de conversión (días)", hint: "Período del Embudo comercial para calcular el % de cotizaciones aceptadas." },
+  { key: "lowStockUnits",        label: "Umbral de stock crítico (m²)", hint: "Disponible mínimo antes de contar un producto como crítico en Cobertura de stock." },
 ]
 
 export function ThresholdSettings() {
   const { data } = useApi<SettingsResp>("/api/settings")
   const [draft, setDraft] = useState<Thresholds | null>(null)
+  const [anticipo, setAnticipo] = useState<number | null>(null)   // en % (0-100)
   const [saving, setSaving] = useState(false)
   const [savedOk, setSavedOk] = useState(false)
 
   useEffect(() => {
-    if (data?.dashboardThresholds && !draft) setDraft(data.dashboardThresholds)
+    if (data && !draft) {
+      setDraft({ ...DEFAULT_THRESHOLDS, ...(data.dashboardThresholds || {}) })
+      setAnticipo(Math.round((data.anticipo_pct ?? 0.8) * 100))
+    }
   }, [data, draft])
 
-  if (!draft) return null
+  if (!draft || anticipo == null) return null
 
   async function save() {
     setSaving(true); setSavedOk(false)
@@ -39,7 +45,7 @@ export function ThresholdSettings() {
       await fetch("/api/settings", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ dashboardThresholds: draft }),
+        body: JSON.stringify({ dashboardThresholds: draft, anticipo_pct: Math.min(100, Math.max(0, anticipo ?? 80)) / 100 }),
       })
       setSavedOk(true)
       setTimeout(() => window.location.reload(), 600)
@@ -59,6 +65,17 @@ export function ThresholdSettings() {
           <SheetDescription>Umbrales que controlan alertas y métricas. Se aplican inmediatamente al guardar.</SheetDescription>
         </SheetHeader>
         <div className="mt-6 space-y-5">
+          <div>
+            <label className="text-sm font-medium block mb-1">Anticipo estándar (%)</label>
+            <Input
+              type="number" min={0} max={100}
+              value={anticipo}
+              onChange={(e) => setAnticipo(Number(e.target.value) || 0)}
+            />
+            <p className="text-xs text-muted-foreground mt-1">
+              Término de pago (Anticipo {anticipo}% · Conforme {100 - anticipo}%). En Cobranzas, una venta sin finalizar con menos de este % cobrado cuenta como "Anticipo incompleto"; con el % pagado queda "Esperando obra" (sin alarma).
+            </p>
+          </div>
           {FIELDS.map((f) => (
             <div key={f.key}>
               <label className="text-sm font-medium block mb-1">{f.label}</label>
