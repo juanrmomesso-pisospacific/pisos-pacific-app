@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { Camera, Wand2, Loader2, Download, Share2, RotateCcw, ImageOff } from "lucide-react"
+import { Camera, Wand2, Loader2, Share2, RotateCcw, ImageOff } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { getJSON } from "@/lib/api"
@@ -170,10 +170,17 @@ export default function VisualizadorPage() {
         )}
       </section>
 
-      {/* 4 · Generar */}
-      <Button className="w-full h-12 text-base" disabled={!ready || loading} onClick={generar}>
-        {loading ? <><Loader2 className="h-5 w-5 mr-2 animate-spin" /> Generando… (~10–20 s)</> : <><Wand2 className="h-5 w-5 mr-2" /> Generar</>}
-      </Button>
+      {/* 4 · Generar — sticky abajo para que en el celular siempre esté a mano (one-handed). */}
+      <div className="sticky bottom-0 -mx-4 px-4 py-3 bg-gradient-to-t from-background via-background to-transparent">
+        <Button className="w-full h-14 text-base shadow-lg" disabled={!ready || loading} onClick={generar}>
+          {loading ? <><Loader2 className="h-5 w-5 mr-2 animate-spin" /> Generando… (~10–20 s)</> : <><Wand2 className="h-5 w-5 mr-2" /> Generar</>}
+        </Button>
+        {!ready && !loading && (
+          <p className="mt-1 text-center text-xs text-muted-foreground">
+            {!foto ? "Falta la foto" : "Elegí un diseño"}
+          </p>
+        )}
+      </div>
 
       {error && (
         <Card className="p-3 text-sm bg-red-50 text-red-800 border-red-200 dark:bg-red-950/40 dark:text-red-200">{error}</Card>
@@ -188,12 +195,13 @@ export default function VisualizadorPage() {
           </div>
           <img src={showOriginal ? foto : render.imagen} alt="render" className="w-full rounded-lg border" />
           <div className="grid grid-cols-2 gap-2">
-            <Button variant="outline" onMouseDown={() => setShowOriginal(true)} onMouseUp={() => setShowOriginal(false)}
+            <Button variant="outline" className="h-12"
+              onMouseDown={() => setShowOriginal(true)} onMouseUp={() => setShowOriginal(false)}
               onMouseLeave={() => setShowOriginal(false)} onTouchStart={() => setShowOriginal(true)} onTouchEnd={() => setShowOriginal(false)}>
-              <RotateCcw className="h-4 w-4 mr-1" /> Mantené para ver original
+              <RotateCcw className="h-4 w-4 mr-1" /> {showOriginal ? "Original" : "Ver original"}
             </Button>
-            <Button onClick={compartir}>
-              <Share2 className="h-4 w-4 mr-1" /> Compartir / <Download className="h-4 w-4 mx-1" />
+            <Button className="h-12" onClick={compartir}>
+              <Share2 className="h-4 w-4 mr-1" /> Compartir
             </Button>
           </div>
           <Button variant="ghost" className="w-full" onClick={reset}>Empezar de nuevo</Button>

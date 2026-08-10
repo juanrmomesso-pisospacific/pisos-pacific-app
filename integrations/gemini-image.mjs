@@ -64,7 +64,8 @@ export async function renderVisualizacion({ foto, refs = [], prompt, model = DEF
   const imgPart = respParts.find(p => p?.inlineData?.data || p?.inline_data?.data);
   if (imgPart) {
     const inline = imgPart.inlineData || imgPart.inline_data;
-    return { imagen: inline.data, mime: inline.mimeType || inline.mime_type || 'image/png', modelo: model, ms };
+    // usage (tokens) sirve para medir el costo real por render en el spike.
+    return { imagen: inline.data, mime: inline.mimeType || inline.mime_type || 'image/png', modelo: model, ms, usage: json?.usageMetadata || null };
   }
 
   // Si no hay imagen: el modelo suele explicar por qué (rechazo/seguridad) como texto.
