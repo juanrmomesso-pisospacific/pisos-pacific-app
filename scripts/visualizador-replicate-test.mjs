@@ -85,8 +85,9 @@ for (const foto of fotos) {
       fs.writeFileSync(path.join(OUT, `mask-${name}-${i}.png`), Buffer.from(uri.split(',')[1], 'base64'));
       maskUris.push(uri);
     }
-    // Heurística: la máscara binaria suele ser la ÚLTIMA salida. Si falla, se ajusta tras ver los mask-*.png
-    const maskUri = maskUris[maskUris.length - 1];
+    // grounded_sam devuelve [anotada, cutout, MÁSCARA(blanco=objeto), máscara_invertida].
+    // Usamos la penúltima (blanco = piso), que es la que flux-fill necesita.
+    const maskUri = maskUris[maskUris.length - 2] || maskUris[maskUris.length - 1];
     if (!maskUri) throw new Error('grounded_sam no devolvió máscara');
 
     // 2) inpaint

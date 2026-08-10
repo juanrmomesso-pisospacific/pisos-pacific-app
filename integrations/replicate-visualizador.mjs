@@ -42,15 +42,29 @@ export async function modelInputSchema(model) {
   return j?.latest_version?.openapi_schema?.components?.schemas?.Input?.properties || null;
 }
 
+const sleep = (ms) => new Promise(res => setTimeout(res, ms));
+
 // Crea una predicción y espera el resultado (create + poll). Devuelve prediction.output.
+// Reintenta ante throttling (cuentas con <US$5 de crédito quedan limitadas a 1 request por vez).
 export async function runPrediction(version, input, { timeoutMs = 120000, label = 'replicate' } = {}) {
   const started = Date.now();
-  // 'Prefer: wait' pide respuesta sincrónica (hasta ~60s); igual hacemos poll por las dudas.
-  let r = await fetch(`${API}/predictions`, withTimeout({
-    method: 'POST', headers: authHeaders({ Prefer: 'wait' }), body: JSON.stringify({ version, input }),
-  }, 65000));
-  let pred = await r.json();
-  if (!r.ok) throw new Error(`${label}: ${pred?.detail || pred?.title || 'HTTP ' + r.status}`);
+  let r, pred;
+  for (let attempt = 0; attempt < 8; attempt++) {
+    // 'Prefer: wait' pide respuesta sincrónica (hasta ~60s); igual hacemos poll por las dudas.
+    r = await fetch(`${API}/predictions`, withTimeout({
+      method: 'POST', headers: authHeaders({ Prefer: 'wait' }), body: JSON.stringify({ version, input }),
+    }, 65000));
+    pred = await r.json();
+    if (r.ok) break;
+    const detail = pred?.detail || pred?.title || `HTTP ${r.status}`;
+    if (r.status === 429 || /throttl/i.test(detail)) {
+      const secs = Number((/resets? in ~?(\d+)/i.exec(detail) || [])[1]) || 8;
+      await sleep((secs + 1) * 1000);
+      continue; // reintentar
+    }
+    throw new Error(`${label}: ${detail}`);
+  }
+  if (!r.ok) throw new Error(`${label}: sigue throttled tras varios reintentos`);
 
   while (pred.status && !['succeeded', 'failed', 'canceled'].includes(pred.status)) {
     if (Date.now() - started > timeoutMs) throw new Error(`${label}: timeout (${Math.round(timeoutMs / 1000)}s)`);
@@ -80,7 +94,7 @@ function firstUrl(output) {
 
 // 1) Máscara del piso (grounded_sam). Devuelve { maskUri, ms, rawOutput } — rawOutput por si hay
 //    que elegir cuál de las salidas es la máscara binaria (se inspecciona en la 1ra corrida).
-export async function floorMask(imageDataUri, { maskPrompt = 'floor', negative = '', dilate = 0 } = {}) {
+export async function floorMask(imageDataUri, { maskPrompt = 'floor,carpet,rug,tile floor,ground', negative = 'wall,window,furniture,ceiling', dilate = 5 } = {}) {
   const version = await latestVersion(MODEL_SEGMENT);
   const input = { image: imageDataUri, mask_prompt: maskPrompt, negative_mask_prompt: negative, adjustment_factor: dilate };
   const { output, ms } = await runPrediction(version, input, { label: 'grounded_sam' });
