@@ -15,7 +15,7 @@ export const ROLE_LABEL: Record<string, string> = {
 
 // Rutas permitidas por rol RESTRINGIDO. Un rol que no está acá = acceso total (admin).
 const RESTRICTED_PATHS: Record<string, string[]> = {
-  vendor: ["/dashboard", "/mensajes", "/leads", "/cotizaciones", "/ventas", "/agenda", "/inventario", "/galeria", "/clientes"],
+  vendor: ["/dashboard", "/mensajes", "/leads", "/cotizaciones", "/ventas", "/agenda", "/inventario", "/galeria", "/clientes", "/visualizador"],
   logistica: ["/ventas", "/cotizaciones", "/leads", "/mensajes", "/agenda"],
 }
 // A dónde cae el usuario tras login / en rutas desconocidas.

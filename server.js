@@ -18,6 +18,8 @@ import { findClientMatch } from './integrations/client-match.mjs';
 import { normProd } from './integrations/product-match.mjs';
 import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
+import { renderVisualizacion, geminiConfigured } from './integrations/gemini-image.mjs';
+import { promptFor } from './config/visualizador-prompts.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -1494,6 +1496,65 @@ app.post('/api/product-aliases', (req, res) => {
   res.json({ ok: true, alias });
 });
 
+// ---------- Visualizador de Ambientes (spike, generativo con Gemini) ----------
+// Catálogo autocontenido (data/visualizador-catalogo.json): 4 diseños de piso + 4 de pared,
+// cada uno con su muestra de material en base64. Sirve de referencia para el modelo.
+let VIS_CATALOGO = { designs: [] };
+try {
+  VIS_CATALOGO = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/visualizador-catalogo.json'), 'utf8'));
+} catch (e) { console.warn('[visualizador] no se pudo cargar el catálogo:', e.message); }
+const visDesignById = (id) => VIS_CATALOGO.designs.find(d => d.id === id);
+
+// GET catálogo: metadata + la imagen de muestra (base64) para pintar la grilla. Sin la API key.
+app.get('/api/visualizador/catalogo', (_req, res) => {
+  res.json({
+    configured: geminiConfigured(),
+    designs: VIS_CATALOGO.designs.map(d => ({
+      id: d.id, nombre: d.nombre, superficie: d.superficie, marca: d.marca,
+      coleccion: d.coleccion, tono: d.tono, muestra: `data:${d.mime};base64,${d.b64}`,
+    })),
+  });
+});
+
+// POST render: foto del ambiente (base64) + diseño(s) del catálogo → foto editada por el modelo.
+app.post('/api/visualizador/render', async (req, res) => {
+  const t0 = Date.now();
+  try {
+    const { foto, foto_mime, superficie, productoId, productoParedId } = req.body || {};
+    if (!foto) return res.status(400).json({ ok: false, error: 'falta la foto del ambiente' });
+    const surf = ['piso', 'pared', 'ambos'].includes(superficie) ? superficie : 'piso';
+
+    // La foto puede venir como data URL o base64 pelado; normalizamos a base64 + mime.
+    const m = /^data:([^;]+);base64,(.*)$/s.exec(String(foto));
+    const fotoData = m ? m[2] : String(foto);
+    const fotoMime = m ? m[1] : (foto_mime || 'image/jpeg');
+
+    // Diseños de referencia según la superficie.
+    const refs = [];
+    let usados = [];
+    if (surf === 'ambos') {
+      const dp = visDesignById(productoId), dw = visDesignById(productoParedId);
+      if (!dp || !dw) return res.status(400).json({ ok: false, error: 'para "ambos" hay que elegir un piso y una pared' });
+      refs.push({ data: dp.b64, mime: dp.mime }, { data: dw.b64, mime: dw.mime });
+      usados = [dp.id, dw.id];
+    } else {
+      const d = visDesignById(productoId);
+      if (!d) return res.status(400).json({ ok: false, error: 'diseño no encontrado' });
+      if (d.superficie !== surf) return res.status(400).json({ ok: false, error: `el diseño "${d.nombre}" es de ${d.superficie}, no de ${surf}` });
+      refs.push({ data: d.b64, mime: d.mime });
+      usados = [d.id];
+    }
+
+    const out = await renderVisualizacion({ foto: { data: fotoData, mime: fotoMime }, refs, prompt: promptFor(surf) });
+    // Log para evaluar el spike: qué se pidió, tamaño, latencia, éxito.
+    console.log(`[visualizador] OK superficie=${surf} diseños=${usados.join('+')} fotoKB=${Math.round(fotoData.length * 3 / 4 / 1024)} ms=${out.ms} modelo=${out.modelo}`);
+    res.json({ ok: true, imagen: `data:${out.mime};base64,${out.imagen}`, modelo: out.modelo, ms: out.ms });
+  } catch (e) {
+    console.warn(`[visualizador] ERROR ms=${Date.now() - t0}: ${e.message}`);
+    res.status(502).json({ ok: false, error: e.message || 'no se pudo generar el render' });
+  }
+});
+
 // ---------- Banco de imágenes (Google Drive, solo lectura) ----------
 const DRIVE_ROOT = process.env.DRIVE_ROOT_FOLDER || '1GttGPDMj120WiYPgCimclfsLFwopV107';
 const DRIVE_CACHE = path.join(UPLOAD_DIR, 'drive-cache');
@@ -2914,7 +2975,7 @@ app.use('/assets', express.static(path.join(DASHBOARD_DIST, 'assets')));
 // Archivos de public/ que Vite copia a la raíz del dist (PWA: manifest, íconos, favicon).
 // index:false → no auto-sirve index.html en '/'; si el archivo no existe, sigue al SPA.
 app.use(express.static(DASHBOARD_DIST, { index: false, maxAge: '1h' }));
-const SPA_ROUTES = ['/', '/login', '/reset', '/dashboard', '/inventario', '/galeria', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow'];
+const SPA_ROUTES = ['/', '/login', '/reset', '/dashboard', '/inventario', '/galeria', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow', '/visualizador'];
 for (const r of SPA_ROUTES) {
   app.get(r, (_, res) => res.sendFile(path.join(DASHBOARD_DIST, 'index.html')));
 }

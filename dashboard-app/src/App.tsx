@@ -27,6 +27,7 @@ const ConfiguracionPage = lazy(() => import("@/pages/ConfiguracionPage"))
 const CashFlowPage = lazy(() => import("@/pages/CashFlowPage"))
 const CajasPage = lazy(() => import("@/pages/CajasPage"))
 const ProveedoresPage = lazy(() => import("@/pages/ProveedoresPage"))
+const VisualizadorPage = lazy(() => import("@/pages/VisualizadorPage"))
 
 // Redirige a la página de inicio del rol (para "/" y rutas desconocidas).
 function RoleLanding() {
@@ -74,6 +75,7 @@ function Gate() {
                   <Route path="/cotizaciones" element={<CotizacionesPage />} />
                   <Route path="/ventas" element={<VentasPage />} />
                   <Route path="/agenda" element={<AgendaPage />} />
+                  <Route path="/visualizador" element={<VisualizadorPage />} />
                   <Route path="/gastos" element={<Navigate to="/cashflow" replace />} />
                   <Route path="/cashflow" element={<CashFlowPage />} />
                   <Route path="/cajas" element={<CajasPage />} />
