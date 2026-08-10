@@ -43,3 +43,6 @@ skills-lock.json
 # Backups locales de db.json
 data/db.json.bak-*
 !assets/firma/*.png
+
+# salida local del probador del visualizador
+renders-test/
