@@ -20,6 +20,7 @@ import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
 import { renderVisualizacion, geminiConfigured } from './integrations/gemini-image.mjs';
 import { promptFor } from './config/visualizador-prompts.js';
+import { inpaintFloor, materialPrompt, urlToDataUri, replicateConfigured } from './integrations/replicate-visualizador.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -1509,6 +1510,7 @@ const visDesignById = (id) => VIS_CATALOGO.designs.find(d => d.id === id);
 app.get('/api/visualizador/catalogo', (_req, res) => {
   res.json({
     configured: geminiConfigured(),
+    inpaint: replicateConfigured(),   // ¿está disponible el modo "pintar el piso" (Replicate)?
     designs: VIS_CATALOGO.designs.map(d => ({
       id: d.id, nombre: d.nombre, superficie: d.superficie, marca: d.marca,
       coleccion: d.coleccion, tono: d.tono, muestra: `data:${d.mime};base64,${d.b64}`,
@@ -1551,6 +1553,28 @@ app.post('/api/visualizador/render', async (req, res) => {
     res.json({ ok: true, imagen: `data:${out.mime};base64,${out.imagen}`, modelo: out.modelo, ms: out.ms });
   } catch (e) {
     console.warn(`[visualizador] ERROR ms=${Date.now() - t0}: ${e.message}`);
+    res.status(502).json({ ok: false, error: e.message || 'no se pudo generar el render' });
+  }
+});
+
+// POST render-mask: inpainting con la MÁSCARA que pinta el vendedor (foto + mask + diseño).
+// Repinta solo la zona pintada (el piso) dejando el resto EXACTO — vía Replicate/FLUX Fill.
+app.post('/api/visualizador/render-mask', async (req, res) => {
+  const t0 = Date.now();
+  try {
+    if (!replicateConfigured()) return res.status(400).json({ ok: false, error: 'inpainting no configurado (falta REPLICATE_API_TOKEN)' });
+    const { foto, mask, productoId } = req.body || {};
+    if (!foto || !mask) return res.status(400).json({ ok: false, error: 'faltan la foto o la máscara' });
+    const design = visDesignById(productoId);
+    if (!design) return res.status(400).json({ ok: false, error: 'diseño no encontrado' });
+    if (design.superficie !== 'piso') return res.status(400).json({ ok: false, error: 'el modo pincel es solo para piso por ahora' });
+
+    const out = await inpaintFloor({ imageDataUri: String(foto), maskDataUri: String(mask), prompt: materialPrompt(design) });
+    const imagen = await urlToDataUri(out.url);
+    console.log(`[visualizador] INPAINT OK diseño=${design.id} ms=${out.ms}`);
+    res.json({ ok: true, imagen, modelo: 'flux-fill', ms: out.ms });
+  } catch (e) {
+    console.warn(`[visualizador] INPAINT ERROR ms=${Date.now() - t0}: ${e.message}`);
     res.status(502).json({ ok: false, error: e.message || 'no se pudo generar el render' });
   }
 });

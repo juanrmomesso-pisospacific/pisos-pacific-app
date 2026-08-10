@@ -3,16 +3,18 @@ import { Camera, Wand2, Loader2, Share2, RotateCcw, ImageOff } from "lucide-reac
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { getJSON } from "@/lib/api"
+import { FloorPainter, type FloorPainterHandle } from "@/components/FloorPainter"
 
-// Visualizador de Ambientes (spike): el vendedor saca una foto del ambiente del cliente,
-// elige un diseño del catálogo y el modelo (Gemini) genera cómo quedaría. Mobile-first.
+// Visualizador de Ambientes (spike): el vendedor saca una foto del ambiente del cliente y
+// elige un diseño. Para PISO usa inpainting (pinta el piso con el dedo → se repinta solo esa
+// zona, misma foto). Para pared/ambos usa el render generativo (Gemini). Mobile-first.
 
 type Superficie = "piso" | "pared" | "ambos"
 type Design = {
   id: string; nombre: string; superficie: "piso" | "pared"
   marca: string; coleccion: string; tono: string; muestra: string
 }
-type Catalogo = { configured: boolean; designs: Design[] }
+type Catalogo = { configured: boolean; inpaint?: boolean; designs: Design[] }
 
 // Redimensiona/comprime la foto client-side (canvas) a máx `max` px lado mayor → JPEG base64.
 // Evita subir 8 MB de la cámara y mantiene el request bajo el límite del server.
@@ -45,6 +47,10 @@ export default function VisualizadorPage() {
   const [render, setRender] = useState<{ imagen: string; ms: number; modelo: string } | null>(null)
   const [showOriginal, setShowOriginal] = useState(false)     // toggle antes/después
   const fileRef = useRef<HTMLInputElement>(null)
+  const painterRef = useRef<FloorPainterHandle>(null)
+
+  // Modo pincel (inpainting): piso + Replicate disponible. Para pared/ambos seguimos con Gemini.
+  const usePincel = superficie === "piso" && !!catalogo?.inpaint
 
   useEffect(() => {
     getJSON<Catalogo>("/api/visualizador/catalogo")
@@ -69,18 +75,24 @@ export default function VisualizadorPage() {
 
   async function generar() {
     if (!ready || !foto) return
+    // Modo pincel: necesita que el vendedor haya pintado el piso.
+    let mask: string | null = null
+    if (usePincel) {
+      mask = painterRef.current?.getMask() ?? null
+      if (!mask) { setError("Pintá el piso con el dedo antes de generar."); return }
+    }
     setLoading(true); setError(null); setRender(null); setShowOriginal(false)
     try {
-      const r = await fetch("/api/visualizador/render", {
-        method: "POST",
-        credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          foto,
-          superficie,
-          productoId: needPiso ? pisoId : paredId, // piso o pared según superficie
-          ...(superficie === "ambos" ? { productoId: pisoId, productoParedId: paredId } : {}),
-        }),
+      const [url, body] = usePincel
+        ? ["/api/visualizador/render-mask", { foto, mask, productoId: pisoId }]
+        : ["/api/visualizador/render", {
+            foto, superficie,
+            productoId: needPiso ? pisoId : paredId,
+            ...(superficie === "ambos" ? { productoId: pisoId, productoParedId: paredId } : {}),
+          }]
+      const r = await fetch(url, {
+        method: "POST", credentials: "include",
+        headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
       })
       const data = await r.json().catch(() => null)
       if (!r.ok || !data?.ok) throw new Error(data?.error || `error ${r.status}`)
@@ -122,9 +134,9 @@ export default function VisualizadorPage() {
         </p>
       </header>
 
-      {catalogo && !catalogo.configured && (
+      {catalogo && ((usePincel && !catalogo.inpaint) || (!usePincel && !catalogo.configured)) && (
         <Card className="p-3 text-sm bg-amber-50 text-amber-900 border-amber-200 dark:bg-amber-950/40 dark:text-amber-200">
-          ⚠️ Falta configurar <code>GEMINI_API_KEY</code> en el servidor — el render no va a funcionar hasta cargarla.
+          ⚠️ Falta configurar <code>{usePincel ? "REPLICATE_API_TOKEN" : "GEMINI_API_KEY"}</code> en el servidor — el render no va a funcionar hasta cargarlo.
         </Card>
       )}
 
@@ -170,10 +182,18 @@ export default function VisualizadorPage() {
         )}
       </section>
 
-      {/* 4 · Generar — sticky abajo para que en el celular siempre esté a mano (one-handed). */}
+      {/* 4 · Pintá el piso (modo inpainting) — el vendedor sombrea el piso sobre la foto. */}
+      {usePincel && foto && pisoId && (
+        <section className="space-y-2">
+          <div className="text-sm font-medium">4 · Pintá el piso a reemplazar</div>
+          <FloorPainter ref={painterRef} src={foto} />
+        </section>
+      )}
+
+      {/* Generar — sticky abajo para que en el celular siempre esté a mano (one-handed). */}
       <div className="sticky bottom-0 -mx-4 px-4 py-3 bg-gradient-to-t from-background via-background to-transparent">
         <Button className="w-full h-14 text-base shadow-lg" disabled={!ready || loading} onClick={generar}>
-          {loading ? <><Loader2 className="h-5 w-5 mr-2 animate-spin" /> Generando… (~10–20 s)</> : <><Wand2 className="h-5 w-5 mr-2" /> Generar</>}
+          {loading ? <><Loader2 className="h-5 w-5 mr-2 animate-spin" /> Generando… ({usePincel ? "~30" : "~10–20"} s)</> : <><Wand2 className="h-5 w-5 mr-2" /> Generar</>}
         </Button>
         {!ready && !loading && (
           <p className="mt-1 text-center text-xs text-muted-foreground">

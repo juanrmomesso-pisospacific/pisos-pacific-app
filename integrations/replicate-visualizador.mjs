@@ -111,10 +111,19 @@ export async function inpaintFloor({ imageDataUri, maskDataUri, prompt }) {
   return { url, ms };
 }
 
-// Prompt del material a partir del diseño del catálogo (tono/veta). FLUX Fill es text-guided;
-// describimos el material lo más fiel posible al tono de la muestra.
+// Descripción en inglés del tono por diseño (más fiel que el `tono` en español del catálogo;
+// probado: mejora el matcheo de color del inpaint). Fallback al `tono` del catálogo.
+const EN_TONE = {
+  natural_oak_xl: 'light natural oak, soft pale warm tone, subtle straight grain',
+  notte_xl: 'warm greige, greyish-taupe medium oak, matte, subtle straight grain',
+  roble_eslavonia_xl: 'honey oak, warm golden-brown, pronounced grain',
+  aspen_xl: 'very light oak, pale and airy, fine grain',
+};
+// Prompt del material a partir del diseño del catálogo. FLUX Fill es text-guided; describimos el
+// material lo más fiel posible + reforzamos que solo rellene la zona enmascarada.
 export function materialPrompt(design) {
-  const tono = design?.tono || 'natural wood';
-  return `Wide-plank wood flooring, ${tono} tone, matte finish, realistic wood grain, ` +
-    `planks laid following the room's perspective, photorealistic, seamless, consistent with the room's lighting and shadows.`;
+  const desc = EN_TONE[design?.id] || design?.tono || 'natural wood';
+  return `Wide-plank engineered wood flooring: ${desc}. Natural matte finish, realistic wood grain, ` +
+    `planks laid following the room's perspective, photorealistic and seamless, consistent with the ` +
+    `room's lighting and soft reflections. Replace only the masked floor area; keep everything else unchanged.`;
 }
