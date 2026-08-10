@@ -5,13 +5,17 @@
 
 export const PROMPTS = {
   // Reemplazar el PISO usando la 2da imagen (muestra del material) como referencia.
-  piso: `Edit this photo of a real room. Replace ONLY the floor with the wood
-flooring material shown in the second image (wide planks, keep a realistic
-plank scale and lay the planks following the room's perspective and vanishing
-lines). Keep everything else exactly as is: furniture, rugs, walls, windows,
-doors, plants, ceiling, lighting, shadows and reflections must remain
-consistent with the original photo. Do not move or remove any object.
-Photorealistic result, same camera angle, same framing, same resolution.`,
+  piso: `Edit this photo of a real room. Replace ONLY the floor with the exact wood
+flooring material shown in the second image. CRITICAL: reproduce the sample's
+exact HUE, SATURATION, TONE and grain — including any grey, cool or muted
+undertone. Do NOT make the floor warmer, more golden, more orange or more
+saturated than the sample; match its lightness precisely. The result must clearly
+read as the same product as the sample. Use wide planks at a realistic scale,
+laid following the room's perspective and vanishing lines. Keep everything else
+exactly as is: furniture, rugs, walls, windows,
+doors, plants, ceiling, lighting, shadows and reflections must remain consistent
+with the original photo. Do not move or remove any object. Photorealistic result,
+same camera angle, same framing, same resolution.`,
 
   // Cubrir la PARED principal con paneles acústicos de listones (AcuDesign), 2da imagen = referencia.
   pared: `Edit this photo of a real room. Cover ONLY the main visible wall with the
