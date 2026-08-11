@@ -127,12 +127,15 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
   const glState = useRef<{ gl: WebGLRenderingContext; prog: WebGLProgram; base: number } | null>(null)
-  const [quad, setQuad] = useState<Pt[] | null>(null)
+  // Perspectiva por PUNTO DE FUGA: 2 puntos del borde cercano (n0,n1) + el punto de fuga (vp).
+  // El plano queda geométricamente correcto; la cobertura la da la máscara pintada.
+  const [ctrl, setCtrl] = useState<{ n0: Pt; n1: Pt; vp: Pt } | null>(null)
+  const quad = ctrl ? deriveQuad(ctrl) : null
   const [dir, setDir] = useState<Dir>("vertical")
   const [size, setSize] = useState(50)          // 0..100 → tamaño de tabla (más = tablas más chicas)
   const [gloss, setGloss] = useState(serie === "Madera" ? 30 : 55)   // brillo/reflejo (H2O más satinado)
   const [ready, setReady] = useState(false)
-  const drag = useRef<number | null>(null)
+  const drag = useRef<"n0" | "n1" | "vp" | null>(null)
 
   // setup WebGL + texturas + auto-quad
   useEffect(() => {
@@ -190,7 +193,7 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
       for (let i = 0; i < pd.length; i += 4) if (md[i] > 128) ls.push((0.299 * pd[i] + 0.587 * pd[i + 1] + 0.114 * pd[i + 2]) / 255)
       ls.sort((a, b) => a - b); const base = ls.length ? ls[Math.floor(ls.length / 2)] : 0.5
       glState.current = { gl, prog, base }
-      setQuad(autoQuad(mask)); setReady(true)
+      setCtrl(autoCtrl(mask)); setReady(true)
     })().catch((e) => console.error("[projector]", e))
     return () => { alive = false }
   }, [photoSrc, maskSrc, textureUrl])
@@ -209,18 +212,18 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
     gl.uniform1f(gl.getUniformLocation(prog, "uGloss"), gloss / 100)
     gl.uniform1i(gl.getUniformLocation(prog, "uDir"), dir === "vertical" ? 0 : dir === "horizontal" ? 1 : 2)
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
-  }, [quad, dir, size, ready, serie, gloss])
+  }, [ctrl, dir, size, ready, serie, gloss])
 
   useImperativeHandle(ref, () => ({
     getResult: () => { try { return canvasRef.current?.toDataURL("image/jpeg", 0.92) ?? null } catch { return null } } }), [])
 
-  // arrastre de los 4 handles
-  function onDown(i: number) { return (e: React.PointerEvent) => { e.preventDefault(); (e.target as HTMLElement).setPointerCapture(e.pointerId); drag.current = i } }
+  // arrastre de los 3 controles: n0/n1 (borde cercano) + vp (punto de fuga)
+  function onDown(k: "n0" | "n1" | "vp") { return (e: React.PointerEvent) => { e.preventDefault(); (e.target as HTMLElement).setPointerCapture(e.pointerId); drag.current = k } }
   function onMove(e: React.PointerEvent) {
-    if (drag.current == null || !quad) return
+    if (!drag.current || !ctrl) return
     const r = wrapRef.current!.getBoundingClientRect()
     const x = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)), y = Math.max(0, Math.min(1, (e.clientY - r.top) / r.height))
-    const nq = quad.slice(); nq[drag.current] = { x, y }; setQuad(nq)
+    setCtrl({ ...ctrl, [drag.current]: { x, y } })
   }
   function onUp() { drag.current = null }
 
@@ -228,13 +231,13 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
     <div className="space-y-2">
       <div ref={wrapRef} className="relative inline-block w-full leading-[0] touch-none" onPointerMove={onMove} onPointerUp={onUp} onPointerLeave={onUp}>
         <canvas ref={canvasRef} className="w-full rounded-lg border block" />
-        {quad?.map((p, i) => (
-          <button key={i} onPointerDown={onDown(i)}
-            className="absolute w-7 h-7 -ml-3.5 -mt-3.5 rounded-full bg-white border-2 border-primary shadow touch-none"
-            style={{ left: `${p.x * 100}%`, top: `${p.y * 100}%` }} aria-label={`esquina ${i + 1}`} />
+        {ctrl && (["n0", "n1", "vp"] as const).map((k) => (
+          <button key={k} onPointerDown={onDown(k)}
+            className={`absolute w-7 h-7 -ml-3.5 -mt-3.5 rounded-full shadow touch-none border-2 ${k === "vp" ? "bg-amber-400 border-amber-600" : "bg-white border-primary"}`}
+            style={{ left: `${ctrl[k].x * 100}%`, top: `${ctrl[k].y * 100}%` }} aria-label={k === "vp" ? "punto de fuga" : "borde cercano"} />
         ))}
       </div>
-      <p className="text-xs text-muted-foreground">Arrastrá las 4 esquinas para que el marco calce con el piso (el fondo del ambiente = las esquinas de arriba).</p>
+      <p className="text-xs text-muted-foreground">Poné los 2 puntos <b>blancos</b> en el borde del piso más cercano a vos, y el punto <b>ámbar</b> (fuga) donde se juntan las líneas al fondo. Después pintá todo el piso que quieras cubrir.</p>
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs text-muted-foreground">Dirección:</span>
         {([["vertical", "Hacia el fondo"], ["horizontal", "A lo ancho"], ["diagonal", "Diagonal"]] as const).map(([v, l]) => (
@@ -253,9 +256,15 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
   )
 })
 
-// Auto-propone el quad del piso desde la máscara: extremos del piso en la fila más lejana (arriba)
-// y la más cercana (abajo).
-function autoQuad(mask: HTMLImageElement): Pt[] {
+const lerp = (a: Pt, b: Pt, t: number): Pt => ({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t })
+// Quad del plano desde el control: las esquinas del FONDO son el borde cercano proyectado hacia el
+// punto de fuga → toda la perspectiva converge al vp (geométricamente correcta), y la máscara recorta.
+function deriveQuad(c: { n0: Pt; n1: Pt; vp: Pt }): Pt[] {
+  const t = 0.9
+  return [lerp(c.n0, c.vp, t), lerp(c.n1, c.vp, t), c.n1, c.n0]   // farLeft, farRight, nearRight, nearLeft
+}
+// Auto-propone el control desde la máscara: borde cercano (abajo) + punto de fuga (centro del fondo).
+function autoCtrl(mask: HTMLImageElement): { n0: Pt; n1: Pt; vp: Pt } {
   const w = 100, h = 100
   const c = document.createElement("canvas"); c.width = w; c.height = h
   const x = c.getContext("2d")!; x.drawImage(mask, 0, 0, w, h)
@@ -264,12 +273,7 @@ function autoQuad(mask: HTMLImageElement): Pt[] {
   for (let yy = 0; yy < h; yy++) for (let xx = 0; xx < w; xx++) if (d[(yy * w + xx) * 4] > 128) {
     any = true; minX = Math.min(minX, xx); maxX = Math.max(maxX, xx); minY = Math.min(minY, yy); maxY = Math.max(maxY, yy)
   }
-  if (!any) return [{ x: 0.2, y: 0.55 }, { x: 0.8, y: 0.55 }, { x: 1, y: 1 }, { x: 0, y: 1 }]
-  // Trapecio del recuadro del piso: fondo (arriba) más angosto, frente (abajo) al ancho completo.
+  if (!any) return { n0: { x: 0, y: 1 }, n1: { x: 1, y: 1 }, vp: { x: 0.5, y: 0.45 } }
   const nx = minX / w, xx = maxX / w, ny = minY / h, yy = maxY / h
-  const inset = (xx - nx) * 0.18
-  return [
-    { x: nx + inset, y: ny }, { x: xx - inset, y: ny },   // esquinas del fondo
-    { x: xx, y: yy }, { x: nx, y: yy },                    // esquinas del frente
-  ]
+  return { n0: { x: nx, y: yy }, n1: { x: xx, y: yy }, vp: { x: (nx + xx) / 2, y: ny } }
 }

@@ -12,9 +12,30 @@ async function loadImg(src: string): Promise<HTMLImageElement> {
   })
 }
 
+// Media/desvío por canal de la zona pintada (blanco en la máscara) de una imagen.
+export async function floorStats(image: string, mask: string): Promise<{ mean: number[]; std: number[] }> {
+  const [ii, mi] = await Promise.all([loadImg(image), loadImg(mask)])
+  const W = ii.naturalWidth, H = ii.naturalHeight
+  const c = document.createElement("canvas"); c.width = W; c.height = H
+  const ctx = c.getContext("2d")!; ctx.drawImage(ii, 0, 0)
+  const d = ctx.getImageData(0, 0, W, H).data
+  const mc = document.createElement("canvas"); mc.width = W; mc.height = H
+  const mx = mc.getContext("2d")!; mx.drawImage(mi, 0, 0, W, H)
+  const md = mx.getImageData(0, 0, W, H).data
+  let n = 0; const m = [0, 0, 0]
+  for (let i = 0; i < d.length; i += 4) if (md[i] > 128) { n++; m[0] += d[i]; m[1] += d[i + 1]; m[2] += d[i + 2] }
+  if (!n) return { mean: [128, 128, 128], std: [40, 40, 40] }
+  for (let k = 0; k < 3; k++) m[k] /= n
+  const s = [0, 0, 0]
+  for (let i = 0; i < d.length; i += 4) if (md[i] > 128) for (let k = 0; k < 3; k++) { const dv = d[i + k] - m[k]; s[k] += dv * dv }
+  for (let k = 0; k < 3; k++) s[k] = Math.sqrt(s[k] / n)
+  return { mean: m, std: s }
+}
+
 // render: dataURL del inpaint · mask: dataURL b/n (blanco = piso) · mean/std: stats de la muestra.
+// sat: realce de croma (1.0 = sin realce, para fijar el color EXACTO de la proyección).
 export async function applyToneTransfer(
-  render: string, mask: string, mean: number[], std: number[]
+  render: string, mask: string, mean: number[], std: number[], sat = 1.18
 ): Promise<string> {
   const [ri, mi] = await Promise.all([loadImg(render), loadImg(mask)])
   const W = ri.naturalWidth, H = ri.naturalHeight
@@ -37,7 +58,7 @@ export async function applyToneTransfer(
   // ratio de desvío acotado (evita amplificar ruido o aplanar de más)
   const ratio = [0, 1, 2].map((k) => Math.min(2.5, Math.max(0.4, std[k] / fs[k])))
 
-  const SAT = 1.18   // realce de saturación: evita que quede gris plano (madera cálida, no apagada)
+  const SAT = sat   // realce de saturación: evita que quede gris plano (madera cálida, no apagada)
   for (let i = 0; i < d.length; i += 4) {
     const a = md[i] / 255                    // feather = blend suave del recolor
     if (a === 0) continue

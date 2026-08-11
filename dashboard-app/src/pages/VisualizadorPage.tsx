@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { getJSON } from "@/lib/api"
 import { FloorPainter, type FloorPainterHandle } from "@/components/FloorPainter"
 import { FloorProjector, type FloorProjectorHandle } from "@/components/FloorProjector"
-import { applyToneTransfer } from "@/lib/toneTransfer"
+import { applyToneTransfer, floorStats } from "@/lib/toneTransfer"
 
 // Visualizador de Ambientes (spike): el vendedor saca una foto del ambiente del cliente y
 // elige un diseño. Para PISO usa inpainting (pinta el piso con el dedo → se repinta solo esa
@@ -170,7 +170,16 @@ export default function VisualizadorPage() {
       })
       const data = await r.json().catch(() => null)
       if (!r.ok || !data?.ok) throw new Error(data?.error || `error ${r.status}`)
-      setRender({ imagen: data.imagen, ms: data.ms, modelo: "render" })
+      // Candado de color: el refinador corre el tono → le devolvemos el color EXACTO del SKU
+      // (tomado de la proyección) manteniendo el realismo/luz del render.
+      let imagen = data.imagen as string
+      if (projMask && src) {
+        try {
+          const st = await floorStats(src, projMask)
+          imagen = await applyToneTransfer(imagen, projMask, st.mean, st.std, 1.0)
+        } catch { /* si falla el candado, mostramos el render tal cual */ }
+      }
+      setRender({ imagen, ms: data.ms, modelo: "render" })
       setTimeout(() => document.getElementById("vis-resultado")?.scrollIntoView({ behavior: "smooth" }), 100)
     } catch (e) {
       setError(e instanceof Error ? e.message : "no se pudo renderizar")
