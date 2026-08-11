@@ -13,9 +13,9 @@ const VERT = `attribute vec2 p; varying vec2 uv; void main(){ uv=vec2((p.x+1.0)/
 const FRAG = `
 precision highp float;
 varying vec2 uv;                 // posición en la imagen (0..1, y abajo)
-uniform sampler2D uPhoto, uMask, uWood;
+uniform sampler2D uPhoto, uMask, uWood, uLum;
 uniform mat3 uHinv;              // imagen -> plano textura (0..1)
-uniform vec2 uRepeat;            // repeticiones (ancho, profundidad)
+uniform vec2 uRepeat;            // repeticiones (ancho, largo)
 uniform float uBase;            // luminancia base del piso (para re-iluminar)
 uniform int uDir;               // 0 vertical, 1 horizontal, 2 diagonal
 float hash(float n){ return fract(sin(n*12.9898)*43758.5453); }
@@ -29,12 +29,14 @@ void main(){
   if(uDir==1) t = vec2(q.y, q.x);                 // tablas a lo ancho
   else if(uDir==2){ float c=0.7071; t = vec2((q.x+q.y)*c, (q.y-q.x)*c); } // diagonal
   vec2 tc = t * uRepeat;
-  float col = floor(tc.x);                         // índice de tabla
-  tc.y += hash(col)*1.0;                           // desfase por tabla (rompe la repetición)
+  float col = floor(tc.x);                         // índice de tabla (columna)
+  tc.y += hash(col);                               // desfase por tabla (rompe la repetición)
   vec2 wuv = fract(tc);
   vec3 wood = texture2D(uWood, wuv).rgb;
-  float lum = dot(photo.rgb, vec3(0.299,0.587,0.114));
-  float shade = clamp(lum / max(uBase, 0.02), 0.55, 1.5);   // luz/sombra de la foto
+  // Re-iluminación SUAVE con luz DIFUSA (uLum = foto muy borroneada) → sombras/luz del ambiente,
+  // NO la trama del piso original (eso evitaba el efecto "transparencia").
+  float lum = dot(texture2D(uLum, uv).rgb, vec3(0.299,0.587,0.114));
+  float shade = mix(1.0, clamp(lum / max(uBase, 0.02), 0.7, 1.35), 0.7);
   vec3 lit = clamp(wood * shade, 0.0, 1.0);
   float a = m * inside;
   gl_FragColor = vec4(mix(photo.rgb, lit, a), 1.0);
@@ -122,6 +124,11 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
         gl.uniform1i(gl.getUniformLocation(prog, name), unit)
       }
       mkTex(photo, 0, "uPhoto"); mkTex(mask, 1, "uMask"); mkTex(wood, 2, "uWood")
+      // Luz difusa: foto muy reducida (=borroneada) → sólo lleva sombras/luz amplias, no la trama del piso.
+      const blur = document.createElement("canvas"); blur.width = 40; blur.height = Math.max(1, Math.round(40 * H / W))
+      const bx = blur.getContext("2d")!; bx.imageSmoothingEnabled = true; bx.drawImage(photo, 0, 0, blur.width, blur.height)
+      const blurImg = new Image(); await new Promise<void>((r) => { blurImg.onload = () => r(); blurImg.src = blur.toDataURL() })
+      mkTex(blurImg, 3, "uLum")
       // luminancia base del piso (mediana aprox sobre la máscara)
       const mc = document.createElement("canvas"); mc.width = 80; mc.height = 80
       const mx = mc.getContext("2d")!; mx.drawImage(photo, 0, 0, 80, 80); const pd = mx.getImageData(0, 0, 80, 80).data
@@ -141,8 +148,9 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
     const { gl, prog, base } = st
     gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight)
     gl.uniformMatrix3fv(gl.getUniformLocation(prog, "uHinv"), false, new Float32Array(homographyInv(quad)))
-    const planks = 4 + (size / 100) * 20                 // 4..24 tablas a lo ancho aprox
-    gl.uniform2f(gl.getUniformLocation(prog, "uRepeat"), planks / 5, planks / 5 * 2.2)  // la textura tiene ~5 tablas
+    const planks = 6 + (size / 100) * 16                 // 6..22 tablas a lo ancho aprox
+    const r = planks / 5                                  // la textura tiene ~5 tablas de ancho
+    gl.uniform2f(gl.getUniformLocation(prog, "uRepeat"), r, r)  // isotrópico: mantiene el largo/proporción real de tabla
     gl.uniform1f(gl.getUniformLocation(prog, "uBase"), base)
     gl.uniform1i(gl.getUniformLocation(prog, "uDir"), dir === "vertical" ? 0 : dir === "horizontal" ? 1 : 2)
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
@@ -193,18 +201,16 @@ function autoQuad(mask: HTMLImageElement): Pt[] {
   const c = document.createElement("canvas"); c.width = w; c.height = h
   const x = c.getContext("2d")!; x.drawImage(mask, 0, 0, w, h)
   const d = x.getImageData(0, 0, w, h).data
-  const rowSpan = (yy: number) => {
-    let lo = -1, hi = -1
-    for (let xx = 0; xx < w; xx++) if (d[(yy * w + xx) * 4] > 128) { if (lo < 0) lo = xx; hi = xx }
-    return lo < 0 ? null : [lo / w, hi / w]
+  let minX = w, maxX = 0, minY = h, maxY = 0, any = false
+  for (let yy = 0; yy < h; yy++) for (let xx = 0; xx < w; xx++) if (d[(yy * w + xx) * 4] > 128) {
+    any = true; minX = Math.min(minX, xx); maxX = Math.max(maxX, xx); minY = Math.min(minY, yy); maxY = Math.max(maxY, yy)
   }
-  let far = -1, near = -1
-  for (let yy = 0; yy < h; yy++) if (rowSpan(yy)) { far = yy; break }
-  for (let yy = h - 1; yy >= 0; yy--) if (rowSpan(yy)) { near = yy; break }
-  if (far < 0) return [{ x: 0.15, y: 0.6 }, { x: 0.85, y: 0.6 }, { x: 1, y: 1 }, { x: 0, y: 1 }]
-  const f = rowSpan(far)!, n = rowSpan(near)!
+  if (!any) return [{ x: 0.2, y: 0.55 }, { x: 0.8, y: 0.55 }, { x: 1, y: 1 }, { x: 0, y: 1 }]
+  // Trapecio del recuadro del piso: fondo (arriba) más angosto, frente (abajo) al ancho completo.
+  const nx = minX / w, xx = maxX / w, ny = minY / h, yy = maxY / h
+  const inset = (xx - nx) * 0.18
   return [
-    { x: f[0], y: far / h }, { x: f[1], y: far / h },
-    { x: n[1], y: near / h }, { x: n[0], y: near / h },
+    { x: nx + inset, y: ny }, { x: xx - inset, y: ny },   // esquinas del fondo
+    { x: xx, y: yy }, { x: nx, y: yy },                    // esquinas del frente
   ]
 }
