@@ -1506,16 +1506,26 @@ try {
 } catch (e) { console.warn('[visualizador] no se pudo cargar el catálogo:', e.message); }
 const visDesignById = (id) => VIS_CATALOGO.designs.find(d => d.id === id);
 
-// GET catálogo: metadata + la imagen de muestra (base64) para pintar la grilla. Sin la API key.
+// Texturas reales de piso (fotos del producto) — fuente de verdad del modo "textura" (proyección).
+let VIS_TEXTURES = { designs: [] };
+try {
+  VIS_TEXTURES = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/visualizador-textures/manifest.json'), 'utf8'));
+} catch (e) { console.warn('[visualizador] no se pudo cargar el manifest de texturas:', e.message); }
+
+// GET catálogo: pisos = texturas reales (proyección); paredes = muestras del catálogo viejo (Gemini).
 app.get('/api/visualizador/catalogo', (_req, res) => {
+  const pisos = VIS_TEXTURES.designs.map(d => ({
+    id: d.id, nombre: d.nombre, superficie: 'piso', serie: d.serie, size_mm: d.size_mm, bevel: d.bevel,
+    textura: d.textura, muestra: d.textura, rgb_mean: d.rgb_mean, rgb_std: d.rgb_std,
+  }));
+  const paredes = VIS_CATALOGO.designs.filter(d => d.superficie === 'pared').map(d => ({
+    id: d.id, nombre: d.nombre, superficie: 'pared', marca: d.marca, coleccion: d.coleccion, tono: d.tono,
+    muestra: `data:${d.mime};base64,${d.b64}`, rgb_mean: d.rgb_mean, rgb_std: d.rgb_std,
+  }));
   res.json({
     configured: geminiConfigured(),
-    inpaint: replicateConfigured(),   // ¿está disponible el modo "pintar el piso" (Replicate)?
-    designs: VIS_CATALOGO.designs.map(d => ({
-      id: d.id, nombre: d.nombre, superficie: d.superficie, marca: d.marca,
-      coleccion: d.coleccion, tono: d.tono, muestra: `data:${d.mime};base64,${d.b64}`,
-      rgb_mean: d.rgb_mean, rgb_std: d.rgb_std,   // para fijar el tono exacto (transferencia de color, front)
-    })),
+    inpaint: replicateConfigured(),   // ¿está disponible el modo "IA rápida" (Replicate)?
+    designs: [...pisos, ...paredes],
   });
 });
 

@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { getJSON } from "@/lib/api"
 import { FloorPainter, type FloorPainterHandle } from "@/components/FloorPainter"
+import { FloorProjector, type FloorProjectorHandle } from "@/components/FloorProjector"
 import { applyToneTransfer } from "@/lib/toneTransfer"
 
 // Visualizador de Ambientes (spike): el vendedor saca una foto del ambiente del cliente y
@@ -13,8 +14,9 @@ import { applyToneTransfer } from "@/lib/toneTransfer"
 type Superficie = "piso" | "pared" | "ambos"
 type Design = {
   id: string; nombre: string; superficie: "piso" | "pared"
-  marca: string; coleccion: string; tono: string; muestra: string
+  marca?: string; coleccion?: string; tono?: string; muestra: string
   rgb_mean?: number[]; rgb_std?: number[]   // stats de la muestra para fijar el tono exacto
+  textura?: string; size_mm?: number[]; serie?: string; bevel?: string  // modo proyección (piso)
 }
 type Catalogo = { configured: boolean; inpaint?: boolean; designs: Design[] }
 
@@ -50,13 +52,19 @@ export default function VisualizadorPage() {
   const [render, setRender] = useState<{ imagen: string; ms: number; modelo: string } | null>(null)
   const [slider, setSlider] = useState(50)                    // comparador antes/después (0–100)
   const [direction, setDirection] = useState<"vertical" | "horizontal" | "diagonal">("vertical")
+  const [modo, setModo] = useState<"textura" | "ia">("textura")  // piso: proyección vs IA rápida
+  const [projMask, setProjMask] = useState<string | null>(null)  // máscara capturada para proyectar
   const fileRef = useRef<HTMLInputElement>(null)
   const painterRef = useRef<FloorPainterHandle>(null)
+  const projectorRef = useRef<FloorProjectorHandle>(null)
 
-  // Modo pincel (inpainting): piso o pared + Replicate disponible. "Ambos" sigue con Gemini.
+  // Modo pincel (inpainting IA): piso o pared + Replicate disponible. "Ambos" sigue con Gemini.
   const usePincel = (superficie === "piso" || superficie === "pared") && !!catalogo?.inpaint
   const surfaceLabel = superficie === "pared" ? "pared" : "piso"
-  const activeDesignId = superficie === "pared" ? paredId : pisoId  // diseño activo en modo pincel
+  const activeDesignId = superficie === "pared" ? paredId : pisoId  // diseño activo
+  const activeDesign = catalogo?.designs.find((d) => d.id === activeDesignId)
+  // Modo PROYECCIÓN (textura real): solo piso, con textura disponible. No usa Replicate (es local).
+  const esProyeccion = superficie === "piso" && modo === "textura" && !!activeDesign?.textura
 
   // "Detectar piso/pared": llama al backend (grounded_sam) y devuelve una máscara b/n para sembrar.
   async function autoDetect(): Promise<string | null> {
@@ -77,6 +85,9 @@ export default function VisualizadorPage() {
       .then(setCatalogo)
       .catch((e) => setError(e.message || "no se pudo cargar el catálogo"))
   }, [])
+
+  // La máscara capturada deja de valer si cambia la foto o la superficie.
+  useEffect(() => { setProjMask(null) }, [foto, superficie])
 
   const pisos = catalogo?.designs.filter((d) => d.superficie === "piso") ?? []
   const paredes = catalogo?.designs.filter((d) => d.superficie === "pared") ?? []
@@ -131,10 +142,11 @@ export default function VisualizadorPage() {
     }
   }
 
-  async function compartir() {
-    if (!render) return
+  async function compartir(imageUrl?: string) {
+    const src = imageUrl ?? render?.imagen
+    if (!src) return
     try {
-      const blob = await (await fetch(render.imagen)).blob()
+      const blob = await (await fetch(src)).blob()
       const file = new File([blob], "ambiente-pacific.jpg", { type: blob.type || "image/jpeg" })
       // Web Share con archivos (móvil): abre WhatsApp/Mail/etc. Debe correr dentro del gesto del tap.
       if (navigator.canShare?.({ files: [file] })) {
@@ -143,11 +155,18 @@ export default function VisualizadorPage() {
       }
     } catch { /* usuario canceló o no soportado → cae a descarga */ }
     const a = document.createElement("a")
-    a.href = render.imagen; a.download = "ambiente-pacific.jpg"; a.click()
+    a.href = src; a.download = "ambiente-pacific.jpg"; a.click()
+  }
+
+  // Modo textura: capturar la máscara pintada y pasar al proyector.
+  function proyectar() {
+    const m = painterRef.current?.getMask()
+    if (!m) { setError("Marcá el piso (Detectar piso o con el dedo) antes de proyectar."); return }
+    setError(null); setProjMask(m)
   }
 
   function reset() {
-    setFoto(null); setRender(null); setError(null); setPisoId(null); setParedId(null)
+    setFoto(null); setRender(null); setError(null); setPisoId(null); setParedId(null); setProjMask(null)
   }
 
   return (
@@ -161,7 +180,7 @@ export default function VisualizadorPage() {
         </p>
       </header>
 
-      {catalogo && ((usePincel && !catalogo.inpaint) || (!usePincel && !catalogo.configured)) && (
+      {catalogo && !esProyeccion && ((usePincel && !catalogo.inpaint) || (!usePincel && !catalogo.configured)) && (
         <Card className="p-3 text-sm bg-amber-50 text-amber-900 border-amber-200 dark:bg-amber-950/40 dark:text-amber-200">
           ⚠️ Falta configurar <code>{usePincel ? "REPLICATE_API_TOKEN" : "GEMINI_API_KEY"}</code> en el servidor — el render no va a funcionar hasta cargarlo.
         </Card>
@@ -209,38 +228,62 @@ export default function VisualizadorPage() {
         )}
       </section>
 
-      {/* 4 · Marcá la superficie (modo inpainting) — detectar automático + retoque con el dedo. */}
-      {usePincel && foto && activeDesignId && (
+      {/* 4 · Marcá el piso/pared + (piso) elegir modo Textura real vs IA rápida. */}
+      {(usePincel || esProyeccion) && foto && activeDesignId && (
         <section className="space-y-2">
-          <div className="text-sm font-medium">4 · Marcá {superficie === "pared" ? "la pared" : "el piso"} a reemplazar</div>
-          <FloorPainter ref={painterRef} src={foto} surfaceLabel={surfaceLabel} onAutoDetect={autoDetect} />
-          {superficie === "piso" && (
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs text-muted-foreground">Dirección de las tablas:</span>
-              {([["vertical", "Hacia el fondo"], ["horizontal", "A lo ancho"], ["diagonal", "Diagonal"]] as const).map(([v, label]) => (
-                <Button key={v} type="button" size="sm" variant={direction === v ? "default" : "outline"} onClick={() => setDirection(v)}>
-                  {label}
+          <div className="flex items-center justify-between gap-2 flex-wrap">
+            <div className="text-sm font-medium">4 · Marcá {superficie === "pared" ? "la pared" : "el piso"} a reemplazar</div>
+            {superficie === "piso" && activeDesign?.textura && catalogo?.inpaint && (
+              <div className="inline-flex rounded-md border p-0.5 text-xs">
+                {([["textura", "Textura real"], ["ia", "IA rápida"]] as const).map(([v, l]) => (
+                  <button key={v} onClick={() => { setModo(v); setProjMask(null) }}
+                    className={`px-2 py-1 rounded ${modo === v ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}>{l}</button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {esProyeccion && projMask ? (
+            <>
+              <FloorProjector ref={projectorRef} photoSrc={foto} maskSrc={projMask}
+                textureUrl={activeDesign!.textura!} plankMm={activeDesign?.size_mm?.[0]} />
+              <div className="grid grid-cols-2 gap-2">
+                <Button variant="outline" className="h-12" onClick={() => setProjMask(null)}>Volver a marcar</Button>
+                <Button className="h-12" onClick={() => compartir(projectorRef.current?.getResult() ?? undefined)}>
+                  <Share2 className="h-4 w-4 mr-1" /> Compartir
                 </Button>
-              ))}
-            </div>
-          )}
-          {render && (
-            <p className="text-xs text-muted-foreground">💡 Podés cambiar el diseño arriba y <b>Generar</b> de nuevo — no hace falta volver a marcar.</p>
+              </div>
+              <p className="text-xs text-muted-foreground">💡 Cambiá el diseño arriba para probar otro piso con el mismo marcado.</p>
+            </>
+          ) : (
+            <>
+              <FloorPainter ref={painterRef} src={foto} surfaceLabel={surfaceLabel} onAutoDetect={autoDetect} />
+              {esProyeccion ? (
+                <Button className="w-full h-12" onClick={proyectar}><Wand2 className="h-4 w-4 mr-1" /> Ver el piso proyectado</Button>
+              ) : superficie === "piso" ? (
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-xs text-muted-foreground">Dirección de las tablas:</span>
+                  {([["vertical", "Hacia el fondo"], ["horizontal", "A lo ancho"], ["diagonal", "Diagonal"]] as const).map(([v, label]) => (
+                    <Button key={v} type="button" size="sm" variant={direction === v ? "default" : "outline"} onClick={() => setDirection(v)}>{label}</Button>
+                  ))}
+                </div>
+              ) : null}
+            </>
           )}
         </section>
       )}
 
-      {/* Generar — sticky abajo para que en el celular siempre esté a mano (one-handed). */}
-      <div className="sticky bottom-0 -mx-4 px-4 py-3 bg-gradient-to-t from-background via-background to-transparent">
-        <Button className="w-full h-14 text-base shadow-lg" disabled={!ready || loading} onClick={generar}>
-          {loading ? <><Loader2 className="h-5 w-5 mr-2 animate-spin" /> Generando… ({usePincel ? "~30" : "~10–20"} s)</> : <><Wand2 className="h-5 w-5 mr-2" /> Generar</>}
-        </Button>
-        {!ready && !loading && (
-          <p className="mt-1 text-center text-xs text-muted-foreground">
-            {!foto ? "Falta la foto" : "Elegí un diseño"}
-          </p>
-        )}
-      </div>
+      {/* Generar (IA / pared) — sticky. La proyección tiene su propio flujo, sin este botón. */}
+      {!esProyeccion && (
+        <div className="sticky bottom-0 -mx-4 px-4 py-3 bg-gradient-to-t from-background via-background to-transparent">
+          <Button className="w-full h-14 text-base shadow-lg" disabled={!ready || loading} onClick={generar}>
+            {loading ? <><Loader2 className="h-5 w-5 mr-2 animate-spin" /> Generando… ({usePincel ? "~30" : "~10–20"} s)</> : <><Wand2 className="h-5 w-5 mr-2" /> Generar</>}
+          </Button>
+          {!ready && !loading && (
+            <p className="mt-1 text-center text-xs text-muted-foreground">{!foto ? "Falta la foto" : "Elegí un diseño"}</p>
+          )}
+        </div>
+      )}
 
       {error && (
         <Card className="p-3 text-sm bg-red-50 text-red-800 border-red-200 dark:bg-red-950/40 dark:text-red-200">{error}</Card>
@@ -266,7 +309,7 @@ export default function VisualizadorPage() {
             <Button variant="outline" className="h-12" onClick={() => setSlider((s) => (s > 50 ? 0 : 100))}>
               <RotateCcw className="h-4 w-4 mr-1" /> Ver {slider > 50 ? "original" : "resultado"}
             </Button>
-            <Button className="h-12" onClick={compartir}>
+            <Button className="h-12" onClick={() => compartir()}>
               <Share2 className="h-4 w-4 mr-1" /> Compartir
             </Button>
           </div>
