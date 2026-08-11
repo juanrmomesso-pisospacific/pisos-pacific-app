@@ -1,0 +1,193 @@
+{
+ "designs": [
+  {
+   "id": "aspen_xl",
+   "nombre": "Aspen XL H2O",
+   "serie": "H2O",
+   "size_mm": [
+    228,
+    1540
+   ],
+   "bevel": "suave",
+   "rgb_mean": [
+    182.9,
+    177.9,
+    171.9
+   ],
+   "rgb_std": [
+    12.7,
+    13.9,
+    14.7
+   ],
+   "textura": "/vis-tex/aspen_xl.jpg"
+  },
+  {
+   "id": "kitsilano",
+   "nombre": "Kitsilano",
+   "serie": "Madera",
+   "size_mm": [
+    190,
+    1900
+   ],
+   "bevel": "marcado",
+   "rgb_mean": [
+    179.4,
+    151.8,
+    118.3
+   ],
+   "rgb_std": [
+    17.3,
+    17.7,
+    18.1
+   ],
+   "textura": "/vis-tex/kitsilano.jpg"
+  },
+  {
+   "id": "natural_oak_xl",
+   "nombre": "Natural Oak XL H2O",
+   "serie": "H2O",
+   "size_mm": [
+    228,
+    1540
+   ],
+   "bevel": "suave",
+   "rgb_mean": [
+    180.4,
+    160.9,
+    141.0
+   ],
+   "rgb_std": [
+    11.8,
+    11.6,
+    10.8
+   ],
+   "textura": "/vis-tex/natural_oak_xl.jpg"
+  },
+  {
+   "id": "notte_xl",
+   "nombre": "Notte XL H2O",
+   "serie": "H2O",
+   "size_mm": [
+    228,
+    1540
+   ],
+   "bevel": "suave",
+   "rgb_mean": [
+    133.0,
+    120.4,
+    105.5
+   ],
+   "rgb_std": [
+    14.9,
+    14.9,
+    14.0
+   ],
+   "textura": "/vis-tex/notte_xl.jpg"
+  },
+  {
+   "id": "roble_clasico_xl",
+   "nombre": "Roble Clásico XL H2O",
+   "serie": "H2O",
+   "size_mm": [
+    228,
+    1540
+   ],
+   "bevel": "suave",
+   "rgb_mean": [
+    165.0,
+    145.3,
+    126.2
+   ],
+   "rgb_std": [
+    11.7,
+    12.5,
+    13.5
+   ],
+   "textura": "/vis-tex/roble_clasico_xl.jpg"
+  },
+  {
+   "id": "roble_eslavonia_xl",
+   "nombre": "Roble Eslavonia XL H2O",
+   "serie": "H2O",
+   "size_mm": [
+    228,
+    1540
+   ],
+   "bevel": "suave",
+   "rgb_mean": [
+    169.8,
+    137.7,
+    100.0
+   ],
+   "rgb_std": [
+    12.8,
+    13.8,
+    13.3
+   ],
+   "textura": "/vis-tex/roble_eslavonia_xl.jpg"
+  },
+  {
+   "id": "roble_handsculped",
+   "nombre": "Roble Handsculped Madera",
+   "serie": "Madera",
+   "size_mm": [
+    260,
+    2200
+   ],
+   "bevel": "marcado",
+   "rgb_mean": [
+    162.7,
+    120.9,
+    69.3
+   ],
+   "rgb_std": [
+    18.7,
+    17.4,
+    15.2
+   ],
+   "textura": "/vis-tex/roble_handsculped.jpg"
+  },
+  {
+   "id": "roble_veta_tallada",
+   "nombre": "Roble Veta Tallada 190 x 1900 mm",
+   "serie": "Madera",
+   "size_mm": [
+    190,
+    1900
+   ],
+   "bevel": "marcado",
+   "rgb_mean": [
+    169.2,
+    148.1,
+    122.5
+   ],
+   "rgb_std": [
+    15.8,
+    18.2,
+    20.7
+   ],
+   "textura": "/vis-tex/roble_veta_tallada.jpg"
+  },
+  {
+   "id": "verona",
+   "nombre": "Verona",
+   "serie": "Madera",
+   "size_mm": [
+    190,
+    1900
+   ],
+   "bevel": "marcado",
+   "rgb_mean": [
+    178.9,
+    163.2,
+    142.0
+   ],
+   "rgb_std": [
+    15.2,
+    16.4,
+    17.4
+   ],
+   "textura": "/vis-tex/verona.jpg"
+  }
+ ]
+}
