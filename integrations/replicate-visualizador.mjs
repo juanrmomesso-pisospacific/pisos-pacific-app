@@ -148,7 +148,8 @@ export function materialPrompt(design) {
   return `Wide-plank engineered wood flooring, ${desc}. ${colorAnchor(design)}` +
     `Natural matte finish, realistic wood grain, planks laid following the room's perspective, ` +
     `photorealistic and seamless, consistent with the room's lighting and soft reflections. ` +
-    `Replace only the masked floor area; keep everything else unchanged.`;
+    `Blend the floor smoothly into the existing baseboards and walls — do NOT add any dark gap, ` +
+    `shadow strip or trim line at the floor-wall junction. Replace only the masked floor area; keep everything else unchanged.`;
 }
 
 // Auto-detección de la superficie (asistente del pincel): grounded_sam por texto → máscara b/n

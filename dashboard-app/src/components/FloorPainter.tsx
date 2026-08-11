@@ -124,8 +124,16 @@ export const FloorPainter = forwardRef<FloorPainterHandle, {
       const m = maskRef.current; if (!m) return null
       // ¿hay algo pintado? (evita mandar una máscara toda negra)
       const d = maskCtx().getImageData(0, 0, m.width, m.height).data
-      for (let i = 0; i < d.length; i += 4) if (d[i] > 128) return m.toDataURL("image/png")
-      return null
+      let any = false
+      for (let i = 0; i < d.length; i += 4) if (d[i] > 128) { any = true; break }
+      if (!any) return null
+      // Feather: bordes suaves → el inpaint se funde con el zócalo (menos línea dura en la junta).
+      const f = document.createElement("canvas"); f.width = m.width; f.height = m.height
+      const fc = f.getContext("2d")!
+      fc.fillStyle = "#000"; fc.fillRect(0, 0, f.width, f.height)
+      fc.filter = `blur(${Math.max(2, Math.round(m.width * 0.006))}px)`
+      fc.drawImage(m, 0, 0)
+      return f.toDataURL("image/png")
     },
   }), [dims])
 
