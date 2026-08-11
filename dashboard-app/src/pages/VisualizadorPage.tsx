@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { getJSON } from "@/lib/api"
 import { FloorPainter, type FloorPainterHandle } from "@/components/FloorPainter"
+import { applyToneTransfer } from "@/lib/toneTransfer"
 
 // Visualizador de Ambientes (spike): el vendedor saca una foto del ambiente del cliente y
 // elige un diseño. Para PISO usa inpainting (pinta el piso con el dedo → se repinta solo esa
@@ -13,6 +14,7 @@ type Superficie = "piso" | "pared" | "ambos"
 type Design = {
   id: string; nombre: string; superficie: "piso" | "pared"
   marca: string; coleccion: string; tono: string; muestra: string
+  rgb_mean?: number[]; rgb_std?: number[]   // stats de la muestra para fijar el tono exacto
 }
 type Catalogo = { configured: boolean; inpaint?: boolean; designs: Design[] }
 
@@ -113,7 +115,14 @@ export default function VisualizadorPage() {
       })
       const data = await r.json().catch(() => null)
       if (!r.ok || !data?.ok) throw new Error(data?.error || `error ${r.status}`)
-      setRender({ imagen: data.imagen, ms: data.ms, modelo: data.modelo })
+      let imagen = data.imagen as string
+      // Tono exacto del SKU: transferencia de color (piso) usando la máscara pintada + stats de la muestra.
+      const design = catalogo?.designs.find((d) => d.id === activeDesignId)
+      if (superficie === "piso" && mask && design?.rgb_mean && design?.rgb_std) {
+        try { imagen = await applyToneTransfer(imagen, mask, design.rgb_mean, design.rgb_std) }
+        catch { /* si falla el recolor, mostramos el render tal cual */ }
+      }
+      setRender({ imagen, ms: data.ms, modelo: data.modelo })
     } catch (e) {
       setError(e instanceof Error ? e.message : "no se pudo generar el render")
     } finally {

@@ -128,28 +128,27 @@ const EN_TONE_WALL = {
 };
 // Prompt del material a partir del diseño del catálogo. FLUX Fill es text-guided; describimos el
 // material lo más fiel posible + reforzamos que solo rellene la zona enmascarada.
-// Ancla de color EXACTO tomada de la muestra real del SKU (avg_hex/palette/color_desc, precomputados
-// del banco). El texto solo no fija el tono → damos el color medio + claro + oscuro y prohibimos derivar.
-function colorAnchor(design) {
-  if (!design?.avg_hex) return '';
-  const [dark, mid, light] = design.palette || [design.avg_hex, design.avg_hex, design.avg_hex];
-  return `EXACT COLOR — match this real sample tone precisely: ${design.color_desc || ''}; ` +
-    `predominant color ${mid}, with lighter ${light} and darker ${dark} in the grain. ` +
-    `Do NOT make it warmer, more golden/orange, lighter or more saturated than these colors. `;
+// Descripción de tono en PROSA (sin códigos hex ni mayúsculas ni comillas: FLUX renderiza como
+// TEXTO sobre la imagen los códigos/mayúsculas del prompt). El color EXACTO se fija después con el
+// regrade por luminancia (frontend), no acá. Acá solo damos claridad/calidez aproximada.
+function toneWords(design) {
+  const d = (design?.color_desc || design?.tono || '').replace(/,?\s*close to\s*#[0-9a-f]{6}/i, '')
+    .replace(/[()#]/g, ' ').replace(/[^a-zA-Z\s]/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
+  return d || 'natural';
 }
 export function materialPrompt(design) {
   if (design?.superficie === 'pared') {
-    const w = EN_TONE_WALL[design?.id] || design?.tono || 'wood slats';
-    return `Vertical wood slat acoustic wall panels: thin vertical ${w} with narrow dark felt gaps ` +
-      `between the slats, running floor-to-ceiling, following the wall's perspective. ${colorAnchor(design)}` +
-      `Photorealistic and seamless, consistent with the room's lighting and shadows. Cover only the masked wall area; keep everything else unchanged.`;
+    const w = EN_TONE_WALL[design?.id] || 'wood slats';
+    return `A photo of the same room where the main wall is covered with vertical wood slat acoustic ` +
+      `panels — thin vertical ${w} in a ${toneWords(design)} tone, with narrow dark felt gaps between the ` +
+      `slats, running floor to ceiling and following the wall's perspective. Keep the same lighting and ` +
+      `shadows. Everything else stays exactly the same.`;
   }
-  const desc = EN_TONE[design?.id] || design?.tono || 'natural wood';
-  return `Wide-plank engineered wood flooring, ${desc}. ${colorAnchor(design)}` +
-    `Natural matte finish, realistic wood grain, planks laid following the room's perspective, ` +
-    `photorealistic and seamless, consistent with the room's lighting and soft reflections. ` +
-    `Blend the floor smoothly into the existing baseboards and walls — do NOT add any dark gap, ` +
-    `shadow strip or trim line at the floor-wall junction. Replace only the masked floor area; keep everything else unchanged.`;
+  const desc = EN_TONE[design?.id] || 'natural oak';
+  return `A photo of the same room where the floor is replaced with a wide-plank engineered wood floor, ` +
+    `${desc}, in a ${toneWords(design)} tone, matte finish, natural wood grain, planks following the ` +
+    `room's perspective. Keep the same lighting, shadows and reflections. Blend the new floor into the ` +
+    `existing baseboards with no dark line at the wall. Everything else stays exactly the same.`;
 }
 
 // Auto-detección de la superficie (asistente del pincel): grounded_sam por texto → máscara b/n

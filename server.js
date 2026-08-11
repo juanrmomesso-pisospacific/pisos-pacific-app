@@ -1514,6 +1514,7 @@ app.get('/api/visualizador/catalogo', (_req, res) => {
     designs: VIS_CATALOGO.designs.map(d => ({
       id: d.id, nombre: d.nombre, superficie: d.superficie, marca: d.marca,
       coleccion: d.coleccion, tono: d.tono, muestra: `data:${d.mime};base64,${d.b64}`,
+      rgb_mean: d.rgb_mean, rgb_std: d.rgb_std,   // para fijar el tono exacto (transferencia de color, front)
     })),
   });
 });
