@@ -119,11 +119,36 @@ const EN_TONE = {
   roble_eslavonia_xl: 'honey oak, warm golden-brown, pronounced grain',
   aspen_xl: 'very light oak, pale and airy, fine grain',
 };
+// Tonos de PARED (paneles acústicos AcuDesign, listones verticales de madera).
+const EN_TONE_WALL = {
+  natural_oak_w: 'light natural oak slats',
+  natural_oak_b: 'medium warm brown oak slats',
+  walnut: 'dark walnut brown slats',
+  black_laca: 'black lacquered slats',
+};
 // Prompt del material a partir del diseño del catálogo. FLUX Fill es text-guided; describimos el
 // material lo más fiel posible + reforzamos que solo rellene la zona enmascarada.
 export function materialPrompt(design) {
+  if (design?.superficie === 'pared') {
+    const w = EN_TONE_WALL[design?.id] || design?.tono || 'wood slats';
+    return `Vertical wood slat acoustic wall panels: thin vertical ${w} with narrow dark felt gaps ` +
+      `between the slats, running floor-to-ceiling, following the wall's perspective. Photorealistic and ` +
+      `seamless, consistent with the room's lighting and shadows. Cover only the masked wall area; keep everything else unchanged.`;
+  }
   const desc = EN_TONE[design?.id] || design?.tono || 'natural wood';
   return `Wide-plank engineered wood flooring: ${desc}. Natural matte finish, realistic wood grain, ` +
     `planks laid following the room's perspective, photorealistic and seamless, consistent with the ` +
     `room's lighting and soft reflections. Replace only the masked floor area; keep everything else unchanged.`;
+}
+
+// Auto-detección de la superficie (asistente del pincel): grounded_sam por texto → máscara b/n
+// (blanco = superficie) como DATA URI. El vendedor la retoca con el pincel. Sirve de "arranque".
+export async function autoSurfaceMask(imageDataUri, superficie = 'piso') {
+  const prompt = superficie === 'pared' ? 'wall' : 'floor';
+  const { rawOutput } = await floorMask(imageDataUri, { maskPrompt: prompt, negative: '', dilate: 0 });
+  const outs = (Array.isArray(rawOutput) ? rawOutput : [rawOutput]).filter(x => typeof x === 'string');
+  // grounded_sam devuelve [anotada, cutout, MÁSCARA(blanco=objeto), invertida] → penúltima.
+  const url = outs[outs.length - 2] || outs[outs.length - 1];
+  if (!url) throw new Error('no se pudo detectar la superficie');
+  return urlToDataUri(url);
 }

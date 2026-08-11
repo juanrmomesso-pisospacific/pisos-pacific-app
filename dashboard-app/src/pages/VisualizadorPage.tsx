@@ -19,7 +19,8 @@ type Catalogo = { configured: boolean; inpaint?: boolean; designs: Design[] }
 // Redimensiona/comprime la foto client-side (canvas) a máx `max` px lado mayor → JPEG base64.
 // Evita subir 8 MB de la cámara y mantiene el request bajo el límite del server.
 async function fotoADataUrl(file: File, max = 1568, quality = 0.85): Promise<string> {
-  const bitmap = await createImageBitmap(file)
+  // imageOrientation:"from-image" respeta el EXIF → las fotos verticales de iPhone quedan derechas.
+  const bitmap = await createImageBitmap(file, { imageOrientation: "from-image" })
   const scale = Math.min(1, max / Math.max(bitmap.width, bitmap.height))
   const w = Math.round(bitmap.width * scale), h = Math.round(bitmap.height * scale)
   const canvas = document.createElement("canvas")
@@ -45,12 +46,28 @@ export default function VisualizadorPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [render, setRender] = useState<{ imagen: string; ms: number; modelo: string } | null>(null)
-  const [showOriginal, setShowOriginal] = useState(false)     // toggle antes/después
+  const [slider, setSlider] = useState(50)                    // comparador antes/después (0–100)
   const fileRef = useRef<HTMLInputElement>(null)
   const painterRef = useRef<FloorPainterHandle>(null)
 
-  // Modo pincel (inpainting): piso + Replicate disponible. Para pared/ambos seguimos con Gemini.
-  const usePincel = superficie === "piso" && !!catalogo?.inpaint
+  // Modo pincel (inpainting): piso o pared + Replicate disponible. "Ambos" sigue con Gemini.
+  const usePincel = (superficie === "piso" || superficie === "pared") && !!catalogo?.inpaint
+  const surfaceLabel = superficie === "pared" ? "pared" : "piso"
+  const activeDesignId = superficie === "pared" ? paredId : pisoId  // diseño activo en modo pincel
+
+  // "Detectar piso/pared": llama al backend (grounded_sam) y devuelve una máscara b/n para sembrar.
+  async function autoDetect(): Promise<string | null> {
+    if (!foto) return null
+    try {
+      const r = await fetch("/api/visualizador/auto-mask", {
+        method: "POST", credentials: "include",
+        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ foto, superficie }),
+      })
+      const data = await r.json().catch(() => null)
+      if (!r.ok || !data?.ok) { setError(data?.error || "no se pudo detectar la superficie"); return null }
+      return data.mask as string
+    } catch { setError("no se pudo detectar la superficie"); return null }
+  }
 
   useEffect(() => {
     getJSON<Catalogo>("/api/visualizador/catalogo")
@@ -81,10 +98,10 @@ export default function VisualizadorPage() {
       mask = painterRef.current?.getMask() ?? null
       if (!mask) { setError("Pintá el piso con el dedo antes de generar."); return }
     }
-    setLoading(true); setError(null); setRender(null); setShowOriginal(false)
+    setLoading(true); setError(null); setRender(null); setSlider(50)
     try {
       const [url, body] = usePincel
-        ? ["/api/visualizador/render-mask", { foto, mask, productoId: pisoId }]
+        ? ["/api/visualizador/render-mask", { foto, mask, productoId: activeDesignId }]
         : ["/api/visualizador/render", {
             foto, superficie,
             productoId: needPiso ? pisoId : paredId,
@@ -182,11 +199,14 @@ export default function VisualizadorPage() {
         )}
       </section>
 
-      {/* 4 · Pintá el piso (modo inpainting) — el vendedor sombrea el piso sobre la foto. */}
-      {usePincel && foto && pisoId && (
+      {/* 4 · Marcá la superficie (modo inpainting) — detectar automático + retoque con el dedo. */}
+      {usePincel && foto && activeDesignId && (
         <section className="space-y-2">
-          <div className="text-sm font-medium">4 · Pintá el piso a reemplazar</div>
-          <FloorPainter ref={painterRef} src={foto} />
+          <div className="text-sm font-medium">4 · Marcá {superficie === "pared" ? "la pared" : "el piso"} a reemplazar</div>
+          <FloorPainter ref={painterRef} src={foto} surfaceLabel={surfaceLabel} onAutoDetect={autoDetect} />
+          {render && (
+            <p className="text-xs text-muted-foreground">💡 Podés cambiar el diseño arriba y <b>Generar</b> de nuevo — no hace falta volver a marcar.</p>
+          )}
         </section>
       )}
 
@@ -206,19 +226,25 @@ export default function VisualizadorPage() {
         <Card className="p-3 text-sm bg-red-50 text-red-800 border-red-200 dark:bg-red-950/40 dark:text-red-200">{error}</Card>
       )}
 
-      {/* 5 · Resultado + comparador */}
+      {/* 5 · Resultado + comparador antes/después con slider */}
       {render && foto && (
         <section className="space-y-3">
           <div className="flex items-center justify-between">
-            <div className="text-sm font-medium">Resultado</div>
-            <div className="text-xs text-muted-foreground">{(render.ms / 1000).toFixed(1)} s · {render.modelo}</div>
+            <div className="text-sm font-medium">Resultado — deslizá para comparar</div>
+            <div className="text-xs text-muted-foreground">{(render.ms / 1000).toFixed(1)} s</div>
           </div>
-          <img src={showOriginal ? foto : render.imagen} alt="render" className="w-full rounded-lg border" />
+          <div className="relative w-full overflow-hidden rounded-lg border select-none leading-[0]">
+            <img src={foto} alt="original" className="w-full block" />
+            <img src={render.imagen} alt="con diseño nuevo" className="absolute inset-0 w-full h-full object-cover"
+              style={{ clipPath: `inset(0 ${100 - slider}% 0 0)` }} />
+            <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow" style={{ left: `${slider}%` }} />
+            <span className="absolute top-2 left-2 text-[11px] px-1.5 py-0.5 rounded bg-black/60 text-white">Con diseño</span>
+            <span className="absolute top-2 right-2 text-[11px] px-1.5 py-0.5 rounded bg-black/60 text-white">Original</span>
+          </div>
+          <input type="range" min={0} max={100} value={slider} onChange={(e) => setSlider(Number(e.target.value))} className="w-full" aria-label="comparar antes y después" />
           <div className="grid grid-cols-2 gap-2">
-            <Button variant="outline" className="h-12"
-              onMouseDown={() => setShowOriginal(true)} onMouseUp={() => setShowOriginal(false)}
-              onMouseLeave={() => setShowOriginal(false)} onTouchStart={() => setShowOriginal(true)} onTouchEnd={() => setShowOriginal(false)}>
-              <RotateCcw className="h-4 w-4 mr-1" /> {showOriginal ? "Original" : "Ver original"}
+            <Button variant="outline" className="h-12" onClick={() => setSlider((s) => (s > 50 ? 0 : 100))}>
+              <RotateCcw className="h-4 w-4 mr-1" /> Ver {slider > 50 ? "original" : "resultado"}
             </Button>
             <Button className="h-12" onClick={compartir}>
               <Share2 className="h-4 w-4 mr-1" /> Compartir

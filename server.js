@@ -20,7 +20,7 @@ import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
 import { renderVisualizacion, geminiConfigured } from './integrations/gemini-image.mjs';
 import { promptFor } from './config/visualizador-prompts.js';
-import { inpaintFloor, materialPrompt, urlToDataUri, replicateConfigured } from './integrations/replicate-visualizador.mjs';
+import { inpaintFloor, materialPrompt, urlToDataUri, replicateConfigured, autoSurfaceMask } from './integrations/replicate-visualizador.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -1567,15 +1567,28 @@ app.post('/api/visualizador/render-mask', async (req, res) => {
     if (!foto || !mask) return res.status(400).json({ ok: false, error: 'faltan la foto o la máscara' });
     const design = visDesignById(productoId);
     if (!design) return res.status(400).json({ ok: false, error: 'diseño no encontrado' });
-    if (design.superficie !== 'piso') return res.status(400).json({ ok: false, error: 'el modo pincel es solo para piso por ahora' });
 
     const out = await inpaintFloor({ imageDataUri: String(foto), maskDataUri: String(mask), prompt: materialPrompt(design) });
     const imagen = await urlToDataUri(out.url);
-    console.log(`[visualizador] INPAINT OK diseño=${design.id} ms=${out.ms}`);
+    console.log(`[visualizador] INPAINT OK diseño=${design.id} (${design.superficie}) ms=${out.ms}`);
     res.json({ ok: true, imagen, modelo: 'flux-fill', ms: out.ms });
   } catch (e) {
     console.warn(`[visualizador] INPAINT ERROR ms=${Date.now() - t0}: ${e.message}`);
     res.status(502).json({ ok: false, error: e.message || 'no se pudo generar el render' });
+  }
+});
+
+// POST auto-mask: "Detectar piso/pared" (asistente del pincel) → máscara b/n que el vendedor retoca.
+app.post('/api/visualizador/auto-mask', async (req, res) => {
+  try {
+    if (!replicateConfigured()) return res.status(400).json({ ok: false, error: 'inpainting no configurado' });
+    const { foto, superficie } = req.body || {};
+    if (!foto) return res.status(400).json({ ok: false, error: 'falta la foto' });
+    const mask = await autoSurfaceMask(String(foto), superficie === 'pared' ? 'pared' : 'piso');
+    res.json({ ok: true, mask });
+  } catch (e) {
+    console.warn(`[visualizador] AUTO-MASK ERROR: ${e.message}`);
+    res.status(502).json({ ok: false, error: e.message || 'no se pudo detectar la superficie' });
   }
 });
 
