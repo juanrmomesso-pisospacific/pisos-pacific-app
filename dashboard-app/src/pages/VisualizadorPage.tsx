@@ -158,6 +158,25 @@ export default function VisualizadorPage() {
     a.href = src; a.download = "ambiente-pacific.jpg"; a.click()
   }
 
+  // "Renderizar": toma el render proyectado (canvas) y le suma realismo fotográfico (ControlNet).
+  async function renderizar() {
+    const src = projectorRef.current?.getResult()
+    if (!src) return
+    setLoading(true); setError(null); setRender(null); setSlider(50)
+    try {
+      const r = await fetch("/api/visualizador/refine", {
+        method: "POST", credentials: "include",
+        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ imagen: src }),
+      })
+      const data = await r.json().catch(() => null)
+      if (!r.ok || !data?.ok) throw new Error(data?.error || `error ${r.status}`)
+      setRender({ imagen: data.imagen, ms: data.ms, modelo: "render" })
+      setTimeout(() => document.getElementById("vis-resultado")?.scrollIntoView({ behavior: "smooth" }), 100)
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "no se pudo renderizar")
+    } finally { setLoading(false) }
+  }
+
   // Modo textura: capturar la máscara pintada y pasar al proyector.
   function proyectar() {
     const m = painterRef.current?.getMask()
@@ -247,13 +266,16 @@ export default function VisualizadorPage() {
             <>
               <FloorProjector ref={projectorRef} photoSrc={foto} maskSrc={projMask}
                 textureUrl={activeDesign!.textura!} plankMm={activeDesign?.size_mm?.[0]} serie={activeDesign?.serie} />
+              <Button className="w-full h-12" disabled={loading} onClick={renderizar}>
+                {loading ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Renderizando… (~1 min)</> : <>✨ Renderizar (realismo fotográfico)</>}
+              </Button>
               <div className="grid grid-cols-2 gap-2">
-                <Button variant="outline" className="h-12" onClick={() => setProjMask(null)}>Volver a marcar</Button>
-                <Button className="h-12" onClick={() => compartir(projectorRef.current?.getResult() ?? undefined)}>
-                  <Share2 className="h-4 w-4 mr-1" /> Compartir
+                <Button variant="outline" className="h-11" onClick={() => setProjMask(null)}>Volver a marcar</Button>
+                <Button variant="outline" className="h-11" onClick={() => compartir(projectorRef.current?.getResult() ?? undefined)}>
+                  <Share2 className="h-4 w-4 mr-1" /> Compartir vista previa
                 </Button>
               </div>
-              <p className="text-xs text-muted-foreground">💡 Cambiá el diseño arriba para probar otro piso con el mismo marcado.</p>
+              <p className="text-xs text-muted-foreground">💡 Ajustá esquinas/dirección/tamaño, después tocá <b>Renderizar</b> para el realismo. Cambiá el diseño arriba para probar otro piso con el mismo marcado.</p>
             </>
           ) : (
             <>
@@ -291,7 +313,7 @@ export default function VisualizadorPage() {
 
       {/* 5 · Resultado + comparador antes/después con slider */}
       {render && foto && (
-        <section className="space-y-3">
+        <section id="vis-resultado" className="space-y-3">
           <div className="flex items-center justify-between">
             <div className="text-sm font-medium">Resultado — deslizá para comparar</div>
             <div className="text-xs text-muted-foreground">{(render.ms / 1000).toFixed(1)} s</div>

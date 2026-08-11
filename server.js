@@ -20,7 +20,7 @@ import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
 import { renderVisualizacion, geminiConfigured } from './integrations/gemini-image.mjs';
 import { promptFor } from './config/visualizador-prompts.js';
-import { inpaintFloor, materialPrompt, urlToDataUri, replicateConfigured, autoSurfaceMask } from './integrations/replicate-visualizador.mjs';
+import { inpaintFloor, materialPrompt, urlToDataUri, replicateConfigured, autoSurfaceMask, refineRender } from './integrations/replicate-visualizador.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -1586,6 +1586,23 @@ app.post('/api/visualizador/render-mask', async (req, res) => {
   } catch (e) {
     console.warn(`[visualizador] INPAINT ERROR ms=${Date.now() - t0}: ${e.message}`);
     res.status(502).json({ ok: false, error: e.message || 'no se pudo generar el render' });
+  }
+});
+
+// POST refine: toma el render proyectado (canvas) y le agrega realismo fotográfico (ControlNet).
+app.post('/api/visualizador/refine', async (req, res) => {
+  const t0 = Date.now();
+  try {
+    if (!replicateConfigured()) return res.status(400).json({ ok: false, error: 'refinador no configurado (falta REPLICATE_API_TOKEN)' });
+    const { imagen } = req.body || {};
+    if (!imagen) return res.status(400).json({ ok: false, error: 'falta la imagen' });
+    const out = await refineRender(String(imagen));
+    const dataUri = await urlToDataUri(out.url);
+    console.log(`[visualizador] REFINE OK ms=${out.ms}`);
+    res.json({ ok: true, imagen: dataUri, ms: out.ms });
+  } catch (e) {
+    console.warn(`[visualizador] REFINE ERROR ms=${Date.now() - t0}: ${e.message}`);
+    res.status(502).json({ ok: false, error: e.message || 'no se pudo renderizar' });
   }
 });
 

@@ -160,6 +160,21 @@ export function materialPrompt(design, opts = {}) {
     `lighting, shadows and reflections, and blend into the existing baseboards. Everything else stays the same.`;
 }
 
+// Refinador con ControlNet: toma el render proyectado y le agrega REALISMO fotográfico
+// (luz/veta/reflejos) SIN destruir la estructura (resemblance alto = bloquea el dibujo del piso).
+// A diferencia del img2img simple, acá el ControlNet preserva las tablas/perspectiva/color.
+export async function refineRender(imageDataUri, { creativity = 0.25, resemblance = 1.0 } = {}) {
+  const version = await latestVersion('batouresearch/magic-image-refiner');
+  const prompt = 'photorealistic interior photograph, natural wide-plank wood floor with realistic grain, ' +
+    'soft natural lighting and gentle floor reflections, sharp detail, high quality real estate photo';
+  const { output, ms } = await runPrediction(version, {
+    image: imageDataUri, prompt, creativity, resemblance, guidance_scale: 6,
+  }, { label: 'refiner', timeoutMs: 180000 });
+  const url = Array.isArray(output) ? output[0] : output;
+  if (!url) throw new Error('el refinador no devolvió imagen');
+  return { url, ms };
+}
+
 // Auto-detección de la superficie (asistente del pincel): grounded_sam por texto → máscara b/n
 // (blanco = superficie) como DATA URI. El vendedor la retoca con el pincel. Sirve de "arranque".
 export async function autoSurfaceMask(imageDataUri, superficie = 'piso') {
