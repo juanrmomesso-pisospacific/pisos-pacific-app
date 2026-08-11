@@ -3007,7 +3007,7 @@ app.get('/api/sales/:id/remito', (req, res) => {
 // ---------- Brand logos (committed in assets/branding/) ----------
 // Assets públicos de la firma de email (los clientes de correo los bajan sin login).
 app.use('/firma', express.static(path.join(__dirname, 'assets/firma')));
-app.use('/vis-tex', express.static(path.join(__dirname, 'data/visualizador-textures'), { maxAge: '7d' }));  // texturas de pisos del visualizador
+app.use('/vis-tex', express.static(path.join(__dirname, 'data/visualizador-textures'), { maxAge: 0, etag: true }));  // texturas de pisos (revalidan al cambiar)
 // Archivos subidos que se comparten con clientes (links públicos, nombres aleatorios).
 app.use('/uploads', express.static(UPLOAD_DIR));
 const BRANDING = path.join(__dirname, 'assets/branding');

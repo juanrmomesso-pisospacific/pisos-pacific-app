@@ -50,10 +50,13 @@ void main(){
   float ej = smoothstep(0.0, 0.008, fy) * smoothstep(0.0, 0.008, 1.0 - fy);
   wood *= mix(uBevel, 1.0, eb);
   wood *= mix(mix(1.0, uBevel, 0.35), 1.0, ej);    // punta = 35% del bisel lateral
+  // realce de saturación (compensa el lavado del mipmap → colores más ricos, menos grisáceo)
+  float wg = dot(wood, vec3(0.3333));
+  wood = clamp(wg + (wood - wg) * 1.14, 0.0, 1.0);
   // Re-iluminación SUAVE con luz DIFUSA (uLum = foto muy borroneada) → sombras/luz del ambiente,
   // NO la trama del piso original (eso evitaba el efecto "transparencia").
   float lum = dot(texture2D(uLum, uv).rgb, vec3(0.299,0.587,0.114));
-  float shade = mix(1.0, clamp(lum / max(uBase, 0.02), 0.7, 1.35), 0.7);
+  float shade = mix(1.0, clamp(lum / max(uBase, 0.02), 0.82, 1.2), 0.5);   // re-iluminación suave (no absorbe el fondo oscuro)
   vec3 lit = clamp(wood * shade, 0.0, 1.0);
   float a = m * inside;
   gl_FragColor = vec4(mix(photo.rgb, lit, a), 1.0);
@@ -120,10 +123,13 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
     ;(async () => {
       const [photo, mask, wood] = await Promise.all([loadImg(photoSrc), loadImg(maskSrc), loadImg(textureUrl)])
       if (!alive) return
-      const W = Math.min(photo.naturalWidth, 1400), s = W / photo.naturalWidth
+      const W = Math.min(photo.naturalWidth, 1600), s = W / photo.naturalWidth
       const H = Math.round(photo.naturalHeight * s)
       const canvas = canvasRef.current!; canvas.width = W; canvas.height = H
-      const gl = canvas.getContext("webgl", { preserveDrawingBuffer: true, premultipliedAlpha: false })!
+      const opts = { preserveDrawingBuffer: true, premultipliedAlpha: false }
+      const gl = (canvas.getContext("webgl2", opts) || canvas.getContext("webgl", opts)) as WebGLRenderingContext
+      const isGL2 = typeof WebGL2RenderingContext !== "undefined" && gl instanceof WebGL2RenderingContext
+      const aniso = gl.getExtension("EXT_texture_filter_anisotropic") as { TEXTURE_MAX_ANISOTROPY_EXT: number; MAX_TEXTURE_MAX_ANISOTROPY_EXT: number } | null
       const prog = gl.createProgram()!
       gl.attachShader(prog, compile(gl, gl.VERTEX_SHADER, VERT))
       gl.attachShader(prog, compile(gl, gl.FRAGMENT_SHADER, FRAG))
@@ -131,16 +137,24 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
       const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf)
       gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW)
       const loc = gl.getAttribLocation(prog, "p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0)
-      const mkTex = (img: HTMLImageElement, unit: number, name: string) => {
+      const mkTex = (img: HTMLImageElement, unit: number, name: string, isWood = false) => {
         const tx = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + unit); gl.bindTexture(gl.TEXTURE_2D, tx)
         gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false)
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, img)
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR)
+        // Antialiasing de la madera: mipmaps (WebGL2 acepta no-POT) + anisotrópico → sin pixelado en perspectiva.
+        if (isWood && isGL2) {
+          gl.generateMipmap(gl.TEXTURE_2D)
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR)
+          if (aniso) gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, Math.min(8, gl.getParameter(aniso.MAX_TEXTURE_MAX_ANISOTROPY_EXT)))
+        } else {
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
+        }
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE)
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE)
         gl.uniform1i(gl.getUniformLocation(prog, name), unit)
       }
-      mkTex(photo, 0, "uPhoto"); mkTex(mask, 1, "uMask"); mkTex(wood, 2, "uWood")
+      mkTex(photo, 0, "uPhoto"); mkTex(mask, 1, "uMask"); mkTex(wood, 2, "uWood", true)
       // Luz difusa: foto muy reducida (=borroneada) → sólo lleva sombras/luz amplias, no la trama del piso.
       const blur = document.createElement("canvas"); blur.width = 40; blur.height = Math.max(1, Math.round(40 * H / W))
       const bx = blur.getContext("2d")!; bx.imageSmoothingEnabled = true; bx.drawImage(photo, 0, 0, blur.width, blur.height)
