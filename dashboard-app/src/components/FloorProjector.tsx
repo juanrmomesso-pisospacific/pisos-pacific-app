@@ -15,7 +15,8 @@ precision highp float;
 varying vec2 uv;                 // posición en la imagen (0..1, y abajo)
 uniform sampler2D uPhoto, uMask, uWood, uLum;
 uniform mat3 uHinv;              // imagen -> plano textura (0..1)
-uniform vec2 uRepeat;            // repeticiones (ancho, largo)
+uniform float uPlanks;          // tablas a lo ancho del piso
+uniform float uBevel;           // oscurecimiento de la junta (H2O ~0.94, Madera ~0.82)
 uniform float uBase;            // luminancia base del piso (para re-iluminar)
 uniform int uDir;               // 0 vertical, 1 horizontal, 2 diagonal
 float hash(float n){ return fract(sin(n*12.9898)*43758.5453); }
@@ -28,11 +29,21 @@ void main(){
   vec2 t = q;
   if(uDir==1) t = vec2(q.y, q.x);                 // tablas a lo ancho
   else if(uDir==2){ float c=0.7071; t = vec2((q.x+q.y)*c, (q.y-q.x)*c); } // diagonal
-  vec2 tc = t * uRepeat;
-  float col = floor(tc.x);                         // índice de tabla (columna)
-  tc.y += hash(col);                               // desfase por tabla (rompe la repetición)
-  vec2 wuv = fract(tc);
-  vec3 wood = texture2D(uWood, wuv).rgb;
+  // COLOCACIÓN TABLA POR TABLA: cada tabla toma una franja distinta de la textura (sin grilla).
+  float pw = 0.2;                                  // ancho de una tabla en la textura (~5 tablas)
+  float lenRep = max(uPlanks / 6.75, 0.35);        // largo real de tabla (aspecto 1540/228 ≈ 6.75)
+  float tx = t.x * uPlanks;
+  float idx = floor(tx);                            // índice de tabla (columna)
+  float fx = fract(tx);                             // 0..1 a lo ancho de la tabla
+  float ty = t.y * lenRep + hash(idx) * 3.7;        // desfase de junta por tabla (traba)
+  float row = floor(ty);
+  float fy = fract(ty);                             // 0..1 a lo largo del tablón
+  float off = hash(idx * 7.0 + row * 3.0) * (1.0 - pw);   // franja aleatoria por tabla-tramo
+  vec3 wood = texture2D(uWood, vec2(off + fx * pw, fy)).rgb;
+  // junta sutil entre tablas (ancho) y de punta (largo)
+  float eb = smoothstep(0.0, 0.02, fx) * smoothstep(0.0, 0.02, 1.0 - fx);
+  float ej = smoothstep(0.0, 0.02, fy) * smoothstep(0.0, 0.02, 1.0 - fy);
+  wood *= mix(uBevel, 1.0, eb) * mix(uBevel, 1.0, ej);
   // Re-iluminación SUAVE con luz DIFUSA (uLum = foto muy borroneada) → sombras/luz del ambiente,
   // NO la trama del piso original (eso evitaba el efecto "transparencia").
   float lum = dot(texture2D(uLum, uv).rgb, vec3(0.299,0.587,0.114));
@@ -86,8 +97,8 @@ function invert3(m: number[]): number[] {
 function loadImg(src: string) { return new Promise<HTMLImageElement>((res, rej) => { const i = new Image(); i.crossOrigin = "anonymous"; i.onload = () => res(i); i.onerror = rej; i.src = src }) }
 
 export const FloorProjector = forwardRef<FloorProjectorHandle, {
-  photoSrc: string; maskSrc: string; textureUrl: string; plankMm?: number
-}>(function FloorProjector({ photoSrc, maskSrc, textureUrl }, ref) {
+  photoSrc: string; maskSrc: string; textureUrl: string; plankMm?: number; serie?: string
+}>(function FloorProjector({ photoSrc, maskSrc, textureUrl, serie }, ref) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
   const glState = useRef<{ gl: WebGLRenderingContext; prog: WebGLProgram; base: number } | null>(null)
@@ -149,12 +160,12 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
     gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight)
     gl.uniformMatrix3fv(gl.getUniformLocation(prog, "uHinv"), false, new Float32Array(homographyInv(quad)))
     const planks = 6 + (size / 100) * 16                 // 6..22 tablas a lo ancho aprox
-    const r = planks / 5                                  // la textura tiene ~5 tablas de ancho
-    gl.uniform2f(gl.getUniformLocation(prog, "uRepeat"), r, r)  // isotrópico: mantiene el largo/proporción real de tabla
+    gl.uniform1f(gl.getUniformLocation(prog, "uPlanks"), planks)
+    gl.uniform1f(gl.getUniformLocation(prog, "uBevel"), serie === "Madera" ? 0.82 : 0.94)
     gl.uniform1f(gl.getUniformLocation(prog, "uBase"), base)
     gl.uniform1i(gl.getUniformLocation(prog, "uDir"), dir === "vertical" ? 0 : dir === "horizontal" ? 1 : 2)
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
-  }, [quad, dir, size, ready])
+  }, [quad, dir, size, ready, serie])
 
   useImperativeHandle(ref, () => ({
     getResult: () => { try { return canvasRef.current?.toDataURL("image/jpeg", 0.92) ?? null } catch { return null } } }), [])

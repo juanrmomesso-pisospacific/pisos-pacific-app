@@ -246,7 +246,7 @@ export default function VisualizadorPage() {
           {esProyeccion && projMask ? (
             <>
               <FloorProjector ref={projectorRef} photoSrc={foto} maskSrc={projMask}
-                textureUrl={activeDesign!.textura!} plankMm={activeDesign?.size_mm?.[0]} />
+                textureUrl={activeDesign!.textura!} plankMm={activeDesign?.size_mm?.[0]} serie={activeDesign?.serie} />
               <div className="grid grid-cols-2 gap-2">
                 <Button variant="outline" className="h-12" onClick={() => setProjMask(null)}>Volver a marcar</Button>
                 <Button className="h-12" onClick={() => compartir(projectorRef.current?.getResult() ?? undefined)}>
