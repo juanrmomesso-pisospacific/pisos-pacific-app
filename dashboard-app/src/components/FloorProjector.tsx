@@ -35,13 +35,16 @@ void main(){
   float tx = t.x * uPlanks;
   float idx = floor(tx);                            // índice de tabla (columna)
   float fx = fract(tx);                             // 0..1 a lo ancho de la tabla
-  // traba regular de 1/3 (patrón de ladrillo cada 3 tablas) + micro-jitter para que no sea mecánico
-  float stagger = mod(idx, 3.0) / 3.0 + (hash(idx) - 0.5) * 0.06;
+  float stagger = hash(idx * 1.7);                  // desfase ALEATORIO por columna (rompe el escalonado)
   float ty = t.y * lenRep + stagger;
   float row = floor(ty);
   float fy = fract(ty);                             // 0..1 a lo largo del tablón
-  float off = hash(idx * 3.0 + row * 17.0) * (1.0 - pw);   // franja distinta por tabla-tramo (veta variada)
-  vec3 wood = texture2D(uWood, vec2(off + fx * pw, fy)).rgb;
+  float rnd = hash(idx * 3.0 + row * 17.0);         // semilla por tabla-tramo
+  float off = rnd * (1.0 - pw);                     // franja distinta de la textura
+  // Espejar al azar (horizontal y/o vertical) → multiplica la variedad de la misma foto (menos repetición).
+  float sx = fract(rnd * 7.0) > 0.5 ? off + (1.0 - fx) * pw : off + fx * pw;
+  float sy = fract(rnd * 13.0) > 0.5 ? 1.0 - fy : fy;
+  vec3 wood = texture2D(uWood, vec2(sx, sy)).rgb;
   // bisel lateral entre tablas (según serie) + junta de punta MUCHO más sutil
   float eb = smoothstep(0.0, 0.012, fx) * smoothstep(0.0, 0.012, 1.0 - fx);
   float ej = smoothstep(0.0, 0.008, fy) * smoothstep(0.0, 0.008, 1.0 - fy);
