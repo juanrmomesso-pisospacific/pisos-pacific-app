@@ -16,8 +16,10 @@ varying vec2 uv;                 // posición en la imagen (0..1, y abajo)
 uniform sampler2D uPhoto, uMask, uWood, uLum, uMaskB;
 uniform mat3 uHinv;              // imagen -> plano textura (0..1)
 uniform float uPlanks;          // tablas a lo ancho del piso
-uniform float uBevel;           // oscurecimiento de la junta (H2O ~0.94, Madera ~0.82)
+uniform float uBevelDepth;      // profundidad del bisel (H2O ~0.5, Madera ~1.5)
 uniform float uBase;            // luminancia base del piso (para re-iluminar)
+uniform float uTopY;            // y del fondo del piso (0..1) — para el reflejo del ambiente
+uniform float uGloss;           // brillo/reflejo del piso (0..1)
 uniform int uDir;               // 0 vertical, 1 horizontal, 2 diagonal
 float hash(float n){ return fract(sin(n*12.9898)*43758.5453); }
 void main(){
@@ -47,11 +49,14 @@ void main(){
   float sx = fract(rnd * 7.0) > 0.5 ? off + (1.0 - fx) * pw : off + fx * pw;
   float sy = fract(rnd * 13.0) > 0.5 ? 1.0 - fy : fy;
   vec3 wood = texture2D(uWood, vec2(sx, sy)).rgb;
-  // bisel lateral entre tablas (según serie) + junta de punta MUCHO más sutil
-  float eb = smoothstep(0.0, 0.012, fx) * smoothstep(0.0, 0.012, 1.0 - fx);
-  float ej = smoothstep(0.0, 0.008, fy) * smoothstep(0.0, 0.008, 1.0 - fy);
-  wood *= mix(uBevel, 1.0, eb);
-  wood *= mix(mix(1.0, uBevel, 0.35), 1.0, ej);    // punta = 35% del bisel lateral
+  // BISEL CON RELIEVE: normal en V en los cantos de tabla + luz direccional → los biseles se ven
+  // 3D (la luz pega en un lado y sombrea el otro), no una simple línea impresa.
+  float bw = 0.05;
+  float ex = fx < bw ? (bw - fx) / bw : (fx > 1.0 - bw ? -(fx - (1.0 - bw)) / bw : 0.0);
+  float ey = fy < bw ? (bw - fy) / bw : (fy > 1.0 - bw ? -(fy - (1.0 - bw)) / bw : 0.0);
+  vec3 N = normalize(vec3(-ex * uBevelDepth, -ey * uBevelDepth * 0.5, 1.0));
+  vec3 L = normalize(vec3(0.25, -0.55, 0.8));
+  wood *= 0.8 + 0.34 * clamp(dot(N, L), 0.0, 1.0);
   // realce de saturación (compensa el lavado del mipmap → colores más ricos, menos grisáceo)
   float wg = dot(wood, vec3(0.3333));
   wood = clamp(wg + (wood - wg) * 1.14, 0.0, 1.0);
@@ -61,8 +66,14 @@ void main(){
   // Re-iluminación SUAVE con luz DIFUSA (uLum = foto muy borroneada) → sombras/luz del ambiente,
   // NO la trama del piso original (eso evitaba el efecto "transparencia").
   float lum = dot(texture2D(uLum, uv).rgb, vec3(0.299,0.587,0.114));
-  float shade = mix(1.0, clamp(lum / max(uBase, 0.02), 0.82, 1.2), 0.5);   // re-iluminación suave (no absorbe el fondo oscuro)
+  float shade = mix(1.0, clamp(lum / max(uBase, 0.02), 0.82, 1.2), 0.5);   // re-iluminación suave
   vec3 lit = clamp(wood * shade, 0.0, 1.0);
+  // REFLEJO del ambiente (ventanas/techo) sobre el piso: espejo del escenario sobre el borde del
+  // fondo, con fresnel (más reflejo hacia el fondo) y el brillo del material → look de piso real.
+  vec2 reflUV = vec2(uv.x, clamp(2.0 * uTopY - uv.y, 0.0, uTopY));
+  vec3 env = texture2D(uLum, reflUV).rgb;
+  float fres = mix(0.08, 0.5, clamp(1.0 - q.y, 0.0, 1.0)) * uGloss;
+  lit = mix(lit, max(lit, env), fres);
   float a = m * inside;
   gl_FragColor = vec4(mix(photo.rgb, lit, a), 1.0);
 }`
@@ -119,6 +130,7 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
   const [quad, setQuad] = useState<Pt[] | null>(null)
   const [dir, setDir] = useState<Dir>("vertical")
   const [size, setSize] = useState(50)          // 0..100 → tamaño de tabla (más = tablas más chicas)
+  const [gloss, setGloss] = useState(serie === "Madera" ? 30 : 55)   // brillo/reflejo (H2O más satinado)
   const [ready, setReady] = useState(false)
   const drag = useRef<number | null>(null)
 
@@ -191,11 +203,13 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
     gl.uniformMatrix3fv(gl.getUniformLocation(prog, "uHinv"), false, new Float32Array(homographyInv(quad)))
     const planks = 4 + (size / 100) * 12                 // 4..16 tablas a lo ancho (tablas más anchas por defecto)
     gl.uniform1f(gl.getUniformLocation(prog, "uPlanks"), planks)
-    gl.uniform1f(gl.getUniformLocation(prog, "uBevel"), serie === "Madera" ? 0.82 : 0.94)
+    gl.uniform1f(gl.getUniformLocation(prog, "uBevelDepth"), serie === "Madera" ? 1.5 : 0.5)
     gl.uniform1f(gl.getUniformLocation(prog, "uBase"), base)
+    gl.uniform1f(gl.getUniformLocation(prog, "uTopY"), (quad[0].y + quad[1].y) / 2)  // fondo del piso
+    gl.uniform1f(gl.getUniformLocation(prog, "uGloss"), gloss / 100)
     gl.uniform1i(gl.getUniformLocation(prog, "uDir"), dir === "vertical" ? 0 : dir === "horizontal" ? 1 : 2)
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
-  }, [quad, dir, size, ready, serie])
+  }, [quad, dir, size, ready, serie, gloss])
 
   useImperativeHandle(ref, () => ({
     getResult: () => { try { return canvasRef.current?.toDataURL("image/jpeg", 0.92) ?? null } catch { return null } } }), [])
@@ -230,6 +244,10 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
       <label className="flex items-center gap-2 text-xs text-muted-foreground">
         Tamaño de tabla
         <input type="range" min={0} max={100} value={size} onChange={(e) => setSize(Number(e.target.value))} className="flex-1 max-w-[220px]" />
+      </label>
+      <label className="flex items-center gap-2 text-xs text-muted-foreground">
+        Brillo del piso
+        <input type="range" min={0} max={100} value={gloss} onChange={(e) => setGloss(Number(e.target.value))} className="flex-1 max-w-[220px]" />
       </label>
     </div>
   )
