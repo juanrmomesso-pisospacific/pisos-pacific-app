@@ -29,19 +29,21 @@ void main(){
   vec2 t = q;
   if(uDir==1) t = vec2(q.y, q.x);                 // tablas a lo ancho
   else if(uDir==2){ float c=0.7071; t = vec2((q.x+q.y)*c, (q.y-q.x)*c); } // diagonal
-  // COLOCACIÓN TABLA POR TABLA con TRABA REGULAR (como se coloca de verdad, no random).
-  float pw = 0.2;                                  // ancho de una tabla en la textura (~5 tablas)
-  float lenRep = max(uPlanks / 11.0, 0.22);        // tablas LARGAS → pocas juntas a la vista
+  // COLOCACIÓN TABLA POR TABLA: cada tabla del render = UNA tabla entera de la textura (sin cruzar
+  // juntas) y LARGA (pocas juntas de punta), como un piso colocado de verdad.
+  float NTEX = 6.0;                                 // tablas a lo ancho que tiene la foto de textura
+  float pw = 1.0 / NTEX;
+  float lenRep = max(uPlanks / 17.0, 0.38);         // tablas LARGAS → pocas juntas de punta
   float tx = t.x * uPlanks;
   float idx = floor(tx);                            // índice de tabla (columna)
   float fx = fract(tx);                             // 0..1 a lo ancho de la tabla
-  float stagger = hash(idx * 1.7);                  // desfase ALEATORIO por columna (rompe el escalonado)
+  float stagger = hash(idx * 1.7);                  // desfase ALEATORIO por columna
   float ty = t.y * lenRep + stagger;
-  float row = floor(ty);
+  float row = floor(ty);                            // tramo de tabla (cambia sólo en las juntas de punta)
   float fy = fract(ty);                             // 0..1 a lo largo del tablón
-  float rnd = hash(idx * 3.0 + row * 17.0);         // semilla por tabla-tramo
-  float off = rnd * (1.0 - pw);                     // franja distinta de la textura
-  // Espejar al azar (horizontal y/o vertical) → multiplica la variedad de la misma foto (menos repetición).
+  float rnd = hash(idx * 3.0 + row * 17.0);         // semilla por tabla
+  float off = floor(rnd * NTEX) / NTEX;             // elige UNA tabla de la textura (no cruza juntas)
+  // Espejar al azar (horizontal y/o vertical) → variedad sin repetir.
   float sx = fract(rnd * 7.0) > 0.5 ? off + (1.0 - fx) * pw : off + fx * pw;
   float sy = fract(rnd * 13.0) > 0.5 ? 1.0 - fy : fy;
   vec3 wood = texture2D(uWood, vec2(sx, sy)).rgb;
