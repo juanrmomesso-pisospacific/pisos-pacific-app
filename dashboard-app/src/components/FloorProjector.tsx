@@ -13,7 +13,7 @@ const VERT = `attribute vec2 p; varying vec2 uv; void main(){ uv=vec2((p.x+1.0)/
 const FRAG = `
 precision highp float;
 varying vec2 uv;                 // posición en la imagen (0..1, y abajo)
-uniform sampler2D uPhoto, uMask, uWood, uLum;
+uniform sampler2D uPhoto, uMask, uWood, uLum, uMaskB;
 uniform mat3 uHinv;              // imagen -> plano textura (0..1)
 uniform float uPlanks;          // tablas a lo ancho del piso
 uniform float uBevel;           // oscurecimiento de la junta (H2O ~0.94, Madera ~0.82)
@@ -53,6 +53,9 @@ void main(){
   // realce de saturación (compensa el lavado del mipmap → colores más ricos, menos grisáceo)
   float wg = dot(wood, vec3(0.3333));
   wood = clamp(wg + (wood - wg) * 1.14, 0.0, 1.0);
+  // sombra de contacto (AO) en los bordes del piso (junto a paredes/muebles) → "apoyado", no pegado
+  float mb = texture2D(uMaskB, uv).r;
+  wood *= mix(0.72, 1.0, smoothstep(0.35, 0.95, mb));
   // Re-iluminación SUAVE con luz DIFUSA (uLum = foto muy borroneada) → sombras/luz del ambiente,
   // NO la trama del piso original (eso evitaba el efecto "transparencia").
   float lum = dot(texture2D(uLum, uv).rgb, vec3(0.299,0.587,0.114));
@@ -160,6 +163,11 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
       const bx = blur.getContext("2d")!; bx.imageSmoothingEnabled = true; bx.drawImage(photo, 0, 0, blur.width, blur.height)
       const blurImg = new Image(); await new Promise<void>((r) => { blurImg.onload = () => r(); blurImg.src = blur.toDataURL() })
       mkTex(blurImg, 3, "uLum")
+      // Máscara borroneada → sombra de contacto (AO) en los bordes del piso.
+      const mb = document.createElement("canvas"); mb.width = 48; mb.height = Math.max(1, Math.round(48 * H / W))
+      const mbx = mb.getContext("2d")!; mbx.imageSmoothingEnabled = true; mbx.drawImage(mask, 0, 0, mb.width, mb.height)
+      const maskBImg = new Image(); await new Promise<void>((r) => { maskBImg.onload = () => r(); maskBImg.src = mb.toDataURL() })
+      mkTex(maskBImg, 4, "uMaskB")
       // luminancia base del piso (mediana aprox sobre la máscara)
       const mc = document.createElement("canvas"); mc.width = 80; mc.height = 80
       const mx = mc.getContext("2d")!; mx.drawImage(photo, 0, 0, 80, 80); const pd = mx.getImageData(0, 0, 80, 80).data
@@ -179,7 +187,7 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
     const { gl, prog, base } = st
     gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight)
     gl.uniformMatrix3fv(gl.getUniformLocation(prog, "uHinv"), false, new Float32Array(homographyInv(quad)))
-    const planks = 6 + (size / 100) * 16                 // 6..22 tablas a lo ancho aprox
+    const planks = 4 + (size / 100) * 12                 // 4..16 tablas a lo ancho (tablas más anchas por defecto)
     gl.uniform1f(gl.getUniformLocation(prog, "uPlanks"), planks)
     gl.uniform1f(gl.getUniformLocation(prog, "uBevel"), serie === "Madera" ? 0.82 : 0.94)
     gl.uniform1f(gl.getUniformLocation(prog, "uBase"), base)
