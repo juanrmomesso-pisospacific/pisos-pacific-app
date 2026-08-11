@@ -128,17 +128,27 @@ const EN_TONE_WALL = {
 };
 // Prompt del material a partir del diseño del catálogo. FLUX Fill es text-guided; describimos el
 // material lo más fiel posible + reforzamos que solo rellene la zona enmascarada.
+// Ancla de color EXACTO tomada de la muestra real del SKU (avg_hex/palette/color_desc, precomputados
+// del banco). El texto solo no fija el tono → damos el color medio + claro + oscuro y prohibimos derivar.
+function colorAnchor(design) {
+  if (!design?.avg_hex) return '';
+  const [dark, mid, light] = design.palette || [design.avg_hex, design.avg_hex, design.avg_hex];
+  return `EXACT COLOR — match this real sample tone precisely: ${design.color_desc || ''}; ` +
+    `predominant color ${mid}, with lighter ${light} and darker ${dark} in the grain. ` +
+    `Do NOT make it warmer, more golden/orange, lighter or more saturated than these colors. `;
+}
 export function materialPrompt(design) {
   if (design?.superficie === 'pared') {
     const w = EN_TONE_WALL[design?.id] || design?.tono || 'wood slats';
     return `Vertical wood slat acoustic wall panels: thin vertical ${w} with narrow dark felt gaps ` +
-      `between the slats, running floor-to-ceiling, following the wall's perspective. Photorealistic and ` +
-      `seamless, consistent with the room's lighting and shadows. Cover only the masked wall area; keep everything else unchanged.`;
+      `between the slats, running floor-to-ceiling, following the wall's perspective. ${colorAnchor(design)}` +
+      `Photorealistic and seamless, consistent with the room's lighting and shadows. Cover only the masked wall area; keep everything else unchanged.`;
   }
   const desc = EN_TONE[design?.id] || design?.tono || 'natural wood';
-  return `Wide-plank engineered wood flooring: ${desc}. Natural matte finish, realistic wood grain, ` +
-    `planks laid following the room's perspective, photorealistic and seamless, consistent with the ` +
-    `room's lighting and soft reflections. Replace only the masked floor area; keep everything else unchanged.`;
+  return `Wide-plank engineered wood flooring, ${desc}. ${colorAnchor(design)}` +
+    `Natural matte finish, realistic wood grain, planks laid following the room's perspective, ` +
+    `photorealistic and seamless, consistent with the room's lighting and soft reflections. ` +
+    `Replace only the masked floor area; keep everything else unchanged.`;
 }
 
 // Auto-detección de la superficie (asistente del pincel): grounded_sam por texto → máscara b/n
