@@ -29,21 +29,24 @@ void main(){
   vec2 t = q;
   if(uDir==1) t = vec2(q.y, q.x);                 // tablas a lo ancho
   else if(uDir==2){ float c=0.7071; t = vec2((q.x+q.y)*c, (q.y-q.x)*c); } // diagonal
-  // COLOCACIÓN TABLA POR TABLA: cada tabla toma una franja distinta de la textura (sin grilla).
+  // COLOCACIÓN TABLA POR TABLA con TRABA REGULAR (como se coloca de verdad, no random).
   float pw = 0.2;                                  // ancho de una tabla en la textura (~5 tablas)
-  float lenRep = max(uPlanks / 6.75, 0.35);        // largo real de tabla (aspecto 1540/228 ≈ 6.75)
+  float lenRep = max(uPlanks / 11.0, 0.22);        // tablas LARGAS → pocas juntas a la vista
   float tx = t.x * uPlanks;
   float idx = floor(tx);                            // índice de tabla (columna)
   float fx = fract(tx);                             // 0..1 a lo ancho de la tabla
-  float ty = t.y * lenRep + hash(idx) * 3.7;        // desfase de junta por tabla (traba)
+  // traba regular de 1/3 (patrón de ladrillo cada 3 tablas) + micro-jitter para que no sea mecánico
+  float stagger = mod(idx, 3.0) / 3.0 + (hash(idx) - 0.5) * 0.06;
+  float ty = t.y * lenRep + stagger;
   float row = floor(ty);
   float fy = fract(ty);                             // 0..1 a lo largo del tablón
-  float off = hash(idx * 7.0 + row * 3.0) * (1.0 - pw);   // franja aleatoria por tabla-tramo
+  float off = hash(idx * 3.0 + row * 17.0) * (1.0 - pw);   // franja distinta por tabla-tramo (veta variada)
   vec3 wood = texture2D(uWood, vec2(off + fx * pw, fy)).rgb;
-  // junta sutil entre tablas (ancho) y de punta (largo)
-  float eb = smoothstep(0.0, 0.02, fx) * smoothstep(0.0, 0.02, 1.0 - fx);
-  float ej = smoothstep(0.0, 0.02, fy) * smoothstep(0.0, 0.02, 1.0 - fy);
-  wood *= mix(uBevel, 1.0, eb) * mix(uBevel, 1.0, ej);
+  // bisel lateral entre tablas (según serie) + junta de punta MUCHO más sutil
+  float eb = smoothstep(0.0, 0.012, fx) * smoothstep(0.0, 0.012, 1.0 - fx);
+  float ej = smoothstep(0.0, 0.008, fy) * smoothstep(0.0, 0.008, 1.0 - fy);
+  wood *= mix(uBevel, 1.0, eb);
+  wood *= mix(mix(1.0, uBevel, 0.35), 1.0, ej);    // punta = 35% del bisel lateral
   // Re-iluminación SUAVE con luz DIFUSA (uLum = foto muy borroneada) → sombras/luz del ambiente,
   // NO la trama del piso original (eso evitaba el efecto "transparencia").
   float lum = dot(texture2D(uLum, uv).rgb, vec3(0.299,0.587,0.114));
