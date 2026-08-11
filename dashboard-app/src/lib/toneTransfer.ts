@@ -37,12 +37,17 @@ export async function applyToneTransfer(
   // ratio de desvío acotado (evita amplificar ruido o aplanar de más)
   const ratio = [0, 1, 2].map((k) => Math.min(2.5, Math.max(0.4, std[k] / fs[k])))
 
+  const SAT = 1.18   // realce de saturación: evita que quede gris plano (madera cálida, no apagada)
   for (let i = 0; i < d.length; i += 4) {
     const a = md[i] / 255                    // feather = blend suave del recolor
     if (a === 0) continue
+    // color remapeado a la muestra del SKU
+    const nv = [0, 1, 2].map((k) => (d[i + k] - fm[k]) * ratio[k] + mean[k])
+    // realce de croma alrededor del gris del propio pixel (mantiene el tono, sube la riqueza)
+    const g = (nv[0] + nv[1] + nv[2]) / 3
     for (let k = 0; k < 3; k++) {
-      const nv = (d[i + k] - fm[k]) * ratio[k] + mean[k]
-      d[i + k] = Math.max(0, Math.min(255, d[i + k] * (1 - a) + nv * a))
+      const sv = g + (nv[k] - g) * SAT
+      d[i + k] = Math.max(0, Math.min(255, d[i + k] * (1 - a) + sv * a))
     }
   }
   ctx.putImageData(img, 0, 0)

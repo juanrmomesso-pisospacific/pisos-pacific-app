@@ -1564,12 +1564,12 @@ app.post('/api/visualizador/render-mask', async (req, res) => {
   const t0 = Date.now();
   try {
     if (!replicateConfigured()) return res.status(400).json({ ok: false, error: 'inpainting no configurado (falta REPLICATE_API_TOKEN)' });
-    const { foto, mask, productoId } = req.body || {};
+    const { foto, mask, productoId, direction } = req.body || {};
     if (!foto || !mask) return res.status(400).json({ ok: false, error: 'faltan la foto o la máscara' });
     const design = visDesignById(productoId);
     if (!design) return res.status(400).json({ ok: false, error: 'diseño no encontrado' });
 
-    const out = await inpaintFloor({ imageDataUri: String(foto), maskDataUri: String(mask), prompt: materialPrompt(design) });
+    const out = await inpaintFloor({ imageDataUri: String(foto), maskDataUri: String(mask), prompt: materialPrompt(design, { direction }) });
     const imagen = await urlToDataUri(out.url);
     console.log(`[visualizador] INPAINT OK diseño=${design.id} (${design.superficie}) ms=${out.ms}`);
     res.json({ ok: true, imagen, modelo: 'flux-fill', ms: out.ms });

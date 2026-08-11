@@ -131,24 +131,33 @@ const EN_TONE_WALL = {
 // Descripción de tono en PROSA (sin códigos hex ni mayúsculas ni comillas: FLUX renderiza como
 // TEXTO sobre la imagen los códigos/mayúsculas del prompt). El color EXACTO se fija después con el
 // regrade por luminancia (frontend), no acá. Acá solo damos claridad/calidez aproximada.
-function toneWords(design) {
-  const d = (design?.color_desc || design?.tono || '').replace(/,?\s*close to\s*#[0-9a-f]{6}/i, '')
-    .replace(/[()#]/g, ' ').replace(/[^a-zA-Z\s]/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
-  return d || 'natural';
+// Solo la CLARIDAD (very light/light/medium/dark). El color exacto lo fija la transferencia de
+// color (frontend). Nada de hex ni mayúsculas (FLUX los dibuja como texto).
+function lightWord(design) {
+  const first = (design?.color_desc || '').split(',')[0].trim().toLowerCase();
+  return /light|dark|medium/.test(first) ? first : 'medium';
 }
-export function materialPrompt(design) {
+// Frase de dirección de las tablas para el prompt.
+const DIR_PHRASE = {
+  horizontal: 'running horizontally across the room, from left to right',
+  vertical: 'running lengthwise away from the camera, from the front to the back of the room',
+  diagonal: 'running on a gentle diagonal across the room',
+};
+export function materialPrompt(design, opts = {}) {
   if (design?.superficie === 'pared') {
     const w = EN_TONE_WALL[design?.id] || 'wood slats';
     return `A photo of the same room where the main wall is covered with vertical wood slat acoustic ` +
-      `panels — thin vertical ${w} in a ${toneWords(design)} tone, with narrow dark felt gaps between the ` +
+      `panels — thin vertical ${w} in a ${lightWord(design)} tone, with narrow dark felt gaps between the ` +
       `slats, running floor to ceiling and following the wall's perspective. Keep the same lighting and ` +
       `shadows. Everything else stays exactly the same.`;
   }
-  const desc = EN_TONE[design?.id] || 'natural oak';
-  return `A photo of the same room where the floor is replaced with a wide-plank engineered wood floor, ` +
-    `${desc}, in a ${toneWords(design)} tone, matte finish, natural wood grain, planks following the ` +
-    `room's perspective. Keep the same lighting, shadows and reflections. Blend the new floor into the ` +
-    `existing baseboards with no dark line at the wall. Everything else stays exactly the same.`;
+  const dir = DIR_PHRASE[opts.direction] || DIR_PHRASE.vertical;
+  return `A photo of the same room where the floor is replaced with new ${lightWord(design)} oak wood flooring. ` +
+    `The floor is made of long, straight, wide planks, all the same width, laid parallel in one single ` +
+    `direction, ${dir}, following the room's perspective. It is a simple straight wide-plank floor — ` +
+    `absolutely not herringbone, not chevron, not parquet, not a fish-bone or diagonal tile pattern, and the ` +
+    `plank direction must be the same across the whole floor. Matte finish, natural wood grain. Keep the same ` +
+    `lighting, shadows and reflections, and blend into the existing baseboards. Everything else stays the same.`;
 }
 
 // Auto-detección de la superficie (asistente del pincel): grounded_sam por texto → máscara b/n

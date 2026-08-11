@@ -49,6 +49,7 @@ export default function VisualizadorPage() {
   const [error, setError] = useState<string | null>(null)
   const [render, setRender] = useState<{ imagen: string; ms: number; modelo: string } | null>(null)
   const [slider, setSlider] = useState(50)                    // comparador antes/después (0–100)
+  const [direction, setDirection] = useState<"vertical" | "horizontal" | "diagonal">("vertical")
   const fileRef = useRef<HTMLInputElement>(null)
   const painterRef = useRef<FloorPainterHandle>(null)
 
@@ -103,7 +104,7 @@ export default function VisualizadorPage() {
     setLoading(true); setError(null); setRender(null); setSlider(50)
     try {
       const [url, body] = usePincel
-        ? ["/api/visualizador/render-mask", { foto, mask, productoId: activeDesignId }]
+        ? ["/api/visualizador/render-mask", { foto, mask, productoId: activeDesignId, direction }]
         : ["/api/visualizador/render", {
             foto, superficie,
             productoId: needPiso ? pisoId : paredId,
@@ -213,6 +214,16 @@ export default function VisualizadorPage() {
         <section className="space-y-2">
           <div className="text-sm font-medium">4 · Marcá {superficie === "pared" ? "la pared" : "el piso"} a reemplazar</div>
           <FloorPainter ref={painterRef} src={foto} surfaceLabel={surfaceLabel} onAutoDetect={autoDetect} />
+          {superficie === "piso" && (
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-xs text-muted-foreground">Dirección de las tablas:</span>
+              {([["vertical", "Hacia el fondo"], ["horizontal", "A lo ancho"], ["diagonal", "Diagonal"]] as const).map(([v, label]) => (
+                <Button key={v} type="button" size="sm" variant={direction === v ? "default" : "outline"} onClick={() => setDirection(v)}>
+                  {label}
+                </Button>
+              ))}
+            </div>
+          )}
           {render && (
             <p className="text-xs text-muted-foreground">💡 Podés cambiar el diseño arriba y <b>Generar</b> de nuevo — no hace falta volver a marcar.</p>
           )}
