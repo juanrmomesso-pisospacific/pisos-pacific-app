@@ -12,6 +12,35 @@ async function loadImg(src: string): Promise<HTMLImageElement> {
   })
 }
 
+// Combina proyección + render: mantiene el COLOR/VETA EXACTOS de la proyección (el producto real)
+// pero le aplica la ILUMINACIÓN del render de IA (sombras/luz/reflejos) → realismo + fidelidad.
+// out = proyección re-iluminada por (lumRender / lumProyección) sólo dentro de la máscara.
+export async function combineRelight(projection: string, refined: string, mask: string): Promise<string> {
+  const [pi, ri, mi] = await Promise.all([loadImg(projection), loadImg(refined), loadImg(mask)])
+  const W = pi.naturalWidth, H = pi.naturalHeight
+  const c = document.createElement("canvas"); c.width = W; c.height = H
+  const ctx = c.getContext("2d")!; ctx.drawImage(pi, 0, 0)
+  const out = ctx.getImageData(0, 0, W, H); const o = out.data
+  const rc = document.createElement("canvas"); rc.width = W; rc.height = H
+  const rx = rc.getContext("2d")!; rx.drawImage(ri, 0, 0, W, H)
+  const rd = rx.getImageData(0, 0, W, H).data
+  const mc = document.createElement("canvas"); mc.width = W; mc.height = H
+  const mx = mc.getContext("2d")!; mx.drawImage(mi, 0, 0, W, H)
+  const md = mx.getImageData(0, 0, W, H).data
+  const L = (r: number, g: number, b: number) => 0.299 * r + 0.587 * g + 0.114 * b
+  for (let i = 0; i < o.length; i += 4) {
+    const a = md[i] / 255
+    if (a === 0) continue
+    const pl = L(o[i], o[i + 1], o[i + 2]) + 1
+    const rl = L(rd[i], rd[i + 1], rd[i + 2])
+    const ratio = Math.max(0.5, Math.min(1.8, rl / pl))
+    const f = 1 + a * (ratio - 1)
+    o[i] = Math.min(255, o[i] * f); o[i + 1] = Math.min(255, o[i + 1] * f); o[i + 2] = Math.min(255, o[i + 2] * f)
+  }
+  ctx.putImageData(out, 0, 0)
+  return c.toDataURL("image/jpeg", 0.92)
+}
+
 // Media/desvío por canal de la zona pintada (blanco en la máscara) de una imagen.
 export async function floorStats(image: string, mask: string): Promise<{ mean: number[]; std: number[] }> {
   const [ii, mi] = await Promise.all([loadImg(image), loadImg(mask)])

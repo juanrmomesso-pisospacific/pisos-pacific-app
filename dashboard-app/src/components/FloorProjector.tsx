@@ -163,7 +163,7 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
         if (isWood && isGL2) {
           gl.generateMipmap(gl.TEXTURE_2D)
           gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR)
-          if (aniso) gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, Math.min(8, gl.getParameter(aniso.MAX_TEXTURE_MAX_ANISOTROPY_EXT)))
+          if (aniso) gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, Math.min(16, gl.getParameter(aniso.MAX_TEXTURE_MAX_ANISOTROPY_EXT)))
         } else {
           gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
         }
@@ -267,7 +267,7 @@ function autoQuad(mask: HTMLImageElement): Pt[] {
   if (!any) return [{ x: 0.2, y: 0.55 }, { x: 0.8, y: 0.55 }, { x: 1, y: 1 }, { x: 0, y: 1 }]
   // Trapecio del recuadro del piso: fondo (arriba) más angosto, frente (abajo) al ancho completo.
   const nx = minX / w, xx = maxX / w, ny = minY / h, yy = maxY / h
-  const inset = (xx - nx) * 0.18
+  const inset = (xx - nx) * 0.26
   return [
     { x: nx + inset, y: ny }, { x: xx - inset, y: ny },   // esquinas del fondo
     { x: xx, y: yy }, { x: nx, y: yy },                    // esquinas del frente
