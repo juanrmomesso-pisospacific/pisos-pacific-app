@@ -68,7 +68,8 @@ void main(){
   // la habitación (gradiente de ventanas, sombras) SIN oscurecer ni aclarar el color del producto.
   // La normalización es la clave: si el piso viejo era oscuro uniforme, el mapa ≈ 1 (no ensombrece).
   float lum = dot(texture2D(uLum, uv).rgb, vec3(0.299,0.587,0.114));
-  float lightMap = clamp(lum / max(uBase, 0.02), 0.5, 1.75);
+  // Rango angosto + aplicación parcial: integra la luz SIN quemar el sol ni manchar las sombras.
+  float lightMap = mix(1.0, clamp(lum / max(uBase, 0.02), 0.68, 1.32), 0.7);
   vec3 lit = clamp(wood * lightMap, 0.0, 1.0);
   // REFLEJO del ambiente (ventanas/techo) sobre el piso: espejo del escenario sobre el borde del
   // fondo, con fresnel (más reflejo hacia el fondo) y el brillo del material → look de piso real.

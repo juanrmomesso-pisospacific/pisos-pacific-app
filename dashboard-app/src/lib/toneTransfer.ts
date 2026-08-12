@@ -33,7 +33,7 @@ export async function combineRelight(projection: string, refined: string, mask: 
     if (a === 0) continue
     const pl = L(o[i], o[i + 1], o[i + 2]) + 1
     const rl = L(rd[i], rd[i + 1], rd[i + 2])
-    const ratio = Math.max(0.5, Math.min(1.8, rl / pl))
+    const ratio = Math.max(0.78, Math.min(1.28, rl / pl))   // suave: no exagera la luz del render
     const f = 1 + a * (ratio - 1)
     o[i] = Math.min(255, o[i] * f); o[i + 1] = Math.min(255, o[i + 1] * f); o[i + 2] = Math.min(255, o[i + 2] * f)
   }
