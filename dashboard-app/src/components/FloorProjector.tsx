@@ -63,11 +63,13 @@ void main(){
   // sombra de contacto (AO) en los bordes del piso (junto a paredes/muebles) → "apoyado", no pegado
   float mb = texture2D(uMaskB, uv).r;
   wood *= mix(0.72, 1.0, smoothstep(0.35, 0.95, mb));
-  // Re-iluminación SUAVE con luz DIFUSA (uLum = foto muy borroneada) → sombras/luz del ambiente,
-  // NO la trama del piso original (eso evitaba el efecto "transparencia").
+  // MAPA DE LUZ (técnica del líder Roomvo/Leap Tools): luminancia de la foto MUY borroneada (uLum,
+  // sin la trama del piso viejo) NORMALIZADA al promedio del piso → integra las sombras/luz reales de
+  // la habitación (gradiente de ventanas, sombras) SIN oscurecer ni aclarar el color del producto.
+  // La normalización es la clave: si el piso viejo era oscuro uniforme, el mapa ≈ 1 (no ensombrece).
   float lum = dot(texture2D(uLum, uv).rgb, vec3(0.299,0.587,0.114));
-  float shade = mix(1.0, clamp(lum / max(uBase, 0.02), 0.82, 1.2), 0.5);   // re-iluminación suave
-  vec3 lit = clamp(wood * shade, 0.0, 1.0);
+  float lightMap = clamp(lum / max(uBase, 0.02), 0.5, 1.75);
+  vec3 lit = clamp(wood * lightMap, 0.0, 1.0);
   // REFLEJO del ambiente (ventanas/techo) sobre el piso: espejo del escenario sobre el borde del
   // fondo, con fresnel (más reflejo hacia el fondo) y el brillo del material → look de piso real.
   vec2 reflUV = vec2(uv.x, clamp(2.0 * uTopY - uv.y, 0.0, uTopY));
