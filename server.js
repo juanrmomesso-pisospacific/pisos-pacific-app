@@ -20,7 +20,7 @@ import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
 import { renderVisualizacion, geminiConfigured } from './integrations/gemini-image.mjs';
 import { promptFor } from './config/visualizador-prompts.js';
-import { inpaintFloor, materialPrompt, urlToDataUri, replicateConfigured, autoSurfaceMask, refineRender } from './integrations/replicate-visualizador.mjs';
+import { inpaintFloor, materialPrompt, urlToDataUri, replicateConfigured, autoSurfaceMask, refineRender, depthMap } from './integrations/replicate-visualizador.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -1606,6 +1606,43 @@ app.post('/api/visualizador/refine', async (req, res) => {
   }
 });
 
+// Render (refinado) como JOB server-side: el refinador tarda ~40-90s y si se apaga la pantalla del
+// celular, el fetch del browser se corta. Solución: POST inicia el trabajo (corre en el server) y
+// devuelve un jobId; el cliente hace polling. Aunque la pestaña se suspenda, el trabajo termina en el
+// server y el resultado se recupera al despertar. Jobs en memoria (efímeros, no críticos).
+const visJobs = new Map();  // id -> { status:'running'|'done'|'error', imagen?, error?, ms?, t }
+function gcVisJobs() { const now = Date.now(); for (const [k, v] of visJobs) if (now - v.t > 600000) visJobs.delete(k); }
+
+app.post('/api/visualizador/refine-start', (req, res) => {
+  if (!replicateConfigured()) return res.status(400).json({ ok: false, error: 'refinador no configurado (falta REPLICATE_API_TOKEN)' });
+  const { imagen } = req.body || {};
+  if (!imagen) return res.status(400).json({ ok: false, error: 'falta la imagen' });
+  gcVisJobs();
+  const id = 'vj_' + Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
+  visJobs.set(id, { status: 'running', t: Date.now() });
+  (async () => {
+    const t0 = Date.now();
+    try {
+      const out = await refineRender(String(imagen));
+      const dataUri = await urlToDataUri(out.url);
+      visJobs.set(id, { status: 'done', imagen: dataUri, ms: out.ms, t: Date.now() });
+      console.log(`[visualizador] REFINE(job ${id}) OK ms=${out.ms}`);
+    } catch (e) {
+      visJobs.set(id, { status: 'error', error: e.message || 'no se pudo renderizar', t: Date.now() });
+      console.warn(`[visualizador] REFINE(job ${id}) ERROR ms=${Date.now() - t0}: ${e.message}`);
+    }
+  })();
+  res.json({ ok: true, jobId: id });
+});
+
+app.get('/api/visualizador/refine-job/:id', (req, res) => {
+  const j = visJobs.get(req.params.id);
+  if (!j) return res.status(404).json({ ok: false, error: 'job no encontrado (venció o el server reinició)' });
+  if (j.status === 'running') return res.json({ ok: true, status: 'running' });
+  if (j.status === 'error') return res.json({ ok: true, status: 'error', error: j.error });
+  res.json({ ok: true, status: 'done', imagen: j.imagen, ms: j.ms });
+});
+
 // POST auto-mask: "Detectar piso/pared" (asistente del pincel) → máscara b/n que el vendedor retoca.
 app.post('/api/visualizador/auto-mask', async (req, res) => {
   try {
@@ -1617,6 +1654,24 @@ app.post('/api/visualizador/auto-mask', async (req, res) => {
   } catch (e) {
     console.warn(`[visualizador] AUTO-MASK ERROR: ${e.message}`);
     res.status(502).json({ ok: false, error: e.message || 'no se pudo detectar la superficie' });
+  }
+});
+
+// POST auto-perspective: "Perspectiva automática" → mapa de profundidad (Depth Anything v2). El
+// frontend cruza el mapa con la máscara del piso para deducir el horizonte y sembrar el quad con la
+// convergencia correcta (sin FOV). Devuelve el mapa gris como data URI.
+app.post('/api/visualizador/auto-perspective', async (req, res) => {
+  const t0 = Date.now();
+  try {
+    if (!replicateConfigured()) return res.status(400).json({ ok: false, error: 'perspectiva automática no configurada (falta REPLICATE_API_TOKEN)' });
+    const { foto } = req.body || {};
+    if (!foto) return res.status(400).json({ ok: false, error: 'falta la foto' });
+    const out = await depthMap(String(foto));
+    console.log(`[visualizador] DEPTH OK ms=${out.ms}`);
+    res.json({ ok: true, depth: out.depth, ms: out.ms });
+  } catch (e) {
+    console.warn(`[visualizador] DEPTH ERROR ms=${Date.now() - t0}: ${e.message}`);
+    res.status(502).json({ ok: false, error: e.message || 'no se pudo calcular la perspectiva' });
   }
 });
 

@@ -54,6 +54,8 @@ export default function VisualizadorPage() {
   const [direction, setDirection] = useState<"vertical" | "horizontal" | "diagonal">("vertical")
   const [modo, setModo] = useState<"textura" | "ia">("textura")  // piso: proyección vs IA rápida
   const [projMask, setProjMask] = useState<string | null>(null)  // máscara capturada para proyectar
+  const [depth, setDepth] = useState<string | null>(null)        // mapa de profundidad (perspectiva auto)
+  const [depthLoading, setDepthLoading] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
   const painterRef = useRef<FloorPainterHandle>(null)
   const projectorRef = useRef<FloorProjectorHandle>(null)
@@ -86,8 +88,26 @@ export default function VisualizadorPage() {
       .catch((e) => setError(e.message || "no se pudo cargar el catálogo"))
   }, [])
 
-  // La máscara capturada deja de valer si cambia la foto o la superficie.
-  useEffect(() => { setProjMask(null) }, [foto, superficie])
+  // La máscara capturada y la profundidad dejan de valer si cambia la foto o la superficie.
+  useEffect(() => { setProjMask(null); setDepth(null) }, [foto, superficie])
+
+  // "Perspectiva automática": pide el mapa de profundidad al backend (Depth Anything v2). El proyector
+  // lo cruza con la máscara del piso para sembrar el marco con la convergencia correcta.
+  async function autoPerspectiva() {
+    if (!foto) return
+    setDepthLoading(true); setError(null)
+    try {
+      const r = await fetch("/api/visualizador/auto-perspective", {
+        method: "POST", credentials: "include",
+        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ foto }),
+      })
+      const data = await r.json().catch(() => null)
+      if (!r.ok || !data?.ok) throw new Error(data?.error || "no se pudo calcular la perspectiva")
+      setDepth(data.depth as string)
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "no se pudo calcular la perspectiva")
+    } finally { setDepthLoading(false) }
+  }
 
   const pisos = catalogo?.designs.filter((d) => d.superficie === "piso") ?? []
   const paredes = catalogo?.designs.filter((d) => d.superficie === "pared") ?? []
@@ -159,20 +179,34 @@ export default function VisualizadorPage() {
   }
 
   // "Renderizar": toma el render proyectado (canvas) y le suma realismo fotográfico (ControlNet).
+  // Corre como JOB en el server (start + polling) → si se apaga la pantalla del celular el trabajo
+  // igual termina en el server y el resultado se recupera al despertar (antes el fetch se cortaba).
   async function renderizar() {
     const src = projectorRef.current?.getResult()
     if (!src) return
     setLoading(true); setError(null); setRender(null); setSlider(50)
     try {
-      const r = await fetch("/api/visualizador/refine", {
+      const s = await fetch("/api/visualizador/refine-start", {
         method: "POST", credentials: "include",
         headers: { "Content-Type": "application/json" }, body: JSON.stringify({ imagen: src }),
       })
-      const data = await r.json().catch(() => null)
-      if (!r.ok || !data?.ok) throw new Error(data?.error || `error ${r.status}`)
+      const sd = await s.json().catch(() => null)
+      if (!s.ok || !sd?.ok) throw new Error(sd?.error || `error ${s.status}`)
+      const jobId = sd.jobId as string
+      // Polling hasta que el job termine (máx ~4 min). Si la pestaña se suspende, al reactivarse
+      // retoma el polling y el job ya está listo en el server.
+      let data: { imagen: string; ms: number } | null = null
+      for (let i = 0; i < 80; i++) {
+        await new Promise((r) => setTimeout(r, 3000))
+        const g = await fetch(`/api/visualizador/refine-job/${jobId}`, { credentials: "include" })
+        const gd = await g.json().catch(() => null)
+        if (gd?.status === "done") { data = { imagen: gd.imagen, ms: gd.ms }; break }
+        if (gd?.status === "error") throw new Error(gd.error || "no se pudo renderizar")
+      }
+      if (!data) throw new Error("el render tardó demasiado")
       // Combine: color/veta EXACTOS de la proyección (el producto real) + iluminación del render de
       // IA (sombras/luz/reflejos). Así el render aporta realismo sin cambiar el color del piso.
-      let imagen = data.imagen as string
+      let imagen = data.imagen
       if (projMask && src) {
         try { imagen = await combineRelight(src, imagen, projMask) }
         catch { /* si falla, mostramos el render tal cual */ }
@@ -271,8 +305,13 @@ export default function VisualizadorPage() {
 
           {esProyeccion && projMask ? (
             <>
-              <FloorProjector ref={projectorRef} photoSrc={foto} maskSrc={projMask}
+              <FloorProjector ref={projectorRef} photoSrc={foto} maskSrc={projMask} depthSrc={depth}
                 textureUrl={activeDesign!.textura!} plankMm={activeDesign?.size_mm?.[0]} serie={activeDesign?.serie} />
+              {catalogo?.inpaint && (
+                <Button variant="outline" className="w-full h-11" disabled={depthLoading} onClick={autoPerspectiva}>
+                  {depthLoading ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Calculando perspectiva… (~10 s)</> : <>📐 Perspectiva automática {depth ? "✓" : ""}</>}
+                </Button>
+              )}
               <Button className="w-full h-12" disabled={loading} onClick={renderizar}>
                 {loading ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Renderizando… (~1 min)</> : <>✨ Renderizar (realismo fotográfico)</>}
               </Button>

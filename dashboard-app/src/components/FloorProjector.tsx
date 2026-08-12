@@ -20,6 +20,7 @@ uniform float uBevelDepth;      // profundidad del bisel (H2O ~0.5, Madera ~1.5)
 uniform float uBase;            // luminancia base del piso (para re-iluminar)
 uniform float uTopY;            // y del fondo del piso (0..1) — para el reflejo del ambiente
 uniform float uGloss;           // brillo/reflejo del piso (0..1)
+uniform float uLight;           // fuerza del mapa de luz (0=plano, ~0.9=máximo)
 uniform int uDir;               // 0 vertical, 1 horizontal, 2 diagonal
 float hash(float n){ return fract(sin(n*12.9898)*43758.5453); }
 void main(){
@@ -68,8 +69,9 @@ void main(){
   // la habitación (gradiente de ventanas, sombras) SIN oscurecer ni aclarar el color del producto.
   // La normalización es la clave: si el piso viejo era oscuro uniforme, el mapa ≈ 1 (no ensombrece).
   float lum = dot(texture2D(uLum, uv).rgb, vec3(0.299,0.587,0.114));
-  // Rango angosto + aplicación parcial: integra la luz SIN quemar el sol ni manchar las sombras.
-  float lightMap = mix(1.0, clamp(lum / max(uBase, 0.02), 0.68, 1.32), 0.7);
+  // Rango angosto + aplicación PARCIAL (uLight, ajustable): integra la luz SIN quemar el sol ni
+  // manchar las sombras. uLight=0 → piso plano (sin re-iluminar); subirlo integra más la luz real.
+  float lightMap = mix(1.0, clamp(lum / max(uBase, 0.02), 0.62, 1.38), uLight);
   vec3 lit = clamp(wood * lightMap, 0.0, 1.0);
   // REFLEJO del ambiente (ventanas/techo) sobre el piso: espejo del escenario sobre el borde del
   // fondo, con fresnel (más reflejo hacia el fondo) y el brillo del material → look de piso real.
@@ -125,15 +127,20 @@ function invert3(m: number[]): number[] {
 function loadImg(src: string) { return new Promise<HTMLImageElement>((res, rej) => { const i = new Image(); i.crossOrigin = "anonymous"; i.onload = () => res(i); i.onerror = rej; i.src = src }) }
 
 export const FloorProjector = forwardRef<FloorProjectorHandle, {
-  photoSrc: string; maskSrc: string; textureUrl: string; plankMm?: number; serie?: string
-}>(function FloorProjector({ photoSrc, maskSrc, textureUrl, serie }, ref) {
+  photoSrc: string; maskSrc: string; textureUrl: string; plankMm?: number; serie?: string; depthSrc?: string | null
+}>(function FloorProjector({ photoSrc, maskSrc, textureUrl, serie, depthSrc }, ref) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
   const glState = useRef<{ gl: WebGLRenderingContext; prog: WebGLProgram; base: number } | null>(null)
+  const maskImgRef = useRef<HTMLImageElement | null>(null)   // máscara cargada (para el cálculo de horizonte)
   const [quad, setQuad] = useState<Pt[] | null>(null)
   const [dir, setDir] = useState<Dir>("vertical")
   const [size, setSize] = useState(50)          // 0..100 → tamaño de tabla (más = tablas más chicas)
   const [gloss, setGloss] = useState(serie === "Madera" ? 30 : 55)   // brillo/reflejo (H2O más satinado)
+  const [light, setLight] = useState(60)        // 0..100 → fuerza del mapa de luz (uLight = light/100*0.9)
+  // Horizonte (fila 0..1) y centro de fuga x: parametrizan la perspectiva. Cuando existen, el quad se
+  // construye con la convergencia CORRECTA (esquinas lejanas apuntando al punto de fuga del piso).
+  const [persp, setPersp] = useState<{ yH: number; cx: number } | null>(null)
   const [ready, setReady] = useState(false)
   const drag = useRef<number | null>(null)
 
@@ -143,6 +150,7 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
     ;(async () => {
       const [photo, mask, wood] = await Promise.all([loadImg(photoSrc), loadImg(maskSrc), loadImg(textureUrl)])
       if (!alive) return
+      maskImgRef.current = mask
       const W = Math.min(photo.naturalWidth, 1600), s = W / photo.naturalWidth
       const H = Math.round(photo.naturalHeight * s)
       const canvas = canvasRef.current!; canvas.width = W; canvas.height = H
@@ -210,9 +218,38 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
     gl.uniform1f(gl.getUniformLocation(prog, "uBase"), base)
     gl.uniform1f(gl.getUniformLocation(prog, "uTopY"), (quad[0].y + quad[1].y) / 2)  // fondo del piso
     gl.uniform1f(gl.getUniformLocation(prog, "uGloss"), gloss / 100)
+    gl.uniform1f(gl.getUniformLocation(prog, "uLight"), (light / 100) * 0.9)
     gl.uniform1i(gl.getUniformLocation(prog, "uDir"), dir === "vertical" ? 0 : dir === "horizontal" ? 1 : 2)
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
-  }, [quad, dir, size, ready, serie, gloss])
+  }, [quad, dir, size, ready, serie, gloss, light])
+
+  // Perspectiva automática: cuando llega el mapa de profundidad, deducir el horizonte del piso y
+  // sembrar el quad con la convergencia correcta (esquinas lejanas apuntando al punto de fuga).
+  useEffect(() => {
+    if (!depthSrc || !maskImgRef.current) return
+    let alive = true
+    ;(async () => {
+      const depth = await loadImg(depthSrc)
+      if (!alive || !maskImgRef.current) return
+      const p = horizonFromDepthMask(depth, maskImgRef.current)
+      if (!p) return
+      setPersp({ yH: p.yH, cx: p.cx })
+      setQuad(perspectiveQuad(p.nearL, p.nearR, p.yF, p.yH, p.cx))
+    })().catch((e) => console.error("[projector depth]", e))
+    return () => { alive = false }
+  }, [depthSrc])
+
+  // Slider "Perspectiva": mueve el horizonte manteniendo las esquinas cercanas → recalcula la
+  // convergencia de las esquinas lejanas (sin depender de la profundidad). 0..100 → yH 0.35..0.62.
+  function setHorizon(v: number) {
+    if (!quad) return
+    const yH = 0.35 + (v / 100) * 0.27
+    const cx = persp?.cx ?? (quad[3].x + quad[2].x) / 2
+    setPersp({ yH, cx })
+    const yF = Math.min(quad[0].y, quad[1].y)                       // borde lejano actual
+    setQuad(perspectiveQuad(quad[3], quad[2], Math.max(yF, yH + 0.03), yH, cx))
+  }
+  const perspSlider = persp ? Math.round(((persp.yH - 0.35) / 0.27) * 100) : 50
 
   useImperativeHandle(ref, () => ({
     getResult: () => { try { return canvasRef.current?.toDataURL("image/jpeg", 0.92) ?? null } catch { return null } } }), [])
@@ -252,9 +289,82 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
         Brillo del piso
         <input type="range" min={0} max={100} value={gloss} onChange={(e) => setGloss(Number(e.target.value))} className="flex-1 max-w-[220px]" />
       </label>
+      <label className="flex items-center gap-2 text-xs text-muted-foreground">
+        Perspectiva
+        <input type="range" min={0} max={100} value={perspSlider} onChange={(e) => setHorizon(Number(e.target.value))} className="flex-1 max-w-[220px]" />
+      </label>
+      <label className="flex items-center gap-2 text-xs text-muted-foreground">
+        Integrar luz
+        <input type="range" min={0} max={100} value={light} onChange={(e) => setLight(Number(e.target.value))} className="flex-1 max-w-[220px]" />
+      </label>
     </div>
   )
 })
+
+// Construye un quad de perspectiva CORRECTA: las esquinas cercanas (nearL/nearR, abajo) se mantienen
+// y las lejanas se calculan haciendo converger cada borde lateral hacia el punto de fuga V=(cx,yH)
+// sobre la línea de horizonte. Así las tablas convergen bien aunque el piso cubra toda la imagen.
+function perspectiveQuad(nearL: Pt, nearR: Pt, yF: number, yH: number, cx: number): Pt[] {
+  const yN = (nearL.y + nearR.y) / 2
+  const r = (yF - yH) / (yN - yH || 1e-3)          // razón de convergencia (0 en el horizonte, 1 en el frente)
+  const fL = { x: cx + (nearL.x - cx) * r, y: yF }
+  const fR = { x: cx + (nearR.x - cx) * r, y: yF }
+  return [fL, fR, { ...nearR }, { ...nearL }]
+}
+
+// Deduce el horizonte del piso a partir del mapa de profundidad (disparidad) y la máscara del piso.
+// En un plano, la disparidad (claro=cerca) es LINEAL con la fila de la imagen → ajustando disp = a·y+b
+// sobre las filas del piso y extrapolando a disp=0 se obtiene la fila del horizonte (yH), sin FOV.
+// Devuelve todo normalizado (0..1). null si no hay suficiente piso o el ajuste no es válido.
+function horizonFromDepthMask(depth: HTMLImageElement, mask: HTMLImageElement): { yH: number; cx: number; yF: number; nearL: Pt; nearR: Pt } | null {
+  const gw = 160, gh = Math.max(1, Math.round(160 * depth.naturalHeight / depth.naturalWidth))
+  const dc = document.createElement("canvas"); dc.width = gw; dc.height = gh
+  const dx = dc.getContext("2d")!; dx.drawImage(depth, 0, 0, gw, gh)
+  const dd = dx.getImageData(0, 0, gw, gh).data
+  const mc = document.createElement("canvas"); mc.width = gw; mc.height = gh
+  const mx = mc.getContext("2d")!; mx.drawImage(mask, 0, 0, gw, gh)
+  const md = mx.getImageData(0, 0, gw, gh).data
+  // Por fila del piso: mediana de disparidad + extremos x. Centro de fuga = centroide x del piso.
+  const rows: { y: number; disp: number; minX: number; maxX: number }[] = []
+  let sumX = 0, cnt = 0, yTop = gh, yBot = 0
+  for (let yy = 0; yy < gh; yy++) {
+    const vals: number[] = []; let mnX = gw, mxX = 0
+    for (let xx = 0; xx < gw; xx++) {
+      const i = (yy * gw + xx) * 4
+      if (md[i] > 128) {
+        vals.push(dd[i]); mnX = Math.min(mnX, xx); mxX = Math.max(mxX, xx)
+        sumX += xx; cnt++; yTop = Math.min(yTop, yy); yBot = Math.max(yBot, yy)
+      }
+    }
+    if (vals.length >= Math.max(3, gw * 0.04)) {
+      vals.sort((a, b) => a - b)
+      rows.push({ y: (yy + 0.5) / gh, disp: vals[Math.floor(vals.length / 2)], minX: mnX / gw, maxX: mxX / gw })
+    }
+  }
+  if (rows.length < 6 || cnt < 50) return null
+  // Ajuste robusto: descartar el 15% de filas más lejanas (arriba, más ruidosas / posible fuga de pared).
+  const fit = rows.slice(Math.floor(rows.length * 0.15))
+  const n = fit.length
+  let sx = 0, sy = 0, sxx = 0, sxy = 0
+  for (const r of fit) { sx += r.y; sy += r.disp; sxx += r.y * r.y; sxy += r.y * r.disp }
+  const denom = n * sxx - sx * sx
+  if (Math.abs(denom) < 1e-9) return null
+  const a = (n * sxy - sx * sy) / denom          // pendiente disp/y
+  const b = (sy - a * sx) / n
+  if (a <= 0.5) return null                        // la disparidad debe crecer hacia abajo (plano de piso)
+  let yH = -b / a
+  const yFfloor = yTop / gh, yN = (yBot + 0.5) / gh
+  yH = Math.max(0.15, Math.min(yFfloor - 0.02, yH))   // el horizonte va por encima del piso visible
+  const cx = cnt ? sumX / cnt / gw : 0.5
+  // Esquinas cercanas = ancho MÁXIMO del piso en la banda inferior (no sólo la última fila, que puede
+  // venir angostada por una pared que entra) → el marco contiene todo el piso cercano. Borde lejano
+  // = tope del piso visible. Las esquinas siguen siendo ajustables a mano.
+  const band = rows.slice(-Math.max(1, Math.round(rows.length * 0.18)))
+  const nearMinX = Math.min(...band.map((r) => r.minX))
+  const nearMaxX = Math.max(...band.map((r) => r.maxX))
+  const yF = Math.max(yFfloor, yH + 0.03)
+  return { yH, cx, yF, nearL: { x: nearMinX, y: yN }, nearR: { x: nearMaxX, y: yN } }
+}
 
 // Auto-propone el quad del piso desde la máscara: extremos del piso en la fila más lejana (arriba)
 // y la más cercana (abajo).

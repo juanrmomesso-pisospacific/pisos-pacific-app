@@ -175,6 +175,25 @@ export async function refineRender(imageDataUri, { creativity = 0.25, resemblanc
   return { url, ms };
 }
 
+// Mapa de PROFUNDIDAD (Depth Anything v2) → devuelve el mapa gris (disparidad: claro=cerca,
+// oscuro=lejos) como DATA URI. Se usa para deducir el HORIZONTE del piso (perspectiva automática):
+// en un plano, la disparidad es lineal con la fila de la imagen → extrapolando a disparidad 0 se
+// obtiene la línea de horizonte, sin conocer el FOV de la cámara. El cálculo del quad se hace en el
+// frontend (donde vive la máscara del piso). model_size 'Large' = mapa muy limpio (~5-10s).
+export async function depthMap(imageDataUri, { modelSize = 'Large' } = {}) {
+  const version = await latestVersion('chenxwh/depth-anything-v2');
+  const { output, ms } = await runPrediction(version, { image: imageDataUri, model_size: modelSize },
+    { label: 'depth', timeoutMs: 120000 });
+  // La salida puede ser: string (url) | [greyUrl, colorUrl] | { grey_depth, color_depth }.
+  let url = null;
+  if (typeof output === 'string') url = output;
+  else if (Array.isArray(output)) url = output.find(x => typeof x === 'string');
+  else if (output && typeof output === 'object') url = output.grey_depth || output.color_depth || firstUrl(output);
+  if (!url) throw new Error('depth-anything no devolvió mapa');
+  const depth = await urlToDataUri(url);
+  return { depth, ms };
+}
+
 // Auto-detección de la superficie (asistente del pincel): grounded_sam por texto → máscara b/n
 // (blanco = superficie) como DATA URI. El vendedor la retoca con el pincel. Sirve de "arranque".
 export async function autoSurfaceMask(imageDataUri, superficie = 'piso') {

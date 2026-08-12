@@ -3,11 +3,36 @@
 > **Para la próxima sesión de Claude.** Este archivo tiene TODO el estado del visualizador de pisos.
 > Leelo entero antes de tocar nada. Branch: `feature/visualizador-spike`. Última actualización: 12-ago-2026.
 
+> **AVANCE 12/8 (tarde) — PERSPECTIVA AUTOMÁTICA POR PROFUNDIDAD (Fase 1 headline) + 2 problemas más:**
+> - ✅ **Perspectiva automática (problema #2 RESUELTO).** Botón **"📐 Perspectiva automática"** → `POST
+>   /api/visualizador/auto-perspective` (Depth Anything v2 en Replicate, ~3-10s) devuelve el mapa de
+>   profundidad; el proyector cruza profundidad+máscara y deduce el **horizonte del piso** (en un plano la
+>   disparidad es lineal con la fila → extrapolando a disparidad 0 sale el horizonte, **sin FOV**) y siembra
+>   el quad con la **convergencia correcta** (esquinas lejanas apuntando al punto de fuga). Validado offline
+>   (overlay: el borde del quad sigue el zócalo) y end-to-end en el navegador con foto real. Reemplaza el
+>   inset fijo 0,26 que ponía las esquinas lejanas flotando sobre la pared. Las 4 esquinas **siguen
+>   ajustables** a mano. Código: `horizonFromDepthMask`/`perspectiveQuad` en `FloorProjector.tsx`.
+> - ✅ **Slider "Perspectiva"** (manual, sin depender de profundidad): mueve el horizonte y recalcula la
+>   convergencia manteniendo las esquinas cercanas → el vendedor arregla la convergencia con un gesto aunque
+>   no corra la profundidad. Uniform de horizonte parametriza el quad.
+> - ✅ **Slider "Integrar luz" (problema #1 mitigado):** la fuerza del mapa de luz ahora es ajustable
+>   (uniform `uLight`, default 60/100·0,9 ≈ 0,54; 0 = piso plano). En vez de adivinar el valor, el dueño lo
+>   baja/sube en el celular. Rango del clamp levemente más ancho (0,62–1,38).
+> - ✅ **Render async server-side (problema #4 RESUELTO):** `POST /api/visualizador/refine-start` inicia el
+>   job (corre en el server) y devuelve `jobId`; `GET /api/visualizador/refine-job/:id` para polling. Si se
+>   apaga la pantalla del celular el trabajo igual termina en el server y se recupera al despertar (antes el
+>   fetch del browser se cortaba). Jobs en memoria (Map, TTL 10min). **Verificado:** un refine de **155s**
+>   sobrevivió start→polling→done. El `POST /api/visualizador/refine` viejo quedó (no se usa desde la UI).
+> - **Queda abierto (necesita celular):** problema #3 (render IA difumina veta/bordes) — iteración de
+>   prompt/creativity/combine, requiere prueba táctil. Cobertura: si el piso es asimétrico puede quedar un
+>   triángulo sin cubrir a la derecha → se arrastra la esquina cercana (o mejorar el default de esquinas).
+>   Y afinar en el celular: ¿el horizonte auto queda bien en fotos con ángulo/alfombra?
+
 ## 0. Qué es y objetivo
 Herramienta para que el vendedor saque una **foto del ambiente** del cliente y vea el **piso Pacific elegido instalado**, fotorrealista y **fiel al producto exacto** (color, veta, tamaño/dirección de tabla), integrando la luz/sombras/perspectiva reales. Ruta `/visualizador`. Objetivo del dueño: **la mejor calidad del mundo** (costo no es límite).
 
 ## 1. Estado actual (qué funciona hoy)
-Flujo del vendedor: **foto → elegir diseño → marcar el piso (pincel/Detectar) → Proyectar → ajustar (4 esquinas, dirección, tamaño de tabla, brillo) → ✨ Renderizar (opcional, ~40-90s) → comparar (slider) → compartir**.
+Flujo del vendedor: **foto → elegir diseño → marcar el piso (pincel/Detectar) → Proyectar → 📐 Perspectiva automática (opcional, profundidad) → ajustar (4 esquinas, dirección, tamaño de tabla, brillo, perspectiva, integrar luz) → ✨ Renderizar (opcional, job server-side) → comparar (slider) → compartir**.
 
 Dos modos (toggle "Textura real / IA rápida", solo piso):
 - **Textura real (principal):** proyección WebGL de la textura real del producto + mapa de luz + biseles PBR + brillo. Es LOCAL (gratis, instantáneo).
@@ -23,12 +48,12 @@ Dos modos (toggle "Textura real / IA rápida", solo piso):
 - **`dashboard-app/src/components/FloorPainter.tsx`** — pincel raster para marcar el piso (+ botón Detectar).
 - **`dashboard-app/src/lib/toneTransfer.ts`** — `combineRelight` (color proyección + luz render), `applyToneTransfer`, `floorStats`.
 - **`dashboard-app/src/pages/VisualizadorPage.tsx`** — la página (flujo, toggle modo, proyector, renderizar, comparador slider).
-- **`integrations/replicate-visualizador.mjs`** — Replicate: `inpaintFloor` (FLUX Fill, IA rápida), `autoSurfaceMask` (grounded_sam), `refineRender` (magic-image-refiner), `runPrediction` (create+poll con reintento por throttle), `latestVersion`, `urlToDataUri`.
+- **`integrations/replicate-visualizador.mjs`** — Replicate: `inpaintFloor` (FLUX Fill, IA rápida), `autoSurfaceMask` (grounded_sam), `refineRender` (magic-image-refiner), `depthMap` (Depth Anything v2, perspectiva auto), `runPrediction` (create+poll con reintento por throttle), `latestVersion`, `urlToDataUri`.
 - **`integrations/gemini-image.mjs`** — Gemini 2.5 Flash Image (modo IA viejo).
 - **`config/visualizador-prompts.js`** — prompts de la IA rápida.
 - **`data/visualizador-textures/`** — **9 texturas reales HD** (fotos del producto del dueño, ~2256px) + `manifest.json` (id, serie H2O/Madera, size_mm, bevel, rgb stats). Servidas en **`/vis-tex/<id>.jpg`** (ruta estática en `server.js`).
 - **`data/visualizador-catalogo.json`** — swatches viejos (solo paredes AcuDesign ahora).
-- **server.js endpoints:** `GET /api/visualizador/catalogo` (pisos del manifest + paredes del catálogo viejo, con flags `configured`/`inpaint`), `POST /api/visualizador/render` (IA Gemini), `POST /api/visualizador/render-mask` (FLUX Fill), `POST /api/visualizador/auto-mask`, `POST /api/visualizador/refine` (magic-image-refiner).
+- **server.js endpoints:** `GET /api/visualizador/catalogo` (pisos del manifest + paredes del catálogo viejo, con flags `configured`/`inpaint`), `POST /api/visualizador/render` (IA Gemini), `POST /api/visualizador/render-mask` (FLUX Fill), `POST /api/visualizador/auto-mask`, `POST /api/visualizador/auto-perspective` (Depth Anything v2 → mapa de profundidad para el horizonte), `POST /api/visualizador/refine-start` + `GET /api/visualizador/refine-job/:id` (render como job server-side, sobrevive pantalla apagada), `POST /api/visualizador/refine` (viejo, síncrono — sin uso en la UI).
 - **9 diseños:** aspen_xl, natural_oak_xl, notte_xl, roble_clasico_xl, roble_eslavonia_xl (H2O, bisel suave) · kitsilano, roble_handsculped, roble_veta_tallada, verona (Madera, bisel marcado).
 
 ## 4. Correr y testear
@@ -47,19 +72,19 @@ ipconfig getifaddr en0    # ⚠️ la IP CAMBIA con el WiFi — dársela al due�
 - HEIC del iPhone: convertir con `sips -s format jpeg -Z 1568` antes.
 
 ## 5. PROBLEMAS ABIERTOS (lo que reportó el dueño, en orden de prioridad)
-1. **Luz exagerada** (mapa de luz demasiado fuerte): quema el sol (blanco) y mancha las sombras (oscuro), sobre todo en fotos con sol duro. **Ya se suavizó** el 12/8 (rango 0.68–1.32, aplicación 0.7 + combine ratio 0.78–1.28) pero **falta re-probar en el celular** y quizás bajar más. El mapa de luz sale de `uLum` (foto reducida a 40px = muy borroneada) normalizada por `uBase` (mediana de luminancia del piso).
-2. **Perspectiva: no se puede cubrir TODO el piso sin que pierda la forma.** Las 4 esquinas manuales no dan la convergencia correcta al punto de fuga sin estirar la textura. Se probó "punto de fuga" (estiraba las tablas) → revertido. **SOLUCIÓN EN CAMINO: perspectiva automática por profundidad** (ver §6).
-3. **Render (IA): veta no nítida + bordes/muebles difuminados + foto saturada/manchada.** El refinador (magic-image-refiner) difumina los encuentros con muebles y satura. Hay que: bajar más la luz, quizás bajar creativity, o mejorar el combine para no difuminar bordes (el blend de máscara).
-4. **El render tarda mucho (~40-96s) y si se apaga la pantalla del celular, se corta.** Es porque el render se dispara client-side (fetch desde el browser); iOS suspende la pestaña. **FIX pendiente: hacerlo un job server-side** (POST inicia → devuelve jobId → el cliente hace polling), así sobrevive a la pantalla apagada. Patrón: como `mp_pending_job` del cashflow.
+1. ⚠️ **Luz exagerada** — MITIGADO 12/8: ahora es un **slider "Integrar luz"** (uniform `uLight`, default ≈0,54) → el dueño lo ajusta en el celular en vez de adivinar un valor. Rango del clamp 0,62–1,38. El mapa de luz sale de `uLum` (foto reducida a 40px = muy borroneada) normalizada por `uBase` (mediana de luminancia del piso). **Falta re-probar en el celular** (quizás bajar el default).
+2. ✅ **Perspectiva: no cubría TODO el piso sin perder la forma** — RESUELTO 12/8 con **perspectiva automática por profundidad** (botón "📐 Perspectiva automática" → Depth Anything v2 → horizonte → quad con convergencia correcta) + **slider "Perspectiva"** manual. Ver el bloque de AVANCE arriba y §6. Descartado: punto de fuga manual (estiraba las tablas).
+3. **Render (IA): veta no nítida + bordes/muebles difuminados + foto saturada/manchada.** El refinador (magic-image-refiner) difumina los encuentros con muebles y satura. Hay que: bajar más la luz, quizás bajar creativity, o mejorar el combine para no difuminar bordes (el blend de máscara). **SIGUE ABIERTO — necesita iteración en el celular.**
+4. ✅ **El render tardaba ~40-96s y se cortaba con la pantalla apagada** — RESUELTO 12/8: job server-side (`refine-start` + `refine-job/:id` con polling). Verificado con un render de 155s. Ver el bloque de AVANCE arriba.
 
 ## 6. EL PLAN (investigación profunda ya hecha) — próximos pasos
 **Documento del plan (artifact):** https://claude.ai/code/artifact/54a5084c-f89c-4ed7-8f18-f504dca84dd7
 
 **Hallazgo clave (verificado vía patentes de Leap Tools/Roomvo — US 11.770.496 / 11.769.195 / 11.210.732):** el líder mundial **NO usa 3D ni IA generativa**. Usa EXACTAMENTE nuestro camino: segmentar piso 2D → **homografía** → **mapa de luz** (luminancia YUV de la foto **borroneada**, normalizada, **multiplicada** sobre la textura) → síntesis estocástica de tabla → blend de bordes. **Estamos al ~80%.**
 
-**Fase 1 (en curso):**
-- ✅ **Mapa de luz** (técnica de Roomvo) — HECHO (commit `3eeea83`), suavizado el 12/8. Re-probar/ajustar.
-- 🔬 **Perspectiva automática por profundidad** — Depth Anything v2 (`chenxwh/depth-anything-v2` en Replicate) da un **mapa de profundidad EXCELENTE** (probado, muy limpio). PERO el primer intento de ajustar el plano → homografía salió torcido (esquinas cercanas fuera de pantalla). **Necesita calibración:** FOV desconocido del celular, conversión disparidad→profundidad (`d=1/disp`), RANSAC robusto (no least-squares, la máscara con feather mete outliers), y validar en varias fotos. Script de validación en `scratchpad/depth-test.mjs` + el intento de plano en el historial. Objetivo: **auto-sembrar las 4 esquinas** desde el plano (siguen ajustables).
+**Fase 1 (HECHA):**
+- ✅ **Mapa de luz** (técnica de Roomvo) — HECHO (commit `3eeea83`), suavizado el 12/8, ahora con slider "Integrar luz".
+- ✅ **Perspectiva automática por profundidad** — HECHO 12/8. La clave que destrabó la "calibración": **NO hace falta el FOV.** En un plano, la disparidad (Depth Anything v2, `chenxwh/depth-anything-v2`) es **lineal con la fila de la imagen** → se ajusta `disp = a·fila + b` sobre las filas del piso (máscara) y se **extrapola a disp=0 → fila del horizonte**. Con el horizonte + el centro de fuga (centroide x del piso), el quad se construye con la convergencia geométricamente correcta (esquinas cercanas → esquinas lejanas apuntando al punto de fuga V=(cx,yH)). NO se reconstruye 3D ni se resuelve homografía por RANSAC — es 1 regresión lineal robusta. Validado offline (overlay pega en el zócalo) y en el navegador. Implementación: `horizonFromDepthMask` + `perspectiveQuad` en `FloorProjector.tsx`; endpoint `auto-perspective` en `server.js`; `depthMap` en `replicate-visualizador.mjs`. **Afinar:** el centro de fuga por centroide se sesga si el piso es asimétrico (pasaje/opening) → el dueño corrige con el slider "Perspectiva" o arrastrando; a futuro estimar cx por convergencia de los bordes izq/der del piso.
 
 **Fase 2 (mejor que Roomvo, requiere GPU propio):**
 - **Descomposición intrínseca** (Careaga & Aksoy — `compphoto/Intrinsic`, open weights, "Colorful Diffuse" TOG'24): separar la foto en **albedo + sombreado coloreado real** → `luz real × nuevo piso` → integración física perfecta (reemplaza el mapa de luz aproximado). Correr en Modal o deploy custom en Replicate.
@@ -72,7 +97,7 @@ ipconfig getifaddr en0    # ⚠️ la IP CAMBIA con el WiFi — dársela al due�
 ## 7. Modelos/APIs (con qué corre cada cosa)
 | Para | Modelo | Dónde |
 |---|---|---|
-| Profundidad (perspectiva auto) | `chenxwh/depth-anything-v2` | Replicate ✅ probado |
+| Profundidad (perspectiva auto) | `chenxwh/depth-anything-v2` | Replicate ✅ **en uso** (`auto-perspective`) |
 | Máscara auto | `schananas/grounded_sam` | Replicate ✅ (en uso) |
 | IA rápida (inpaint) | `black-forest-labs/flux-fill-pro` | Replicate ✅ (en uso) |
 | Render/refinado | `batouresearch/magic-image-refiner` | Replicate ✅ (en uso; difumina) |
