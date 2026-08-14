@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { getJSON } from "@/lib/api"
 import { FloorPainter, type FloorPainterHandle } from "@/components/FloorPainter"
 import { FloorProjector, type FloorProjectorHandle } from "@/components/FloorProjector"
-import { applyToneTransfer, combineRelight } from "@/lib/toneTransfer"
+import { applyToneTransfer } from "@/lib/toneTransfer"
 
 // Visualizador de Ambientes (spike): el vendedor saca una foto del ambiente del cliente y
 // elige un diseño. Para PISO usa inpainting (pinta el piso con el dedo → se repinta solo esa
@@ -178,46 +178,6 @@ export default function VisualizadorPage() {
     a.href = src; a.download = "ambiente-pacific.jpg"; a.click()
   }
 
-  // "Renderizar": toma el render proyectado (canvas) y le suma realismo fotográfico (ControlNet).
-  // Corre como JOB en el server (start + polling) → si se apaga la pantalla del celular el trabajo
-  // igual termina en el server y el resultado se recupera al despertar (antes el fetch se cortaba).
-  async function renderizar() {
-    const src = projectorRef.current?.getResult()
-    if (!src) return
-    setLoading(true); setError(null); setRender(null); setSlider(50)
-    try {
-      const s = await fetch("/api/visualizador/refine-start", {
-        method: "POST", credentials: "include",
-        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ imagen: src }),
-      })
-      const sd = await s.json().catch(() => null)
-      if (!s.ok || !sd?.ok) throw new Error(sd?.error || `error ${s.status}`)
-      const jobId = sd.jobId as string
-      // Polling hasta que el job termine (máx ~4 min). Si la pestaña se suspende, al reactivarse
-      // retoma el polling y el job ya está listo en el server.
-      let data: { imagen: string; ms: number } | null = null
-      for (let i = 0; i < 80; i++) {
-        await new Promise((r) => setTimeout(r, 3000))
-        const g = await fetch(`/api/visualizador/refine-job/${jobId}`, { credentials: "include" })
-        const gd = await g.json().catch(() => null)
-        if (gd?.status === "done") { data = { imagen: gd.imagen, ms: gd.ms }; break }
-        if (gd?.status === "error") throw new Error(gd.error || "no se pudo renderizar")
-      }
-      if (!data) throw new Error("el render tardó demasiado")
-      // Combine: color/veta EXACTOS de la proyección (el producto real) + iluminación del render de
-      // IA (sombras/luz/reflejos). Así el render aporta realismo sin cambiar el color del piso.
-      let imagen = data.imagen
-      if (projMask && src) {
-        try { imagen = await combineRelight(src, imagen, projMask) }
-        catch { /* si falla, mostramos el render tal cual */ }
-      }
-      setRender({ imagen, ms: data.ms, modelo: "render" })
-      setTimeout(() => document.getElementById("vis-resultado")?.scrollIntoView({ behavior: "smooth" }), 100)
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "no se pudo renderizar")
-    } finally { setLoading(false) }
-  }
-
   // Modo textura: capturar la máscara pintada y pasar al proyector.
   function proyectar() {
     const m = painterRef.current?.getMask()
@@ -249,6 +209,11 @@ export default function VisualizadorPage() {
       {/* 1 · Foto */}
       <section className="space-y-2">
         <div className="text-sm font-medium">1 · Foto del ambiente</div>
+        <p className="text-xs text-muted-foreground">
+          📸 Mejores resultados con un <b>ambiente despejado</b> (sin muchos muebles), <b>luz pareja</b> (sin sol
+          fuerte ni sombras marcadas) y el <b>piso bien visible</b>, sacada de pie y derecha. Pasillos angostos o
+          fotos muy anguladas rinden peor.
+        </p>
         <input ref={fileRef} type="file" accept="image/*" capture="environment" hidden onChange={onPick} />
         {foto ? (
           <div className="relative">
@@ -312,16 +277,11 @@ export default function VisualizadorPage() {
                   {depthLoading ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Calculando perspectiva… (~10 s)</> : <>📐 Perspectiva automática {depth ? "✓" : ""}</>}
                 </Button>
               )}
-              <Button className="w-full h-12" disabled={loading} onClick={renderizar}>
-                {loading ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Renderizando… (~1 min)</> : <>✨ Renderizar (realismo fotográfico)</>}
+              <Button className="w-full h-12" onClick={() => compartir(projectorRef.current?.getResult() ?? undefined)}>
+                <Share2 className="h-4 w-4 mr-1" /> Compartir
               </Button>
-              <div className="grid grid-cols-2 gap-2">
-                <Button variant="outline" className="h-11" onClick={() => setProjMask(null)}>Volver a marcar</Button>
-                <Button variant="outline" className="h-11" onClick={() => compartir(projectorRef.current?.getResult() ?? undefined)}>
-                  <Share2 className="h-4 w-4 mr-1" /> Compartir vista previa
-                </Button>
-              </div>
-              <p className="text-xs text-muted-foreground">💡 Ajustá esquinas/dirección/tamaño, después tocá <b>Renderizar</b> para el realismo. Cambiá el diseño arriba para probar otro piso con el mismo marcado.</p>
+              <Button variant="outline" className="w-full h-11" onClick={() => setProjMask(null)}>Volver a marcar</Button>
+              <p className="text-xs text-muted-foreground">💡 Ajustá las esquinas, dirección, tamaño y luz hasta que calce. Cambiá el diseño arriba para probar otro piso con el mismo marcado.</p>
             </>
           ) : (
             <>

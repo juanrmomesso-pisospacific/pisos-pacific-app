@@ -138,7 +138,7 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
   const [dir, setDir] = useState<Dir>("vertical")
   const [size, setSize] = useState(50)          // 0..100 → tamaño de tabla (más = tablas más chicas)
   const [gloss, setGloss] = useState(serie === "Madera" ? 10 : 20)   // brillo/reflejo bajo por defecto (el reflejo fuerte manchaba)
-  const [light, setLight] = useState(25)        // 0..100 → mapa de luz SUAVE por defecto (antes 60 horneaba sombras = "manchas")
+  const [light, setLight] = useState(38)        // 0..100 → mapa de luz SUAVE (blur 16px) → degradé que "apoya" el piso sin manchar
   // Horizonte (fila 0..1) y centro de fuga x: parametrizan la perspectiva. Cuando existen, el quad se
   // construye con la convergencia CORRECTA (esquinas lejanas apuntando al punto de fuga del piso).
   const [persp, setPersp] = useState<{ yH: number; cx: number } | null>(null)
@@ -184,8 +184,9 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
         gl.uniform1i(gl.getUniformLocation(prog, name), unit)
       }
       mkTex(photo, 0, "uPhoto"); mkTex(mask, 1, "uMask"); mkTex(wood, 2, "uWood", true)
-      // Luz difusa: foto muy reducida (=borroneada) → sólo lleva sombras/luz amplias, no la trama del piso.
-      const blur = document.createElement("canvas"); blur.width = 40; blur.height = Math.max(1, Math.round(40 * H / W))
+      // Luz difusa: foto MUY reducida (=muy borroneada) → sólo el degradé AMPLIO de luz (cerca/lejos,
+      // ventana), NO las sombras locales de muebles que aparecían como "manchas". 16px = suave de verdad.
+      const blur = document.createElement("canvas"); blur.width = 16; blur.height = Math.max(1, Math.round(16 * H / W))
       const bx = blur.getContext("2d")!; bx.imageSmoothingEnabled = true; bx.drawImage(photo, 0, 0, blur.width, blur.height)
       const blurImg = new Image(); await new Promise<void>((r) => { blurImg.onload = () => r(); blurImg.src = blur.toDataURL() })
       mkTex(blurImg, 3, "uLum")
