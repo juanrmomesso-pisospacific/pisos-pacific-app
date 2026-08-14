@@ -415,6 +415,9 @@ function LeadDetailSheet({ lead, onClose, convId, leadQuotes }: { lead: Lead | n
             <DetailRow label="Email"    value={lead.email ?? "—"} />
             <DetailRow label="Teléfono" value={lead.phone ?? "—"} />
             <DetailRow label="Dirección / obra" value={lead.address ?? "—"} />
+            {lead.postal_code && (
+              <DetailRow label="Código postal" value={lead.postal_code} />
+            )}
             <DetailRow label="Vendedor" value={lead.assigned_seller || "Sin asignar"} />
             {lead.needs_placement != null && (
               <DetailRow label="Colocación" value={lead.needs_placement ? "Sí" : "No"} />

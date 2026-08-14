@@ -48,14 +48,18 @@ function parseFramerForm(text) {
   if (!email) return null;
   const m2 = parseFloat(grab('M2').replace(',', '.')) || null;
   const radio = grab('Radio');
+  // El form web manda "codigo_postal: 1062" (defensivo con variantes por si cambia la etiqueta).
+  const postal = grab('codigo_postal') || grab('Codigo Postal') || grab('Código Postal') || grab('CP');
+  const bits = [m2 ? `${m2}m²` : '', radio || '', postal ? `CP ${postal}` : ''].filter(Boolean);
   return {
     name: grab('Nombre') || email,
     email,
     phone: grab('Telefono') || grab('Teléfono') || '',
     address: grab('Direccion') || grab('Dirección') || '',
     approx_m2: m2,
+    postal_code: postal,
     needs_placement: radio ? !/sin\s+colocaci/i.test(radio) : null,
-    notes: `Formulario web — ${m2 ? m2 + 'm² · ' : ''}${radio || ''}`.trim(),
+    notes: `Formulario web — ${bits.join(' · ')}`.trim(),
   };
 }
 
@@ -107,7 +111,7 @@ export async function syncGmailLeads(db, save, customQuery) {
         id: `lead-email-${msg.id.slice(0, 12)}`,
         name: contact.name, email: contact.email, phone: form?.phone || '',
         source: form ? 'Web' : 'Email',
-        address: form?.address || '', approx_m2: form?.approx_m2 ?? null,
+        address: form?.address || '', postal_code: form?.postal_code || '', approx_m2: form?.approx_m2 ?? null,
         needs_placement: form?.needs_placement ?? null, interested_products: [],
         notes: form ? form.notes : `Email: ${subject} — ${body.slice(0, 180)}`,
         status: 'New', assigned_seller: '', created_at: ts, last_touch_at: ts,

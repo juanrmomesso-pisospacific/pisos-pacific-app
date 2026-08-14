@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react"
-import { Trash2, Sparkles, AlertTriangle } from "lucide-react"
+import { Trash2, Sparkles, AlertTriangle, Replace } from "lucide-react"
 import { FormSheet, FieldLabel } from "./FormSheet"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -53,6 +53,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const [paymentTerms, setPaymentTerms] = useState<string>(editQuote?.payment_terms ?? "Anticipo 80% · Conforme 20%")
   const [hasIva, setHasIva] = useState<boolean>(editQuote?.has_iva ?? true)   // las cotizaciones salen siempre con IVA por defecto
   const [items, setItems] = useState<LineItem[]>(editItems)
+  const [changingIdx, setChangingIdx] = useState<number | null>(null)  // ítem cuyo diseño se está reemplazando
   const [zoned, setZoned] = useState<boolean>(editQuote?.zoned ?? false)
   const [zones, setZones] = useState<string[]>(() => {
     const zs = [...new Set(editItems.map((i) => i.zone).filter(Boolean) as string[])]
@@ -95,6 +96,16 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
     if (!p) return
     // Costo BLOQUEADO al momento de agregar (snapshot del catálogo) → margen estable.
     setItems(prev => [...prev, { product_id: p.id, sku: p.sku, description: p.name, quantity: 1, unit_price: p.price, cost: Number(p.cost) || 0, category: p.category, zone }])
+  }
+  // Reemplaza el DISEÑO/producto de un ítem SIN moverlo de lugar (mantiene cantidad, zona y
+// descuento). Actualiza identidad + precio/costo al del producto nuevo (snapshot del catálogo).
+  function changeProduct(idx: number, productId: string) {
+    const p = products.find(x => x.id === productId)
+    if (!p) return
+    setItems(prev => prev.map((it, i) => i === idx
+      ? { ...it, product_id: p.id, sku: p.sku, description: p.name, unit_price: p.price, cost: Number(p.cost) || 0, category: p.category }
+      : it))
+    setChangingIdx(null)
   }
   function addZone() { setZones(prev => [...prev, `Zona ${prev.length + 1}`]) }
   function renameZone(idx: number, name: string) {
@@ -166,6 +177,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   }
   function removeItem(idx: number) {
     setItems(items.filter((_, i) => i !== idx))
+    setChangingIdx(null)
   }
 
   async function submit() {
@@ -236,8 +248,16 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
             <div className="text-sm truncate">{it.description}</div>
             <div className="text-[10px] text-muted-foreground tabular">{it.sku}</div>
           </div>
+          <Button type="button" size="icon" variant="ghost" className="h-8 w-8 shrink-0" title="Cambiar diseño (mantiene el lugar y la cantidad)" onClick={() => setChangingIdx(changingIdx === idx ? null : idx)}><Replace className="h-3.5 w-3.5" /></Button>
           <Button type="button" size="icon" variant="ghost" className="h-8 w-8 shrink-0" onClick={() => removeItem(idx)}><Trash2 className="h-3.5 w-3.5" /></Button>
         </div>
+        {changingIdx === idx && (
+          <div className="rounded-md border border-dashed border-border p-2 bg-muted/30 space-y-1">
+            <div className="text-[10px] uppercase tracking-wide text-muted-foreground">Cambiar diseño por…</div>
+            <SearchPicker items={productPickerItems} placeholder="Buscar otro piso o diseño…" onPick={(id) => changeProduct(idx, id)} />
+            <button type="button" className="text-[11px] text-muted-foreground hover:text-foreground" onClick={() => setChangingIdx(null)}>cancelar</button>
+          </div>
+        )}
         {isFloor && (
           <div className="flex items-center justify-between text-[11px] text-muted-foreground tabular -mt-1">
             <span>Stock: <span className="text-foreground">{stock}</span> · comprometido: <span className="text-amber-700">{reserved}</span> · disponible: <span className={available <= 0 ? "text-destructive font-medium" : available <= 5 ? "text-amber-600 font-medium" : "text-foreground"}>{available}</span></span>

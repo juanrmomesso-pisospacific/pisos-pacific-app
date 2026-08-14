@@ -31,6 +31,7 @@ export type Lead = {
   last_touch_at: string
   // Web form (pisospacific.com/cotiza) — only set when source === "Web"
   address?: string
+  postal_code?: string
   approx_m2?: number
   needs_placement?: boolean
 }
