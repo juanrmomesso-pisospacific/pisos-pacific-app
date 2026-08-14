@@ -3,6 +3,30 @@
 > **Para la próxima sesión de Claude.** Este archivo tiene TODO el estado del visualizador de pisos.
 > Leelo entero antes de tocar nada. Branch: `feature/visualizador-spike`. Última actualización: 12-ago-2026.
 
+> **DECISIÓN 14/8 — ENFOQUE "FOTOS FÁCILES" (del dueño, tras ver resultados en fotos difíciles):**
+> El dueño probó con fotos difíciles (pasillo angosto con luz dura, ambientes con muebles) y el
+> resultado era **inadmisible para la marca**: el piso quedaba "pegado/fotomontaje" o con "manchas
+> negras", y el render de IA curvaba las tablas ("acordeón"). Diagnóstico y arreglos:
+> - **CAUSA de las "manchas": 3 efectos de realismo demasiado fuertes** (repro en cocina con banquetas):
+>   mapa de luz que horneaba sombras/hotspots reales, brillo/reflejo, y AO (sombra de contacto) que
+>   hacía un halo oscuro alrededor de CADA pata de mueble. Bajados los defaults + AO suave (commit a05cee2).
+> - **CAUSA del "acordeón": el paso de IA "Renderizar" (magic-image-refiner)** re-dibujaba el piso y
+>   curvaba las tablas rectas. **SACADO** — la proyección WebGL limpia es ahora el resultado final
+>   (botón → "Compartir"). Los endpoints `refine*` del server quedan inertes.
+> - **Tensión de fondo (honestidad técnica): el mapa de luz crudo o mete manchas (luz alta) o queda
+>   plano/pegado (luz baja).** El punto justo es JUSTO lo difícil de Roomvo. Mitigado suavizando el blur
+>   del mapa de luz (40px→16px): captura sólo el degradé amplio (que "apoya" el piso) sin las sombras
+>   locales (manchas). Default de luz 38.
+> - **DECISIÓN: scope a fotos fáciles** (ambiente despejado, luz pareja, piso visible, foto derecha) —
+>   ahí el resultado es digno. Guía de foto agregada en el paso 1. Pasillos/luz dura/clutter quedan FUERA.
+> - **Aprendizaje de proceso (mío): NO reiniciar el server viejo.** El dueño probó 2 días con un server
+>   que arrancó ANTES de los endpoints nuevos → auto-perspective y render daban 404 ("hacía lo mismo" /
+>   "error 404") y su veredicto negativo fue sobre features que ni corrían. SIEMPRE reiniciar el server
+>   de prueba tras cambiar server.js (ver §4). Commit del enfoque: e45bca8.
+> - **Pendiente si el dueño aprueba el caso fácil:** afinar variación de tono entre tablas (a veces una
+>   columna sale más oscura = "raya"). Si NO aprueba ni el caso fácil → evaluar Fase 2 (relighting real,
+>   GPU) o pausar. Fase 2 = descomposición intrínseca (albedo+sombra real) para manejar fotos difíciles.
+>
 > **AVANCE 12/8 (tarde) — PERSPECTIVA AUTOMÁTICA POR PROFUNDIDAD (Fase 1 headline) + 2 problemas más:**
 > - ✅ **Perspectiva automática (problema #2 RESUELTO).** Botón **"📐 Perspectiva automática"** → `POST
 >   /api/visualizador/auto-perspective` (Depth Anything v2 en Replicate, ~3-10s) devuelve el mapa de
