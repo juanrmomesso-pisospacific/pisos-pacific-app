@@ -61,9 +61,10 @@ void main(){
   // realce de saturación (compensa el lavado del mipmap → colores más ricos, menos grisáceo)
   float wg = dot(wood, vec3(0.3333));
   wood = clamp(wg + (wood - wg) * 1.14, 0.0, 1.0);
-  // sombra de contacto (AO) en los bordes del piso (junto a paredes/muebles) → "apoyado", no pegado
+  // sombra de contacto (AO) SUTIL en los bordes del piso → "apoyado" sin halos oscuros marcados
+  // alrededor de cada pata de mueble (antes 0.72 = halos negros = "manchas" que no se entendían).
   float mb = texture2D(uMaskB, uv).r;
-  wood *= mix(0.72, 1.0, smoothstep(0.35, 0.95, mb));
+  wood *= mix(0.88, 1.0, smoothstep(0.35, 0.95, mb));
   // MAPA DE LUZ (técnica del líder Roomvo/Leap Tools): luminancia de la foto MUY borroneada (uLum,
   // sin la trama del piso viejo) NORMALIZADA al promedio del piso → integra las sombras/luz reales de
   // la habitación (gradiente de ventanas, sombras) SIN oscurecer ni aclarar el color del producto.
@@ -136,8 +137,8 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
   const [quad, setQuad] = useState<Pt[] | null>(null)
   const [dir, setDir] = useState<Dir>("vertical")
   const [size, setSize] = useState(50)          // 0..100 → tamaño de tabla (más = tablas más chicas)
-  const [gloss, setGloss] = useState(serie === "Madera" ? 30 : 55)   // brillo/reflejo (H2O más satinado)
-  const [light, setLight] = useState(60)        // 0..100 → fuerza del mapa de luz (uLight = light/100*0.9)
+  const [gloss, setGloss] = useState(serie === "Madera" ? 10 : 20)   // brillo/reflejo bajo por defecto (el reflejo fuerte manchaba)
+  const [light, setLight] = useState(25)        // 0..100 → mapa de luz SUAVE por defecto (antes 60 horneaba sombras = "manchas")
   // Horizonte (fila 0..1) y centro de fuga x: parametrizan la perspectiva. Cuando existen, el quad se
   // construye con la convergencia CORRECTA (esquinas lejanas apuntando al punto de fuga del piso).
   const [persp, setPersp] = useState<{ yH: number; cx: number } | null>(null)
