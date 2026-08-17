@@ -102,10 +102,10 @@ export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onO
       caja_name: caja?.name ?? null,
       category: v.transfer ? (v.concept.trim() || "Fuera del P&L") : (v.category || null),
       subcategory: v.transfer ? null : (v.subcategory || null),
-      counterparty: v.counterparty || null,
-      counterparty_type: v.flow === "Ingreso" ? "client" : "supplier",
-      client_id: v.client_id || null,
-      supplier_id: v.supplier_id || null,
+      counterparty: v.transfer ? null : (v.counterparty || null),
+      counterparty_type: v.transfer ? null : (v.flow === "Ingreso" ? "client" : "supplier"),
+      client_id: v.transfer ? null : (v.client_id || null),
+      supplier_id: v.transfer ? null : (v.supplier_id || null),
       description: v.description,
       sale_ref: null,
       currency: v.amount_usd && !v.amount_ars ? "USD" : "ARS",
@@ -159,7 +159,7 @@ export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onO
 
       {/* Movimiento interno / transferencia: NO es gasto ni cobro → fuera del P&L (la caja igual lo cuenta) */}
       <label className="flex items-start gap-2 text-sm cursor-pointer">
-        <input type="checkbox" className="mt-0.5" checked={v.transfer} onChange={(e) => patch({ transfer: e.target.checked })} />
+        <input type="checkbox" className="mt-0.5" checked={v.transfer} onChange={(e) => patch({ transfer: e.target.checked, ...(e.target.checked ? { counterparty: "", supplier_id: "", client_id: "" } : {}) })} />
         <span>
           <b>Movimiento interno / transferencia (fuera del P&amp;L)</b>
           <FieldHint>No es {v.flow === "Egreso" ? "un gasto" : "un cobro"}: sale del P&amp;L pero sigue contando para el saldo de la caja (ej. depositar plata en la cuenta para un giro al exterior). Para transferencias entre cuentas, cargá también la otra pata.</FieldHint>
@@ -212,6 +212,7 @@ export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onO
         </div>
       )}
 
+      {!v.transfer && (
       <div>
         <FieldLabel>{v.flow === "Ingreso" ? "Cliente / origen" : "Proveedor / receptor"}</FieldLabel>
         {v.counterparty ? (
@@ -229,6 +230,7 @@ export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onO
           />
         )}
       </div>
+      )}
       <div>
         <FieldLabel>Descripción</FieldLabel>
         <Input value={v.description} onChange={(e) => patch({ description: e.target.value })} />
