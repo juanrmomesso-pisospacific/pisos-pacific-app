@@ -108,8 +108,11 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   const transferChanged = transfer !== !!mov?.transfer
   const categoryChanged = (v.category !== (mov?.category || "")) || (v.subcategory !== (mov?.subcategory || ""))
   const fixChanged = amountChanged || flowChanged || cajaChanged || dateChanged
+  // Un movimiento ya marcado transferencia que TODAVÍA cuelga de un proveedor/cliente hay que
+  // poder limpiarlo re-guardando (una transferencia interna no es pago a nadie).
+  const transferNeedsClear = !!transfer && !!(mov?.counterparty || mov?.supplier_id || mov?.client_id)
   async function submit() {
-    if (!mov || (!v.counterparty && !fixChanged && !linkChanged && !transferChanged && !categoryChanged)) return
+    if (!mov || (!v.counterparty && !fixChanged && !linkChanged && !transferChanged && !categoryChanged && !transferNeedsClear)) return
     // Correcciones del movimiento (monto/flujo/caja/fecha) primero, en un solo PATCH.
     if (fixChanged) {
       const fix: Record<string, unknown> = {}
@@ -137,7 +140,10 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
     if (transfer) {
       await update.run("cashflow", mov.id, {
         transfer: true, needs_review: false, review_reason: null,
-        sale_ref: null, linked_sale_id: null, counterparty_type: null,
+        sale_ref: null, linked_sale_id: null,
+        // Movimiento interno: no es pago/cobro a nadie → sin contraparte (si no, el filtro por
+        // proveedor lo cuenta como pago a esa persona). El detalle queda en la descripción.
+        counterparty: null, counterparty_type: null, supplier_id: null, client_id: null,
         category: outNote.trim() || "Fuera del P&L", subcategory: null, expense_type: null,
       })
     } else if (transferChanged) {
