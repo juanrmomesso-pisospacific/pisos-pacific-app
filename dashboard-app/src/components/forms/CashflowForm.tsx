@@ -52,6 +52,8 @@ export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onO
     amount_usd: 0,
     amount_ars: 0,
     exchange_rate: 1425,
+    transfer: false,                 // movimiento interno / transferencia (fuera del P&L)
+    concept: "Transferencia entre cuentas",  // concepto cuando es transferencia (= category)
   })
   const patch = (p: Partial<typeof v>) => setV((prev) => ({ ...prev, ...p }))
 
@@ -98,8 +100,8 @@ export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onO
       flow: v.flow,
       caja_id: v.caja_id,
       caja_name: caja?.name ?? null,
-      category: v.category || null,
-      subcategory: v.subcategory || null,
+      category: v.transfer ? (v.concept.trim() || "Fuera del P&L") : (v.category || null),
+      subcategory: v.transfer ? null : (v.subcategory || null),
       counterparty: v.counterparty || null,
       counterparty_type: v.flow === "Ingreso" ? "client" : "supplier",
       client_id: v.client_id || null,
@@ -110,9 +112,10 @@ export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onO
       amount_ars: v.amount_ars || null,
       amount_usd: usd,
       exchange_rate: v.amount_ars && usd ? +(v.amount_ars / usd).toFixed(2) : null,
-      fixed_variable: v.flow === "Egreso" ? v.fixed_variable : null,
-      expense_type: v.flow === "Egreso" ? v.expense_type : null,
-      transfer: false,
+      // Transferencia/movimiento interno: fuera del P&L (sin tipo de gasto).
+      fixed_variable: v.flow === "Egreso" && !v.transfer ? v.fixed_variable : null,
+      expense_type: v.flow === "Egreso" && !v.transfer ? v.expense_type : null,
+      transfer: v.transfer,
       needs_review: false,
       review_reason: null,
     }
@@ -154,8 +157,24 @@ export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onO
         </select>
       </div>
 
+      {/* Movimiento interno / transferencia: NO es gasto ni cobro → fuera del P&L (la caja igual lo cuenta) */}
+      <label className="flex items-start gap-2 text-sm cursor-pointer">
+        <input type="checkbox" className="mt-0.5" checked={v.transfer} onChange={(e) => patch({ transfer: e.target.checked })} />
+        <span>
+          <b>Movimiento interno / transferencia (fuera del P&amp;L)</b>
+          <FieldHint>No es {v.flow === "Egreso" ? "un gasto" : "un cobro"}: sale del P&amp;L pero sigue contando para el saldo de la caja (ej. depositar plata en la cuenta para un giro al exterior). Para transferencias entre cuentas, cargá también la otra pata.</FieldHint>
+        </span>
+      </label>
+
+      {v.transfer && (
+        <div>
+          <FieldLabel>Concepto</FieldLabel>
+          <Input value={v.concept} onChange={(e) => patch({ concept: e.target.value })} placeholder="Ej. Transferencia entre cuentas / giro al exterior" />
+        </div>
+      )}
+
       {/* Egreso: Tipo de Gasto manda la cascada de categoría/subcategoría */}
-      {v.flow === "Egreso" ? (
+      {v.flow === "Egreso" && !v.transfer ? (
         <div className="grid grid-cols-2 gap-3">
           <div>
             <FieldLabel>Tipo de gasto (P&amp;L)</FieldLabel>
@@ -174,22 +193,24 @@ export function CashflowForm({ open, onOpenChange, cajas }: { open: boolean; onO
         </div>
       ) : null}
 
-      <div className="grid grid-cols-2 gap-3">
-        <div>
-          <FieldLabel>Categoría</FieldLabel>
-          <select value={v.category} onChange={(e) => patch({ category: e.target.value, subcategory: "" })} className={inputSel}>
-            <option value="">— Seleccionar —</option>
-            {catNames.map((c) => <option key={c} value={c}>{c}</option>)}
-          </select>
+      {!v.transfer && (
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <FieldLabel>Categoría</FieldLabel>
+            <select value={v.category} onChange={(e) => patch({ category: e.target.value, subcategory: "" })} className={inputSel}>
+              <option value="">— Seleccionar —</option>
+              {catNames.map((c) => <option key={c} value={c}>{c}</option>)}
+            </select>
+          </div>
+          <div>
+            <FieldLabel>Subcategoría</FieldLabel>
+            <select value={v.subcategory} onChange={(e) => patch({ subcategory: e.target.value })} className={inputSel} disabled={!v.category}>
+              <option value="">—</option>
+              {subs.map((s) => <option key={s} value={s}>{s}</option>)}
+            </select>
+          </div>
         </div>
-        <div>
-          <FieldLabel>Subcategoría</FieldLabel>
-          <select value={v.subcategory} onChange={(e) => patch({ subcategory: e.target.value })} className={inputSel} disabled={!v.category}>
-            <option value="">—</option>
-            {subs.map((s) => <option key={s} value={s}>{s}</option>)}
-          </select>
-        </div>
-      </div>
+      )}
 
       <div>
         <FieldLabel>{v.flow === "Ingreso" ? "Cliente / origen" : "Proveedor / receptor"}</FieldLabel>
