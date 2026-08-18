@@ -123226,11 +123226,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786903722827",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-16T18:08:41.249Z",
-      "last_message_preview": "Hola, quisiera asesoramiento para colocar piso de pvc en todo el depto, son 62 M2, me interesa el roble de eslavonia. Pasan a cotizar por el",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-16T18:08:41.249Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-18T22:13:28.029Z",
+      "last_message_preview": "Hola Diego cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-16T18:08:41.249Z",
+      "last_outbound_at": "2026-08-18T22:13:28.029Z"
     },
     {
       "id": "conv-email-1a00d243bf74",
@@ -135342,6 +135343,16 @@
       "ts": "2026-08-18T22:13:12.890Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4MjA3NjI1MjM5Nzc4NDozMjk2NjAxMzg3MTYyNjcxNTQ3NzM1NDc0NzE3OTA0MDc2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787091208608-r614",
+      "conversation_id": "conv-1786903722827-z906",
+      "direction": "out",
+      "body": "Hola Diego cómo estás?",
+      "ts": "2026-08-18T22:13:28.029Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk2NjAxNDE1MDg5MjE3NjkyMzQyODQ1OTg5ODczMjU0NAZDZD",
       "via": "ig-app"
     }
   ],
