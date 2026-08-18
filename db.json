@@ -123179,11 +123179,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786839957826",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-16T00:25:56.465Z",
-      "last_message_preview": "Hola ! Quisiera pedir un presupuesto ?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-16T00:25:56.465Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-18T22:13:02.454Z",
+      "last_message_preview": "Sii nos pasas m2 y que piso te gusto",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-16T00:25:56.465Z",
+      "last_outbound_at": "2026-08-18T22:13:02.454Z"
     },
     {
       "id": "conv-email-1a00861beb9a",
@@ -135302,6 +135303,36 @@
       "body": "✉️ Re: Presupuesto\n\n160 m2, en mastwich zona norte y si con colocación sería,gracias\r\n\r\nObtener Outlook para Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\nFrom: Pisos Pacific <info@pisospacific.com>\r\nSent: Tuesday, 18 August 2026 17:30:51\r\nTo: sabrilaudanza@hotmail.com <sabrilaudanza@hotmail.com>\r\nSubject: Re: Presupuesto\r\n\r\nHola Sabrina, ¡muchas gracias por tu consulta!\r\n\r\n¿Cuántos metros cuadrados necesitas cubrir?\r\n\r\nPor otro lado, si tenés dirección de entrega y si necesitan presupuestar colocación, pasame la información así te preparo el presupuesto preliminar.\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\n\r\n\r\n[Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087<https://wa.me/5491151750087>\r\ninfo@pisospacific.com<mailto:info@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
       "ts": "2026-08-18T21:51:22.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787091171965-igu4",
+      "conversation_id": "conv-1786839957826-wfr7",
+      "direction": "out",
+      "body": "Hola Paula",
+      "ts": "2026-08-18T22:12:51.404Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4MjA3NjI1MjM5Nzc4NDozMjk2NjAxMzQ3NTI3ODg4Mzk1MTczMDk3MjI5NDExOTQyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787091173885-ta16",
+      "conversation_id": "conv-1786839957826-wfr7",
+      "direction": "out",
+      "body": "Cómo estás?",
+      "ts": "2026-08-18T22:12:53.467Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4MjA3NjI1MjM5Nzc4NDozMjk2NjAxMzUxMzMzMzI0NDE1MDQ1MjY5MTMxODg2NTkyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787091182721-zmqb",
+      "conversation_id": "conv-1786839957826-wfr7",
+      "direction": "out",
+      "body": "Sii nos pasas m2 y que piso te gusto",
+      "ts": "2026-08-18T22:13:02.454Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4MjA3NjI1MjM5Nzc4NDozMjk2NjAxMzY3OTExOTU5MzM3NzEyNjI0OTcxOTEzNjI1NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
