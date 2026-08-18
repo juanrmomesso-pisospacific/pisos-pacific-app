@@ -27696,6 +27696,72 @@
       "quote_number": "A7846",
       "status": "DRAFT",
       "lead_id": "local-1787084291476-85r9y"
+    },
+    {
+      "id": "local-1787084442433-0r5kr",
+      "client_id": "",
+      "client_name": "Carolina Romaneli",
+      "client_dni": "",
+      "client_email": "caio.romanellib@gmail.com",
+      "client_phone": "",
+      "client_address": "José Manuel Estrada 1365, Martínez",
+      "internal_notes": "Formulario web — 100m² · Con Colocación",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Carolina - H2O",
+      "has_iva": true,
+      "price": 6558.2,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 100,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "total": 3800,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 100,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 1500,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 120,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 120,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "created_at": "2026-08-18T20:20:42.206Z",
+      "quote_number": "A5149",
+      "status": "DRAFT",
+      "lead_id": "lead-email-19fb38919e88"
     }
   ],
   "clients": [
@@ -116693,10 +116759,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 100m² · Con Colocación",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-07-30T14:58:53.000Z",
-      "last_touch_at": "2026-08-17T05:45:39.000Z"
+      "last_touch_at": "2026-08-18T20:20:42.503Z"
     },
     {
       "id": "lead-email-19fb490f2f8b",
@@ -141666,7 +141732,11 @@
       "1a00a87c35ab24bf",
       "1a00fae1db68135e",
       "1a014d02125cb8bf",
-      "1a015a23ed4c3446"
+      "1a015a23ed4c3446",
+      "1a01686ae91bcd59",
+      "1a016840d33f91d5",
+      "1a016836b2a15b4e",
+      "1a016822f2f0c7a1"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
