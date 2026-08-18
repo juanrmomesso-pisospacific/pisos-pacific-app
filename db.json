@@ -576,7 +576,7 @@
       "active": true,
       "margin": 170.5,
       "stock": 1314.95,
-      "reservedStock": 379,
+      "reservedStock": 579,
       "subLine": "Colección Madera",
       "shortName": "Roble Light Brushed 14/3mm x 19x190",
       "thicknessMm": 14,
@@ -738,7 +738,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1038.5953279999999,
-      "reservedStock": 3704.3,
+      "reservedStock": 3804.3,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1817,7 +1817,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 5707.5,
+      "reservedStock": 5907.5,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -1841,7 +1841,7 @@
       "active": true,
       "margin": 172.9,
       "stock": 0,
-      "reservedStock": 5358.03,
+      "reservedStock": 5458.03,
       "subLine": "Colocación Piso",
       "shortName": "Colocación Prefinished Sobre Manta",
       "thicknessMm": null,
@@ -2417,7 +2417,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 6443,
+      "reservedStock": 6803,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -27760,7 +27760,7 @@
       "discount_amount": 0,
       "created_at": "2026-08-18T20:20:42.206Z",
       "quote_number": "A5149",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "lead-email-19fb38919e88"
     },
     {
@@ -27827,7 +27827,7 @@
       "discount_amount": 990,
       "created_at": "2026-08-18T20:21:41.189Z",
       "quote_number": "A7886",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "lead-email-19fb38919e88"
     },
     {
@@ -27894,7 +27894,7 @@
       "discount_amount": 990,
       "created_at": "2026-08-18T20:22:05.356Z",
       "quote_number": "A7975",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "lead-email-19fb38919e88"
     },
     {
@@ -121742,14 +121742,15 @@
       "contact_name": "Carolina",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fb38919e88",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-17T05:45:39.000Z",
       "last_message_preview": "Hola! Cómo estás?\r\n\r\nQuería saber si habían podido armar un presupuesto aprox o si tienen un\r\nlocal que pueda ir a ver.\r\n\r\nGracias,\r\nCarolin",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-17T05:45:39.000Z",
-      "last_outbound_at": "2026-08-03T12:43:56.241Z"
+      "last_outbound_at": "2026-08-03T12:43:56.241Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fb490f2f8b",
@@ -122704,7 +122705,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a01181c115d",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-17T20:55:05.000Z",
       "last_message_preview": "Hola ,queríamos saber el precio del metro cuadrado de el prefinished,ese que te envié xx muchas gracias si tenés WhatsApp mejor\r\n\r\nObtener O",
       "email_subject": "Presupuesto",
@@ -139859,6 +139860,87 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 200,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-18T20:29:04.645Z",
+      "type": "quote_reserve",
+      "ref": "local-1787084442433-0r5kr",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-18T20:29:04.645Z",
+      "type": "quote_reserve",
+      "ref": "local-1787084442433-0r5kr",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-18T20:29:04.645Z",
+      "type": "quote_reserve",
+      "ref": "local-1787084442433-0r5kr",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 120,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-18T20:29:06.575Z",
+      "type": "quote_reserve",
+      "ref": "local-1787084501447-ibiau",
+      "product_id": "PROD-201",
+      "sku": "PROD-201",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-18T20:29:06.575Z",
+      "type": "quote_reserve",
+      "ref": "local-1787084501447-ibiau",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-18T20:29:06.575Z",
+      "type": "quote_reserve",
+      "ref": "local-1787084501447-ibiau",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 120,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-18T20:29:14.199Z",
+      "type": "quote_reserve",
+      "ref": "local-1787084525585-xohso",
+      "product_id": "PROD-201",
+      "sku": "PROD-201",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-18T20:29:14.199Z",
+      "type": "quote_reserve",
+      "ref": "local-1787084525585-xohso",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-18T20:29:14.199Z",
+      "type": "quote_reserve",
+      "ref": "local-1787084525585-xohso",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 120,
       "warehouse_id": "main"
     }
   ],
