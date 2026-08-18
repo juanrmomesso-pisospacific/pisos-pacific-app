@@ -121967,14 +121967,15 @@
       "contact_name": "clara lugones",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fb490f2f8b",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-03T23:19:38.000Z",
       "last_message_preview": "Muchas gracias!! El 3 ago 2026, a la(s) 19:23, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: ﻿ Hola clara, te comparto el presupuest",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-03T23:19:38.000Z",
-      "last_outbound_at": "2026-08-03T22:23:19.781Z"
+      "last_outbound_at": "2026-08-03T22:23:19.781Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fb5764798f",
