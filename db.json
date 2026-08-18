@@ -118362,7 +118362,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-08-17T20:55:05.000Z",
-      "last_touch_at": "2026-08-17T20:55:05.000Z"
+      "last_touch_at": "2026-08-18T21:51:22.000Z"
     },
     {
       "id": "lead-email-1a0149b4ca95",
@@ -122915,12 +122915,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a01181c115d",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-18T20:30:51.804Z",
-      "last_message_preview": "Hola Sabrina, ¡muchas gracias por tu consulta!\n\n¿Cuántos metros cuadrados necesitas cubrir?\n\nPor otro lado, si tenés dirección de entrega y ",
+      "unread_count": 1,
+      "last_message_at": "2026-08-18T21:51:22.000Z",
+      "last_message_preview": "160 m2, en mastwich zona norte y si con colocación sería,gracias\r\n\r\nObtener Outlook para Android<https://aka.ms/AAb9ysg>\r\n__________________",
       "email_subject": "Presupuesto",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-17T20:55:05.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-18T21:51:22.000Z",
       "last_outbound_at": "2026-08-18T20:30:51.804Z"
     },
     {
@@ -134939,6 +134939,14 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a016e3be9552bb2"
+    },
+    {
+      "id": "m-email-1a016db97363",
+      "conversation_id": "conv-email-1a01181c115d",
+      "direction": "in",
+      "body": "✉️ Re: Presupuesto\n\n160 m2, en mastwich zona norte y si con colocación sería,gracias\r\n\r\nObtener Outlook para Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\nFrom: Pisos Pacific <info@pisospacific.com>\r\nSent: Tuesday, 18 August 2026 17:30:51\r\nTo: sabrilaudanza@hotmail.com <sabrilaudanza@hotmail.com>\r\nSubject: Re: Presupuesto\r\n\r\nHola Sabrina, ¡muchas gracias por tu consulta!\r\n\r\n¿Cuántos metros cuadrados necesitas cubrir?\r\n\r\nPor otro lado, si tenés dirección de entrega y si necesitan presupuestar colocación, pasame la información así te preparo el presupuesto preliminar.\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\n\r\n\r\n[Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087<https://wa.me/5491151750087>\r\ninfo@pisospacific.com<mailto:info@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
+      "ts": "2026-08-18T21:51:22.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -141285,7 +141293,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-18T09:24:51.566Z",
     "gmail_seen_ids": [
-      "19eac2ef9e6863ab",
       "19ea8105edf58d61",
       "19ea6f729a53b727",
       "19e9205c64ef69c9",
@@ -142084,7 +142091,8 @@
       "1a015eccd5428811",
       "1a016025268a8b32",
       "1a0167297cd095b8",
-      "1a016b209b5205ee"
+      "1a016b209b5205ee",
+      "1a016db97363b3c4"
     ],
     "cash_sessions": {
       "1136982222": {
