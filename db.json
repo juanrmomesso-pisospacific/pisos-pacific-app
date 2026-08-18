@@ -28219,6 +28219,85 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a0167297cd0",
       "share_token": "497c1bbe8c9d9def1516d778"
+    },
+    {
+      "id": "local-1787090759669-2o3gq",
+      "client_id": "",
+      "client_name": "Juana Robredo",
+      "client_dni": "",
+      "client_email": "juanarobredom@gmail.com",
+      "client_phone": "",
+      "client_address": "Barrio Senderos 1 Pilar",
+      "internal_notes": "Email: Presupuesto Natural Oak de h2O — Hola, como estan? Me podrian pasar el presupuesto del Natural Oak y del Roble Clasico de la coleccion H2O para 70 metros?\r\nSin colocacion para una obra en Pilar.\r\nMuchas gracias \r\n",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización - H2O - Eslavonia XL Barrio Senderos 1 Pilar",
+      "has_iva": true,
+      "price": 3400.1,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 3 más",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 50,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "total": 1900,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 50,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 750,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 160,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 160,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-062",
+          "sku": "PROD-062",
+          "description": "M2 - Nylon Manta 200 Micrones",
+          "quantity": 1,
+          "unit_price": 0,
+          "cost": 1,
+          "category": "Extras",
+          "total": 0,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "created_at": "2026-08-18T22:05:59.242Z",
+      "quote_number": "A7483",
+      "status": "DRAFT",
+      "lead_id": "lead-email-19f865e86996"
     }
   ],
   "clients": [
@@ -116368,10 +116447,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 50m² · Con Colocación",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-07-21T20:29:29.000Z",
-      "last_touch_at": "2026-07-30T21:05:30.000Z"
+      "last_touch_at": "2026-08-18T22:05:59.521Z"
     },
     {
       "id": "lead-email-19f87811c947",
@@ -142428,7 +142507,8 @@
       "1a016947f19313ad",
       "1a01692322bc91bd",
       "1a01691d7113deb8",
-      "1a0168d52cbc1f75"
+      "1a0168d52cbc1f75",
+      "1a016e3be9552bb2"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
