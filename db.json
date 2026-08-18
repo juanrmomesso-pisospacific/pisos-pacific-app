@@ -27762,6 +27762,73 @@
       "quote_number": "A5149",
       "status": "DRAFT",
       "lead_id": "lead-email-19fb38919e88"
+    },
+    {
+      "id": "local-1787084501447-ibiau",
+      "client_id": "",
+      "client_name": "Carolina Romaneli",
+      "client_dni": "",
+      "client_email": "caio.romanellib@gmail.com",
+      "client_phone": "",
+      "client_address": "José Manuel Estrada 1365, Martínez",
+      "internal_notes": "Formulario web — 100m² · Con Colocación",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Carolina - Madera - Veta Tallada",
+      "has_iva": true,
+      "price": 12741.3,
+      "zoned": false,
+      "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-201",
+          "sku": "PROD-201",
+          "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed",
+          "quantity": 100,
+          "unit_price": 99,
+          "cost": 34.01,
+          "category": "Pisos de Madera",
+          "disc_value": 10,
+          "total": 9900,
+          "discount": 990,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 100,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 1500,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 120,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 120,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 990,
+      "discount_amount": 990,
+      "created_at": "2026-08-18T20:21:41.189Z",
+      "quote_number": "A7886",
+      "status": "DRAFT",
+      "lead_id": "lead-email-19fb38919e88"
     }
   ],
   "clients": [
@@ -117956,6 +118023,22 @@
       "address": "Obra Hurlingham",
       "created_at": "2026-08-18T20:18:11.115Z",
       "last_touch_at": "2026-08-18T20:18:21.964Z"
+    },
+    {
+      "id": "local-1787084498642-oqxsq",
+      "name": "Sol Mountford",
+      "phone": "1169249077",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "presupuesto sobre ceramico PB",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Vilahaus Pilar",
+      "created_at": "2026-08-18T20:21:38.427Z",
+      "last_touch_at": "2026-08-18T20:21:41.160Z"
     }
   ],
   "conversations": [
