@@ -123180,11 +123180,11 @@
       "linked_lead_id": "lead-instagram-1786839957826",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-18T22:13:02.454Z",
-      "last_message_preview": "Sii nos pasas m2 y que piso te gusto",
+      "last_message_at": "2026-08-18T22:13:12.890Z",
+      "last_message_preview": "Sino un contacto de WhatsApp y mañana te contactamos",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-16T00:25:56.465Z",
-      "last_outbound_at": "2026-08-18T22:13:02.454Z"
+      "last_outbound_at": "2026-08-18T22:13:12.890Z"
     },
     {
       "id": "conv-email-1a00861beb9a",
@@ -135332,6 +135332,16 @@
       "ts": "2026-08-18T22:13:02.454Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4MjA3NjI1MjM5Nzc4NDozMjk2NjAxMzY3OTExOTU5MzM3NzEyNjI0OTcxOTEzNjI1NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787091193318-epvn",
+      "conversation_id": "conv-1786839957826-wfr7",
+      "direction": "out",
+      "body": "Sino un contacto de WhatsApp y mañana te contactamos",
+      "ts": "2026-08-18T22:13:12.890Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4MjA3NjI1MjM5Nzc4NDozMjk2NjAxMzg3MTYyNjcxNTQ3NzM1NDc0NzE3OTA0MDc2OAZDZD",
       "via": "ig-app"
     }
   ],
