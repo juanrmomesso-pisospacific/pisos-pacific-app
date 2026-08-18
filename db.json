@@ -122743,7 +122743,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ffd083de90",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-14T13:46:30.000Z",
       "last_message_preview": "Hola\r\nMuchas gracias.\r\nNi bien pueda, les aviso y coordinamos.\r\nSlds\r\n\r\n\r\nEl vie, 14 de ago de 2026, 08:32, Pisos Pacific <info@pisospacific",
       "email_subject": "Consulta",
@@ -122961,13 +122961,14 @@
       "contact_name": "Theo Martin",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a016b209b52",
-      "status": "open",
-      "unread_count": 1,
+      "status": "closed",
+      "unread_count": 0,
       "last_message_at": "2026-08-18T21:05:54.000Z",
       "last_message_preview": "Estimados,\r\n\r\nMe dirijo a ustedes para hacerles llegar mi postulación, con el genuino\r\ninterés de formar parte de su equipo de diseño.\r\n\r\nMi",
       "email_subject": "Postulación – Diseñador",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-18T21:05:54.000Z"
+      "last_inbound_at": "2026-08-18T21:05:54.000Z",
+      "ignored": true
     }
   ],
   "messages": [
