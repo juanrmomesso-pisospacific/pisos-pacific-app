@@ -28216,8 +28216,9 @@
       "discount_amount": 0,
       "created_at": "2026-08-18T21:59:34.923Z",
       "quote_number": "A4300",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a0167297cd0"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a0167297cd0",
+      "share_token": "497c1bbe8c9d9def1516d778"
     }
   ],
   "clients": [
@@ -122946,11 +122947,12 @@
       "linked_lead_id": "lead-email-1a0167297cd0",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-18T19:56:26.000Z",
-      "last_message_preview": "Hola, como estan? Me podrian pasar el presupuesto del Natural Oak y del Roble Clasico de la coleccion H2O para 70 metros?\r\nSin colocacion pa",
+      "last_message_at": "2026-08-18T22:00:19.706Z",
+      "last_message_preview": "📄 Presupuesto NA4300 - Cotizacion Paz - H2O - Obra Pilar - Paz Caride.pdf",
       "email_subject": "Presupuesto Natural Oak de h2O",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-18T19:56:26.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-18T19:56:26.000Z",
+      "last_outbound_at": "2026-08-18T22:00:19.706Z"
     },
     {
       "id": "conv-email-1a016b209b52",
@@ -134925,6 +134927,16 @@
       "body": "✉️ Postulación – Diseñador\n\nEstimados,\r\n\r\nMe dirijo a ustedes para hacerles llegar mi postulación, con el genuino\r\ninterés de formar parte de su equipo de diseño.\r\n\r\nMi nombre es Theo Martin, soy Diseñador Industrial graduado de la UBA y\r\ncuento con experiencia en modelado 3D, prototipado y UX/UI. He seguido de\r\ncerca su trabajo y admiro profundamente la identidad visual y conceptual\r\nque imprimen en cada proyecto. Es por ello que me entusiasma la posibilidad\r\nde aportar mi criterio creativo, mi capacidad de propuesta y mis ganas de\r\nsumar ideas originales a un equipo con el que realmente me identifico.\r\n\r\nA lo largo de mi formación y experiencia profesional, desarrollé proyectos\r\nde producto desde la fase de conceptualización hasta su materialización\r\nfinal, buscando siempre un equilibrio entre la resolución técnica y una\r\nmirada estética propia. Creo firmemente que el diseño no solo resuelve\r\nproblemas, sino que construye identidad, y me encantaría contribuir a la\r\nsuya desde mi lugar.\r\n\r\nAdjunto mi Portfolio <https://www.behance.net/theomartin9> , CV y Carta de\r\npresentación para su consideración. Cuento con disponibilidad full time y\r\nplena disposición para sumarme a los desafíos que el equipo tenga por\r\ndelante.\r\n\r\nQuedo a su entera disposición para cualquier consulta o entrevista que\r\nconsideren pertinente.\r\n\r\nAgradezco de antemano el tiempo dedicado a revisar mi perfil.\r\n\r\nSaludos cordiales,\r\n\r\nTheo Martin",
       "ts": "2026-08-18T21:05:54.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787090419706-d7xx",
+      "conversation_id": "conv-email-1a0167297cd0",
+      "direction": "out",
+      "body": "Hola Paz, te comparto el presupuesto NA4300 adjunto. Cualquier consulta quedo a disposición.\n\n¡El valor del Natural Oak y del Roble Clásico es el mismo!\n\nSaludos,\n📄 Presupuesto NA4300 - Cotizacion Paz - H2O - Obra Pilar - Paz Caride.pdf",
+      "ts": "2026-08-18T22:00:19.706Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a016e3be9552bb2"
     }
   ],
   "templates": [
