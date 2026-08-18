@@ -123227,11 +123227,11 @@
       "linked_lead_id": "lead-instagram-1786903722827",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-18T22:14:00.557Z",
-      "last_message_preview": "Y si te parece ok el precio vamos con muestras y a tomar medidas al dpto",
+      "last_message_at": "2026-08-18T22:14:17.754Z",
+      "last_message_preview": "Si queres pásame un contacto de WhatsApp y mañana te contactamos",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-16T18:08:41.249Z",
-      "last_outbound_at": "2026-08-18T22:14:00.557Z"
+      "last_outbound_at": "2026-08-18T22:14:17.754Z"
     },
     {
       "id": "conv-email-1a00d243bf74",
@@ -135373,6 +135373,16 @@
       "ts": "2026-08-18T22:14:00.557Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk2NjAxNDc1MDkyMzMxMTgwNzI2NjU0ODYwNDczMTM5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787091258180-1bdq",
+      "conversation_id": "conv-1786903722827-z906",
+      "direction": "out",
+      "body": "Si queres pásame un contacto de WhatsApp y mañana te contactamos",
+      "ts": "2026-08-18T22:14:17.754Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk2NjAxNTA2ODE1NTAxMzM1NTYyMTg2OTgyMTEwMDAzMgZDZD",
       "via": "ig-app"
     }
   ],
