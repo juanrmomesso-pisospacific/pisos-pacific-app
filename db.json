@@ -122760,11 +122760,12 @@
       "linked_lead_id": "lead-email-1a01181c115d",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-17T20:55:05.000Z",
-      "last_message_preview": "Hola ,queríamos saber el precio del metro cuadrado de el prefinished,ese que te envié xx muchas gracias si tenés WhatsApp mejor\r\n\r\nObtener O",
+      "last_message_at": "2026-08-18T20:30:51.804Z",
+      "last_message_preview": "Hola Sabrina, ¡muchas gracias por tu consulta!\n\n¿Cuántos metros cuadrados necesitas cubrir?\n\nPor otro lado, si tenés dirección de entrega y ",
       "email_subject": "Presupuesto",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-17T20:55:05.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-17T20:55:05.000Z",
+      "last_outbound_at": "2026-08-18T20:30:51.804Z"
     },
     {
       "id": "conv-email-1a0149b4ca95",
@@ -122774,7 +122775,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0149b4ca95",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-18T11:21:55.000Z",
       "last_message_preview": "Formulario web — 200m² · Sin Colocación · CP 1669 · Del viso pilar",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -134711,6 +134712,15 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a01686ae91bcd59"
+    },
+    {
+      "id": "m-1787085051804-jq6f",
+      "conversation_id": "conv-email-1a01181c115d",
+      "direction": "out",
+      "body": "Hola Sabrina, ¡muchas gracias por tu consulta!\n\n¿Cuántos metros cuadrados necesitas cubrir?\n\nPor otro lado, si tenés dirección de entrega y si necesitan presupuestar colocación, pasame la información así te preparo el presupuesto preliminar.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-08-18T20:30:51.804Z",
+      "status": "sent",
+      "wa_id": "1a01691d7113deb8"
     }
   ],
   "templates": [
