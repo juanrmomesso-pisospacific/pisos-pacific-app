@@ -27601,6 +27601,46 @@
       "quote_number": "A1247",
       "status": "ACCEPTED",
       "sale_id": "local-sale-1786709462935-bjpa"
+    },
+    {
+      "id": "local-1787084219605-7tv6h",
+      "client_id": "",
+      "client_name": "María Florencia Pena",
+      "client_dni": "",
+      "client_email": "ffflorpena@gmail.com",
+      "client_phone": "",
+      "client_address": "25 de Mayo 1655, Venado Tuerto, Santa Fe.",
+      "internal_notes": "Email: Presupuesto Natural Oak de h2O — Hola, como estan? Me podrian pasar el presupuesto del Natural Oak y del Roble Clasico de la coleccion H2O para 70 metros?\r\nSin colocacion para una obra en Pilar.\r\nMuchas gracias \r\n",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Presupuesto p/Venado Tuerto",
+      "has_iva": true,
+      "price": 689.7,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+      "items": [
+        {
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+          "quantity": 15,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "total": 570,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "created_at": "2026-08-18T20:16:59.371Z",
+      "quote_number": "A3055",
+      "status": "DRAFT",
+      "lead_id": "lead-email-19fa98b77b2f"
     }
   ],
   "clients": [
@@ -116390,10 +116430,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 15m² · Sin Colocación",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-07-28T16:25:16.000Z",
-      "last_touch_at": "2026-08-15T00:44:44.000Z"
+      "last_touch_at": "2026-08-18T20:16:59.644Z"
     },
     {
       "id": "lead-instagram-1785267543222",
