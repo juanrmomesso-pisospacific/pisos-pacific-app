@@ -15166,6 +15166,138 @@
       "stock_reserved": true,
       "stock_deducted": false,
       "seller_name": "Victoria Gonzalez Collado"
+    },
+    {
+      "id": "local-sale-1787084086817-j719",
+      "quote_id": "local-1786047280009-mxrh9",
+      "quote_number": "A4116",
+      "title": "Cotización @maru.cosentino Escalera",
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 6 más",
+      "internal_notes": "",
+      "public_notes": "Presupuesto basado en foto. Se deben verificar medidas en obra",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mshygokp-lldf",
+      "client_name": "Arq. Maru Cosentino",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Pilar",
+      "contract_total": 1769.04,
+      "items": [
+        {
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+          "quantity": 5,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 15,
+          "total": 190,
+          "discount": 28.5,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-116",
+          "sku": "SERV-116",
+          "description": "Colocación Conjunto de Pedada/Frentin (Colección Madera)",
+          "quantity": 9,
+          "unit_price": 65.33,
+          "cost": 43.33,
+          "category": "Servicio",
+          "disc_kind": "amount",
+          "disc_value": 198,
+          "total": 587.97,
+          "discount": 198,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-118",
+          "sku": "SERV-118",
+          "description": "Colocación y Ajustes de Compensados y Descansos en Escalera",
+          "quantity": 5,
+          "unit_price": 95.33,
+          "cost": 73.33,
+          "category": "Servicio",
+          "disc_value": 5,
+          "total": 476.65,
+          "discount": 23.83,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "111223",
+          "sku": "111223",
+          "description": "Adhesivo Especial Para Escaleras 830",
+          "quantity": 7,
+          "unit_price": 25,
+          "cost": 10,
+          "category": "Extras",
+          "disc_value": 5,
+          "total": 175,
+          "discount": 8.75,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "1534",
+          "sku": "1534",
+          "description": "SERV - Ajuste Escalon a Filo",
+          "quantity": 14,
+          "unit_price": 15,
+          "cost": 0,
+          "category": "Servicio",
+          "disc_value": 5,
+          "total": 210,
+          "discount": 10.5,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 180,
+          "cost": 0,
+          "category": "Servicio",
+          "disc_value": 100,
+          "total": 180,
+          "discount": 180,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1784069148766-cotkf",
+          "sku": "PROD - 102984",
+          "description": "H2O HD - Nariz Volada - Canada - Roble Clásico XL",
+          "quantity": 14,
+          "unit_price": 30,
+          "cost": 11,
+          "category": "Pisos H2O",
+          "disc_value": 5,
+          "total": 420,
+          "discount": 21,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 470.58,
+      "status": "Confirmado",
+      "created_at": "2026-08-18T20:14:46.817Z",
+      "has_iva": false,
+      "iva_mode": "none",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 1769.04
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado"
     }
   ],
   "quotes": [
@@ -26371,8 +26503,9 @@
       "discount_amount": 470.58,
       "created_at": "2026-08-06T20:14:39.901Z",
       "quote_number": "A4116",
-      "status": "SENT",
-      "lead_id": "lead-instagram-1781700697729"
+      "status": "Aceptado",
+      "lead_id": "lead-instagram-1781700697729",
+      "sale_id": "local-sale-1787084086817-j719"
     },
     {
       "id": "local-1786368139738-admmm",
@@ -29393,7 +29526,9 @@
       "dni": "",
       "emails": [],
       "phones": [],
-      "addresses": [],
+      "addresses": [
+        "Pilar"
+      ],
       "notes": null,
       "name": "Arq. Maru Cosentino",
       "updated_at": "2026-08-06T20:15:25.801Z"
