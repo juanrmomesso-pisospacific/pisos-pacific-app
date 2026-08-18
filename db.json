@@ -122744,7 +122744,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a00da68104b",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-17T02:56:31.000Z",
       "last_message_preview": "Buenas noches. Estoy buscando cotizacion de lo anterior. Gracias",
       "email_subject": "Piso simil marmol blanco",
@@ -122776,11 +122776,12 @@
       "linked_lead_id": "lead-email-1a0149b4ca95",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-18T11:21:55.000Z",
-      "last_message_preview": "Formulario web — 200m² · Sin Colocación · CP 1669 · Del viso pilar",
+      "last_message_at": "2026-08-18T20:31:15.280Z",
+      "last_message_preview": "Hola Daniel, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-18T11:21:55.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-18T11:21:55.000Z",
+      "last_outbound_at": "2026-08-18T20:31:15.280Z"
     },
     {
       "id": "conv-email-1a0167297cd0",
@@ -134721,6 +134722,15 @@
       "ts": "2026-08-18T20:30:51.804Z",
       "status": "sent",
       "wa_id": "1a01691d7113deb8"
+    },
+    {
+      "id": "m-1787085075280-eajn",
+      "conversation_id": "conv-email-1a0149b4ca95",
+      "direction": "out",
+      "body": "Hola Daniel, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-08-18T20:31:15.280Z",
+      "status": "sent",
+      "wa_id": "1a01692322bc91bd"
     }
   ],
   "templates": [
