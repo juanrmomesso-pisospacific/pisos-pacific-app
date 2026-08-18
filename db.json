@@ -26263,7 +26263,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización @maru.cosentino Escalera",
       "has_iva": true,
-      "price": 2344.5443999999998,
+      "price": 2140.5384,
       "zoned": false,
       "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 6 más",
       "items": [
@@ -26289,9 +26289,10 @@
           "unit_price": 65.33,
           "cost": 43.33,
           "category": "Servicio",
-          "disc_value": 5,
+          "disc_kind": "amount",
+          "disc_value": 198,
           "total": 587.97,
-          "discount": 29.4,
+          "discount": 198,
           "image": "",
           "target_item_index": null
         },
@@ -26366,8 +26367,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 301.98,
-      "discount_amount": 301.98,
+      "discount_total": 470.58,
+      "discount_amount": 470.58,
       "created_at": "2026-08-06T20:14:39.901Z",
       "quote_number": "A4116",
       "status": "SENT",
@@ -121972,7 +121973,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0026a1a52a",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-14T22:35:02.000Z",
       "last_message_preview": "Formulario web — 100m² · Con Colocación · CP 1686 · Santa Ana, 225",
       "email_subject": "Pedido de Presupuesto | Página Web",
