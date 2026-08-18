@@ -117626,6 +117626,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-18T11:21:55.000Z",
       "last_touch_at": "2026-08-18T11:21:55.000Z"
+    },
+    {
+      "id": "lead-email-1a0167297cd0",
+      "name": "Paz Caride",
+      "email": "pazcaridell@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Presupuesto Natural Oak de h2O — Hola, como estan? Me podrian pasar el presupuesto del Natural Oak y del Roble Clasico de la coleccion H2O para 70 metros?\r\nSin colocacion para una obra en Pilar.\r\nMuchas gracias \r\n",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-18T19:56:26.000Z",
+      "last_touch_at": "2026-08-18T19:56:26.000Z"
     }
   ],
   "conversations": [
@@ -122094,6 +122111,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-18T11:21:55.000Z"
+    },
+    {
+      "id": "conv-email-1a0167297cd0",
+      "channel": "email",
+      "contact_id": "pazcaridell@gmail.com",
+      "contact_name": "Paz Caride",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0167297cd0",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-18T19:56:26.000Z",
+      "last_message_preview": "Hola, como estan? Me podrian pasar el presupuesto del Natural Oak y del Roble Clasico de la coleccion H2O para 70 metros?\r\nSin colocacion pa",
+      "email_subject": "Presupuesto Natural Oak de h2O",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-18T19:56:26.000Z"
     }
   ],
   "messages": [
@@ -133965,6 +133997,14 @@
       "body": "✉️ Re: Atrim Global\n\nHola! Como están?\r\n\r\nQuería saber si habían podido revisar mi consulta, ya que aún no recibí\r\nningun contacto!\r\n\r\nMuchas gracias!!\r\n\r\nSaludos,\r\n\r\nJuan\r\n\r\nEl El lun, 10 ago 2026 a la(s) 5:05 p. m., Atrim Global <\r\nmarketing@atrimglobal.com> escribió:\r\n\r\n>\r\n> ¡Gracias por contactar con nosotros! Hemos recibido tu consulta y estamos\r\n> trabajando para brindarte la información que necesitás. ¡En breve\r\n> recibirás una respuesta!\r\n> Atentamente,\r\n> El equipo de Atrim Global\r\n>\r\n> © 2026 Atrim Global. Todos los derechos reservados.\r\n> <https://www.atrimglobal.com>\r\n>\r\n>",
       "ts": "2026-08-18T16:09:09.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-email-1a0167297cd0",
+      "conversation_id": "conv-email-1a0167297cd0",
+      "direction": "in",
+      "body": "✉️ Presupuesto Natural Oak de h2O\n\nHola, como estan? Me podrian pasar el presupuesto del Natural Oak y del Roble Clasico de la coleccion H2O para 70 metros?\r\nSin colocacion para una obra en Pilar.\r\nMuchas gracias \r\nSaludos,\r\nPaz",
+      "ts": "2026-08-18T19:56:26.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -140208,7 +140248,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-18T09:24:51.566Z",
     "gmail_seen_ids": [
-      "19eb21cff37674e8",
       "19eb0bfb07984825",
       "19eac2ef9e6863ab",
       "19ea8105edf58d61",
@@ -141007,7 +141046,8 @@
       "1a01511641a6a949",
       "1a0153efa0195f1d",
       "1a015eccd5428811",
-      "1a016025268a8b32"
+      "1a016025268a8b32",
+      "1a0167297cd095b8"
     ],
     "cash_sessions": {
       "1136982222": {
