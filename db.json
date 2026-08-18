@@ -118308,6 +118308,22 @@
       "address": "Vilahaus Pilar",
       "created_at": "2026-08-18T20:21:38.427Z",
       "last_touch_at": "2026-08-18T20:21:41.160Z"
+    },
+    {
+      "id": "local-1787085329496-zna78",
+      "name": "Maria Arroyo",
+      "phone": "1144382566",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Obra Pilar",
+      "created_at": "2026-08-18T20:35:29.281Z",
+      "last_touch_at": "2026-08-18T20:35:31.913Z"
     }
   ],
   "conversations": [
