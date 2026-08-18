@@ -26262,8 +26262,8 @@
       "seller_name": "Victoria Gonzalez Collado",
       "seller_phone": "+54 11 36982222",
       "title": "Cotización @maru.cosentino Escalera",
-      "has_iva": true,
-      "price": 2140.5384,
+      "has_iva": false,
+      "price": 1769.04,
       "zoned": false,
       "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 6 más",
       "items": [
@@ -121974,11 +121974,12 @@
       "linked_lead_id": "lead-email-1a0026a1a52a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-14T22:35:02.000Z",
-      "last_message_preview": "Formulario web — 100m² · Con Colocación · CP 1686 · Santa Ana, 225",
+      "last_message_at": "2026-08-18T20:13:45.674Z",
+      "last_message_preview": "Hola Carlos, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-14T22:35:02.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-14T22:35:02.000Z",
+      "last_outbound_at": "2026-08-18T20:13:45.674Z"
     },
     {
       "id": "conv-email-1a0029feff38",
@@ -122032,7 +122033,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a00b6451881",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-16T16:25:18.000Z",
       "last_message_preview": "Formulario web — 100m² · Con Colocación · CP 8500 · Cardenal Cagliero 1351",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -134006,6 +134007,15 @@
       "body": "✉️ Presupuesto Natural Oak de h2O\n\nHola, como estan? Me podrian pasar el presupuesto del Natural Oak y del Roble Clasico de la coleccion H2O para 70 metros?\r\nSin colocacion para una obra en Pilar.\r\nMuchas gracias \r\nSaludos,\r\nPaz",
       "ts": "2026-08-18T19:56:26.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787084025674-1ci5",
+      "conversation_id": "conv-email-1a0026a1a52a",
+      "direction": "out",
+      "body": "Hola Carlos, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-08-18T20:13:45.674Z",
+      "status": "sent",
+      "wa_id": "1a016822f2f0c7a1"
     }
   ],
   "templates": [
