@@ -122745,11 +122745,12 @@
       "linked_lead_id": "lead-email-1a00da68104b",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-17T02:56:31.000Z",
-      "last_message_preview": "Buenas noches. Estoy buscando cotizacion de lo anterior. Gracias",
+      "last_message_at": "2026-08-18T20:33:45.995Z",
+      "last_message_preview": "Hola Vilma ¿cómo estás?\n\nNo encuentro un mail anterior para asociar a la consulta! Pero si lo que estás buscando es simil marmol, ¡nosotros ",
       "email_subject": "Piso simil marmol blanco",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-17T02:56:31.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-17T02:56:31.000Z",
+      "last_outbound_at": "2026-08-18T20:33:45.995Z"
     },
     {
       "id": "conv-email-1a01181c115d",
@@ -134731,6 +134732,15 @@
       "ts": "2026-08-18T20:31:15.280Z",
       "status": "sent",
       "wa_id": "1a01692322bc91bd"
+    },
+    {
+      "id": "m-1787085225995-k4qa",
+      "conversation_id": "conv-email-1a00da68104b",
+      "direction": "out",
+      "body": "Hola Vilma ¿cómo estás?\n\nNo encuentro un mail anterior para asociar a la consulta! Pero si lo que estás buscando es simil marmol, ¡nosotros no trabajamos ese diseño!\n\nCualquier duda que tengas, no dudes en consultarnos!\n\nSaludos,",
+      "ts": "2026-08-18T20:33:45.995Z",
+      "status": "sent",
+      "wa_id": "1a016947f19313ad"
     }
   ],
   "templates": [
