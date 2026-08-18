@@ -117819,6 +117819,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-18T19:56:26.000Z",
       "last_touch_at": "2026-08-18T19:56:26.000Z"
+    },
+    {
+      "id": "local-1787084291476-85r9y",
+      "name": "Eli ",
+      "phone": "1123989883",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "New",
+      "assigned_seller": "",
+      "address": "Obra Hurlingham",
+      "created_at": "2026-08-18T20:18:11.115Z",
+      "last_touch_at": "2026-08-18T20:18:11.115Z"
     }
   ],
   "conversations": [
