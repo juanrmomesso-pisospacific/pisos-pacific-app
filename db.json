@@ -121142,7 +121142,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fa98b77b2f",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-15T00:44:44.000Z",
       "last_message_preview": "Ay disculpen, nunca me di cuenta que no mandé los modelos. Nos gustan el\r\nRoble Eslavonia y el Roble Clásico, de los H20, efecto click! Grac",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -122154,11 +122154,12 @@
       "linked_lead_id": "lead-email-1a00861beb9a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-16T02:23:18.000Z",
-      "last_message_preview": "Precios de pisos",
+      "last_message_at": "2026-08-18T20:15:48.209Z",
+      "last_message_preview": "Hola Maria, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "(sin asunto)",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-16T02:23:18.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-16T02:23:18.000Z",
+      "last_outbound_at": "2026-08-18T20:15:48.209Z"
     },
     {
       "id": "conv-email-1a00b6451881",
@@ -134161,6 +134162,15 @@
       "ts": "2026-08-18T20:15:06.742Z",
       "status": "sent",
       "wa_id": "1a016836b2a15b4e"
+    },
+    {
+      "id": "m-1787084148209-tdlf",
+      "conversation_id": "conv-email-1a00861beb9a",
+      "direction": "out",
+      "body": "Hola Maria, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nPor otro lado, contanos cuántos metros cuadrados tenes que cubrir.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-08-18T20:15:48.209Z",
+      "status": "sent",
+      "wa_id": "1a016840d33f91d5"
     }
   ],
   "templates": [
