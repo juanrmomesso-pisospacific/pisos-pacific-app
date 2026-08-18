@@ -121611,12 +121611,12 @@
       "linked_lead_id": "lead-email-19f865e86996",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-07-30T21:05:30.000Z",
-      "last_message_preview": "Hola Victoria, cómo estás?\r\n\r\nQuería cotizar 50 m2 en las siguientes opciones:\r\n\r\n1) Colección H20: Eslavonia XL\r\n2) Colección Madera: Roble",
+      "last_message_at": "2026-08-18T22:16:40.000Z",
+      "last_message_preview": "Hola Juana, cómo estás?\r\n\r\nDisculpas por la demora en la respuesta. Soy Juan Rodriguez Momesso de\r\nPisos Pacific. Vi que nos quedó pendiente",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-07-30T21:05:30.000Z",
-      "last_outbound_at": "2026-07-24T20:41:53.476Z"
+      "last_outbound_at": "2026-08-18T22:16:40.000Z"
     },
     {
       "id": "conv-email-19f87811c947",
@@ -135384,6 +135384,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk2NjAxNTA2ODE1NTAxMzM1NTYyMTg2OTgyMTEwMDAzMgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-emailout-1a016f2b830b",
+      "conversation_id": "conv-email-19f865e86996",
+      "direction": "out",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Juana, cómo estás?\r\n\r\nDisculpas por la demora en la respuesta. Soy Juan Rodriguez Momesso de\r\nPisos Pacific. Vi que nos quedó pendiente esta respuesta.\r\n\r\nTe comparto el presupuesto por lo solicitado y te agregué un producto\r\ndentro de nuestra colección de madera que es Roble Europeo y tiene las\r\nmismas medidas. La veta es tallada al igual que el que solicitaste pero es\r\nun tallado con menos profundidad.\r\n\r\nCualquier duda, con gusto te acercamos muestras.\r\n\r\nSaludos!\r\n\r\n\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl jue, 30 jul 2026 a las 18:05, juana robredo (<juanarobredom@gmail.com>)\r\nescribió:\r\n\r\n> Hola Victoria, cómo estás?\r\n>\r\n> Quería cotizar 50 m2 en las siguientes opciones:\r\n>\r\n> 1) Colección H20: Eslavonia XL\r\n> 2) Colección Madera: Roble Europeo Veta Tallada\r\n>\r\n> Muchas gracias,\r\n>\r\n>\r\n>\r\n> El vie, 24 jul 2026 a las 17:41, Pisos Pacific (<info@pisospacific.com>)\r\n> escribió:\r\n>\r\n>> Hola Juan, ¿cómo estás?\r\n>>\r\n>> Queríamos consultarte en qué colección estás interesada así podemos\r\n>> enviarte un presupuesto acorde.\r\n>>\r\n>> Trabajamos con pisos prefinished y también con nuestra colección H2O.\r\n>>\r\n>> Quedamos atentos a tu respuesta para asesorarte mejor.\r\n>>\r\n>> Saludos,\r\n>> Equipo Pa",
+      "ts": "2026-08-18T22:16:40.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -142866,7 +142874,8 @@
       "1a01692322bc91bd",
       "1a01691d7113deb8",
       "1a0168d52cbc1f75",
-      "1a016e3be9552bb2"
+      "1a016e3be9552bb2",
+      "1a016f2b830b47c7"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
