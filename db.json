@@ -28044,6 +28044,60 @@
       "quote_number": "A8969",
       "status": "DRAFT",
       "lead_id": "local-1787084498642-oqxsq"
+    },
+    {
+      "id": "local-1787085001012-8d0c8",
+      "client_id": "local-1781548189981-7anr4",
+      "client_name": "Marina De La Brosse",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Chacras de Murray",
+      "internal_notes": "",
+      "public_notes": "se deben verificar medidas en obra.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Agregado",
+      "has_iva": true,
+      "price": 2382.49,
+      "zoned": false,
+      "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-010",
+          "sku": "PROD-010",
+          "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada",
+          "quantity": 22.7,
+          "unit_price": 75,
+          "cost": 29,
+          "category": "Pisos de Madera",
+          "disc_kind": "amount",
+          "disc_value": 113.5,
+          "total": 1702.5,
+          "discount": 113.5,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-107",
+          "sku": "SERV-107",
+          "description": "Servicio - Colocación Prefinished Sobre Manta",
+          "quantity": 19,
+          "unit_price": 20,
+          "cost": 7.33,
+          "category": "Servicio",
+          "total": 380,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 113.5,
+      "discount_amount": 113.5,
+      "created_at": "2026-08-18T20:30:00.832Z",
+      "quote_number": "A4449",
+      "status": "DRAFT"
     }
   ],
   "clients": [
