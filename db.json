@@ -123227,11 +123227,11 @@
       "linked_lead_id": "lead-instagram-1786903722827",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-18T22:13:28.029Z",
-      "last_message_preview": "Hola Diego cómo estás?",
+      "last_message_at": "2026-08-18T22:13:45.533Z",
+      "last_message_preview": "Si te puedo pasar presupuesto preliminar para que veas si te interesa",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-16T18:08:41.249Z",
-      "last_outbound_at": "2026-08-18T22:13:28.029Z"
+      "last_outbound_at": "2026-08-18T22:13:45.533Z"
     },
     {
       "id": "conv-email-1a00d243bf74",
@@ -135353,6 +135353,16 @@
       "ts": "2026-08-18T22:13:28.029Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk2NjAxNDE1MDg5MjE3NjkyMzQyODQ1OTg5ODczMjU0NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787091225942-7zt1",
+      "conversation_id": "conv-1786903722827-z906",
+      "direction": "out",
+      "body": "Si te puedo pasar presupuesto preliminar para que veas si te interesa",
+      "ts": "2026-08-18T22:13:45.533Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk2NjAxNDQ3Mzc5NzM1OTA3OTA5Mzg5MDgxMDExODE0NAZDZD",
       "via": "ig-app"
     }
   ],
