@@ -118391,6 +118391,23 @@
       "address": "Obra Pilar",
       "created_at": "2026-08-18T20:35:29.281Z",
       "last_touch_at": "2026-08-18T20:35:31.913Z"
+    },
+    {
+      "id": "lead-email-1a016b209b52",
+      "name": "Theo Martin",
+      "email": "martintheo682@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Postulación – Diseñador — Estimados,\r\n\r\nMe dirijo a ustedes para hacerles llegar mi postulación, con el genuino\r\ninterés de formar parte de su equipo de diseño.\r\n\r\nMi nombre es Theo Martin, soy Diseñador In",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-18T21:05:54.000Z",
+      "last_touch_at": "2026-08-18T21:05:54.000Z"
     }
   ],
   "conversations": [
@@ -122881,6 +122898,21 @@
       "email_subject": "Presupuesto Natural Oak de h2O",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-18T19:56:26.000Z"
+    },
+    {
+      "id": "conv-email-1a016b209b52",
+      "channel": "email",
+      "contact_id": "martintheo682@gmail.com",
+      "contact_name": "Theo Martin",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a016b209b52",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-18T21:05:54.000Z",
+      "last_message_preview": "Estimados,\r\n\r\nMe dirijo a ustedes para hacerles llegar mi postulación, con el genuino\r\ninterés de formar parte de su equipo de diseño.\r\n\r\nMi",
+      "email_subject": "Postulación – Diseñador",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-18T21:05:54.000Z"
     }
   ],
   "messages": [
@@ -134832,6 +134864,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Carolina, cómo estás?\r\n\r\nTe pido disculpas!! Se nos había pasado este mail!\r\n\r\nTe comparto 3 presupuestos para que puedas evaluar. Estoy incluyendo uno de\r\nla colección Madera que no está en la página porque es bastante nuevo, que\r\nes el Roble Kitsilano. Es Roble Europeo al igual que el que te gustó de\r\nVeta Tallada, pero tiene un poco menos de profundidad en la veta. Tenemos\r\npara acercarte muestras de cualquiera que te interese o podés pasar por\r\nnuestro depósito que queda en Olivos!\r\n\r\nCualquier duda, estoy a tu disposición!\r\n\r\nSaludos,\r\n\r\nJuan\r\n\r\n\r\n\r\nEl lun, 17 ago 2026 a las 2:45, Carolina Romanelli (<\r\ncaio.romanellib@gmail.com>) escribió:\r\n\r\n> Hola! Cómo estás?\r\n>\r\n> Quería saber si habían podido armar un presupuesto aprox o si tienen un\r\n> local que pueda ir a ver.\r\n>\r\n> Gracias,\r\n> Carolina\r\n>\r\n> El El lun, 3 ago 2026 a la(s) 16:02, Carolina Romanelli <\r\n> caio.romanellib@gmail.com> escribió:\r\n>\r\n>> Hola Juan! Cómo estás?\r\n>>\r\n>> Muchas gracias por tu respuesta. Quería averiguar por tres modelos. En\r\n>> madera: roble europeo veta tallada y veta cerrada. En H2O: Eslovenia XL.\r\n>> Estamos por remodelar nuestra casa (José Manuel Estrada 1365, Martínez) y\r\n>> en la planta alta vamos a tener que cambiar el piso si o si pero estoy\r\n>> averiguando diferentes presupuestos para ver si lo cambiamos en la planta\r\n>> baja también. Son aproximadamente 100 mts2 que necesitaría cotizar en\r\n>> principio.\r\n>> Si necesitas más información avísame o cualquier cosa este es mi númer",
       "ts": "2026-08-18T20:25:55.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-email-1a016b209b52",
+      "conversation_id": "conv-email-1a016b209b52",
+      "direction": "in",
+      "body": "✉️ Postulación – Diseñador\n\nEstimados,\r\n\r\nMe dirijo a ustedes para hacerles llegar mi postulación, con el genuino\r\ninterés de formar parte de su equipo de diseño.\r\n\r\nMi nombre es Theo Martin, soy Diseñador Industrial graduado de la UBA y\r\ncuento con experiencia en modelado 3D, prototipado y UX/UI. He seguido de\r\ncerca su trabajo y admiro profundamente la identidad visual y conceptual\r\nque imprimen en cada proyecto. Es por ello que me entusiasma la posibilidad\r\nde aportar mi criterio creativo, mi capacidad de propuesta y mis ganas de\r\nsumar ideas originales a un equipo con el que realmente me identifico.\r\n\r\nA lo largo de mi formación y experiencia profesional, desarrollé proyectos\r\nde producto desde la fase de conceptualización hasta su materialización\r\nfinal, buscando siempre un equilibrio entre la resolución técnica y una\r\nmirada estética propia. Creo firmemente que el diseño no solo resuelve\r\nproblemas, sino que construye identidad, y me encantaría contribuir a la\r\nsuya desde mi lugar.\r\n\r\nAdjunto mi Portfolio <https://www.behance.net/theomartin9> , CV y Carta de\r\npresentación para su consideración. Cuento con disponibilidad full time y\r\nplena disposición para sumarme a los desafíos que el equipo tenga por\r\ndelante.\r\n\r\nQuedo a su entera disposición para cualquier consulta o entrevista que\r\nconsideren pertinente.\r\n\r\nAgradezco de antemano el tiempo dedicado a revisar mi perfil.\r\n\r\nSaludos cordiales,\r\n\r\nTheo Martin",
+      "ts": "2026-08-18T21:05:54.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -141178,7 +141218,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-18T09:24:51.566Z",
     "gmail_seen_ids": [
-      "19eb0bfb07984825",
       "19eac2ef9e6863ab",
       "19ea8105edf58d61",
       "19ea6f729a53b727",
@@ -141977,7 +142016,8 @@
       "1a0153efa0195f1d",
       "1a015eccd5428811",
       "1a016025268a8b32",
-      "1a0167297cd095b8"
+      "1a0167297cd095b8",
+      "1a016b209b5205ee"
     ],
     "cash_sessions": {
       "1136982222": {
