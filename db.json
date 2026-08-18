@@ -121798,12 +121798,12 @@
       "linked_lead_id": "lead-email-19fb38919e88",
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-08-17T05:45:39.000Z",
-      "last_message_preview": "Hola! Cómo estás?\r\n\r\nQuería saber si habían podido armar un presupuesto aprox o si tienen un\r\nlocal que pueda ir a ver.\r\n\r\nGracias,\r\nCarolin",
+      "last_message_at": "2026-08-18T20:25:55.000Z",
+      "last_message_preview": "Hola Carolina, cómo estás?\r\n\r\nTe pido disculpas!! Se nos había pasado este mail!\r\n\r\nTe comparto 3 presupuestos para que puedas evaluar. Esto",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-17T05:45:39.000Z",
-      "last_outbound_at": "2026-08-03T12:43:56.241Z",
+      "last_outbound_at": "2026-08-18T20:25:55.000Z",
       "ignored": true
     },
     {
@@ -134741,6 +134741,14 @@
       "ts": "2026-08-18T20:33:45.995Z",
       "status": "sent",
       "wa_id": "1a016947f19313ad"
+    },
+    {
+      "id": "m-emailout-1a0168d52cbc",
+      "conversation_id": "conv-email-19fb38919e88",
+      "direction": "out",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Carolina, cómo estás?\r\n\r\nTe pido disculpas!! Se nos había pasado este mail!\r\n\r\nTe comparto 3 presupuestos para que puedas evaluar. Estoy incluyendo uno de\r\nla colección Madera que no está en la página porque es bastante nuevo, que\r\nes el Roble Kitsilano. Es Roble Europeo al igual que el que te gustó de\r\nVeta Tallada, pero tiene un poco menos de profundidad en la veta. Tenemos\r\npara acercarte muestras de cualquiera que te interese o podés pasar por\r\nnuestro depósito que queda en Olivos!\r\n\r\nCualquier duda, estoy a tu disposición!\r\n\r\nSaludos,\r\n\r\nJuan\r\n\r\n\r\n\r\nEl lun, 17 ago 2026 a las 2:45, Carolina Romanelli (<\r\ncaio.romanellib@gmail.com>) escribió:\r\n\r\n> Hola! Cómo estás?\r\n>\r\n> Quería saber si habían podido armar un presupuesto aprox o si tienen un\r\n> local que pueda ir a ver.\r\n>\r\n> Gracias,\r\n> Carolina\r\n>\r\n> El El lun, 3 ago 2026 a la(s) 16:02, Carolina Romanelli <\r\n> caio.romanellib@gmail.com> escribió:\r\n>\r\n>> Hola Juan! Cómo estás?\r\n>>\r\n>> Muchas gracias por tu respuesta. Quería averiguar por tres modelos. En\r\n>> madera: roble europeo veta tallada y veta cerrada. En H2O: Eslovenia XL.\r\n>> Estamos por remodelar nuestra casa (José Manuel Estrada 1365, Martínez) y\r\n>> en la planta alta vamos a tener que cambiar el piso si o si pero estoy\r\n>> averiguando diferentes presupuestos para ver si lo cambiamos en la planta\r\n>> baja también. Son aproximadamente 100 mts2 que necesitaría cotizar en\r\n>> principio.\r\n>> Si necesitas más información avísame o cualquier cosa este es mi númer",
+      "ts": "2026-08-18T20:25:55.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -142218,7 +142226,11 @@
       "1a01686ae91bcd59",
       "1a016840d33f91d5",
       "1a016836b2a15b4e",
-      "1a016822f2f0c7a1"
+      "1a016822f2f0c7a1",
+      "1a016947f19313ad",
+      "1a01692322bc91bd",
+      "1a01691d7113deb8",
+      "1a0168d52cbc1f75"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
