@@ -118880,6 +118880,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-19T13:07:42.857Z",
       "last_touch_at": "2026-08-19T13:07:42.857Z"
+    },
+    {
+      "id": "lead-instagram-1787160038154",
+      "name": "@patog.lanz",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-19T17:20:36.590Z",
+      "last_touch_at": "2026-08-19T17:20:36.590Z"
     }
   ],
   "conversations": [
@@ -123465,6 +123481,20 @@
       "email_subject": "RE: Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-19T15:28:30.000Z"
+    },
+    {
+      "id": "conv-1787160038154-v9mv",
+      "channel": "instagram",
+      "contact_id": "2125552828173964",
+      "contact_name": "@patog.lanz",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787160038154",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-19T17:20:36.590Z",
+      "last_message_preview": "Buenas tardes les envío una foto de un espacio chico a ver qué me aconsejan?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-19T17:20:36.590Z"
     }
   ],
   "messages": [
@@ -135766,6 +135796,14 @@
       "body": "Hola, si, eso desde ya. La colocación tiene un costo adicional?",
       "ts": "2026-08-19T17:15:50.603Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787160038154-m07w",
+      "conversation_id": "conv-1787160038154-v9mv",
+      "direction": "in",
+      "body": "Buenas tardes les envío una foto de un espacio chico a ver qué me aconsejan?",
+      "ts": "2026-08-19T17:20:36.590Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -143780,7 +143818,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2Njk4MDI5OTMyNjExNTgwMTk4OTc2NjkyOTQ0ODk2MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzAwMzkwNzc4NTg1NjU5MDk4NzI5Njk1ODg0MDgzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzAwNDIzMTI3OTM0MjMwODY1MTQ3Mjg5MDM2MzkwNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2NzI3ODUzODIxNDcxNjAwMjc0MzgyOTkzNDM3NDkxMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2NzI3ODUzODIxNDcxNjAwMjc0MzgyOTkzNDM3NDkxMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4MzgxMzc0ODg0MTYwNTU2OTg1OTE5NDcxNjE2MAZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
