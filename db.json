@@ -123443,11 +123443,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787144864684",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-08-19T13:08:00.394Z",
-      "last_message_preview": "Dónde puedo ver los pisos o hablar con algún representante? Estamos por zona Bancalari",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-19T13:08:00.394Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-19T13:43:10.582Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-19T13:08:00.394Z",
+      "last_outbound_at": "2026-08-19T13:43:10.582Z"
     }
   ],
   "messages": [
@@ -135655,6 +135656,66 @@
       "body": "Dónde puedo ver los pisos o hablar con algún representante? Estamos por zona Bancalari",
       "ts": "2026-08-19T13:08:00.394Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787146966700-i25j",
+      "conversation_id": "conv-1787144864683-4y8d",
+      "direction": "out",
+      "body": "Hola Tamy! Cómo estás?",
+      "ts": "2026-08-19T13:42:46.136Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzA0MjcwNjQyNjIyNzg0NzM5OTExODkxNzg2MTM3NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787146970979-3tjj",
+      "conversation_id": "conv-1787144864683-4y8d",
+      "direction": "out",
+      "body": "Estamos en Olivos",
+      "ts": "2026-08-19T13:42:50.642Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzA0Mjc4OTU0MDI4Mzc3NDI3NDQ5NjI4OTA0NjUyOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787146983527-syww",
+      "conversation_id": "conv-1787144864683-4y8d",
+      "direction": "out",
+      "body": "Te puedo pasar el número de una de las dueñas así arreglas",
+      "ts": "2026-08-19T13:43:03.008Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzA0MzAxNzY1ODMxMDM1MzIyMTE0NTU2NjY0MjE3NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787146986120-fvq2",
+      "conversation_id": "conv-1787144864683-4y8d",
+      "direction": "out",
+      "body": "Victoria",
+      "ts": "2026-08-19T13:43:05.629Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzA0MzA2NjAxMDE5NjQ5NjIwOTc0NzU4OTk4ODM1MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787146990701-cc72",
+      "conversation_id": "conv-1787144864683-4y8d",
+      "direction": "out",
+      "body": "1136982222",
+      "ts": "2026-08-19T13:43:10.281Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzA0MzE1MTgxNDkzMTQwNzE2NDU0NzU3ODk4NjQ5NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787146990969-na7q",
+      "conversation_id": "conv-1787144864683-4y8d",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-19T13:43:10.582Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzA0MzE1NzM2OTEzNTM2NzI5NDA1MTMxMzI1NDQwMAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
