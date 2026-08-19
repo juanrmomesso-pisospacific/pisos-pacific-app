@@ -123429,11 +123429,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787143584228",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-19T12:46:23.040Z",
-      "last_message_preview": "Hola, una consulta. Instalan en la costa? Es para una casa en Mar Azul, pdo de Villa Gesell",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-19T12:46:23.040Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-19T13:43:51.913Z",
+      "last_message_preview": "Hola Diego cómo estás? Podemos mandar equipo para allá si problema. \nPero no hacemos solo colocación. Tendría que ser con la compra de nuest",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-19T12:46:23.040Z",
+      "last_outbound_at": "2026-08-19T13:43:51.913Z"
     },
     {
       "id": "conv-1787144864683-4y8d",
@@ -135715,6 +135716,16 @@
       "ts": "2026-08-19T13:43:10.582Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzA0MzE1NzM2OTEzNTM2NzI5NDA1MTMxMzI1NDQwMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787147032208-5paq",
+      "conversation_id": "conv-1787143584228-knsx",
+      "direction": "out",
+      "body": "Hola Diego cómo estás? Podemos mandar equipo para allá si problema. \nPero no hacemos solo colocación. Tendría que ser con la compra de nuestros pisos",
+      "ts": "2026-08-19T13:43:51.913Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2NzA0MzkxOTgwMTQ1NzQ3MjgzOTI1ODYwMjQ3MTQyNAZDZD",
       "via": "ig-app"
     }
   ],
