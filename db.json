@@ -113254,6 +113254,31 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-msygi9ke-001"
+    },
+    {
+      "date": "2026-08-18T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-002",
+      "caja_name": "Mercado Pago",
+      "category": "Flota",
+      "subcategory": "Peajes",
+      "counterparty": "Peajes (AUSOL/AUSA/AUBASA)",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": null,
+      "description": "Peajes MP (agrupados del día, API)",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 20275.62,
+      "amount_usd": 13.12,
+      "exchange_rate": 1545,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Flota/Vehículos",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null,
+      "source": "mp-api",
+      "id": "MOV-MPAUTO-mszthivp-001"
     }
   ],
   "containers": [
@@ -141836,8 +141861,8 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": 102844674,
-    "mp_last_sync": "2026-08-18T09:24:51.566Z",
+    "mp_pending_job": null,
+    "mp_last_sync": "2026-08-19T08:15:58.165Z",
     "gmail_seen_ids": [
       "19ea8105edf58d61",
       "19ea6f729a53b727",
