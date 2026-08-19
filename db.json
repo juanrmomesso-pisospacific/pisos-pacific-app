@@ -118817,6 +118817,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-18T21:05:54.000Z",
       "last_touch_at": "2026-08-18T21:05:54.000Z"
+    },
+    {
+      "id": "lead-instagram-1787100106970",
+      "name": "@pezzonifraquelli.studio",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-19T00:41:44.398Z",
+      "last_touch_at": "2026-08-19T00:41:44.398Z"
     }
   ],
   "conversations": [
@@ -123327,6 +123343,20 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-18T21:05:54.000Z",
       "ignored": true
+    },
+    {
+      "id": "conv-1787100106970-kuvt",
+      "channel": "instagram",
+      "contact_id": "1365254112444112",
+      "contact_name": "@pezzonifraquelli.studio",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787100106970",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-19T00:41:44.398Z",
+      "last_message_preview": "📲 Te mencionó en una historia",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-19T00:41:44.398Z"
     }
   ],
   "messages": [
@@ -135392,6 +135422,16 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Juana, cómo estás?\r\n\r\nDisculpas por la demora en la respuesta. Soy Juan Rodriguez Momesso de\r\nPisos Pacific. Vi que nos quedó pendiente esta respuesta.\r\n\r\nTe comparto el presupuesto por lo solicitado y te agregué un producto\r\ndentro de nuestra colección de madera que es Roble Europeo y tiene las\r\nmismas medidas. La veta es tallada al igual que el que solicitaste pero es\r\nun tallado con menos profundidad.\r\n\r\nCualquier duda, con gusto te acercamos muestras.\r\n\r\nSaludos!\r\n\r\n\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl jue, 30 jul 2026 a las 18:05, juana robredo (<juanarobredom@gmail.com>)\r\nescribió:\r\n\r\n> Hola Victoria, cómo estás?\r\n>\r\n> Quería cotizar 50 m2 en las siguientes opciones:\r\n>\r\n> 1) Colección H20: Eslavonia XL\r\n> 2) Colección Madera: Roble Europeo Veta Tallada\r\n>\r\n> Muchas gracias,\r\n>\r\n>\r\n>\r\n> El vie, 24 jul 2026 a las 17:41, Pisos Pacific (<info@pisospacific.com>)\r\n> escribió:\r\n>\r\n>> Hola Juan, ¿cómo estás?\r\n>>\r\n>> Queríamos consultarte en qué colección estás interesada así podemos\r\n>> enviarte un presupuesto acorde.\r\n>>\r\n>> Trabajamos con pisos prefinished y también con nuestra colección H2O.\r\n>>\r\n>> Quedamos atentos a tu respuesta para asesorarte mejor.\r\n>>\r\n>> Saludos,\r\n>> Equipo Pa",
       "ts": "2026-08-18T22:16:40.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-1787100106970-ihsj",
+      "conversation_id": "conv-1787100106970-kuvt",
+      "direction": "in",
+      "body": "📲 Te mencionó en una historia",
+      "ts": "2026-08-19T00:41:44.398Z",
+      "status": "received",
+      "media_url": "/uploads/119dbc0c3747d04b.jpg",
+      "media_type": "image"
     }
   ],
   "templates": [
@@ -142875,7 +142915,8 @@
       "1a01691d7113deb8",
       "1a0168d52cbc1f75",
       "1a016e3be9552bb2",
-      "1a016f2b830b47c7"
+      "1a016f2b830b47c7",
+      "1a016f6cfd08948d"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -143394,7 +143435,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzQ1MjM1NDIzOTI4MzozMjk1OTkyNTEzMjQ3MDk4NTQ5Nzc0MTMzMzk4OTY4NzI5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4MjA3NjI1MjM5Nzc4NDozMjk2MTM3OTM3NzU5ODI2MjMyOTU5NjQyOTUyMjE3Mzk1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk2MjU1NTYzMDI1MjE1MjkwMzE3MjA1ODgyMTY4OTM0NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDg2OTI4OTM4ODA5NjYwNTozMjk2NTU1ODgwMjQyMDgwNDQ0MDA1MTY4Nzg1NTQ4OTAyNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDg2OTI4OTM4ODA5NjYwNTozMjk2NTU1ODgwMjQyMDgwNDQ0MDA1MTY4Nzg1NTQ4OTAyNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxMTY5MjQ2NDgxNTI3MjozMjk2NjE3ODI1OTkzMDE3MzEzNjEyNTk0OTQ0MTQ3NDU2MAZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
