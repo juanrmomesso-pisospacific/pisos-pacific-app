@@ -119165,6 +119165,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-19T17:20:36.590Z",
       "last_touch_at": "2026-08-19T17:20:36.590Z"
+    },
+    {
+      "id": "lead-instagram-1787178823156",
+      "name": "@virginialpgn",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-19T22:33:41.081Z",
+      "last_touch_at": "2026-08-19T22:33:41.081Z"
     }
   ],
   "conversations": [
@@ -123766,6 +123782,20 @@
       "last_message_preview": "Hay q sacar el piso que esta ,no?",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-19T17:24:07.586Z"
+    },
+    {
+      "id": "conv-1787178823156-st6z",
+      "channel": "instagram",
+      "contact_id": "2154780145150929",
+      "contact_name": "@virginialpgn",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787178823156",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-19T22:33:41.081Z",
+      "last_message_preview": "📷 Foto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-19T22:33:41.081Z"
     }
   ],
   "messages": [
@@ -136137,6 +136167,16 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Carlos, ¿cómo estás?\r\n\r\nTe comparto ambos presupuestos. Cualquier duda que tengas, no dudes en\r\nconsultarme.\r\n\r\nDesde ya, muchas gracias.\r\n\r\nSaludos,\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl mié, 19 ago 2026 a las 12:28, Carlos Mansilla (<camansilla@artear.com>)\r\nescribió:\r\n\r\n> Hola Estoy interesado en el Roble Kitsiliano de Madera y como Opcion el\r\n> Eslavonia XL de H20.\r\n> Saludos\r\n>\r\n> ------------------------------\r\n> *De:* Pisos Pacific <info@pisospacific.com>\r\n> *Enviado:* martes, 18 de agosto de 2026 17:13\r\n> *Para:* Carlos Mansilla <camansilla@artear.com>\r\n> *Asunto:* Re: Pedido de Presupuesto | Página Web\r\n>\r\n> No suele recibir correo electrónico de info@pisospacific.com. Por qué es\r\n> esto importante <https://aka.ms/LearnAboutSenderIdentification>\r\n> Hola Carlos, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gra",
       "ts": "2026-08-19T20:06:13.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-1787178823156-8mx2",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "📷 Foto",
+      "ts": "2026-08-19T22:33:41.081Z",
+      "status": "received",
+      "media_url": "/uploads/68ae06c7c8fd9b08.jpg",
+      "media_type": "image"
     }
   ],
   "templates": [
@@ -144159,7 +144199,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4NjU2ODM5MjU3NDg0MzM2NzAwMDc4MDA0NjMzNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4NjU4MDA5NTY4NzM0NTgxODMzMDQ4MzEzMDM2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4NzE5OTA0Nzg2ODk4Njk4OTE5MDc5NjI3OTgwOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4NzcwNTkzMTA5OTc1OTQ3NDYyMzQ2MzI5MjkyOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4NzcwNTkzMTA5OTc1OTQ3NDYyMzQ2MzI5MjkyOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2NzYzMDMyNjQ0NjQ2NzY3NzYwOTE4MjM3MjAzNjYwOAZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
