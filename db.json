@@ -28639,8 +28639,9 @@
       "discount_amount": 1200,
       "created_at": "2026-08-19T19:57:15.251Z",
       "quote_number": "A7201",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a01181c115d"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a01181c115d",
+      "share_token": "ea087e58ced56dfc78c97adf"
     }
   ],
   "clients": [
@@ -123419,12 +123420,12 @@
       "linked_lead_id": "lead-email-1a01181c115d",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-18T21:51:22.000Z",
-      "last_message_preview": "160 m2, en mastwich zona norte y si con colocación sería,gracias\r\n\r\nObtener Outlook para Android<https://aka.ms/AAb9ysg>\r\n__________________",
+      "last_message_at": "2026-08-19T19:58:54.868Z",
+      "last_message_preview": "📄 Presupuesto NA7201 - Obra Madera - Maschwitz - Sabrina Laudanza.pdf",
       "email_subject": "Presupuesto",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-18T21:51:22.000Z",
-      "last_outbound_at": "2026-08-18T20:30:51.804Z"
+      "last_outbound_at": "2026-08-19T19:58:54.868Z"
     },
     {
       "id": "conv-email-1a0149b4ca95",
@@ -135915,6 +135916,16 @@
       "body": "Hay q sacar el piso que esta ,no?",
       "ts": "2026-08-19T17:24:07.586Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787169534868-ac3p",
+      "conversation_id": "conv-email-1a01181c115d",
+      "direction": "out",
+      "body": "Hola Sabrina, ¿cómo estás?\n\nTe podemos acercar muestras de todas nuestras alternativas de pisos. \nJusto del que me pasaste foto, no tenemos en stock pero tenemos roble natural que tiene un tono muy similar. Como te mencioné podemos llevarte muestras o incluso podes acercarte a nuestro depósito a ver todo lo que tenemos.\n\nTe dejo mi WhatsApp + 5411 5175 0087\n\nCualquier duda que tengas, me avisas!\n\nSaludos,\n\nJuan\n📄 Presupuesto NA7201 - Obra Madera - Maschwitz - Sabrina Laudanza.pdf",
+      "ts": "2026-08-19T19:58:54.868Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a01b9af3a95a962"
     }
   ],
   "templates": [
