@@ -123745,11 +123745,12 @@
       "linked_lead_id": "lead-email-1a0026a1a52a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-19T15:28:30.000Z",
-      "last_message_preview": "Hola Estoy interesado en el Roble Kitsiliano de Madera y como Opcion el Eslavonia XL de H20.\r\nSaludos\r\n\r\n________________________________\r\nD",
+      "last_message_at": "2026-08-19T20:06:13.000Z",
+      "last_message_preview": "Hola Carlos, ¿cómo estás?\r\n\r\nTe comparto ambos presupuestos. Cualquier duda que tengas, no dudes en\r\nconsultarme.\r\n\r\nDesde ya, muchas gracia",
       "email_subject": "RE: Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-19T15:28:30.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-19T15:28:30.000Z",
+      "last_outbound_at": "2026-08-19T20:06:13.000Z"
     },
     {
       "id": "conv-1787160038154-v9mv",
@@ -136127,6 +136128,14 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a01b9af3a95a962"
+    },
+    {
+      "id": "m-emailout-1a01ba1a9272",
+      "conversation_id": "conv-email-1a01aa372bce",
+      "direction": "out",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Carlos, ¿cómo estás?\r\n\r\nTe comparto ambos presupuestos. Cualquier duda que tengas, no dudes en\r\nconsultarme.\r\n\r\nDesde ya, muchas gracias.\r\n\r\nSaludos,\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl mié, 19 ago 2026 a las 12:28, Carlos Mansilla (<camansilla@artear.com>)\r\nescribió:\r\n\r\n> Hola Estoy interesado en el Roble Kitsiliano de Madera y como Opcion el\r\n> Eslavonia XL de H20.\r\n> Saludos\r\n>\r\n> ------------------------------\r\n> *De:* Pisos Pacific <info@pisospacific.com>\r\n> *Enviado:* martes, 18 de agosto de 2026 17:13\r\n> *Para:* Carlos Mansilla <camansilla@artear.com>\r\n> *Asunto:* Re: Pedido de Presupuesto | Página Web\r\n>\r\n> No suele recibir correo electrónico de info@pisospacific.com. Por qué es\r\n> esto importante <https://aka.ms/LearnAboutSenderIdentification>\r\n> Hola Carlos, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gra",
+      "ts": "2026-08-19T20:06:13.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -143612,7 +143621,9 @@
       "1a016e3be9552bb2",
       "1a016f2b830b47c7",
       "1a016f6cfd08948d",
-      "1a019e94fca7028d"
+      "1a019e94fca7028d",
+      "1a01b9af3a95a962",
+      "1a01ba1a9272e9b8"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
