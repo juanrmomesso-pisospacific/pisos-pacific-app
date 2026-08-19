@@ -114222,7 +114222,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-06-12T13:08:46.000Z",
-      "last_touch_at": "2026-08-18T14:20:04.000Z"
+      "last_touch_at": "2026-08-19T14:54:20.000Z"
     },
     {
       "id": "lead-email-19ebe5200018",
@@ -119599,13 +119599,13 @@
       "contact_name": "Customer Comex+ Cargo",
       "linked_client_name": null,
       "status": "closed",
-      "unread_count": 17,
-      "last_message_at": "2026-08-18T14:20:04.000Z",
-      "last_message_preview": "Genial Cami!! 🙌🏼\r\nLes informaré las novedades del zarpe.\r\n\r\nSaludos,\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく",
+      "unread_count": 18,
+      "last_message_at": "2026-08-19T14:54:20.000Z",
+      "last_message_preview": "Buenos días Vicky, Cami\r\nConfirmamos el on board de la carga de referencia:\r\n\r\n*ETD DALIAN: 19/AUG*\r\n*VSL: KOTA LUKIS *\r\n*ETA BUENOS AIRES: ",
       "email_subject": "Re: Comex+Cargo // Juan Momesso // COTIZACION FLETE 40 pies | Shanghai - Buenos Aires | LAM-PA2601 -- PCCF1488 -- CCF1203 ** CCF-MI-00000043",
       "linked_lead_id": "lead-email-19ebbf39b073",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-18T14:20:04.000Z",
+      "last_inbound_at": "2026-08-19T14:54:20.000Z",
       "ignored": true
     },
     {
@@ -135727,6 +135727,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2NzA0MzkxOTgwMTQ1NzQ3MjgzOTI1ODYwMjQ3MTQyNAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a01a84c250c",
+      "conversation_id": "conv-email-19ebbf39b073",
+      "direction": "in",
+      "body": "✉️ Re: Comex+Cargo // Momesso // Cotizacion JR007 | Wall panles | Shanghai - Buenos Aires | 20 ft // CCF-MI-00000105\n\nBuenos días Vicky, Cami\r\nConfirmamos el on board de la carga de referencia:\r\n\r\n*ETD DALIAN: 19/AUG*\r\n*VSL: KOTA LUKIS *\r\n*ETA BUENOS AIRES: 10/OCT*\r\n\r\n[image: image.png]\r\n\r\n\r\nSaludos,\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\nCarolina Lodovico\r\n*Customer Comex+ Cargo*\r\nCel WhatsApp: (+54)115-761-1787\r\n\r\n*Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nAv. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\n\r\nEl mar, 18 ago 2026 a la(s) 11:20 a.m., Customer Comex+ Cargo (\r\nCustomerCargo@grupocomexmas.com) escribió:\r\n\r\n> Genial Cami!! 🙌🏼\r\n> Les informaré las novedades del zarpe.\r\n>\r\n> Saludos,\r\n>\r\n>\r\n>\r\n> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n> Cordiali Saluti*\r\n> Carolina Lodovico\r\n> *Customer Comex+ Cargo*\r\n> Cel WhatsApp: (+54)115-761-1787\r\n>\r\n> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n> Tel.: (+54)114331-2207/1893\r\n> Av. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\n> Argentina\r\n>\r\n>\r\n> El mar, 18 ago 2026 a la(s) 10:30 a.m., Camila Cerveri (\r\n> camilac@grupocomexmas.com) escribió:\r\n>\r\n>> Hola Caro, buen dia\r\n>>\r\n>> La cantidad de bultos ahora coincide con el packing list que tengo.\r\n>>\r\n>> Saludos\r\n>>\r\n>>\r\n>>\r\n>>\r\n>> El mar, 18 ago 2026 a la(s) 10:02 a.m., Customer Comex+ Cargo (\r\n>> CustomerCargo@grupocomexmas.com) escribió:\r\n>>\r\n>>> Buenos días Vicky, Cami,\r\n>>> Confirmamos que el contened",
+      "ts": "2026-08-19T14:54:20.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -142073,7 +142081,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-19T08:15:58.165Z",
     "gmail_seen_ids": [
-      "19e87c4c8831d234",
       "19e877f8f634af6e",
       "19e867668d5fb9d9",
       "19e85f6090cc5099",
@@ -142872,7 +142879,8 @@
       "1a0199176a294d18",
       "1a019bc5aac0e618",
       "1a019f000429e376",
-      "1a019e94fca7028d"
+      "1a019e94fca7028d",
+      "1a01a84c250c8092"
     ],
     "cash_sessions": {
       "1136982222": {
