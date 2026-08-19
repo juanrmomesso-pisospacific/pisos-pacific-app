@@ -118848,6 +118848,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-19T08:56:07.000Z",
       "last_touch_at": "2026-08-19T08:56:07.000Z"
+    },
+    {
+      "id": "lead-instagram-1787143584228",
+      "name": "@dpimentel105",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-19T12:46:23.040Z",
+      "last_touch_at": "2026-08-19T12:46:23.040Z"
     }
   ],
   "conversations": [
@@ -123388,6 +123404,20 @@
       "email_subject": "OEM Factory Price Eco-Friendly Rigid core Flooring",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-19T08:56:07.000Z"
+    },
+    {
+      "id": "conv-1787143584228-knsx",
+      "channel": "instagram",
+      "contact_id": "2203357130524115",
+      "contact_name": "@dpimentel105",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787143584228",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-19T12:46:23.040Z",
+      "last_message_preview": "Hola, una consulta. Instalan en la costa? Es para una casa en Mar Azul, pdo de Villa Gesell",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-19T12:46:23.040Z"
     }
   ],
   "messages": [
@@ -135571,6 +135601,14 @@
       "body": "🥰🥰",
       "ts": "2026-08-19T10:44:37.167Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787143584228-8sio",
+      "conversation_id": "conv-1787143584228-knsx",
+      "direction": "in",
+      "body": "Hola, una consulta. Instalan en la costa? Es para una casa en Mar Azul, pdo de Villa Gesell",
+      "ts": "2026-08-19T12:46:23.040Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -143055,7 +143093,8 @@
       "1a0168d52cbc1f75",
       "1a016e3be9552bb2",
       "1a016f2b830b47c7",
-      "1a016f6cfd08948d"
+      "1a016f6cfd08948d",
+      "1a019e94fca7028d"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -143579,7 +143618,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxMTY5MjQ2NDgxNTI3MjozMjk2NjE3OTU2MzcwNDYxMjg3ODcyNzUwNjAwNzQyNTAyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxMTY5MjQ2NDgxNTI3MjozMjk2NjE4MTU5MDQyNjMyMTk1MTI4Mzc4NTQzMzYxMjI4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxMTY5MjQ2NDgxNTI3MjozMjk2NjE4MzI0NTE0Njg1Nzk2Mjc0MDczNjAzMTk4MTU2OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxMTY5MjQ2NDgxNTI3MjozMjk2Njg0NTUyOTc0MjI0Mjg3MDI0NTIwNjMyODg2ODg2NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxMTY5MjQ2NDgxNTI3MjozMjk2Njg0NTUyOTc0MjI0Mjg3MDI0NTIwNjMyODg2ODg2NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDEwMDk2NzM1NTg4Nzc4NDozMjk2Njk2MzQ0ODA4MDM1NzcxOTY2Mjc4NzUwOTA5MjM1MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2Njk4MDI5OTMyNjExNTgwMTk4OTc2NjkyOTQ0ODk2MAZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
