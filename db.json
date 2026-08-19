@@ -118581,7 +118581,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-08-14T22:35:02.000Z",
-      "last_touch_at": "2026-08-14T22:35:02.000Z"
+      "last_touch_at": "2026-08-19T15:28:30.000Z"
     },
     {
       "id": "lead-email-1a0029feff38",
@@ -123429,11 +123429,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787143584228",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-19T13:43:51.913Z",
-      "last_message_preview": "Hola Diego cómo estás? Podemos mandar equipo para allá si problema. \nPero no hacemos solo colocación. Tendría que ser con la compra de nuest",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-19T12:46:23.040Z",
+      "unread_count": 1,
+      "last_message_at": "2026-08-19T17:15:50.603Z",
+      "last_message_preview": "Hola, si, eso desde ya. La colocación tiene un costo adicional?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-19T17:15:50.603Z",
       "last_outbound_at": "2026-08-19T13:43:51.913Z"
     },
     {
@@ -123450,6 +123450,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-19T13:08:00.394Z",
       "last_outbound_at": "2026-08-19T13:43:10.582Z"
+    },
+    {
+      "id": "conv-email-1a01aa372bce",
+      "channel": "email",
+      "contact_id": "camansilla@artear.com",
+      "contact_name": "Carlos Mansilla",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0026a1a52a",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-19T15:28:30.000Z",
+      "last_message_preview": "Hola Estoy interesado en el Roble Kitsiliano de Madera y como Opcion el Eslavonia XL de H20.\r\nSaludos\r\n\r\n________________________________\r\nD",
+      "email_subject": "RE: Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-19T15:28:30.000Z"
     }
   ],
   "messages": [
@@ -135735,6 +135750,22 @@
       "body": "✉️ Re: Comex+Cargo // Momesso // Cotizacion JR007 | Wall panles | Shanghai - Buenos Aires | 20 ft // CCF-MI-00000105\n\nBuenos días Vicky, Cami\r\nConfirmamos el on board de la carga de referencia:\r\n\r\n*ETD DALIAN: 19/AUG*\r\n*VSL: KOTA LUKIS *\r\n*ETA BUENOS AIRES: 10/OCT*\r\n\r\n[image: image.png]\r\n\r\n\r\nSaludos,\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\nCarolina Lodovico\r\n*Customer Comex+ Cargo*\r\nCel WhatsApp: (+54)115-761-1787\r\n\r\n*Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nAv. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\n\r\nEl mar, 18 ago 2026 a la(s) 11:20 a.m., Customer Comex+ Cargo (\r\nCustomerCargo@grupocomexmas.com) escribió:\r\n\r\n> Genial Cami!! 🙌🏼\r\n> Les informaré las novedades del zarpe.\r\n>\r\n> Saludos,\r\n>\r\n>\r\n>\r\n> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n> Cordiali Saluti*\r\n> Carolina Lodovico\r\n> *Customer Comex+ Cargo*\r\n> Cel WhatsApp: (+54)115-761-1787\r\n>\r\n> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n> Tel.: (+54)114331-2207/1893\r\n> Av. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\n> Argentina\r\n>\r\n>\r\n> El mar, 18 ago 2026 a la(s) 10:30 a.m., Camila Cerveri (\r\n> camilac@grupocomexmas.com) escribió:\r\n>\r\n>> Hola Caro, buen dia\r\n>>\r\n>> La cantidad de bultos ahora coincide con el packing list que tengo.\r\n>>\r\n>> Saludos\r\n>>\r\n>>\r\n>>\r\n>>\r\n>> El mar, 18 ago 2026 a la(s) 10:02 a.m., Customer Comex+ Cargo (\r\n>> CustomerCargo@grupocomexmas.com) escribió:\r\n>>\r\n>>> Buenos días Vicky, Cami,\r\n>>> Confirmamos que el contened",
       "ts": "2026-08-19T14:54:20.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a01aa372bce",
+      "conversation_id": "conv-email-1a01aa372bce",
+      "direction": "in",
+      "body": "✉️ RE: Pedido de Presupuesto | Página Web\n\nHola Estoy interesado en el Roble Kitsiliano de Madera y como Opcion el Eslavonia XL de H20.\r\nSaludos\r\n\r\n________________________________\r\nDe: Pisos Pacific <info@pisospacific.com>\r\nEnviado: martes, 18 de agosto de 2026 17:13\r\nPara: Carlos Mansilla <camansilla@artear.com>\r\nAsunto: Re: Pedido de Presupuesto | Página Web\r\n\r\nNo suele recibir correo electrónico de info@pisospacific.com. Por qué es esto importante<https://aka.ms/LearnAboutSenderIdentification>\r\nHola Carlos, ¡muchas gracias por tu consulta!\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera<https://pisospacific.com/madera> — Pisos de madera noble prefinished\r\n• Línea H2O<https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación.\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\n\r\n\r\n[Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087<https://wa.me/5491151750087>\r\ninfo@pisospacific.com<mailto:info@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
+      "ts": "2026-08-19T15:28:30.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787159751266-xxz8",
+      "conversation_id": "conv-1787143584228-knsx",
+      "direction": "in",
+      "body": "Hola, si, eso desde ya. La colocación tiene un costo adicional?",
+      "ts": "2026-08-19T17:15:50.603Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -142081,7 +142112,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-19T08:15:58.165Z",
     "gmail_seen_ids": [
-      "19e877f8f634af6e",
       "19e867668d5fb9d9",
       "19e85f6090cc5099",
       "19e8430cd342c6c4",
@@ -142880,7 +142910,8 @@
       "1a019bc5aac0e618",
       "1a019f000429e376",
       "1a019e94fca7028d",
-      "1a01a84c250c8092"
+      "1a01a84c250c8092",
+      "1a01aa372bce7bc0"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -143748,7 +143779,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDEwMDk2NzM1NTg4Nzc4NDozMjk2Njk2MzQ0ODA4MDM1NzcxOTY2Mjc4NzUwOTA5MjM1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2Njk4MDI5OTMyNjExNTgwMTk4OTc2NjkyOTQ0ODk2MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzAwMzkwNzc4NTg1NjU5MDk4NzI5Njk1ODg0MDgzMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzAwNDIzMTI3OTM0MjMwODY1MTQ3Mjg5MDM2MzkwNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzAwNDIzMTI3OTM0MjMwODY1MTQ3Mjg5MDM2MzkwNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2NzI3ODUzODIxNDcxNjAwMjc0MzgyOTkzNDM3NDkxMgZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
