@@ -123791,11 +123791,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-19T22:33:41.081Z",
-      "last_message_preview": "📷 Foto",
+      "unread_count": 2,
+      "last_message_at": "2026-08-19T22:34:35.404Z",
+      "last_message_preview": "Hola!! Te consulto, tienen fotos donde hayan instalado el piso Verona? Es madera de ingeniería o que material? Muchas gracias",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-19T22:33:41.081Z"
+      "last_inbound_at": "2026-08-19T22:34:35.404Z"
     }
   ],
   "messages": [
@@ -136177,6 +136177,14 @@
       "status": "received",
       "media_url": "/uploads/68ae06c7c8fd9b08.jpg",
       "media_type": "image"
+    },
+    {
+      "id": "m-1787178876257-d9vq",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "Hola!! Te consulto, tienen fotos donde hayan instalado el piso Verona? Es madera de ingeniería o que material? Muchas gracias",
+      "ts": "2026-08-19T22:34:35.404Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -144200,7 +144208,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4NjU4MDA5NTY4NzM0NTgxODMzMDQ4MzEzMDM2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4NzE5OTA0Nzg2ODk4Njk4OTE5MDc5NjI3OTgwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4NzcwNTkzMTA5OTc1OTQ3NDYyMzQ2MzI5MjkyOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2NzYzMDMyNjQ0NjQ2NzY3NzYwOTE4MjM3MjAzNjYwOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2NzYzMDMyNjQ0NjQ2NzY3NzYwOTE4MjM3MjAzNjYwOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2NzYzMTMyODUyOTY4Mzg2MzQ5NjEwMzE5MDA2OTI0OAZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
