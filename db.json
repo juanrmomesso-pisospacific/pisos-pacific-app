@@ -118864,6 +118864,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-19T12:46:23.040Z",
       "last_touch_at": "2026-08-19T12:46:23.040Z"
+    },
+    {
+      "id": "lead-instagram-1787144864684",
+      "name": "@tamy_selvood",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-19T13:07:42.857Z",
+      "last_touch_at": "2026-08-19T13:07:42.857Z"
     }
   ],
   "conversations": [
@@ -123418,6 +123434,20 @@
       "last_message_preview": "Hola, una consulta. Instalan en la costa? Es para una casa en Mar Azul, pdo de Villa Gesell",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-19T12:46:23.040Z"
+    },
+    {
+      "id": "conv-1787144864683-4y8d",
+      "channel": "instagram",
+      "contact_id": "1834585067786825",
+      "contact_name": "@tamy_selvood",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787144864684",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-19T13:07:42.857Z",
+      "last_message_preview": "Hola",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-19T13:07:42.857Z"
     }
   ],
   "messages": [
@@ -135609,6 +135639,14 @@
       "body": "Hola, una consulta. Instalan en la costa? Es para una casa en Mar Azul, pdo de Villa Gesell",
       "ts": "2026-08-19T12:46:23.040Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787144864684-dmtr",
+      "conversation_id": "conv-1787144864683-4y8d",
+      "direction": "in",
+      "body": "Hola",
+      "ts": "2026-08-19T13:07:42.857Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -143620,7 +143658,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxMTY5MjQ2NDgxNTI3MjozMjk2NjE4MzI0NTE0Njg1Nzk2Mjc0MDczNjAzMTk4MTU2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxMTY5MjQ2NDgxNTI3MjozMjk2Njg0NTUyOTc0MjI0Mjg3MDI0NTIwNjMyODg2ODg2NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDEwMDk2NzM1NTg4Nzc4NDozMjk2Njk2MzQ0ODA4MDM1NzcxOTY2Mjc4NzUwOTA5MjM1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2Njk4MDI5OTMyNjExNTgwMTk4OTc2NjkyOTQ0ODk2MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2Njk4MDI5OTMyNjExNTgwMTk4OTc2NjkyOTQ0ODk2MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzAwMzkwNzc4NTg1NjU5MDk4NzI5Njk1ODg0MDgzMgZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
