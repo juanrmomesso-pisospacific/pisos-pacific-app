@@ -117487,7 +117487,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-29T04:37:49.000Z",
-      "last_touch_at": "2026-08-07T08:24:51.000Z"
+      "last_touch_at": "2026-08-19T09:51:32.000Z"
     },
     {
       "id": "lead-instagram-1785337451526",
@@ -122300,12 +122300,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fac2a34f88",
       "status": "closed",
-      "unread_count": 4,
-      "last_message_at": "2026-08-07T08:24:51.000Z",
-      "last_message_preview": "Dear Victoria\r\n\r\n \r\n\r\nSpace is released, I hv released to Young.\r\n\r\n \r\n\r\nBooking no.:275436330\r\n\r\nVsl/voy: SEASPAN RIO DE JANEIRO 634E\r\n\r\nET",
+      "unread_count": 5,
+      "last_message_at": "2026-08-19T09:51:32.000Z",
+      "last_message_preview": "Dear Victoria\r\n\r\n \r\n\r\nVsl wl sail on Aug.25\r\n\r\n \r\n\r\n \r\n\r\n\r\n\r\n \r\n\r\nBest regards,\r\n\r\n \r\n\r\nTracy\r\n\r\nCollyer Logistics North China Ltd. Dalian B",
       "email_subject": "RE: MANAGE DOCUMENTATION SHANGHAI - COLON, PANAMA | PDPG 2624 | 1 x 10 ft",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-07T08:24:51.000Z",
+      "last_inbound_at": "2026-08-19T09:51:32.000Z",
       "ignored": true
     },
     {
@@ -135566,6 +135566,14 @@
       "body": "✉️ OEM Factory Price Eco-Friendly Rigid core Flooring\n\nHello\r\n\r\nWe hope this email finds you well. My name is Eddy from DM Floor, an eco-friendly rigid core flooring manufacturer.\r\n\r\n\r\nWe came across your excellent reputation in the flooring market . Your focus on quality and innovation aligns properly with what we do at DM Floor.\r\n\r\n\r\nWe are writing to explore the possibility of a partnership with your company, as we believe that our flooring would be a valuable addition to your product range.\r\n\r\n\r\nMGO Flooring is 100% degradable, TVOC, PVC and formaldehyde-free, making it safe for health and the environment with a swelling rate of less than 3% after being soaked in water for 24 hours. MGO Flooring doesn't expand or shrink due to temperature changes like other vinyl flooring (SPC and LVT flooring) because MGO flooring doesn’t contain PVC (a major advantage over SPC).It is also fireproof with ASTM Class A standards and can be easily installed using the Valinge click system. We can provide flooring planks and hybrid tiles.\r\n\r\nCWC Flooring: is waterproof with a swelling rate of less than 3% after being soaked in water for 24 hours. Additionally, CWC flooring does not expand or shrink due to temperature changes. It has anti-scratch resistance ranging from AC2, AC3, and AC4.\r\n\r\n\r\nIt is also light in weight, around 56% lighter in weight than SPC flooring, whereby we can load 4,000 Sqm per container, which also saves shipping costs and also makes it easy to work with, especially in high-rise buildings.\r\n\r\n\r\nWe do provide OEM services, ",
       "ts": "2026-08-19T08:56:07.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0196ee6ea7",
+      "conversation_id": "conv-email-19fac2a34f88",
+      "direction": "in",
+      "body": "✉️ RE: MANAGE DOCUMENTATION SHANGHAI - COLON, PANAMA | PDPG 2624 | 1 x 10 ft\n\nDear Victoria\r\n\r\n \r\n\r\nVsl wl sail on Aug.25\r\n\r\n \r\n\r\n \r\n\r\n\r\n\r\n \r\n\r\nBest regards,\r\n\r\n \r\n\r\nTracy\r\n\r\nCollyer Logistics North China Ltd. Dalian Branch,\r\n\r\nTel: +86-411-82740169\r\n\r\nCell:+8618640809118\r\n\r\nSkype:t.yang@dal.collyerlogistics.com\r\n\r\nWeb:  <http://www.collyerlogistics.com/> www.collyerlogistics.com\r\n\r\n \r\n\r\n- as agents of Collyer Container Line - This message is intended for the recipient(s) named above. It may contain confidential or privileged information. If you are not the intended recipient, please notify the sender immediately by replying to this message and then delete it from your system. Do not copy, use or circulate this communication. Thank you.\r\n\r\n \r\n\r\nFrom: Victoria Pisos Pacific <victoria@pisospacific.com> \r\nSent: Wednesday, August 19, 2026 1:54 AM\r\nTo: Tracy Yang <t.yang@dal.collyerlogistics.com>\r\nCc: info pisos <info@pisospacific.com>\r\nSubject: Re: MANAGE DOCUMENTATION SHANGHAI - COLON, PANAMA | PDPG 2624 | 1 x 10 ft\r\n\r\n \r\n\r\nHi Tracy,\r\n\r\nCould you please let me know if the load has sailed?\r\n\r\nBest regards,\r\nVictoria González Collado\r\n\r\n \r\n\r\nEl El vie, 7 ago 2026 a la(s) 05:24, Tracy Yang <t.yang@dal.collyerlogistics.com <mailto:t.yang@dal.collyerlogistics.com> > escribió:\r\n\r\nDear Victoria\r\n\r\n \r\n\r\nSpace is released, I hv released to Young.\r\n\r\n \r\n\r\nBooking no.:275436330\r\n\r\nVsl/voy: SEASPAN RIO DE JANEIRO 634E\r\n\r\nETD: AUG.18\r\n\r\nETA: SEP.20\r\n\r\n \r\n\r\nBest regards,\r\n\r\n \r\n\r\nTracy\r\n\r\nCollyer Logistics North China Ltd. Dalian Branch,\r\n\r\nTel: +86-411-82740169\r\n\r\nCell",
+      "ts": "2026-08-19T09:51:32.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -141912,7 +141920,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-19T08:15:58.165Z",
     "gmail_seen_ids": [
-      "19e8f951f9481736",
       "19e8efb794dc52b0",
       "19e8dfe0a8356f9a",
       "19e8959374f51db7",
@@ -142711,7 +142718,8 @@
       "1a016db97363b3c4",
       "1a0191f4683aa29e",
       "1a0193e3525b5cec",
-      "1a0194fcf9cc5d18"
+      "1a0194fcf9cc5d18",
+      "1a0196ee6ea76cbc"
     ],
     "cash_sessions": {
       "1136982222": {
