@@ -123698,13 +123698,14 @@
       "contact_name": "Eddy",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0193e3525b",
-      "status": "open",
-      "unread_count": 1,
+      "status": "closed",
+      "unread_count": 0,
       "last_message_at": "2026-08-19T08:56:07.000Z",
       "last_message_preview": "Hello\r\n\r\nWe hope this email finds you well. My name is Eddy from DM Floor, an eco-friendly rigid core flooring manufacturer.\r\n\r\n\r\nWe came ac",
       "email_subject": "OEM Factory Price Eco-Friendly Rigid core Flooring",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-19T08:56:07.000Z"
+      "last_inbound_at": "2026-08-19T08:56:07.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1787143584228-knsx",
