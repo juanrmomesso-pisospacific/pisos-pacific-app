@@ -118858,6 +118858,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-19T00:41:44.398Z",
       "last_touch_at": "2026-08-19T00:41:44.398Z"
+    },
+    {
+      "id": "lead-email-1a0193e3525b",
+      "name": "Eddy",
+      "email": "eddy@dmgfloor.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: OEM Factory Price Eco-Friendly Rigid core Flooring — Hello\r\n\r\nWe hope this email finds you well. My name is Eddy from DM Floor, an eco-friendly rigid core flooring manufacturer.\r\n\r\n\r\nWe came across your excellent reputation in the fl",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-19T08:56:07.000Z",
+      "last_touch_at": "2026-08-19T08:56:07.000Z"
     }
   ],
   "conversations": [
@@ -123383,6 +123400,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-19T00:46:14.647Z",
       "last_outbound_at": "2026-08-19T01:11:45.093Z"
+    },
+    {
+      "id": "conv-email-1a0193e3525b",
+      "channel": "email",
+      "contact_id": "eddy@dmgfloor.com",
+      "contact_name": "Eddy",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0193e3525b",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-19T08:56:07.000Z",
+      "last_message_preview": "Hello\r\n\r\nWe hope this email finds you well. My name is Eddy from DM Floor, an eco-friendly rigid core flooring manufacturer.\r\n\r\n\r\nWe came ac",
+      "email_subject": "OEM Factory Price Eco-Friendly Rigid core Flooring",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-19T08:56:07.000Z"
     }
   ],
   "messages": [
@@ -135526,6 +135558,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 105c542b7c6c4da9889b8df659104869\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-17 00:00:00 UTC to 2026-08-18 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-08-19T08:24:33.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0193e3525b",
+      "conversation_id": "conv-email-1a0193e3525b",
+      "direction": "in",
+      "body": "✉️ OEM Factory Price Eco-Friendly Rigid core Flooring\n\nHello\r\n\r\nWe hope this email finds you well. My name is Eddy from DM Floor, an eco-friendly rigid core flooring manufacturer.\r\n\r\n\r\nWe came across your excellent reputation in the flooring market . Your focus on quality and innovation aligns properly with what we do at DM Floor.\r\n\r\n\r\nWe are writing to explore the possibility of a partnership with your company, as we believe that our flooring would be a valuable addition to your product range.\r\n\r\n\r\nMGO Flooring is 100% degradable, TVOC, PVC and formaldehyde-free, making it safe for health and the environment with a swelling rate of less than 3% after being soaked in water for 24 hours. MGO Flooring doesn't expand or shrink due to temperature changes like other vinyl flooring (SPC and LVT flooring) because MGO flooring doesn’t contain PVC (a major advantage over SPC).It is also fireproof with ASTM Class A standards and can be easily installed using the Valinge click system. We can provide flooring planks and hybrid tiles.\r\n\r\nCWC Flooring: is waterproof with a swelling rate of less than 3% after being soaked in water for 24 hours. Additionally, CWC flooring does not expand or shrink due to temperature changes. It has anti-scratch resistance ranging from AC2, AC3, and AC4.\r\n\r\n\r\nIt is also light in weight, around 56% lighter in weight than SPC flooring, whereby we can load 4,000 Sqm per container, which also saves shipping costs and also makes it easy to work with, especially in high-rise buildings.\r\n\r\n\r\nWe do provide OEM services, ",
+      "ts": "2026-08-19T08:56:07.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -141872,7 +141912,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-19T08:15:58.165Z",
     "gmail_seen_ids": [
-      "19ea6f729a53b727",
       "19e9205c64ef69c9",
       "19e8f951f9481736",
       "19e8efb794dc52b0",
@@ -142671,7 +142710,8 @@
       "1a0167297cd095b8",
       "1a016b209b5205ee",
       "1a016db97363b3c4",
-      "1a0191f4683aa29e"
+      "1a0191f4683aa29e",
+      "1a0193e3525b5cec"
     ],
     "cash_sessions": {
       "1136982222": {
