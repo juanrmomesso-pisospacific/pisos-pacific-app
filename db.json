@@ -123490,11 +123490,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787160038154",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-19T17:20:36.590Z",
-      "last_message_preview": "Buenas tardes les envío una foto de un espacio chico a ver qué me aconsejan?",
+      "unread_count": 2,
+      "last_message_at": "2026-08-19T17:21:26.289Z",
+      "last_message_preview": "📷 Foto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-19T17:20:36.590Z"
+      "last_inbound_at": "2026-08-19T17:21:26.289Z"
     }
   ],
   "messages": [
@@ -135804,6 +135804,16 @@
       "body": "Buenas tardes les envío una foto de un espacio chico a ver qué me aconsejan?",
       "ts": "2026-08-19T17:20:36.590Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787160086845-dlop",
+      "conversation_id": "conv-1787160038154-v9mv",
+      "direction": "in",
+      "body": "📷 Foto",
+      "ts": "2026-08-19T17:21:26.289Z",
+      "status": "received",
+      "media_url": "/uploads/ae2b8998ccd3db6a.jpg",
+      "media_type": "image"
     }
   ],
   "templates": [
@@ -143819,7 +143829,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzAwMzkwNzc4NTg1NjU5MDk4NzI5Njk1ODg0MDgzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMjEwOTM4OTI0MDgyMzozMjk2NzAwNDIzMTI3OTM0MjMwODY1MTQ3Mjg5MDM2MzkwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2NzI3ODUzODIxNDcxNjAwMjc0MzgyOTkzNDM3NDkxMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4MzgxMzc0ODg0MTYwNTU2OTg1OTE5NDcxNjE2MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4MzgxMzc0ODg0MTYwNTU2OTg1OTE5NDcxNjE2MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4NDczMDUzNTY0MTM2MDE5NzEyMDQyODA4MTE1MgZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
