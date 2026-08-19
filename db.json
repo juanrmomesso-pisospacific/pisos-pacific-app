@@ -123394,11 +123394,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787100106970",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-19T01:11:45.093Z",
-      "last_message_preview": "Mañana subimos todo!",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-19T00:46:14.647Z",
+      "unread_count": 2,
+      "last_message_at": "2026-08-19T10:44:24.941Z",
+      "last_message_preview": "↩️ Reaccionó: ❤",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-19T10:44:24.941Z",
       "last_outbound_at": "2026-08-19T01:11:45.093Z"
     },
     {
@@ -135573,6 +135573,22 @@
       "direction": "in",
       "body": "✉️ RE: MANAGE DOCUMENTATION SHANGHAI - COLON, PANAMA | PDPG 2624 | 1 x 10 ft\n\nDear Victoria\r\n\r\n \r\n\r\nVsl wl sail on Aug.25\r\n\r\n \r\n\r\n \r\n\r\n\r\n\r\n \r\n\r\nBest regards,\r\n\r\n \r\n\r\nTracy\r\n\r\nCollyer Logistics North China Ltd. Dalian Branch,\r\n\r\nTel: +86-411-82740169\r\n\r\nCell:+8618640809118\r\n\r\nSkype:t.yang@dal.collyerlogistics.com\r\n\r\nWeb:  <http://www.collyerlogistics.com/> www.collyerlogistics.com\r\n\r\n \r\n\r\n- as agents of Collyer Container Line - This message is intended for the recipient(s) named above. It may contain confidential or privileged information. If you are not the intended recipient, please notify the sender immediately by replying to this message and then delete it from your system. Do not copy, use or circulate this communication. Thank you.\r\n\r\n \r\n\r\nFrom: Victoria Pisos Pacific <victoria@pisospacific.com> \r\nSent: Wednesday, August 19, 2026 1:54 AM\r\nTo: Tracy Yang <t.yang@dal.collyerlogistics.com>\r\nCc: info pisos <info@pisospacific.com>\r\nSubject: Re: MANAGE DOCUMENTATION SHANGHAI - COLON, PANAMA | PDPG 2624 | 1 x 10 ft\r\n\r\n \r\n\r\nHi Tracy,\r\n\r\nCould you please let me know if the load has sailed?\r\n\r\nBest regards,\r\nVictoria González Collado\r\n\r\n \r\n\r\nEl El vie, 7 ago 2026 a la(s) 05:24, Tracy Yang <t.yang@dal.collyerlogistics.com <mailto:t.yang@dal.collyerlogistics.com> > escribió:\r\n\r\nDear Victoria\r\n\r\n \r\n\r\nSpace is released, I hv released to Young.\r\n\r\n \r\n\r\nBooking no.:275436330\r\n\r\nVsl/voy: SEASPAN RIO DE JANEIRO 634E\r\n\r\nETD: AUG.18\r\n\r\nETA: SEP.20\r\n\r\n \r\n\r\nBest regards,\r\n\r\n \r\n\r\nTracy\r\n\r\nCollyer Logistics North China Ltd. Dalian Branch,\r\n\r\nTel: +86-411-82740169\r\n\r\nCell",
       "ts": "2026-08-19T09:51:32.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787136265351-7yxl",
+      "conversation_id": "conv-1787100106970-kuvt",
+      "direction": "in",
+      "body": "↩️ Reaccionó: ❤",
+      "ts": "2026-08-19T10:44:24.066Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787136265743-a2ne",
+      "conversation_id": "conv-1787100106970-kuvt",
+      "direction": "in",
+      "body": "↩️ Reaccionó: ❤",
+      "ts": "2026-08-19T10:44:24.941Z",
       "status": "received"
     }
   ],
