@@ -119536,6 +119536,23 @@
       "address": "Bancalari",
       "created_at": "2026-08-20T14:56:08.087Z",
       "last_touch_at": "2026-08-20T14:56:10.954Z"
+    },
+    {
+      "id": "lead-email-1a0210a0f433",
+      "name": "Camila Lesiuk",
+      "email": "camilalesiuk1998@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Asesoramiento — Hola buenas tardes…\r\n\r\nMi nombre es Camila, soy diseñadora de interiores. Quería consultarles si\r\nexiste la posibilidad de adquirir o solicitar el catálogo y  muestras para\r\npoder ",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-20T21:18:10.000Z",
+      "last_touch_at": "2026-08-20T21:18:10.000Z"
     }
   ],
   "conversations": [
@@ -124200,6 +124217,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T11:48:18.000Z",
       "last_outbound_at": "2026-08-20T15:28:33.371Z"
+    },
+    {
+      "id": "conv-email-1a0210a0f433",
+      "channel": "email",
+      "contact_id": "camilalesiuk1998@gmail.com",
+      "contact_name": "Camila Lesiuk",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0210a0f433",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-20T21:18:10.000Z",
+      "last_message_preview": "Hola buenas tardes…\r\n\r\nMi nombre es Camila, soy diseñadora de interiores. Quería consultarles si\r\nexiste la posibilidad de adquirir o solici",
+      "email_subject": "Asesoramiento",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-20T21:18:10.000Z"
     }
   ],
   "messages": [
@@ -137076,6 +137108,14 @@
       "body": "📎 Adjunto",
       "ts": "2026-08-20T17:55:08.312Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0210a0f433",
+      "conversation_id": "conv-email-1a0210a0f433",
+      "direction": "in",
+      "body": "✉️ Asesoramiento\n\nHola buenas tardes…\r\n\r\nMi nombre es Camila, soy diseñadora de interiores. Quería consultarles si\r\nexiste la posibilidad de adquirir o solicitar el catálogo y  muestras para\r\npoder apreciar en persona los colores, texturas y terminaciones antes de\r\ndefinir materiales para mis proyectos.\r\n\r\nMe interesaron mucho sus productos y me encantaría poder incorporarlos en\r\nfuturas propuestas.\r\n\r\nDesde ya, muchísimas gracias! Quedo atenta a la información y cómo puedo\r\nadquirirlas.",
+      "ts": "2026-08-20T21:18:10.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -143426,7 +143466,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-20T14:05:28.890Z",
     "gmail_seen_ids": [
-      "19e4fb9b93d05583",
       "19e464906d5fa8d9",
       "19e432d123909647",
       "19e4076b472d0f35",
@@ -144225,7 +144264,8 @@
       "1a01f002f4feea85",
       "1a01f0b26b87597c",
       "1a01f0faa05202b3",
-      "1a01f98519d4d616"
+      "1a01f98519d4d616",
+      "1a0210a0f433dd6e"
     ],
     "cash_sessions": {
       "1136982222": {
