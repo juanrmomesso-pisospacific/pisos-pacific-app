@@ -123823,11 +123823,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-20T11:23:50.128Z",
-      "last_message_preview": "Me interesa el color. Buscaba algo así más claro.",
+      "unread_count": 2,
+      "last_message_at": "2026-08-20T11:24:01.594Z",
+      "last_message_preview": "El tema es q soy de Rosario",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T11:23:50.128Z",
+      "last_inbound_at": "2026-08-20T11:24:01.594Z",
       "last_outbound_at": "2026-08-20T11:00:47.564Z"
     },
     {
@@ -136494,6 +136494,14 @@
       "body": "Me interesa el color. Buscaba algo así más claro.",
       "ts": "2026-08-20T11:23:50.128Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787225042669-0lc8",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "El tema es q soy de Rosario",
+      "ts": "2026-08-20T11:24:01.594Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -144527,7 +144535,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ0NTQ1MDg0NjM1MTUxNTQwODM4MjczNDM2ODc2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ0NjQ3OTUyNjg5NDk2MzUwODk3ODI5MjYyMTMxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ1MzkzNjQ1NDM0MzcxMjA4ODU1NTUzNDY4MDA2NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ4MjczMjkxNTI3MzUyNzY2Nzc2MTc4MjcxODQ2NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ4MjczMjkxNTI3MzUyNzY2Nzc2MTc4MjcxODQ2NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ4Mjk0NDQyNDc3NDA3OTg1MDAxNjI2Mjg0ODUxMgZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
