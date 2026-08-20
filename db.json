@@ -123852,12 +123852,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787223010753",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-20T10:57:49.069Z",
-      "last_message_preview": "En pesos argentinos",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-20T10:59:20.978Z",
+      "last_message_preview": "$49590 el m2 + iva",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T10:57:49.069Z",
-      "last_outbound_at": "2026-08-20T10:57:23.034Z"
+      "last_outbound_at": "2026-08-20T10:59:20.978Z"
     }
   ],
   "messages": [
@@ -136404,6 +136404,16 @@
       "ts": "2026-08-20T10:58:33.003Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2ODQ1NDc0Njg5NzY3NDU3Njg4NDI4NjA0MjkzMTIwMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223561364-ekzh",
+      "conversation_id": "conv-1787223010753-in1g",
+      "direction": "out",
+      "body": "$49590 el m2 + iva",
+      "ts": "2026-08-20T10:59:20.978Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ1NTYzMTg2NjAzNTk2NjkwNzM0MjE3NTMzODQ5NgZDZD",
       "via": "ig-app"
     }
   ],
