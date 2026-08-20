@@ -119569,6 +119569,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-20T21:47:27.799Z",
       "last_touch_at": "2026-08-20T21:47:27.799Z"
+    },
+    {
+      "id": "lead-email-1a02148e3a65",
+      "name": "emilia",
+      "email": "emiliapascarelli@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "terrero",
+      "postal_code": "1416",
+      "approx_m2": 80,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 80m² · Con Colocación · CP 1416",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-20T22:26:59.000Z",
+      "last_touch_at": "2026-08-20T22:26:59.000Z"
     }
   ],
   "conversations": [
@@ -124262,6 +124279,21 @@
       "last_message_preview": "Tienen local donde ir a ver los pisos?",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-20T21:47:27.799Z"
+    },
+    {
+      "id": "conv-email-1a02148e3a65",
+      "channel": "email",
+      "contact_id": "emiliapascarelli@gmail.com",
+      "contact_name": "emilia",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a02148e3a65",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-20T22:26:59.000Z",
+      "last_message_preview": "Formulario web — 80m² · Con Colocación · CP 1416 · terrero",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-20T22:26:59.000Z"
     }
   ],
   "messages": [
@@ -137154,6 +137186,14 @@
       "body": "Tienen local donde ir a ver los pisos?",
       "ts": "2026-08-20T21:47:27.799Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a02148e3a65",
+      "conversation_id": "conv-email-1a02148e3a65",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 80m² · Con Colocación · CP 1416 · terrero",
+      "ts": "2026-08-20T22:26:59.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -143504,7 +143544,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-20T14:05:28.890Z",
     "gmail_seen_ids": [
-      "19e464906d5fa8d9",
       "19e432d123909647",
       "19e4076b472d0f35",
       "19e342bba945da5c",
@@ -144303,7 +144342,8 @@
       "1a01f0b26b87597c",
       "1a01f0faa05202b3",
       "1a01f98519d4d616",
-      "1a0210a0f433dd6e"
+      "1a0210a0f433dd6e",
+      "1a02148e3a658947"
     ],
     "cash_sessions": {
       "1136982222": {
