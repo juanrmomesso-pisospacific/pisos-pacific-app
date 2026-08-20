@@ -28843,6 +28843,61 @@
       "quote_number": "A1975",
       "status": "DRAFT",
       "lead_id": "lead-email-1a0026a1a52a"
+    },
+    {
+      "id": "local-1787237881817-8b0z4",
+      "client_id": "",
+      "client_name": "Tamy Selvood",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 4178-0018",
+      "client_address": "Bancalari",
+      "internal_notes": "",
+      "public_notes": "Se coloca sobre el piso existente (cemento alisado). A definir diseño y se deben verificar medidas en obra.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Tamy Selvood ",
+      "has_iva": true,
+      "price": 4486.68,
+      "zoned": false,
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 80,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 3040,
+          "discount": 304,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 72,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "disc_value": 10,
+          "total": 1080,
+          "discount": 108,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 412,
+      "discount_amount": 412,
+      "created_at": "2026-08-20T14:58:01.537Z",
+      "quote_number": "A3929",
+      "status": "DRAFT",
+      "lead_id": "local-1787237768328-v2p2k"
     }
   ],
   "clients": [
@@ -119364,6 +119419,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-20T11:48:18.000Z",
       "last_touch_at": "2026-08-20T11:48:18.000Z"
+    },
+    {
+      "id": "local-1787237768328-v2p2k",
+      "name": "Tamy Selvood ",
+      "phone": "+54 9 11 4178-0018",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Bancalari",
+      "created_at": "2026-08-20T14:56:08.087Z",
+      "last_touch_at": "2026-08-20T14:56:10.954Z"
     }
   ],
   "conversations": [
