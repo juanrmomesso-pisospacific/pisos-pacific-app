@@ -123838,11 +123838,11 @@
       "linked_lead_id": "lead-instagram-1787188700131",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-20T10:58:13.253Z",
-      "last_message_preview": "Te queda en 34.2 + iva",
+      "last_message_at": "2026-08-20T10:58:33.003Z",
+      "last_message_preview": "El m2",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T01:18:43.640Z",
-      "last_outbound_at": "2026-08-20T10:58:13.253Z"
+      "last_outbound_at": "2026-08-20T10:58:33.003Z"
     },
     {
       "id": "conv-1787223010753-in1g",
@@ -136394,6 +136394,16 @@
       "ts": "2026-08-20T10:58:13.253Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2ODQ1NDM4MjU2MjQ4ODczNzQ3MjczMDQxODM4MDgwMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223513769-z9xn",
+      "conversation_id": "conv-1787188700131-9dmw",
+      "direction": "out",
+      "body": "El m2",
+      "ts": "2026-08-20T10:58:33.003Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2ODQ1NDc0Njg5NzY3NDU3Njg4NDI4NjA0MjkzMTIwMAZDZD",
       "via": "ig-app"
     }
   ],
