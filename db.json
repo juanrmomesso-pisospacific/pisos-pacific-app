@@ -123840,11 +123840,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-20T13:15:22.667Z",
-      "last_message_preview": "Necesito datos\nDNI\nTeléfono\nDirección \nCp",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-20T12:26:22.517Z",
+      "unread_count": 3,
+      "last_message_at": "2026-08-20T13:32:20.898Z",
+      "last_message_preview": "Verona sí o sí q es el q más me interesa",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-20T13:32:20.898Z",
       "last_outbound_at": "2026-08-20T13:15:22.667Z"
     },
     {
@@ -136656,6 +136656,30 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODYwNjE4ODQ2NzQ3MjkzOTU4ODg4NDg3MjgyMjc4NAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1787232730508-4w9v",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "Me gustaría de Roble Kitsilano, Roble Europeo Veta\nTallada y el Verona",
+      "ts": "2026-08-20T13:32:09.675Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787232733815-7eok",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "De ser posible",
+      "ts": "2026-08-20T13:32:13.084Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787232742112-m98m",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "Verona sí o sí q es el q más me interesa",
+      "ts": "2026-08-20T13:32:20.898Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -144698,7 +144722,10 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ4NDA4MDQzODY1NzE1MTUyMTQ3MDc5NTQ4MTA4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODU1MTg0NjAyMzMwOTY1OTk1NDM1MTk4MzAzNDM2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODU1MTk1MjI3MTk4MDczMTk5MTA4OTMyMjM5MzYwMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2ODU2MDE1MjY0Nzk2NzQ1MjE4ODQxNjA2MTQ3Mjc2OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2ODU2MDE1MjY0Nzk2NzQ1MjE4ODQxNjA2MTQ3Mjc2OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODYyNDc2NDQ3MzQ5MDE4MzgyMTczNjc0OTgyNjA0OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODYyNDgyNzM2NDQ3MjgxNjQwOTcwMTIzMjE0ODQ4MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODYyNDk3MTUwNzQwNDc5NTM1MjQzMjM5Nzc3ODk0NAZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
