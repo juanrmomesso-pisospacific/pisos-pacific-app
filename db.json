@@ -123838,11 +123838,11 @@
       "linked_lead_id": "lead-instagram-1787188700131",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-20T10:57:45.054Z",
-      "last_message_preview": "Hola Luciano cómo estás?",
+      "last_message_at": "2026-08-20T10:58:02.465Z",
+      "last_message_preview": "USD 38 + iva\nAhora estamos con 10 off",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T01:18:43.640Z",
-      "last_outbound_at": "2026-08-20T10:57:45.054Z"
+      "last_outbound_at": "2026-08-20T10:58:02.465Z"
     },
     {
       "id": "conv-1787223010753-in1g",
@@ -136375,6 +136375,16 @@
       "body": "En pesos argentinos",
       "ts": "2026-08-20T10:57:49.069Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787223482972-r7jm",
+      "conversation_id": "conv-1787188700131-9dmw",
+      "direction": "out",
+      "body": "USD 38 + iva\nAhora estamos con 10 off",
+      "ts": "2026-08-20T10:58:02.465Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2ODQ1NDE4MzU1NzA1ODMxNTQyMjI3NDM3MjUwMTUwNAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
