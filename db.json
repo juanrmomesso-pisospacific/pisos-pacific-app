@@ -124045,12 +124045,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-20T13:48:42.394Z",
-      "last_message_preview": "Dale bárbaro!! Que ya estamos q tenemos q definir el piso! Muchas gracias",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-20T15:10:24.941Z",
+      "last_message_preview": "Dale!!",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T13:48:42.394Z",
-      "last_outbound_at": "2026-08-20T13:38:20.133Z"
+      "last_outbound_at": "2026-08-20T15:10:24.941Z"
     },
     {
       "id": "conv-1787188700131-9dmw",
@@ -136929,6 +136929,16 @@
       "body": "Dale bárbaro!! Que ya estamos q tenemos q definir el piso! Muchas gracias",
       "ts": "2026-08-20T13:48:42.394Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787238625747-pqq0",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Dale!!",
+      "ts": "2026-08-20T15:10:24.941Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODczMzUxMjk0MzEzMTg3OTE0OTE5OTU2MTg1MDg4MAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
