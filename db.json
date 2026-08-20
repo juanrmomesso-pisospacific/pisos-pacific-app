@@ -123824,11 +123824,11 @@
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-20T11:00:02.371Z",
-      "last_message_preview": "Ahora te paso",
+      "last_message_at": "2026-08-20T11:00:47.564Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-19T22:34:35.404Z",
-      "last_outbound_at": "2026-08-20T11:00:02.371Z"
+      "last_outbound_at": "2026-08-20T11:00:47.564Z"
     },
     {
       "id": "conv-1787188700131-9dmw",
@@ -136455,6 +136455,26 @@
       "ts": "2026-08-20T11:00:02.371Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ1NjM5NTQ0MjkyMzIwMTk5NDAwNjAxMzY3MzQ3MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223642095-5c7p",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Esta es una obra que estamos colocando",
+      "ts": "2026-08-20T11:00:41.579Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ1NzExODY5MjM4NzA5MzM2NDIzODc0ODQ4MzU4NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223648760-i97h",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-20T11:00:47.564Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ1NzIyOTA5NTY3MDc1OTE2OTk4ODcyMTkwMTU2OAZDZD",
       "via": "ig-app"
     }
   ],
