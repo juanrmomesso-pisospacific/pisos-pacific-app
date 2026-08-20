@@ -123841,11 +123841,11 @@
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-20T13:15:00.140Z",
-      "last_message_preview": "Sii",
+      "last_message_at": "2026-08-20T13:15:22.667Z",
+      "last_message_preview": "Necesito datos\nDNI\nTeléfono\nDirección \nCp",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T12:26:22.517Z",
-      "last_outbound_at": "2026-08-20T13:15:00.140Z"
+      "last_outbound_at": "2026-08-20T13:15:22.667Z"
     },
     {
       "id": "conv-1787188700131-9dmw",
@@ -136645,6 +136645,16 @@
       "ts": "2026-08-20T13:15:00.140Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODYwNTc3MjkwODg1MTY0NzQ2NjU4MjQ1MzUxODMzNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787231723471-n81p",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Necesito datos\nDNI\nTeléfono\nDirección \nCp",
+      "ts": "2026-08-20T13:15:22.667Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODYwNjE4ODQ2NzQ3MjkzOTU4ODg4NDg3MjgyMjc4NAZDZD",
       "via": "ig-app"
     }
   ],
