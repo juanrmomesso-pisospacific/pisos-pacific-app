@@ -123837,11 +123837,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787188700131",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-08-20T01:18:43.640Z",
-      "last_message_preview": "Sería para cubrir 130 m2",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T01:18:43.640Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-20T10:57:45.054Z",
+      "last_message_preview": "Hola Luciano cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-20T01:18:43.640Z",
+      "last_outbound_at": "2026-08-20T10:57:45.054Z"
     },
     {
       "id": "conv-1787223010753-in1g",
@@ -123851,11 +123852,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787223010753",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-20T10:57:23.034Z",
-      "last_message_preview": "Estamos con 10 off x el momento",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-20T10:51:04.828Z",
+      "unread_count": 1,
+      "last_message_at": "2026-08-20T10:57:49.069Z",
+      "last_message_preview": "En pesos argentinos",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-20T10:57:49.069Z",
       "last_outbound_at": "2026-08-20T10:57:23.034Z"
     }
   ],
@@ -136356,6 +136357,24 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ1MzQ1NjE4OTM3NzI1NjM0MDQ1Nzk0ODk3MTAwOAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1787223465737-eou9",
+      "conversation_id": "conv-1787188700131-9dmw",
+      "direction": "out",
+      "body": "Hola Luciano cómo estás?",
+      "ts": "2026-08-20T10:57:45.054Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2ODQ1Mzg2MjM4MTkyMjQ5OTQ1Mzc2NzQ2ODk3NDA4MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223469661-z78x",
+      "conversation_id": "conv-1787223010753-in1g",
+      "direction": "in",
+      "body": "En pesos argentinos",
+      "ts": "2026-08-20T10:57:49.069Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -144387,7 +144406,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2NzgxMjgwODY5NjUxMzc1NDg2MjgyMTE2MzY2MzM2MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2NzgxMjk5NjQwOTE0MjYwMjg5MzQ2OTA2MzA1MzMxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ0NTQ1MDg0NjM1MTUxNTQwODM4MjczNDM2ODc2OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ0NjQ3OTUyNjg5NDk2MzUwODk3ODI5MjYyMTMxMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ0NjQ3OTUyNjg5NDk2MzUwODk3ODI5MjYyMTMxMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ1MzkzNjQ1NDM0MzcxMjA4ODU1NTUzNDY4MDA2NAZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
