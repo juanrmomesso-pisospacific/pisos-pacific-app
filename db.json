@@ -124045,7 +124045,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-20T15:18:52.929Z",
       "last_message_preview": "↩️ Reaccionó: ❤",
       "last_message_direction": "in",
@@ -143236,6 +143236,10 @@
     "EvF5nh374B-SXYZZ_iTh_x7g4-AFvCz0": {
       "userId": "u-vicky",
       "expires": 1788293404655
+    },
+    "DhuK77z5d2icBP7ojPgNQlzZ0jgW9QXB": {
+      "userId": "u-admin",
+      "expires": 1788449253882
     }
   },
   "settings": {
