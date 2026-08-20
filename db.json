@@ -123840,11 +123840,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-20T11:43:20.726Z",
-      "last_message_preview": "La colocacion puede ser pegada a carpeta (más caro y más complicado si tenes que hacer alguna reparación) \n\nO la otra opción es Con manta en",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-20T11:25:03.178Z",
+      "unread_count": 2,
+      "last_message_at": "2026-08-20T12:26:22.517Z",
+      "last_message_preview": "A Rosario hacen envío de muestras?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-20T12:26:22.517Z",
       "last_outbound_at": "2026-08-20T11:43:20.726Z"
     },
     {
@@ -136612,6 +136612,22 @@
       "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 99a881bcb47e45dd9ce064fa63dfdaea\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-18 00:00:00 UTC to 2026-08-19 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-08-20T12:00:15.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787228778006-f3xs",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "Bien",
+      "ts": "2026-08-20T12:26:16.757Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787228783341-z15u",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "A Rosario hacen envío de muestras?",
+      "ts": "2026-08-20T12:26:22.517Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -144651,7 +144667,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ4MzIwMzg5NTQyMTg0MjA1MTU1NzA0Mzk5NDYyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ4MzM5Mzc1MzQ4MDgxMjgzMDkyMDYzNDUzMTg0MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ4MzYyNTUyOTcxODEwMjUyMzA1ODUxMjE5OTY4MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ4NDA4MDQzODY1NzE1MTUyMTQ3MDc5NTQ4MTA4OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ4NDA4MDQzODY1NzE1MTUyMTQ3MDc5NTQ4MTA4OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODU1MTg0NjAyMzMwOTY1OTk1NDM1MTk4MzAzNDM2OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODU1MTk1MjI3MTk4MDczMTk5MTA4OTMyMjM5MzYwMAZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
