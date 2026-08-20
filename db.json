@@ -113763,6 +113763,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1787239933935-gznoe",
+      "date": "2026-08-20T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "counterparty": "Pipi & Juan",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-024",
+      "description": "Gastos personal, osde y aysa",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 580000,
+      "amount_usd": 374.19,
+      "exchange_rate": 1550.01,
+      "fixed_variable": "Fijo",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
