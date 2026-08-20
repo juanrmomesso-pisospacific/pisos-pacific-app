@@ -123823,11 +123823,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-08-19T22:34:35.404Z",
-      "last_message_preview": "Hola!! Te consulto, tienen fotos donde hayan instalado el piso Verona? Es madera de ingeniería o que material? Muchas gracias",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-19T22:34:35.404Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-20T11:00:02.371Z",
+      "last_message_preview": "Ahora te paso",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-19T22:34:35.404Z",
+      "last_outbound_at": "2026-08-20T11:00:02.371Z"
     },
     {
       "id": "conv-1787188700131-9dmw",
@@ -136414,6 +136415,46 @@
       "ts": "2026-08-20T10:59:20.978Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ1NTYzMTg2NjAzNTk2NjkwNzM0MjE3NTMzODQ5NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223588111-0l6f",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Hola Vir cómo estás",
+      "ts": "2026-08-20T10:59:47.294Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ1NjExNzMxNjI4OTk0ODA1NDgyNjE3MjU0NzA3MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223595701-47xt",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Es piso de ingeniería si",
+      "ts": "2026-08-20T10:59:55.183Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ1NjI2Mjg0MDUzMjU2OTk4MTAwMjI3MjczNTIzMgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223597979-l1wk",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Roble",
+      "ts": "2026-08-20T10:59:57.218Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ1NjMwMDM4NDEzOTMxODc4OTg1MTIzMjMzNzkyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223602905-ewxz",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Ahora te paso",
+      "ts": "2026-08-20T11:00:02.371Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ1NjM5NTQ0MjkyMzIwMTk5NDAwNjAxMzY3MzQ3MgZDZD",
       "via": "ig-app"
     }
   ],
