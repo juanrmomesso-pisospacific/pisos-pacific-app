@@ -123590,11 +123590,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786903722827",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-18T22:14:17.754Z",
-      "last_message_preview": "Si queres pásame un contacto de WhatsApp y mañana te contactamos",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-16T18:08:41.249Z",
+      "unread_count": 2,
+      "last_message_at": "2026-08-20T00:14:08.130Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-20T00:14:08.130Z",
       "last_outbound_at": "2026-08-18T22:14:17.754Z"
     },
     {
@@ -136185,6 +136185,22 @@
       "body": "Hola!! Te consulto, tienen fotos donde hayan instalado el piso Verona? Es madera de ingeniería o que material? Muchas gracias",
       "ts": "2026-08-19T22:34:35.404Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787184848694-605o",
+      "conversation_id": "conv-1786903722827-z906",
+      "direction": "in",
+      "body": "1167972417",
+      "ts": "2026-08-20T00:14:07.845Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787184849021-6jen",
+      "conversation_id": "conv-1786903722827-z906",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-20T00:14:08.130Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -144209,7 +144225,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4NzE5OTA0Nzg2ODk4Njk4OTE5MDc5NjI3OTgwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMjk2NzI4NzcwNTkzMTA5OTc1OTQ3NDYyMzQ2MzI5MjkyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2NzYzMDMyNjQ0NjQ2NzY3NzYwOTE4MjM3MjAzNjYwOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2NzYzMTMyODUyOTY4Mzg2MzQ5NjEwMzE5MDA2OTI0OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2NzYzMTMyODUyOTY4Mzg2MzQ5NjEwMzE5MDA2OTI0OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk2Nzc0MTUwMDYwOTU3MDE4ODM5MzM2NzI0NTY4NDczNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk2Nzc0MTUwNTg3NzY0NjcwMTE5NTU2MjEyNDgzNjg2NAZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
