@@ -123851,11 +123851,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787223010753",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-08-20T10:51:04.828Z",
-      "last_message_preview": "Precio del metro 2?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T10:51:04.828Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-20T10:57:23.034Z",
+      "last_message_preview": "Estamos con 10 off x el momento",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-20T10:51:04.828Z",
+      "last_outbound_at": "2026-08-20T10:57:23.034Z"
     }
   ],
   "messages": [
@@ -136325,6 +136326,36 @@
       "body": "Precio del metro 2?",
       "ts": "2026-08-20T10:51:04.828Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787223426505-324n",
+      "conversation_id": "conv-1787223010753-in1g",
+      "direction": "out",
+      "body": "Hola",
+      "ts": "2026-08-20T10:57:06.167Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ1MzE0NTA1ODI3MjIyNzU3NzkxNzM4NTczNjE5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223435385-t2j2",
+      "conversation_id": "conv-1787223010753-in1g",
+      "direction": "out",
+      "body": "USD 38 + iva",
+      "ts": "2026-08-20T10:57:15.051Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ1MzMwODkyODIwNzY1OTE3Nzg2NDE3ODE3MTkwNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223443457-olp0",
+      "conversation_id": "conv-1787223010753-in1g",
+      "direction": "out",
+      "body": "Estamos con 10 off x el momento",
+      "ts": "2026-08-20T10:57:23.034Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ1MzQ1NjE4OTM3NzI1NjM0MDQ1Nzk0ODk3MTAwOAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
