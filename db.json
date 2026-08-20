@@ -119553,6 +119553,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-20T21:18:10.000Z",
       "last_touch_at": "2026-08-20T21:18:10.000Z"
+    },
+    {
+      "id": "lead-instagram-1787262450212",
+      "name": "@lorena_muzzio",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-20T21:47:27.799Z",
+      "last_touch_at": "2026-08-20T21:47:27.799Z"
     }
   ],
   "conversations": [
@@ -124232,6 +124248,20 @@
       "email_subject": "Asesoramiento",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-20T21:18:10.000Z"
+    },
+    {
+      "id": "conv-1787262450212-9v9a",
+      "channel": "instagram",
+      "contact_id": "1740160510578573",
+      "contact_name": "@lorena_muzzio",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787262450212",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-20T21:47:27.799Z",
+      "last_message_preview": "Tienen local donde ir a ver los pisos?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-20T21:47:27.799Z"
     }
   ],
   "messages": [
@@ -137116,6 +137146,14 @@
       "body": "✉️ Asesoramiento\n\nHola buenas tardes…\r\n\r\nMi nombre es Camila, soy diseñadora de interiores. Quería consultarles si\r\nexiste la posibilidad de adquirir o solicitar el catálogo y  muestras para\r\npoder apreciar en persona los colores, texturas y terminaciones antes de\r\ndefinir materiales para mis proyectos.\r\n\r\nMe interesaron mucho sus productos y me encantaría poder incorporarlos en\r\nfuturas propuestas.\r\n\r\nDesde ya, muchísimas gracias! Quedo atenta a la información y cómo puedo\r\nadquirirlas.",
       "ts": "2026-08-20T21:18:10.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787262450212-5weh",
+      "conversation_id": "conv-1787262450212-9v9a",
+      "direction": "in",
+      "body": "Tienen local donde ir a ver los pisos?",
+      "ts": "2026-08-20T21:47:27.799Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -145171,7 +145209,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODYyNTYwMDk2MTg3MTI0MDAwODM1MTczMjQ2NTY2NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODY0MzA3NjkwOTM4NDM5MDEyMDM1MzA2MTQwNDY3MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2ODgxNDY1NjgwMjU2Mzg0ODkwNTkwMDM0NTUyNDIyNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDg2OTI4OTM4ODA5NjYwNTozMjk2ODkxNTgyODk1NzA2MDIxNTcyNDA5MzY2NTcwNTk4NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDg2OTI4OTM4ODA5NjYwNTozMjk2ODkxNTgyODk1NzA2MDIxNTcyNDA5MzY2NTcwNTk4NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2NzIxMzAzNjA0OTEyODozMjk2OTE3Mjk2NzExMDkxNjU5NjU2NzE5NTUzMzcwNTIxNgZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
