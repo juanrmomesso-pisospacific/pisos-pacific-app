@@ -123838,11 +123838,11 @@
       "linked_lead_id": "lead-instagram-1787188700131",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-20T10:58:02.465Z",
-      "last_message_preview": "USD 38 + iva\nAhora estamos con 10 off",
+      "last_message_at": "2026-08-20T10:58:13.253Z",
+      "last_message_preview": "Te queda en 34.2 + iva",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T01:18:43.640Z",
-      "last_outbound_at": "2026-08-20T10:58:02.465Z"
+      "last_outbound_at": "2026-08-20T10:58:13.253Z"
     },
     {
       "id": "conv-1787223010753-in1g",
@@ -136384,6 +136384,16 @@
       "ts": "2026-08-20T10:58:02.465Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2ODQ1NDE4MzU1NzA1ODMxNTQyMjI3NDM3MjUwMTUwNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223494154-vp9f",
+      "conversation_id": "conv-1787188700131-9dmw",
+      "direction": "out",
+      "body": "Te queda en 34.2 + iva",
+      "ts": "2026-08-20T10:58:13.253Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2ODQ1NDM4MjU2MjQ4ODczNzQ3MjczMDQxODM4MDgwMAZDZD",
       "via": "ig-app"
     }
   ],
