@@ -120499,14 +120499,15 @@
       "contact_name": "Coordinación Zabala Romina",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ed5e9e8aef",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-07-20T16:25:09.000Z",
       "last_message_preview": "Estimados,\r\n\r\nComparto comprobante de transferencia por la factura 3989.\r\n\r\nGracias!\r\nSaludos,\r\nJuan\r\n\r\n\r\nEl lun, 20 jul 2026 a las 11:59, C",
       "email_subject": "FA0003-3924 RODRIGUEZ MPMESSO JUAN Re: Facturación",
       "last_message_direction": "out",
       "last_inbound_at": "2026-07-20T15:01:26.000Z",
-      "last_outbound_at": "2026-07-20T16:25:09.000Z"
+      "last_outbound_at": "2026-07-20T16:25:09.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19ed6246b2e9",
@@ -120592,14 +120593,15 @@
       "contact_name": "Alejandro Weskamp",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19edcc75eea5",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-07-15T12:05:42.000Z",
       "last_message_preview": "Hola. Te voy a avisar. He tenido postergando mi viaje. Gracias!\r\n\r\n*Alejandro Weskamp*\r\n\r\n\r\nAlippi 9262 Torre 2 Piso 1 Dpto D. Rosario, ARG ",
       "email_subject": "Consulta showroom Pisos pacific",
       "last_message_direction": "in",
       "last_inbound_at": "2026-07-15T12:05:42.000Z",
-      "last_outbound_at": "2026-07-14T23:56:02.628Z"
+      "last_outbound_at": "2026-07-14T23:56:02.628Z",
+      "ignored": true
     },
     {
       "id": "conv-1781871799724-l3rc",
@@ -124091,11 +124093,12 @@
       "linked_lead_id": "lead-email-1a01f002f4fe",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-20T11:48:18.000Z",
-      "last_message_preview": "Formulario web — 42m² · Sin Colocación · CP M5521 · Hellen Keller 330",
+      "last_message_at": "2026-08-20T15:28:33.371Z",
+      "last_message_preview": "Hola Martin, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T11:48:18.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-20T11:48:18.000Z",
+      "last_outbound_at": "2026-08-20T15:28:33.371Z"
     }
   ],
   "messages": [
@@ -136947,6 +136950,15 @@
       "body": "↩️ Reaccionó: ❤",
       "ts": "2026-08-20T15:18:52.929Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787239713371-8x31",
+      "conversation_id": "conv-email-1a01f002f4fe",
+      "direction": "out",
+      "body": "Hola Martin, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-08-20T15:28:33.371Z",
+      "status": "sent",
+      "wa_id": "1a01fc9c952a7ae4"
     }
   ],
   "templates": [
