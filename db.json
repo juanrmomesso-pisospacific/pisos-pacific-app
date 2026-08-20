@@ -123824,11 +123824,11 @@
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-20T11:41:50.116Z",
-      "last_message_preview": "USD 75 + iva el m2\nAhora estamos con 10 off",
+      "last_message_at": "2026-08-20T11:42:21.904Z",
+      "last_message_preview": "Las medidas son 19 cm ancho x 1.90 largo. 12 mm espesor.",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T11:25:03.178Z",
-      "last_outbound_at": "2026-08-20T11:41:50.116Z"
+      "last_outbound_at": "2026-08-20T11:42:21.904Z"
     },
     {
       "id": "conv-1787188700131-9dmw",
@@ -136543,6 +136543,16 @@
       "ts": "2026-08-20T11:41:50.116Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODUwMjY1NTE3OTMwMTUzOTI3NDE0MjI2OTgzMzIxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787226142423-m81g",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Las medidas son 19 cm ancho x 1.90 largo. 12 mm espesor.",
+      "ts": "2026-08-20T11:42:21.904Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODUwMzI0MTU2NDMyODM2NzM3NzA3NDIwMTAzNDc1MgZDZD",
       "via": "ig-app"
     }
   ],
