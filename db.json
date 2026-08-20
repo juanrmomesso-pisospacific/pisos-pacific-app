@@ -123823,12 +123823,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 6,
-      "last_message_at": "2026-08-20T11:25:03.178Z",
-      "last_message_preview": "Tendría q verlo con luz solar tb obviamente en su caso si coordinamos por la muestra",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-20T11:41:50.116Z",
+      "last_message_preview": "USD 75 + iva el m2\nAhora estamos con 10 off",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T11:25:03.178Z",
-      "last_outbound_at": "2026-08-20T11:00:47.564Z"
+      "last_outbound_at": "2026-08-20T11:41:50.116Z"
     },
     {
       "id": "conv-1787188700131-9dmw",
@@ -136534,6 +136534,16 @@
       "body": "Tendría q verlo con luz solar tb obviamente en su caso si coordinamos por la muestra",
       "ts": "2026-08-20T11:25:03.178Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787226110977-ygc0",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "USD 75 + iva el m2\nAhora estamos con 10 off",
+      "ts": "2026-08-20T11:41:50.116Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODUwMjY1NTE3OTMwMTUzOTI3NDE0MjI2OTgzMzIxNgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
