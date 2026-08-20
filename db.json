@@ -117105,7 +117105,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-07-24T02:56:33.000Z",
-      "last_touch_at": "2026-08-14T03:07:49.000Z"
+      "last_touch_at": "2026-08-20T04:29:04.000Z"
     },
     {
       "id": "lead-instagram-1784916324625",
@@ -122098,12 +122098,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f920e2ca6d",
       "status": "closed",
-      "unread_count": 20,
-      "last_message_at": "2026-08-14T03:07:49.000Z",
-      "last_message_preview": "Dear Mike, Daniel.\r\n\r\nThanks for your logos confirmation and 3T, 75PET confirmation with video.\r\nAttached is helpful for you to choose best ",
+      "unread_count": 21,
+      "last_message_at": "2026-08-20T04:29:04.000Z",
+      "last_message_preview": "Dear Mike, Daniel.\r\n\r\nAttached, this is Orange Color (LAMI PET) on BASE PET film.\r\nPls confirm this.\r\n\r\nJoshua\r\n\r\n\r\n\r\n\r\n861-4 Samil-Ro, Nam-",
       "email_subject": "Re: radiant heating",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-14T03:07:49.000Z",
+      "last_inbound_at": "2026-08-20T04:29:04.000Z",
       "ignored": true
     },
     {
@@ -136263,6 +136263,14 @@
       "body": "Sería para cubrir 130 m2",
       "ts": "2026-08-20T01:18:43.640Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a01d6e98e41",
+      "conversation_id": "conv-email-19f920e2ca6d",
+      "direction": "in",
+      "body": "✉️ Re: order for Uruguay ==> Orange LAMI PET Color on BASE PET carbon film\n\nDear Mike, Daniel.\r\n\r\nAttached, this is Orange Color (LAMI PET) on BASE PET film.\r\nPls confirm this.\r\n\r\nJoshua\r\n\r\n\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 4588 6512\r\nTel. : +82 31 866 5688\r\n\r\n* www.felixkorea.com <http://www.felixkorea.com>*\r\n\r\n\r\n\r\n2026년 8월 14일 (금) 오후 12:07, FELIXKOREA <felixkorea.com@gmail.com>님이 작성:\r\n\r\n> Dear Mike, Daniel.\r\n>\r\n> Thanks for your logos confirmation and 3T, 75PET confirmation with video.\r\n> Attached is helpful for you to choose best wiring mothods.\r\n> In Korea, we mostly use method 3 for wiring.\r\n>\r\n> Many thanks,\r\n>\r\n> Joshua\r\n>\r\n>\r\n>\r\n>\r\n> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> Korea. 11405\r\n> Mob. : +82 10 4588 6512\r\n> Tel. : +82 31 866 5688\r\n>\r\n> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>\r\n>\r\n>\r\n> 2026년 8월 12일 (수) 오후 6:35, Mike <mike@pisospacific.com>님이 작성:\r\n>\r\n>> yes is ok\r\n>> mike\r\n>>\r\n>> El mié, 12 ago 2026 a las 4:02, FELIXKOREA (<felixkorea.com@gmail.com>)\r\n>> escribió:\r\n>>\r\n>>> Dear Mike, Daniel.\r\n>>>\r\n>>> As Daniel asked me of adding Mr. Parquet logo, pls see the attached\r\n>>> PACIFI - MR. PARQUET logos on the 80cm film.\r\n>>>\r\n>>> For putting your logo on Floor Insulation sheet, it's difficult to do it\r\n>>> due to printing mold change and MOQ rolls.\r\n>>>\r\n>>> on the side of LAMI PET, we will put final mark.\r\n>>> *PAC308R  220V  80W/M  +/-10%   MADE IN KOREA*\r\n>>>\r\n>>> as you said, this order' batch No : PM-2601\r\n>>>\r\n>>> Joshua\r\n>>> Felix Korea.\r\n>>>\r\n>>>\r\n>>> 861",
+      "ts": "2026-08-20T04:29:04.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -142609,7 +142617,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-19T08:15:58.165Z",
     "gmail_seen_ids": [
-      "19e8430cd342c6c4",
       "19e8404e01ba397d",
       "19e74f66d1ae55f4",
       "19e6fc569ce3ebe7",
@@ -143408,7 +143415,8 @@
       "1a01a84c250c8092",
       "1a01aa372bce7bc0",
       "1a01bc8010350554",
-      "1a01cacc332af18f"
+      "1a01cacc332af18f",
+      "1a01d6e98e413f45"
     ],
     "cash_sessions": {
       "1136982222": {
