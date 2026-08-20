@@ -113787,6 +113787,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1787240464513-6unoj",
+      "date": "2026-08-20T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "counterparty": "Pipi & Juan",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-024",
+      "description": "Pago de Escritura - Chacabuco 553",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 4120000,
+      "amount_usd": 2658.06,
+      "exchange_rate": 1550,
+      "fixed_variable": "Fijo",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
@@ -144528,7 +144552,8 @@
       "1a019e94fca7028d",
       "1a01b9af3a95a962",
       "1a01ba1a9272e9b8",
-      "1a01f0faa05202b3"
+      "1a01f0faa05202b3",
+      "1a01fc9c952a7ae4"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
