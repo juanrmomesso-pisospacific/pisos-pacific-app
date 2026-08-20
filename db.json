@@ -123763,12 +123763,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787143584228",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-19T17:15:50.603Z",
-      "last_message_preview": "Hola, si, eso desde ya. La colocación tiene un costo adicional?",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-20T11:01:55.963Z",
+      "last_message_preview": "Si tenes los m2 te armo cotización completa",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-19T17:15:50.603Z",
-      "last_outbound_at": "2026-08-19T13:43:51.913Z"
+      "last_outbound_at": "2026-08-20T11:01:55.963Z"
     },
     {
       "id": "conv-1787144864683-4y8d",
@@ -136475,6 +136475,16 @@
       "ts": "2026-08-20T11:00:47.564Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODQ1NzIyOTA5NTY3MDc1OTE2OTk4ODcyMTkwMTU2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787223716490-m9jn",
+      "conversation_id": "conv-1787143584228-knsx",
+      "direction": "out",
+      "body": "Si tenes los m2 te armo cotización completa",
+      "ts": "2026-08-20T11:01:55.963Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2ODQ1ODQ5MDg0NjYxOTcyMDk0MTk2MzE3MDU0NTY2NAZDZD",
       "via": "ig-app"
     }
   ],
