@@ -115491,7 +115491,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-08-19T08:24:33.000Z"
+      "last_touch_at": "2026-08-20T08:23:24.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -120733,12 +120733,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 31,
-      "last_message_at": "2026-08-19T08:24:33.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-17 00:00:00 UTC to 2026-08-18 00:00:00 UTC.",
+      "unread_count": 32,
+      "last_message_at": "2026-08-20T08:23:24.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-18 00:00:00 UTC to 2026-08-19 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-19T08:24:33.000Z",
+      "last_inbound_at": "2026-08-20T08:23:24.000Z",
       "ignored": true
     },
     {
@@ -136271,6 +136271,14 @@
       "body": "✉️ Re: order for Uruguay ==> Orange LAMI PET Color on BASE PET carbon film\n\nDear Mike, Daniel.\r\n\r\nAttached, this is Orange Color (LAMI PET) on BASE PET film.\r\nPls confirm this.\r\n\r\nJoshua\r\n\r\n\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 4588 6512\r\nTel. : +82 31 866 5688\r\n\r\n* www.felixkorea.com <http://www.felixkorea.com>*\r\n\r\n\r\n\r\n2026년 8월 14일 (금) 오후 12:07, FELIXKOREA <felixkorea.com@gmail.com>님이 작성:\r\n\r\n> Dear Mike, Daniel.\r\n>\r\n> Thanks for your logos confirmation and 3T, 75PET confirmation with video.\r\n> Attached is helpful for you to choose best wiring mothods.\r\n> In Korea, we mostly use method 3 for wiring.\r\n>\r\n> Many thanks,\r\n>\r\n> Joshua\r\n>\r\n>\r\n>\r\n>\r\n> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> Korea. 11405\r\n> Mob. : +82 10 4588 6512\r\n> Tel. : +82 31 866 5688\r\n>\r\n> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>\r\n>\r\n>\r\n> 2026년 8월 12일 (수) 오후 6:35, Mike <mike@pisospacific.com>님이 작성:\r\n>\r\n>> yes is ok\r\n>> mike\r\n>>\r\n>> El mié, 12 ago 2026 a las 4:02, FELIXKOREA (<felixkorea.com@gmail.com>)\r\n>> escribió:\r\n>>\r\n>>> Dear Mike, Daniel.\r\n>>>\r\n>>> As Daniel asked me of adding Mr. Parquet logo, pls see the attached\r\n>>> PACIFI - MR. PARQUET logos on the 80cm film.\r\n>>>\r\n>>> For putting your logo on Floor Insulation sheet, it's difficult to do it\r\n>>> due to printing mold change and MOQ rolls.\r\n>>>\r\n>>> on the side of LAMI PET, we will put final mark.\r\n>>> *PAC308R  220V  80W/M  +/-10%   MADE IN KOREA*\r\n>>>\r\n>>> as you said, this order' batch No : PM-2601\r\n>>>\r\n>>> Joshua\r\n>>> Felix Korea.\r\n>>>\r\n>>>\r\n>>> 861",
       "ts": "2026-08-20T04:29:04.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a01e44b1f95",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: eb34d4105bc2493ea5bc37064c819bd3\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-18 00:00:00 UTC to 2026-08-19 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-08-20T08:23:24.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -142617,7 +142625,6 @@
     "mp_pending_job": 102855312,
     "mp_last_sync": "2026-08-19T08:15:58.165Z",
     "gmail_seen_ids": [
-      "19e8404e01ba397d",
       "19e74f66d1ae55f4",
       "19e6fc569ce3ebe7",
       "19e6f4212ca410b5",
@@ -143416,7 +143423,8 @@
       "1a01aa372bce7bc0",
       "1a01bc8010350554",
       "1a01cacc332af18f",
-      "1a01d6e98e413f45"
+      "1a01d6e98e413f45",
+      "1a01e44b1f9561eb"
     ],
     "cash_sessions": {
       "1136982222": {
