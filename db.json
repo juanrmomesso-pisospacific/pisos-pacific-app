@@ -113716,6 +113716,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mt1leunu-005"
+    },
+    {
+      "id": "local-1787239765848-g84jr",
+      "flow": "Ingreso",
+      "date": "2026-08-20T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Arq. Agustina Bilbao",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra Village Golf - Magu Segura",
+      "sale_ref": "A7726",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 4800,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
