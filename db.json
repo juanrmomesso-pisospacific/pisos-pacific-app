@@ -119213,6 +119213,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-20T10:50:09.063Z",
       "last_touch_at": "2026-08-20T10:50:09.063Z"
+    },
+    {
+      "id": "lead-email-1a01f002f4fe",
+      "name": "Martin",
+      "email": "martin.c.loria@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Hellen Keller 330",
+      "postal_code": "M5521",
+      "approx_m2": 42,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 42m² · Sin Colocación · CP M5521",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-20T11:48:18.000Z",
+      "last_touch_at": "2026-08-20T11:48:18.000Z"
     }
   ],
   "conversations": [
@@ -123859,6 +123876,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T10:57:49.069Z",
       "last_outbound_at": "2026-08-20T10:59:20.978Z"
+    },
+    {
+      "id": "conv-email-1a01f002f4fe",
+      "channel": "email",
+      "contact_id": "martin.c.loria@gmail.com",
+      "contact_name": "Martin",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a01f002f4fe",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-20T11:48:18.000Z",
+      "last_message_preview": "Formulario web — 42m² · Sin Colocación · CP M5521 · Hellen Keller 330",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-20T11:48:18.000Z"
     }
   ],
   "messages": [
@@ -136564,6 +136596,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODUwNDMyNjYyOTE1Mjg1NzY5MDEzNzgwOTY0OTY2NAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a01f002f4fe",
+      "conversation_id": "conv-email-1a01f002f4fe",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 42m² · Sin Colocación · CP M5521 · Hellen Keller 330",
+      "ts": "2026-08-20T11:48:18.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -142910,7 +142950,6 @@
     "mp_pending_job": 102855312,
     "mp_last_sync": "2026-08-19T08:15:58.165Z",
     "gmail_seen_ids": [
-      "19e6f4212ca410b5",
       "19e69d13b789c7e0",
       "19e6590584f7fcc8",
       "19e645397e27ce4c",
@@ -143709,7 +143748,8 @@
       "1a01d6e98e413f45",
       "1a01e44b1f9561eb",
       "1a01e76132f4f86c",
-      "1a01eabfe155585d"
+      "1a01eabfe155585d",
+      "1a01f002f4feea85"
     ],
     "cash_sessions": {
       "1136982222": {
