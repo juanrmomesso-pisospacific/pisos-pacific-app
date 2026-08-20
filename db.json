@@ -14165,7 +14165,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Village Golf",
-      "contract_total": 7154.143149999999,
+      "contract_total": 5913,
       "items": [
         {
           "product_id": "SERV-106",
@@ -14252,12 +14252,12 @@
       "discount_total": 370.08,
       "status": "Programado",
       "created_at": "2026-07-22T22:35:15.171Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 5913,
         "total_paid": 0,
-        "balance_due": 7154.143149999999
+        "balance_due": 5913
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -14272,7 +14272,8 @@
           "at": "2026-08-14T13:13:26.398Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "iva_amount": 0
     },
     {
       "id": "local-sale-1784797365504-3npc",
