@@ -119197,6 +119197,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-20T01:18:17.666Z",
       "last_touch_at": "2026-08-20T01:18:17.666Z"
+    },
+    {
+      "id": "lead-instagram-1787223010753",
+      "name": "@sonsolesmoreda",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-20T10:50:09.063Z",
+      "last_touch_at": "2026-08-20T10:50:09.063Z"
     }
   ],
   "conversations": [
@@ -123826,6 +123842,20 @@
       "last_message_preview": "Sería para cubrir 130 m2",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-20T01:18:43.640Z"
+    },
+    {
+      "id": "conv-1787223010753-in1g",
+      "channel": "instagram",
+      "contact_id": "934755633022157",
+      "contact_name": "@sonsolesmoreda",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787223010753",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-20T10:50:09.063Z",
+      "last_message_preview": "Hola me pasarían el precio del metro 2 de estos pisos .",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-20T10:50:09.063Z"
     }
   ],
   "messages": [
@@ -136279,6 +136309,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: eb34d4105bc2493ea5bc37064c819bd3\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-18 00:00:00 UTC to 2026-08-19 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-08-20T08:23:24.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787223010753-yh2y",
+      "conversation_id": "conv-1787223010753-in1g",
+      "direction": "in",
+      "body": "Hola me pasarían el precio del metro 2 de estos pisos .",
+      "ts": "2026-08-20T10:50:09.063Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -144308,7 +144346,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk2Nzc0MTUwNTg3NzY0NjcwMTE5NTU2MjEyNDgzNjg2NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2NzgxMjUxNzI3ODg3MjI2ODYwNzM5MzQxNjM0NzY0OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2NzgxMjgwODY5NjUxMzc1NDg2MjgyMTE2MzY2MzM2MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2NzgxMjk5NjQwOTE0MjYwMjg5MzQ2OTA2MzA1MzMxMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjgwMzUwNDcxNzc5NDkwMTozMjk2NzgxMjk5NjQwOTE0MjYwMjg5MzQ2OTA2MzA1MzMxMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDU1ODA3MTI2OTYxMDczMDozMjk2ODQ0NTQ1MDg0NjM1MTUxNTQwODM4MjczNDM2ODc2OAZDZD"
     ],
     "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
     "warehouses": [
