@@ -123840,12 +123840,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 5,
-      "last_message_at": "2026-08-20T13:32:55.021Z",
-      "last_message_preview": "📎 Adjunto",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-20T13:38:20.133Z",
+      "last_message_preview": "Te aviso!!",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T13:32:55.021Z",
-      "last_outbound_at": "2026-08-20T13:15:22.667Z"
+      "last_outbound_at": "2026-08-20T13:38:20.133Z"
     },
     {
       "id": "conv-1787188700131-9dmw",
@@ -136696,6 +136696,26 @@
       "body": "📎 Adjunto",
       "ts": "2026-08-20T13:32:55.021Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787233098281-l5pr",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Genial seguro salgan semana que viene",
+      "ts": "2026-08-20T13:38:17.452Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODYzMTU0ODc3NjUxNjU2MjczNDc2MzkwNjk1NzMxMgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787233100746-pclz",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Te aviso!!",
+      "ts": "2026-08-20T13:38:20.133Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk2ODYzMTU5ODIzMjAxNjA2MzQyMTE4NzI3NDgzMzkyMAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
