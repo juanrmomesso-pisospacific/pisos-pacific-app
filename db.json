@@ -124344,11 +124344,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787262450212",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-20T21:47:27.799Z",
-      "last_message_preview": "Tienen local donde ir a ver los pisos?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T21:47:27.799Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-21T15:57:57.584Z",
+      "last_message_preview": "Es con cita previa",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-20T21:47:27.799Z",
+      "last_outbound_at": "2026-08-21T15:57:57.584Z"
     },
     {
       "id": "conv-email-1a02148e3a65",
@@ -137303,6 +137304,36 @@
       "body": "✉️ Re: order for Uruguay ==> Orange LAMI PET Color on BASE PET carbon film\n\nthank you\r\n\r\nEl jue, 20 ago 2026 a la(s) 1:29 a.m., FELIXKOREA (felixkorea.com@gmail.com)\r\nescribió:\r\n\r\n> Dear Mike, Daniel.\r\n>\r\n> Attached, this is Orange Color (LAMI PET) on BASE PET film.\r\n> Pls confirm this.\r\n>\r\n> Joshua\r\n>\r\n>\r\n>\r\n>\r\n> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> Korea. 11405\r\n> Mob. : +82 10 4588 6512\r\n> Tel. : +82 31 866 5688\r\n>\r\n> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>\r\n>\r\n>\r\n> 2026년 8월 14일 (금) 오후 12:07, FELIXKOREA <felixkorea.com@gmail.com>님이 작성:\r\n>\r\n>> Dear Mike, Daniel.\r\n>>\r\n>> Thanks for your logos confirmation and 3T, 75PET confirmation with video.\r\n>> Attached is helpful for you to choose best wiring mothods.\r\n>> In Korea, we mostly use method 3 for wiring.\r\n>>\r\n>> Many thanks,\r\n>>\r\n>> Joshua\r\n>>\r\n>>\r\n>>\r\n>>\r\n>> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n>> Korea. 11405\r\n>> Mob. : +82 10 4588 6512\r\n>> Tel. : +82 31 866 5688\r\n>>\r\n>> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>>\r\n>>\r\n>>\r\n>> 2026년 8월 12일 (수) 오후 6:35, Mike <mike@pisospacific.com>님이 작성:\r\n>>\r\n>>> yes is ok\r\n>>> mike\r\n>>>\r\n>>> El mié, 12 ago 2026 a las 4:02, FELIXKOREA (<felixkorea.com@gmail.com>)\r\n>>> escribió:\r\n>>>\r\n>>>> Dear Mike, Daniel.\r\n>>>>\r\n>>>> As Daniel asked me of adding Mr. Parquet logo, pls see the attached\r\n>>>> PACIFI - MR. PARQUET logos on the 80cm film.\r\n>>>>\r\n>>>> For putting your logo on Floor Insulation sheet, it's difficult to do\r\n>>>> it due to printing mold change and MOQ rolls.\r\n>>>>\r\n>>>> on the side of LAMI PET, we will p",
       "ts": "2026-08-21T12:58:54.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787327866889-jq7x",
+      "conversation_id": "conv-1787262450212-9v9a",
+      "direction": "out",
+      "body": "Hola Lorena",
+      "ts": "2026-08-21T15:57:46.155Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2NzIxMzAzNjA0OTEyODozMjk3MDM3OTcyMjc4NzY1NTkyOTYxNDkyNDc0Mzk2NjcyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787327875599-6nsl",
+      "conversation_id": "conv-1787262450212-9v9a",
+      "direction": "out",
+      "body": "Si el depósito queda en olivos",
+      "ts": "2026-08-21T15:57:54.813Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2NzIxMzAzNjA0OTEyODozMjk3MDM3OTg4MjQ5OTcxMzY5Mzc0NDgxMjMxMTcwNzY0OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787327878125-z4bs",
+      "conversation_id": "conv-1787262450212-9v9a",
+      "direction": "out",
+      "body": "Es con cita previa",
+      "ts": "2026-08-21T15:57:57.584Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2NzIxMzAzNjA0OTEyODozMjk3MDM3OTkzMzYxMDEyNTk0NTUxNTk0MDY4MzcxMDQ2NAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
