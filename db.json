@@ -115781,7 +115781,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-08-20T12:00:15.000Z"
+      "last_touch_at": "2026-08-21T12:02:26.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -121124,12 +121124,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 33,
-      "last_message_at": "2026-08-20T12:00:15.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-18 00:00:00 UTC to 2026-08-19 00:00:00 UTC.",
+      "unread_count": 34,
+      "last_message_at": "2026-08-21T12:02:26.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-19 00:00:00 UTC to 2026-08-20 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T12:00:15.000Z",
+      "last_inbound_at": "2026-08-21T12:02:26.000Z",
       "ignored": true
     },
     {
@@ -137194,6 +137194,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 80m² · Con Colocación · CP 1416 · terrero",
       "ts": "2026-08-20T22:26:59.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a024337dedc",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: e50f7f49ae61489dac08c9e80471d2c9\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-19 00:00:00 UTC to 2026-08-20 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-08-21T12:02:26.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -143544,7 +143552,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-20T14:05:28.890Z",
     "gmail_seen_ids": [
-      "19e342bba945da5c",
       "19e1c876a1ea062f",
       "19e1a479c3e99063",
       "19e053ddfbed799d",
@@ -144343,7 +144350,8 @@
       "1a0210a0f433dd6e",
       "1a02148e3a658947",
       "1a0239c77c6c07db",
-      "1a023d4efb5f6801"
+      "1a023d4efb5f6801",
+      "1a024337dedca49e"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -144687,7 +144695,9 @@
       "1a01b9af3a95a962",
       "1a01ba1a9272e9b8",
       "1a01f0faa05202b3",
-      "1a01fc9c952a7ae4"
+      "1a01fc9c952a7ae4",
+      "1a024360797640d6",
+      "1a0243606f6e8ed4"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -145252,14 +145262,14 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDg2OTI4OTM4ODA5NjYwNTozMjk2ODkxNTgyODk1NzA2MDIxNTcyNDA5MzY2NTcwNTk4NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2NzIxMzAzNjA0OTEyODozMjk2OTE3Mjk2NzExMDkxNjU5NjU2NzE5NTUzMzcwNTIxNgZDZD"
     ],
-    "last_weekly_reminder": "2026-08-14T12:05:50.071Z",
+    "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
       {
         "id": "main",
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-08-20",
+    "last_daily_task_reminder": "2026-08-21",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -145603,7 +145613,7 @@
         "learned_at": "2026-07-28T15:39:11.018Z"
       }
     },
-    "last_daily_pending_digest": "2026-08-20",
+    "last_daily_pending_digest": "2026-08-21",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
