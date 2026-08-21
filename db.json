@@ -124330,11 +124330,12 @@
       "linked_lead_id": "lead-email-1a0210a0f433",
       "status": "open",
       "unread_count": 1,
-      "last_message_at": "2026-08-20T21:18:10.000Z",
-      "last_message_preview": "Hola buenas tardes…\r\n\r\nMi nombre es Camila, soy diseñadora de interiores. Quería consultarles si\r\nexiste la posibilidad de adquirir o solici",
+      "last_message_at": "2026-08-21T16:49:24.000Z",
+      "last_message_preview": "Hola Camila,\r\n\r\nMuchas gracias por escribirnos y por tu interés en nuestros productos.\r\n\r\nCon gusto podemos prepararte un muestrario con tod",
       "email_subject": "Asesoramiento",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T21:18:10.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-20T21:18:10.000Z",
+      "last_outbound_at": "2026-08-21T16:49:24.000Z"
     },
     {
       "id": "conv-1787262450212-9v9a",
@@ -137372,6 +137373,14 @@
       "body": "✉️ Tan solo un clic verificar tu cuenta ¡Te esperamos!\n\nAtrim Global: https://www.atrimglobal.com\r\n\r\n# ¡Hola!\r\n\r\nBienvenido a Atrim Global\r\n\r\nGracias por registrarte en nuestro portal. A partir de ahora vas a poder:\r\n\r\n- Armar tus listas de favoritos\r\n\r\n- Acceder al Campus Atrim\r\n\r\n- Acceder al kit digital\r\n\r\nDentro de las 48 hs. recibirás un mail de confirmación de registro.\r\n\r\nConfirma tu dirección de correo electrónico: https://www.atrimglobal.com/es-ar/email/verify/10395/5a762fa3fb8dac13a4f8966dca9c69aaaafa16bf?expires=1787501707&signature=7d86c2f11179c30866991f63cf38f4ee45ce45505b289a102e536c3da135be5b\r\n\r\nSi no has creado una cuenta, no es necesario que realices esta acción.\r\n\r\n Atentamente,\r\n El equipo de Atrim Global\r\n\r\nSi tenés problemas haciendo clic en el botón \"Confirma tu dirección de correo electrónico\", copiá y pegá la URL siguiente en tu navegador: [https://www.atrimglobal.com/es-ar/email/verify/10395/5a762fa3fb8dac13a4f8966dca9c69aaaafa16bf?expires=1787501707&signature=7d86c2f11179c30866991f63cf38f4ee45ce45505b289a102e536c3da135be5b](https://www.atrimglobal.com/es-ar/email/verify/10395/5a762fa3fb8dac13a4f8966dca9c69aaaafa16bf?expires=1787501707&signature=7d86c2f11179c30866991f63cf38f4ee45ce45505b289a102e536c3da135be5b)\r\n\r\n© 2026 Atrim Global. Todos los derechos reservados.",
       "ts": "2026-08-21T16:15:12.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-emailout-1a0253a2d0b2",
+      "conversation_id": "conv-email-1a0210a0f433",
+      "direction": "out",
+      "body": "✉️ Re: Asesoramiento\n\nHola Camila,\r\n\r\nMuchas gracias por escribirnos y por tu interés en nuestros productos.\r\n\r\nCon gusto podemos prepararte un muestrario con todos nuestros pisos. Si nos\r\ncompartís tu dirección, te lo enviamos!\r\n\r\nDe lo contrario, también podés pasar por nuestro depósito para ver las\r\nmuestras en persona y retirar los muestrarios que necesités.\r\n\r\nQuedamos a disposición.\r\n\r\nSaludos,\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl jue, 20 ago 2026 a las 18:18, Camila Lesiuk (<camilalesiuk1998@gmail.com>)\r\nescribió:\r\n\r\n> Hola buenas tardes…\r\n>\r\n> Mi nombre es Camila, soy diseñadora de interiores. Quería consultarles si\r\n> existe la posibilidad de adquirir o solicitar el catálogo y  muestras para\r\n> poder apreciar en persona los colores, texturas y terminaciones antes de\r\n> definir materiales para mis proyectos.\r\n>\r\n> Me interesaron mucho sus productos y me encantaría poder incorporarlos en\r\n> futuras propuestas.\r\n>\r\n> Desde ya, muchísimas gracias! Quedo atenta a la información y cómo puedo\r\n> adquirirlas.\r\n>",
+      "ts": "2026-08-21T16:49:24.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -144867,7 +144876,9 @@
       "1a01f0faa05202b3",
       "1a01fc9c952a7ae4",
       "1a024360797640d6",
-      "1a0243606f6e8ed4"
+      "1a0243606f6e8ed4",
+      "1a0253a2d0b2fd13",
+      "1a02536cf44a5c37"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
