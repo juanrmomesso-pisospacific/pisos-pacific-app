@@ -117363,7 +117363,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-22T21:04:04.000Z",
-      "last_touch_at": "2026-08-10T01:37:36.000Z"
+      "last_touch_at": "2026-08-21T12:58:54.000Z"
     },
     {
       "id": "lead-instagram-1784843470497",
@@ -122475,12 +122475,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f8ba4c1c23",
       "status": "closed",
-      "unread_count": 3,
-      "last_message_at": "2026-08-10T01:37:36.000Z",
-      "last_message_preview": "HI JOSHUA,\r\n\r\nplease find attached the transfer slip for USD 8.000 to get the heating\r\nfilm into production.\r\n\r\nbest regards\r\n\r\n\r\n\r\nEl vie, ",
+      "unread_count": 4,
+      "last_message_at": "2026-08-21T12:58:54.000Z",
+      "last_message_preview": "thank you\r\n\r\nEl jue, 20 ago 2026 a la(s) 1:29 a.m., FELIXKOREA (felixkorea.com@gmail.com)\r\nescribió:\r\n\r\n> Dear Mike, Daniel.\r\n>\r\n> Attached,",
       "email_subject": "Re: draft por favor chequear Daniel Juan",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-10T01:37:36.000Z",
+      "last_inbound_at": "2026-08-21T12:58:54.000Z",
       "ignored": true
     },
     {
@@ -137242,6 +137242,14 @@
       "body": "✉️ Contactar para compra e instalación de pisos vinilicos\n\nEnviar toda la información al siguiente correo electrónico:\r\njavierleonardomancinelli@gmail.com\r\n\r\nCelular: 2615741755. Sólo Wapp",
       "ts": "2026-08-21T12:38:06.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0246758ce4",
+      "conversation_id": "conv-email-19f8ba4c1c23",
+      "direction": "in",
+      "body": "✉️ Re: order for Uruguay ==> Orange LAMI PET Color on BASE PET carbon film\n\nthank you\r\n\r\nEl jue, 20 ago 2026 a la(s) 1:29 a.m., FELIXKOREA (felixkorea.com@gmail.com)\r\nescribió:\r\n\r\n> Dear Mike, Daniel.\r\n>\r\n> Attached, this is Orange Color (LAMI PET) on BASE PET film.\r\n> Pls confirm this.\r\n>\r\n> Joshua\r\n>\r\n>\r\n>\r\n>\r\n> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> Korea. 11405\r\n> Mob. : +82 10 4588 6512\r\n> Tel. : +82 31 866 5688\r\n>\r\n> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>\r\n>\r\n>\r\n> 2026년 8월 14일 (금) 오후 12:07, FELIXKOREA <felixkorea.com@gmail.com>님이 작성:\r\n>\r\n>> Dear Mike, Daniel.\r\n>>\r\n>> Thanks for your logos confirmation and 3T, 75PET confirmation with video.\r\n>> Attached is helpful for you to choose best wiring mothods.\r\n>> In Korea, we mostly use method 3 for wiring.\r\n>>\r\n>> Many thanks,\r\n>>\r\n>> Joshua\r\n>>\r\n>>\r\n>>\r\n>>\r\n>> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n>> Korea. 11405\r\n>> Mob. : +82 10 4588 6512\r\n>> Tel. : +82 31 866 5688\r\n>>\r\n>> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>>\r\n>>\r\n>>\r\n>> 2026년 8월 12일 (수) 오후 6:35, Mike <mike@pisospacific.com>님이 작성:\r\n>>\r\n>>> yes is ok\r\n>>> mike\r\n>>>\r\n>>> El mié, 12 ago 2026 a las 4:02, FELIXKOREA (<felixkorea.com@gmail.com>)\r\n>>> escribió:\r\n>>>\r\n>>>> Dear Mike, Daniel.\r\n>>>>\r\n>>>> As Daniel asked me of adding Mr. Parquet logo, pls see the attached\r\n>>>> PACIFI - MR. PARQUET logos on the 80cm film.\r\n>>>>\r\n>>>> For putting your logo on Floor Insulation sheet, it's difficult to do\r\n>>>> it due to printing mold change and MOQ rolls.\r\n>>>>\r\n>>>> on the side of LAMI PET, we will p",
+      "ts": "2026-08-21T12:58:54.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -143592,7 +143600,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-20T14:05:28.890Z",
     "gmail_seen_ids": [
-      "19e0492ca584d2bb",
       "19e03cfb986347fd",
       "19e030d93e36fd3c",
       "19dcce1cc1008044",
@@ -144391,7 +144398,8 @@
       "1a024337dedca49e",
       "1a024360797640d6",
       "1a0243606f6e8ed4",
-      "1a0245448e4792fa"
+      "1a0245448e4792fa",
+      "1a0246758ce4e50c"
     ],
     "cash_sessions": {
       "1136982222": {
