@@ -124208,12 +124208,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787143584228",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-20T16:23:43.758Z",
-      "last_message_preview": "Te paso las medidas: son dos habitaciones de 3 x 3 y un pasillo de 4,5 x 3.",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-21T19:12:32.605Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T16:23:43.758Z",
-      "last_outbound_at": "2026-08-20T11:01:55.963Z"
+      "last_outbound_at": "2026-08-21T19:12:32.605Z"
     },
     {
       "id": "conv-1787144864683-4y8d",
@@ -137381,6 +137381,16 @@
       "body": "✉️ Re: Asesoramiento\n\nHola Camila,\r\n\r\nMuchas gracias por escribirnos y por tu interés en nuestros productos.\r\n\r\nCon gusto podemos prepararte un muestrario con todos nuestros pisos. Si nos\r\ncompartís tu dirección, te lo enviamos!\r\n\r\nDe lo contrario, también podés pasar por nuestro depósito para ver las\r\nmuestras en persona y retirar los muestrarios que necesités.\r\n\r\nQuedamos a disposición.\r\n\r\nSaludos,\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl jue, 20 ago 2026 a las 18:18, Camila Lesiuk (<camilalesiuk1998@gmail.com>)\r\nescribió:\r\n\r\n> Hola buenas tardes…\r\n>\r\n> Mi nombre es Camila, soy diseñadora de interiores. Quería consultarles si\r\n> existe la posibilidad de adquirir o solicitar el catálogo y  muestras para\r\n> poder apreciar en persona los colores, texturas y terminaciones antes de\r\n> definir materiales para mis proyectos.\r\n>\r\n> Me interesaron mucho sus productos y me encantaría poder incorporarlos en\r\n> futuras propuestas.\r\n>\r\n> Desde ya, muchísimas gracias! Quedo atenta a la información y cómo puedo\r\n> adquirirlas.\r\n>",
       "ts": "2026-08-21T16:49:24.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-1787339553374-1rfv",
+      "conversation_id": "conv-1787143584228-knsx",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-21T19:12:32.605Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk3MDU5NTI5OTcyOTkwMTEwMzgyODMwOTU1MTA4NzYxNgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
