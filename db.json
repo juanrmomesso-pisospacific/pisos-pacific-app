@@ -119586,6 +119586,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-20T22:26:59.000Z",
       "last_touch_at": "2026-08-20T22:26:59.000Z"
+    },
+    {
+      "id": "lead-email-1a0245448e47",
+      "name": "Javier Leonardo Mancinelli",
+      "email": "capacitacionupcnmendoza@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Contactar para compra e instalación de pisos vinilicos — Enviar toda la información al siguiente correo electrónico:\r\njavierleonardomancinelli@gmail.com\r\n\r\nCelular: 2615741755. Sólo Wapp",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-21T12:38:06.000Z",
+      "last_touch_at": "2026-08-21T12:38:06.000Z"
     }
   ],
   "conversations": [
@@ -124294,6 +124311,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-20T22:26:59.000Z"
+    },
+    {
+      "id": "conv-email-1a0245448e47",
+      "channel": "email",
+      "contact_id": "capacitacionupcnmendoza@gmail.com",
+      "contact_name": "Javier Leonardo Mancinelli",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0245448e47",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-21T12:38:06.000Z",
+      "last_message_preview": "Enviar toda la información al siguiente correo electrónico:\r\njavierleonardomancinelli@gmail.com\r\n\r\nCelular: 2615741755. Sólo Wapp",
+      "email_subject": "Contactar para compra e instalación de pisos vinilicos",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-21T12:38:06.000Z"
     }
   ],
   "messages": [
@@ -137202,6 +137234,14 @@
       "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: e50f7f49ae61489dac08c9e80471d2c9\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-19 00:00:00 UTC to 2026-08-20 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-08-21T12:02:26.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0245448e47",
+      "conversation_id": "conv-email-1a0245448e47",
+      "direction": "in",
+      "body": "✉️ Contactar para compra e instalación de pisos vinilicos\n\nEnviar toda la información al siguiente correo electrónico:\r\njavierleonardomancinelli@gmail.com\r\n\r\nCelular: 2615741755. Sólo Wapp",
+      "ts": "2026-08-21T12:38:06.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -143552,7 +143592,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-20T14:05:28.890Z",
     "gmail_seen_ids": [
-      "19e053ddfbed799d",
       "19e0492ca584d2bb",
       "19e03cfb986347fd",
       "19e030d93e36fd3c",
@@ -144351,7 +144390,8 @@
       "1a023d4efb5f6801",
       "1a024337dedca49e",
       "1a024360797640d6",
-      "1a0243606f6e8ed4"
+      "1a0243606f6e8ed4",
+      "1a0245448e4792fa"
     ],
     "cash_sessions": {
       "1136982222": {
