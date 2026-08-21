@@ -119605,7 +119605,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-08-20T21:18:10.000Z",
-      "last_touch_at": "2026-08-20T21:18:10.000Z"
+      "last_touch_at": "2026-08-21T22:27:36.000Z"
     },
     {
       "id": "lead-instagram-1787262450212",
@@ -124329,12 +124329,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0210a0f433",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-21T16:49:24.000Z",
-      "last_message_preview": "Hola Camila,\r\n\r\nMuchas gracias por escribirnos y por tu interés en nuestros productos.\r\n\r\nCon gusto podemos prepararte un muestrario con tod",
+      "unread_count": 2,
+      "last_message_at": "2026-08-21T22:27:36.000Z",
+      "last_message_preview": "Buenas noches! Muchísimas gracias 😊\r\nLa dirección es San Vicente Misiones, calle Tupac Amaru 1665. Código postal\r\n3364\r\nSi tengo que abonar",
       "email_subject": "Asesoramiento",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-20T21:18:10.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-21T22:27:36.000Z",
       "last_outbound_at": "2026-08-21T16:49:24.000Z"
     },
     {
@@ -137401,6 +137401,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3MDU5NzUwNzE0NDk3NjIwMzIwNzY0Njg0MzUwMjU5MgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a0266fffa2a",
+      "conversation_id": "conv-email-1a0210a0f433",
+      "direction": "in",
+      "body": "✉️ Re: Asesoramiento\n\nBuenas noches! Muchísimas gracias 😊\r\nLa dirección es San Vicente Misiones, calle Tupac Amaru 1665. Código postal\r\n3364\r\nSi tengo que abonar el envío de las muestras estoy a disposición!\r\n\r\nEl El vie, 21 ago 2026 a la(s) 1:49 p. m., info pisos <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola Camila,\r\n>\r\n> Muchas gracias por escribirnos y por tu interés en nuestros productos.\r\n>\r\n> Con gusto podemos prepararte un muestrario con todos nuestros pisos. Si\r\n> nos compartís tu dirección, te lo enviamos!\r\n>\r\n> De lo contrario, también podés pasar por nuestro depósito para ver las\r\n> muestras en persona y retirar los muestrarios que necesités.\r\n>\r\n> Quedamos a disposición.\r\n>\r\n> Saludos,\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n> El jue, 20 ago 2026 a las 18:18, Camila Lesiuk (<\r\n> camilalesiuk1998@gmail.com>) escribió:\r\n>\r\n>> Hola buenas tardes…\r\n>>\r\n>> Mi nombre es Camila, soy diseñadora de interiores. Quería consultarles\r\n>> si existe la posibilidad de adquirir o solicitar el catálogo y  muestras para\r\n>> poder apreciar en persona los colores, texturas y terminaciones antes de\r\n>> definir materiales para mis proyectos.\r\n>>\r\n>> Me interesaron mucho sus productos y me encantaría poder inc",
+      "ts": "2026-08-21T22:27:36.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -143751,7 +143759,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-21T14:10:50.891Z",
     "gmail_seen_ids": [
-      "19e030d93e36fd3c",
       "19dcce1cc1008044",
       "19dc5ad45f9d4dd8",
       "19dac470a30185ce",
@@ -144550,7 +144557,8 @@
       "1a0243606f6e8ed4",
       "1a0245448e4792fa",
       "1a0246758ce4e50c",
-      "1a0251ae973afd4a"
+      "1a0251ae973afd4a",
+      "1a0266fffa2ad39b"
     ],
     "cash_sessions": {
       "1136982222": {
