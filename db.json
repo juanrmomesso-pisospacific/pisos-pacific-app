@@ -124345,11 +124345,11 @@
       "linked_lead_id": "lead-instagram-1787262450212",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-21T15:57:57.584Z",
-      "last_message_preview": "Es con cita previa",
+      "last_message_at": "2026-08-21T15:58:14.792Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T21:47:27.799Z",
-      "last_outbound_at": "2026-08-21T15:57:57.584Z"
+      "last_outbound_at": "2026-08-21T15:58:14.792Z"
     },
     {
       "id": "conv-email-1a02148e3a65",
@@ -137333,6 +137333,36 @@
       "ts": "2026-08-21T15:57:57.584Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2NzIxMzAzNjA0OTEyODozMjk3MDM3OTkzMzYxMDEyNTk0NTUxNTk0MDY4MzcxMDQ2NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787327890856-9p51",
+      "conversation_id": "conv-1787262450212-9v9a",
+      "direction": "out",
+      "body": "Te paso WhatsApp para coordinar",
+      "ts": "2026-08-21T15:58:10.358Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2NzIxMzAzNjA0OTEyODozMjk3MDM4MDE2OTI1MzQyNzk4MjM1NjEwNjcwNDg0Njg0OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787327894869-tus4",
+      "conversation_id": "conv-1787262450212-9v9a",
+      "direction": "out",
+      "body": "1136982222",
+      "ts": "2026-08-21T15:58:14.332Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2NzIxMzAzNjA0OTEyODozMjk3MDM4MDI0MjU1NTQ1NzgyMjI0MDU2Mjc2NjQxMzgyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787327895607-jxvr",
+      "conversation_id": "conv-1787262450212-9v9a",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-21T15:58:14.792Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2NzIxMzAzNjA0OTEyODozMjk3MDM4MDI1MTAzMjQ3NDU5Mzg3MzA1MDExNjAzMDQ2NAZDZD",
       "via": "ig-app"
     }
   ],
