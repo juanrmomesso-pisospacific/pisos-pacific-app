@@ -114809,6 +114809,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1787395600410-c49bc",
+      "date": "2026-08-22T00:00:00.000Z",
+      "flow": "Ingreso",
+      "caja_id": "CAJ-006",
+      "caja_name": "Wise",
+      "category": "Giro Macu - Movimiento interno Sale Cash",
+      "subcategory": null,
+      "counterparty": null,
+      "counterparty_type": null,
+      "client_id": null,
+      "supplier_id": null,
+      "description": "Cash por Wise",
+      "sale_ref": null,
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 1500,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": true,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
