@@ -120776,6 +120776,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-22T18:57:30.310Z",
       "last_touch_at": "2026-08-22T18:57:30.310Z"
+    },
+    {
+      "id": "lead-email-1a02bb4c751d",
+      "name": "Daniela Zumpichiatti",
+      "email": "danielazumpi@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "DINAMARCA",
+      "postal_code": "1706",
+      "approx_m2": 20,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 20m² · Con Colocación · CP 1706",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-22T23:01:02.000Z",
+      "last_touch_at": "2026-08-22T23:01:02.000Z"
     }
   ],
   "conversations": [
@@ -125590,6 +125607,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-22T18:57:49.956Z",
       "last_outbound_at": "2026-08-22T21:33:35.486Z"
+    },
+    {
+      "id": "conv-email-1a02bb4c751d",
+      "channel": "email",
+      "contact_id": "danielazumpi@gmail.com",
+      "contact_name": "Daniela Zumpichiatti",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a02bb4c751d",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-22T23:01:02.000Z",
+      "last_message_preview": "Formulario web — 20m² · Con Colocación · CP 1706 · DINAMARCA",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-22T23:01:02.000Z"
     }
   ],
   "messages": [
@@ -138798,6 +138830,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3MjM1NzAyMTIwMjEyNTQ1MjQxOTQwMzI2MTkzNTYxNgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a02bb4c751d",
+      "conversation_id": "conv-email-1a02bb4c751d",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 20m² · Con Colocación · CP 1706 · DINAMARCA",
+      "ts": "2026-08-22T23:01:02.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -145148,7 +145188,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-22T14:06:46.547Z",
     "gmail_seen_ids": [
-      "19d8c87cf121ac39",
       "19d84e32661c750f",
       "19e745f1c8900e4a",
       "19e72514ffb1168f",
@@ -145947,7 +145986,8 @@
       "1a0270fb075c8199",
       "1a028cc965d893a3",
       "1a02907151fa78c5",
-      "1a0295c6288889da"
+      "1a0295c6288889da",
+      "1a02bb4c751df5a3"
     ],
     "cash_sessions": {
       "1136982222": {
