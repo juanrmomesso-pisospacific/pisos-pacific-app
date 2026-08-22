@@ -125584,11 +125584,11 @@
       "linked_lead_id": "lead-instagram-1787425051703",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-22T21:33:21.908Z",
-      "last_message_preview": "Hola Marcos cómo estás?",
+      "last_message_at": "2026-08-22T21:33:35.486Z",
+      "last_message_preview": "Si obvio decinos!",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-22T18:57:49.956Z",
-      "last_outbound_at": "2026-08-22T21:33:21.908Z"
+      "last_outbound_at": "2026-08-22T21:33:35.486Z"
     }
   ],
   "messages": [
@@ -138746,6 +138746,16 @@
       "ts": "2026-08-22T21:33:21.908Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3MjM0NDk2MDU0NDAxOTU3MjQyMzk3Njk1OTM0NDY0MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787434415934-d8c2",
+      "conversation_id": "conv-1787425051703-1f1k",
+      "direction": "out",
+      "body": "Si obvio decinos!",
+      "ts": "2026-08-22T21:33:35.486Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3MjM0NTIxMTAyNzc4MjU1Njc5NTY5ODM4NDIwNzg3MgZDZD",
       "via": "ig-app"
     }
   ],
