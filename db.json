@@ -125583,11 +125583,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787425051703",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-08-22T18:57:49.956Z",
-      "last_message_preview": "Le quisiese hacer una consulta de precios para pisos de una casa",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-22T18:57:49.956Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-22T21:33:21.908Z",
+      "last_message_preview": "Hola Marcos cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-22T18:57:49.956Z",
+      "last_outbound_at": "2026-08-22T21:33:21.908Z"
     }
   ],
   "messages": [
@@ -138736,6 +138737,16 @@
       "body": "Le quisiese hacer una consulta de precios para pisos de una casa",
       "ts": "2026-08-22T18:57:49.956Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787434402396-14c5",
+      "conversation_id": "conv-1787425051703-1f1k",
+      "direction": "out",
+      "body": "Hola Marcos cómo estás?",
+      "ts": "2026-08-22T21:33:21.908Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3MjM0NDk2MDU0NDAxOTU3MjQyMzk3Njk1OTM0NDY0MAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
