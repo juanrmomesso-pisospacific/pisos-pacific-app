@@ -119689,6 +119689,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-22T00:56:08.000Z",
       "last_touch_at": "2026-08-22T00:56:08.000Z"
+    },
+    {
+      "id": "lead-email-1a0270fb075c",
+      "name": "René",
+      "email": "renecowey29@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Calle Dr Villanueva 225 225",
+      "postal_code": "B1878BOE",
+      "approx_m2": 13,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 13m² · Con Colocación · CP B1878BOE",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-22T01:22:14.000Z",
+      "last_touch_at": "2026-08-22T01:22:14.000Z"
     }
   ],
   "conversations": [
@@ -124444,6 +124461,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-22T00:56:08.000Z"
+    },
+    {
+      "id": "conv-email-1a0270fb075c",
+      "channel": "email",
+      "contact_id": "renecowey29@hotmail.com",
+      "contact_name": "René",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0270fb075c",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-22T01:22:14.000Z",
+      "last_message_preview": "Formulario web — 13m² · Con Colocación · CP B1878BOE · Calle Dr Villanueva 225 225",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-22T01:22:14.000Z"
     }
   ],
   "messages": [
@@ -137526,6 +137558,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTM5ODI0NzA0NDY5NjozMjk3MTAxMDE0NTUwOTA1MDI5OTc1NDA5ODM3MDU0MzYxNgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a0270fb075c",
+      "conversation_id": "conv-email-1a0270fb075c",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 13m² · Con Colocación · CP B1878BOE · Calle Dr Villanueva 225 225",
+      "ts": "2026-08-22T01:22:14.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -143876,7 +143916,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-21T14:10:50.891Z",
     "gmail_seen_ids": [
-      "19dac470a30185ce",
       "19d9b878577fa5ad",
       "19d995710ccfe48e",
       "19d91e987752d615",
@@ -144675,7 +144714,8 @@
       "1a0251ae973afd4a",
       "1a0266fffa2ad39b",
       "1a026ce543c5aa3a",
-      "1a026f7cda1206ac"
+      "1a026f7cda1206ac",
+      "1a0270fb075c8199"
     ],
     "cash_sessions": {
       "1136982222": {
