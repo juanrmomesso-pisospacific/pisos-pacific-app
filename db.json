@@ -125569,11 +125569,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787404599766",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-08-22T13:17:53.099Z",
-      "last_message_preview": "De pisos vinilicos, gracias",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-22T13:17:53.099Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-22T21:33:51.726Z",
+      "last_message_preview": "Hola Lucia cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-22T13:17:53.099Z",
+      "last_outbound_at": "2026-08-22T21:33:51.726Z"
     },
     {
       "id": "conv-1787425051703-1f1k",
@@ -138756,6 +138757,16 @@
       "ts": "2026-08-22T21:33:35.486Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3MjM0NTIxMTAyNzc4MjU1Njc5NTY5ODM4NDIwNzg3MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787434432628-90bk",
+      "conversation_id": "conv-1787404599766-2ycf",
+      "direction": "out",
+      "body": "Hola Lucia cómo estás?",
+      "ts": "2026-08-22T21:33:51.726Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg4ODM2MTE1MzcwNjkxMDozMjk3MjM0NTUxMDU5NzM1Mzg0Mzg3MjYzMDA1MzAxMTQ1NgZDZD",
       "via": "ig-app"
     }
   ],
