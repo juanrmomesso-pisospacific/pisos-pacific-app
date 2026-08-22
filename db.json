@@ -124423,11 +124423,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787355763657",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-21T23:42:41.106Z",
-      "last_message_preview": "Hola!!! Ese modelo es nuevo??",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-21T23:42:41.106Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-22T01:27:21.440Z",
+      "last_message_preview": "Sino en la semana te mandamos",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-21T23:42:41.106Z",
+      "last_outbound_at": "2026-08-22T01:27:21.440Z"
     },
     {
       "id": "conv-email-1a026f7cda12",
@@ -137495,6 +137496,36 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 54m² · Sin Colocación · CP 5187 · La voz del interior 859 Villa San Nicolás",
       "ts": "2026-08-22T00:56:08.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787362029156-xre6",
+      "conversation_id": "conv-1787355763657-muge",
+      "direction": "out",
+      "body": "Hola Cata!! Es piso Prefinished",
+      "ts": "2026-08-22T01:27:08.705Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTM5ODI0NzA0NDY5NjozMjk3MTAwOTkxMDU5Mjg0NTEyNzMyMzI2ODAzNTkwMzQ4OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787362036528-m7pp",
+      "conversation_id": "conv-1787355763657-muge",
+      "direction": "out",
+      "body": "Nose si tienen nuestras muestras",
+      "ts": "2026-08-22T01:27:16.153Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTM5ODI0NzA0NDY5NjozMjk3MTAxMDA0Nzk4NTk2NTg3NTc0MzA4NDU4ODgyNjYyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787362041872-1fgj",
+      "conversation_id": "conv-1787355763657-muge",
+      "direction": "out",
+      "body": "Sino en la semana te mandamos",
+      "ts": "2026-08-22T01:27:21.440Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTM5ODI0NzA0NDY5NjozMjk3MTAxMDE0NTUwOTA1MDI5OTc1NDA5ODM3MDU0MzYxNgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
