@@ -119706,6 +119706,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-22T01:22:14.000Z",
       "last_touch_at": "2026-08-22T01:22:14.000Z"
+    },
+    {
+      "id": "lead-instagram-1787369665060",
+      "name": "@raulg_claros",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-22T03:34:23.158Z",
+      "last_touch_at": "2026-08-22T03:34:23.158Z"
     }
   ],
   "conversations": [
@@ -124476,6 +124492,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-22T01:22:14.000Z"
+    },
+    {
+      "id": "conv-1787369665059-mpje",
+      "channel": "instagram",
+      "contact_id": "1575275960929920",
+      "contact_name": "@raulg_claros",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787369665060",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-22T03:34:23.158Z",
+      "last_message_preview": "📷 Foto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-22T03:34:23.158Z"
     }
   ],
   "messages": [
@@ -137566,6 +137596,16 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 13m² · Con Colocación · CP B1878BOE · Calle Dr Villanueva 225 225",
       "ts": "2026-08-22T01:22:14.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787369665060-iych",
+      "conversation_id": "conv-1787369665059-mpje",
+      "direction": "in",
+      "body": "📷 Foto",
+      "ts": "2026-08-22T03:34:23.158Z",
+      "status": "received",
+      "media_url": "/uploads/341e54b080c7c1f1.jpg",
+      "media_type": "image"
     }
   ],
   "templates": [
@@ -145627,7 +145667,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjQwODM5MjkxMDAyNzgwNzozMjk2ODgxNDY1NjgwMjU2Mzg0ODkwNTkwMDM0NTUyNDIyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDg2OTI4OTM4ODA5NjYwNTozMjk2ODkxNTgyODk1NzA2MDIxNTcyNDA5MzY2NTcwNTk4NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2NzIxMzAzNjA0OTEyODozMjk2OTE3Mjk2NzExMDkxNjU5NjU2NzE5NTUzMzcwNTIxNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTM5ODI0NzA0NDY5NjozMjk3MDg5NDI5Mzc5NzE5NDcwNTQ2MzUwOTk1ODc4NzA3MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTM5ODI0NzA0NDY5NjozMjk3MDg5NDI5Mzc5NzE5NDcwNTQ2MzUwOTk1ODc4NzA3MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyNTc0MDAxMTYyNjQ4MTozMjk3MTEyMDMyNDY0ODIyODg4MDQ5ODkwMjE4NjMyODA2NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MTE1Mzg2MzU5Mjg4ODM3NzozMjk3MTE1MDc0MTM5MzcxODY5OTEwMzY4OTY4NjEyMjQ5NgZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
