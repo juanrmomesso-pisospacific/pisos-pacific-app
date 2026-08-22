@@ -114647,6 +114647,30 @@
       "raw_name": "TRANSFERENCIA",
       "classified_by": "regla \"transferencia\" → TRANSFERENCIA (aprendida)",
       "id": "MOV-IMP-mt489odc-012"
+    },
+    {
+      "id": "mov-1787395075256-bpjtz",
+      "date": "2026-08-21T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "HR",
+      "subcategory": "Pago Instalaciones",
+      "counterparty": "Hugo Ramirez",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-017",
+      "description": "Pago de obra Agus Lando",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 1820000,
+      "amount_usd": 1181.82,
+      "exchange_rate": 1540,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
