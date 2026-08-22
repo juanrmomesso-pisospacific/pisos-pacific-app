@@ -119459,7 +119459,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-08-19T08:56:07.000Z",
-      "last_touch_at": "2026-08-19T08:56:07.000Z"
+      "last_touch_at": "2026-08-21T08:58:11.000Z"
     },
     {
       "id": "lead-instagram-1787143584228",
@@ -124208,12 +124208,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0193e3525b",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-08-19T08:56:07.000Z",
+      "unread_count": 1,
+      "last_message_at": "2026-08-21T08:58:11.000Z",
       "last_message_preview": "Hello\r\n\r\nWe hope this email finds you well. My name is Eddy from DM Floor, an eco-friendly rigid core flooring manufacturer.\r\n\r\n\r\nWe came ac",
       "email_subject": "OEM Factory Price Eco-Friendly Rigid core Flooring",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-19T08:56:07.000Z",
+      "last_inbound_at": "2026-08-21T08:58:11.000Z",
       "ignored": true
     },
     {
@@ -137447,6 +137447,14 @@
       "body": "Hola!!! Ese modelo es nuevo??",
       "ts": "2026-08-21T23:42:41.106Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a026ce543c5",
+      "conversation_id": "conv-email-1a0193e3525b",
+      "direction": "in",
+      "body": "✉️ Aldehyde-free flooring OEM Eco-Friendly Rigid core Flooring\n\nHello\r\n\r\nWe hope this email finds you well. My name is Eddy from DM Floor, an eco-friendly rigid core flooring manufacturer.\r\n\r\n\r\nWe came across your excellent reputation in the flooring market . Your focus on quality and innovation aligns properly with what we do at DM Floor.\r\n\r\n\r\nWe are writing to explore the possibility of a partnership with your company, as we believe that our flooring would be a valuable addition to your product range.\r\n\r\n\r\nMGO Flooring is 100% degradable, TVOC, PVC and formaldehyde-free, making it safe for health and the environment with a swelling rate of less than 3% after being soaked in water for 24 hours. MGO Flooring doesn't expand or shrink due to temperature changes like other vinyl flooring (SPC and LVT flooring) because MGO flooring doesn’t contain PVC (a major advantage over SPC).It is also fireproof with ASTM Class A standards and can be easily installed using the Valinge click system. We can provide flooring planks and hybrid tiles.\r\n\r\nCWC Flooring: is waterproof with a swelling rate of less than 3% after being soaked in water for 24 hours. Additionally, CWC flooring does not expand or shrink due to temperature changes. It has anti-scratch resistance ranging from AC2, AC3, and AC4.\r\n\r\n\r\nIt is also light in weight, around 56% lighter in weight than SPC flooring, whereby we can load 4,000 Sqm per container, which also saves shipping costs and also makes it easy to work with, especially in high-rise buildings.\r\n\r\n\r\nWe do provide OEM services, ",
+      "ts": "2026-08-21T08:58:11.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -143797,7 +143805,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-21T14:10:50.891Z",
     "gmail_seen_ids": [
-      "19dcce1cc1008044",
       "19dc5ad45f9d4dd8",
       "19dac470a30185ce",
       "19d9b878577fa5ad",
@@ -144596,7 +144603,8 @@
       "1a0245448e4792fa",
       "1a0246758ce4e50c",
       "1a0251ae973afd4a",
-      "1a0266fffa2ad39b"
+      "1a0266fffa2ad39b",
+      "1a026ce543c5aa3a"
     ],
     "cash_sessions": {
       "1136982222": {
