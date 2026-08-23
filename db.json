@@ -120793,6 +120793,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-22T23:01:02.000Z",
       "last_touch_at": "2026-08-22T23:01:02.000Z"
+    },
+    {
+      "id": "lead-instagram-1787448248514",
+      "name": "@anajupiterph",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-23T01:24:06.823Z",
+      "last_touch_at": "2026-08-23T01:24:06.823Z"
     }
   ],
   "conversations": [
@@ -125622,6 +125638,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-22T23:01:02.000Z"
+    },
+    {
+      "id": "conv-1787448248514-0zto",
+      "channel": "instagram",
+      "contact_id": "1564063411859401",
+      "contact_name": "@anajupiterph",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787448248514",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-23T01:24:06.823Z",
+      "last_message_preview": "Hola, de qué material son los pisos?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-23T01:24:06.823Z"
     }
   ],
   "messages": [
@@ -138838,6 +138868,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 20m² · Con Colocación · CP 1706 · DINAMARCA",
       "ts": "2026-08-22T23:01:02.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787448248514-qmfg",
+      "conversation_id": "conv-1787448248514-0zto",
+      "direction": "in",
+      "body": "Hola, de qué material son los pisos?",
+      "ts": "2026-08-23T01:24:06.823Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -146908,7 +146946,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg4ODM2MTE1MzcwNjkxMDozMjk3MTc5NjU2MDgxMjI2Mzg3MDQwODQ0NTM4NjU1NTM5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3MjE3MjQ1NDAxNDMwOTEyNzEzMzU4NDgwODczODgxNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3MjE3MjQ5ODM3NDA0MzE1MTQxMDMzNDIxOTEwODM1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3MjE3MjgxNjQxNjE0NzA2MDQxMTg2MzQ1NzA3MTEwNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3MjE3MjgxNjQxNjE0NzA2MDQxMTg2MzQ1NzA3MTEwNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3MjYwMDM1NDE2MjgxNzgyNDgwOTAwOTI5NTY1NDkxMgZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
