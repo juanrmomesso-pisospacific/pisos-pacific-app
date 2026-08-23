@@ -125762,11 +125762,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787448248514",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-08-23T16:51:14.422Z",
-      "last_message_preview": "Gracias!",
+      "unread_count": 3,
+      "last_message_at": "2026-08-23T16:51:30.177Z",
+      "last_message_preview": "Madera prefinished es madera pura?",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-23T16:51:14.422Z",
+      "last_inbound_at": "2026-08-23T16:51:30.177Z",
       "last_outbound_at": "2026-08-23T16:28:27.259Z"
     },
     {
@@ -139134,6 +139134,14 @@
       "body": "Gracias!",
       "ts": "2026-08-23T16:51:14.422Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787503890648-jlyp",
+      "conversation_id": "conv-1787448248514-0zto",
+      "direction": "in",
+      "body": "Madera prefinished es madera pura?",
+      "ts": "2026-08-23T16:51:30.177Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -147211,7 +147219,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ3NDQ5MTAwOTI3ODcxMzozMjk3MjYyMDc5NjI3MzA0NjM5MTM1NDI5MzM5OTU4NDc2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyMDk5NTIyODc1ODIwMzozMjk3MjYyMTEzMzA5ODE5Njk2NTI3MzE3MzA4OTA1ODgxNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc4NDk4Nzk0NDQ2OTEyMzozMjk3MzU4NzcxMDE3NTAxNDI2MDY5NDg5Mzc5MDc1Njg2NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3MzYyNjUwMjI0NDU0NDU5NzU4NjkzMTIwNjg0ODUxMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3MzYyNjUwMjI0NDU0NDU5NzU4NjkzMTIwNjg0ODUxMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3MzYyNjc5Mjg1NTg2MDQ1MzYzNjQ0MDc0MzQ3NzI0OAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
