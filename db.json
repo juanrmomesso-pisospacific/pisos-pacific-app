@@ -125763,11 +125763,11 @@
       "linked_lead_id": "lead-instagram-1787448248514",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-23T16:27:33.195Z",
-      "last_message_preview": "Hola Ana cómo estás?",
+      "last_message_at": "2026-08-23T16:27:51.448Z",
+      "last_message_preview": "La colección h2O es de piedra polimero y madera",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-23T01:24:06.823Z",
-      "last_outbound_at": "2026-08-23T16:27:33.195Z"
+      "last_outbound_at": "2026-08-23T16:27:51.448Z"
     },
     {
       "id": "conv-1787449293163-o9g0",
@@ -139097,6 +139097,16 @@
       "ts": "2026-08-23T16:27:33.195Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3MzYwMDI4NTIyOTcwOTc3NDM5NzY1MzEzMzU1Nzc2MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787502471797-s57z",
+      "conversation_id": "conv-1787448248514-0zto",
+      "direction": "out",
+      "body": "La colección h2O es de piedra polimero y madera",
+      "ts": "2026-08-23T16:27:51.448Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3MzYwMDYyMTkzNzA3Nzg4NzQwNTg5NzMzNTk2MzY0OAZDZD",
       "via": "ig-app"
     }
   ],
