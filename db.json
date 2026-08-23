@@ -120908,6 +120908,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-23T01:42:53.252Z",
       "last_touch_at": "2026-08-23T01:42:53.252Z"
+    },
+    {
+      "id": "lead-instagram-1787501773113",
+      "name": "@carlaromag",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-23T16:16:11.500Z",
+      "last_touch_at": "2026-08-23T16:16:11.500Z"
     }
   ],
   "conversations": [
@@ -125793,6 +125809,20 @@
       "last_message_preview": "😍",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-23T01:42:53.252Z"
+    },
+    {
+      "id": "conv-1787501773113-hc02",
+      "channel": "instagram",
+      "contact_id": "3263622017167572",
+      "contact_name": "@carlaromag",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787501773113",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-23T16:16:11.500Z",
+      "last_message_preview": "Hola buen día quisiera saber en  la ciudad de La Plata quien vende sus pisos H2O, gracias.",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-23T16:16:11.500Z"
     }
   ],
   "messages": [
@@ -139049,6 +139079,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 1a65e5c81bda4f748b153f6c76bbace1\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-21 00:00:00 UTC to 2026-08-22 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-08-23T08:24:29.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787501773113-ljv6",
+      "conversation_id": "conv-1787501773113-hc02",
+      "direction": "in",
+      "body": "Hola buen día quisiera saber en  la ciudad de La Plata quien vende sus pisos H2O, gracias.",
+      "ts": "2026-08-23T16:16:11.500Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -147124,7 +147162,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3MjYwMDM1NDE2MjgxNzgyNDgwOTAwOTI5NTY1NDkxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3MjYxOTYzMjM4NTQ1MDQ5NDc3Njk3OTEyMTc2NjQwMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ3NDQ5MTAwOTI3ODcxMzozMjk3MjYyMDc5NjI3MzA0NjM5MTM1NDI5MzM5OTU4NDc2OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyMDk5NTIyODc1ODIwMzozMjk3MjYyMTEzMzA5ODE5Njk2NTI3MzE3MzA4OTA1ODgxNgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyMDk5NTIyODc1ODIwMzozMjk3MjYyMTEzMzA5ODE5Njk2NTI3MzE3MzA4OTA1ODgxNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc4NDk4Nzk0NDQ2OTEyMzozMjk3MzU4NzcxMDE3NTAxNDI2MDY5NDg5Mzc5MDc1Njg2NAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
