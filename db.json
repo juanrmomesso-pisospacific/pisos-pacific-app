@@ -120924,6 +120924,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-23T16:16:11.500Z",
       "last_touch_at": "2026-08-23T16:16:11.500Z"
+    },
+    {
+      "id": "lead-instagram-1787526506304",
+      "name": "@gavinaalvarado",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-23T23:08:24.247Z",
+      "last_touch_at": "2026-08-23T23:08:24.247Z"
     }
   ],
   "conversations": [
@@ -125824,6 +125840,20 @@
       "last_message_preview": "Hola buen día quisiera saber en  la ciudad de La Plata quien vende sus pisos H2O, gracias.",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-23T16:16:11.500Z"
+    },
+    {
+      "id": "conv-1787526506304-yoqf",
+      "channel": "instagram",
+      "contact_id": "1012322245181433",
+      "contact_name": "@gavinaalvarado",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787526506304",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-08-23T23:08:33.947Z",
+      "last_message_preview": "Para mi cliente",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-23T23:08:33.947Z"
     }
   ],
   "messages": [
@@ -139168,6 +139198,22 @@
       "body": "Ok. Gracias por la explicación!",
       "ts": "2026-08-23T22:27:54.032Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787526506304-9p2b",
+      "conversation_id": "conv-1787526506304-yoqf",
+      "direction": "in",
+      "body": "Hola quisiera contactarme con alguien para presupuestar y ver los pisos",
+      "ts": "2026-08-23T23:08:24.247Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787526514497-7cr7",
+      "conversation_id": "conv-1787526506304-yoqf",
+      "direction": "in",
+      "body": "Para mi cliente",
+      "ts": "2026-08-23T23:08:33.947Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -147248,7 +147294,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3MzYyNjUwMjI0NDU0NDU5NzU4NjkzMTIwNjg0ODUxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3MzYyNjc5Mjg1NTg2MDQ1MzYzNjQ0MDc0MzQ3NzI0OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA4MzIyMTMyNzY2MjM4NzozMjk3MzkwMTUyMDE5ODk2OTUwMTI1MTIwMzc0OTY0MjI0MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3Mzk5OTExOTI3MjQ4Njc3NDM5MDQxNzA3Mzg5NzQ3MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3Mzk5OTExOTI3MjQ4Njc3NDM5MDQxNzA3Mzg5NzQ3MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc0MDU4ODc4NjAxMTIzMDozMjk3NDA0Mzk0ODgyMjc0MzYwMTQ0ODg0NDgzNTk0NjQ5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc0MDU4ODc4NjAxMTIzMDozMjk3NDA0NDEyNzc2NjQzNTk1Mjg4MDU1MTczMTM5NjYwOAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
