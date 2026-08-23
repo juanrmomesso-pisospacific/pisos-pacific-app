@@ -125762,11 +125762,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787448248514",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-23T01:24:06.823Z",
-      "last_message_preview": "Hola, de qué material son los pisos?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-23T01:24:06.823Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-23T16:27:33.195Z",
+      "last_message_preview": "Hola Ana cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-23T01:24:06.823Z",
+      "last_outbound_at": "2026-08-23T16:27:33.195Z"
     },
     {
       "id": "conv-1787449293163-o9g0",
@@ -139087,6 +139088,16 @@
       "body": "Hola buen día quisiera saber en  la ciudad de La Plata quien vende sus pisos H2O, gracias.",
       "ts": "2026-08-23T16:16:11.500Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787502453623-sye0",
+      "conversation_id": "conv-1787448248514-0zto",
+      "direction": "out",
+      "body": "Hola Ana cómo estás?",
+      "ts": "2026-08-23T16:27:33.195Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3MzYwMDI4NTIyOTcwOTc3NDM5NzY1MzEzMzU1Nzc2MAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
