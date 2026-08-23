@@ -116856,7 +116856,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-08-21T12:02:26.000Z"
+      "last_touch_at": "2026-08-23T08:24:29.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -122395,12 +122395,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 34,
-      "last_message_at": "2026-08-21T12:02:26.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-19 00:00:00 UTC to 2026-08-20 00:00:00 UTC.",
+      "unread_count": 35,
+      "last_message_at": "2026-08-23T08:24:29.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-21 00:00:00 UTC to 2026-08-22 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-21T12:02:26.000Z",
+      "last_inbound_at": "2026-08-23T08:24:29.000Z",
       "ignored": true
     },
     {
@@ -138990,6 +138990,14 @@
       "body": "😍",
       "ts": "2026-08-23T01:42:53.252Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a02db8a8eaa",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 1a65e5c81bda4f748b153f6c76bbace1\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-21 00:00:00 UTC to 2026-08-22 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-08-23T08:24:29.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -145340,7 +145348,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-22T14:06:46.547Z",
     "gmail_seen_ids": [
-      "19e745f1c8900e4a",
       "19e72514ffb1168f",
       "19eb7630f9d26c96",
       "19eb7efd47a40180",
@@ -146139,7 +146146,8 @@
       "1a02907151fa78c5",
       "1a0295c6288889da",
       "1a02bb4c751df5a3",
-      "1a02bd73fb1ae49e"
+      "1a02bd73fb1ae49e",
+      "1a02db8a8eaa2bdd"
     ],
     "cash_sessions": {
       "1136982222": {
