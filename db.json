@@ -125762,12 +125762,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787448248514",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-08-23T16:51:30.177Z",
-      "last_message_preview": "Madera prefinished es madera pura?",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-23T17:53:15.986Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-23T16:51:30.177Z",
-      "last_outbound_at": "2026-08-23T16:28:27.259Z"
+      "last_outbound_at": "2026-08-23T17:53:15.986Z"
     },
     {
       "id": "conv-1787449293163-o9g0",
@@ -139142,6 +139142,16 @@
       "body": "Madera prefinished es madera pura?",
       "ts": "2026-08-23T16:51:30.177Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787507596446-e831",
+      "conversation_id": "conv-1787448248514-0zto",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-23T17:53:15.986Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyNDcyODUxMTA1NTY2ODozMjk3MzY5NTE1Mjk2NjgyNTgxOTY2MzIyNzM3MjQzNzUwNAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
