@@ -125949,11 +125949,12 @@
       "linked_lead_id": "lead-email-1a02148e3a65",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-20T22:26:59.000Z",
-      "last_message_preview": "Formulario web — 80m² · Con Colocación · CP 1416 · terrero",
+      "last_message_at": "2026-08-24T18:17:30.901Z",
+      "last_message_preview": "Hola emilia, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T22:26:59.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-20T22:26:59.000Z",
+      "last_outbound_at": "2026-08-24T18:17:30.901Z"
     },
     {
       "id": "conv-email-1a0245448e47",
@@ -125963,7 +125964,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0245448e47",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-21T12:38:06.000Z",
       "last_message_preview": "Enviar toda la información al siguiente correo electrónico:\r\njavierleonardomancinelli@gmail.com\r\n\r\nCelular: 2615741755. Sólo Wapp",
       "email_subject": "Contactar para compra e instalación de pisos vinilicos",
@@ -139903,6 +139904,15 @@
       "ts": "2026-08-24T18:16:56.391Z",
       "status": "sent",
       "wa_id": "1a034fd63e88990e"
+    },
+    {
+      "id": "m-1787595450901-f2gt",
+      "conversation_id": "conv-email-1a02148e3a65",
+      "direction": "out",
+      "body": "Hola emilia, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos,\nEquipo Pacific",
+      "ts": "2026-08-24T18:17:30.901Z",
+      "status": "sent",
+      "wa_id": "1a034fde80138d31"
     }
   ],
   "templates": [
