@@ -126101,11 +126101,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787449293163",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-24T18:22:54.959Z",
-      "last_message_preview": "📎 Adjunto",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-24T14:14:41.883Z",
+      "unread_count": 2,
+      "last_message_at": "2026-08-24T18:51:51.997Z",
+      "last_message_preview": "↩️ Reaccionó: ❤",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-24T18:51:51.997Z",
       "last_outbound_at": "2026-08-24T18:22:54.959Z"
     },
     {
@@ -140059,6 +140059,22 @@
       "direction": "in",
       "body": "✉️ Re: Asesoramiento\n\nHola buenos días! Te dejo los datos a continuación…\r\nNombre: Lesiuk, Camila\r\nDNI 41.113.644\r\nNúmero: 3755533547\r\nMail: camilalesiuk1998@gmail.com\r\n\r\nEl El lun, 24 ago 2026 a la(s) 10:47 a. m., info pisos <\r\ninfo@pisospacific.com> escribió:\r\n\r\n> Hola Camila, buen día!\r\n>\r\n> Perfecto, realizamos el envío y te compartimos el número de seguimiento\r\n> para que puedas seguirlo.\r\n> Para realizar el envío usamos Via Cargo como encomienda, por lo que vamos\r\n> a estar requiriendo los siguientes datos.\r\n>\r\n>    - Dirección de entrega: San Vicente Misiones, calle Tupac Amaru 1665.\r\n>    Código postal 3364\r\n>    <https://www.google.com/maps/search/San+Vicente+Misiones,+calle+Tupac+Amaru+1665.+C%C3%B3digo+postal+3364?entry=gmail&source=g>\r\n>\r\n>    - Nombre de quien recibe:\r\n>    - DNI o CUIT:\r\n>    - Número de teléfono:\r\n>    - Mail:\r\n>\r\n>\r\n> Saludos,\r\n>\r\n> Juan\r\n>\r\n> El vie, 21 ago 2026 a las 19:27, Camila Lesiuk (<\r\n> camilalesiuk1998@gmail.com>) escribió:\r\n>\r\n>> Buenas noches! Muchísimas gracias 😊\r\n>> La dirección es San Vicente Misiones, calle Tupac Amaru 1665. Código\r\n>> postal 3364\r\n>> <https://www.google.com/maps/search/San+Vicente+Misiones,+calle+Tupac+Amaru+1665.+C%C3%B3digo+postal+3364?entry=gmail&source=g>\r\n>>\r\n>> Si tengo que abonar el envío de las muestras estoy a disposición!\r\n>>\r\n>> El El vie, 21 ago 2026 a la(s) 1:49 p. m., info pisos <\r\n>> info@pisospacific.com> escribió:\r\n>>\r\n>>> Hola Camila,\r\n>>>\r\n>>> Muchas gracias por escribirnos y por tu interés en nuestros productos",
       "ts": "2026-08-24T18:36:11.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787597510785-sf4a",
+      "conversation_id": "conv-1787449293163-o9g0",
+      "direction": "in",
+      "body": "↩️ Reaccionó: ❤",
+      "ts": "2026-08-24T18:51:50.330Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787597512602-5w3r",
+      "conversation_id": "conv-1787449293163-o9g0",
+      "direction": "in",
+      "body": "↩️ Reaccionó: ❤",
+      "ts": "2026-08-24T18:51:51.997Z",
       "status": "received"
     }
   ],
