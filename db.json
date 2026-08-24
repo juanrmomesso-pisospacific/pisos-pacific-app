@@ -29093,6 +29093,73 @@
       "quote_number": "A1252",
       "status": "SENT",
       "lead_id": "local-1787592834308-mue6n"
+    },
+    {
+      "id": "local-1787599713757-yllvk",
+      "client_id": "",
+      "client_name": "Juan stok",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Tigre",
+      "internal_notes": "Lead automático desde instagram",
+      "public_notes": "No se verificaron medidas en obra. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Juan stok",
+      "has_iva": true,
+      "price": 2681.844,
+      "zoned": false,
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 42,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 1596,
+          "discount": 159.6,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 42,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 630,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 150,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 150,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 159.6,
+      "discount_amount": 159.6,
+      "created_at": "2026-08-24T19:28:33.565Z",
+      "quote_number": "A6185",
+      "status": "DRAFT",
+      "lead_id": "lead-instagram-1787449293163"
     }
   ],
   "clients": [
