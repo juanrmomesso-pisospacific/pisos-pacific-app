@@ -126174,11 +126174,11 @@
       "linked_lead_id": "lead-instagram-1787425051703",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-24T20:44:00.009Z",
-      "last_message_preview": "Genial",
+      "last_message_at": "2026-08-24T20:45:01.436Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T20:22:28.362Z",
-      "last_outbound_at": "2026-08-24T20:44:00.009Z"
+      "last_outbound_at": "2026-08-24T20:45:01.436Z"
     },
     {
       "id": "conv-email-1a02bb4c751d",
@@ -140347,6 +140347,36 @@
       "ts": "2026-08-24T20:44:00.009Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3NTQ3NzkyMDUyNjE3MjE3NjAwNDE2Njk4Mzg3NjYwOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787604293757-izr4",
+      "conversation_id": "conv-1787425051703-1f1k",
+      "direction": "out",
+      "body": "Te paso el contacto de Victoria",
+      "ts": "2026-08-24T20:44:53.266Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3NTQ3ODkwMjk0MzgzMTAxMzc0MzM5ODY5MTUzNjg5NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787604301581-iggj",
+      "conversation_id": "conv-1787425051703-1f1k",
+      "direction": "out",
+      "body": "1136982222",
+      "ts": "2026-08-24T20:45:01.164Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3NTQ3OTA0ODY0MjA4MTc3MjUxNjg3Njk5MjExODc4NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787604301981-eykc",
+      "conversation_id": "conv-1787425051703-1f1k",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-24T20:45:01.436Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3NTQ3OTA1MzY1NzQ5MzIzMTc0MTQ3MjE0Mjc4NjU2MAZDZD",
       "via": "ig-app"
     }
   ],
