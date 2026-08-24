@@ -126169,12 +126169,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787449293163",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-08-24T18:52:09.063Z",
-      "last_message_preview": "Juan Stok",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-24T19:31:41.697Z",
+      "last_message_preview": "https://pisos-pacific.onrender.com/p/q/local-1787599713757-yllvk/46dc98bb472a4d0ec366ccc4",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T18:52:09.063Z",
-      "last_outbound_at": "2026-08-24T18:22:54.959Z"
+      "last_outbound_at": "2026-08-24T19:31:41.697Z"
     },
     {
       "id": "conv-1787449356379-fox3",
@@ -140198,6 +140198,16 @@
       "body": "Genial!! Mil gracias",
       "ts": "2026-08-24T19:27:57.464Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787599904123-7zvw",
+      "conversation_id": "conv-1787449293163-o9g0",
+      "direction": "out",
+      "body": "https://pisos-pacific.onrender.com/p/q/local-1787599713757-yllvk/46dc98bb472a4d0ec366ccc4",
+      "ts": "2026-08-24T19:31:41.697Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTM5Nzg5MjgwMjcwNzAxMTk5NDY4NzI2NDI2MDA5NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
