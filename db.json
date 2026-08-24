@@ -126174,11 +126174,11 @@
       "linked_lead_id": "lead-instagram-1787533348550",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-24T16:45:05.690Z",
-      "last_message_preview": "Y esto corresponde a qué tipo de piso? Que espesor? Tiene manta incluida cada una o se pone una manta general?",
-      "last_message_direction": "in",
+      "last_message_at": "2026-08-24T18:23:27.842Z",
+      "last_message_preview": "Te paso el catálogo! En caso de nivelar lo puede hacer el colocador pero el debería hacer previamente la inspección",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T16:45:05.690Z",
-      "last_outbound_at": "2026-08-24T14:11:17.143Z"
+      "last_outbound_at": "2026-08-24T18:23:27.842Z"
     },
     {
       "id": "conv-email-1a03459c2313",
@@ -139993,6 +139993,16 @@
       "ts": "2026-08-24T18:22:54.959Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTMyMTc2NzkyNTQxNTE3Njk0ODg3MzkyNjAxNzAyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787595808300-1be1",
+      "conversation_id": "conv-1787533348550-xcch",
+      "direction": "out",
+      "body": "Te paso el catálogo! En caso de nivelar lo puede hacer el colocador pero el debería hacer previamente la inspección",
+      "ts": "2026-08-24T18:23:27.842Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTMyMjM3NDQ5OTI0MTI0ODg1MDI2NjM5OTE3ODc1MgZDZD",
       "via": "ig-app"
     }
   ],
