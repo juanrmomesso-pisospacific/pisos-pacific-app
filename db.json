@@ -121121,6 +121121,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-24T15:18:00.000Z",
       "last_touch_at": "2026-08-24T15:18:00.000Z"
+    },
+    {
+      "id": "lead-instagram-1787585365250",
+      "name": "@bgmservicios.instalaciones",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-24T15:29:23.645Z",
+      "last_touch_at": "2026-08-24T15:29:23.645Z"
     }
   ],
   "conversations": [
@@ -126067,6 +126083,20 @@
       "email_subject": "Re: Presupuesto - 100 m2 - Sin Colocación — Pisos Pacific",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-24T15:18:00.000Z"
+    },
+    {
+      "id": "conv-1787585365250-eyu7",
+      "channel": "instagram",
+      "contact_id": "2995094577504055",
+      "contact_name": "@bgmservicios.instalaciones",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787585365250",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-08-24T15:29:24.704Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-24T15:29:24.704Z"
     }
   ],
   "messages": [
@@ -139625,6 +139655,22 @@
       "body": "✉️ Re: Presupuesto - 100 m2 - Sin Colocación — Pisos Pacific\n\nHola chicos buenos días. Perdón me quedó muy atrás el mensaje. El\r\npresupuesto lo necesito por la línea H2O\r\n\r\n\r\nEl El sáb, 9 may 2026 a la(s) 11:14, info pisos <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola Nuria, muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n>    - Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n>    noble prefinished\r\n>    - Línea H2O <https://pisospacific.com/h2o> — Línea de pisos SPC\r\n>\r\n> Como indicaste que no necesitás el servicio de colocación, el presupuesto\r\n> será solo por los materiales y con servicio de entrega incluído.\r\n>\r\n> La dirección que nos compartiste es: Laprida 4147, Mar del Plata.\r\n>\r\n> Muchas gracias!\r\n> Saludos,\r\n>\r\n> Juan Rodriguez Momesso\r\n>\r\n>",
       "ts": "2026-08-24T15:18:00.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787585365250-zk9l",
+      "conversation_id": "conv-1787585365250-eyu7",
+      "direction": "in",
+      "body": "Hola buenos días. Cómo están, me presento, mi nombre es Leonardo y me dedico a la instalación de productos en wpc  en general, wall panel de interior y exterior, placas uv/ simil marmol, pisos flotante y vinilico , deck , también hacemos instalación de cortinas y otras cosas más , no hacemos trabajos de albañilería, todo obra fina , ya tenemos dos años en el mercado, les dejo un teléfono y este ig para q puedan ver algunos trabajos ya realizados , cabe aclarar , nosotros trabajamos de forma independiente y tercerizados, damos ub servicios de instalación y no hacemos reventas \n\nDejo un cel \n\n1156599023",
+      "ts": "2026-08-24T15:29:23.645Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787585365351-4c1y",
+      "conversation_id": "conv-1787585365250-eyu7",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-24T15:29:24.704Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -147719,7 +147765,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTAyNjI1MTQwOTIyMzgzNTYzNDEwNDIwMzczOTEzNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTAyNjMyNjc1NjA5MzcwMjgzMzMzNzc3MTQ5MTMyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTA0NjUxNzg3MjUwNjgxMTM2ODgzMTM0ODM3NTU1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTA0NzAzOTE1Njc3ODY0MDgwNTk4NDE5MDA3MDc4NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTA0NzAzOTE1Njc3ODY0MDgwNTk4NDE5MDA3MDc4NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY2MTY4NTQ3MjAyMDA3MTozMjk3NTEyOTcxMzA4NDg0NzM0NTU0MzIyNzQ0OTAxNjMyMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY2MTY4NTQ3MjAyMDA3MTozMjk3NTEyOTczMjYwNjQ2NDc0OTY4Mzc2MDkyODEyOTAyNAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
