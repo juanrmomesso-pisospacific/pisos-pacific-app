@@ -125493,7 +125493,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ff7ca2a289",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-12T21:04:08.000Z",
       "last_message_preview": "Formulario web — 12m² · Con Colocación · Avda de los constituyentes",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -139864,6 +139864,15 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDczMDE3NzY1ODY4NzY4NjozMjk3NTMwNDc1OTQ1MDc4OTMzNzIzMDM0NDUxOTE1NTcxMgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1787595234111-4mqe",
+      "conversation_id": "conv-email-19ff6f4d2630",
+      "direction": "out",
+      "body": "Hola Aldana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos,\nEquipo Pacific",
+      "ts": "2026-08-24T18:13:54.111Z",
+      "status": "failed",
+      "error": "The operation was aborted due to timeout"
     }
   ],
   "templates": [
