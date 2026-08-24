@@ -126174,11 +126174,11 @@
       "linked_lead_id": "lead-instagram-1787533348550",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-24T18:23:27.842Z",
-      "last_message_preview": "Te paso el catálogo! En caso de nivelar lo puede hacer el colocador pero el debería hacer previamente la inspección",
+      "last_message_at": "2026-08-24T18:23:39.041Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T16:45:05.690Z",
-      "last_outbound_at": "2026-08-24T18:23:27.842Z"
+      "last_outbound_at": "2026-08-24T18:23:39.041Z"
     },
     {
       "id": "conv-email-1a03459c2313",
@@ -126188,7 +126188,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a03459c2313",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-24T15:18:00.000Z",
       "last_message_preview": "Hola chicos buenos días. Perdón me quedó muy atrás el mensaje. El\r\npresupuesto lo necesito por la línea H2O\r\n\r\n\r\nEl El sáb, 9 may 2026 a la(",
       "email_subject": "Re: Presupuesto - 100 m2 - Sin Colocación — Pisos Pacific",
@@ -140003,6 +140003,16 @@
       "ts": "2026-08-24T18:23:27.842Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTMyMjM3NDQ5OTI0MTI0ODg1MDI2NjM5OTE3ODc1MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787595819431-5m2s",
+      "conversation_id": "conv-1787533348550-xcch",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-24T18:23:39.041Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTMyMjU4MTA5NjY4NzQ0ODg1MjkyMDM0NjM0NTQ3MgZDZD",
       "via": "ig-app"
     }
   ],
