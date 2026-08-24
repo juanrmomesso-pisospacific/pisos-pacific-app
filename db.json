@@ -121137,6 +121137,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-24T15:29:23.645Z",
       "last_touch_at": "2026-08-24T15:29:23.645Z"
+    },
+    {
+      "id": "lead-email-1a03472cf81a",
+      "name": "Karime Viano",
+      "email": "karimeviano@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Calle Pacheco De Melo 3048 3048",
+      "postal_code": "C1425AUN",
+      "approx_m2": 34,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 34m² · Con Colocación · CP C1425AUN",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-24T15:45:33.000Z",
+      "last_touch_at": "2026-08-24T15:45:33.000Z"
     }
   ],
   "conversations": [
@@ -126097,6 +126114,21 @@
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-24T15:29:24.704Z"
+    },
+    {
+      "id": "conv-email-1a03472cf81a",
+      "channel": "email",
+      "contact_id": "karimeviano@hotmail.com",
+      "contact_name": "Karime Viano",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a03472cf81a",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-24T15:45:33.000Z",
+      "last_message_preview": "Formulario web — 34m² · Con Colocación · CP C1425AUN · Calle Pacheco De Melo 3048 3048",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-24T15:45:33.000Z"
     }
   ],
   "messages": [
@@ -139671,6 +139703,14 @@
       "body": "📎 Adjunto",
       "ts": "2026-08-24T15:29:24.704Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a03472cf81a",
+      "conversation_id": "conv-email-1a03472cf81a",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 34m² · Con Colocación · CP C1425AUN · Calle Pacheco De Melo 3048 3048",
+      "ts": "2026-08-24T15:45:33.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -146021,7 +146061,6 @@
     "mp_pending_job": 102908325,
     "mp_last_sync": "2026-08-23T14:06:57.531Z",
     "gmail_seen_ids": [
-      "19ec7f31b24d4fa6",
       "19ec9239e29ae869",
       "19ecac1b85de683f",
       "19ecbcacd6cacf33",
@@ -146820,7 +146859,8 @@
       "1a0333344f51aeb7",
       "1a033a91a5614a1b",
       "1a033dbf3ef3012a",
-      "1a03459c2313f8de"
+      "1a03459c2313f8de",
+      "1a03472cf81af174"
     ],
     "cash_sessions": {
       "1136982222": {
