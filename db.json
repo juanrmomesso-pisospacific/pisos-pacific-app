@@ -126079,11 +126079,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787533348550",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-24T16:44:37.553Z",
-      "last_message_preview": "Perfecto. En caso de tener que nivelar, lo hacen ustdes?",
+      "unread_count": 2,
+      "last_message_at": "2026-08-24T16:45:05.690Z",
+      "last_message_preview": "Y esto corresponde a qué tipo de piso? Que espesor? Tiene manta incluida cada una o se pone una manta general?",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-24T16:44:37.553Z",
+      "last_inbound_at": "2026-08-24T16:45:05.690Z",
       "last_outbound_at": "2026-08-24T14:11:17.143Z"
     },
     {
@@ -139719,6 +139719,14 @@
       "body": "Perfecto. En caso de tener que nivelar, lo hacen ustdes?",
       "ts": "2026-08-24T16:44:37.553Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787589906231-51jx",
+      "conversation_id": "conv-1787533348550-xcch",
+      "direction": "in",
+      "body": "Y esto corresponde a qué tipo de piso? Que espesor? Tiene manta incluida cada una o se pone una manta general?",
+      "ts": "2026-08-24T16:45:05.690Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -147816,7 +147824,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTA0NzAzOTE1Njc3ODY0MDgwNTk4NDE5MDA3MDc4NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY2MTY4NTQ3MjAyMDA3MTozMjk3NTEyOTcxMzA4NDg0NzM0NTU0MzIyNzQ0OTAxNjMyMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY2MTY4NTQ3MjAyMDA3MTozMjk3NTEyOTczMjYwNjQ2NDc0OTY4Mzc2MDkyODEyOTAyNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTIxMjk3OTk4MDkwMzMwODc1OTYxNDM1NzUwNDAwMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTIxMjk3OTk4MDkwMzMwODc1OTYxNDM1NzUwNDAwMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTIxMzQ5OTAxMTAwMTQ1OTEzMzUzMzcwMTI3NTY0OAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
