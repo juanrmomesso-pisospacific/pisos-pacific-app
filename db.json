@@ -125852,11 +125852,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787501773113",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-23T16:16:11.500Z",
-      "last_message_preview": "Hola buen día quisiera saber en  la ciudad de La Plata quien vende sus pisos H2O, gracias.",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-23T16:16:11.500Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-24T12:56:19.310Z",
+      "last_message_preview": "Pero podes consultarnos",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-23T16:16:11.500Z",
+      "last_outbound_at": "2026-08-24T12:56:19.310Z"
     },
     {
       "id": "conv-1787526506304-yoqf",
@@ -139288,6 +139289,26 @@
       "ts": "2026-08-24T12:55:54.940Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NDk1OTg0MjQ1MDY2NjgzNDkyMzU3MzY1OTgyODIyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787576171593-096d",
+      "conversation_id": "conv-1787501773113-hc02",
+      "direction": "out",
+      "body": "Hola no tenemos sucursales!",
+      "ts": "2026-08-24T12:56:10.317Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc4NDk4Nzk0NDQ2OTEyMzozMjk3NDk2MDEyNjA5OTg2Nzg4MjkwNTg0NTM1NDIwMTA4OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787576179714-qz8o",
+      "conversation_id": "conv-1787501773113-hc02",
+      "direction": "out",
+      "body": "Pero podes consultarnos",
+      "ts": "2026-08-24T12:56:19.310Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc4NDk4Nzk0NDQ2OTEyMzozMjk3NDk2MDI5MTk5MTMyNjY1NzMxMTQwMDc3OTU3OTM5MgZDZD",
       "via": "ig-app"
     }
   ],
