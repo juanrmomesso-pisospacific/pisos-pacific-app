@@ -125957,11 +125957,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787449293163",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-24T14:14:13.624Z",
-      "last_message_preview": "Buen día",
+      "unread_count": 2,
+      "last_message_at": "2026-08-24T14:14:41.883Z",
+      "last_message_preview": "Quiero instalar piso tipo spc símil madera para superficie de 42m2. Zona tigre con instalación",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-24T14:14:13.624Z",
+      "last_inbound_at": "2026-08-24T14:14:41.883Z",
       "last_outbound_at": "2026-08-24T12:55:54.940Z"
     },
     {
@@ -139577,6 +139577,14 @@
       "body": "Buen día",
       "ts": "2026-08-24T14:14:13.624Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787580882470-5ypo",
+      "conversation_id": "conv-1787449293163-o9g0",
+      "direction": "in",
+      "body": "Quiero instalar piso tipo spc símil madera para superficie de 42m2. Zona tigre con instalación",
+      "ts": "2026-08-24T14:14:41.883Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -147670,7 +147678,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTAyNTQ0NDgwNjMwMjE3Mjc5OTg5MTUzNjg3MTQyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTAyNjI1MTQwOTIyMzgzNTYzNDEwNDIwMzczOTEzNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTAyNjMyNjc1NjA5MzcwMjgzMzMzNzc3MTQ5MTMyOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTA0NjUxNzg3MjUwNjgxMTM2ODgzMTM0ODM3NTU1MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTA0NjUxNzg3MjUwNjgxMTM2ODgzMTM0ODM3NTU1MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTA0NzAzOTE1Njc3ODY0MDgwNTk4NDE5MDA3MDc4NAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
