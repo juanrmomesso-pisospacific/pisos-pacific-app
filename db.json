@@ -125592,11 +125592,12 @@
       "linked_lead_id": "lead-email-1a0029feff38",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-14T23:33:50.000Z",
-      "last_message_preview": "Formulario web — 21m² · Con Colocación · CP B1716NWO · Barrio cartero casa 199",
+      "last_message_at": "2026-08-24T18:16:07.996Z",
+      "last_message_preview": "Hola Eliana, Perdon la demora en responder nos entro en spam!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada de",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-14T23:33:50.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-14T23:33:50.000Z",
+      "last_outbound_at": "2026-08-24T18:16:07.996Z"
     },
     {
       "id": "conv-1786839957826-wfr7",
@@ -125668,7 +125669,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a00d243bf74",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-17T00:34:32.000Z",
       "last_message_preview": "Formulario web — 23m² · Con Colocación · CP 1431 · Altolaguirre 2275 1ro \"5\"",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -139883,6 +139884,15 @@
       "ts": "2026-08-24T18:14:43.363Z",
       "status": "sent",
       "wa_id": "1a034fb5b361f6d5"
+    },
+    {
+      "id": "m-1787595367996-q4bf",
+      "conversation_id": "conv-email-1a0029feff38",
+      "direction": "out",
+      "body": "Hola Eliana, Perdon la demora en responder nos entro en spam!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-08-24T18:16:07.996Z",
+      "status": "sent",
+      "wa_id": "1a034fca40ef04b0"
     }
   ],
   "templates": [
