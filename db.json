@@ -126203,11 +126203,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787585365250",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-24T15:29:24.704Z",
-      "last_message_preview": "📎 Adjunto",
+      "unread_count": 1,
+      "last_message_at": "2026-08-24T18:26:17.381Z",
+      "last_message_preview": "↩️ Reaccionó: ❤",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-24T15:29:24.704Z"
+      "last_inbound_at": "2026-08-24T18:26:17.381Z",
+      "last_outbound_at": "2026-08-24T18:25:59.869Z"
     },
     {
       "id": "conv-email-1a03472cf81a",
@@ -126217,7 +126218,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a03472cf81a",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-24T15:45:33.000Z",
       "last_message_preview": "Formulario web — 34m² · Con Colocación · CP C1425AUN · Calle Pacheco De Melo 3048 3048",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -140014,6 +140015,33 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTMyMjU4MTA5NjY4NzQ0ODg1MjkyMDM0NjM0NTQ3MgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1787595959612-w4ip",
+      "conversation_id": "conv-1787585365250-eyu7",
+      "direction": "out",
+      "body": "Hola Muchas gracias. Por el momento no estamos buscando pero cualquier cosa te avisamos",
+      "ts": "2026-08-24T18:25:59.069Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY2MTY4NTQ3MjAyMDA3MTozMjk3NTMyNTE2NDE1MTMxNjA3MDE5NzgzNzI5ODY2MzQyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787595959869-ya7y",
+      "conversation_id": "conv-1787585365250-eyu7",
+      "direction": "out",
+      "body": "Hola Muchas gracias. Por el momento no estamos buscando pero cualquier cosa te avisamos",
+      "ts": "2026-08-24T18:25:59.869Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY2MTY4NTQ3MjAyMDA3MTozMjk3NTMyNTE2NDE1MTMxNjA3MDE5NzgzNzI5ODY2MzQyNAZDZD"
+    },
+    {
+      "id": "m-1787595977894-k8ox",
+      "conversation_id": "conv-1787585365250-eyu7",
+      "direction": "in",
+      "body": "↩️ Reaccionó: ❤",
+      "ts": "2026-08-24T18:26:17.381Z",
+      "status": "received"
     }
   ],
   "templates": [
