@@ -125857,11 +125857,11 @@
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-20T15:18:52.929Z",
-      "last_message_preview": "↩️ Reaccionó: ❤",
-      "last_message_direction": "in",
+      "last_message_at": "2026-08-24T18:59:29.580Z",
+      "last_message_preview": "Cualquier cosa estamos en contacto",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-20T15:18:52.929Z",
-      "last_outbound_at": "2026-08-20T15:10:24.941Z"
+      "last_outbound_at": "2026-08-24T18:59:29.580Z"
     },
     {
       "id": "conv-1787188700131-9dmw",
@@ -126101,11 +126101,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787449293163",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-08-24T18:51:51.997Z",
-      "last_message_preview": "↩️ Reaccionó: ❤",
+      "unread_count": 3,
+      "last_message_at": "2026-08-24T18:52:09.063Z",
+      "last_message_preview": "Juan Stok",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-24T18:51:51.997Z",
+      "last_inbound_at": "2026-08-24T18:52:09.063Z",
       "last_outbound_at": "2026-08-24T18:22:54.959Z"
     },
     {
@@ -140076,6 +140076,44 @@
       "body": "↩️ Reaccionó: ❤",
       "ts": "2026-08-24T18:51:51.997Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787597529711-xv0y",
+      "conversation_id": "conv-1787449293163-o9g0",
+      "direction": "in",
+      "body": "Juan Stok",
+      "ts": "2026-08-24T18:52:09.063Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787597956994-rnuj",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-24T18:59:16.138Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3NTM2MjAwMzU3MTM1NTYzMjk4MzU3MjU0OTIwNjAxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787597964363-bnnl",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Hola Vir! Ahí fue!!",
+      "ts": "2026-08-24T18:59:24.018Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3NTM2MjE0ODkyODk1MDM2ODk0Nzg1NjU2MDA5NTIzMgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787597970484-12k5",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Cualquier cosa estamos en contacto",
+      "ts": "2026-08-24T18:59:29.580Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3NTM2MjI1MTUzNDMxNTY5OTQ1MDY2MjYxNzA4ODAwMAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
@@ -148272,7 +148310,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY2MTY4NTQ3MjAyMDA3MTozMjk3NTEyOTcxMzA4NDg0NzM0NTU0MzIyNzQ0OTAxNjMyMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY2MTY4NTQ3MjAyMDA3MTozMjk3NTEyOTczMjYwNjQ2NDc0OTY4Mzc2MDkyODEyOTAyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTIxMjk3OTk4MDkwMzMwODc1OTYxNDM1NzUwNDAwMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTIxMzQ5OTAxMTAwMTQ1OTEzMzUzMzcwMTI3NTY0OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTIxMzQ5OTAxMTAwMTQ1OTEzMzUzMzcwMTI3NTY0OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTM1NDEyNTQzMjY4NjY5OTI2MzAyMjQwNTI1NTE2OAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
