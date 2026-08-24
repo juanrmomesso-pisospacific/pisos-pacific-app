@@ -125778,12 +125778,12 @@
       "linked_lead_id": "lead-email-1a0210a0f433",
       "status": "open",
       "unread_count": 2,
-      "last_message_at": "2026-08-21T22:27:36.000Z",
-      "last_message_preview": "Buenas noches! Muchísimas gracias 😊\r\nLa dirección es San Vicente Misiones, calle Tupac Amaru 1665. Código postal\r\n3364\r\nSi tengo que abonar",
+      "last_message_at": "2026-08-24T13:47:09.000Z",
+      "last_message_preview": "Hola Camila, buen día!\r\n\r\nPerfecto, realizamos el envío y te compartimos el número de seguimiento\r\npara que puedas seguirlo.\r\nPara realizar ",
       "email_subject": "Asesoramiento",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-21T22:27:36.000Z",
-      "last_outbound_at": "2026-08-21T16:49:24.000Z"
+      "last_outbound_at": "2026-08-24T13:47:09.000Z"
     },
     {
       "id": "conv-1787262450212-9v9a",
@@ -139489,6 +139489,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NDk2MDg4NjI4Njk0NDUzMzUxOTQ5NDU2ODQ3NjY3MgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-emailout-1a034066edaa",
+      "conversation_id": "conv-email-1a0210a0f433",
+      "direction": "out",
+      "body": "✉️ Re: Asesoramiento\n\nHola Camila, buen día!\r\n\r\nPerfecto, realizamos el envío y te compartimos el número de seguimiento\r\npara que puedas seguirlo.\r\nPara realizar el envío usamos Via Cargo como encomienda, por lo que vamos a\r\nestar requiriendo los siguientes datos.\r\n\r\n   - Dirección de entrega: San Vicente Misiones, calle Tupac Amaru 1665.\r\n   Código postal 3364\r\n   - Nombre de quien recibe:\r\n   - DNI o CUIT:\r\n   - Número de teléfono:\r\n   - Mail:\r\n\r\n\r\nSaludos,\r\n\r\nJuan\r\n\r\nEl vie, 21 ago 2026 a las 19:27, Camila Lesiuk (<camilalesiuk1998@gmail.com>)\r\nescribió:\r\n\r\n> Buenas noches! Muchísimas gracias 😊\r\n> La dirección es San Vicente Misiones, calle Tupac Amaru 1665. Código\r\n> postal 3364\r\n> Si tengo que abonar el envío de las muestras estoy a disposición!\r\n>\r\n> El El vie, 21 ago 2026 a la(s) 1:49 p. m., info pisos <\r\n> info@pisospacific.com> escribió:\r\n>\r\n>> Hola Camila,\r\n>>\r\n>> Muchas gracias por escribirnos y por tu interés en nuestros productos.\r\n>>\r\n>> Con gusto podemos prepararte un muestrario con todos nuestros pisos. Si\r\n>> nos compartís tu dirección, te lo enviamos!\r\n>>\r\n>> De lo contrario, también podés pasar por nuestro depósito para ver las\r\n>> muestras en persona y retirar los muestrarios que necesités.\r\n>>\r\n>> Quedamos a disposición.\r\n>>\r\n>> Saludos,\r\n>>\r\n>> [image: Pisos Pacific]\r\n>> Juan Rodríguez Momesso\r\n>> Ventas\r\n>>\r\n>> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n>> info@pisospacific.com\r\n>> pisospacific.com\r\n>> [image: Instagram] <https://www.instagram.com/pisospacific/> [image",
+      "ts": "2026-08-24T13:47:09.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -146989,7 +146997,8 @@
       "1a02536cf44a5c37",
       "1a0295c6288889da",
       "1a02e82be5f14b80",
-      "1a033a91a5614a1b"
+      "1a033a91a5614a1b",
+      "1a034066edaad31a"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
