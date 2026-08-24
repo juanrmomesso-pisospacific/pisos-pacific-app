@@ -125494,11 +125494,12 @@
       "linked_lead_id": "lead-email-19ff7ca2a289",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-12T21:04:08.000Z",
-      "last_message_preview": "Formulario web — 12m² · Con Colocación · Avda de los constituyentes",
+      "last_message_at": "2026-08-24T18:14:43.363Z",
+      "last_message_preview": "Hola Marcela, Perdon la demora en responder. Nos entro en spam.\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-12T21:04:08.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-12T21:04:08.000Z",
+      "last_outbound_at": "2026-08-24T18:14:43.363Z"
     },
     {
       "id": "conv-email-19ffb81bb8f4",
@@ -125590,7 +125591,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0029feff38",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-14T23:33:50.000Z",
       "last_message_preview": "Formulario web — 21m² · Con Colocación · CP B1716NWO · Barrio cartero casa 199",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -139873,6 +139874,15 @@
       "ts": "2026-08-24T18:13:54.111Z",
       "status": "failed",
       "error": "The operation was aborted due to timeout"
+    },
+    {
+      "id": "m-1787595283363-2c3v",
+      "conversation_id": "conv-email-19ff7ca2a289",
+      "direction": "out",
+      "body": "Hola Marcela, Perdon la demora en responder. Nos entro en spam.\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-08-24T18:14:43.363Z",
+      "status": "sent",
+      "wa_id": "1a034fb5b361f6d5"
     }
   ],
   "templates": [
