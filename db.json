@@ -125809,11 +125809,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787449293163",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-23T01:41:31.898Z",
-      "last_message_preview": "Buenas",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-23T01:41:31.898Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-24T12:55:54.940Z",
+      "last_message_preview": "Hola cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-23T01:41:31.898Z",
+      "last_outbound_at": "2026-08-24T12:55:54.940Z"
     },
     {
       "id": "conv-1787449356379-fox3",
@@ -139278,6 +139279,16 @@
       "body": "Hola , cómo estás? Queria averiguar el presupuesto para la colocación de pisos sistema spc en un departamento,  unicado en avellaneda. De aldededor de unos 40m2",
       "ts": "2026-08-24T01:02:27.128Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787576155598-jn84",
+      "conversation_id": "conv-1787449293163-o9g0",
+      "direction": "out",
+      "body": "Hola cómo estás?",
+      "ts": "2026-08-24T12:55:54.940Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NDk1OTg0MjQ1MDY2NjgzNDkyMzU3MzY1OTgyODIyNAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
