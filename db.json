@@ -126173,12 +126173,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787425051703",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-08-24T20:22:28.362Z",
-      "last_message_preview": "Sii, es obra nueva",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-24T20:44:00.009Z",
+      "last_message_preview": "Genial",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T20:22:28.362Z",
-      "last_outbound_at": "2026-08-24T20:16:12.213Z"
+      "last_outbound_at": "2026-08-24T20:44:00.009Z"
     },
     {
       "id": "conv-email-1a02bb4c751d",
@@ -140338,6 +140338,16 @@
       "body": "Sii, es obra nueva",
       "ts": "2026-08-24T20:22:28.362Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787604240470-uzwe",
+      "conversation_id": "conv-1787425051703-1f1k",
+      "direction": "out",
+      "body": "Genial",
+      "ts": "2026-08-24T20:44:00.009Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3NTQ3NzkyMDUyNjE3MjE3NjAwNDE2Njk4Mzg3NjYwOAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
