@@ -126219,11 +126219,12 @@
       "linked_lead_id": "lead-email-1a03472cf81a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-24T15:45:33.000Z",
-      "last_message_preview": "Formulario web — 34m² · Con Colocación · CP C1425AUN · Calle Pacheco De Melo 3048 3048",
+      "last_message_at": "2026-08-24T18:26:35.228Z",
+      "last_message_preview": "Hola Karime, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-24T15:45:33.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-24T15:45:33.000Z",
+      "last_outbound_at": "2026-08-24T18:26:35.228Z"
     },
     {
       "id": "conv-email-1a034fff1d5d",
@@ -126233,7 +126234,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a026f7cda12",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-24T18:19:32.000Z",
       "last_message_preview": "Buenas tardes, me interesa la línea H2O\r\n\r\n\r\n*Ab. María Elisa Barroso Rodríguez*\r\n*M.P.: 1-41910*\r\n*Córdoba*\r\n\r\n\r\nEl El lun, 24 ago 2026 a l",
       "email_subject": "Re: Pedido de Presupuesto | Página Web",
@@ -140042,6 +140043,15 @@
       "body": "↩️ Reaccionó: ❤",
       "ts": "2026-08-24T18:26:17.381Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787595995228-g20r",
+      "conversation_id": "conv-email-1a03472cf81a",
+      "direction": "out",
+      "body": "Hola Karime, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos, Equipo Pisos Pacific",
+      "ts": "2026-08-24T18:26:35.228Z",
+      "status": "sent",
+      "wa_id": "1a03506375c4fd2e"
     }
   ],
   "templates": [
