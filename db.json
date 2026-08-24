@@ -120940,6 +120940,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-23T23:08:24.247Z",
       "last_touch_at": "2026-08-23T23:08:24.247Z"
+    },
+    {
+      "id": "lead-instagram-1787533348550",
+      "name": "@maba_maga",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-24T01:02:27.128Z",
+      "last_touch_at": "2026-08-24T01:02:27.128Z"
     }
   ],
   "conversations": [
@@ -125854,6 +125870,20 @@
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-23T23:08:52.353Z"
+    },
+    {
+      "id": "conv-1787533348550-xcch",
+      "channel": "instagram",
+      "contact_id": "1059658936991295",
+      "contact_name": "@maba_maga",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787533348550",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-24T01:02:27.128Z",
+      "last_message_preview": "Hola , cómo estás? Queria averiguar el presupuesto para la colocación de pisos sistema spc en un departamento,  unicado en avellaneda. De al",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-24T01:02:27.128Z"
     }
   ],
   "messages": [
@@ -139240,6 +139270,14 @@
       "status": "received",
       "media_url": "/uploads/1c7bd5edbed8118e.jpg",
       "media_type": "image"
+    },
+    {
+      "id": "m-1787533348550-3nhn",
+      "conversation_id": "conv-1787533348550-xcch",
+      "direction": "in",
+      "body": "Hola , cómo estás? Queria averiguar el presupuesto para la colocación de pisos sistema spc en un departamento,  unicado en avellaneda. De aldededor de unos 40m2",
+      "ts": "2026-08-24T01:02:27.128Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -147325,7 +147363,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc0MDU4ODc4NjAxMTIzMDozMjk3NDA0NDEyNzc2NjQzNTk1Mjg4MDU1MTczMTM5NjYwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc0MDU4ODc4NjAxMTIzMDozMjk3NDA0NDQ2MDcyMzI2NzQwMTA1NDM5MTAyNzg5MjIyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc0MDU4ODc4NjAxMTIzMDozMjk3NDA0NDQ2NzI4NzQ4NTkzOTQ1MTcxMzg0MTc5MDk3NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDAyNzYwNTI1OTg5MDY2MTozMjk3NDA2MTgzMjgwOTIxMDM5NTk4ODAzOTU0NDM0MDQ4MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDAyNzYwNTI1OTg5MDY2MTozMjk3NDA2MTgzMjgwOTIxMDM5NTk4ODAzOTU0NDM0MDQ4MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NDE3MDE3NzY5NTQ2OTY3MDIxOTg5Mjk0NTU4NDEyOAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
