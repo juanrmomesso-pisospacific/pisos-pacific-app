@@ -125882,11 +125882,11 @@
       "linked_lead_id": "lead-instagram-1787533348550",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-24T12:56:35.969Z",
-      "last_message_preview": "Hola cómo estás?",
+      "last_message_at": "2026-08-24T12:56:51.526Z",
+      "last_message_preview": "Y sería con colocación?",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T01:02:27.128Z",
-      "last_outbound_at": "2026-08-24T12:56:35.969Z"
+      "last_outbound_at": "2026-08-24T12:56:51.526Z"
     }
   ],
   "messages": [
@@ -139320,6 +139320,26 @@
       "ts": "2026-08-24T12:56:35.969Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NDk2MDU5OTI5NzYwOTk4Mjg1NDcwODA3MjU0NjMwNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787576207608-qken",
+      "conversation_id": "conv-1787533348550-xcch",
+      "direction": "out",
+      "body": "Me pasas tu nombre y apellido",
+      "ts": "2026-08-24T12:56:47.102Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NDk2MDgwNDY3MzUzMTIzNzA0MDM4OTIyMTI1MzEyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787576212132-5x6r",
+      "conversation_id": "conv-1787533348550-xcch",
+      "direction": "out",
+      "body": "Y sería con colocación?",
+      "ts": "2026-08-24T12:56:51.526Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NDk2MDg4NjI4Njk0NDUzMzUxOTQ5NDU2ODQ3NjY3MgZDZD",
       "via": "ig-app"
     }
   ],
