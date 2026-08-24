@@ -126029,12 +126029,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787533348550",
       "status": "open",
-      "unread_count": 4,
-      "last_message_at": "2026-08-24T13:55:59.061Z",
-      "last_message_preview": "Magalí me llamo",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-24T14:10:04.172Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T13:55:59.061Z",
-      "last_outbound_at": "2026-08-24T12:56:51.526Z"
+      "last_outbound_at": "2026-08-24T14:10:04.172Z"
     }
   ],
   "messages": [
@@ -139529,6 +139529,16 @@
       "body": "Magalí me llamo",
       "ts": "2026-08-24T13:55:59.061Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787580604847-s9l9",
+      "conversation_id": "conv-1787533348550-xcch",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-24T14:10:04.172Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTA0MTkxNjI4OTgyNTQ1MzM4Mzg2OTg5NzExMzYwMAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
