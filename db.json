@@ -255,7 +255,7 @@
       "active": true,
       "margin": 158.6,
       "stock": 2989.5,
-      "reservedStock": 4456.8,
+      "reservedStock": 4544.64,
       "subLine": "Colección Madera",
       "shortName": "Roble Kitsilano 12/1 Veta Tallada",
       "thicknessMm": 12,
@@ -576,7 +576,7 @@
       "active": true,
       "margin": 170.5,
       "stock": 1314.95,
-      "reservedStock": 579,
+      "reservedStock": 664,
       "subLine": "Colección Madera",
       "shortName": "Roble Light Brushed 14/3mm x 19x190",
       "thicknessMm": 14,
@@ -711,7 +711,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1126.495328,
-      "reservedStock": 549.0999999999999,
+      "reservedStock": 685.0999999999999,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Natural Oak 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1817,7 +1817,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 5907.5,
+      "reservedStock": 5979.5,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -1841,7 +1841,7 @@
       "active": true,
       "margin": 172.9,
       "stock": 0,
-      "reservedStock": 5458.03,
+      "reservedStock": 5611.03,
       "subLine": "Colocación Piso",
       "shortName": "Colocación Prefinished Sobre Manta",
       "thicknessMm": null,
@@ -2417,7 +2417,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 6803,
+      "reservedStock": 7403,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -28903,7 +28903,7 @@
       "discount_amount": 412,
       "created_at": "2026-08-20T14:58:01.537Z",
       "quote_number": "A3929",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1787237768328-v2p2k"
     },
     {
@@ -28970,7 +28970,7 @@
       "discount_amount": 658.8,
       "created_at": "2026-08-24T13:37:58.232Z",
       "quote_number": "A8309",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1787578574229-z0ey2"
     },
     {
@@ -29037,7 +29037,7 @@
       "discount_amount": 841.5,
       "created_at": "2026-08-24T13:40:17.794Z",
       "quote_number": "A7636",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1787578574229-z0ey2"
     },
     {
@@ -29091,7 +29091,7 @@
       "discount_amount": 212.8,
       "created_at": "2026-08-24T17:35:25.175Z",
       "quote_number": "A1252",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1787592834308-mue6n"
     }
   ],
@@ -145081,6 +145081,96 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 120,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-24T17:51:24.914Z",
+      "type": "quote_reserve",
+      "ref": "local-1787592926092-7tc0z",
+      "product_id": "PROD-026",
+      "sku": "PROD-026",
+      "qty": 56,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-24T17:51:24.914Z",
+      "type": "quote_reserve",
+      "ref": "local-1787592926092-7tc0z",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 200,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-24T17:51:26.769Z",
+      "type": "quote_reserve",
+      "ref": "local-1787578818645-ph5yn",
+      "product_id": "PROD-201",
+      "sku": "PROD-201",
+      "qty": 85,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-24T17:51:26.769Z",
+      "type": "quote_reserve",
+      "ref": "local-1787578818645-ph5yn",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": 76.5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-24T17:51:26.769Z",
+      "type": "quote_reserve",
+      "ref": "local-1787578818645-ph5yn",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 200,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-24T17:51:28.617Z",
+      "type": "quote_reserve",
+      "ref": "local-1787578678760-pbkhq",
+      "product_id": "PROD-010",
+      "sku": "PROD-010",
+      "qty": 87.84,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-24T17:51:28.617Z",
+      "type": "quote_reserve",
+      "ref": "local-1787578678760-pbkhq",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": 76.5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-24T17:51:28.617Z",
+      "type": "quote_reserve",
+      "ref": "local-1787578678760-pbkhq",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 200,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-24T17:51:31.568Z",
+      "type": "quote_reserve",
+      "ref": "local-1787237881817-8b0z4",
+      "product_id": "PROD-026",
+      "sku": "PROD-026",
+      "qty": 80,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-24T17:51:31.568Z",
+      "type": "quote_reserve",
+      "ref": "local-1787237881817-8b0z4",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 72,
       "warehouse_id": "main"
     }
   ],
