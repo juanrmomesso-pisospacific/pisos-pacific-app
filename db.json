@@ -28905,6 +28905,73 @@
       "quote_number": "A3929",
       "status": "DRAFT",
       "lead_id": "local-1787237768328-v2p2k"
+    },
+    {
+      "id": "local-1787578678760-pbkhq",
+      "client_id": "",
+      "client_name": "Arq. Graciela Artagaveytia",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "1162892200",
+      "client_address": "",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Arq. Graciela Artagaveytia | Kitsilano",
+      "has_iva": true,
+      "price": 9267.632,
+      "zoned": false,
+      "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-010",
+          "sku": "PROD-010",
+          "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada",
+          "quantity": 87.84,
+          "unit_price": 75,
+          "cost": 29,
+          "category": "Pisos de Madera",
+          "disc_value": 10,
+          "total": 6588,
+          "discount": 658.8,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-107",
+          "sku": "SERV-107",
+          "description": "Servicio - Colocación Prefinished Sobre Manta",
+          "quantity": 76.5,
+          "unit_price": 20,
+          "cost": 7.33,
+          "category": "Servicio",
+          "total": 1530,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 200,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 200,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 658.8,
+      "discount_amount": 658.8,
+      "created_at": "2026-08-24T13:37:58.232Z",
+      "quote_number": "A8309",
+      "status": "DRAFT",
+      "lead_id": "local-1787578574229-z0ey2"
     }
   ],
   "clients": [
