@@ -126173,12 +126173,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787425051703",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-08-24T20:11:28.317Z",
-      "last_message_preview": "Estaba buscando recomendacionds para pisos tambien",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-24T20:15:38.137Z",
+      "last_message_preview": "Bien por suerte!!",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T20:11:28.317Z",
-      "last_outbound_at": "2026-08-22T21:33:35.486Z"
+      "last_outbound_at": "2026-08-24T20:15:38.137Z"
     },
     {
       "id": "conv-email-1a02bb4c751d",
@@ -140292,6 +140292,16 @@
       "body": "Estaba buscando recomendacionds para pisos tambien",
       "ts": "2026-08-24T20:11:28.317Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787602538496-629v",
+      "conversation_id": "conv-1787425051703-1f1k",
+      "direction": "out",
+      "body": "Bien por suerte!!",
+      "ts": "2026-08-24T20:15:38.137Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3NTQ0NjUyNjUzMTc4Mjc2MjM2OTQ5MDQyOTY3MzQ3MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
