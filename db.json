@@ -121104,6 +121104,23 @@
       "address": "",
       "created_at": "2026-08-24T13:36:13.835Z",
       "last_touch_at": "2026-08-24T13:36:17.585Z"
+    },
+    {
+      "id": "lead-email-1a03459c2313",
+      "name": "Nuria Salguero",
+      "email": "salgueronuria0@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Re: Presupuesto - 100 m2 - Sin Colocación — Pisos Pacific — Hola chicos buenos días. Perdón me quedó muy atrás el mensaje. El\r\npresupuesto lo necesito por la línea H2O\r\n\r\n\r\nEl El sáb, 9 may 2026 a la(s) 11:14, info pisos <info@pisospacific.",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-24T15:18:00.000Z",
+      "last_touch_at": "2026-08-24T15:18:00.000Z"
     }
   ],
   "conversations": [
@@ -126035,6 +126052,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T13:55:59.061Z",
       "last_outbound_at": "2026-08-24T14:11:17.143Z"
+    },
+    {
+      "id": "conv-email-1a03459c2313",
+      "channel": "email",
+      "contact_id": "salgueronuria0@gmail.com",
+      "contact_name": "Nuria Salguero",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a03459c2313",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-24T15:18:00.000Z",
+      "last_message_preview": "Hola chicos buenos días. Perdón me quedó muy atrás el mensaje. El\r\npresupuesto lo necesito por la línea H2O\r\n\r\n\r\nEl El sáb, 9 may 2026 a la(",
+      "email_subject": "Re: Presupuesto - 100 m2 - Sin Colocación — Pisos Pacific",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-24T15:18:00.000Z"
     }
   ],
   "messages": [
@@ -139585,6 +139617,14 @@
       "body": "Quiero instalar piso tipo spc símil madera para superficie de 42m2. Zona tigre con instalación",
       "ts": "2026-08-24T14:14:41.883Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a03459c2313",
+      "conversation_id": "conv-email-1a03459c2313",
+      "direction": "in",
+      "body": "✉️ Re: Presupuesto - 100 m2 - Sin Colocación — Pisos Pacific\n\nHola chicos buenos días. Perdón me quedó muy atrás el mensaje. El\r\npresupuesto lo necesito por la línea H2O\r\n\r\n\r\nEl El sáb, 9 may 2026 a la(s) 11:14, info pisos <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola Nuria, muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n>    - Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n>    noble prefinished\r\n>    - Línea H2O <https://pisospacific.com/h2o> — Línea de pisos SPC\r\n>\r\n> Como indicaste que no necesitás el servicio de colocación, el presupuesto\r\n> será solo por los materiales y con servicio de entrega incluído.\r\n>\r\n> La dirección que nos compartiste es: Laprida 4147, Mar del Plata.\r\n>\r\n> Muchas gracias!\r\n> Saludos,\r\n>\r\n> Juan Rodriguez Momesso\r\n>\r\n>",
+      "ts": "2026-08-24T15:18:00.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -145935,7 +145975,6 @@
     "mp_pending_job": 102908325,
     "mp_last_sync": "2026-08-23T14:06:57.531Z",
     "gmail_seen_ids": [
-      "19ebed9d69631b56",
       "19ec7f31b24d4fa6",
       "19ec9239e29ae869",
       "19ecac1b85de683f",
@@ -146734,7 +146773,8 @@
       "1a03318a7b70c785",
       "1a0333344f51aeb7",
       "1a033a91a5614a1b",
-      "1a033dbf3ef3012a"
+      "1a033dbf3ef3012a",
+      "1a03459c2313f8de"
     ],
     "cash_sessions": {
       "1136982222": {
