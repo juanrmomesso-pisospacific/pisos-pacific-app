@@ -125881,11 +125881,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787533348550",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-24T01:02:27.128Z",
-      "last_message_preview": "Hola , cómo estás? Queria averiguar el presupuesto para la colocación de pisos sistema spc en un departamento,  unicado en avellaneda. De al",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-24T01:02:27.128Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-24T12:56:35.969Z",
+      "last_message_preview": "Hola cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-24T01:02:27.128Z",
+      "last_outbound_at": "2026-08-24T12:56:35.969Z"
     }
   ],
   "messages": [
@@ -139309,6 +139310,16 @@
       "ts": "2026-08-24T12:56:19.310Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc4NDk4Nzk0NDQ2OTEyMzozMjk3NDk2MDI5MTk5MTMyNjY1NzMxMTQwMDc3OTU3OTM5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787576196497-zind",
+      "conversation_id": "conv-1787533348550-xcch",
+      "direction": "out",
+      "body": "Hola cómo estás?",
+      "ts": "2026-08-24T12:56:35.969Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NDk2MDU5OTI5NzYwOTk4Mjg1NDcwODA3MjU0NjMwNAZDZD",
       "via": "ig-app"
     }
   ],
