@@ -126030,11 +126030,11 @@
       "linked_lead_id": "lead-instagram-1787533348550",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-24T14:10:30.751Z",
-      "last_message_preview": "Aprox 2.106.000 los 40 m2",
+      "last_message_at": "2026-08-24T14:10:54.562Z",
+      "last_message_preview": "Y la colocación 1.000.000 más",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T13:55:59.061Z",
-      "last_outbound_at": "2026-08-24T14:10:30.751Z"
+      "last_outbound_at": "2026-08-24T14:10:54.562Z"
     }
   ],
   "messages": [
@@ -139548,6 +139548,16 @@
       "ts": "2026-08-24T14:10:30.751Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTA0MjQwNjYwMDkwNzE3ODQxODI2MzAwMjQ0Nzg3MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787580655056-blpy",
+      "conversation_id": "conv-1787533348550-xcch",
+      "direction": "out",
+      "body": "Y la colocación 1.000.000 más",
+      "ts": "2026-08-24T14:10:54.562Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTA0Mjg0NTgyOTk4NDYzNzU1NTA0MDQ0NTI2Nzk2OAZDZD",
       "via": "ig-app"
     }
   ],
