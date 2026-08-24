@@ -28972,6 +28972,73 @@
       "quote_number": "A8309",
       "status": "DRAFT",
       "lead_id": "local-1787578574229-z0ey2"
+    },
+    {
+      "id": "local-1787578818645-ph5yn",
+      "client_id": "",
+      "client_name": "Arq. Graciela Artagaveytia",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "1162892200",
+      "client_address": "",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Arq. Graciela Artagaveytia | Roble Veta tallada",
+      "has_iva": true,
+      "price": 11257.235,
+      "zoned": false,
+      "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-201",
+          "sku": "PROD-201",
+          "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed",
+          "quantity": 85,
+          "unit_price": 99,
+          "cost": 34.01,
+          "category": "Pisos de Madera",
+          "disc_value": 10,
+          "total": 8415,
+          "discount": 841.5,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-107",
+          "sku": "SERV-107",
+          "description": "Servicio - Colocación Prefinished Sobre Manta",
+          "quantity": 76.5,
+          "unit_price": 20,
+          "cost": 7.33,
+          "category": "Servicio",
+          "total": 1530,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 200,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 200,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 841.5,
+      "discount_amount": 841.5,
+      "created_at": "2026-08-24T13:40:17.794Z",
+      "quote_number": "A7636",
+      "status": "DRAFT",
+      "lead_id": "local-1787578574229-z0ey2"
     }
   ],
   "clients": [
