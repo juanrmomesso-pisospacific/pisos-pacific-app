@@ -126102,11 +126102,11 @@
       "linked_lead_id": "lead-instagram-1787449293163",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-24T14:14:41.883Z",
-      "last_message_preview": "Quiero instalar piso tipo spc símil madera para superficie de 42m2. Zona tigre con instalación",
-      "last_message_direction": "in",
+      "last_message_at": "2026-08-24T18:20:33.725Z",
+      "last_message_preview": "Perfecto! ahi te paso catalogo y cotizacion.",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T14:14:41.883Z",
-      "last_outbound_at": "2026-08-24T12:55:54.940Z"
+      "last_outbound_at": "2026-08-24T18:20:33.725Z"
     },
     {
       "id": "conv-1787449356379-fox3",
@@ -139966,6 +139966,15 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenas tardes, me interesa la línea H2O\r\n\r\n\r\n*Ab. María Elisa Barroso Rodríguez*\r\n*M.P.: 1-41910*\r\n*Córdoba*\r\n\r\n\r\nEl El lun, 24 ago 2026 a la(s) 15:18, Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola María, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación. También\r\n> compartinos la dirección de entrega así la agregamos en la cotización.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos,\r\n> Equipo Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-08-24T18:19:32.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787595633725-qrzd",
+      "conversation_id": "conv-1787449293163-o9g0",
+      "direction": "out",
+      "body": "Perfecto! ahi te paso catalogo y cotizacion.",
+      "ts": "2026-08-24T18:20:33.725Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTMxOTE1ODAwMjI3MzcwODc2MjY3ODExNTE3MjM1MgZDZD"
     }
   ],
   "templates": [
@@ -147557,7 +147566,14 @@
       "1a0295c6288889da",
       "1a02e82be5f14b80",
       "1a033a91a5614a1b",
-      "1a034066edaad31a"
+      "1a034066edaad31a",
+      "1a034ffeaf3caee7",
+      "1a034ff92013cdec",
+      "1a034ff1183cd2e6",
+      "1a034fde80138d31",
+      "1a034fd63e88990e",
+      "1a034fca40ef04b0",
+      "1a034fb5b361f6d5"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
