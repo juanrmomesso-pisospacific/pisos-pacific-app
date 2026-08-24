@@ -126029,11 +126029,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787533348550",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-24T13:54:07.153Z",
-      "last_message_preview": "Hola. Si si con colocación",
+      "unread_count": 2,
+      "last_message_at": "2026-08-24T13:55:11.251Z",
+      "last_message_preview": "El piso que esta ahora es de flexiplast/flexiplest xq habia alfombra  y la sacamos. Algunas partes estan salidas, quizas haya que nivelar. E",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-24T13:54:07.153Z",
+      "last_inbound_at": "2026-08-24T13:55:11.251Z",
       "last_outbound_at": "2026-08-24T12:56:51.526Z"
     }
   ],
@@ -139505,6 +139505,14 @@
       "body": "Hola. Si si con colocación",
       "ts": "2026-08-24T13:54:07.153Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787579711711-z29k",
+      "conversation_id": "conv-1787533348550-xcch",
+      "direction": "in",
+      "body": "El piso que esta ahora es de flexiplast/flexiplest xq habia alfombra  y la sacamos. Algunas partes estan salidas, quizas haya que nivelar. Entiendo que esto al verlo, puede ser que modifique el presupuesto.",
+      "ts": "2026-08-24T13:55:11.251Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -147594,7 +147602,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc0MDU4ODc4NjAxMTIzMDozMjk3NDA0NDQ2NzI4NzQ4NTkzOTQ1MTcxMzg0MTc5MDk3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDAyNzYwNTI1OTg5MDY2MTozMjk3NDA2MTgzMjgwOTIxMDM5NTk4ODAzOTU0NDM0MDQ4MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NDE3MDE3NzY5NTQ2OTY3MDIxOTg5Mjk0NTU4NDEyOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTAyNDI2MjQxODU5NTc3MTkwNzc4MzkxMDIyNzk2OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTAyNDI2MjQxODU5NTc3MTkwNzc4MzkxMDIyNzk2OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4OTA3ODUzMDAyMDM4NjozMjk3NTAyNTQ0NDgwNjMwMjE3Mjc5OTg5MTUzNjg3MTQyNAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
