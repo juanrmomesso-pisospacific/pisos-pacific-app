@@ -125386,7 +125386,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786484029126",
       "status": "open",
-      "unread_count": 3,
+      "unread_count": 0,
       "last_message_at": "2026-08-20T17:55:08.312Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
@@ -125654,7 +125654,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786903722827",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-08-20T00:14:08.130Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
@@ -125670,11 +125670,12 @@
       "linked_lead_id": "lead-email-1a00d243bf74",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-17T00:34:32.000Z",
-      "last_message_preview": "Formulario web — 23m² · Con Colocación · CP 1431 · Altolaguirre 2275 1ro \"5\"",
+      "last_message_at": "2026-08-24T18:16:56.391Z",
+      "last_message_preview": "Hola Natalia, perdon la demora en responder! nos entro en spam!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-17T00:34:32.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-17T00:34:32.000Z",
+      "last_outbound_at": "2026-08-24T18:16:56.391Z"
     },
     {
       "id": "conv-email-1a00da68104b",
@@ -125764,7 +125765,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787100106970",
       "status": "open",
-      "unread_count": 3,
+      "unread_count": 0,
       "last_message_at": "2026-08-19T10:44:37.167Z",
       "last_message_preview": "🥰🥰",
       "last_message_direction": "in",
@@ -125870,7 +125871,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787188700131",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-20T12:33:47.060Z",
       "last_message_preview": "Muchas gracias",
       "last_message_direction": "in",
@@ -125947,7 +125948,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a02148e3a65",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-20T22:26:59.000Z",
       "last_message_preview": "Formulario web — 80m² · Con Colocación · CP 1416 · terrero",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -139893,6 +139894,15 @@
       "ts": "2026-08-24T18:16:07.996Z",
       "status": "sent",
       "wa_id": "1a034fca40ef04b0"
+    },
+    {
+      "id": "m-1787595416391-juh4",
+      "conversation_id": "conv-email-1a00d243bf74",
+      "direction": "out",
+      "body": "Hola Natalia, perdon la demora en responder! nos entro en spam!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la zona de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-08-24T18:16:56.391Z",
+      "status": "sent",
+      "wa_id": "1a034fd63e88990e"
     }
   ],
   "templates": [
