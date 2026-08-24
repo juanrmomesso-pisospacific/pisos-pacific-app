@@ -126102,11 +126102,11 @@
       "linked_lead_id": "lead-instagram-1787449293163",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-24T18:21:10.472Z",
-      "last_message_preview": "Te pido nombre completo asi te puedo pasar presupuesto formal",
+      "last_message_at": "2026-08-24T18:22:54.959Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-24T14:14:41.883Z",
-      "last_outbound_at": "2026-08-24T18:21:10.472Z"
+      "last_outbound_at": "2026-08-24T18:22:54.959Z"
     },
     {
       "id": "conv-1787449356379-fox3",
@@ -139984,6 +139984,16 @@
       "ts": "2026-08-24T18:21:10.472Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTMxOTgzNzQxMjYyNjAzMzg0ODQ2NjExNDg3MTI5NgZDZD"
+    },
+    {
+      "id": "m-1787595775331-7h54",
+      "conversation_id": "conv-1787449293163-o9g0",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-24T18:22:54.959Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMwMDg5OTYxNTg5NjI3NTozMjk3NTMyMTc2NzkyNTQxNTE3Njk0ODg3MzkyNjAxNzAyNAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
