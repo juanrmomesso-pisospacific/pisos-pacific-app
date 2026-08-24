@@ -120956,6 +120956,20 @@
       "assigned_seller": "",
       "created_at": "2026-08-24T01:02:27.128Z",
       "last_touch_at": "2026-08-24T01:02:27.128Z"
+    },
+    {
+      "id": "local-1787578574229-z0ey2",
+      "name": "Arq. Graciela Artagaveytia ",
+      "phone": "1162892200",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "",
+      "created_at": "2026-08-24T13:36:13.835Z",
+      "last_touch_at": "2026-08-24T13:36:17.585Z"
     }
   ],
   "conversations": [
