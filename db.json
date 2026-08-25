@@ -29169,6 +29169,60 @@
       "status": "DRAFT",
       "lead_id": "lead-instagram-1787449293163",
       "share_token": "46dc98bb472a4d0ec366ccc4"
+    },
+    {
+      "id": "local-1787668029462-c1ic5",
+      "client_id": "",
+      "client_name": "Nuria Salguero",
+      "client_dni": "",
+      "client_email": "salgueronuria0@gmail.com",
+      "client_phone": "",
+      "client_address": "Laprida 4147, Mar del Plata",
+      "internal_notes": "Email: Re: Presupuesto - 100 m2 - Sin Colocación — Pisos Pacific — Hola chicos buenos días. Perdón me quedó muy atrás el mensaje. El\r\npresupuesto lo necesito por la línea H2O\r\n\r\n\r\nEl El sáb, 9 may 2026 a la(s) 11:14, info pisos <info@pisospacific.",
+      "public_notes": "Entrega en Destino SIN Descarga. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Cotización Nuria Salguero",
+      "has_iva": true,
+      "price": 4640.35,
+      "zoned": false,
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 100,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 3800,
+          "discount": 380,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 415,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 415,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 380,
+      "discount_amount": 380,
+      "created_at": "2026-08-25T14:27:09.133Z",
+      "quote_number": "A7137",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a03459c2313"
     }
   ],
   "clients": [
@@ -121297,10 +121351,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: Re: Presupuesto - 100 m2 - Sin Colocación — Pisos Pacific — Hola chicos buenos días. Perdón me quedó muy atrás el mensaje. El\r\npresupuesto lo necesito por la línea H2O\r\n\r\n\r\nEl El sáb, 9 may 2026 a la(s) 11:14, info pisos <info@pisospacific.",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-08-24T15:18:00.000Z",
-      "last_touch_at": "2026-08-24T15:18:00.000Z"
+      "last_touch_at": "2026-08-25T14:27:09.484Z"
     },
     {
       "id": "lead-instagram-1787585365250",
