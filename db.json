@@ -29346,6 +29346,73 @@
       "quote_number": "A4209",
       "status": "DRAFT",
       "lead_id": "local-1787676289596-xiwls"
+    },
+    {
+      "id": "local-1787676601309-qakuh",
+      "client_id": "",
+      "client_name": "Emilia Pascarelli",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "1163210317",
+      "client_address": "Palermo",
+      "internal_notes": "",
+      "public_notes": "Se deben verificar medidas en obra.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Emilia Pascarelli",
+      "has_iva": true,
+      "price": 5401.44,
+      "zoned": false,
+      "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-201",
+          "sku": "PROD-201",
+          "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed",
+          "quantity": 40,
+          "unit_price": 99,
+          "cost": 34.01,
+          "category": "Pisos de Madera",
+          "disc_value": 10,
+          "total": 3960,
+          "discount": 396,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-107",
+          "sku": "SERV-107",
+          "description": "Servicio - Colocación Prefinished Sobre Manta",
+          "quantity": 36,
+          "unit_price": 20,
+          "cost": 7.33,
+          "category": "Servicio",
+          "total": 720,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 180,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 180,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 396,
+      "discount_amount": 396,
+      "created_at": "2026-08-25T16:50:01.054Z",
+      "quote_number": "A6811",
+      "status": "DRAFT",
+      "lead_id": "local-1787676289596-xiwls"
     }
   ],
   "clients": [
