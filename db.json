@@ -738,7 +738,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1038.5953279999999,
-      "reservedStock": 3804.3,
+      "reservedStock": 3828.3,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -2417,7 +2417,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 7403,
+      "reservedStock": 7583,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -29276,7 +29276,7 @@
       "discount_amount": 91.2,
       "created_at": "2026-08-25T14:39:06.452Z",
       "quote_number": "A4661",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1787594666223-ralay",
       "share_token": "265022170624c270a6457189"
     }
@@ -146094,6 +146094,24 @@
       "product_id": "SERV-106",
       "sku": "SERV-106",
       "qty": 72,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:05.494Z",
+      "type": "quote_reserve",
+      "ref": "local-1787668746604-tt2s7",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 24,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:05.494Z",
+      "type": "quote_reserve",
+      "ref": "local-1787668746604-tt2s7",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 180,
       "warehouse_id": "main"
     }
   ],
