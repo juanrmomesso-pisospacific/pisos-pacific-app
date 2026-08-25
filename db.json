@@ -10935,7 +10935,7 @@
           "category": "Servicio"
         }
       ],
-      "status": "Programado",
+      "status": "En proceso",
       "delivery_status": "Acopiado",
       "created_at": "2026-05-01T00:00:00.000Z",
       "fecha_pendiente": false,
@@ -10960,7 +10960,15 @@
       "iva_amount": 2701,
       "delivery_date": "2026-08-25",
       "delivery_date_to": "2026-08-31",
-      "delivery_crew": "Hugo Ramirez"
+      "delivery_crew": "Hugo Ramirez",
+      "status_log": [
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-08-25T14:25:40.042Z",
+          "by": "Admin User"
+        }
+      ]
     },
     {
       "id": "0000136",
