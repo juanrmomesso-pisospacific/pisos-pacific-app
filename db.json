@@ -121358,6 +121358,22 @@
       "address": "",
       "created_at": "2026-08-24T18:04:25.440Z",
       "last_touch_at": "2026-08-24T18:04:25.440Z"
+    },
+    {
+      "id": "lead-instagram-1787618959518",
+      "name": "@feelingme18",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-25T00:49:17.620Z",
+      "last_touch_at": "2026-08-25T00:49:17.620Z"
     }
   ],
   "conversations": [
@@ -126358,6 +126374,20 @@
       "email_subject": "Re: Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-24T18:19:32.000Z"
+    },
+    {
+      "id": "conv-1787618959518-o27x",
+      "channel": "instagram",
+      "contact_id": "811372925363025",
+      "contact_name": "@feelingme18",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787618959518",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-25T00:49:17.620Z",
+      "last_message_preview": "Buenas, tienen algún Whassap para asesoría?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-25T00:49:17.620Z"
     }
   ],
   "messages": [
@@ -140414,6 +140444,14 @@
       "body": "Gracias, me comunico",
       "ts": "2026-08-24T20:52:09.250Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787618959518-l4vj",
+      "conversation_id": "conv-1787618959518-o27x",
+      "direction": "in",
+      "body": "Buenas, tienen algún Whassap para asesoría?",
+      "ts": "2026-08-25T00:49:17.620Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -148619,7 +148657,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3NTQ1Mzk4NTQ0NDE1NjUxMzUxMjQzNjU1NDI2ODY3MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3NTQ1NDA5Mzg1MDAyNjczMTAxNjkxNjI3ODcwNjE3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDczMDE3NzY1ODY4NzY4NjozMjk3NTQ4Njg3OTk2NTEyNzg1NjQ1MTQzMDI4MDg1NTU1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDczMDE3NzY1ODY4NzY4NjozMjk3NTQ4Njk0NTQzMTMxMjg1NTIxNzM5NTU4Nzg3NDgxNgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDczMDE3NzY1ODY4NzY4NjozMjk3NTQ4Njk0NTQzMTMxMjg1NTIxNzM5NTU4Nzg3NDgxNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3MjA4NjQ1MzQxMDk1NDozMjk3NTc0OTQxMjUyOTk5NzYyOTkwNTE2MjQ2NTE4MTY5NgZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
