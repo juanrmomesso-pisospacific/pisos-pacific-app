@@ -126393,12 +126393,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-08-25T21:58:36.319Z",
-      "last_message_preview": "Hola!! Ese que modelo es? Gracias",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-25T22:34:31.376Z",
+      "last_message_preview": "Natural oak pero de la colección h2O",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-25T21:58:36.319Z",
-      "last_outbound_at": "2026-08-24T18:59:29.580Z"
+      "last_outbound_at": "2026-08-25T22:34:31.376Z"
     },
     {
       "id": "conv-1787188700131-9dmw",
@@ -141026,6 +141026,16 @@
       "body": "Hola!! Ese que modelo es? Gracias",
       "ts": "2026-08-25T21:58:36.319Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787697271906-8ozq",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "out",
+      "body": "Natural oak pero de la colección h2O",
+      "ts": "2026-08-25T22:34:31.376Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3NzE5NDA0NjM2MDMzNjk5OTM2OTA0NjA1NzAyNTUzNgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
