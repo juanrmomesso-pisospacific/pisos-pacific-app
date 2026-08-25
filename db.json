@@ -126170,7 +126170,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ff7ca2a289",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-25T17:12:37.000Z",
       "last_message_preview": "Hola. Es para living comedor y cocina. Lo que sea mejor.\r\nMarcela López Hatchondo\r\n\r\nEl 24 ago 2026, a la(s) 15:14, Pisos Pacific <info@piso",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -126957,14 +126957,15 @@
       "contact_name": "Abril Pailos",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a039852a3ce",
-      "status": "open",
-      "unread_count": 1,
+      "status": "closed",
+      "unread_count": 0,
       "last_message_at": "2026-08-25T18:21:22.000Z",
       "last_message_preview": "Perfecto. lo esperamos!\r\n\r\nMaria Laura Buzzella\r\n\r\nBona Center\r\n\r\n11 3637-9225\r\nadministracion@bona.com.ar <rocio@bona.com.ar>\r\nwww.bona.com",
       "email_subject": "FA 0003-4053 RODRIGUEZ MOMESSO JUAN Re: FA0003-3989 RODRIGUEZ MOMESSO JUAN",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-25T18:21:22.000Z",
-      "last_outbound_at": "2026-08-25T18:15:25.000Z"
+      "last_outbound_at": "2026-08-25T18:15:25.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1787693924811-z6fa",
