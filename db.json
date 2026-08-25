@@ -121454,6 +121454,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-25T01:10:39.000Z",
       "last_touch_at": "2026-08-25T01:10:39.000Z"
+    },
+    {
+      "id": "local-1787668671684-663j1",
+      "name": "Inés Gaviña",
+      "phone": "+54 9 11 6475-1607",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Contacted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Cañitas",
+      "created_at": "2026-08-25T14:37:51.627Z",
+      "last_touch_at": "2026-08-25T14:37:57.547Z"
     }
   ],
   "conversations": [
@@ -148201,7 +148217,8 @@
       "1a034fca40ef04b0",
       "1a034fb5b361f6d5",
       "1a03506375c4fd2e",
-      "1a038cf77a838b0b"
+      "1a038cf77a838b0b",
+      "1a0395242965bb7e"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
