@@ -576,7 +576,7 @@
       "active": true,
       "margin": 170.5,
       "stock": 1314.95,
-      "reservedStock": 664,
+      "reservedStock": 674,
       "subLine": "Colección Madera",
       "shortName": "Roble Light Brushed 14/3mm x 19x190",
       "thicknessMm": 14,
@@ -738,7 +738,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1038.5953279999999,
-      "reservedStock": 3828.3,
+      "reservedStock": 3962.3,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -819,7 +819,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 143.64000000000001,
-      "reservedStock": 1392.328,
+      "reservedStock": 1619.328,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1817,7 +1817,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 5979.5,
+      "reservedStock": 6303.5,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2057,7 +2057,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 120,
+      "reservedStock": 134,
       "subLine": "Escalera",
       "shortName": "Colocación Pedada/Frentín Madera",
       "thicknessMm": null,
@@ -2105,7 +2105,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 39,
+      "reservedStock": 43,
       "subLine": "Escalera",
       "shortName": "Colocación Compensados y Descansos",
       "thicknessMm": null,
@@ -2417,7 +2417,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 7583,
+      "reservedStock": 7983,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -2483,7 +2483,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 174,
+      "reservedStock": 184,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -2501,7 +2501,7 @@
       "active": true,
       "margin": 50,
       "stock": 0,
-      "reservedStock": 154,
+      "reservedStock": 172,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -2519,7 +2519,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 276,
+      "reservedStock": 294,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -27240,7 +27240,7 @@
       "discount_amount": 99,
       "created_at": "2026-08-11T20:14:47.586Z",
       "quote_number": "A7404",
-      "status": "DRAFT"
+      "status": "SENT"
     },
     {
       "id": "local-1786560865196-ecj8j",
@@ -27306,7 +27306,7 @@
       "discount_amount": 862.6,
       "created_at": "2026-08-12T18:54:25.021Z",
       "quote_number": "A5181",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1786560760471-b81mu"
     },
     {
@@ -27373,7 +27373,7 @@
       "discount_amount": 509.2,
       "created_at": "2026-08-13T13:03:30.033Z",
       "quote_number": "A6497",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1786626087478-b0nx7"
     },
     {
@@ -146112,6 +146112,114 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 180,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:41.607Z",
+      "type": "quote_reserve",
+      "ref": "local-1786626210343-qv0et",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 120,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:41.607Z",
+      "type": "quote_reserve",
+      "ref": "local-1786626210343-qv0et",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 200,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:41.607Z",
+      "type": "quote_reserve",
+      "ref": "local-1786626210343-qv0et",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 134,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:46.280Z",
+      "type": "quote_reserve",
+      "ref": "local-1786560865196-ecj8j",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": 227,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:46.280Z",
+      "type": "quote_reserve",
+      "ref": "local-1786560865196-ecj8j",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 204,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:46.280Z",
+      "type": "quote_reserve",
+      "ref": "local-1786560865196-ecj8j",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 200,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:50.656Z",
+      "type": "quote_reserve",
+      "ref": "local-1786479287759-hmgqk",
+      "product_id": "PROD-201",
+      "sku": "PROD-201",
+      "qty": 10,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:50.656Z",
+      "type": "quote_reserve",
+      "ref": "local-1786479287759-hmgqk",
+      "product_id": "SERV-116",
+      "sku": "SERV-116",
+      "qty": 14,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:50.656Z",
+      "type": "quote_reserve",
+      "ref": "local-1786479287759-hmgqk",
+      "product_id": "prod-123344",
+      "sku": "prod-123344",
+      "qty": 18,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:50.656Z",
+      "type": "quote_reserve",
+      "ref": "local-1786479287759-hmgqk",
+      "product_id": "SERV-118",
+      "sku": "SERV-118",
+      "qty": 4,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:50.656Z",
+      "type": "quote_reserve",
+      "ref": "local-1786479287759-hmgqk",
+      "product_id": "1534",
+      "sku": "1534",
+      "qty": 18,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-25T16:41:50.656Z",
+      "type": "quote_reserve",
+      "ref": "local-1786479287759-hmgqk",
+      "product_id": "111223",
+      "sku": "111223",
+      "qty": 10,
       "warehouse_id": "main"
     }
   ],
