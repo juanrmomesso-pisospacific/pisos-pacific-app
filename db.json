@@ -120794,7 +120794,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-08-12T21:04:08.000Z",
-      "last_touch_at": "2026-08-12T21:04:08.000Z"
+      "last_touch_at": "2026-08-25T17:12:37.000Z"
     },
     {
       "id": "local-1786626087478-b0nx7",
@@ -126013,12 +126013,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ff7ca2a289",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-24T18:14:43.363Z",
-      "last_message_preview": "Hola Marcela, Perdon la demora en responder. Nos entro en spam.\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada ",
+      "unread_count": 1,
+      "last_message_at": "2026-08-25T17:12:37.000Z",
+      "last_message_preview": "Hola. Es para living comedor y cocina. Lo que sea mejor.\r\nMarcela López Hatchondo\r\n\r\nEl 24 ago 2026, a la(s) 15:14, Pisos Pacific <info@piso",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-12T21:04:08.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-25T17:12:37.000Z",
       "last_outbound_at": "2026-08-24T18:14:43.363Z"
     },
     {
@@ -140937,6 +140937,14 @@
       "body": "✉️ FA 0003-4053 RODRIGUEZ MOMESSO JUAN Re: FA0003-3989 RODRIGUEZ MOMESSO JUAN\n\nBuenos días,\r\nadjunto factura FA 0003-4053 y detallo datos bancarios:\r\n\r\nCURRUE S.A. BANCO MERCADO PAGO\r\n\r\nCVU: 0000003100076451822526\r\n\r\nAlias: BONA.ARGENTINA.MP\r\n\r\nCUIT/CUIL: 30715517007\r\n\r\nMercado Pago\r\nAguardo el comprobante de pago para continuar con la gestión.\r\nSaludos cordiales,\r\n\r\nMaria Laura Buzzella\r\n\r\nBona Center\r\n\r\n11 3637-9225\r\nadministracion@bona.com.ar <rocio@bona.com.ar>\r\nwww.bona.com.ar\r\nAv. J.B. Alberdi 3909 - CABA (1407)\r\n\r\n[image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n[image: instagram] <https://www.instagram.com/bona.argentina>\r\n\r\n\r\nEl mar, 25 ago 2026 a la(s) 11:51 a.m., Hola Bona (hola@bona.com.ar)\r\nescribió:\r\n\r\n> Hola buen día, adjunto cotización para enviar facturación y medios de pago\r\n> al cliente.\r\n>\r\n> Retira cliente.\r\n>\r\n> Saludos.\r\n>\r\n> Asesor técnico Ruben Moreno\r\n>\r\n> Bona Center\r\n> 4674-0176 int 2 <11+4674-0176>\r\n> *11 3630-4870*\r\n> hola@bona.com.ar\r\n> www.bona.com.ar\r\n> Av. J.B. Alberdi 3909 - CABA (1407)\r\n> [image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n> [image: instagram] <https://www.instagram.com/bona.argentina>\r\n>\r\n>\r\n> El lun, 20 jul 2026 a la(s) 1:25 p.m., info pisos (info@pisospacific.com)\r\n> escribió:\r\n>\r\n>> Estimados,\r\n>>\r\n>> Comparto comprobante de transferencia por la factura 3989.\r\n>>\r\n>> Gracias!\r\n>> Saludos,\r\n>> Juan\r\n>>\r\n>>\r\n>> El lun, 20 jul 2026 a las 11:59, Coordinación Zabala Romina (<\r\n>> coordinacion@bona.com.ar>) escribió:\r\n>>\r\n>>> Buenos dias,\r\n>>> adjunto factura por el pedi",
       "ts": "2026-08-25T15:25:33.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a039e8e9616",
+      "conversation_id": "conv-email-19ff7ca2a289",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola. Es para living comedor y cocina. Lo que sea mejor.\r\nMarcela López Hatchondo\r\n\r\nEl 24 ago 2026, a la(s) 15:14, Pisos Pacific <info@pisospacific.com> escribió:\r\n\r\n﻿\r\nHola Marcela, Perdon la demora en responder. Nos entro en spam.\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera<https://pisospacific.com/madera> — Pisos de madera noble prefinished\r\n• Línea H2O<https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\n\r\n\r\n[Pisos Pacific]\r\nVictoria Collado\r\nVentas\r\n\r\n+54 11 3698-2222<https://wa.me/5491136982222>\r\nvictoria@pisospacific.com<mailto:victoria@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
+      "ts": "2026-08-25T17:12:37.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -147656,7 +147664,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19ed17c8afc2ec5a",
       "19ed19d9b22014c9",
       "19ed1cbd789eb524",
       "19ed1d22a9eaa671",
@@ -148455,7 +148462,8 @@
       "1a038cf77a838b0b",
       "1a0393f072257d09",
       "1a039677484eaa05",
-      "1a039852a3cef6a1"
+      "1a039852a3cef6a1",
+      "1a039e8e9616c539"
     ],
     "cash_sessions": {
       "1136982222": {
