@@ -116611,7 +116611,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-06-16T19:07:42.000Z",
-      "last_touch_at": "2026-07-20T14:34:44.000Z"
+      "last_touch_at": "2026-08-25T14:55:41.000Z"
     },
     {
       "id": "lead-email-19ed1ecec1c1",
@@ -122465,12 +122465,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ed1d22a9ea",
       "status": "closed",
-      "unread_count": 1,
-      "last_message_at": "2026-07-20T14:34:44.000Z",
-      "last_message_preview": "Hola Buen día, adjunto cotización para enviar Facturación y medios de pago\r\nal cliente.\r\n\r\nFactura A\r\n\r\nCon envío a Salvador Debenedetti 389",
+      "unread_count": 2,
+      "last_message_at": "2026-08-25T14:55:41.000Z",
+      "last_message_preview": "Hola buen día, adjunto cotización para enviar facturación y medios de pago\r\nal cliente.\r\n\r\nRetira cliente.\r\n\r\nSaludos.\r\n\r\nAsesor técnico Rub",
       "email_subject": "Facturación",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-07-20T14:34:44.000Z",
+      "last_inbound_at": "2026-08-25T14:55:41.000Z",
       "ignored": true
     },
     {
@@ -140672,6 +140672,14 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0395242965bb7e"
+    },
+    {
+      "id": "m-email-1a039677484e",
+      "conversation_id": "conv-email-19ed1d22a9ea",
+      "direction": "in",
+      "body": "✉️ Re: FA0003-3989 RODRIGUEZ MOMESSO JUAN\n\nHola buen día, adjunto cotización para enviar facturación y medios de pago\r\nal cliente.\r\n\r\nRetira cliente.\r\n\r\nSaludos.\r\n\r\nAsesor técnico Ruben Moreno\r\n\r\nBona Center\r\n4674-0176 int 2 <11+4674-0176>\r\n*11 3630-4870*\r\nhola@bona.com.ar\r\nwww.bona.com.ar\r\nAv. J.B. Alberdi 3909 - CABA (1407)\r\n[image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n[image: instagram] <https://www.instagram.com/bona.argentina>\r\n\r\n\r\nEl lun, 20 jul 2026 a la(s) 1:25 p.m., info pisos (info@pisospacific.com)\r\nescribió:\r\n\r\n> Estimados,\r\n>\r\n> Comparto comprobante de transferencia por la factura 3989.\r\n>\r\n> Gracias!\r\n> Saludos,\r\n> Juan\r\n>\r\n>\r\n> El lun, 20 jul 2026 a las 11:59, Coordinación Zabala Romina (<\r\n> coordinacion@bona.com.ar>) escribió:\r\n>\r\n>> Buenos dias,\r\n>> adjunto factura por el pedido realizado a nuestro comercial.\r\n>> Aguardamos el comprobante de pago para continuar con la gestión.\r\n>>\r\n>> CURRUE S.A. BANCO MERCADO PAGO\r\n>>\r\n>> CVU: 0000003100076451822526\r\n>>\r\n>> Alias: BONA.ARGENTINA.MP\r\n>>\r\n>> CUIT/CUIL: 30715517007\r\n>>\r\n>> Mercado Pago\r\n>>\r\n>>\r\n>>\r\n>>\r\n>> Romina Zabala\r\n>>\r\n>> Bona Center\r\n>>\r\n>> Administración\r\n>> 11 3637-9225 int 2 <11+4674-0176>\r\n>> coordinacion@bona.com.ar\r\n>> www.bona.com.ar\r\n>> Av. J.B. Alberdi 3909 - CABA (1407)\r\n>> [image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n>> [image: instagram] <https://www.instagram.com/bona.argentina>\r\n>>\r\n>>\r\n>> El lun, 20 jul 2026 a las 11:30, Hola Bona (<hola@bona.com.ar>) escribió:\r\n>>\r\n>>> Hola Buen día, adj",
+      "ts": "2026-08-25T14:55:41.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -147112,7 +147120,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19ed1582ce4b9af5",
       "19ed14eaa1f170a9",
       "19ed17c8afc2ec5a",
       "19ed19d9b22014c9",
@@ -147911,7 +147918,8 @@
       "1a03879f42bc37b5",
       "1a038d7349a64458",
       "1a038cf77a838b0b",
-      "1a0393f072257d09"
+      "1a0393f072257d09",
+      "1a039677484eaa05"
     ],
     "cash_sessions": {
       "1136982222": {
