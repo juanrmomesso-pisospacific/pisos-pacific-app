@@ -121374,6 +121374,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-25T00:49:17.620Z",
       "last_touch_at": "2026-08-25T00:49:17.620Z"
+    },
+    {
+      "id": "lead-email-1a036782d7b8",
+      "name": "Juan Rozenbeim",
+      "email": "jrozenbeim@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Av San Martin 3057",
+      "postal_code": "1416",
+      "approx_m2": 3.332,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 3.332m² · Con Colocación · CP 1416",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-25T01:10:39.000Z",
+      "last_touch_at": "2026-08-25T01:10:39.000Z"
     }
   ],
   "conversations": [
@@ -126388,6 +126405,21 @@
       "last_message_preview": "Buenas, tienen algún Whassap para asesoría?",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-25T00:49:17.620Z"
+    },
+    {
+      "id": "conv-email-1a036782d7b8",
+      "channel": "email",
+      "contact_id": "jrozenbeim@gmail.com",
+      "contact_name": "Juan Rozenbeim",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a036782d7b8",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-25T01:10:39.000Z",
+      "last_message_preview": "Formulario web — 3.332m² · Con Colocación · CP 1416 · Av San Martin 3057",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-25T01:10:39.000Z"
     }
   ],
   "messages": [
@@ -140452,6 +140484,14 @@
       "body": "Buenas, tienen algún Whassap para asesoría?",
       "ts": "2026-08-25T00:49:17.620Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a036782d7b8",
+      "conversation_id": "conv-email-1a036782d7b8",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 3.332m² · Con Colocación · CP 1416 · Av San Martin 3057",
+      "ts": "2026-08-25T01:10:39.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -146892,7 +146932,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19ecc15e705645d8",
       "19ecc5f28cfe661b",
       "19ecc771055b7e48",
       "19eccab2d4a06f2a",
@@ -147691,7 +147730,8 @@
       "1a03472cf81af174",
       "1a034ef14f7111a6",
       "1a034fff1d5d23b9",
-      "1a0350f339ff4217"
+      "1a0350f339ff4217",
+      "1a036782d7b8d2c1"
     ],
     "cash_sessions": {
       "1136982222": {
