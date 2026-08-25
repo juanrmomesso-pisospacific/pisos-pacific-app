@@ -126078,12 +126078,12 @@
       "linked_lead_id": "lead-email-19ff3888e0b8",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-12T01:28:10.000Z",
-      "last_message_preview": "Hola Mariano, cómo estás?\r\n\r\nSoy Juan Rodríguez Momesso uno de los socios de Pisos Pacific.\r\n\r\nTe comparto mi celular +54911 51750087\r\n\r\nGra",
+      "last_message_at": "2026-08-25T23:50:26.883Z",
+      "last_message_preview": "Hola Mariano, ¿cómo estás?\n\nMe gustaría saber si habías podido ver mi correo. \n\nMe gustaría entender cómo podemos ayudarte!\n\nSaludos,\n\nJuan",
       "email_subject": "Reventa",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-12T01:13:45.000Z",
-      "last_outbound_at": "2026-08-12T01:28:10.000Z"
+      "last_outbound_at": "2026-08-25T23:50:26.883Z"
     },
     {
       "id": "conv-email-19ff69c9c918",
@@ -141204,6 +141204,15 @@
       "ts": "2026-08-25T23:48:41.781Z",
       "status": "sent",
       "wa_id": "1a03b537a5e2074c"
+    },
+    {
+      "id": "m-1787701826883-sve0",
+      "conversation_id": "conv-email-19ff3888e0b8",
+      "direction": "out",
+      "body": "Hola Mariano, ¿cómo estás?\n\nMe gustaría saber si habías podido ver mi correo. \n\nMe gustaría entender cómo podemos ayudarte!\n\nSaludos,\n\nJuan",
+      "ts": "2026-08-25T23:50:26.883Z",
+      "status": "sent",
+      "wa_id": "1a03b5514ba1a5ed"
     }
   ],
   "templates": [
@@ -149085,7 +149094,9 @@
       "1a03506375c4fd2e",
       "1a038cf77a838b0b",
       "1a0395242965bb7e",
-      "1a03a22637a24b81"
+      "1a03a22637a24b81",
+      "1a03b537a5e2074c",
+      "1a03b52249c41fd5"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
