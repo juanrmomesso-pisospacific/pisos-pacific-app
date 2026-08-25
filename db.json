@@ -121759,6 +121759,22 @@
       "address": "Palermo",
       "created_at": "2026-08-25T16:44:49.487Z",
       "last_touch_at": "2026-08-25T16:44:52.869Z"
+    },
+    {
+      "id": "lead-instagram-1787693924812",
+      "name": "@agustil",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-25T21:38:43.169Z",
+      "last_touch_at": "2026-08-25T21:38:43.169Z"
     }
   ],
   "conversations": [
@@ -126808,6 +126824,20 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-25T18:21:22.000Z",
       "last_outbound_at": "2026-08-25T18:15:25.000Z"
+    },
+    {
+      "id": "conv-1787693924811-z6fa",
+      "channel": "instagram",
+      "contact_id": "1288415789729136",
+      "contact_name": "@agustil",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787693924812",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-25T21:38:43.169Z",
+      "last_message_preview": "📲 Te mencionó en una historia",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-25T21:38:43.169Z"
     }
   ],
   "messages": [
@@ -140978,6 +141008,16 @@
       "body": "✉️ Re: FA 0003-4053 RODRIGUEZ MOMESSO JUAN Re: FA0003-3989 RODRIGUEZ MOMESSO JUAN\n\nBuenas tardes,\r\nadjunto recibo por el pago realizado.\r\nSaludos cordiales\r\n\r\nRomina Zabala\r\n\r\nBona Center\r\n\r\nAdministración\r\n11 3637-9225 int 2 <11+4674-0176>\r\ncoordinacion@bona.com.ar\r\nwww.bona.com.ar\r\nAv. J.B. Alberdi 3909 - CABA (1407)\r\n[image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n[image: instagram] <https://www.instagram.com/bona.argentina>\r\n\r\n\r\nEl mar, 25 ago 2026 a las 15:19, Abril Pailos (<administracion@bona.com.ar>)\r\nescribió:\r\n\r\n> Perfecto. lo esperamos!\r\n>\r\n> Maria Laura Buzzella\r\n>\r\n> Bona Center\r\n>\r\n> 11 3637-9225\r\n> administracion@bona.com.ar <rocio@bona.com.ar>\r\n> www.bona.com.ar\r\n> Av. J.B. Alberdi 3909 - CABA (1407)\r\n>\r\n> [image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n> [image: instagram] <https://www.instagram.com/bona.argentina>\r\n>\r\n>\r\n> El mar, 25 ago 2026 a la(s) 3:15 p.m., info pisos (info@pisospacific.com)\r\n> escribió:\r\n>\r\n>> Adjunto comprobante de pago!\r\n>>\r\n>> Retiro a eso de las 16hs\r\n>>\r\n>> Gracias!\r\n>> El El mar, 25 ago 2026 a la(s) 12:23 p. m., Abril Pailos <\r\n>> administracion@bona.com.ar> escribió:\r\n>>\r\n>>> Buenos días,\r\n>>> adjunto factura FA 0003-4053 y detallo datos bancarios:\r\n>>>\r\n>>> CURRUE S.A. BANCO MERCADO PAGO\r\n>>>\r\n>>> CVU: 0000003100076451822526\r\n>>>\r\n>>> Alias: BONA.ARGENTINA.MP\r\n>>>\r\n>>> CUIT/CUIL: 30715517007\r\n>>>\r\n>>> Mercado Pago\r\n>>> Aguardo el comprobante de pago para continuar con la gestión.\r\n>>> Saludos cordiales,\r\n>>>\r\n>>> Maria Laura Buzzella\r\n>>>\r\n>>> Bona Center\r\n>>>\r\n>>> 11 3637",
       "ts": "2026-08-25T20:52:38.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787693924812-0ch8",
+      "conversation_id": "conv-1787693924811-z6fa",
+      "direction": "in",
+      "body": "📲 Te mencionó en una historia",
+      "ts": "2026-08-25T21:38:43.169Z",
+      "status": "received",
+      "media_url": "/uploads/7db49ebb3a60291a.jpg",
+      "media_type": "image"
     }
   ],
   "templates": [
@@ -149466,7 +149506,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc5NTgzNDE3OTk4OTcxNDozMjk3NTQ1NDA5Mzg1MDAyNjczMTAxNjkxNjI3ODcwNjE3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDczMDE3NzY1ODY4NzY4NjozMjk3NTQ4Njg3OTk2NTEyNzg1NjQ1MTQzMDI4MDg1NTU1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDczMDE3NzY1ODY4NzY4NjozMjk3NTQ4Njk0NTQzMTMxMjg1NTIxNzM5NTU4Nzg3NDgxNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3MjA4NjQ1MzQxMDk1NDozMjk3NTc0OTQxMjUyOTk5NzYyOTkwNTE2MjQ2NTE4MTY5NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3MjA4NjQ1MzQxMDk1NDozMjk3NTc0OTQxMjUyOTk5NzYyOTkwNTE2MjQ2NTE4MTY5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODcyNjU0MTQ3NjY2MzcxOTozMjk3NzEzMjI4MjgyNzQ0NjczOTE4MzQwMDcwNTMyNzEwNAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
