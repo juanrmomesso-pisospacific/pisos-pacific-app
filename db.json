@@ -125427,14 +125427,15 @@
       "contact_name": "Joaquin",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fecb4fe88d",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-14T13:35:05.000Z",
       "last_message_preview": "Buen dia\r\nTe dejo telefono 2227479179\r\n\r\n\r\nSaludos, Joaquin\r\n________________________________\r\nDe: info pisos <info@pisospacific.com>\r\nEnvia",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-14T13:35:05.000Z",
-      "last_outbound_at": "2026-08-13T19:40:33.000Z"
+      "last_outbound_at": "2026-08-13T19:40:33.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fed1d860e0",
@@ -125676,14 +125677,15 @@
       "contact_name": "Norma Suarez",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ffd083de90",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-14T13:46:30.000Z",
       "last_message_preview": "Hola\r\nMuchas gracias.\r\nNi bien pueda, les aviso y coordinamos.\r\nSlds\r\n\r\n\r\nEl vie, 14 de ago de 2026, 08:32, Pisos Pacific <info@pisospacific",
       "email_subject": "Consulta",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-14T13:46:30.000Z",
-      "last_outbound_at": "2026-08-14T11:32:47.001Z"
+      "last_outbound_at": "2026-08-14T11:32:47.001Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19ffd56c4c66",
@@ -126068,7 +126070,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0210a0f433",
       "status": "open",
-      "unread_count": 3,
+      "unread_count": 0,
       "last_message_at": "2026-08-24T18:36:11.000Z",
       "last_message_preview": "Hola buenos días! Te dejo los datos a continuación…\r\nNombre: Lesiuk, Camila\r\nDNI 41.113.644\r\nNúmero: 3755533547\r\nMail: camilalesiuk1998@gmai",
       "email_subject": "Asesoramiento",
@@ -126114,13 +126116,14 @@
       "contact_name": "Javier Leonardo Mancinelli",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0245448e47",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-21T12:38:06.000Z",
       "last_message_preview": "Enviar toda la información al siguiente correo electrónico:\r\njavierleonardomancinelli@gmail.com\r\n\r\nCelular: 2615741755. Sólo Wapp",
       "email_subject": "Contactar para compra e instalación de pisos vinilicos",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-21T12:38:06.000Z"
+      "last_inbound_at": "2026-08-21T12:38:06.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1787355763657-muge",
@@ -126369,7 +126372,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a03472cf81a",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-25T08:52:09.000Z",
       "last_message_preview": "Hola!\r\nEl que es a prueba de agua porque quiero para el baño también\r\nEs un monoambiente, la superficie total es de 34 metros , es para tene",
       "email_subject": "Pedido de Presupuesto | Página Web",
