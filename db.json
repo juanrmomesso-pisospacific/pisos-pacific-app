@@ -29279,6 +29279,73 @@
       "status": "SENT",
       "lead_id": "local-1787594666223-ralay",
       "share_token": "265022170624c270a6457189"
+    },
+    {
+      "id": "local-1787676399187-hgxcy",
+      "client_id": "",
+      "client_name": "Emilia Pascarelli",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "1163210317",
+      "client_address": "Palermo",
+      "internal_notes": "",
+      "public_notes": "Se deben verificar medidas en obra.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Emilia Pascarelli",
+      "has_iva": true,
+      "price": 2526.48,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 40,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 1520,
+          "discount": 152,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 36,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 540,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 180,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 180,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 152,
+      "discount_amount": 152,
+      "created_at": "2026-08-25T16:46:38.487Z",
+      "quote_number": "A4209",
+      "status": "DRAFT",
+      "lead_id": "local-1787676289596-xiwls"
     }
   ],
   "clients": [
