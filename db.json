@@ -121742,7 +121742,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-08-25T15:25:33.000Z",
-      "last_touch_at": "2026-08-25T15:25:33.000Z"
+      "last_touch_at": "2026-08-25T18:21:22.000Z"
     },
     {
       "id": "local-1787676289596-xiwls",
@@ -126801,12 +126801,13 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a039852a3ce",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-25T15:25:33.000Z",
-      "last_message_preview": "Buenos días,\r\nadjunto factura FA 0003-4053 y detallo datos bancarios:\r\n\r\nCURRUE S.A. BANCO MERCADO PAGO\r\n\r\nCVU: 0000003100076451822526\r\n\r\nAl",
+      "unread_count": 1,
+      "last_message_at": "2026-08-25T18:21:22.000Z",
+      "last_message_preview": "Perfecto. lo esperamos!\r\n\r\nMaria Laura Buzzella\r\n\r\nBona Center\r\n\r\n11 3637-9225\r\nadministracion@bona.com.ar <rocio@bona.com.ar>\r\nwww.bona.com",
       "email_subject": "FA 0003-4053 RODRIGUEZ MOMESSO JUAN Re: FA0003-3989 RODRIGUEZ MOMESSO JUAN",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-25T15:25:33.000Z"
+      "last_inbound_at": "2026-08-25T18:21:22.000Z",
+      "last_outbound_at": "2026-08-25T18:15:25.000Z"
     }
   ],
   "messages": [
@@ -140945,6 +140946,22 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola. Es para living comedor y cocina. Lo que sea mejor.\r\nMarcela López Hatchondo\r\n\r\nEl 24 ago 2026, a la(s) 15:14, Pisos Pacific <info@pisospacific.com> escribió:\r\n\r\n﻿\r\nHola Marcela, Perdon la demora en responder. Nos entro en spam.\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera<https://pisospacific.com/madera> — Pisos de madera noble prefinished\r\n• Línea H2O<https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\n\r\n\r\n[Pisos Pacific]\r\nVictoria Collado\r\nVentas\r\n\r\n+54 11 3698-2222<https://wa.me/5491136982222>\r\nvictoria@pisospacific.com<mailto:victoria@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
       "ts": "2026-08-25T17:12:37.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a03a2617dad",
+      "conversation_id": "conv-email-1a039852a3ce",
+      "direction": "in",
+      "body": "✉️ Re: FA 0003-4053 RODRIGUEZ MOMESSO JUAN Re: FA0003-3989 RODRIGUEZ MOMESSO JUAN\n\nPerfecto. lo esperamos!\r\n\r\nMaria Laura Buzzella\r\n\r\nBona Center\r\n\r\n11 3637-9225\r\nadministracion@bona.com.ar <rocio@bona.com.ar>\r\nwww.bona.com.ar\r\nAv. J.B. Alberdi 3909 - CABA (1407)\r\n\r\n[image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n[image: instagram] <https://www.instagram.com/bona.argentina>\r\n\r\n\r\nEl mar, 25 ago 2026 a la(s) 3:15 p.m., info pisos (info@pisospacific.com)\r\nescribió:\r\n\r\n> Adjunto comprobante de pago!\r\n>\r\n> Retiro a eso de las 16hs\r\n>\r\n> Gracias!\r\n> El El mar, 25 ago 2026 a la(s) 12:23 p. m., Abril Pailos <\r\n> administracion@bona.com.ar> escribió:\r\n>\r\n>> Buenos días,\r\n>> adjunto factura FA 0003-4053 y detallo datos bancarios:\r\n>>\r\n>> CURRUE S.A. BANCO MERCADO PAGO\r\n>>\r\n>> CVU: 0000003100076451822526\r\n>>\r\n>> Alias: BONA.ARGENTINA.MP\r\n>>\r\n>> CUIT/CUIL: 30715517007\r\n>>\r\n>> Mercado Pago\r\n>> Aguardo el comprobante de pago para continuar con la gestión.\r\n>> Saludos cordiales,\r\n>>\r\n>> Maria Laura Buzzella\r\n>>\r\n>> Bona Center\r\n>>\r\n>> 11 3637-9225\r\n>> administracion@bona.com.ar <rocio@bona.com.ar>\r\n>> www.bona.com.ar\r\n>> Av. J.B. Alberdi 3909 - CABA\r\n>> <https://www.google.com/maps/search/Av.+J.B.+Alberdi+3909+-+CABA?entry=gmail&source=g>\r\n>> (1407)\r\n>>\r\n>> [image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n>> [image: instagram] <https://www.instagram.com/bona.argentina>\r\n>>\r\n>>\r\n>> El mar, 25 ago 2026 a la(s) 11:51 a.m., Hola Bona (hola@bona.com.ar)\r\n>> escribió:\r\n>>\r\n>>> Hola buen día, adjunto cotización para enviar facturación y medio",
+      "ts": "2026-08-25T18:21:22.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-emailout-1a03a22637a2",
+      "conversation_id": "conv-email-1a039852a3ce",
+      "direction": "out",
+      "body": "✉️ Re: FA 0003-4053 RODRIGUEZ MOMESSO JUAN Re: FA0003-3989 RODRIGUEZ MOMESSO JUAN\n\nAdjunto comprobante de pago!\r\n\r\nRetiro a eso de las 16hs\r\n\r\nGracias!\r\nEl El mar, 25 ago 2026 a la(s) 12:23 p. m., Abril Pailos <\r\nadministracion@bona.com.ar> escribió:\r\n\r\n> Buenos días,\r\n> adjunto factura FA 0003-4053 y detallo datos bancarios:\r\n>\r\n> CURRUE S.A. BANCO MERCADO PAGO\r\n>\r\n> CVU: 0000003100076451822526\r\n>\r\n> Alias: BONA.ARGENTINA.MP\r\n>\r\n> CUIT/CUIL: 30715517007\r\n>\r\n> Mercado Pago\r\n> Aguardo el comprobante de pago para continuar con la gestión.\r\n> Saludos cordiales,\r\n>\r\n> Maria Laura Buzzella\r\n>\r\n> Bona Center\r\n>\r\n> 11 3637-9225\r\n> administracion@bona.com.ar <rocio@bona.com.ar>\r\n> www.bona.com.ar\r\n> Av. J.B. Alberdi 3909 - CABA\r\n> <https://www.google.com/maps/search/Av.+J.B.+Alberdi+3909+-+CABA?entry=gmail&source=g>\r\n> (1407)\r\n>\r\n> [image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n> [image: instagram] <https://www.instagram.com/bona.argentina>\r\n>\r\n>\r\n> El mar, 25 ago 2026 a la(s) 11:51 a.m., Hola Bona (hola@bona.com.ar)\r\n> escribió:\r\n>\r\n>> Hola buen día, adjunto cotización para enviar facturación y medios de\r\n>> pago al cliente.\r\n>>\r\n>> Retira cliente.\r\n>>\r\n>> Saludos.\r\n>>\r\n>> Asesor técnico Ruben Moreno\r\n>>\r\n>> Bona Center\r\n>> 4674-0176 int 2 <11+4674-0176>\r\n>> *11 3630-4870*\r\n>> hola@bona.com.ar\r\n>> www.bona.com.ar\r\n>> Av. J.B. Alberdi 3909 - CABA\r\n>> <https://www.google.com/maps/search/Av.+J.B.+Alberdi+3909+-+CABA?entry=gmail&source=g>\r\n>> (1407)\r\n>> [image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n>> [image: instagram] <https:",
+      "ts": "2026-08-25T18:15:25.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -147661,10 +147678,9 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": null,
+    "mp_pending_job": 102925277,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19ed19d9b22014c9",
       "19ed1cbd789eb524",
       "19ed1d22a9eaa671",
       "19ed1ecec1c15a4b",
@@ -148463,7 +148479,8 @@
       "1a0393f072257d09",
       "1a039677484eaa05",
       "1a039852a3cef6a1",
-      "1a039e8e9616c539"
+      "1a039e8e9616c539",
+      "1a03a2617dad2065"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -148825,7 +148842,8 @@
       "1a034fb5b361f6d5",
       "1a03506375c4fd2e",
       "1a038cf77a838b0b",
-      "1a0395242965bb7e"
+      "1a0395242965bb7e",
+      "1a03a22637a24b81"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
