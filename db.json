@@ -117789,7 +117789,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-06T07:14:51.000Z",
-      "last_touch_at": "2026-08-04T02:16:04.000Z"
+      "last_touch_at": "2026-08-25T02:06:20.000Z"
     },
     {
       "id": "lead-email-19f381e4939c",
@@ -123399,12 +123399,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f3647c461f",
       "status": "closed",
-      "unread_count": 8,
-      "last_message_at": "2026-08-04T02:16:04.000Z",
-      "last_message_preview": "Hi Victoria,\r\n\r\nThe 4pcs exterior pine panel is from a different factory that you liked, the price i offered on July 8th to Juan, here it is",
+      "unread_count": 9,
+      "last_message_at": "2026-08-25T02:06:20.000Z",
+      "last_message_preview": "Hi Victoria,\r\n\r\nLet me request from factory and come back to you.\r\nThank you\r\n \r\n \r\n*******     ********    ********     ********    *******",
       "email_subject": "RE: New order of wall panels | Argentina",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-04T02:16:04.000Z",
+      "last_inbound_at": "2026-08-25T02:06:20.000Z",
       "last_outbound_at": "2026-07-15T00:12:41.000Z",
       "ignored": true
     },
@@ -140492,6 +140492,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 3.332m² · Con Colocación · CP 1416 · Av San Martin 3057",
       "ts": "2026-08-25T01:10:39.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a036ab36569",
+      "conversation_id": "conv-email-19f3647c461f",
+      "direction": "in",
+      "body": "✉️ RE: Re: Exterior and Interior panel\n\nHi Victoria,\r\n\r\nLet me request from factory and come back to you.\r\nThank you\r\n \r\n \r\n*******     ********    ********     ********    ********     ********    ********     ********    ********     ********    ********     ********  \r\nATTENTION: Our bank information remains always the same if no further notification, pls CALL us to double check if you received scam mails asking to pay to a new account\r\n \r\n \r\nThanks & B.rgs\r\nGina Bao/Cfloor Service\r\n \r\nAddress: Room 1108/1109, Tower A. \r\nShiAo International center, \r\nNo 101 ShaoYaoJu Bei Li. \r\nChaoYang District. Beijing 100029 China.\r\n \r\nTel: 0086 10 84351355 \r\nMobile: +86 132 6001 6981\r\nEmail: gina@cfloor.net\r\nWebsite: www.cfloor.net\r\n \r\n \r\n--------------- Original Message ----------\r\nFrom: Victoria Pisos Pacific <victoria@pisospacific.com>; \r\nTo: <gina@cfloor.net>; \r\nCC: info pisos <info@pisospacific.com>; \r\nSent: 2026-08-25 02:00\r\nSubject: Re: Exterior and Interior panel\r\n\r\n\r\nHi Gina,\r\n\r\nCould you please send over the technical data sheets for both products? Additionally, could you please confirm their HS codes?\r\n\r\nI have attached images of both products for your reference.\r\n\r\nBest regards,\r\n\r\nVictoria González Collado\r\n\r\n\r\n\r\n\r\nEl lun, 3 ago 2026 a las 23:16, Cfloor-Gina (<gina@cfloor.net>) escribió:\r\n\r\n\r\nHi Victoria,\r\n \r\nThe 4pcs exterior pine panel is from a different factory that you liked, the price i offered on July 8th to Juan, here it is\r\n \r\nHi Juan,\r\n \r\nJust got the offer from the other factory.\r\n \r\nSize 2400x135x21mm",
+      "ts": "2026-08-25T02:06:20.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -146932,7 +146940,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19ecc5f28cfe661b",
       "19ecc771055b7e48",
       "19eccab2d4a06f2a",
       "19ecfb703b233e9b",
@@ -147731,7 +147738,8 @@
       "1a034ef14f7111a6",
       "1a034fff1d5d23b9",
       "1a0350f339ff4217",
-      "1a036782d7b8d2c1"
+      "1a036782d7b8d2c1",
+      "1a036ab36569ec0d"
     ],
     "cash_sessions": {
       "1136982222": {
