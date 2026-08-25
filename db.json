@@ -116956,7 +116956,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-06-17T14:10:53.000Z",
-      "last_touch_at": "2026-07-20T15:01:26.000Z"
+      "last_touch_at": "2026-08-25T20:52:38.000Z"
     },
     {
       "id": "lead-email-19ed6246b2e9",
@@ -122824,12 +122824,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ed5e9e8aef",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-07-20T16:25:09.000Z",
-      "last_message_preview": "Estimados,\r\n\r\nComparto comprobante de transferencia por la factura 3989.\r\n\r\nGracias!\r\nSaludos,\r\nJuan\r\n\r\n\r\nEl lun, 20 jul 2026 a las 11:59, C",
+      "unread_count": 1,
+      "last_message_at": "2026-08-25T20:52:38.000Z",
+      "last_message_preview": "Buenas tardes,\r\nadjunto recibo por el pago realizado.\r\nSaludos cordiales\r\n\r\nRomina Zabala\r\n\r\nBona Center\r\n\r\nAdministración\r\n11 3637-9225 int",
       "email_subject": "FA0003-3924 RODRIGUEZ MPMESSO JUAN Re: Facturación",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-07-20T15:01:26.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-25T20:52:38.000Z",
       "last_outbound_at": "2026-07-20T16:25:09.000Z",
       "ignored": true
     },
@@ -140970,6 +140970,14 @@
       "body": "✉️ RE: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X40' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\n\nBuen día, Estimada Victoria\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, nos ponemos en contacto para informarle que la línea naviera (Maersk) ha notificado un ajuste en la programación del buque para su embarque.\r\nA continuación, le compartimos el detalle actualizado del itinerario de su carga:\r\n\r\nBill of Lading / Booking: 275436330\r\n\r\n  *\r\nContenedor: MSKU7461355 (1x40')\r\n  *\r\nPuerto de Origen: Yangshan SGH Guandong Terminal (Shanghai, China)\r\n  *\r\nPuerto de Destino: Balboa Port Terminal (Panamá)\r\n  *\r\nMotonave de Salida: RIO KOBE / V. 634E\r\n  *\r\nNueva Fecha Estimada de Salida (ETD): 27 de agosto de 2026\r\n  *\r\nNueva Fecha Estimada de Llegada (ETA): 27 de septiembre de 2026\r\n  *\r\nMotivo: Ajustes en la programación y rotación de itinerarios de la naviera.\r\n\r\n\r\nLamentamos este retraso ajeno a nuestro control. Nos mantenemos monitoreando el tránsito del contenedor para mantenerle informado de cualquier novedad adicional durante su travesía.\r\nQuedamos a su entera disposición en caso de requerir alguna consulta adicional.\r\n\r\nSaludos,\r\nBest Regards.\r\n[cid:c6a3166d-cc88-4ec2-bf12-0e463d3be574]\r\n________________________________\r\nDe: Victoria Pisos Pacific <victoria@pisospacific.com>\r\nEnviado: lunes, 17 de agosto de 2026 8:36\r\nPara: Juan Rosario <jrosario@bvlpanama.com>\r\nCc: Giselle Ceballos <gceballos@bvlpanama.com>; Abe Dabah <abedabah@gmail.com>; arieltesone26@gmail.com <arieltesone26@gmail.com>; info@pisospacific.com <info@pisospacific.com>; Joseph Sam <js",
       "ts": "2026-08-25T20:24:33.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a03ab15cd3a",
+      "conversation_id": "conv-email-19ed5e9e8aef",
+      "direction": "in",
+      "body": "✉️ Re: FA 0003-4053 RODRIGUEZ MOMESSO JUAN Re: FA0003-3989 RODRIGUEZ MOMESSO JUAN\n\nBuenas tardes,\r\nadjunto recibo por el pago realizado.\r\nSaludos cordiales\r\n\r\nRomina Zabala\r\n\r\nBona Center\r\n\r\nAdministración\r\n11 3637-9225 int 2 <11+4674-0176>\r\ncoordinacion@bona.com.ar\r\nwww.bona.com.ar\r\nAv. J.B. Alberdi 3909 - CABA (1407)\r\n[image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n[image: instagram] <https://www.instagram.com/bona.argentina>\r\n\r\n\r\nEl mar, 25 ago 2026 a las 15:19, Abril Pailos (<administracion@bona.com.ar>)\r\nescribió:\r\n\r\n> Perfecto. lo esperamos!\r\n>\r\n> Maria Laura Buzzella\r\n>\r\n> Bona Center\r\n>\r\n> 11 3637-9225\r\n> administracion@bona.com.ar <rocio@bona.com.ar>\r\n> www.bona.com.ar\r\n> Av. J.B. Alberdi 3909 - CABA (1407)\r\n>\r\n> [image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n> [image: instagram] <https://www.instagram.com/bona.argentina>\r\n>\r\n>\r\n> El mar, 25 ago 2026 a la(s) 3:15 p.m., info pisos (info@pisospacific.com)\r\n> escribió:\r\n>\r\n>> Adjunto comprobante de pago!\r\n>>\r\n>> Retiro a eso de las 16hs\r\n>>\r\n>> Gracias!\r\n>> El El mar, 25 ago 2026 a la(s) 12:23 p. m., Abril Pailos <\r\n>> administracion@bona.com.ar> escribió:\r\n>>\r\n>>> Buenos días,\r\n>>> adjunto factura FA 0003-4053 y detallo datos bancarios:\r\n>>>\r\n>>> CURRUE S.A. BANCO MERCADO PAGO\r\n>>>\r\n>>> CVU: 0000003100076451822526\r\n>>>\r\n>>> Alias: BONA.ARGENTINA.MP\r\n>>>\r\n>>> CUIT/CUIL: 30715517007\r\n>>>\r\n>>> Mercado Pago\r\n>>> Aguardo el comprobante de pago para continuar con la gestión.\r\n>>> Saludos cordiales,\r\n>>>\r\n>>> Maria Laura Buzzella\r\n>>>\r\n>>> Bona Center\r\n>>>\r\n>>> 11 3637",
+      "ts": "2026-08-25T20:52:38.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -147689,7 +147697,6 @@
     "mp_pending_job": 102925277,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19ed1d22a9eaa671",
       "19ed1ecec1c15a4b",
       "19ed23ed3de8845a",
       "19ed23e5ed9aa76d",
@@ -148488,7 +148495,8 @@
       "1a039852a3cef6a1",
       "1a039e8e9616c539",
       "1a03a2617dad2065",
-      "1a03a98ceb7e1cf4"
+      "1a03a98ceb7e1cf4",
+      "1a03ab15cd3a1abf"
     ],
     "cash_sessions": {
       "1136982222": {
