@@ -29755,6 +29755,73 @@
       "quote_number": "A1500",
       "status": "DRAFT",
       "lead_id": "local-1787748466872-lpspz"
+    },
+    {
+      "id": "local-1787748758858-q333r",
+      "client_id": "",
+      "client_name": "Bussola Haus - Flor Albinati",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 5963-7012",
+      "client_address": "Libertador 4748",
+      "internal_notes": "",
+      "public_notes": "Medidas por plano. Se deben verificar en obra.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Bussola Haus - Flor Albinati",
+      "has_iva": true,
+      "price": 6769.466,
+      "zoned": false,
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 113,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 4294,
+          "discount": 429.4,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 102,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 1530,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 200,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 200,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 429.4,
+      "discount_amount": 429.4,
+      "created_at": "2026-08-26T12:52:38.250Z",
+      "quote_number": "A2560",
+      "status": "DRAFT",
+      "lead_id": "local-1787748466872-lpspz"
     }
   ],
   "clients": [
