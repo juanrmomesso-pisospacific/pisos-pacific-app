@@ -127054,11 +127054,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787709823306",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-26T02:03:41.621Z",
-      "last_message_preview": "Estimados,\nMi nombre es Verónica Díaz y me comunico en representación de Funktion Argentina, empresa dedicada a la fabricación y comercializ",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-26T02:03:41.621Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-26T09:41:46.266Z",
+      "last_message_preview": "Info@pisospacific.com",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-26T02:03:41.621Z",
+      "last_outbound_at": "2026-08-26T09:41:46.266Z"
     },
     {
       "id": "conv-email-1a03bf74fd5c",
@@ -141363,6 +141364,36 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 828ec5328fe049e397063f43557e5c4d\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-24 00:00:00 UTC to 2026-08-25 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-08-26T08:24:38.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787737290895-cc7l",
+      "conversation_id": "conv-1787709823306-0j30",
+      "direction": "out",
+      "body": "Hola Veronica",
+      "ts": "2026-08-26T09:41:30.377Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ0ODc4NDYzNzIxMjY5MDozMjk3NzkzMjI2NjYxMzM5NjU4MzUzMTA1MzY4MzA0ODQ0OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787737296996-maq2",
+      "conversation_id": "conv-1787709823306-0j30",
+      "direction": "out",
+      "body": "Si pásanos el catálogo!",
+      "ts": "2026-08-26T09:41:36.742Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ0ODc4NDYzNzIxMjY5MDozMjk3NzkzMjM4NDAzMTcxODc2NjE1MTUxNDIwMjMwODYwOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787737306610-zatd",
+      "conversation_id": "conv-1787709823306-0j30",
+      "direction": "out",
+      "body": "Info@pisospacific.com",
+      "ts": "2026-08-26T09:41:46.266Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ0ODc4NDYzNzIxMjY5MDozMjk3NzkzMjU1OTcxNzU2ODU0MDIxMzUyNDYwNTk2MDE5MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
