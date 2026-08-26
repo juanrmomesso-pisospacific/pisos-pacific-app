@@ -122784,11 +122784,11 @@
       "linked_client_name": null,
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-22T21:44:15.717Z",
-      "last_message_preview": "📎 Adjunto",
+      "last_message_at": "2026-08-26T22:11:42.380Z",
+      "last_message_preview": "Top",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-14T21:46:33.527Z",
-      "last_outbound_at": "2026-08-22T21:44:15.717Z"
+      "last_outbound_at": "2026-08-26T22:11:42.380Z"
     },
     {
       "id": "conv-1781093292446-6fr2",
@@ -142375,6 +142375,26 @@
       "body": "📎 Adjunto",
       "ts": "2026-08-26T22:05:33.496Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787782302559-5jo9",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-26T22:11:41.972Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3ODc2MjU4Mzk5MjYxNDAwNjExOTYxMTcyNzA4NTU2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787782303042-e3hb",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "Top",
+      "ts": "2026-08-26T22:11:42.380Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3ODc2MjU5MTUxODE2NjE2NTE3NDIzNDExMzkwMDU0NAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
