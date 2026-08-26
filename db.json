@@ -121916,6 +121916,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-25T21:38:43.169Z",
       "last_touch_at": "2026-08-25T21:38:43.169Z"
+    },
+    {
+      "id": "lead-email-1a03b611598f",
+      "name": "Nuria",
+      "email": "torras.nuria@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Monseñor Zazpe 3134",
+      "postal_code": "1425",
+      "approx_m2": 30,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 30m² · Con Colocación · CP 1425",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-26T00:03:32.000Z",
+      "last_touch_at": "2026-08-26T00:03:32.000Z"
     }
   ],
   "conversations": [
@@ -126221,13 +126238,13 @@
       "linked_lead_id": "lead-email-19ffd56c4c66",
       "status": "closed",
       "unread_count": 2,
-      "last_message_at": "2026-08-15T16:00:20.000Z",
-      "last_message_preview": "Hola Juan, buen día.\r\n\r\nMuchas gracias por tu respuesta y por la buena predisposición.\r\n\r\nMe resulta especialmente interesante saber que act",
+      "last_message_at": "2026-08-25T23:58:45.000Z",
+      "last_message_preview": "Hola Pablo, ¿cómo estás?\r\n\r\nTal como hablamos, te comparto la propuesta con los 3 modelos. Yo apunto a\r\nque empecemos con el proyecto yendo ",
       "email_subject": "Propuesta comercial – Distribución Pisos Pacific en sudeste de Córdoba",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-15T16:00:20.000Z",
       "ignored": true,
-      "last_outbound_at": "2026-08-14T11:25:55.000Z"
+      "last_outbound_at": "2026-08-25T23:58:45.000Z"
     },
     {
       "id": "conv-email-19ffd8d127fd",
@@ -126505,12 +126522,12 @@
       "linked_lead_id": "lead-email-1a0026a1a52a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-19T20:06:13.000Z",
-      "last_message_preview": "Hola Carlos, ¿cómo estás?\r\n\r\nTe comparto ambos presupuestos. Cualquier duda que tengas, no dudes en\r\nconsultarme.\r\n\r\nDesde ya, muchas gracia",
+      "last_message_at": "2026-08-25T23:51:47.000Z",
+      "last_message_preview": "Hola Carlos, buenas noches.\r\n\r\nQuería consultarte si habías podido ver mi mail con los presupuestos.\r\n\r\nEstoy a tu disposición ante cualquie",
       "email_subject": "RE: Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-19T15:28:30.000Z",
-      "last_outbound_at": "2026-08-19T20:06:13.000Z"
+      "last_outbound_at": "2026-08-25T23:51:47.000Z"
     },
     {
       "id": "conv-1787160038154-v9mv",
@@ -126980,6 +126997,21 @@
       "last_message_preview": "📲 Te mencionó en una historia",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-25T21:38:43.169Z"
+    },
+    {
+      "id": "conv-email-1a03b611598f",
+      "channel": "email",
+      "contact_id": "torras.nuria@gmail.com",
+      "contact_name": "Nuria",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a03b611598f",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-26T00:03:32.000Z",
+      "last_message_preview": "Formulario web — 30m² · Con Colocación · CP 1425 · Monseñor Zazpe 3134",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-26T00:03:32.000Z"
     }
   ],
   "messages": [
@@ -141213,6 +141245,30 @@
       "ts": "2026-08-25T23:50:26.883Z",
       "status": "sent",
       "wa_id": "1a03b5514ba1a5ed"
+    },
+    {
+      "id": "m-email-1a03b611598f",
+      "conversation_id": "conv-email-1a03b611598f",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 30m² · Con Colocación · CP 1425 · Monseñor Zazpe 3134",
+      "ts": "2026-08-26T00:03:32.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-emailout-1a03b5cb28ae",
+      "conversation_id": "conv-email-19ffd56c4c66",
+      "direction": "out",
+      "body": "✉️ Propuesta Corral de Bustos\n\nHola Pablo, ¿cómo estás?\r\n\r\nTal como hablamos, te comparto la propuesta con los 3 modelos. Yo apunto a\r\nque empecemos con el proyecto yendo por el modelo 1 con el objetivo de\r\npasar al modelo 2 en el mediano plazo.\r\n\r\nMe gustaría que nos reunamos así despejamos cualquier tipo de duda!\r\n\r\nDesde ya muchas gracias,\r\n\r\nSaludos,\r\n\r\n\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
+      "ts": "2026-08-25T23:58:45.000Z",
+      "status": "sent"
+    },
+    {
+      "id": "m-emailout-1a03b5652259",
+      "conversation_id": "conv-email-1a01aa372bce",
+      "direction": "out",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Carlos, buenas noches.\r\n\r\nQuería consultarte si habías podido ver mi mail con los presupuestos.\r\n\r\nEstoy a tu disposición ante cualquier consulta.\r\n\r\nSaludos,\r\n\r\n\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl mié, 19 ago 2026 a las 17:06, info pisos (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Carlos, ¿cómo estás?\r\n>\r\n> Te comparto ambos presupuestos. Cualquier duda que tengas, no dudes en\r\n> consultarme.\r\n>\r\n> Desde ya, muchas gracias.\r\n>\r\n> Saludos,\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n> El mié, 19 ago 2026 a las 12:28, Carlos Mansilla (<camansilla@artear.com>)\r\n> escribió:\r\n>\r\n>> Hola Estoy interesado en el Roble Kitsiliano de Madera y como Opcion el\r\n>> Eslavonia XL de H20.\r\n>> Saludos\r\n>>\r\n>> ------------------------------\r\n>> *De:* Pisos Pacific <info@pisospacific.com>\r\n>> *Enviado:* martes, 18 de agosto de 2026 17:13\r\n>> *Para:* Carlos Mansilla <camansilla@artear.com>\r\n>> *Asunto:* Re",
+      "ts": "2026-08-25T23:51:47.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -147932,7 +147988,6 @@
     "mp_pending_job": 102925277,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19ed1ecec1c15a4b",
       "19ed23ed3de8845a",
       "19ed23e5ed9aa76d",
       "19eb770856a2504a",
@@ -148731,7 +148786,8 @@
       "1a039e8e9616c539",
       "1a03a2617dad2065",
       "1a03a98ceb7e1cf4",
-      "1a03ab15cd3a1abf"
+      "1a03ab15cd3a1abf",
+      "1a03b611598fa129"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -149096,7 +149152,10 @@
       "1a0395242965bb7e",
       "1a03a22637a24b81",
       "1a03b537a5e2074c",
-      "1a03b52249c41fd5"
+      "1a03b52249c41fd5",
+      "1a03b5cb28ae65dc",
+      "1a03b565225938b6",
+      "1a03b5514ba1a5ed"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
