@@ -28920,7 +28920,7 @@
       "client_dni": "",
       "client_email": "",
       "client_phone": "+54 9 11 4178-0018",
-      "client_address": "Santa Teresa - Lote 283",
+      "client_address": "Bancalari",
       "internal_notes": "",
       "public_notes": "Se coloca sobre el piso existente (cemento alisado). A definir diseño y se deben verificar medidas en obra.",
       "payment_terms": "Anticipo 80% · Conforme 20%",
@@ -28928,9 +28928,9 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Tamy Selvood ",
       "has_iva": true,
-      "price": 6873.3081999999995,
+      "price": 6958.008199999998,
       "zoned": false,
-      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 5 más",
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 6 más",
       "items": [
         {
           "product_id": "PROD-027",
@@ -29010,6 +29010,19 @@
           "cost": 0,
           "category": "Servicio",
           "total": 200,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1787776441717-8ides",
+          "sku": "SERV-11",
+          "description": "Levantar artefactos de baño (Hinodoro & Bidet)",
+          "quantity": 2,
+          "unit_price": 35,
+          "cost": 27,
+          "category": "Pisos H2O",
+          "total": 70,
           "discount": 0,
           "image": "",
           "target_item_index": null
