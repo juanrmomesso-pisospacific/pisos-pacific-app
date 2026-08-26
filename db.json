@@ -126949,12 +126949,12 @@
       "linked_lead_id": "lead-email-1a0026a1a52a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-26T16:20:52.000Z",
-      "last_message_preview": "hola si los vi, pero estan mucho por fuera de mi presupuesto.Gracias Igual\r\n________________________________\r\nDe: info pisos <info@pisospaci",
+      "last_message_at": "2026-08-26T18:02:17.958Z",
+      "last_message_preview": "Hola Carlos, lamento eso! Si estás comparando con otros presupuestos, no dudes en enviarnos lo que tenés. \n\nSaludos,\n\nJuan",
       "email_subject": "RE: Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-26T16:20:52.000Z",
-      "last_outbound_at": "2026-08-25T23:51:47.000Z"
+      "last_outbound_at": "2026-08-26T18:02:17.958Z"
     },
     {
       "id": "conv-1787160038154-v9mv",
@@ -141917,6 +141917,15 @@
       "body": "✉️ RE: Pedido de Presupuesto | Página Web\n\nhola si los vi, pero estan mucho por fuera de mi presupuesto.Gracias Igual\r\n________________________________\r\nDe: info pisos <info@pisospacific.com>\r\nEnviado: martes, 25 de agosto de 2026 20:51\r\nPara: Carlos Mansilla <camansilla@artear.com>\r\nAsunto: Re: Pedido de Presupuesto | Página Web\r\n\r\nNo suele recibir correo electrónico de info@pisospacific.com. Por qué es esto importante<https://aka.ms/LearnAboutSenderIdentification>\r\nHola Carlos, buenas noches.\r\n\r\nQuería consultarte si habías podido ver mi mail con los presupuestos.\r\n\r\nEstoy a tu disposición ante cualquier consulta.\r\n\r\nSaludos,\r\n\r\n\r\n\r\n[Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087<https://wa.me/5491151750087>\r\ninfo@pisospacific.com<mailto:info@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl mié, 19 ago 2026 a las 17:06, info pisos (<info@pisospacific.com<mailto:info@pisospacific.com>>) escribió:\r\nHola Carlos, ¿cómo estás?\r\n\r\nTe comparto ambos presupuestos. Cualquier duda que tengas, no dudes en consultarme.\r\n\r\nDesde ya, muchas gracias.\r\n\r\nSaludos,\r\n\r\n[Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087<https://wa.me/5491151750087>\r\ninfo@pisospacific.com<mailto:info@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.faceboo",
       "ts": "2026-08-26T16:20:52.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787767337958-nqe1",
+      "conversation_id": "conv-email-1a01aa372bce",
+      "direction": "out",
+      "body": "Hola Carlos, lamento eso! Si estás comparando con otros presupuestos, no dudes en enviarnos lo que tenés. \n\nSaludos,\n\nJuan",
+      "ts": "2026-08-26T18:02:17.958Z",
+      "status": "sent",
+      "wa_id": "1a03f3cb3840e4cb"
     }
   ],
   "templates": [
