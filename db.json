@@ -122182,6 +122182,23 @@
       "address": "",
       "created_at": "2026-08-26T12:47:45.871Z",
       "last_touch_at": "2026-08-26T12:47:50.656Z"
+    },
+    {
+      "id": "lead-email-1a03e3b3bcf8",
+      "name": "ventas@funktionargentina.com.ar",
+      "email": "ventas@funktionargentina.com.ar",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: re: Catalogo de Perfiles FUNKTION — Estimados,\r\n\r\nMi nombre es Verónica Díaz y me comunico en representación de Funktion\r\nArgentina, empresa dedicada a la fabricación y comercialización de perfiles\r\nde aluminio para ",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-26T13:20:44.000Z",
+      "last_touch_at": "2026-08-26T13:20:44.000Z"
     }
   ],
   "conversations": [
@@ -127292,6 +127309,21 @@
       "email_subject": "Piso Roble Eslovenia XL",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-26T02:47:26.000Z"
+    },
+    {
+      "id": "conv-email-1a03e3b3bcf8",
+      "channel": "email",
+      "contact_id": "ventas@funktionargentina.com.ar",
+      "contact_name": "ventas@funktionargentina.com.ar",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a03e3b3bcf8",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-26T13:20:44.000Z",
+      "last_message_preview": "Estimados,\r\n\r\nMi nombre es Verónica Díaz y me comunico en representación de Funktion\r\nArgentina, empresa dedicada a la fabricación y comerci",
+      "email_subject": "re: Catalogo de Perfiles FUNKTION",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-26T13:20:44.000Z"
     }
   ],
   "messages": [
@@ -141647,6 +141679,14 @@
       "body": "Hola cómo estas ? Ya te envié los catálogos por mail",
       "ts": "2026-08-26T13:21:07.950Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a03e3b3bcf8",
+      "conversation_id": "conv-email-1a03e3b3bcf8",
+      "direction": "in",
+      "body": "✉️ re: Catalogo de Perfiles FUNKTION\n\nEstimados,\r\n\r\nMi nombre es Verónica Díaz y me comunico en representación de Funktion\r\nArgentina, empresa dedicada a la fabricación y comercialización de perfiles\r\nde aluminio para terminaciones de pisos.\r\n\r\nNos especializamos en ofrecer productos de excelente calidad, diseñados para\r\nbrindar terminaciones estéticas, duraderas y funcionales para proyectos\r\nresidenciales, comerciales e industriales.\r\n\r\nNos gustaría presentarles nuestra línea de perfiles de aluminio y evaluar la\r\nposibilidad de convertirnos en uno de sus proveedores.\r\n\r\n¿Qué ofrecemos?\r\n\r\nPerfiles y varillas de aluminio para pisos y revestimientos.\r\n\r\nProductos de alta calidad y excelente terminación.\r\n\r\nAmplio stock y variedad de modelos.\r\n\r\nAsesoramiento comercial y técnico.\r\n\r\nAtención personalizada.\r\n\r\nCotizaciones rápidas y envíos a todo el país.\r\n\r\nSerá un gusto enviarles nuestro catálogo y una propuesta comercial adaptada\r\na sus necesidades.\r\n\r\nQuedo a disposición para coordinar una reunión o una llamada.\r\n\r\nVerónica Díaz\r\n\r\nAsesora Comercial – Funktion Argentina\r\n\r\nTeléfono / WhatsApp: 11 6153-7790\r\n\r\n \r\n\r\nSaludos Cordiales.\r\n\r\n \r\n\r\n    Verónica Diaz\r\n\r\n   DEXALUM S.R.L\r\n\r\n   (011) 4-368-6901/7129.\r\n\r\n     <mailto:ventas@funktionargentina.com.ar>\r\nventas@funktionargentina.com.ar\r\n\r\n\r\n\r\n\r\n                 <https://www.facebook.com/funktion.dexalum.7>\r\nhttps://www.facebook.com/funktion.dexalum.7\r\n\r\n \r\n\r\n\r\n                11 6153-7790",
+      "ts": "2026-08-26T13:20:44.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -148366,7 +148406,6 @@
     "mp_pending_job": 102925277,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19ea21c2912d754a",
       "19ea21c1f4f35c7d",
       "19ea21aeb2dc2ef8",
       "19ea21ae0fd746ed",
@@ -149165,7 +149204,8 @@
       "1a03d5d433efb8c5",
       "1a03da5d9b0ff49e",
       "1a03df554bab558b",
-      "1a03df5d29ff969d"
+      "1a03df5d29ff969d",
+      "1a03e3b3bcf8e602"
     ],
     "cash_sessions": {
       "1136982222": {
