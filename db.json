@@ -3239,6 +3239,21 @@
       "margin": 173,
       "createdAt": "2026-07-14T22:48:09.053Z",
       "updatedAt": "2026-07-14T22:48:09.053Z"
+    },
+    {
+      "id": "local-1787776441717-8ides",
+      "name": "Levantar artefactos de baño (Hinodoro & Bidet)",
+      "sku": "SERV-11",
+      "category": "Pisos H2O",
+      "price": 35,
+      "cost": 27,
+      "currency": "USD",
+      "stock": 0,
+      "reservedStock": 0,
+      "active": true,
+      "margin": 30,
+      "createdAt": "2026-08-26T20:34:01.455Z",
+      "updatedAt": "2026-08-26T20:34:01.455Z"
     }
   ],
   "sales": [
