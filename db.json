@@ -126979,11 +126979,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787618959518",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-25T00:49:17.620Z",
-      "last_message_preview": "Buenas, tienen algún Whassap para asesoría?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-25T00:49:17.620Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-26T09:42:08.208Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-25T00:49:17.620Z",
+      "last_outbound_at": "2026-08-26T09:42:08.208Z"
     },
     {
       "id": "conv-email-1a036782d7b8",
@@ -141393,6 +141394,26 @@
       "ts": "2026-08-26T09:41:46.266Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ0ODc4NDYzNzIxMjY5MDozMjk3NzkzMjU1OTcxNzU2ODU0MDIxMzUyNDYwNTk2MDE5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787737328586-hzh3",
+      "conversation_id": "conv-1787618959518-o27x",
+      "direction": "out",
+      "body": "Hola Emiliano! Como estas? \nSii te paso\n1136982222",
+      "ts": "2026-08-26T09:42:07.888Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3MjA4NjQ1MzQxMDk1NDozMjk3NzkzMjk1ODU3NTYzMjk5OTM4NzY5NTI3NDc4NjgxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787737328921-wv8q",
+      "conversation_id": "conv-1787618959518-o27x",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-26T09:42:08.208Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3MjA4NjQ1MzQxMDk1NDozMjk3NzkzMjk2NDQ3NTkzNDc3MTgyODEzNzYxNjQ3NDExMgZDZD",
       "via": "ig-app"
     }
   ],
