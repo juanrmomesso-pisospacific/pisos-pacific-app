@@ -29823,6 +29823,73 @@
       "status": "DRAFT",
       "lead_id": "local-1787748466872-lpspz",
       "share_token": "2a2421609a20dc76df8d67ab"
+    },
+    {
+      "id": "local-1787756608720-daxf1",
+      "client_id": "",
+      "client_name": "Patricia Bin",
+      "client_dni": "",
+      "client_email": "estudiopbin@gmail.com",
+      "client_phone": "",
+      "client_address": "Zona Norte - A confirmar",
+      "internal_notes": "Email: FA 0003-4053 RODRIGUEZ MOMESSO JUAN Re: FA0003-3989 RODRIGUEZ MOMESSO JUAN — Buenos días,\r\nadjunto factura FA 0003-4053 y detallo datos bancarios:\r\n\r\nCURRUE S.A. BANCO MERCADO PAGO\r\n\r\nCVU: 0000003100076451822526\r\n\r\nAlias: BONA.ARGENTINA.MP\r\n\r\nCUIT/CUIL: 307",
+      "public_notes": "Sujeto a visita y medición de obra para ver estado de carpetas y ajustes. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Cotización Zona Norte - H2O",
+      "has_iva": true,
+      "price": 15185.5,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 250,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 9500,
+          "discount": 950,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 250,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 3750,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 250,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 250,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 950,
+      "discount_amount": 950,
+      "created_at": "2026-08-26T15:03:28.443Z",
+      "quote_number": "A6982",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a03bf74fd5c"
     }
   ],
   "clients": [
@@ -122164,10 +122231,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: Piso Roble Eslovenia XL — Estimados,\r\nSolicito un presupuesto del piso Roble Eslovenia XL para ser colocado en\r\nuna superficie de aprox. 250 m2.\r\n\r\nAdemás quería consultarles si tienen colocadores en zona n",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-08-26T02:47:26.000Z",
-      "last_touch_at": "2026-08-26T15:01:59.312Z"
+      "last_touch_at": "2026-08-26T15:03:28.792Z"
     },
     {
       "id": "local-1787748466872-lpspz",
