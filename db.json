@@ -117673,7 +117673,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-08-23T08:24:29.000Z"
+      "last_touch_at": "2026-08-26T08:24:38.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -123504,12 +123504,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 35,
-      "last_message_at": "2026-08-23T08:24:29.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-21 00:00:00 UTC to 2026-08-22 00:00:00 UTC.",
+      "unread_count": 36,
+      "last_message_at": "2026-08-26T08:24:38.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-24 00:00:00 UTC to 2026-08-25 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-23T08:24:29.000Z",
+      "last_inbound_at": "2026-08-26T08:24:38.000Z",
       "ignored": true
     },
     {
@@ -141355,6 +141355,14 @@
       "body": "✉️ Build for the agentic Internet - the Connect 2026 lineup and agenda are live\n\npaygo_general_withLogo Cloudflare Connect · San Francisco Come build what’s next with us We’re bringing our customer community together in San Francisco this fall, and we’d love for you to be there. Cloudflare Connect is three days built around you: get hands-on training, meet our product leaders, and exchange ideas with the engineers powering more than 20% of the web. Whether you need a practical roadmap or simply want to reconnect with our team, this is the place to be. Date October 19 - 21, 2026 Location Moscone West · San Francisco Register now Just added to the main stage Fabian Hedin Co-founder & CTO, Lovable Mark Papermaster EVP & CTO, AMD Alejandro Salinas Head of Core Infrastructure, Block, Inc. Jorn Lambert Chief Product Officer, Mastercard Explore the newly released agenda 01 See what’s launching. Get a first look at upcoming Cloudflare products and capabilities. 02 Solve complex architecture challenges. Learn practical approaches to routing, networking, and security. 03 Build your own technical path. Tailor the event around hands-on sessions and focused tracks. Plan your Connect experience See the sessions, choose your tracks, and claim your ticket. Explore the agenda Start building · Log in · Visit Community Copyright © 2026 Cloudflare, Inc. 101 Townsend Street, San Francisco, CA 94107 cloudflare.com · Privacy policy · Unsubscribe LinkedIn · X · Instagram",
       "ts": "2026-08-26T04:11:30.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a03d2be06ef",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 828ec5328fe049e397063f43557e5c4d\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-24 00:00:00 UTC to 2026-08-25 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-08-26T08:24:38.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -148074,7 +148082,6 @@
     "mp_pending_job": 102925277,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19ed5094a970a5ca",
       "19ed5e9e8aef039d",
       "19ed6246b2e97886",
       "19ed6c043ae35b63",
@@ -148873,7 +148880,8 @@
       "1a03b611598fa129",
       "1a03b85ffcadf54a",
       "1a03bf74fd5c42f5",
-      "1a03c4419111011c"
+      "1a03c4419111011c",
+      "1a03d2be06ef25f4"
     ],
     "cash_sessions": {
       "1136982222": {
