@@ -14292,7 +14292,35 @@
           "by": "Admin User"
         }
       ],
-      "iva_amount": 0
+      "iva_amount": 0,
+      "remito_items": [
+        {
+          "description": "M2 - Nylon Manta 200 Micrones",
+          "quantity": 88.353,
+          "unit": "m²"
+        },
+        {
+          "description": "Cuartacaña MDF - Blanca",
+          "quantity": 101.54,
+          "unit": "ml"
+        },
+        {
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 100.03,
+          "unit": "m²"
+        },
+        {
+          "description": "Varilla de terminación",
+          "quantity": 3,
+          "unit": "u"
+        },
+        {
+          "description": "Varilla L",
+          "quantity": 3,
+          "unit": "u"
+        }
+      ],
+      "remito_confirmed": true
     },
     {
       "id": "local-sale-1784797365504-3npc",
