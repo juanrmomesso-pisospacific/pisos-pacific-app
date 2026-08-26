@@ -29902,6 +29902,59 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a03bf74fd5c",
       "share_token": "6bd750cb0acc9c803dc9a7ad"
+    },
+    {
+      "id": "local-1787761825771-aza7c",
+      "client_id": "CLI-mtab64rv-xrwy",
+      "client_name": "SAMACO",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "a confirmar",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "San Juan - Light Grey XL",
+      "has_iva": true,
+      "price": 3448.5,
+      "zoned": false,
+      "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-030",
+          "sku": "PROD-030",
+          "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m",
+          "quantity": 100,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 25,
+          "total": 3800,
+          "discount": 950,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 0,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 0,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 950,
+      "discount_amount": 950,
+      "created_at": "2026-08-26T16:30:22.086Z",
+      "quote_number": "A4287",
+      "status": "DRAFT"
     }
   ],
   "clients": [
@@ -121325,7 +121378,7 @@
       "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-08-14T22:35:02.000Z",
-      "last_touch_at": "2026-08-19T20:00:49.929Z"
+      "last_touch_at": "2026-08-26T16:20:52.000Z"
     },
     {
       "id": "lead-email-1a0029feff38",
@@ -122290,6 +122343,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-26T13:20:44.000Z",
       "last_touch_at": "2026-08-26T13:20:44.000Z"
+    },
+    {
+      "id": "lead-email-1a03eec5d8ca",
+      "name": "Nueva Patagonia Inmobiliaria",
+      "email": "nuevapatagoniabs@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: (sin asunto) — Queria saber el precio de piso por m2. El mas económico. Gracias",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-26T16:34:18.000Z",
+      "last_touch_at": "2026-08-26T16:34:18.000Z"
     }
   ],
   "conversations": [
@@ -126878,12 +126948,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0026a1a52a",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-25T23:51:47.000Z",
-      "last_message_preview": "Hola Carlos, buenas noches.\r\n\r\nQuería consultarte si habías podido ver mi mail con los presupuestos.\r\n\r\nEstoy a tu disposición ante cualquie",
+      "unread_count": 1,
+      "last_message_at": "2026-08-26T16:20:52.000Z",
+      "last_message_preview": "hola si los vi, pero estan mucho por fuera de mi presupuesto.Gracias Igual\r\n________________________________\r\nDe: info pisos <info@pisospaci",
       "email_subject": "RE: Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-19T15:28:30.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-26T16:20:52.000Z",
       "last_outbound_at": "2026-08-25T23:51:47.000Z"
     },
     {
@@ -127418,6 +127488,21 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-26T13:20:44.000Z",
       "ignored": true
+    },
+    {
+      "id": "conv-email-1a03eec5d8ca",
+      "channel": "email",
+      "contact_id": "nuevapatagoniabs@gmail.com",
+      "contact_name": "Nueva Patagonia Inmobiliaria",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a03eec5d8ca",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-26T16:34:18.000Z",
+      "last_message_preview": "Queria saber el precio de piso por m2. El mas económico. Gracias",
+      "email_subject": "(sin asunto)",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-26T16:34:18.000Z"
     }
   ],
   "messages": [
@@ -141816,6 +141901,22 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Juan,\r\n\r\nEstoy interesada en la linea H20.\r\n\r\nSaludos,\r\nNuria.\r\n\r\nEl mié, 26 ago 2026 a las 12:05, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Nuria, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación. También\r\n> compartinos la dirección de entrega así la agregamos en la cotización.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos,\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-08-26T15:51:28.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a03eec5d8ca",
+      "conversation_id": "conv-email-1a03eec5d8ca",
+      "direction": "in",
+      "body": "✉️ (sin asunto)\n\nQueria saber el precio de piso por m2. El mas económico. Gracias",
+      "ts": "2026-08-26T16:34:18.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a03edfeda41",
+      "conversation_id": "conv-email-1a01aa372bce",
+      "direction": "in",
+      "body": "✉️ RE: Pedido de Presupuesto | Página Web\n\nhola si los vi, pero estan mucho por fuera de mi presupuesto.Gracias Igual\r\n________________________________\r\nDe: info pisos <info@pisospacific.com>\r\nEnviado: martes, 25 de agosto de 2026 20:51\r\nPara: Carlos Mansilla <camansilla@artear.com>\r\nAsunto: Re: Pedido de Presupuesto | Página Web\r\n\r\nNo suele recibir correo electrónico de info@pisospacific.com. Por qué es esto importante<https://aka.ms/LearnAboutSenderIdentification>\r\nHola Carlos, buenas noches.\r\n\r\nQuería consultarte si habías podido ver mi mail con los presupuestos.\r\n\r\nEstoy a tu disposición ante cualquier consulta.\r\n\r\nSaludos,\r\n\r\n\r\n\r\n[Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087<https://wa.me/5491151750087>\r\ninfo@pisospacific.com<mailto:info@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl mié, 19 ago 2026 a las 17:06, info pisos (<info@pisospacific.com<mailto:info@pisospacific.com>>) escribió:\r\nHola Carlos, ¿cómo estás?\r\n\r\nTe comparto ambos presupuestos. Cualquier duda que tengas, no dudes en consultarme.\r\n\r\nDesde ya, muchas gracias.\r\n\r\nSaludos,\r\n\r\n[Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087<https://wa.me/5491151750087>\r\ninfo@pisospacific.com<mailto:info@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.faceboo",
+      "ts": "2026-08-26T16:20:52.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -148535,8 +148636,6 @@
     "mp_pending_job": 102925277,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19ea21ae0fd746ed",
-      "19ed76a8effb9928",
       "19ed989dc9dc099f",
       "19edc00c37fd3b91",
       "19edc6d31531349e",
@@ -149334,7 +149433,9 @@
       "1a03df5d29ff969d",
       "1a03e3b3bcf8e602",
       "1a03e58d1aa78732",
-      "1a03ec58d4150d44"
+      "1a03ec58d4150d44",
+      "1a03eec5d8cae97b",
+      "1a03edfeda41e544"
     ],
     "cash_sessions": {
       "1136982222": {
