@@ -30000,7 +30000,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "San Juan - Light Grey XL",
       "has_iva": true,
-      "price": 3787.3,
+      "price": 3781.25,
       "zoned": false,
       "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m + 1 más",
       "items": [
@@ -30022,11 +30022,11 @@
           "product_id": "SERV-131",
           "sku": "SERV-131",
           "description": "Servicio de Entrega",
-          "quantity": 280,
+          "quantity": 275,
           "unit_price": 1,
           "cost": 0,
           "category": "Servicio",
-          "total": 280,
+          "total": 275,
           "discount": 0,
           "image": "",
           "target_item_index": null
