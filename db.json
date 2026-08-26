@@ -15367,6 +15367,173 @@
       "stock_reserved": true,
       "stock_deducted": false,
       "seller_name": "Victoria Gonzalez Collado"
+    },
+    {
+      "id": "local-sale-1787779289897-giig",
+      "quote_id": "local-1787237881817-8b0z4",
+      "quote_number": "A3929",
+      "title": "Cotización Tamy Selvood ",
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 9 más",
+      "internal_notes": "",
+      "public_notes": "Se coloca sobre el piso existente (cemento alisado). Diseño roble eslavonia. El zocalo lo saca el pintor. Incluye cepillado de puerta, sacar hinodoro y bidet. Mover los muebles.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mtalmomh-wp13",
+      "client_name": "Tamy Selvood",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 4178-0018",
+      "client_address": "Santa Teresa Lote 283",
+      "contract_total": 7724.3616999999995,
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 113,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 4294,
+          "discount": 429.4,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 103,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "disc_value": 10,
+          "total": 1545,
+          "discount": 154.5,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-121",
+          "sku": "SERV-121",
+          "description": "Ajuste Puerta Blindada / Medidas Especiales",
+          "quantity": 4,
+          "unit_price": 56.33,
+          "cost": 43.33,
+          "category": "Servicio",
+          "total": 225.32,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-078",
+          "sku": "PROD-078",
+          "description": "Varilla L SPC - L Shape",
+          "quantity": 10,
+          "unit_price": 8,
+          "cost": 3,
+          "category": "Terminaciones",
+          "disc_value": 100,
+          "total": 80,
+          "discount": 80,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-063",
+          "sku": "PROD-063",
+          "description": "Varilla de Transición - Aluminio",
+          "quantity": 3,
+          "unit_price": 35.76,
+          "cost": 29.8,
+          "category": "Terminaciones",
+          "disc_value": 100,
+          "total": 107.28,
+          "discount": 107.28,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 200,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 200,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1787776441717-8ides",
+          "sku": "SERV-11",
+          "description": "Levantar artefactos de baño (Hinodoro & Bidet)",
+          "quantity": 2,
+          "unit_price": 35,
+          "cost": 27,
+          "category": "Pisos H2O",
+          "total": 70,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-120",
+          "sku": "SERV-120",
+          "description": "Ajuste Puerta Placa",
+          "quantity": 1,
+          "unit_price": 30.33,
+          "cost": 23.33,
+          "category": "Servicio",
+          "total": 30.33,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "ZOC-MDF-09",
+          "sku": "ZOC-MDF-09",
+          "description": "Zócalo MDF 9cm",
+          "quantity": 74,
+          "unit_price": 3.23,
+          "cost": 1.49,
+          "category": "Zócalos",
+          "total": 239.02,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-129",
+          "sku": "SERV-129",
+          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+          "quantity": 70,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 364,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 771.18,
+      "status": "Confirmado",
+      "created_at": "2026-08-26T21:21:29.897Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 7724.3616999999995
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado"
     }
   ],
   "quotes": [
@@ -28915,7 +29082,7 @@
     },
     {
       "id": "local-1787237881817-8b0z4",
-      "client_id": "",
+      "client_id": "CLI-mtalmomh-wp13",
       "client_name": "Tamy Selvood",
       "client_dni": "",
       "client_email": "",
@@ -29072,7 +29239,8 @@
       "created_at": "2026-08-20T14:58:01.537Z",
       "quote_number": "A3929",
       "status": "ACCEPTED",
-      "lead_id": "local-1787237768328-v2p2k"
+      "lead_id": "local-1787237768328-v2p2k",
+      "sale_id": "local-sale-1787779289897-giig"
     },
     {
       "id": "local-1787578678760-pbkhq",
@@ -32203,6 +32371,22 @@
       "notes": null,
       "name": "SAMACO",
       "updated_at": "2026-08-26T16:28:41.515Z"
+    },
+    {
+      "id": "CLI-mtalmomh-wp13",
+      "type": "client",
+      "active": true,
+      "name": "Tamy Selvood",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        "+54 9 11 4178-0018"
+      ],
+      "addresses": [
+        "Santa Teresa Lote 283"
+      ],
+      "notes": null,
+      "updated_at": "2026-08-26T21:21:29.897Z"
     }
   ],
   "expenses": [],
