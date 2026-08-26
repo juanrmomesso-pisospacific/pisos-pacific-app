@@ -31909,6 +31909,18 @@
       ],
       "notes": null,
       "updated_at": "2026-08-15T12:28:05.611Z"
+    },
+    {
+      "id": "CLI-mtab64rv-xrwy",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "SAMACO",
+      "updated_at": "2026-08-26T16:28:41.515Z"
     }
   ],
   "expenses": [],
