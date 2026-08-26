@@ -127434,7 +127434,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a03b611598f",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-26T15:51:28.000Z",
       "last_message_preview": "Hola Juan,\r\n\r\nEstoy interesada en la linea H20.\r\n\r\nSaludos,\r\nNuria.\r\n\r\nEl mié, 26 ago 2026 a las 12:05, Pisos Pacific (<info@pisospacific.co",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -127498,11 +127498,12 @@
       "linked_lead_id": "lead-email-1a03eec5d8ca",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-26T16:34:18.000Z",
-      "last_message_preview": "Queria saber el precio de piso por m2. El mas económico. Gracias",
+      "last_message_at": "2026-08-26T18:04:09.174Z",
+      "last_message_preview": "Hola, ¿cómo están?\n\nLos pisos más economicos que trabajamos son nuestra línea H2O. Son pisos de 6,6 mm de SPC en tablas de 1,50m x 23 cm.\n\nE",
       "email_subject": "(sin asunto)",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-26T16:34:18.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-26T16:34:18.000Z",
+      "last_outbound_at": "2026-08-26T18:04:09.174Z"
     }
   ],
   "messages": [
@@ -141926,6 +141927,15 @@
       "ts": "2026-08-26T18:02:17.958Z",
       "status": "sent",
       "wa_id": "1a03f3cb3840e4cb"
+    },
+    {
+      "id": "m-1787767449174-zw6z",
+      "conversation_id": "conv-email-1a03eec5d8ca",
+      "direction": "out",
+      "body": "Hola, ¿cómo están?\n\nLos pisos más economicos que trabajamos son nuestra línea H2O. Son pisos de 6,6 mm de SPC en tablas de 1,50m x 23 cm.\n\nEl valor es de USD 38 + IVA. \n\nMuchas gracias por tu interés!",
+      "ts": "2026-08-26T18:04:09.174Z",
+      "status": "sent",
+      "wa_id": "1a03f3e6515afd20"
     }
   ],
   "templates": [
