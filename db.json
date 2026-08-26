@@ -127342,11 +127342,12 @@
       "linked_lead_id": "lead-email-1a03b611598f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-26T00:03:32.000Z",
-      "last_message_preview": "Formulario web — 30m² · Con Colocación · CP 1425 · Monseñor Zazpe 3134",
+      "last_message_at": "2026-08-26T15:05:26.256Z",
+      "last_message_preview": "Hola Nuria, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-26T00:03:32.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-26T00:03:32.000Z",
+      "last_outbound_at": "2026-08-26T15:05:26.256Z"
     },
     {
       "id": "conv-1787709823306-0j30",
@@ -141775,6 +141776,15 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a03e99b987c8da8"
+    },
+    {
+      "id": "m-1787756726256-hyij",
+      "conversation_id": "conv-email-1a03b611598f",
+      "direction": "out",
+      "body": "Hola Nuria, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-08-26T15:05:26.256Z",
+      "status": "sent",
+      "wa_id": "1a03e9ac7fdd2f0c"
     }
   ],
   "templates": [
@@ -149662,7 +149672,8 @@
       "1a03b5cb28ae65dc",
       "1a03b565225938b6",
       "1a03b5514ba1a5ed",
-      "1a03df5d29ff969d"
+      "1a03df5d29ff969d",
+      "1a03e99b987c8da8"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
