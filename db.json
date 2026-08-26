@@ -117299,7 +117299,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-06-17T14:10:53.000Z",
-      "last_touch_at": "2026-08-25T20:52:38.000Z"
+      "last_touch_at": "2026-08-26T13:54:25.000Z"
     },
     {
       "id": "lead-email-19ed6246b2e9",
@@ -123264,12 +123264,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ed5e9e8aef",
       "status": "closed",
-      "unread_count": 1,
-      "last_message_at": "2026-08-25T20:52:38.000Z",
-      "last_message_preview": "Buenas tardes,\r\nadjunto recibo por el pago realizado.\r\nSaludos cordiales\r\n\r\nRomina Zabala\r\n\r\nBona Center\r\n\r\nAdministración\r\n11 3637-9225 int",
+      "unread_count": 2,
+      "last_message_at": "2026-08-26T13:54:25.000Z",
+      "last_message_preview": "Buenos dias,\r\nadjunto factura y recibo por el material retirado por alberdi.\r\nGracias por elegir Bona.\r\n\r\nRomina Zabala\r\n\r\nBona Center\r\n\r\nAd",
       "email_subject": "FA0003-3924 RODRIGUEZ MPMESSO JUAN Re: Facturación",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-25T20:52:38.000Z",
+      "last_inbound_at": "2026-08-26T13:54:25.000Z",
       "last_outbound_at": "2026-07-20T16:25:09.000Z",
       "ignored": true
     },
@@ -141687,6 +141687,14 @@
       "body": "✉️ re: Catalogo de Perfiles FUNKTION\n\nEstimados,\r\n\r\nMi nombre es Verónica Díaz y me comunico en representación de Funktion\r\nArgentina, empresa dedicada a la fabricación y comercialización de perfiles\r\nde aluminio para terminaciones de pisos.\r\n\r\nNos especializamos en ofrecer productos de excelente calidad, diseñados para\r\nbrindar terminaciones estéticas, duraderas y funcionales para proyectos\r\nresidenciales, comerciales e industriales.\r\n\r\nNos gustaría presentarles nuestra línea de perfiles de aluminio y evaluar la\r\nposibilidad de convertirnos en uno de sus proveedores.\r\n\r\n¿Qué ofrecemos?\r\n\r\nPerfiles y varillas de aluminio para pisos y revestimientos.\r\n\r\nProductos de alta calidad y excelente terminación.\r\n\r\nAmplio stock y variedad de modelos.\r\n\r\nAsesoramiento comercial y técnico.\r\n\r\nAtención personalizada.\r\n\r\nCotizaciones rápidas y envíos a todo el país.\r\n\r\nSerá un gusto enviarles nuestro catálogo y una propuesta comercial adaptada\r\na sus necesidades.\r\n\r\nQuedo a disposición para coordinar una reunión o una llamada.\r\n\r\nVerónica Díaz\r\n\r\nAsesora Comercial – Funktion Argentina\r\n\r\nTeléfono / WhatsApp: 11 6153-7790\r\n\r\n \r\n\r\nSaludos Cordiales.\r\n\r\n \r\n\r\n    Verónica Diaz\r\n\r\n   DEXALUM S.R.L\r\n\r\n   (011) 4-368-6901/7129.\r\n\r\n     <mailto:ventas@funktionargentina.com.ar>\r\nventas@funktionargentina.com.ar\r\n\r\n\r\n\r\n\r\n                 <https://www.facebook.com/funktion.dexalum.7>\r\nhttps://www.facebook.com/funktion.dexalum.7\r\n\r\n \r\n\r\n\r\n                11 6153-7790",
       "ts": "2026-08-26T13:20:44.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a03e58d1aa7",
+      "conversation_id": "conv-email-19ed5e9e8aef",
+      "direction": "in",
+      "body": "✉️ FA0003-4056 RODRIGUEZ MOMESSO JUAN Re: FA 0003-4053 RODRIGUEZ MOMESSO JUAN Re: FA0003-3989 RODRIGUEZ MOMESSO JUAN\n\nBuenos dias,\r\nadjunto factura y recibo por el material retirado por alberdi.\r\nGracias por elegir Bona.\r\n\r\nRomina Zabala\r\n\r\nBona Center\r\n\r\nAdministración\r\n11 3637-9225 int 2 <11+4674-0176>\r\ncoordinacion@bona.com.ar\r\nwww.bona.com.ar\r\nAv. J.B. Alberdi 3909 - CABA (1407)\r\n[image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n[image: instagram] <https://www.instagram.com/bona.argentina>\r\n\r\n\r\nEl mar, 25 ago 2026 a las 17:52, Coordinación Zabala Romina (<\r\ncoordinacion@bona.com.ar>) escribió:\r\n\r\n> Buenas tardes,\r\n> adjunto recibo por el pago realizado.\r\n> Saludos cordiales\r\n>\r\n> Romina Zabala\r\n>\r\n> Bona Center\r\n>\r\n> Administración\r\n> 11 3637-9225 int 2 <11+4674-0176>\r\n> coordinacion@bona.com.ar\r\n> www.bona.com.ar\r\n> Av. J.B. Alberdi 3909 - CABA (1407)\r\n> [image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n> [image: instagram] <https://www.instagram.com/bona.argentina>\r\n>\r\n>\r\n> El mar, 25 ago 2026 a las 15:19, Abril Pailos (<administracion@bona.com.ar>)\r\n> escribió:\r\n>\r\n>> Perfecto. lo esperamos!\r\n>>\r\n>> Maria Laura Buzzella\r\n>>\r\n>> Bona Center\r\n>>\r\n>> 11 3637-9225\r\n>> administracion@bona.com.ar <rocio@bona.com.ar>\r\n>> www.bona.com.ar\r\n>> Av. J.B. Alberdi 3909 - CABA (1407)\r\n>>\r\n>> [image: facebook] <https://www.facebook.com/BonaArgentinaOficial>\r\n>> [image: instagram] <https://www.instagram.com/bona.argentina>\r\n>>\r\n>>\r\n>> El mar, 25 ago 2026 a la(s) 3:15 p.m., info pisos (info@pisospacific.com)\r\n>> escribió:\r\n>>\r\n>>> Adjunto comprobante de pago!\r\n>>>\r\n>>>",
+      "ts": "2026-08-26T13:54:25.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -148406,7 +148414,6 @@
     "mp_pending_job": 102925277,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19ea21c1f4f35c7d",
       "19ea21aeb2dc2ef8",
       "19ea21ae0fd746ed",
       "19ed76a8effb9928",
@@ -149205,7 +149212,8 @@
       "1a03da5d9b0ff49e",
       "1a03df554bab558b",
       "1a03df5d29ff969d",
-      "1a03e3b3bcf8e602"
+      "1a03e3b3bcf8e602",
+      "1a03e58d1aa78732"
     ],
     "cash_sessions": {
       "1136982222": {
