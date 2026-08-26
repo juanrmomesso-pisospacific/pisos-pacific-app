@@ -30032,8 +30032,9 @@
       "discount_amount": 0,
       "created_at": "2026-08-26T18:07:32.384Z",
       "quote_number": "A7385",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a03b611598f"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a03b611598f",
+      "share_token": "3f261280c3db2f7185617dca"
     }
   ],
   "clients": [
@@ -127514,12 +127515,12 @@
       "linked_lead_id": "lead-email-1a03b611598f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-26T15:51:28.000Z",
-      "last_message_preview": "Hola Juan,\r\n\r\nEstoy interesada en la linea H20.\r\n\r\nSaludos,\r\nNuria.\r\n\r\nEl mié, 26 ago 2026 a las 12:05, Pisos Pacific (<info@pisospacific.co",
+      "last_message_at": "2026-08-26T18:08:17.218Z",
+      "last_message_preview": "📄 Presupuesto NA7385 - Palermo - H2O Nuria - Nuria Torras.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-26T15:51:28.000Z",
-      "last_outbound_at": "2026-08-26T15:05:26.256Z"
+      "last_outbound_at": "2026-08-26T18:08:17.218Z"
     },
     {
       "id": "conv-1787709823306-0j30",
@@ -142015,6 +142016,16 @@
       "ts": "2026-08-26T18:04:09.174Z",
       "status": "sent",
       "wa_id": "1a03f3e6515afd20"
+    },
+    {
+      "id": "m-1787767697218-sp9i",
+      "conversation_id": "conv-email-1a03b611598f",
+      "direction": "out",
+      "body": "Hola Nuria, te comparto el presupuesto NA7385 adjunto. Cualquier consulta quedo a disposición.\n\nPresupuestamos el servicio de colocación por el mínimo. En caso de interesarte, podemos avanzar con una visita técnica. \n\nSaludos,\n📄 Presupuesto NA7385 - Palermo - H2O Nuria - Nuria Torras.pdf",
+      "ts": "2026-08-26T18:08:17.218Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a03f422e15dd742"
     }
   ],
   "templates": [
