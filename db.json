@@ -116594,6 +116594,30 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mt7o1793-002"
+    },
+    {
+      "id": "mov-1787859160347-sj7pe",
+      "date": "2026-08-27T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "counterparty": "Pipi & Juan",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-024",
+      "description": "Gastos Varios Fin de Semana - ",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 135000,
+      "amount_usd": 87.38,
+      "exchange_rate": 1544.98,
+      "fixed_variable": "Fijo",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
@@ -122967,9 +122991,9 @@
       "interested_products": [],
       "notes": "Email: (sin asunto) — Hola \r\nLes escribo por un presupuesto para un piso vinilico o flotante para un departamento de aprox 60 metros solo cuartos y living. Me oasas tu contacto \r\nSaludos \r\nMariana\r\nEnvi",
       "status": "New",
-      "assigned_seller": "",
+      "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-08-27T17:58:35.000Z",
-      "last_touch_at": "2026-08-27T17:58:35.000Z"
+      "last_touch_at": "2026-08-27T19:25:52.742Z"
     }
   ],
   "conversations": [
@@ -128165,7 +128189,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0445fdecad",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-27T17:58:35.000Z",
       "last_message_preview": "Hola \r\nLes escribo por un presupuesto para un piso vinilico o flotante para un departamento de aprox 60 metros solo cuartos y living. Me oas",
       "email_subject": "(sin asunto)",
