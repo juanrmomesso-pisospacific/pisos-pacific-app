@@ -116906,6 +116906,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1787859961544-iuo9q",
+      "date": "2026-08-27T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "Producto",
+      "subcategory": "Pago Mercaderia",
+      "counterparty": "Hushfloor Currenxie",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-043",
+      "description": "Comision A.Tessone",
+      "sale_ref": null,
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 4800,
+      "exchange_rate": null,
+      "fixed_variable": "Fijo",
+      "expense_type": "COGS",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
