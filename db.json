@@ -116858,6 +116858,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1787859738184-8bgqi",
+      "date": "2026-08-27T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "Instalaciones",
+      "subcategory": "Insumos Generales Colocación",
+      "counterparty": "Otros",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-008",
+      "description": "Siliconas",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 36000,
+      "amount_usd": 23.3,
+      "exchange_rate": 1545.06,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
