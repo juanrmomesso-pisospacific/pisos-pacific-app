@@ -116618,6 +116618,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1787859197496-s92tt",
+      "date": "2026-08-24T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "counterparty": "Oso",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-044",
+      "description": "Lunes con adelanto",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 30000,
+      "amount_usd": 19.42,
+      "exchange_rate": 1544.8,
+      "fixed_variable": "Fijo",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
