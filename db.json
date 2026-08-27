@@ -30271,7 +30271,8 @@
       "discount_amount": 1197,
       "created_at": "2026-08-26T16:30:22.086Z",
       "quote_number": "A4287",
-      "status": "DRAFT"
+      "status": "DRAFT",
+      "share_token": "f56018725c75ff1367ff02a2"
     },
     {
       "id": "local-1787767652641-8om31",
