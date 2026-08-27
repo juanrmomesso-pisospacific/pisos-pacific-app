@@ -127407,11 +127407,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-08-27T11:30:34.053Z",
-      "last_message_preview": "Tema zócalos y manta tb te consulto",
+      "unread_count": 5,
+      "last_message_at": "2026-08-27T11:31:12.120Z",
+      "last_message_preview": "Muchas gracias",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-27T11:30:34.053Z",
+      "last_inbound_at": "2026-08-27T11:31:12.120Z",
       "last_outbound_at": "2026-08-25T22:34:31.376Z"
     },
     {
@@ -142593,6 +142593,22 @@
       "body": "Tema zócalos y manta tb te consulto",
       "ts": "2026-08-27T11:30:34.053Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787830270814-oozp",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "Info de Pago y envío y tiempos. Si se puede ver el tema del IVA.",
+      "ts": "2026-08-27T11:31:10.263Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787830272768-t7ob",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "Muchas gracias",
+      "ts": "2026-08-27T11:31:12.120Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -151108,7 +151124,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk3OTI2NjA3NTk4NTE1MzE1NDQ0MTA1MTM1MjU5NjQ4MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NTI1NDEwMDY0OTQxMDE5MjU1NTIxMzA2MjE0NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NjU5Mjk2NTYxMDk4MTE5MjkxNzE0NTYxNjM4NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0Njc3NDgyOTEyNzc3MTU4NzY2NjcwOTA1MzQ0MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0Njc3NDgyOTEyNzc3MTU4NzY2NjcwOTA1MzQ0MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NzQ0Mjc5MDY1NTk2MTI3ODIxMTE3NDY5NDkxMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NzQ3NzA0MjEwOTE4ODc0MDI2Mzg3NjQ5MzMxMgZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
