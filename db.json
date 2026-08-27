@@ -117984,7 +117984,7 @@
       "status": "New",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-06-18T22:08:22.000Z",
-      "last_touch_at": "2026-07-15T12:05:42.000Z"
+      "last_touch_at": "2026-08-27T03:19:02.000Z"
     },
     {
       "id": "lead-instagram-1781871799724",
@@ -123932,12 +123932,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19edcc75eea5",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-07-15T12:05:42.000Z",
-      "last_message_preview": "Hola. Te voy a avisar. He tenido postergando mi viaje. Gracias!\r\n\r\n*Alejandro Weskamp*\r\n\r\n\r\nAlippi 9262 Torre 2 Piso 1 Dpto D. Rosario, ARG ",
+      "unread_count": 1,
+      "last_message_at": "2026-08-27T03:19:02.000Z",
+      "last_message_preview": "Viajando del interior a caba 27 y 28-8 . Me interesa ver productos ensu\r\nshowroom\r\nContactame al 3413252871\r\n\r\n*Alejandro Weskamp*\r\n\r\n\r\nAlip",
       "email_subject": "Consulta showroom Pisos pacific",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-07-15T12:05:42.000Z",
+      "last_inbound_at": "2026-08-27T03:19:02.000Z",
       "last_outbound_at": "2026-07-14T23:56:02.628Z",
       "ignored": true
     },
@@ -142513,6 +142513,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzOTI4NzgyOTk3MzI3OTYwNzYzMzQ3NTUzNDg0OAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a0413aa14b5",
+      "conversation_id": "conv-email-19edcc75eea5",
+      "direction": "in",
+      "body": "✉️ Pasame contacto.telefonico\n\nViajando del interior a caba 27 y 28-8 . Me interesa ver productos ensu\r\nshowroom\r\nContactame al 3413252871\r\n\r\n*Alejandro Weskamp*\r\n\r\n\r\nAlippi 9262 Torre 2 Piso 1 Dpto D. Rosario, ARG   Tel 0341-153252871",
+      "ts": "2026-08-27T03:19:02.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -149232,7 +149240,6 @@
     "mp_pending_job": 102925277,
     "mp_last_sync": "2026-08-24T20:05:27.927Z",
     "gmail_seen_ids": [
-      "19edc6d31531349e",
       "19edcc75eea579e9",
       "19ee04793e5cc0b3",
       "19ee051287c43229",
@@ -150031,7 +150038,8 @@
       "1a03eec5d8cae97b",
       "1a03edfeda41e544",
       "1a03f58f2860c548",
-      "1a03f5739826d15b"
+      "1a03f5739826d15b",
+      "1a0413aa14b574bf"
     ],
     "cash_sessions": {
       "1136982222": {
