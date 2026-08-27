@@ -122783,12 +122783,12 @@
       "contact_name": "@juanrmomesso",
       "linked_client_name": null,
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-27T02:21:08.674Z",
-      "last_message_preview": "📎 Adjunto",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-27T02:21:42.117Z",
+      "last_message_preview": "No me iría allá",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-27T02:21:08.674Z",
-      "last_outbound_at": "2026-08-27T02:20:40.468Z"
+      "last_outbound_at": "2026-08-27T02:21:42.117Z"
     },
     {
       "id": "conv-1781093292446-6fr2",
@@ -142493,6 +142493,26 @@
       "body": "📎 Adjunto",
       "ts": "2026-08-27T02:21:08.674Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787797299259-y1ev",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "Jajaja mira la tremenda casa que tienen",
+      "ts": "2026-08-27T02:21:38.911Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzOTIyODY5MTExMzczMTg0NDQxMjkyMDU2MTY2NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787797302462-byq4",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "No me iría allá",
+      "ts": "2026-08-27T02:21:42.117Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzOTI4NzgyOTk3MzI3OTYwNzYzMzQ3NTUzNDg0OAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
