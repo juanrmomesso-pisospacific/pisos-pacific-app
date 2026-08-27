@@ -116834,6 +116834,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1787859521089-h7z77",
+      "date": "2026-08-25T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "Instalaciones",
+      "subcategory": "Insumos Generales Colocación",
+      "counterparty": "Otros",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-008",
+      "description": "Julian - Compra de Pinturas",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 40000,
+      "amount_usd": 25.89,
+      "exchange_rate": 1545,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
