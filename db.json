@@ -127407,11 +127407,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-27T11:29:11.614Z",
-      "last_message_preview": "Buen día. Me llegaron las muestras. Me gustó mucho el Verona.",
+      "unread_count": 3,
+      "last_message_at": "2026-08-27T11:30:34.053Z",
+      "last_message_preview": "Tema zócalos y manta tb te consulto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-27T11:29:11.614Z",
+      "last_inbound_at": "2026-08-27T11:30:34.053Z",
       "last_outbound_at": "2026-08-25T22:34:31.376Z"
     },
     {
@@ -142577,6 +142577,22 @@
       "body": "Buen día. Me llegaron las muestras. Me gustó mucho el Verona.",
       "ts": "2026-08-27T11:29:11.614Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787830224806-oirk",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "Aprox necesitaría la superficie de 142mts. Que porcentaje de desperdicio habría que sumar?",
+      "ts": "2026-08-27T11:30:24.194Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1787830234611-8kqp",
+      "conversation_id": "conv-1787178823156-st6z",
+      "direction": "in",
+      "body": "Tema zócalos y manta tb te consulto",
+      "ts": "2026-08-27T11:30:34.053Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -151090,7 +151106,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzODAyNzUwNjUyNTYwNzk3OTY3MjY3ODY5NDkxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzODY3MDkxNzA5NzY0MjUyOTQzNzgwMzA4NTgyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk3OTI2NjA3NTk4NTE1MzE1NDQ0MTA1MTM1MjU5NjQ4MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NTI1NDEwMDY0OTQxMDE5MjU1NTIxMzA2MjE0NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NTI1NDEwMDY0OTQxMDE5MjU1NTIxMzA2MjE0NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NjU5Mjk2NTYxMDk4MTE5MjkxNzE0NTYxNjM4NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0Njc3NDgyOTEyNzc3MTU4NzY2NjcwOTA1MzQ0MAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
