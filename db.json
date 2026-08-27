@@ -30235,7 +30235,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "San Juan - Light Grey XL",
       "has_iva": true,
-      "price": 3781.25,
+      "price": 3953.675,
       "zoned": false,
       "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m + 1 más",
       "items": [
@@ -30243,13 +30243,13 @@
           "product_id": "PROD-030",
           "sku": "PROD-030",
           "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m",
-          "quantity": 100,
+          "quantity": 105,
           "unit_price": 38,
           "cost": 16.33,
           "category": "Pisos H2O",
           "disc_value": 25,
-          "total": 3800,
-          "discount": 950,
+          "total": 3990,
+          "discount": 997.5,
           "image": "",
           "target_item_index": null
         },
@@ -30267,8 +30267,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 950,
-      "discount_amount": 950,
+      "discount_total": 997.5,
+      "discount_amount": 997.5,
       "created_at": "2026-08-26T16:30:22.086Z",
       "quote_number": "A4287",
       "status": "DRAFT"
