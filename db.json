@@ -30352,6 +30352,72 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a03b611598f",
       "share_token": "3f261280c3db2f7185617dca"
+    },
+    {
+      "id": "local-1787851581213-x1wdv",
+      "client_id": "CLI-027",
+      "client_name": "Arq Paula Ballinotti",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "PH Nuñez",
+      "has_iva": true,
+      "price": 8818.964,
+      "zoned": false,
+      "description": "H2O HD - Chevron - Aura - 625 x 125 x 6/0.3mm + 2 más",
+      "items": [
+        {
+          "product_id": "local-1782930311636-1b4g3",
+          "sku": "PROD-2928",
+          "description": "H2O HD - Chevron - Aura - 625 x 125 x 6/0.3mm",
+          "quantity": 97,
+          "unit_price": 65,
+          "cost": 20,
+          "category": "Pisos H2O",
+          "disc_value": 12,
+          "total": 6305,
+          "discount": 756.6,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 78,
+          "unit_price": 20,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 1560,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 180,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 180,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 756.6,
+      "discount_amount": 756.6,
+      "created_at": "2026-08-27T17:26:21.066Z",
+      "quote_number": "A9417",
+      "status": "DRAFT"
     }
   ],
   "clients": [
