@@ -122784,11 +122784,11 @@
       "linked_client_name": null,
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-26T22:11:42.380Z",
-      "last_message_preview": "Top",
+      "last_message_at": "2026-08-27T02:17:38.500Z",
+      "last_message_preview": "Justo jajajja",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-14T21:46:33.527Z",
-      "last_outbound_at": "2026-08-26T22:11:42.380Z"
+      "last_outbound_at": "2026-08-27T02:17:38.500Z"
     },
     {
       "id": "conv-1781093292446-6fr2",
@@ -142403,6 +142403,26 @@
       "body": "😍",
       "ts": "2026-08-26T23:22:19.720Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787797058504-fgby",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-27T02:17:38.045Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzNDc4NTQ5MjU4MjgxOTA5OTI4MzI1NDQxMTI2NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1787797058923-qzum",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "Justo jajajja",
+      "ts": "2026-08-27T02:17:38.500Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzNDc5Mzg4MzY5MzEwMzU4MDUwNTIyMjE1MjE5MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
