@@ -114707,7 +114707,7 @@
       "caja_id": "CAJ-004",
       "caja_name": "Banco de Comercio - Cuenta USD",
       "category": "Producto",
-      "subcategory": null,
+      "subcategory": "Pago Mercaderia",
       "counterparty": "Hushfloor Currenxie",
       "counterparty_type": "supplier",
       "client_id": null,
@@ -114761,7 +114761,7 @@
       "caja_id": "CAJ-004",
       "caja_name": "Banco de Comercio - Cuenta USD",
       "category": "Producto",
-      "subcategory": null,
+      "subcategory": "Pago Mercaderia",
       "counterparty": "Hushfloor Currenxie",
       "counterparty_type": "supplier",
       "client_id": null,
@@ -154005,6 +154005,34 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"PAGO DE SERVICIOS TARJETA 17230770 OP2483\""
+    },
+    {
+      "id": "local-1787859616419-84lrx",
+      "match": [
+        "Operación Comex"
+      ],
+      "cuit": null,
+      "counterparty": "Hushfloor Currenxie",
+      "category": "Producto",
+      "subcategory": "Pago Mercaderia",
+      "expense_type": "COGS",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Operación Comex\""
+    },
+    {
+      "id": "local-1787859624481-3oemp",
+      "match": [
+        "Operación Comex"
+      ],
+      "cuit": null,
+      "counterparty": "Hushfloor Currenxie",
+      "category": "Producto",
+      "subcategory": "Pago Mercaderia",
+      "expense_type": "COGS",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Operación Comex\""
     }
   ],
   "product_aliases": [
