@@ -125723,12 +125723,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1784917400689",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-08-26T22:05:33.496Z",
-      "last_message_preview": "📎 Adjunto",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-27T10:15:03.483Z",
+      "last_message_preview": "Gracias Sofi!!! ❤️",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-26T22:05:33.496Z",
-      "last_outbound_at": "2026-07-29T21:10:37.143Z"
+      "last_outbound_at": "2026-08-27T10:15:03.483Z"
     },
     {
       "id": "conv-1784917481524-y66g",
@@ -142559,6 +142559,16 @@
       "body": "Hola! Como están? Donde se pueden ir a ver los materiales?",
       "ts": "2026-08-27T05:46:36.328Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787825704060-qmyg",
+      "conversation_id": "conv-1784917400689-sike",
+      "direction": "out",
+      "body": "Gracias Sofi!!! ❤️",
+      "ts": "2026-08-27T10:15:03.483Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA1MTUyNjE5NDE2NTIzNDozMjk3OTU2MzIwMDU2NDMyNzgwNzM5NDM5MTk2NTgyNzA3MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
