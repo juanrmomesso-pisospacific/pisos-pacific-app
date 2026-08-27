@@ -122937,6 +122937,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-27T14:09:13.994Z",
       "last_touch_at": "2026-08-27T14:09:13.994Z"
+    },
+    {
+      "id": "lead-instagram-1787853659842",
+      "name": "@marianaarbol",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-27T18:00:57.578Z",
+      "last_touch_at": "2026-08-27T18:00:57.578Z"
     }
   ],
   "conversations": [
@@ -128109,6 +128125,20 @@
       "last_message_preview": "↩️ Reaccionó: ❤",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-27T14:09:13.994Z"
+    },
+    {
+      "id": "conv-1787853659842-tf2y",
+      "channel": "instagram",
+      "contact_id": "4365278877117716",
+      "contact_name": "@marianaarbol",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787853659842",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-27T18:00:57.578Z",
+      "last_message_preview": "Hola quiero pedir un presupuesto para un departamento de aprox 65 mts cuadrados. Por aca o me pasas un WhatsApp?\nGracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-27T18:00:57.578Z"
     }
   ],
   "messages": [
@@ -142779,6 +142809,14 @@
       "body": "↩️ Reaccionó: ❤",
       "ts": "2026-08-27T14:09:13.994Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787853659842-zy8i",
+      "conversation_id": "conv-1787853659842-tf2y",
+      "direction": "in",
+      "body": "Hola quiero pedir un presupuesto para un departamento de aprox 65 mts cuadrados. Por aca o me pasas un WhatsApp?\nGracias",
+      "ts": "2026-08-27T18:00:57.578Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -151297,7 +151335,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NjU5Mjk2NTYxMDk4MTE5MjkxNzE0NTYxNjM4NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0Njc3NDgyOTEyNzc3MTU4NzY2NjcwOTA1MzQ0MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NzQ0Mjc5MDY1NTk2MTI3ODIxMTE3NDY5NDkxMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NzQ3NzA0MjEwOTE4ODc0MDI2Mzg3NjQ5MzMxMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NzQ3NzA0MjEwOTE4ODc0MDI2Mzg3NjQ5MzMxMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDgyMTQ4NjE2NjE4ODIwNzozMjk4MDA3ODg2MjU4NzA4MzUwNzc5NjY0MzkzMjAxMjU0NAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
