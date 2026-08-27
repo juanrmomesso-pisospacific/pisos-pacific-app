@@ -116786,6 +116786,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1787859446257-cexsa",
+      "date": "2026-08-25T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "Flota",
+      "subcategory": "Nafta",
+      "counterparty": "YPF",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-030",
+      "description": "Carga Tcross",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 80000,
+      "amount_usd": 51.78,
+      "exchange_rate": 1545,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Flota/Vehículos",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
