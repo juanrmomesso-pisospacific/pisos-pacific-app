@@ -122783,12 +122783,12 @@
       "contact_name": "@juanrmomesso",
       "linked_client_name": null,
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-27T02:19:24.818Z",
-      "last_message_preview": "Bueno, hay que tener en cuenta eso.",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-27T02:19:40.120Z",
+      "last_message_preview": "Si, pero tenes más lugar para estacionar una pickup",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-27T02:19:24.818Z",
-      "last_outbound_at": "2026-08-27T02:18:47.040Z"
+      "last_outbound_at": "2026-08-27T02:19:40.120Z"
     },
     {
       "id": "conv-1781093292446-6fr2",
@@ -142449,6 +142449,16 @@
       "body": "Bueno, hay que tener en cuenta eso.",
       "ts": "2026-08-27T02:19:24.818Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787797180499-8tn0",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "Si, pero tenes más lugar para estacionar una pickup",
+      "ts": "2026-08-27T02:19:40.120Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzNzAzNzM4ODAzMzY0ODk5NzQzMDQyNDc2NDQxNgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
