@@ -116690,6 +116690,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1787859265778-ztf6v",
+      "date": "2026-08-27T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "Flota",
+      "subcategory": "Gastos por Mantenimiento Auto",
+      "counterparty": "Otros",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-008",
+      "description": "Limpieza Auto",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 25000,
+      "amount_usd": 16.18,
+      "exchange_rate": 1545.12,
+      "fixed_variable": "Fijo",
+      "expense_type": "Gastos de Flota/Vehículos",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
