@@ -122773,6 +122773,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-26T16:34:18.000Z",
       "last_touch_at": "2026-08-26T16:34:18.000Z"
+    },
+    {
+      "id": "lead-instagram-1787809597980",
+      "name": "@elclosetdemegg",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-27T05:46:36.328Z",
+      "last_touch_at": "2026-08-27T05:46:36.328Z"
     }
   ],
   "conversations": [
@@ -127917,6 +127933,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-26T16:34:18.000Z",
       "last_outbound_at": "2026-08-26T18:04:09.174Z"
+    },
+    {
+      "id": "conv-1787809597980-13lp",
+      "channel": "instagram",
+      "contact_id": "2532734057177474",
+      "contact_name": "@elclosetdemegg",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787809597980",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-27T05:46:36.328Z",
+      "last_message_preview": "Hola! Como están? Donde se pueden ir a ver los materiales?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-27T05:46:36.328Z"
     }
   ],
   "messages": [
@@ -142521,6 +142551,14 @@
       "body": "✉️ Pasame contacto.telefonico\n\nViajando del interior a caba 27 y 28-8 . Me interesa ver productos ensu\r\nshowroom\r\nContactame al 3413252871\r\n\r\n*Alejandro Weskamp*\r\n\r\n\r\nAlippi 9262 Torre 2 Piso 1 Dpto D. Rosario, ARG   Tel 0341-153252871",
       "ts": "2026-08-27T03:19:02.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787809597980-ah9g",
+      "conversation_id": "conv-1787809597980-13lp",
+      "direction": "in",
+      "body": "Hola! Como están? Donde se pueden ir a ver los materiales?",
+      "ts": "2026-08-27T05:46:36.328Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -151032,7 +151070,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzNjc1NTExMjM3NzE2NDc0MzU3MTk0MzcxODkxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzNzgyMjY1OTYwMTYzMzU5NTc2MDM0MTY4MDEyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzODAyNzUwNjUyNTYwNzk3OTY3MjY3ODY5NDkxMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzODY3MDkxNzA5NzY0MjUyOTQzNzgwMzA4NTgyNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk3OTAzODY3MDkxNzA5NzY0MjUyOTQzNzgwMzA4NTgyNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk3OTI2NjA3NTk4NTE1MzE1NDQ0MTA1MTM1MjU5NjQ4MAZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
