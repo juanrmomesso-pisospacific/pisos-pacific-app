@@ -123876,7 +123876,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-08-26T13:20:44.000Z",
-      "last_touch_at": "2026-08-26T13:20:44.000Z"
+      "last_touch_at": "2026-08-28T17:23:00.000Z"
     },
     {
       "id": "lead-email-1a03eec5d8ca",
@@ -129161,12 +129161,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a03e3b3bcf8",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-08-26T13:20:44.000Z",
-      "last_message_preview": "Estimados,\r\n\r\nMi nombre es Verónica Díaz y me comunico en representación de Funktion\r\nArgentina, empresa dedicada a la fabricación y comerci",
+      "unread_count": 1,
+      "last_message_at": "2026-08-28T17:23:00.000Z",
+      "last_message_preview": "Buenos días !!!\r\n\r\nMi nombre es Veronica Diaz de la empresa Funktion, adjunto lo solicitado.\r\n\r\nCualquier duda o consulta estoy a su disposi",
       "email_subject": "re: Catalogo de Perfiles FUNKTION",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-26T13:20:44.000Z",
+      "last_inbound_at": "2026-08-28T17:23:00.000Z",
       "ignored": true
     },
     {
@@ -144010,6 +144010,14 @@
       "body": "✉️ Re: Comex+Cargo // FOB Shanghai - Buenos Aires | PDPG 2619 | Juan Rodriguez Momesso // CCF-MI-00000082\n\nHola Vicky,\r\nBuenos días!\r\n\r\nInformamos que el arribo de la carga a Buenos Aires se actualizó al 15/SEP\r\na bordo del buque MSC RAYSHMI:\r\n\r\n[image: image.png]\r\n\r\nPor otro lado, nos informan que el shipper aún no canceló los gastos\r\nlocales para poder confirmar la emisión del b/l en destino.\r\nLes dejaremos saber cuando se encuentre liberado.\r\n\r\nSaludos,\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\nCarolina Lodovico\r\n*Customer Comex+ Cargo*\r\nCel WhatsApp: (+54)115-761-1787\r\n\r\n*Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nAv. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\n\r\nEl vie, 31 jul 2026 a la(s) 11:28 a.m., Customer Comex+ Cargo (\r\nCustomerCargo@grupocomexmas.com) escribió:\r\n\r\n> Buenas tardes Vicky,\r\n> Confirmamos el zarpe de esta carga:\r\n>\r\n> *ETD Shanghai: 30/07*\r\n>\r\n> *ETA Buenos Aires: 06/09*\r\n>\r\n> *Buque: MSC RAYSHMI*\r\n>\r\n> [image: image.png]\r\n>\r\n>\r\n>\r\n> Saludos,\r\n>\r\n>\r\n> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n> Cordiali Saluti*\r\n> Carolina Lodovico\r\n> *Customer Comex+ Cargo*\r\n> Cel WhatsApp: (+54)115-761-1787\r\n>\r\n> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n> Tel.: (+54)114331-2207/1893\r\n> Av. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\n> Argentina\r\n>\r\n>\r\n> El mié, 29 jul 2026 a la(s) 8:51 a.m., Customer Comex+ Cargo (\r\n> CustomerCargo@grupocomexmas.com) escribió:\r\n>\r\n>> Hola Vicky,\r\n",
       "ts": "2026-08-28T13:53:15.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a04965bc429",
+      "conversation_id": "conv-email-1a03e3b3bcf8",
+      "direction": "in",
+      "body": "✉️ re: Catalogo\n\nBuenos días !!!\r\n\r\nMi nombre es Veronica Diaz de la empresa Funktion, adjunto lo solicitado.\r\n\r\nCualquier duda o consulta estoy a su disposición \r\n\r\n \r\n\r\nSaludos Cordiales.\r\n\r\n \r\n\r\n    Verónica Diaz\r\n\r\n   DEXALUM S.R.L\r\n\r\n   (011) 4-368-6901/7129.\r\n\r\n     <mailto:ventas@funktionargentina.com.ar>\r\nventas@funktionargentina.com.ar\r\n\r\n\r\n\r\n\r\n                 <https://www.facebook.com/funktion.dexalum.7>\r\nhttps://www.facebook.com/funktion.dexalum.7\r\n\r\n \r\n\r\n\r\n                11 6153-7790",
+      "ts": "2026-08-28T17:23:00.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -150733,7 +150741,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-28T13:04:46.967Z",
     "gmail_seen_ids": [
-      "19ee4fb5cb92580f",
       "19ee54605a7318c8",
       "19ee6dba01e59f1f",
       "19ee6d52f183f9e3",
@@ -151532,7 +151539,8 @@
       "1a048428b56b3daa",
       "1a048428a886777d",
       "1a0488f5ed9e4c0c",
-      "1a048a60d576eec5"
+      "1a048a60d576eec5",
+      "1a04965bc429d142"
     ],
     "cash_sessions": {
       "1136982222": {
