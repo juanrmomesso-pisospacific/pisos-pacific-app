@@ -3254,6 +3254,21 @@
       "margin": 30,
       "createdAt": "2026-08-26T20:34:01.455Z",
       "updatedAt": "2026-08-26T20:34:01.455Z"
+    },
+    {
+      "id": "local-1787936110293-2lnn7",
+      "name": "Colocación sobre pared o cielorraso",
+      "sku": "SERV- 032",
+      "category": "Pisos de Madera",
+      "price": 35,
+      "cost": 26,
+      "currency": "USD",
+      "stock": 0,
+      "reservedStock": 0,
+      "active": true,
+      "margin": 35,
+      "createdAt": "2026-08-28T16:55:09.716Z",
+      "updatedAt": "2026-08-28T16:55:09.716Z"
     }
   ],
   "sales": [
