@@ -124040,6 +124040,22 @@
       "address": "Rosario",
       "created_at": "2026-08-28T17:10:02.181Z",
       "last_touch_at": "2026-08-28T17:10:33.479Z"
+    },
+    {
+      "id": "lead-instagram-1787944218618",
+      "name": "@rondaarq",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-28T19:10:17.199Z",
+      "last_touch_at": "2026-08-28T19:10:17.199Z"
     }
   ],
   "conversations": [
@@ -129284,6 +129300,20 @@
       "email_subject": "Quintana - Pedido cotizacion",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-28T13:29:06.000Z"
+    },
+    {
+      "id": "conv-1787944218618-1rxw",
+      "channel": "instagram",
+      "contact_id": "1219539793698884",
+      "contact_name": "@rondaarq",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787944218618",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-28T19:10:17.199Z",
+      "last_message_preview": "📷 Foto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-28T19:10:17.199Z"
     }
   ],
   "messages": [
@@ -144034,6 +144064,16 @@
       "body": "Quería averiguar esto",
       "ts": "2026-08-28T18:59:24.595Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787944218618-d275",
+      "conversation_id": "conv-1787944218618-1rxw",
+      "direction": "in",
+      "body": "📷 Foto",
+      "ts": "2026-08-28T19:10:17.199Z",
+      "status": "received",
+      "media_url": "/uploads/bf1fdc49ad210b9b.bin",
+      "media_type": "file"
     }
   ],
   "templates": [
@@ -152563,7 +152603,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ3MjEyNDQyOTQ1NjY4NzozMjk4MDUyOTE4NDg1MzY3NzY4MTg0MjI5MDY5MDA5NzE1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDI0NDg2MDY2NzQwODEyMzozMjk4MDY0NDQ5OTkyODc3NDIyMzkxMDIxNDgzMjIyNjMwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk4MTczNjk5Mzg0NzQ3MjYxNzE0NTI1OTcwMDI1Njc2OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk4MTczNzM1NDMyNDMzNzQ2NjA5OTcyNTUwODgwNDYwOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk4MTczNzM1NDMyNDMzNzQ2NjA5OTcyNTUwODgwNDYwOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTgyNjk2OTQxMzI4NzU4MTozMjk4MTc0OTM5Mjc1NjcxNzcyODE4OTUzNTE2MDg5MzQ0MAZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
