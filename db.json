@@ -123984,6 +123984,22 @@
       "address": "Rosario",
       "created_at": "2026-08-28T17:10:02.181Z",
       "last_touch_at": "2026-08-28T17:10:33.479Z"
+    },
+    {
+      "id": "local-1787937700487-jklsy",
+      "name": "Mariana Arbol",
+      "phone": "+54 9 11 5420-6701",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "Tiene un ceramico existente. Se debera ver niveles en obra con regla. Verificar medidas",
+      "status": "New",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Recoleta",
+      "created_at": "2026-08-28T17:21:40.238Z",
+      "last_touch_at": "2026-08-28T17:21:40.238Z"
     }
   ],
   "conversations": [
