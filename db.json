@@ -123308,6 +123308,22 @@
       "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-08-27T17:58:35.000Z",
       "last_touch_at": "2026-08-27T19:25:52.742Z"
+    },
+    {
+      "id": "lead-instagram-1787878071384",
+      "name": "@clau.arguelles",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-28T00:47:49.596Z",
+      "last_touch_at": "2026-08-28T00:47:49.596Z"
     }
   ],
   "conversations": [
@@ -128509,6 +128525,20 @@
       "email_subject": "(sin asunto)",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-27T17:58:35.000Z"
+    },
+    {
+      "id": "conv-1787878071384-8ya6",
+      "channel": "instagram",
+      "contact_id": "2521256621635697",
+      "contact_name": "@clau.arguelles",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787878071384",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-28T00:47:49.596Z",
+      "last_message_preview": "Hola, cuánto vale el M2?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-28T00:47:49.596Z"
     }
   ],
   "messages": [
@@ -143195,6 +143225,14 @@
       "body": "✉️ (sin asunto)\n\nHola \r\nLes escribo por un presupuesto para un piso vinilico o flotante para un departamento de aprox 60 metros solo cuartos y living. Me oasas tu contacto \r\nSaludos \r\nMariana\r\nEnviado desde mi iPhone",
       "ts": "2026-08-27T17:58:35.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787878071384-n50t",
+      "conversation_id": "conv-1787878071384-8ya6",
+      "direction": "in",
+      "body": "Hola, cuánto vale el M2?",
+      "ts": "2026-08-28T00:47:49.596Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -151714,7 +151752,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0Njc3NDgyOTEyNzc3MTU4NzY2NjcwOTA1MzQ0MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NzQ0Mjc5MDY1NTk2MTI3ODIxMTE3NDY5NDkxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NzQ3NzA0MjEwOTE4ODc0MDI2Mzg3NjQ5MzMxMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDgyMTQ4NjE2NjE4ODIwNzozMjk4MDA3ODg2MjU4NzA4MzUwNzc5NjY0MzkzMjAxMjU0NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDgyMTQ4NjE2NjE4ODIwNzozMjk4MDA3ODg2MjU4NzA4MzUwNzc5NjY0MzkzMjAxMjU0NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ3MjEyNDQyOTQ1NjY4NzozMjk4MDUyOTE4NDg1MzY3NzY4MTg0MjI5MDY5MDA5NzE1MgZDZD"
     ],
     "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
     "warehouses": [
