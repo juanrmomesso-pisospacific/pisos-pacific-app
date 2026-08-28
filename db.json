@@ -128456,11 +128456,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786903722827",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-20T00:14:08.130Z",
-      "last_message_preview": "📎 Adjunto",
+      "unread_count": 1,
+      "last_message_at": "2026-08-28T18:59:05.053Z",
+      "last_message_preview": "Hola",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T00:14:08.130Z",
+      "last_inbound_at": "2026-08-28T18:59:05.053Z",
       "last_outbound_at": "2026-08-18T22:14:17.754Z"
     },
     {
@@ -144018,6 +144018,14 @@
       "body": "✉️ re: Catalogo\n\nBuenos días !!!\r\n\r\nMi nombre es Veronica Diaz de la empresa Funktion, adjunto lo solicitado.\r\n\r\nCualquier duda o consulta estoy a su disposición \r\n\r\n \r\n\r\nSaludos Cordiales.\r\n\r\n \r\n\r\n    Verónica Diaz\r\n\r\n   DEXALUM S.R.L\r\n\r\n   (011) 4-368-6901/7129.\r\n\r\n     <mailto:ventas@funktionargentina.com.ar>\r\nventas@funktionargentina.com.ar\r\n\r\n\r\n\r\n\r\n                 <https://www.facebook.com/funktion.dexalum.7>\r\nhttps://www.facebook.com/funktion.dexalum.7\r\n\r\n \r\n\r\n\r\n                11 6153-7790",
       "ts": "2026-08-28T17:23:00.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787943546174-flx4",
+      "conversation_id": "conv-1786903722827-z906",
+      "direction": "in",
+      "body": "Hola",
+      "ts": "2026-08-28T18:59:05.053Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -152545,7 +152553,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Njk2Nzc4NzI5MzQxNzozMjk3OTY0NzQ3NzA0MjEwOTE4ODc0MDI2Mzg3NjQ5MzMxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDgyMTQ4NjE2NjE4ODIwNzozMjk4MDA3ODg2MjU4NzA4MzUwNzc5NjY0MzkzMjAxMjU0NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ3MjEyNDQyOTQ1NjY4NzozMjk4MDUyOTE4NDg1MzY3NzY4MTg0MjI5MDY5MDA5NzE1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDI0NDg2MDY2NzQwODEyMzozMjk4MDY0NDQ5OTkyODc3NDIyMzkxMDIxNDgzMjIyNjMwNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDI0NDg2MDY2NzQwODEyMzozMjk4MDY0NDQ5OTkyODc3NDIyMzkxMDIxNDgzMjIyNjMwNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk4MTczNjk5Mzg0NzQ3MjYxNzE0NTI1OTcwMDI1Njc2OAZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
