@@ -128736,12 +128736,12 @@
       "linked_lead_id": "lead-email-1a0210a0f433",
       "status": "open",
       "unread_count": 1,
-      "last_message_at": "2026-08-28T16:31:50.000Z",
-      "last_message_preview": "Hola buenas tardes! Para entregarme el pedido me piden la guía puede ser?\r\nCreo que es el número de seguimiento\r\n\r\nEl El lun, 24 ago 2026 a ",
+      "last_message_at": "2026-08-28T19:55:34.000Z",
+      "last_message_preview": "Hola Camila! Cómo estás?\r\n\r\nTe comparto la guía para que puedas retirar. En teoría con tu DNI ya\r\npodrías!!\r\n\r\n999037948458\r\n\r\nCualquier dud",
       "email_subject": "Asesoramiento",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-28T16:31:50.000Z",
-      "last_outbound_at": "2026-08-24T13:47:09.000Z"
+      "last_outbound_at": "2026-08-28T19:55:34.000Z"
     },
     {
       "id": "conv-1787262450212-9v9a",
@@ -144082,6 +144082,14 @@
       "body": "✉️ Re: Asesoramiento\n\nHola buenas tardes! Para entregarme el pedido me piden la guía puede ser?\r\nCreo que es el número de seguimiento\r\n\r\nEl El lun, 24 ago 2026 a la(s) 3:36 p. m., Camila Lesiuk <\r\ncamilalesiuk1998@gmail.com> escribió:\r\n\r\n> Hola buenos días! Te dejo los datos a continuación…\r\n> Nombre: Lesiuk, Camila\r\n> DNI 41.113.644\r\n> Número: 3755533547\r\n> Mail: camilalesiuk1998@gmail.com\r\n>\r\n> El El lun, 24 ago 2026 a la(s) 10:47 a. m., info pisos <\r\n> info@pisospacific.com> escribió:\r\n>\r\n>> Hola Camila, buen día!\r\n>>\r\n>> Perfecto, realizamos el envío y te compartimos el número de seguimiento\r\n>> para que puedas seguirlo.\r\n>> Para realizar el envío usamos Via Cargo como encomienda, por lo que vamos\r\n>> a estar requiriendo los siguientes datos.\r\n>>\r\n>>    - Dirección de entrega: San Vicente Misiones, calle Tupac Amaru 1665.\r\n>>    Código postal 3364\r\n>>    <https://www.google.com/maps/search/San+Vicente+Misiones,+calle+Tupac+Amaru+1665.+C%C3%B3digo+postal+3364?entry=gmail&source=g>\r\n>>\r\n>>    - Nombre de quien recibe:\r\n>>    - DNI o CUIT:\r\n>>    - Número de teléfono:\r\n>>    - Mail:\r\n>>\r\n>>\r\n>> Saludos,\r\n>>\r\n>> Juan\r\n>>\r\n>> El vie, 21 ago 2026 a las 19:27, Camila Lesiuk (<\r\n>> camilalesiuk1998@gmail.com>) escribió:\r\n>>\r\n>>> Buenas noches! Muchísimas gracias 😊\r\n>>> La dirección es San Vicente Misiones, calle Tupac Amaru 1665. Código\r\n>>> postal 3364\r\n>>> <https://www.google.com/maps/search/San+Vicente+Misiones,+calle+Tupac+Amaru+1665.+C%C3%B3digo+postal+3364?entry=gmail&source=g>\r\n>>>\r\n>>> Si ten",
       "ts": "2026-08-28T16:31:50.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-emailout-1a049f120529",
+      "conversation_id": "conv-email-1a0210a0f433",
+      "direction": "out",
+      "body": "✉️ Re: Asesoramiento\n\nHola Camila! Cómo estás?\r\n\r\nTe comparto la guía para que puedas retirar. En teoría con tu DNI ya\r\npodrías!!\r\n\r\n999037948458\r\n\r\nCualquier duda me avisas!\r\n\r\nEl El vie, 28 ago 2026 a la(s) 4:28 p. m., Camila Lesiuk <\r\ncamilalesiuk1998@gmail.com> escribió:\r\n\r\n> Hola buenas tardes! Para entregarme el pedido me piden la guía puede ser?\r\n> Creo que es el número de seguimiento\r\n>\r\n> El El lun, 24 ago 2026 a la(s) 3:36 p. m., Camila Lesiuk <\r\n> camilalesiuk1998@gmail.com> escribió:\r\n>\r\n>> Hola buenos días! Te dejo los datos a continuación…\r\n>> Nombre: Lesiuk, Camila\r\n>> DNI 41.113.644\r\n>> Número: 3755533547\r\n>> Mail: camilalesiuk1998@gmail.com\r\n>>\r\n>> El El lun, 24 ago 2026 a la(s) 10:47 a. m., info pisos <\r\n>> info@pisospacific.com> escribió:\r\n>>\r\n>>> Hola Camila, buen día!\r\n>>>\r\n>>> Perfecto, realizamos el envío y te compartimos el número de seguimiento\r\n>>> para que puedas seguirlo.\r\n>>> Para realizar el envío usamos Via Cargo como encomienda, por lo que\r\n>>> vamos a estar requiriendo los siguientes datos.\r\n>>>\r\n>>>    - Dirección de entrega: San Vicente Misiones, calle Tupac Amaru\r\n>>>    1665. Código postal 3364\r\n>>>    <https://www.google.com/maps/search/San+Vicente+Misiones,+calle+Tupac+Amaru+1665.+C%C3%B3digo+postal+3364?entry=gmail&source=g>\r\n>>>\r\n>>>    - Nombre de quien recibe:\r\n>>>    - DNI o CUIT:\r\n>>>    - Número de teléfono:\r\n>>>    - Mail:\r\n>>>\r\n>>>\r\n>>> Saludos,\r\n>>>\r\n>>> Juan\r\n>>>\r\n>>> El vie, 21 ago 2026 a las 19:27, Camila Lesiuk (<\r\n>>> camilalesiuk1998@gmail.com",
+      "ts": "2026-08-28T19:55:34.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -151981,7 +151989,8 @@
       "1a03f422e15dd742",
       "1a0431c2f2a7f927",
       "1a048428b56b3daa",
-      "1a048428a886777d"
+      "1a048428a886777d",
+      "1a049f1205297d67"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
