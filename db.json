@@ -3269,6 +3269,21 @@
       "margin": 35,
       "createdAt": "2026-08-28T16:55:09.716Z",
       "updatedAt": "2026-08-28T16:55:09.716Z"
+    },
+    {
+      "id": "local-1787951463606-9ixis",
+      "name": "Adhesivo Especial Para Escaleras BONA",
+      "sku": "PROD-53",
+      "category": "Pisos H2O",
+      "price": 28,
+      "cost": 18,
+      "currency": "USD",
+      "stock": 0,
+      "reservedStock": 0,
+      "active": true,
+      "margin": 56,
+      "createdAt": "2026-08-28T21:11:03.436Z",
+      "updatedAt": "2026-08-28T21:11:03.436Z"
     }
   ],
   "sales": [
