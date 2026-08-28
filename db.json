@@ -151172,7 +151172,8 @@
       "1a03f3e6515afd20",
       "1a03f3cb3840e4cb",
       "1a03f422e15dd742",
-      "1a0431c2f2a7f927"
+      "1a0431c2f2a7f927",
+      "1a048428b56b3daa"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -151802,14 +151803,14 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ3MjEyNDQyOTQ1NjY4NzozMjk4MDUyOTE4NDg1MzY3NzY4MTg0MjI5MDY5MDA5NzE1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDI0NDg2MDY2NzQwODEyMzozMjk4MDY0NDQ5OTkyODc3NDIyMzkxMDIxNDgzMjIyNjMwNAZDZD"
     ],
-    "last_weekly_reminder": "2026-08-21T12:05:15.170Z",
+    "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
       {
         "id": "main",
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-08-27",
+    "last_daily_task_reminder": "2026-08-28",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -152153,7 +152154,7 @@
         "learned_at": "2026-07-28T15:39:11.018Z"
       }
     },
-    "last_daily_pending_digest": "2026-08-27",
+    "last_daily_pending_digest": "2026-08-28",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
