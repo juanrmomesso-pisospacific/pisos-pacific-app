@@ -123901,6 +123901,22 @@
       "address": "Obra Libertador ",
       "created_at": "2026-08-28T16:37:54.981Z",
       "last_touch_at": "2026-08-28T16:38:01.729Z"
+    },
+    {
+      "id": "local-1787937002319-ujwwu",
+      "name": "Virgina Pagani",
+      "phone": "",
+      "email": "",
+      "source": "Instagram",
+      "interested_products": [
+        "Verona | Roble Europeo"
+      ],
+      "notes": "",
+      "status": "New",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Rosario",
+      "created_at": "2026-08-28T17:10:02.181Z",
+      "last_touch_at": "2026-08-28T17:10:02.181Z"
     }
   ],
   "conversations": [
