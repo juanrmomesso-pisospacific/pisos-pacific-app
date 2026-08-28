@@ -123324,7 +123324,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-08-20T21:18:10.000Z",
-      "last_touch_at": "2026-08-24T18:36:11.000Z"
+      "last_touch_at": "2026-08-28T16:31:50.000Z"
     },
     {
       "id": "lead-instagram-1787262450212",
@@ -128735,12 +128735,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0210a0f433",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-24T18:36:11.000Z",
-      "last_message_preview": "Hola buenos días! Te dejo los datos a continuación…\r\nNombre: Lesiuk, Camila\r\nDNI 41.113.644\r\nNúmero: 3755533547\r\nMail: camilalesiuk1998@gmai",
+      "unread_count": 1,
+      "last_message_at": "2026-08-28T16:31:50.000Z",
+      "last_message_preview": "Hola buenas tardes! Para entregarme el pedido me piden la guía puede ser?\r\nCreo que es el número de seguimiento\r\n\r\nEl El lun, 24 ago 2026 a ",
       "email_subject": "Asesoramiento",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-24T18:36:11.000Z",
+      "last_inbound_at": "2026-08-28T16:31:50.000Z",
       "last_outbound_at": "2026-08-24T13:47:09.000Z"
     },
     {
@@ -144074,6 +144074,14 @@
       "status": "received",
       "media_url": "/uploads/bf1fdc49ad210b9b.bin",
       "media_type": "file"
+    },
+    {
+      "id": "m-email-1a049d82f303",
+      "conversation_id": "conv-email-1a0210a0f433",
+      "direction": "in",
+      "body": "✉️ Re: Asesoramiento\n\nHola buenas tardes! Para entregarme el pedido me piden la guía puede ser?\r\nCreo que es el número de seguimiento\r\n\r\nEl El lun, 24 ago 2026 a la(s) 3:36 p. m., Camila Lesiuk <\r\ncamilalesiuk1998@gmail.com> escribió:\r\n\r\n> Hola buenos días! Te dejo los datos a continuación…\r\n> Nombre: Lesiuk, Camila\r\n> DNI 41.113.644\r\n> Número: 3755533547\r\n> Mail: camilalesiuk1998@gmail.com\r\n>\r\n> El El lun, 24 ago 2026 a la(s) 10:47 a. m., info pisos <\r\n> info@pisospacific.com> escribió:\r\n>\r\n>> Hola Camila, buen día!\r\n>>\r\n>> Perfecto, realizamos el envío y te compartimos el número de seguimiento\r\n>> para que puedas seguirlo.\r\n>> Para realizar el envío usamos Via Cargo como encomienda, por lo que vamos\r\n>> a estar requiriendo los siguientes datos.\r\n>>\r\n>>    - Dirección de entrega: San Vicente Misiones, calle Tupac Amaru 1665.\r\n>>    Código postal 3364\r\n>>    <https://www.google.com/maps/search/San+Vicente+Misiones,+calle+Tupac+Amaru+1665.+C%C3%B3digo+postal+3364?entry=gmail&source=g>\r\n>>\r\n>>    - Nombre de quien recibe:\r\n>>    - DNI o CUIT:\r\n>>    - Número de teléfono:\r\n>>    - Mail:\r\n>>\r\n>>\r\n>> Saludos,\r\n>>\r\n>> Juan\r\n>>\r\n>> El vie, 21 ago 2026 a las 19:27, Camila Lesiuk (<\r\n>> camilalesiuk1998@gmail.com>) escribió:\r\n>>\r\n>>> Buenas noches! Muchísimas gracias 😊\r\n>>> La dirección es San Vicente Misiones, calle Tupac Amaru 1665. Código\r\n>>> postal 3364\r\n>>> <https://www.google.com/maps/search/San+Vicente+Misiones,+calle+Tupac+Amaru+1665.+C%C3%B3digo+postal+3364?entry=gmail&source=g>\r\n>>>\r\n>>> Si ten",
+      "ts": "2026-08-28T16:31:50.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -150797,7 +150805,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-28T13:04:46.967Z",
     "gmail_seen_ids": [
-      "19ee54605a7318c8",
       "19ee6dba01e59f1f",
       "19ee6d52f183f9e3",
       "19ee75d9a6941a9c",
@@ -151596,7 +151603,8 @@
       "1a048428a886777d",
       "1a0488f5ed9e4c0c",
       "1a048a60d576eec5",
-      "1a04965bc429d142"
+      "1a04965bc429d142",
+      "1a049d82f3032eb5"
     ],
     "cash_sessions": {
       "1136982222": {
