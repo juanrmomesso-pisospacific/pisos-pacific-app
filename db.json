@@ -118304,7 +118304,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-06-12T13:08:46.000Z",
-      "last_touch_at": "2026-08-19T14:54:20.000Z"
+      "last_touch_at": "2026-08-28T13:53:15.000Z"
     },
     {
       "id": "lead-email-19ebe5200018",
@@ -124478,13 +124478,13 @@
       "contact_name": "Customer Comex+ Cargo",
       "linked_client_name": null,
       "status": "closed",
-      "unread_count": 18,
-      "last_message_at": "2026-08-19T14:54:20.000Z",
-      "last_message_preview": "Buenos días Vicky, Cami\r\nConfirmamos el on board de la carga de referencia:\r\n\r\n*ETD DALIAN: 19/AUG*\r\n*VSL: KOTA LUKIS *\r\n*ETA BUENOS AIRES: ",
+      "unread_count": 19,
+      "last_message_at": "2026-08-28T13:53:15.000Z",
+      "last_message_preview": "Hola Vicky,\r\nBuenos días!\r\n\r\nInformamos que el arribo de la carga a Buenos Aires se actualizó al 15/SEP\r\na bordo del buque MSC RAYSHMI:\r\n\r\n[",
       "email_subject": "Re: Comex+Cargo // Juan Momesso // COTIZACION FLETE 40 pies | Shanghai - Buenos Aires | LAM-PA2601 -- PCCF1488 -- CCF1203 ** CCF-MI-00000043",
       "linked_lead_id": "lead-email-19ebbf39b073",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-19T14:54:20.000Z",
+      "last_inbound_at": "2026-08-28T13:53:15.000Z",
       "ignored": true
     },
     {
@@ -143721,6 +143721,14 @@
       "body": "✉️ Quintana - Pedido cotizacion\n\nHola buen dia!\r\nNecesito cotizar 65m2 de piso + desperdicio para una reforma en Recoleta. \r\n\r\nEstoy interesada en:\r\n\r\nDe la colección Pacific H20\r\n- Roble Slavonia XL\r\n\r\nDe la colección madera\r\n- Roble americano\r\n- Roble europeo\r\n\r\nTambien necesitaría considerar 60ml de Zocalo aproximadamente. \r\n\r\nEspero la respuesta, muchas gracias!\r\n\r\nArq. Catalina Casserly\r\n11 6148 9127",
       "ts": "2026-08-28T13:29:06.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a048a60d576",
+      "conversation_id": "conv-email-19ebbf39b073",
+      "direction": "in",
+      "body": "✉️ Re: Comex+Cargo // FOB Shanghai - Buenos Aires | PDPG 2619 | Juan Rodriguez Momesso // CCF-MI-00000082\n\nHola Vicky,\r\nBuenos días!\r\n\r\nInformamos que el arribo de la carga a Buenos Aires se actualizó al 15/SEP\r\na bordo del buque MSC RAYSHMI:\r\n\r\n[image: image.png]\r\n\r\nPor otro lado, nos informan que el shipper aún no canceló los gastos\r\nlocales para poder confirmar la emisión del b/l en destino.\r\nLes dejaremos saber cuando se encuentre liberado.\r\n\r\nSaludos,\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\nCarolina Lodovico\r\n*Customer Comex+ Cargo*\r\nCel WhatsApp: (+54)115-761-1787\r\n\r\n*Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nAv. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\n\r\nEl vie, 31 jul 2026 a la(s) 11:28 a.m., Customer Comex+ Cargo (\r\nCustomerCargo@grupocomexmas.com) escribió:\r\n\r\n> Buenas tardes Vicky,\r\n> Confirmamos el zarpe de esta carga:\r\n>\r\n> *ETD Shanghai: 30/07*\r\n>\r\n> *ETA Buenos Aires: 06/09*\r\n>\r\n> *Buque: MSC RAYSHMI*\r\n>\r\n> [image: image.png]\r\n>\r\n>\r\n>\r\n> Saludos,\r\n>\r\n>\r\n> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n> Cordiali Saluti*\r\n> Carolina Lodovico\r\n> *Customer Comex+ Cargo*\r\n> Cel WhatsApp: (+54)115-761-1787\r\n>\r\n> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n> Tel.: (+54)114331-2207/1893\r\n> Av. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\n> Argentina\r\n>\r\n>\r\n> El mié, 29 jul 2026 a la(s) 8:51 a.m., Customer Comex+ Cargo (\r\n> CustomerCargo@grupocomexmas.com) escribió:\r\n>\r\n>> Hola Vicky,\r\n",
+      "ts": "2026-08-28T13:53:15.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -150444,7 +150452,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-28T13:04:46.967Z",
     "gmail_seen_ids": [
-      "19ee2140a24af1f6",
       "19ee4fb5cb92580f",
       "19ee54605a7318c8",
       "19ee6dba01e59f1f",
@@ -151243,7 +151250,8 @@
       "1a04818cab6e2f34",
       "1a048428b56b3daa",
       "1a048428a886777d",
-      "1a0488f5ed9e4c0c"
+      "1a0488f5ed9e4c0c",
+      "1a048a60d576eec5"
     ],
     "cash_sessions": {
       "1136982222": {
