@@ -1980,12 +1980,26 @@ async function mpAutoSync() {
   try {
     const last = db.settings.mp_last_sync ? Date.parse(db.settings.mp_last_sync) : 0;
     if (Date.now() - last < 20 * 3600e3) return;
-    // Retomar un reporte pendiente de una corrida anterior (MP tarda 10-20 min en generarlos)
+    // Retomar un reporte pendiente de una corrida anterior (MP tarda 10-20 min en generarlos).
+    // OJO: si MP falla al generar el reporte, su id NUNCA aparece en la lista → getMpReport
+    // devuelve {ready:false} para siempre y el job "envenenado" trababa el sync indefinidamente.
+    // Guard: si el pendiente lleva > MP_PENDING_MAX_MS sin resolverse, lo descarto y arranco fresco.
+    const MP_PENDING_MAX_MS = 45 * 60e3;
     let jobId = db.settings.mp_pending_job;
+    // Un pending sin timestamp (código viejo) → lo adopto ahora para que también pueda envejecer.
+    if (jobId && !db.settings.mp_pending_at) { db.settings.mp_pending_at = new Date().toISOString(); save(); }
+    const pendingAt = db.settings.mp_pending_at ? Date.parse(db.settings.mp_pending_at) : 0;
+    if (jobId && pendingAt && Date.now() - pendingAt > MP_PENDING_MAX_MS) {
+      console.warn('[mp-auto] descarto reporte pendiente envenenado', jobId, '(demasiado viejo, MP nunca lo generó)');
+      jobId = null;
+      db.settings.mp_pending_job = null;
+      db.settings.mp_pending_at = null;
+    }
     if (!jobId) {
       console.log('[mp-auto] iniciando sync…');
       ({ jobId } = await startMpReport({ days: 30 }));
       db.settings.mp_pending_job = jobId;
+      db.settings.mp_pending_at = new Date().toISOString();
       save();
     } else {
       console.log('[mp-auto] retomando reporte pendiente', jobId);
@@ -1999,6 +2013,7 @@ async function mpAutoSync() {
     }
     if (!result?.ready) { console.warn('[mp-auto] el reporte sigue generándose; lo retomo en la próxima corrida'); return; }
     db.settings.mp_pending_job = null;
+    db.settings.mp_pending_at = null;
     const nuevos = result.movements.filter((m) => !m._dupe);
     let seq = 0;
     for (const m of nuevos) {
