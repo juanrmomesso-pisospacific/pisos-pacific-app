@@ -30613,6 +30613,73 @@
       "quote_number": "A7376",
       "status": "DRAFT",
       "lead_id": "local-1787935075167-637sh"
+    },
+    {
+      "id": "local-1787937381740-9az85",
+      "client_id": "",
+      "client_name": "Virgina Pagani",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Rosario",
+      "internal_notes": "",
+      "public_notes": "Medidas verificadas con el cliente. El envio esta cotizado con Andesmar. Servicio puerta a puerta. No incluye descargar en obra. El presupuesto incluye la manta para colocacion.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Virgina Pagani",
+      "has_iva": true,
+      "price": 13611.9555,
+      "zoned": false,
+      "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-011",
+          "sku": "PROD-011",
+          "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada",
+          "quantity": 157.38,
+          "unit_price": 75,
+          "cost": 29,
+          "category": "Pisos de Madera",
+          "disc_value": 10,
+          "total": 11803.5,
+          "discount": 1180.35,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "ZOC-MDF-09",
+          "sku": "ZOC-MDF-09",
+          "description": "Zócalo MDF 9cm",
+          "quantity": 102,
+          "unit_price": 3.2,
+          "cost": 1.49,
+          "category": "Zócalos",
+          "total": 326.40000000000003,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 300,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 300,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 1180.35,
+      "discount_amount": 1180.35,
+      "created_at": "2026-08-28T17:16:21.524Z",
+      "quote_number": "A4727",
+      "status": "DRAFT",
+      "lead_id": "local-1787937002319-ujwwu"
     }
   ],
   "clients": [
