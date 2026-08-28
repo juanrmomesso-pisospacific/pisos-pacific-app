@@ -123893,14 +123893,16 @@
       "id": "lead-email-1a0445fdecad",
       "name": "Mariana Arból",
       "email": "mariana211619@gmail.com",
-      "phone": "",
+      "phone": "+54 9 11 5420-6701",
       "source": "Email",
-      "address": "",
+      "address": "Recoleta",
       "postal_code": "",
       "approx_m2": null,
       "needs_placement": null,
-      "interested_products": [],
-      "notes": "Email: (sin asunto) — Hola \r\nLes escribo por un presupuesto para un piso vinilico o flotante para un departamento de aprox 60 metros solo cuartos y living. Me oasas tu contacto \r\nSaludos \r\nMariana\r\nEnvi",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "Email: (sin asunto) — Hola \r\nLes escribo por un presupuesto para un piso vinilico o flotante para un departamento de aprox 60 metros solo cuartos y living. Me oasas tu contacto \r\nSaludos \r\nMariana\r\nEnvi · Tiene un ceramico existente. Se debera ver niveles en obra con regla. Verificar medidas",
       "status": "New",
       "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-08-27T17:58:35.000Z",
@@ -123984,22 +123986,6 @@
       "address": "Rosario",
       "created_at": "2026-08-28T17:10:02.181Z",
       "last_touch_at": "2026-08-28T17:10:33.479Z"
-    },
-    {
-      "id": "local-1787937700487-jklsy",
-      "name": "Mariana Arbol",
-      "phone": "+54 9 11 5420-6701",
-      "email": "",
-      "source": "WhatsApp",
-      "interested_products": [
-        "H2O"
-      ],
-      "notes": "Tiene un ceramico existente. Se debera ver niveles en obra con regla. Verificar medidas",
-      "status": "New",
-      "assigned_seller": "Victoria Gonzalez Collado",
-      "address": "Recoleta",
-      "created_at": "2026-08-28T17:21:40.238Z",
-      "last_touch_at": "2026-08-28T17:21:40.238Z"
     }
   ],
   "conversations": [
