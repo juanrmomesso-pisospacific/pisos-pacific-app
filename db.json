@@ -124642,6 +124642,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-28T19:10:17.199Z",
       "last_touch_at": "2026-08-28T19:10:17.199Z"
+    },
+    {
+      "id": "lead-email-1a04b56ebaeb",
+      "name": "martina medina",
+      "email": "martu2002medina@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "juncal 1062",
+      "postal_code": "1640",
+      "approx_m2": 74,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 74m² · Sin Colocación · CP 1640",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-29T02:26:22.000Z",
+      "last_touch_at": "2026-08-29T02:26:22.000Z"
     }
   ],
   "conversations": [
@@ -129902,6 +129919,21 @@
       "last_message_preview": "📷 Foto",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-28T19:10:17.199Z"
+    },
+    {
+      "id": "conv-email-1a04b56ebaeb",
+      "channel": "email",
+      "contact_id": "martu2002medina@gmail.com",
+      "contact_name": "martina medina",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a04b56ebaeb",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-29T02:26:22.000Z",
+      "last_message_preview": "Formulario web — 74m² · Sin Colocación · CP 1640 · juncal 1062",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-29T02:26:22.000Z"
     }
   ],
   "messages": [
@@ -144686,6 +144718,14 @@
       "body": "✉️ Re: Quintana - Pedido cotizacion\n\nHola Catalina, ¡Muchas gracias por tu consulta!\r\n\r\nAdjunto te comparto 4 presupuestos distintos incluyendo el descuento\r\nprofesional.\r\nLínea H2O - Eslavonia XL : *US$ 4.375,90 + IVA*\r\nColección Madera - Roble Veta Tallada (14/3) - Tablas de 19X190: *US$\r\n8.208,30 + IVA*\r\nColección Madera - Roble Kitsilano (12/1) - Tablas de 19X190: *US$\r\n7.114,35 + IVA*\r\nColección Madera - Roble Americano (10/1) - Tablas de 12X120: *US$\r\n6.041,85 + IVA*\r\n\r\nEn la semana podemos acercarte muestras si te interesan!\r\n\r\nDesde ya muchas gracias.\r\nSaludos,\r\n\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl vie, 28 ago 2026 a las 10:29, Catalina Casserly (<\r\narq.catacasserly@gmail.com>) escribió:\r\n\r\n> Hola buen dia!\r\n> Necesito cotizar 65m2 de piso + desperdicio para una reforma en Recoleta.\r\n>\r\n> Estoy interesada en:\r\n>\r\n> De la colección Pacific H20\r\n> - Roble Slavonia XL\r\n>\r\n> De la colección madera\r\n> - Roble americano\r\n> - Roble europeo\r\n>\r\n> Tambien necesitaría considerar 60ml de Zocalo aproximadamente.\r\n>\r\n> Espero la respuesta, muchas gracias!\r\n>\r\n> Arq. Catalina Casserly\r\n> 11 6148 9127",
       "ts": "2026-08-28T21:53:35.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-email-1a04b56ebaeb",
+      "conversation_id": "conv-email-1a04b56ebaeb",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 74m² · Sin Colocación · CP 1640 · juncal 1062",
+      "ts": "2026-08-29T02:26:22.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -151409,7 +151449,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-28T13:04:46.967Z",
     "gmail_seen_ids": [
-      "19ee6dba01e59f1f",
       "19ee6d52f183f9e3",
       "19ee75d9a6941a9c",
       "19eec9870a5c2fbe",
@@ -152208,7 +152247,8 @@
       "1a0488f5ed9e4c0c",
       "1a048a60d576eec5",
       "1a04965bc429d142",
-      "1a049d82f3032eb5"
+      "1a049d82f3032eb5",
+      "1a04b56ebaeb9046"
     ],
     "cash_sessions": {
       "1136982222": {
