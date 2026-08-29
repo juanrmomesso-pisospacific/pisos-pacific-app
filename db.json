@@ -118861,12 +118861,12 @@
       "flow": "Egreso",
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Otros Gastos y Ajustes",
-      "subcategory": "Ajuste",
-      "counterparty": "MOV ENTRE CUENTAS",
+      "category": "Bienes de Capital",
+      "subcategory": "Compra Flota",
+      "counterparty": "VolksWagen",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-015",
       "description": "DÉBITO POR DEBIN",
       "sale_ref": null,
       "currency": "ARS",
@@ -118874,10 +118874,10 @@
       "amount_usd": 2959.43,
       "exchange_rate": 1545,
       "fixed_variable": "Variable",
-      "expense_type": "Otros Gastos y Ajustes",
-      "transfer": true,
-      "needs_review": true,
-      "review_reason": "extracto bancario importado — verificar clasificación y signo",
+      "expense_type": "Depreciación y Amortización",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null,
       "raw_name": "DÉBITO POR DEBIN",
       "classified_by": "descripción de movimiento entre cuentas",
       "id": "MOV-IMP-mtebzxsa-025"
@@ -153544,7 +153544,9 @@
       "1a048428b56b3daa",
       "1a048428a886777d",
       "1a049f1205297d67",
-      "1a04a5d2cb2e6837"
+      "1a04a5d2cb2e6837",
+      "1a04d69e79a56f34",
+      "1a04d5eb0c1601c6"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -154185,7 +154187,7 @@
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-08-28",
+    "last_daily_task_reminder": "2026-08-29",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -154569,7 +154571,7 @@
         "learned_at": "2026-07-28T15:39:11.018Z"
       }
     },
-    "last_daily_pending_digest": "2026-08-28",
+    "last_daily_pending_digest": "2026-08-29",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
@@ -156651,6 +156653,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"BLOISEQR\""
+    },
+    {
+      "id": "local-1788005180693-96u6p",
+      "match": [
+        "DÉBITO POR DEBIN"
+      ],
+      "cuit": null,
+      "counterparty": "VolksWagen",
+      "category": "Bienes de Capital",
+      "subcategory": "Compra Flota",
+      "expense_type": "Depreciación y Amortización",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"DÉBITO POR DEBIN\""
     }
   ],
   "product_aliases": [
