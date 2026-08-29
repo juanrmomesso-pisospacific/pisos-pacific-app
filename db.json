@@ -124675,6 +124675,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-29T04:42:11.353Z",
       "last_touch_at": "2026-08-29T04:42:11.353Z"
+    },
+    {
+      "id": "lead-email-1a04d3963422",
+      "name": "Bárbara",
+      "email": "b.armen@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Juan Bautista Alberdi 128 Caba",
+      "postal_code": "1424",
+      "approx_m2": 30,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 30m² · Con Colocación · CP 1424",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-29T11:13:20.000Z",
+      "last_touch_at": "2026-08-29T11:13:20.000Z"
     }
   ],
   "conversations": [
@@ -129964,6 +129981,21 @@
       "last_message_preview": "Hola. Por favor, dejen de interrumpir los videos que miro en YouTube. Ya le dije exactamente lo mismo a un montón de compañías y empresas qu",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-29T04:42:11.353Z"
+    },
+    {
+      "id": "conv-email-1a04d3963422",
+      "channel": "email",
+      "contact_id": "b.armen@hotmail.com",
+      "contact_name": "Bárbara",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a04d3963422",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-29T11:13:20.000Z",
+      "last_message_preview": "Formulario web — 30m² · Con Colocación · CP 1424 · Juan Bautista Alberdi 128 Caba",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-29T11:13:20.000Z"
     }
   ],
   "messages": [
@@ -144772,6 +144804,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: a284023ea7914f4f91f33c64fcba0f16\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-27 00:00:00 UTC to 2026-08-28 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-08-29T08:24:21.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a04d3963422",
+      "conversation_id": "conv-email-1a04d3963422",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 30m² · Con Colocación · CP 1424 · Juan Bautista Alberdi 128 Caba",
+      "ts": "2026-08-29T11:13:20.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -151495,7 +151535,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-28T13:04:46.967Z",
     "gmail_seen_ids": [
-      "19eecd9a990b02aa",
       "19eee1f814f02675",
       "19eeeaf2dfe6dce4",
       "19eef374d23d47f3",
@@ -152294,7 +152333,8 @@
       "1a04b56ebaeb9046",
       "1a04c9eb0087ed11",
       "1a04cc167fe31ee2",
-      "1a04d087f6a3d174"
+      "1a04d087f6a3d174",
+      "1a04d3963422b994"
     ],
     "cash_sessions": {
       "1136982222": {
