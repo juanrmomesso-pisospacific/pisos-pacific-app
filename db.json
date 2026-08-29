@@ -124655,10 +124655,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 74m² · Sin Colocación · CP 1640",
-      "status": "New",
-      "assigned_seller": "",
+      "status": "Contacted",
+      "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-08-29T02:26:22.000Z",
-      "last_touch_at": "2026-08-29T02:26:22.000Z"
+      "last_touch_at": "2026-08-29T11:54:11.574Z"
     },
     {
       "id": "lead-instagram-1787978533315",
@@ -129886,13 +129886,14 @@
       "contact_name": "Mariana Arból",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0445fdecad",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-27T17:58:35.000Z",
       "last_message_preview": "Hola \r\nLes escribo por un presupuesto para un piso vinilico o flotante para un departamento de aprox 60 metros solo cuartos y living. Me oas",
       "email_subject": "(sin asunto)",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-27T17:58:35.000Z"
+      "last_inbound_at": "2026-08-27T17:58:35.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1787878071384-8ya6",
@@ -129962,11 +129963,12 @@
       "linked_lead_id": "lead-email-1a04b56ebaeb",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-29T02:26:22.000Z",
-      "last_message_preview": "Formulario web — 74m² · Sin Colocación · CP 1640 · juncal 1062",
+      "last_message_at": "2026-08-29T11:54:06.642Z",
+      "last_message_preview": "Hola martina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-29T02:26:22.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-29T02:26:22.000Z",
+      "last_outbound_at": "2026-08-29T11:54:06.642Z"
     },
     {
       "id": "conv-1787978533314-xewb",
@@ -144812,6 +144814,15 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 30m² · Con Colocación · CP 1424 · Juan Bautista Alberdi 128 Caba",
       "ts": "2026-08-29T11:13:20.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788004446642-socr",
+      "conversation_id": "conv-email-1a04b56ebaeb",
+      "direction": "out",
+      "body": "Hola martina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nPor otro lado, podemos cotizar también la colocación en caso sea necesario. \n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-08-29T11:54:06.642Z",
+      "status": "sent",
+      "wa_id": "1a04d5eb0c1601c6"
     }
   ],
   "templates": [
