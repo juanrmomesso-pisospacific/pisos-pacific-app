@@ -119181,6 +119181,31 @@
       "raw_name": "Remuneración de Saldo.",
       "classified_by": "interés bancario → fuera del P&L",
       "id": "MOV-IMP-mtebzxsa-029"
+    },
+    {
+      "date": "2026-08-28T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-002",
+      "caja_name": "Mercado Pago",
+      "category": "Flota",
+      "subcategory": "Peajes",
+      "counterparty": "Peajes (AUSOL/AUSA/AUBASA)",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": null,
+      "description": "Peajes MP (agrupados del día, API)",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 9011.96,
+      "amount_usd": 5.83,
+      "exchange_rate": 1545,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Flota/Vehículos",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null,
+      "source": "mp-api",
+      "id": "MOV-MPAUTO-mteebo4s-001"
     }
   ],
   "containers": [
@@ -152884,8 +152909,8 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": 102976111,
-    "mp_last_sync": "2026-08-28T13:04:46.967Z",
+    "mp_pending_job": null,
+    "mp_last_sync": "2026-08-29T13:08:03.436Z",
     "gmail_seen_ids": [
       "19eeeaf2dfe6dce4",
       "19eef374d23d47f3",
@@ -155124,7 +155149,7 @@
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
-    "mp_pending_at": "2026-08-29T13:06:21.720Z"
+    "mp_pending_at": null
   },
   "payment_links": [],
   "tasks": [
