@@ -130200,12 +130200,12 @@
       "linked_lead_id": "lead-email-1a0167297cd0",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-18T22:00:19.706Z",
-      "last_message_preview": "📄 Presupuesto NA4300 - Cotizacion Paz - H2O - Obra Pilar - Paz Caride.pdf",
+      "last_message_at": "2026-08-29T12:22:27.895Z",
+      "last_message_preview": "Hola Paz, espero que te encuentres bien!\n\nQuería saber si habías podido ver el presupuesto que te enviamos. \n\nPor favor ante cualquier duda ",
       "email_subject": "Presupuesto Natural Oak de h2O",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-18T19:56:26.000Z",
-      "last_outbound_at": "2026-08-18T22:00:19.706Z"
+      "last_outbound_at": "2026-08-29T12:22:27.895Z"
     },
     {
       "id": "conv-email-1a016b209b52",
@@ -145845,6 +145845,15 @@
       "ts": "2026-08-29T12:18:07.912Z",
       "status": "sent",
       "wa_id": "1a04d74ae1180844"
+    },
+    {
+      "id": "m-1788006147895-327o",
+      "conversation_id": "conv-email-1a0167297cd0",
+      "direction": "out",
+      "body": "Hola Paz, espero que te encuentres bien!\n\nQuería saber si habías podido ver el presupuesto que te enviamos. \n\nPor favor ante cualquier duda consultanos. \n\nMuchas gracias!\nSaludos,",
+      "ts": "2026-08-29T12:22:27.895Z",
+      "status": "sent",
+      "wa_id": "1a04d78a768216e8"
     }
   ],
   "templates": [
