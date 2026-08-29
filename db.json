@@ -152884,7 +152884,7 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": null,
+    "mp_pending_job": 102976111,
     "mp_last_sync": "2026-08-28T13:04:46.967Z",
     "gmail_seen_ids": [
       "19eeeaf2dfe6dce4",
@@ -154068,7 +154068,8 @@
       "1a04a5d2cb2e6837",
       "1a04d69e79a56f34",
       "1a04d5eb0c1601c6",
-      "1a04d74ae1180844"
+      "1a04d74ae1180844",
+      "1a04d78a768216e8"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -155122,7 +155123,8 @@
     },
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
-    }
+    },
+    "mp_pending_at": "2026-08-29T13:06:21.720Z"
   },
   "payment_links": [],
   "tasks": [
