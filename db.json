@@ -124659,6 +124659,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-29T02:26:22.000Z",
       "last_touch_at": "2026-08-29T02:26:22.000Z"
+    },
+    {
+      "id": "lead-instagram-1787978533315",
+      "name": "@psfanatico2025",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-29T04:42:11.353Z",
+      "last_touch_at": "2026-08-29T04:42:11.353Z"
     }
   ],
   "conversations": [
@@ -129934,6 +129950,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-29T02:26:22.000Z"
+    },
+    {
+      "id": "conv-1787978533314-xewb",
+      "channel": "instagram",
+      "contact_id": "3673354216152200",
+      "contact_name": "@psfanatico2025",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1787978533315",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-29T04:42:11.353Z",
+      "last_message_preview": "Hola. Por favor, dejen de interrumpir los videos que miro en YouTube. Ya le dije exactamente lo mismo a un montón de compañías y empresas qu",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-29T04:42:11.353Z"
     }
   ],
   "messages": [
@@ -144726,6 +144756,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 74m² · Sin Colocación · CP 1640 · juncal 1062",
       "ts": "2026-08-29T02:26:22.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1787978533315-zfyw",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "in",
+      "body": "Hola. Por favor, dejen de interrumpir los videos que miro en YouTube. Ya le dije exactamente lo mismo a un montón de compañías y empresas que hacen esto. ¿Para qué publicitan por YouTube?. Las compañías y empresas deberían dejar de publicitar por YouTube para que los usuarios de YouTube como yo que ven videotutoriales de programación no renieguen con las malditas interrupciones de los videos debido a los anuncios.\n\nNo interrumpan los videos de YouTube con anuncios. Estoy viendo videotutoriales de programación y me hacen perder la concentración que necesito para aprender debido a las interrupciones en el medio u otras partes de los videos. ¡No anuncien por YouTube, háganlo por otros medios!. Por favor, respóndanme a través de este medio y déjense de publicitar por YouTube. Ya me tienen podrido\n\n¡Gracias y saludos! - Nicolás Matías Funtalas.",
+      "ts": "2026-08-29T04:42:11.353Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -153258,7 +153296,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDI0NDg2MDY2NzQwODEyMzozMjk4MDY0NDQ5OTkyODc3NDIyMzkxMDIxNDgzMjIyNjMwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk4MTczNjk5Mzg0NzQ3MjYxNzE0NTI1OTcwMDI1Njc2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk4MTczNzM1NDMyNDMzNzQ2NjA5OTcyNTUwODgwNDYwOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTgyNjk2OTQxMzI4NzU4MTozMjk4MTc0OTM5Mjc1NjcxNzcyODE4OTUzNTE2MDg5MzQ0MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTgyNjk2OTQxMzI4NzU4MTozMjk4MTc0OTM5Mjc1NjcxNzcyODE4OTUzNTE2MDg5MzQ0MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk4MjM4MjM3NzE2ODIzODI0MjMzNzI4NjkyNTU4MjMzNgZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
