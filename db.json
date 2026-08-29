@@ -117890,12 +117890,12 @@
       "flow": "Egreso",
       "caja_id": "CAJ-002",
       "caja_name": "Mercado Pago",
-      "category": "Sin clasificar",
-      "subcategory": null,
-      "counterparty": "SAAUSA",
+      "category": "Flota",
+      "subcategory": "Gastos TelePase",
+      "counterparty": "Telepase",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-018",
       "description": "MP API · SETTLEMENT · available_money · op 174668452669",
       "sale_ref": null,
       "currency": "ARS",
@@ -117903,10 +117903,10 @@
       "amount_usd": 4.23,
       "exchange_rate": 1545,
       "fixed_variable": "Variable",
-      "expense_type": "Otros Gastos y Ajustes",
+      "expense_type": "Gastos de Flota/Vehículos",
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "nombre estimado del perfil de MP — confirmar y clasificar",
+      "needs_review": false,
+      "review_reason": null,
       "source": "mp-api",
       "mp_op_id": "174668452669",
       "mp_user_id": "632303549",
@@ -153577,6 +153577,16 @@
         "expense_type": "Gastos de Flota/Vehículos",
         "learned_at": "2026-07-12T14:02:09.972Z"
       },
+      "632303549": {
+        "counterparty": "Telepase",
+        "counterparty_type": "supplier",
+        "supplier_id": "PROV-018",
+        "client_id": null,
+        "category": "Flota",
+        "subcategory": "Gastos TelePase",
+        "expense_type": "Gastos de Flota/Vehículos",
+        "learned_at": "2026-08-29T11:56:21.261Z"
+      },
       "639766091": {
         "counterparty": "Pipi & Juan",
         "counterparty_type": "supplier",
@@ -155782,6 +155792,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"TRANSF DEBITO Nro:578468\""
+    },
+    {
+      "id": "local-1788004581460-sg24b",
+      "match": [
+        "SAAUSA"
+      ],
+      "cuit": null,
+      "counterparty": "Telepase",
+      "category": "Flota",
+      "subcategory": "Gastos TelePase",
+      "expense_type": "Gastos de Flota/Vehículos",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"SAAUSA\""
     }
   ],
   "product_aliases": [
