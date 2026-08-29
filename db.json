@@ -118178,6 +118178,33 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mtcyrlvb-015"
+    },
+    {
+      "source": "bbva-upload",
+      "date": "2026-08-25T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-001",
+      "caja_name": "BBVA",
+      "category": "Impuestos",
+      "subcategory": null,
+      "counterparty": "ARCA",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": null,
+      "description": "REG REC SIRCREB 24/08/26 00001Q Nro:00000136",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 456.66,
+      "amount_usd": 0.3,
+      "exchange_rate": 1545,
+      "fixed_variable": "Fijo",
+      "expense_type": "Impuestos y Tasas",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null,
+      "raw_name": "REG REC SIRCREB 24/08/26 00001Q Nro:00000136",
+      "classified_by": "regla \"impuestos / banco\" → ARCA (aprendida)",
+      "id": "MOV-IMP-mtebwrup-001"
     }
   ],
   "containers": [
