@@ -125729,6 +125729,23 @@
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-08-29T11:13:20.000Z",
       "last_touch_at": "2026-08-29T14:03:24.000Z"
+    },
+    {
+      "id": "lead-email-1a04fdacc039",
+      "name": "Gerardo Velasquez",
+      "email": "velasquezgerardo66@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Solicitud de presupuesto — Reciban un gran saludo quisiera un presupuesto para la compra y montaje de\r\n30 metros de pisos en spc de alto tráfico para un monoambiente ubicado en\r\nCABA en el sector de congreso",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-29T23:28:42.000Z",
+      "last_touch_at": "2026-08-29T23:28:42.000Z"
     }
   ],
   "conversations": [
@@ -131036,6 +131053,21 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-29T14:03:24.000Z",
       "last_outbound_at": "2026-08-29T12:18:07.912Z"
+    },
+    {
+      "id": "conv-email-1a04fdacc039",
+      "channel": "email",
+      "contact_id": "velasquezgerardo66@gmail.com",
+      "contact_name": "Gerardo Velasquez",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a04fdacc039",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-29T23:28:42.000Z",
+      "last_message_preview": "Reciban un gran saludo quisiera un presupuesto para la compra y montaje de\r\n30 metros de pisos en spc de alto tráfico para un monoambiente u",
+      "email_subject": "Solicitud de presupuesto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-29T23:28:42.000Z"
     }
   ],
   "messages": [
@@ -145887,6 +145919,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nLinea H2O El 29 ago 2026 09:18, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: Hola Bárbara, ¡muchas gracias por tu consulta! Para avanzar con el presupuesto, comentanos en qué modelo estás",
       "ts": "2026-08-29T14:03:24.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a04fdacc039",
+      "conversation_id": "conv-email-1a04fdacc039",
+      "direction": "in",
+      "body": "✉️ Solicitud de presupuesto\n\nReciban un gran saludo quisiera un presupuesto para la compra y montaje de\r\n30 metros de pisos en spc de alto tráfico para un monoambiente ubicado en\r\nCABA en el sector de congreso, es de hacer notar que el departamento está\r\namoblado incluso con un placard , esto para tomar en cuenta en la\r\ninstalación.\r\n\r\nAgradecido de antemano\r\n\r\nGerardo Velásquez",
+      "ts": "2026-08-29T23:28:42.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -152924,7 +152964,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-29T13:08:03.436Z",
     "gmail_seen_ids": [
-      "19eef374d23d47f3",
       "19eef49c3872e25e",
       "19eef4f787f75a46",
       "19eeff52b05501f1",
@@ -153723,7 +153762,8 @@
       "1a04d087f6a3d174",
       "1a04d3963422b994",
       "1a04d69e79a56f34",
-      "1a04dd53339ae868"
+      "1a04dd53339ae868",
+      "1a04fdacc0397649"
     ],
     "cash_sessions": {
       "1136982222": {
