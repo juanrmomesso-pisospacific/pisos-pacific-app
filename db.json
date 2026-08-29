@@ -31458,6 +31458,60 @@
       "quote_number": "A5600",
       "status": "DRAFT",
       "lead_id": "lead-email-1a0488f5ed9e"
+    },
+    {
+      "id": "local-1788005733312-09mw8",
+      "client_id": "",
+      "client_name": "Alejandro Weskamp",
+      "client_dni": "",
+      "client_email": "aweskamp@parkempresario.com.ar",
+      "client_phone": "",
+      "client_address": "Avda Real 9191 Rosario ( Country Golf Lote 165  )",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Cotización Verona",
+      "has_iva": true,
+      "price": 14308.25,
+      "zoned": false,
+      "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-011",
+          "sku": "PROD-011",
+          "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada",
+          "quantity": 170,
+          "unit_price": 75,
+          "cost": 29,
+          "category": "Pisos de Madera",
+          "disc_value": 10,
+          "total": 12750,
+          "discount": 1275,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 350,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 350,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 1275,
+      "discount_amount": 1275,
+      "created_at": "2026-08-29T12:15:33.058Z",
+      "quote_number": "A7639",
+      "status": "DRAFT",
+      "lead_id": "lead-email-19edcc75eea5"
     }
   ],
   "clients": [
