@@ -120139,7 +120139,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-08-28T08:25:47.000Z"
+      "last_touch_at": "2026-08-29T08:24:21.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -126213,12 +126213,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 38,
-      "last_message_at": "2026-08-28T08:25:47.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-26 00:00:00 UTC to 2026-08-27 00:00:00 UTC.",
+      "unread_count": 39,
+      "last_message_at": "2026-08-29T08:24:21.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-27 00:00:00 UTC to 2026-08-28 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-28T08:25:47.000Z",
+      "last_inbound_at": "2026-08-29T08:24:21.000Z",
       "ignored": true
     },
     {
@@ -144764,6 +144764,14 @@
       "body": "Hola. Por favor, dejen de interrumpir los videos que miro en YouTube. Ya le dije exactamente lo mismo a un montón de compañías y empresas que hacen esto. ¿Para qué publicitan por YouTube?. Las compañías y empresas deberían dejar de publicitar por YouTube para que los usuarios de YouTube como yo que ven videotutoriales de programación no renieguen con las malditas interrupciones de los videos debido a los anuncios.\n\nNo interrumpan los videos de YouTube con anuncios. Estoy viendo videotutoriales de programación y me hacen perder la concentración que necesito para aprender debido a las interrupciones en el medio u otras partes de los videos. ¡No anuncien por YouTube, háganlo por otros medios!. Por favor, respóndanme a través de este medio y déjense de publicitar por YouTube. Ya me tienen podrido\n\n¡Gracias y saludos! - Nicolás Matías Funtalas.",
       "ts": "2026-08-29T04:42:11.353Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a04c9eb0087",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: a284023ea7914f4f91f33c64fcba0f16\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-27 00:00:00 UTC to 2026-08-28 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-08-29T08:24:21.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -151487,7 +151495,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-28T13:04:46.967Z",
     "gmail_seen_ids": [
-      "19ee6d52f183f9e3",
       "19ee75d9a6941a9c",
       "19eec9870a5c2fbe",
       "19eecd9a990b02aa",
@@ -152286,7 +152293,8 @@
       "1a048a60d576eec5",
       "1a04965bc429d142",
       "1a049d82f3032eb5",
-      "1a04b56ebaeb9046"
+      "1a04b56ebaeb9046",
+      "1a04c9eb0087ed11"
     ],
     "cash_sessions": {
       "1136982222": {
