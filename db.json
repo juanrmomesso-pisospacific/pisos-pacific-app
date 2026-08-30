@@ -873,7 +873,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 141.7,
-      "reservedStock": 0,
+      "reservedStock": 105,
       "subLine": "Línea H2O XL",
       "shortName": "H2O XL Light Grey 5,5x23x150",
       "thicknessMm": 5.5,
@@ -2417,7 +2417,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 10194,
+      "reservedStock": 10469,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -15712,6 +15712,66 @@
         "total_invoiced": 0,
         "total_paid": 0,
         "balance_due": 4377.42184
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Juan Rodriguez Momesso"
+    },
+    {
+      "id": "local-sale-1788129923090-btob",
+      "quote_id": "local-1787761825771-aza7c",
+      "quote_number": "A4287",
+      "title": "San Juan - Light Grey XL",
+      "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m + 1 más",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mtab64rv-xrwy",
+      "client_name": "SAMACO",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "a confirmar",
+      "contract_total": 3712.2799999999997,
+      "items": [
+        {
+          "product_id": "PROD-030",
+          "sku": "PROD-030",
+          "description": "H2O XL - Light Grey 5,5mm x 23cm x 1,50m",
+          "quantity": 105,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 30,
+          "total": 3990,
+          "discount": 1197,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 275,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 275,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 1197,
+      "status": "Confirmado",
+      "created_at": "2026-08-30T22:45:23.090Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 3712.2799999999997
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -30454,8 +30514,9 @@
       "discount_amount": 1197,
       "created_at": "2026-08-26T16:30:22.086Z",
       "quote_number": "A4287",
-      "status": "DRAFT",
-      "share_token": "f56018725c75ff1367ff02a2"
+      "status": "Aceptado",
+      "share_token": "f56018725c75ff1367ff02a2",
+      "sale_id": "local-sale-1788129923090-btob"
     },
     {
       "id": "local-1787767652641-8om31",
@@ -33608,7 +33669,9 @@
       "dni": "",
       "emails": [],
       "phones": [],
-      "addresses": [],
+      "addresses": [
+        "a confirmar"
+      ],
       "notes": null,
       "name": "SAMACO",
       "updated_at": "2026-08-26T16:28:41.515Z"
@@ -152258,6 +152321,24 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 180,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-30T22:45:16.994Z",
+      "type": "quote_reserve",
+      "ref": "local-1787761825771-aza7c",
+      "product_id": "PROD-030",
+      "sku": "PROD-030",
+      "qty": 105,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-30T22:45:16.994Z",
+      "type": "quote_reserve",
+      "ref": "local-1787761825771-aza7c",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 275,
       "warehouse_id": "main"
     }
   ],
