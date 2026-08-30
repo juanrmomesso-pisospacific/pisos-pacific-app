@@ -125877,6 +125877,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-30T16:05:09.468Z",
       "last_touch_at": "2026-08-30T16:05:09.468Z"
+    },
+    {
+      "id": "lead-email-1a0539fa708d",
+      "name": "Bernardo",
+      "email": "bghervas@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Pilar, Buenos Aires",
+      "postal_code": "1629",
+      "approx_m2": 120,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 120m² · Con Colocación · CP 1629",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-30T17:02:46.000Z",
+      "last_touch_at": "2026-08-30T17:02:46.000Z"
     }
   ],
   "conversations": [
@@ -131243,6 +131260,21 @@
       "last_message_preview": "Hola ! Buenas tardes! Estamos pensando en ampliar la casa y quería saber la diferencia y el costo a este los pisos de madera y H20. Prefinis",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-30T16:05:09.468Z"
+    },
+    {
+      "id": "conv-email-1a0539fa708d",
+      "channel": "email",
+      "contact_id": "bghervas@gmail.com",
+      "contact_name": "Bernardo",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0539fa708d",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-30T17:02:46.000Z",
+      "last_message_preview": "Formulario web — 120m² · Con Colocación · CP 1629 · Pilar, Buenos Aires",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-30T17:02:46.000Z"
     }
   ],
   "messages": [
@@ -146126,6 +146158,14 @@
       "body": "Hola ! Buenas tardes! Estamos pensando en ampliar la casa y quería saber la diferencia y el costo a este los pisos de madera y H20. Prefinished es madera ?",
       "ts": "2026-08-30T16:05:09.468Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0539fa708d",
+      "conversation_id": "conv-email-1a0539fa708d",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 120m² · Con Colocación · CP 1629 · Pilar, Buenos Aires",
+      "ts": "2026-08-30T17:02:46.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -153163,7 +153203,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-30T13:07:31.564Z",
     "gmail_seen_ids": [
-      "19ef10dd33a14a12",
       "19ef11a3af2aa237",
       "19ef1123d93390e5",
       "19ef1208e341878a",
@@ -153962,7 +154001,8 @@
       "1a05219907b25415",
       "1a0529042a68118c",
       "1a052be49ab50493",
-      "1a0534d3845f402f"
+      "1a0534d3845f402f",
+      "1a0539fa708d5a15"
     ],
     "cash_sessions": {
       "1136982222": {
