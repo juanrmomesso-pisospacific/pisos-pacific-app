@@ -125894,6 +125894,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-30T17:02:46.000Z",
       "last_touch_at": "2026-08-30T17:02:46.000Z"
+    },
+    {
+      "id": "lead-email-1a053ac1a5ef",
+      "name": "Natalia",
+      "email": "nataliazelik@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Segurola 3292",
+      "postal_code": "1417",
+      "approx_m2": 40,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 40m² · Con Colocación · CP 1417",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-30T17:11:22.000Z",
+      "last_touch_at": "2026-08-30T17:11:22.000Z"
     }
   ],
   "conversations": [
@@ -131275,6 +131292,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-30T17:02:46.000Z"
+    },
+    {
+      "id": "conv-email-1a053ac1a5ef",
+      "channel": "email",
+      "contact_id": "nataliazelik@gmail.com",
+      "contact_name": "Natalia",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a053ac1a5ef",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-30T17:11:22.000Z",
+      "last_message_preview": "Formulario web — 40m² · Con Colocación · CP 1417 · Segurola 3292",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-30T17:11:22.000Z"
     }
   ],
   "messages": [
@@ -146166,6 +146198,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 120m² · Con Colocación · CP 1629 · Pilar, Buenos Aires",
       "ts": "2026-08-30T17:02:46.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a053ac1a5ef",
+      "conversation_id": "conv-email-1a053ac1a5ef",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 40m² · Con Colocación · CP 1417 · Segurola 3292",
+      "ts": "2026-08-30T17:11:22.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -153203,7 +153243,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-30T13:07:31.564Z",
     "gmail_seen_ids": [
-      "19ef11a3af2aa237",
       "19ef1123d93390e5",
       "19ef1208e341878a",
       "19ef15204a4991df",
@@ -154002,7 +154041,8 @@
       "1a0529042a68118c",
       "1a052be49ab50493",
       "1a0534d3845f402f",
-      "1a0539fa708d5a15"
+      "1a0539fa708d5a15",
+      "1a053ac1a5ef51c1"
     ],
     "cash_sessions": {
       "1136982222": {
