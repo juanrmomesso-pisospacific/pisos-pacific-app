@@ -115386,14 +115386,14 @@
       "flow": "Ingreso",
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Otros",
-      "subcategory": null,
-      "counterparty": "IB Proveedores",
+      "category": "Venta - Pisos",
+      "subcategory": "H2O HD XL",
+      "counterparty": "Matias Pagano",
       "counterparty_type": "client",
-      "client_id": null,
+      "client_id": "local-1782239371402-h23qx",
       "supplier_id": null,
       "description": "IB Proveedores",
-      "sale_ref": null,
+      "sale_ref": "A1822",
       "currency": "ARS",
       "amount_ars": 10579785.64,
       "amount_usd": 6892.37,
@@ -115405,7 +115405,8 @@
       "review_reason": null,
       "raw_name": "IB Proveedores",
       "classified_by": "regla \"ib proveedores\" → IB Proveedores (aprendida)",
-      "id": "MOV-IMP-msxcfqku-029"
+      "id": "MOV-IMP-msxcfqku-029",
+      "linked_sale_id": "local-sale-1785098651769-1nb0"
     },
     {
       "source": "bdc-upload",
@@ -157723,6 +157724,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"DÉBITO POR DEBIN\""
+    },
+    {
+      "id": "local-1788130072586-9yqxg",
+      "match": [
+        "IB Proveedores"
+      ],
+      "cuit": null,
+      "counterparty": "Matias Pagano",
+      "category": "Venta - Pisos",
+      "subcategory": "H2O HD XL",
+      "expense_type": null,
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"IB Proveedores\""
     }
   ],
   "product_aliases": [
