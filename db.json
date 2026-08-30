@@ -125746,6 +125746,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-29T23:28:42.000Z",
       "last_touch_at": "2026-08-29T23:28:42.000Z"
+    },
+    {
+      "id": "lead-email-1a052be49ab5",
+      "name": "Julieta",
+      "email": "julietasossa@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Talar del lago",
+      "postal_code": "1617",
+      "approx_m2": 100,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 100m² · Con Colocación · CP 1617",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-30T12:56:36.000Z",
+      "last_touch_at": "2026-08-30T12:56:36.000Z"
     }
   ],
   "conversations": [
@@ -131068,6 +131085,21 @@
       "email_subject": "Solicitud de presupuesto",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-29T23:28:42.000Z"
+    },
+    {
+      "id": "conv-email-1a052be49ab5",
+      "channel": "email",
+      "contact_id": "julietasossa@hotmail.com",
+      "contact_name": "Julieta",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a052be49ab5",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-30T12:56:36.000Z",
+      "last_message_preview": "Formulario web — 100m² · Con Colocación · CP 1617 · Talar del lago",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-30T12:56:36.000Z"
     }
   ],
   "messages": [
@@ -145927,6 +145959,14 @@
       "body": "✉️ Solicitud de presupuesto\n\nReciban un gran saludo quisiera un presupuesto para la compra y montaje de\r\n30 metros de pisos en spc de alto tráfico para un monoambiente ubicado en\r\nCABA en el sector de congreso, es de hacer notar que el departamento está\r\namoblado incluso con un placard , esto para tomar en cuenta en la\r\ninstalación.\r\n\r\nAgradecido de antemano\r\n\r\nGerardo Velásquez",
       "ts": "2026-08-29T23:28:42.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a052be49ab5",
+      "conversation_id": "conv-email-1a052be49ab5",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 100m² · Con Colocación · CP 1617 · Talar del lago",
+      "ts": "2026-08-30T12:56:36.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -152961,10 +153001,9 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": null,
+    "mp_pending_job": 102985012,
     "mp_last_sync": "2026-08-29T13:08:03.436Z",
     "gmail_seen_ids": [
-      "19ef022e58fbce6d",
       "19ef03f01e7c5464",
       "19ef10dd33a14a12",
       "19ef11a3af2aa237",
@@ -153763,7 +153802,8 @@
       "1a04fdacc0397649",
       "1a0501a9855c04ac",
       "1a05219907b25415",
-      "1a0529042a68118c"
+      "1a0529042a68118c",
+      "1a052be49ab50493"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -155202,7 +155242,7 @@
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
-    "mp_pending_at": null
+    "mp_pending_at": "2026-08-30T13:06:21.678Z"
   },
   "payment_links": [],
   "tasks": [
