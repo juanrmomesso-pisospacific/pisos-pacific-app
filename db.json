@@ -152964,7 +152964,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-29T13:08:03.436Z",
     "gmail_seen_ids": [
-      "19eeff52b05501f1",
       "19ef022e58fbce6d",
       "19ef03f01e7c5464",
       "19ef10dd33a14a12",
@@ -153763,7 +153762,8 @@
       "1a04dd53339ae868",
       "1a04fdacc0397649",
       "1a0501a9855c04ac",
-      "1a05219907b25415"
+      "1a05219907b25415",
+      "1a0529042a68118c"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -154146,7 +154146,8 @@
       "1a04d69e79a56f34",
       "1a04d5eb0c1601c6",
       "1a04d74ae1180844",
-      "1a04d78a768216e8"
+      "1a04d78a768216e8",
+      "1a0529042a68118c"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -154787,7 +154788,7 @@
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-08-29",
+    "last_daily_task_reminder": "2026-08-30",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -155171,7 +155172,7 @@
         "learned_at": "2026-07-28T15:39:11.018Z"
       }
     },
-    "last_daily_pending_digest": "2026-08-29",
+    "last_daily_pending_digest": "2026-08-30",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
