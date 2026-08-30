@@ -281,8 +281,8 @@
       "currency": "USD",
       "active": true,
       "margin": 158.6,
-      "stock": 1940.2000000000003,
-      "reservedStock": 676.63,
+      "stock": 1740.2000000000003,
+      "reservedStock": 476.63,
       "subLine": "Colección Madera",
       "shortName": "Roble Verona 12/1 Veta Tallada",
       "thicknessMm": 12,
@@ -1841,7 +1841,7 @@
       "active": true,
       "margin": 172.9,
       "stock": 0,
-      "reservedStock": 6068.53,
+      "reservedStock": 5887.53,
       "subLine": "Colocación Piso",
       "shortName": "Colocación Prefinished Sobre Manta",
       "thicknessMm": null,
@@ -2369,7 +2369,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 726,
+      "reservedStock": 576,
       "subLine": "Zócalos",
       "shortName": "Colocación Zócalos Pegados y Clavados",
       "thicknessMm": null,
@@ -2417,7 +2417,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 10469,
+      "reservedStock": 10468,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -9857,7 +9857,7 @@
           "category": "Servicio"
         }
       ],
-      "status": "En proceso",
+      "status": "Finalizado",
       "delivery_status": "Acopiado",
       "created_at": "2026-04-08T00:00:00.000Z",
       "fecha_pendiente": false,
@@ -9871,8 +9871,8 @@
         "total_paid": 7000,
         "balance_due": 10240
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "",
       "payments": [
         {
@@ -9893,6 +9893,12 @@
           "from": "Programado",
           "to": "En proceso",
           "at": "2026-08-14T13:06:35.366Z",
+          "by": "Admin User"
+        },
+        {
+          "from": "En proceso",
+          "to": "Finalizado",
+          "at": "2026-08-30T22:51:13.245Z",
           "by": "Admin User"
         }
       ]
@@ -152340,6 +152346,51 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 275,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-30T22:51:13.245Z",
+      "type": "sale_deduct",
+      "ref": "0000122",
+      "product_id": "PROD-011",
+      "sku": "PROD-011",
+      "qty": -200,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-30T22:51:13.245Z",
+      "type": "sale_deduct",
+      "ref": "0000122",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": -181,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-30T22:51:13.245Z",
+      "type": "sale_deduct",
+      "ref": "0000122",
+      "product_id": "PROD-058",
+      "sku": "PROD-058",
+      "qty": -165,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-30T22:51:13.245Z",
+      "type": "sale_deduct",
+      "ref": "0000122",
+      "product_id": "SERV-129",
+      "sku": "SERV-129",
+      "qty": -150,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-30T22:51:13.245Z",
+      "type": "sale_deduct",
+      "ref": "0000122",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": -1,
       "warehouse_id": "main"
     }
   ],
