@@ -125844,6 +125844,23 @@
       "assigned_seller": "",
       "created_at": "2026-08-30T12:56:36.000Z",
       "last_touch_at": "2026-08-30T12:56:36.000Z"
+    },
+    {
+      "id": "lead-email-1a0534d3845f",
+      "name": "Agustina",
+      "email": "guchigv@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Barrio el Aduar. Km 115 ruta 9",
+      "postal_code": "Radio: Con Colocación",
+      "approx_m2": 50,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 50m² · Con Colocación · CP Radio: Con Colocación",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-30T15:32:44.000Z",
+      "last_touch_at": "2026-08-30T15:32:44.000Z"
     }
   ],
   "conversations": [
@@ -131181,6 +131198,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-30T12:56:36.000Z"
+    },
+    {
+      "id": "conv-email-1a0534d3845f",
+      "channel": "email",
+      "contact_id": "guchigv@hotmail.com",
+      "contact_name": "Agustina",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0534d3845f",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-30T15:32:44.000Z",
+      "last_message_preview": "Formulario web — 50m² · Con Colocación · CP Radio: Con Colocación · Barrio el Aduar. Km 115 ruta 9",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-30T15:32:44.000Z"
     }
   ],
   "messages": [
@@ -146048,6 +146080,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 100m² · Con Colocación · CP 1617 · Talar del lago",
       "ts": "2026-08-30T12:56:36.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0534d3845f",
+      "conversation_id": "conv-email-1a0534d3845f",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 50m² · Con Colocación · CP Radio: Con Colocación · Barrio el Aduar. Km 115 ruta 9",
+      "ts": "2026-08-30T15:32:44.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -153085,7 +153125,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-30T13:07:31.564Z",
     "gmail_seen_ids": [
-      "19ef03f01e7c5464",
       "19ef10dd33a14a12",
       "19ef11a3af2aa237",
       "19ef1123d93390e5",
@@ -153884,7 +153923,8 @@
       "1a0501a9855c04ac",
       "1a05219907b25415",
       "1a0529042a68118c",
-      "1a052be49ab50493"
+      "1a052be49ab50493",
+      "1a0534d3845f402f"
     ],
     "cash_sessions": {
       "1136982222": {
