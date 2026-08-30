@@ -125861,6 +125861,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-30T15:32:44.000Z",
       "last_touch_at": "2026-08-30T15:32:44.000Z"
+    },
+    {
+      "id": "lead-instagram-1788105911471",
+      "name": "@porcarocio",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-30T16:05:09.468Z",
+      "last_touch_at": "2026-08-30T16:05:09.468Z"
     }
   ],
   "conversations": [
@@ -131213,6 +131229,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-30T15:32:44.000Z"
+    },
+    {
+      "id": "conv-1788105911471-txce",
+      "channel": "instagram",
+      "contact_id": "1361160879380813",
+      "contact_name": "@porcarocio",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788105911471",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-30T16:05:09.468Z",
+      "last_message_preview": "Hola ! Buenas tardes! Estamos pensando en ampliar la casa y quería saber la diferencia y el costo a este los pisos de madera y H20. Prefinis",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-30T16:05:09.468Z"
     }
   ],
   "messages": [
@@ -146088,6 +146118,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 50m² · Con Colocación · CP Radio: Con Colocación · Barrio el Aduar. Km 115 ruta 9",
       "ts": "2026-08-30T15:32:44.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788105911471-5umx",
+      "conversation_id": "conv-1788105911471-txce",
+      "direction": "in",
+      "body": "Hola ! Buenas tardes! Estamos pensando en ampliar la casa y quería saber la diferencia y el costo a este los pisos de madera y H20. Prefinished es madera ?",
+      "ts": "2026-08-30T16:05:09.468Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -154940,7 +154978,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk4MTczNjk5Mzg0NzQ3MjYxNzE0NTI1OTcwMDI1Njc2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk4MTczNzM1NDMyNDMzNzQ2NjA5OTcyNTUwODgwNDYwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTgyNjk2OTQxMzI4NzU4MTozMjk4MTc0OTM5Mjc1NjcxNzcyODE4OTUzNTE2MDg5MzQ0MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk4MjM4MjM3NzE2ODIzODI0MjMzNzI4NjkyNTU4MjMzNgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk4MjM4MjM3NzE2ODIzODI0MjMzNzI4NjkyNTU4MjMzNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NDczMjA4ODY1MDQwNTYxNDk1MjMzNTk5MTExMTY4MAZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
