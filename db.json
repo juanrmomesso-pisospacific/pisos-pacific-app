@@ -33547,6 +33547,18 @@
       ],
       "notes": null,
       "updated_at": "2026-08-26T21:21:29.897Z"
+    },
+    {
+      "id": "CLI-mtge5hq8-tqku",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Hugo Ramirez",
+      "updated_at": "2026-08-30T22:38:47.552Z"
     }
   ],
   "expenses": [],
