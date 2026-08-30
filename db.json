@@ -119450,6 +119450,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mtftqu7g-003"
+    },
+    {
+      "id": "local-1788130504539-gzi0j",
+      "flow": "Ingreso",
+      "date": "2026-08-30T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Julian Machado",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra San Agustin Adicionales",
+      "sale_ref": "A3079",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 479.11,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
