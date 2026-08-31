@@ -34180,7 +34180,7 @@
     },
     {
       "id": "CAJ-005",
-      "name": "Caja General",
+      "name": "Efectivo USD",
       "type": "Efectivo",
       "currency": "USD",
       "active": true,
@@ -34214,6 +34214,12 @@
       "type": "Tarjeta",
       "currency": "ARS",
       "active": false
+    },
+    {
+      "id": "CAJ-009",
+      "name": "Efectivo Pesos",
+      "type": "Efectivo",
+      "currency": "ARS"
     }
   ],
   "suppliers": [
