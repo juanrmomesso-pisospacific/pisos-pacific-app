@@ -125128,10 +125128,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
-      "assigned_seller": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-08-19T22:33:41.081Z",
-      "last_touch_at": "2026-08-19T22:33:41.081Z"
+      "last_touch_at": "2026-08-31T12:24:18.588Z"
     },
     {
       "id": "lead-instagram-1787188700131",
@@ -125827,10 +125827,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
-      "assigned_seller": "",
+      "status": "Contacted",
+      "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-08-27T18:00:57.578Z",
-      "last_touch_at": "2026-08-27T18:00:57.578Z"
+      "last_touch_at": "2026-08-31T12:24:04.656Z"
     },
     {
       "id": "lead-email-1a0445fdecad",
@@ -130714,7 +130714,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
       "status": "open",
-      "unread_count": 5,
+      "unread_count": 0,
       "last_message_at": "2026-08-27T11:31:12.120Z",
       "last_message_preview": "Muchas gracias",
       "last_message_direction": "in",
@@ -131307,7 +131307,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787878071384",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-28T00:47:49.596Z",
       "last_message_preview": "Hola, cuánto vale el M2?",
       "last_message_direction": "in",
