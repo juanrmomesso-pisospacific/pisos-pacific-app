@@ -119794,12 +119794,12 @@
       "flow": "Egreso",
       "caja_id": "CAJ-002",
       "caja_name": "Mercado Pago",
-      "category": "Sin clasificar",
-      "subcategory": null,
-      "counterparty": "MORANPATRICIA",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "counterparty": "Pipi & Juan",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-024",
       "description": "MP API · SETTLEMENT · available_money · op 176192077156",
       "sale_ref": null,
       "currency": "ARS",
@@ -119807,10 +119807,10 @@
       "amount_usd": 77.67,
       "exchange_rate": 1545,
       "fixed_variable": "Variable",
-      "expense_type": "Otros Gastos y Ajustes",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "nombre estimado del perfil de MP — confirmar y clasificar",
+      "needs_review": false,
+      "review_reason": null,
       "source": "mp-api",
       "mp_op_id": "176192077156",
       "mp_user_id": "681663199",
@@ -156922,6 +156922,16 @@
         "expense_type": "Gastos de Personal (HR y Mano de Obra)",
         "learned_at": "2026-07-14T23:43:51.238Z"
       },
+      "681663199": {
+        "counterparty": "Pipi & Juan",
+        "counterparty_type": "supplier",
+        "supplier_id": "PROV-024",
+        "client_id": null,
+        "category": "HR",
+        "subcategory": "Sueldos",
+        "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+        "learned_at": "2026-08-31T20:25:50.629Z"
+      },
       "703353700": {
         "counterparty": "Pipi & Juan",
         "counterparty_type": "supplier",
@@ -159191,6 +159201,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Carlos Vera\""
+    },
+    {
+      "id": "local-1788207950835-vv71a",
+      "match": [
+        "MORANPATRICIA"
+      ],
+      "cuit": null,
+      "counterparty": "Pipi & Juan",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"MORANPATRICIA\""
     }
   ],
   "product_aliases": [
