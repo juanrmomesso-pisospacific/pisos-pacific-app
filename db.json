@@ -119993,8 +119993,8 @@
       "flow": "Egreso",
       "caja_id": "CAJ-005",
       "caja_name": "Caja General",
-      "category": "HR",
-      "subcategory": "Pago Instalaciones",
+      "category": "Flota",
+      "subcategory": "Flete",
       "counterparty": "Carlos Vera",
       "counterparty_type": "supplier",
       "client_id": null,
@@ -120006,7 +120006,7 @@
       "amount_usd": 815.53,
       "exchange_rate": 1545.01,
       "fixed_variable": "Variable",
-      "expense_type": "Gastos de Instalaciones y Suministros",
+      "expense_type": "Gastos de Flota/Vehículos",
       "transfer": false,
       "needs_review": false,
       "review_reason": null
@@ -159115,6 +159115,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"IB Proveedores\""
+    },
+    {
+      "id": "local-1788206447594-zb16u",
+      "match": [
+        "Carlos Vera"
+      ],
+      "cuit": null,
+      "counterparty": "Carlos Vera",
+      "category": "Flota",
+      "subcategory": "Flete",
+      "expense_type": "Gastos de Flota/Vehículos",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Carlos Vera\""
     }
   ],
   "product_aliases": [
