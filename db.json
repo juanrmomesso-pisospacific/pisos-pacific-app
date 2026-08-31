@@ -131687,10 +131687,11 @@
       "linked_lead_id": "lead-instagram-1788189602351",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-31T17:24:47.324Z",
-      "last_message_preview": "Te consulto hay facilidades de pago ?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-31T17:24:47.324Z"
+      "last_message_at": "2026-08-31T17:31:58.568Z",
+      "last_message_preview": "si el pago es en eft podemos desestimar el IVA",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-31T17:24:47.324Z",
+      "last_outbound_at": "2026-08-31T17:31:58.568Z"
     }
   ],
   "messages": [
@@ -147062,6 +147063,15 @@
       "ts": "2026-08-31T17:31:03.253Z",
       "status": "sent",
       "wa_id": "1a058dfe585eb354"
+    },
+    {
+      "id": "m-1788197518568-mzbw",
+      "conversation_id": "conv-1788189602351-hrb5",
+      "direction": "out",
+      "body": "si el pago es en eft podemos desestimar el IVA",
+      "ts": "2026-08-31T17:31:58.568Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5MTI4Njc3MTk2MjA4ODozMjk4NjQyMTk3MzE2NTQ4NjIxNTIyODk0OTE5MzAzMTY4MAZDZD"
     }
   ],
   "templates": [
