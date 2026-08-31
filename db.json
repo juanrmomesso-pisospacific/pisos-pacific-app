@@ -131418,10 +131418,11 @@
       "linked_lead_id": "lead-instagram-1787878071384",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-28T00:47:49.596Z",
-      "last_message_preview": "Hola, cuánto vale el M2?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-28T00:47:49.596Z"
+      "last_message_at": "2026-08-31T16:54:43.432Z",
+      "last_message_preview": "Cuál pisos",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-28T00:47:49.596Z",
+      "last_outbound_at": "2026-08-31T16:54:43.432Z"
     },
     {
       "id": "conv-1787884323035-dtb8",
@@ -146782,6 +146783,26 @@
       "ts": "2026-08-31T16:54:30.220Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDI0NDg2MDY2NzQwODEyMzozMjk4NjM4MDUwMzU4NDAxNzkxMTA1NTIxMzY4MzI3NzgyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788195282044-30i3",
+      "conversation_id": "conv-1787878071384-8ya6",
+      "direction": "out",
+      "body": "Hola Clau! Cómo estás?",
+      "ts": "2026-08-31T16:54:41.293Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ3MjEyNDQyOTQ1NjY4NzozMjk4NjM4MDcwNzgyODA0Njk0ODg3ODA3Njc0NDgyNjg4MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788195283830-56sm",
+      "conversation_id": "conv-1787878071384-8ya6",
+      "direction": "out",
+      "body": "Cuál pisos",
+      "ts": "2026-08-31T16:54:43.432Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ3MjEyNDQyOTQ1NjY4NzozMjk4NjM4MDc0NzI5NDYzNDUzMzY1MDc3NzkxMjYzOTQ4OAZDZD",
       "via": "ig-app"
     }
   ],
