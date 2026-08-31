@@ -126138,7 +126138,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-08-30T15:32:44.000Z",
-      "last_touch_at": "2026-08-30T15:32:44.000Z"
+      "last_touch_at": "2026-08-31T15:05:56.000Z"
     },
     {
       "id": "lead-instagram-1788105911471",
@@ -126189,6 +126189,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-30T17:11:22.000Z",
       "last_touch_at": "2026-08-30T17:11:22.000Z"
+    },
+    {
+      "id": "lead-instagram-1788189602351",
+      "name": "@natizelik",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-08-31T15:20:00.975Z",
+      "last_touch_at": "2026-08-31T15:20:00.975Z"
     }
   ],
   "conversations": [
@@ -131342,11 +131358,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787809597980",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-27T05:46:36.328Z",
-      "last_message_preview": "Hola! Como están? Donde se pueden ir a ver los materiales?",
+      "unread_count": 1,
+      "last_message_at": "2026-08-31T16:16:01.688Z",
+      "last_message_preview": "???",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-27T05:46:36.328Z"
+      "last_inbound_at": "2026-08-31T16:16:01.688Z"
     },
     {
       "id": "conv-1787839755133-waik",
@@ -131537,12 +131553,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0534d3845f",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-31T12:32:54.626Z",
-      "last_message_preview": "Hola Agustina, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de piso",
+      "unread_count": 1,
+      "last_message_at": "2026-08-31T15:05:56.000Z",
+      "last_message_preview": "es para exterior asi que supongo que sera mejor la linea H20 no?\r\n________________________________\r\nFrom: Pisos Pacific <info@pisospacific.c",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-30T15:32:44.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-31T15:05:56.000Z",
       "last_outbound_at": "2026-08-31T12:32:54.626Z"
     },
     {
@@ -131590,6 +131606,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-30T17:11:22.000Z"
+    },
+    {
+      "id": "conv-1788189602351-hrb5",
+      "channel": "instagram",
+      "contact_id": "1055810110384702",
+      "contact_name": "@natizelik",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788189602351",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-08-31T15:20:00.975Z",
+      "last_message_preview": "Genial muchas gracias!",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-31T15:20:00.975Z"
     }
   ],
   "messages": [
@@ -146647,6 +146677,30 @@
       "body": "Gracias",
       "ts": "2026-08-31T12:59:23.841Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0585b1411f",
+      "conversation_id": "conv-email-1a0534d3845f",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nes para exterior asi que supongo que sera mejor la linea H20 no?\r\n________________________________\r\nFrom: Pisos Pacific <info@pisospacific.com>\r\nSent: Monday, August 31, 2026 12:32 PM\r\nTo: guchigv@hotmail.com <guchigv@hotmail.com>\r\nSubject: Re: Pedido de Presupuesto | Página Web\r\n\r\nHola Agustina, como estas?\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera<https://pisospacific.com/madera> — Pisos de madera noble prefinished\r\n• Línea H2O<https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación.\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\nVictoria Collado\r\n\r\n\r\n[Pisos Pacific]\r\nVictoria Collado\r\nVentas\r\n\r\n+54 11 3698-2222<https://wa.me/5491136982222>\r\nvictoria@pisospacific.com<mailto:victoria@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
+      "ts": "2026-08-31T15:05:56.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788189602351-5t8f",
+      "conversation_id": "conv-1788189602351-hrb5",
+      "direction": "in",
+      "body": "Genial muchas gracias!",
+      "ts": "2026-08-31T15:20:00.975Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788192962644-5ofu",
+      "conversation_id": "conv-1787809597980-13lp",
+      "direction": "in",
+      "body": "???",
+      "ts": "2026-08-31T16:16:01.688Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -153747,7 +153801,6 @@
     "mp_pending_job": 102993872,
     "mp_last_sync": "2026-08-30T13:07:31.564Z",
     "gmail_seen_ids": [
-      "19ef1627667697e3",
       "19ef1663447c0b29",
       "19ef19708e3e4a88",
       "19ef1e85b5035f50",
@@ -154546,7 +154599,8 @@
       "1a0574b508d8b7f5",
       "1a057b69ee3fd8cf",
       "1a057abbd0ad1c65",
-      "1a057e8841ddbb99"
+      "1a057e8841ddbb99",
+      "1a0585b1411fbda9"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -155571,7 +155625,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk4MjM4MjM3NzE2ODIzODI0MjMzNzI4NjkyNTU4MjMzNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NDczMjA4ODY1MDQwNTYxNDk1MjMzNTk5MTExMTY4MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjEyMDE1MTIyNjkxNzQ4ODQ4MTc5MDMwNzg2MDQ4MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjEyMDI4NjgxNTcwNjg1ODgxOTg1NDQ4ODU2NzgwOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjEyMDI4NjgxNTcwNjg1ODgxOTg1NDQ4ODU2NzgwOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5MTI4Njc3MTk2MjA4ODozMjk4NjI3NTkyNDQ2MTE5NjEzMzE1MTQ0NzAyNTk3NTI5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjMzNzkxODY4MzY2Mjg4MzEzNTE0Nzk4ODc0NjI0MAZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
