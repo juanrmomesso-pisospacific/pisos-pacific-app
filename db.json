@@ -131554,10 +131554,11 @@
       "linked_lead_id": "lead-instagram-1788105911471",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-30T16:05:09.468Z",
-      "last_message_preview": "Hola ! Buenas tardes! Estamos pensando en ampliar la casa y quería saber la diferencia y el costo a este los pisos de madera y H20. Prefinis",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-30T16:05:09.468Z"
+      "last_message_at": "2026-08-31T12:35:51.543Z",
+      "last_message_preview": "Hola como estas?\nLa diferencia principal entre H2O y Prefinished está en la composición\n\nH2O: compuesto de piedra polimero y madera con una ",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-30T16:05:09.468Z",
+      "last_outbound_at": "2026-08-31T12:35:51.543Z"
     },
     {
       "id": "conv-email-1a0539fa708d",
@@ -146593,6 +146594,15 @@
       "ts": "2026-08-31T12:32:54.626Z",
       "status": "sent",
       "wa_id": "1a057ceef5fb8909"
+    },
+    {
+      "id": "m-1788179751543-mt5i",
+      "conversation_id": "conv-1788105911471-txce",
+      "direction": "out",
+      "body": "Hola como estas?\nLa diferencia principal entre H2O y Prefinished está en la composición\n\nH2O: compuesto de piedra polimero y madera con una terminación de alta resistencia y tecnología que permite colocarlo en ambientes donde se busca mayor practicidad y resistencia. Tiene una excelente relación precio-calidad.\n\nPrefinished: es un piso de madera natural de mayor categoría, con una construcción y terminación superior, que aporta una sensación más auténtica siendo cada tabla distinta porque es madera natural. requiere un poco mas de mantenimiento.",
+      "ts": "2026-08-31T12:35:51.543Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjA5NDIyOTkyNzAwMzg2Mzk4MzAyMjI4ODE0MjMzNgZDZD"
     }
   ],
   "templates": [
