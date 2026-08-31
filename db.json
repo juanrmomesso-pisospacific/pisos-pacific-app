@@ -131569,11 +131569,12 @@
       "linked_lead_id": "lead-email-1a0539fa708d",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-30T17:02:46.000Z",
-      "last_message_preview": "Formulario web — 120m² · Con Colocación · CP 1629 · Pilar, Buenos Aires",
+      "last_message_at": "2026-08-31T12:37:34.732Z",
+      "last_message_preview": "Hola Bernardo, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de piso",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-30T17:02:46.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-30T17:02:46.000Z",
+      "last_outbound_at": "2026-08-31T12:37:34.732Z"
     },
     {
       "id": "conv-email-1a053ac1a5ef",
@@ -146621,6 +146622,15 @@
       "ts": "2026-08-31T12:36:49.175Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjA5NTI5NDAyNzkxNTM3MTI2NDQyMzcwNTQ0NDM1MgZDZD"
+    },
+    {
+      "id": "m-1788179854732-4l7k",
+      "conversation_id": "conv-email-1a0539fa708d",
+      "direction": "out",
+      "body": "Hola Bernardo, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias\nSaludos, Victoria Collado",
+      "ts": "2026-08-31T12:37:34.732Z",
+      "status": "sent",
+      "wa_id": "1a057d334ac553e6"
     }
   ],
   "templates": [
