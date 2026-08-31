@@ -126413,7 +126413,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-08-30T12:56:36.000Z",
-      "last_touch_at": "2026-08-30T12:56:36.000Z"
+      "last_touch_at": "2026-08-31T18:43:08.000Z"
     },
     {
       "id": "lead-email-1a0534d3845f",
@@ -131848,12 +131848,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a052be49ab5",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-31T12:32:14.138Z",
-      "last_message_preview": "Hola Julieta, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos",
+      "unread_count": 2,
+      "last_message_at": "2026-08-31T18:44:12.000Z",
+      "last_message_preview": "Perdón, la zona de colocación seria General Pacheco.\r\nSaludos\r\n________________________________\r\nDe: Pisos Pacific <info@pisospacific.com>\r\n",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-30T12:56:36.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-31T18:44:12.000Z",
       "last_outbound_at": "2026-08-31T12:32:14.138Z"
     },
     {
@@ -147313,6 +147313,22 @@
       "ts": "2026-08-31T17:31:58.568Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5MTI4Njc3MTk2MjA4ODozMjk4NjQyMTk3MzE2NTQ4NjIxNTIyODk0OTE5MzAzMTY4MAZDZD"
+    },
+    {
+      "id": "m-email-1a05922eebf9",
+      "conversation_id": "conv-email-1a052be49ab5",
+      "direction": "in",
+      "body": "✉️ RE: Pedido de Presupuesto | Página Web\n\nPerdón, la zona de colocación seria General Pacheco.\r\nSaludos\r\n________________________________\r\nDe: Pisos Pacific <info@pisospacific.com>\r\nEnviado: lunes, 31 de agosto de 2026 12:32\r\nPara: julietasossa@hotmail.com <julietasossa@hotmail.com>\r\nAsunto: Re: Pedido de Presupuesto | Página Web\r\n\r\nHola Julieta, como estas?\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera<https://pisospacific.com/madera> — Pisos de madera noble prefinished\r\n• Línea H2O<https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la zona de entrega así la agregamos en la cotización.\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\nVictoria Collado\r\n\r\n\r\n[Pisos Pacific]\r\nVictoria Collado\r\nVentas\r\n\r\n+54 11 3698-2222<https://wa.me/5491136982222>\r\nvictoria@pisospacific.com<mailto:victoria@pisospacific.com>\r\npisospacific.com<https://pisospacific.com/>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
+      "ts": "2026-08-31T18:44:12.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a05921ed800",
+      "conversation_id": "conv-email-1a052be49ab5",
+      "direction": "in",
+      "body": "✉️ RE: Pedido de Presupuesto | Página Web\n\nHola buenas tardes:\r\nGracias por la respuesta, estoy buscando en madera, actualmente tengo de la marca Patagonia.\r\nEn el lugar de colocación hay loza radiante.\r\nEl modelo seria roble veta tallada.\r\nLes dejo mi teléfono 1153755951\r\nSaludos\r\nJulieta\r\n________________________________\r\nDe: Pisos Pacific <info@pisospacific.com>\r\nEnviado: lunes, 31 de agosto de 2026 12:32\r\nPara: julietasossa@hotmail.com <julietasossa@hotmail.com>\r\nAsunto: Re: Pedido de Presupuesto | Página Web\r\n\r\nHola Julieta, como estas?\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera<https://pisospacific.com/madera> — Pisos de madera noble prefinished\r\n• Línea H2O<https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la zona de entrega así la agregamos en la cotización.\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\nVictoria Collado\r\n\r\n\r\n[Pisos Pacific]\r\nVictoria Collado\r\nVentas\r\n\r\n+54 11 3698-2222<https://wa.me/5491136982222>\r\nvictoria@pisospacific.com<mailto:victoria@pisospacific.com>\r\npisospacific.com<https://pisospacific.com/>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
+      "ts": "2026-08-31T18:43:08.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -154417,8 +154433,6 @@
     "mp_pending_job": 102993872,
     "mp_last_sync": "2026-08-30T13:07:31.564Z",
     "gmail_seen_ids": [
-      "19ef1663447c0b29",
-      "19ef19708e3e4a88",
       "19ef1e85b5035f50",
       "19ef1e4807b97e4a",
       "19ef278d4aaca77b",
@@ -155216,7 +155230,9 @@
       "1a057b69ee3fd8cf",
       "1a057abbd0ad1c65",
       "1a057e8841ddbb99",
-      "1a0585b1411fbda9"
+      "1a0585b1411fbda9",
+      "1a05922eebf95b8b",
+      "1a05921ed800e848"
     ],
     "cash_sessions": {
       "1136982222": {
