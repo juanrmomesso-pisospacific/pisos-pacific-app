@@ -119890,6 +119890,28 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "local-1788205884642-qcokb",
+      "flow": "Ingreso",
+      "date": "2026-08-04T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Kike Pedreira",
+      "counterparty_type": "client",
+      "description": "Cobro - Centauros - General Rodriguez",
+      "sale_ref": "A0073",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 15275,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
