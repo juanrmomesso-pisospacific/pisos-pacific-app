@@ -131432,10 +131432,11 @@
       "linked_lead_id": "lead-instagram-1787884323035",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-28T02:32:00.839Z",
-      "last_message_preview": "Hola. Tienen local fisico? Necesito presupuesto",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-28T02:32:00.839Z"
+      "last_message_at": "2026-08-31T16:54:30.220Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-28T02:32:00.839Z",
+      "last_outbound_at": "2026-08-31T16:54:30.220Z"
     },
     {
       "id": "conv-email-1a0488f5ed9e",
@@ -146741,6 +146742,46 @@
       "ts": "2026-08-31T16:51:07.302Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM3Njc2MDQwNTk0Mzc1NTA5Mzc4NTAwODE0NDM4NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788195257793-hndv",
+      "conversation_id": "conv-1787884323035-dtb8",
+      "direction": "out",
+      "body": "Hola Alejandra cómo estás?\nEstamos en Olivos",
+      "ts": "2026-08-31T16:54:16.693Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDI0NDg2MDY2NzQwODEyMzozMjk4NjM4MDI1NDA1MTMzMjE1NzYzNTgwOTMyMDYzMjMyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788195266237-9qcp",
+      "conversation_id": "conv-1787884323035-dtb8",
+      "direction": "out",
+      "body": "Te comparto contacto para que coordines una cita",
+      "ts": "2026-08-31T16:54:25.598Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDI0NDg2MDY2NzQwODEyMzozMjk4NjM4MDQxODMxMjY3MDYwNDk5MTcyNTM3OTI1NjMyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788195270524-xkv0",
+      "conversation_id": "conv-1787884323035-dtb8",
+      "direction": "out",
+      "body": "1136982222",
+      "ts": "2026-08-31T16:54:29.889Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDI0NDg2MDY2NzQwODEyMzozMjk4NjM4MDQ5NzQ2MDM5OTg1NDg1ODQ0MzUwOTcyNzIzMgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788195270875-2tz7",
+      "conversation_id": "conv-1787884323035-dtb8",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-31T16:54:30.220Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDI0NDg2MDY2NzQwODEyMzozMjk4NjM4MDUwMzU4NDAxNzkxMTA1NTIxMzY4MzI3NzgyNAZDZD",
       "via": "ig-app"
     }
   ],
