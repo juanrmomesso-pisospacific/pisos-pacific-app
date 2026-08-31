@@ -131572,12 +131572,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788105911471",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-08-31T12:59:23.841Z",
-      "last_message_preview": "Gracias",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-31T16:55:05.799Z",
+      "last_message_preview": "En las medidas!",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-31T12:59:23.841Z",
-      "last_outbound_at": "2026-08-31T12:36:49.175Z"
+      "last_outbound_at": "2026-08-31T16:55:05.799Z"
     },
     {
       "id": "conv-email-1a0539fa708d",
@@ -146803,6 +146803,16 @@
       "ts": "2026-08-31T16:54:43.432Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ3MjEyNDQyOTQ1NjY4NzozMjk4NjM4MDc0NzI5NDYzNDUzMzY1MDc3NzkxMjYzOTQ4OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788195306237-e902",
+      "conversation_id": "conv-1788105911471-txce",
+      "direction": "out",
+      "body": "En las medidas!",
+      "ts": "2026-08-31T16:55:05.799Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjM4MTE1OTg4NDM5OTk0MTA2MjExNzY3NTc2MTY2NAZDZD",
       "via": "ig-app"
     }
   ],
