@@ -131277,7 +131277,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787853659842",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-27T18:00:57.578Z",
       "last_message_preview": "Hola quiero pedir un presupuesto para un departamento de aprox 65 mts cuadrados. Por aca o me pasas un WhatsApp?\nGracias",
       "last_message_direction": "in",
@@ -146425,6 +146425,15 @@
       "ts": "2026-08-31T12:22:18.270Z",
       "status": "failed",
       "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"A2ayo_Q1NdUa6NLMzyGvJIm\"}}"
+    },
+    {
+      "id": "m-1788178983605-mprb",
+      "conversation_id": "conv-1787809597980-13lp",
+      "direction": "out",
+      "body": "+54 9 11 5175-0087",
+      "ts": "2026-08-31T12:23:03.605Z",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"A7nijFrqS091JTuYMUYWrHE\"}}"
     }
   ],
   "templates": [
