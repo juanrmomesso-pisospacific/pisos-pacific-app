@@ -131573,11 +131573,11 @@
       "linked_lead_id": "lead-instagram-1788105911471",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-31T16:55:19.909Z",
-      "last_message_preview": "Manejamos todo lo que es Roble",
+      "last_message_at": "2026-08-31T16:55:59.200Z",
+      "last_message_preview": "El más vendido es el Kitsiliano o Verona (más económicos) ahí te mando algunas fotos",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-31T12:59:23.841Z",
-      "last_outbound_at": "2026-08-31T16:55:19.909Z"
+      "last_outbound_at": "2026-08-31T16:55:59.200Z"
     },
     {
       "id": "conv-email-1a0539fa708d",
@@ -146859,6 +146859,16 @@
       "ts": "2026-08-31T16:55:41.537Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM4MTgxOTEzODg5ODkwNzI2NTA5MDM5MjY4NjU5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788195359525-5ab9",
+      "conversation_id": "conv-1788105911471-txce",
+      "direction": "out",
+      "body": "El más vendido es el Kitsiliano o Verona (más económicos) ahí te mando algunas fotos",
+      "ts": "2026-08-31T16:55:59.200Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjM4MjE0NDk2Mzk5NzczNTYxMzkzMjUxOTgxNzIxNgZDZD",
       "via": "ig-app"
     }
   ],
