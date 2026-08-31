@@ -32158,7 +32158,8 @@
       "discount_amount": 0,
       "created_at": "2026-08-31T22:40:07.161Z",
       "quote_number": "A7186",
-      "status": "DRAFT"
+      "status": "DRAFT",
+      "share_token": "74059139a8442196617dc1dc"
     }
   ],
   "clients": [
