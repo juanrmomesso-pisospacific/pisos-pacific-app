@@ -131321,7 +131321,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787884323035",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-28T02:32:00.839Z",
       "last_message_preview": "Hola. Tienen local fisico? Necesito presupuesto",
       "last_message_direction": "in",
@@ -146434,6 +146434,15 @@
       "ts": "2026-08-31T12:23:03.605Z",
       "status": "failed",
       "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"A7nijFrqS091JTuYMUYWrHE\"}}"
+    },
+    {
+      "id": "m-1788179082804-aw17",
+      "conversation_id": "conv-1787878071384-8ya6",
+      "direction": "out",
+      "body": "Hola Clau como estas? De que coleccion? los precios varian.",
+      "ts": "2026-08-31T12:24:42.804Z",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"AuOiP8ENRj0qkFAZz7EsbAc\"}}"
     }
   ],
   "templates": [
