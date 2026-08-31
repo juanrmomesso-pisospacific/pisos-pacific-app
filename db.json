@@ -711,7 +711,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1126.495328,
-      "reservedStock": 685.0999999999999,
+      "reservedStock": 801.0999999999999,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Natural Oak 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1817,7 +1817,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 6578,
+      "reservedStock": 6682,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2033,7 +2033,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 0,
+      "reservedStock": 106,
       "subLine": "Nivelación",
       "shortName": "Nivelación Carpeta + Materiales",
       "thicknessMm": null,
@@ -2201,7 +2201,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 1,
+      "reservedStock": 8,
       "subLine": "Carpintería",
       "shortName": "Ajuste o Cepillado Puerta",
       "thicknessMm": null,
@@ -2369,7 +2369,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 576,
+      "reservedStock": 676,
       "subLine": "Zócalos",
       "shortName": "Colocación Zócalos Pegados y Clavados",
       "thicknessMm": null,
@@ -2984,7 +2984,7 @@
       "currency": "USD",
       "margin": 50,
       "stock": 0,
-      "reservedStock": 1,
+      "reservedStock": 114,
       "stockTrack": false,
       "active": true,
       "createdAt": "2026-06-18T00:00:00.000Z",
@@ -31928,7 +31928,7 @@
       "discount_amount": 820.5,
       "created_at": "2026-08-31T18:03:25.093Z",
       "quote_number": "A7112",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1788198224463-iip6y"
     },
     {
@@ -153351,6 +153351,60 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": -1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-31T18:58:40.790Z",
+      "type": "quote_reserve",
+      "ref": "local-1788199405319-9fdcc",
+      "product_id": "PROD-026",
+      "sku": "PROD-026",
+      "qty": 116,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-31T18:58:40.790Z",
+      "type": "quote_reserve",
+      "ref": "local-1788199405319-9fdcc",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 104,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-31T18:58:40.790Z",
+      "type": "quote_reserve",
+      "ref": "local-1788199405319-9fdcc",
+      "product_id": "SERV-122",
+      "sku": "SERV-122",
+      "qty": 7,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-31T18:58:40.790Z",
+      "type": "quote_reserve",
+      "ref": "local-1788199405319-9fdcc",
+      "product_id": "ZOC-MDF-08",
+      "sku": "ZOC-MDF-08",
+      "qty": 113,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-31T18:58:40.790Z",
+      "type": "quote_reserve",
+      "ref": "local-1788199405319-9fdcc",
+      "product_id": "SERV-129",
+      "sku": "SERV-129",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-08-31T18:58:40.790Z",
+      "type": "quote_reserve",
+      "ref": "local-1788199405319-9fdcc",
+      "product_id": "SERV-115",
+      "sku": "SERV-115",
+      "qty": 106,
       "warehouse_id": "main"
     }
   ],
