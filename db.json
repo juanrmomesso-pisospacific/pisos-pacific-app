@@ -119962,6 +119962,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1788206379953-stgyc",
+      "date": "2026-08-28T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "HR",
+      "subcategory": "Pago Instalaciones",
+      "counterparty": "Ariel Ernesto Garcia",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-016",
+      "description": "Obra Reparación de Escalera Ayres - Parcial\tConjunto pedada/frentín (vinílico) Obra Reparación de Escalera Ayres - Parcial\tFabricación de nariz recta 90 H2O Obra Reparación de Escalera Ayres - Parcial\tCompensados y descansos",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 830000,
+      "amount_usd": 537.22,
+      "exchange_rate": 1544.99,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
