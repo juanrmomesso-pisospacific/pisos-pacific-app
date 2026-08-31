@@ -1814,6 +1814,73 @@ app.post('/api/cashflow/bulk-update', requireModule('finanzas'), requireAdmin, (
   res.json({ updated, skipped_ingresos: skipped });
 });
 
+// ---------- Movimiento interno entre cajas (transferencia) ----------
+// Arma las DOS patas de un movimiento interno en una sola operación atómica:
+//   - egreso en la caja origen, ingreso en la caja destino, ambos transfer:true (fuera del P&L);
+//   - las dos comparten transfer_group → se reconocen como par y se borran juntas.
+// Sirve para transferencias de misma moneda (banco→banco) Y para cambios de moneda
+// (ej. vender USD del efectivo para reponer pesos): cada pata queda en SU moneda, con el
+// MISMO valor USD (así el consolidado netea 0), y el peso se registra en amount_ars → la
+// caja de pesos concilia en pesos, sin arrastre de tipo de cambio.
+app.post('/api/cashflow/internal-transfer', requireModule('finanzas'), requireAdmin, async (req, res) => {
+  const b = req.body || {};
+  const from = db.cajas.find((c) => c.id === b.from_caja_id);
+  const to = db.cajas.find((c) => c.id === b.to_caja_id);
+  if (!from || !to) return res.status(400).json({ error: 'caja origen/destino inválida' });
+  if (from.id === to.id) return res.status(400).json({ error: 'origen y destino no pueden ser la misma caja' });
+  const amountFrom = Number(b.amount_from);
+  if (!isFinite(amountFrom) || amountFrom <= 0) return res.status(400).json({ error: 'monto de origen inválido' });
+  const sameCur = (from.currency || 'ARS') === (to.currency || 'ARS');
+  const amountTo = sameCur ? amountFrom : Number(b.amount_to);
+  if (!sameCur && (!isFinite(amountTo) || amountTo <= 0)) return res.status(400).json({ error: 'para cambio de moneda hace falta el monto que ENTRA en la caja destino' });
+  const blue = await getBlueRate();
+  const r2 = (n) => Math.round(n * 100) / 100;
+  // Valor USD compartido por las dos patas → el consolidado netea exactamente 0.
+  let usdValue;
+  if ((from.currency) === 'USD') usdValue = amountFrom;
+  else if ((to.currency) === 'USD') usdValue = amountTo;
+  else usdValue = amountFrom / blue;                 // ambas en ARS → al blue
+  usdValue = r2(usdValue) || 0.01;
+  const gid = `tg-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+  const dateIso = b.date ? `${String(b.date).slice(0, 10)}T00:00:00.000Z` : new Date().toISOString();
+  const note = (b.note || '').trim();
+  const convTxt = sameCur ? '' : ` · ${from.currency} ${amountFrom.toLocaleString('es-AR')} → ${to.currency} ${amountTo.toLocaleString('es-AR')}`;
+  const leg = (caja, flow, native, otherName, arrow) => {
+    const isUsd = (caja.currency) === 'USD';
+    return {
+      id: `mov-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      date: dateIso, flow, caja_id: caja.id, caja_name: caja.name,
+      category: 'Transferencia entre cuentas', subcategory: null,
+      counterparty: null, counterparty_type: null, client_id: null, supplier_id: null,
+      description: `${arrow} ${otherName}${note ? ': ' + note : ''}${convTxt}`,
+      sale_ref: null, currency: caja.currency || 'ARS',
+      amount_ars: isUsd ? null : r2(native), amount_usd: usdValue,
+      exchange_rate: isUsd ? null : r2(native / usdValue),
+      fixed_variable: null, expense_type: null,
+      transfer: true, needs_review: false, review_reason: null,
+      source: 'internal-transfer', transfer_group: gid,
+    };
+  };
+  const egreso = leg(from, 'Egreso', amountFrom, to.name, '→');
+  const ingreso = leg(to, 'Ingreso', amountTo, from.name, '←');
+  db.cashflow.push(egreso, ingreso);
+  save();
+  res.json({ ok: true, transfer_group: gid, legs: [egreso, ingreso] });
+});
+
+// Borrado en PAR: si el movimiento es una pata de un movimiento interno (transfer_group),
+// se borra también su pareja (si no, quedaría una transferencia a medias descuadrando cajas).
+// Ruta específica ANTES del CRUD genérico → tiene precedencia.
+app.delete('/api/cashflow/:id', requireModule('finanzas'), requireAdmin, (req, res) => {
+  const m = db.cashflow.find((x) => x.id === req.params.id);
+  if (!m) return res.sendStatus(404);
+  const before = db.cashflow.length;
+  if (m.transfer_group) db.cashflow = db.cashflow.filter((x) => x.transfer_group !== m.transfer_group);
+  else db.cashflow = db.cashflow.filter((x) => x.id !== m.id);
+  save();
+  res.json({ deleted: before - db.cashflow.length, paired: !!m.transfer_group });
+});
+
 // Unificar dos proveedores: re-apunta movimientos (por supplier_id o por nombre) y reglas
 // del 'from' al 'to', y borra el 'from'. {from_id, to_id, commit}. Dry-run por defecto.
 app.post('/api/suppliers/merge', requireAdmin, (req, res) => {

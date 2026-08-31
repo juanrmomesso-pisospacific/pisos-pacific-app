@@ -11,8 +11,9 @@ import { Plus, Wallet } from "lucide-react"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { CashflowForm } from "@/components/forms/CashflowForm"
 import { CashQuickForm } from "@/components/forms/CashQuickForm"
+import { InternalTransferForm } from "@/components/forms/InternalTransferForm"
 import { ImportStatementDialog } from "@/components/ImportStatementDialog"
-import { Upload } from "lucide-react"
+import { Upload, ArrowLeftRight } from "lucide-react"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { useConfirm } from "@/components/ui/confirm"
@@ -66,17 +67,20 @@ export default function CashFlowPage() {
   const [openNew, setOpenNew] = useState(false)
   const [openCash, setOpenCash] = useState(false)
   const [openImport, setOpenImport] = useState(false)
+  const [openTransfer, setOpenTransfer] = useState(false)
 
   return (
    <DataState loading={cfApi.loading} error={cfApi.error} hasData={movements.length > 0} onRetry={cfApi.refetch}>
     <div className="px-4 lg:px-6 space-y-4">
       <TopbarActions>
         <Button variant="outline" size="sm" onClick={() => setOpenImport(true)}><Upload className="h-4 w-4" />Importar extracto</Button>
+        <Button variant="outline" size="sm" onClick={() => setOpenTransfer(true)}><ArrowLeftRight className="h-4 w-4" />Transferencia entre cajas</Button>
         <Button variant="outline" size="sm" onClick={() => setOpenCash(true)}><Wallet className="h-4 w-4" />Gasto en efectivo</Button>
         <Button size="sm" onClick={() => setOpenNew(true)}><Plus className="h-4 w-4" />Nuevo movimiento</Button>
       </TopbarActions>
       <CashflowForm open={openNew} onOpenChange={setOpenNew} cajas={cajas} />
       <CashQuickForm open={openCash} onOpenChange={setOpenCash} cajas={cajas} />
+      <InternalTransferForm open={openTransfer} onOpenChange={setOpenTransfer} cajas={cajas} />
       <ImportStatementDialog open={openImport} onOpenChange={setOpenImport} onDone={cfApi.refetch} />
       <p className="text-xs text-muted-foreground">Toda la plata en un lugar: resultado (P&amp;L), estructura de gastos, gasto por proveedor y libro completo (ingresos + egresos). Para cargar un movimiento usá <b>Nuevo movimiento</b>.</p>
       <Tabs defaultValue="pnl">

@@ -74,6 +74,7 @@ export const api = {
   linkMovementToSale:  (movId: string, sale_id: string | null) => post(`/api/cashflow/${movId}/link-sale`, { sale_id }),
   cashflowBulkUpdate:  (ids: string[], set: Record<string, unknown>) => post(`/api/cashflow/bulk-update`, { ids, set }),
   cajaReconcile:       (id: string, body: { real: number; currency: string; note?: string; commit?: boolean }) => post(`/api/cajas/${id}/reconcile`, body),
+  internalTransfer:    (body: { from_caja_id: string; to_caja_id: string; amount_from: number; amount_to?: number; date?: string; note?: string }) => post(`/api/cashflow/internal-transfer`, body),
   cajasReconciliations: () => get(`/api/cajas/reconciliations`),
   suppliersReview:     () => get(`/api/suppliers/review`),
   supplierRegisterLink: (body: { name?: string; supplier_id?: string; learn?: boolean; commit?: boolean }) => post(`/api/suppliers/register-link`, body),

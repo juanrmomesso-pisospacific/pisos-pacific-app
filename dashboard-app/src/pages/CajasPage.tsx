@@ -4,13 +4,14 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
-import { Wallet, Landmark, Banknote, Scale } from "lucide-react"
+import { Wallet, Landmark, Banknote, Scale, ArrowLeftRight } from "lucide-react"
 import { useApi } from "@/lib/api"
 import { DataState } from "@/components/ui/data-state"
 import { api, refresh } from "@/lib/mutations"
 import { useConfirm } from "@/components/ui/confirm"
+import { InternalTransferForm } from "@/components/forms/InternalTransferForm"
 import { cn, appLocale } from "@/lib/utils"
-import type { CajaBalance } from "@/lib/types"
+import type { CajaBalance, Caja } from "@/lib/types"
 
 type BalancesResponse = { balances: CajaBalance[]; unassigned_movements: number }
 type Recon = { caja_id: string; ts: string; real: number; currency: string; real_usd: number; sys_usd: number; adj_usd: number; note: string | null }
@@ -23,8 +24,10 @@ const fmtDate = (ts: string) => { const d = ts.slice(0, 10).split("-"); return `
 export default function CajasPage() {
   const { data, loading, error, refetch } = useApi<BalancesResponse>("/api/cajas/balances")
   const balances = data?.balances ?? []
+  const cajas = useApi<Caja[]>("/api/cajas").data ?? []
   const recons = useApi<{ reconciliations: Recon[] }>("/api/cajas/reconciliations").data?.reconciliations ?? []
   const confirm = useConfirm()
+  const [openTransfer, setOpenTransfer] = useState(false)
   const [real, setReal] = useState<Record<string, string>>({})
   const [cur, setCur] = useState<Record<string, string>>({})
   const [busy, setBusy] = useState<string | null>(null)
@@ -67,6 +70,11 @@ export default function CajasPage() {
   return (
    <DataState loading={loading} error={error} hasData={balances.length > 0} onRetry={refetch}>
     <div className="px-4 lg:px-6 space-y-4">
+      <div className="flex items-center justify-between">
+        <span className="text-sm font-medium">Saldos por caja</span>
+        <Button variant="outline" size="sm" onClick={() => setOpenTransfer(true)}><ArrowLeftRight className="h-4 w-4" />Transferencia entre cajas</Button>
+      </div>
+      <InternalTransferForm open={openTransfer} onOpenChange={setOpenTransfer} cajas={cajas} />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {balances.map((b) => {
           const Icon = iconFor(b.type)
