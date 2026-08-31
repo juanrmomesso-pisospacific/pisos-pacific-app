@@ -126272,6 +126272,22 @@
       "assigned_seller": "",
       "created_at": "2026-08-31T15:20:00.975Z",
       "last_touch_at": "2026-08-31T15:20:00.975Z"
+    },
+    {
+      "id": "local-1788198224463-iip6y",
+      "name": "Patricia Ordoñez | Carlos Melhem",
+      "phone": "",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Chacras el chaja",
+      "created_at": "2026-08-31T17:43:44.295Z",
+      "last_touch_at": "2026-08-31T17:43:47.328Z"
     }
   ],
   "conversations": [
@@ -155361,7 +155377,11 @@
       "1a057ce508457530",
       "1a057cd65a437dde",
       "1a057cd577618055",
-      "1a057d334ac553e6"
+      "1a057d334ac553e6",
+      "1a058dfe585eb354",
+      "1a058dd5f16636a7",
+      "1a058dcbb7f7b22d",
+      "1a058dcb0c4437c5"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
