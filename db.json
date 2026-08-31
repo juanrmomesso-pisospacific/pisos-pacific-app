@@ -131249,7 +131249,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787809597980",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-27T05:46:36.328Z",
       "last_message_preview": "Hola! Como están? Donde se pueden ir a ver los materiales?",
       "last_message_direction": "in",
@@ -146407,6 +146407,15 @@
       "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 0e31d405ba064611b569589c9061e0f4\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-29 00:00:00 UTC to 2026-08-30 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-08-31T11:54:25.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788178902363-rzzs",
+      "conversation_id": "conv-1787709823306-0j30",
+      "direction": "out",
+      "body": "Hola Vero! si hoy nos vamos a estar comunicando! gracias",
+      "ts": "2026-08-31T12:21:42.363Z",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"Aj2DIottzCFCyCRtn-wH8HL\"}}"
     }
   ],
   "templates": [
