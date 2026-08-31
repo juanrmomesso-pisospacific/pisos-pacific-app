@@ -131358,11 +131358,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787809597980",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-31T16:55:41.537Z",
-      "last_message_preview": "📎 Adjunto",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-31T16:55:33.867Z",
+      "unread_count": 1,
+      "last_message_at": "2026-08-31T16:56:58.810Z",
+      "last_message_preview": "Muchas gracias ❤️❤️",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-31T16:56:58.810Z",
       "last_outbound_at": "2026-08-31T16:55:41.537Z"
     },
     {
@@ -131573,11 +131573,11 @@
       "linked_lead_id": "lead-instagram-1788105911471",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-31T16:56:24.546Z",
-      "last_message_preview": "Este mide 19 cm ancho x 1.90 mts largo x 12 mm espesor \nValor usd 75 + iva",
+      "last_message_at": "2026-08-31T16:57:38.239Z",
+      "last_message_preview": "Estamos con 10 off",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-31T12:59:23.841Z",
-      "last_outbound_at": "2026-08-31T16:56:24.546Z"
+      "last_outbound_at": "2026-08-31T16:57:38.239Z"
     },
     {
       "id": "conv-email-1a0539fa708d",
@@ -146880,6 +146880,24 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjM4MjYxMjUxNTUwNTA2OTI0OTU1NDU1MDg4MjMwNAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1788195419646-p83t",
+      "conversation_id": "conv-1787809597980-13lp",
+      "direction": "in",
+      "body": "Muchas gracias ❤️❤️",
+      "ts": "2026-08-31T16:56:58.810Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788195458527-73c5",
+      "conversation_id": "conv-1788105911471-txce",
+      "direction": "out",
+      "body": "Estamos con 10 off",
+      "ts": "2026-08-31T16:57:38.239Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjM4Mzk3MTkxODgzMTY4NDI0NTE3MzAyODUxOTkzNgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
@@ -155807,7 +155825,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjEyMDI4NjgxNTcwNjg1ODgxOTg1NDQ4ODU2NzgwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5MTI4Njc3MTk2MjA4ODozMjk4NjI3NTkyNDQ2MTE5NjEzMzE1MTQ0NzAyNTk3NTI5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjMzNzkxODY4MzY2Mjg4MzEzNTE0Nzk4ODc0NjI0MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM4MTY3NzY1ODUxNDYyNzY4OTM3NDc3ODY1NDcyMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM4MTY3NzY1ODUxNDYyNzY4OTM3NDc3ODY1NDcyMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM4MzI0NDU3NDUwNDIwMzE2MDY3Mjg5NzMzNTI5NgZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
