@@ -146443,6 +146443,15 @@
       "ts": "2026-08-31T12:24:42.804Z",
       "status": "failed",
       "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"AuOiP8ENRj0qkFAZz7EsbAc\"}}"
+    },
+    {
+      "id": "m-1788179119777-19mc",
+      "conversation_id": "conv-1787884323035-dtb8",
+      "direction": "out",
+      "body": "Hola Alejandro, como estas? Si tenemos nuestro deposito en Olivos. es con cita previa. si te ointeresa pasar avisanos",
+      "ts": "2026-08-31T12:25:19.777Z",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"AAvMcHCAO-XDnygwgq1QFTF\"}}"
     }
   ],
   "templates": [
