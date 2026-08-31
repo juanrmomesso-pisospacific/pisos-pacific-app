@@ -122544,7 +122544,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-14T05:51:00.000Z",
-      "last_touch_at": "2026-08-04T03:35:40.000Z"
+      "last_touch_at": "2026-08-31T08:59:57.000Z"
     },
     {
       "id": "lead-instagram-1784037148171",
@@ -128579,12 +128579,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f5f2e6a369",
       "status": "closed",
-      "unread_count": 4,
-      "last_message_at": "2026-08-04T03:35:40.000Z",
-      "last_message_preview": "Hello Victoria,\n  Hope you are fine.\n  Did you find time to value our offer?\n  Is there anything I can explain for you？ If you need free sam",
+      "unread_count": 5,
+      "last_message_at": "2026-08-31T08:59:57.000Z",
+      "last_message_preview": "Hello Victoria，\n  Hope you are fine.\n  I had quoted the price a month ago, did you find time to check it?\nDo you need samples? anything need",
       "email_subject": "Re: Inquiry for Accessories Quotation | Buenos Aires - Argentina",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-04T03:35:40.000Z",
+      "last_inbound_at": "2026-08-31T08:59:57.000Z",
       "ignored": true
     },
     {
@@ -146391,6 +146391,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 40m² · Con Colocación · CP 1417 · Segurola 3292",
       "ts": "2026-08-30T17:11:22.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0570c29a78",
+      "conversation_id": "conv-email-19f5f2e6a369",
+      "direction": "in",
+      "body": "✉️ Re: Re: Inquiry for Accessories Quotation | Buenos Aires - Argentina\n\nHello Victoria，\n  Hope you are fine.\n  I had quoted the price a month ago, did you find time to check it?\nDo you need samples? anything need to explain for you?\n  Thanks in advance.\n\n --------------\n\n\t   Best Regards\n ------------------------\n\n\t徐 朦\n\n\tJOANNA XU\n\n\tSALES\n\n\t苏州金尚装饰材料有限公司\n\n\t张家港市长江路8号，邮编 215613\n\n\tSUZHOU KING DECORATION MATERIAL CO., LTD.\n\n\t No. 8 Changjiang Road, Fenghuang ZhangJiaGang 215613, JiangSu,\nP.R.China.\n\n Mob: +86 134 0560 8127\n\n\tTEL: +86 512 5691 5877 / 806\n\n\tFAX:  +86 512 5691 5875\n\n\tEMAIL: joanna@js-king.com.cn [1]\n\n\tWEB: www.js-king.com.cn [2]\n\n ======= 2026-07-27 06:07:28\nvictoria@pisospacific.com在来信中写道： =======\n ------------------------------- 源邮件\n--------------------------------\n 主题: Re: Inquiry for Accessories Quotation | Buenos Aires -\nArgentina\n 发件人: Victoria Pisos Pacific\n 日期: Mon, July 27, 2026 6:24 am\n 收件人: Joanna\n 抄送: info pisos\n --------------------------------------------------------------------------\n Hi Joanna,\n  Thank you for the update. Please find my answers below regarding the\nquotation details:\n  1. PROFILES AND DIMENSIONS:\n   - L-shape (SS Tile Trim): The 6 mm, 12 mm, and 15 mm sizes with a\nlength of 250 cm are correct.  - T-molding and Reducers: I will send a\npicture of the design we like. We will use these for three different\nproducts with floor thicknesses of 6 mm, 12 mm, and 15 mm. The lengths\ncould be 250 cm and 100 cm.\n  2. PACKAGING REQUIREMENTS:\n   - T-molding and L-shapes: Standard packaging is fine, but we will\nneed to inc",
+      "ts": "2026-08-31T08:59:57.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -153491,7 +153499,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-08-30T13:07:31.564Z",
     "gmail_seen_ids": [
-      "19ef1123d93390e5",
       "19ef1208e341878a",
       "19ef15204a4991df",
       "19ef150a1ec20910",
@@ -154290,7 +154297,8 @@
       "1a052be49ab50493",
       "1a0534d3845f402f",
       "1a0539fa708d5a15",
-      "1a053ac1a5ef51c1"
+      "1a053ac1a5ef51c1",
+      "1a0570c29a781fee"
     ],
     "cash_sessions": {
       "1136982222": {
