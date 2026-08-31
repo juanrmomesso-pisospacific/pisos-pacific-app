@@ -131554,11 +131554,11 @@
       "linked_lead_id": "lead-instagram-1788105911471",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-31T12:35:51.543Z",
-      "last_message_preview": "Hola como estas?\nLa diferencia principal entre H2O y Prefinished está en la composición\n\nH2O: compuesto de piedra polimero y madera con una ",
+      "last_message_at": "2026-08-31T12:36:36.529Z",
+      "last_message_preview": "el costo de la coleccion h2o es de usd 38 + iva\ny los prefinished varian segun modelo. Desde 75 hasta 99 usd el m2 + iva",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-30T16:05:09.468Z",
-      "last_outbound_at": "2026-08-31T12:35:51.543Z"
+      "last_outbound_at": "2026-08-31T12:36:36.529Z"
     },
     {
       "id": "conv-email-1a0539fa708d",
@@ -146603,6 +146603,15 @@
       "ts": "2026-08-31T12:35:51.543Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjA5NDIyOTkyNzAwMzg2Mzk4MzAyMjI4ODE0MjMzNgZDZD"
+    },
+    {
+      "id": "m-1788179796529-46h4",
+      "conversation_id": "conv-1788105911471-txce",
+      "direction": "out",
+      "body": "el costo de la coleccion h2o es de usd 38 + iva\ny los prefinished varian segun modelo. Desde 75 hasta 99 usd el m2 + iva",
+      "ts": "2026-08-31T12:36:36.529Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjA5NTA2MDc2ODc5OTY2NTcxODk5NjEwMjAyMTEyMAZDZD"
     }
   ],
   "templates": [
@@ -154887,7 +154896,11 @@
       "1a04d74ae1180844",
       "1a04d78a768216e8",
       "1a0529042a68118c",
-      "1a057b69ee3fd8cf"
+      "1a057b69ee3fd8cf",
+      "1a057ceef5fb8909",
+      "1a057ce508457530",
+      "1a057cd65a437dde",
+      "1a057cd577618055"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
