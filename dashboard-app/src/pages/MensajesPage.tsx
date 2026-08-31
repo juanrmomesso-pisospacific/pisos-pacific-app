@@ -16,6 +16,7 @@ import { SearchPicker } from "@/components/SearchPicker"
 import { useConfirm } from "@/components/ui/confirm"
 import { LeadForm } from "@/components/forms/LeadForm"
 import { QuoteForm, type QuotePrefill } from "@/components/forms/QuoteForm"
+import { saldoDe, cobradoDe } from "@/lib/sales"
 import { fmtMoney, cn, appLocale } from "@/lib/utils"
 import { fileToBase64 } from "@/lib/export"
 import { openPacificPdf } from "@/lib/pdf"
@@ -885,7 +886,7 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes, c
   const linkedLead = conversation.linked_lead_id ? leadById.get(conversation.linked_lead_id) : undefined
   const clientSales = linkedClient ? sales.filter(s => s.client_name === linkedClient.name) : []
   const totalBilled = clientSales.reduce((sum, s) => sum + (s.contract_total ?? 0), 0)
-  const totalDue = clientSales.reduce((sum, s) => sum + (s.financial_position?.balance_due ?? 0), 0)
+  const totalDue = clientSales.reduce((sum, s) => sum + saldoDe(s), 0)
 
   // Build LeadForm prefill from the conversation (and any linked client we already have)
   const initialLead: Partial<Lead> = {
@@ -1180,9 +1181,9 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes, c
 }
 
 function LeadSaleRow({ sale }: { sale: Sale }) {
-  const due = sale.financial_position?.balance_due ?? 0
+  const due = saldoDe(sale)
   const total = sale.contract_total ?? 0
-  const paid = sale.financial_position?.total_paid ?? 0
+  const paid = cobradoDe(sale)
   const statusVariant =
     sale.status === "Finalizado" ? "default" :
     sale.status === "Cancelado" ? "destructive" :

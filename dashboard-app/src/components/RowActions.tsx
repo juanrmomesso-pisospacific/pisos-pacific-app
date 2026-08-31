@@ -11,8 +11,11 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { openPacificPdf } from "@/lib/pdf"
 import { quoteShareMessage } from "@/lib/chat"
 import { useConfirm } from "@/components/ui/confirm"
+import { useModules, moduleOn } from "@/contexts/ConfigContext"
+import { saldoDe, cobradoDe } from "@/lib/sales"
+import { registrarCobroVenta } from "@/lib/cobro"
 import { fmtMoney, cn, appLocale } from "@/lib/utils"
-import type { Quote, Sale } from "@/lib/types"
+import type { Quote, Sale, Caja } from "@/lib/types"
 
 // ---------- Quote row actions ----------
 // Link al historial de chat de un contacto (lo resuelve MensajesPage por client/phone/email).
@@ -179,7 +182,7 @@ export function SaleRowActions({ sale }: { sale: Sale }) {
   const [gastosOpen, setGastosOpen] = useState(false)
   const [linkOpen, setLinkOpen] = useState(false)
   const [scheduleOpen, setScheduleOpen] = useState(false)
-  const due = sale.financial_position?.balance_due ?? 0
+  const due = saldoDe(sale)
   const confirm = useConfirm()
 
   const handle = async (next: string) => { const r = await txn.run(sale.id, next); if (r) refresh() }
@@ -367,7 +370,7 @@ function ScheduleDeliveryDrawer({ open, onOpenChange, sale }: { open: boolean; o
 
 // ---------- T6.A — Payment link drawer ----------
 function PaymentLinkDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChange: (o: boolean) => void; sale: Sale }) {
-  const due = sale.financial_position?.balance_due ?? 0
+  const due = saldoDe(sale)
   const [link, setLink] = useState<{ id: string; init_point: string; mode: "mock" | "live"; amount: number } | null>(null)
   const [amount, setAmount] = useState<number>(due)
   const [copied, setCopied] = useState(false)
@@ -509,7 +512,7 @@ function LinkedExpensesDrawer({ open, onOpenChange, sale }: { open: boolean; onO
 export function QuickSaleActions({ sale }: { sale: Sale }) {
   const txn = useAction(api.saleTransition)
   const [payOpen, setPayOpen] = useState(false)
-  const due = sale.financial_position?.balance_due ?? 0
+  const due = saldoDe(sale)
   const handleFinalize = async () => { const r = await txn.run(sale.id, "Finalizado"); if (r) refresh() }
   return (
     <>
@@ -523,18 +526,34 @@ export function QuickSaleActions({ sale }: { sale: Sale }) {
 }
 
 // ---------- Payment drawer ----------
+// Registrar un cobro. UN SOLO camino (lib/cobro.ts): con finanzas crea un movimiento de caja
+// INGRESO linkeado a la venta (el "cobrado" deriva de ahí); sin finanzas, cobro directo. Antes
+// este drawer bumpeaba financial_position.total_paid, que el saldo derivado ignora si ya hay
+// cobro en el cashflow → el cobro "desaparecía" del saldo.
 function PaymentDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChange: (o: boolean) => void; sale: Sale }) {
   const settings = useApi<{ paymentMethods?: string[] }>("/api/settings").data
   const methods = settings?.paymentMethods ?? []
-  const due = sale.financial_position?.balance_due ?? 0
+  const modules = useModules()
+  const finanzasOn = moduleOn(modules, "finanzas")
+  const cajas = useApi<Caja[]>("/api/cajas").data ?? []
+  const due = saldoDe(sale)
   const [amount, setAmount] = useState<number>(due)
   const [method, setMethod] = useState<string>(methods[0] ?? "")
   const [notes, setNotes] = useState<string>("")
-  const pay = useAction(api.salePayment)
+  const [cajaId, setCajaId] = useState<string>("")
+  const [date, setDate] = useState<string>(new Date().toISOString().slice(0, 10))
+  // Con finanzas el cobro es un movimiento de caja: default a la caja de efectivo (o la primera).
+  useEffect(() => {
+    if (cajaId || !cajas.length) return
+    const efectivo = cajas.find((c) => /efectivo|caja general/i.test(c.name)) ?? cajas[0]
+    setCajaId(efectivo.id)
+  }, [cajas, cajaId])
+  const cobrar = useAction(registrarCobroVenta)
 
   const submit = async () => {
     if (amount <= 0) return
-    const r = await pay.run(sale.id, amount, method, notes)
+    const caja = cajas.find((c) => c.id === cajaId)
+    const r = await cobrar.run({ sale, amount, finanzasOn, cajaId, cajaName: caja?.name, date, method, notes })
     if (r) { onOpenChange(false); refresh() }
   }
 
@@ -542,13 +561,13 @@ function PaymentDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChan
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Registrar pago</SheetTitle>
+          <SheetTitle>Registrar cobro</SheetTitle>
           <SheetDescription>#{sale.quote_number} · {sale.client_name}</SheetDescription>
         </SheetHeader>
         <div className="mt-6 space-y-4">
           <div className="rounded-md border border-border p-3 text-sm bg-muted/40">
             <div className="flex justify-between"><span className="text-muted-foreground">Total contrato</span><span className="tabular">{fmtMoney(sale.contract_total)}</span></div>
-            <div className="flex justify-between mt-1"><span className="text-muted-foreground">Ya pagado</span><span className="tabular">{fmtMoney(sale.financial_position?.total_paid)}</span></div>
+            <div className="flex justify-between mt-1"><span className="text-muted-foreground">Ya cobrado</span><span className="tabular">{fmtMoney(cobradoDe(sale))}</span></div>
             <div className="flex justify-between mt-1 font-medium"><span>Saldo</span><span className="tabular">{fmtMoney(due)}</span></div>
           </div>
           <div>
@@ -560,19 +579,37 @@ function PaymentDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChan
               ))}
             </div>
           </div>
-          <div>
-            <label className="text-sm font-medium block mb-1">Método</label>
-            <select value={method} onChange={(e) => setMethod(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
-              {methods.map((m) => <option key={m} value={m}>{m}</option>)}
-            </select>
-          </div>
+          {finanzasOn ? (
+            <>
+              <div className="grid grid-cols-2 gap-2">
+                <div>
+                  <label className="text-sm font-medium block mb-1">Caja</label>
+                  <select value={cajaId} onChange={(e) => setCajaId(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
+                    {cajas.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <label className="text-sm font-medium block mb-1">Fecha</label>
+                  <Input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+                </div>
+              </div>
+              <p className="text-[11px] text-muted-foreground">Registra un ingreso en la caja, linkeado a la venta. Para cobros por transferencia/banco que ya vas a importar en el extracto, mejor linkealos desde el Libro (evita duplicar).</p>
+            </>
+          ) : (
+            <div>
+              <label className="text-sm font-medium block mb-1">Método</label>
+              <select value={method} onChange={(e) => setMethod(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
+                {methods.map((m) => <option key={m} value={m}>{m}</option>)}
+              </select>
+            </div>
+          )}
           <div>
             <label className="text-sm font-medium block mb-1">Notas (opcional)</label>
             <Input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Comprobante, transferencia ID…" />
           </div>
           <div className="flex items-center gap-2 pt-2">
-            <Button onClick={submit} disabled={pay.busy || amount <= 0}>{pay.busy ? "Registrando…" : `Registrar ${fmtMoney(amount)}`}</Button>
-            {pay.error && <span className="text-xs text-destructive">{pay.error}</span>}
+            <Button onClick={submit} disabled={cobrar.busy || amount <= 0 || (finanzasOn && !cajaId)}>{cobrar.busy ? "Registrando…" : `Registrar ${fmtMoney(amount)}`}</Button>
+            {cobrar.error && <span className="text-xs text-destructive">{cobrar.error}</span>}
           </div>
           {(sale.payments && sale.payments.length > 0) && (
             <div className="pt-4 border-t border-border">

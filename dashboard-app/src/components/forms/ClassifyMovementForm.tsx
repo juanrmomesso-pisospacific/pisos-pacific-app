@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { useConfirm } from "@/components/ui/confirm"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
+import { saldoDe } from "@/lib/sales"
 import type { Category, Supplier, CashflowMovement, Sale, Caja } from "@/lib/types"
 import { EXPENSE_TYPES, categoriesForType } from "@/lib/cashflow"
 import { fmtMoney, appLocale } from "@/lib/utils"
@@ -266,12 +267,12 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
             </div>
           ) : (
             <SearchPicker
-              items={sales.map((s) => ({ id: s.id, label: s.client_name || s.title || s.id, sub: `#${s.quote_number} · saldo ${fmtMoney(s.financial_position?.balance_due ?? 0)}`, keywords: `${s.client_name || ""} ${s.quote_number || ""} ${s.title || ""}` }))}
+              items={sales.map((s) => ({ id: s.id, label: s.client_name || s.title || s.id, sub: `#${s.quote_number} · saldo ${fmtMoney(saldoDe(s))}`, keywords: `${s.client_name || ""} ${s.quote_number || ""} ${s.title || ""}` }))}
               placeholder="Buscar venta por cliente o número…"
               onPick={setSaleId}
             />
           )}
-          {linkedSale && <FieldHint>Saldo actual {fmtMoney(linkedSale.financial_position?.balance_due ?? 0)} — al asociar se descuenta este cobro (≈ US${Math.round(mov?.amount_usd ?? 0)}).</FieldHint>}
+          {linkedSale && <FieldHint>Saldo actual {fmtMoney(saldoDe(linkedSale))} — al asociar se descuenta este cobro (≈ US${Math.round(mov?.amount_usd ?? 0)}).</FieldHint>}
         </div>
       )}
 

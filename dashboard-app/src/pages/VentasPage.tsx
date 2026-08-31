@@ -1141,7 +1141,7 @@ function EditSaleItemsSheet({ sale, products, open, onOpenChange, onChanged }: {
     total = Math.round(net * factor)
     iva = total - net
   }
-  const paid = sale.financial_position?.total_paid ?? 0
+  const paid = cobradoDe(sale)
   const newBalance = Math.max(0, total - paid)
 
   const setQty = (i: number, v: number) => setItems(items.map((it, idx) => idx === i ? { ...it, quantity: v } : it))
@@ -1231,7 +1231,7 @@ function IvaEditor({ sale, onChanged }: { sale: Sale; onChanged: () => void }) {
   const save = async () => {
     // También se recalcula financial_position: si solo cambiara contract_total, el saldo
     // viejo quedaría congelado en las ventas cuyo cobrado no deriva del cashflow.
-    const paid = Number(sale.financial_position?.total_paid) || 0
+    const paid = cobradoDe(sale)
     const r = await upd.run("sales", sale.id, {
       iva_mode: mode, iva_amount: iva, has_iva: mode !== "none", contract_total: total,
       financial_position: { total_invoiced: total, total_paid: paid, balance_due: Math.max(0, total - paid) },

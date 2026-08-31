@@ -8,7 +8,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import { useApi } from "@/lib/api"
-import { saldoDe } from "@/lib/sales"
+import { saldoDe, cobradoDe } from "@/lib/sales"
 import { DataState } from "@/components/ui/data-state"
 import { usePeriod } from "@/contexts/PeriodContext"
 import { QuickPeriod } from "@/components/QuickPeriod"
@@ -102,7 +102,7 @@ function FunnelReport() {
       return true
     })
     const totalBilled = periodSales.reduce((sum, s) => sum + (s.contract_total ?? 0), 0)
-    const totalPaid   = periodSales.reduce((sum, s) => sum + (s.financial_position?.total_paid ?? 0), 0)
+    const totalPaid   = periodSales.reduce((sum, s) => sum + (cobradoDe(s)), 0)
 
     return {
       leadStages,
@@ -337,7 +337,7 @@ function VendorReport() {
 
       const quotesAccepted = vQuotes.filter(q => q.status === "Aceptado" || q.status === "ACCEPTED").length
       const billed = vSales.reduce((sum, s) => sum + (s.contract_total ?? 0), 0)
-      const paid   = vSales.reduce((sum, s) => sum + (s.financial_position?.total_paid ?? 0), 0)
+      const paid   = vSales.reduce((sum, s) => sum + (cobradoDe(s)), 0)
       const cogs = vSales.reduce((sum, s) => {
         let sCogs = 0
         for (const it of s.items ?? []) {
@@ -597,7 +597,7 @@ function AgingReport() {
                 {data.rows.map((r) => {
                   const due = saldoDe(r.sale)
                   const total = r.sale.contract_total ?? 0
-                  const paid  = r.sale.financial_position?.total_paid ?? 0
+                  const paid  = cobradoDe(r.sale)
                   const overdue = r.daysPast > 0
                   return (
                     <TableRow key={r.sale.id}>

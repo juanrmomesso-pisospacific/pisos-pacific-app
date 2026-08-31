@@ -14,6 +14,7 @@ import { findConvId } from "@/lib/chat"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import { ClientForm } from "@/components/forms/ClientForm"
 import type { Sale, Quote } from "@/lib/types"
+import { saldoDe } from "@/lib/sales"
 
 type Client = {
   id: string
@@ -29,7 +30,7 @@ type Client = {
 type Row = Client & { ventas: number; total: number; saldo: number; lastDate: string; contacto: string }
 type SortKey = "name" | "dni" | "ventas" | "total" | "saldo"
 
-const saldoDue = (s: Sale) => s.cashflow_balance_due ?? s.financial_position?.balance_due ?? 0
+const saldoDue = (s: Sale) => saldoDe(s)
 
 export default function ClientesPage() {
   const clients = useApi<Client[]>("/api/clients").data ?? []
