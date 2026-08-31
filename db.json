@@ -119913,6 +119913,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1788206110539-ao1xj",
+      "date": "2026-08-28T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "Transferencia entre cuentas",
+      "subcategory": null,
+      "counterparty": null,
+      "counterparty_type": null,
+      "client_id": null,
+      "supplier_id": null,
+      "description": "Efectivo a macu y gira a Wise",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 1500,
+      "amount_usd": 0.97,
+      "exchange_rate": 1546.39,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": true,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
