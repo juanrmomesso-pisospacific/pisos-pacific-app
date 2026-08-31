@@ -31933,8 +31933,8 @@
     },
     {
       "id": "local-1788200807061-ka9md",
-      "client_id": "CLI-mthkis2o-h3za",
-      "client_name": "Fernando Apaarquitectura",
+      "client_id": "CLI-mthkm3vq-ccyr",
+      "client_name": "Fernando - Apa Arquitectura",
       "client_dni": "",
       "client_email": "",
       "client_phone": "",
@@ -34082,6 +34082,18 @@
       "notes": null,
       "name": "Fernando Apaarquitectura",
       "updated_at": "2026-08-31T18:24:51.360Z"
+    },
+    {
+      "id": "CLI-mthkm3vq-ccyr",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Fernando - Apa Arquitectura",
+      "updated_at": "2026-08-31T18:27:26.630Z"
     }
   ],
   "expenses": [],
