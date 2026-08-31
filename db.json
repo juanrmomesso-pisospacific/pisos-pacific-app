@@ -14409,7 +14409,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Centauros - General Rodriguez",
-      "contract_total": 18482.75,
+      "contract_total": 15275,
       "items": [
         {
           "product_id": "PROD-027",
@@ -14457,16 +14457,17 @@
       "discount_total": 4534,
       "status": "Confirmado",
       "created_at": "2026-07-23T09:02:45.505Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 15275,
         "total_paid": 0,
-        "balance_due": 18482.75
+        "balance_due": 15275
       },
       "stock_reserved": true,
       "stock_deducted": false,
-      "seller_name": "Victoria Gonzalez Collado"
+      "seller_name": "Victoria Gonzalez Collado",
+      "iva_amount": 0
     },
     {
       "id": "local-sale-1785098651769-1nb0",
