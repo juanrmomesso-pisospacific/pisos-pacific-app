@@ -131359,11 +131359,11 @@
       "linked_lead_id": "lead-instagram-1787809597980",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-31T16:50:39.116Z",
-      "last_message_preview": "📎 Adjunto",
+      "last_message_at": "2026-08-31T16:50:50.766Z",
+      "last_message_preview": "Estamos en Olivos",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-31T16:16:01.688Z",
-      "last_outbound_at": "2026-08-31T16:50:39.116Z"
+      "last_outbound_at": "2026-08-31T16:50:50.766Z"
     },
     {
       "id": "conv-1787839755133-waik",
@@ -146721,6 +146721,16 @@
       "ts": "2026-08-31T16:50:39.116Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM3NjI0MDQ1NzE0MjQwOTYxNjkwODg2NTI0MTA4OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788195051206-lamg",
+      "conversation_id": "conv-1787809597980-13lp",
+      "direction": "out",
+      "body": "Estamos en Olivos",
+      "ts": "2026-08-31T16:50:50.766Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM3NjQ1NTM2MTI0OTY5OTczMTM0MjQ1Mjg1MDY4OAZDZD",
       "via": "ig-app"
     }
   ],
