@@ -131573,11 +131573,11 @@
       "linked_lead_id": "lead-instagram-1788105911471",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-31T16:55:59.200Z",
-      "last_message_preview": "El más vendido es el Kitsiliano o Verona (más económicos) ahí te mando algunas fotos",
+      "last_message_at": "2026-08-31T16:56:24.546Z",
+      "last_message_preview": "Este mide 19 cm ancho x 1.90 mts largo x 12 mm espesor \nValor usd 75 + iva",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-31T12:59:23.841Z",
-      "last_outbound_at": "2026-08-31T16:55:59.200Z"
+      "last_outbound_at": "2026-08-31T16:56:24.546Z"
     },
     {
       "id": "conv-email-1a0539fa708d",
@@ -146869,6 +146869,16 @@
       "ts": "2026-08-31T16:55:59.200Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjM4MjE0NDk2Mzk5NzczNTYxMzkzMjUxOTgxNzIxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788195384881-3ldo",
+      "conversation_id": "conv-1788105911471-txce",
+      "direction": "out",
+      "body": "Este mide 19 cm ancho x 1.90 mts largo x 12 mm espesor \nValor usd 75 + iva",
+      "ts": "2026-08-31T16:56:24.546Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjM4MjYxMjUxNTUwNTA2OTI0OTU1NDU1MDg4MjMwNAZDZD",
       "via": "ig-app"
     }
   ],
