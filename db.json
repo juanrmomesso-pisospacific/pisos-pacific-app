@@ -131506,11 +131506,12 @@
       "linked_lead_id": "lead-email-1a04fdacc039",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-29T23:28:42.000Z",
-      "last_message_preview": "Reciban un gran saludo quisiera un presupuesto para la compra y montaje de\r\n30 metros de pisos en spc de alto tráfico para un monoambiente u",
+      "last_message_at": "2026-08-31T12:31:13.692Z",
+      "last_message_preview": "Hola Gerardo, ¿cómo estás?\n\nTe adjunto el presupuesto solicitado. Incluye la entrega, mano de obra, piso y zocalos.\n\nCualquier duda, no dude",
       "email_subject": "Solicitud de presupuesto",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-29T23:28:42.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-29T23:28:42.000Z",
+      "last_outbound_at": "2026-08-31T12:31:13.692Z"
     },
     {
       "id": "conv-email-1a052be49ab5",
@@ -131520,7 +131521,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a052be49ab5",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-30T12:56:36.000Z",
       "last_message_preview": "Formulario web — 100m² · Con Colocación · CP 1617 · Talar del lago",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -146554,6 +146555,24 @@
       "ts": "2026-08-31T12:25:33.542Z",
       "status": "failed",
       "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"AZ2JAIQc4LZZhHVF-pLh1ye\"}}"
+    },
+    {
+      "id": "m-1788179470135-ll6p",
+      "conversation_id": "conv-email-1a04fdacc039",
+      "direction": "out",
+      "body": "📎 uesto_NA2392_-_Departamento_Congresp_-_Gerardo_Velasquez.pdf",
+      "ts": "2026-08-31T12:31:10.135Z",
+      "status": "sent",
+      "wa_id": "1a057cd577618055"
+    },
+    {
+      "id": "m-1788179473692-4vkw",
+      "conversation_id": "conv-email-1a04fdacc039",
+      "direction": "out",
+      "body": "Hola Gerardo, ¿cómo estás?\n\nTe adjunto el presupuesto solicitado. Incluye la entrega, mano de obra, piso y zocalos.\n\nCualquier duda, no dudes en consultarnos.\nSaludos,\nVictoria Collado",
+      "ts": "2026-08-31T12:31:13.692Z",
+      "status": "sent",
+      "wa_id": "1a057cd65a437dde"
     }
   ],
   "templates": [
