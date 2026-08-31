@@ -157601,6 +157601,15 @@
       "sale_id": "0000121",
       "notes": "Obra Pando - Pilar",
       "created_at": "2026-08-14T14:54:56.898Z"
+    },
+    {
+      "id": "local-1788204577510-w6sht",
+      "type": "otro",
+      "title": "Paneles Pueyrredon 1770",
+      "due_date": "2026-09-01",
+      "assigned_seller": "Hugo Ramirez",
+      "status": "pendiente",
+      "created_at": "2026-08-31T19:29:37.349Z"
     }
   ],
   "password_resets": {},
