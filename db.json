@@ -131573,11 +131573,11 @@
       "linked_lead_id": "lead-instagram-1788105911471",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-31T16:57:38.239Z",
-      "last_message_preview": "Estamos con 10 off",
+      "last_message_at": "2026-08-31T16:58:02.817Z",
+      "last_message_preview": "La colocacion es cada tabla encolada sobre una manta importada apta losa radiante",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-31T12:59:23.841Z",
-      "last_outbound_at": "2026-08-31T16:57:38.239Z"
+      "last_outbound_at": "2026-08-31T16:58:02.817Z"
     },
     {
       "id": "conv-email-1a0539fa708d",
@@ -146897,6 +146897,16 @@
       "ts": "2026-08-31T16:57:38.239Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjM4Mzk3MTkxODgzMTY4NDI0NTE3MzAyODUxOTkzNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788195483128-zxnq",
+      "conversation_id": "conv-1788105911471-txce",
+      "direction": "out",
+      "body": "La colocacion es cada tabla encolada sobre una manta importada apta losa radiante",
+      "ts": "2026-08-31T16:58:02.817Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjM4NDQyNTI5MzAwMTYyNjMxMDk1MDYxNzM1MDE0NAZDZD",
       "via": "ig-app"
     }
   ],
