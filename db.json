@@ -131425,7 +131425,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787809597980",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-31T16:56:58.810Z",
       "last_message_preview": "Muchas gracias ❤️❤️",
       "last_message_direction": "in",
@@ -131624,12 +131624,12 @@
       "linked_lead_id": "lead-email-1a0534d3845f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-31T15:05:56.000Z",
-      "last_message_preview": "es para exterior asi que supongo que sera mejor la linea H20 no?\r\n________________________________\r\nFrom: Pisos Pacific <info@pisospacific.c",
+      "last_message_at": "2026-08-31T17:31:03.253Z",
+      "last_message_preview": "Hola Agus! como estas? \nEl H2O no es un piso para exterior. Aunque tiene una muy buena resistencia  está diseñado para soportar situaciones ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-31T15:05:56.000Z",
-      "last_outbound_at": "2026-08-31T12:32:54.626Z"
+      "last_outbound_at": "2026-08-31T17:31:03.253Z"
     },
     {
       "id": "conv-1788105911471-txce",
@@ -131639,7 +131639,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788105911471",
       "status": "open",
-      "unread_count": 4,
+      "unread_count": 0,
       "last_message_at": "2026-08-31T17:09:07.738Z",
       "last_message_preview": "↩️ Reaccionó: ❤",
       "last_message_direction": "in",
@@ -131686,7 +131686,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788189602351",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-08-31T17:24:47.324Z",
       "last_message_preview": "Te consulto hay facilidades de pago ?",
       "last_message_direction": "in",
@@ -147053,6 +147053,15 @@
       "ts": "2026-08-31T17:28:17.934Z",
       "status": "sent",
       "wa_id": "1a058dd5f16636a7"
+    },
+    {
+      "id": "m-1788197463253-6l21",
+      "conversation_id": "conv-email-1a0534d3845f",
+      "direction": "out",
+      "body": "Hola Agus! como estas? \nEl H2O no es un piso para exterior. Aunque tiene una muy buena resistencia  está diseñado para soportar situaciones de humedad ocasional pero NO constante. Por lo tanto no está preparado para estar expuesto de manera permanente a la intemperie.\n\nCualquier cosa estamos a disposición",
+      "ts": "2026-08-31T17:31:03.253Z",
+      "status": "sent",
+      "wa_id": "1a058dfe585eb354"
     }
   ],
   "templates": [
