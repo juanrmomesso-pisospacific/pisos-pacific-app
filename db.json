@@ -131358,11 +131358,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787809597980",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-08-31T16:16:01.688Z",
-      "last_message_preview": "???",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-31T16:16:01.688Z"
+      "unread_count": 0,
+      "last_message_at": "2026-08-31T16:50:01.980Z",
+      "last_message_preview": "Hola Meg! Cómo estás? Mil disculpas\nTe respondimos por un sistema nuevo que estamos usando que ahí nos aparece la respuesta",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-31T16:16:01.688Z",
+      "last_outbound_at": "2026-08-31T16:50:01.980Z"
     },
     {
       "id": "conv-1787839755133-waik",
@@ -146701,6 +146702,16 @@
       "body": "???",
       "ts": "2026-08-31T16:16:01.688Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788195002521-ytvu",
+      "conversation_id": "conv-1787809597980-13lp",
+      "direction": "out",
+      "body": "Hola Meg! Cómo estás? Mil disculpas\nTe respondimos por un sistema nuevo que estamos usando que ahí nos aparece la respuesta",
+      "ts": "2026-08-31T16:50:01.980Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM3NTU1NTQyOTIwMzExMTc2NDM1MTExMTkyMTY2NAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
