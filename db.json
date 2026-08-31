@@ -128758,13 +128758,13 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1783715627239",
       "status": "closed",
-      "unread_count": 1,
-      "last_message_at": "2026-08-01T19:07:37.355Z",
-      "last_message_preview": "Es muy linda ya la tenía guardada jajaja",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-08-31T19:21:27.601Z",
+      "last_message_preview": "Para que cotices para la yera",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-01T19:07:37.355Z",
       "ignored": true,
-      "last_outbound_at": "2026-08-01T01:58:35.281Z"
+      "last_outbound_at": "2026-08-31T19:21:27.601Z"
     },
     {
       "id": "conv-email-19f4fcf002ff",
@@ -147355,6 +147355,16 @@
       "body": "✉️ RE: Pedido de Presupuesto | Página Web\n\nHola buenas tardes:\r\nGracias por la respuesta, estoy buscando en madera, actualmente tengo de la marca Patagonia.\r\nEn el lugar de colocación hay loza radiante.\r\nEl modelo seria roble veta tallada.\r\nLes dejo mi teléfono 1153755951\r\nSaludos\r\nJulieta\r\n________________________________\r\nDe: Pisos Pacific <info@pisospacific.com>\r\nEnviado: lunes, 31 de agosto de 2026 12:32\r\nPara: julietasossa@hotmail.com <julietasossa@hotmail.com>\r\nAsunto: Re: Pedido de Presupuesto | Página Web\r\n\r\nHola Julieta, como estas?\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera<https://pisospacific.com/madera> — Pisos de madera noble prefinished\r\n• Línea H2O<https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la zona de entrega así la agregamos en la cotización.\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\nVictoria Collado\r\n\r\n\r\n[Pisos Pacific]\r\nVictoria Collado\r\nVentas\r\n\r\n+54 11 3698-2222<https://wa.me/5491136982222>\r\nvictoria@pisospacific.com<mailto:victoria@pisospacific.com>\r\npisospacific.com<https://pisospacific.com/>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
       "ts": "2026-08-31T18:43:08.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788204088709-ckv6",
+      "conversation_id": "conv-1783715627239-zeoj",
+      "direction": "out",
+      "body": "Para que cotices para la yera",
+      "ts": "2026-08-31T19:21:27.601Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODczODg0MjI0ODc2Njk3NTozMjk4NjU0MzE1NTU1MTYwNzgwMDUwNjY5NDIwNjc1MDcyMAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
