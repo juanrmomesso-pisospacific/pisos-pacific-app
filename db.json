@@ -146416,6 +146416,15 @@
       "ts": "2026-08-31T12:21:42.363Z",
       "status": "failed",
       "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"Aj2DIottzCFCyCRtn-wH8HL\"}}"
+    },
+    {
+      "id": "m-1788178938269-u6st",
+      "conversation_id": "conv-1787809597980-13lp",
+      "direction": "out",
+      "body": "Hola como estas? Estamos en Olivos. Te dejo un numero para coordinar con cita previa pasar por el deposito.",
+      "ts": "2026-08-31T12:22:18.270Z",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"A2ayo_Q1NdUa6NLMzyGvJIm\"}}"
     }
   ],
   "templates": [
