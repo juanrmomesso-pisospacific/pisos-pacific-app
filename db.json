@@ -131538,11 +131538,12 @@
       "linked_lead_id": "lead-email-1a0534d3845f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-30T15:32:44.000Z",
-      "last_message_preview": "Formulario web — 50m² · Con Colocación · CP Radio: Con Colocación · Barrio el Aduar. Km 115 ruta 9",
+      "last_message_at": "2026-08-31T12:32:54.626Z",
+      "last_message_preview": "Hola Agustina, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de piso",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-30T15:32:44.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-30T15:32:44.000Z",
+      "last_outbound_at": "2026-08-31T12:32:54.626Z"
     },
     {
       "id": "conv-1788105911471-txce",
@@ -131552,7 +131553,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788105911471",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-30T16:05:09.468Z",
       "last_message_preview": "Hola ! Buenas tardes! Estamos pensando en ampliar la casa y quería saber la diferencia y el costo a este los pisos de madera y H20. Prefinis",
       "last_message_direction": "in",
@@ -146583,6 +146584,15 @@
       "ts": "2026-08-31T12:32:14.138Z",
       "status": "sent",
       "wa_id": "1a057ce508457530"
+    },
+    {
+      "id": "m-1788179574626-rw1n",
+      "conversation_id": "conv-email-1a0534d3845f",
+      "direction": "out",
+      "body": "Hola Agustina, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos,\nVictoria Collado",
+      "ts": "2026-08-31T12:32:54.626Z",
+      "status": "sent",
+      "wa_id": "1a057ceef5fb8909"
     }
   ],
   "templates": [
