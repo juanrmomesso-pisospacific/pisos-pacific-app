@@ -120019,10 +120019,10 @@
       "caja_name": "Caja General",
       "category": "Instalaciones",
       "subcategory": "Insumos Generales Colocación",
-      "counterparty": "Carlos Vera",
+      "counterparty": "Viem Distribuidora",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": "PROV-032",
+      "supplier_id": "PROV-CP-viemdistribu",
       "description": "Siliconas Negras y Transparentes",
       "sale_ref": null,
       "currency": "ARS",
@@ -159174,6 +159174,20 @@
       "category": "Flota",
       "subcategory": "Flete",
       "expense_type": "Gastos de Flota/Vehículos",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Carlos Vera\""
+    },
+    {
+      "id": "local-1788207855796-2ldgy",
+      "match": [
+        "Carlos Vera"
+      ],
+      "cuit": null,
+      "counterparty": "Viem Distribuidora",
+      "category": "Instalaciones",
+      "subcategory": "Insumos Generales Colocación",
+      "expense_type": "Gastos de Instalaciones y Suministros",
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Carlos Vera\""
