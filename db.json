@@ -31753,6 +31753,73 @@
       "quote_number": "A2392",
       "status": "DRAFT",
       "lead_id": "lead-email-1a04fdacc039"
+    },
+    {
+      "id": "local-1788197132233-qa5kd",
+      "client_id": "",
+      "client_name": "Barbara Armen",
+      "client_dni": "",
+      "client_email": "b.armen@hotmail.com",
+      "client_phone": "",
+      "client_address": "Caballito",
+      "internal_notes": "Formulario web — 40m² · Con Colocación · CP 1417",
+      "public_notes": "Se deben verificar los m2 previo a la colocación. Las medidas fueron provistas por el cliente. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Barbara Armen",
+      "has_iva": true,
+      "price": 2236.806,
+      "zoned": false,
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 33,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 1254,
+          "discount": 125.4,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 30,
+          "unit_price": 18,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 540,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 180,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 180,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 125.4,
+      "discount_amount": 125.4,
+      "created_at": "2026-08-31T17:25:32.082Z",
+      "quote_number": "A4370",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a04d3963422"
     }
   ],
   "clients": [
@@ -126084,10 +126151,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 30m² · Con Colocación · CP 1424",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-08-29T11:13:20.000Z",
-      "last_touch_at": "2026-08-31T17:24:38.902Z"
+      "last_touch_at": "2026-08-31T17:25:32.321Z"
     },
     {
       "id": "lead-email-1a04fdacc039",
@@ -131509,12 +131576,12 @@
       "linked_lead_id": "lead-email-1a04d3963422",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-29T14:03:24.000Z",
-      "last_message_preview": "Linea H2O El 29 ago 2026 09:18, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: Hola Bárbara, ¡muchas gracias por tu consulta! Para av",
+      "last_message_at": "2026-08-31T17:27:35.971Z",
+      "last_message_preview": "Hola Barbara, como estas?\nTe paso el preuspusto que inlcuye entrega y mano de obra + Piso.\n\nCualquier cosa estamos en contacto, \nSaludos,",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-29T14:03:24.000Z",
-      "last_outbound_at": "2026-08-29T12:18:07.912Z"
+      "last_outbound_at": "2026-08-31T17:27:35.971Z"
     },
     {
       "id": "conv-email-1a04fdacc039",
@@ -146958,6 +147025,24 @@
       "body": "Te consulto hay facilidades de pago ?",
       "ts": "2026-08-31T17:24:47.324Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788197253455-323j",
+      "conversation_id": "conv-email-1a04d3963422",
+      "direction": "out",
+      "body": "📎 Presupuesto_NA4370_-_Barbara_Armen_-_Barbara_Armen.pdf",
+      "ts": "2026-08-31T17:27:33.455Z",
+      "status": "sent",
+      "wa_id": "1a058dcb0c4437c5"
+    },
+    {
+      "id": "m-1788197255971-zcyc",
+      "conversation_id": "conv-email-1a04d3963422",
+      "direction": "out",
+      "body": "Hola Barbara, como estas?\nTe paso el preuspusto que inlcuye entrega y mano de obra + Piso.\n\nCualquier cosa estamos en contacto, \nSaludos,",
+      "ts": "2026-08-31T17:27:35.971Z",
+      "status": "sent",
+      "wa_id": "1a058dcbb7f7b22d"
     }
   ],
   "templates": [
