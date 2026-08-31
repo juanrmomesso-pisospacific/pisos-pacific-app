@@ -131522,11 +131522,12 @@
       "linked_lead_id": "lead-email-1a052be49ab5",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-30T12:56:36.000Z",
-      "last_message_preview": "Formulario web — 100m² · Con Colocación · CP 1617 · Talar del lago",
+      "last_message_at": "2026-08-31T12:32:14.138Z",
+      "last_message_preview": "Hola Julieta, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-30T12:56:36.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-30T12:56:36.000Z",
+      "last_outbound_at": "2026-08-31T12:32:14.138Z"
     },
     {
       "id": "conv-email-1a0534d3845f",
@@ -131536,7 +131537,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0534d3845f",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-30T15:32:44.000Z",
       "last_message_preview": "Formulario web — 50m² · Con Colocación · CP Radio: Con Colocación · Barrio el Aduar. Km 115 ruta 9",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -146573,6 +146574,15 @@
       "ts": "2026-08-31T12:31:13.692Z",
       "status": "sent",
       "wa_id": "1a057cd65a437dde"
+    },
+    {
+      "id": "m-1788179534138-1ldk",
+      "conversation_id": "conv-email-1a052be49ab5",
+      "direction": "out",
+      "body": "Hola Julieta, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la zona de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos,\nVictoria Collado",
+      "ts": "2026-08-31T12:32:14.138Z",
+      "status": "sent",
+      "wa_id": "1a057ce508457530"
     }
   ],
   "templates": [
