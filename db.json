@@ -131553,11 +131553,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788105911471",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-31T12:36:49.175Z",
-      "last_message_preview": "estamos con 10 off en todas las colecciones",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-30T16:05:09.468Z",
+      "unread_count": 2,
+      "last_message_at": "2026-08-31T12:59:23.841Z",
+      "last_message_preview": "Gracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-08-31T12:59:23.841Z",
       "last_outbound_at": "2026-08-31T12:36:49.175Z"
     },
     {
@@ -146631,6 +146631,22 @@
       "ts": "2026-08-31T12:37:34.732Z",
       "status": "sent",
       "wa_id": "1a057d334ac553e6"
+    },
+    {
+      "id": "m-1788181157251-62e4",
+      "conversation_id": "conv-1788105911471-txce",
+      "direction": "in",
+      "body": "Hola ! Buen día ! Gracias !!! Y los pisos prefinished en que varía el costo ? En el tipo de madera ? Cómo es la colocación ?",
+      "ts": "2026-08-31T12:59:16.491Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788181164291-svtl",
+      "conversation_id": "conv-1788105911471-txce",
+      "direction": "in",
+      "body": "Gracias",
+      "ts": "2026-08-31T12:59:23.841Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -154919,7 +154935,8 @@
       "1a057ceef5fb8909",
       "1a057ce508457530",
       "1a057cd65a437dde",
-      "1a057cd577618055"
+      "1a057cd577618055",
+      "1a057d334ac553e6"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -155552,7 +155569,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDcxNzE5NTMzNjY2NDI1NjozMjk4MTczNzM1NDMyNDMzNzQ2NjA5OTcyNTUwODgwNDYwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTgyNjk2OTQxMzI4NzU4MTozMjk4MTc0OTM5Mjc1NjcxNzcyODE4OTUzNTE2MDg5MzQ0MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk4MjM4MjM3NzE2ODIzODI0MjMzNzI4NjkyNTU4MjMzNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NDczMjA4ODY1MDQwNTYxNDk1MjMzNTk5MTExMTY4MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NDczMjA4ODY1MDQwNTYxNDk1MjMzNTk5MTExMTY4MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjEyMDE1MTIyNjkxNzQ4ODQ4MTc5MDMwNzg2MDQ4MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjEyMDI4NjgxNTcwNjg1ODgxOTg1NDQ4ODU2NzgwOAZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
