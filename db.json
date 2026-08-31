@@ -131554,11 +131554,11 @@
       "linked_lead_id": "lead-instagram-1788105911471",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-31T12:36:36.529Z",
-      "last_message_preview": "el costo de la coleccion h2o es de usd 38 + iva\ny los prefinished varian segun modelo. Desde 75 hasta 99 usd el m2 + iva",
+      "last_message_at": "2026-08-31T12:36:49.175Z",
+      "last_message_preview": "estamos con 10 off en todas las colecciones",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-30T16:05:09.468Z",
-      "last_outbound_at": "2026-08-31T12:36:36.529Z"
+      "last_outbound_at": "2026-08-31T12:36:49.175Z"
     },
     {
       "id": "conv-email-1a0539fa708d",
@@ -131568,7 +131568,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0539fa708d",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-30T17:02:46.000Z",
       "last_message_preview": "Formulario web — 120m² · Con Colocación · CP 1629 · Pilar, Buenos Aires",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -146612,6 +146612,15 @@
       "ts": "2026-08-31T12:36:36.529Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjA5NTA2MDc2ODc5OTY2NTcxODk5NjEwMjAyMTEyMAZDZD"
+    },
+    {
+      "id": "m-1788179809175-w679",
+      "conversation_id": "conv-1788105911471-txce",
+      "direction": "out",
+      "body": "estamos con 10 off en todas las colecciones",
+      "ts": "2026-08-31T12:36:49.175Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMjA3OTM5NTY4OTQxMzozMjk4NjA5NTI5NDAyNzkxNTM3MTI2NDQyMzcwNTQ0NDM1MgZDZD"
     }
   ],
   "templates": [
