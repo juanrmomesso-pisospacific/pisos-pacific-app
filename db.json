@@ -14335,7 +14335,7 @@
       ],
       "zoned": false,
       "discount_total": 370.08,
-      "status": "Programado",
+      "status": "En proceso",
       "created_at": "2026-07-22T22:35:15.171Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -14355,6 +14355,12 @@
           "from": "Confirmado",
           "to": "Programado",
           "at": "2026-08-14T13:13:26.398Z",
+          "by": "Admin User"
+        },
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-08-31T19:45:01.402Z",
           "by": "Admin User"
         }
       ],
