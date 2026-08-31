@@ -52,19 +52,32 @@ export default function MensajesPage() {
 
   const [searchParams, setSearchParams] = useSearchParams()
   const convFromUrl = searchParams.get("conv")
-  const [channelFilter, setChannelFilter] = useState<ChannelFilter>("all")
+  // Filtros PERSISTENTES (preferencias de trabajo del vendedor): antes se reseteaban al salir
+  // y volver, y el vendedor reconstruía "mis pendientes de WhatsApp" decenas de veces por día.
+  const { state: auth } = useAuth()
+  const myself = auth.user?.role === "vendor" ? (auth.user.seller_name || "") : ""
+  const saved = useMemo(() => { try { return JSON.parse(localStorage.getItem("mensajes:filters") || "{}") } catch { return {} } }, [])
+  const [channelFilter, setChannelFilter] = useState<ChannelFilter>(saved.channelFilter ?? "all")
   const [q, setQ] = useState("")
-  const [onlyUnread, setOnlyUnread] = useState(false)
-  const [onlyPending, setOnlyPending] = useState(false)   // esperan NUESTRA respuesta (última 'in')
-  const [onlyWaiting, setOnlyWaiting] = useState(false)   // esperan al cliente (última 'out' hace ≥3d)
-  const [showClosed, setShowClosed] = useState(false)
-  const [sellerFilter, setSellerFilter] = useState("")   // "" todos · "__none__" sin asignar · nombre
+  const [onlyUnread, setOnlyUnread] = useState<boolean>(saved.onlyUnread ?? false)
+  const [onlyPending, setOnlyPending] = useState<boolean>(saved.onlyPending ?? false)   // esperan NUESTRA respuesta (última 'in')
+  const [onlyWaiting, setOnlyWaiting] = useState<boolean>(saved.onlyWaiting ?? false)   // esperan al cliente (última 'out' hace ≥3d)
+  const [showClosed, setShowClosed] = useState<boolean>(saved.showClosed ?? false)
+  // Un vendedor arranca viendo LAS SUYAS (default a su nombre); admin/logística: todos.
+  const [sellerFilter, setSellerFilter] = useState<string>(saved.sellerFilter ?? myself)   // "" todos · "__none__" sin asignar · nombre
   const [selectedId, setSelectedId] = useState<string | null>(convFromUrl)
   const [showContact, setShowContact] = useState(false)   // móvil: panel de ficha como overlay
+  useEffect(() => {
+    try { localStorage.setItem("mensajes:filters", JSON.stringify({ channelFilter, onlyUnread, onlyPending, onlyWaiting, showClosed, sellerFilter })) } catch { /* ignore */ }
+  }, [channelFilter, onlyUnread, onlyPending, onlyWaiting, showClosed, sellerFilter])
 
   // Vendedor asignado de una conversación = el del lead vinculado.
   const sellerOf = (c: Conversation) => (c.linked_lead_id ? leadById.get(c.linked_lead_id)?.assigned_seller : "") || ""
-  const sellers = useMemo(() => [...new Set(leads.map(l => l.assigned_seller).filter(Boolean) as string[])].sort(), [leads])
+  const sellers = useMemo(() => {
+    const set = new Set(leads.map(l => l.assigned_seller).filter(Boolean) as string[])
+    if (myself) set.add(myself)   // el vendedor siempre puede elegirse, aunque no tenga leads aún
+    return [...set].sort()
+  }, [leads, myself])
 
   // Pendiente = última del cliente (no se resetea al abrir, solo al responder).
   const isPending = (c: Conversation) => c.last_message_direction === "in" && c.status !== "closed"
@@ -312,6 +325,11 @@ function ConversationRow({ conv, lead, waiting, selected, onClick, onIgnore }: {
   const ChannelIcon = channelIcon(conv.channel) ?? AtSign
   const pending = conv.last_message_direction === "in" && conv.status !== "closed"   // espera nuestra respuesta
   const pendingDays = pending ? Math.floor((Date.now() - new Date(conv.last_inbound_at ?? conv.last_message_at).getTime()) / 86400e3) : 0
+  // Ventana de 24h de Meta: en WA/IG, si el último entrante fue hace +24h no se puede responder
+  // directo (hace falta plantilla / la app del celular). Mostrarlo YA en la lista evita escribir
+  // una respuesta larga y descubrir recién al mandar que la ventana venció.
+  const isChat = conv.channel === "whatsapp" || conv.channel === "instagram"
+  const outsideWindow = pending && isChat && (Date.now() - new Date(conv.last_inbound_at ?? conv.last_message_at).getTime()) > 24 * 3600e3
   return (
     <div
       role="button"
@@ -350,10 +368,15 @@ function ConversationRow({ conv, lead, waiting, selected, onClick, onIgnore }: {
             )}
           </div>
           {pending ? (
-            <div className="mt-1">
+            <div className="mt-1 flex items-center gap-1 flex-wrap">
               <span className={`inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-[10px] font-medium ${pendingDays >= 2 ? "bg-red-100 text-red-700 dark:bg-red-950/40 dark:text-red-400" : "bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-400"}`}>
                 <Clock3 className="h-2.5 w-2.5" />Sin responder · {agoLabel(conv.last_inbound_at ?? conv.last_message_at)}
               </span>
+              {outsideWindow && (
+                <span className="inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-[10px] font-medium bg-muted text-muted-foreground" title={conv.channel === "whatsapp" ? "Pasaron +24h: hace falta plantilla de re-enganche" : "Pasaron +24h: respondé desde la app del celular (se espeja)"}>
+                  ⏰ fuera de ventana
+                </span>
+              )}
             </div>
           ) : waiting ? (
             <div className="mt-1">
@@ -745,11 +768,12 @@ function Composer({
 }) {
   const fileRef = useRef<HTMLInputElement>(null)
   const onKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    // Enter = salto de línea; Shift+Enter = enviar (para no mandar sin querer).
-    if (e.key === "Enter" && e.shiftKey) {
-      e.preventDefault()
-      onSend()
-    }
+    if (e.key !== "Enter") return
+    // Email: NUNCA enviar con Enter (se escapaban mails sin querer) → se manda con el botón.
+    if (isEmail) return
+    // Chat (WhatsApp/Instagram): Enter = enviar, Shift+Enter = salto de línea — como la memoria
+    // muscular de WhatsApp (antes estaba invertido y confundía a los vendedores todo el día).
+    if (!e.shiftKey) { e.preventDefault(); onSend() }
   }
   return (
     <div className="border-t border-border bg-background shrink-0">
@@ -805,7 +829,7 @@ function Composer({
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={onKeyDown}
-          placeholder={isEmail ? "Escribí el email… (Shift+Enter para enviar)" : "Escribí un mensaje… (Shift+Enter para enviar)"}
+          placeholder={isEmail ? "Escribí el email… (enviá con el botón)" : "Escribí un mensaje… (Enter envía · Shift+Enter salto de línea)"}
           rows={isEmail ? 6 : 3}
           className={cn("flex-1 resize-y max-h-[60vh] rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring", isEmail ? "min-h-[140px]" : "min-h-[72px]")}
         />
@@ -891,8 +915,22 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes, c
     refresh()
   }
 
-  // Quote prefill from linked lead (button is disabled when no lead linked)
-  const quotePrefill: QuotePrefill | null = linkedLead ? leadToQuotePrefill(linkedLead) : null
+  // Prefill de cotización: desde el lead vinculado, o —si la conversación es de un CLIENTE ya
+  // existente (comprador recurrente que vuelve por chat)— desde los datos del cliente. Al
+  // convertir la cotización en venta, el find-or-create de cliente deduplica por nombre/tel/mail
+  // → no duplica al cliente. Antes esto estaba trabado (solo se podía cotizar desde un lead).
+  const quotePrefill: QuotePrefill | null = linkedLead
+    ? leadToQuotePrefill(linkedLead)
+    : linkedClient
+    ? {
+        client_name: linkedClient.name,
+        client_phone: linkedClient.phones?.[0] ?? "",
+        client_email: linkedClient.emails?.[0] ?? "",
+        client_address: linkedClient.addresses?.[0] ?? "",
+        title: `Cotización ${linkedClient.name}`,
+        source: "Cliente",
+      }
+    : null
 
   // Quotes already created for this lead — listed in a dedicated section below
   const leadQuotes = linkedLead ? quotes.filter(q => q.lead_id === linkedLead.id) : []
@@ -1086,10 +1124,10 @@ function ContactPanel({ conversation, clients, sales, leads, leadById, quotes, c
         <Button
           className="w-full"
           size="sm"
-          variant={linkedLead || linkedClient ? "default" : "outline"}
-          disabled={!linkedLead}
+          variant={quotePrefill ? "default" : "outline"}
+          disabled={!quotePrefill}
           onClick={() => setNewQuoteOpen(true)}
-          title={linkedLead ? "Crear cotización desde este lead" : "Primero creá un lead"}
+          title={linkedLead ? "Crear cotización desde este lead" : linkedClient ? "Crear cotización para este cliente" : "Primero vinculá un lead o cliente"}
         >
           <FileText className="h-3.5 w-3.5" />Crear cotización
         </Button>

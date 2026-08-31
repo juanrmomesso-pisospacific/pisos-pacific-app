@@ -23,7 +23,7 @@ import { fmtMoney, fmtInt, cn, appLocale } from "@/lib/utils"
 import { useConfig, useModules, moduleOn, taxWord } from "@/contexts/ConfigContext"
 import { materialState, MATERIAL_LABEL } from "@/lib/calendar"
 import { saleMaterialsForRemito, looseUnit } from "@/lib/remito"
-import { cobradoDe, saldoDe, tieneSaldo } from "@/lib/sales"
+import { cobradoDe, saldoDe, tieneSaldo, cobranzaNivel, finalizadaEl } from "@/lib/sales"
 import { openPacificPdf } from "@/lib/pdf"
 import type { Sale, Quote, Caja, CashflowMovement, Product } from "@/lib/types"
 
@@ -95,6 +95,22 @@ const cobrado = (s: Sale) => cobradoDe(s)
 const isDue = (s: Sale) => tieneSaldo(s)
 const isPendingDelivery = (s: Sale) => s.status !== "Cancelado" && materialState(s) !== "full"
 
+// Cobranza: relevancia por estado de obra (regla del dueño, ver lib/sales.ts). La antigüedad
+// de la VENTA no mide mora; sí el aging desde que la obra se FINALIZÓ sin cobrar.
+const daysSince = (ymd: string | null) => ymd ? Math.max(0, Math.round((Date.now() - new Date(ymd + "T00:00:00").getTime()) / 86400000)) : 0
+const COBRANZA_RANK: Record<string, number> = { entregada: 0, anticipo: 1, esperando: 2 }
+// Chip de urgencia de cobro (se auto-oculta si la venta no tiene saldo).
+function CobranzaBadge({ sale }: { sale: Sale }) {
+  const nivel = cobranzaNivel(sale)
+  if (!nivel) return null
+  if (nivel === "entregada") {
+    const d = daysSince(finalizadaEl(sale))
+    return <Badge variant="outline" className="text-[10px] font-normal text-rose-700 border-rose-400/50 dark:text-rose-300">Entregada sin cobrar{d ? ` · ${d}d` : ""}</Badge>
+  }
+  if (nivel === "anticipo") return <Badge variant="outline" className="text-[10px] font-normal text-amber-700 border-amber-400/50 dark:text-amber-300">Anticipo incompleto</Badge>
+  return <Badge variant="outline" className="text-[10px] font-normal text-muted-foreground">Esperando conforme</Badge>
+}
+
 export default function VentasPage() {
   const salesApi = useApi<Sale[]>("/api/sales")
   const sales = salesApi.data ?? []
@@ -109,9 +125,13 @@ export default function VentasPage() {
     sweptRef.current = true
     Promise.all(due.map(s => api.saleTransition(s.id, "En proceso").catch(() => null))).then(() => refetchSales())
   }, [sales])
-  const [filter, setFilter] = useState<"Todas" | (typeof STATUSES)[number]>("Todas")
+  const { state: auth } = useAuth()
+  const [filter, setFilter] = useState<"Todas" | (typeof STATUSES)[number] | "Cancelado">("Todas")
   const [quick, setQuick] = useState<"none" | "cobro" | "entrega">("none")
   const [q, setQ] = useState("")
+  // Filtro por vendedor. Un vendedor arranca viendo LAS SUYAS (admin/logística: todas).
+  const [sellerFilter, setSellerFilter] = useState<string>(() => (auth.user?.role === "vendor" && auth.user?.seller_name) ? auth.user.seller_name : "")
+  const sellers = useMemo(() => [...new Set(sales.map((s) => s.seller_name).filter(Boolean) as string[])].sort(), [sales])
   // Filtro por PRODUCTO: qué ventas incluyen tal piso (ej. "las reservas de Roble Eslavonia XL").
   const products = useApi<Product[]>("/api/products").data ?? []
   const [prodFilterId, setProdFilterId] = useState<string | null>(null)
@@ -139,20 +159,31 @@ export default function VentasPage() {
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase()
-    return [...sales]
-      .sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""))
-      .filter((row) => {
-        if (filter !== "Todas" && row.status !== filter) return false
-        if (quick === "cobro" && !isDue(row)) return false
-        if (quick === "entrega" && !isPendingDelivery(row)) return false
-        if (prodSel && !(row.items || []).some((it) => itemMatchesProduct(it, prodSel))) return false
-        if (!needle) return true
-        // El buscador libre también entra a los ÍTEMS (producto por nombre o SKU).
-        return row.client_name.toLowerCase().includes(needle)
-          || row.quote_number.toLowerCase().includes(needle)
-          || (row.items || []).some((it) => (it.description || "").toLowerCase().includes(needle) || (it.sku || "").toLowerCase().includes(needle))
+    const base = sales.filter((row) => {
+      if (filter !== "Todas" && row.status !== filter) return false
+      if (sellerFilter && (row.seller_name || "") !== sellerFilter) return false
+      if (quick === "cobro" && !isDue(row)) return false
+      if (quick === "entrega" && !isPendingDelivery(row)) return false
+      if (prodSel && !(row.items || []).some((it) => itemMatchesProduct(it, prodSel))) return false
+      if (!needle) return true
+      // El buscador libre también entra a los ÍTEMS (producto por nombre o SKU).
+      return row.client_name.toLowerCase().includes(needle)
+        || row.quote_number.toLowerCase().includes(needle)
+        || (row.items || []).some((it) => (it.description || "").toLowerCase().includes(needle) || (it.sku || "").toLowerCase().includes(needle))
+    })
+    // En "Pendiente de cobro" ordenamos por URGENCIA (entregada sin cobrar primero, por aging);
+    // en el resto, por fecha de creación (lo más nuevo arriba).
+    if (quick === "cobro") {
+      return base.sort((a, b) => {
+        const ra = COBRANZA_RANK[cobranzaNivel(a) ?? "esperando"] ?? 3
+        const rb = COBRANZA_RANK[cobranzaNivel(b) ?? "esperando"] ?? 3
+        if (ra !== rb) return ra - rb
+        if (ra === 0) return daysSince(finalizadaEl(b)) - daysSince(finalizadaEl(a))  // más viejo primero
+        return saldoDue(b) - saldoDue(a)
       })
-  }, [sales, filter, quick, q, prodSel])
+    }
+    return base.sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""))
+  }, [sales, filter, sellerFilter, quick, q, prodSel])
   // m² del producto filtrado en las ventas visibles (y cuántos están en ventas ACTIVAS = reservas).
   const prodStats = useMemo(() => {
     if (!prodSel) return null
@@ -177,11 +208,13 @@ export default function VentasPage() {
   const kpis = useMemo(() => {
     const due = sales.filter(isDue)
     const dueTotal = due.reduce((a, s) => a + saldoDue(s), 0)
+    const entregadaSinCobrar = due.filter((s) => cobranzaNivel(s) === "entregada").length
+    const anticipoIncompleto = due.filter((s) => cobranzaNivel(s) === "anticipo").length
     const active = sales.filter((s) => s.status !== "Cancelado")
     const matPartial = active.filter((s) => materialState(s) === "partial").length
     const matNone = active.filter((s) => materialState(s) === "none").length
     const finalizadas = sales.filter((s) => s.status === "Finalizado").length   // colocadas / obra cerrada
-    return { dueCount: due.length, dueTotal, matPartial, matNone, finalizadas, pendMaterial: matPartial + matNone }
+    return { dueCount: due.length, dueTotal, entregadaSinCobrar, anticipoIncompleto, matPartial, matNone, finalizadas, pendMaterial: matPartial + matNone }
   }, [sales])
 
   const [openNew, setOpenNew] = useState(false)
@@ -208,7 +241,11 @@ export default function VentasPage() {
             <Card className="p-4">
               <div className="text-xs text-muted-foreground">Pendiente de cobro</div>
               <div className="text-2xl font-semibold tabular">{fmtMoney(kpis.dueTotal)}</div>
-              <div className="text-[11px] text-muted-foreground">{kpis.dueCount} ventas con saldo</div>
+              <div className="text-[11px] text-muted-foreground">
+                {kpis.dueCount} ventas con saldo
+                {kpis.entregadaSinCobrar > 0 && <> · <span className="text-rose-600 font-medium">{kpis.entregadaSinCobrar} entregada{kpis.entregadaSinCobrar === 1 ? "" : "s"} sin cobrar</span></>}
+                {kpis.anticipoIncompleto > 0 && <> · <span className="text-amber-600">{kpis.anticipoIncompleto} anticipo incompleto</span></>}
+              </div>
             </Card>
           </button>
           <button onClick={() => setQuick(quick === "entrega" ? "none" : "entrega")} className={cn("text-left", quick === "entrega" && "ring-2 ring-foreground rounded-lg")}>
@@ -236,13 +273,21 @@ export default function VentasPage() {
         ) : null}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap gap-1">
-            {(["Todas", ...STATUSES] as const).map((s) => (
-              <Button key={s} size="sm" variant={s === filter ? "default" : "outline"} onClick={() => setFilter(s)} className="h-8 px-3 text-xs">
+            {(["Todas", ...STATUSES, "Cancelado"] as const).map((s) => (
+              (s === "Cancelado" && (counts["Cancelado"] ?? 0) === 0) ? null : (
+              <Button key={s} size="sm" variant={s === filter ? "default" : "outline"} onClick={() => setFilter(s)} className={cn("h-8 px-3 text-xs", s === "Cancelado" && "text-muted-foreground")}>
                 {s} <span className="ml-1 text-muted-foreground">{counts[s] ?? 0}</span>
               </Button>
+              )
             ))}
           </div>
           <div className="flex items-center gap-2">
+            {sellers.length > 1 && (
+              <select value={sellerFilter} onChange={(e) => setSellerFilter(e.target.value)} className="h-8 rounded-md border border-input bg-transparent px-2 text-xs" title="Filtrar por vendedor">
+                <option value="">Todos los vendedores</option>
+                {sellers.map((s) => <option key={s} value={s}>{s}</option>)}
+              </select>
+            )}
             <Tabs value={view} onValueChange={(v) => setViewPersist(v as View)}>
               <TabsList className="h-8">
                 <TabsTrigger value="tabla" className="gap-1.5"><Rows3 className="h-3.5 w-3.5" />Tabla</TabsTrigger>
@@ -328,7 +373,10 @@ function VentasTable({ rows, onChanged }: { rows: Sale[]; onChanged: () => void 
               <TableCell><MaterialBadge sale={r} /></TableCell>
               <TableCell className="text-xs text-muted-foreground">{r.created_at ? new Date(r.created_at).toLocaleDateString(appLocale()) : "—"}</TableCell>
               <TableCell className="text-right tabular">{fmtMoney(r.contract_total)}</TableCell>
-              <TableCell className={`text-right tabular ${due > 0 ? "text-foreground font-medium" : "text-muted-foreground"}`}>{fmtMoney(due)}</TableCell>
+              <TableCell className={`text-right tabular ${due > 0 ? "text-foreground font-medium" : "text-muted-foreground"}`}>
+                {fmtMoney(due)}
+                {due > 0.5 ? <div className="mt-0.5"><CobranzaBadge sale={r} /></div> : null}
+              </TableCell>
               <TableCell className="text-right"><div onClick={(e) => e.stopPropagation()}><SaleRowActions sale={r} /></div></TableCell>
             </TableRow>
           )
@@ -369,6 +417,7 @@ function VentasCards({ rows, onChanged }: { rows: Sale[]; onChanged: () => void 
               <span className="tabular font-medium">{fmtMoney(s.contract_total)}</span>
               {due > 0.5 ? <Badge variant="outline" className="text-[10px]">Saldo {fmtMoney(due)}</Badge> : <span className="text-[11px] text-emerald-700">Saldado ✓</span>}
             </div>
+            {due > 0.5 ? <div className="mt-1.5"><CobranzaBadge sale={s} /></div> : null}
             {s.delivery_date ? (
               <div className="text-[10px] text-muted-foreground mt-1.5 inline-flex items-center gap-1">
                 <CalendarDays className="h-2.5 w-2.5" />Colocación {new Date(s.delivery_date).toLocaleDateString(appLocale())}
@@ -388,6 +437,7 @@ function VentasKanban({ rows, onChanged }: { rows: Sale[]; onChanged: () => void
   const [dragOver, setDragOver] = useState<SaleStatus | null>(null)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const txn = useAction(api.saleTransition)
+  const confirm = useConfirm()
   const selected = selectedId ? rows.find(s => s.id === selectedId) ?? null : null
 
   const byStatus = useMemo(() => {
@@ -405,6 +455,16 @@ function VentasKanban({ rows, onChanged }: { rows: Sale[]; onChanged: () => void
     if (!sale || sale.status === status) return
     // Programado requiere fecha de colocación: si no la tiene, abrir el detalle para cargarla.
     if (status === "Programado" && !sale.delivery_date) { setSelectedId(id); return }
+    // Finalizar DESCUENTA STOCK del material no entregado → pedir confirmación (el drag es el
+    // camino más fácil y era el menos protegido; el menú ⋯ ya confirmaba).
+    if (status === "Finalizado") {
+      const ok = await confirm({
+        title: `Finalizar ${sale.title || sale.client_name}?`,
+        description: "Marca la obra como entregada e instalada y DESCUENTA del stock el material que todavía no se entregó. Solo confirmá si la obra está cerrada.",
+        confirmLabel: "Finalizar (descontar stock)",
+      })
+      if (!ok) return
+    }
     const r = await txn.run(id, status)
     if (r) onChanged()  // refetch suave, sin recargar la página
   }
@@ -475,9 +535,9 @@ function VentasKanban({ rows, onChanged }: { rows: Sale[]; onChanged: () => void
                       <span className="tabular text-foreground">{fmtMoney(r.contract_total)}</span>
                       {due > 0 ? <Badge variant="outline" className="text-[10px]">Saldo {fmtMoney(due)}</Badge> : <span className="text-muted-foreground tabular">{r.created_at ? new Date(r.created_at).toLocaleDateString(appLocale()) : "—"}</span>}
                     </div>
-                    <div className="mt-1.5 flex items-center gap-1.5">
+                    <div className="mt-1.5 flex items-center gap-1.5 flex-wrap">
                       <MaterialBadge sale={r} />
-                      {isDue(r) ? <span className="text-[10px] text-foreground">· debe {fmtMoney(saldoDue(r))}</span> : null}
+                      <CobranzaBadge sale={r} />
                     </div>
                     {r.delivery_date && (
                       <div className="text-[10px] text-muted-foreground mt-0.5 inline-flex items-center gap-1">
@@ -767,6 +827,11 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
             {sale.client_email && <Row label="Email" value={sale.client_email} />}
             {sale.client_address && <Row label="Dirección / obra" value={sale.client_address} />}
             {sale.seller_name && <Row label="Vendedor" value={sale.seller_name} />}
+            {sale.status_log?.length ? (() => {
+              const last = sale.status_log[sale.status_log.length - 1]
+              const when = last.at ? new Date(last.at).toLocaleDateString(appLocale()) : ""
+              return <Row label="Último cambio de estado" value={`${last.from ? last.from + " → " : ""}${last.to}${when ? ` · ${when}` : ""}${last.by ? ` · ${last.by}` : ""}`} />
+            })() : null}
           </DetailSection>
 
           <DetailSection title={`Items (${sale.items?.length ?? 0})`}>
