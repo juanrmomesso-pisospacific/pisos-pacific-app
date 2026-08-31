@@ -128759,12 +128759,12 @@
       "linked_lead_id": "lead-instagram-1783715627239",
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-08-31T19:21:27.601Z",
-      "last_message_preview": "Para que cotices para la yera",
+      "last_message_at": "2026-08-31T19:21:58.473Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-01T19:07:37.355Z",
       "ignored": true,
-      "last_outbound_at": "2026-08-31T19:21:27.601Z"
+      "last_outbound_at": "2026-08-31T19:21:58.473Z"
     },
     {
       "id": "conv-email-19f4fcf002ff",
@@ -147364,6 +147364,16 @@
       "ts": "2026-08-31T19:21:27.601Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODczODg0MjI0ODc2Njk3NTozMjk4NjU0MzE1NTU1MTYwNzgwMDUwNjY5NDIwNjc1MDcyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788204118836-ah58",
+      "conversation_id": "conv-1783715627239-zeoj",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-08-31T19:21:58.473Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODczODg0MjI0ODc2Njk3NTozMjk4NjU0MzcyNTAyNTIxMzA2NDE1NDkyMDUwMjk1MTkzNgZDZD",
       "via": "ig-app"
     }
   ],
