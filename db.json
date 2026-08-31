@@ -119986,6 +119986,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1788206433484-mxo0c",
+      "date": "2026-08-28T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Caja General",
+      "category": "HR",
+      "subcategory": "Pago Instalaciones",
+      "counterparty": "Carlos Vera",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-032",
+      "description": " Hudson 250 Ayres 220 Village 250 Exaltación 540",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 1260000,
+      "amount_usd": 815.53,
+      "exchange_rate": 1545.01,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
