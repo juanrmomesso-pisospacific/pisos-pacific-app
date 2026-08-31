@@ -130512,7 +130512,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786903722827",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-08-28T18:59:24.595Z",
       "last_message_preview": "Quería averiguar esto",
       "last_message_direction": "in",
@@ -131352,7 +131352,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787944218618",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-28T19:10:17.199Z",
       "last_message_preview": "📷 Foto",
       "last_message_direction": "in",
@@ -131382,7 +131382,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787978533315",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-29T04:42:11.353Z",
       "last_message_preview": "Hola. Por favor, dejen de interrumpir los videos que miro en YouTube. Ya le dije exactamente lo mismo a un montón de compañías y empresas qu",
       "last_message_direction": "in",
@@ -131396,7 +131396,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a04d3963422",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-08-29T14:03:24.000Z",
       "last_message_preview": "Linea H2O El 29 ago 2026 09:18, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: Hola Bárbara, ¡muchas gracias por tu consulta! Para av",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -146452,6 +146452,15 @@
       "ts": "2026-08-31T12:25:19.777Z",
       "status": "failed",
       "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"AAvMcHCAO-XDnygwgq1QFTF\"}}"
+    },
+    {
+      "id": "m-1788179133542-l7pk",
+      "conversation_id": "conv-1787884323035-dtb8",
+      "direction": "out",
+      "body": "Para pasarte el presupuesto necesito tres datos: los m² aproximados, la ubicación de la obra y qué piso te gustó.",
+      "ts": "2026-08-31T12:25:33.542Z",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"AZ2JAIQc4LZZhHVF-pLh1ye\"}}"
     }
   ],
   "templates": [
