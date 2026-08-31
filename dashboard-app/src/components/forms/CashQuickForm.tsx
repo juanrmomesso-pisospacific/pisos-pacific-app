@@ -9,7 +9,10 @@ import { EXPENSE_TYPES, categoriesForType } from "@/lib/cashflow"
 
 type Fx = { compra: number; venta: number; promedio: number; updated_at?: string }
 
-const CASH_CAJA = "CAJ-005" // Caja General = efectivo
+// Efectivo separado por moneda: dólares → Efectivo USD (CAJ-005), pesos → Efectivo Pesos
+// (CAJ-009). Así cada caja se concilia en SU moneda, sin arrastre de tipo de cambio.
+const cashCajaFor = (currency: "ARS" | "USD") =>
+  currency === "USD" ? { id: "CAJ-005", name: "Efectivo USD" } : { id: "CAJ-009", name: "Efectivo Pesos" }
 const inputSel = "h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm"
 
 // Inferencia liviana del tipo de gasto a partir de la descripción (con override manual).
@@ -90,14 +93,15 @@ export function CashQuickForm({ open, onOpenChange, cajas }: { open: boolean; on
 
   async function submit() {
     if (!v.amount || !v.description) return
-    const caja = cajas.find((c) => c.id === CASH_CAJA)
     const isUsd = v.currency === "USD"
+    const cashCaja = cashCajaFor(v.currency)
+    const caja = cajas.find((c) => c.id === cashCaja.id)
     const body = {
       id: `mov-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
       date: `${v.date}T00:00:00.000Z`,
       flow: "Egreso",
-      caja_id: CASH_CAJA,
-      caja_name: caja?.name ?? "Caja General",
+      caja_id: cashCaja.id,
+      caja_name: caja?.name ?? cashCaja.name,
       category: v.category || null,
       subcategory: v.subcategory || null,
       counterparty: v.counterparty || null,
@@ -127,7 +131,7 @@ export function CashQuickForm({ open, onOpenChange, cajas }: { open: boolean; on
   return (
     <FormSheet open={open} onOpenChange={onOpenChange} title="Gasto en efectivo" onSubmit={submit} busy={create.busy} error={create.error}>
       <div className="rounded-md bg-muted/40 px-3 py-2 text-xs text-muted-foreground">
-        Va directo a <b>Caja General (efectivo)</b> como egreso. Cargá monto y descripción; el tipo de gasto se completa solo (lo podés cambiar).
+        Va directo al efectivo como egreso: si es en <b>pesos → Efectivo Pesos</b>, si es en <b>dólares → Efectivo USD</b>. Cargá monto y descripción; el tipo de gasto se completa solo (lo podés cambiar).
       </div>
 
       <div className="grid grid-cols-[1fr_auto] gap-3">

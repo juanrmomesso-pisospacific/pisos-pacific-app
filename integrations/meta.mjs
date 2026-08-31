@@ -444,10 +444,14 @@ async function handleCashReport(db, save, from, rawText) {
   const rate = await getBlueRate();
   const usd = currency === 'USD' ? s.amount : +(s.amount / rate).toFixed(2);
   const expense_type = inferType(s.description);
+  // Efectivo separado por moneda: los pagos en pesos salen de Efectivo Pesos (CAJ-009)
+  // y los pagos en dólares de Efectivo USD (CAJ-005). Así cada caja se concilia en SU
+  // moneda, sin arrastre de tipo de cambio (causa histórica de las "diferencias de caja").
+  const cashCaja = currency === 'USD' ? { id: 'CAJ-005', name: 'Efectivo USD' } : { id: 'CAJ-009', name: 'Efectivo Pesos' };
   const mov = {
     id: `mov-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
     date: new Date().toISOString(),
-    flow: 'Egreso', caja_id: 'CAJ-005', caja_name: 'Caja General',
+    flow: 'Egreso', caja_id: cashCaja.id, caja_name: cashCaja.name,
     category: null, subcategory: null,
     counterparty: s.counterparty || null, counterparty_type: 'supplier', client_id: null, supplier_id: s.supplier_id || null,
     description: s.description, sale_ref: null,
@@ -460,7 +464,7 @@ async function handleCashReport(db, save, from, rawText) {
   db.cashflow.push(mov);
   sessions[norm] = { last_mov_id: mov.id, ts: Date.now() };
   save();
-  return reply(`✅ Registrado en Caja General: $${fmtNum(s.amount)}${currency === 'USD' ? ' USD' : ''} · ${s.description}${s.counterparty ? ' · ' + s.counterparty : ''} · ${expense_type}.\n(Si está mal, respondé *cancelar*.)`);
+  return reply(`✅ Registrado en ${cashCaja.name}: $${fmtNum(s.amount)}${currency === 'USD' ? ' USD' : ''} · ${s.description}${s.counterparty ? ' · ' + s.counterparty : ''} · ${expense_type}.\n(Si está mal, respondé *cancelar*.)`);
 }
 
 // Mensaje con las opciones de proveedor (A/B/C…) cuando el nombre tipeado no existe exacto.
