@@ -11035,8 +11035,8 @@
       "vercel_qnum": "A0072",
       "iva_mode": "full",
       "iva_amount": 2701,
-      "delivery_date": "2026-08-25",
-      "delivery_date_to": "2026-08-31",
+      "delivery_date": "2026-09-02",
+      "delivery_date_to": "2026-09-08",
       "delivery_crew": "Hugo Ramirez",
       "status_log": [
         {
@@ -14347,8 +14347,8 @@
       "stock_reserved": true,
       "stock_deducted": false,
       "seller_name": "Juan Rodriguez Momesso",
-      "delivery_date": "2026-09-01",
-      "delivery_date_to": "2026-09-03",
+      "delivery_date": "2026-08-27",
+      "delivery_date_to": "2026-09-01",
       "delivery_crew": "Hugo Ramirez",
       "status_log": [
         {
