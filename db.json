@@ -159268,6 +159268,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"MORANPATRICIA\""
+    },
+    {
+      "id": "local-1788211529724-ovull",
+      "match": [
+        "TRANSF DEBITO Nro:578468"
+      ],
+      "cuit": null,
+      "counterparty": "Otros",
+      "category": "Administración",
+      "subcategory": null,
+      "expense_type": "Gastos Administrativos",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"TRANSF DEBITO Nro:578468\""
     }
   ],
   "product_aliases": [
