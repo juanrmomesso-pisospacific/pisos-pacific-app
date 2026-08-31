@@ -34185,9 +34185,10 @@
       "currency": "USD",
       "active": true,
       "notes": "Caja física - principal en USD",
-      "anchor_date": "2026-06-22",
-      "anchor_usd": 41662.45,
-      "anchor_note": "Ancla 22/6: Caja General $9.000.000 @1470 + u$s35.540 (informado por el dueño)"
+      "anchor_date": "2026-08-31",
+      "anchor_usd": 19800,
+      "anchor_note": "Arqueo físico 31/8: 19.800 USD billetes. Split a Efectivo USD + Efectivo Pesos.",
+      "anchor_ars": null
     },
     {
       "id": "CAJ-006",
@@ -34219,7 +34220,11 @@
       "id": "CAJ-009",
       "name": "Efectivo Pesos",
       "type": "Efectivo",
-      "currency": "ARS"
+      "currency": "ARS",
+      "anchor_date": "2026-08-31",
+      "anchor_usd": 634.3,
+      "anchor_ars": 980000,
+      "anchor_note": "Arqueo físico 31/8: 980.000 pesos."
     }
   ],
   "suppliers": [
@@ -159318,6 +159323,32 @@
       "sys_usd": 337.57,
       "adj_usd": -209.54,
       "note": "Ancla al saldo real del extracto BBVA 14/7 (sin movimientos posteriores; carga semanal 19/7)",
+      "anchored": true
+    },
+    {
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "ts": "2026-08-31T21:13:24.572Z",
+      "real": 19800,
+      "currency": "USD",
+      "blue": 1545,
+      "real_usd": 19800,
+      "sys_usd": 21649.13,
+      "adj_usd": -1849.13,
+      "note": "Arqueo físico 31/8: 19.800 USD billetes. Split a Efectivo USD + Efectivo Pesos.",
+      "anchored": true
+    },
+    {
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "ts": "2026-08-31T21:13:24.818Z",
+      "real": 980000,
+      "currency": "ARS",
+      "blue": 1545,
+      "real_usd": 634.3,
+      "sys_usd": 0,
+      "adj_usd": 634.3,
+      "note": "Arqueo físico 31/8: 980.000 pesos.",
       "anchored": true
     }
   ]
