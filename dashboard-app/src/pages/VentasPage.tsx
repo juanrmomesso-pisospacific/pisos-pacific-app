@@ -274,7 +274,7 @@ export default function VentasPage() {
             {" · "}<button className="underline" onClick={() => setProdFilterId(null)}>quitar</button>
           </div>
         ) : null}
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3">
           <div className="flex flex-wrap gap-1">
             {(["Todas", ...STATUSES, "Cancelado"] as const).map((s) => (
               (s === "Cancelado" && (counts["Cancelado"] ?? 0) === 0) ? null : (
@@ -284,7 +284,7 @@ export default function VentasPage() {
               )
             ))}
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             {sellers.length > 1 && (
               <select value={sellerFilter} onChange={(e) => setSellerFilter(e.target.value)} className="h-8 rounded-md border border-input bg-transparent px-2 text-xs" title="Filtrar por vendedor">
                 <option value="">Todos los vendedores</option>
