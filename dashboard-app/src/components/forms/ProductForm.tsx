@@ -2,6 +2,7 @@ import { useState } from "react"
 import { FormSheet, FieldLabel } from "./FormSheet"
 import { Input } from "@/components/ui/input"
 import { api, useAction, refresh } from "@/lib/mutations"
+import { cajasHint } from "@/lib/boxes"
 import type { Product } from "@/lib/types"
 
 const CATEGORIES = ["Pisos H2O", "Pisos de Madera", "Zócalo", "Zócalos", "Deck", "Servicio", "Extras"]
@@ -32,6 +33,7 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
       const body: Record<string, unknown> = {
         name: v.name, sku: v.sku, category: v.category, price, cost, currency: v.currency, margin,
         stockTrack: !!v.stockTrack,
+        m2_por_caja: Number(v.m2_por_caja) || 0,
         updatedAt: new Date().toISOString(),
       }
       // Stock: solo si cambió (el server registra el delta como ajuste manual en la auditoría).
@@ -44,6 +46,7 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
     const body = {
       name: v.name, sku: v.sku, category: v.category, price, cost, currency: v.currency,
       stock: Number(v.stock) || 0, reservedStock: Number(v.reservedStock) || 0,
+      m2_por_caja: Number(v.m2_por_caja) || 0,
       active: true, margin,
       createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
     }
@@ -52,6 +55,9 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
   }
 
   const cats = CATEGORIES.includes(v.category || "") ? CATEGORIES : [...CATEGORIES, v.category || ""]
+  // Pisos: llevan stock y se cargan por cajas cerradas → mostramos m²/caja y la equivalencia.
+  const isFloor = !!v.stockTrack || /piso/i.test(v.category || "")
+  const m2caja = Number(v.m2_por_caja) || 0
   return (
     <FormSheet open={open} onOpenChange={onOpenChange}
       title={isEdit ? `Editar producto · ${editProduct!.sku}` : "Nuevo Ítem"}
@@ -92,9 +98,18 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
           <div>
             <FieldLabel>Stock inicial (m²)</FieldLabel>
             <Input type="number" min={0} value={v.stock ?? 0} onChange={(e) => setV({ ...v, stock: Number(e.target.value) })} />
+            {isFloor && m2caja > 0 && <p className="text-[11px] text-muted-foreground mt-1">{cajasHint(Number(v.stock) || 0, m2caja)}</p>}
           </div>
         )}
       </div>
+      {isFloor && (
+        <div>
+          <FieldLabel>m² por caja (opcional)</FieldLabel>
+          <Input type="number" min={0} step="0.01" value={v.m2_por_caja ?? ""} placeholder="Ej.: 2,16"
+            onChange={(e) => setV({ ...v, m2_por_caja: Number(e.target.value) || 0 })} />
+          <p className="text-[11px] text-muted-foreground mt-1">Cuántos m² trae cada caja cerrada. Se usa para mostrar la equivalencia cajas↔m² al cargar stock y cotizar.</p>
+        </div>
+      )}
       {isEdit && (
         <div className="rounded-md border border-border p-3 space-y-2">
           <label className="flex items-center gap-2 text-sm">
@@ -105,6 +120,7 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
             <div>
               <FieldLabel>Stock físico</FieldLabel>
               <Input type="number" min={0} step="0.1" value={v.stock ?? 0} onChange={(e) => setV({ ...v, stock: Number(e.target.value) })} />
+              {m2caja > 0 && <p className="text-[11px] text-muted-foreground mt-1">{cajasHint(Number(v.stock) || 0, m2caja)}</p>}
               <p className="text-[11px] text-muted-foreground mt-1">El cambio queda registrado como ajuste manual en Movimientos (auditoría).</p>
             </div>
           )}

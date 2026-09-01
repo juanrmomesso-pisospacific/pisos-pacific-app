@@ -2815,10 +2815,21 @@ function presupuestoData(rec) {
   const lineTotal = (it) => Number(it.total) || (Number(it.quantity) || 0) * (Number(it.unit_price) || 0);
   const lineDisc = (it) => Math.max(0, Number(it.discount) || 0);
   const lineNet = (it) => lineTotal(it) - lineDisc(it);
+  // Sufijo de cajas para pisos con m²/caja definido: "120 m2 · 8 cajas" (info para el cliente/revendedor).
+  const boxSuffix = (it) => {
+    const p = db.products.find(pr => pr.sku === it.sku);
+    const mpc = Number(p && p.m2_por_caja) || 0;
+    const qty = Number(it.quantity) || 0;
+    if (!mpc || !qty) return '';
+    const cajas = qty / mpc;
+    const exact = Math.abs(cajas - Math.round(cajas)) < 0.02;
+    const n = (Math.round(cajas * 10) / 10).toLocaleString(loc, { maximumFractionDigits: exact ? 0 : 1 });
+    return ` · ${exact ? '' : '≈ '}${n} ${Math.round(cajas) === 1 && exact ? 'caja' : 'cajas'}`;
+  };
   const rowOf = (it) => {
     const isEntrega = /entrega/i.test(it.description || '') || it.sku === 'SERV-131';
     const qty = Number(it.quantity) || 0;
-    return [it.description || it.sku || '', isEntrega ? '—' : `${qty} m2`, isEntrega ? '—' : usdFmt(it.unit_price), usdFmt(lineTotal(it))];
+    return [it.description || it.sku || '', isEntrega ? '—' : `${qty} m2${boxSuffix(it)}`, isEntrega ? '—' : usdFmt(it.unit_price), usdFmt(lineTotal(it))];
   };
   // Descuento por ítem: el ítem a precio bruto + una sub-fila "Descuento" (solo si tiene).
   const rowsFor = (list) => list.flatMap(it => {

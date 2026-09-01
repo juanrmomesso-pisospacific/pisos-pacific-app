@@ -26,6 +26,7 @@ import { materialState, MATERIAL_LABEL } from "@/lib/calendar"
 import { saleMaterialsForRemito, looseUnit } from "@/lib/remito"
 import { cobradoDe, saldoDe, tieneSaldo, cobranzaNivel, finalizadaEl } from "@/lib/sales"
 import { openPacificPdf } from "@/lib/pdf"
+import { cajasHint } from "@/lib/boxes"
 import type { Sale, Quote, Caja, CashflowMovement, Product } from "@/lib/types"
 
 const STATUSES = ["Confirmado", "Programado", "En proceso", "Finalizado"] as const
@@ -1104,6 +1105,7 @@ function EditSaleItemsSheet({ sale, products, open, onOpenChange, onChanged }: {
               <div className="flex items-end gap-2">
                 <label className="text-[10px] text-muted-foreground flex-1">Cantidad (m²)
                   <Input type="number" min={0} step="0.01" value={it.quantity === 0 ? "" : it.quantity} onChange={(e) => setQty(i, Number(e.target.value) || 0)} className="h-8 mt-0.5" />
+                  {(() => { const p = products.find(x => x.id === it.product_id || x.sku === it.sku); const h = p ? cajasHint(it.quantity, p.m2_por_caja) : null; return h ? <span className="block text-[10px] text-muted-foreground mt-0.5 font-normal normal-case">{h}</span> : null })()}
                 </label>
                 <label className="text-[10px] text-muted-foreground flex-1">Precio unit. (US$)
                   <Input type="number" min={0} step="0.01" value={it.unit_price === 0 ? "" : it.unit_price} onChange={(e) => setPrice(i, Number(e.target.value) || 0)} className="h-8 mt-0.5" />

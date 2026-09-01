@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney } from "@/lib/utils"
+import { cajasHint } from "@/lib/boxes"
 import type { Product } from "@/lib/types"
 import { useConfig } from "@/contexts/ConfigContext"
 
@@ -101,6 +102,7 @@ export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
                   <div>
                     <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Cantidad</div>
                     <Input type="number" min={0} step="0.1" value={it.quantity === 0 ? "" : it.quantity} placeholder="0" onChange={(e) => updateItem(idx, { quantity: Number(e.target.value) || 0 })} className="h-8" />
+                    {(() => { const p = products.find(x => x.id === it.product_id); const h = p ? cajasHint(it.quantity, p.m2_por_caja) : null; return h ? <p className="text-[10px] text-muted-foreground mt-0.5">{h}</p> : null })()}
                   </div>
                   <div>
                     <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Precio</div>

@@ -8,6 +8,7 @@ import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney } from "@/lib/utils"
 import { SearchPicker } from "@/components/SearchPicker"
+import { cajasHint, m2PorCaja, noEsMultiploDeCaja } from "@/lib/boxes"
 import type { Product, Quote } from "@/lib/types"
 import { looksLikeHandle, leadToQuotePrefill, type Lead } from "@/lib/leads"
 import { useConfig, taxWord } from "@/contexts/ConfigContext"
@@ -271,8 +272,13 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
         )}
         <div className="grid grid-cols-3 gap-2 items-end">
           <div>
-            <div className="text-[10px] uppercase tracking-wide text-muted-foreground mb-0.5">Cantidad</div>
+            <div className="text-[10px] uppercase tracking-wide text-muted-foreground mb-0.5">Cantidad (m²)</div>
             <Input type="number" min={0} step="0.1" value={it.quantity === 0 ? "" : it.quantity} placeholder="0" onChange={(e) => updateItem(idx, { quantity: Number(e.target.value) || 0 })} className="h-8" />
+            {isFloor && m2PorCaja(p) && (
+              <p className={`text-[10px] mt-0.5 ${noEsMultiploDeCaja(it.quantity, p!.m2_por_caja) ? "text-amber-600" : "text-muted-foreground"}`}>
+                {cajasHint(it.quantity, p!.m2_por_caja)}{noEsMultiploDeCaja(it.quantity, p!.m2_por_caja) ? " · no completa caja" : ""}
+              </p>
+            )}
           </div>
           <div>
             <div className="text-[10px] uppercase tracking-wide text-muted-foreground mb-0.5">Precio unit.</div>
