@@ -132611,11 +132611,12 @@
       "linked_lead_id": "lead-email-1a05dbd69617",
       "status": "open",
       "unread_count": 1,
-      "last_message_at": "2026-09-01T16:11:17.000Z",
-      "last_message_preview": "Buenas tardes como están ustedes nesecito contactarme con un vendedor\r\nmayorista de pisos flotantes",
+      "last_message_at": "2026-09-01T19:13:45.000Z",
+      "last_message_preview": "Hola Carlos, cómo estás?\r\n\r\nSoy Juan Rodriguez Momesso del área de ventas\r\n\r\nContame qué es lo que estás buscando así yo puedo ayudarte.\r\n\r\n",
       "email_subject": "(sin asunto)",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-01T16:11:17.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-01T16:11:17.000Z",
+      "last_outbound_at": "2026-09-01T19:13:45.000Z"
     }
   ],
   "messages": [
@@ -148182,6 +148183,14 @@
       "body": "✉️ (sin asunto)\n\nBuenas tardes como están ustedes nesecito contactarme con un vendedor\r\nmayorista de pisos flotantes",
       "ts": "2026-09-01T16:11:17.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-emailout-1a05e644855d",
+      "conversation_id": "conv-email-1a05dbd69617",
+      "direction": "out",
+      "body": "✉️ Re:\n\nHola Carlos, cómo estás?\r\n\r\nSoy Juan Rodriguez Momesso del área de ventas\r\n\r\nContame qué es lo que estás buscando así yo puedo ayudarte.\r\n\r\nTe dejo mi celular. +54911 51750087\r\n\r\n\r\nSaludos,\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl mar, 1 sept 2026 a las 13:11, Carlos (<carlosoria722@gmail.com>)\r\nescribió:\r\n\r\n> Buenas tardes como están ustedes nesecito contactarme con un vendedor\r\n> mayorista de pisos flotantes\r\n>",
+      "ts": "2026-09-01T19:13:45.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -156770,7 +156779,8 @@
       "1a058dcbb7f7b22d",
       "1a058dcb0c4437c5",
       "1a0592799bea37c8",
-      "1a05d0c781e133d9"
+      "1a05d0c781e133d9",
+      "1a05e644855d2df7"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
