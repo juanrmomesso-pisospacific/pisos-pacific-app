@@ -132779,12 +132779,12 @@
       "linked_lead_id": "lead-email-1a05ae8c6c59",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-01T21:03:12.492Z",
-      "last_message_preview": "Hola Juan, ¿cómo estás?\n\nEl precio del H2O Roble Eslavonia es de USD 38 + IVA por m². Actualmente tenemos una promoción del 10% de descuento",
+      "last_message_at": "2026-09-01T22:22:26.000Z",
+      "last_message_preview": "Hola Juan, cómo estás?\r\n\r\nMuchas gracias por comunicarte con nosotros.\r\n\r\nTe paso información del piso H2O. La línea H2O es piso de SPC. Es ",
       "email_subject": "Consulta precios",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-01T02:59:47.000Z",
-      "last_outbound_at": "2026-09-01T21:03:12.492Z"
+      "last_outbound_at": "2026-09-01T22:22:26.000Z"
     },
     {
       "id": "conv-1788243340498-d8cb",
@@ -148562,6 +148562,14 @@
       "body": "✉️ Re: Liquidación.\n\nHola Pablo, dale!\r\n\r\nDe el ASPEN XL te puedo hacer un buen descuento. -> Ver fotos\r\n<https://pisospacific.com/pisos-vinilicos-spc-h2o/aspen-xl>\r\n\r\nY si querés madera, este que te hablaba está re descontado y puede servirte\r\ntambién. Pero la colocación de madera es un poco más cara. -> ver fotos\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-americano>\r\n\r\nCualquier cosa me avisas!\r\nSaludos,\r\n\r\nJuan\r\n\r\nEl mar, 1 sept 2026 a las 17:08, Pablo Federman (<pablofederman@gmail.com>)\r\nescribió:\r\n\r\n> Hablemos mañana. Hoy estoy corriendo. Veo ese piso, asi se de que me\r\n> hablas también. Me podes pasar por aca foto o imágenes de ese mas barato?\r\n> Asi voy adelantado?\r\n>\r\n> El mar, 1 de sept de 2026, 16:59, info pisos <info@pisospacific.com>\r\n> escribió:\r\n>\r\n>> Pablo, te paso presupuestos.\r\n>>\r\n>> Te cuento, tengo un piso de roble en re liquidación que está a USD 35 +\r\n>> IVA el m2. Más la colocación si la hacemos nosotros.\r\n>>\r\n>> Eso es lo más barato que tengo en madera.\r\n>>\r\n>> Pero en SPC te puedo hacer un buen precio y que te lleves un muy buen\r\n>> producto para ayudarte a terminar la obra y que encima tengas un piso que\r\n>> te dure !!\r\n>>\r\n>> El valor del SPC es de usd 38+ IVA. Puedo buscarte un muy buen descuento\r\n>> si hacemos con el ASPEN (es el único que está con descuento )\r\n>>\r\n>> La colocación es de usd 15 + IVA el m2.\r\n>>\r\n>> Si queres llámame y vemos bien tu caso. Quiero ayudarte pero que compres\r\n>> bien!\r\n>>\r\n>> Saludos\r\n>>\r\n>> Juan\r\n>>\r\n>> +11 5175 008",
       "ts": "2026-09-01T22:12:27.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-emailout-1a05f1107cc2",
+      "conversation_id": "conv-email-1a05ae8c6c59",
+      "direction": "out",
+      "body": "✉️ Re: Consulta precios\n\nHola Juan, cómo estás?\r\n\r\nMuchas gracias por comunicarte con nosotros.\r\n\r\nTe paso información del piso H2O. La línea H2O es piso de SPC. Es 100%\r\nimpermeable, con protección antiscratch y terminación mate muy realista.\r\nIdeal para zonas húmedas, mascotas o alto tránsito.\r\n\r\nEl núcleo duro del producto es de 5MM y tiene una manta acústica de EVA de\r\n1,5MM.\r\n\r\nEl valor de la línea H2O es de usd 38 + IVA sin colocación.\r\n\r\nSi necesitas que te arme un presupuesto, compartime datos de entrega, si\r\nrequiere colocación y cantidad de metros cuadrados.\r\n\r\nMuchas gracias,\r\n\r\nSaludos,\r\n\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl lun, 31 ago 2026 a las 23:59, Juan Chavez (<juanchavez25696@gmail.com>)\r\nescribió:\r\n\r\n>\r\n> Estimados, les consulto precio y características técnicas del piso H20\r\n> Roble Eslovenia.\r\n>\r\n> Muchas gracias\r\n>",
+      "ts": "2026-09-01T22:22:26.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -157260,7 +157268,8 @@
       "1a05ec87b0d6ab5b",
       "1a05ec6c4aa9f1b1",
       "1a05ecaafc1a255b",
-      "1a05f07e44eda682"
+      "1a05f07e44eda682",
+      "1a05f1107cc2b687"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
