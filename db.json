@@ -126899,6 +126899,22 @@
       "address": "Chacras el chaja",
       "created_at": "2026-08-31T17:43:44.295Z",
       "last_touch_at": "2026-08-31T17:43:47.328Z"
+    },
+    {
+      "id": "lead-instagram-1788226448336",
+      "name": "@claudio_gabriel_kracovsky",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-01T01:34:06.085Z",
+      "last_touch_at": "2026-09-01T01:34:06.085Z"
     }
   ],
   "conversations": [
@@ -132319,6 +132335,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-31T17:24:47.324Z",
       "last_outbound_at": "2026-08-31T17:31:58.568Z"
+    },
+    {
+      "id": "conv-1788226448335-5ml5",
+      "channel": "instagram",
+      "contact_id": "1059775280251313",
+      "contact_name": "@claudio_gabriel_kracovsky",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788226448336",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-01T01:34:06.085Z",
+      "last_message_preview": "Hola, que origen de fábricacion son los pisos h2o, tienen en Caba algun show room?\nMe pasan lista de precio por caja y mts.\n\nGracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-01T01:34:06.085Z"
     }
   ],
   "messages": [
@@ -147735,6 +147765,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODczODg0MjI0ODc2Njk3NTozMjk4NjU0MzcyNTAyNTIxMzA2NDE1NDkyMDUwMjk1MTkzNgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1788226448336-gnfv",
+      "conversation_id": "conv-1788226448335-5ml5",
+      "direction": "in",
+      "body": "Hola, que origen de fábricacion son los pisos h2o, tienen en Caba algun show room?\nMe pasan lista de precio por caja y mts.\n\nGracias",
+      "ts": "2026-09-01T01:34:06.085Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -156962,7 +157000,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjMzNzkxODY4MzY2Mjg4MzEzNTE0Nzk4ODc0NjI0MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM4MTY3NzY1ODUxNDYyNzY4OTM3NDc3ODY1NDcyMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM4MzI0NDU3NDUwNDIwMzE2MDY3Mjg5NzMzNTI5NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5MTI4Njc3MTk2MjA4ODozMjk4NjQxNDAyMzIzNTM1NDQyMDMzMTg3MDc1MDI0NDg2NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5MTI4Njc3MTk2MjA4ODozMjk4NjQxNDAyMzIzNTM1NDQyMDMzMTg3MDc1MDI0NDg2NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU2OTQ3MDg3OTMzODA4NjozMjk4Njk1NTU5Njc3NjM5Nzg5MjQ3NTQ0Mjc2NzU5MzQ3MgZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
