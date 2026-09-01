@@ -127072,6 +127072,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-01T13:40:16.171Z",
       "last_touch_at": "2026-09-01T13:40:16.171Z"
+    },
+    {
+      "id": "lead-email-1a05d33786df",
+      "name": "Pablo Federman",
+      "email": "pablofederman@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Liquidación. — Necesito buen precio y cuotas.\r\nPiso para dos dormitorios de 3,5 x 4\r\nY para dos ambientes grandes. Uno de 40 mts. Otro de 60mts. Y una cocina.\r\nGracias!",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-01T13:40:32.000Z",
+      "last_touch_at": "2026-09-01T13:40:32.000Z"
     }
   ],
   "conversations": [
@@ -132551,6 +132568,21 @@
       "last_message_preview": "Por dónde puedo pasar a verlo",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-01T13:40:38.159Z"
+    },
+    {
+      "id": "conv-email-1a05d33786df",
+      "channel": "email",
+      "contact_id": "pablofederman@gmail.com",
+      "contact_name": "Pablo Federman",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a05d33786df",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-01T13:40:32.000Z",
+      "last_message_preview": "Necesito buen precio y cuotas.\r\nPiso para dos dormitorios de 3,5 x 4\r\nY para dos ambientes grandes. Uno de 40 mts. Otro de 60mts. Y una coci",
+      "email_subject": "Liquidación.",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-01T13:40:32.000Z"
     }
   ],
   "messages": [
@@ -148033,6 +148065,14 @@
       "body": "Por dónde puedo pasar a verlo",
       "ts": "2026-09-01T13:40:38.159Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a05d33786df",
+      "conversation_id": "conv-email-1a05d33786df",
+      "direction": "in",
+      "body": "✉️ Liquidación.\n\nNecesito buen precio y cuotas.\r\nPiso para dos dormitorios de 3,5 x 4\r\nY para dos ambientes grandes. Uno de 40 mts. Otro de 60mts. Y una cocina.\r\nGracias!",
+      "ts": "2026-09-01T13:40:32.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -155426,7 +155466,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-01T04:59:23.738Z",
     "gmail_seen_ids": [
-      "19ef449ee8ca7ce6",
       "19ef44dcd27c84a1",
       "19ef481391bd75de",
       "19ef47947afd3369",
@@ -156225,7 +156264,8 @@
       "1a05bfdb618b3b07",
       "1a05c817ee17c0e8",
       "1a05d12927fcafd7",
-      "1a05d0c781e133d9"
+      "1a05d0c781e133d9",
+      "1a05d33786df370b"
     ],
     "cash_sessions": {
       "1136982222": {
