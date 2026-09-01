@@ -127088,7 +127088,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-01T13:40:32.000Z",
-      "last_touch_at": "2026-09-01T19:55:13.000Z"
+      "last_touch_at": "2026-09-01T20:08:37.000Z"
     },
     {
       "id": "lead-email-1a05dbd69617",
@@ -127117,11 +127117,11 @@
       "linked_client_name": null,
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-27T02:21:42.117Z",
-      "last_message_preview": "No me iría allá",
+      "last_message_at": "2026-09-01T20:31:01.634Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-27T02:21:08.674Z",
-      "last_outbound_at": "2026-08-27T02:21:42.117Z"
+      "last_outbound_at": "2026-09-01T20:31:01.634Z"
     },
     {
       "id": "conv-1781093292446-6fr2",
@@ -132595,13 +132595,13 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a05d33786df",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-01T19:55:13.000Z",
-      "last_message_preview": "Buenas Juan, gracias!\r\nEstoy en el final y muy justo de presupuesto.\r\nPor eso busco un saldo o una liquidación muy conveniente. Podes darme ",
+      "unread_count": 3,
+      "last_message_at": "2026-09-01T20:08:37.000Z",
+      "last_message_preview": "Hablemos mañana. Hoy estoy corriendo. Veo ese piso, asi se de que me hablas\r\ntambién. Me podes pasar por aca foto o imágenes de ese mas bara",
       "email_subject": "Liquidación.",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-01T19:55:13.000Z",
-      "last_outbound_at": "2026-09-01T19:49:58.000Z"
+      "last_inbound_at": "2026-09-01T20:08:37.000Z",
+      "last_outbound_at": "2026-09-01T19:59:04.000Z"
     },
     {
       "id": "conv-email-1a05dbd69617",
@@ -148208,6 +148208,32 @@
       "body": "✉️ Re: Liquidación.\n\nHola Pablo, cómo estás?\r\n\r\n¡Muchas gracias por contactarnos!\r\nContanos qué piso estás buscando dentro de nuestras lineas de piso.\r\n\r\n   - Colección Madera\r\n   <https://pisospacific.com/pisos-madera-natural-ingenieria>\r\n   - Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o>\r\n\r\nEn base a eso, puedo armarte un presupuesto!\r\n\r\nPor otro lado, necesitas que coticemos colocación? Si es así, por favor\r\ncompartinos la dirección y el estado de la obra. Se coloca sobre piso\r\nexistente o es sobre carpeta nueva?\r\n\r\nGracias!\r\nSaludos,\r\n\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl mar, 1 sept 2026 a las 10:40, Pablo Federman (<pablofederman@gmail.com>)\r\nescribió:\r\n\r\n> Necesito buen precio y cuotas.\r\n> Piso para dos dormitorios de 3,5 x 4\r\n> Y para dos ambientes grandes. Uno de 40 mts. Otro de 60mts. Y una cocina.\r\n> Gracias!\r\n>",
       "ts": "2026-09-01T19:49:58.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-email-1a05e96b633b",
+      "conversation_id": "conv-email-1a05d33786df",
+      "direction": "in",
+      "body": "✉️ Re: Liquidación.\n\nHablemos mañana. Hoy estoy corriendo. Veo ese piso, asi se de que me hablas\r\ntambién. Me podes pasar por aca foto o imágenes de ese mas barato? Asi voy\r\nadelantado?\r\n\r\nEl mar, 1 de sept de 2026, 16:59, info pisos <info@pisospacific.com>\r\nescribió:\r\n\r\n> Pablo, te paso presupuestos.\r\n>\r\n> Te cuento, tengo un piso de roble en re liquidación que está a USD 35 +\r\n> IVA el m2. Más la colocación si la hacemos nosotros.\r\n>\r\n> Eso es lo más barato que tengo en madera.\r\n>\r\n> Pero en SPC te puedo hacer un buen precio y que te lleves un muy buen\r\n> producto para ayudarte a terminar la obra y que encima tengas un piso que\r\n> te dure !!\r\n>\r\n> El valor del SPC es de usd 38+ IVA. Puedo buscarte un muy buen descuento\r\n> si hacemos con el ASPEN (es el único que está con descuento )\r\n>\r\n> La colocación es de usd 15 + IVA el m2.\r\n>\r\n> Si queres llámame y vemos bien tu caso. Quiero ayudarte pero que compres\r\n> bien!\r\n>\r\n> Saludos\r\n>\r\n> Juan\r\n>\r\n> +11 5175 0087\r\n>\r\n> El El mar, 1 sept 2026 a la(s) 4:55 p. m., Pablo Federman <\r\n> pablofederman@gmail.com> escribió:\r\n>\r\n>> Buenas Juan, gracias!\r\n>> Estoy en el final y muy justo de presupuesto.\r\n>> Por eso busco un saldo o una liquidación muy conveniente. Podes darme una\r\n>> orientación de valores del piso x m2 y luego avanzamos en mas detalles?\r\n>>\r\n>> El mar, 1 de sept de 2026, 16:50, info pisos <info@pisospacific.com>\r\n>> escribió:\r\n>>\r\n>>> Hola Pablo, cómo estás?\r\n>>>\r\n>>> ¡Muchas gracias por contactarnos!\r\n>>> Contanos qué piso estás buscando den",
+      "ts": "2026-09-01T20:08:37.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-emailout-1a05e8dc55a4",
+      "conversation_id": "conv-email-1a05d33786df",
+      "direction": "out",
+      "body": "✉️ Re: Liquidación.\n\nPablo, te paso presupuestos.\r\n\r\nTe cuento, tengo un piso de roble en re liquidación que está a USD 35 + IVA\r\nel m2. Más la colocación si la hacemos nosotros.\r\n\r\nEso es lo más barato que tengo en madera.\r\n\r\nPero en SPC te puedo hacer un buen precio y que te lleves un muy buen\r\nproducto para ayudarte a terminar la obra y que encima tengas un piso que\r\nte dure !!\r\n\r\nEl valor del SPC es de usd 38+ IVA. Puedo buscarte un muy buen descuento si\r\nhacemos con el ASPEN (es el único que está con descuento )\r\n\r\nLa colocación es de usd 15 + IVA el m2.\r\n\r\nSi queres llámame y vemos bien tu caso. Quiero ayudarte pero que compres\r\nbien!\r\n\r\nSaludos\r\n\r\nJuan\r\n\r\n+11 5175 0087\r\n\r\nEl El mar, 1 sept 2026 a la(s) 4:55 p. m., Pablo Federman <\r\npablofederman@gmail.com> escribió:\r\n\r\n> Buenas Juan, gracias!\r\n> Estoy en el final y muy justo de presupuesto.\r\n> Por eso busco un saldo o una liquidación muy conveniente. Podes darme una\r\n> orientación de valores del piso x m2 y luego avanzamos en mas detalles?\r\n>\r\n> El mar, 1 de sept de 2026, 16:50, info pisos <info@pisospacific.com>\r\n> escribió:\r\n>\r\n>> Hola Pablo, cómo estás?\r\n>>\r\n>> ¡Muchas gracias por contactarnos!\r\n>> Contanos qué piso estás buscando dentro de nuestras lineas de piso.\r\n>>\r\n>>    - Colección Madera\r\n>>    <https://pisospacific.com/pisos-madera-natural-ingenieria>\r\n>>    - Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o>\r\n>>\r\n>> En base a eso, puedo armarte un presupuesto!\r\n>>\r\n>> Por otro lado, necesitas que coticemos colocación",
+      "ts": "2026-09-01T19:59:04.000Z",
+      "status": "sent"
+    },
+    {
+      "id": "m-1788294662094-etir",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-01T20:31:01.634Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk4ODIxMzk1MTU0NjA1NTI0NjczMTExODM2NjQyNTA4OAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
@@ -155601,7 +155627,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-01T04:59:23.738Z",
     "gmail_seen_ids": [
-      "19ef47947afd3369",
       "19ef476e18384d70",
       "19ef48cddc2abe72",
       "19ef4969d6e25c1d",
@@ -156400,7 +156425,8 @@
       "1a05d0c781e133d9",
       "1a05d33786df370b",
       "1a05dbd69617759f",
-      "1a05e8a6cf88138a"
+      "1a05e8a6cf88138a",
+      "1a05e96b633b835c"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -156798,7 +156824,8 @@
       "1a0592799bea37c8",
       "1a05d0c781e133d9",
       "1a05e644855d2df7",
-      "1a05e8572d51fdf5"
+      "1a05e8572d51fdf5",
+      "1a05e8dc55a4203c"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
