@@ -132825,12 +132825,12 @@
       "linked_lead_id": "lead-email-1a05d33786df",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-01T20:08:37.000Z",
-      "last_message_preview": "Hablemos mañana. Hoy estoy corriendo. Veo ese piso, asi se de que me hablas\r\ntambién. Me podes pasar por aca foto o imágenes de ese mas bara",
+      "last_message_at": "2026-09-01T22:12:27.000Z",
+      "last_message_preview": "Hola Pablo, dale!\r\n\r\nDe el ASPEN XL te puedo hacer un buen descuento. -> Ver fotos\r\n<https://pisospacific.com/pisos-vinilicos-spc-h2o/aspen-",
       "email_subject": "Liquidación.",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-01T20:08:37.000Z",
-      "last_outbound_at": "2026-09-01T19:59:04.000Z"
+      "last_outbound_at": "2026-09-01T22:12:27.000Z"
     },
     {
       "id": "conv-email-1a05dbd69617",
@@ -148554,6 +148554,14 @@
       "body": "Que precio tiene",
       "ts": "2026-09-01T21:54:02.319Z",
       "status": "received"
+    },
+    {
+      "id": "m-emailout-1a05f07e44ed",
+      "conversation_id": "conv-email-1a05d33786df",
+      "direction": "out",
+      "body": "✉️ Re: Liquidación.\n\nHola Pablo, dale!\r\n\r\nDe el ASPEN XL te puedo hacer un buen descuento. -> Ver fotos\r\n<https://pisospacific.com/pisos-vinilicos-spc-h2o/aspen-xl>\r\n\r\nY si querés madera, este que te hablaba está re descontado y puede servirte\r\ntambién. Pero la colocación de madera es un poco más cara. -> ver fotos\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-americano>\r\n\r\nCualquier cosa me avisas!\r\nSaludos,\r\n\r\nJuan\r\n\r\nEl mar, 1 sept 2026 a las 17:08, Pablo Federman (<pablofederman@gmail.com>)\r\nescribió:\r\n\r\n> Hablemos mañana. Hoy estoy corriendo. Veo ese piso, asi se de que me\r\n> hablas también. Me podes pasar por aca foto o imágenes de ese mas barato?\r\n> Asi voy adelantado?\r\n>\r\n> El mar, 1 de sept de 2026, 16:59, info pisos <info@pisospacific.com>\r\n> escribió:\r\n>\r\n>> Pablo, te paso presupuestos.\r\n>>\r\n>> Te cuento, tengo un piso de roble en re liquidación que está a USD 35 +\r\n>> IVA el m2. Más la colocación si la hacemos nosotros.\r\n>>\r\n>> Eso es lo más barato que tengo en madera.\r\n>>\r\n>> Pero en SPC te puedo hacer un buen precio y que te lleves un muy buen\r\n>> producto para ayudarte a terminar la obra y que encima tengas un piso que\r\n>> te dure !!\r\n>>\r\n>> El valor del SPC es de usd 38+ IVA. Puedo buscarte un muy buen descuento\r\n>> si hacemos con el ASPEN (es el único que está con descuento )\r\n>>\r\n>> La colocación es de usd 15 + IVA el m2.\r\n>>\r\n>> Si queres llámame y vemos bien tu caso. Quiero ayudarte pero que compres\r\n>> bien!\r\n>>\r\n>> Saludos\r\n>>\r\n>> Juan\r\n>>\r\n>> +11 5175 008",
+      "ts": "2026-09-01T22:12:27.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -157251,7 +157259,8 @@
       "1a05e8dc55a4203c",
       "1a05ec87b0d6ab5b",
       "1a05ec6c4aa9f1b1",
-      "1a05ecaafc1a255b"
+      "1a05ecaafc1a255b",
+      "1a05f07e44eda682"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
