@@ -127089,6 +127089,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-01T13:40:32.000Z",
       "last_touch_at": "2026-09-01T13:40:32.000Z"
+    },
+    {
+      "id": "lead-email-1a05dbd69617",
+      "name": "Carlos",
+      "email": "carlosoria722@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: (sin asunto) — Buenas tardes como están ustedes nesecito contactarme con un vendedor\r\nmayorista de pisos flotantes",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-01T16:11:17.000Z",
+      "last_touch_at": "2026-09-01T16:11:17.000Z"
     }
   ],
   "conversations": [
@@ -132584,6 +132601,21 @@
       "email_subject": "Liquidación.",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-01T13:40:32.000Z"
+    },
+    {
+      "id": "conv-email-1a05dbd69617",
+      "channel": "email",
+      "contact_id": "carlosoria722@gmail.com",
+      "contact_name": "Carlos",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a05dbd69617",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-01T16:11:17.000Z",
+      "last_message_preview": "Buenas tardes como están ustedes nesecito contactarme con un vendedor\r\nmayorista de pisos flotantes",
+      "email_subject": "(sin asunto)",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-01T16:11:17.000Z"
     }
   ],
   "messages": [
@@ -148142,6 +148174,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzg4NzkwMTQxNzAzNzcwMjkyODczMTIyMjMxMDkxMgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a05dbd69617",
+      "conversation_id": "conv-email-1a05dbd69617",
+      "direction": "in",
+      "body": "✉️ (sin asunto)\n\nBuenas tardes como están ustedes nesecito contactarme con un vendedor\r\nmayorista de pisos flotantes",
+      "ts": "2026-09-01T16:11:17.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -155535,7 +155575,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-01T04:59:23.738Z",
     "gmail_seen_ids": [
-      "19ef44dcd27c84a1",
       "19ef481391bd75de",
       "19ef47947afd3369",
       "19ef476e18384d70",
@@ -156334,7 +156373,8 @@
       "1a05c817ee17c0e8",
       "1a05d12927fcafd7",
       "1a05d0c781e133d9",
-      "1a05d33786df370b"
+      "1a05d33786df370b",
+      "1a05dbd69617759f"
     ],
     "cash_sessions": {
       "1136982222": {
