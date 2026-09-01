@@ -17,10 +17,9 @@ uniform sampler2D uPhoto, uMask, uWood, uLum, uMaskB;
 uniform mat3 uHinv;              // imagen -> plano textura (0..1)
 uniform float uPlanks;          // tablas a lo ancho del piso
 uniform float uBevelDepth;      // profundidad del bisel (H2O ~0.5, Madera ~1.5)
-uniform float uBase;            // luminancia base del piso (para re-iluminar)
 uniform float uTopY;            // y del fondo del piso (0..1) — para el reflejo del ambiente
 uniform float uGloss;           // brillo/reflejo del piso (0..1)
-uniform float uLight;           // fuerza del mapa de luz (0=plano, ~0.9=máximo)
+uniform float uBright;          // brillo/oscuridad del piso (multiplicador manual, ~0.5..1.15)
 uniform int uDir;               // 0 vertical, 1 horizontal, 2 diagonal
 float hash(float n){ return fract(sin(n*12.9898)*43758.5453); }
 void main(){
@@ -36,7 +35,9 @@ void main(){
   // juntas) y LARGA (pocas juntas de punta), como un piso colocado de verdad.
   float NTEX = 6.0;                                 // tablas a lo ancho que tiene la foto de textura
   float pw = 1.0 / NTEX;
-  float lenRep = max(uPlanks / 17.0, 0.38);         // tablas LARGAS → pocas juntas de punta
+  // Proporción largo:ancho de tabla = ~9:1 (una tabla XL real es ~2200x230mm). Antes 17:1 = "fideo"
+  // estirado al alinear la perspectiva. Sigue siendo larga (pocas juntas) pero con forma realista.
+  float lenRep = max(uPlanks / 9.0, 0.5);
   float tx = t.x * uPlanks;
   float idx = floor(tx);                            // índice de tabla (columna)
   float fx = fract(tx);                             // 0..1 a lo ancho de la tabla
@@ -65,15 +66,10 @@ void main(){
   // alrededor de cada pata de mueble (antes 0.72 = halos negros = "manchas" que no se entendían).
   float mb = texture2D(uMaskB, uv).r;
   wood *= mix(0.88, 1.0, smoothstep(0.35, 0.95, mb));
-  // MAPA DE LUZ (técnica del líder Roomvo/Leap Tools): luminancia de la foto MUY borroneada (uLum,
-  // sin la trama del piso viejo) NORMALIZADA al promedio del piso → integra las sombras/luz reales de
-  // la habitación (gradiente de ventanas, sombras) SIN oscurecer ni aclarar el color del producto.
-  // La normalización es la clave: si el piso viejo era oscuro uniforme, el mapa ≈ 1 (no ensombrece).
-  float lum = dot(texture2D(uLum, uv).rgb, vec3(0.299,0.587,0.114));
-  // Rango angosto + aplicación PARCIAL (uLight, ajustable): integra la luz SIN quemar el sol ni
-  // manchar las sombras. uLight=0 → piso plano (sin re-iluminar); subirlo integra más la luz real.
-  float lightMap = mix(1.0, clamp(lum / max(uBase, 0.02), 0.62, 1.38), uLight);
-  vec3 lit = clamp(wood * lightMap, 0.0, 1.0);
+  // SIN integración de luz: el "mapa de luz" (luminancia de la foto) horneaba las sombras/hotspots
+  // reales → piso "manchado como dálmata". Se saca. El brillo/oscuridad general lo maneja el vendedor
+  // con el slider "Brillo del piso" (uBright), para apoyar el tono del piso a la luz del ambiente.
+  vec3 lit = clamp(wood * uBright, 0.0, 1.0);
   // REFLEJO del ambiente (ventanas/techo) sobre el piso: espejo del escenario sobre el borde del
   // fondo, con fresnel (más reflejo hacia el fondo) y el brillo del material → look de piso real.
   vec2 reflUV = vec2(uv.x, clamp(2.0 * uTopY - uv.y, 0.0, uTopY));
@@ -132,13 +128,13 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
 }>(function FloorProjector({ photoSrc, maskSrc, textureUrl, serie, depthSrc }, ref) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
-  const glState = useRef<{ gl: WebGLRenderingContext; prog: WebGLProgram; base: number } | null>(null)
+  const glState = useRef<{ gl: WebGLRenderingContext; prog: WebGLProgram } | null>(null)
   const maskImgRef = useRef<HTMLImageElement | null>(null)   // máscara cargada (para el cálculo de horizonte)
   const [quad, setQuad] = useState<Pt[] | null>(null)
   const [dir, setDir] = useState<Dir>("vertical")
   const [size, setSize] = useState(50)          // 0..100 → tamaño de tabla (más = tablas más chicas)
-  const [gloss, setGloss] = useState(serie === "Madera" ? 10 : 20)   // brillo/reflejo bajo por defecto (el reflejo fuerte manchaba)
-  const [light, setLight] = useState(38)        // 0..100 → mapa de luz SUAVE (blur 16px) → degradé que "apoya" el piso sin manchar
+  const [gloss] = useState(serie === "Madera" ? 8 : 12)   // reflejo del ambiente SUTIL, fijo (sin slider)
+  const [bright, setBright] = useState(50)      // 0..100 → brillo del piso (50=neutro; abajo oscurece hasta 0.5×)
   // Horizonte (fila 0..1) y centro de fuga x: parametrizan la perspectiva. Cuando existen, el quad se
   // construye con la convergencia CORRECTA (esquinas lejanas apuntando al punto de fuga del piso).
   const [persp, setPersp] = useState<{ yH: number; cx: number } | null>(null)
@@ -195,14 +191,7 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
       const mbx = mb.getContext("2d")!; mbx.imageSmoothingEnabled = true; mbx.drawImage(mask, 0, 0, mb.width, mb.height)
       const maskBImg = new Image(); await new Promise<void>((r) => { maskBImg.onload = () => r(); maskBImg.src = mb.toDataURL() })
       mkTex(maskBImg, 4, "uMaskB")
-      // luminancia base del piso (mediana aprox sobre la máscara)
-      const mc = document.createElement("canvas"); mc.width = 80; mc.height = 80
-      const mx = mc.getContext("2d")!; mx.drawImage(photo, 0, 0, 80, 80); const pd = mx.getImageData(0, 0, 80, 80).data
-      mx.drawImage(mask, 0, 0, 80, 80); const md = mx.getImageData(0, 0, 80, 80).data
-      const ls: number[] = []
-      for (let i = 0; i < pd.length; i += 4) if (md[i] > 128) ls.push((0.299 * pd[i] + 0.587 * pd[i + 1] + 0.114 * pd[i + 2]) / 255)
-      ls.sort((a, b) => a - b); const base = ls.length ? ls[Math.floor(ls.length / 2)] : 0.5
-      glState.current = { gl, prog, base }
+      glState.current = { gl, prog }
       setQuad(autoQuad(mask)); setReady(true)
     })().catch((e) => console.error("[projector]", e))
     return () => { alive = false }
@@ -211,19 +200,20 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
   // render en cada cambio
   useEffect(() => {
     const st = glState.current; if (!st || !quad) return
-    const { gl, prog, base } = st
+    const { gl, prog } = st
     gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight)
     gl.uniformMatrix3fv(gl.getUniformLocation(prog, "uHinv"), false, new Float32Array(homographyInv(quad)))
     const planks = 4 + (size / 100) * 12                 // 4..16 tablas a lo ancho (tablas más anchas por defecto)
     gl.uniform1f(gl.getUniformLocation(prog, "uPlanks"), planks)
     gl.uniform1f(gl.getUniformLocation(prog, "uBevelDepth"), serie === "Madera" ? 1.5 : 0.5)
-    gl.uniform1f(gl.getUniformLocation(prog, "uBase"), base)
     gl.uniform1f(gl.getUniformLocation(prog, "uTopY"), (quad[0].y + quad[1].y) / 2)  // fondo del piso
     gl.uniform1f(gl.getUniformLocation(prog, "uGloss"), gloss / 100)
-    gl.uniform1f(gl.getUniformLocation(prog, "uLight"), (light / 100) * 0.9)
+    // Brillo manual: 50=neutro (1.0); abajo oscurece hasta 0.5×, arriba aclara hasta 1.15×.
+    const brightVal = bright <= 50 ? 0.5 + (bright / 50) * 0.5 : 1.0 + ((bright - 50) / 50) * 0.15
+    gl.uniform1f(gl.getUniformLocation(prog, "uBright"), brightVal)
     gl.uniform1i(gl.getUniformLocation(prog, "uDir"), dir === "vertical" ? 0 : dir === "horizontal" ? 1 : 2)
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
-  }, [quad, dir, size, ready, serie, gloss, light])
+  }, [quad, dir, size, ready, serie, gloss, bright])
 
   // Perspectiva automática: cuando llega el mapa de profundidad, deducir el horizonte del piso y
   // sembrar el quad con la convergencia correcta (esquinas lejanas apuntando al punto de fuga).
@@ -289,15 +279,11 @@ export const FloorProjector = forwardRef<FloorProjectorHandle, {
       </label>
       <label className="flex items-center gap-2 text-xs text-muted-foreground">
         Brillo del piso
-        <input type="range" min={0} max={100} value={gloss} onChange={(e) => setGloss(Number(e.target.value))} className="flex-1 max-w-[220px]" />
+        <input type="range" min={0} max={100} value={bright} onChange={(e) => setBright(Number(e.target.value))} className="flex-1 max-w-[220px]" />
       </label>
       <label className="flex items-center gap-2 text-xs text-muted-foreground">
         Perspectiva
         <input type="range" min={0} max={100} value={perspSlider} onChange={(e) => setHorizon(Number(e.target.value))} className="flex-1 max-w-[220px]" />
-      </label>
-      <label className="flex items-center gap-2 text-xs text-muted-foreground">
-        Integrar luz
-        <input type="range" min={0} max={100} value={light} onChange={(e) => setLight(Number(e.target.value))} className="flex-1 max-w-[220px]" />
       </label>
     </div>
   )
