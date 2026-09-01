@@ -127040,6 +127040,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-01T02:59:47.000Z",
       "last_touch_at": "2026-09-01T02:59:47.000Z"
+    },
+    {
+      "id": "lead-instagram-1788243340498",
+      "name": "@bim.archviz",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-01T06:15:38.892Z",
+      "last_touch_at": "2026-09-01T06:15:38.892Z"
     }
   ],
   "conversations": [
@@ -132489,6 +132505,20 @@
       "email_subject": "Consulta precios",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-01T02:59:47.000Z"
+    },
+    {
+      "id": "conv-1788243340498-d8cb",
+      "channel": "instagram",
+      "contact_id": "1045753255027449",
+      "contact_name": "@bim.archviz",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788243340498",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-09-01T06:15:40.042Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-01T06:15:40.042Z"
     }
   ],
   "messages": [
@@ -147921,6 +147951,22 @@
       "body": "✉️ Consulta precios\n\nEstimados, les consulto precio y características técnicas del piso H20\r\nRoble Eslovenia.\r\n\r\nMuchas gracias",
       "ts": "2026-09-01T02:59:47.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788243340498-hb58",
+      "conversation_id": "conv-1788243340498-d8cb",
+      "direction": "in",
+      "body": "Hola, ¿cómo están? Mi nombre es Juan y soy estudiante de Arquitectura de 4.º año. Actualmente estoy ofreciendo servicios de dibujo técnico, documentación y modelado digital para proyectos de arquitectura, tanto para estudios como para arquitectos \nServicios:\n• AutoCAD 2D: plantas, cortes, vistas, detalles constructivos, documentación y planos técnicos.\n• Revit / BIM: modelado arquitectónico, desarrollo de plantas, cortes, fachadas, documentación y organización del modelo.\n• • D5 Render: renderizados arquitectónicos, imágenes interiores y exteriores\n\nMe interesa especialmente colaborar como dibujante/modelador digital, pudiendo trabajar por proyecto, por entregas o de manera puntual según la necesidad.\n\nComo estudiante de 4.º año de Arquitectura, cuento con experiencia académica en representación gráfica, documentación arquitectónica, sistemas constructivos, modelado 3D y desarrollo de proyectos.\n\nDEJO MI TELÉFONO DE CONTACTO : 3855394483",
+      "ts": "2026-09-01T06:15:38.892Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788243340699-egdi",
+      "conversation_id": "conv-1788243340498-d8cb",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-01T06:15:40.042Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -157149,7 +157195,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM4MTY3NzY1ODUxNDYyNzY4OTM3NDc3ODY1NDcyMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMjk4NjM4MzI0NDU3NDUwNDIwMzE2MDY3Mjg5NzMzNTI5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5MTI4Njc3MTk2MjA4ODozMjk4NjQxNDAyMzIzNTM1NDQyMDMzMTg3MDc1MDI0NDg2NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU2OTQ3MDg3OTMzODA4NjozMjk4Njk1NTU5Njc3NjM5Nzg5MjQ3NTQ0Mjc2NzU5MzQ3MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU2OTQ3MDg3OTMzODA4NjozMjk4Njk1NTU5Njc3NjM5Nzg5MjQ3NTQ0Mjc2NzU5MzQ3MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4NzI2NzIxNDA3NDc4OTI3NDQyODgwNTU3NjkxNjk5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4NzI2NzIzNTI4ODEwMjIzNzMzNzAyMDkwNjA3ODIwOAZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
