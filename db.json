@@ -132569,11 +132569,12 @@
       "linked_lead_id": "lead-email-1a05ae8c6c59",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-01T02:59:47.000Z",
-      "last_message_preview": "Estimados, les consulto precio y características técnicas del piso H20\r\nRoble Eslovenia.\r\n\r\nMuchas gracias",
+      "last_message_at": "2026-09-01T21:03:12.492Z",
+      "last_message_preview": "Hola Juan, ¿cómo estás?\n\nEl precio del H2O Roble Eslavonia es de USD 38 + IVA por m². Actualmente tenemos una promoción del 10% de descuento",
       "email_subject": "Consulta precios",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-01T02:59:47.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-01T02:59:47.000Z",
+      "last_outbound_at": "2026-09-01T21:03:12.492Z"
     },
     {
       "id": "conv-1788243340498-d8cb",
@@ -132583,7 +132584,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788243340498",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-01T14:53:50.699Z",
       "last_message_preview": "Dale muchas graciassss",
       "last_message_direction": "in",
@@ -132629,7 +132630,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a05dbd69617",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-01T19:13:45.000Z",
       "last_message_preview": "Hola Carlos, cómo estás?\r\n\r\nSoy Juan Rodriguez Momesso del área de ventas\r\n\r\nContame qué es lo que estás buscando así yo puedo ayudarte.\r\n\r\n",
       "email_subject": "(sin asunto)",
@@ -148285,6 +148286,15 @@
       "ts": "2026-09-01T21:01:20.135Z",
       "status": "sent",
       "wa_id": "1a05ec6c4aa9f1b1"
+    },
+    {
+      "id": "m-1788296592492-l6m1",
+      "conversation_id": "conv-email-1a05ae8c6c59",
+      "direction": "out",
+      "body": "Hola Juan, ¿cómo estás?\n\nEl precio del H2O Roble Eslavonia es de USD 38 + IVA por m². Actualmente tenemos una promoción del 10% de descuento.\n\nEs un piso compuesto por piedra polímero y madera, con sistema clic, y ya viene con la manta incorporada, por lo que no es necesario colocar una manta adicional.\n\nEl único requisito fundamental para la colocación es que la carpeta esté correctamente nivelada\n\nCualquier duda o consulta, estamos a disposición para ayudarte.\n\n¡Muchas gracias!",
+      "ts": "2026-09-01T21:03:12.492Z",
+      "status": "sent",
+      "wa_id": "1a05ec87b0d6ab5b"
     }
   ],
   "templates": [
@@ -155621,6 +155631,10 @@
     "21toeHgyiPa3J27RuOykSsH4mafrLkvt": {
       "userId": "u-admin",
       "expires": 1789426835203
+    },
+    "myTiF1AF32cFZ1eekdZ-q3hwabdUL-L0": {
+      "userId": "u-vicky",
+      "expires": 1789506184397
     }
   },
   "settings": {
@@ -156876,7 +156890,9 @@
       "1a05d0c781e133d9",
       "1a05e644855d2df7",
       "1a05e8572d51fdf5",
-      "1a05e8dc55a4203c"
+      "1a05e8dc55a4203c",
+      "1a05ec87b0d6ab5b",
+      "1a05ec6c4aa9f1b1"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
