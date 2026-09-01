@@ -818,8 +818,8 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 143.64000000000001,
-      "reservedStock": 1856.328,
+      "stock": 126.96800000000002,
+      "reservedStock": 1839.656,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1817,7 +1817,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 7278,
+      "reservedStock": 7258,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2968,7 +2968,7 @@
       "currency": "USD",
       "margin": 50,
       "stock": 0,
-      "reservedStock": 142.3,
+      "reservedStock": 130,
       "stockTrack": false,
       "active": true,
       "createdAt": "2026-06-18T00:00:00.000Z",
@@ -14776,7 +14776,7 @@
       ],
       "zoned": false,
       "discount_total": 633.54,
-      "status": "En proceso",
+      "status": "Finalizado",
       "created_at": "2026-08-03T12:40:49.693Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -14785,8 +14785,8 @@
         "total_paid": 0,
         "balance_due": 391.87301999999994
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Juan Rodriguez Momesso",
       "delivery_date": "2026-08-05",
       "delivery_date_to": "2026-08-05",
@@ -14802,6 +14802,12 @@
           "from": "Programado",
           "to": "En proceso",
           "at": "2026-08-06T14:15:34.619Z",
+          "by": "Admin User"
+        },
+        {
+          "from": "En proceso",
+          "to": "Finalizado",
+          "at": "2026-09-01T21:25:01.162Z",
           "by": "Admin User"
         }
       ]
@@ -154706,6 +154712,33 @@
       "sku": "SERV-131",
       "qty": 180,
       "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-01T21:25:01.162Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1785760849693-yeoi",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": -16.672,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-01T21:25:01.162Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1785760849693-yeoi",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": -20,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-01T21:25:01.162Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1785760849693-yeoi",
+      "product_id": "ZOC-MDF-07",
+      "sku": "ZOC-MDF-07",
+      "qty": -12.3,
+      "warehouse_id": "main"
     }
   ],
   "users": [
@@ -157019,7 +157052,8 @@
       "1a05e8572d51fdf5",
       "1a05e8dc55a4203c",
       "1a05ec87b0d6ab5b",
-      "1a05ec6c4aa9f1b1"
+      "1a05ec6c4aa9f1b1",
+      "1a05ecaafc1a255b"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
