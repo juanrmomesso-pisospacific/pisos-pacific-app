@@ -127317,6 +127317,22 @@
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-09-01T20:47:21.000Z",
       "last_touch_at": "2026-09-01T21:00:47.514Z"
+    },
+    {
+      "id": "lead-instagram-1788299640128",
+      "name": "@mary_aldavez",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-01T21:53:58.643Z",
+      "last_touch_at": "2026-09-01T21:53:58.643Z"
     }
   ],
   "conversations": [
@@ -132847,6 +132863,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-01T20:47:21.000Z",
       "last_outbound_at": "2026-09-01T21:01:20.135Z"
+    },
+    {
+      "id": "conv-1788299640128-iesj",
+      "channel": "instagram",
+      "contact_id": "2122902535771967",
+      "contact_name": "@mary_aldavez",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788299640128",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-09-01T21:54:02.319Z",
+      "last_message_preview": "Que precio tiene",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-01T21:54:02.319Z"
     }
   ],
   "messages": [
@@ -148508,6 +148538,22 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a05ecaafc1a255b"
+    },
+    {
+      "id": "m-1788299640128-qime",
+      "conversation_id": "conv-1788299640128-iesj",
+      "direction": "in",
+      "body": "Hola buenas tardes",
+      "ts": "2026-09-01T21:53:58.643Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788299642997-ygow",
+      "conversation_id": "conv-1788299640128-iesj",
+      "direction": "in",
+      "body": "Que precio tiene",
+      "ts": "2026-09-01T21:54:02.319Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -157851,7 +157897,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4NzI2NzIzNTI4ODEwMjIzNzMzNzAyMDkwNjA3ODIwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzc1OTMyMjk5OTI1MDE2MjY0Njk0ODM0NjA2ODk5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzc1OTcyODYwNDg5Mzc5NjMxMTExNDc3MTg1NzQwOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4Nzg0MDc1NjY2ODExODAyMzU2OTAwNDQ1NzYyMzU1MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4Nzg0MDc1NjY2ODExODAyMzU2OTAwNDQ1NzYyMzU1MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMDY3NjgzNTg5OTc1NDozMjk4ODMwNTc2MTE3MjY2MDA0MDE1ODE0OTgwMDM2MTk4NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMDY3NjgzNTg5OTc1NDozMjk4ODMwNTgyODk2ODE3MDc1MzM0MzY0MTMxODU4ODQxNgZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
