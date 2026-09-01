@@ -132515,10 +132515,11 @@
       "linked_lead_id": "lead-instagram-1788243340498",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-01T06:15:40.042Z",
-      "last_message_preview": "📎 Adjunto",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-01T06:15:40.042Z"
+      "last_message_at": "2026-09-01T11:18:19.004Z",
+      "last_message_preview": "Hola Juan, muchas gracias cualquier cosa te avisamos!!",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-01T06:15:40.042Z",
+      "last_outbound_at": "2026-09-01T11:18:19.004Z"
     }
   ],
   "messages": [
@@ -147967,6 +147968,15 @@
       "body": "📎 Adjunto",
       "ts": "2026-09-01T06:15:40.042Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788261499004-6ipm",
+      "conversation_id": "conv-1788243340498-d8cb",
+      "direction": "out",
+      "body": "Hola Juan, muchas gracias cualquier cosa te avisamos!!",
+      "ts": "2026-09-01T11:18:19.004Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4NzYwMjIwNDc1NTU2NTUxNjcyMDk0MTQzODA3NDg4MAZDZD"
     }
   ],
   "templates": [
