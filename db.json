@@ -132564,11 +132564,11 @@
       "linked_lead_id": "lead-instagram-1788270018228",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-01T15:35:53.989Z",
-      "last_message_preview": "Cuantos M2 necesitabas?",
+      "last_message_at": "2026-09-01T15:36:26.421Z",
+      "last_message_preview": "Te dejo número para coordinar",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-01T13:40:38.159Z",
-      "last_outbound_at": "2026-09-01T15:35:53.989Z"
+      "last_outbound_at": "2026-09-01T15:36:26.421Z"
     },
     {
       "id": "conv-email-1a05d33786df",
@@ -148121,6 +148121,26 @@
       "ts": "2026-09-01T15:35:53.989Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzg4NzMwMzE1OTc5NzA2OTQ1MDc3NDEyODM2MTQ3MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788276981310-5809",
+      "conversation_id": "conv-1788270018228-52sg",
+      "direction": "out",
+      "body": "Estamos en Olivos",
+      "ts": "2026-09-01T15:36:20.412Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzg4Nzc5MDU3MTg5OTE3NjMyNTQxNjM1OTAzNDg4MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788276987229-fa2n",
+      "conversation_id": "conv-1788270018228-52sg",
+      "direction": "out",
+      "body": "Te dejo número para coordinar",
+      "ts": "2026-09-01T15:36:26.421Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzg4NzkwMTQxNzAzNzcwMjkyODczMTIyMjMxMDkxMgZDZD",
       "via": "ig-app"
     }
   ],
