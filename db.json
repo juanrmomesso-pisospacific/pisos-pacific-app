@@ -127106,6 +127106,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-01T16:11:17.000Z",
       "last_touch_at": "2026-09-01T16:11:17.000Z"
+    },
+    {
+      "id": "lead-email-1a05eb9fd4a5",
+      "name": "Marcela",
+      "email": "marceladecandia@yahoo.com.ar",
+      "phone": "",
+      "source": "Web",
+      "address": "Belgrano caba",
+      "postal_code": "1428",
+      "approx_m2": 40,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 40m² · Con Colocación · CP 1428",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-01T20:47:21.000Z",
+      "last_touch_at": "2026-09-01T20:47:21.000Z"
     }
   ],
   "conversations": [
@@ -132618,6 +132635,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-01T16:11:17.000Z",
       "last_outbound_at": "2026-09-01T19:13:45.000Z"
+    },
+    {
+      "id": "conv-email-1a05eb9fd4a5",
+      "channel": "email",
+      "contact_id": "marceladecandia@yahoo.com.ar",
+      "contact_name": "Marcela",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a05eb9fd4a5",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-01T20:47:21.000Z",
+      "last_message_preview": "Formulario web — 40m² · Con Colocación · CP 1428 · Belgrano caba",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-01T20:47:21.000Z"
     }
   ],
   "messages": [
@@ -148234,6 +148266,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk4ODIxMzk1MTU0NjA1NTI0NjczMTExODM2NjQyNTA4OAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a05eb9fd4a5",
+      "conversation_id": "conv-email-1a05eb9fd4a5",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 40m² · Con Colocación · CP 1428 · Belgrano caba",
+      "ts": "2026-09-01T20:47:21.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -155627,7 +155667,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-01T04:59:23.738Z",
     "gmail_seen_ids": [
-      "19ef476e18384d70",
       "19ef48cddc2abe72",
       "19ef4969d6e25c1d",
       "19ef4cf9ee34ba73",
@@ -156426,7 +156465,8 @@
       "1a05d33786df370b",
       "1a05dbd69617759f",
       "1a05e8a6cf88138a",
-      "1a05e96b633b835c"
+      "1a05e96b633b835c",
+      "1a05eb9fd4a5a102"
     ],
     "cash_sessions": {
       "1136982222": {
