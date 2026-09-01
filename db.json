@@ -132600,11 +132600,11 @@
       "linked_lead_id": "lead-instagram-1788270018228",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-01T15:36:26.421Z",
-      "last_message_preview": "Te dejo número para coordinar",
+      "last_message_at": "2026-09-01T21:04:01.731Z",
+      "last_message_preview": "1136982222",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-01T13:40:38.159Z",
-      "last_outbound_at": "2026-09-01T15:36:26.421Z"
+      "last_outbound_at": "2026-09-01T21:04:01.731Z"
     },
     {
       "id": "conv-email-1a05d33786df",
@@ -148295,6 +148295,15 @@
       "ts": "2026-09-01T21:03:12.492Z",
       "status": "sent",
       "wa_id": "1a05ec87b0d6ab5b"
+    },
+    {
+      "id": "m-1788296641731-rfh9",
+      "conversation_id": "conv-1788270018228-52sg",
+      "direction": "out",
+      "body": "1136982222",
+      "ts": "2026-09-01T21:04:01.731Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4ODI1MDQ3MDE3ODE3NDU5ODM5OTU4MzkxMTQxMTcxMgZDZD"
     }
   ],
   "templates": [
