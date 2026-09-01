@@ -711,7 +711,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1126.495328,
-      "reservedStock": 1217.1,
+      "reservedStock": 1303.1,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Natural Oak 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1817,7 +1817,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 7142,
+      "reservedStock": 7278,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2417,7 +2417,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 11328,
+      "reservedStock": 11688,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -3063,7 +3063,7 @@
       "cost": 20,
       "currency": "USD",
       "stock": 168.44,
-      "reservedStock": 0,
+      "reservedStock": 73,
       "active": true,
       "margin": -100,
       "createdAt": "2026-07-01T18:25:10.979Z",
@@ -30627,7 +30627,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "PH Nuñez",
       "has_iva": true,
-      "price": 8818.964,
+      "price": 6673.876,
       "zoned": false,
       "description": "H2O HD - Chevron - Aura - 625 x 125 x 6/0.3mm + 2 más",
       "items": [
@@ -30635,13 +30635,13 @@
           "product_id": "local-1782930311636-1b4g3",
           "sku": "PROD-2928",
           "description": "H2O HD - Chevron - Aura - 625 x 125 x 6/0.3mm",
-          "quantity": 97,
+          "quantity": 73,
           "unit_price": 65,
           "cost": 20,
           "category": "Pisos H2O",
           "disc_value": 12,
-          "total": 6305,
-          "discount": 756.6,
+          "total": 4745,
+          "discount": 569.4,
           "image": "",
           "target_item_index": null
         },
@@ -30649,11 +30649,11 @@
           "product_id": "SERV-106",
           "sku": "SERV-106",
           "description": "Servicio - Colocación H2O",
-          "quantity": 78,
+          "quantity": 58,
           "unit_price": 20,
           "cost": 6,
           "category": "Servicio",
-          "total": 1560,
+          "total": 1160,
           "discount": 0,
           "image": "",
           "target_item_index": null
@@ -30672,11 +30672,11 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 756.6,
-      "discount_amount": 756.6,
+      "discount_total": 569.4,
+      "discount_amount": 569.4,
       "created_at": "2026-08-27T17:26:21.066Z",
       "quote_number": "A9417",
-      "status": "DRAFT"
+      "status": "SENT"
     },
     {
       "id": "local-1787851952377-2iu8e",
@@ -30742,7 +30742,7 @@
       "discount_amount": 326.8,
       "created_at": "2026-08-27T17:32:32.228Z",
       "quote_number": "A8356",
-      "status": "DRAFT"
+      "status": "SENT"
     },
     {
       "id": "local-1787936033047-mupql",
@@ -154640,6 +154640,60 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 120,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-01T21:05:16.710Z",
+      "type": "quote_reserve",
+      "ref": "local-1787851952377-2iu8e",
+      "product_id": "PROD-026",
+      "sku": "PROD-026",
+      "qty": 86,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-01T21:05:16.710Z",
+      "type": "quote_reserve",
+      "ref": "local-1787851952377-2iu8e",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 78,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-01T21:05:16.710Z",
+      "type": "quote_reserve",
+      "ref": "local-1787851952377-2iu8e",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 180,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-01T21:05:25.721Z",
+      "type": "quote_reserve",
+      "ref": "local-1787851581213-x1wdv",
+      "product_id": "local-1782930311636-1b4g3",
+      "sku": "PROD-2928",
+      "qty": 73,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-01T21:05:25.721Z",
+      "type": "quote_reserve",
+      "ref": "local-1787851581213-x1wdv",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 58,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-01T21:05:25.721Z",
+      "type": "quote_reserve",
+      "ref": "local-1787851581213-x1wdv",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 180,
       "warehouse_id": "main"
     }
   ],
