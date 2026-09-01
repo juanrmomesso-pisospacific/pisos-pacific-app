@@ -132563,11 +132563,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788270018228",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-01T13:40:38.159Z",
-      "last_message_preview": "Por dónde puedo pasar a verlo",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-01T13:40:38.159Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-01T15:35:53.989Z",
+      "last_message_preview": "Cuantos M2 necesitabas?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-01T13:40:38.159Z",
+      "last_outbound_at": "2026-09-01T15:35:53.989Z"
     },
     {
       "id": "conv-email-1a05d33786df",
@@ -148081,6 +148082,46 @@
       "body": "Dale muchas graciassss",
       "ts": "2026-09-01T14:53:50.699Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788276940860-311g",
+      "conversation_id": "conv-1788270018228-52sg",
+      "direction": "out",
+      "body": "Hola Karen",
+      "ts": "2026-09-01T15:35:40.148Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzg4NzA0Nzg0MDk5NDg4OTQwNzE4OTU0ODUzMTcxMgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788276944581-gjvf",
+      "conversation_id": "conv-1788270018228-52sg",
+      "direction": "out",
+      "body": "Cómo estás??",
+      "ts": "2026-09-01T15:35:43.989Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzg4NzExODY5NjM0MDgyOTA3NTE3OTIzMTUxMDUyOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788276946301-xbfm",
+      "conversation_id": "conv-1788270018228-52sg",
+      "direction": "out",
+      "body": "Siii",
+      "ts": "2026-09-01T15:35:45.762Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzg4NzE1MTM5ODYzNjQ4OTIyNzEwMzc4ODU5NzI0OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788276954804-bab0",
+      "conversation_id": "conv-1788270018228-52sg",
+      "direction": "out",
+      "body": "Cuantos M2 necesitabas?",
+      "ts": "2026-09-01T15:35:53.989Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzg4NzMwMzE1OTc5NzA2OTQ1MDc3NDEyODM2MTQ3MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
