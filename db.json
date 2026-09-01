@@ -126915,6 +126915,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-01T01:34:06.085Z",
       "last_touch_at": "2026-09-01T01:34:06.085Z"
+    },
+    {
+      "id": "lead-email-1a05ae8c6c59",
+      "name": "Juan Chavez",
+      "email": "juanchavez25696@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Consulta precios — Estimados, les consulto precio y características técnicas del piso H20\r\nRoble Eslovenia.\r\n\r\nMuchas gracias",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-01T02:59:47.000Z",
+      "last_touch_at": "2026-09-01T02:59:47.000Z"
     }
   ],
   "conversations": [
@@ -132349,6 +132366,21 @@
       "last_message_preview": "Hola, que origen de fábricacion son los pisos h2o, tienen en Caba algun show room?\nMe pasan lista de precio por caja y mts.\n\nGracias",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-01T01:34:06.085Z"
+    },
+    {
+      "id": "conv-email-1a05ae8c6c59",
+      "channel": "email",
+      "contact_id": "juanchavez25696@gmail.com",
+      "contact_name": "Juan Chavez",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a05ae8c6c59",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-01T02:59:47.000Z",
+      "last_message_preview": "Estimados, les consulto precio y características técnicas del piso H20\r\nRoble Eslovenia.\r\n\r\nMuchas gracias",
+      "email_subject": "Consulta precios",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-01T02:59:47.000Z"
     }
   ],
   "messages": [
@@ -147773,6 +147805,14 @@
       "body": "Hola, que origen de fábricacion son los pisos h2o, tienen en Caba algun show room?\nMe pasan lista de precio por caja y mts.\n\nGracias",
       "ts": "2026-09-01T01:34:06.085Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a05ae8c6c59",
+      "conversation_id": "conv-email-1a05ae8c6c59",
+      "direction": "in",
+      "body": "✉️ Consulta precios\n\nEstimados, les consulto precio y características técnicas del piso H20\r\nRoble Eslovenia.\r\n\r\nMuchas gracias",
+      "ts": "2026-09-01T02:59:47.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -155166,7 +155206,6 @@
     "mp_pending_job": 103000440,
     "mp_last_sync": "2026-08-30T13:07:31.564Z",
     "gmail_seen_ids": [
-      "19ef1e85b5035f50",
       "19ef1e4807b97e4a",
       "19ef278d4aaca77b",
       "19ef2876fc3d0aed",
@@ -155965,7 +156004,8 @@
       "1a057e8841ddbb99",
       "1a0585b1411fbda9",
       "1a05922eebf95b8b",
-      "1a05921ed800e848"
+      "1a05921ed800e848",
+      "1a05ae8c6c59af30"
     ],
     "cash_sessions": {
       "1136982222": {
