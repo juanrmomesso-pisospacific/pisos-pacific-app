@@ -127056,6 +127056,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-01T06:15:38.892Z",
       "last_touch_at": "2026-09-01T06:15:38.892Z"
+    },
+    {
+      "id": "lead-instagram-1788270018228",
+      "name": "@karen.monzo",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-01T13:40:16.171Z",
+      "last_touch_at": "2026-09-01T13:40:16.171Z"
     }
   ],
   "conversations": [
@@ -132521,6 +132537,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-01T06:15:40.042Z",
       "last_outbound_at": "2026-09-01T11:18:19.004Z"
+    },
+    {
+      "id": "conv-1788270018228-52sg",
+      "channel": "instagram",
+      "contact_id": "1847137813361476",
+      "contact_name": "@karen.monzo",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788270018228",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-09-01T13:40:38.159Z",
+      "last_message_preview": "Por dónde puedo pasar a verlo",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-01T13:40:38.159Z"
     }
   ],
   "messages": [
@@ -147987,6 +148017,22 @@
       "ts": "2026-09-01T11:20:47.290Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU2OTQ3MDg3OTMzODA4NjozMjk4NzYwNDk0MDI0NjA2MjgyOTUyOTUyOTI5MDA2Mzg3MgZDZD"
+    },
+    {
+      "id": "m-1788270018228-w92q",
+      "conversation_id": "conv-1788270018228-52sg",
+      "direction": "in",
+      "body": "Hola chicos, les llegó finalmente el tipo chevron en Julio?",
+      "ts": "2026-09-01T13:40:16.171Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788270038854-0cs8",
+      "conversation_id": "conv-1788270018228-52sg",
+      "direction": "in",
+      "body": "Por dónde puedo pasar a verlo",
+      "ts": "2026-09-01T13:40:38.159Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -156574,7 +156620,8 @@
       "1a058dd5f16636a7",
       "1a058dcbb7f7b22d",
       "1a058dcb0c4437c5",
-      "1a0592799bea37c8"
+      "1a0592799bea37c8",
+      "1a05d0c781e133d9"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -157217,7 +157264,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5MTI4Njc3MTk2MjA4ODozMjk4NjQxNDAyMzIzNTM1NDQyMDMzMTg3MDc1MDI0NDg2NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU2OTQ3MDg3OTMzODA4NjozMjk4Njk1NTU5Njc3NjM5Nzg5MjQ3NTQ0Mjc2NzU5MzQ3MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4NzI2NzIxNDA3NDc4OTI3NDQyODgwNTU3NjkxNjk5MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4NzI2NzIzNTI4ODEwMjIzNzMzNzAyMDkwNjA3ODIwOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4NzI2NzIzNTI4ODEwMjIzNzMzNzAyMDkwNjA3ODIwOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzc1OTMyMjk5OTI1MDE2MjY0Njk0ODM0NjA2ODk5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzc1OTcyODYwNDg5Mzc5NjMxMTExNDc3MTg1NzQwOAZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
