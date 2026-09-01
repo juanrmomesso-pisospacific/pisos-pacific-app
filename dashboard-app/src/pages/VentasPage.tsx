@@ -11,6 +11,7 @@ import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/comp
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { SaleRowActions } from "@/components/RowActions"
+import { DeliveryScheduler } from "@/components/DeliveryScheduler"
 import { SaleForm } from "@/components/forms/SaleForm"
 import { SearchPicker } from "@/components/SearchPicker"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
@@ -146,11 +147,13 @@ export default function VentasPage() {
   )
   const itemMatchesProduct = (it: { sku?: string; product_id?: string }, p: Product) =>
     (!!it.sku && it.sku === p.sku) || (!!it.product_id && it.product_id === p.id)
-  // Default is kanban; persist user choice across reloads (e.g. after drag-drop's refresh())
+  // Default: Tarjetas en móvil (el drag del Kanban no funciona con el dedo → el estado se cambia
+  // desde el menú ⋯); Kanban en desktop. La elección del usuario se persiste y gana.
   const [view, setView] = useState<View>(() => {
     if (typeof window === "undefined") return "kanban"
     const saved = window.localStorage.getItem("ventas:view")
-    return (saved === "tabla" || saved === "kanban" || saved === "cards") ? saved : "kanban"
+    if (saved === "tabla" || saved === "kanban" || saved === "cards") return saved
+    return window.matchMedia("(max-width: 767px)").matches ? "cards" : "kanban"
   })
   const setViewPersist = (v: View) => {
     setView(v)
@@ -561,16 +564,10 @@ function VentasKanban({ rows, onChanged }: { rows: Sale[]; onChanged: () => void
 // SaleDetailSheet — click card → full sale view with editable Entrega section
 // -----------------------------------------------------------------------------
 function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onClose: () => void; onChanged: () => void }) {
-  const settings = useApi<{ sellers?: { name: string }[]; crews?: string[] }>("/api/settings").data
-  const crews = settings?.crews ?? []
   const quotes = useApi<Quote[]>("/api/quotes").data ?? []
   const cajas = useApi<Caja[]>("/api/cajas").data ?? []
   const cashflow = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
   const products = useApi<Product[]>("/api/products").data ?? []
-  const [dateFrom, setDateFrom] = useState("")
-  const [dateTo, setDateTo] = useState("")
-  const [crew, setCrew] = useState("")
-  const [notes, setNotes] = useState("")
   // Registrar cobro
   const [payAmount, setPayAmount] = useState<number>(0)
   const [payCaja, setPayCaja] = useState("")
@@ -586,8 +583,6 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   const [editOpen, setEditOpen] = useState(false)
   const [deliverOpen, setDeliverOpen] = useState(false)
   const update = useAction(api.update)
-  const txn = useAction(api.saleTransition)
-  const createTask = useAction(api.create)
   const createMov = useAction(api.create)
   const payDirect = useAction(api.salePayment)
   const conversations = useApi<any[]>("/api/conversations").data ?? []
@@ -600,10 +595,6 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
 
   useEffect(() => {
     if (!sale) return
-    setDateFrom(sale.delivery_date ? sale.delivery_date.slice(0, 10) : "")
-    setDateTo(sale.delivery_date_to ? sale.delivery_date_to.slice(0, 10) : "")
-    setCrew(sale.delivery_crew ?? "")
-    setNotes(sale.delivery_notes ?? "")
     setPayAmount(0)
     setPayCaja("")
     setPayDate(new Date().toISOString().slice(0, 10))
@@ -619,45 +610,7 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
 
   const due = saldoDue(sale)
   const paid = cobrado(sale)
-  const isFirstSchedule = !sale.delivery_date
   const linkedQuote = quotes.find(q => q.id === sale.quote_id) ?? null
-
-  const saveEntrega = async () => {
-    if (!dateFrom) return
-    const effectiveTo = dateTo && dateTo >= dateFrom ? dateTo : ""
-    await update.run("sales", sale.id, {
-      delivery_date: dateFrom,
-      delivery_date_to: effectiveTo || undefined,
-      delivery_crew: crew || undefined,
-      delivery_notes: notes || undefined,
-    })
-    // Conexión agenda → ventas: fecha futura → Programado; fecha de hoy/pasada → En proceso.
-    const today = new Date().toISOString().slice(0, 10)
-    if (dateFrom <= today) { if (sale.status === "Confirmado" || sale.status === "Programado") await txn.run(sale.id, "En proceso") }
-    else if (sale.status === "Confirmado") await txn.run(sale.id, "Programado")
-    if (isFirstSchedule) {
-      const now = new Date().toISOString()
-      const m = new Date(dateFrom); m.setDate(m.getDate() - 2)
-      await createTask.run("tasks", {
-        type: "medicion",
-        title: `Medición previa · ${sale.client_name}`,
-        due_date: m.toISOString().slice(0, 10),
-        assigned_seller: crew || sale.seller_name || undefined,
-        status: "pendiente",
-        sale_id: sale.id,
-        notes: sale.client_address || "",
-        created_at: now,
-      })
-      // Remito is created automatically when the Medición is marked complete (see /agenda).
-    }
-    onClose(); onChanged()
-  }
-
-  const clearEntrega = async () => {
-    if (!confirm("¿Limpiar la fecha de entrega? Las tareas de medición / informe ya creadas siguen en la agenda — moveles la fecha o cancelálas desde ahí.")) return
-    await update.run("sales", sale.id, { delivery_date: "", delivery_date_to: "", delivery_crew: "", delivery_notes: "" })
-    onClose(); onChanged()
-  }
 
   // Cobros: con finanzas, ingresos del cashflow linkeados a esta venta (la fuente del saldo);
   // sin finanzas, los pagos directos registrados en la venta (sale.payments) — si no, el cobro
@@ -755,7 +708,52 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
           <Tile label="Saldo" value={fmtMoney(due)} highlight={due > 0} />
         </div>
 
-        <IvaEditor sale={sale} onChanged={onChanged} />
+        {/* Cobros — acción principal, arriba de todo (antes estaba a 4-5 scrolls, debajo del remito) */}
+        <div className="mt-4">
+          <DetailSection title="Cobros">
+            {due > 0.5 ? (
+              <div className="rounded-md border border-border p-2.5 space-y-2 bg-muted/20">
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Monto (US$)</div>
+                    <div className="flex gap-1">
+                      <Input type="number" min={0} step="0.01" value={payAmount === 0 ? "" : payAmount} placeholder="0" onChange={(e) => setPayAmount(Number(e.target.value) || 0)} className="h-8" />
+                      <Button type="button" variant="outline" size="sm" className="h-8 px-2 text-xs shrink-0" onClick={() => setPayAmount(Math.round(due * 100) / 100)}>Todo</Button>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Fecha</div>
+                    <Input type="date" value={payDate} onChange={(e) => setPayDate(e.target.value)} className="h-8" />
+                  </div>
+                </div>
+                {finanzasOn && (
+                  <div>
+                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Caja</div>
+                    <select value={payCaja} onChange={(e) => setPayCaja(e.target.value)} className="h-8 w-full rounded-md border border-input bg-transparent px-2 text-sm">
+                      <option value="">— Elegí la caja —</option>
+                      {cajas.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+                    </select>
+                  </div>
+                )}
+                <Button size="sm" onClick={registrarCobro} disabled={createMov.busy || payDirect.busy || payAmount <= 0 || (finanzasOn && !payCaja)}>{createMov.busy || payDirect.busy ? "Registrando…" : "Registrar cobro"}</Button>
+                {(createMov.error || payDirect.error) && <div className="text-[11px] text-destructive">{createMov.error || payDirect.error}</div>}
+              </div>
+            ) : (
+              <div className="text-xs text-emerald-700">Saldado ✓</div>
+            )}
+            {cobros.length > 0 && (
+              <div className="space-y-1.5 mt-2">
+                {cobros.map((m) => (
+                  <div key={m.id} className="rounded-md border border-border px-2 py-1.5 flex items-center justify-between text-xs gap-2">
+                    <span>{m.date ? new Date(m.date).toLocaleDateString(appLocale()) : "—"}</span>
+                    <span className="text-muted-foreground truncate">{m.caja_name}</span>
+                    <span className="tabular">{fmtMoney(m.amount_usd || 0)}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </DetailSection>
+        </div>
 
         {/* Entrega de material — descuenta stock SIN finalizar la venta (entrega antes de colocar) */}
         <MaterialDeliveryPanel sale={sale} products={products} isAdmin={isAdmin} onOpen={() => setDeliverOpen(true)} onChanged={onChanged} />
@@ -773,48 +771,16 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
               </Badge>
             )}
           </div>
-          <div className="p-4 space-y-3">
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="text-xs font-medium block mb-1">Colocación desde</label>
-                <Input type="date" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
-              </div>
-              <div>
-                <label className="text-xs font-medium block mb-1">Hasta <span className="text-muted-foreground font-normal">(opcional)</span></label>
-                <Input type="date" value={dateTo} min={dateFrom || undefined} onChange={(e) => setDateTo(e.target.value)} />
-              </div>
-            </div>
-            <div className="text-[10px] text-muted-foreground -mt-1">Para instalaciones de varios días dejá "hasta". Al guardar: se agrega a Agenda + crea la Medición previa (−2 días). El Remito se genera cuando la medición esté completa.</div>
-            <div>
-              <label className="text-xs font-medium block mb-1">Equipo de colocación</label>
-              {crews.length > 0 ? (
-                <select value={crew} onChange={(e) => setCrew(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
-                  <option value="">— Sin asignar —</option>
-                  {crews.map(c => <option key={c} value={c}>{c}</option>)}
-                  {crew && !crews.includes(crew) && crew !== "Externo" && <option value={crew}>{crew}</option>}
-                  <option value="Externo">Externo / otro</option>
-                </select>
-              ) : (
-                <Input value={crew} onChange={(e) => setCrew(e.target.value)} placeholder="Equipo" />
-              )}
-            </div>
-            <div>
-              <label className="text-xs font-medium block mb-1">Notas de entrega</label>
-              <Input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Ascensor de carga, llaves con portero…" />
-            </div>
-            <div className="flex items-center gap-2 pt-1">
-              <Button onClick={saveEntrega} disabled={update.busy || txn.busy || createTask.busy || !dateFrom}>
-                {update.busy || txn.busy || createTask.busy
-                  ? "Guardando…"
-                  : sale.delivery_date ? "Actualizar entrega" : "Programar entrega"}
-              </Button>
-              {sale.delivery_date && (
-                <Button variant="outline" onClick={clearEntrega} disabled={update.busy}>Limpiar fecha</Button>
-              )}
-              <Button variant="outline" className="ml-auto" onClick={() => window.open(`/api/sales/${sale.id}/remito`, "_blank")}>
-                <Truck className="h-4 w-4" />Remito depósito
-              </Button>
-            </div>
+          <div className="p-4">
+            <DeliveryScheduler
+              sale={sale}
+              onSaved={() => { onClose(); onChanged() }}
+              actionsRight={
+                <Button variant="outline" onClick={() => window.open(`/api/sales/${sale.id}/remito`, "_blank")}>
+                  <Truck className="h-4 w-4" />Remito depósito
+                </Button>
+              }
+            />
           </div>
         </div>
 
@@ -855,52 +821,9 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
           </DetailSection>
         </div>
 
+        {/* IVA — ocasional/admin, movido abajo (antes estaba arriba de todo, empujando el cobro a 4-5 scrolls) */}
         <div className="mt-6">
-          <DetailSection title="Cobros">
-            <div className="flex items-center justify-between text-sm mb-2">
-              <span className="text-muted-foreground">Cobrado <b className="text-foreground tabular">{fmtMoney(paid)}</b> de {fmtMoney(sale.contract_total)}</span>
-              <span className={cn("tabular font-medium", due > 0.5 ? "text-amber-700" : "text-emerald-700")}>{due > 0.5 ? `Saldo ${fmtMoney(due)}` : "Saldado ✓"}</span>
-            </div>
-            {due > 0.5 && (
-              <div className="rounded-md border border-border p-2.5 space-y-2 bg-muted/20">
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Monto (US$)</div>
-                    <div className="flex gap-1">
-                      <Input type="number" min={0} step="0.01" value={payAmount === 0 ? "" : payAmount} placeholder="0" onChange={(e) => setPayAmount(Number(e.target.value) || 0)} className="h-8" />
-                      <Button type="button" variant="outline" size="sm" className="h-8 px-2 text-xs shrink-0" onClick={() => setPayAmount(Math.round(due * 100) / 100)}>Todo</Button>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Fecha</div>
-                    <Input type="date" value={payDate} onChange={(e) => setPayDate(e.target.value)} className="h-8" />
-                  </div>
-                </div>
-                {finanzasOn && (
-                  <div>
-                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Caja</div>
-                    <select value={payCaja} onChange={(e) => setPayCaja(e.target.value)} className="h-8 w-full rounded-md border border-input bg-transparent px-2 text-sm">
-                      <option value="">— Elegí la caja —</option>
-                      {cajas.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
-                    </select>
-                  </div>
-                )}
-                <Button size="sm" onClick={registrarCobro} disabled={createMov.busy || payDirect.busy || payAmount <= 0 || (finanzasOn && !payCaja)}>{createMov.busy || payDirect.busy ? "Registrando…" : "Registrar cobro"}</Button>
-                {(createMov.error || payDirect.error) && <div className="text-[11px] text-destructive">{createMov.error || payDirect.error}</div>}
-              </div>
-            )}
-            {cobros.length > 0 && (
-              <div className="space-y-1.5 mt-2">
-                {cobros.map((m) => (
-                  <div key={m.id} className="rounded-md border border-border px-2 py-1.5 flex items-center justify-between text-xs gap-2">
-                    <span>{m.date ? new Date(m.date).toLocaleDateString(appLocale()) : "—"}</span>
-                    <span className="text-muted-foreground truncate">{m.caja_name}</span>
-                    <span className="tabular">{fmtMoney(m.amount_usd || 0)}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </DetailSection>
+          <IvaEditor sale={sale} onChanged={onChanged} />
         </div>
 
         <div className="mt-6">

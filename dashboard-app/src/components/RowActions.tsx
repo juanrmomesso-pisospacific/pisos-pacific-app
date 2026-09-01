@@ -11,6 +11,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { openPacificPdf } from "@/lib/pdf"
 import { quoteShareMessage } from "@/lib/chat"
 import { useConfirm } from "@/components/ui/confirm"
+import { DeliveryScheduler } from "@/components/DeliveryScheduler"
 import { useModules, moduleOn } from "@/contexts/ConfigContext"
 import { saldoDe, cobradoDe } from "@/lib/sales"
 import { registrarCobroVenta } from "@/lib/cobro"
@@ -246,64 +247,8 @@ export function SaleRowActions({ sale }: { sale: Sale }) {
   )
 }
 
-// ---------- T-Calendar — Programar entrega drawer (entrega + optional medición + remito) ----------
+// ---------- Programar entrega drawer — usa el scheduler compartido (DeliveryScheduler) ----------
 function ScheduleDeliveryDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChange: (o: boolean) => void; sale: Sale }) {
-  const settings = useApi<{ sellers?: { name: string }[]; crews?: string[] }>("/api/settings").data
-  const crews = settings?.crews ?? []
-  const [dateFrom, setDateFrom] = useState<string>(sale.delivery_date ? sale.delivery_date.slice(0, 10) : "")
-  const [dateTo, setDateTo]     = useState<string>(sale.delivery_date_to ? sale.delivery_date_to.slice(0, 10) : "")
-  const [crew, setCrew] = useState<string>(sale.delivery_crew ?? "")
-  const [notes, setNotes] = useState<string>(sale.delivery_notes ?? "")
-  const [medicionDate, setMedicionDate] = useState<string>("")
-  const update = useAction(api.update)
-  const txn = useAction(api.saleTransition)
-  const createTask = useAction(api.create)
-
-  useEffect(() => {
-    if (!open) return
-    setDateFrom(sale.delivery_date ? sale.delivery_date.slice(0, 10) : "")
-    setDateTo(sale.delivery_date_to ? sale.delivery_date_to.slice(0, 10) : "")
-    setCrew(sale.delivery_crew ?? "")
-    setNotes(sale.delivery_notes ?? "")
-    if (sale.delivery_date) {
-      const m = new Date(sale.delivery_date); m.setDate(m.getDate() - 2)
-      setMedicionDate(m.toISOString().slice(0, 10))
-    } else {
-      setMedicionDate("")
-    }
-  }, [open, sale.id])
-
-  const submit = async () => {
-    if (!dateFrom) return
-    // Sanity: if both set, ensure to >= from
-    const effectiveTo = dateTo && dateTo >= dateFrom ? dateTo : ""
-    const r = await update.run("sales", sale.id, {
-      delivery_date: dateFrom,
-      delivery_date_to: effectiveTo || undefined,
-      delivery_crew: crew || undefined,
-      delivery_notes: notes || undefined,
-    })
-    if (!r) return
-    if (sale.status === "Confirmado") await txn.run(sale.id, "Programado")
-
-    const now = new Date().toISOString()
-    if (medicionDate) {
-      await createTask.run("tasks", {
-        type: "medicion",
-        title: `Medición previa · ${sale.client_name}`,
-        due_date: medicionDate,
-        assigned_seller: crew || sale.seller_name || undefined,
-        status: "pendiente",
-        sale_id: sale.id,
-        notes: sale.client_address || "",
-        created_at: now,
-      })
-    }
-    // Note: Remito is NOT auto-created here. It's created automatically when the
-    // Medición is completed in the calendar — see MedicionFormSheet on /agenda.
-    onOpenChange(false); refresh()
-  }
-
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent>
@@ -317,51 +262,7 @@ function ScheduleDeliveryDrawer({ open, onOpenChange, sale }: { open: boolean; o
             {sale.client_address && <div>📍 {sale.client_address}</div>}
             <div>Total: {fmtMoney(sale.contract_total)}</div>
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div>
-              <label className="text-sm font-medium block mb-1">Entrega desde</label>
-              <Input type="date" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
-            </div>
-            <div>
-              <label className="text-sm font-medium block mb-1">Hasta <span className="text-muted-foreground font-normal">(opcional)</span></label>
-              <Input type="date" value={dateTo} min={dateFrom || undefined} onChange={(e) => setDateTo(e.target.value)} />
-            </div>
-          </div>
-          <div className="text-[11px] text-muted-foreground -mt-2">Si la instalación dura varios días, dejá la fecha "hasta". Se ve como evento en cada día del rango.</div>
-          <div>
-            <label className="text-xs font-medium block mb-1">Medición previa <span className="text-muted-foreground">(−2 días por defecto)</span></label>
-            <Input type="date" value={medicionDate} onChange={(e) => setMedicionDate(e.target.value)} />
-            <div className="text-[10px] text-muted-foreground mt-1">El Remito se crea automáticamente al completar la medición.</div>
-          </div>
-          <div>
-            <label className="text-sm font-medium block mb-1">Equipo de colocación <span className="text-muted-foreground font-normal">(opcional)</span></label>
-            {crews.length > 0 ? (
-              <select value={crew} onChange={(e) => setCrew(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
-                <option value="">— Sin asignar —</option>
-                {crews.map(c => <option key={c} value={c}>{c}</option>)}
-                {crew && !crews.includes(crew) && crew !== "Externo" && <option value={crew}>{crew}</option>}
-                <option value="Externo">Externo / otro</option>
-              </select>
-            ) : (
-              <Input value={crew} onChange={(e) => setCrew(e.target.value)} placeholder="Equipo" />
-            )}
-          </div>
-          <div>
-            <label className="text-sm font-medium block mb-1">Notas de entrega (opcional)</label>
-            <Input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Ascensor de carga, llaves con portero, etc." />
-          </div>
-          <div className="flex items-center gap-2 pt-2">
-            <Button onClick={submit} disabled={update.busy || txn.busy || createTask.busy || !dateFrom}>
-              {update.busy || txn.busy || createTask.busy ? "Guardando…" : sale.delivery_date ? "Actualizar entrega" : "Programar entrega"}
-            </Button>
-            {update.error && <span className="text-xs text-destructive">{update.error}</span>}
-            {sale.delivery_date && (
-              <Button variant="outline" disabled={update.busy} onClick={async () => {
-                await update.run("sales", sale.id, { delivery_date: "", delivery_date_to: "", delivery_crew: "", delivery_notes: "" })
-                onOpenChange(false); refresh()
-              }}>Limpiar</Button>
-            )}
-          </div>
+          <DeliveryScheduler sale={sale} onSaved={() => { onOpenChange(false); refresh() }} />
         </div>
       </SheetContent>
     </Sheet>
