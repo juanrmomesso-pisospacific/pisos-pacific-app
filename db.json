@@ -132486,10 +132486,11 @@
       "linked_lead_id": "lead-instagram-1788226448336",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-01T01:34:06.085Z",
-      "last_message_preview": "Hola, que origen de fábricacion son los pisos h2o, tienen en Caba algun show room?\nMe pasan lista de precio por caja y mts.\n\nGracias",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-01T01:34:06.085Z"
+      "last_message_at": "2026-09-01T11:20:47.290Z",
+      "last_message_preview": "Hola Claudio como estas? Son de china el decor layer de Noruega (el dibuji que se ve).\nel m2 esta usd 38 + iva.\nahora estamos con 10 off.\n\nP",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-01T01:34:06.085Z",
+      "last_outbound_at": "2026-09-01T11:20:47.290Z"
     },
     {
       "id": "conv-email-1a05ae8c6c59",
@@ -132499,7 +132500,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a05ae8c6c59",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-01T02:59:47.000Z",
       "last_message_preview": "Estimados, les consulto precio y características técnicas del piso H20\r\nRoble Eslovenia.\r\n\r\nMuchas gracias",
       "email_subject": "Consulta precios",
@@ -147977,6 +147978,15 @@
       "ts": "2026-09-01T11:18:19.004Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4NzYwMjIwNDc1NTU2NTUxNjcyMDk0MTQzODA3NDg4MAZDZD"
+    },
+    {
+      "id": "m-1788261647290-2fek",
+      "conversation_id": "conv-1788226448335-5ml5",
+      "direction": "out",
+      "body": "Hola Claudio como estas? Son de china el decor layer de Noruega (el dibuji que se ve).\nel m2 esta usd 38 + iva.\nahora estamos con 10 off.\n\nPor caja vienen 2.086 m2",
+      "ts": "2026-09-01T11:20:47.290Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU2OTQ3MDg3OTMzODA4NjozMjk4NzYwNDk0MDI0NjA2MjgyOTUyOTUyOTI5MDA2Mzg3MgZDZD"
     }
   ],
   "templates": [
