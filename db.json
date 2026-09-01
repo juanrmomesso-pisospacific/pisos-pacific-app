@@ -132646,11 +132646,12 @@
       "linked_lead_id": "lead-email-1a05eb9fd4a5",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-01T20:47:21.000Z",
-      "last_message_preview": "Formulario web — 40m² · Con Colocación · CP 1428 · Belgrano caba",
+      "last_message_at": "2026-09-01T21:01:20.135Z",
+      "last_message_preview": "Hola Marcela, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-01T20:47:21.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-01T20:47:21.000Z",
+      "last_outbound_at": "2026-09-01T21:01:20.135Z"
     }
   ],
   "messages": [
@@ -148275,6 +148276,15 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 40m² · Con Colocación · CP 1428 · Belgrano caba",
       "ts": "2026-09-01T20:47:21.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788296480135-jfmo",
+      "conversation_id": "conv-email-1a05eb9fd4a5",
+      "direction": "out",
+      "body": "Hola Marcela, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. Confirmando el producto te comparto un presupuesto preliminar!\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-01T21:01:20.135Z",
+      "status": "sent",
+      "wa_id": "1a05ec6c4aa9f1b1"
     }
   ],
   "templates": [
