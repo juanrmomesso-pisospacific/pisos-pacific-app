@@ -32160,6 +32160,59 @@
       "quote_number": "A7186",
       "status": "SENT",
       "share_token": "74059139a8442196617dc1dc"
+    },
+    {
+      "id": "local-1788296675242-ljpzg",
+      "client_id": "",
+      "client_name": "Marcela",
+      "client_dni": "",
+      "client_email": "marceuru18@hotmail.com",
+      "client_phone": "",
+      "client_address": "A confirmar",
+      "internal_notes": "Formulario web — 40m² · Con Colocación · CP 1428",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Cotización 12 M2 H2O",
+      "has_iva": true,
+      "price": 1396.7562400000002,
+      "zoned": false,
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 14.588,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "total": 554.3439999999999,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 40,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 600,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "created_at": "2026-09-01T21:04:35.132Z",
+      "quote_number": "A6092",
+      "status": "DRAFT",
+      "lead_id": "lead-email-19ff7ca2a289"
     }
   ],
   "clients": [
@@ -125580,10 +125633,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 12m² · Con Colocación",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-08-12T21:04:08.000Z",
-      "last_touch_at": "2026-08-25T17:12:37.000Z"
+      "last_touch_at": "2026-09-01T21:04:35.361Z"
     },
     {
       "id": "local-1786626087478-b0nx7",
