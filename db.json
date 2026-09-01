@@ -12064,7 +12064,7 @@
       ],
       "zoned": true,
       "discount_total": 610,
-      "status": "En proceso",
+      "status": "Finalizado",
       "created_at": "2026-06-18T19:58:31.536Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -12100,7 +12100,15 @@
         }
       ],
       "material_delivery_date": "2026-07-08",
-      "iva_amount": 0
+      "iva_amount": 0,
+      "status_log": [
+        {
+          "from": "En proceso",
+          "to": "Finalizado",
+          "at": "2026-09-01T21:25:16.494Z",
+          "by": "Admin User"
+        }
+      ]
     },
     {
       "id": "local-sale-1781890561241-06er",
