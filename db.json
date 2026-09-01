@@ -127233,7 +127233,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-01T02:59:47.000Z",
-      "last_touch_at": "2026-09-01T02:59:47.000Z"
+      "last_touch_at": "2026-09-01T23:45:16.000Z"
     },
     {
       "id": "lead-instagram-1788243340498",
@@ -132778,12 +132778,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a05ae8c6c59",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-01T22:22:26.000Z",
-      "last_message_preview": "Hola Juan, cómo estás?\r\n\r\nMuchas gracias por comunicarte con nosotros.\r\n\r\nTe paso información del piso H2O. La línea H2O es piso de SPC. Es ",
+      "unread_count": 1,
+      "last_message_at": "2026-09-01T23:45:16.000Z",
+      "last_message_preview": "Muchas gracias por la respuesta.\r\n\r\nCual es el espesor de la capa de uso?\r\n\r\nEl mar, 1 sept 2026, 19:22, info pisos <info@pisospacific.com> ",
       "email_subject": "Consulta precios",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-01T02:59:47.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-01T23:45:16.000Z",
       "last_outbound_at": "2026-09-01T22:22:26.000Z"
     },
     {
@@ -148570,6 +148570,14 @@
       "body": "✉️ Re: Consulta precios\n\nHola Juan, cómo estás?\r\n\r\nMuchas gracias por comunicarte con nosotros.\r\n\r\nTe paso información del piso H2O. La línea H2O es piso de SPC. Es 100%\r\nimpermeable, con protección antiscratch y terminación mate muy realista.\r\nIdeal para zonas húmedas, mascotas o alto tránsito.\r\n\r\nEl núcleo duro del producto es de 5MM y tiene una manta acústica de EVA de\r\n1,5MM.\r\n\r\nEl valor de la línea H2O es de usd 38 + IVA sin colocación.\r\n\r\nSi necesitas que te arme un presupuesto, compartime datos de entrega, si\r\nrequiere colocación y cantidad de metros cuadrados.\r\n\r\nMuchas gracias,\r\n\r\nSaludos,\r\n\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl lun, 31 ago 2026 a las 23:59, Juan Chavez (<juanchavez25696@gmail.com>)\r\nescribió:\r\n\r\n>\r\n> Estimados, les consulto precio y características técnicas del piso H20\r\n> Roble Eslovenia.\r\n>\r\n> Muchas gracias\r\n>",
       "ts": "2026-09-01T22:22:26.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-email-1a05f5d0c74a",
+      "conversation_id": "conv-email-1a05ae8c6c59",
+      "direction": "in",
+      "body": "✉️ Re: Consulta precios\n\nMuchas gracias por la respuesta.\r\n\r\nCual es el espesor de la capa de uso?\r\n\r\nEl mar, 1 sept 2026, 19:22, info pisos <info@pisospacific.com> escribió:\r\n\r\n> Hola Juan, cómo estás?\r\n>\r\n> Muchas gracias por comunicarte con nosotros.\r\n>\r\n> Te paso información del piso H2O. La línea H2O es piso de SPC. Es 100%\r\n> impermeable, con protección antiscratch y terminación mate muy realista.\r\n> Ideal para zonas húmedas, mascotas o alto tránsito.\r\n>\r\n> El núcleo duro del producto es de 5MM y tiene una manta acústica de EVA de\r\n> 1,5MM.\r\n>\r\n> El valor de la línea H2O es de usd 38 + IVA sin colocación.\r\n>\r\n> Si necesitas que te arme un presupuesto, compartime datos de entrega, si\r\n> requiere colocación y cantidad de metros cuadrados.\r\n>\r\n> Muchas gracias,\r\n>\r\n> Saludos,\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n> El lun, 31 ago 2026 a las 23:59, Juan Chavez (<juanchavez25696@gmail.com>)\r\n> escribió:\r\n>\r\n>>\r\n>> Estimados, les consulto precio y características técnicas del piso H20\r\n>> Roble Eslovenia.\r\n>>\r\n>> Muchas gracias\r\n>>\r\n>",
+      "ts": "2026-09-01T23:45:16.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -156066,7 +156074,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-01T04:59:23.738Z",
     "gmail_seen_ids": [
-      "19ef48cddc2abe72",
       "19ef4969d6e25c1d",
       "19ef4cf9ee34ba73",
       "19ef55b00dab18d3",
@@ -156865,7 +156872,8 @@
       "1a05dbd69617759f",
       "1a05e8a6cf88138a",
       "1a05e96b633b835c",
-      "1a05eb9fd4a5a102"
+      "1a05eb9fd4a5a102",
+      "1a05f5d0c74a74cc"
     ],
     "cash_sessions": {
       "1136982222": {
