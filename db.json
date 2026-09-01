@@ -127120,9 +127120,9 @@
       "interested_products": [],
       "notes": "Formulario web — 40m² · Con Colocación · CP 1428",
       "status": "New",
-      "assigned_seller": "",
+      "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-09-01T20:47:21.000Z",
-      "last_touch_at": "2026-09-01T20:47:21.000Z"
+      "last_touch_at": "2026-09-01T21:00:47.514Z"
     }
   ],
   "conversations": [
@@ -131128,13 +131128,14 @@
       "contact_name": "María Florencia Pena",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fa98b77b2f",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-09T22:33:40.000Z",
       "last_message_preview": "Formulario web — 15m² · Sin Colocación · 25 de Mayo 1655, Venado Tuerto, Santa Fe.",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-09T22:33:40.000Z"
+      "last_inbound_at": "2026-08-09T22:33:40.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fec384694b",
@@ -132612,7 +132613,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a05d33786df",
       "status": "open",
-      "unread_count": 3,
+      "unread_count": 0,
       "last_message_at": "2026-09-01T20:08:37.000Z",
       "last_message_preview": "Hablemos mañana. Hoy estoy corriendo. Veo ese piso, asi se de que me hablas\r\ntambién. Me podes pasar por aca foto o imágenes de ese mas bara",
       "email_subject": "Liquidación.",
