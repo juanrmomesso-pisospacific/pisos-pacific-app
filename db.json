@@ -711,7 +711,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1126.495328,
-      "reservedStock": 1303.1,
+      "reservedStock": 1369.78,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Natural Oak 6,5x23x150",
       "thicknessMm": 6.5,
@@ -2417,7 +2417,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 11688,
+      "reservedStock": 11689,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -15808,6 +15808,67 @@
         "total_invoiced": 0,
         "total_paid": 0,
         "balance_due": 3712.2799999999997
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Juan Rodriguez Momesso"
+    },
+    {
+      "id": "local-sale-1788298785438-hd0d",
+      "quote_id": "local-1788298776013-pl5im",
+      "quote_number": "A3922",
+      "title": "Franco Pallucchini ",
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 1 más",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-060",
+      "client_name": "Flavia San Juan",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "San Juan",
+      "contract_total": 1930.8400000000001,
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 66.68,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_kind": "amount",
+          "disc_value": 800,
+          "total": 2533.84,
+          "discount": 800,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 197,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 197,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 800,
+      "status": "Confirmado",
+      "created_at": "2026-09-01T21:39:45.438Z",
+      "has_iva": false,
+      "iva_mode": "none",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 1930.8400000000001
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -32236,6 +32297,61 @@
       "status": "Enviado",
       "lead_id": "lead-email-19ff7ca2a289",
       "share_token": "00b1ab56f712191fc1feb4b8"
+    },
+    {
+      "id": "local-1788298776013-pl5im",
+      "client_id": "CLI-060",
+      "client_name": "Flavia San Juan",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "San Juan",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Franco Pallucchini ",
+      "has_iva": false,
+      "price": 1930.8400000000001,
+      "zoned": false,
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 66.68,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_kind": "amount",
+          "disc_value": 800,
+          "total": 2533.84,
+          "discount": 800,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 197,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 197,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 800,
+      "discount_amount": 800,
+      "created_at": "2026-09-01T21:39:35.402Z",
+      "quote_number": "A3922",
+      "status": "ACCEPTED",
+      "sale_id": "local-sale-1788298785438-hd0d"
     }
   ],
   "clients": [
@@ -33018,7 +33134,9 @@
       "dni": "",
       "emails": [],
       "phones": [],
-      "addresses": [],
+      "addresses": [
+        "San Juan"
+      ],
       "active": true,
       "notes": null,
       "updated_at": "2026-06-03T19:46:57.827Z"
@@ -154754,6 +154872,24 @@
       "product_id": "ZOC-MDF-07",
       "sku": "ZOC-MDF-07",
       "qty": -12.3,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-01T21:39:39.709Z",
+      "type": "quote_reserve",
+      "ref": "local-1788298776013-pl5im",
+      "product_id": "PROD-026",
+      "sku": "PROD-026",
+      "qty": 66.68,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-01T21:39:39.709Z",
+      "type": "quote_reserve",
+      "ref": "local-1788298776013-pl5im",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 1,
       "warehouse_id": "main"
     }
   ],
