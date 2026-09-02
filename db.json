@@ -127496,6 +127496,38 @@
       "assigned_seller": "",
       "created_at": "2026-09-02T03:47:05.000Z",
       "last_touch_at": "2026-09-02T03:47:05.000Z"
+    },
+    {
+      "id": "lead-instagram-1788370090533",
+      "name": "@isaacjuli",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-02T17:28:08.871Z",
+      "last_touch_at": "2026-09-02T17:28:08.871Z"
+    },
+    {
+      "id": "lead-instagram-1788370340316",
+      "name": "@marceladecandia",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-02T17:32:18.547Z",
+      "last_touch_at": "2026-09-02T17:32:18.547Z"
     }
   ],
   "conversations": [
@@ -133069,6 +133101,34 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-02T03:47:05.000Z"
+    },
+    {
+      "id": "conv-1788370090533-mwpb",
+      "channel": "instagram",
+      "contact_id": "37975769758733085",
+      "contact_name": "@isaacjuli",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788370090533",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-02T17:28:08.871Z",
+      "last_message_preview": "Hola quiero saber mas sobre la linea H2O y por donde puedo comprarla? Hacen envios al interior?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-02T17:28:08.871Z"
+    },
+    {
+      "id": "conv-1788370340316-3zh9",
+      "channel": "instagram",
+      "contact_id": "2134060170548532",
+      "contact_name": "@marceladecandia",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788370340316",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-02T17:32:18.547Z",
+      "last_message_preview": "Buenas tardes. Estoy interesada en los pisos H2O. Tendrán algún lugar para verlos? Gracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-02T17:32:18.547Z"
     }
   ],
   "messages": [
@@ -148845,6 +148905,22 @@
       "body": "✉️ Re: Cotizacion 2 contenedores de 20/40 nor | Shanghai Buenos Aires | PDPG 2626\n\nVicky,\r\n\r\nComo estas?\r\nSiguiendo lo que van publicando ls lineas marítimas en sus webs puedo compartirte los siguientes valores. Es todo hasta mitad de mes ya que por el momento no hay tarifas post 14/09.-\r\nEs importante tener en cuenta que entre un 20’GP y un 40’NOR no conviene avanzar con la ultima opción a menos que sea una cuestión de m3. En una comparación de tarifas entre un 40’GP y un NOR ahi si conviene. Te voy a detallar los 3 valores para que puedan evaluar bien.\r\n\r\nCondición de venta: FOB\r\nPOL: Shanghai\r\nPOD: Buenos Aires\r\nMercadería: general, no IMO\r\n\r\nFlete internacional: \r\n20’GP - USD 9.400.-\r\n40’GP - USD 10.400 (Maersk) / USD 11.100 (MSC)\r\n40’NOR - USD 10.400 (MSC) \r\nGastos Locales: USD 800.- + IVA\r\n\r\nVigencia al 14/09\r\nDias libres:18 a 21 dias\r\nTC: BNA\r\n\r\nLas tarifas detalladas con anterioridad están sujetas a espacios y disponibilidad de equipos en origen. No incluyen seguro pero podemos ofrecer servicio por el 0,35% del valor a asegurar (min. USD65).\r\n\r\nEn septiembre vamos a tener un feriado de 3 dias en China y otro que sera del 1 al 7 de Octubre lo que posiblemente genere que las taifas se mantengan en estos valores o hasta que incluso suban un poco mas. Luego los meses de Octubre/Nov y Diciembre son temporada alta.\r\n\r\nQuedo a disposición.\r\n\r\nSlds!!\r\n\r\nאנחנו עם ישראל\r\n\r\nSaludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n\r\nJuan M. Garcia Barcia\r\nGrupo Comex+ // Comex+Cargo\r\nOficina Puerto Madero\r\nTel.: (+54)114331-2207/1",
       "ts": "2026-09-02T16:59:22.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788370090533-0z0b",
+      "conversation_id": "conv-1788370090533-mwpb",
+      "direction": "in",
+      "body": "Hola quiero saber mas sobre la linea H2O y por donde puedo comprarla? Hacen envios al interior?",
+      "ts": "2026-09-02T17:28:08.871Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788370340316-ji00",
+      "conversation_id": "conv-1788370340316-3zh9",
+      "direction": "in",
+      "body": "Buenas tardes. Estoy interesada en los pisos H2O. Tendrán algún lugar para verlos? Gracias",
+      "ts": "2026-09-02T17:32:18.547Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -158195,7 +158271,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4Nzg0MDc1NjY2ODExODAyMzU2OTAwNDQ1NzYyMzU1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMDY3NjgzNTg5OTc1NDozMjk4ODMwNTc2MTE3MjY2MDA0MDE1ODE0OTgwMDM2MTk4NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMDY3NjgzNTg5OTc1NDozMjk4ODMwNTgyODk2ODE3MDc1MzM0MzY0MTMxODU4ODQxNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDAwMjM0MTk4NTM0MDc2OTozMjk4ODU4OTc4MTM0NDc5NjQ0NzcwOTE1NzkyOTI1NDkxMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDAwMjM0MTk4NTM0MDc2OTozMjk4ODU4OTc4MTM0NDc5NjQ0NzcwOTE1NzkyOTI1NDkxMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk4OTYwNTMzODQ4Njk2Mjg2NTA4NTEzMjU4OTQ5ODM2OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTYwOTk0NDE5MDE2NzIzMzc5MDg5MTQyMzQzMjcwNAZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
