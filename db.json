@@ -133126,11 +133126,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788370090533",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-02T17:28:08.871Z",
-      "last_message_preview": "Hola quiero saber mas sobre la linea H2O y por donde puedo comprarla? Hacen envios al interior?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-02T17:28:08.871Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-02T18:04:06.882Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-02T17:28:08.871Z",
+      "last_outbound_at": "2026-09-02T18:04:06.882Z"
     },
     {
       "id": "conv-1788370340316-3zh9",
@@ -149094,6 +149095,16 @@
       "ts": "2026-09-02T18:02:55.247Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTY0MzgyNTMyODA1MTEyODg5NjUwNjYwNjY0OTM0NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788372247358-rtlv",
+      "conversation_id": "conv-1788370090533-mwpb",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-02T18:04:06.882Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk4OTY0NTE0Njc2NjM1NTEyNjcxOTM4MTQxODAxNjc2OAZDZD",
       "via": "ig-app"
     }
   ],
