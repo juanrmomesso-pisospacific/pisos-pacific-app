@@ -133154,12 +133154,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788371645808",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-02T17:57:10.163Z",
-      "last_message_preview": "Que estás buscando?",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-02T17:54:03.012Z",
-      "last_outbound_at": "2026-09-02T17:57:10.163Z"
+      "unread_count": 2,
+      "last_message_at": "2026-09-02T17:58:06.602Z",
+      "last_message_preview": "Eso queria saber",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-02T17:58:06.602Z",
+      "last_outbound_at": "2026-09-02T17:57:54.127Z"
     }
   ],
   "messages": [
@@ -149000,6 +149000,32 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTYzNzQ1OTY0ODk3ODM5ODMyMjI0NTQ3OTk1NjQ4MAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1788371874945-tiie",
+      "conversation_id": "conv-1788371645808-i841",
+      "direction": "out",
+      "body": "Lo que son los pisos de madera si son similares",
+      "ts": "2026-09-02T17:57:54.127Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTYzODI3MDY0NDYyMzIyNzQyODkxMzY3MzE0MjI3MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788371880625-vi14",
+      "conversation_id": "conv-1788371645808-i841",
+      "direction": "in",
+      "body": "Viendo pisos.",
+      "ts": "2026-09-02T17:57:59.114Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788371887453-unmh",
+      "conversation_id": "conv-1788371645808-i841",
+      "direction": "in",
+      "body": "Eso queria saber",
+      "ts": "2026-09-02T17:58:06.602Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -158353,7 +158379,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDAwMjM0MTk4NTM0MDc2OTozMjk4ODU4OTc4MTM0NDc5NjQ0NzcwOTE1NzkyOTI1NDkxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk4OTYwNTMzODQ4Njk2Mjg2NTA4NTEzMjU4OTQ5ODM2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTYwOTk0NDE5MDE2NzIzMzc5MDg5MTQyMzQzMjcwNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTYzNDAwNzMyMjgyMDk4MTM2MzcyMDAyMzE3OTI2NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTYzNDAwNzMyMjgyMDk4MTM2MzcyMDAyMzE3OTI2NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTYzODM2MjY1MjI0MTg1Mzg2NTIxMzc3ODk4NDk2MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTYzODUwMDc2NTM1NzQ3MDIyNTk4Nzg0MTAzMjE5MgZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
