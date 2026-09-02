@@ -363,6 +363,26 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
   if (changed) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log('Backfill depósitos: warehouse_id en containers/movimientos + depósito default'); }
 }
 
+// Backfill de m²/caja por SKU (valores del dueño, sep-2026). Idempotente: solo setea los que
+// NO tienen el campo todavía (una edición manual desde el catálogo se preserva). Instancias
+// sin estos SKUs (ej. Panamá) simplemente no matchean nada.
+{
+  const M2_POR_CAJA = {
+    'PROD-002': 2.89, 'PROD-009': 2.89, 'PROD-012': 2.89, 'PROD-020': 2.89, 'PROD-021': 2.89,
+    'PROD-010': 2.89, 'PROD-011': 2.89,
+    'PROD-026': 2.084, 'PROD-027': 2.084, 'PROD-028': 2.084, 'PROD-190': 2.084, 'PROD-202': 2.084,
+    'PROD-031': 2.197, 'PROD-032': 2.197, 'PROD-033': 2.197, 'PROD-035': 2.197,
+    'PROD-001': 2.74, 'PROD-008': 2.74,
+    'PROD-004': 3.432, 'PROD-006': 2.88,
+    'PROD-007': 1.8, 'PROD-016': 1.8, 'PROD-017': 1.8,
+  };
+  let n = 0;
+  for (const p of db.products || []) {
+    if (p && p.m2_por_caja == null && M2_POR_CAJA[p.sku] != null) { p.m2_por_caja = M2_POR_CAJA[p.sku]; n++; }
+  }
+  if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill m²/caja: ${n} productos`); }
+}
+
 // Backfill del estado de respuesta de las conversaciones (dirección del último mensaje +
 // timestamps por dirección). Idempotente: solo completa las que no lo tienen todavía
 // (de ahí en más lo mantiene touchConv en cada escritura). "Pendiente" = última 'in'.
