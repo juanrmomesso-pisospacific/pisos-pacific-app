@@ -127555,11 +127555,11 @@
       "linked_client_name": null,
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-02T09:20:46.102Z",
-      "last_message_preview": "📎 Adjunto",
+      "last_message_at": "2026-09-02T17:55:45.898Z",
+      "last_message_preview": "Nuestras muestras",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-27T02:21:08.674Z",
-      "last_outbound_at": "2026-09-02T09:20:46.102Z"
+      "last_outbound_at": "2026-09-02T17:55:45.898Z"
     },
     {
       "id": "conv-1781093292446-6fr2",
@@ -148959,6 +148959,26 @@
       "body": "Son similares a los tan famosos  patagonia flooring?",
       "ts": "2026-09-02T17:54:03.012Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788371746065-5z9a",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-02T17:55:45.440Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk4OTYzNTg5NjgwMjE5Mjk5MTU1ODY4NDc3MTM1MjU3NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788371746704-5srz",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "Nuestras muestras",
+      "ts": "2026-09-02T17:55:45.898Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk4OTYzNTkwNTIzNTE1ODkzODM0MzE1MzcxMTcxMDIwOAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
