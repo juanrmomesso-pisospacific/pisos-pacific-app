@@ -25,7 +25,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "Roble Tallada 18cm — STOCK BAJO"
+      "stockObs": "Roble Tallada 18cm — STOCK BAJO",
+      "m2_por_caja": 2.74
     },
     {
       "id": "PROD-002",
@@ -52,7 +53,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 150,
       "location": "Depósito",
-      "stockObs": "Roble Tallada JR003 — STOCK BAJO"
+      "stockObs": "Roble Tallada JR003 — STOCK BAJO",
+      "m2_por_caja": 2.89
     },
     {
       "id": "PROD-003",
@@ -106,7 +108,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "Roble Handsculped"
+      "stockObs": "Roble Handsculped",
+      "m2_por_caja": 3.432
     },
     {
       "id": "PROD-005",
@@ -160,7 +163,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "Lapacho IPE — Cajas perdidas por humedad"
+      "stockObs": "Lapacho IPE — Cajas perdidas por humedad",
+      "m2_por_caja": 2.88
     },
     {
       "id": "PROD-007",
@@ -187,7 +191,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 75,
       "location": "Depósito",
-      "stockObs": "Saldos — Roble 12cm"
+      "stockObs": "Saldos — Roble 12cm",
+      "m2_por_caja": 1.8
     },
     {
       "id": "PROD-008",
@@ -214,7 +219,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "ALERTA: Smoked Tallada — SIN STOCK"
+      "stockObs": "ALERTA: Smoked Tallada — SIN STOCK",
+      "m2_por_caja": 2.74
     },
     {
       "id": "PROD-009",
@@ -241,7 +247,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "Carbonized"
+      "stockObs": "Carbonized",
+      "m2_por_caja": 2.89
     },
     {
       "id": "PROD-010",
@@ -268,7 +275,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 100,
       "location": "Depósito",
-      "stockObs": "Kitsilano — STOCK BAJO"
+      "stockObs": "Kitsilano — STOCK BAJO",
+      "m2_por_caja": 2.89
     },
     {
       "id": "PROD-011",
@@ -295,7 +303,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 100,
       "location": "Depósito",
-      "stockObs": "Verona"
+      "stockObs": "Verona",
+      "m2_por_caja": 2.89
     },
     {
       "id": "PROD-012",
@@ -322,7 +331,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "Sawmark"
+      "stockObs": "Sawmark",
+      "m2_por_caja": 2.89
     },
     {
       "id": "PROD-013",
@@ -430,7 +440,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "Roble Eslavonia Cerrada — STOCK BAJO"
+      "stockObs": "Roble Eslavonia Cerrada — STOCK BAJO",
+      "m2_por_caja": 1.8
     },
     {
       "id": "PROD-017",
@@ -457,7 +468,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 30,
       "location": "Depósito",
-      "stockObs": "Roble 90x900 Cerrada — STOCK BAJO"
+      "stockObs": "Roble 90x900 Cerrada — STOCK BAJO",
+      "m2_por_caja": 1.8
     },
     {
       "id": "PROD-018",
@@ -535,7 +547,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "Light Smoked — STOCK BAJO"
+      "stockObs": "Light Smoked — STOCK BAJO",
+      "m2_por_caja": 2.89
     },
     {
       "id": "PROD-021",
@@ -562,7 +575,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "Roble Veta Cerrada — STOCK BAJO"
+      "stockObs": "Roble Veta Cerrada — STOCK BAJO",
+      "m2_por_caja": 2.89
     },
     {
       "id": "PROD-201",
@@ -724,7 +738,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 100,
       "location": "Depósito",
-      "stockObs": "ALERTA: H2O HD XL Natural Oak — SIN STOCK (faltante)"
+      "stockObs": "ALERTA: H2O HD XL Natural Oak — SIN STOCK (faltante)",
+      "m2_por_caja": 2.084
     },
     {
       "id": "PROD-027",
@@ -751,7 +766,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "ALERTA: H2O HD XL Roble Eslavonia — SIN STOCK"
+      "stockObs": "ALERTA: H2O HD XL Roble Eslavonia — SIN STOCK",
+      "m2_por_caja": 2.084
     },
     {
       "id": "PROD-028",
@@ -778,7 +794,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "H2O HD XL Notte"
+      "stockObs": "H2O HD XL Notte",
+      "m2_por_caja": 2.084
     },
     {
       "id": "PROD-190",
@@ -805,7 +822,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "H2O HD XL Aspen — REVISAR stock bajo"
+      "stockObs": "H2O HD XL Aspen — REVISAR stock bajo",
+      "m2_por_caja": 2.084
     },
     {
       "id": "PROD-202",
@@ -832,7 +850,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "H2O HD XL Roble Clásico"
+      "stockObs": "H2O HD XL Roble Clásico",
+      "m2_por_caja": 2.084
     },
     {
       "id": "PROD-029",
@@ -913,7 +932,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "H2O Aspen — REVISAR con depósito"
+      "stockObs": "H2O Aspen — REVISAR con depósito",
+      "m2_por_caja": 2.197
     },
     {
       "id": "PROD-032",
@@ -942,7 +962,8 @@
       "location": "Depósito",
       "stockObs": "H2O Roble Eslavonia — STOCK BAJO",
       "drive_folder_id": "1W5wHagQRMmxeUiVMCVc5dBllhXAvA28m",
-      "drive_cover_id": "12Mda_qsKcQGCY-XxfJ7tBr3-XEEd8gbS"
+      "drive_cover_id": "12Mda_qsKcQGCY-XxfJ7tBr3-XEEd8gbS",
+      "m2_por_caja": 2.197
     },
     {
       "id": "PROD-033",
@@ -969,7 +990,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "H2O Roble Clásico"
+      "stockObs": "H2O Roble Clásico",
+      "m2_por_caja": 2.197
     },
     {
       "id": "PROD-034",
@@ -1023,7 +1045,8 @@
       "updatedAt": "2026-06-03T19:46:57.827Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "H2O Roble Gris"
+      "stockObs": "H2O Roble Gris",
+      "m2_por_caja": 2.197
     },
     {
       "id": "PROD-036",
@@ -122414,7 +122437,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-22T15:30:51.000Z",
-      "last_touch_at": "2026-08-13T16:11:06.000Z"
+      "last_touch_at": "2026-09-02T15:28:50.000Z"
     },
     {
       "id": "lead-instagram-1782150900322",
@@ -128838,12 +128861,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19eeff52b055",
       "status": "closed",
-      "unread_count": 5,
-      "last_message_at": "2026-08-13T16:11:06.000Z",
-      "last_message_preview": "Buenas tardes Vicky/Juan,\r\n\r\nComo estan?\r\nNos confirma nuestro agente de origen que por surte tenemos el ok y el booking confirmado.\r\nMañana",
+      "unread_count": 7,
+      "last_message_at": "2026-09-02T15:28:50.000Z",
+      "last_message_preview": "Buenas tardes Vicky!\r\n\r\nComo estas? Espero que muy bien.\r\nPor el momento no hay valores para los dias posteriores al 15/09.\r\n\r\nActualmente e",
       "email_subject": "Re: COTIZACION Shanghai - Buenos Aires | PDPG 2619 | Juan Rodriguez Momesso",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-13T16:11:06.000Z",
+      "last_inbound_at": "2026-09-02T15:28:50.000Z",
       "ignored": true
     },
     {
@@ -148798,6 +148821,22 @@
       "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 5c39e0fc92134c689d5cfe361a2f9858\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-08-31 00:00:00 UTC to 2026-09-01 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-02T12:03:50.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0624e246cf",
+      "conversation_id": "conv-email-19eeff52b055",
+      "direction": "in",
+      "body": "✉️ Re: Comex+Cargo // FOB Shanghai - Buenos Aires | PDPG 2619 | Juan Rodriguez Momesso // CCF-MI-00000082\n\nVicky,\r\n\r\nComo estas? Espero que disfrutando tu miércoles!\r\nSobre lo que hablamos de los gastos de origen sobre la diferencia de USD23 que Tracy estaba objetando, te cuento que pudimos negociar con nuestro agente y se hará cargo de esa diferencia para que Tracy pueda por favor terminar de pagar los gastos de origen asi nos liberan la documentación para ser impresa en destino.\r\n\r\nQuedamos a disposición por cualquier consulta.\r\n\r\nSlds!!\r\n\r\nאנחנו עם ישראל\r\n\r\nSaludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n\r\nJuan M. Garcia Barcia\r\nGrupo Comex+ // Comex+Cargo\r\nOficina Puerto Madero\r\nTel.: (+54)114331-2207/1893\r\nCel.: (+54) 911 7098-2746\r\nAv. Alicia Moreau de Justo 1150 – Of. A-106 // (C1107AAX) – C.A.B.A., Argentina\r\n\r\n\r\n> El 28 ago 2026, a las 10:53 a. m., Customer Comex+ Cargo <CustomerCargo@grupocomexmas.com> escribió:\r\n> \r\n> Hola Vicky,\r\n> Buenos días! \r\n> \r\n> Informamos que el arribo de la carga a Buenos Aires se actualizó al 15/SEP a bordo del buque MSC RAYSHMI: \r\n> \r\n> <image.png>\r\n> \r\n> Por otro lado, nos informan que el shipper aún no canceló los gastos locales para poder confirmar la emisión del b/l en destino. \r\n> Les dejaremos saber cuando se encuentre liberado. \r\n> \r\n> Saludos,\r\n> \r\n> \r\n> Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n> \r\n> Carolina Lodovico\r\n> Customer Comex+ Cargo\r\n> Cel WhatsApp: (+54)115-761-1787\r\n> Grupo Comex+ // Comex+ Cargo\r\n> Oficina Puerto Madero\r\n> Tel.: (+54)1",
+      "ts": "2026-09-02T13:27:47.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a062bcf2dd3",
+      "conversation_id": "conv-email-19eeff52b055",
+      "direction": "in",
+      "body": "✉️ Re: Cotizacion 2 contenedores de 20/40 nor | Shanghai Buenos Aires | PDPG 2626\n\nBuenas tardes Vicky!\r\n\r\nComo estas? Espero que muy bien.\r\nPor el momento no hay valores para los dias posteriores al 15/09.\r\n\r\nActualmente estamos cargando en la segunda semana del mes de Septiembre con valores alrededor de los USD10.500 / 10.700 segun la linea marítima y el tamaño del contenedor. Para los casos especiales como un 40’NOR las tarifas estan unos 600/700 USD mas bajos.\r\n\r\nLo que puedo hacer si te parece bien es hablar con un par de agentes para ver si podemos conseguir alguna tarifa SPOT para algun servicio posterior al 15/09 para ver que responden las lineas maritimas y asi analizar posibilidades. Lo voy pidiendo a China y vuelvo en breve con comentarios.\r\n\r\nSlds!!\r\n\r\nאנחנו עם ישראל\r\n\r\nSaludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n\r\nJuan M. Garcia Barcia\r\nGrupo Comex+ // Comex+Cargo\r\nOficina Puerto Madero\r\nTel.: (+54)114331-2207/1893\r\nCel.: (+54) 911 7098-2746\r\nAv. Alicia Moreau de Justo 1150 – Of. A-106 // (C1107AAX) – C.A.B.A., Argentina\r\n\r\n\r\n> El 2 sept 2026, a las 9:32 a. m., Victoria Pisos Pacific <victoria@pisospacific.com> escribió:\r\n> \r\n> Hola Juan, ¿cómo estás?\r\n> \r\n> Quería cotizar embarques para cargar a partir del 15 de septiembre.\r\n> \r\n> ¿Me podés pasar, por favor, las tarifas y las condiciones? También necesitaría saber los días libres incluidos.\r\n> \r\n> Serían:\r\n> \r\n> 2 contenedores\r\n> Origen: Shanghai\r\n> Destino: Buenos Aires\r\n> Opciones: 20’ y 40’ NOR\r\n> Muchas gracias.\r\n> \r\n> Victoria \r\n>",
+      "ts": "2026-09-02T15:28:50.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -156294,11 +156333,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-02T03:30:06.392Z",
     "gmail_seen_ids": [
-      "19ef6de482978c99",
-      "19ef6fa68c39fa87",
-      "19ef896b4b644784",
-      "19ef8eacc5b49f67",
-      "19ef955142fc8fde",
       "19ef9a9b9b39b51e",
       "19efa12585d6170f",
       "19efa74bdaf19e54",
@@ -157093,7 +157127,12 @@
       "1a0613a700f0188a",
       "1a061939f1f50720",
       "1a061bc8820c329d",
-      "1a0620115b82a149"
+      "1a0620115b82a149",
+      "1a0621b6b172b6a3",
+      "1a06217acea70b2d",
+      "1a0624e246cf5ef2",
+      "1a062bcf2dd39ee9",
+      "1a062ce00499549a"
     ],
     "cash_sessions": {
       "1136982222": {
