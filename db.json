@@ -127561,6 +127561,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-02T18:32:25.000Z",
       "last_touch_at": "2026-09-02T18:32:25.000Z"
+    },
+    {
+      "id": "lead-email-1a0644da1ab2",
+      "name": "Miranda Thiara Daura",
+      "email": "mirandathiaradaura@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "America 1745",
+      "postal_code": "1643",
+      "approx_m2": 80,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 80m² · Con Colocación · CP 1643",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-02T22:46:43.000Z",
+      "last_touch_at": "2026-09-02T22:46:43.000Z"
     }
   ],
   "conversations": [
@@ -133195,6 +133212,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-02T18:32:25.000Z"
+    },
+    {
+      "id": "conv-email-1a0644da1ab2",
+      "channel": "email",
+      "contact_id": "mirandathiaradaura@gmail.com",
+      "contact_name": "Miranda Thiara Daura",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0644da1ab2",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-02T22:46:43.000Z",
+      "last_message_preview": "Formulario web — 80m² · Con Colocación · CP 1643 · America 1745",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-02T22:46:43.000Z"
     }
   ],
   "messages": [
@@ -149241,6 +149273,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTc2MDU4NjYwNjY1MDg0NzM2NDQzNzc0OTI2ODQ4MAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a0644da1ab2",
+      "conversation_id": "conv-email-1a0644da1ab2",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 80m² · Con Colocación · CP 1643 · America 1745",
+      "ts": "2026-09-02T22:46:43.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -156737,7 +156777,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-02T03:30:06.392Z",
     "gmail_seen_ids": [
-      "19efd474bcf145f9",
       "19efe3bea654a83c",
       "19efe86ac843710c",
       "19efea816c744a48",
@@ -157536,7 +157575,8 @@
       "1a0630fd58ab2198",
       "1a0631df0897cc6e",
       "1a063527e6c95f7d",
-      "1a06364ceb1b38e9"
+      "1a06364ceb1b38e9",
+      "1a0644da1ab2d310"
     ],
     "cash_sessions": {
       "1136982222": {
