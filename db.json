@@ -127456,6 +127456,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-02T02:10:35.408Z",
       "last_touch_at": "2026-09-02T02:10:35.408Z"
+    },
+    {
+      "id": "lead-email-1a0603a4356b",
+      "name": "Fernando",
+      "email": "f.tuillier@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Liniers 365",
+      "postal_code": "1842",
+      "approx_m2": 30,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 30m² · Sin Colocación · CP 1842",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-02T03:47:05.000Z",
+      "last_touch_at": "2026-09-02T03:47:05.000Z"
     }
   ],
   "conversations": [
@@ -133014,6 +133031,21 @@
       "last_message_preview": "We are a professional Chinese manufacturer of waterproof tile backer boards for bathrooms, kitchens and all wet areas.\nWe focus on steady qu",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-02T02:10:35.408Z"
+    },
+    {
+      "id": "conv-email-1a0603a4356b",
+      "channel": "email",
+      "contact_id": "f.tuillier@gmail.com",
+      "contact_name": "Fernando",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0603a4356b",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-02T03:47:05.000Z",
+      "last_message_preview": "Formulario web — 30m² · Sin Colocación · CP 1842 · Liniers 365",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-02T03:47:05.000Z"
     }
   ],
   "messages": [
@@ -148723,6 +148755,14 @@
       "body": "We are a professional Chinese manufacturer of waterproof tile backer boards for bathrooms, kitchens and all wet areas.\nWe focus on steady quality, on‑time delivery and product customization to support long‑term cooperation.\nAdvantages:✅100% waterproof & moisture‑proof, zero water absorption, no swelling✅Strong tile bonding, avoids tile hollowing and falling off✅Lightweight, easy to cut & install, saves labor cost\nStrict batch QC, flexible customization and stable supply chain guarantee on‑time shipment. Our products are well‑recognized by overseas contractors and building material distributors globally.\nFree samples and competitive wholesale prices are available for your demand.Looking forward to our long‑term partnership.\nBest regards,",
       "ts": "2026-09-02T02:10:35.408Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0603a4356b",
+      "conversation_id": "conv-email-1a0603a4356b",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 30m² · Sin Colocación · CP 1842 · Liniers 365",
+      "ts": "2026-09-02T03:47:05.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -156219,7 +156259,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-02T03:30:06.392Z",
     "gmail_seen_ids": [
-      "19ef4969d6e25c1d",
       "19ef4cf9ee34ba73",
       "19ef55b00dab18d3",
       "19ef562c2b98a192",
@@ -157018,7 +157057,8 @@
       "1a05e8a6cf88138a",
       "1a05e96b633b835c",
       "1a05eb9fd4a5a102",
-      "1a05f5d0c74a74cc"
+      "1a05f5d0c74a74cc",
+      "1a0603a4356bb48a"
     ],
     "cash_sessions": {
       "1136982222": {
