@@ -133154,11 +133154,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788371645808",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-02T17:54:03.012Z",
-      "last_message_preview": "Son similares a los tan famosos  patagonia flooring?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-02T17:54:03.012Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-02T17:56:49.706Z",
+      "last_message_preview": "Hola Nora cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-02T17:54:03.012Z",
+      "last_outbound_at": "2026-09-02T17:56:49.706Z"
     }
   ],
   "messages": [
@@ -148978,6 +148979,16 @@
       "ts": "2026-09-02T17:55:45.898Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk4OTYzNTkwNTIzNTE1ODkzODM0MzE1MzcxMTcxMDIwOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788371810531-a3e5",
+      "conversation_id": "conv-1788371645808-i841",
+      "direction": "out",
+      "body": "Hola Nora cómo estás?",
+      "ts": "2026-09-02T17:56:49.706Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTYzNzA4MjI5MjEyNTIzNjgxNDY3NTExMjM2MTk4NAZDZD",
       "via": "ig-app"
     }
   ],
