@@ -133141,11 +133141,11 @@
       "linked_lead_id": "lead-instagram-1788370340316",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-02T17:58:56.025Z",
-      "last_message_preview": "Sino hacemos envíos de muestras",
+      "last_message_at": "2026-09-02T18:02:55.247Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-02T17:32:18.547Z",
-      "last_outbound_at": "2026-09-02T17:58:56.025Z"
+      "last_outbound_at": "2026-09-02T18:02:55.247Z"
     },
     {
       "id": "conv-1788371645808-i841",
@@ -149064,6 +149064,36 @@
       "ts": "2026-09-02T17:58:56.025Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTYzOTQxMjQ3MzA0OTE1ODM0MjEzNDg0MTk5OTM2MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788372169943-wqn5",
+      "conversation_id": "conv-1788370340316-3zh9",
+      "direction": "out",
+      "body": "Te paso el contacto de Victoria por si queres coordinar",
+      "ts": "2026-09-02T18:02:49.458Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTY0MzcxODU0NTM4MzcwOTQxNDAyNTE2NzExMDE0NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788372174985-09dn",
+      "conversation_id": "conv-1788370340316-3zh9",
+      "direction": "out",
+      "body": "1136982222",
+      "ts": "2026-09-02T18:02:54.616Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTY0MzgxMzcwMTQ3NDE2NzYwNjk5NzgzMzIyMDA5NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788372175670-k69b",
+      "conversation_id": "conv-1788370340316-3zh9",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-02T18:02:55.247Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTY0MzgyNTMyODA1MTEyODg5NjUwNjYwNjY0OTM0NAZDZD",
       "via": "ig-app"
     }
   ],
