@@ -127333,6 +127333,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-01T21:53:58.643Z",
       "last_touch_at": "2026-09-01T21:53:58.643Z"
+    },
+    {
+      "id": "lead-instagram-1788315037437",
+      "name": "@aico_tilepanel",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-02T02:10:35.408Z",
+      "last_touch_at": "2026-09-02T02:10:35.408Z"
     }
   ],
   "conversations": [
@@ -132877,6 +132893,20 @@
       "last_message_preview": "Que precio tiene",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-01T21:54:02.319Z"
+    },
+    {
+      "id": "conv-1788315037437-txi6",
+      "channel": "instagram",
+      "contact_id": "1103986962205263",
+      "contact_name": "@aico_tilepanel",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788315037437",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-02T02:10:35.408Z",
+      "last_message_preview": "We are a professional Chinese manufacturer of waterproof tile backer boards for bathrooms, kitchens and all wet areas.\nWe focus on steady qu",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-02T02:10:35.408Z"
     }
   ],
   "messages": [
@@ -148578,6 +148608,14 @@
       "body": "✉️ Re: Consulta precios\n\nMuchas gracias por la respuesta.\r\n\r\nCual es el espesor de la capa de uso?\r\n\r\nEl mar, 1 sept 2026, 19:22, info pisos <info@pisospacific.com> escribió:\r\n\r\n> Hola Juan, cómo estás?\r\n>\r\n> Muchas gracias por comunicarte con nosotros.\r\n>\r\n> Te paso información del piso H2O. La línea H2O es piso de SPC. Es 100%\r\n> impermeable, con protección antiscratch y terminación mate muy realista.\r\n> Ideal para zonas húmedas, mascotas o alto tránsito.\r\n>\r\n> El núcleo duro del producto es de 5MM y tiene una manta acústica de EVA de\r\n> 1,5MM.\r\n>\r\n> El valor de la línea H2O es de usd 38 + IVA sin colocación.\r\n>\r\n> Si necesitas que te arme un presupuesto, compartime datos de entrega, si\r\n> requiere colocación y cantidad de metros cuadrados.\r\n>\r\n> Muchas gracias,\r\n>\r\n> Saludos,\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n> El lun, 31 ago 2026 a las 23:59, Juan Chavez (<juanchavez25696@gmail.com>)\r\n> escribió:\r\n>\r\n>>\r\n>> Estimados, les consulto precio y características técnicas del piso H20\r\n>> Roble Eslovenia.\r\n>>\r\n>> Muchas gracias\r\n>>\r\n>",
       "ts": "2026-09-01T23:45:16.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788315037437-i6a0",
+      "conversation_id": "conv-1788315037437-txi6",
+      "direction": "in",
+      "body": "We are a professional Chinese manufacturer of waterproof tile backer boards for bathrooms, kitchens and all wet areas.\nWe focus on steady quality, on‑time delivery and product customization to support long‑term cooperation.\nAdvantages:✅100% waterproof & moisture‑proof, zero water absorption, no swelling✅Strong tile bonding, avoids tile hollowing and falling off✅Lightweight, easy to cut & install, saves labor cost\nStrict batch QC, flexible customization and stable supply chain guarantee on‑time shipment. Our products are well‑recognized by overseas contractors and building material distributors globally.\nFree samples and competitive wholesale prices are available for your demand.Looking forward to our long‑term partnership.\nBest regards,",
+      "ts": "2026-09-02T02:10:35.408Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -157925,7 +157963,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNzE2MDU2MDkzNTEyOTozMjk4Nzc1OTcyODYwNDg5Mzc5NjMxMTExNDc3MTg1NzQwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MjA5ODA2MTYzODI2MDozMjk4Nzg0MDc1NjY2ODExODAyMzU2OTAwNDQ1NzYyMzU1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMDY3NjgzNTg5OTc1NDozMjk4ODMwNTc2MTE3MjY2MDA0MDE1ODE0OTgwMDM2MTk4NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMDY3NjgzNTg5OTc1NDozMjk4ODMwNTgyODk2ODE3MDc1MzM0MzY0MTMxODU4ODQxNgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMDY3NjgzNTg5OTc1NDozMjk4ODMwNTgyODk2ODE3MDc1MzM0MzY0MTMxODU4ODQxNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDAwMjM0MTk4NTM0MDc2OTozMjk4ODU4OTc4MTM0NDc5NjQ0NzcwOTE1NzkyOTI1NDkxMgZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
