@@ -133084,11 +133084,11 @@
       "linked_lead_id": "lead-instagram-1788299640128",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-02T18:04:19.204Z",
-      "last_message_preview": "Hola Maria cómo estás?",
+      "last_message_at": "2026-09-02T18:04:41.811Z",
+      "last_message_preview": "Que piso fue el que te gustó así te pasamos precio",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-01T21:54:02.319Z",
-      "last_outbound_at": "2026-09-02T18:04:19.204Z"
+      "last_outbound_at": "2026-09-02T18:04:41.811Z"
     },
     {
       "id": "conv-1788315037437-txi6",
@@ -149116,6 +149116,16 @@
       "ts": "2026-09-02T18:04:19.204Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMDY3NjgzNTg5OTc1NDozMjk4OTY0NTM3NDA3NDY2MTg3NDU1MDU0OTkyNzQyODA5NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788372282093-lphn",
+      "conversation_id": "conv-1788299640128-iesj",
+      "direction": "out",
+      "body": "Que piso fue el que te gustó así te pasamos precio",
+      "ts": "2026-09-02T18:04:41.811Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMDY3NjgzNTg5OTc1NDozMjk4OTY0NTc5MTA5MDE3MDEyMDEyNjI4NTMxNDI2MDk5MgZDZD",
       "via": "ig-app"
     }
   ],
