@@ -133161,11 +133161,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788370090533",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-02T18:04:06.882Z",
+      "unread_count": 2,
+      "last_message_at": "2026-09-02T23:37:30.324Z",
       "last_message_preview": "📎 Adjunto",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-02T17:28:08.871Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-02T23:37:30.324Z",
       "last_outbound_at": "2026-09-02T18:04:06.882Z"
     },
     {
@@ -149281,6 +149281,22 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 80m² · Con Colocación · CP 1643 · America 1745",
       "ts": "2026-09-02T22:46:43.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788392250164-qlyw",
+      "conversation_id": "conv-1788370090533-mwpb",
+      "direction": "in",
+      "body": "Dale perfecto! 3496416117",
+      "ts": "2026-09-02T23:37:29.551Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788392250897-rmuz",
+      "conversation_id": "conv-1788370090533-mwpb",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-02T23:37:30.324Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -158640,7 +158656,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTYzODk0Mzc4NTg4NjQ3MjU1MjY1Nzk3NTI0Njg0OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMjk4OTY4MDkwNzEzODg3OTY2OTI5MjAzNTA4NzUzMjAzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTcxNzA1OTQ0NDI2NTc5Nzg2MzExNDM5NjQwMTY2NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTcxNzc2OTgyMTE2NzM5OTQ4NTEyNjY5Mzg3OTgwOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTcxNzc2OTgyMTE2NzM5OTQ4NTEyNjY5Mzg3OTgwOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk5MDAxNDEzMDg4ODgzMDA3ODM0OTAzMDExOTcwMjUyOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk5MDAxNDE0NTE0ODkwMTExNzA4OTQ2MTkwMDkzNTE2OAZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
