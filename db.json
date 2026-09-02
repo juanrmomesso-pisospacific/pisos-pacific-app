@@ -127528,6 +127528,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-02T17:32:18.547Z",
       "last_touch_at": "2026-09-02T17:32:18.547Z"
+    },
+    {
+      "id": "lead-instagram-1788371645808",
+      "name": "@noralewis22",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-02T17:54:03.012Z",
+      "last_touch_at": "2026-09-02T17:54:03.012Z"
     }
   ],
   "conversations": [
@@ -133129,6 +133145,20 @@
       "last_message_preview": "Buenas tardes. Estoy interesada en los pisos H2O. Tendrán algún lugar para verlos? Gracias",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-02T17:32:18.547Z"
+    },
+    {
+      "id": "conv-1788371645808-i841",
+      "channel": "instagram",
+      "contact_id": "1429502529085197",
+      "contact_name": "@noralewis22",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788371645808",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-02T17:54:03.012Z",
+      "last_message_preview": "Son similares a los tan famosos  patagonia flooring?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-02T17:54:03.012Z"
     }
   ],
   "messages": [
@@ -148921,6 +148951,14 @@
       "body": "Buenas tardes. Estoy interesada en los pisos H2O. Tendrán algún lugar para verlos? Gracias",
       "ts": "2026-09-02T17:32:18.547Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788371645808-tz6a",
+      "conversation_id": "conv-1788371645808-i841",
+      "direction": "in",
+      "body": "Son similares a los tan famosos  patagonia flooring?",
+      "ts": "2026-09-02T17:54:03.012Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -158273,7 +158311,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMDY3NjgzNTg5OTc1NDozMjk4ODMwNTgyODk2ODE3MDc1MzM0MzY0MTMxODU4ODQxNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDAwMjM0MTk4NTM0MDc2OTozMjk4ODU4OTc4MTM0NDc5NjQ0NzcwOTE1NzkyOTI1NDkxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk4OTYwNTMzODQ4Njk2Mjg2NTA4NTEzMjU4OTQ5ODM2OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTYwOTk0NDE5MDE2NzIzMzc5MDg5MTQyMzQzMjcwNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTYwOTk0NDE5MDE2NzIzMzc5MDg5MTQyMzQzMjcwNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTYzNDAwNzMyMjgyMDk4MTM2MzcyMDAyMzE3OTI2NAZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
