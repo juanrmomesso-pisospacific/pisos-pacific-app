@@ -133157,12 +133157,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788371645808",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-09-02T17:58:30.618Z",
-      "last_message_preview": "Busco alternativa con mejor precio",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-02T18:08:29.567Z",
+      "last_message_preview": "Perfecto",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-02T17:58:30.618Z",
-      "last_outbound_at": "2026-09-02T17:57:54.127Z"
+      "last_outbound_at": "2026-09-02T18:08:29.567Z"
     }
   ],
   "messages": [
@@ -149126,6 +149126,16 @@
       "ts": "2026-09-02T18:04:41.811Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzMDY3NjgzNTg5OTc1NDozMjk4OTY0NTc5MTA5MDE3MDEyMDEyNjI4NTMxNDI2MDk5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788372510325-xg31",
+      "conversation_id": "conv-1788371645808-i841",
+      "direction": "out",
+      "body": "Perfecto",
+      "ts": "2026-09-02T18:08:29.567Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTY0OTk5MjQ0NTA3OTM3Nzk3NTk5NDQ3MDEwNTA4OAZDZD",
       "via": "ig-app"
     }
   ],
