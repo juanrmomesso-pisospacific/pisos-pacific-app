@@ -9,12 +9,13 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney } from "@/lib/utils"
 import { SearchPicker } from "@/components/SearchPicker"
 import { cajasHint, m2PorCaja, noEsMultiploDeCaja } from "@/lib/boxes"
+import { floorStats, reventaDiscountPct, reventaBreakdown, computeCommission, type ResellerFields } from "@/lib/reseller"
 import type { Product, Quote } from "@/lib/types"
 import { looksLikeHandle, leadToQuotePrefill, type Lead } from "@/lib/leads"
 import { useConfig, taxWord } from "@/contexts/ConfigContext"
 
 type Settings = { sellers?: { name: string; phone?: string }[] }
-type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] }
+type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] } & ResellerFields
 type LineItem = { product_id: string; sku: string; description: string; quantity: number; unit_price: number; category: string; cost?: number; zone?: string; disc_kind?: "pct" | "amount"; disc_value?: number }
 
 export type QuotePrefill = {
@@ -54,6 +55,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const [paymentTerms, setPaymentTerms] = useState<string>(editQuote?.payment_terms ?? "Anticipo 80% · Conforme 20%")
   const [hasIva, setHasIva] = useState<boolean>(editQuote?.has_iva ?? true)   // las cotizaciones salen siempre con IVA por defecto
   const [items, setItems] = useState<LineItem[]>(editItems)
+  const [commissionResellerId, setCommissionResellerId] = useState<string>((editQuote as any)?.reseller_id ?? "")
   const [changingIdx, setChangingIdx] = useState<number | null>(null)  // ítem cuyo diseño se está reemplazando
   const [zoned, setZoned] = useState<boolean>(editQuote?.zoned ?? false)
   const [zones, setZones] = useState<string[]>(() => {
@@ -173,6 +175,33 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const iva = hasIva ? subtotalAfterDiscount * IVA_RATE : 0
   const total = subtotalAfterDiscount + iva
 
+  // --- Revendedores ---
+  // Mayorista: el cliente ES el revendedor → los pisos se cotizan a precio distribuidor
+  // (lista − acuerdo − volumen), recalculado según los m² de piso del pedido.
+  const reventaReseller = (!isLeadDriven && client?.reseller && client.reseller_mode === "reventa") ? client : null
+  const floorM2 = useMemo(() => floorStats(items, products).m2, [items, products])
+  const effDisc = reventaReseller ? reventaDiscountPct(reventaReseller.reseller_reventa, floorM2) : 0
+  const reventaBd = reventaReseller ? reventaBreakdown(reventaReseller.reseller_reventa, floorM2) : null
+  // Aplica el descuento mayorista a los pisos (unit_price = lista × (1 − descuento)). No toca
+  // servicios/accesorios. Se recalcula solo cuando cambia el revendedor o el tramo de volumen.
+  useEffect(() => {
+    if (!reventaReseller) return
+    setItems(prev => {
+      let changed = false
+      const next = prev.map(it => {
+        const p = products.find(x => x.id === it.product_id)
+        if (!p || !p.stockTrack) return it
+        const np = Math.round((Number(p.price) || 0) * (1 - effDisc / 100) * 100) / 100
+        if (Math.abs((it.unit_price || 0) - np) > 0.005) { changed = true; return { ...it, unit_price: np } }
+        return it
+      })
+      return changed ? next : prev
+    })
+  }, [reventaReseller?.id, effDisc, products.length])
+  // Comisión: revendedor que trae al cliente (aparte del cliente final). Se calcula sobre pisos.
+  const commissionReseller = allClients.find(c => c.id === commissionResellerId && c.reseller && c.reseller_mode === "comision") || null
+  const commissionEst = commissionReseller ? computeCommission(commissionReseller.reseller_comision, items, products) : null
+
   function updateItem(idx: number, patch: Partial<LineItem>) {
     setItems(items.map((it, i) => i === idx ? { ...it, ...patch } : it))
   }
@@ -217,6 +246,9 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       items: items.map(it => ({ ...it, total: itemGross(it), discount: itemDisc(it), image: "", target_item_index: null })),
       discount_total: Math.round(discountAmount * 100) / 100,   // suma de descuentos por ítem (para margen y PDF)
       discount_amount: Math.round(discountAmount * 100) / 100,
+      // Revendedor por comisión (el backend congela la comisión al convertir a venta).
+      reseller_id: commissionReseller?.id || "",
+      reseller_name: commissionReseller?.name || "",
     }
     const r = isEdit
       ? await update.run("quotes", editQuote!.id, common)
@@ -377,6 +409,34 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
         <Input value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Av. del Libertador 1234 / Casa Pilar" />
         <p className="text-[11px] text-muted-foreground mt-1">Aparece en el PDF como "Dirección" del cliente.</p>
       </div>
+
+      {reventaReseller && reventaBd && (
+        <div className="rounded-md border border-emerald-500/40 bg-emerald-50/40 dark:bg-emerald-950/20 p-3 text-xs space-y-0.5">
+          <div className="font-medium text-emerald-800 dark:text-emerald-300">Precio mayorista — {reventaReseller.name}</div>
+          <div className="text-muted-foreground">
+            −{reventaBd.acuerdo}% acuerdo{reventaBd.volumen > 0 ? ` −${reventaBd.volumen}% volumen` : ""} · {floorM2} m² de piso = <b className="text-foreground">−{reventaBd.total}%</b> sobre lista
+          </div>
+          <div className="text-muted-foreground">Los pisos se cotizan a precio distribuidor automáticamente; servicios y accesorios van a lista.</div>
+        </div>
+      )}
+      {!reventaReseller && (
+        <div>
+          <FieldLabel>Revendedor por comisión (opcional)</FieldLabel>
+          {commissionReseller ? (
+            <div className="flex items-center justify-between border border-border rounded-md px-3 h-9 text-sm bg-muted/30">
+              <span className="truncate">{commissionReseller.name}{commissionEst && commissionEst.amount > 0 ? <span className="text-muted-foreground"> · comisión ≈ {fmtMoney(commissionEst.amount)}</span> : null}</span>
+              <button type="button" className="text-xs text-muted-foreground hover:text-foreground shrink-0" onClick={() => setCommissionResellerId("")}>quitar</button>
+            </div>
+          ) : (
+            <SearchPicker
+              items={allClients.filter(c => c.reseller && c.reseller_mode === "comision").map(c => ({ id: c.id, label: c.name, sub: "comisión", keywords: (c.phones || []).join(" ") }))}
+              placeholder="Buscar revendedor (trae al cliente)…"
+              onPick={(id) => setCommissionResellerId(id)}
+            />
+          )}
+          <p className="text-[11px] text-muted-foreground mt-1">El cliente paga precio de lista; la comisión se calcula sobre los pisos y se guarda en la venta.</p>
+        </div>
+      )}
 
       <div className="pt-2">
         <div className="flex items-center justify-between mb-1.5">

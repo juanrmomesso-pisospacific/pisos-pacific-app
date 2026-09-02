@@ -18,6 +18,7 @@ import { findClientMatch } from './integrations/client-match.mjs';
 import { normProd } from './integrations/product-match.mjs';
 import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
+import { computeCommission as computeResellerCommission } from './integrations/reseller.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -1641,6 +1642,17 @@ app.patch('/api/sales/:id/edit-items', requireAdmin, (req, res) => {
   s.contract_total = contract_total;
   const paid = Number(s.financial_position?.total_paid) || 0;
   s.financial_position = { total_invoiced: contract_total, total_paid: paid, balance_due: Math.max(0, contract_total - paid) };
+  applyCommission(s);   // recalcula la comisión del revendedor (los pisos pueden haber cambiado)
+  save();
+  res.json(s);
+});
+
+// Marcar la comisión de una venta como pagada / pendiente (para el reporte de comisiones).
+app.post('/api/sales/:id/commission-paid', requireAdmin, (req, res) => {
+  const s = db.sales.find(x => x.id === req.params.id);
+  if (!s) return res.sendStatus(404);
+  s.commission_paid = req.body?.paid !== false;
+  s.commission_paid_at = s.commission_paid ? new Date().toISOString() : null;
   save();
   res.json(s);
 });
@@ -1952,6 +1964,7 @@ const MODULE_OF = { cashflow: 'finanzas', cajas: 'finanzas', cp_rules: 'finanzas
   app.post(`/api/${name}`, ...guard, (req, res) => {
     const id = req.body.id ?? `local-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
     const row = { id, ...req.body };
+    if (name === 'sales' && row.reseller_id) applyCommission(row);   // congela comisión en venta directa
     db[name].push(row);
     save();
     res.json(row);
@@ -2733,6 +2746,21 @@ app.post('/api/quotes/:id/duplicate', (req, res) => {
 
 // Shared helper — clones a quote into a new Confirmado sale and links them.
 // Returns the sale (or null if already converted / quote not found).
+// Congela/recalcula la comisión del revendedor sobre una venta (base = solo pisos, a lista).
+// Preserva el estado de "pagado". Se llama al convertir la cotización y al editar ítems.
+function applyCommission(sale) {
+  if (!sale) return;
+  if (!sale.reseller_id) { sale.commission_amount = 0; return; }
+  const rc = db.clients.find(c => c.id === sale.reseller_id);
+  if (!rc || !rc.reseller || rc.reseller_mode !== 'comision') { sale.commission_amount = 0; return; }
+  const { amount, type, m2 } = computeResellerCommission(rc.reseller_comision, sale.items || [], db.products);
+  sale.reseller_name = rc.name;
+  sale.commission_amount = amount;
+  sale.commission_type = type;
+  sale.commission_m2 = m2;
+  if (sale.commission_paid == null) sale.commission_paid = false;
+}
+
 function convertQuoteToSale(q) {
   if (!q || q.sale_id) return null;
   // CLIENTE: al concretar la venta es cuando un lead "se vuelve cliente". Find-or-create
@@ -2788,7 +2816,10 @@ function convertQuoteToSale(q) {
     stock_reserved: q.status === 'Enviado' || q.status === 'Aceptado' || q.status === 'SENT' || q.status === 'ACCEPTED',
     stock_deducted: false,
     seller_name: q.seller_name ?? '',
+    reseller_id: q.reseller_id || '',
+    reseller_name: q.reseller_name || '',
   };
+  applyCommission(sale);   // congela la comisión del revendedor (si hay) sobre los pisos
   db.sales.push(sale);
   q.sale_id = saleId;
   if (q.status !== 'ACCEPTED' && q.status !== 'Aceptado') q.status = 'Aceptado';
@@ -3007,7 +3038,7 @@ app.use('/assets', express.static(path.join(DASHBOARD_DIST, 'assets')));
 // Archivos de public/ que Vite copia a la raíz del dist (PWA: manifest, íconos, favicon).
 // index:false → no auto-sirve index.html en '/'; si el archivo no existe, sigue al SPA.
 app.use(express.static(DASHBOARD_DIST, { index: false, maxAge: '1h' }));
-const SPA_ROUTES = ['/', '/login', '/reset', '/dashboard', '/inventario', '/galeria', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow'];
+const SPA_ROUTES = ['/', '/login', '/reset', '/dashboard', '/inventario', '/galeria', '/cotizaciones', '/ventas', '/agenda', '/gastos', '/clientes', '/movimientos', '/leads', '/mensajes', '/reportes', '/configuracion', '/cajas', '/proveedores', '/cashflow', '/comisiones'];
 for (const r of SPA_ROUTES) {
   app.get(r, (_, res) => res.sendFile(path.join(DASHBOARD_DIST, 'index.html')));
 }

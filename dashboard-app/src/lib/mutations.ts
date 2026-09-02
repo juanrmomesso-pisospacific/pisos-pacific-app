@@ -50,6 +50,7 @@ export const api = {
   quoteShare:      (id: string, opts: { whatsapp?: boolean; email?: boolean; message?: string }) => post(`/api/quotes/${id}/share`, opts),
   // Sale actions
   saleTransition:  (id: string, status: string) => post(`/api/sales/${id}/transition`, { status }),
+  commissionPaid:  (id: string, paid: boolean) => post(`/api/sales/${id}/commission-paid`, { paid }),
   // Cobro directo sobre la venta (financial_position) — camino de las operaciones SIN módulo
   // finanzas (no crea movimiento de caja; con finanzas el cobro se linkea desde el Libro).
   salePayment:     (id: string, amount: number, method?: string, notes?: string, date?: string) =>

@@ -100,6 +100,7 @@ export default function ClientesPage() {
 
   const [openNew, setOpenNew] = useState(false)
   const [selected, setSelected] = useState<Row | null>(null)
+  const [editClient, setEditClient] = useState<Row | null>(null)
 
   return (
     <>
@@ -151,13 +152,14 @@ export default function ClientesPage() {
         </Card>
       </div>
       <ClientForm open={openNew} onOpenChange={setOpenNew} />
-      <ClientDetailSheet client={selected} onClose={() => setSelected(null)} />
+      {editClient && <ClientForm key={editClient.id} open editClient={editClient as any} onOpenChange={(o) => { if (!o) setEditClient(null) }} />}
+      <ClientDetailSheet client={selected} onClose={() => setSelected(null)} onEdit={(c) => { setSelected(null); setEditClient(c) }} />
     </>
   )
 }
 
 // Detalle del cliente: sus cotizaciones + ventas + acceso al chat.
-function ClientDetailSheet({ client, onClose }: { client: (Row & { phones?: string[]; emails?: string[] }) | null; onClose: () => void }) {
+function ClientDetailSheet({ client, onClose, onEdit }: { client: (Row & { phones?: string[]; emails?: string[] }) | null; onClose: () => void; onEdit: (c: Row) => void }) {
   const quotes = useApi<Quote[]>("/api/quotes").data ?? []
   const sales = useApi<Sale[]>("/api/sales").data ?? []
   const conversations = useApi<any[]>("/api/conversations").data ?? []
@@ -175,10 +177,15 @@ function ClientDetailSheet({ client, onClose }: { client: (Row & { phones?: stri
         <SheetHeader>
           <div className="flex items-center justify-between gap-3 pr-8">
             <div>
-              <SheetTitle>{name}</SheetTitle>
+              <SheetTitle className="flex items-center gap-2">{name}
+                {(client as any)?.reseller && <Badge variant="muted" className="text-[10px]">{(client as any).reseller_mode === "comision" ? "Comisión" : "Mayorista"}</Badge>}
+              </SheetTitle>
               <SheetDescription>{client?.contacto || "—"}</SheetDescription>
             </div>
-            <Button variant="outline" size="sm" onClick={openChat}><MessageCircle className="h-4 w-4" />Chat</Button>
+            <div className="flex items-center gap-2">
+              {client && !client.id.startsWith("sales:") && <Button variant="outline" size="sm" onClick={() => onEdit(client)}>Editar</Button>}
+              <Button variant="outline" size="sm" onClick={openChat}><MessageCircle className="h-4 w-4" />Chat</Button>
+            </div>
           </div>
         </SheetHeader>
 

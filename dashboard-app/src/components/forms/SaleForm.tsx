@@ -7,10 +7,12 @@ import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney } from "@/lib/utils"
 import { cajasHint } from "@/lib/boxes"
+import { computeCommission, type ResellerFields } from "@/lib/reseller"
+import { SearchPicker } from "@/components/SearchPicker"
 import type { Product } from "@/lib/types"
 import { useConfig } from "@/contexts/ConfigContext"
 
-type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] }
+type Client = { id: string; name: string; dni: string; phones?: string[]; emails?: string[]; addresses?: string[] } & ResellerFields
 type LineItem = { product_id: string; sku: string; description: string; quantity: number; unit_price: number; category: string; cost?: number }
 
 export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: (o: boolean) => void }) {
@@ -22,10 +24,13 @@ export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
   const [items, setItems] = useState<LineItem[]>([])
   const [hasIva, setHasIva] = useState<boolean>(false)
   const [reserve, setReserve] = useState<boolean>(true)
+  const [resellerId, setResellerId] = useState<string>("")
   const create = useAction(api.create)
 
   const { tax } = useConfig()   // impuesto por config de la operación
   const client = clients.find(c => c.id === clientId)
+  const commissionReseller = clients.find(c => c.id === resellerId && c.reseller && c.reseller_mode === "comision") || null
+  const commissionEst = commissionReseller ? computeCommission(commissionReseller.reseller_comision, items, products) : null
   const subtotal = useMemo(() => items.reduce((s, i) => s + (i.quantity * i.unit_price), 0), [items])
   const iva = hasIva ? subtotal * tax.rate : 0
   const total = subtotal + iva
@@ -58,6 +63,8 @@ export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
       financial_position: { total_invoiced: 0, total_paid: 0, balance_due: total },
       stock_reserved: reserve,
       stock_deducted: false,
+      reseller_id: commissionReseller?.id || "",
+      reseller_name: commissionReseller?.name || "",
     }
     const r = await create.run("sales", body)
     if (r) { onOpenChange(false); refresh() }
@@ -79,6 +86,21 @@ export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
       <div>
         <FieldLabel>Título / referencia</FieldLabel>
         <Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Obra Pilar" />
+      </div>
+      <div>
+        <FieldLabel>Revendedor por comisión (opcional)</FieldLabel>
+        {commissionReseller ? (
+          <div className="flex items-center justify-between border border-border rounded-md px-3 h-9 text-sm bg-muted/30">
+            <span className="truncate">{commissionReseller.name}{commissionEst && commissionEst.amount > 0 ? <span className="text-muted-foreground"> · comisión ≈ {fmtMoney(commissionEst.amount)}</span> : null}</span>
+            <button type="button" className="text-xs text-muted-foreground hover:text-foreground shrink-0" onClick={() => setResellerId("")}>quitar</button>
+          </div>
+        ) : (
+          <SearchPicker
+            items={clients.filter(c => c.reseller && c.reseller_mode === "comision").map(c => ({ id: c.id, label: c.name, sub: "comisión" }))}
+            placeholder="Buscar revendedor (trae al cliente)…"
+            onPick={(id) => setResellerId(id)}
+          />
+        )}
       </div>
       <div className="pt-2">
         <div className="flex items-center justify-between mb-2">

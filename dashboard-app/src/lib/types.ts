@@ -113,6 +113,14 @@ export type Sale = {
   }
   payments?: { ts: string; amount: number; method?: string; notes?: string }[]
   status_log?: { from: string; to: string; at: string; by?: string }[]   // transiciones de estado (desde jul-2026)
+  // Revendedor por comisión (el cliente es el cliente final; este socio trajo la venta).
+  reseller_id?: string
+  reseller_name?: string
+  commission_amount?: number      // comisión congelada al confirmar la venta (sobre pisos)
+  commission_type?: string        // pct | per_m2 | tiered_m2
+  commission_m2?: number          // m² de piso base de la comisión
+  commission_paid?: boolean
+  commission_paid_at?: string | null
 }
 
 export type Quote = {
@@ -144,6 +152,8 @@ export type Quote = {
   discount_value?: number              // the entered number (% or $)
   discount_amount?: number             // resolved $ amount actually deducted from subtotal
   internal_discount_reason?: string
+  reseller_id?: string                 // revendedor por comisión (se propaga a la venta)
+  reseller_name?: string
   status: "Borrador" | "Enviado" | "Aceptado" | string
 }
 
