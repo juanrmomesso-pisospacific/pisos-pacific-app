@@ -133159,12 +133159,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788370340316",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-02T19:09:43.786Z",
-      "last_message_preview": "Te hago otra pregunta. Vos haces presupuesto?",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-02T19:48:24.888Z",
+      "last_message_preview": "Te hace presupuesto Victoria",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-02T19:09:43.786Z",
-      "last_outbound_at": "2026-09-02T18:02:55.247Z"
+      "last_outbound_at": "2026-09-02T19:48:24.888Z"
     },
     {
       "id": "conv-1788371645808-i841",
@@ -149231,6 +149231,16 @@
       "body": "Te hago otra pregunta. Vos haces presupuesto?",
       "ts": "2026-09-02T19:09:43.786Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788378505364-2yhr",
+      "conversation_id": "conv-1788370340316-3zh9",
+      "direction": "out",
+      "body": "Te hace presupuesto Victoria",
+      "ts": "2026-09-02T19:48:24.888Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTc2MDU4NjYwNjY1MDg0NzM2NDQzNzc0OTI2ODQ4MAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
