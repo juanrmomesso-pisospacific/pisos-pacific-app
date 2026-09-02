@@ -133155,11 +133155,11 @@
       "linked_lead_id": "lead-instagram-1788371645808",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-02T17:56:49.706Z",
-      "last_message_preview": "Hola Nora cómo estás?",
+      "last_message_at": "2026-09-02T17:57:10.163Z",
+      "last_message_preview": "Que estás buscando?",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-02T17:54:03.012Z",
-      "last_outbound_at": "2026-09-02T17:56:49.706Z"
+      "last_outbound_at": "2026-09-02T17:57:10.163Z"
     }
   ],
   "messages": [
@@ -148989,6 +148989,16 @@
       "ts": "2026-09-02T17:56:49.706Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTYzNzA4MjI5MjEyNTIzNjgxNDY3NTExMjM2MTk4NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788371830938-6er8",
+      "conversation_id": "conv-1788371645808-i841",
+      "direction": "out",
+      "body": "Que estás buscando?",
+      "ts": "2026-09-02T17:57:10.163Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NzczNDMyMzcxOTQyMzozMjk4OTYzNzQ1OTY0ODk3ODM5ODMyMjI0NTQ3OTk1NjQ4MAZDZD",
       "via": "ig-app"
     }
   ],
