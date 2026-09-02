@@ -133141,11 +133141,11 @@
       "linked_lead_id": "lead-instagram-1788370340316",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-02T17:58:31.318Z",
-      "last_message_preview": "Hola Marcela cómo estás?",
+      "last_message_at": "2026-09-02T17:58:56.025Z",
+      "last_message_preview": "Sino hacemos envíos de muestras",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-02T17:32:18.547Z",
-      "last_outbound_at": "2026-09-02T17:58:31.318Z"
+      "last_outbound_at": "2026-09-02T17:58:56.025Z"
     },
     {
       "id": "conv-1788371645808-i841",
@@ -149044,6 +149044,26 @@
       "ts": "2026-09-02T17:58:31.318Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTYzODk1NjY5NDc1MTk1NDYzNzkzODgxMDE1OTEwNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788371930452-1z1r",
+      "conversation_id": "conv-1788370340316-3zh9",
+      "direction": "out",
+      "body": "Si tenemos el deposito en Olivos",
+      "ts": "2026-09-02T17:58:49.810Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTYzOTI5NzgyOTMyMDE5ODU5MjQwMTY5MDg1MzM3NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788371936692-cec3",
+      "conversation_id": "conv-1788370340316-3zh9",
+      "direction": "out",
+      "body": "Sino hacemos envíos de muestras",
+      "ts": "2026-09-02T17:58:56.025Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ5NDI5MTIyMjU3MjEzNzozMjk4OTYzOTQxMjQ3MzA0OTE1ODM0MjEzNDg0MTk5OTM2MAZDZD",
       "via": "ig-app"
     }
   ],
