@@ -122437,7 +122437,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-22T15:30:51.000Z",
-      "last_touch_at": "2026-09-02T15:28:50.000Z"
+      "last_touch_at": "2026-09-02T16:59:22.000Z"
     },
     {
       "id": "lead-instagram-1782150900322",
@@ -128861,12 +128861,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19eeff52b055",
       "status": "closed",
-      "unread_count": 7,
-      "last_message_at": "2026-09-02T15:28:50.000Z",
-      "last_message_preview": "Buenas tardes Vicky!\r\n\r\nComo estas? Espero que muy bien.\r\nPor el momento no hay valores para los dias posteriores al 15/09.\r\n\r\nActualmente e",
+      "unread_count": 8,
+      "last_message_at": "2026-09-02T16:59:22.000Z",
+      "last_message_preview": "Vicky,\r\n\r\nComo estas?\r\nSiguiendo lo que van publicando ls lineas marítimas en sus webs puedo compartirte los siguientes valores. Es todo has",
       "email_subject": "Re: COTIZACION Shanghai - Buenos Aires | PDPG 2619 | Juan Rodriguez Momesso",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-02T15:28:50.000Z",
+      "last_inbound_at": "2026-09-02T16:59:22.000Z",
       "ignored": true
     },
     {
@@ -148837,6 +148837,14 @@
       "body": "✉️ Re: Cotizacion 2 contenedores de 20/40 nor | Shanghai Buenos Aires | PDPG 2626\n\nBuenas tardes Vicky!\r\n\r\nComo estas? Espero que muy bien.\r\nPor el momento no hay valores para los dias posteriores al 15/09.\r\n\r\nActualmente estamos cargando en la segunda semana del mes de Septiembre con valores alrededor de los USD10.500 / 10.700 segun la linea marítima y el tamaño del contenedor. Para los casos especiales como un 40’NOR las tarifas estan unos 600/700 USD mas bajos.\r\n\r\nLo que puedo hacer si te parece bien es hablar con un par de agentes para ver si podemos conseguir alguna tarifa SPOT para algun servicio posterior al 15/09 para ver que responden las lineas maritimas y asi analizar posibilidades. Lo voy pidiendo a China y vuelvo en breve con comentarios.\r\n\r\nSlds!!\r\n\r\nאנחנו עם ישראל\r\n\r\nSaludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n\r\nJuan M. Garcia Barcia\r\nGrupo Comex+ // Comex+Cargo\r\nOficina Puerto Madero\r\nTel.: (+54)114331-2207/1893\r\nCel.: (+54) 911 7098-2746\r\nAv. Alicia Moreau de Justo 1150 – Of. A-106 // (C1107AAX) – C.A.B.A., Argentina\r\n\r\n\r\n> El 2 sept 2026, a las 9:32 a. m., Victoria Pisos Pacific <victoria@pisospacific.com> escribió:\r\n> \r\n> Hola Juan, ¿cómo estás?\r\n> \r\n> Quería cotizar embarques para cargar a partir del 15 de septiembre.\r\n> \r\n> ¿Me podés pasar, por favor, las tarifas y las condiciones? También necesitaría saber los días libres incluidos.\r\n> \r\n> Serían:\r\n> \r\n> 2 contenedores\r\n> Origen: Shanghai\r\n> Destino: Buenos Aires\r\n> Opciones: 20’ y 40’ NOR\r\n> Muchas gracias.\r\n> \r\n> Victoria \r\n>",
       "ts": "2026-09-02T15:28:50.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0630fd58ab",
+      "conversation_id": "conv-email-19eeff52b055",
+      "direction": "in",
+      "body": "✉️ Re: Cotizacion 2 contenedores de 20/40 nor | Shanghai Buenos Aires | PDPG 2626\n\nVicky,\r\n\r\nComo estas?\r\nSiguiendo lo que van publicando ls lineas marítimas en sus webs puedo compartirte los siguientes valores. Es todo hasta mitad de mes ya que por el momento no hay tarifas post 14/09.-\r\nEs importante tener en cuenta que entre un 20’GP y un 40’NOR no conviene avanzar con la ultima opción a menos que sea una cuestión de m3. En una comparación de tarifas entre un 40’GP y un NOR ahi si conviene. Te voy a detallar los 3 valores para que puedan evaluar bien.\r\n\r\nCondición de venta: FOB\r\nPOL: Shanghai\r\nPOD: Buenos Aires\r\nMercadería: general, no IMO\r\n\r\nFlete internacional: \r\n20’GP - USD 9.400.-\r\n40’GP - USD 10.400 (Maersk) / USD 11.100 (MSC)\r\n40’NOR - USD 10.400 (MSC) \r\nGastos Locales: USD 800.- + IVA\r\n\r\nVigencia al 14/09\r\nDias libres:18 a 21 dias\r\nTC: BNA\r\n\r\nLas tarifas detalladas con anterioridad están sujetas a espacios y disponibilidad de equipos en origen. No incluyen seguro pero podemos ofrecer servicio por el 0,35% del valor a asegurar (min. USD65).\r\n\r\nEn septiembre vamos a tener un feriado de 3 dias en China y otro que sera del 1 al 7 de Octubre lo que posiblemente genere que las taifas se mantengan en estos valores o hasta que incluso suban un poco mas. Luego los meses de Octubre/Nov y Diciembre son temporada alta.\r\n\r\nQuedo a disposición.\r\n\r\nSlds!!\r\n\r\nאנחנו עם ישראל\r\n\r\nSaludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n\r\nJuan M. Garcia Barcia\r\nGrupo Comex+ // Comex+Cargo\r\nOficina Puerto Madero\r\nTel.: (+54)114331-2207/1",
+      "ts": "2026-09-02T16:59:22.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -156333,7 +156341,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-02T03:30:06.392Z",
     "gmail_seen_ids": [
-      "19ef9a9b9b39b51e",
       "19efa12585d6170f",
       "19efa74bdaf19e54",
       "19efa88687adc9e4",
@@ -157132,7 +157139,8 @@
       "1a06217acea70b2d",
       "1a0624e246cf5ef2",
       "1a062bcf2dd39ee9",
-      "1a062ce00499549a"
+      "1a062ce00499549a",
+      "1a0630fd58ab2198"
     ],
     "cash_sessions": {
       "1136982222": {
