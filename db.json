@@ -131904,11 +131904,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1784917400689",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-03T20:26:23.462Z",
-      "last_message_preview": "Plisss que amor esta foto ❤️",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-26T22:05:33.496Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-03T20:42:23.863Z",
+      "last_message_preview": "↩️ Reaccionó: ❤",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-03T20:42:23.863Z",
       "last_outbound_at": "2026-09-03T20:26:23.462Z"
     },
     {
@@ -150909,6 +150909,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA1MTUyNjE5NDE2NTIzNDozMjk5MTM5NjQxNzU1OTUwMTc2NzE0NTc1NzEzNDAyODgwMAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1788468144723-ximq",
+      "conversation_id": "conv-1784917400689-sike",
+      "direction": "in",
+      "body": "↩️ Reaccionó: ❤",
+      "ts": "2026-09-03T20:42:23.863Z",
+      "status": "received"
     }
   ],
   "templates": [
