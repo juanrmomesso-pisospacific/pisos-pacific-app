@@ -33272,7 +33272,13 @@
       "addresses": [],
       "active": true,
       "notes": null,
-      "updated_at": "2026-06-03T19:46:57.827Z"
+      "updated_at": "2026-06-03T19:46:57.827Z",
+      "reseller": true,
+      "reseller_mode": "comision",
+      "reseller_comision": {
+        "type": "pct",
+        "pct": 7
+      }
     },
     {
       "id": "CLI-005",
@@ -33311,7 +33317,13 @@
       "addresses": [],
       "active": true,
       "notes": null,
-      "updated_at": "2026-06-03T19:46:57.827Z"
+      "updated_at": "2026-06-03T19:46:57.827Z",
+      "reseller": true,
+      "reseller_mode": "comision",
+      "reseller_comision": {
+        "type": "pct",
+        "pct": 7
+      }
     },
     {
       "id": "CLI-008",
@@ -33324,7 +33336,13 @@
       "addresses": [],
       "active": true,
       "notes": null,
-      "updated_at": "2026-06-03T19:46:57.827Z"
+      "updated_at": "2026-06-03T19:46:57.827Z",
+      "reseller": true,
+      "reseller_mode": "comision",
+      "reseller_comision": {
+        "type": "pct",
+        "pct": 7
+      }
     },
     {
       "id": "CLI-009",
@@ -33352,7 +33370,13 @@
       ],
       "active": true,
       "notes": null,
-      "updated_at": "2026-06-03T19:46:57.827Z"
+      "updated_at": "2026-06-03T19:46:57.827Z",
+      "reseller": true,
+      "reseller_mode": "comision",
+      "reseller_comision": {
+        "type": "pct",
+        "pct": 7
+      }
     },
     {
       "id": "CLI-011",
@@ -33627,7 +33651,13 @@
       "addresses": [],
       "active": true,
       "notes": null,
-      "updated_at": "2026-06-03T19:46:57.827Z"
+      "updated_at": "2026-06-03T19:46:57.827Z",
+      "reseller": true,
+      "reseller_mode": "comision",
+      "reseller_comision": {
+        "type": "pct",
+        "pct": 7
+      }
     },
     {
       "id": "CLI-032",
@@ -33679,7 +33709,13 @@
       "addresses": [],
       "active": true,
       "notes": null,
-      "updated_at": "2026-06-03T19:46:57.827Z"
+      "updated_at": "2026-06-03T19:46:57.827Z",
+      "reseller": true,
+      "reseller_mode": "comision",
+      "reseller_comision": {
+        "type": "pct",
+        "pct": 7
+      }
     },
     {
       "id": "CLI-036",
@@ -34515,7 +34551,26 @@
       "addresses": [
         "San Agustin Lote 20"
       ],
-      "updated_at": "2026-06-08T07:11:41.179Z"
+      "updated_at": "2026-06-08T07:11:41.179Z",
+      "reseller": true,
+      "reseller_mode": "reventa",
+      "reseller_reventa": {
+        "mode": "lista",
+        "price_list": {
+          "PROD-002": 70,
+          "PROD-009": 70,
+          "PROD-012": 70,
+          "PROD-020": 70,
+          "PROD-021": 70,
+          "PROD-010": 55,
+          "PROD-011": 55,
+          "PROD-026": 25,
+          "PROD-027": 25,
+          "PROD-028": 25,
+          "PROD-190": 25,
+          "PROD-202": 25
+        }
+      }
     },
     {
       "id": "local-1780931589676-bukh6",
@@ -35362,6 +35417,23 @@
       "notes": null,
       "name": "Matias Caprile",
       "updated_at": "2026-09-03T19:41:22.138Z"
+    },
+    {
+      "id": "CLI-hugo-schellotto",
+      "type": "client",
+      "active": true,
+      "name": "Hugo Schellotto",
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "updated_at": "2026-09-03T20:00:48.013Z",
+      "reseller": true,
+      "reseller_mode": "comision",
+      "reseller_comision": {
+        "type": "price_list",
+        "price_list": {}
+      }
     }
   ],
   "expenses": [],
@@ -134587,11 +134659,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788464536866",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-03T19:42:15.744Z",
-      "last_message_preview": "¡Hola! 🤍 Somos El Taller, una marca de productos de cocina y asado hechos a mano. En redes mostramos nuestros procesos y nuestro día a día,",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-03T19:42:15.744Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-03T20:24:13.520Z",
+      "last_message_preview": "Hola Gonzalo cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-03T19:42:15.744Z",
+      "last_outbound_at": "2026-09-03T20:24:13.520Z"
     }
   ],
   "messages": [
@@ -150770,6 +150843,16 @@
       "body": "¡Hola! 🤍 Somos El Taller, una marca de productos de cocina y asado hechos a mano. En redes mostramos nuestros procesos y nuestro día a día, compartiendo un estilo de vida con el que nuestra comunidad conecta mucho.\n\nHoy estamos empezando un proyecto enorme: Compramos un terreno con una casa de 1985 que vamos a reconstruir por completo y donde también vamos a construir nuestro nuevo Taller. Queremos mostrar toda la transformación en redes, en distintos capítulos: obra, elección de productos, procesos, antes y después y resultado final.\n\nPara este proyecto queremos aliarnos con marcas que realmente elegiríamos para nuestra casa y por su diseño y calidad pensamos en ustedes.\n\nSi les interesa, podemos hablar por WhatsApp y compartirles los renders + la propuesta completa y marcas que ya son parte de este proyecto. ¡Nos encantaría que sean parte! 🤍",
       "ts": "2026-09-03T19:42:15.744Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788467054110-8r5m",
+      "conversation_id": "conv-1788464536866-51kr",
+      "direction": "out",
+      "body": "Hola Gonzalo cómo estás?",
+      "ts": "2026-09-03T20:24:13.520Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU0NDU0MTU0OTA5Mzg1NjozMjk5MTM5NDAyMDU2MjYwNzY4OTQ5MDg1Njc4NjUyNjIwOAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
