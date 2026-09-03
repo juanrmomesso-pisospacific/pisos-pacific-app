@@ -32389,9 +32389,9 @@
       "payment_terms": "Anticipo 80% · Conforme 20%",
       "seller_name": "Juan Rodriguez Momesso",
       "seller_phone": "+54 9 11 51750087",
-      "title": "Obra Gral Pacheco - Kitsilano",
+      "title": "Obra Gral Pacheco - Roble Veta Tallada",
       "has_iva": true,
-      "price": 13552,
+      "price": 12995.4,
       "zoned": false,
       "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed + 3 más",
       "items": [
@@ -32403,8 +32403,9 @@
           "unit_price": 92,
           "cost": 34.01,
           "category": "Pisos de Madera",
+          "disc_value": 5,
           "total": 9200,
-          "discount": 0,
+          "discount": 460,
           "image": "",
           "target_item_index": null
         },
@@ -32448,8 +32449,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 0,
-      "discount_amount": 0,
+      "discount_total": 460,
+      "discount_amount": 460,
       "reseller_id": "",
       "reseller_name": "",
       "created_at": "2026-09-03T12:19:56.868Z",
