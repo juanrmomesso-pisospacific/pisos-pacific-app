@@ -369,7 +369,7 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
 {
   const M2_POR_CAJA = {
     'PROD-002': 2.89, 'PROD-009': 2.89, 'PROD-012': 2.89, 'PROD-020': 2.89, 'PROD-021': 2.89,
-    'PROD-010': 2.89, 'PROD-011': 2.89,
+    'PROD-010': 3.61, 'PROD-011': 3.61,   // Kitsilano / Verona (12/1mm)
     'PROD-026': 2.084, 'PROD-027': 2.084, 'PROD-028': 2.084, 'PROD-190': 2.084, 'PROD-202': 2.084,
     'PROD-031': 2.197, 'PROD-032': 2.197, 'PROD-033': 2.197, 'PROD-035': 2.197,
     'PROD-001': 2.74, 'PROD-008': 2.74,
@@ -379,6 +379,11 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
   let n = 0;
   for (const p of db.products || []) {
     if (p && p.m2_por_caja == null && M2_POR_CAJA[p.sku] != null) { p.m2_por_caja = M2_POR_CAJA[p.sku]; n++; }
+  }
+  // Corrección de la carga inicial: Kitsilano/Verona se habían puesto en 2,89 (son 3,61).
+  for (const sku of ['PROD-010', 'PROD-011']) {
+    const p = db.products.find(x => x.sku === sku);
+    if (p && p.m2_por_caja === 2.89) { p.m2_por_caja = 3.61; n++; }
   }
   if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill m²/caja: ${n} productos`); }
 }
@@ -401,11 +406,24 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
         id: 'CLI-samaco', type: 'client', active: true, name: 'SAMACO', dni: '',
         emails: [], phones: [], addresses: [], updated_at: new Date().toISOString(),
         reseller: true, reseller_mode: 'reventa',
-        reseller_reventa: { desc_acuerdo: 25, tiers: [{ upto_m2: 100, extra_pct: 0 }, { upto_m2: 300, extra_pct: 5 }, { upto_m2: 500, extra_pct: 10 }] },
+        reseller_reventa: { mode: 'descuento', desc_acuerdo: 25, tiers: [{ upto_m2: 100, extra_pct: 0 }, { upto_m2: 300, extra_pct: 5 }, { upto_m2: 500, extra_pct: 10 }] },
       });
       n++;
     }
-    if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill revendedores: ${n} (arqs 7% comisión + SAMACO mayorista)`); }
+    // Julian Machado → mayorista con LISTA DE PRECIOS fija por producto (no descuento uniforme).
+    // Roble 15mm → $70 · Kitsilano/Verona → $55 · H2O HD XL → $25.
+    const julian = db.clients.find(c => /julian\s+machado/i.test(c.name || ''));
+    if (julian && !julian.reseller) {
+      julian.reseller = true;
+      julian.reseller_mode = 'reventa';
+      julian.reseller_reventa = { mode: 'lista', price_list: {
+        'PROD-002': 70, 'PROD-009': 70, 'PROD-012': 70, 'PROD-020': 70, 'PROD-021': 70,
+        'PROD-010': 55, 'PROD-011': 55,
+        'PROD-026': 25, 'PROD-027': 25, 'PROD-028': 25, 'PROD-190': 25, 'PROD-202': 25,
+      } };
+      n++;
+    }
+    if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill revendedores: ${n} (arqs 7% + SAMACO desc + Julian lista)`); }
   }
 }
 

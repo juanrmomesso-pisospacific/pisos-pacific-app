@@ -3,8 +3,12 @@ import { Trash2, Plus } from "lucide-react"
 import { FormSheet, FieldLabel } from "./FormSheet"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { SearchPicker } from "@/components/SearchPicker"
+import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
+import { fmtMoney } from "@/lib/utils"
 import { DEFAULT_REVENTA, type ResellerFields, type VolumeTier, type CommissionTier } from "@/lib/reseller"
+import type { Product } from "@/lib/types"
 
 type Client = {
   id?: string; name: string; dni: string; type: string
@@ -28,6 +32,8 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
     reseller_reventa: src?.reseller_reventa ?? DEFAULT_REVENTA,
     reseller_comision: src?.reseller_comision ?? { type: "pct", pct: 10 },
   })
+  const products = useApi<Product[]>("/api/products").data ?? []
+  const floors = products.filter(p => p.stockTrack && p.active !== false)
   const create = useAction(api.create)
   const update = useAction(api.update)
   const action = isEdit ? update : create
@@ -55,10 +61,16 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
   // --- editores de la config ---
   const reventa = v.reseller_reventa ?? DEFAULT_REVENTA
   const setReventa = (patch: Partial<typeof reventa>) => setV({ ...v, reseller_reventa: { ...reventa, ...patch } })
+  const rTiers: VolumeTier[] = reventa.tiers ?? DEFAULT_REVENTA.tiers!
   const setVolTier = (i: number, patch: Partial<VolumeTier>) =>
-    setReventa({ tiers: reventa.tiers.map((t, idx) => idx === i ? { ...t, ...patch } : t) })
-  const addVolTier = () => setReventa({ tiers: [...reventa.tiers, { upto_m2: null, extra_pct: 0 }] })
-  const rmVolTier = (i: number) => setReventa({ tiers: reventa.tiers.filter((_, idx) => idx !== i) })
+    setReventa({ tiers: rTiers.map((t, idx) => idx === i ? { ...t, ...patch } : t) })
+  const setVolTiers = (tiers: VolumeTier[]) => setReventa({ tiers })
+  const addVolTier = () => setVolTiers([...rTiers, { upto_m2: null, extra_pct: 0 }])
+  const rmVolTier = (i: number) => setVolTiers(rTiers.filter((_, idx) => idx !== i))
+  const reventaMode = reventa.mode ?? "descuento"
+  const priceList: Record<string, number> = reventa.price_list ?? {}
+  const setPrice = (sku: string, price: number) => setReventa({ price_list: { ...priceList, [sku]: price } })
+  const rmPrice = (sku: string) => { const pl = { ...priceList }; delete pl[sku]; setReventa({ price_list: pl }) }
 
   const comision = v.reseller_comision ?? { type: "pct" as const, pct: 0 }
   const setComision = (patch: Partial<typeof comision>) => setV({ ...v, reseller_comision: { ...comision, ...patch } })
@@ -117,25 +129,51 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
 
             {v.reseller_mode === "reventa" ? (
               <div className="space-y-2">
-                <p className="text-[11px] text-muted-foreground">Precio distribuidor = lista − (acuerdo + volumen). El descuento aplica <b>solo a los pisos</b>; servicios y accesorios van a lista.</p>
-                <div>
-                  <FieldLabel>Descuento por acuerdo (%)</FieldLabel>
-                  <Input type="number" min={0} max={100} step="0.5" value={reventa.desc_acuerdo} onChange={(e) => setReventa({ desc_acuerdo: Number(e.target.value) || 0 })} className="h-8 w-32" />
+                <div className="inline-flex rounded-md border border-input overflow-hidden text-[11px]">
+                  <button type="button" onClick={() => setReventa({ mode: "descuento" })} className={`px-2.5 h-7 ${reventaMode === "descuento" ? "bg-foreground text-background" : "bg-transparent"}`}>Descuento sobre lista</button>
+                  <button type="button" onClick={() => setReventa({ mode: "lista" })} className={`px-2.5 h-7 ${reventaMode === "lista" ? "bg-foreground text-background" : "bg-transparent"}`}>Lista de precios</button>
                 </div>
-                <div className="text-[11px] uppercase tracking-wide text-muted-foreground">Descuento adicional por volumen (m² de piso)</div>
-                <div className="space-y-1">
-                  {reventa.tiers.map((t, i) => (
-                    <div key={i} className="flex items-center gap-2 text-sm">
-                      <span className="text-[11px] text-muted-foreground w-14">hasta</span>
-                      <Input type="number" min={0} value={t.upto_m2 ?? ""} placeholder="∞" onChange={(e) => setVolTier(i, { upto_m2: e.target.value === "" ? null : Number(e.target.value) })} className="h-8 w-24" />
-                      <span className="text-[11px] text-muted-foreground">m² →</span>
-                      <Input type="number" min={0} step="0.5" value={t.extra_pct} onChange={(e) => setVolTier(i, { extra_pct: Number(e.target.value) || 0 })} className="h-8 w-20" />
-                      <span className="text-[11px] text-muted-foreground">% extra</span>
-                      <Button type="button" size="icon" variant="ghost" className="h-7 w-7 ml-auto" onClick={() => rmVolTier(i)}><Trash2 className="h-3.5 w-3.5" /></Button>
+                <p className="text-[11px] text-muted-foreground">Aplica <b>solo a los pisos</b>; servicios y accesorios van a lista.</p>
+                {reventaMode === "descuento" ? (
+                  <>
+                    <div>
+                      <FieldLabel>Descuento por acuerdo (%)</FieldLabel>
+                      <Input type="number" min={0} max={100} step="0.5" value={reventa.desc_acuerdo ?? 0} onChange={(e) => setReventa({ desc_acuerdo: Number(e.target.value) || 0 })} className="h-8 w-32" />
                     </div>
-                  ))}
-                  <Button type="button" size="sm" variant="outline" onClick={addVolTier}><Plus className="h-3.5 w-3.5" />Agregar tramo</Button>
-                </div>
+                    <div className="text-[11px] uppercase tracking-wide text-muted-foreground">Descuento adicional por volumen (m² de piso)</div>
+                    <div className="space-y-1">
+                      {rTiers.map((t, i) => (
+                        <div key={i} className="flex items-center gap-2 text-sm">
+                          <span className="text-[11px] text-muted-foreground w-14">hasta</span>
+                          <Input type="number" min={0} value={t.upto_m2 ?? ""} placeholder="∞" onChange={(e) => setVolTier(i, { upto_m2: e.target.value === "" ? null : Number(e.target.value) })} className="h-8 w-24" />
+                          <span className="text-[11px] text-muted-foreground">m² →</span>
+                          <Input type="number" min={0} step="0.5" value={t.extra_pct} onChange={(e) => setVolTier(i, { extra_pct: Number(e.target.value) || 0 })} className="h-8 w-20" />
+                          <span className="text-[11px] text-muted-foreground">% extra</span>
+                          <Button type="button" size="icon" variant="ghost" className="h-7 w-7 ml-auto" onClick={() => rmVolTier(i)}><Trash2 className="h-3.5 w-3.5" /></Button>
+                        </div>
+                      ))}
+                      <Button type="button" size="sm" variant="outline" onClick={addVolTier}><Plus className="h-3.5 w-3.5" />Agregar tramo</Button>
+                    </div>
+                  </>
+                ) : (
+                  <div className="space-y-1.5">
+                    <div className="text-[11px] uppercase tracking-wide text-muted-foreground">Precio mayorista por producto</div>
+                    {Object.keys(priceList).length === 0 && <p className="text-[11px] text-muted-foreground italic">Agregá los pisos con su precio mayorista. Los que no estén en la lista se cotizan a precio de lista.</p>}
+                    {floors.filter(p => priceList[p.sku] != null).map((p) => (
+                      <div key={p.sku} className="flex items-center gap-2 text-sm">
+                        <span className="flex-1 truncate text-xs" title={p.name}>{p.name}</span>
+                        <span className="text-[10px] text-muted-foreground line-through">{fmtMoney(p.price)}</span>
+                        <Input type="number" min={0} step="0.01" value={priceList[p.sku]} onChange={(e) => setPrice(p.sku, Number(e.target.value) || 0)} className="h-8 w-24 text-right" />
+                        <Button type="button" size="icon" variant="ghost" className="h-7 w-7" onClick={() => rmPrice(p.sku)}><Trash2 className="h-3.5 w-3.5" /></Button>
+                      </div>
+                    ))}
+                    <SearchPicker
+                      items={floors.filter(p => priceList[p.sku] == null).map(p => ({ id: p.sku, label: p.name, sub: p.sku, hint: fmtMoney(p.price) }))}
+                      placeholder="Agregar piso a la lista…"
+                      onPick={(sku) => { const p = floors.find(x => x.sku === sku); if (p) setPrice(sku, p.price) }}
+                    />
+                  </div>
+                )}
               </div>
             ) : (
               <div className="space-y-2">

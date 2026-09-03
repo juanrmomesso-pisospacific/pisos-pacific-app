@@ -9,7 +9,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney } from "@/lib/utils"
 import { SearchPicker } from "@/components/SearchPicker"
 import { cajasHint, m2PorCaja, noEsMultiploDeCaja } from "@/lib/boxes"
-import { floorStats, reventaDiscountPct, reventaBreakdown, computeCommission, type ResellerFields } from "@/lib/reseller"
+import { floorStats, reventaDiscountPct, reventaBreakdown, reventaFloorPrice, computeCommission, type ResellerFields } from "@/lib/reseller"
 import type { Product, Quote } from "@/lib/types"
 import { looksLikeHandle, leadToQuotePrefill, type Lead } from "@/lib/leads"
 import { useConfig, taxWord } from "@/contexts/ConfigContext"
@@ -180,10 +180,11 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   // (lista − acuerdo − volumen), recalculado según los m² de piso del pedido.
   const reventaReseller = (!isLeadDriven && client?.reseller && client.reseller_mode === "reventa") ? client : null
   const floorM2 = useMemo(() => floorStats(items, products).m2, [items, products])
-  const effDisc = reventaReseller ? reventaDiscountPct(reventaReseller.reseller_reventa, floorM2) : 0
-  const reventaBd = reventaReseller ? reventaBreakdown(reventaReseller.reseller_reventa, floorM2) : null
-  // Aplica el descuento mayorista a los pisos (unit_price = lista × (1 − descuento)). No toca
-  // servicios/accesorios. Se recalcula solo cuando cambia el revendedor o el tramo de volumen.
+  const reventaMode = reventaReseller?.reseller_reventa?.mode ?? "descuento"
+  const effDisc = reventaReseller && reventaMode === "descuento" ? reventaDiscountPct(reventaReseller.reseller_reventa, floorM2) : 0
+  const reventaBd = reventaReseller && reventaMode === "descuento" ? reventaBreakdown(reventaReseller.reseller_reventa, floorM2) : null
+  // Aplica el precio mayorista a los pisos: modo 'descuento' = lista × (1 − desc); modo 'lista' =
+  // precio fijo del SKU. No toca servicios/accesorios. Recalcula al cambiar revendedor/volumen.
   useEffect(() => {
     if (!reventaReseller) return
     setItems(prev => {
@@ -191,13 +192,13 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       const next = prev.map(it => {
         const p = products.find(x => x.id === it.product_id)
         if (!p || !p.stockTrack) return it
-        const np = Math.round((Number(p.price) || 0) * (1 - effDisc / 100) * 100) / 100
+        const np = reventaFloorPrice(reventaReseller.reseller_reventa, p.sku, Number(p.price) || 0, floorM2)
         if (Math.abs((it.unit_price || 0) - np) > 0.005) { changed = true; return { ...it, unit_price: np } }
         return it
       })
       return changed ? next : prev
     })
-  }, [reventaReseller?.id, effDisc, products.length])
+  }, [reventaReseller?.id, effDisc, reventaMode, floorM2, products.length])
   // Comisión: revendedor que trae al cliente (aparte del cliente final). Se calcula sobre pisos.
   const commissionReseller = allClients.find(c => c.id === commissionResellerId && c.reseller && c.reseller_mode === "comision") || null
   const commissionEst = commissionReseller ? computeCommission(commissionReseller.reseller_comision, items, products) : null
@@ -410,13 +411,17 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
         <p className="text-[11px] text-muted-foreground mt-1">Aparece en el PDF como "Dirección" del cliente.</p>
       </div>
 
-      {reventaReseller && reventaBd && (
+      {reventaReseller && (
         <div className="rounded-md border border-emerald-500/40 bg-emerald-50/40 dark:bg-emerald-950/20 p-3 text-xs space-y-0.5">
           <div className="font-medium text-emerald-800 dark:text-emerald-300">Precio mayorista — {reventaReseller.name}</div>
-          <div className="text-muted-foreground">
-            −{reventaBd.acuerdo}% acuerdo{reventaBd.volumen > 0 ? ` −${reventaBd.volumen}% volumen` : ""} · {floorM2} m² de piso = <b className="text-foreground">−{reventaBd.total}%</b> sobre lista
-          </div>
-          <div className="text-muted-foreground">Los pisos se cotizan a precio distribuidor automáticamente; servicios y accesorios van a lista.</div>
+          {reventaMode === "lista" ? (
+            <div className="text-muted-foreground">Los pisos se cotizan con la <b className="text-foreground">lista de precios de {reventaReseller.name}</b> (precio fijo por producto).</div>
+          ) : reventaBd ? (
+            <div className="text-muted-foreground">
+              −{reventaBd.acuerdo}% acuerdo{reventaBd.volumen > 0 ? ` −${reventaBd.volumen}% volumen` : ""} · {floorM2} m² de piso = <b className="text-foreground">−{reventaBd.total}%</b> sobre lista
+            </div>
+          ) : null}
+          <div className="text-muted-foreground">Se aplica solo a los pisos; servicios y accesorios van a precio de lista.</div>
         </div>
       )}
       {!reventaReseller && (

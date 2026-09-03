@@ -6,7 +6,12 @@ import type { Product } from "./types"
 export type VolumeTier = { upto_m2: number | null; extra_pct: number }
 export type CommissionTier = { upto_m2: number | null; per_m2: number }
 
-export type ReventaConfig = { desc_acuerdo: number; tiers: VolumeTier[] }
+export type ReventaConfig = {
+  mode?: "descuento" | "lista"        // descuento sobre lista (SAMACO) | lista de precios fija (Julian)
+  desc_acuerdo?: number
+  tiers?: VolumeTier[]
+  price_list?: Record<string, number> // sku → precio mayorista fijo (modo lista)
+}
 export type ComisionConfig = {
   type: "pct" | "per_m2" | "tiered_m2"
   pct?: number
@@ -62,6 +67,18 @@ export function reventaDiscountPct(reventa: ReventaConfig | undefined, floorM2: 
   return r2(acuerdo + vol)
 }
 
+/** Precio mayorista de un piso: modo 'lista' → precio fijo del SKU (fallback a lista); modo
+ *  'descuento' → lista × (1 − descuento efectivo por volumen). */
+export function reventaFloorPrice(reventa: ReventaConfig | undefined, sku: string, listPrice: number, floorM2: number): number {
+  if (!reventa) return listPrice
+  if (reventa.mode === "lista") {
+    const p = reventa.price_list?.[sku]
+    return (p != null && p > 0) ? p : listPrice
+  }
+  const disc = reventaDiscountPct(reventa, floorM2)
+  return Math.round(listPrice * (1 - disc / 100) * 100) / 100
+}
+
 /** Desglose para el banner del mayorista. */
 export function reventaBreakdown(reventa: ReventaConfig | undefined, floorM2: number) {
   const acuerdo = Number(reventa?.desc_acuerdo) || 0
@@ -83,6 +100,7 @@ export function computeCommission(comision: ComisionConfig | undefined, items: L
 }
 
 export const DEFAULT_REVENTA: ReventaConfig = {
+  mode: "descuento",
   desc_acuerdo: 25,
   tiers: [
     { upto_m2: 100, extra_pct: 0 },
