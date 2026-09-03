@@ -22151,12 +22151,12 @@
       "has_iva": false,
       "price": 2974.6000000000004,
       "zoned": false,
-      "description": "H2O HD XL - Notte 6,5mm x 23cm x 1,50m + 4 más",
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 4 más",
       "items": [
         {
-          "product_id": "PROD-028",
-          "sku": "PROD-028",
-          "description": "H2O HD XL - Notte 6,5mm x 23cm x 1,50m",
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
           "quantity": 52,
           "unit_price": 38,
           "cost": 16.33,
