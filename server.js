@@ -401,6 +401,15 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
       const c = db.clients.find(x => x.id === id);
       if (c && !c.reseller) { c.reseller = true; c.reseller_mode = 'comision'; c.reseller_comision = { type: 'pct', pct: 7 }; n++; }
     }
+    // Hugo Schellotto: no era cliente → crearlo como revendedor por comisión (7%).
+    if (!db.clients.some(c => /hugo\s+sch?el+ot+o/i.test(c.name || ''))) {
+      db.clients.push({
+        id: 'CLI-hugo-schellotto', type: 'client', active: true, name: 'Hugo Schellotto', dni: '',
+        emails: [], phones: [], addresses: [], updated_at: new Date().toISOString(),
+        reseller: true, reseller_mode: 'comision', reseller_comision: { type: 'pct', pct: 7 },
+      });
+      n++;
+    }
     if (!db.clients.some(c => /\bsamaco\b/i.test(c.name || ''))) {
       db.clients.push({
         id: 'CLI-samaco', type: 'client', active: true, name: 'SAMACO', dni: '',
