@@ -262,7 +262,7 @@
       "active": true,
       "margin": 158.6,
       "stock": 2989.5,
-      "reservedStock": 4721.14,
+      "reservedStock": 4821.14,
       "subLine": "Colección Madera",
       "shortName": "Roble Kitsilano 12/1 Veta Tallada",
       "thicknessMm": 12,
@@ -590,7 +590,7 @@
       "active": true,
       "margin": 170.5,
       "stock": 1314.95,
-      "reservedStock": 838.33,
+      "reservedStock": 938.33,
       "subLine": "Colección Madera",
       "shortName": "Roble Light Brushed 14/3mm x 19x190",
       "thicknessMm": 14,
@@ -1744,7 +1744,7 @@
       "active": true,
       "margin": -100,
       "stock": 0,
-      "reservedStock": 4730,
+      "reservedStock": 4930,
       "subLine": "Materiales",
       "shortName": "Nylon Manta 200 Micrones",
       "thicknessMm": null,
@@ -1768,7 +1768,7 @@
       "active": true,
       "margin": -100,
       "stock": 0,
-      "reservedStock": 4455,
+      "reservedStock": 4655,
       "subLine": "Materiales",
       "shortName": "Bajo Piso EVA 2mm Aluminizado",
       "thicknessMm": null,
@@ -1864,7 +1864,7 @@
       "active": true,
       "margin": 172.9,
       "stock": 0,
-      "reservedStock": 6147.53,
+      "reservedStock": 6347.53,
       "subLine": "Colocación Piso",
       "shortName": "Colocación Prefinished Sobre Manta",
       "thicknessMm": null,
@@ -32455,7 +32455,7 @@
       "reseller_name": "",
       "created_at": "2026-09-03T12:19:56.868Z",
       "quote_number": "A5568",
-      "status": "DRAFT"
+      "status": "SENT"
     },
     {
       "id": "local-q-1788438005534-fdkd",
@@ -32536,7 +32536,7 @@
       "reseller_name": "",
       "created_at": "2026-09-03T12:20:05.534Z",
       "quote_number": "A2636",
-      "status": "DRAFT"
+      "status": "SENT"
     }
   ],
   "clients": [
@@ -127541,10 +127541,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 100m² · Con Colocación · CP 1617",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-08-30T12:56:36.000Z",
-      "last_touch_at": "2026-09-03T12:18:10.737Z"
+      "last_touch_at": "2026-09-03T12:24:25.594Z"
     },
     {
       "id": "lead-email-1a0534d3845f",
@@ -133519,7 +133519,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a06364ceb1b",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-02T18:32:25.000Z",
       "last_message_preview": "Formulario web — 56m² · Con Colocación · CP 1414 · Avenida Cordoba 5217",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -133534,7 +133534,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0644da1ab2",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-02T22:46:43.000Z",
       "last_message_preview": "Formulario web — 80m² · Con Colocación · CP 1643 · America 1745",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -156040,6 +156040,78 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T12:24:14.064Z",
+      "type": "quote_reserve",
+      "ref": "local-q-1788438005534-fdkd",
+      "product_id": "PROD-010",
+      "sku": "PROD-010",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T12:24:14.064Z",
+      "type": "quote_reserve",
+      "ref": "local-q-1788438005534-fdkd",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T12:24:14.064Z",
+      "type": "quote_reserve",
+      "ref": "local-q-1788438005534-fdkd",
+      "product_id": "PROD-072",
+      "sku": "PROD-072",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T12:24:14.064Z",
+      "type": "quote_reserve",
+      "ref": "local-q-1788438005534-fdkd",
+      "product_id": "PROD-062",
+      "sku": "PROD-062",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T12:24:16.137Z",
+      "type": "quote_reserve",
+      "ref": "local-1788437997161-hh2fg",
+      "product_id": "PROD-201",
+      "sku": "PROD-201",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T12:24:16.137Z",
+      "type": "quote_reserve",
+      "ref": "local-1788437997161-hh2fg",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T12:24:16.137Z",
+      "type": "quote_reserve",
+      "ref": "local-1788437997161-hh2fg",
+      "product_id": "PROD-072",
+      "sku": "PROD-072",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T12:24:16.137Z",
+      "type": "quote_reserve",
+      "ref": "local-1788437997161-hh2fg",
+      "product_id": "PROD-062",
+      "sku": "PROD-062",
+      "qty": 100,
       "warehouse_id": "main"
     }
   ],
