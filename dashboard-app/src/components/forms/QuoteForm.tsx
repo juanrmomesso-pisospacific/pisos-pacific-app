@@ -9,7 +9,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { fmtMoney } from "@/lib/utils"
 import { SearchPicker } from "@/components/SearchPicker"
 import { cajasHint, m2PorCaja, noEsMultiploDeCaja } from "@/lib/boxes"
-import { productUnitLabel } from "@/lib/panels"
+import { productUnitLabel, isPanel } from "@/lib/panels"
 import { floorStats, reventaDiscountPct, reventaBreakdown, reventaFloorPrice, computeCommission, type ResellerFields } from "@/lib/reseller"
 import type { Product, Quote } from "@/lib/types"
 import { looksLikeHandle, leadToQuotePrefill, type Lead } from "@/lib/leads"
@@ -95,6 +95,10 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   }
   useEffect(() => { if (!open && pickedLead) clearPickedLead() }, [open])
 
+  // Paneles ACUDESIGN se cotizan en PESOS y no se mezclan con pisos (presupuestos separados).
+  // El picker se filtra por el modo actual (paneles vs resto), así no se mezclan.
+  const hasPanel = items.some(it => isPanel(products.find(x => x.id === it.product_id)))
+  const currency: "USD" | "ARS" = hasPanel ? "ARS" : "USD"
   function addProduct(productId: string, zone?: string) {
     const p = products.find(x => x.id === productId)
     if (!p) return
@@ -251,6 +255,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       // Revendedor por comisión (el backend congela la comisión al convertir a venta).
       reseller_id: commissionReseller?.id || "",
       reseller_name: commissionReseller?.name || "",
+      currency,   // ARS para paneles (ACUDESIGN), USD para el resto
     }
     const r = isEdit
       ? await update.run("quotes", editQuote!.id, common)
@@ -264,10 +269,14 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
 
   const canSubmit = (isLeadDriven ? clientName.trim().length > 0 : !!client) && items.length > 0 && items.every(i => i.product_id && i.quantity > 0)
 
-  const productPickerItems = products.filter(p => p.active !== false).map(p => {
-    const av = (Number(p.stock) || 0) - (Number(p.committed ?? p.reservedStock) || 0)
-    return { id: p.id, label: p.name, sub: p.sku, keywords: p.category, hint: fmtMoney(p.price) + (p.stockTrack && av <= 0 ? " · sin stock" : "") }
-  })
+  const productPickerItems = products
+    .filter(p => p.active !== false)
+    // Si ya hay ítems, el picker solo ofrece del mismo tipo (paneles↔pesos vs pisos↔dólares).
+    .filter(p => items.length === 0 || isPanel(p) === hasPanel)
+    .map(p => {
+      const av = (Number(p.stock) || 0) - (Number(p.committed ?? p.reservedStock) || 0)
+      return { id: p.id, label: p.name, sub: p.sku, keywords: p.category, hint: fmtMoney(p.price) + (p.stockTrack && av <= 0 ? " · sin stock" : "") }
+    })
   const itemCard = (it: LineItem, idx: number) => {
     const p = products.find(x => x.id === it.product_id)
     const stock = Number(p?.stock ?? 0)
@@ -412,6 +421,12 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
         <p className="text-[11px] text-muted-foreground mt-1">Aparece en el PDF como "Dirección" del cliente.</p>
       </div>
 
+      {hasPanel && (
+        <div className="rounded-md border border-blue-500/40 bg-blue-50/40 dark:bg-blue-950/20 p-3 text-xs">
+          <span className="font-medium text-blue-800 dark:text-blue-300">Presupuesto de paneles · en pesos (ACUDESIGN)</span>
+          <span className="text-muted-foreground"> — los precios están en $ ARS. El P&L los convierte a USD al dólar del momento.</span>
+        </div>
+      )}
       {reventaReseller && (
         <div className="rounded-md border border-emerald-500/40 bg-emerald-50/40 dark:bg-emerald-950/20 p-3 text-xs space-y-0.5">
           <div className="font-medium text-emerald-800 dark:text-emerald-300">Precio mayorista — {reventaReseller.name}</div>

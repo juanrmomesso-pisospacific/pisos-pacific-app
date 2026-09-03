@@ -7,7 +7,7 @@ import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
 import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
 import { startMpReport, getMpReport, parseSettlementBuffer, backfillMpUserMap, mpUserEntry, MP_UNLEARNABLE, MP_CAJA_ID } from './import/mp-api.mjs';
-import { getBlueRate, configureFx } from './import/fx.mjs';
+import { getBlueRate, configureFx, lastBlue } from './import/fx.mjs';
 import { handleInbound, sendOutbound, sendWhatsAppDocument, refreshIgToken, createWaTemplate, listWaTemplates, sendWhatsAppTemplate } from './integrations/meta.mjs';
 import { buildDailyDigest, todayArt } from './integrations/task-bot.mjs';
 import { syncGmailLeads, syncGmailSent, fetchLatestMpReport, listSentRecipients } from './integrations/gmail.mjs';
@@ -388,9 +388,11 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
   if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill m²/caja: ${n} productos`); }
 }
 
-// Seed de paneles ACUDESIGN (sep-2026). Acupanel 2,4 × 0,36 m, se venden POR UNIDAD. Precio
-// $72.000 ARS → US$51,43 (TC 1400); costo US$29,52 (importado). kind:'panel' → línea propia en
-// el P&L, fuera de acuerdos de revendedor, unidad "u". Idempotente (por sku); guardado para AR.
+// Seed de paneles ACUDESIGN (sep-2026). Acupanel 2,4 × 0,36 m, se venden POR UNIDAD y se
+// cotizan EN PESOS (precio fijo $72.000 ARS, lo ajusta el dueño); el COSTO es US$29,52
+// (importado). currency:'ARS' → el presupuesto sale en pesos; el P&L convierte el ingreso a USD
+// al blue del momento (el costo ya es USD). kind:'panel' → línea propia, fuera de revendedores,
+// unidad "u". Idempotente (por sku); guardado para AR.
 {
   const isAR = db.products.some(p => p.sku === 'PROD-026');
   if (isAR) {
@@ -401,13 +403,13 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
       ['PANEL-004', 'Acupanel - Walnut - Black (2,4 x 0,36 mts)'],
       ['PANEL-005', 'Acupanel - Scandinavian Oak (2,4 x 0,36 mts)'],
     ];
-    const price = 51.43, cost = 29.52, margin = Math.round(((price - cost) / cost) * 100);
+    const price = 72000, cost = 29.52;   // precio en ARS · costo en USD (importado)
     let n = 0;
     for (const [sku, name] of PANELS) {
       if (db.products.some(p => p.sku === sku)) continue;
       db.products.push({
         id: sku, sku, name, category: 'Paneles', kind: 'panel', unit: 'u',
-        price, cost, currency: 'USD', margin, active: true,
+        price, cost, currency: 'ARS', cost_currency: 'USD', margin: 0, active: true,
         stock: 0, reservedStock: 0, stockTrack: true,
         createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
       });
@@ -882,23 +884,30 @@ function itemPnlCategory(it) {
 // Margin per sale (for dashboards): venta_neta = Σ(item.total) − discount_total; COGS = Σ(qty × item.cost locked).
 // breakdown: ingreso y costo por categoría (piso/servicio/extras) para el P&L híbrido.
 function saleMargin(s) {
-  let net = 0, cogs = 0, hasSku = false;
+  // Paneles: se cotizan en pesos → su ingreso se convierte a USD al blue del momento para el
+  // P&L consolidado (el costo ya es USD). El resto (pisos/servicios/extras) es USD nativo.
+  const blue = lastBlue() || 1400;
+  let net = 0, cogs = 0, hasSku = false, hasPanel = false;
   const bd = { piso: { rev: 0, cost: 0 }, servicio: { rev: 0, cost: 0 }, extras: { rev: 0, cost: 0 }, panel: { rev: 0, cost: 0 } };
   for (const it of s.items || []) {
     if (!it || it.product_id === 'discount') continue;
-    const rev = Number(it.total) || 0;
+    const cat = itemPnlCategory(it);
+    let rev = Number(it.total) || 0;
     const c = (Number(it.quantity) || 0) * (Number(it.cost) || 0);
+    if (cat === 'panel') { rev = rev / blue; hasPanel = true; }   // ingreso ARS → USD (costo ya USD)
     net += rev;
     cogs += c;
-    const cat = itemPnlCategory(it);
     bd[cat].rev += rev; bd[cat].cost += c;
     if (it.sku) hasSku = true;
   }
   // Sin detalle SKU no hay costo real → margen no calculable (evita un 100% engañoso en dashboards).
   if (!hasSku) return { venta_neta: null, cogs: null, margin: null, margin_pct: null, has_sku_detail: false };
-  net -= Number(s.discount_total) || 0;
-  // El descuento global se imputa proporcionalmente al ingreso de piso (es lo que más se descuenta).
-  if (bd.piso.rev > 0) bd.piso.rev = Math.round((bd.piso.rev - (Number(s.discount_total) || 0)) * 100) / 100;
+  // Descuento global: en presupuestos de panel viene en pesos → también se convierte a USD.
+  const disc = (Number(s.discount_total) || 0) / (hasPanel ? blue : 1);
+  net -= disc;
+  // El descuento se imputa al ingreso de la categoría dominante (piso, o panel en quotes de panel).
+  if (bd.piso.rev > 0) bd.piso.rev = Math.round((bd.piso.rev - disc) * 100) / 100;
+  else if (hasPanel && bd.panel.rev > 0) bd.panel.rev = Math.round((bd.panel.rev - disc) * 100) / 100;
   const r2 = (n) => Math.round(n * 100) / 100;
   const margin_bd = {
     piso: { rev: r2(bd.piso.rev), cost: r2(bd.piso.cost) },
@@ -2938,6 +2947,7 @@ function convertQuoteToSale(q) {
     seller_name: q.seller_name ?? '',
     reseller_id: q.reseller_id || '',
     reseller_name: q.reseller_name || '',
+    currency: q.currency || 'USD',
   };
   applyCommission(sale);   // congela la comisión del revendedor (si hay) sobre los pisos
   db.sales.push(sale);
@@ -2960,6 +2970,12 @@ app.post('/api/quotes/:id/convert', (req, res) => {
 const usdFmt = (n) => 'US$ ' + Number(n || 0).toLocaleString(db.settings.locale || 'es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 function presupuestoData(rec) {
   const loc = db.settings.locale || 'es-AR';
+  // Moneda del presupuesto: paneles se cotizan en PESOS. Explícita en rec.currency, o inferida
+  // (si tiene ítems de panel). El PDF formatea en pesos ("$ 72.000") o dólares ("US$ 51,43").
+  const curr = rec.currency || ((rec.items || []).some(it => { const p = db.products.find(pr => pr.sku === it.sku); return p && p.kind === 'panel'; }) ? 'ARS' : 'USD');
+  const money = curr === 'ARS'
+    ? (n) => '$ ' + Number(n || 0).toLocaleString(loc, { maximumFractionDigits: 0 })
+    : usdFmt;
   const fecha = rec.created_at ? new Date(rec.created_at).toLocaleDateString(loc) : new Date().toLocaleDateString(loc);
   const sellerPhone = (db.settings.sellers || []).find(s => s.name === rec.seller_name)?.phone || rec.seller_phone || '';
   const items = (rec.items || []).filter(it => it && it.product_id !== 'discount' && !/^descuento/i.test(it.description || ''));
@@ -2983,13 +2999,13 @@ function presupuestoData(rec) {
     const p = db.products.find(pr => pr.sku === it.sku);
     const isPanel = p && p.kind === 'panel';
     const qtyCell = isPanel ? `${qty} u` : `${qty} m2${boxSuffix(it)}`;
-    return [it.description || it.sku || '', isEntrega ? '—' : qtyCell, isEntrega ? '—' : usdFmt(it.unit_price), usdFmt(lineTotal(it))];
+    return [it.description || it.sku || '', isEntrega ? '—' : qtyCell, isEntrega ? '—' : money(it.unit_price), money(lineTotal(it))];
   };
   // Descuento por ítem: el ítem a precio bruto + una sub-fila "Descuento" (solo si tiene).
   const rowsFor = (list) => list.flatMap(it => {
     const r = [rowOf(it)];
     const d = lineDisc(it);
-    if (d > 0) { const pct = (it.disc_kind === 'pct' && it.disc_value) ? ` (${it.disc_value}%)` : ''; r.push([`Descuento${pct}`, '—', '—', '-' + usdFmt(d)]); }
+    if (d > 0) { const pct = (it.disc_kind === 'pct' && it.disc_value) ? ` (${it.disc_value}%)` : ''; r.push([`Descuento${pct}`, '—', '—', '-' + money(d)]); }
     return r;
   });
   const hasItemDisc = items.some(it => lineDisc(it) > 0);
@@ -3010,7 +3026,8 @@ function presupuestoData(rec) {
     vence: venceDate.toLocaleDateString(db.settings.locale || 'es-AR'),
     has_iva: !!rec.has_iva,
     iva_label: taxLabel(),
-    empresa: companyCfg(),
+    // En pesos la nota de "dólar billete" no aplica → aclaramos que los precios están en ARS.
+    empresa: curr === 'ARS' ? { ...companyCfg(), fx_note: 'Precios en pesos argentinos' } : companyCfg(),
     forma_pago: rec.payment_terms || 'Anticipo 80% · Conforme 20%',
     vendedor: sellerPhone ? `${rec.seller_name || ''} · ${sellerPhone}` : (rec.seller_name || ''),
     vendedor_short: rec.seller_name || '',
@@ -3019,22 +3036,22 @@ function presupuestoData(rec) {
     obs: rec.public_notes || '',
     resumen: { m2: Math.round(m2 * 10) / 10, ambientes: (rec.zoned && zones.length) ? zones.length : 1, items: items.length },
     vigencia_dias: rec.valid_days || 10,
-    subtotal: usdFmt(net),
-    iva: usdFmt(iva),
-    total: usdFmt(net + iva),
+    subtotal: money(net),
+    iva: money(iva),
+    total: money(net + iva),
   };
   if (rec.zoned && zones.length) {
     const sections = zones.map(z => {
       const zi = items.filter(it => it.zone === z);
-      return { title: z, rows: rowsFor(zi), subtotal_label: `Subtotal ${z}`, subtotal_val: usdFmt(zi.reduce((s, it) => s + lineNet(it), 0)) };
+      return { title: z, rows: rowsFor(zi), subtotal_label: `Subtotal ${z}`, subtotal_val: money(zi.reduce((s, it) => s + lineNet(it), 0)) };
     });
     const noZone = items.filter(it => !it.zone);
-    if (noZone.length) sections.push({ title: 'Otros', rows: rowsFor(noZone), subtotal_label: 'Subtotal Otros', subtotal_val: usdFmt(noZone.reduce((s, it) => s + lineNet(it), 0)) });
+    if (noZone.length) sections.push({ title: 'Otros', rows: rowsFor(noZone), subtotal_label: 'Subtotal Otros', subtotal_val: money(noZone.reduce((s, it) => s + lineNet(it), 0)) });
     return { ...base, mode: 'sections', sections };
   }
   const rows = rowsFor(items);
   // Compat: cotizaciones viejas con descuento global (sin descuento por ítem).
-  if (!hasItemDisc && discount > 0) rows.push(['Descuento', '—', '—', '-' + usdFmt(discount)]);
+  if (!hasItemDisc && discount > 0) rows.push(['Descuento', '—', '—', '-' + money(discount)]);
   return { ...base, mode: 'single', rows };
 }
 // Nombre de archivo seguro para Content-Disposition: sin acentos ni caracteres ilegales.

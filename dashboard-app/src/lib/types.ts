@@ -97,6 +97,7 @@ export type Sale = {
   has_sku_detail?: boolean
   // Desglose por categoría para el P&L híbrido (rev = ingreso, cost = costo bloqueado)
   margin_bd?: { piso: { rev: number; cost: number }; servicio: { rev: number; cost: number }; extras: { rev: number; cost: number }; panel?: { rev: number; cost: number } }
+  currency?: "USD" | "ARS"         // moneda de la venta (paneles = ARS)
   // Optional: many sales include seller name (sometimes empty)
   seller_name?: string
   delivery_date?: string           // start of the delivery window (back-compat — same as delivery_date_from)
@@ -157,6 +158,7 @@ export type Quote = {
   internal_discount_reason?: string
   reseller_id?: string                 // revendedor por comisión (se propaga a la venta)
   reseller_name?: string
+  currency?: "USD" | "ARS"             // moneda del presupuesto (paneles = ARS; pisos = USD)
   status: "Borrador" | "Enviado" | "Aceptado" | string
 }
 
