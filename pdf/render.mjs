@@ -72,10 +72,10 @@ const hline = (doc, x1, y, x2, color = C.hair, lw = 1) =>
 
 // Banda oscura superior (común a presupuesto y remito): lockup + título + meta.
 // meta = [{ t, hot }] — los "hot" van en semibold blanco pleno. Devuelve la altura.
-function drawMasthead(doc, title, meta = []) {
+function drawMasthead(doc, title, meta = [], logo = 'pacific_lockup_arg_white.png') {
   const MH = 82, R = PAGE.w - PADX;
   doc.rect(0, 0, PAGE.w, MH).fill(C.ink);
-  doc.image(ASSET('pacific_lockup_arg_white.png'), PADX, 22, { height: 38 });
+  doc.image(ASSET(logo), PADX, 22, { height: 38 });
   line(doc, title, R, 25, { font: 'semi', size: 12, color: '#ffffff', cs: 2.4, align: 'right', opacity: 0.9 });
   let mx = R;
   for (let i = meta.length - 1; i >= 0; i--) {
@@ -102,7 +102,7 @@ export async function presupuestoPdf(data) {
     { t: `N° ${data.numero || '—'}` },
     { t: `Emisión ${data.fecha || ''}` },
     { t: `Vence ${data.vence || ''}`, hot: true },
-  ]);
+  ], data.logo || 'pacific_lockup_arg_white.png');
 
   // --- 2. Cuerpo con auto-fit a una página ---
   const bodyTop = MH + 22;
@@ -115,7 +115,7 @@ export async function presupuestoPdf(data) {
   const sections = data.mode === 'sections'
     ? (data.sections || []).map((s) => ({ name: s.title, sub: s.subtotal_val, rows: normRows(s.rows) }))
     : [{ name: 'Detalle', sub: null, rows: normRows(data.rows) }];
-  const hasIva = data.has_iva && data.iva && !/^US\$ ?0([.,]00)?$/.test(data.iva);
+  const hasIva = data.has_iva && data.iva && !/^(US)?\$ ?0([.,]00)?$/.test(data.iva);
   // Textos de empresa/país por config de la operación (data.empresa la manda el server).
   const empresa = data.empresa || {};
   const ivaLabel = data.iva_label || 'IVA 21%';

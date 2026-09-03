@@ -579,6 +579,10 @@ const moduleOn = (name) => db.settings.modules?.[name] !== false;
 const taxRate = () => Number(db.settings.tax?.rate ?? 0.21);
 const taxLabel = () => db.settings.tax?.label || 'IVA 21%';
 const companyCfg = () => ({ ...CONFIG_DEFAULTS.company, ...db.settings.company });
+// Marca ACUDESIGN (entidad relacionada que vende los paneles). Sus presupuestos salen con esta
+// marca + logo propio. Editable por db.settings.company_acudesign (CUIT/teléfono/garantía).
+const ACUDESIGN_DEFAULTS = { name: 'AcuDesign', web: 'acudesign.com.ar', email: 'info@acudesign.com.ar', warranty: 'Garantía del fabricante sobre el producto.', fx_note: 'Precios en pesos argentinos' };
+const acudesignCfg = () => ({ ...ACUDESIGN_DEFAULTS, ...db.settings.company_acudesign });
 // Gate por módulo: escrituras de un módulo apagado → 403 (las lecturas devuelven vacío para
 // que ninguna página/consumidor remoto se rompa; la nav del front ya no las muestra).
 const requireModule = (name) => (_req, res, next) => (moduleOn(name) ? next() : res.status(403).json({ error: `módulo ${name} desactivado en esta operación` }));
@@ -3026,8 +3030,9 @@ function presupuestoData(rec) {
     vence: venceDate.toLocaleDateString(db.settings.locale || 'es-AR'),
     has_iva: !!rec.has_iva,
     iva_label: taxLabel(),
-    // En pesos la nota de "dólar billete" no aplica → aclaramos que los precios están en ARS.
-    empresa: curr === 'ARS' ? { ...companyCfg(), fx_note: 'Precios en pesos argentinos' } : companyCfg(),
+    // Paneles (ARS) → marca + logo ACUDESIGN; pisos (USD) → Pacific.
+    empresa: curr === 'ARS' ? acudesignCfg() : companyCfg(),
+    logo: curr === 'ARS' ? 'acudesign_lockup_white.png' : 'pacific_lockup_arg_white.png',
     forma_pago: rec.payment_terms || 'Anticipo 80% · Conforme 20%',
     vendedor: sellerPhone ? `${rec.seller_name || ''} · ${sellerPhone}` : (rec.seller_name || ''),
     vendedor_short: rec.seller_name || '',
