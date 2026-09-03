@@ -123121,7 +123121,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-22T15:30:51.000Z",
-      "last_touch_at": "2026-09-02T16:59:22.000Z"
+      "last_touch_at": "2026-09-03T16:44:48.000Z"
     },
     {
       "id": "lead-instagram-1782150900322",
@@ -129628,12 +129628,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19eeff52b055",
       "status": "closed",
-      "unread_count": 8,
-      "last_message_at": "2026-09-02T16:59:22.000Z",
-      "last_message_preview": "Vicky,\r\n\r\nComo estas?\r\nSiguiendo lo que van publicando ls lineas marítimas en sus webs puedo compartirte los siguientes valores. Es todo has",
+      "unread_count": 9,
+      "last_message_at": "2026-09-03T16:44:48.000Z",
+      "last_message_preview": "Victoria,\r\n\r\nComo estas? Espero que bien. Un agente me confirmo tarifas mas bajas dentro de la misma vigencia de ayer pero habria que espera",
       "email_subject": "Re: COTIZACION Shanghai - Buenos Aires | PDPG 2619 | Juan Rodriguez Momesso",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-02T16:59:22.000Z",
+      "last_inbound_at": "2026-09-03T16:44:48.000Z",
       "ignored": true
     },
     {
@@ -150061,6 +150061,14 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a067415bf6fbb26"
+    },
+    {
+      "id": "m-email-1a06828f7fe1",
+      "conversation_id": "conv-email-19eeff52b055",
+      "direction": "in",
+      "body": "✉️ Re: Cotizacion 2 contenedores de 20/40 nor | Shanghai Buenos Aires | PDPG 2626\n\nVictoria,\r\n\r\nComo estas? Espero que bien. Un agente me confirmo tarifas mas bajas dentro de la misma vigencia de ayer pero habria que esperar a estar mas cerca del 15/09 para tener valores actualizados para después de ese dia que es cuando estaria lista la carga.\r\n\r\nCondición de venta: FOB\r\nPOL: Shanghai\r\nPOD: Buenos Aires\r\nMercadería: general, no IMO\r\n\r\nFlete internacional: \r\n20’GP - USD 9.300.-\r\n40’NOR - USD 8.550\r\nGastos Locales: USD 800.- + IVA\r\n\r\nVigencia al 14/09\r\nDias libres:14 a 18 dias\r\nTC: BNA\r\n\r\nLas tarifas detalladas con anterioridad están sujetas a espacios y disponibilidad de equipos en origen. No incluyen seguro pero podemos ofrecer servicio por el 0,35% del valor a asegurar (min. USD65).\r\n\r\nQuedo a disposición.\r\n\r\nSlds!!\r\n\r\nאנחנו עם ישראל\r\n\r\nSaludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n\r\nJuan M. Garcia Barcia\r\nGrupo Comex+ // Comex+Cargo\r\nOficina Puerto Madero\r\nTel.: (+54)114331-2207/1893\r\nCel.: (+54) 911 7098-2746\r\nAv. Alicia Moreau de Justo 1150 – Of. A-106 // (C1107AAX) – C.A.B.A., Argentina\r\n\r\n\r\n> El 2 sept 2026, a las 1:59 p. m., Juan Garcia Barcia <juangb@grupocomexmas.com> escribió:\r\n> \r\n> Vicky,\r\n> \r\n> Como estas?\r\n> Siguiendo lo que van publicando ls lineas marítimas en sus webs puedo compartirte los siguientes valores. Es todo hasta mitad de mes ya que por el momento no hay tarifas post 14/09.-\r\n> Es importante tener en cuenta que entre un 20’GP y un 40’NOR no conviene avanzar con la ultima opción a menos qu",
+      "ts": "2026-09-03T16:44:48.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -157629,7 +157637,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-03T01:03:56.203Z",
     "gmail_seen_ids": [
-      "19eff19480220cba",
       "19eff51429142d5c",
       "19effd3543e50212",
       "19f009f36df19624",
@@ -158428,7 +158435,8 @@
       "1a066ca6a80fd663",
       "1a06727b934526e3",
       "1a067260ae00b38b",
-      "1a0679685f352740"
+      "1a0679685f352740",
+      "1a06828f7fe19521"
     ],
     "cash_sessions": {
       "1136982222": {
