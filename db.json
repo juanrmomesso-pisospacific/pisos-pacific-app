@@ -34462,6 +34462,18 @@
       "notes": null,
       "name": "Marina",
       "updated_at": "2026-08-31T22:40:04.653Z"
+    },
+    {
+      "id": "CLI-mtlhr5d9-qugy",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Julieta Sossa",
+      "updated_at": "2026-09-03T12:18:27.693Z"
     }
   ],
   "expenses": [],
