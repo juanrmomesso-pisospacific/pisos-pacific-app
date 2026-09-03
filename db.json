@@ -121523,6 +121523,28 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "local-1788457003635-3bkuc",
+      "flow": "Ingreso",
+      "date": "2026-09-03T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "arq. Soledad Salas | Estudio GGYA",
+      "counterparty_type": "client",
+      "description": "Cobro - Reforma",
+      "sale_ref": "A7742",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 2300,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
