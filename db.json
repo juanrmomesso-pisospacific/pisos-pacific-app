@@ -32603,8 +32603,9 @@
       "reseller_name": "",
       "created_at": "2026-09-03T12:31:54.893Z",
       "quote_number": "A8972",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a03472cf81a"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a03472cf81a",
+      "share_token": "188875e5d7bd0f82997af0cb"
     }
   ],
   "clients": [
@@ -132943,12 +132944,12 @@
       "linked_lead_id": "lead-email-1a03472cf81a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-25T08:52:09.000Z",
-      "last_message_preview": "Hola!\r\nEl que es a prueba de agua porque quiero para el baño también\r\nEs un monoambiente, la superficie total es de 34 metros , es para tene",
+      "last_message_at": "2026-09-03T12:32:11.644Z",
+      "last_message_preview": "📄 Presupuesto NA8972 - Cotizacion Karime - H2O - Karime Viano.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-25T08:52:09.000Z",
-      "last_outbound_at": "2026-08-24T18:26:35.228Z"
+      "last_outbound_at": "2026-09-03T12:32:11.644Z"
     },
     {
       "id": "conv-email-1a034fff1d5d",
@@ -149747,6 +149748,16 @@
       "ts": "2026-09-03T12:29:20.463Z",
       "status": "sent",
       "wa_id": "1a0673ebeee7019c"
+    },
+    {
+      "id": "m-1788438731644-pd11",
+      "conversation_id": "conv-email-1a03472cf81a",
+      "direction": "out",
+      "body": "Hola Karime, te comparto el presupuesto NA8972 adjunto. Cualquier consulta quedo a disposición.\n📄 Presupuesto NA8972 - Cotizacion Karime - H2O - Karime Viano.pdf",
+      "ts": "2026-09-03T12:32:11.644Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a067415bf6fbb26"
     }
   ],
   "templates": [
