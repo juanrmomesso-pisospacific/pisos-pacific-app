@@ -22149,9 +22149,9 @@
       "seller_phone": "+54 11 36982222",
       "title": "Reforma Consultorio Conde",
       "has_iva": false,
-      "price": 2249.8,
+      "price": 2974.6000000000004,
       "zoned": false,
-      "description": "H2O HD XL - Notte 6,5mm x 23cm x 1,50m + 2 más",
+      "description": "H2O HD XL - Notte 6,5mm x 23cm x 1,50m + 4 más",
       "items": [
         {
           "product_id": "PROD-028",
@@ -22191,6 +22191,32 @@
           "cost": 0,
           "category": "Servicio",
           "total": 93,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-213",
+          "sku": "PROD-213",
+          "description": "Zócalo EPS 70mm - Line Blanco",
+          "quantity": 60,
+          "unit_price": 6.88,
+          "cost": 2.75,
+          "category": "Zócalos",
+          "total": 412.8,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-129",
+          "sku": "SERV-129",
+          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+          "quantity": 60,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 312,
           "discount": 0,
           "image": "",
           "target_item_index": null
