@@ -588,7 +588,7 @@
       "cost": 34.01,
       "currency": "USD",
       "active": true,
-      "margin": 170.5,
+      "margin": 171,
       "stock": 1314.95,
       "reservedStock": 938.33,
       "subLine": "Colección Madera",
@@ -600,10 +600,11 @@
       "stockTrack": true,
       "stockCodeLegacy": "2314019201215",
       "createdAt": "2026-06-03T19:46:57.827Z",
-      "updatedAt": "2026-06-03T19:46:57.827Z",
+      "updatedAt": "2026-09-03T12:38:47.754Z",
       "lowStockAlarm": 100,
       "location": "Depósito",
-      "stockObs": "Roble Light Brushed 14/3 — Compra reciente"
+      "stockObs": "Roble Light Brushed 14/3 — Compra reciente",
+      "m2_por_caja": 2.89
     },
     {
       "id": "PROD-022",
