@@ -13,10 +13,12 @@ export type ReventaConfig = {
   price_list?: Record<string, number> // sku → precio mayorista fijo (modo lista)
 }
 export type ComisionConfig = {
-  type: "pct" | "per_m2" | "tiered_m2"
+  type: "pct" | "per_m2" | "tiered_m2" | "price_list"
   pct?: number
   per_m2?: number
   tiers?: CommissionTier[]
+  // Modo lista (Hugo): precio del revendedor por SKU. Comisión = (precio cotizado − precio revendedor) × cant.
+  price_list?: Record<string, number>
 }
 
 // Campos que sumamos al registro de cliente (loose — clients no tienen tipo formal en la app).
@@ -95,6 +97,16 @@ export function computeCommission(comision: ComisionConfig | undefined, items: L
   else if (comision.type === "tiered_m2") {
     const rate = tierRate(m2, (comision.tiers || []).map((t) => ({ upto_m2: t.upto_m2, rate: t.per_m2 })))
     val = m2 * rate
+  } else if (comision.type === "price_list") {
+    // Comisión = diferencia entre lo cotizado y el precio del revendedor, por piso. Solo los que
+    // están en su lista; nunca negativa (si se cotizó por debajo de su precio, comisión 0 en esa línea).
+    const pl = comision.price_list || {}
+    for (const it of items) {
+      if (!isFloorLine(it, products)) continue
+      const rp = pl[it.sku || ""]
+      if (rp == null) continue
+      val += Math.max(0, (Number(it.unit_price) || 0) - rp) * (Number(it.quantity) || 0)
+    }
   }
   return { amount: r2(val), type: comision.type, m2, base: amount }
 }

@@ -79,6 +79,9 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
     setComision({ tiers: comTiers.map((t, idx) => idx === i ? { ...t, ...patch } : t) })
   const addComTier = () => setComision({ tiers: [...comTiers, { upto_m2: null, per_m2: 0 }] })
   const rmComTier = (i: number) => setComision({ tiers: comTiers.filter((_, idx) => idx !== i) })
+  const comPriceList: Record<string, number> = comision.price_list ?? {}
+  const setComPrice = (sku: string, price: number) => setComision({ price_list: { ...comPriceList, [sku]: price } })
+  const rmComPrice = (sku: string) => { const pl = { ...comPriceList }; delete pl[sku]; setComision({ price_list: pl }) }
 
   return (
     <FormSheet open={open} onOpenChange={onOpenChange} title={isEdit ? `Editar · ${editClient!.name}` : "Nuevo cliente"}
@@ -184,6 +187,7 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
                     <option value="pct">% del monto de pisos</option>
                     <option value="per_m2">$ por m² de piso</option>
                     <option value="tiered_m2">Escala por m² (tramos)</option>
+                    <option value="price_list">Lista de precios (precio del revendedor)</option>
                   </select>
                 </div>
                 {comision.type === "pct" && (
@@ -210,6 +214,25 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
                     <Button type="button" size="sm" variant="outline" onClick={addComTier}><Plus className="h-3.5 w-3.5" />Agregar tramo</Button>
                   </div>
                 )}
+                {comision.type === "price_list" && (
+                  <div className="space-y-1.5">
+                    <p className="text-[11px] text-muted-foreground">Precio del revendedor por producto. La <b>comisión = precio cotizado − este precio</b> (por m² de piso). Se cotiza al cliente a precio de lista; la diferencia es la comisión.</p>
+                    {Object.keys(comPriceList).length === 0 && <p className="text-[11px] text-muted-foreground italic">Agregá los pisos con el precio del revendedor.</p>}
+                    {floors.filter(p => comPriceList[p.sku] != null).map((p) => (
+                      <div key={p.sku} className="flex items-center gap-2 text-sm">
+                        <span className="flex-1 truncate text-xs" title={p.name}>{p.name}</span>
+                        <span className="text-[10px] text-muted-foreground">lista {fmtMoney(p.price)} →</span>
+                        <Input type="number" min={0} step="0.01" value={comPriceList[p.sku]} onChange={(e) => setComPrice(p.sku, Number(e.target.value) || 0)} className="h-8 w-24 text-right" />
+                        <Button type="button" size="icon" variant="ghost" className="h-7 w-7" onClick={() => rmComPrice(p.sku)}><Trash2 className="h-3.5 w-3.5" /></Button>
+                      </div>
+                    ))}
+                    <SearchPicker
+                      items={floors.filter(p => comPriceList[p.sku] == null).map(p => ({ id: p.sku, label: p.name, sub: p.sku, hint: fmtMoney(p.price) }))}
+                      placeholder="Agregar piso…"
+                      onPick={(sku) => { const p = floors.find(x => x.sku === sku); if (p) setComPrice(sku, p.price) }}
+                    />
+                  </div>
+                )}
               </div>
             )}
           </>
@@ -219,4 +242,4 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
   )
 }
 
-type ComisionType = "pct" | "per_m2" | "tiered_m2"
+type ComisionType = "pct" | "per_m2" | "tiered_m2" | "price_list"

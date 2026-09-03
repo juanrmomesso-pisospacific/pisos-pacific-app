@@ -66,6 +66,15 @@ export function computeCommission(comision, items, products) {
   else if (comision.type === 'tiered_m2') {
     const rate = tierRate(m2, (comision.tiers || []).map((t) => ({ upto_m2: t.upto_m2, rate: t.per_m2 })));
     val = m2 * rate;
+  } else if (comision.type === 'price_list') {
+    // Comisión = (precio cotizado − precio del revendedor) × cant, por piso en su lista; nunca negativa.
+    const pl = comision.price_list || {};
+    for (const it of items || []) {
+      if (!isFloorLine(it, products)) continue;
+      const rp = pl[it.sku || ''];
+      if (rp == null) continue;
+      val += Math.max(0, (Number(it.unit_price) || 0) - rp) * (Number(it.quantity) || 0);
+    }
   }
   return { amount: r2(val), type: comision.type, m2, base: amount };
 }

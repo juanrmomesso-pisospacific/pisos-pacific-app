@@ -142,7 +142,9 @@ export default function DashboardPage() {
     const grossProfit = ingV - costV - insumosColoc
     const grossPct = ingV ? grossProfit / ingV : NaN
     const m2 = inP.reduce((a, s) => a + (s.items || []).filter(it => isPisoItem(it.sku)).reduce((x, it) => x + (Number(it.quantity) || 0), 0), 0)
-    const neto = grossProfit - opexTotal
+    // Comisiones a revendedores: costo real que baja el margen (arqs por %, mayoristas por lista).
+    const comisiones = inP.reduce((a, s) => a + (Number(s.commission_amount) || 0), 0)
+    const neto = grossProfit - opexTotal - comisiones
     // Cobrado (caja) del período: ingresos reales de ventas — linkeados a una venta o
     // clasificados como Venta. La brecha vs. facturación es la alerta temprana de cobranza.
     const cobradoCaja = cashflow.reduce((a, m) => {
@@ -152,7 +154,7 @@ export default function DashboardPage() {
     }, 0)
     // Cobertura de costos: qué parte de la facturación tiene costo bloqueado (honestidad del margen).
     const factConCosto = detailed.reduce((a, s) => a + billed(s), 0)
-    return { fact, grossProfit, grossPct, m2, opexTotal, neto, cobradoCaja, factConCosto, count: inP.length, detailedCount: detailed.length, opex }
+    return { fact, grossProfit, grossPct, m2, opexTotal, comisiones, neto, cobradoCaja, factConCosto, count: inP.length, detailedCount: detailed.length, opex }
   }
   const cur = useMemo(() => metrics(range), [sales, cashflow, products, range, isInstaller])
   const pre = useMemo(() => metrics(prev), [sales, cashflow, products, prev, isInstaller])
@@ -241,9 +243,15 @@ export default function DashboardPage() {
       if (t === "Gastos de Instalaciones y Suministros") { insumosColoc += m.amount_usd || 0; continue }
       opexBy[t] = (opexBy[t] || 0) + (m.amount_usd || 0)
     }
+    // Comisiones a revendedores del período (bajan el margen, tanto arqs % como mayoristas por lista).
+    let comisiones = 0
+    for (const s of sales) {
+      if (!inRange(saleDate(s), range) || s.status === "Cancelado") continue
+      comisiones += Number(s.commission_amount) || 0
+    }
     const ingresos = cat.piso.rev + cat.servicio.rev + cat.extras.rev
     const costos = cat.piso.cost + cat.servicio.cost + cat.extras.cost + insumosColoc
-    return { cat, insumosColoc, ingresos, costos, bruta: ingresos - costos, opexBy }
+    return { cat, insumosColoc, comisiones, ingresos, costos, bruta: ingresos - costos, opexBy }
   }, [cur, sales, range, isInstaller])
 
   // ---- Top productos PISO vendidos ----
@@ -670,13 +678,13 @@ function FactChart({ data, mode }: { data: ChartRow[]; mode: "line" | "bar" }) {
 
 type Pnl = {
   cat: { piso: { rev: number; cost: number }; servicio: { rev: number; cost: number }; extras: { rev: number; cost: number } }
-  insumosColoc: number; ingresos: number; costos: number; bruta: number; opexBy: Record<string, number>
+  insumosColoc: number; comisiones: number; ingresos: number; costos: number; bruta: number; opexBy: Record<string, number>
 }
 // showOpex=false (operación sin módulo finanzas): no hay gastos de caja cargados, así que el
 // estado corta en la ganancia bruta (mostrar "gastos $0 → neto=bruta" sería engañoso).
 function PnlMini({ pnl, showOpex = true }: { pnl: Pnl; showOpex?: boolean }) {
   const opexTotal = OPEX_ORDER.reduce((a, t) => a + (pnl.opexBy[t] || 0), 0)
-  const neto = pnl.bruta - opexTotal
+  const neto = pnl.bruta - opexTotal - pnl.comisiones
   const brutoPct = pnl.ingresos ? pnl.bruta / pnl.ingresos : NaN
   const netoPct = pnl.ingresos ? neto / pnl.ingresos : NaN
   const Line = ({ l, v, bold, muted, indent }: { l: string; v: number; bold?: boolean; muted?: boolean; indent?: boolean }) => (
@@ -702,6 +710,7 @@ function PnlMini({ pnl, showOpex = true }: { pnl: Pnl; showOpex?: boolean }) {
         <>
           <Head l="Gastos" />
           {OPEX_ORDER.filter(t => pnl.opexBy[t]).map(t => <Line key={t} l={t.replace("Gastos de ", "").replace(" (HR y Mano de Obra)", "")} v={-(pnl.opexBy[t] || 0)} muted indent />)}
+          {pnl.comisiones > 0 && <Line l="Comisiones a revendedores" v={-pnl.comisiones} muted indent />}
           <Line l={`Resultado neto · ${isFinite(netoPct) ? (netoPct * 100).toFixed(0) + "%" : "—"}`} v={neto} bold />
         </>
       )}
