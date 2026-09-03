@@ -782,7 +782,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 254.248,
-      "reservedStock": 222,
+      "reservedStock": 292.8,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Notte 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1841,7 +1841,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 7258,
+      "reservedStock": 7323,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2393,7 +2393,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 756,
+      "reservedStock": 800,
       "subLine": "Zócalos",
       "shortName": "Colocación Zócalos Pegados y Clavados",
       "thicknessMm": null,
@@ -2441,7 +2441,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 11689,
+      "reservedStock": 11859,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -3008,7 +3008,7 @@
       "currency": "USD",
       "margin": 50,
       "stock": 0,
-      "reservedStock": 144,
+      "reservedStock": 188,
       "stockTrack": false,
       "active": true,
       "createdAt": "2026-06-18T00:00:00.000Z",
@@ -33218,7 +33218,7 @@
       "reseller_name": "",
       "created_at": "2026-09-03T19:52:32.764Z",
       "quote_number": "A2415",
-      "status": "DRAFT"
+      "status": "SENT"
     }
   ],
   "clients": [
@@ -157371,6 +157371,51 @@
       "product_id": "PROD-062",
       "sku": "PROD-062",
       "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T21:02:49.000Z",
+      "type": "quote_reserve",
+      "ref": "local-1788465153152-y4p82",
+      "product_id": "PROD-028",
+      "sku": "PROD-028",
+      "qty": 70.8,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T21:02:49.000Z",
+      "type": "quote_reserve",
+      "ref": "local-1788465153152-y4p82",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 65,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T21:02:49.000Z",
+      "type": "quote_reserve",
+      "ref": "local-1788465153152-y4p82",
+      "product_id": "ZOC-MDF-08",
+      "sku": "ZOC-MDF-08",
+      "qty": 44,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T21:02:49.000Z",
+      "type": "quote_reserve",
+      "ref": "local-1788465153152-y4p82",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 170,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-03T21:02:49.000Z",
+      "type": "quote_reserve",
+      "ref": "local-1788465153152-y4p82",
+      "product_id": "SERV-129",
+      "sku": "SERV-129",
+      "qty": 44,
       "warehouse_id": "main"
     }
   ],
