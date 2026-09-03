@@ -15931,6 +15931,152 @@
       "stock_reserved": true,
       "stock_deducted": false,
       "seller_name": "Juan Rodriguez Momesso"
+    },
+    {
+      "id": "local-sale-1788457017414-p1au",
+      "quote_id": "local-1786040795482-e7ewz",
+      "quote_number": "A1380",
+      "title": "Cotización Escalera Moira Sigal",
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 7 más",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mtlt4qiu-clca",
+      "client_name": "Escalera Moira Sigal",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 4528-0596",
+      "client_address": "La Damasia Lote 112",
+      "contract_total": 905.6799999999998,
+      "items": [
+        {
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+          "quantity": 10.42,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 100,
+          "total": 395.96,
+          "discount": 395.96,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-117",
+          "sku": "SERV-117",
+          "description": "Colocación Conjunto de Pedada/Frentin (Línea H2O)",
+          "quantity": 9,
+          "unit_price": 47.67,
+          "cost": 36.67,
+          "category": "Servicio",
+          "total": 429.03000000000003,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-118",
+          "sku": "SERV-118",
+          "description": "Colocación y Ajustes de Compensados y Descansos en Escalera",
+          "quantity": 5,
+          "unit_price": 95.33,
+          "cost": 73.33,
+          "category": "Servicio",
+          "total": 476.65,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "1534",
+          "sku": "1534",
+          "description": "SERV - Ajuste Escalon a Filo",
+          "quantity": 14,
+          "unit_price": 15,
+          "cost": 0,
+          "category": "Servicio",
+          "disc_value": 100,
+          "total": 210,
+          "discount": 210,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "111223",
+          "sku": "111223",
+          "description": "Adhesivo Especial Para Escaleras 830",
+          "quantity": 9,
+          "unit_price": 25,
+          "cost": 10,
+          "category": "Extras",
+          "disc_value": 100,
+          "total": 225,
+          "discount": 225,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1783539932685-ogl79",
+          "sku": "SERV-01202",
+          "description": "Retiro de Piso Existente - Pegado",
+          "quantity": 14,
+          "unit_price": 10,
+          "cost": 6.67,
+          "category": "Servicio",
+          "disc_value": 100,
+          "total": 140,
+          "discount": 140,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 180,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "disc_value": 100,
+          "total": 180,
+          "discount": 180,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1784069148766-cotkf",
+          "sku": "PROD - 102984",
+          "description": "H2O HD - Nariz Volada - Canada - Roble Clásico XL",
+          "quantity": 14,
+          "unit_price": 30,
+          "cost": 11,
+          "category": "Pisos H2O",
+          "disc_value": 100,
+          "total": 420,
+          "discount": 420,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 1570.96,
+      "status": "Confirmado",
+      "created_at": "2026-09-03T17:36:57.414Z",
+      "has_iva": false,
+      "iva_mode": "none",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 905.6799999999998
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -26799,7 +26945,7 @@
     },
     {
       "id": "local-1786040795482-e7ewz",
-      "client_id": "",
+      "client_id": "CLI-mtlt4qiu-clca",
       "client_name": "Escalera Moira Sigal",
       "client_dni": "",
       "client_email": "",
@@ -26932,7 +27078,8 @@
       "created_at": "2026-08-06T18:26:35.375Z",
       "quote_number": "A1380",
       "status": "ACCEPTED",
-      "lead_id": "local-1786040458691-uecbj"
+      "lead_id": "local-1786040458691-uecbj",
+      "sale_id": "local-sale-1788457017414-p1au"
     },
     {
       "id": "local-1786046053655-luokh",
@@ -35007,6 +35154,22 @@
       "notes": null,
       "name": "Julieta Sossa",
       "updated_at": "2026-09-03T12:18:27.693Z"
+    },
+    {
+      "id": "CLI-mtlt4qiu-clca",
+      "type": "client",
+      "active": true,
+      "name": "Escalera Moira Sigal",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        "+54 9 11 4528-0596"
+      ],
+      "addresses": [
+        "La Damasia Lote 112"
+      ],
+      "notes": null,
+      "updated_at": "2026-09-03T17:36:57.414Z"
     }
   ],
   "expenses": [],
