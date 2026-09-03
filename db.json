@@ -15139,7 +15139,40 @@
           "at": "2026-08-14T13:08:53.855Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "remito_items": [
+        {
+          "description": "Adhesivo Especial Para Escaleras 830",
+          "quantity": 1,
+          "unit": "m²"
+        },
+        {
+          "description": "Cuartacaña MDF - Blanca",
+          "quantity": 35,
+          "unit": "ml"
+        },
+        {
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+          "quantity": 26,
+          "unit": "cajas"
+        },
+        {
+          "description": "Varilla de terminación L Atrim",
+          "quantity": 1,
+          "unit": "u"
+        },
+        {
+          "description": "Rellenador / Sellador Atrim",
+          "quantity": 2,
+          "unit": "u"
+        },
+        {
+          "description": "Silicona Transparente",
+          "quantity": 1,
+          "unit": "u"
+        }
+      ],
+      "remito_confirmed": false
     },
     {
       "id": "local-sale-1786709462935-bjpa",
