@@ -122784,7 +122784,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-09-03T08:24:15.000Z"
+      "last_touch_at": "2026-09-03T12:04:09.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -129255,12 +129255,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 43,
-      "last_message_at": "2026-09-03T08:24:15.000Z",
+      "unread_count": 44,
+      "last_message_at": "2026-09-03T12:04:09.000Z",
       "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-01 00:00:00 UTC to 2026-09-02 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-03T08:24:15.000Z",
+      "last_inbound_at": "2026-09-03T12:04:09.000Z",
       "ignored": true
     },
     {
@@ -149476,6 +149476,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: ef4e380906eb43289060b836a2795ebb\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-01 00:00:00 UTC to 2026-09-02 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-03T08:24:15.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a06727b9345",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: ec07dc1c3cc148c782f1366aa65d5bde\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-01 00:00:00 UTC to 2026-09-02 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-09-03T12:04:09.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -156972,8 +156980,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-03T01:03:56.203Z",
     "gmail_seen_ids": [
-      "19efea816c744a48",
-      "19eff11655764bfd",
       "19eff218b2b5e6ab",
       "19eff19480220cba",
       "19eff51429142d5c",
@@ -157771,7 +157777,9 @@
       "1a06364ceb1b38e9",
       "1a0644da1ab2d310",
       "1a0665e6e0d64c3d",
-      "1a066ca6a80fd663"
+      "1a066ca6a80fd663",
+      "1a06727b934526e3",
+      "1a067260ae00b38b"
     ],
     "cash_sessions": {
       "1136982222": {
