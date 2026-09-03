@@ -13343,7 +13343,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Conde 1609 PB",
-      "contract_total": 2250,
+      "contract_total": 2632,
       "items": [
         {
           "product_id": "SERV-106",
@@ -13392,9 +13392,9 @@
       "has_iva": false,
       "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 2250,
+        "total_invoiced": 2632,
         "total_paid": 0,
-        "balance_due": 2250
+        "balance_due": 2632
       },
       "stock_reserved": true,
       "stock_deducted": false,
