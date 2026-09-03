@@ -134660,11 +134660,11 @@
       "linked_lead_id": "lead-instagram-1788464536866",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-03T20:24:13.520Z",
-      "last_message_preview": "Hola Gonzalo cómo estás?",
+      "last_message_at": "2026-09-03T20:24:32.787Z",
+      "last_message_preview": "Obvio te paso el contacto de uno de los dueños",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-03T19:42:15.744Z",
-      "last_outbound_at": "2026-09-03T20:24:13.520Z"
+      "last_outbound_at": "2026-09-03T20:24:32.787Z"
     }
   ],
   "messages": [
@@ -150852,6 +150852,16 @@
       "ts": "2026-09-03T20:24:13.520Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU0NDU0MTU0OTA5Mzg1NjozMjk5MTM5NDAyMDU2MjYwNzY4OTQ5MDg1Njc4NjUyNjIwOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788467073430-xggg",
+      "conversation_id": "conv-1788464536866-51kr",
+      "direction": "out",
+      "body": "Obvio te paso el contacto de uno de los dueños",
+      "ts": "2026-09-03T20:24:32.787Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU0NDU0MTU0OTA5Mzg1NjozMjk5MTM5NDM3NTk1OTIzOTIyMDU0NTcxMjA4MDAyNzY0OAZDZD",
       "via": "ig-app"
     }
   ],
