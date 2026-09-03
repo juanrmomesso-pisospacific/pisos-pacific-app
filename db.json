@@ -128271,13 +128271,14 @@
       "contact_id": "3565298693622023",
       "contact_name": "@juanrmomesso",
       "linked_client_name": null,
-      "status": "open",
+      "status": "closed",
       "unread_count": 1,
       "last_message_at": "2026-09-02T18:36:25.456Z",
       "last_message_preview": "Y nuestro piso",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-02T18:36:25.456Z",
-      "last_outbound_at": "2026-09-02T17:55:45.898Z"
+      "last_outbound_at": "2026-09-02T17:55:45.898Z",
+      "ignored": true
     },
     {
       "id": "conv-1781093292446-6fr2",
