@@ -121414,12 +121414,12 @@
       "flow": "Egreso",
       "caja_id": "CAJ-009",
       "caja_name": "Efectivo Pesos",
-      "category": "HR",
-      "subcategory": "Sueldos",
-      "counterparty": "Pipi & Juan",
+      "category": "Instalaciones",
+      "subcategory": "Insumos Generales Colocación",
+      "counterparty": "Otros",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": "PROV-024",
+      "supplier_id": "PROV-008",
       "description": "Sueldo Agosto",
       "sale_ref": null,
       "currency": "ARS",
@@ -121427,7 +121427,7 @@
       "amount_usd": 24.1,
       "exchange_rate": 1535.27,
       "fixed_variable": "Fijo",
-      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+      "expense_type": "Gastos de Instalaciones y Suministros",
       "transfer": false,
       "needs_review": false,
       "review_reason": null
@@ -162238,6 +162238,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"TRANSF DEBITO Nro:578468\""
+    },
+    {
+      "id": "local-1788456661030-g79eb",
+      "match": [
+        "Pipi & Juan"
+      ],
+      "cuit": null,
+      "counterparty": "Otros",
+      "category": "Instalaciones",
+      "subcategory": "Insumos Generales Colocación",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Pipi & Juan\""
     }
   ],
   "product_aliases": [
