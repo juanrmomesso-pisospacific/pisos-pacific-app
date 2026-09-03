@@ -121431,6 +121431,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1788456642316-78c07",
+      "date": "2026-09-02T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "counterparty": "Pipi & Juan",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-024",
+      "description": "carne y verduras",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 90000,
+      "amount_usd": 58.63,
+      "exchange_rate": 1535.05,
+      "fixed_variable": "Fijo",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
@@ -128334,6 +128358,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-02T22:46:43.000Z",
       "last_touch_at": "2026-09-02T22:46:43.000Z"
+    },
+    {
+      "id": "lead-instagram-1788456649167",
+      "name": "@dianagewis",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-03T17:30:47.559Z",
+      "last_touch_at": "2026-09-03T17:30:47.559Z"
     }
   ],
   "conversations": [
@@ -133987,6 +134027,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-02T22:46:43.000Z",
       "last_outbound_at": "2026-09-03T12:29:20.463Z"
+    },
+    {
+      "id": "conv-1788456649167-s079",
+      "channel": "instagram",
+      "contact_id": "2465684543942215",
+      "contact_name": "@dianagewis",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788456649167",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-03T17:30:47.559Z",
+      "last_message_preview": "Solicito cel de contacto para pedir info gracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-03T17:30:47.559Z"
     }
   ],
   "messages": [
@@ -150141,6 +150195,14 @@
       "body": "✉️ Re: Cotizacion 2 contenedores de 20/40 nor | Shanghai Buenos Aires | PDPG 2626\n\nVictoria,\r\n\r\nComo estas? Espero que bien. Un agente me confirmo tarifas mas bajas dentro de la misma vigencia de ayer pero habria que esperar a estar mas cerca del 15/09 para tener valores actualizados para después de ese dia que es cuando estaria lista la carga.\r\n\r\nCondición de venta: FOB\r\nPOL: Shanghai\r\nPOD: Buenos Aires\r\nMercadería: general, no IMO\r\n\r\nFlete internacional: \r\n20’GP - USD 9.300.-\r\n40’NOR - USD 8.550\r\nGastos Locales: USD 800.- + IVA\r\n\r\nVigencia al 14/09\r\nDias libres:14 a 18 dias\r\nTC: BNA\r\n\r\nLas tarifas detalladas con anterioridad están sujetas a espacios y disponibilidad de equipos en origen. No incluyen seguro pero podemos ofrecer servicio por el 0,35% del valor a asegurar (min. USD65).\r\n\r\nQuedo a disposición.\r\n\r\nSlds!!\r\n\r\nאנחנו עם ישראל\r\n\r\nSaludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n\r\nJuan M. Garcia Barcia\r\nGrupo Comex+ // Comex+Cargo\r\nOficina Puerto Madero\r\nTel.: (+54)114331-2207/1893\r\nCel.: (+54) 911 7098-2746\r\nAv. Alicia Moreau de Justo 1150 – Of. A-106 // (C1107AAX) – C.A.B.A., Argentina\r\n\r\n\r\n> El 2 sept 2026, a las 1:59 p. m., Juan Garcia Barcia <juangb@grupocomexmas.com> escribió:\r\n> \r\n> Vicky,\r\n> \r\n> Como estas?\r\n> Siguiendo lo que van publicando ls lineas marítimas en sus webs puedo compartirte los siguientes valores. Es todo hasta mitad de mes ya que por el momento no hay tarifas post 14/09.-\r\n> Es importante tener en cuenta que entre un 20’GP y un 40’NOR no conviene avanzar con la ultima opción a menos qu",
       "ts": "2026-09-03T16:44:48.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788456649167-gw2l",
+      "conversation_id": "conv-1788456649167-s079",
+      "direction": "in",
+      "body": "Solicito cel de contacto para pedir info gracias",
+      "ts": "2026-09-03T17:30:47.559Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -159586,7 +159648,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk5MDAxNDgzMDM1NTkwMjk1OTY2NTUxODI3MTc5MTEwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk5MDAxNDk3MTUyNDQwODEzNzE4NzAyNjQ5NjY1MTI2NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk5MDAxNTA3MTg1NDIyMDAxMjI0NTE2OTY4NTM5NzUwNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk5MDAxNTQwMjYxMjMyODY5NDA0MTM0NjM5NjEyNzIzMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk5MDAxNTQwMjYxMjMyODY5NDA0MTM0NjM5NjEyNzIzMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIwNjgxODY2MTQxNDM0MDozMjk5MTIwMjA2NDQ0OTE0MzI2Nzc4NzI0NjUyNTIxODgxNgZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
