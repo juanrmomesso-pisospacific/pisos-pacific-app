@@ -133226,14 +133226,15 @@
       "contact_name": "Julieta",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a052be49ab5",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-31T18:44:12.000Z",
       "last_message_preview": "Perdón, la zona de colocación seria General Pacheco.\r\nSaludos\r\n________________________________\r\nDe: Pisos Pacific <info@pisospacific.com>\r\n",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-31T18:44:12.000Z",
-      "last_outbound_at": "2026-08-31T12:32:14.138Z"
+      "last_outbound_at": "2026-08-31T12:32:14.138Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0534d3845f",
@@ -133536,11 +133537,12 @@
       "linked_lead_id": "lead-email-1a0644da1ab2",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-02T22:46:43.000Z",
-      "last_message_preview": "Formulario web — 80m² · Con Colocación · CP 1643 · America 1745",
+      "last_message_at": "2026-09-03T12:29:20.463Z",
+      "last_message_preview": "Hola Miranda, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-02T22:46:43.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-02T22:46:43.000Z",
+      "last_outbound_at": "2026-09-03T12:29:20.463Z"
     }
   ],
   "messages": [
@@ -149668,6 +149670,15 @@
       "ts": "2026-09-03T12:27:12.673Z",
       "status": "sent",
       "wa_id": "1a0673ccae09f66c"
+    },
+    {
+      "id": "m-1788438560463-zufj",
+      "conversation_id": "conv-email-1a0644da1ab2",
+      "direction": "out",
+      "body": "Hola Miranda, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. ¡En cuanto me confirmes el modelo, te lo armamos!\n\nPor otro lado ¿la colocación es sobre un piso existente o sobre carpeta?\n\nCualquier duda que tengas, me podes escribir por acá o al WhatsApp - 1151750087\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-03T12:29:20.463Z",
+      "status": "sent",
+      "wa_id": "1a0673ebeee7019c"
     }
   ],
   "templates": [
