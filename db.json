@@ -35256,6 +35256,18 @@
       ],
       "notes": null,
       "updated_at": "2026-09-03T18:19:35.322Z"
+    },
+    {
+      "id": "CLI-mtlxkqca-p680",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Matias Caprile",
+      "updated_at": "2026-09-03T19:41:22.138Z"
     }
   ],
   "expenses": [],
