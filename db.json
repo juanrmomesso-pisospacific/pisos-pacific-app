@@ -128787,6 +128787,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-03T17:32:44.881Z",
       "last_touch_at": "2026-09-03T17:32:44.881Z"
+    },
+    {
+      "id": "lead-instagram-1788464536866",
+      "name": "@eltallergpf",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-03T19:42:15.744Z",
+      "last_touch_at": "2026-09-03T19:42:15.744Z"
     }
   ],
   "conversations": [
@@ -134468,6 +134484,20 @@
       "last_message_preview": "Buenas tardes. Necesitaría presupuesto 44m de piso H2O Eslavonia, con colocación y zócalos.gracias",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-03T17:32:44.881Z"
+    },
+    {
+      "id": "conv-1788464536866-51kr",
+      "channel": "instagram",
+      "contact_id": "1636678467879589",
+      "contact_name": "@eltallergpf",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788464536866",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-03T19:42:15.744Z",
+      "last_message_preview": "¡Hola! 🤍 Somos El Taller, una marca de productos de cocina y asado hechos a mano. En redes mostramos nuestros procesos y nuestro día a día,",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-03T19:42:15.744Z"
     }
   ],
   "messages": [
@@ -150638,6 +150668,14 @@
       "body": "Buenas tardes. Necesitaría presupuesto 44m de piso H2O Eslavonia, con colocación y zócalos.gracias",
       "ts": "2026-09-03T17:32:44.881Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788464536866-dvzn",
+      "conversation_id": "conv-1788464536866-51kr",
+      "direction": "in",
+      "body": "¡Hola! 🤍 Somos El Taller, una marca de productos de cocina y asado hechos a mano. En redes mostramos nuestros procesos y nuestro día a día, compartiendo un estilo de vida con el que nuestra comunidad conecta mucho.\n\nHoy estamos empezando un proyecto enorme: Compramos un terreno con una casa de 1985 que vamos a reconstruir por completo y donde también vamos a construir nuestro nuevo Taller. Queremos mostrar toda la transformación en redes, en distintos capítulos: obra, elección de productos, procesos, antes y después y resultado final.\n\nPara este proyecto queremos aliarnos con marcas que realmente elegiríamos para nuestra casa y por su diseño y calidad pensamos en ustedes.\n\nSi les interesa, podemos hablar por WhatsApp y compartirles los renders + la propuesta completa y marcas que ya son parte de este proyecto. ¡Nos encantaría que sean parte! 🤍",
+      "ts": "2026-09-03T19:42:15.744Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -160085,7 +160123,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk5MDAxNTA3MTg1NDIyMDAxMjI0NTE2OTY4NTM5NzUwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY1ODc5Mjk2NTYyNDU5MzozMjk5MDAxNTQwMjYxMjMyODY5NDA0MTM0NjM5NjEyNzIzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIwNjgxODY2MTQxNDM0MDozMjk5MTIwMjA2NDQ0OTE0MzI2Nzc4NzI0NjUyNTIxODgxNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUwMjYwNzA0OTY0Mjk5MzozMjk5MTIwNDIyODY1NzU5MDMxNDkzNzQxODQ3ODc4MDQxNgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUwMjYwNzA0OTY0Mjk5MzozMjk5MTIwNDIyODY1NzU5MDMxNDkzNzQxODQ3ODc4MDQxNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU0NDU0MTU0OTA5Mzg1NjozMjk5MTM0NzU3NTc4MjM2NDc1NjI5OTkyODMwMTQ2OTY5NgZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
