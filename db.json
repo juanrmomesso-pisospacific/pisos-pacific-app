@@ -133520,11 +133520,12 @@
       "linked_lead_id": "lead-email-1a06364ceb1b",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-02T18:32:25.000Z",
-      "last_message_preview": "Formulario web — 56m² · Con Colocación · CP 1414 · Avenida Cordoba 5217",
+      "last_message_at": "2026-09-03T12:27:12.673Z",
+      "last_message_preview": "Hola Francisco, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuest",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-02T18:32:25.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-02T18:32:25.000Z",
+      "last_outbound_at": "2026-09-03T12:27:12.673Z"
     },
     {
       "id": "conv-email-1a0644da1ab2",
@@ -149658,6 +149659,15 @@
       "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: ec07dc1c3cc148c782f1366aa65d5bde\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-01 00:00:00 UTC to 2026-09-02 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-03T12:04:09.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788438432673-f7om",
+      "conversation_id": "conv-email-1a06364ceb1b",
+      "direction": "out",
+      "body": "Hola Francisco, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\n¿El piso iría colocado sobre carpeta o sobre un piso existente?\n\nEl presupuesto incluye materiales y mano de obra de colocación. En cuanto me confirmes el modelo te lo preparamos!\n\nCualquier duda puntual que tengas me podes avisar por acá o por WhatsApp - 1151750087\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-03T12:27:12.673Z",
+      "status": "sent",
+      "wa_id": "1a0673ccae09f66c"
     }
   ],
   "templates": [
