@@ -134660,11 +134660,11 @@
       "linked_lead_id": "lead-instagram-1788464536866",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-03T20:24:32.787Z",
-      "last_message_preview": "Obvio te paso el contacto de uno de los dueños",
+      "last_message_at": "2026-09-03T20:24:57.645Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-03T19:42:15.744Z",
-      "last_outbound_at": "2026-09-03T20:24:32.787Z"
+      "last_outbound_at": "2026-09-03T20:24:57.645Z"
     }
   ],
   "messages": [
@@ -150862,6 +150862,26 @@
       "ts": "2026-09-03T20:24:32.787Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU0NDU0MTU0OTA5Mzg1NjozMjk5MTM5NDM3NTk1OTIzOTIyMDU0NTcxMjA4MDAyNzY0OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788467097763-wda6",
+      "conversation_id": "conv-1788464536866-51kr",
+      "direction": "out",
+      "body": "+54 9 11 5175-0087\nJuan Rodríguez Momesso",
+      "ts": "2026-09-03T20:24:57.334Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU0NDU0MTU0OTA5Mzg1NjozMjk5MTM5NDgyODc4MTY0ODYwMDYyMjc2MzI3MDQ3MTY4MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788467098032-o8mf",
+      "conversation_id": "conv-1788464536866-51kr",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-03T20:24:57.645Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU0NDU0MTU0OTA5Mzg1NjozMjk5MTM5NDgzNDUyMjIzODQ2Mjg3MzAyODMxNDI2NzY0OAZDZD",
       "via": "ig-app"
     }
   ],
