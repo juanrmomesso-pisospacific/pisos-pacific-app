@@ -121,6 +121,7 @@ export type Sale = {
   commission_m2?: number          // m² de piso base de la comisión
   commission_paid?: boolean
   commission_paid_at?: string | null
+  commission_override?: boolean   // la comisión se editó a mano para esta venta (no se recalcula)
 }
 
 export type Quote = {

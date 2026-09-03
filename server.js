@@ -383,6 +383,32 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
   if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill m²/caja: ${n} productos`); }
 }
 
+// Backfill de revendedores (sep-2026, provisto por el dueño). Estudios/arquitectos → comisión
+// 7% SUGERIDA (editable por venta); SAMACO → mayorista con el Plan Reventa del PDF. Idempotente:
+// solo marca clientes que NO son revendedor todavía (una edición desde la ficha se preserva).
+// Guardado para AR (esos ids solo existen en la instancia AR → no corre en Panamá).
+{
+  const COM_RESELLERS = ['CLI-007', 'CLI-010', 'CLI-004', 'CLI-031', 'CLI-008', 'CLI-035'];
+  const isAR = db.clients.some(c => COM_RESELLERS.includes(c.id));
+  if (isAR) {
+    let n = 0;
+    for (const id of COM_RESELLERS) {
+      const c = db.clients.find(x => x.id === id);
+      if (c && !c.reseller) { c.reseller = true; c.reseller_mode = 'comision'; c.reseller_comision = { type: 'pct', pct: 7 }; n++; }
+    }
+    if (!db.clients.some(c => /\bsamaco\b/i.test(c.name || ''))) {
+      db.clients.push({
+        id: 'CLI-samaco', type: 'client', active: true, name: 'SAMACO', dni: '',
+        emails: [], phones: [], addresses: [], updated_at: new Date().toISOString(),
+        reseller: true, reseller_mode: 'reventa',
+        reseller_reventa: { desc_acuerdo: 25, tiers: [{ upto_m2: 100, extra_pct: 0 }, { upto_m2: 300, extra_pct: 5 }, { upto_m2: 500, extra_pct: 10 }] },
+      });
+      n++;
+    }
+    if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill revendedores: ${n} (arqs 7% comisión + SAMACO mayorista)`); }
+  }
+}
+
 // Backfill del estado de respuesta de las conversaciones (dirección del último mensaje +
 // timestamps por dirección). Idempotente: solo completa las que no lo tienen todavía
 // (de ahí en más lo mantiene touchConv en cada escritura). "Pendiente" = última 'in'.
@@ -1677,6 +1703,17 @@ app.post('/api/sales/:id/commission-paid', requireAdmin, (req, res) => {
   res.json(s);
 });
 
+// Editar la comisión de una venta (depende de la obra). { amount } fija un override manual;
+// { auto: true } vuelve al cálculo automático (7% sugerido) del revendedor.
+app.post('/api/sales/:id/commission', requireAdmin, (req, res) => {
+  const s = db.sales.find(x => x.id === req.params.id);
+  if (!s) return res.sendStatus(404);
+  if (req.body?.auto) { s.commission_override = false; applyCommission(s); }
+  else { s.commission_override = true; s.commission_amount = Math.max(0, Number(req.body?.amount) || 0); }
+  save();
+  res.json(s);
+});
+
 // Special-case: crear proveedor con DEDUP. Si ya existe uno con el mismo nombre
 // normalizado (sin importar mayúsculas/acentos/espacios), devuelve el existente en vez
 // de duplicar. Corre ANTES del POST genérico de abajo. Idempotente.
@@ -2770,15 +2807,18 @@ app.post('/api/quotes/:id/duplicate', (req, res) => {
 // Preserva el estado de "pagado". Se llama al convertir la cotización y al editar ítems.
 function applyCommission(sale) {
   if (!sale) return;
-  if (!sale.reseller_id) { sale.commission_amount = 0; return; }
+  if (!sale.reseller_id) { if (!sale.commission_override) sale.commission_amount = 0; return; }
   const rc = db.clients.find(c => c.id === sale.reseller_id);
-  if (!rc || !rc.reseller || rc.reseller_mode !== 'comision') { sale.commission_amount = 0; return; }
-  const { amount, type, m2 } = computeResellerCommission(rc.reseller_comision, sale.items || [], db.products);
+  if (!rc || !rc.reseller || rc.reseller_mode !== 'comision') { if (!sale.commission_override) sale.commission_amount = 0; return; }
   sale.reseller_name = rc.name;
+  if (sale.commission_paid == null) sale.commission_paid = false;
+  // La comisión depende de la obra: 7% es el default sugerido (config del revendedor) pero se
+  // puede EDITAR por venta. Un override manual no se recalcula (ni al editar los ítems).
+  if (sale.commission_override) return;
+  const { amount, type, m2 } = computeResellerCommission(rc.reseller_comision, sale.items || [], db.products);
   sale.commission_amount = amount;
   sale.commission_type = type;
   sale.commission_m2 = m2;
-  if (sale.commission_paid == null) sale.commission_paid = false;
 }
 
 function convertQuoteToSale(q) {

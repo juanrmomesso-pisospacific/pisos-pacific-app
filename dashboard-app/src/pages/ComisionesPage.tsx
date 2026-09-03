@@ -1,5 +1,6 @@
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import { Link } from "react-router-dom"
+import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
@@ -93,7 +94,7 @@ export default function ComisionesPage() {
                         <TableCell className="truncate max-w-[180px]">{s.client_name}</TableCell>
                         <TableCell className="text-xs text-muted-foreground">{s.created_at ? new Date(s.created_at).toLocaleDateString(appLocale()) : "—"}</TableCell>
                         <TableCell className="text-right tabular">{fmtInt(s.commission_m2 || 0)}<span className="text-[10px] text-muted-foreground ml-1">{COM_LABEL[s.commission_type || ""] || ""}</span></TableCell>
-                        <TableCell className="text-right tabular font-medium">{fmtMoney(s.commission_amount || 0)}</TableCell>
+                        <TableCell className="text-right"><CommissionCell sale={s} /></TableCell>
                         <TableCell className="text-right">
                           {s.commission_paid ? (
                             <Button size="sm" variant="ghost" className="h-7 text-emerald-700" onClick={() => toggle(s)} disabled={markPaid.busy}>
@@ -113,6 +114,34 @@ export default function ComisionesPage() {
         })}
       </div>
     </DataState>
+  )
+}
+
+// Comisión editable por venta (depende de la obra; 7% es el default sugerido). Click en el
+// monto → editar; "auto" vuelve al cálculo del revendedor.
+function CommissionCell({ sale }: { sale: Sale }) {
+  const [editing, setEditing] = useState(false)
+  const [val, setVal] = useState(String(sale.commission_amount ?? 0))
+  const set = useAction(api.commissionSet)
+  async function save(body: { amount?: number; auto?: boolean }) {
+    const r = await set.run(sale.id, body)
+    if (r) { setEditing(false); refresh() }
+  }
+  if (editing) {
+    return (
+      <div className="flex items-center gap-1 justify-end">
+        <Input type="number" min={0} step="0.01" value={val} onChange={(e) => setVal(e.target.value)} className="h-7 w-24 text-right" autoFocus />
+        <Button size="sm" className="h-7 px-2" onClick={() => save({ amount: Number(val) || 0 })} disabled={set.busy}>OK</Button>
+        {sale.commission_override && <Button size="sm" variant="ghost" className="h-7 px-1.5 text-[11px]" title="Volver al 7% sugerido" onClick={() => save({ auto: true })} disabled={set.busy}>auto</Button>}
+        <button type="button" className="text-[11px] text-muted-foreground" onClick={() => setEditing(false)}>✕</button>
+      </div>
+    )
+  }
+  return (
+    <button type="button" className="tabular font-medium hover:underline decoration-dotted" title="Editar comisión (depende de la obra)" onClick={() => { setVal(String(sale.commission_amount ?? 0)); setEditing(true) }}>
+      {fmtMoney(sale.commission_amount || 0)}
+      {sale.commission_override && <span className="text-[9px] text-amber-600 ml-1 align-top">editada</span>}
+    </button>
   )
 }
 
