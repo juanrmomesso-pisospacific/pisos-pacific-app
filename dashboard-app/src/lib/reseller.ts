@@ -35,7 +35,7 @@ const r2 = (n: number) => Math.round((Number(n) || 0) * 100) / 100
 
 export function isFloorLine(it: LineLike, products: Product[]): boolean {
   const p = products.find((x) => (it.sku && x.sku === it.sku) || (it.product_id && x.id === it.product_id))
-  return !!(p && p.stockTrack)
+  return !!(p && p.stockTrack && p.kind !== "panel")   // paneles NO entran en acuerdos de revendedor
 }
 
 export function floorStats(items: LineLike[], products: Product[]): { m2: number; amount: number } {

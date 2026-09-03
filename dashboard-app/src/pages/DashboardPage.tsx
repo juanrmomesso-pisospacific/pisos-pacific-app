@@ -101,7 +101,7 @@ export default function DashboardPage() {
 
   // Producto piso (m²): por stockTrack y activo. Mapa sku→producto.
   const prodBySku = useMemo(() => { const m = new Map<string, Product>(); for (const p of products) m.set(p.sku, p); return m }, [products])
-  const isPisoItem = (sku?: string) => { const p = sku ? prodBySku.get(sku) : undefined; return !!p && !!p.stockTrack && p.active !== false }
+  const isPisoItem = (sku?: string) => { const p = sku ? prodBySku.get(sku) : undefined; return !!p && !!p.stockTrack && p.kind !== "panel" && p.active !== false }
   // Colocadores: su mano de obra ya está en el costo de servicio → se excluye del opex.
   // Match NORMALIZADO (sin mayúsculas/acentos) + por primer nombre cuando la contraparte es
   // de una sola palabra (ej. "Hugo" matchea "Hugo Ramirez") → evita doble conteo por nombres
@@ -131,7 +131,7 @@ export default function DashboardPage() {
     const detailed = inP.filter(s => s.has_sku_detail && s.margin_bd)
     // Bruto "obra completo" = ingresos (piso+servicio+extras) − costos bloqueados − insumos generales de colocación.
     let ingV = 0, costV = 0
-    for (const s of detailed) for (const k of ["piso", "servicio", "extras"] as const) { ingV += s.margin_bd![k].rev; costV += s.margin_bd![k].cost }
+    for (const s of detailed) for (const k of ["piso", "servicio", "extras", "panel"] as const) { ingV += s.margin_bd![k]?.rev || 0; costV += s.margin_bd![k]?.cost || 0 }
     const opex = cashflow.filter(m => m.flow === "Egreso" && !m.transfer && inRange((m.date || "").slice(0, 10), r) && (m.expense_type || "") !== "COGS")
     let insumosColoc = 0, opexTotal = 0
     for (const m of opex) {
@@ -226,11 +226,11 @@ export default function DashboardPage() {
   // ---- P&L híbrido (devengado): ingresos/costos por categoría desde ventas; opex desde cashflow ----
   const pnl = useMemo(() => {
     // Ingresos y costos por categoría (Piso/Servicio/Extras) desde ventas con costo bloqueado.
-    const cat = { piso: { rev: 0, cost: 0 }, servicio: { rev: 0, cost: 0 }, extras: { rev: 0, cost: 0 } }
+    const cat = { piso: { rev: 0, cost: 0 }, servicio: { rev: 0, cost: 0 }, extras: { rev: 0, cost: 0 }, panel: { rev: 0, cost: 0 } }
     for (const s of sales) {
       if (!inRange(saleDate(s), range) || s.status === "Cancelado" || !s.margin_bd) continue
-      for (const k of ["piso", "servicio", "extras"] as const) {
-        cat[k].rev += s.margin_bd[k].rev; cat[k].cost += s.margin_bd[k].cost
+      for (const k of ["piso", "servicio", "extras", "panel"] as const) {
+        cat[k].rev += s.margin_bd[k]?.rev || 0; cat[k].cost += s.margin_bd[k]?.cost || 0
       }
     }
     // Egresos del cashflow del período. Colocadores (installerSet) → ya en costo de servicio, se excluyen.
@@ -249,8 +249,8 @@ export default function DashboardPage() {
       if (!inRange(saleDate(s), range) || s.status === "Cancelado") continue
       comisiones += Number(s.commission_amount) || 0
     }
-    const ingresos = cat.piso.rev + cat.servicio.rev + cat.extras.rev
-    const costos = cat.piso.cost + cat.servicio.cost + cat.extras.cost + insumosColoc
+    const ingresos = cat.piso.rev + cat.servicio.rev + cat.extras.rev + cat.panel.rev
+    const costos = cat.piso.cost + cat.servicio.cost + cat.extras.cost + cat.panel.cost + insumosColoc
     return { cat, insumosColoc, comisiones, ingresos, costos, bruta: ingresos - costos, opexBy }
   }, [cur, sales, range, isInstaller])
 
@@ -677,7 +677,7 @@ function FactChart({ data, mode }: { data: ChartRow[]; mode: "line" | "bar" }) {
 }
 
 type Pnl = {
-  cat: { piso: { rev: number; cost: number }; servicio: { rev: number; cost: number }; extras: { rev: number; cost: number } }
+  cat: { piso: { rev: number; cost: number }; servicio: { rev: number; cost: number }; extras: { rev: number; cost: number }; panel: { rev: number; cost: number } }
   insumosColoc: number; comisiones: number; ingresos: number; costos: number; bruta: number; opexBy: Record<string, number>
 }
 // showOpex=false (operación sin módulo finanzas): no hay gastos de caja cargados, así que el
@@ -699,11 +699,13 @@ function PnlMini({ pnl, showOpex = true }: { pnl: Pnl; showOpex?: boolean }) {
       <Line l="Piso" v={pnl.cat.piso.rev} indent />
       <Line l="Servicio (colocación)" v={pnl.cat.servicio.rev} indent />
       <Line l="Extras" v={pnl.cat.extras.rev} indent />
+      {pnl.cat.panel.rev > 0 && <Line l="Paneles (ACUDESIGN)" v={pnl.cat.panel.rev} indent />}
       <Line l="Ingresos totales" v={pnl.ingresos} bold />
       <Head l="Costos" />
       <Line l="Costo piso" v={-pnl.cat.piso.cost} muted indent />
       <Line l="Costo servicio" v={-pnl.cat.servicio.cost} muted indent />
       <Line l="Costo extras" v={-pnl.cat.extras.cost} muted indent />
+      {pnl.cat.panel.cost > 0 && <Line l="Costo paneles" v={-pnl.cat.panel.cost} muted indent />}
       <Line l="Insumos grales. colocación" v={-pnl.insumosColoc} muted indent />
       <Line l={`Ganancia bruta · ${isFinite(brutoPct) ? (brutoPct * 100).toFixed(0) + "%" : "—"}`} v={pnl.bruta} bold />
       {showOpex && (

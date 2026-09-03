@@ -5,7 +5,7 @@ import { api, useAction, refresh } from "@/lib/mutations"
 import { cajasHint } from "@/lib/boxes"
 import type { Product } from "@/lib/types"
 
-const CATEGORIES = ["Pisos H2O", "Pisos de Madera", "Zócalo", "Zócalos", "Deck", "Servicio", "Extras"]
+const CATEGORIES = ["Pisos H2O", "Pisos de Madera", "Paneles", "Zócalo", "Zócalos", "Deck", "Servicio", "Extras"]
 const CURRENCIES = ["USD", "ARS"]
 
 type FormState = Partial<Product> & { name: string; sku: string }
@@ -56,7 +56,9 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
 
   const cats = CATEGORIES.includes(v.category || "") ? CATEGORIES : [...CATEGORIES, v.category || ""]
   // Pisos: llevan stock y se cargan por cajas cerradas → mostramos m²/caja y la equivalencia.
-  const isFloor = !!v.stockTrack || /piso/i.test(v.category || "")
+  // Paneles llevan stock pero se venden por unidad → sin m²/caja.
+  const isPanel = v.kind === "panel" || /panel/i.test(v.category || "")
+  const isFloor = (!!v.stockTrack || /piso/i.test(v.category || "")) && !isPanel
   const m2caja = Number(v.m2_por_caja) || 0
   return (
     <FormSheet open={open} onOpenChange={onOpenChange}

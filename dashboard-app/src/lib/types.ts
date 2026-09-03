@@ -11,7 +11,9 @@ export type Product = {
   margin: number
   reservedStock: number
   committed?: number          // m² comprometidos en ventas no finalizadas (derivado)
-  stockTrack?: boolean        // true para pisos (se trackea stock); false servicios/extras
+  stockTrack?: boolean        // true para pisos/paneles (se trackea stock); false servicios/extras
+  kind?: "panel" | string     // "panel" = ACUDESIGN, se vende por unidad y va en su propia línea del P&L
+  unit?: "m2" | "u" | string  // unidad de venta/stock: m² (pisos, default) o u (paneles)
   m2_por_caja?: number        // m² que trae cada caja cerrada (solo pisos) — para mostrar la equivalencia cajas↔m²
   drive_folder_id?: string    // carpeta del Drive con las fotos del producto (banco de imágenes)
   drive_cover_id?: string     // imagen de portada (primera foto de la carpeta)
@@ -94,7 +96,7 @@ export type Sale = {
   margin_pct?: number | null
   has_sku_detail?: boolean
   // Desglose por categoría para el P&L híbrido (rev = ingreso, cost = costo bloqueado)
-  margin_bd?: { piso: { rev: number; cost: number }; servicio: { rev: number; cost: number }; extras: { rev: number; cost: number } }
+  margin_bd?: { piso: { rev: number; cost: number }; servicio: { rev: number; cost: number }; extras: { rev: number; cost: number }; panel?: { rev: number; cost: number } }
   // Optional: many sales include seller name (sometimes empty)
   seller_name?: string
   delivery_date?: string           // start of the delivery window (back-compat — same as delivery_date_from)

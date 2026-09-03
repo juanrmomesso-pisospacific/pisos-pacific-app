@@ -10,7 +10,7 @@ const r2 = (n) => Math.round((Number(n) || 0) * 100) / 100;
 /** ¿La línea es un piso? (el producto lleva stock). Servicios/accesorios → false. */
 export function isFloorLine(it, products) {
   const p = (products || []).find((x) => (it.sku && x.sku === it.sku) || (it.product_id && x.id === it.product_id));
-  return !!(p && p.stockTrack);
+  return !!(p && p.stockTrack && p.kind !== 'panel');   // paneles NO entran en acuerdos de revendedor
 }
 
 /** m² y monto bruto (qty×precio) de las líneas de piso del pedido. */

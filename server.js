@@ -388,6 +388,35 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
   if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill m²/caja: ${n} productos`); }
 }
 
+// Seed de paneles ACUDESIGN (sep-2026). Acupanel 2,4 × 0,36 m, se venden POR UNIDAD. Precio
+// $72.000 ARS → US$51,43 (TC 1400); costo US$29,52 (importado). kind:'panel' → línea propia en
+// el P&L, fuera de acuerdos de revendedor, unidad "u". Idempotente (por sku); guardado para AR.
+{
+  const isAR = db.products.some(p => p.sku === 'PROD-026');
+  if (isAR) {
+    const PANELS = [
+      ['PANEL-001', 'Acupanel - Natural Oak - Black (2,4 x 0,36 mts)'],
+      ['PANEL-002', 'Acupanel - Natural Oak - White (2,4 x 0,36 mts)'],
+      ['PANEL-003', 'Acupanel - Black Laca (2,4 x 0,36 mts)'],
+      ['PANEL-004', 'Acupanel - Walnut - Black (2,4 x 0,36 mts)'],
+      ['PANEL-005', 'Acupanel - Scandinavian Oak (2,4 x 0,36 mts)'],
+    ];
+    const price = 51.43, cost = 29.52, margin = Math.round(((price - cost) / cost) * 100);
+    let n = 0;
+    for (const [sku, name] of PANELS) {
+      if (db.products.some(p => p.sku === sku)) continue;
+      db.products.push({
+        id: sku, sku, name, category: 'Paneles', kind: 'panel', unit: 'u',
+        price, cost, currency: 'USD', margin, active: true,
+        stock: 0, reservedStock: 0, stockTrack: true,
+        createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
+      });
+      n++;
+    }
+    if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Seed paneles ACUDESIGN: ${n} productos`); }
+  }
+}
+
 // Backfill de revendedores (sep-2026, provisto por el dueño). Estudios/arquitectos → comisión
 // 7% SUGERIDA (editable por venta); SAMACO → mayorista con el Plan Reventa del PDF. Idempotente:
 // solo marca clientes que NO son revendedor todavía (una edición desde la ficha se preserva).
@@ -839,6 +868,7 @@ app.post('/api/inventory/reconcile', requireAdmin, (req, res) => {
 function itemPnlCategory(it) {
   const p = it.sku ? db.products.find(x => x.sku === it.sku) : null;
   if (p) {
+    if (p.kind === 'panel') return 'panel';   // ACUDESIGN: línea propia en el P&L
     if (p.stockTrack) return 'piso';
     if (/servicio/i.test(p.category || '')) return 'servicio';
     return 'extras';
@@ -853,7 +883,7 @@ function itemPnlCategory(it) {
 // breakdown: ingreso y costo por categoría (piso/servicio/extras) para el P&L híbrido.
 function saleMargin(s) {
   let net = 0, cogs = 0, hasSku = false;
-  const bd = { piso: { rev: 0, cost: 0 }, servicio: { rev: 0, cost: 0 }, extras: { rev: 0, cost: 0 } };
+  const bd = { piso: { rev: 0, cost: 0 }, servicio: { rev: 0, cost: 0 }, extras: { rev: 0, cost: 0 }, panel: { rev: 0, cost: 0 } };
   for (const it of s.items || []) {
     if (!it || it.product_id === 'discount') continue;
     const rev = Number(it.total) || 0;
@@ -874,6 +904,7 @@ function saleMargin(s) {
     piso: { rev: r2(bd.piso.rev), cost: r2(bd.piso.cost) },
     servicio: { rev: r2(bd.servicio.rev), cost: r2(bd.servicio.cost) },
     extras: { rev: r2(bd.extras.rev), cost: r2(bd.extras.cost) },
+    panel: { rev: r2(bd.panel.rev), cost: r2(bd.panel.cost) },
   };
   const margin = net - cogs;
   return { venta_neta: Math.round(net * 100) / 100, cogs: Math.round(cogs * 100) / 100, margin: Math.round(margin * 100) / 100, margin_pct: net ? Math.round((margin / net) * 1000) / 10 : null, has_sku_detail: true, margin_bd };
@@ -2949,7 +2980,10 @@ function presupuestoData(rec) {
   const rowOf = (it) => {
     const isEntrega = /entrega/i.test(it.description || '') || it.sku === 'SERV-131';
     const qty = Number(it.quantity) || 0;
-    return [it.description || it.sku || '', isEntrega ? '—' : `${qty} m2${boxSuffix(it)}`, isEntrega ? '—' : usdFmt(it.unit_price), usdFmt(lineTotal(it))];
+    const p = db.products.find(pr => pr.sku === it.sku);
+    const isPanel = p && p.kind === 'panel';
+    const qtyCell = isPanel ? `${qty} u` : `${qty} m2${boxSuffix(it)}`;
+    return [it.description || it.sku || '', isEntrega ? '—' : qtyCell, isEntrega ? '—' : usdFmt(it.unit_price), usdFmt(lineTotal(it))];
   };
   // Descuento por ítem: el ítem a precio bruto + una sub-fila "Descuento" (solo si tiene).
   const rowsFor = (list) => list.flatMap(it => {
@@ -2965,7 +2999,7 @@ function presupuestoData(rec) {
   const iva = rec.has_iva ? net * taxRate() : 0;
   const zones = [...new Set(items.map(it => it.zone).filter(Boolean))];
   // Resumen del proyecto: m² de pisos (productos con stock), cantidad de ambientes e ítems.
-  const isFloor = (it) => { const p = db.products.find(pr => pr.sku === it.sku); return p ? !!p.stockTrack : false; };
+  const isFloor = (it) => { const p = db.products.find(pr => pr.sku === it.sku); return p ? (!!p.stockTrack && p.kind !== 'panel') : false; };
   const m2 = items.filter(isFloor).reduce((s, it) => s + (Number(it.quantity) || 0), 0);
   const validDays = rec.valid_days || 10;
   const venceDate = new Date(rec.created_at ? new Date(rec.created_at) : new Date());
