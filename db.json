@@ -13343,7 +13343,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Conde 1609 PB",
-      "contract_total": 2327,
+      "contract_total": 2250,
       "items": [
         {
           "product_id": "SERV-106",
@@ -13364,11 +13364,11 @@
           "product_id": "SERV-131",
           "sku": "SERV-131",
           "description": "Servicio de Entrega",
-          "quantity": 170,
+          "quantity": 80,
           "unit_price": 1,
           "cost": 0,
           "category": "Servicio",
-          "total": 170,
+          "total": 80,
           "discount": 0,
           "image": "",
           "target_item_index": null
@@ -13392,9 +13392,9 @@
       "has_iva": false,
       "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 2327,
+        "total_invoiced": 2250,
         "total_paid": 0,
-        "balance_due": 2327
+        "balance_due": 2250
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -13403,7 +13403,8 @@
       "delivery_date": "2026-09-09",
       "delivery_date_to": "2026-09-10",
       "delivery_crew": "Hugo Ramirez",
-      "delivery_notes": "Consultorio, se coloca sobre piso de madera existente"
+      "delivery_notes": "Consultorio, se coloca sobre piso de madera existente",
+      "commission_amount": 0
     },
     {
       "id": "local-sale-1784218318495-pcjl",
