@@ -135063,11 +135063,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788456649167",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-03T17:30:47.559Z",
-      "last_message_preview": "Solicito cel de contacto para pedir info gracias",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-03T17:30:47.559Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-04T17:27:14.612Z",
+      "last_message_preview": "Victoria",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-03T17:30:47.559Z",
+      "last_outbound_at": "2026-09-04T17:27:14.612Z"
     },
     {
       "id": "conv-1788456766429-3cwk",
@@ -151513,6 +151514,46 @@
       "ts": "2026-09-04T17:26:36.659Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUwMjYwNzA0OTY0Mjk5MzozMjk5Mjc5MTIzNDg0NzI4OTY4NTM3NzQzOTc3Mjk2NjkxMgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788542822477-rmvz",
+      "conversation_id": "conv-1788456649167-s079",
+      "direction": "out",
+      "body": "Hola Diana cómo estás?",
+      "ts": "2026-09-04T17:27:01.921Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIwNjgxODY2MTQxNDM0MDozMjk5Mjc5MTcwMDg0NzcyMDk5MDMxOTI2Nzg2NTk1MjI1NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788542828581-o6gk",
+      "conversation_id": "conv-1788456649167-s079",
+      "direction": "out",
+      "body": "1136982222",
+      "ts": "2026-09-04T17:27:08.221Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIwNjgxODY2MTQxNDM0MDozMjk5Mjc5MTgxNzA2NTE2MDEzMzc0MTIzNjU3NTAxMDgxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788542828928-a4mc",
+      "conversation_id": "conv-1788456649167-s079",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-04T17:27:08.579Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIwNjgxODY2MTQxNDM0MDozMjk5Mjc5MTgyMzY4MTg5NjU1MjUxNjQxMDQ4MjM2MDMyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788542835071-ustx",
+      "conversation_id": "conv-1788456649167-s079",
+      "direction": "out",
+      "body": "Victoria",
+      "ts": "2026-09-04T17:27:14.612Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIwNjgxODY2MTQxNDM0MDozMjk5Mjc5MTkzNDk2Mzc5ODYzODU1Mjk0NjM5OTI0ODM4NAZDZD",
       "via": "ig-app"
     }
   ],
