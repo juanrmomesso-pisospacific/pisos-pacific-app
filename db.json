@@ -122237,6 +122237,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1788538498077-1138q",
+      "date": "2026-09-04T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "counterparty": "Pipi & Juan",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-024",
+      "description": "Pintura Huguito ",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 3000000,
+      "amount_usd": 1960.78,
+      "exchange_rate": 1530,
+      "fixed_variable": "Fijo",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
