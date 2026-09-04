@@ -122189,6 +122189,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1788538429912-smpp1",
+      "date": "2026-09-04T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "HR",
+      "subcategory": "Pago Instalaciones",
+      "counterparty": "Ariel Ernesto Garcia",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-016",
+      "description": "Limpieza Ayres",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 100000,
+      "amount_usd": 65.36,
+      "exchange_rate": 1529.99,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
