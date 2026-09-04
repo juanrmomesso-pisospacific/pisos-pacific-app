@@ -10,7 +10,8 @@ import { fmtMoney } from "@/lib/utils"
 import { SearchPicker } from "@/components/SearchPicker"
 import { cajasHint, m2PorCaja, noEsMultiploDeCaja } from "@/lib/boxes"
 import { productUnitLabel, isPanel } from "@/lib/panels"
-import { floorStats, reventaBreakdown, reventaFloorPrice, computeCommission, type ResellerFields } from "@/lib/reseller"
+import { floorStats, reventaBreakdown, reventaFloorPrice, type ResellerFields } from "@/lib/reseller"
+import { CommissionResellerPicker } from "@/components/CommissionResellerPicker"
 import type { Product, Quote } from "@/lib/types"
 import { looksLikeHandle, leadToQuotePrefill, type Lead } from "@/lib/leads"
 import { useConfig, taxWord } from "@/contexts/ConfigContext"
@@ -204,8 +205,6 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
     })
   }, [reventaReseller?.id, reventaBd?.total, reventaMode, floorM2, products.length])
   // Comisión: revendedor que trae al cliente (aparte del cliente final). Se calcula sobre pisos.
-  const commissionReseller = allClients.find(c => c.id === commissionResellerId && c.reseller && c.reseller_mode === "comision") || null
-  const commissionEst = commissionReseller ? computeCommission(commissionReseller.reseller_comision, items, products) : null
 
   function updateItem(idx: number, patch: Partial<LineItem>) {
     setItems(items.map((it, i) => i === idx ? { ...it, ...patch } : it))
@@ -252,8 +251,8 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       discount_total: Math.round(discountAmount * 100) / 100,   // suma de descuentos por ítem (para margen y PDF)
       discount_amount: Math.round(discountAmount * 100) / 100,
       // Revendedor por comisión (el backend congela la comisión al convertir a venta).
-      reseller_id: commissionReseller?.id || "",
-      reseller_name: commissionReseller?.name || "",
+      reseller_id: commissionResellerId || "",
+      reseller_name: allClients.find(c => c.id === commissionResellerId)?.name || "",
       currency,   // ARS para paneles (ACUDESIGN), USD para el resto
     }
     const r = isEdit
@@ -440,22 +439,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
         </div>
       )}
       {!reventaReseller && (
-        <div>
-          <FieldLabel>Revendedor por comisión (opcional)</FieldLabel>
-          {commissionReseller ? (
-            <div className="flex items-center justify-between border border-border rounded-md px-3 h-9 text-sm bg-muted/30">
-              <span className="truncate">{commissionReseller.name}{commissionEst && commissionEst.amount > 0 ? <span className="text-muted-foreground"> · comisión ≈ {fmtMoney(commissionEst.amount)}</span> : null}</span>
-              <button type="button" className="text-xs text-muted-foreground hover:text-foreground shrink-0" onClick={() => setCommissionResellerId("")}>quitar</button>
-            </div>
-          ) : (
-            <SearchPicker
-              items={allClients.filter(c => c.reseller && c.reseller_mode === "comision").map(c => ({ id: c.id, label: c.name, sub: "comisión", keywords: (c.phones || []).join(" ") }))}
-              placeholder="Buscar revendedor (trae al cliente)…"
-              onPick={(id) => setCommissionResellerId(id)}
-            />
-          )}
-          <p className="text-[11px] text-muted-foreground mt-1">El cliente paga precio de lista; la comisión se calcula sobre los pisos y se guarda en la venta.</p>
-        </div>
+        <CommissionResellerPicker clients={allClients} items={items} products={products} value={commissionResellerId} onChange={setCommissionResellerId} help />
       )}
 
       <div className="pt-2">

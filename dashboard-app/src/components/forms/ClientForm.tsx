@@ -161,20 +161,8 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
                 ) : (
                   <div className="space-y-1.5">
                     <div className="text-[11px] uppercase tracking-wide text-muted-foreground">Precio mayorista por producto</div>
-                    {Object.keys(priceList).length === 0 && <p className="text-[11px] text-muted-foreground italic">Agregá los pisos con su precio mayorista. Los que no estén en la lista se cotizan a precio de lista.</p>}
-                    {floors.filter(p => priceList[p.sku] != null).map((p) => (
-                      <div key={p.sku} className="flex items-center gap-2 text-sm">
-                        <span className="flex-1 truncate text-xs" title={p.name}>{p.name}</span>
-                        <span className="text-[10px] text-muted-foreground line-through">{fmtMoney(p.price)}</span>
-                        <Input type="number" min={0} step="0.01" value={priceList[p.sku]} onChange={(e) => setPrice(p.sku, Number(e.target.value) || 0)} className="h-8 w-24 text-right" />
-                        <Button type="button" size="icon" variant="ghost" className="h-7 w-7" onClick={() => rmPrice(p.sku)}><Trash2 className="h-3.5 w-3.5" /></Button>
-                      </div>
-                    ))}
-                    <SearchPicker
-                      items={floors.filter(p => priceList[p.sku] == null).map(p => ({ id: p.sku, label: p.name, sub: p.sku, hint: fmtMoney(p.price) }))}
-                      placeholder="Agregar piso a la lista…"
-                      onPick={(sku) => { const p = floors.find(x => x.sku === sku); if (p) setPrice(sku, p.price) }}
-                    />
+                    <PriceListEditor floors={floors} priceList={priceList} onSet={setPrice} onRemove={rmPrice}
+                      placeholder="Agregar piso a la lista…" emptyText="Agregá los pisos con su precio mayorista. Los que no estén en la lista se cotizan a precio de lista." />
                   </div>
                 )}
               </div>
@@ -217,20 +205,8 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
                 {comision.type === "price_list" && (
                   <div className="space-y-1.5">
                     <p className="text-[11px] text-muted-foreground">Precio del revendedor por producto. La <b>comisión = precio cotizado − este precio</b> (por m² de piso). Se cotiza al cliente a precio de lista; la diferencia es la comisión.</p>
-                    {Object.keys(comPriceList).length === 0 && <p className="text-[11px] text-muted-foreground italic">Agregá los pisos con el precio del revendedor.</p>}
-                    {floors.filter(p => comPriceList[p.sku] != null).map((p) => (
-                      <div key={p.sku} className="flex items-center gap-2 text-sm">
-                        <span className="flex-1 truncate text-xs" title={p.name}>{p.name}</span>
-                        <span className="text-[10px] text-muted-foreground">lista {fmtMoney(p.price)} →</span>
-                        <Input type="number" min={0} step="0.01" value={comPriceList[p.sku]} onChange={(e) => setComPrice(p.sku, Number(e.target.value) || 0)} className="h-8 w-24 text-right" />
-                        <Button type="button" size="icon" variant="ghost" className="h-7 w-7" onClick={() => rmComPrice(p.sku)}><Trash2 className="h-3.5 w-3.5" /></Button>
-                      </div>
-                    ))}
-                    <SearchPicker
-                      items={floors.filter(p => comPriceList[p.sku] == null).map(p => ({ id: p.sku, label: p.name, sub: p.sku, hint: fmtMoney(p.price) }))}
-                      placeholder="Agregar piso…"
-                      onPick={(sku) => { const p = floors.find(x => x.sku === sku); if (p) setComPrice(sku, p.price) }}
-                    />
+                    <PriceListEditor floors={floors} priceList={comPriceList} onSet={setComPrice} onRemove={rmComPrice}
+                      placeholder="Agregar piso…" emptyText="Agregá los pisos con el precio del revendedor." />
                   </div>
                 )}
               </div>
@@ -243,3 +219,29 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
 }
 
 type ComisionType = "pct" | "per_m2" | "tiered_m2" | "price_list"
+
+// Editor de lista de precios por piso (reusado por mayorista-lista y comisión-lista).
+function PriceListEditor({ floors, priceList, onSet, onRemove, placeholder, emptyText }: {
+  floors: Product[]; priceList: Record<string, number>
+  onSet: (sku: string, price: number) => void; onRemove: (sku: string) => void
+  placeholder: string; emptyText: string
+}) {
+  return (
+    <>
+      {Object.keys(priceList).length === 0 && <p className="text-[11px] text-muted-foreground italic">{emptyText}</p>}
+      {floors.filter(p => priceList[p.sku] != null).map((p) => (
+        <div key={p.sku} className="flex items-center gap-2 text-sm">
+          <span className="flex-1 truncate text-xs" title={p.name}>{p.name}</span>
+          <span className="text-[10px] text-muted-foreground">lista {fmtMoney(p.price)} →</span>
+          <Input type="number" min={0} step="0.01" value={priceList[p.sku]} onChange={(e) => onSet(p.sku, Number(e.target.value) || 0)} className="h-8 w-24 text-right" />
+          <Button type="button" size="icon" variant="ghost" className="h-7 w-7" onClick={() => onRemove(p.sku)}><Trash2 className="h-3.5 w-3.5" /></Button>
+        </div>
+      ))}
+      <SearchPicker
+        items={floors.filter(p => priceList[p.sku] == null).map(p => ({ id: p.sku, label: p.name, sub: p.sku, hint: fmtMoney(p.price) }))}
+        placeholder={placeholder}
+        onPick={(sku) => { const p = floors.find(x => x.sku === sku); if (p) onSet(sku, p.price) }}
+      />
+    </>
+  )
+}
