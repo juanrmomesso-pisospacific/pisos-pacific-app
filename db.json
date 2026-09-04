@@ -124013,7 +124013,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-09-03T12:04:09.000Z"
+      "last_touch_at": "2026-09-04T08:26:13.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -130566,12 +130566,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 44,
-      "last_message_at": "2026-09-03T12:04:09.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-01 00:00:00 UTC to 2026-09-02 00:00:00 UTC.",
+      "unread_count": 45,
+      "last_message_at": "2026-09-04T08:26:13.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-02 00:00:00 UTC to 2026-09-03 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-03T12:04:09.000Z",
+      "last_inbound_at": "2026-09-04T08:26:13.000Z",
       "ignored": true
     },
     {
@@ -151036,6 +151036,14 @@
       "body": "✉️ See Fei-Fei Li and Adam Grant live at Cloudflare Connect\n\nConnect 2026_Email #11_Everyone both.html Fei-Fei Li and Adam Grant join the Connect 2026 main stage. The NextNet Speaker Series is live. Cloudflare Connect · San Francisco See Fei-Fei Li and Adam Grant live at Cloudflare Connect. Every team building with AI is asking two questions: where the technology is going, and how to get people to actually adopt it. At Connect, you'll hear from two people who've spent their careers on each. Fei-Fei Li AI pioneer and professor, Stanford University Adam Grant Organizational psychologist and bestselling author Live on the main stage in San Francisco - alongside 100+ technical sessions and 5,000+ architects, developers, and security leaders. Add them to your agenda. Register now Start building · Log in · Visit Community Copyright © 2026 Cloudflare, Inc. 101 Townsend Street, San Francisco, CA 94107 cloudflare.com · Privacy policy · Unsubscribe LinkedIn · X · Instagram",
       "ts": "2026-09-04T04:21:07.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a06b868e730",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 14f3570d39ad4435835b682e88a791f8\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-02 00:00:00 UTC to 2026-09-03 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-09-04T08:26:13.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -158653,7 +158661,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-04T02:03:39.910Z",
     "gmail_seen_ids": [
-      "19f030843d1d9952",
       "19f03cd5efa0d2b0",
       "19f03e3847b16492",
       "19f04292c8f57667",
@@ -159452,7 +159459,8 @@
       "1a069f10fef30837",
       "1a06a6c3891eb824",
       "1a06aab727b11cdb",
-      "1a06aa62292ba6a4"
+      "1a06aa62292ba6a4",
+      "1a06b868e730ef7c"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -160532,7 +160540,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU0NDU0MTU0OTA5Mzg1NjozMjk5MTM0NzU3NTc4MjM2NDc1NjI5OTkyODMwMTQ2OTY5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU0NDU0MTU0OTA5Mzg1NjozMjk5MTM5NTQ2MjcwMzQ5MjE4NDgxNzQ0MDY4Njg2NjQzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU0NDU0MTU0OTA5Mzg1NjozMjk5MTM5NTU2NjgxMDgyODMxMTI4OTgyNTg1NTUzNzE1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDk5NTkyNjM0NTM3MTY5NDozMjk5MTg0MjMzMDExNTY5MTk4NjEzODIyNTY4MTg5MTMyOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDk5NTkyNjM0NTM3MTY5NDozMjk5MTg0MjMzMDExNTY5MTk4NjEzODIyNTY4MTg5MTMyOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMjk5MjE5NzEwMzY5ODE0ODY2ODI2MDI4MzQyMzEyOTYwMAZDZD"
     ],
     "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
     "warehouses": [
