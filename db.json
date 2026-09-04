@@ -122261,6 +122261,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1788539268542-k0hi2",
+      "date": "2026-09-04T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "HR",
+      "subcategory": "Pago Instalaciones",
+      "counterparty": "Hugo Ramirez",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-017",
+      "description": "Pago que no hicimos porque cancelamos con devo de auto. ",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 978000,
+      "amount_usd": 639.22,
+      "exchange_rate": 1529.99,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
