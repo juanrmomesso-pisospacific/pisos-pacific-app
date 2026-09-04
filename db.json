@@ -122141,6 +122141,30 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mtmb8d8m-001"
+    },
+    {
+      "id": "mov-1788538367212-3x9ve",
+      "date": "2026-09-04T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "HR",
+      "subcategory": "Pago Instalaciones",
+      "counterparty": "Ariel Ernesto Garcia",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-016",
+      "description": "Reparación Austria y Limpiezas",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 1220000,
+      "amount_usd": 797.39,
+      "exchange_rate": 1529.99,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
