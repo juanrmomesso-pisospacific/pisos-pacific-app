@@ -349,6 +349,36 @@ export async function remitoPdf(data) {
   return toBuffer(doc);
 }
 
+// Recibo de cobro (fondo blanco, logo oscuro). Layout del modelo: fecha + N° arriba a la
+// derecha; Recibí de / La suma de / forma de pago / Por concepto de / Total; firma + aclaración.
+export async function reciboPdf(data) {
+  const doc = newDoc();
+  doc.save();
+  doc.scale(PX);
+  const R = PAGE.w - PADX;
+  try { doc.image(ASSET(data.logo || 'pacific_lockup_arg.png'), PADX, 40, { height: 42 }); } catch { /* sin logo */ }
+  line(doc, `Fecha: ${data.fecha || ''}`, R, 62, { size: 12.5, align: 'right', color: C.ink });
+  line(doc, `Recibo N: ${data.numero || ''}`, R, 82, { size: 12.5, align: 'right', color: C.ink });
+  let y = 170;
+  const row = (txt) => { const h = para(doc, txt, PADX, y, BODY_W, { size: 13, color: C.ink }); y += h + 22; };
+  row(`Recibí de: ${data.client || ''}`);
+  row(`La suma de: ${data.words || ''}`);
+  row(`forma de pago: ${data.method || ''}`);
+  row(`Por concepto de: ${data.concept || ''}`);
+  line(doc, `Total: ${data.total || ''}`, PADX, y, { size: 14, font: 'semi', color: C.ink });
+  y += 70;
+  line(doc, 'Firma y aclaración:', PADX, y, { size: 13, color: C.ink });
+  y += 22;
+  if (data.signature) { try { doc.image(ASSET(data.signature), PADX, y, { height: 62 }); } catch { /* sin firma */ } }
+  y += 70;
+  hline(doc, PADX, y, PADX + 230, C.ink2, 0.8);
+  line(doc, data.signer || '', PADX, y + 7, { size: 12, color: C.ink });
+  doc.restore();
+  return toBuffer(doc);
+}
+
 export function generatePdf(data) {
-  return data?.doc_type === 'remito' ? remitoPdf(data) : presupuestoPdf(data);
+  if (data?.doc_type === 'remito') return remitoPdf(data);
+  if (data?.doc_type === 'recibo') return reciboPdf(data);
+  return presupuestoPdf(data);
 }

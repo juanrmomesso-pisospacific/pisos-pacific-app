@@ -18,6 +18,7 @@ import { findClientMatch } from './integrations/client-match.mjs';
 import { normProd } from './integrations/product-match.mjs';
 import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
+import { montoALetras } from './pdf/num2words.mjs';
 import { computeCommission as computeResellerCommission } from './integrations/reseller.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -2831,6 +2832,47 @@ app.post('/api/sales/:id/payment', (req, res) => {
   save();
   res.json(s);
 });
+
+// Recibo de un cobro. cobro_ref = id del movimiento de caja (finanzas) o "pay-<i>" (cobro directo
+// en la venta). Numera con db.settings.receipt_next (configurable). Idempotente por (venta, cobro):
+// re-emitir devuelve el mismo N°. El concepto es editable.
+app.post('/api/sales/:id/receipt', requireAdmin, (req, res) => {
+  const s = db.sales.find(x => x.id === req.params.id);
+  if (!s) return res.sendStatus(404);
+  db.receipts = db.receipts || [];
+  const ref = String(req.body?.cobro_ref || '');
+  let amount = 0, currency = 'USD', method = '', date = '';
+  if (ref.startsWith('pay-')) {
+    const p = (s.payments || [])[Number(ref.slice(4))];
+    if (!p) return res.status(404).json({ error: 'cobro no encontrado' });
+    amount = Number(p.amount) || 0; currency = s.currency === 'ARS' ? 'ARS' : 'USD'; method = p.method || 'Efectivo'; date = p.ts;
+  } else {
+    const m = db.cashflow.find(x => x.id === ref);
+    if (!m) return res.status(404).json({ error: 'cobro no encontrado' });
+    currency = m.currency === 'ARS' ? 'ARS' : 'USD';
+    amount = currency === 'ARS' ? (Number(m.amount_ars) || 0) : (Number(m.amount_usd) || 0);
+    method = m.caja_name || 'Transferencia'; date = m.date;
+  }
+  let rec = db.receipts.find(r => r.sale_id === s.id && r.cobro_ref === ref);
+  if (!rec) {
+    const no = Number(db.settings.receipt_next) || 1;
+    db.settings.receipt_next = no + 1;
+    rec = { no, sale_id: s.id, cobro_ref: ref, ts: new Date().toISOString() };
+    db.receipts.push(rec);
+  }
+  rec.amount = amount; rec.currency = currency; rec.method = method; rec.date = date;
+  rec.client = s.client_name || '';
+  rec.concept = String(req.body?.concept || '').trim() || defaultReceiptConcept(s);
+  rec.signer = String(req.body?.signer || '').trim() || s.seller_name || companyCfg().name;
+  save();
+  res.json({ no: rec.no });
+});
+
+app.get('/api/receipts/:no/pdf', requireAuth, (req, res) => {
+  const rec = (db.receipts || []).find(r => String(r.no) === String(req.params.no));
+  if (!rec) return res.sendStatus(404);
+  renderPdf(reciboData(rec), res, pdfFilename(`Recibo N${String(rec.no).padStart(6, '0')}`, rec.client));
+});
 // Linkear un MOVIMIENTO de caja (cobro que entró por banco/MP) a una VENTA: le pone el sale_ref y lo
 // clasifica como cobro. El saldo de la venta se DERIVA de los movimientos con sale_ref (ver GET
 // /api/sales: cashflow_paid = Σ amount_usd), así que no hay que tocar financial_position — el cobro
@@ -3058,6 +3100,35 @@ function presupuestoData(rec) {
   // Compat: cotizaciones viejas con descuento global (sin descuento por ítem).
   if (!hasItemDisc && discount > 0) rows.push(['Descuento', '—', '—', '-' + money(discount)]);
   return { ...base, mode: 'single', rows };
+}
+// Concepto por defecto del recibo (editable al emitir). "Pago de venta N° X por anticipo/saldo de <producto>".
+function defaultReceiptConcept(s) {
+  const floor = (s.items || []).find(it => { const p = db.products.find(x => x.sku === it.sku); return p && p.stockTrack; });
+  const prod = floor ? (floor.description || floor.category || 'productos') : ((s.items || [])[0]?.description || 'productos');
+  const paid = Number(s.financial_position?.total_paid) || 0;
+  const etapa = paid < (Number(s.contract_total) || 0) ? 'anticipo' : 'saldo';
+  return `Pago de venta N° ${s.quote_number || s.id} por ${etapa} de ${prod}.`;
+}
+// Datos del recibo → PDF (doc_type 'recibo'). Marca ACUDESIGN si el cobro es en pesos (paneles).
+function reciboData(rec) {
+  const loc = db.settings.locale || 'es-AR';
+  const curr = rec.currency === 'ARS' ? 'ARS' : 'USD';
+  const total = curr === 'ARS'
+    ? '$ ' + Number(rec.amount || 0).toLocaleString(loc, { maximumFractionDigits: 2 })
+    : 'u$ ' + Number(rec.amount || 0).toLocaleString(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return {
+    doc_type: 'recibo',
+    fecha: rec.date ? new Date(rec.date).toLocaleDateString(loc) : new Date().toLocaleDateString(loc),
+    numero: String(rec.no).padStart(6, '0'),
+    client: rec.client || '',
+    words: montoALetras(rec.amount, curr),
+    method: String(rec.method || 'Efectivo').toUpperCase(),
+    concept: rec.concept || '',
+    total,
+    signer: rec.signer || companyCfg().name,
+    logo: curr === 'ARS' ? 'acudesign_lockup_dark.png' : 'pacific_lockup_arg.png',
+    signature: db.settings.receipt_signature || null,   // PNG de firma (si el dueño lo carga)
+  };
 }
 // Nombre de archivo seguro para Content-Disposition: sin acentos ni caracteres ilegales.
 function pdfFilename(...parts) {

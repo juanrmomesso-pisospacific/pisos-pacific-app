@@ -52,6 +52,7 @@ export const api = {
   saleTransition:  (id: string, status: string) => post(`/api/sales/${id}/transition`, { status }),
   commissionPaid:  (id: string, paid: boolean) => post(`/api/sales/${id}/commission-paid`, { paid }),
   commissionSet:   (id: string, body: { amount?: number; auto?: boolean }) => post(`/api/sales/${id}/commission`, body),
+  mintReceipt:     (id: string, body: { cobro_ref: string; concept?: string }) => post(`/api/sales/${id}/receipt`, body) as Promise<{ no: number }>,
   // Cobro directo sobre la venta (financial_position) — camino de las operaciones SIN módulo
   // finanzas (no crea movimiento de caja; con finanzas el cobro se linkea desde el Libro).
   salePayment:     (id: string, amount: number, method?: string, notes?: string, date?: string) =>

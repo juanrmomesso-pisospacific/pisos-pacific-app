@@ -574,6 +574,10 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   const [payAmount, setPayAmount] = useState<number>(0)
   const [payCaja, setPayCaja] = useState("")
   const [payDate, setPayDate] = useState("")
+  // Recibo de un cobro: el cobro elegido + concepto editable (vacío = automático del server).
+  const [receiptFor, setReceiptFor] = useState<string | null>(null)
+  const [receiptConcept, setReceiptConcept] = useState("")
+  const mintReceipt = useAction(api.mintReceipt)
   // Preparación del remito (inspección)
   const [remitoItems, setRemitoItems] = useState<{ description: string; quantity: number; unit: string }[]>([])
   const [remitoConfirmed, setRemitoConfirmed] = useState(false)
@@ -746,10 +750,26 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
             {cobros.length > 0 && (
               <div className="space-y-1.5 mt-2">
                 {cobros.map((m) => (
-                  <div key={m.id} className="rounded-md border border-border px-2 py-1.5 flex items-center justify-between text-xs gap-2">
-                    <span>{m.date ? new Date(m.date).toLocaleDateString(appLocale()) : "—"}</span>
-                    <span className="text-muted-foreground truncate">{m.caja_name}</span>
-                    <span className="tabular">{fmtMoney(m.amount_usd || 0)}</span>
+                  <div key={m.id}>
+                    <div className="rounded-md border border-border px-2 py-1.5 flex items-center justify-between text-xs gap-2">
+                      <span>{m.date ? new Date(m.date).toLocaleDateString(appLocale()) : "—"}</span>
+                      <span className="text-muted-foreground truncate flex-1">{m.caja_name}</span>
+                      <span className="tabular">{fmtMoney(m.amount_usd || 0)}</span>
+                      {isAdmin && <button type="button" className="text-[11px] text-primary hover:underline shrink-0" onClick={() => { setReceiptFor(receiptFor === m.id ? null : m.id); setReceiptConcept("") }}>Recibo</button>}
+                    </div>
+                    {receiptFor === m.id && (
+                      <div className="rounded-md border border-dashed border-border p-2 mt-1 space-y-1.5 bg-muted/20">
+                        <div className="text-[10px] uppercase tracking-wide text-muted-foreground">Concepto (opcional · vacío = automático)</div>
+                        <Input value={receiptConcept} onChange={(e) => setReceiptConcept(e.target.value)} placeholder="Pago de venta N°… (automático)" className="h-8 text-xs" />
+                        <div className="flex items-center gap-2">
+                          <Button size="sm" className="h-7" disabled={mintReceipt.busy} onClick={async () => {
+                            const r = await mintReceipt.run(sale.id, { cobro_ref: m.id, concept: receiptConcept.trim() || undefined })
+                            if (r) { window.open(`/api/receipts/${r.no}/pdf`, "_blank"); setReceiptFor(null) }
+                          }}>{mintReceipt.busy ? "Generando…" : "Generar recibo"}</Button>
+                          <button type="button" className="text-[11px] text-muted-foreground" onClick={() => setReceiptFor(null)}>cancelar</button>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
