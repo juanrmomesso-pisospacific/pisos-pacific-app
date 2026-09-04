@@ -129027,6 +129027,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-04T03:17:51.000Z",
       "last_touch_at": "2026-09-04T03:17:51.000Z"
+    },
+    {
+      "id": "lead-email-1a06c3aa1772",
+      "name": "Lihuen Di Marco",
+      "email": "dimarcomarialihuen@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Juan Bautista Alberdi 447, Monte Grande, GBA Sur",
+      "postal_code": "1842",
+      "approx_m2": 10,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 10m² · Sin Colocación · CP 1842",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-04T11:42:56.000Z",
+      "last_touch_at": "2026-09-04T11:42:56.000Z"
     }
   ],
   "conversations": [
@@ -134752,6 +134769,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-04T03:17:51.000Z"
+    },
+    {
+      "id": "conv-email-1a06c3aa1772",
+      "channel": "email",
+      "contact_id": "dimarcomarialihuen@gmail.com",
+      "contact_name": "Lihuen Di Marco",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a06c3aa1772",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-04T11:42:56.000Z",
+      "last_message_preview": "Formulario web — 10m² · Sin Colocación · CP 1842 · Juan Bautista Alberdi 447, Monte Grande, GBA Sur",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-04T11:42:56.000Z"
     }
   ],
   "messages": [
@@ -151044,6 +151076,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 14f3570d39ad4435835b682e88a791f8\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-02 00:00:00 UTC to 2026-09-03 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-04T08:26:13.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a06c3aa1772",
+      "conversation_id": "conv-email-1a06c3aa1772",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 10m² · Sin Colocación · CP 1842 · Juan Bautista Alberdi 447, Monte Grande, GBA Sur",
+      "ts": "2026-09-04T11:42:56.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -158661,8 +158701,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-04T02:03:39.910Z",
     "gmail_seen_ids": [
-      "19f03cd5efa0d2b0",
-      "19f03e3847b16492",
       "19f04292c8f57667",
       "19f05b94f9676f4b",
       "19f082ddf58a2be2",
@@ -159460,7 +159498,9 @@
       "1a06a6c3891eb824",
       "1a06aab727b11cdb",
       "1a06aa62292ba6a4",
-      "1a06b868e730ef7c"
+      "1a06b868e730ef7c",
+      "1a06bfa462196244",
+      "1a06c3aa1772a47a"
     ],
     "cash_sessions": {
       "1136982222": {
