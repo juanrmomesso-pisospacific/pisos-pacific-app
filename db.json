@@ -123903,7 +123903,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-22T15:30:51.000Z",
-      "last_touch_at": "2026-09-03T16:44:48.000Z"
+      "last_touch_at": "2026-09-04T14:42:40.000Z"
     },
     {
       "id": "lead-instagram-1782150900322",
@@ -130525,12 +130525,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19eeff52b055",
       "status": "closed",
-      "unread_count": 9,
-      "last_message_at": "2026-09-03T16:44:48.000Z",
-      "last_message_preview": "Victoria,\r\n\r\nComo estas? Espero que bien. Un agente me confirmo tarifas mas bajas dentro de la misma vigencia de ayer pero habria que espera",
+      "unread_count": 10,
+      "last_message_at": "2026-09-04T14:42:40.000Z",
+      "last_message_preview": "Hola Vicky,\r\n\r\nMuchas gracias por confiarnos esta nueva carga!\r\nAjusto el asunto del correo y sumo a Caro para un correcto seguimiento de lo",
       "email_subject": "Re: COTIZACION Shanghai - Buenos Aires | PDPG 2619 | Juan Rodriguez Momesso",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-03T16:44:48.000Z",
+      "last_inbound_at": "2026-09-04T14:42:40.000Z",
       "ignored": true
     },
     {
@@ -151222,6 +151222,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 75m² · Con Colocación · CP 1426 · Avenida federico lacroze",
       "ts": "2026-09-04T13:56:12.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a06cdf97a1f",
+      "conversation_id": "conv-email-19eeff52b055",
+      "direction": "in",
+      "body": "✉️ Re: Comex+Cargo // Momesso // FOB | Shanghai Buenos Aires | PDPG 2626 // CCF-MI-00000134\n\nHola Vicky,\r\n\r\nMuchas gracias por confiarnos esta nueva carga!\r\nAjusto el asunto del correo y sumo a Caro para un correcto seguimiento de los avances de la coordinación.\r\nSumo nuestra referencia y comparto datos del agente para esta carga!\r\n\r\n￼\r\n\r\nLos mantenemos informados sobre los avances.\r\n\r\nBuen viernes!!\r\n\r\nאנחנו עם ישראל\r\n\r\nSaludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n\r\nJuan M. Garcia Barcia\r\nGrupo Comex+ // Comex+Cargo\r\nOficina Puerto Madero\r\nTel.: (+54)114331-2207/1893\r\nCel.: (+54) 911 7098-2746\r\nAv. Alicia Moreau de Justo 1150 – Of. A-106 // (C1107AAX) – C.A.B.A., Argentina\r\n\r\n\r\nEl 3 sep. 2026, a las 22:02, Victoria Pisos Pacific <victoria@pisospacific.com> escribió:\r\n\r\nHola Juan,\r\n\r\nMuchas gracias. Confirmamos la opción de 2 contenedores 40’NOR a USD 8.550.\r\n\r\nSi conseguís una mejor tarifa, dale para adelante. En caso de que no se pueda cargar o haya alguna modificación en la tarifa, por favor manteneme al tanto.\r\n\r\nPara que quede claro seria a partir del 15 de septiembre. Estamos ok?\r\n\r\n\r\nSaludos,\r\nVictoria\r\n\r\n\r\nEl jue, 3 sept 2026 a las 13:45, Juan Garcia Barcia (<juangb@grupocomexmas.com <mailto:juangb@grupocomexmas.com>>) escribió:\r\n> Victoria,\r\n> \r\n> Como estas? Espero que bien. Un agente me confirmo tarifas mas bajas dentro de la misma vigencia de ayer pero habria que esperar a estar mas cerca del 15/09 para tener valores actualizados para después de ese dia que es cuando estaria lista la carga.\r\n> \r\n> Condición de ve",
+      "ts": "2026-09-04T14:42:40.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -158911,7 +158919,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-04T02:03:39.910Z",
     "gmail_seen_ids": [
-      "19f08d81d4c75166",
       "19f08e381bdf86e9",
       "19f08f32acda12d2",
       "19f0d53dbbf8b05b",
@@ -159710,7 +159717,8 @@
       "1a06c3aa1772a47a",
       "1a06c4afca3800d6",
       "1a06c4afb6c553af",
-      "1a06cb4a510778d9"
+      "1a06cb4a510778d9",
+      "1a06cdf97a1fb3b5"
     ],
     "cash_sessions": {
       "1136982222": {
