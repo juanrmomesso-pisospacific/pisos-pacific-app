@@ -420,6 +420,18 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
   }
 }
 
+// Config de recibos (AR): número inicial de la serie (sigue los recibos manuales del dueño) +
+// firma de Juan (asset firma-juan.png). Idempotente: solo si no están seteados.
+{
+  if (db.products.some(p => p.sku === 'PROD-026')) {
+    let ch = false;
+    if (db.settings.receipt_next == null) { db.settings.receipt_next = 112; ch = true; }
+    if (db.settings.receipt_signature == null) { db.settings.receipt_signature = 'firma-juan.png'; ch = true; }
+    if (db.settings.receipt_signer == null) { db.settings.receipt_signer = 'Juan Rodriguez Momesso'; ch = true; }
+    if (ch) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log('Config recibos: N° inicial + firma'); }
+  }
+}
+
 // Backfill de revendedores (sep-2026, provisto por el dueño). Estudios/arquitectos → comisión
 // 7% SUGERIDA (editable por venta); SAMACO → mayorista con el Plan Reventa del PDF. Idempotente:
 // solo marca clientes que NO son revendedor todavía (una edición desde la ficha se preserva).
@@ -2863,7 +2875,8 @@ app.post('/api/sales/:id/receipt', requireAdmin, (req, res) => {
   rec.amount = amount; rec.currency = currency; rec.method = method; rec.date = date;
   rec.client = s.client_name || '';
   rec.concept = String(req.body?.concept || '').trim() || defaultReceiptConcept(s);
-  rec.signer = String(req.body?.signer || '').trim() || s.seller_name || companyCfg().name;
+  // La aclaración es quien firma: por defecto el firmante configurado (dueño de la firma), no la empresa.
+  rec.signer = String(req.body?.signer || '').trim() || db.settings.receipt_signer || s.seller_name || companyCfg().name;
   save();
   res.json({ no: rec.no });
 });
