@@ -124145,7 +124145,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-22T15:30:51.000Z",
-      "last_touch_at": "2026-09-04T14:42:40.000Z"
+      "last_touch_at": "2026-09-04T21:49:28.000Z"
     },
     {
       "id": "lead-instagram-1782150900322",
@@ -130767,12 +130767,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19eeff52b055",
       "status": "closed",
-      "unread_count": 10,
-      "last_message_at": "2026-09-04T14:42:40.000Z",
-      "last_message_preview": "Hola Vicky,\r\n\r\nMuchas gracias por confiarnos esta nueva carga!\r\nAjusto el asunto del correo y sumo a Caro para un correcto seguimiento de lo",
+      "unread_count": 11,
+      "last_message_at": "2026-09-04T21:49:28.000Z",
+      "last_message_preview": "Vicky,\r\n\r\nCómo estás? Por ahora no hay tarifas post esa vigencia. Lo que podemos\r\nhacer es el 13/9 aproximadamente revisar nuevamente como v",
       "email_subject": "Re: COTIZACION Shanghai - Buenos Aires | PDPG 2619 | Juan Rodriguez Momesso",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-04T14:42:40.000Z",
+      "last_inbound_at": "2026-09-04T21:49:28.000Z",
       "ignored": true
     },
     {
@@ -151563,6 +151563,14 @@
       "body": "Belgrano",
       "ts": "2026-09-04T19:17:47.736Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a06e6623e45",
+      "conversation_id": "conv-email-19eeff52b055",
+      "direction": "in",
+      "body": "✉️ Re: Comex+Cargo // Momesso // FOB | Shanghai Buenos Aires | PDPG 2626 // CCF-MI-00000134\n\nVicky,\r\n\r\nCómo estás? Por ahora no hay tarifas post esa vigencia. Lo que podemos\r\nhacer es el 13/9 aproximadamente revisar nuevamente como vienen los valores\r\npara después del 15/9. Y a partir de ahí ver si avanzamos o reevaluamos.\r\n\r\nTe parece?\r\n\r\nSlds!!!\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\n\r\nJuan M. Garcia Barcia\r\n\r\n*Grupo Comex+ // Comex+CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nCel.: (+54) 9117098-2746\r\nAv. Alicia Moreau de Justo 1150 – Of. C-306 // (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\nEl El vie, 4 sept 2026 a la(s) 16:45, Victoria Pisos Pacific <\r\nvictoria@pisospacific.com> escribió:\r\n\r\n> Hola Juan,\r\n>\r\n> Tengo una duda con respecto a la vigencia indicada hasta el 14/09, ya que\r\n> la carga estará lista a partir del 15/09.\r\n>\r\n> Estamos bien con esto?\r\n>\r\n> Saludos,\r\n> Victoria\r\n>\r\n>\r\n> El vie, 4 sept 2026 a las 11:43, Juan Garcia Barcia (<\r\n> juangb@grupocomexmas.com>) escribió:\r\n>\r\n>> Hola Vicky,\r\n>>\r\n>> Muchas gracias por confiarnos esta nueva carga!\r\n>> Ajusto el asunto del correo y sumo a Caro para un correcto seguimiento de\r\n>> los avances de la coordinación.\r\n>> Sumo nuestra referencia y comparto datos del agente para esta carga!\r\n>>\r\n>> [image: image001.png]\r\n>>\r\n>> Los mantenemos informados sobre los avances.\r\n>>\r\n>> Buen viernes!!\r\n>>\r\n>> אנחנו עם ישראל\r\n>>\r\n>>\r\n>> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n>> Cordiali Saluti*\r\n>> Juan M. Garcia Barcia\r\n>>\r\n>>",
+      "ts": "2026-09-04T21:49:28.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -159306,8 +159314,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-04T02:03:39.910Z",
     "gmail_seen_ids": [
-      "19f12a6ca5f90ed4",
-      "19f12deb5ac29b83",
       "19f134d8327489d4",
       "19f137e687f0df0d",
       "19f13b7e4f7c3b4a",
@@ -160105,7 +160111,9 @@
       "1a06df49dcfee685",
       "1a06e1edbbba8aa6",
       "1a06e1d1f28fc061",
-      "1a06e1c04cffa89e"
+      "1a06e1c04cffa89e",
+      "1a06e6623e4506a6",
+      "1a06e64a86f7e977"
     ],
     "cash_sessions": {
       "1136982222": {
