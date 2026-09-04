@@ -27,15 +27,22 @@ function centenasALetras(n, apocope) {
   return out;
 }
 
+// 0..999.999 a palabras (bloque de "miles"). apocope en las centenas iniciales por si sigue "MIL".
+function milesALetras(n, apocope) {
+  if (n < 1000) return centenasALetras(n, apocope);
+  const miles = Math.floor(n / 1000), resto = n % 1000;
+  const milesTxt = miles === 1 ? 'MIL' : centenasALetras(miles, true) + ' MIL';
+  return (milesTxt + (resto ? ' ' + centenasALetras(resto, apocope) : '')).trim();
+}
+
 function enteroALetras(n) {
   if (n === 0) return 'CERO';
-  let out = '';
   const millones = Math.floor(n / 1e6);
-  const miles = Math.floor((n % 1e6) / 1000);
-  const resto = n % 1000;
-  if (millones) out += (millones === 1 ? 'UN MILLÓN' : centenasALetras(millones, true) + ' MILLONES') + ' ';
-  if (miles) out += (miles === 1 ? 'MIL' : centenasALetras(miles, true) + ' MIL') + ' ';
-  if (resto) out += centenasALetras(resto, false);
+  const resto = n % 1e6;
+  let out = '';
+  // millones puede ser hasta 999.999 → milesALetras (no solo centenasALetras 0..999).
+  if (millones) out += (millones === 1 ? 'UN MILLÓN' : milesALetras(millones, true) + ' MILLONES') + (resto ? ' ' : '');
+  if (resto) out += milesALetras(resto, false);
   return out.trim();
 }
 
@@ -45,8 +52,9 @@ function enteroALetras(n) {
  */
 export function montoALetras(amount, currency = 'USD') {
   const n = Math.max(0, Number(amount) || 0);
-  const entero = Math.floor(n);
-  const centavos = Math.round((n - entero) * 100);
+  let entero = Math.floor(n);
+  let centavos = Math.round((n - entero) * 100);
+  if (centavos >= 100) { entero += 1; centavos = 0; }   // 0.999 → redondeo a 100 rueda al entero
   const moneda = currency === 'ARS' ? 'PESOS' : 'DÓLARES';
   const letras = enteroALetras(entero);
   const cent = centavos > 0 ? ` CON ${centenasALetras(centavos, false)} CENTAVOS` : '';

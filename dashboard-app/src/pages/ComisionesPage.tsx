@@ -27,11 +27,11 @@ export default function ComisionesPage() {
   ), [sales])
 
   const groups = useMemo(() => {
-    const m = new Map<string, { name: string; sales: Sale[]; generado: number; pagado: number }>()
+    const m = new Map<string, { id: string; name: string; sales: Sale[]; generado: number; pagado: number }>()
     for (const s of rows) {
       const id = s.reseller_id!
       const name = clients.find(c => c.id === id)?.name || s.reseller_name || "—"
-      const g = m.get(id) ?? { name, sales: [], generado: 0, pagado: 0 }
+      const g = m.get(id) ?? { id, name, sales: [], generado: 0, pagado: 0 }
       const amt = Number(s.commission_amount) || 0
       g.sales.push(s)
       g.generado += amt
@@ -65,7 +65,7 @@ export default function ComisionesPage() {
         ) : groups.map((g) => {
           const gPend = g.generado - g.pagado
           return (
-            <Card key={g.name}>
+            <Card key={g.id}>
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-center justify-between text-base">
                   <span>{g.name}</span>

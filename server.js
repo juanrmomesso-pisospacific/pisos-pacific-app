@@ -949,7 +949,9 @@ app.get('/api/sales',    (_, res) => {
   res.json(db.sales.map(s => {
     const out = { ...s, ...saleMargin(s) };
     const cashflow_paid = paidByRef[s.quote_number];
-    if (cashflow_paid != null) {
+    // Ventas en pesos (paneles): contract_total está en ARS y cashflow_paid suma amount_usd →
+    // no mezclar. El saldo cae a financial_position (en la moneda de la venta).
+    if (cashflow_paid != null && s.currency !== 'ARS') {
       const paid = Math.round(cashflow_paid * 100) / 100;
       out.cashflow_paid = paid;
       out.cashflow_balance_due = Math.round((s.contract_total - paid) * 100) / 100;
@@ -2881,7 +2883,7 @@ app.post('/api/sales/:id/receipt', requireAdmin, (req, res) => {
   res.json({ no: rec.no });
 });
 
-app.get('/api/receipts/:no/pdf', requireAuth, (req, res) => {
+app.get('/api/receipts/:no/pdf', requireAdmin, (req, res) => {   // recibos = solo admin (evita enumeración por vendors)
   const rec = (db.receipts || []).find(r => String(r.no) === String(req.params.no));
   if (!rec) return res.sendStatus(404);
   renderPdf(reciboData(rec), res, pdfFilename(`Recibo N${String(rec.no).padStart(6, '0')}`, rec.client));

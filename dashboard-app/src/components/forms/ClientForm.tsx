@@ -33,7 +33,7 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
     reseller_comision: src?.reseller_comision ?? { type: "pct", pct: 10 },
   })
   const products = useApi<Product[]>("/api/products").data ?? []
-  const floors = products.filter(p => p.stockTrack && p.active !== false)
+  const floors = products.filter(p => p.stockTrack && p.kind !== "panel" && p.active !== false)   // paneles no van en listas de revendedor
   const create = useAction(api.create)
   const update = useAction(api.update)
   const action = isEdit ? update : create
