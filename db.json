@@ -129010,6 +129010,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-04T03:09:16.430Z",
       "last_touch_at": "2026-09-04T03:09:16.430Z"
+    },
+    {
+      "id": "lead-email-1a06a6c3891e",
+      "name": "Barbara Martinez",
+      "email": "mbarb6033@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Concepción del Uruguay Entre Rios",
+      "postal_code": "3260",
+      "approx_m2": 100,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 100m² · Con Colocación · CP 3260",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-04T03:17:51.000Z",
+      "last_touch_at": "2026-09-04T03:17:51.000Z"
     }
   ],
   "conversations": [
@@ -134720,6 +134737,21 @@
       "last_message_preview": "Quiero cotizar",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-04T03:09:16.430Z"
+    },
+    {
+      "id": "conv-email-1a06a6c3891e",
+      "channel": "email",
+      "contact_id": "mbarb6033@gmail.com",
+      "contact_name": "Barbara Martinez",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a06a6c3891e",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-04T03:17:51.000Z",
+      "last_message_preview": "Formulario web — 100m² · Con Colocación · CP 3260 · Concepción del Uruguay Entre Rios",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-04T03:17:51.000Z"
     }
   ],
   "messages": [
@@ -150980,6 +151012,14 @@
       "body": "Quiero cotizar",
       "ts": "2026-09-04T03:09:16.430Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a06a6c3891e",
+      "conversation_id": "conv-email-1a06a6c3891e",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 100m² · Con Colocación · CP 3260 · Concepción del Uruguay Entre Rios",
+      "ts": "2026-09-04T03:17:51.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -158597,7 +158637,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-04T02:03:39.910Z",
     "gmail_seen_ids": [
-      "19f009f36df19624",
       "19f0281d183c59a5",
       "19f02f414f9fd49c",
       "19f030843d1d9952",
@@ -159396,7 +159435,8 @@
       "1a0679685f352740",
       "1a06828f7fe19521",
       "1a0693c25908a27f",
-      "1a069f10fef30837"
+      "1a069f10fef30837",
+      "1a06a6c3891eb824"
     ],
     "cash_sessions": {
       "1136982222": {
