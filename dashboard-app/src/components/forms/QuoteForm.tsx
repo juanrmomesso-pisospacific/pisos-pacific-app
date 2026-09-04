@@ -10,7 +10,7 @@ import { fmtMoney } from "@/lib/utils"
 import { SearchPicker } from "@/components/SearchPicker"
 import { cajasHint, m2PorCaja, noEsMultiploDeCaja } from "@/lib/boxes"
 import { productUnitLabel, isPanel } from "@/lib/panels"
-import { floorStats, reventaDiscountPct, reventaBreakdown, reventaFloorPrice, computeCommission, type ResellerFields } from "@/lib/reseller"
+import { floorStats, reventaBreakdown, reventaFloorPrice, computeCommission, type ResellerFields } from "@/lib/reseller"
 import type { Product, Quote } from "@/lib/types"
 import { looksLikeHandle, leadToQuotePrefill, type Lead } from "@/lib/leads"
 import { useConfig, taxWord } from "@/contexts/ConfigContext"
@@ -186,7 +186,6 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const reventaReseller = (!isLeadDriven && client?.reseller && client.reseller_mode === "reventa") ? client : null
   const floorM2 = useMemo(() => floorStats(items, products).m2, [items, products])
   const reventaMode = reventaReseller?.reseller_reventa?.mode ?? "descuento"
-  const effDisc = reventaReseller && reventaMode === "descuento" ? reventaDiscountPct(reventaReseller.reseller_reventa, floorM2) : 0
   const reventaBd = reventaReseller && reventaMode === "descuento" ? reventaBreakdown(reventaReseller.reseller_reventa, floorM2) : null
   // Aplica el precio mayorista a los pisos: modo 'descuento' = lista × (1 − desc); modo 'lista' =
   // precio fijo del SKU. No toca servicios/accesorios. Recalcula al cambiar revendedor/volumen.
@@ -203,7 +202,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       })
       return changed ? next : prev
     })
-  }, [reventaReseller?.id, effDisc, reventaMode, floorM2, products.length])
+  }, [reventaReseller?.id, reventaBd?.total, reventaMode, floorM2, products.length])
   // Comisión: revendedor que trae al cliente (aparte del cliente final). Se calcula sobre pisos.
   const commissionReseller = allClients.find(c => c.id === commissionResellerId && c.reseller && c.reseller_mode === "comision") || null
   const commissionEst = commissionReseller ? computeCommission(commissionReseller.reseller_comision, items, products) : null

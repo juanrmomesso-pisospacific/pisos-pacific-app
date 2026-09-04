@@ -596,6 +596,11 @@ const companyCfg = () => ({ ...CONFIG_DEFAULTS.company, ...db.settings.company }
 // marca + logo propio. Editable por db.settings.company_acudesign (CUIT/teléfono/garantía).
 const ACUDESIGN_DEFAULTS = { name: 'AcuDesign', web: 'acudesign.com.ar', email: 'info@acudesign.com.ar', warranty: 'Garantía del fabricante sobre el producto.', fx_note: 'Precios en pesos argentinos' };
 const acudesignCfg = () => ({ ...ACUDESIGN_DEFAULTS, ...db.settings.company_acudesign });
+// Marca del comprobante según la moneda: ARS (paneles) → ACUDESIGN · USD → Pacific. Una sola
+// regla para presupuesto (logo claro sobre cabezal oscuro) y recibo (logo oscuro sobre blanco).
+const brandFor = (curr) => curr === 'ARS'
+  ? { empresa: acudesignCfg(), logoWhite: 'acudesign_lockup_white.png', logoDark: 'acudesign_lockup_dark.png' }
+  : { empresa: companyCfg(), logoWhite: 'pacific_lockup_arg_white.png', logoDark: 'pacific_lockup_arg.png' };
 // Gate por módulo: escrituras de un módulo apagado → 403 (las lecturas devuelven vacío para
 // que ninguna página/consumidor remoto se rompa; la nav del front ya no las muestra).
 const requireModule = (name) => (_req, res, next) => (moduleOn(name) ? next() : res.status(403).json({ error: `módulo ${name} desactivado en esta operación` }));
@@ -3031,9 +3036,10 @@ app.post('/api/quotes/:id/convert', (req, res) => {
 const usdFmt = (n) => 'US$ ' + Number(n || 0).toLocaleString(db.settings.locale || 'es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 function presupuestoData(rec) {
   const loc = db.settings.locale || 'es-AR';
+  const bySku = new Map(db.products.map(p => [p.sku, p]));   // 1 índice para todo el render (evita finds repetidos)
   // Moneda del presupuesto: paneles se cotizan en PESOS. Explícita en rec.currency, o inferida
   // (si tiene ítems de panel). El PDF formatea en pesos ("$ 72.000") o dólares ("US$ 51,43").
-  const curr = rec.currency || ((rec.items || []).some(it => { const p = db.products.find(pr => pr.sku === it.sku); return p && p.kind === 'panel'; }) ? 'ARS' : 'USD');
+  const curr = rec.currency || ((rec.items || []).some(it => bySku.get(it.sku)?.kind === 'panel') ? 'ARS' : 'USD');
   const money = curr === 'ARS'
     ? (n) => '$ ' + Number(n || 0).toLocaleString(loc, { maximumFractionDigits: 0 })
     : usdFmt;
@@ -3045,7 +3051,7 @@ function presupuestoData(rec) {
   const lineNet = (it) => lineTotal(it) - lineDisc(it);
   // Sufijo de cajas para pisos con m²/caja definido: "120 m2 · 8 cajas" (info para el cliente/revendedor).
   const boxSuffix = (it) => {
-    const p = db.products.find(pr => pr.sku === it.sku);
+    const p = bySku.get(it.sku);
     const mpc = Number(p && p.m2_por_caja) || 0;
     const qty = Number(it.quantity) || 0;
     if (!mpc || !qty) return '';
@@ -3057,7 +3063,7 @@ function presupuestoData(rec) {
   const rowOf = (it) => {
     const isEntrega = /entrega/i.test(it.description || '') || it.sku === 'SERV-131';
     const qty = Number(it.quantity) || 0;
-    const p = db.products.find(pr => pr.sku === it.sku);
+    const p = bySku.get(it.sku);
     const isPanel = p && p.kind === 'panel';
     const qtyCell = isPanel ? `${qty} u` : `${qty} m2${boxSuffix(it)}`;
     return [it.description || it.sku || '', isEntrega ? '—' : qtyCell, isEntrega ? '—' : money(it.unit_price), money(lineTotal(it))];
@@ -3076,7 +3082,7 @@ function presupuestoData(rec) {
   const iva = rec.has_iva ? net * taxRate() : 0;
   const zones = [...new Set(items.map(it => it.zone).filter(Boolean))];
   // Resumen del proyecto: m² de pisos (productos con stock), cantidad de ambientes e ítems.
-  const isFloor = (it) => { const p = db.products.find(pr => pr.sku === it.sku); return p ? (!!p.stockTrack && p.kind !== 'panel') : false; };
+  const isFloor = (it) => { const p = bySku.get(it.sku); return p ? (!!p.stockTrack && p.kind !== 'panel') : false; };
   const m2 = items.filter(isFloor).reduce((s, it) => s + (Number(it.quantity) || 0), 0);
   const validDays = rec.valid_days || 10;
   const venceDate = new Date(rec.created_at ? new Date(rec.created_at) : new Date());
@@ -3088,8 +3094,8 @@ function presupuestoData(rec) {
     has_iva: !!rec.has_iva,
     iva_label: taxLabel(),
     // Paneles (ARS) → marca + logo ACUDESIGN; pisos (USD) → Pacific.
-    empresa: curr === 'ARS' ? acudesignCfg() : companyCfg(),
-    logo: curr === 'ARS' ? 'acudesign_lockup_white.png' : 'pacific_lockup_arg_white.png',
+    empresa: brandFor(curr).empresa,
+    logo: brandFor(curr).logoWhite,
     forma_pago: rec.payment_terms || 'Anticipo 80% · Conforme 20%',
     vendedor: sellerPhone ? `${rec.seller_name || ''} · ${sellerPhone}` : (rec.seller_name || ''),
     vendedor_short: rec.seller_name || '',
@@ -3141,7 +3147,7 @@ function reciboData(rec) {
     concept: rec.concept || '',
     total,
     signer: rec.signer || companyCfg().name,
-    logo: curr === 'ARS' ? 'acudesign_lockup_dark.png' : 'pacific_lockup_arg.png',
+    logo: brandFor(curr).logoDark,
     signature: db.settings.receipt_signature || null,   // PNG de firma (si el dueño lo carga)
   };
 }

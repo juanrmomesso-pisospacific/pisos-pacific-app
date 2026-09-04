@@ -63,10 +63,7 @@ export function tierRate(m2: number, tiers: { upto_m2: number | null; rate: numb
 
 /** Descuento mayorista efectivo (%) = acuerdo + volumen del tramo (aditivo). */
 export function reventaDiscountPct(reventa: ReventaConfig | undefined, floorM2: number): number {
-  if (!reventa) return 0
-  const acuerdo = Number(reventa.desc_acuerdo) || 0
-  const vol = tierRate(floorM2, (reventa.tiers || []).map((t) => ({ upto_m2: t.upto_m2, rate: t.extra_pct })))
-  return r2(acuerdo + vol)
+  return reventaBreakdown(reventa, floorM2).total
 }
 
 /** Precio mayorista de un piso: modo 'lista' → precio fijo del SKU (fallback a lista); modo

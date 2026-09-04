@@ -16,12 +16,6 @@ export function cajasDeM2(m2: number, m2caja?: number | null): number | null {
   return m2 / m2caja
 }
 
-/** m² de N cajas (redondeado a 2 decimales). */
-export function m2DeCajas(cajas: number, m2caja?: number | null): number {
-  if (!m2caja || m2caja <= 0) return 0
-  return Math.round(cajas * m2caja * 100) / 100
-}
-
 /** Formatea una cantidad de cajas: entero si es exacto, si no 1 decimal. */
 export function fmtCajas(cajas: number): string {
   const loc = appLocale()

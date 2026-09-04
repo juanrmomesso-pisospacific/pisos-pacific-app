@@ -29,10 +29,15 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
     const price = Number(v.price) || 0
     const cost = Number(v.cost) || 0
     const margin = cost > 0 ? Math.round(((price - cost) / cost) * 100) : 0
+    // Panel (ACUDESIGN): se vende por unidad y va en su propia línea del P&L. Un producto de
+    // categoría "Paneles" debe quedar con kind:'panel'+unit:'u' para comportarse como panel en
+    // todo el resto de la app (no solo en este form).
+    const panel = v.kind === "panel" || /panel/i.test(v.category || "")
+    const kindUnit = panel ? { kind: "panel", unit: "u" } : {}
     if (isEdit) {
       const body: Record<string, unknown> = {
         name: v.name, sku: v.sku, category: v.category, price, cost, currency: v.currency, margin,
-        stockTrack: !!v.stockTrack,
+        stockTrack: !!v.stockTrack, ...kindUnit,
         m2_por_caja: Number(v.m2_por_caja) || 0,
         updatedAt: new Date().toISOString(),
       }
@@ -46,7 +51,7 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
     const body = {
       name: v.name, sku: v.sku, category: v.category, price, cost, currency: v.currency,
       stock: Number(v.stock) || 0, reservedStock: Number(v.reservedStock) || 0,
-      m2_por_caja: Number(v.m2_por_caja) || 0,
+      m2_por_caja: Number(v.m2_por_caja) || 0, ...kindUnit,
       active: true, margin,
       createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
     }

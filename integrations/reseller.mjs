@@ -41,13 +41,8 @@ export function tierRate(m2, tiers) {
   return Number(list[list.length - 1].rate) || 0;        // más allá del último tope
 }
 
-/** Descuento mayorista efectivo (%) = acuerdo fijo + volumen del tramo (aditivo). */
-export function reventaDiscountPct(reventa, floorM2) {
-  if (!reventa) return 0;
-  const acuerdo = Number(reventa.desc_acuerdo) || 0;
-  const vol = tierRate(floorM2, (reventa.tiers || []).map((t) => ({ upto_m2: t.upto_m2, rate: t.extra_pct })));
-  return r2(acuerdo + vol);
-}
+// (reventaDiscountPct vive solo en el front lib/reseller.ts — el precio mayorista se aplica
+// en la cotización, no en el backend. Acá alcanza con floorStats + computeCommission.)
 
 /**
  * Comisión de una venta/cotización para un revendedor modo comisión.

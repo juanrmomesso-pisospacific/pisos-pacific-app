@@ -210,14 +210,13 @@ export default function DashboardPage() {
 
   // ---- Facturación + volumen por mes (con desglose por categoría para la vista apilada) ----
   const byMonth = useMemo(() => {
-    const m = new Map<string, { fact: number; m2: number; piso: number; servicio: number; extras: number }>()
+    const m = new Map<string, { fact: number; m2: number }>()
     for (const s of sales) {
       const d = saleDate(s); if (!inRange(d, range) || s.status === "Cancelado") continue
       const mk = d.slice(0, 7)
-      const row = m.get(mk) ?? { fact: 0, m2: 0, piso: 0, servicio: 0, extras: 0 }
+      const row = m.get(mk) ?? { fact: 0, m2: 0 }
       row.fact += billed(s)
       row.m2 += (s.items || []).filter(it => isPisoItem(it.sku)).reduce((x, it) => x + (Number(it.quantity) || 0), 0)
-      if (s.margin_bd) { row.piso += s.margin_bd.piso.rev; row.servicio += s.margin_bd.servicio.rev; row.extras += s.margin_bd.extras.rev }
       m.set(mk, row)
     }
     return [...m.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([mk, v]) => ({ mk, ...v }))
@@ -227,8 +226,12 @@ export default function DashboardPage() {
   const pnl = useMemo(() => {
     // Ingresos y costos por categoría (Piso/Servicio/Extras) desde ventas con costo bloqueado.
     const cat = { piso: { rev: 0, cost: 0 }, servicio: { rev: 0, cost: 0 }, extras: { rev: 0, cost: 0 }, panel: { rev: 0, cost: 0 } }
+    // Comisiones a revendedores del período (bajan el margen, tanto arqs % como mayoristas por lista).
+    let comisiones = 0
     for (const s of sales) {
-      if (!inRange(saleDate(s), range) || s.status === "Cancelado" || !s.margin_bd) continue
+      if (!inRange(saleDate(s), range) || s.status === "Cancelado") continue
+      comisiones += Number(s.commission_amount) || 0   // cuenta con o sin margin_bd
+      if (!s.margin_bd) continue
       for (const k of ["piso", "servicio", "extras", "panel"] as const) {
         cat[k].rev += s.margin_bd[k]?.rev || 0; cat[k].cost += s.margin_bd[k]?.cost || 0
       }
@@ -242,12 +245,6 @@ export default function DashboardPage() {
       const t = m.expense_type || "Otros Gastos y Ajustes"
       if (t === "Gastos de Instalaciones y Suministros") { insumosColoc += m.amount_usd || 0; continue }
       opexBy[t] = (opexBy[t] || 0) + (m.amount_usd || 0)
-    }
-    // Comisiones a revendedores del período (bajan el margen, tanto arqs % como mayoristas por lista).
-    let comisiones = 0
-    for (const s of sales) {
-      if (!inRange(saleDate(s), range) || s.status === "Cancelado") continue
-      comisiones += Number(s.commission_amount) || 0
     }
     const ingresos = cat.piso.rev + cat.servicio.rev + cat.extras.rev + cat.panel.rev
     const costos = cat.piso.cost + cat.servicio.cost + cat.extras.cost + cat.panel.cost + insumosColoc
@@ -543,7 +540,7 @@ function EmbudoCard({ embudo, windowDays, onClick }: { embudo: EmbudoData; windo
   )
 }
 
-type ChartRow = { mk: string; fact: number; m2: number; piso: number; servicio: number; extras: number }
+type ChartRow = { mk: string; fact: number; m2: number }
 // Tokens del handoff: tinta + naranja para volumen.
 const C_FACT = "#222222", C_M2 = "#E08A3C", C_GRID = "#ededed"
 const niceMax = (v: number) => {
