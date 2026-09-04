@@ -135077,11 +135077,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788456766429",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-03T17:32:44.881Z",
-      "last_message_preview": "Buenas tardes. Necesitaría presupuesto 44m de piso H2O Eslavonia, con colocación y zócalos.gracias",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-03T17:32:44.881Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-04T17:26:36.659Z",
+      "last_message_preview": "En qué zona?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-03T17:32:44.881Z",
+      "last_outbound_at": "2026-09-04T17:26:36.659Z"
     },
     {
       "id": "conv-1788464536866-51kr",
@@ -151492,6 +151493,26 @@
       "ts": "2026-09-04T17:26:20.685Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDk5NTkyNjM0NTM3MTY5NDozMjk5Mjc5MDk0MDE4OTMzMDAyODYyMjMzOTYwNzg4Nzg3MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788542794206-6qpt",
+      "conversation_id": "conv-1788456766429-3cwk",
+      "direction": "out",
+      "body": "Hola Rodolfo perfecto",
+      "ts": "2026-09-04T17:26:33.654Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUwMjYwNzA0OTY0Mjk5MzozMjk5Mjc5MTE3OTQyNjE4NjkzODIyOTY0MjI1MDY4MjM2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788542796997-wubu",
+      "conversation_id": "conv-1788456766429-3cwk",
+      "direction": "out",
+      "body": "En qué zona?",
+      "ts": "2026-09-04T17:26:36.659Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUwMjYwNzA0OTY0Mjk5MzozMjk5Mjc5MTIzNDg0NzI4OTY4NTM3NzQzOTc3Mjk2NjkxMgZDZD",
       "via": "ig-app"
     }
   ],
