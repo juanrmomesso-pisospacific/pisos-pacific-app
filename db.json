@@ -124429,7 +124429,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-02T08:35:47.000Z",
-      "last_touch_at": "2026-08-26T04:11:30.000Z"
+      "last_touch_at": "2026-09-04T04:21:07.000Z"
     },
     {
       "id": "lead-email-19f22df2aa8d",
@@ -125627,7 +125627,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-07-24T02:56:33.000Z",
-      "last_touch_at": "2026-08-20T04:29:04.000Z"
+      "last_touch_at": "2026-09-04T04:26:21.000Z"
     },
     {
       "id": "lead-instagram-1784916324625",
@@ -130881,12 +130881,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f21f84d4ce",
       "status": "closed",
-      "unread_count": 5,
-      "last_message_at": "2026-08-26T04:11:30.000Z",
-      "last_message_preview": "paygo_general_withLogo Cloudflare Connect · San Francisco Come build what’s next with us We’re bringing our customer community together in S",
+      "unread_count": 6,
+      "last_message_at": "2026-09-04T04:21:07.000Z",
+      "last_message_preview": "Connect 2026_Email #11_Everyone both.html Fei-Fei Li and Adam Grant join the Connect 2026 main stage. The NextNet Speaker Series is live. Cl",
       "email_subject": "New updates to your AI bot controls.",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-26T04:11:30.000Z",
+      "last_inbound_at": "2026-09-04T04:21:07.000Z",
       "ignored": true
     },
     {
@@ -131931,12 +131931,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f920e2ca6d",
       "status": "closed",
-      "unread_count": 21,
-      "last_message_at": "2026-08-20T04:29:04.000Z",
-      "last_message_preview": "Dear Mike, Daniel.\r\n\r\nAttached, this is Orange Color (LAMI PET) on BASE PET film.\r\nPls confirm this.\r\n\r\nJoshua\r\n\r\n\r\n\r\n\r\n861-4 Samil-Ro, Nam-",
+      "unread_count": 22,
+      "last_message_at": "2026-09-04T04:26:21.000Z",
+      "last_message_preview": "Dear Daniel or Juan,\r\n\r\nPls find the attached packing list and Commercial invoice of Air urgent\r\nshipment (for 300M2)\r\nPls arrange your forw",
       "email_subject": "Re: radiant heating",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T04:29:04.000Z",
+      "last_inbound_at": "2026-09-04T04:26:21.000Z",
       "ignored": true
     },
     {
@@ -151020,6 +151020,22 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 100m² · Con Colocación · CP 3260 · Concepción del Uruguay Entre Rios",
       "ts": "2026-09-04T03:17:51.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a06aab727b1",
+      "conversation_id": "conv-email-19f920e2ca6d",
+      "direction": "in",
+      "body": "✉️ Packing list and Commercial Invoice for Air Urgent shipment\n\nDear Daniel or Juan,\r\n\r\nPls find the attached packing list and Commercial invoice of Air urgent\r\nshipment (for 300M2)\r\nPls arrange your forwarding agency for Air shipment(EX-work) and let me\r\nknow contact info.\r\nI will send you a video of Film carbon-printing with PACIFIC/mr. Parquet\r\nlogo during sleeping via Whatsapp.\r\nIt take one more week to finish Silver printing, Orange Color LAMI Pressing\r\nand Packing.\r\nNext monday, Pls nominate air forwarding agency based on packing list\r\n(1pallet)\r\n\r\nBest regards,\r\n\r\n\r\nMy contact details.:\r\nCompany Name : Felix Korea\r\nAddress: 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 8288 0491\r\nTel. : +82 31 866 5688\r\nemail : felixkorea.com@gmail.com\r\n\r\n\r\n\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 4588 6512\r\nTel. : +82 31 866 5688\r\n\r\n* www.felixkorea.com <http://www.felixkorea.com>*\r\n\r\n\r\n\r\n2026년 8월 21일 (금) 오후 9:59, Daniel La Buonora <daniel@mrparquet.com.uy>님이 작성:\r\n\r\n> thank you\r\n>\r\n> El jue, 20 ago 2026 a la(s) 1:29 a.m., FELIXKOREA (\r\n> felixkorea.com@gmail.com) escribió:\r\n>\r\n>> Dear Mike, Daniel.\r\n>>\r\n>> Attached, this is Orange Color (LAMI PET) on BASE PET film.\r\n>> Pls confirm this.\r\n>>\r\n>> Joshua\r\n>>\r\n>>\r\n>>\r\n>>\r\n>> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n>> Korea. 11405\r\n>> Mob. : +82 10 4588 6512\r\n>> Tel. : +82 31 866 5688\r\n>>\r\n>> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>>\r\n>>\r\n>>\r\n>> 2026년 8월 14일 (금) 오후 12:07, FELIXKOREA <felixkorea.com@gm",
+      "ts": "2026-09-04T04:26:21.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a06aa62292b",
+      "conversation_id": "conv-email-19f21f84d4ce",
+      "direction": "in",
+      "body": "✉️ See Fei-Fei Li and Adam Grant live at Cloudflare Connect\n\nConnect 2026_Email #11_Everyone both.html Fei-Fei Li and Adam Grant join the Connect 2026 main stage. The NextNet Speaker Series is live. Cloudflare Connect · San Francisco See Fei-Fei Li and Adam Grant live at Cloudflare Connect. Every team building with AI is asking two questions: where the technology is going, and how to get people to actually adopt it. At Connect, you'll hear from two people who've spent their careers on each. Fei-Fei Li AI pioneer and professor, Stanford University Adam Grant Organizational psychologist and bestselling author Live on the main stage in San Francisco - alongside 100+ technical sessions and 5,000+ architects, developers, and security leaders. Add them to your agenda. Register now Start building · Log in · Visit Community Copyright © 2026 Cloudflare, Inc. 101 Townsend Street, San Francisco, CA 94107 cloudflare.com · Privacy policy · Unsubscribe LinkedIn · X · Instagram",
+      "ts": "2026-09-04T04:21:07.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -158637,8 +158653,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-04T02:03:39.910Z",
     "gmail_seen_ids": [
-      "19f0281d183c59a5",
-      "19f02f414f9fd49c",
       "19f030843d1d9952",
       "19f03cd5efa0d2b0",
       "19f03e3847b16492",
@@ -159436,7 +159450,9 @@
       "1a06828f7fe19521",
       "1a0693c25908a27f",
       "1a069f10fef30837",
-      "1a06a6c3891eb824"
+      "1a06a6c3891eb824",
+      "1a06aab727b11cdb",
+      "1a06aa62292ba6a4"
     ],
     "cash_sessions": {
       "1136982222": {
