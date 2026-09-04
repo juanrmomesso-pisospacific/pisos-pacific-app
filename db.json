@@ -135106,11 +135106,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788491357882",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-04T03:09:16.430Z",
-      "last_message_preview": "Quiero cotizar",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-04T03:09:16.430Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-04T17:26:20.685Z",
+      "last_message_preview": "Sí que colección te interesa?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-04T03:09:16.430Z",
+      "last_outbound_at": "2026-09-04T17:26:20.685Z"
     },
     {
       "id": "conv-email-1a06a6c3891e",
@@ -151472,6 +151473,26 @@
       "body": "✉️ Re: Comex+Cargo // Momesso // FOB | Shanghai Buenos Aires | PDPG 2626 // CCF-MI-00000134\n\nHola Vicky,\r\n\r\nMuchas gracias por confiarnos esta nueva carga!\r\nAjusto el asunto del correo y sumo a Caro para un correcto seguimiento de los avances de la coordinación.\r\nSumo nuestra referencia y comparto datos del agente para esta carga!\r\n\r\n￼\r\n\r\nLos mantenemos informados sobre los avances.\r\n\r\nBuen viernes!!\r\n\r\nאנחנו עם ישראל\r\n\r\nSaludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n\r\nJuan M. Garcia Barcia\r\nGrupo Comex+ // Comex+Cargo\r\nOficina Puerto Madero\r\nTel.: (+54)114331-2207/1893\r\nCel.: (+54) 911 7098-2746\r\nAv. Alicia Moreau de Justo 1150 – Of. A-106 // (C1107AAX) – C.A.B.A., Argentina\r\n\r\n\r\nEl 3 sep. 2026, a las 22:02, Victoria Pisos Pacific <victoria@pisospacific.com> escribió:\r\n\r\nHola Juan,\r\n\r\nMuchas gracias. Confirmamos la opción de 2 contenedores 40’NOR a USD 8.550.\r\n\r\nSi conseguís una mejor tarifa, dale para adelante. En caso de que no se pueda cargar o haya alguna modificación en la tarifa, por favor manteneme al tanto.\r\n\r\nPara que quede claro seria a partir del 15 de septiembre. Estamos ok?\r\n\r\n\r\nSaludos,\r\nVictoria\r\n\r\n\r\nEl jue, 3 sept 2026 a las 13:45, Juan Garcia Barcia (<juangb@grupocomexmas.com <mailto:juangb@grupocomexmas.com>>) escribió:\r\n> Victoria,\r\n> \r\n> Como estas? Espero que bien. Un agente me confirmo tarifas mas bajas dentro de la misma vigencia de ayer pero habria que esperar a estar mas cerca del 15/09 para tener valores actualizados para después de ese dia que es cuando estaria lista la carga.\r\n> \r\n> Condición de ve",
       "ts": "2026-09-04T14:42:40.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788542773243-hrt0",
+      "conversation_id": "conv-1788491357881-bkwx",
+      "direction": "out",
+      "body": "Hola javier cómo estás?",
+      "ts": "2026-09-04T17:26:12.710Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDk5NTkyNjM0NTM3MTY5NDozMjk5Mjc5MDc5MzA3NTI3MzIxNTQ0NzU3OTUxMTIyNjM2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788542780964-63z4",
+      "conversation_id": "conv-1788491357881-bkwx",
+      "direction": "out",
+      "body": "Sí que colección te interesa?",
+      "ts": "2026-09-04T17:26:20.685Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDk5NTkyNjM0NTM3MTY5NDozMjk5Mjc5MDk0MDE4OTMzMDAyODYyMjMzOTYwNzg4Nzg3MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
@@ -161540,7 +161561,10 @@
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
-    "mp_pending_at": null
+    "mp_pending_at": null,
+    "receipt_next": 112,
+    "receipt_signature": "firma-juan.png",
+    "receipt_signer": "Juan Rodriguez Momesso"
   },
   "payment_links": [],
   "tasks": [
