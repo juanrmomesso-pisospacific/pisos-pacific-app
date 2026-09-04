@@ -129142,6 +129142,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-04T11:42:56.000Z",
       "last_touch_at": "2026-09-04T11:42:56.000Z"
+    },
+    {
+      "id": "lead-email-1a06cb4a5107",
+      "name": "Dolores",
+      "email": "detchegoin@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Avenida federico lacroze",
+      "postal_code": "1426",
+      "approx_m2": 75,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 75m² · Con Colocación · CP 1426",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-04T13:56:12.000Z",
+      "last_touch_at": "2026-09-04T13:56:12.000Z"
     }
   ],
   "conversations": [
@@ -134882,6 +134899,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-04T11:42:56.000Z"
+    },
+    {
+      "id": "conv-email-1a06cb4a5107",
+      "channel": "email",
+      "contact_id": "detchegoin@gmail.com",
+      "contact_name": "Dolores",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a06cb4a5107",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-04T13:56:12.000Z",
+      "last_message_preview": "Formulario web — 75m² · Con Colocación · CP 1426 · Avenida federico lacroze",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-04T13:56:12.000Z"
     }
   ],
   "messages": [
@@ -151182,6 +151214,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 10m² · Sin Colocación · CP 1842 · Juan Bautista Alberdi 447, Monte Grande, GBA Sur",
       "ts": "2026-09-04T11:42:56.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a06cb4a5107",
+      "conversation_id": "conv-email-1a06cb4a5107",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 75m² · Con Colocación · CP 1426 · Avenida federico lacroze",
+      "ts": "2026-09-04T13:56:12.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -158871,7 +158911,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-04T02:03:39.910Z",
     "gmail_seen_ids": [
-      "19f082ddf58a2be2",
       "19f08d81d4c75166",
       "19f08e381bdf86e9",
       "19f08f32acda12d2",
@@ -159670,7 +159709,8 @@
       "1a06bfa462196244",
       "1a06c3aa1772a47a",
       "1a06c4afca3800d6",
-      "1a06c4afb6c553af"
+      "1a06c4afb6c553af",
+      "1a06cb4a510778d9"
     ],
     "cash_sessions": {
       "1136982222": {
