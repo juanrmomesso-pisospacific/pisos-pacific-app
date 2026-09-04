@@ -3323,6 +3323,101 @@
       "margin": 22,
       "createdAt": "2026-08-28T21:12:16.367Z",
       "updatedAt": "2026-08-28T21:12:16.367Z"
+    },
+    {
+      "id": "PANEL-001",
+      "sku": "PANEL-001",
+      "name": "Acupanel - Natural Oak - Black (2,4 x 0,36 mts)",
+      "category": "Paneles",
+      "kind": "panel",
+      "unit": "u",
+      "price": 72000,
+      "cost": 29.52,
+      "currency": "ARS",
+      "cost_currency": "USD",
+      "margin": 0,
+      "active": true,
+      "stock": 0,
+      "reservedStock": 0,
+      "stockTrack": true,
+      "createdAt": "2026-09-04T12:01:17.109Z",
+      "updatedAt": "2026-09-04T12:01:17.109Z"
+    },
+    {
+      "id": "PANEL-002",
+      "sku": "PANEL-002",
+      "name": "Acupanel - Natural Oak - White (2,4 x 0,36 mts)",
+      "category": "Paneles",
+      "kind": "panel",
+      "unit": "u",
+      "price": 72000,
+      "cost": 29.52,
+      "currency": "ARS",
+      "cost_currency": "USD",
+      "margin": 0,
+      "active": true,
+      "stock": 0,
+      "reservedStock": 0,
+      "stockTrack": true,
+      "createdAt": "2026-09-04T12:01:17.109Z",
+      "updatedAt": "2026-09-04T12:01:17.109Z"
+    },
+    {
+      "id": "PANEL-003",
+      "sku": "PANEL-003",
+      "name": "Acupanel - Black Laca (2,4 x 0,36 mts)",
+      "category": "Paneles",
+      "kind": "panel",
+      "unit": "u",
+      "price": 72000,
+      "cost": 29.52,
+      "currency": "ARS",
+      "cost_currency": "USD",
+      "margin": 0,
+      "active": true,
+      "stock": 0,
+      "reservedStock": 0,
+      "stockTrack": true,
+      "createdAt": "2026-09-04T12:01:17.110Z",
+      "updatedAt": "2026-09-04T12:01:17.110Z"
+    },
+    {
+      "id": "PANEL-004",
+      "sku": "PANEL-004",
+      "name": "Acupanel - Walnut - Black (2,4 x 0,36 mts)",
+      "category": "Paneles",
+      "kind": "panel",
+      "unit": "u",
+      "price": 72000,
+      "cost": 29.52,
+      "currency": "ARS",
+      "cost_currency": "USD",
+      "margin": 0,
+      "active": true,
+      "stock": 0,
+      "reservedStock": 0,
+      "stockTrack": true,
+      "createdAt": "2026-09-04T12:01:17.110Z",
+      "updatedAt": "2026-09-04T12:01:17.110Z"
+    },
+    {
+      "id": "PANEL-005",
+      "sku": "PANEL-005",
+      "name": "Acupanel - Scandinavian Oak (2,4 x 0,36 mts)",
+      "category": "Paneles",
+      "kind": "panel",
+      "unit": "u",
+      "price": 72000,
+      "cost": 29.52,
+      "currency": "ARS",
+      "cost_currency": "USD",
+      "margin": 0,
+      "active": true,
+      "stock": 0,
+      "reservedStock": 0,
+      "stockTrack": true,
+      "createdAt": "2026-09-04T12:01:17.110Z",
+      "updatedAt": "2026-09-04T12:01:17.110Z"
     }
   ],
   "sales": [
@@ -158701,8 +158796,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-04T02:03:39.910Z",
     "gmail_seen_ids": [
-      "19f04292c8f57667",
-      "19f05b94f9676f4b",
       "19f082ddf58a2be2",
       "19f08d81d4c75166",
       "19f08e381bdf86e9",
@@ -159500,7 +159593,9 @@
       "1a06aa62292ba6a4",
       "1a06b868e730ef7c",
       "1a06bfa462196244",
-      "1a06c3aa1772a47a"
+      "1a06c3aa1772a47a",
+      "1a06c4afca3800d6",
+      "1a06c4afb6c553af"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -159910,7 +160005,9 @@
       "1a067260ae00b38b",
       "1a067415bf6fbb26",
       "1a0673ebeee7019c",
-      "1a0673ccae09f66c"
+      "1a0673ccae09f66c",
+      "1a06c4afca3800d6",
+      "1a06c4afb6c553af"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -160583,14 +160680,14 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDk5NTkyNjM0NTM3MTY5NDozMjk5MTg0MjMzMDExNTY5MTk4NjEzODIyNTY4MTg5MTMyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMjk5MjE5NzEwMzY5ODE0ODY2ODI2MDI4MzQyMzEyOTYwMAZDZD"
     ],
-    "last_weekly_reminder": "2026-08-28T12:05:15.273Z",
+    "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
       {
         "id": "main",
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-09-03",
+    "last_daily_task_reminder": "2026-09-04",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -160994,7 +161091,7 @@
         "learned_at": "2026-07-28T15:39:11.018Z"
       }
     },
-    "last_daily_pending_digest": "2026-09-03",
+    "last_daily_pending_digest": "2026-09-04",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
