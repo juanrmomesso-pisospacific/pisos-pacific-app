@@ -129459,6 +129459,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-05T11:14:56.000Z",
       "last_touch_at": "2026-09-05T11:14:56.000Z"
+    },
+    {
+      "id": "lead-email-1a071ff9c208",
+      "name": "Paula",
+      "email": "paulapuntocruz@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Washington 2767",
+      "postal_code": "1430",
+      "approx_m2": 80,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 80m² · Sin Colocación · CP 1430",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-05T14:36:11.000Z",
+      "last_touch_at": "2026-09-05T14:36:11.000Z"
     }
   ],
   "conversations": [
@@ -135246,6 +135263,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-05T11:14:56.000Z"
+    },
+    {
+      "id": "conv-email-1a071ff9c208",
+      "channel": "email",
+      "contact_id": "paulapuntocruz@gmail.com",
+      "contact_name": "Paula",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a071ff9c208",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-05T14:36:11.000Z",
+      "last_message_preview": "Formulario web — 80m² · Sin Colocación · CP 1430 · Washington 2767",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-05T14:36:11.000Z"
     }
   ],
   "messages": [
@@ -151690,6 +151722,14 @@
       "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 99db83bb91b2442698dbeccbf71e9a81\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-03 00:00:00 UTC to 2026-09-04 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-05T12:01:07.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a071ff9c208",
+      "conversation_id": "conv-email-1a071ff9c208",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 80m² · Sin Colocación · CP 1430 · Washington 2767",
+      "ts": "2026-09-05T14:36:11.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -159433,7 +159473,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-04T23:37:28.497Z",
     "gmail_seen_ids": [
-      "19f13d2da106f6a2",
       "19f13c9832836688",
       "19f13f4b49398ef5",
       "19f13f3d6d3a145a",
@@ -160232,7 +160271,8 @@
       "1a07104f0b0edf88",
       "1a071475a8d6b553",
       "1a07171a83b976a6",
-      "1a071917c66146e5"
+      "1a071917c66146e5",
+      "1a071ff9c208a83c"
     ],
     "cash_sessions": {
       "1136982222": {
