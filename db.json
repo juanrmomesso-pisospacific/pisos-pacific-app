@@ -129442,6 +129442,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-05T02:05:30.387Z",
       "last_touch_at": "2026-09-05T02:05:30.387Z"
+    },
+    {
+      "id": "lead-email-1a071475a8d6",
+      "name": "Viviana",
+      "email": "vbp622@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Emilio Lamarca 5100",
+      "postal_code": "1419",
+      "approx_m2": 15,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 15m² · Con Colocación · CP 1419",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-05T11:14:56.000Z",
+      "last_touch_at": "2026-09-05T11:14:56.000Z"
     }
   ],
   "conversations": [
@@ -135214,6 +135231,21 @@
       "last_message_preview": "Graciaaas ❤️❤️",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-05T02:05:30.387Z"
+    },
+    {
+      "id": "conv-email-1a071475a8d6",
+      "channel": "email",
+      "contact_id": "vbp622@gmail.com",
+      "contact_name": "Viviana",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a071475a8d6",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-05T11:14:56.000Z",
+      "last_message_preview": "Formulario web — 15m² · Con Colocación · CP 1419 · Emilio Lamarca 5100",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-05T11:14:56.000Z"
     }
   ],
   "messages": [
@@ -151642,6 +151674,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 026da38870b2473e9aac9d2bb7233399\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-03 00:00:00 UTC to 2026-09-04 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-05T08:24:00.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a071475a8d6",
+      "conversation_id": "conv-email-1a071475a8d6",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 15m² · Con Colocación · CP 1419 · Emilio Lamarca 5100",
+      "ts": "2026-09-05T11:14:56.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -159385,7 +159425,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-04T23:37:28.497Z",
     "gmail_seen_ids": [
-      "19f13b7e4f7c3b4a",
       "19f13b3c557f19fb",
       "19f13d3442c3cde7",
       "19f13d2da106f6a2",
@@ -160184,7 +160223,8 @@
       "1a06e6623e4506a6",
       "1a06e64a86f7e977",
       "1a070aae30f4a3d3",
-      "1a07104f0b0edf88"
+      "1a07104f0b0edf88",
+      "1a071475a8d6b553"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -161269,7 +161309,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDk5NTkyNjM0NTM3MTY5NDozMjk5MTg0MjMzMDExNTY5MTk4NjEzODIyNTY4MTg5MTMyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMjk5MjE5NzEwMzY5ODE0ODY2ODI2MDI4MzQyMzEyOTYwMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUwMjYwNzA0OTY0Mjk5MzozMjk5MjkxNDI5NDUwMjI1NjE4OTE2MzI5MTE5NTQ3MzkyMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE5MDA5MDQ5MzY0MjEzNjozMjk5MzM2NTU1MDc2NTI4MTc0Njk4NjQ5MzQzMzM0ODA5NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE5MDA5MDQ5MzY0MjEzNjozMjk5MzM2NTU1MDc2NTI4MTc0Njk4NjQ5MzQzMzM0ODA5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMjk5Mzk2Njg1NjMwNDYyMTc1MDcyMDA5MzM5MjczMjE2MAZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
