@@ -129492,6 +129492,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-05T18:09:14.686Z",
       "last_touch_at": "2026-09-05T18:09:14.686Z"
+    },
+    {
+      "id": "lead-instagram-1788640053472",
+      "name": "@kruchonatalia",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-05T20:27:31.878Z",
+      "last_touch_at": "2026-09-05T20:27:31.878Z"
     }
   ],
   "conversations": [
@@ -135308,6 +135324,20 @@
       "last_message_preview": "Hola, buenas tardes. Quería consultarles el precio del metro cuadrado del piso Roble Eslavonia xl, muchas gracias!!",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-05T18:09:14.686Z"
+    },
+    {
+      "id": "conv-1788640053471-45ca",
+      "channel": "instagram",
+      "contact_id": "1595428655557319",
+      "contact_name": "@kruchonatalia",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788640053472",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-05T20:27:31.878Z",
+      "last_message_preview": "Hola",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-05T20:27:31.878Z"
     }
   ],
   "messages": [
@@ -151768,6 +151798,14 @@
       "body": "Hola, buenas tardes. Quería consultarles el precio del metro cuadrado del piso Roble Eslavonia xl, muchas gracias!!",
       "ts": "2026-09-05T18:09:14.686Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788640053472-nhr2",
+      "conversation_id": "conv-1788640053471-45ca",
+      "direction": "in",
+      "body": "Hola",
+      "ts": "2026-09-05T20:27:31.878Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -161398,7 +161436,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUwMjYwNzA0OTY0Mjk5MzozMjk5MjkxNDI5NDUwMjI1NjE4OTE2MzI5MTE5NTQ3MzkyMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE5MDA5MDQ5MzY0MjEzNjozMjk5MzM2NTU1MDc2NTI4MTc0Njk4NjQ5MzQzMzM0ODA5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMjk5Mzk2Njg1NjMwNDYyMTc1MDcyMDA5MzM5MjczMjE2MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MTgxNzY1MTI2NjMwODcyNjozMjk5NDQzMjIyMDgwODQyMzk2NTQ1MTI5MDU0MzEyODU3NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MTgxNzY1MTI2NjMwODcyNjozMjk5NDQzMjIyMDgwODQyMzk2NTQ1MTI5MDU0MzEyODU3NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMjk5NDU4NTI3Njk5NjIxOTI1Mjg5OTAwMjAxMTYxNTIzMgZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
