@@ -129476,6 +129476,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-05T14:36:11.000Z",
       "last_touch_at": "2026-09-05T14:36:11.000Z"
+    },
+    {
+      "id": "lead-instagram-1788631756262",
+      "name": "@tefitamachado",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-05T18:09:14.686Z",
+      "last_touch_at": "2026-09-05T18:09:14.686Z"
     }
   ],
   "conversations": [
@@ -135278,6 +135294,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-05T14:36:11.000Z"
+    },
+    {
+      "id": "conv-1788631756262-ckiw",
+      "channel": "instagram",
+      "contact_id": "1984821155515664",
+      "contact_name": "@tefitamachado",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788631756262",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-05T18:09:14.686Z",
+      "last_message_preview": "Hola, buenas tardes. Quería consultarles el precio del metro cuadrado del piso Roble Eslavonia xl, muchas gracias!!",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-05T18:09:14.686Z"
     }
   ],
   "messages": [
@@ -151730,6 +151760,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 80m² · Sin Colocación · CP 1430 · Washington 2767",
       "ts": "2026-09-05T14:36:11.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788631756262-wpp3",
+      "conversation_id": "conv-1788631756262-ckiw",
+      "direction": "in",
+      "body": "Hola, buenas tardes. Quería consultarles el precio del metro cuadrado del piso Roble Eslavonia xl, muchas gracias!!",
+      "ts": "2026-09-05T18:09:14.686Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -161359,7 +161397,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMjk5MjE5NzEwMzY5ODE0ODY2ODI2MDI4MzQyMzEyOTYwMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUwMjYwNzA0OTY0Mjk5MzozMjk5MjkxNDI5NDUwMjI1NjE4OTE2MzI5MTE5NTQ3MzkyMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE5MDA5MDQ5MzY0MjEzNjozMjk5MzM2NTU1MDc2NTI4MTc0Njk4NjQ5MzQzMzM0ODA5NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMjk5Mzk2Njg1NjMwNDYyMTc1MDcyMDA5MzM5MjczMjE2MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMjk5Mzk2Njg1NjMwNDYyMTc1MDcyMDA5MzM5MjczMjE2MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MTgxNzY1MTI2NjMwODcyNjozMjk5NDQzMjIyMDgwODQyMzk2NTQ1MTI5MDU0MzEyODU3NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
