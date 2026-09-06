@@ -135562,11 +135562,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788735895884",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-06T23:04:54.484Z",
-      "last_message_preview": "Hola",
+      "unread_count": 2,
+      "last_message_at": "2026-09-06T23:06:52.445Z",
+      "last_message_preview": "Me pasarías precio de los pisos color roble clásico y eslavonia?",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-06T23:04:54.484Z"
+      "last_inbound_at": "2026-09-06T23:06:52.445Z"
     }
   ],
   "messages": [
@@ -152083,6 +152083,14 @@
       "body": "Hola",
       "ts": "2026-09-06T23:04:54.484Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788736013157-9i38",
+      "conversation_id": "conv-1788735895884-m1a3",
+      "direction": "in",
+      "body": "Me pasarías precio de los pisos color roble clásico y eslavonia?",
+      "ts": "2026-09-06T23:06:52.445Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -161718,7 +161726,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMjk5NDU4NTI3Njk5NjIxOTI1Mjg5OTAwMjAxMTYxNTIzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk5NDg0NjQxNzUzMzM2NzM1MTQyODQ2NjU5NzY5MTM5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NjA4ODIwNzY1NTM2NDE3ODk2MjY0MzM5MTg3MzAyNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODk1NTU2NjgyODkwNjcyMzozMjk5NjM1MzI2MTAwNzI2OTIxMDQwMDI2ODYzMzUwNTc5MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODk1NTU2NjgyODkwNjcyMzozMjk5NjM1MzI2MTAwNzI2OTIxMDQwMDI2ODYzMzUwNTc5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODk1NTU2NjgyODkwNjcyMzozMjk5NjM1NTQzNzAwOTMyODQ4NjQyNzM4OTM1MDM3OTUyMAZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
