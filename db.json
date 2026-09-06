@@ -124483,7 +124483,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-09-05T12:01:07.000Z"
+      "last_touch_at": "2026-09-06T08:23:30.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -131169,12 +131169,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 47,
-      "last_message_at": "2026-09-05T12:01:07.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-03 00:00:00 UTC to 2026-09-04 00:00:00 UTC.",
+      "unread_count": 48,
+      "last_message_at": "2026-09-06T08:23:30.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-04 00:00:00 UTC to 2026-09-05 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-05T12:01:07.000Z",
+      "last_inbound_at": "2026-09-06T08:23:30.000Z",
       "ignored": true
     },
     {
@@ -151959,6 +151959,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 21m² · Con Colocación · CP 5519 · Remedios de Escalada 1618, Dorrego, Guaymallén, Mendoza",
       "ts": "2026-09-06T04:41:00.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a075d0c6811",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: d846b9aa2eff4c2698f9b862142a7242\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-04 00:00:00 UTC to 2026-09-05 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-09-06T08:23:30.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -159702,7 +159710,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-05T23:36:44.658Z",
     "gmail_seen_ids": [
-      "19f13f4b49398ef5",
       "19f13f3d6d3a145a",
       "19f142f837fc611e",
       "19f145d43032939b",
@@ -160501,7 +160508,8 @@
       "1a07171a83b976a6",
       "1a071917c66146e5",
       "1a071ff9c208a83c",
-      "1a075050f3c06786"
+      "1a075050f3c06786",
+      "1a075d0c6811db26"
     ],
     "cash_sessions": {
       "1136982222": {
