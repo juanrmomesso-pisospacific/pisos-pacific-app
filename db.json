@@ -129613,6 +129613,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-05T20:27:31.878Z",
       "last_touch_at": "2026-09-05T20:27:31.878Z"
+    },
+    {
+      "id": "lead-email-1a075050f3c0",
+      "name": "Laura Ellena",
+      "email": "laurellena@yahoo.com.ar",
+      "phone": "",
+      "source": "Web",
+      "address": "Remedios de Escalada 1618, Dorrego, Guaymallén, Mendoza",
+      "postal_code": "5519",
+      "approx_m2": 21,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 21m² · Con Colocación · CP 5519",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-06T04:41:00.000Z",
+      "last_touch_at": "2026-09-06T04:41:00.000Z"
     }
   ],
   "conversations": [
@@ -135443,6 +135460,21 @@
       "last_message_preview": "Hola",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-05T20:27:31.878Z"
+    },
+    {
+      "id": "conv-email-1a075050f3c0",
+      "channel": "email",
+      "contact_id": "laurellena@yahoo.com.ar",
+      "contact_name": "Laura Ellena",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a075050f3c0",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-06T04:41:00.000Z",
+      "last_message_preview": "Formulario web — 21m² · Con Colocación · CP 5519 · Remedios de Escalada 1618, Dorrego, Guaymallén, Mendoza",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-06T04:41:00.000Z"
     }
   ],
   "messages": [
@@ -151919,6 +151951,14 @@
       "body": "Respondan...",
       "ts": "2026-09-06T00:23:28.335Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a075050f3c0",
+      "conversation_id": "conv-email-1a075050f3c0",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 21m² · Con Colocación · CP 5519 · Remedios de Escalada 1618, Dorrego, Guaymallén, Mendoza",
+      "ts": "2026-09-06T04:41:00.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -159662,7 +159702,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-05T23:36:44.658Z",
     "gmail_seen_ids": [
-      "19f13c9832836688",
       "19f13f4b49398ef5",
       "19f13f3d6d3a145a",
       "19f142f837fc611e",
@@ -160461,7 +160500,8 @@
       "1a071475a8d6b553",
       "1a07171a83b976a6",
       "1a071917c66146e5",
-      "1a071ff9c208a83c"
+      "1a071ff9c208a83c",
+      "1a075050f3c06786"
     ],
     "cash_sessions": {
       "1136982222": {
