@@ -134904,11 +134904,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787978533315",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-29T04:42:11.353Z",
-      "last_message_preview": "Hola. Por favor, dejen de interrumpir los videos que miro en YouTube. Ya le dije exactamente lo mismo a un montón de compañías y empresas qu",
+      "unread_count": 1,
+      "last_message_at": "2026-09-06T00:23:28.335Z",
+      "last_message_preview": "Respondan...",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-29T04:42:11.353Z"
+      "last_inbound_at": "2026-09-06T00:23:28.335Z"
     },
     {
       "id": "conv-email-1a04d3963422",
@@ -151911,6 +151911,14 @@
       "body": "Hola",
       "ts": "2026-09-05T20:27:31.878Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788654209140-ivm3",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "in",
+      "body": "Respondan...",
+      "ts": "2026-09-06T00:23:28.335Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -161542,7 +161550,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE5MDA5MDQ5MzY0MjEzNjozMjk5MzM2NTU1MDc2NTI4MTc0Njk4NjQ5MzQzMzM0ODA5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMjk5Mzk2Njg1NjMwNDYyMTc1MDcyMDA5MzM5MjczMjE2MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MTgxNzY1MTI2NjMwODcyNjozMjk5NDQzMjIyMDgwODQyMzk2NTQ1MTI5MDU0MzEyODU3NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMjk5NDU4NTI3Njk5NjIxOTI1Mjg5OTAwMjAxMTYxNTIzMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMjk5NDU4NTI3Njk5NjIxOTI1Mjg5OTAwMjAxMTYxNTIzMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk5NDg0NjQxNzUzMzM2NzM1MTQyODQ2NjU5NzY5MTM5MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
