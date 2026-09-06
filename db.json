@@ -129630,6 +129630,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-06T04:41:00.000Z",
       "last_touch_at": "2026-09-06T04:41:00.000Z"
+    },
+    {
+      "id": "lead-email-1a077dbea19c",
+      "name": "IGNACIO",
+      "email": "nacho.calvi@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Almafuerte 2137",
+      "postal_code": "1712",
+      "approx_m2": 30,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 30m² · Con Colocación · CP 1712",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-06T17:54:55.000Z",
+      "last_touch_at": "2026-09-06T17:54:55.000Z"
     }
   ],
   "conversations": [
@@ -135475,6 +135492,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-06T04:41:00.000Z"
+    },
+    {
+      "id": "conv-email-1a077dbea19c",
+      "channel": "email",
+      "contact_id": "nacho.calvi@gmail.com",
+      "contact_name": "IGNACIO",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a077dbea19c",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-06T17:54:55.000Z",
+      "last_message_preview": "Formulario web — 30m² · Con Colocación · CP 1712 · Almafuerte 2137",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-06T17:54:55.000Z"
     }
   ],
   "messages": [
@@ -151967,6 +151999,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: d846b9aa2eff4c2698f9b862142a7242\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-04 00:00:00 UTC to 2026-09-05 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-06T08:23:30.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a077dbea19c",
+      "conversation_id": "conv-email-1a077dbea19c",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 30m² · Con Colocación · CP 1712 · Almafuerte 2137",
+      "ts": "2026-09-06T17:54:55.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -159710,7 +159750,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-05T23:36:44.658Z",
     "gmail_seen_ids": [
-      "19f145d43032939b",
       "19f14652f47b2c75",
       "19f14b85f02960fe",
       "19f14b561aaf9f00",
@@ -160509,7 +160548,8 @@
       "1a075050f3c06786",
       "1a075d0c6811db26",
       "1a0762111a69d4aa",
-      "1a076b7d8feb86a6"
+      "1a076b7d8feb86a6",
+      "1a077dbea19c4840"
     ],
     "cash_sessions": {
       "1136982222": {
