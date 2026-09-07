@@ -15099,7 +15099,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Edificio Rubi Sector 2 B 2",
-      "contract_total": 3789.3394404799997,
+      "contract_total": 3915,
       "items": [
         {
           "product_id": "SERV-106",
@@ -15124,7 +15124,7 @@
           "cost": 16.67,
           "category": "Servicio",
           "zone": "Revestimiento Pared Toilette",
-          "total": 45.212288,
+          "total": 45.21,
           "discount": 0,
           "image": "",
           "target_item_index": null
@@ -15210,10 +15210,21 @@
           "category": "Pisos H2O",
           "zone": "Revestimiento Pared Toilette",
           "disc_value": 10,
-          "total": 79.2832,
+          "total": 79.28,
           "discount": 7.93,
           "image": "",
           "target_item_index": null
+        },
+        {
+          "product_id": "SERV-115",
+          "sku": "SERV-115",
+          "description": "Servicio - Nivelación de Carpeta - incluye Materiales",
+          "quantity": 8,
+          "unit_price": 13,
+          "total": 104,
+          "cost": 10,
+          "category": "Servicio",
+          "discount": 0
         }
       ],
       "zoned": true,
@@ -15223,9 +15234,9 @@
       "has_iva": true,
       "iva_mode": "full",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 3915,
         "total_paid": 0,
-        "balance_due": 3789.3394404799997
+        "balance_due": 3915
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -15279,7 +15290,8 @@
           "unit": "u"
         }
       ],
-      "remito_confirmed": false
+      "remito_confirmed": false,
+      "commission_amount": 0
     },
     {
       "id": "local-sale-1786709462935-bjpa",
