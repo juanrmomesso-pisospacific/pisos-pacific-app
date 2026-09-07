@@ -129927,6 +129927,22 @@
       "address": "Coghlan",
       "created_at": "2026-09-07T11:54:24.201Z",
       "last_touch_at": "2026-09-07T11:54:31.100Z"
+    },
+    {
+      "id": "lead-instagram-1788797049505",
+      "name": "@sol__cis",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-07T16:04:07.877Z",
+      "last_touch_at": "2026-09-07T16:04:07.877Z"
     }
   ],
   "conversations": [
@@ -135819,6 +135835,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-06T23:07:43.955Z",
       "last_outbound_at": "2026-09-07T14:27:57.005Z"
+    },
+    {
+      "id": "conv-1788797049505-yor9",
+      "channel": "instagram",
+      "contact_id": "1054246674281754",
+      "contact_name": "@sol__cis",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788797049505",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-07T16:04:07.877Z",
+      "last_message_preview": "📷 Foto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-07T16:04:07.877Z"
     }
   ],
   "messages": [
@@ -152513,6 +152543,16 @@
       "body": "📎 Adjunto",
       "ts": "2026-09-07T14:43:49.888Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788797049505-tkh4",
+      "conversation_id": "conv-1788797049505-yor9",
+      "direction": "in",
+      "body": "📷 Foto",
+      "ts": "2026-09-07T16:04:07.877Z",
+      "status": "received",
+      "media_url": "/uploads/f828f7bc6156c9b7.bin",
+      "media_type": "file"
     }
   ],
   "templates": [
@@ -162154,7 +162194,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODk1NTU2NjgyODkwNjcyMzozMjk5NjM1NjM4NzIwMzg0NTg0MTMyOTMwMjEwNDE3ODY4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM3NjI5NDg5NzMwMjE0MTAwMjMwMTMzMTk5NjY3MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM5MjQ1NzA1MzM1MDc5NDYzMDY5MDUzODI1ODQzMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM5MjQ2NTc4NTU3ODI3MDUyMjk0OTUzNDQ4MjQzMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM5MjQ2NTc4NTU3ODI3MDUyMjk0OTUzNDQ4MjQzMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MTM0MTk5NjgyODcwMzQ0MDY5NTE4NTExMzA4OAZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
