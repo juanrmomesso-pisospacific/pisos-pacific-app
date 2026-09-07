@@ -135798,12 +135798,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788721527142",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-07T14:29:13.262Z",
-      "last_message_preview": "Buenas ! Estoy buscando pisos de SPC de buena calidad",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-07T14:30:08.466Z",
+      "last_message_preview": "Perfecto sería la colección h2O",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-07T14:29:13.262Z",
-      "last_outbound_at": "2026-09-07T14:28:47.991Z"
+      "last_outbound_at": "2026-09-07T14:30:08.466Z"
     },
     {
       "id": "conv-1788735895884-m1a3",
@@ -152466,6 +152466,16 @@
       "ts": "2026-09-07T14:29:51.738Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MTgxNzY1MTI2NjMwODcyNjozMjk5NzM3NzAwNDY2MzYxNjUxMzc4NDUyNzQ3MDk4NTIxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788791408916-zl68",
+      "conversation_id": "conv-1788721527142-l5mf",
+      "direction": "out",
+      "body": "Perfecto sería la colección h2O",
+      "ts": "2026-09-07T14:30:08.466Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM3NzMxMzIzNTQwMTgyMzAxNjUzMTEzMzQ2NDU3NgZDZD",
       "via": "ig-app"
     }
   ],
