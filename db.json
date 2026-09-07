@@ -136386,11 +136386,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788797049505",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-07T18:46:37.218Z",
-      "last_message_preview": "si nos pasas tu whatsapp y te enviamos el catalogo y precios por ahi!",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-07T16:06:32.620Z",
+      "unread_count": 2,
+      "last_message_at": "2026-09-07T21:10:45.642Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-07T21:10:45.642Z",
       "last_outbound_at": "2026-09-07T18:46:37.218Z"
     },
     {
@@ -153376,6 +153376,22 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Juan,\r\n\r\n\r\nGracias por tu mensaje, estamos interesados en la línea H2O. Estamos\r\nconsiderando remodelar una casa y cambiar los pisos en parte de ella.\r\nVoy a buscar por mi parte el equipo para la aplicación.\r\n\r\nSaludos\r\n\r\nEl lun, 7 sept 2026 a las 15:59, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Barbara, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> Por otro lado, te comento que no contamos con equipo de colocadores en\r\n> Concepción del Uruguay.\r\n> Puedo presupuestarte producto y envío pero no puedo presupuestar la\r\n> colocación!\r\n>\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos,\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-07T21:01:38.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788815445680-y9uo",
+      "conversation_id": "conv-1788797049505-yor9",
+      "direction": "in",
+      "body": "Dale, mi teléfono es 011 6999-5470",
+      "ts": "2026-09-07T21:10:45.030Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788815446257-of9k",
+      "conversation_id": "conv-1788797049505-yor9",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-07T21:10:45.642Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -163040,7 +163056,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzU5NDgxMDMyNzgxMTYzNjIyNzMxOTc0NTQ3ODY1NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzYwNDkxNjA2OTc4MzA2NDA1OTM4MjcyNzcwNDU3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyNDMwNDQzMTgzODYxMTozMjk5NzcyNzQwODk4OTM5NzQ0MTI0MjUyNzQwNTQ0MTAyNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyNDMwNDQzMTgzODYxMTozMjk5Nzc4OTUxODUzMzQxODc2MTk2NDQxODk5MzQ4Nzg3MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyNDMwNDQzMTgzODYxMTozMjk5Nzc4OTUxODUzMzQxODc2MTk2NDQxODk5MzQ4Nzg3MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzgyMDcwOTU3NjEyMTEzNDA5MjE3NjI1MzI1NTY4MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzgyMDcyMDg2ODI3NzA3MjA2OTQwNDU2NTQzODQ2NAZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
