@@ -135923,11 +135923,12 @@
       "linked_lead_id": "lead-email-1a06a6c3891e",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-04T03:17:51.000Z",
-      "last_message_preview": "Formulario web — 100m² · Con Colocación · CP 3260 · Concepción del Uruguay Entre Rios",
+      "last_message_at": "2026-09-07T18:59:20.071Z",
+      "last_message_preview": "Hola Barbara, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-04T03:17:51.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-04T03:17:51.000Z",
+      "last_outbound_at": "2026-09-07T18:59:20.071Z"
     },
     {
       "id": "conv-email-1a06c3aa1772",
@@ -135996,7 +135997,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a071ff9c208",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-05T14:36:11.000Z",
       "last_message_preview": "Formulario web — 80m² · Sin Colocación · CP 1430 · Washington 2767",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -152974,6 +152975,15 @@
       "ts": "2026-09-07T18:46:37.218Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzY2MTE4MjI3Njc5NTEyOTA2Mjg5Mjg0OTA3MDA4MAZDZD"
+    },
+    {
+      "id": "m-1788807560071-dxhm",
+      "conversation_id": "conv-email-1a06a6c3891e",
+      "direction": "out",
+      "body": "Hola Barbara, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nPor otro lado, te comento que no contamos con equipo de colocadores en Concepción del Uruguay. \nPuedo presupuestarte producto y envío pero no puedo presupuestar la colocación!\n\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-07T18:59:20.071Z",
+      "status": "sent",
+      "wa_id": "1a07d3d3a8333900"
     }
   ],
   "templates": [
