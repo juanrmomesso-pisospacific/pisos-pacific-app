@@ -130498,6 +130498,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-07T22:10:06.296Z",
       "last_touch_at": "2026-09-07T22:10:06.296Z"
+    },
+    {
+      "id": "lead-email-1a07deac3182",
+      "name": "Carina",
+      "email": "carinasobieray@yahoo.com.ar",
+      "phone": "",
+      "source": "Web",
+      "address": "Villa Pueyrredón, CABA",
+      "postal_code": "1419",
+      "approx_m2": 40,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 40m² · Con Colocación · CP 1419",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-07T22:08:51.000Z",
+      "last_touch_at": "2026-09-07T22:08:51.000Z"
     }
   ],
   "conversations": [
@@ -136452,6 +136469,21 @@
       "last_message_preview": "Hola, qué preparación previa requiere el piso? El h2o se puede colocar sobre un piso de parquet viejo con algunos problemas de humedad?",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-07T22:10:06.296Z"
+    },
+    {
+      "id": "conv-email-1a07deac3182",
+      "channel": "email",
+      "contact_id": "carinasobieray@yahoo.com.ar",
+      "contact_name": "Carina",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a07deac3182",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-07T22:08:51.000Z",
+      "last_message_preview": "Formulario web — 40m² · Con Colocación · CP 1419 · Villa Pueyrredón, CABA",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-07T22:08:51.000Z"
     }
   ],
   "messages": [
@@ -153430,6 +153462,14 @@
       "body": "Hola, qué preparación previa requiere el piso? El h2o se puede colocar sobre un piso de parquet viejo con algunos problemas de humedad?",
       "ts": "2026-09-07T22:10:06.296Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a07deac3182",
+      "conversation_id": "conv-email-1a07deac3182",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 40m² · Con Colocación · CP 1419 · Villa Pueyrredón, CABA",
+      "ts": "2026-09-07T22:08:51.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -161182,7 +161222,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-06T23:36:45.529Z",
     "gmail_seen_ids": [
-      "19f1b97d041a0d74",
       "19f1c8fb3ec2139d",
       "19f1cc7279964461",
       "19f1d89cfed6a91a",
@@ -161981,7 +162020,8 @@
       "1a07ce26210f6a97",
       "1a07dad6a0815bf0",
       "1a07da4d3b403bad",
-      "1a07dc81d9a1c8f8"
+      "1a07dc81d9a1c8f8",
+      "1a07deac3182cf11"
     ],
     "cash_sessions": {
       "1136982222": {
