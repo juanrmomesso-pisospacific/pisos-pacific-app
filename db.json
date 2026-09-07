@@ -135799,11 +135799,11 @@
       "linked_lead_id": "lead-instagram-1788721527142",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-07T14:30:08.466Z",
-      "last_message_preview": "Perfecto sería la colección h2O",
+      "last_message_at": "2026-09-07T14:30:22.803Z",
+      "last_message_preview": "Tenes un número asi te mandamos el catálogo y coordinamos el envío de muestras",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-07T14:29:13.262Z",
-      "last_outbound_at": "2026-09-07T14:30:08.466Z"
+      "last_outbound_at": "2026-09-07T14:30:22.803Z"
     },
     {
       "id": "conv-1788735895884-m1a3",
@@ -152476,6 +152476,16 @@
       "ts": "2026-09-07T14:30:08.466Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM3NzMxMzIzNTQwMTgyMzAxNjUzMTEzMzQ2NDU3NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788791423285-3fje",
+      "conversation_id": "conv-1788721527142-l5mf",
+      "direction": "out",
+      "body": "Tenes un número asi te mandamos el catálogo y coordinamos el envío de muestras",
+      "ts": "2026-09-07T14:30:22.803Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM3NzU3NzcwOTI2Nzc0NjYwOTk0NTA1MTY2MDI4OAZDZD",
       "via": "ig-app"
     }
   ],
