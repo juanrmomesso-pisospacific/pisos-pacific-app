@@ -135844,11 +135844,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788797049505",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-07T16:04:07.877Z",
-      "last_message_preview": "📷 Foto",
+      "unread_count": 2,
+      "last_message_at": "2026-09-07T16:04:55.252Z",
+      "last_message_preview": "Hola, cómo estás?\nEstoy en obra en el barrio de Saavedra, CABA",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-07T16:04:07.877Z"
+      "last_inbound_at": "2026-09-07T16:04:55.252Z"
     }
   ],
   "messages": [
@@ -152553,6 +152553,14 @@
       "status": "received",
       "media_url": "/uploads/f828f7bc6156c9b7.bin",
       "media_type": "file"
+    },
+    {
+      "id": "m-1788797095896-9y4o",
+      "conversation_id": "conv-1788797049505-yor9",
+      "direction": "in",
+      "body": "Hola, cómo estás?\nEstoy en obra en el barrio de Saavedra, CABA",
+      "ts": "2026-09-07T16:04:55.252Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162195,7 +162203,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM3NjI5NDg5NzMwMjE0MTAwMjMwMTMzMTk5NjY3MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM5MjQ1NzA1MzM1MDc5NDYzMDY5MDUzODI1ODQzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM5MjQ2NTc4NTU3ODI3MDUyMjk0OTUzNDQ4MjQzMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MTM0MTk5NjgyODcwMzQ0MDY5NTE4NTExMzA4OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MTM0MTk5NjgyODcwMzQ0MDY5NTE4NTExMzA4OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MjIxNTkxODExNzU5NzI0OTgyODEwODEwNzc3NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
