@@ -135738,11 +135738,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788631756262",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-05T18:09:14.686Z",
-      "last_message_preview": "Hola, buenas tardes. Quería consultarles el precio del metro cuadrado del piso Roble Eslavonia xl, muchas gracias!!",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-05T18:09:14.686Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-07T14:29:38.315Z",
+      "last_message_preview": "Hola Tefi! Como estas?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-05T18:09:14.686Z",
+      "last_outbound_at": "2026-09-07T14:29:38.315Z"
     },
     {
       "id": "conv-1788640053471-45ca",
@@ -152445,6 +152446,16 @@
       "ts": "2026-09-07T14:29:14.491Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMjk5NzM3NjMxNzU2MjUyMTQzNjQ2NDA0ODA0OTc1MDAxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788791378934-nmqo",
+      "conversation_id": "conv-1788631756262-ckiw",
+      "direction": "out",
+      "body": "Hola Tefi! Como estas?",
+      "ts": "2026-09-07T14:29:38.315Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MTgxNzY1MTI2NjMwODcyNjozMjk5NzM3Njc1NzA1MTY5Nzk4NzA0MDEzMDE3MDM1NTcxMgZDZD",
       "via": "ig-app"
     }
   ],
