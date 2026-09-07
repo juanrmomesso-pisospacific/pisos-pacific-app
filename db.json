@@ -135844,11 +135844,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788797049505",
       "status": "open",
-      "unread_count": 4,
-      "last_message_at": "2026-09-07T16:05:54.054Z",
-      "last_message_preview": "Y orientarnos si los pisos pueden revestir escaleras y soportan losa radiante?",
+      "unread_count": 5,
+      "last_message_at": "2026-09-07T16:06:32.620Z",
+      "last_message_preview": "O que modelo se recomienda para esos casos\nMuchas gracias!",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-07T16:05:54.054Z"
+      "last_inbound_at": "2026-09-07T16:06:32.620Z"
     }
   ],
   "messages": [
@@ -152577,6 +152577,14 @@
       "body": "Y orientarnos si los pisos pueden revestir escaleras y soportan losa radiante?",
       "ts": "2026-09-07T16:05:54.054Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788797193227-l1jc",
+      "conversation_id": "conv-1788797049505-yor9",
+      "direction": "in",
+      "body": "O que modelo se recomienda para esos casos\nMuchas gracias!",
+      "ts": "2026-09-07T16:06:32.620Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162222,7 +162230,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MTM0MTk5NjgyODcwMzQ0MDY5NTE4NTExMzA4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MjIxNTkxODExNzU5NzI0OTgyODEwODEwNzc3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MjQ3NjI3Mzk1MDgyMDU3MjM5NTQzMzA5OTI2NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MzMwMDYzMjI2OTQ4MjcyMTY3MzE0MDUwMjUyOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MzMwMDYzMjI2OTQ4MjcyMTY3MzE0MDUwMjUyOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4NDAxMjA0OTEyNDcyODI0MzEzNTExOTg4NDI4OAZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
