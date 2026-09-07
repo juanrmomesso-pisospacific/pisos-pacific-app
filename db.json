@@ -129762,7 +129762,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-04T13:56:12.000Z",
-      "last_touch_at": "2026-09-04T13:56:12.000Z"
+      "last_touch_at": "2026-09-07T17:20:05.000Z"
     },
     {
       "id": "lead-instagram-1788573931773",
@@ -135695,12 +135695,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a06cb4a5107",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-04T13:56:12.000Z",
+      "unread_count": 2,
+      "last_message_at": "2026-09-07T17:20:05.000Z",
       "last_message_preview": "Formulario web — 75m² · Con Colocación · CP 1426 · Avenida federico lacroze",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-04T13:56:12.000Z"
+      "last_inbound_at": "2026-09-07T17:20:05.000Z"
     },
     {
       "id": "conv-1788573931773-w71w",
@@ -152593,6 +152593,14 @@
       "body": "Hola queria saber el valor de colocar un piso en casi 45 mts 2",
       "ts": "2026-09-07T16:46:47.696Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a07ce26210f",
+      "conversation_id": "conv-email-1a06cb4a5107",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 75m² · Con Colocación · CP 1426 · Avenida federico lacroze",
+      "ts": "2026-09-07T17:20:05.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -160336,7 +160344,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-06T23:36:45.529Z",
     "gmail_seen_ids": [
-      "19f18466a3b54742",
       "19f18766fa691adf",
       "19f1883578ee2a79",
       "19f1a2163d8603ca",
@@ -161135,7 +161142,8 @@
       "1a07b50731b6f97e",
       "1a07bbc1b11216ee",
       "1a07bde349b6ecbf",
-      "1a07c7fb8f3e1939"
+      "1a07c7fb8f3e1939",
+      "1a07ce26210f6a97"
     ],
     "cash_sessions": {
       "1136982222": {
