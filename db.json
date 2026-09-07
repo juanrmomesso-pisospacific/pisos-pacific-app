@@ -135806,11 +135806,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787978533315",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-07T20:32:44.801Z",
-      "last_message_preview": "En qué podemos ayudarte?",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-06T00:23:28.335Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-07T23:18:34.881Z",
+      "last_message_preview": "Les puse esto:\n\nHola. Por favor, dejen de interrumpir los videos que miro en YouTube. Ya le dije exactamente lo mismo a un montón de compañí",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-07T23:18:34.881Z",
       "last_outbound_at": "2026-09-07T20:32:44.801Z"
     },
     {
@@ -153470,6 +153470,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 40m² · Con Colocación · CP 1419 · Villa Pueyrredón, CABA",
       "ts": "2026-09-07T22:08:51.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788823115699-qknb",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "in",
+      "body": "Les puse esto:\n\nHola. Por favor, dejen de interrumpir los videos que miro en YouTube. Ya le dije exactamente lo mismo a un montón de compañías y empresas que hacen esto. ¿Para qué publicitan por YouTube?. Las compañías y empresas deberían dejar de publicitar por YouTube para que los usuarios de YouTube como yo que ven videotutoriales de programación no renieguen con las malditas interrupciones de los videos debido a los anuncios.\n\nNo interrumpan los videos de YouTube con anuncios. Estoy viendo videotutoriales de programación y me hacen perder la concentración que necesito para aprender debido a las interrupciones en el medio u otras partes de los videos. ¡No anuncien por YouTube, háganlo por otros medios!. Por favor, respóndanme a través de este medio y déjense de publicitar por YouTube. Ya me tienen podrido\n\n¡Gracias y saludos! - Nicolás Matías Funtalas.",
+      "ts": "2026-09-07T23:18:34.881Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -163137,7 +163145,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyNDMwNDQzMTgzODYxMTozMjk5Nzc4OTUxODUzMzQxODc2MTk2NDQxODk5MzQ4Nzg3MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzgyMDcwOTU3NjEyMTEzNDA5MjE3NjI1MzI1NTY4MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzgyMDcyMDg2ODI3NzA3MjA2OTQwNDU2NTQzODQ2NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0ODk1NjM0MjEyMjMwODozMjk5Nzg4NjQwMzMzMTkyMzgxNjA1NzUzODcwMTQyNjY4OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0ODk1NjM0MjEyMjMwODozMjk5Nzg4NjQwMzMzMTkyMzgxNjA1NzUzODcwMTQyNjY4OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk5Nzk2MjE5MzM0OTQ1NDk3Nzc3Mzc4MjgxNzU3MDgxNgZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
