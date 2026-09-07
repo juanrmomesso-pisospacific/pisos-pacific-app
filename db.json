@@ -130025,6 +130025,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-07T17:26:14.255Z",
       "last_touch_at": "2026-09-07T17:26:14.255Z"
+    },
+    {
+      "id": "local-1788806692678-94l1a",
+      "name": "Sol Rossi",
+      "phone": "+54 9 11 5815-7737",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Contacted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Martindale - Pilar",
+      "created_at": "2026-09-07T18:44:52.417Z",
+      "last_touch_at": "2026-09-07T18:44:56.266Z"
     }
   ],
   "conversations": [
