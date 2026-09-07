@@ -135874,12 +135874,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788801976004",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-07T17:46:39.007Z",
-      "last_message_preview": "Muchas gracias",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-07T17:47:28.857Z",
+      "last_message_preview": "Con colocación? En que zona?",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-07T17:46:39.007Z",
-      "last_outbound_at": "2026-09-07T17:45:19.179Z"
+      "last_outbound_at": "2026-09-07T17:47:28.857Z"
     }
   ],
   "messages": [
@@ -152686,6 +152686,26 @@
       "body": "Muchas gracias",
       "ts": "2026-09-07T17:46:39.007Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788803248889-5g8s",
+      "conversation_id": "conv-1788801976004-muje",
+      "direction": "out",
+      "body": "De la colección h2O no?",
+      "ts": "2026-09-07T17:47:28.271Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzU5NTcxOTA4MDc1OTE5ODg0ODg5MTg5NzI0OTc5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788803249292-68ki",
+      "conversation_id": "conv-1788801976004-muje",
+      "direction": "out",
+      "body": "Con colocación? En que zona?",
+      "ts": "2026-09-07T17:47:28.857Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzU5NTcyOTg5Njg5NjkwNjAwNDA0NTIyOTk4MTY5NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
