@@ -135739,11 +135739,11 @@
       "linked_lead_id": "lead-instagram-1788631756262",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-07T14:29:38.315Z",
-      "last_message_preview": "Hola Tefi! Como estas?",
+      "last_message_at": "2026-09-07T14:29:51.738Z",
+      "last_message_preview": "Usd 38 + iva\nAhora estamos con 10 off\nTe queda en usd 34.20 + iva",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-05T18:09:14.686Z",
-      "last_outbound_at": "2026-09-07T14:29:38.315Z"
+      "last_outbound_at": "2026-09-07T14:29:51.738Z"
     },
     {
       "id": "conv-1788640053471-45ca",
@@ -152456,6 +152456,16 @@
       "ts": "2026-09-07T14:29:38.315Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MTgxNzY1MTI2NjMwODcyNjozMjk5NzM3Njc1NzA1MTY5Nzk4NzA0MDEzMDE3MDM1NTcxMgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788791392317-9u6d",
+      "conversation_id": "conv-1788631756262-ckiw",
+      "direction": "out",
+      "body": "Usd 38 + iva\nAhora estamos con 10 off\nTe queda en usd 34.20 + iva",
+      "ts": "2026-09-07T14:29:51.738Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MTgxNzY1MTI2NjMwODcyNjozMjk5NzM3NzAwNDY2MzYxNjUxMzc4NDUyNzQ3MDk4NTIxNgZDZD",
       "via": "ig-app"
     }
   ],
