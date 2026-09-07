@@ -135874,11 +135874,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788801976004",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-07T17:26:14.255Z",
-      "last_message_preview": "Hola, mande mail ya 3 veces pidiendo presupuesto para precio de 75 mts de roble clasic. \n\nGraaaacias",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-07T17:26:14.255Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-07T17:45:19.179Z",
+      "last_message_preview": "Obvio te preparamos",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-07T17:26:14.255Z",
+      "last_outbound_at": "2026-09-07T17:45:19.179Z"
     }
   ],
   "messages": [
@@ -152639,6 +152640,36 @@
       "body": "Hola, mande mail ya 3 veces pidiendo presupuesto para precio de 75 mts de roble clasic. \n\nGraaaacias",
       "ts": "2026-09-07T17:26:14.255Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788803101923-5nqf",
+      "conversation_id": "conv-1788801976004-muje",
+      "direction": "out",
+      "body": "Hola Dolores cómo estás?",
+      "ts": "2026-09-07T17:45:01.248Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzU5MzAwNjk4MzgzMjQyNDUwODM5ODY5OTAyMDI4OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788803111083-4tw4",
+      "conversation_id": "conv-1788801976004-muje",
+      "direction": "out",
+      "body": "No tenemos ningún Mail con este pedido",
+      "ts": "2026-09-07T17:45:10.581Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzU5MzE3OTE1Mjc1NTEwMDY4NTQ2MTk1ODQyNjYyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788803119760-amdm",
+      "conversation_id": "conv-1788801976004-muje",
+      "direction": "out",
+      "body": "Obvio te preparamos",
+      "ts": "2026-09-07T17:45:19.179Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzU5MzMzNzc1NzQzNjM3MTMyNjQ5MTQzMzEwNzQ1NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
