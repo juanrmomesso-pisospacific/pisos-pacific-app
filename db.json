@@ -130594,6 +130594,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-07T22:08:51.000Z",
       "last_touch_at": "2026-09-07T22:08:51.000Z"
+    },
+    {
+      "id": "lead-email-1a07e3feddad",
+      "name": "Gabriel Román",
+      "email": "gabrielm_roman@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Los Paraísos 244",
+      "postal_code": "6620",
+      "approx_m2": 39,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 39m² · Con Colocación · CP 6620",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-07T23:41:52.000Z",
+      "last_touch_at": "2026-09-07T23:41:52.000Z"
     }
   ],
   "conversations": [
@@ -136563,6 +136580,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-07T22:08:51.000Z"
+    },
+    {
+      "id": "conv-email-1a07e3feddad",
+      "channel": "email",
+      "contact_id": "gabrielm_roman@hotmail.com",
+      "contact_name": "Gabriel Román",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a07e3feddad",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-07T23:41:52.000Z",
+      "last_message_preview": "Formulario web — 39m² · Con Colocación · CP 6620 · Los Paraísos 244",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-07T23:41:52.000Z"
     }
   ],
   "messages": [
@@ -153557,6 +153589,14 @@
       "body": "Les puse esto:\n\nHola. Por favor, dejen de interrumpir los videos que miro en YouTube. Ya le dije exactamente lo mismo a un montón de compañías y empresas que hacen esto. ¿Para qué publicitan por YouTube?. Las compañías y empresas deberían dejar de publicitar por YouTube para que los usuarios de YouTube como yo que ven videotutoriales de programación no renieguen con las malditas interrupciones de los videos debido a los anuncios.\n\nNo interrumpan los videos de YouTube con anuncios. Estoy viendo videotutoriales de programación y me hacen perder la concentración que necesito para aprender debido a las interrupciones en el medio u otras partes de los videos. ¡No anuncien por YouTube, háganlo por otros medios!. Por favor, respóndanme a través de este medio y déjense de publicitar por YouTube. Ya me tienen podrido\n\n¡Gracias y saludos! - Nicolás Matías Funtalas.",
       "ts": "2026-09-07T23:18:34.881Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a07e3feddad",
+      "conversation_id": "conv-email-1a07e3feddad",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 39m² · Con Colocación · CP 6620 · Los Paraísos 244",
+      "ts": "2026-09-07T23:41:52.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -161309,7 +161349,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-07T23:37:50.528Z",
     "gmail_seen_ids": [
-      "19f1c8fb3ec2139d",
       "19f1cc7279964461",
       "19f1d89cfed6a91a",
       "19f1d99dcaf39995",
@@ -162108,7 +162147,8 @@
       "1a07dad6a0815bf0",
       "1a07da4d3b403bad",
       "1a07dc81d9a1c8f8",
-      "1a07deac3182cf11"
+      "1a07deac3182cf11",
+      "1a07e3feddad009c"
     ],
     "cash_sessions": {
       "1136982222": {
