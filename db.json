@@ -135796,11 +135796,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788721527142",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-06T19:05:25.913Z",
-      "last_message_preview": "Hola me mandas info? Hacen envíos de muestras al interior ?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-06T19:05:25.913Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-07T14:28:34.112Z",
+      "last_message_preview": "Que colección te interesaba?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-06T19:05:25.913Z",
+      "last_outbound_at": "2026-09-07T14:28:34.112Z"
     },
     {
       "id": "conv-1788735895884-m1a3",
@@ -152375,6 +152376,46 @@
       "ts": "2026-09-07T14:27:57.005Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODk1NTU2NjgyODkwNjcyMzozMjk5NzM3NDg4ODE5NjA5OTQ0NTkwMTY5NzE5MTI0Nzg3MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788791299139-zsrv",
+      "conversation_id": "conv-1788721527142-l5mf",
+      "direction": "out",
+      "body": "Hola Julia",
+      "ts": "2026-09-07T14:28:18.624Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM3NTI4NzAwMTAzNzI4MjE0MzU4NDM1MTQyMDQxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788791301927-sstm",
+      "conversation_id": "conv-1788721527142-l5mf",
+      "direction": "out",
+      "body": "Cómo estás?",
+      "ts": "2026-09-07T14:28:21.315Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM3NTMzNjY1MjE4Mjk1MDQ3NTc3MTIyMzczNjMyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788791306776-0f5v",
+      "conversation_id": "conv-1788721527142-l5mf",
+      "direction": "out",
+      "body": "Sii hacemos envíos",
+      "ts": "2026-09-07T14:28:26.453Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM3NTQzMTQzMzA4NTA4MDk1MzU2NTMxOTUyODQ0OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788791314633-27rp",
+      "conversation_id": "conv-1788721527142-l5mf",
+      "direction": "out",
+      "body": "Que colección te interesaba?",
+      "ts": "2026-09-07T14:28:34.112Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM3NTU3MjcxNTQ4MDQ1NjM4NjE1NjMxNjA2NTc5MgZDZD",
       "via": "ig-app"
     }
   ],
