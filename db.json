@@ -135773,11 +135773,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787978533315",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-06T00:23:28.335Z",
-      "last_message_preview": "Respondan...",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-06T00:23:28.335Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-07T20:32:32.038Z",
+      "last_message_preview": "No tenemos ningún mensaje tuyo",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-06T00:23:28.335Z",
+      "last_outbound_at": "2026-09-07T20:32:32.038Z"
     },
     {
       "id": "conv-email-1a04d3963422",
@@ -153328,6 +153329,26 @@
       "ts": "2026-09-07T20:32:03.202Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyNDMwNDQzMTgzODYxMTozMjk5Nzc3Nzg3OTQxNzMzODUyODU4Mzc5ODk4MTkxODcyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788813147129-sptt",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "out",
+      "body": "Hola Nicolás",
+      "ts": "2026-09-07T20:32:26.557Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk5Nzc3ODMxMDIyNTAxNjE0OTQ3MDMyMzM3MzI0NDQxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788813152409-9pc1",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "out",
+      "body": "No tenemos ningún mensaje tuyo",
+      "ts": "2026-09-07T20:32:32.038Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk5Nzc3ODQxMTMzNTA1MTUxMTg3MDA4NTc1NzE0MDk5MgZDZD",
       "via": "ig-app"
     }
   ],
