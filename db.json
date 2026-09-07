@@ -135769,11 +135769,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788640053472",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-07T14:29:14.491Z",
-      "last_message_preview": "Hola Naty con que podemos ayudarte?",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-05T20:27:31.878Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-07T16:46:47.696Z",
+      "last_message_preview": "Hola queria saber el valor de colocar un piso en casi 45 mts 2",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-07T16:46:47.696Z",
       "last_outbound_at": "2026-09-07T14:29:14.491Z"
     },
     {
@@ -152585,6 +152585,14 @@
       "body": "O que modelo se recomienda para esos casos\nMuchas gracias!",
       "ts": "2026-09-07T16:06:32.620Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788799608491-7204",
+      "conversation_id": "conv-1788640053471-45ca",
+      "direction": "in",
+      "body": "Hola queria saber el valor de colocar un piso en casi 45 mts 2",
+      "ts": "2026-09-07T16:46:47.696Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162231,7 +162239,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MjIxNTkxODExNzU5NzI0OTgyODEwODEwNzc3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MjQ3NjI3Mzk1MDgyMDU3MjM5NTQzMzA5OTI2NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MzMwMDYzMjI2OTQ4MjcyMTY3MzE0MDUwMjUyOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4NDAxMjA0OTEyNDcyODI0MzEzNTExOTg4NDI4OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4NDAxMjA0OTEyNDcyODI0MzEzNTExOTg4NDI4OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMjk5NzUyODU2MjMzNzU1NDExNzgxMDM3MDk0MzkwOTg4OAZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
