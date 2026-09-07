@@ -136415,11 +136415,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788810388962",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-07T19:46:27.195Z",
-      "last_message_preview": "Dónde están ubicados para ir personalmente \n\nGracias",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-07T19:46:27.195Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-07T20:32:03.202Z",
+      "last_message_preview": "Es con cita previa",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-07T19:46:27.195Z",
+      "last_outbound_at": "2026-09-07T20:32:03.202Z"
     }
   ],
   "messages": [
@@ -153298,6 +153299,36 @@
       "body": "Dónde están ubicados para ir personalmente \n\nGracias",
       "ts": "2026-09-07T19:46:27.195Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788813115182-pk58",
+      "conversation_id": "conv-1788810388962-avv8",
+      "direction": "out",
+      "body": "Hola Silvia",
+      "ts": "2026-09-07T20:31:54.563Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyNDMwNDQzMTgzODYxMTozMjk5Nzc3NzcyMDA1MDkzNTg1NDkwNzA4MDk5MjM1ODQwMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788813120693-gp7r",
+      "conversation_id": "conv-1788810388962-avv8",
+      "direction": "out",
+      "body": "Estamos en Olivos",
+      "ts": "2026-09-07T20:32:00.229Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyNDMwNDQzMTgzODYxMTozMjk5Nzc3NzgyNDU3MDU3NTE1ODE3MDk0ODM0OTE5ODMzNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788813123652-5bsf",
+      "conversation_id": "conv-1788810388962-avv8",
+      "direction": "out",
+      "body": "Es con cita previa",
+      "ts": "2026-09-07T20:32:03.202Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyNDMwNDQzMTgzODYxMTozMjk5Nzc3Nzg3OTQxNzMzODUyODU4Mzc5ODk4MTkxODcyMAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
