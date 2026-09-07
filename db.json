@@ -135774,11 +135774,11 @@
       "linked_lead_id": "lead-instagram-1787978533315",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-07T20:32:32.038Z",
-      "last_message_preview": "No tenemos ningún mensaje tuyo",
+      "last_message_at": "2026-09-07T20:32:44.801Z",
+      "last_message_preview": "En qué podemos ayudarte?",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-06T00:23:28.335Z",
-      "last_outbound_at": "2026-09-07T20:32:32.038Z"
+      "last_outbound_at": "2026-09-07T20:32:44.801Z"
     },
     {
       "id": "conv-email-1a04d3963422",
@@ -153349,6 +153349,16 @@
       "ts": "2026-09-07T20:32:32.038Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk5Nzc3ODQxMTMzNTA1MTUxMTg3MDA4NTc1NzE0MDk5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788813165505-5qqb",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "out",
+      "body": "En qué podemos ayudarte?",
+      "ts": "2026-09-07T20:32:44.801Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk5Nzc3ODY0Njc3NTc3MTQwNTI5Mjc3MzQ4MjQzMDQ2NAZDZD",
       "via": "ig-app"
     }
   ],
