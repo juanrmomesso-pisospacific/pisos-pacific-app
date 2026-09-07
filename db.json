@@ -135874,11 +135874,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788801976004",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-07T17:45:19.179Z",
-      "last_message_preview": "Obvio te preparamos",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-07T17:26:14.255Z",
+      "unread_count": 2,
+      "last_message_at": "2026-09-07T17:46:39.007Z",
+      "last_message_preview": "Muchas gracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-07T17:46:39.007Z",
       "last_outbound_at": "2026-09-07T17:45:19.179Z"
     }
   ],
@@ -152670,6 +152670,22 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzU5MzMzNzc1NzQzNjM3MTMyNjQ5MTQzMzEwNzQ1NgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1788803196412-qfq5",
+      "conversation_id": "conv-1788801976004-muje",
+      "direction": "in",
+      "body": "Hola!!! Justo me pasaron u  contacto y mande WhatsApp. \nHabia pedido cotizar desde la página",
+      "ts": "2026-09-07T17:46:35.744Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788803199628-iczu",
+      "conversation_id": "conv-1788801976004-muje",
+      "direction": "in",
+      "body": "Muchas gracias",
+      "ts": "2026-09-07T17:46:39.007Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162318,7 +162334,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4MzMwMDYzMjI2OTQ4MjcyMTY3MzE0MDUwMjUyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzQ4NDAxMjA0OTEyNDcyODI0MzEzNTExOTg4NDI4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMjk5NzUyODU2MjMzNzU1NDExNzgxMDM3MDk0MzkwOTg4OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzU3MjIxNzY0MDcyNjQ5MDY4MTAxMTA0NTY2MjcyMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzU3MjIxNzY0MDcyNjQ5MDY4MTAxMTA0NTY2MjcyMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzU5NDc1MDEzMDg2NTI5NTE0MDE5MzAxOTM2MzMyOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDM3MDc3MzA2NTEwOTMwOTozMjk5NzU5NDgxMDMyNzgxMTYzNjIyNzMxOTc0NTQ3ODY1NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
