@@ -135810,11 +135810,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788735895884",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-09-06T23:07:43.955Z",
-      "last_message_preview": "https://www.instagram.com/p/DbtaaB6HE6d/?img_index=5&stkn=MWdiNmo3bXJ1YWtx",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-06T23:07:43.955Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-07T14:27:57.005Z",
+      "last_message_preview": "Usd 38 + iva\nAhora estamos con 10 off\nTe queda en usd 34.20 + iva",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-06T23:07:43.955Z",
+      "last_outbound_at": "2026-09-07T14:27:57.005Z"
     }
   ],
   "messages": [
@@ -152355,6 +152356,26 @@
       "body": "✉️ RE: Re: Re: Exterior and Interior panel\n\nHi Victoria,\r\n\r\nThey factory passed me 3 times the TDS but it was not correct, I instructed him how to do it right, now they don't reply me, jajajaja...\r\nMaybe it's way more difficult for them, i will keep pushing him.\r\n\r\nSorry to keep you waiting, some suppliers are difficult especially at the beginning.\r\n \r\n \r\n*******     ********    ********     ********    ********     ********    ********     ********    ********     ********    ********     ********  \r\nATTENTION: Our bank information remains always the same if no further notification, pls CALL us to double check if you received scam mails asking to pay to a new account\r\n \r\n \r\nThanks & B.rgs\r\nGina Bao/Cfloor Service\r\n \r\nAddress: Room 1108/1109, Tower A. \r\nShiAo International center, \r\nNo 101 ShaoYaoJu Bei Li. \r\nChaoYang District. Beijing 100029 China.\r\n \r\nTel: 0086 10 84351355 \r\nMobile: +86 132 6001 6981\r\nEmail: gina@cfloor.net\r\nWebsite: www.cfloor.net\r\n \r\n \r\n--------------- Original Message ----------\r\nFrom: Victoria Pisos Pacific <victoria@pisospacific.com>; \r\nTo: <gina@cfloor.net>; \r\nCC: info pisos <info@pisospacific.com>; \r\nSent: 2026-09-05 04:29\r\nSubject: Re: Re: Exterior and Interior panel\r\n\r\n\r\nHi Gina! Any news?\r\n\r\n\r\nEl lun, 24 ago 2026 a las 23:06, Cfloor-Gina (<gina@cfloor.net>) escribió:\r\n\r\n\r\nHi Victoria,\r\n \r\nLet me request from factory and come back to you.\r\nThank you\r\n \r\n \r\n*******     ********    ********     ********    ********     ********    ********     ********    ********     ********    ********     ",
       "ts": "2026-09-07T09:28:33.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788791247320-44pj",
+      "conversation_id": "conv-1788735895884-m1a3",
+      "direction": "out",
+      "body": "Hola Max cómo estás?",
+      "ts": "2026-09-07T14:27:26.746Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODk1NTU2NjgyODkwNjcyMzozMjk5NzM3NDMzMDAxNTQyNDg4MzQ4MTc5NTAwODM5NzMxMgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788791277465-vob0",
+      "conversation_id": "conv-1788735895884-m1a3",
+      "direction": "out",
+      "body": "Usd 38 + iva\nAhora estamos con 10 off\nTe queda en usd 34.20 + iva",
+      "ts": "2026-09-07T14:27:57.005Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODk1NTU2NjgyODkwNjcyMzozMjk5NzM3NDg4ODE5NjA5OTQ0NTkwMTY5NzE5MTI0Nzg3MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
