@@ -135752,11 +135752,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788640053472",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-05T20:27:31.878Z",
-      "last_message_preview": "Hola",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-05T20:27:31.878Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-07T14:29:14.491Z",
+      "last_message_preview": "Hola Naty con que podemos ayudarte?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-05T20:27:31.878Z",
+      "last_outbound_at": "2026-09-07T14:29:14.491Z"
     },
     {
       "id": "conv-email-1a075050f3c0",
@@ -135796,11 +135797,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788721527142",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-07T14:28:47.991Z",
-      "last_message_preview": "La de pisos Prefinished de madera? O la colección h2O?",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-06T19:05:25.913Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-07T14:29:13.262Z",
+      "last_message_preview": "Buenas ! Estoy buscando pisos de SPC de buena calidad",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-07T14:29:13.262Z",
       "last_outbound_at": "2026-09-07T14:28:47.991Z"
     },
     {
@@ -152427,6 +152428,24 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM3NTgyODczNzEyMjAzMjM4MjE0ODUyMjAxNjc2OAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1788791353820-1vsa",
+      "conversation_id": "conv-1788721527142-l5mf",
+      "direction": "in",
+      "body": "Buenas ! Estoy buscando pisos de SPC de buena calidad",
+      "ts": "2026-09-07T14:29:13.262Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788791354927-kkj0",
+      "conversation_id": "conv-1788640053471-45ca",
+      "direction": "out",
+      "body": "Hola Naty con que podemos ayudarte?",
+      "ts": "2026-09-07T14:29:14.491Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMjk5NzM3NjMxNzU2MjUyMTQzNjQ2NDA0ODA0OTc1MDAxNgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
@@ -162065,7 +162084,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NjA4ODIwNzY1NTM2NDE3ODk2MjY0MzM5MTg3MzAyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODk1NTU2NjgyODkwNjcyMzozMjk5NjM1MzI2MTAwNzI2OTIxMDQwMDI2ODYzMzUwNTc5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODk1NTU2NjgyODkwNjcyMzozMjk5NjM1NTQzNzAwOTMyODQ4NjQyNzM4OTM1MDM3OTUyMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODk1NTU2NjgyODkwNjcyMzozMjk5NjM1NjM4NzIwMzg0NTg0MTMyOTMwMjEwNDE3ODY4OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODk1NTU2NjgyODkwNjcyMzozMjk5NjM1NjM4NzIwMzg0NTg0MTMyOTMwMjEwNDE3ODY4OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU4MjM3Mjg2NTI1MjkzMjozMjk5NzM3NjI5NDg5NzMwMjE0MTAwMjMwMTMzMTk5NjY3MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
