@@ -129866,6 +129866,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-06T23:04:54.484Z",
       "last_touch_at": "2026-09-06T23:04:54.484Z"
+    },
+    {
+      "id": "local-1788782064409-tma6l",
+      "name": "Paula Lacruz",
+      "phone": "‪+54 9 11 3781‑0272‬",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Contacted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Coghlan",
+      "created_at": "2026-09-07T11:54:24.201Z",
+      "last_touch_at": "2026-09-07T11:54:31.100Z"
     }
   ],
   "conversations": [
