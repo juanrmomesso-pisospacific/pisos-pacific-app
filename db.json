@@ -130482,6 +130482,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-07T19:46:27.195Z",
       "last_touch_at": "2026-09-07T19:46:27.195Z"
+    },
+    {
+      "id": "lead-instagram-1788819008545",
+      "name": "@carisobi",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-07T22:10:06.296Z",
+      "last_touch_at": "2026-09-07T22:10:06.296Z"
     }
   ],
   "conversations": [
@@ -136422,6 +136438,20 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-07T20:42:34.160Z",
       "last_outbound_at": "2026-09-07T20:32:03.202Z"
+    },
+    {
+      "id": "conv-1788819008545-cgtr",
+      "channel": "instagram",
+      "contact_id": "1766346887740130",
+      "contact_name": "@carisobi",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788819008545",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-07T22:10:06.296Z",
+      "last_message_preview": "Hola, qué preparación previa requiere el piso? El h2o se puede colocar sobre un piso de parquet viejo con algunos problemas de humedad?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-07T22:10:06.296Z"
     }
   ],
   "messages": [
@@ -153392,6 +153422,14 @@
       "body": "📎 Adjunto",
       "ts": "2026-09-07T21:10:45.642Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788819008545-ognt",
+      "conversation_id": "conv-1788819008545-cgtr",
+      "direction": "in",
+      "body": "Hola, qué preparación previa requiere el piso? El h2o se puede colocar sobre un piso de parquet viejo con algunos problemas de humedad?",
+      "ts": "2026-09-07T22:10:06.296Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -163058,7 +163096,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyNDMwNDQzMTgzODYxMTozMjk5NzcyNzQwODk4OTM5NzQ0MTI0MjUyNzQwNTQ0MTAyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyNDMwNDQzMTgzODYxMTozMjk5Nzc4OTUxODUzMzQxODc2MTk2NDQxODk5MzQ4Nzg3MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzgyMDcwOTU3NjEyMTEzNDA5MjE3NjI1MzI1NTY4MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzgyMDcyMDg2ODI3NzA3MjA2OTQwNDU2NTQzODQ2NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzgyMDcyMDg2ODI3NzA3MjA2OTQwNDU2NTQzODQ2NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0ODk1NjM0MjEyMjMwODozMjk5Nzg4NjQwMzMzMTkyMzgxNjA1NzUzODcwMTQyNjY4OAZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
