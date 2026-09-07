@@ -135959,10 +135959,11 @@
       "linked_lead_id": "lead-instagram-1788797049505",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-07T16:06:32.620Z",
-      "last_message_preview": "O que modelo se recomienda para esos casos\nMuchas gracias!",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-07T16:06:32.620Z"
+      "last_message_at": "2026-09-07T18:46:21.129Z",
+      "last_message_preview": "Hola Sol como estas?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-07T16:06:32.620Z",
+      "last_outbound_at": "2026-09-07T18:46:21.129Z"
     },
     {
       "id": "conv-1788801976004-muje",
@@ -152812,6 +152813,15 @@
       "body": "Si, los h2o con colocación. \nEstoy en belgrano",
       "ts": "2026-09-07T17:55:46.841Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788806781129-wk9e",
+      "conversation_id": "conv-1788797049505-yor9",
+      "direction": "out",
+      "body": "Hola Sol como estas?",
+      "ts": "2026-09-07T18:46:21.129Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYxOTkwMTI0NDE1NTMwMDozMjk5NzY2MDg4NDA1MjUyNjQ0MDUzNzUyNTA3MDA2OTc2MAZDZD"
     }
   ],
   "templates": [
