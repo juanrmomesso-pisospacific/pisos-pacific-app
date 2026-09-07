@@ -135953,7 +135953,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a06cb4a5107",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-09-07T17:20:05.000Z",
       "last_message_preview": "Formulario web — 75m² · Con Colocación · CP 1426 · Avenida federico lacroze",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -135998,11 +135998,12 @@
       "linked_lead_id": "lead-email-1a071ff9c208",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-05T14:36:11.000Z",
-      "last_message_preview": "Formulario web — 80m² · Sin Colocación · CP 1430 · Washington 2767",
+      "last_message_at": "2026-09-07T19:00:10.143Z",
+      "last_message_preview": "Hola Paula, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-05T14:36:11.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-05T14:36:11.000Z",
+      "last_outbound_at": "2026-09-07T19:00:10.143Z"
     },
     {
       "id": "conv-1788631756262-ckiw",
@@ -136057,7 +136058,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a077dbea19c",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-06T17:54:55.000Z",
       "last_message_preview": "Formulario web — 30m² · Con Colocación · CP 1712 · Almafuerte 2137",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -152984,6 +152985,15 @@
       "ts": "2026-09-07T18:59:20.071Z",
       "status": "sent",
       "wa_id": "1a07d3d3a8333900"
+    },
+    {
+      "id": "m-1788807610143-qubo",
+      "conversation_id": "conv-email-1a071ff9c208",
+      "direction": "out",
+      "body": "Hola Paula, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEn caso de requerir colocación, no dudes en avisarnos y lo presupuestamos también!\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-07T19:00:10.143Z",
+      "status": "sent",
+      "wa_id": "1a07d3dffd320bb2"
     }
   ],
   "templates": [
