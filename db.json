@@ -35792,6 +35792,18 @@
       ],
       "notes": null,
       "updated_at": "2026-09-07T18:43:28.515Z"
+    },
+    {
+      "id": "CLI-mtrlxrl0-njbl",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Alexia Valenzuela",
+      "updated_at": "2026-09-07T19:02:11.940Z"
     }
   ],
   "expenses": [],
