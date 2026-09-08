@@ -130611,6 +130611,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-07T23:41:52.000Z",
       "last_touch_at": "2026-09-07T23:41:52.000Z"
+    },
+    {
+      "id": "local-1788826226537-c1eik",
+      "name": "Sol Galarraga",
+      "phone": "+54 9 11 3039-7656",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "Escalera coleccion H2O"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "San isidro",
+      "created_at": "2026-09-08T00:10:26.371Z",
+      "last_touch_at": "2026-09-08T00:10:29.654Z"
     }
   ],
   "conversations": [
