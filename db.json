@@ -777,6 +777,28 @@
       "stage": "postventa",
       "keywords": "terminado,quedo,conforme,gracias por todo",
       "body": "Hola {nombre},\n\n¿Cómo quedó la obra? Esperamos que estés disfrutando tu piso nuevo.\n\nSi quedaste conforme, nos ayudaría muchísimo una reseña en Google o una foto de la obra terminada para nuestras redes.\n\n¡Gracias por confiar en Pisos Pacific!\n\nSaludos,"
+    },
+    {
+      "id": "tpl-email-followup-presupuesto",
+      "name": "email_followup_presupuesto",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "email",
+      "status": "approved",
+      "keywords": "seguimiento,follow up,pudiste ver,presupuesto enviado,recordatorio,definir",
+      "body": "Hola {nombre}, ¿cómo estás? Quería saber si habías podido ver el presupuesto que te adjuntamos.\n\nPor favor, ante cualquier duda, nos consultás para que podamos asesorarte de la mejor manera.\n\nDesde ya, muchas gracias.\nSaludos,",
+      "stage": "seguimiento"
+    },
+    {
+      "id": "tpl-email-followup-consulta",
+      "name": "email_followup_consulta",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "email",
+      "status": "approved",
+      "keywords": "seguimiento,follow up,pudiste ver,sin respuesta,recordatorio,consulta",
+      "body": "Hola {nombre}, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos la mejor forma de asesorarte.\n\n¡Muchas gracias!\nSaludos,",
+      "stage": "seguimiento"
     }
   ],
   "stock_movements": [
@@ -942,7 +964,7 @@
     },
     "locale": "es-PA",
     "updatedAt": "2026-07-17T01:53:18.716Z",
-    "last_daily_pending_digest": "2026-09-04"
+    "last_daily_pending_digest": "2026-09-08"
   },
   "password_resets": {}
 }
