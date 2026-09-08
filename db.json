@@ -130840,6 +130840,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-08T11:53:35.259Z",
       "last_touch_at": "2026-09-08T11:53:35.259Z"
+    },
+    {
+      "id": "lead-email-1a0811bd44d0",
+      "name": "Info Construcción",
+      "email": "envio@infoconstruccion.com.ar",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: 🧱 Empresas de construcción en alerta ante el pedido del IERIC de acceder al Libro de Sueldos Digital — [ View in browser](https://r.infodesarrollos-news.com.ar/mk/mr/sh/7nVTPdZCTJDXOqqKRQhO0mRTgry7xtD/VDan8kz7xvUH)\r\n\r\n**Noticias & Negocios**\r\n-----------------------\r\n\r\n\r\n** de la In",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-08T13:01:19.000Z",
+      "last_touch_at": "2026-09-08T13:01:19.000Z"
     }
   ],
   "conversations": [
@@ -136844,6 +136861,21 @@
       "last_message_preview": "https://www.instagram.com/reel/Dc_D_kTOrqp/?stkn=MTJxNGVqM3h6azg5cw==",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-08T11:53:35.259Z"
+    },
+    {
+      "id": "conv-email-1a0811bd44d0",
+      "channel": "email",
+      "contact_id": "envio@infoconstruccion.com.ar",
+      "contact_name": "Info Construcción",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0811bd44d0",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-08T13:01:19.000Z",
+      "last_message_preview": "[ View in browser](https://r.infodesarrollos-news.com.ar/mk/mr/sh/7nVTPdZCTJDXOqqKRQhO0mRTgry7xtD/VDan8kz7xvUH)\r\n\r\n**Noticias & Negocios**\r\n",
+      "email_subject": "🧱 Empresas de construcción en alerta ante el pedido del IERIC de acceder al Libro de Sueldos Digital",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-08T13:01:19.000Z"
     }
   ],
   "messages": [
@@ -153989,6 +154021,14 @@
       "body": "✉️ Re: DOCUMENTACION CONTAINER PDPG 2619 | CCF-MI-00000082 | JUAN RODRIGUEZ MOMESSO\n\nHola Vicky, buen dia\r\n\r\nMuchas gracias. Reviso los documentos y preparo el presupuesto.\r\n\r\nBuen martes :)\r\n\r\nSaludos\r\n\r\n\r\n\r\n\r\nEl mar, 8 sept 2026 a la(s) 9:42 a.m., Victoria Pisos Pacific (\r\nvictoria@pisospacific.com) escribió:\r\n\r\n> Hola Cami, ¿cómo estás?\r\n>\r\n> Disculpa la demora en el envío de la documentación; a la fábrica le\r\n> faltaba especificar las cantidades de los moldings.\r\n>\r\n> Cuando puedas, por favor envíanos el presupuesto del costo estimado.\r\n> Confirma si está todo en orden y cualquier duda lo hablamos.\r\n>\r\n> Te comento que ya pedí el TELEX.\r\n>\r\n> Saludos,\r\n> Vicky\r\n>\r\n>",
       "ts": "2026-09-08T12:45:08.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0811bd44d0",
+      "conversation_id": "conv-email-1a0811bd44d0",
+      "direction": "in",
+      "body": "✉️ 🧱 Empresas de construcción en alerta ante el pedido del IERIC de acceder al Libro de Sueldos Digital\n\n[ View in browser](https://r.infodesarrollos-news.com.ar/mk/mr/sh/7nVTPdZCTJDXOqqKRQhO0mRTgry7xtD/VDan8kz7xvUH)\r\n\r\n**Noticias & Negocios**\r\n-----------------------\r\n\r\n\r\n** de la Industria de la Construcción y la Vivienda**\r\n-----------------------------------------------------\r\n\r\n**Segunda semana de septiembre 2026 - Año 6 - #276**\r\n---------------------------------------------------- \r\n**[Suscripción](https://r.infodesarrollos-news.com.ar/mk/cl/f/sh/7nVU1aA2nfsTSXgdUePjIN9dVVe4t2R/LDybBzftYj4Msuscripcion-a-info-construccion/)**\r\n\r\n[**Quienes Somos**](https://r.infodesarrollos-news.com.ar/mk/cl/f/sh/7nVU1aA2ng1uQADANUZzUAkgLK80al1/KA86Z8XP-C0wquines-somos/)\r\n\r\n[**Construwapp**](https://r.infodesarrollos-news.com.ar/mk/cl/f/sh/7nVU1aA2ng7ZOjj5JCHLbFi6qPcMoaZ/CJBIW5Cb6fns)\r\n\r\n[**Publicar**](https://r.infodesarrollos-news.com.ar/mk/cl/f/sh/7nVU1aA2ng9SOGEOHlVndc1v0m79YX5/X-_DTR5mINyP)\r\n\r\n**[Contacto](https://r.infodesarrollos-news.com.ar/mk/cl/f/sh/WCPzyXJTZ6vLwtQN2yn7WsOMlwP5jhRr/73WrUCugQGEW)**\r\n\r\n**Empresas de construcción en alerta ante el pedido del IERIC de acceder al Libro de Sueldos Digital**\r\n======================================================================================================\r\nFuente: iProesional por Hernán Gilardo – La Ley de Modernización Laboral y su reglamentación modificaron el sistema de registración laboral en la industria de la construcción.\r\n\r\n\r\nLa Ley de Modernización Laboral y su reglamentación modificaron el sistema de registración laboral ",
+      "ts": "2026-09-08T13:01:19.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -161979,7 +162019,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-07T23:37:50.528Z",
     "gmail_seen_ids": [
-      "19f1e7666262e112",
       "19f1e7571937f6c3",
       "19f1ec0c808c2b28",
       "19f1ebb7a8b700a3",
@@ -162778,7 +162817,8 @@
       "1a080e67d877771a",
       "1a080f444eb4f09d",
       "1a0810ac94574c61",
-      "1a0810d950297fdb"
+      "1a0810d950297fdb",
+      "1a0811bd44d0f5f2"
     ],
     "cash_sessions": {
       "1136982222": {
