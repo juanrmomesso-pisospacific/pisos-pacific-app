@@ -136672,11 +136672,12 @@
       "linked_lead_id": "lead-email-1a075050f3c0",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-06T04:41:00.000Z",
-      "last_message_preview": "Formulario web — 21m² · Con Colocación · CP 5519 · Remedios de Escalada 1618, Dorrego, Guaymallén, Mendoza",
+      "last_message_at": "2026-09-08T11:39:36.767Z",
+      "last_message_preview": "Hola Laura, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-06T04:41:00.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-06T04:41:00.000Z",
+      "last_outbound_at": "2026-09-08T11:39:36.767Z"
     },
     {
       "id": "conv-email-1a077dbea19c",
@@ -153852,6 +153853,15 @@
       "ts": "2026-09-08T11:38:48.823Z",
       "status": "sent",
       "wa_id": "1a080d049a810626"
+    },
+    {
+      "id": "m-1788867576767-4d65",
+      "conversation_id": "conv-email-1a075050f3c0",
+      "direction": "out",
+      "body": "Hola Laura, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nRespecto a la colocación, lamentablemente, no contamos con equipo de colocadores en Mendoza! \n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-08T11:39:36.767Z",
+      "status": "sent",
+      "wa_id": "1a080d1034a941e6"
     }
   ],
   "templates": [
