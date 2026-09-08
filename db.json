@@ -135809,12 +135809,12 @@
       "linked_lead_id": "lead-email-1a03472cf81a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-03T12:32:11.644Z",
-      "last_message_preview": "📄 Presupuesto NA8972 - Cotizacion Karime - H2O - Karime Viano.pdf",
+      "last_message_at": "2026-09-08T11:41:21.625Z",
+      "last_message_preview": "Hola Karime, ¿cómo estás? Quería saber si habías podido ver el presupuesto que te adjuntamos. \n\nPor favor, ante cualquier duda, nos consulta",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-25T08:52:09.000Z",
-      "last_outbound_at": "2026-09-03T12:32:11.644Z"
+      "last_outbound_at": "2026-09-08T11:41:21.625Z"
     },
     {
       "id": "conv-email-1a034fff1d5d",
@@ -153862,6 +153862,15 @@
       "ts": "2026-09-08T11:39:36.767Z",
       "status": "sent",
       "wa_id": "1a080d1034a941e6"
+    },
+    {
+      "id": "m-1788867681625-t3w1",
+      "conversation_id": "conv-email-1a03472cf81a",
+      "direction": "out",
+      "body": "Hola Karime, ¿cómo estás? Quería saber si habías podido ver el presupuesto que te adjuntamos. \n\nPor favor, ante cualquier duda, nos consultas para que podamos asesorarte de la mejor manera.\n\nDesde ya, muchas gracias.\nSaludos,",
+      "ts": "2026-09-08T11:41:21.625Z",
+      "status": "sent",
+      "wa_id": "1a080d29c3e3a354"
     }
   ],
   "templates": [
