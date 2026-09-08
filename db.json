@@ -136564,11 +136564,12 @@
       "linked_lead_id": "lead-email-1a06c3aa1772",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-04T11:42:56.000Z",
-      "last_message_preview": "Formulario web — 10m² · Sin Colocación · CP 1842 · Juan Bautista Alberdi 447, Monte Grande, GBA Sur",
+      "last_message_at": "2026-09-08T11:38:27.855Z",
+      "last_message_preview": "Hola Lihuen, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-04T11:42:56.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-04T11:42:56.000Z",
+      "last_outbound_at": "2026-09-08T11:38:27.855Z"
     },
     {
       "id": "conv-email-1a06cb4a5107",
@@ -136608,7 +136609,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a071475a8d6",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-05T11:14:56.000Z",
       "last_message_preview": "Formulario web — 15m² · Con Colocación · CP 1419 · Emilio Lamarca 5100",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -153832,6 +153833,15 @@
       "ts": "2026-09-08T11:37:58.527Z",
       "status": "sent",
       "wa_id": "1a080cf83f2bf279"
+    },
+    {
+      "id": "m-1788867507855-defh",
+      "conversation_id": "conv-email-1a06c3aa1772",
+      "direction": "out",
+      "body": "Hola Lihuen, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-08T11:38:27.855Z",
+      "status": "sent",
+      "wa_id": "1a080cff7f972e24"
     }
   ],
   "templates": [
