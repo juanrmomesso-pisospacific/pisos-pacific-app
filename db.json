@@ -130873,6 +130873,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-08T13:43:23.998Z",
       "last_touch_at": "2026-09-08T13:43:23.998Z"
+    },
+    {
+      "id": "lead-email-1a0815b2ac47",
+      "name": "ANA FONTAN",
+      "email": "anafontan09@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "OLLEROS 3006",
+      "postal_code": "1426",
+      "approx_m2": 3,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 3m² · Con Colocación · CP 1426",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-08T14:10:30.000Z",
+      "last_touch_at": "2026-09-08T14:10:30.000Z"
     }
   ],
   "conversations": [
@@ -136906,6 +136923,21 @@
       "last_message_preview": "Buen día .\nMe pasarías más información sobre el piso H20",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-08T13:43:23.998Z"
+    },
+    {
+      "id": "conv-email-1a0815b2ac47",
+      "channel": "email",
+      "contact_id": "anafontan09@gmail.com",
+      "contact_name": "ANA FONTAN",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0815b2ac47",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-08T14:10:30.000Z",
+      "last_message_preview": "Formulario web — 3m² · Con Colocación · CP 1426 · OLLEROS 3006",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-08T14:10:30.000Z"
     }
   ],
   "messages": [
@@ -154067,6 +154099,14 @@
       "body": "Buen día .\nMe pasarías más información sobre el piso H20",
       "ts": "2026-09-08T13:43:23.998Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0815b2ac47",
+      "conversation_id": "conv-email-1a0815b2ac47",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 3m² · Con Colocación · CP 1426 · OLLEROS 3006",
+      "ts": "2026-09-08T14:10:30.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162057,7 +162097,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-07T23:37:50.528Z",
     "gmail_seen_ids": [
-      "19f1e7571937f6c3",
       "19f1ec0c808c2b28",
       "19f1ebb7a8b700a3",
       "19f1ed6b99478ec2",
@@ -162856,7 +162895,8 @@
       "1a080f444eb4f09d",
       "1a0810ac94574c61",
       "1a0810d950297fdb",
-      "1a0811bd44d0f5f2"
+      "1a0811bd44d0f5f2",
+      "1a0815b2ac471b81"
     ],
     "cash_sessions": {
       "1136982222": {
