@@ -136456,12 +136456,12 @@
       "linked_lead_id": "lead-email-1a06364ceb1b",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-03T12:27:12.673Z",
-      "last_message_preview": "Hola Francisco, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuest",
+      "last_message_at": "2026-09-08T11:43:43.221Z",
+      "last_message_preview": "Hola Francisco, espero que te encuentres bien!\n\nQuería saber si habías podido definir entre las opciones de pisos con las que contamos. Si t",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-02T18:32:25.000Z",
-      "last_outbound_at": "2026-09-03T12:27:12.673Z"
+      "last_outbound_at": "2026-09-08T11:43:43.221Z"
     },
     {
       "id": "conv-email-1a0644da1ab2",
@@ -153880,6 +153880,15 @@
       "ts": "2026-09-08T11:42:16.368Z",
       "status": "sent",
       "wa_id": "1a080d372abf88b1"
+    },
+    {
+      "id": "m-1788867823221-qdqv",
+      "conversation_id": "conv-email-1a06364ceb1b",
+      "direction": "out",
+      "body": "Hola Francisco, espero que te encuentres bien!\n\nQuería saber si habías podido definir entre las opciones de pisos con las que contamos. Si tenés alguna duda respecto a las mismas, consultanos así buscamos la mejor forma de asesorarte.\n\n¡Muchas gracias!\n\nSaludos",
+      "ts": "2026-09-08T11:43:43.221Z",
+      "status": "sent",
+      "wa_id": "1a080d4c4545ebf6"
     }
   ],
   "templates": [
