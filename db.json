@@ -136563,7 +136563,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a06c3aa1772",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-04T11:42:56.000Z",
       "last_message_preview": "Formulario web — 10m² · Sin Colocación · CP 1842 · Juan Bautista Alberdi 447, Monte Grande, GBA Sur",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -136577,13 +136577,14 @@
       "contact_name": "Dolores",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a06cb4a5107",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-07T17:20:05.000Z",
       "last_message_preview": "Formulario web — 75m² · Con Colocación · CP 1426 · Avenida federico lacroze",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-07T17:20:05.000Z"
+      "last_inbound_at": "2026-09-07T17:20:05.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1788573931773-w71w",
@@ -136788,11 +136789,12 @@
       "linked_lead_id": "lead-email-1a07deac3182",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-07T22:08:51.000Z",
-      "last_message_preview": "Formulario web — 40m² · Con Colocación · CP 1419 · Villa Pueyrredón, CABA",
+      "last_message_at": "2026-09-08T11:37:58.527Z",
+      "last_message_preview": "Hola Carina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-07T22:08:51.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-07T22:08:51.000Z",
+      "last_outbound_at": "2026-09-08T11:37:58.527Z"
     },
     {
       "id": "conv-email-1a07e3feddad",
@@ -136801,13 +136803,14 @@
       "contact_name": "Gabriel Román",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a07e3feddad",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-07T23:41:52.000Z",
       "last_message_preview": "Formulario web — 39m² · Con Colocación · CP 6620 · Los Paraísos 244",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-07T23:41:52.000Z"
+      "last_inbound_at": "2026-09-07T23:41:52.000Z",
+      "ignored": true
     }
   ],
   "messages": [
@@ -153820,6 +153823,15 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a080ce7d8ec7667"
+    },
+    {
+      "id": "m-1788867478527-i3lj",
+      "conversation_id": "conv-email-1a07deac3182",
+      "direction": "out",
+      "body": "Hola Carina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. Avisanos si nececesitas que coticemos colocación de zócalos también. \n\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-08T11:37:58.527Z",
+      "status": "sent",
+      "wa_id": "1a080cf83f2bf279"
     }
   ],
   "templates": [
