@@ -133,6 +133,28 @@
       "stage": "seguimiento"
     },
     {
+      "id": "tpl-email-followup-presupuesto",
+      "name": "email_followup_presupuesto",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "email",
+      "status": "approved",
+      "keywords": "seguimiento,follow up,pudiste ver,presupuesto enviado,recordatorio,definir",
+      "body": "Hola {nombre}, ¿cómo estás? Quería saber si habías podido ver el presupuesto que te adjuntamos.\n\nPor favor, ante cualquier duda, nos consultás para que podamos asesorarte de la mejor manera.\n\nDesde ya, muchas gracias.\nSaludos,",
+      "stage": "seguimiento"
+    },
+    {
+      "id": "tpl-email-followup-consulta",
+      "name": "email_followup_consulta",
+      "category": "UTILITY",
+      "language": "es_AR",
+      "channel": "email",
+      "status": "approved",
+      "keywords": "seguimiento,follow up,pudiste ver,sin respuesta,recordatorio,consulta",
+      "body": "Hola {nombre}, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos la mejor forma de asesorarte.\n\n¡Muchas gracias!\nSaludos,",
+      "stage": "seguimiento"
+    },
+    {
       "id": "tpl-email-6",
       "name": "email_visita_showroom",
       "category": "UTILITY",
