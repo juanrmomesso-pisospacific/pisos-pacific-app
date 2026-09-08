@@ -32420,12 +32420,12 @@
       "client_dni": "",
       "client_email": "",
       "client_phone": "",
-      "client_address": "Chacras el chaja Lote 26",
+      "client_address": "Chacras el chaja",
       "internal_notes": "",
       "public_notes": "Reforma | Mover muebles | se recomienda hacer carpeta liviana | sacar zocalos existentes | volver a colocar zocalos | cepillar 7 puertas de las cuales 1 es corrediza. Poner nylon. Definir que se hace en el mueble de bajococina.",
       "payment_terms": "Anticipo 80% · Conforme 20%",
-      "seller_name": "Juan Rodriguez Momesso",
-      "seller_phone": "+54 9 11 51750087",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
       "title": "Cotización Patricia Ordoñez | Carlos Melhem",
       "has_iva": true,
       "price": 9649.145,
@@ -32521,7 +32521,10 @@
       "created_at": "2026-08-31T18:03:25.093Z",
       "quote_number": "A7112",
       "status": "ACCEPTED",
-      "lead_id": "local-1788198224463-iip6y"
+      "lead_id": "local-1788198224463-iip6y",
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD"
     },
     {
       "id": "local-1788200807061-ka9md",
