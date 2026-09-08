@@ -130267,7 +130267,7 @@
       "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-09-01T20:47:21.000Z",
-      "last_touch_at": "2026-09-08T11:51:31.826Z"
+      "last_touch_at": "2026-09-08T16:37:06.000Z"
     },
     {
       "id": "lead-instagram-1788299640128",
@@ -136416,12 +136416,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a05eb9fd4a5",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-01T21:01:20.135Z",
-      "last_message_preview": "Hola Marcela, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
+      "unread_count": 1,
+      "last_message_at": "2026-09-08T16:37:06.000Z",
+      "last_message_preview": "Buenas tardes \r\nEstoy interesada en presupuesto de piso H2O a prueba de agua, color roble Eslavonia XL para 44 metros con zócalos incluidos.",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-01T20:47:21.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-08T16:37:06.000Z",
       "last_outbound_at": "2026-09-01T21:01:20.135Z"
     },
     {
@@ -154107,6 +154107,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 3m² · Con Colocación · CP 1426 · OLLEROS 3006",
       "ts": "2026-09-08T14:10:30.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a081e184bfa",
+      "conversation_id": "conv-email-1a05eb9fd4a5",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenas tardes \r\nEstoy interesada en presupuesto de piso H2O a prueba de agua, color roble Eslavonia XL para 44 metros con zócalos incluidos.Gracias \r\n\r\n\r\nEnviado desde Yahoo Mail para iPhone\r\n\r\n\r\nEl martes, septiembre 1, 2026, 18:01, Pisos Pacific <info@pisospacific.com> escribió:\r\n\r\nHola Marcela, ¡muchas gracias por tu consulta!\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera — Pisos de madera noble prefinished\r\n• Línea H2O — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación. Confirmando el producto te comparto un presupuesto preliminar!\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\n\r\n\r\n|    |  Juan Rodríguez Momesso Ventas    +54 11 5175-0087\r\n info@pisospacific.com\r\n pisospacific.com      La evolución del piso de madera  |",
+      "ts": "2026-09-08T16:37:06.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162097,7 +162105,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-07T23:37:50.528Z",
     "gmail_seen_ids": [
-      "19f1ec0c808c2b28",
       "19f1ebb7a8b700a3",
       "19f1ed6b99478ec2",
       "19f21f84d4ce4257",
@@ -162896,7 +162903,8 @@
       "1a0810ac94574c61",
       "1a0810d950297fdb",
       "1a0811bd44d0f5f2",
-      "1a0815b2ac471b81"
+      "1a0815b2ac471b81",
+      "1a081e184bfa8b25"
     ],
     "cash_sessions": {
       "1136982222": {
