@@ -21444,7 +21444,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Reforma",
       "has_iva": true,
-      "price": 2501.312,
+      "price": 2869.1519999999996,
       "zoned": false,
       "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 3 más",
       "items": [
@@ -21452,13 +21452,13 @@
           "product_id": "PROD-202",
           "sku": "PROD-202",
           "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
-          "quantity": 68,
+          "quantity": 78,
           "unit_price": 38,
           "cost": 16.33,
           "category": "Pisos H2O",
           "disc_value": 20,
-          "total": 2584,
-          "discount": 516.8,
+          "total": 2964,
+          "discount": 592.8,
           "image": "",
           "target_item_index": null
         },
@@ -21480,13 +21480,13 @@
           "product_id": "PROD-062",
           "sku": "PROD-062",
           "description": "M2 - Nylon Manta 200 Micrones",
-          "quantity": 68,
+          "quantity": 78,
           "unit_price": 2,
           "cost": 1,
           "category": "Extras",
           "disc_value": 100,
-          "total": 136,
-          "discount": 136,
+          "total": 156,
+          "discount": 156,
           "image": "",
           "target_item_index": null
         },
@@ -21505,12 +21505,15 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 924.32,
-      "discount_amount": 924.32,
+      "discount_total": 1020.32,
+      "discount_amount": 1020.32,
       "created_at": "2026-06-24T12:51:53.812Z",
       "quote_number": "A6396",
       "status": "SENT",
-      "lead_id": "lead-instagram-1782231082591"
+      "lead_id": "lead-instagram-1782231082591",
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD"
     },
     {
       "id": "local-1782307103224-qa8ky",
