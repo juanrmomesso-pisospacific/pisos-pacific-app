@@ -30436,14 +30436,14 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Emilia Pascarelli",
       "has_iva": true,
-      "price": 2526.48,
+      "price": 2692.4919999999997,
       "zoned": false,
-      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
+      "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m + 4 más",
       "items": [
         {
-          "product_id": "PROD-027",
-          "sku": "PROD-027",
-          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "product_id": "PROD-190",
+          "sku": "PROD-190",
+          "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m",
           "quantity": 40,
           "unit_price": 38,
           "cost": 16.33,
@@ -30479,6 +30479,32 @@
           "discount": 0,
           "image": "",
           "target_item_index": null
+        },
+        {
+          "product_id": "ZOC-MDF-07",
+          "sku": "ZOC-MDF-07",
+          "description": "Zócalo MDF 7cm",
+          "quantity": 18,
+          "unit_price": 3,
+          "cost": 1.29,
+          "category": "Zócalos",
+          "total": 54,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-129",
+          "sku": "SERV-129",
+          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+          "quantity": 16,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 83.2,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
         }
       ],
       "discount_total": 152,
@@ -30486,7 +30512,10 @@
       "created_at": "2026-08-25T16:46:38.487Z",
       "quote_number": "A4209",
       "status": "DRAFT",
-      "lead_id": "local-1787676289596-xiwls"
+      "lead_id": "local-1787676289596-xiwls",
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD"
     },
     {
       "id": "local-1787676601309-qakuh",
