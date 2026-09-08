@@ -127941,10 +127941,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 90m² · Sin Colocación",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-08-02T15:54:55.000Z",
-      "last_touch_at": "2026-08-04T14:07:28.217Z"
+      "last_touch_at": "2026-09-08T12:24:45.850Z"
     },
     {
       "id": "lead-email-19fc32dcca0c",
@@ -131671,13 +131671,13 @@
       "linked_client_name": null,
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-06T12:45:48.214Z",
-      "last_message_preview": "Hola Silvina, espero que te encuentres bien. \n\nQuería ver si habías avanzado con algún otro presupuesto para los pisos o si el proyecto camb",
+      "last_message_at": "2026-09-08T12:24:38.484Z",
+      "last_message_preview": "Hola Silvina, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "linked_lead_id": "lead-email-19ecbcacd6ca",
       "last_message_direction": "out",
       "last_inbound_at": "2026-06-15T14:58:45.000Z",
-      "last_outbound_at": "2026-08-06T12:45:48.214Z"
+      "last_outbound_at": "2026-09-08T12:24:38.484Z"
     },
     {
       "id": "conv-email-19ecc771055b",
@@ -153972,6 +153972,15 @@
       "ts": "2026-09-08T12:23:59.351Z",
       "status": "sent",
       "wa_id": "1a080f9a2d271094"
+    },
+    {
+      "id": "m-1788870278484-27gw",
+      "conversation_id": "conv-email-19ecbcacd6ca",
+      "direction": "out",
+      "body": "Hola Silvina, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos la mejor forma de asesorarte.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-08T12:24:38.484Z",
+      "status": "sent",
+      "wa_id": "1a080fa3c114bbc5"
     }
   ],
   "templates": [
