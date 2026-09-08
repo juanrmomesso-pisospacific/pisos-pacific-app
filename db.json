@@ -34009,8 +34009,9 @@
       "currency": "USD",
       "created_at": "2026-09-08T11:35:36.037Z",
       "quote_number": "A4531",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a06a6c3891e"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a06a6c3891e",
+      "share_token": "5cd01268ad6de33d74200779"
     }
   ],
   "clients": [
@@ -130786,10 +130787,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 40m² · Con Colocación · CP 1419",
-      "status": "New",
-      "assigned_seller": "",
+      "status": "Contacted",
+      "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-09-07T22:08:51.000Z",
-      "last_touch_at": "2026-09-07T22:08:51.000Z"
+      "last_touch_at": "2026-09-08T11:37:07.953Z"
     },
     {
       "id": "lead-email-1a07e3feddad",
@@ -136547,12 +136548,12 @@
       "linked_lead_id": "lead-email-1a06a6c3891e",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-07T21:01:38.000Z",
-      "last_message_preview": "Hola Juan,\r\n\r\n\r\nGracias por tu mensaje, estamos interesados en la línea H2O. Estamos\r\nconsiderando remodelar una casa y cambiar los pisos en",
+      "last_message_at": "2026-09-08T11:36:51.478Z",
+      "last_message_preview": "📄 Presupuesto NA4531 - Obra Concepcion del Uruguay - Barbara Martinez.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-07T21:01:38.000Z",
-      "last_outbound_at": "2026-09-07T18:59:20.071Z"
+      "last_outbound_at": "2026-09-08T11:36:51.478Z"
     },
     {
       "id": "conv-email-1a06c3aa1772",
@@ -136786,7 +136787,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a07deac3182",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-07T22:08:51.000Z",
       "last_message_preview": "Formulario web — 40m² · Con Colocación · CP 1419 · Villa Pueyrredón, CABA",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -153809,6 +153810,16 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 39m² · Con Colocación · CP 6620 · Los Paraísos 244",
       "ts": "2026-09-07T23:41:52.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788867411478-vm0h",
+      "conversation_id": "conv-email-1a06a6c3891e",
+      "direction": "out",
+      "body": "Hola Barbara, te comparto el presupuesto NA4531 adjunto. Cualquier consulta quedo a disposición. \n\nRespecto a la colocación, podemos ayudarlos con todas las recomendaciones que hay que seguir para que la misma sea correcta.\n\nGracias,\nSaludos,\n\nJuan\n📄 Presupuesto NA4531 - Obra Concepcion del Uruguay - Barbara Martinez.pdf",
+      "ts": "2026-09-08T11:36:51.478Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a080ce7d8ec7667"
     }
   ],
   "templates": [
