@@ -136116,12 +136116,12 @@
       "linked_lead_id": "lead-email-1a04b56ebaeb",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-29T11:54:06.642Z",
-      "last_message_preview": "Hola martina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
+      "last_message_at": "2026-09-08T12:23:09.414Z",
+      "last_message_preview": "Hola Martina, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-29T02:26:22.000Z",
-      "last_outbound_at": "2026-08-29T11:54:06.642Z"
+      "last_outbound_at": "2026-09-08T12:23:09.414Z"
     },
     {
       "id": "conv-1787978533314-xewb",
@@ -153936,6 +153936,15 @@
       "body": "https://www.instagram.com/reel/Dc_D_kTOrqp/?stkn=MTJxNGVqM3h6azg5cw==",
       "ts": "2026-09-08T11:53:35.259Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788870189414-zc1q",
+      "conversation_id": "conv-email-1a04b56ebaeb",
+      "direction": "out",
+      "body": "Hola Martina, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos la mejor forma de asesorarte.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-08T12:23:09.414Z",
+      "status": "sent",
+      "wa_id": "1a080f8e1183dfbb"
     }
   ],
   "templates": [
