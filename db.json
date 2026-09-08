@@ -130264,10 +130264,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 40m² · Con Colocación · CP 1428",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-09-01T20:47:21.000Z",
-      "last_touch_at": "2026-09-01T21:00:47.514Z"
+      "last_touch_at": "2026-09-08T11:51:31.826Z"
     },
     {
       "id": "lead-instagram-1788299640128",
@@ -136319,12 +136319,12 @@
       "linked_lead_id": "lead-email-1a05d33786df",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-01T22:12:27.000Z",
-      "last_message_preview": "Hola Pablo, dale!\r\n\r\nDe el ASPEN XL te puedo hacer un buen descuento. -> Ver fotos\r\n<https://pisospacific.com/pisos-vinilicos-spc-h2o/aspen-",
+      "last_message_at": "2026-09-08T11:51:16.475Z",
+      "last_message_preview": "Hola Pablo, \n\nEspero que te encuentres bien! Quería ver si habías podido analizar los números. Te invito a que pases por nuestro depósito pa",
       "email_subject": "Liquidación.",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-01T20:08:37.000Z",
-      "last_outbound_at": "2026-09-01T22:12:27.000Z"
+      "last_outbound_at": "2026-09-08T11:51:16.475Z"
     },
     {
       "id": "conv-email-1a05dbd69617",
@@ -153889,6 +153889,15 @@
       "ts": "2026-09-08T11:43:43.221Z",
       "status": "sent",
       "wa_id": "1a080d4c4545ebf6"
+    },
+    {
+      "id": "m-1788868276475-xqdj",
+      "conversation_id": "conv-email-1a05d33786df",
+      "direction": "out",
+      "body": "Hola Pablo, \n\nEspero que te encuentres bien! Quería ver si habías podido analizar los números. Te invito a que pases por nuestro depósito para ver los modelos que tenemos y trabajamos en un precio que te sea conveniente. \n\nDesde ya, muchas gracias!\nSaludos,\n\nJuan",
+      "ts": "2026-09-08T11:51:16.475Z",
+      "status": "sent",
+      "wa_id": "1a080dbb1ed19db1"
     }
   ],
   "templates": [
@@ -163073,7 +163082,15 @@
       "1a076b7d8feb86a6",
       "1a07bde349b6ecbf",
       "1a07d3dffd320bb2",
-      "1a07d3d3a8333900"
+      "1a07d3d3a8333900",
+      "1a080d4c4545ebf6",
+      "1a080d372abf88b1",
+      "1a080d29c3e3a354",
+      "1a080d1034a941e6",
+      "1a080d049a810626",
+      "1a080cff7f972e24",
+      "1a080cf83f2bf279",
+      "1a080ce7d8ec7667"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
