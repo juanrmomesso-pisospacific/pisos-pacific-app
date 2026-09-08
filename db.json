@@ -134176,12 +134176,12 @@
       "linked_lead_id": "lead-email-19fa8f8408a1",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-25T23:48:41.781Z",
-      "last_message_preview": "Hola Lourdes, espero que te encuentres bien!\n\nQuería consultarte si habías podido ver el mail y definir el piso que te interesó para que pod",
+      "last_message_at": "2026-09-08T12:23:32.686Z",
+      "last_message_preview": "Hola Lourdes, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-07-28T13:44:28.000Z",
-      "last_outbound_at": "2026-08-25T23:48:41.781Z"
+      "last_outbound_at": "2026-09-08T12:23:32.686Z"
     },
     {
       "id": "conv-1785250945445-5q87",
@@ -134757,12 +134757,12 @@
       "linked_lead_id": "lead-email-19fda3d71b41",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-07T18:21:49.248Z",
-      "last_message_preview": "Hola Mariana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
+      "last_message_at": "2026-09-08T12:23:59.351Z",
+      "last_message_preview": "Hola Mariana, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-07T03:21:26.000Z",
-      "last_outbound_at": "2026-08-07T18:21:49.248Z"
+      "last_outbound_at": "2026-09-08T12:23:59.351Z"
     },
     {
       "id": "conv-email-19fdbfc50044",
@@ -135164,12 +135164,12 @@
       "linked_lead_id": "lead-email-19ffd8d127fd",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-14T11:33:16.881Z",
-      "last_message_preview": "Hola Lorena, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
+      "last_message_at": "2026-09-08T12:23:48.033Z",
+      "last_message_preview": "Hola Lorena, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-13T23:55:08.000Z",
-      "last_outbound_at": "2026-08-14T11:33:16.881Z"
+      "last_outbound_at": "2026-09-08T12:23:48.033Z"
     },
     {
       "id": "conv-email-1a0026a1a52a",
@@ -153945,6 +153945,33 @@
       "ts": "2026-09-08T12:23:09.414Z",
       "status": "sent",
       "wa_id": "1a080f8e1183dfbb"
+    },
+    {
+      "id": "m-1788870212686-n81e",
+      "conversation_id": "conv-email-19fa8f8408a1",
+      "direction": "out",
+      "body": "Hola Lourdes, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos la mejor forma de asesorarte.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-08T12:23:32.686Z",
+      "status": "sent",
+      "wa_id": "1a080f93b00bd795"
+    },
+    {
+      "id": "m-1788870228033-vjs2",
+      "conversation_id": "conv-email-19ffd8d127fd",
+      "direction": "out",
+      "body": "Hola Lorena, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos la mejor forma de asesorarte.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-08T12:23:48.033Z",
+      "status": "sent",
+      "wa_id": "1a080f9772628680"
+    },
+    {
+      "id": "m-1788870239351-wk6v",
+      "conversation_id": "conv-email-19fda3d71b41",
+      "direction": "out",
+      "body": "Hola Mariana, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos la mejor forma de asesorarte.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-08T12:23:59.351Z",
+      "status": "sent",
+      "wa_id": "1a080f9a2d271094"
     }
   ],
   "templates": [
