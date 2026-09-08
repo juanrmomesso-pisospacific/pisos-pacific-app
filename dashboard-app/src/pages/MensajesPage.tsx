@@ -66,14 +66,17 @@ export default function MensajesPage() {
   const [showClosed, setShowClosed] = useState<boolean>(saved.showClosed ?? false)
   // Un vendedor arranca viendo LAS SUYAS (default a su nombre); admin/logística: todos.
   const [sellerFilter, setSellerFilter] = useState<string>(saved.sellerFilter ?? myself)   // "" todos · "__none__" sin asignar · nombre
+  // Estado del lead vinculado: "" todos · "__nolead__" sin lead · un LeadStatus (New/Contacted/…)
+  const [statusFilter, setStatusFilter] = useState<string>(saved.statusFilter ?? "")
   const [selectedId, setSelectedId] = useState<string | null>(convFromUrl)
   const [showContact, setShowContact] = useState(false)   // móvil: panel de ficha como overlay
   useEffect(() => {
-    try { localStorage.setItem("mensajes:filters", JSON.stringify({ channelFilter, onlyUnread, onlyPending, onlyWaiting, showClosed, sellerFilter })) } catch { /* ignore */ }
-  }, [channelFilter, onlyUnread, onlyPending, onlyWaiting, showClosed, sellerFilter])
+    try { localStorage.setItem("mensajes:filters", JSON.stringify({ channelFilter, onlyUnread, onlyPending, onlyWaiting, showClosed, sellerFilter, statusFilter })) } catch { /* ignore */ }
+  }, [channelFilter, onlyUnread, onlyPending, onlyWaiting, showClosed, sellerFilter, statusFilter])
 
-  // Vendedor asignado de una conversación = el del lead vinculado.
+  // Vendedor asignado / estado del lead de una conversación = los del lead vinculado.
   const sellerOf = (c: Conversation) => (c.linked_lead_id ? leadById.get(c.linked_lead_id)?.assigned_seller : "") || ""
+  const statusOf = (c: Conversation) => (c.linked_lead_id ? leadById.get(c.linked_lead_id)?.status : "") || ""
   const sellers = useMemo(() => {
     const set = new Set(leads.map(l => l.assigned_seller).filter(Boolean) as string[])
     if (myself) set.add(myself)   // el vendedor siempre puede elegirse, aunque no tenga leads aún
@@ -104,6 +107,8 @@ export default function MensajesPage() {
       if (onlyWaiting && !isWaiting(c)) return false
       if (sellerFilter === "__none__" && sellerOf(c)) return false
       if (sellerFilter && sellerFilter !== "__none__" && sellerOf(c) !== sellerFilter) return false
+      if (statusFilter === "__nolead__" && c.linked_lead_id) return false
+      if (statusFilter && statusFilter !== "__nolead__" && statusOf(c) !== statusFilter) return false
       if (!needle) return true
       return c.contact_name.toLowerCase().includes(needle)
         || c.contact_id.toLowerCase().includes(needle)
@@ -115,7 +120,7 @@ export default function MensajesPage() {
       if (sa === "wait") return (a.last_outbound_at ?? a.last_message_at ?? "").localeCompare(b.last_outbound_at ?? b.last_message_at ?? "") // más enfriado primero
       return (b.last_message_at ?? "").localeCompare(a.last_message_at ?? "")
     })
-  }, [conversations, channelFilter, q, onlyUnread, onlyPending, onlyWaiting, showClosed, sellerFilter, leadById, waitCutoff])
+  }, [conversations, channelFilter, q, onlyUnread, onlyPending, onlyWaiting, showClosed, sellerFilter, statusFilter, leadById, waitCutoff])
 
   // Default-select the first conversation when the list arrives — SOLO en desktop.
   // En móvil queremos ver primero la lista (single-pane); auto-seleccionar saltearía
@@ -202,6 +207,8 @@ export default function MensajesPage() {
         sellerFilter={sellerFilter}
         setSellerFilter={setSellerFilter}
         sellers={sellers}
+        statusFilter={statusFilter}
+        setStatusFilter={setStatusFilter}
       />
       <Thread
         className={cn("lg:flex", selectedId && !showContact ? "flex" : "hidden")}
@@ -234,7 +241,7 @@ const SECTION_LABEL = { pend: "Pendientes de respuesta", wait: "Esperando al cli
 function ConversationList({
   conversations, sectionOf, showSections, total, selectedId, onSelect, onIgnore, channelFilter, setChannelFilter, q, setQ, leadById,
   onlyUnread, setOnlyUnread, onlyPending, setOnlyPending, onlyWaiting, setOnlyWaiting, pendingCount, waitingCount,
-  showClosed, setShowClosed, sellerFilter, setSellerFilter, sellers, className,
+  showClosed, setShowClosed, sellerFilter, setSellerFilter, sellers, statusFilter, setStatusFilter, className,
 }: {
   conversations: Conversation[]
   sectionOf: (c: Conversation) => "pend" | "wait" | "ok"
@@ -262,6 +269,8 @@ function ConversationList({
   sellerFilter: string
   setSellerFilter: (s: string) => void
   sellers: string[]
+  statusFilter: string
+  setStatusFilter: (s: string) => void
 }) {
   return (
     <aside className={cn("flex-col border border-border rounded-l-lg bg-card overflow-hidden", className)}>
@@ -293,6 +302,11 @@ function ConversationList({
             {sellers.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
         </div>
+        <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)} className="h-7 w-full rounded-md border border-input bg-transparent px-2 text-xs" title="Filtrar por estado del lead">
+          <option value="">Todos los estados del lead</option>
+          {LEAD_STATUS_ORDER.map((s) => <option key={s} value={s}>{LEAD_STATUS_LABEL[s]}</option>)}
+          <option value="__nolead__">Sin lead vinculado</option>
+        </select>
         <div className="text-[11px] text-muted-foreground">{conversations.length} de {total} conversaciones</div>
       </div>
       <div className="flex-1 overflow-y-auto">
