@@ -130579,7 +130579,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-05T11:14:56.000Z",
-      "last_touch_at": "2026-09-05T11:14:56.000Z"
+      "last_touch_at": "2026-09-08T21:34:51.000Z"
     },
     {
       "id": "lead-email-1a071ff9c208",
@@ -136708,12 +136708,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a071475a8d6",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-08T11:38:48.823Z",
-      "last_message_preview": "Hola Viviana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
+      "unread_count": 1,
+      "last_message_at": "2026-09-08T21:34:51.000Z",
+      "last_message_preview": "Hola Juan, estoy interesada en los pisos de la línea H20. La dirección\r\nsería en el 5100 de Emilio Lamarca, c.a.b.a\r\nAguardo cotización.\r\nMu",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-05T11:14:56.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-08T21:34:51.000Z",
       "last_outbound_at": "2026-09-08T11:38:48.823Z"
     },
     {
@@ -154156,6 +154156,14 @@
       "body": "✉️ **AVISO DE ARRIBO** Re: Comex+Cargo // FOB Shanghai - Buenos Aires | PDPG 2619 | Juan Rodriguez Momesso // CCF-MI-00000082\n\nEstimados,\r\nBuenos días\r\n\r\nEnviamos adjunto el aviso de arribo de la carga de referencia:\r\n[image: image.png]\r\n* De origen nos informan que aún no reciben la autorización para confirmar\r\nla emisión del b/l en destino.\r\nPodrían ayudarnos a chequear con el proveedor para que confirme en lo\r\nposible antes del arribo?\r\n\r\nGracias!\r\n\r\nSaludos,\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\nCarolina Lodovico\r\n*Customer Comex+ Cargo*\r\nCel WhatsApp: (+54)115-761-1787\r\n\r\n*Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nAv. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\n\r\nEl vie, 28 ago 2026 a la(s) 10:53 a.m., Customer Comex+ Cargo (\r\nCustomerCargo@grupocomexmas.com) escribió:\r\n\r\n> Hola Vicky,\r\n> Buenos días!\r\n>\r\n> Informamos que el arribo de la carga a Buenos Aires se actualizó al 15/SEP\r\n> a bordo del buque MSC RAYSHMI:\r\n>\r\n> [image: image.png]\r\n>\r\n> Por otro lado, nos informan que el shipper aún no canceló los gastos\r\n> locales para poder confirmar la emisión del b/l en destino.\r\n> Les dejaremos saber cuando se encuentre liberado.\r\n>\r\n> Saludos,\r\n>\r\n>\r\n>\r\n> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n> Cordiali Saluti*\r\n> Carolina Lodovico\r\n> *Customer Comex+ Cargo*\r\n> Cel WhatsApp: (+54)115-761-1787\r\n>\r\n> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n> Tel.: (+54)114331-2207/1893\r\n> Av. Alicia Moreau de Justo 1150 – Of. A-103// (C11",
       "ts": "2026-09-08T17:38:50.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a082f232d82",
+      "conversation_id": "conv-email-1a071475a8d6",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Juan, estoy interesada en los pisos de la línea H20. La dirección\r\nsería en el 5100 de Emilio Lamarca, c.a.b.a\r\nAguardo cotización.\r\nMuchas gracias.\r\n\r\n\r\n\r\nEl mar, 8 sept 2026 a las 8:38, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Viviana, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación. También\r\n> compartinos la dirección de entrega así la agregamos en la cotización.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos,\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n\r\n\r\n-- \r\n*                                   Viviana*",
+      "ts": "2026-09-08T21:34:51.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162146,7 +162154,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-07T23:37:50.528Z",
     "gmail_seen_ids": [
-      "19f1ed6b99478ec2",
       "19f21f84d4ce4257",
       "19f2211a40d59970",
       "19f22b22de923636",
@@ -162945,7 +162952,8 @@
       "1a0811bd44d0f5f2",
       "1a0815b2ac471b81",
       "1a081e184bfa8b25",
-      "1a0821a7e01e1bdc"
+      "1a0821a7e01e1bdc",
+      "1a082f232d824ad3"
     ],
     "cash_sessions": {
       "1136982222": {
