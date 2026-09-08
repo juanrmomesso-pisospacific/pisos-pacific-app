@@ -618,7 +618,7 @@
       "active": false,
       "margin": 135.6,
       "stock": 0,
-      "reservedStock": 60,
+      "reservedStock": 390,
       "subLine": "Línea H2O HD",
       "shortName": "H2O HD Roble Eslavonia 7x18x120",
       "thicknessMm": 7,
@@ -754,7 +754,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 938.5653279999999,
-      "reservedStock": 4117.04,
+      "reservedStock": 4232.04,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -838,7 +838,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 126.96800000000002,
-      "reservedStock": 1839.656,
+      "reservedStock": 1956.2359999999999,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1649,7 +1649,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 18.459999999999994,
+      "reservedStock": 26.459999999999994,
       "subLine": "Terminaciones",
       "shortName": "Cuartacaña MDF Blanco",
       "thicknessMm": null,
@@ -1697,7 +1697,7 @@
       "active": true,
       "margin": 166.7,
       "stock": 0,
-      "reservedStock": 81,
+      "reservedStock": 87,
       "subLine": "Terminaciones",
       "shortName": "Varilla L SPC",
       "thicknessMm": null,
@@ -1841,7 +1841,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 7234.647,
+      "reservedStock": 7789.647,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2225,7 +2225,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 8,
+      "reservedStock": 15,
       "subLine": "Carpintería",
       "shortName": "Ajuste o Cepillado Puerta",
       "thicknessMm": null,
@@ -2441,7 +2441,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 11629,
+      "reservedStock": 12659,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -2855,7 +2855,7 @@
       "active": true,
       "margin": 50,
       "stock": 0,
-      "reservedStock": 0,
+      "reservedStock": 2,
       "subLine": "Varilla L INOX",
       "shortName": "Varilla L Acero Inox 6mm",
       "thicknessMm": null,
@@ -3087,7 +3087,7 @@
       "cost": 20,
       "currency": "USD",
       "stock": 168.44,
-      "reservedStock": 73,
+      "reservedStock": 167,
       "active": true,
       "margin": -100,
       "createdAt": "2026-07-01T18:25:10.979Z",
@@ -32784,8 +32784,8 @@
       "internal_notes": "",
       "public_notes": "",
       "payment_terms": "Anticipo 80% · Conforme 20%",
-      "seller_name": "Juan Rodriguez Momesso",
-      "seller_phone": "+54 9 11 51750087",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
       "title": "Franco Pallucchini ",
       "has_iva": false,
       "price": 1930.8400000000001,
@@ -32826,7 +32826,10 @@
       "created_at": "2026-09-01T21:39:35.402Z",
       "quote_number": "A3922",
       "status": "ACCEPTED",
-      "sale_id": "local-sale-1788298785438-hd0d"
+      "sale_id": "local-sale-1788298785438-hd0d",
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD"
     },
     {
       "id": "local-1788437997161-hh2fg",
@@ -33183,7 +33186,7 @@
       "reseller_name": "",
       "created_at": "2026-09-03T12:38:31.725Z",
       "quote_number": "A8467",
-      "status": "DRAFT"
+      "status": "SENT"
     },
     {
       "id": "local-1788439470775-yc2iz",
@@ -33296,7 +33299,7 @@
       "reseller_name": "",
       "created_at": "2026-09-03T12:44:30.536Z",
       "quote_number": "A6556",
-      "status": "DRAFT"
+      "status": "SENT"
     },
     {
       "id": "local-1788465153152-y4p82",
@@ -33505,7 +33508,7 @@
       "currency": "USD",
       "created_at": "2026-09-07T18:49:19.525Z",
       "quote_number": "A7106",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1788806692678-94l1a"
     },
     {
@@ -33577,7 +33580,7 @@
       "currency": "USD",
       "created_at": "2026-09-07T18:56:05.376Z",
       "quote_number": "A7201",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1788806733182-vr0wn"
     },
     {
@@ -33649,7 +33652,7 @@
       "currency": "USD",
       "created_at": "2026-09-07T19:03:36.628Z",
       "quote_number": "A6483",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1788806733182-vr0wn"
     },
     {
@@ -33814,7 +33817,7 @@
       "currency": "USD",
       "created_at": "2026-09-07T20:17:25.562Z",
       "quote_number": "A1513",
-      "status": "DRAFT"
+      "status": "SENT"
     },
     {
       "id": "local-1788826875945-2qxbe",
@@ -160381,6 +160384,222 @@
       "product_id": "PROD-027",
       "sku": "PROD-027",
       "qty": 81.27,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:28.154Z",
+      "type": "quote_reserve",
+      "ref": "local-1788812245730-5nrtt",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 33,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:28.154Z",
+      "type": "quote_reserve",
+      "ref": "local-1788812245730-5nrtt",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 190,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:32.871Z",
+      "type": "quote_reserve",
+      "ref": "local-1788807816917-6d4sd",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 82,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:32.871Z",
+      "type": "quote_reserve",
+      "ref": "local-1788807816917-6d4sd",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 75,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:32.871Z",
+      "type": "quote_reserve",
+      "ref": "local-1788807816917-6d4sd",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 190,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:35.034Z",
+      "type": "quote_reserve",
+      "ref": "local-1788807365675-79gop",
+      "product_id": "local-1782930311636-1b4g3",
+      "sku": "PROD-2928",
+      "qty": 94,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:35.034Z",
+      "type": "quote_reserve",
+      "ref": "local-1788807365675-79gop",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 75,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:35.034Z",
+      "type": "quote_reserve",
+      "ref": "local-1788807365675-79gop",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 190,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:37.784Z",
+      "type": "quote_reserve",
+      "ref": "local-1788806959923-t6f1a",
+      "product_id": "PROD-022",
+      "sku": "PROD-022",
+      "qty": 330,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:37.784Z",
+      "type": "quote_reserve",
+      "ref": "local-1788806959923-t6f1a",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 300,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:37.784Z",
+      "type": "quote_reserve",
+      "ref": "local-1788806959923-t6f1a",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 280,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:43.977Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439470775-yc2iz",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": 62.5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:43.977Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439470775-yc2iz",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 56,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:43.977Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439470775-yc2iz",
+      "product_id": "SERV-122",
+      "sku": "SERV-122",
+      "qty": 3,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:43.977Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439470775-yc2iz",
+      "product_id": "PROD-078",
+      "sku": "PROD-078",
+      "qty": 3,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:43.977Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439470775-yc2iz",
+      "product_id": "VAR-INOX-6",
+      "sku": "VAR-INOX-6",
+      "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:43.977Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439470775-yc2iz",
+      "product_id": "PROD-060",
+      "sku": "PROD-060",
+      "qty": 4,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:46.205Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439111952-nbhvr",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": 54.08,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:46.205Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439111952-nbhvr",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 49,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:46.205Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439111952-nbhvr",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 180,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:46.205Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439111952-nbhvr",
+      "product_id": "SERV-122",
+      "sku": "SERV-122",
+      "qty": 4,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:46.205Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439111952-nbhvr",
+      "product_id": "PROD-078",
+      "sku": "PROD-078",
+      "qty": 3,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:46.205Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439111952-nbhvr",
+      "product_id": "VAR-INOX-6",
+      "sku": "VAR-INOX-6",
+      "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-08T01:42:46.205Z",
+      "type": "quote_reserve",
+      "ref": "local-1788439111952-nbhvr",
+      "product_id": "PROD-060",
+      "sku": "PROD-060",
+      "qty": 4,
       "warehouse_id": "main"
     }
   ],
