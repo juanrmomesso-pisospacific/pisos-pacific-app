@@ -124466,7 +124466,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-06-12T13:08:46.000Z",
-      "last_touch_at": "2026-08-28T13:53:15.000Z"
+      "last_touch_at": "2026-09-08T17:38:50.000Z"
     },
     {
       "id": "lead-email-19ebe5200018",
@@ -131610,13 +131610,13 @@
       "contact_name": "Customer Comex+ Cargo",
       "linked_client_name": null,
       "status": "closed",
-      "unread_count": 19,
-      "last_message_at": "2026-08-28T13:53:15.000Z",
-      "last_message_preview": "Hola Vicky,\r\nBuenos días!\r\n\r\nInformamos que el arribo de la carga a Buenos Aires se actualizó al 15/SEP\r\na bordo del buque MSC RAYSHMI:\r\n\r\n[",
+      "unread_count": 20,
+      "last_message_at": "2026-09-08T17:38:50.000Z",
+      "last_message_preview": "Estimados,\r\nBuenos días\r\n\r\nEnviamos adjunto el aviso de arribo de la carga de referencia:\r\n[image: image.png]\r\n* De origen nos informan que ",
       "email_subject": "Re: Comex+Cargo // Juan Momesso // COTIZACION FLETE 40 pies | Shanghai - Buenos Aires | LAM-PA2601 -- PCCF1488 -- CCF1203 ** CCF-MI-00000043",
       "linked_lead_id": "lead-email-19ebbf39b073",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-28T13:53:15.000Z",
+      "last_inbound_at": "2026-09-08T17:38:50.000Z",
       "ignored": true
     },
     {
@@ -154115,6 +154115,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenas tardes \r\nEstoy interesada en presupuesto de piso H2O a prueba de agua, color roble Eslavonia XL para 44 metros con zócalos incluidos.Gracias \r\n\r\n\r\nEnviado desde Yahoo Mail para iPhone\r\n\r\n\r\nEl martes, septiembre 1, 2026, 18:01, Pisos Pacific <info@pisospacific.com> escribió:\r\n\r\nHola Marcela, ¡muchas gracias por tu consulta!\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera — Pisos de madera noble prefinished\r\n• Línea H2O — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación. Confirmando el producto te comparto un presupuesto preliminar!\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\n\r\n\r\n|    |  Juan Rodríguez Momesso Ventas    +54 11 5175-0087\r\n info@pisospacific.com\r\n pisospacific.com      La evolución del piso de madera  |",
       "ts": "2026-09-08T16:37:06.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0821a7e01e",
+      "conversation_id": "conv-email-19ebbf39b073",
+      "direction": "in",
+      "body": "✉️ **AVISO DE ARRIBO** Re: Comex+Cargo // FOB Shanghai - Buenos Aires | PDPG 2619 | Juan Rodriguez Momesso // CCF-MI-00000082\n\nEstimados,\r\nBuenos días\r\n\r\nEnviamos adjunto el aviso de arribo de la carga de referencia:\r\n[image: image.png]\r\n* De origen nos informan que aún no reciben la autorización para confirmar\r\nla emisión del b/l en destino.\r\nPodrían ayudarnos a chequear con el proveedor para que confirme en lo\r\nposible antes del arribo?\r\n\r\nGracias!\r\n\r\nSaludos,\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\nCarolina Lodovico\r\n*Customer Comex+ Cargo*\r\nCel WhatsApp: (+54)115-761-1787\r\n\r\n*Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nAv. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\n\r\nEl vie, 28 ago 2026 a la(s) 10:53 a.m., Customer Comex+ Cargo (\r\nCustomerCargo@grupocomexmas.com) escribió:\r\n\r\n> Hola Vicky,\r\n> Buenos días!\r\n>\r\n> Informamos que el arribo de la carga a Buenos Aires se actualizó al 15/SEP\r\n> a bordo del buque MSC RAYSHMI:\r\n>\r\n> [image: image.png]\r\n>\r\n> Por otro lado, nos informan que el shipper aún no canceló los gastos\r\n> locales para poder confirmar la emisión del b/l en destino.\r\n> Les dejaremos saber cuando se encuentre liberado.\r\n>\r\n> Saludos,\r\n>\r\n>\r\n>\r\n> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n> Cordiali Saluti*\r\n> Carolina Lodovico\r\n> *Customer Comex+ Cargo*\r\n> Cel WhatsApp: (+54)115-761-1787\r\n>\r\n> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n> Tel.: (+54)114331-2207/1893\r\n> Av. Alicia Moreau de Justo 1150 – Of. A-103// (C11",
+      "ts": "2026-09-08T17:38:50.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162105,7 +162113,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-07T23:37:50.528Z",
     "gmail_seen_ids": [
-      "19f1ebb7a8b700a3",
       "19f1ed6b99478ec2",
       "19f21f84d4ce4257",
       "19f2211a40d59970",
@@ -162904,7 +162911,8 @@
       "1a0810d950297fdb",
       "1a0811bd44d0f5f2",
       "1a0815b2ac471b81",
-      "1a081e184bfa8b25"
+      "1a081e184bfa8b25",
+      "1a0821a7e01e1bdc"
     ],
     "cash_sessions": {
       "1136982222": {
