@@ -137257,11 +137257,11 @@
       "linked_lead_id": "lead-instagram-1788819008545",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-09T16:57:29.260Z",
-      "last_message_preview": "Sino no lo recomendamos",
+      "last_message_at": "2026-09-09T16:57:49.748Z",
+      "last_message_preview": "Habría que hacerle algunas líneas de dilatación para que la madera pueda trabajar a causa de esa humedad",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-07T22:10:06.296Z",
-      "last_outbound_at": "2026-09-09T16:57:29.260Z"
+      "last_outbound_at": "2026-09-09T16:57:49.748Z"
     },
     {
       "id": "conv-email-1a07deac3182",
@@ -154740,6 +154740,16 @@
       "ts": "2026-09-09T16:57:29.260Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0ODk1NjM0MjEyMjMwODozMzAwMDcyNzk5NDQ3NDc0Mjg4MzI5Mzc1OTg3ODk4Nzc3NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788973070261-49va",
+      "conversation_id": "conv-1788819008545-cgtr",
+      "direction": "out",
+      "body": "Habría que hacerle algunas líneas de dilatación para que la madera pueda trabajar a causa de esa humedad",
+      "ts": "2026-09-09T16:57:49.748Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0ODk1NjM0MjEyMjMwODozMzAwMDcyODM3MjQxMzQwNjM1Mjg4NjEyOTUwNDU1MDkxMgZDZD",
       "via": "ig-app"
     }
   ],
