@@ -16324,6 +16324,99 @@
       "reseller_name": "",
       "currency": "USD",
       "commission_amount": 0
+    },
+    {
+      "id": "local-sale-1788971609802-uvv0",
+      "quote_id": "local-1782305514249-abucx",
+      "quote_number": "A6396",
+      "title": "Reforma",
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 3 más",
+      "internal_notes": "Lead automático desde instagram",
+      "public_notes": "Sin inspeccion previa. Las medidas se deben verificar en obra.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "local-1782313346052-6b591",
+      "client_name": "Solana Ottaviani",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Obra Nuñez",
+      "contract_total": 2371.2,
+      "items": [
+        {
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+          "quantity": 78,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 20,
+          "total": 2964,
+          "discount": 592.8,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 200,
+          "cost": 0,
+          "category": "Servicio",
+          "disc_value": 100,
+          "total": 200,
+          "discount": 200,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-062",
+          "sku": "PROD-062",
+          "description": "M2 - Nylon Manta 200 Micrones",
+          "quantity": 78,
+          "unit_price": 2,
+          "cost": 1,
+          "category": "Extras",
+          "disc_value": 100,
+          "total": 156,
+          "discount": 156,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-063",
+          "sku": "PROD-063",
+          "description": "Varilla de Transición - Aluminio",
+          "quantity": 2,
+          "unit_price": 35.76,
+          "cost": 29.8,
+          "category": "Terminaciones",
+          "disc_value": 100,
+          "total": 71.52,
+          "discount": 71.52,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 1020.32,
+      "status": "Confirmado",
+      "created_at": "2026-09-09T16:33:29.802Z",
+      "has_iva": false,
+      "iva_mode": "none",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 2371.2
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -21509,11 +21602,12 @@
       "discount_amount": 1020.32,
       "created_at": "2026-06-24T12:51:53.812Z",
       "quote_number": "A6396",
-      "status": "SENT",
+      "status": "Aceptado",
       "lead_id": "lead-instagram-1782231082591",
       "reseller_id": "",
       "reseller_name": "",
-      "currency": "USD"
+      "currency": "USD",
+      "sale_id": "local-sale-1788971609802-uvv0"
     },
     {
       "id": "local-1782307103224-qa8ky",
@@ -35856,7 +35950,9 @@
       "dni": "",
       "emails": [],
       "phones": [],
-      "addresses": [],
+      "addresses": [
+        "Obra Nuñez"
+      ],
       "updated_at": "2026-06-24T15:02:25.684Z"
     },
     {
