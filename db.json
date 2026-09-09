@@ -34045,6 +34045,88 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a06a6c3891e",
       "share_token": "5cd01268ad6de33d74200779"
+    },
+    {
+      "id": "local-1788966014588-kxxpi",
+      "client_id": "",
+      "client_name": "Marcela",
+      "client_dni": "",
+      "client_email": "marceladecandia@yahoo.com.ar",
+      "client_phone": "",
+      "client_address": "Belgrano",
+      "internal_notes": "Formulario web — 195m² · Con Colocación",
+      "public_notes": "Colocación sobre piso nivelado. Sujeto a visita de obra para revisar estado de carpetas y metros finales. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Obra Belgrano",
+      "has_iva": true,
+      "price": 3228.0380000000005,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 3 más",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 41.7,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "total": 1584.6000000000001,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 40,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 600,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-201Z",
+          "sku": "PROD-201Z",
+          "description": "Zócalo EPS 70mm - Plain Blanco",
+          "quantity": 40,
+          "unit_price": 6.88,
+          "cost": 2.75,
+          "category": "Zócalos",
+          "total": 275.2,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-129",
+          "sku": "SERV-129",
+          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+          "quantity": 40,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 208,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-09T15:00:14.220Z",
+      "quote_number": "A3417",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a05eb9fd4a5"
     }
   ],
   "clients": [
@@ -163550,7 +163632,8 @@
       "1a080f9772628680",
       "1a080f93b00bd795",
       "1a080f8e1183dfbb",
-      "1a086409220eb78e"
+      "1a086409220eb78e",
+      "1a086ad1e0f8e0cc"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
