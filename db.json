@@ -130610,7 +130610,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-04T11:42:56.000Z",
-      "last_touch_at": "2026-09-04T11:42:56.000Z"
+      "last_touch_at": "2026-09-09T12:48:28.000Z"
     },
     {
       "id": "lead-email-1a06cb4a5107",
@@ -136760,12 +136760,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a06c3aa1772",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-08T11:38:27.855Z",
-      "last_message_preview": "Hola Lihuen, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras",
+      "unread_count": 1,
+      "last_message_at": "2026-09-09T12:48:28.000Z",
+      "last_message_preview": "Buenos días!\r\nEstoy interesada en la línea de SPC\r\n\r\nEl mar, 8 de sept de 2026, 8:38 a.m., Pisos Pacific <info@pisospacific.com>\r\nescribió:\r",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-04T11:42:56.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-09T12:48:28.000Z",
       "last_outbound_at": "2026-09-08T11:38:27.855Z"
     },
     {
@@ -154301,6 +154301,14 @@
       "body": "✉️ Re: DOCUMENTACION CONTAINER PDPG 2619 | CCF-MI-00000082 | JUAN RODRIGUEZ MOMESSO\n\nHola Vicky, buen dia\r\n\r\nLos documentos están bien. Estoy preparando el presupuesto para enviarselos!\r\n\r\nBuen miércoles :)\r\n\r\nSaludos\r\n\r\n\r\n\r\n\r\nEl mar, 8 sept 2026 a la(s) 9:45 a.m., Camila Cerveri (\r\ncamilac@grupocomexmas.com) escribió:\r\n\r\n> Hola Vicky, buen dia\r\n>\r\n> Muchas gracias. Reviso los documentos y preparo el presupuesto.\r\n>\r\n> Buen martes :)\r\n>\r\n> Saludos\r\n>\r\n>\r\n>\r\n>\r\n> El mar, 8 sept 2026 a la(s) 9:42 a.m., Victoria Pisos Pacific (\r\n> victoria@pisospacific.com) escribió:\r\n>\r\n>> Hola Cami, ¿cómo estás?\r\n>>\r\n>> Disculpa la demora en el envío de la documentación; a la fábrica le\r\n>> faltaba especificar las cantidades de los moldings.\r\n>>\r\n>> Cuando puedas, por favor envíanos el presupuesto del costo estimado.\r\n>> Confirma si está todo en orden y cualquier duda lo hablamos.\r\n>>\r\n>> Te comento que ya pedí el TELEX.\r\n>>\r\n>> Saludos,\r\n>> Vicky\r\n>>\r\n>>",
       "ts": "2026-09-09T12:32:55.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a086369b3c5",
+      "conversation_id": "conv-email-1a06c3aa1772",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenos días!\r\nEstoy interesada en la línea de SPC\r\n\r\nEl mar, 8 de sept de 2026, 8:38 a.m., Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola Lihuen, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos,\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-09-09T12:48:28.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162291,7 +162299,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-09T00:01:08.119Z",
     "gmail_seen_ids": [
-      "19f22df2aa8d2ffd",
       "19f231788a9ca232",
       "19f234e8a996d8e6",
       "19f235ece7d131c0",
@@ -163090,7 +163097,8 @@
       "1a08544295ab2e1a",
       "1a08591cc0b27b57",
       "1a085c908f79f21a",
-      "1a0862903c311d41"
+      "1a0862903c311d41",
+      "1a086369b3c52958"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -163522,7 +163530,8 @@
       "1a080f9a2d271094",
       "1a080f9772628680",
       "1a080f93b00bd795",
-      "1a080f8e1183dfbb"
+      "1a080f8e1183dfbb",
+      "1a086409220eb78e"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -164233,7 +164242,7 @@
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-09-08",
+    "last_daily_task_reminder": "2026-09-09",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -164637,7 +164646,7 @@
         "learned_at": "2026-07-28T15:39:11.018Z"
       }
     },
-    "last_daily_pending_digest": "2026-09-08",
+    "last_daily_pending_digest": "2026-09-09",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
