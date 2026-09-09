@@ -137521,11 +137521,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788982816801",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-09T19:40:15.558Z",
-      "last_message_preview": "Hola cuál es el precio aproximado por metro cuadrado?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-09T19:40:15.558Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-09T20:38:29.400Z",
+      "last_message_preview": "Hola Ignacio! Como estas?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-09T19:40:15.558Z",
+      "last_outbound_at": "2026-09-09T20:38:29.400Z"
     }
   ],
   "messages": [
@@ -154977,6 +154978,16 @@
       "ts": "2026-09-09T20:38:15.217Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMzAwMDk3MjMzOTI0NTc4NTYxMjMzMzk5NjY4MzgyMTA1NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788986310076-5qcb",
+      "conversation_id": "conv-1788982816801-8lzj",
+      "direction": "out",
+      "body": "Hola Ignacio! Como estas?",
+      "ts": "2026-09-09T20:38:29.400Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE3Nzg0NDI4MzE5OTYwNjozMzAwMDk3MjYwMDg3NjQ3MzMxODU5MDYzMTEyMDk5NDMwNAZDZD",
       "via": "ig-app"
     }
   ],
