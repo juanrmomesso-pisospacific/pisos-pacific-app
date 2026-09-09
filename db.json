@@ -21443,8 +21443,8 @@
       "seller_name": "Victoria Gonzalez Collado",
       "seller_phone": "+54 11 36982222",
       "title": "Reforma",
-      "has_iva": true,
-      "price": 2869.1519999999996,
+      "has_iva": false,
+      "price": 2371.2,
       "zoned": false,
       "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 3 más",
       "items": [
