@@ -136594,12 +136594,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787978533315",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-07T23:18:34.881Z",
-      "last_message_preview": "Les puse esto:\n\nHola. Por favor, dejen de interrumpir los videos que miro en YouTube. Ya le dije exactamente lo mismo a un montón de compañí",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-09T16:51:04.073Z",
+      "last_message_preview": "Saludos!!!!!!",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-07T23:18:34.881Z",
-      "last_outbound_at": "2026-09-07T20:32:44.801Z"
+      "last_outbound_at": "2026-09-09T16:51:04.073Z"
     },
     {
       "id": "conv-email-1a04d3963422",
@@ -154643,6 +154643,26 @@
       "body": "✉️ Activación de operaciones | C&M Ship Broker\n\nEstimados, buenos dias! Como estás?\r\n\r\nMe contacto porque estoy retomando comunicación con algunos contactos con los que buscamos desarrollar nuevas oportunidades. Sabemos que hoy el costo del flete y la eficiencia operativa son factores clave, por eso desde C&M estamos trabajando para ofrecer tarifas competitivas y optimizar la gestión de sus embarques.\r\n\r\nContamos con consolidados con salidas semanales desde China y Europa, tanto marítimos LCL/FCL como aéreos.\r\n\r\nAdemás, incorporamos el servicio de Courier vía FedEx para el envío de documentación y muestras.\r\n\r\nActualmente realizan este tipo de envíos?\r\n\r\n\r\n\r\nQuedo atenta a su respuesta.\r\n\r\n\r\n\r\nSaludos cordiales.\r\n\r\n[cid:image001.gif@01DD4055.8FBA1E00]\r\nGlobal Broker Engineering\r\nIngegneria del brokeraggio globale\r\nグローバルブローカーエンジニアリング\r\n글로벌 브로커 엔지니어링\r\n全球經紀人工程\r\n\r\nRocío Gaitán\r\nSales Executive\r\nE-mail: rocio.gaitan@cmship.com<mailto:rocio.gaitan@cmship.com>\r\nCel: +54 9 11 2331 5406\r\nwww.cmship.com<https://www.cmship.com/>\r\n[cid:image002.png@01DD4055.8FBA1E00]",
       "ts": "2026-09-09T15:37:25.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788972660848-0lem",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "out",
+      "body": "Jaja paga YouTube y te deja de aparecer cualquier publicidad",
+      "ts": "2026-09-09T16:51:00.326Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDcyMDgxOTkwOTIwNzU5NDI1NjcwNjk4MTMzMDk0NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788972664560-mlcq",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "out",
+      "body": "Saludos!!!!!!",
+      "ts": "2026-09-09T16:51:04.073Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDcyMDg4OTAyNjA1ODU4NTQ0MjAxMzY4MTgxMTQ1NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
