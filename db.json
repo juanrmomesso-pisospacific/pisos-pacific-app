@@ -34292,6 +34292,63 @@
       "quote_number": "A9912",
       "status": "DRAFT",
       "lead_id": "local-1788966783758-idfbh"
+    },
+    {
+      "id": "local-1788979569110-reaw3",
+      "client_id": "",
+      "client_name": "Alfonsina Scoppa",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+5493329578587",
+      "client_address": "Baradero",
+      "internal_notes": "",
+      "public_notes": "Las medidas fueron previstas por el cliente. El envio cotizado por via cargo.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Alfonsina Scoppa",
+      "has_iva": true,
+      "price": 4588.102199999999,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 102.1,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 3879.7999999999997,
+          "discount": 387.98,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 300,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 300,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 387.98,
+      "discount_amount": 387.98,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-09T18:46:08.865Z",
+      "quote_number": "A1432",
+      "status": "DRAFT",
+      "lead_id": "local-1788978891090-9mzoh"
     }
   ],
   "clients": [
