@@ -137508,11 +137508,11 @@
       "linked_lead_id": "lead-instagram-1788975705558",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-09T20:39:07.474Z",
-      "last_message_preview": "Hola Maxi cómo estás?",
+      "last_message_at": "2026-09-09T20:39:20.092Z",
+      "last_message_preview": "Por ahora no nos interesa! Muchas gracias igual",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-09T17:41:43.371Z",
-      "last_outbound_at": "2026-09-09T20:39:07.474Z"
+      "last_outbound_at": "2026-09-09T20:39:20.092Z"
     },
     {
       "id": "conv-1788982816801-8lzj",
@@ -155009,6 +155009,16 @@
       "ts": "2026-09-09T20:39:07.474Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ0NTM4MDEwOTkxOTA1MTozMzAwMDk3MzMwMzIyNTQ4MTAyNjU0Mjc2MjUyMjA1MDU2MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788986360712-jyn6",
+      "conversation_id": "conv-1788975705558-wmjb",
+      "direction": "out",
+      "body": "Por ahora no nos interesa! Muchas gracias igual",
+      "ts": "2026-09-09T20:39:20.092Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ0NTM4MDEwOTkxOTA1MTozMzAwMDk3MzUzNTk3OTMwMzUxODQyMTEzODA4NzYwODMyMAZDZD",
       "via": "ig-app"
     }
   ],
