@@ -137249,11 +137249,11 @@
       "linked_lead_id": "lead-instagram-1788640053472",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-09T20:38:01.345Z",
-      "last_message_preview": "📎 Adjunto",
+      "last_message_at": "2026-09-09T20:38:15.217Z",
+      "last_message_preview": "Esa es la colección h2O y sino tenemos la colección de pisos Prefinished",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-09T18:38:57.039Z",
-      "last_outbound_at": "2026-09-09T20:38:01.345Z"
+      "last_outbound_at": "2026-09-09T20:38:15.217Z"
     },
     {
       "id": "conv-email-1a075050f3c0",
@@ -154967,6 +154967,16 @@
       "ts": "2026-09-09T20:38:01.345Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMzAwMDk3MjA4MzM1MzQ5MjYwNTc4Mjg1NTg1MzgwMTQ3MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788986295619-pe92",
+      "conversation_id": "conv-1788640053471-45ca",
+      "direction": "out",
+      "body": "Esa es la colección h2O y sino tenemos la colección de pisos Prefinished",
+      "ts": "2026-09-09T20:38:15.217Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMzAwMDk3MjMzOTI0NTc4NTYxMjMzMzk5NjY4MzgyMTA1NgZDZD",
       "via": "ig-app"
     }
   ],
