@@ -137507,11 +137507,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788975705558",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-09T20:39:20.092Z",
-      "last_message_preview": "Por ahora no nos interesa! Muchas gracias igual",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-09T17:41:43.371Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-09T20:43:25.079Z",
+      "last_message_preview": "↩️ Reaccionó: 👍",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-09T20:43:25.079Z",
       "last_outbound_at": "2026-09-09T20:39:20.092Z"
     },
     {
@@ -155027,6 +155027,14 @@
       "direction": "in",
       "body": "Gracias",
       "ts": "2026-09-09T20:42:41.738Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788986605707-uism",
+      "conversation_id": "conv-1788975705558-wmjb",
+      "direction": "in",
+      "body": "↩️ Reaccionó: 👍",
+      "ts": "2026-09-09T20:43:25.079Z",
       "status": "received"
     }
   ],
