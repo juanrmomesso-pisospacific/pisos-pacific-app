@@ -136594,11 +136594,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787978533315",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-09T16:52:12.616Z",
-      "last_message_preview": "Saludos!!!",
+      "unread_count": 4,
+      "last_message_at": "2026-09-09T17:06:52.176Z",
+      "last_message_preview": "😀😀😀😀😀😀",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-09T16:52:12.616Z",
+      "last_inbound_at": "2026-09-09T17:06:52.176Z",
       "last_outbound_at": "2026-09-09T16:51:04.073Z"
     },
     {
@@ -154751,6 +154751,22 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0ODk1NjM0MjEyMjMwODozMzAwMDcyODM3MjQxMzQwNjM1Mjg4NjEyOTUwNDU1MDkxMgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1788973603955-lj7x",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "in",
+      "body": "No entiendo por que tantas empresas y compañías publicitan justamente por YouTube. Deberían publicitar por otros medios",
+      "ts": "2026-09-09T17:06:43.521Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788973612948-vxu7",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "in",
+      "body": "😀😀😀😀😀😀",
+      "ts": "2026-09-09T17:06:52.176Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -164679,7 +164695,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MTYyOTAyMzgzMTg2NzUwMzozMjk5ODc5NzgzNzgzMTI5ODI1MDU0MTkyNzc4OTIzMjEyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMjcxMjM4MDc5MjAzMzozMjk5ODkxOTM3ODYxNTkyNjkyMzQ3NzQzMDg1MDAyNzUyMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDcyMTkzNjk2OTYxNDUzMjUxMzgwODUxNTA3MjAwMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDcyMjE1MzQxOTc0MzQ0MzQ0NTgzOTYyMzYxODU2MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDcyMjE1MzQxOTc0MzQ0MzQ0NTgzOTYyMzYxODU2MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDczODIxODc5MDQ4NTIwMjI5MTIyODU2NTA0NTI0OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDczODM3ODQzOTU2NTc4MjE1MzQ3MTcyMzU2OTE1MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
