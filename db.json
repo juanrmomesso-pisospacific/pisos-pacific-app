@@ -136594,11 +136594,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787978533315",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-09T16:51:04.073Z",
-      "last_message_preview": "Saludos!!!!!!",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-07T23:18:34.881Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-09T16:52:00.882Z",
+      "last_message_preview": "¿Y para qué publicitan por YouTub?. No publiciten vía YouTube.",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-09T16:52:00.882Z",
       "last_outbound_at": "2026-09-09T16:51:04.073Z"
     },
     {
@@ -154663,6 +154663,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDcyMDg4OTAyNjA1ODU4NTQ0MjAxMzY4MTgxMTQ1NgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1788972721478-h9f9",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "in",
+      "body": "¿Y para qué publicitan por YouTub?. No publiciten vía YouTube.",
+      "ts": "2026-09-09T16:52:00.882Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -164589,7 +164597,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0ODk1NjM0MjEyMjMwODozMjk5Nzg4NjQwMzMzMTkyMzgxNjA1NzUzODcwMTQyNjY4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMjk5Nzk2MjE5MzM0OTQ1NDk3Nzc3Mzc4MjgxNzU3MDgxNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MTYyOTAyMzgzMTg2NzUwMzozMjk5ODc5NzgzNzgzMTI5ODI1MDU0MTkyNzc4OTIzMjEyOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMjcxMjM4MDc5MjAzMzozMjk5ODkxOTM3ODYxNTkyNjkyMzQ3NzQzMDg1MDAyNzUyMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMjcxMjM4MDc5MjAzMzozMjk5ODkxOTM3ODYxNTkyNjkyMzQ3NzQzMDg1MDAyNzUyMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDcyMTkzNjk2OTYxNDUzMjUxMzgwODUxNTA3MjAwMAZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
