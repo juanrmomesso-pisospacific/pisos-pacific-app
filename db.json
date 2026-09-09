@@ -125772,7 +125772,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-06-29T14:40:02.000Z",
-      "last_touch_at": "2026-09-08T12:45:08.000Z"
+      "last_touch_at": "2026-09-09T12:32:55.000Z"
     },
     {
       "id": "lead-instagram-1782746611795",
@@ -132749,12 +132749,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f13d3442c3",
       "status": "closed",
-      "unread_count": 6,
-      "last_message_at": "2026-09-08T12:45:08.000Z",
-      "last_message_preview": "Hola Vicky, buen dia\r\n\r\nMuchas gracias. Reviso los documentos y preparo el presupuesto.\r\n\r\nBuen martes :)\r\n\r\nSaludos\r\n\r\n\r\n\r\n\r\nEl mar, 8 sept",
+      "unread_count": 7,
+      "last_message_at": "2026-09-09T12:32:55.000Z",
+      "last_message_preview": "Hola Vicky, buen dia\r\n\r\nLos documentos están bien. Estoy preparando el presupuesto para enviarselos!\r\n\r\nBuen miércoles :)\r\n\r\nSaludos\r\n\r\n\r\n\r\n",
       "email_subject": "Re: Comex+Cargo // Juan Momesso // COTIZACION FLETE 40 pies | Shanghai - Buenos Aires | LAM-PA2601 -- PCCF1488 -- CCF1203 ** CCF-MI-00000043",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-08T12:45:08.000Z",
+      "last_inbound_at": "2026-09-09T12:32:55.000Z",
       "last_outbound_at": "2026-07-01T16:38:25.000Z",
       "ignored": true
     },
@@ -154293,6 +154293,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 274408b6e9654d539b4c0fe8da93b371\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-07 00:00:00 UTC to 2026-09-08 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-09T08:23:49.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0862903c31",
+      "conversation_id": "conv-email-19f13d3442c3",
+      "direction": "in",
+      "body": "✉️ Re: DOCUMENTACION CONTAINER PDPG 2619 | CCF-MI-00000082 | JUAN RODRIGUEZ MOMESSO\n\nHola Vicky, buen dia\r\n\r\nLos documentos están bien. Estoy preparando el presupuesto para enviarselos!\r\n\r\nBuen miércoles :)\r\n\r\nSaludos\r\n\r\n\r\n\r\n\r\nEl mar, 8 sept 2026 a la(s) 9:45 a.m., Camila Cerveri (\r\ncamilac@grupocomexmas.com) escribió:\r\n\r\n> Hola Vicky, buen dia\r\n>\r\n> Muchas gracias. Reviso los documentos y preparo el presupuesto.\r\n>\r\n> Buen martes :)\r\n>\r\n> Saludos\r\n>\r\n>\r\n>\r\n>\r\n> El mar, 8 sept 2026 a la(s) 9:42 a.m., Victoria Pisos Pacific (\r\n> victoria@pisospacific.com) escribió:\r\n>\r\n>> Hola Cami, ¿cómo estás?\r\n>>\r\n>> Disculpa la demora en el envío de la documentación; a la fábrica le\r\n>> faltaba especificar las cantidades de los moldings.\r\n>>\r\n>> Cuando puedas, por favor envíanos el presupuesto del costo estimado.\r\n>> Confirma si está todo en orden y cualquier duda lo hablamos.\r\n>>\r\n>> Te comento que ya pedí el TELEX.\r\n>>\r\n>> Saludos,\r\n>> Vicky\r\n>>\r\n>>",
+      "ts": "2026-09-09T12:32:55.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162283,7 +162291,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-09T00:01:08.119Z",
     "gmail_seen_ids": [
-      "19f22c8ee648ce12",
       "19f22df2aa8d2ffd",
       "19f231788a9ca232",
       "19f234e8a996d8e6",
@@ -163082,7 +163089,8 @@
       "1a08385656b768c1",
       "1a08544295ab2e1a",
       "1a08591cc0b27b57",
-      "1a085c908f79f21a"
+      "1a085c908f79f21a",
+      "1a0862903c311d41"
     ],
     "cash_sessions": {
       "1136982222": {
