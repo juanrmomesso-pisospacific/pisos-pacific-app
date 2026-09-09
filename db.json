@@ -137522,11 +137522,11 @@
       "linked_lead_id": "lead-instagram-1788982816801",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-09T20:38:29.400Z",
-      "last_message_preview": "Hola Ignacio! Como estas?",
+      "last_message_at": "2026-09-09T20:38:44.770Z",
+      "last_message_preview": "De la colección h2O o pisos de madera Prefinished?",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-09T19:40:15.558Z",
-      "last_outbound_at": "2026-09-09T20:38:29.400Z"
+      "last_outbound_at": "2026-09-09T20:38:44.770Z"
     }
   ],
   "messages": [
@@ -154988,6 +154988,16 @@
       "ts": "2026-09-09T20:38:29.400Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE3Nzg0NDI4MzE5OTYwNjozMzAwMDk3MjYwMDg3NjQ3MzMxODU5MDYzMTEyMDk5NDMwNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788986325046-nbir",
+      "conversation_id": "conv-1788982816801-8lzj",
+      "direction": "out",
+      "body": "De la colección h2O o pisos de madera Prefinished?",
+      "ts": "2026-09-09T20:38:44.770Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE3Nzg0NDI4MzE5OTYwNjozMzAwMDk3Mjg4NDQxMzExMjMzNDIzNTEyNzEzMTQwNjMzNgZDZD",
       "via": "ig-app"
     }
   ],
