@@ -137135,12 +137135,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788640053472",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-07T16:46:47.696Z",
-      "last_message_preview": "Hola queria saber el valor de colocar un piso en casi 45 mts 2",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-09T16:54:10.783Z",
+      "last_message_preview": "De qué colección te interesa?",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-07T16:46:47.696Z",
-      "last_outbound_at": "2026-09-07T14:29:14.491Z"
+      "last_outbound_at": "2026-09-09T16:54:10.783Z"
     },
     {
       "id": "conv-email-1a075050f3c0",
@@ -154679,6 +154679,16 @@
       "body": "Saludos!!!",
       "ts": "2026-09-09T16:52:12.616Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788972851279-paro",
+      "conversation_id": "conv-1788640053471-45ca",
+      "direction": "out",
+      "body": "De qué colección te interesa?",
+      "ts": "2026-09-09T16:54:10.783Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMzAwMDcyNDMzMzIyMjI1NjI3Mzc3MDgyMzI5MzA3NTQ1NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
