@@ -131190,6 +131190,23 @@
       "address": "Libertador 4612",
       "created_at": "2026-09-09T15:13:03.096Z",
       "last_touch_at": "2026-09-09T15:13:08.549Z"
+    },
+    {
+      "id": "lead-email-1a086d13eec2",
+      "name": "Rocío Ayelén Gaitán",
+      "email": "rocio.gaitan@cmship.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Activación de operaciones | C&M Ship Broker — Estimados, buenos dias! Como estás?\r\n\r\nMe contacto porque estoy retomando comunicación con algunos contactos con los que buscamos desarrollar nuevas oportunidades. Sabemos que hoy ",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-09T15:37:25.000Z",
+      "last_touch_at": "2026-09-09T15:37:25.000Z"
     }
   ],
   "conversations": [
@@ -137255,6 +137272,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-09T00:15:52.000Z"
+    },
+    {
+      "id": "conv-email-1a086d13eec2",
+      "channel": "email",
+      "contact_id": "rocio.gaitan@cmship.com",
+      "contact_name": "Rocío Ayelén Gaitán",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a086d13eec2",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-09T15:37:25.000Z",
+      "last_message_preview": "Estimados, buenos dias! Como estás?\r\n\r\nMe contacto porque estoy retomando comunicación con algunos contactos con los que buscamos desarrolla",
+      "email_subject": "Activación de operaciones | C&M Ship Broker",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-09T15:37:25.000Z"
     }
   ],
   "messages": [
@@ -154507,6 +154539,14 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a086af6f02bcf53"
+    },
+    {
+      "id": "m-email-1a086d13eec2",
+      "conversation_id": "conv-email-1a086d13eec2",
+      "direction": "in",
+      "body": "✉️ Activación de operaciones | C&M Ship Broker\n\nEstimados, buenos dias! Como estás?\r\n\r\nMe contacto porque estoy retomando comunicación con algunos contactos con los que buscamos desarrollar nuevas oportunidades. Sabemos que hoy el costo del flete y la eficiencia operativa son factores clave, por eso desde C&M estamos trabajando para ofrecer tarifas competitivas y optimizar la gestión de sus embarques.\r\n\r\nContamos con consolidados con salidas semanales desde China y Europa, tanto marítimos LCL/FCL como aéreos.\r\n\r\nAdemás, incorporamos el servicio de Courier vía FedEx para el envío de documentación y muestras.\r\n\r\nActualmente realizan este tipo de envíos?\r\n\r\n\r\n\r\nQuedo atenta a su respuesta.\r\n\r\n\r\n\r\nSaludos cordiales.\r\n\r\n[cid:image001.gif@01DD4055.8FBA1E00]\r\nGlobal Broker Engineering\r\nIngegneria del brokeraggio globale\r\nグローバルブローカーエンジニアリング\r\n글로벌 브로커 엔지니어링\r\n全球經紀人工程\r\n\r\nRocío Gaitán\r\nSales Executive\r\nE-mail: rocio.gaitan@cmship.com<mailto:rocio.gaitan@cmship.com>\r\nCel: +54 9 11 2331 5406\r\nwww.cmship.com<https://www.cmship.com/>\r\n[cid:image002.png@01DD4055.8FBA1E00]",
+      "ts": "2026-09-09T15:37:25.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162497,7 +162537,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-09T00:01:08.119Z",
     "gmail_seen_ids": [
-      "19f235ece7d131c0",
       "19f23599f34158bb",
       "19f26f30b1ccd803",
       "19f2713daf0ad040",
@@ -163296,7 +163335,8 @@
       "1a0862903c311d41",
       "1a086369b3c52958",
       "1a086409220eb78e",
-      "1a0869ee2aeef6d8"
+      "1a0869ee2aeef6d8",
+      "1a086d13eec2c66b"
     ],
     "cash_sessions": {
       "1136982222": {
