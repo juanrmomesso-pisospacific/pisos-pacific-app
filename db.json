@@ -137248,12 +137248,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788640053472",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-09T18:38:57.039Z",
-      "last_message_preview": "Asi te digo",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-09T20:38:01.345Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-09T18:38:57.039Z",
-      "last_outbound_at": "2026-09-09T16:54:21.287Z"
+      "last_outbound_at": "2026-09-09T20:38:01.345Z"
     },
     {
       "id": "conv-email-1a075050f3c0",
@@ -154957,6 +154957,16 @@
       "ts": "2026-09-09T20:37:47.945Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMjcxMjM4MDc5MjAzMzozMzAwMDk3MTgzNjE3NjE3OTM2OTQxNTA1NTU4OTI0NDkyOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788986281744-b1z9",
+      "conversation_id": "conv-1788640053471-45ca",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-09T20:38:01.345Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMzAwMDk3MjA4MzM1MzQ5MjYwNTc4Mjg1NTg1MzgwMTQ3MgZDZD",
       "via": "ig-app"
     }
   ],
