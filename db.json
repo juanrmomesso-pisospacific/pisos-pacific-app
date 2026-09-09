@@ -34128,6 +34128,76 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a05eb9fd4a5",
       "share_token": "8ac5fceba9d516c7d7e12c43"
+    },
+    {
+      "id": "local-1788966949716-qtxg5",
+      "client_id": "",
+      "client_name": "Arq. Iara Bresca | GGYA",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 4989-1397",
+      "client_address": "Libertador 4612",
+      "internal_notes": "",
+      "public_notes": "Se deben verificar todas las medidas en obra.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Arq. Iara Bresca | GGYA",
+      "has_iva": true,
+      "price": 22749.4399,
+      "zoned": false,
+      "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-201",
+          "sku": "PROD-201",
+          "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed",
+          "quantity": 182.07,
+          "unit_price": 99,
+          "cost": 34.01,
+          "category": "Pisos de Madera",
+          "disc_value": 15,
+          "total": 18024.93,
+          "discount": 2703.74,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-107",
+          "sku": "SERV-107",
+          "description": "Servicio - Colocación Prefinished Sobre Manta",
+          "quantity": 164,
+          "unit_price": 20,
+          "cost": 7.33,
+          "category": "Servicio",
+          "total": 3280,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 200,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 200,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 2703.74,
+      "discount_amount": 2703.74,
+      "reseller_id": "CLI-010",
+      "reseller_name": "GGYA",
+      "currency": "USD",
+      "created_at": "2026-09-09T15:15:49.058Z",
+      "quote_number": "A9912",
+      "status": "DRAFT",
+      "lead_id": "local-1788966783758-idfbh"
     }
   ],
   "clients": [
@@ -163660,7 +163730,8 @@
       "1a080f93b00bd795",
       "1a080f8e1183dfbb",
       "1a086409220eb78e",
-      "1a086ad1e0f8e0cc"
+      "1a086ad1e0f8e0cc",
+      "1a086af6f02bcf53"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
