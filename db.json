@@ -127946,7 +127946,7 @@
       "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-07-30T19:47:05.000Z",
-      "last_touch_at": "2026-08-03T23:19:38.000Z"
+      "last_touch_at": "2026-09-09T14:42:26.000Z"
     },
     {
       "id": "lead-email-19fb5764798f",
@@ -134530,12 +134530,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fb490f2f8b",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-08-03T23:19:38.000Z",
-      "last_message_preview": "Muchas gracias!! El 3 ago 2026, a la(s) 19:23, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: ﻿ Hola clara, te comparto el presupuest",
+      "unread_count": 1,
+      "last_message_at": "2026-09-09T14:42:26.000Z",
+      "last_message_preview": "Buenas tardes, me podrán cotizar el Roble Eslavonia XL, por 23 m2. Sería\r\nsin instalación con envío a CABA.\r\n\r\nMuchas gracias!!\r\n\r\nEl lun, 3",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-03T23:19:38.000Z",
+      "last_inbound_at": "2026-09-09T14:42:26.000Z",
       "last_outbound_at": "2026-08-03T22:23:19.781Z",
       "ignored": true
     },
@@ -154309,6 +154309,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenos días!\r\nEstoy interesada en la línea de SPC\r\n\r\nEl mar, 8 de sept de 2026, 8:38 a.m., Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola Lihuen, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos,\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-09T12:48:28.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0869ee2aee",
+      "conversation_id": "conv-email-19fb490f2f8b",
+      "direction": "in",
+      "body": "✉️ Re: Presupuesto Pisos Pacific — Obra Sanchez de Bustamante H2O\n\nBuenas tardes, me podrán cotizar el Roble Eslavonia XL, por 23 m2. Sería\r\nsin instalación con envío a CABA.\r\n\r\nMuchas gracias!!\r\n\r\nEl lun, 3 ago 2026 a las 19:23, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola clara, te comparto el presupuesto NA9905 adjunto. El mismo incluye el\r\n> mínimo de colocación (40m2) y la entrega con descarga.\r\n>\r\n> Cualquier consulta quedo a disposición.\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-09-09T14:42:26.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -162299,7 +162307,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-09T00:01:08.119Z",
     "gmail_seen_ids": [
-      "19f234e8a996d8e6",
       "19f235ece7d131c0",
       "19f23599f34158bb",
       "19f26f30b1ccd803",
@@ -163098,7 +163105,8 @@
       "1a085c908f79f21a",
       "1a0862903c311d41",
       "1a086369b3c52958",
-      "1a086409220eb78e"
+      "1a086409220eb78e",
+      "1a0869ee2aeef6d8"
     ],
     "cash_sessions": {
       "1136982222": {
