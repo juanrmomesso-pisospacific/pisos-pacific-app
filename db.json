@@ -137256,11 +137256,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788819008545",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-07T22:10:06.296Z",
-      "last_message_preview": "Hola, qué preparación previa requiere el piso? El h2o se puede colocar sobre un piso de parquet viejo con algunos problemas de humedad?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-07T22:10:06.296Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-09T16:57:29.260Z",
+      "last_message_preview": "Sino no lo recomendamos",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-07T22:10:06.296Z",
+      "last_outbound_at": "2026-09-09T16:57:29.260Z"
     },
     {
       "id": "conv-email-1a07deac3182",
@@ -154719,6 +154720,26 @@
       "ts": "2026-09-09T16:54:52.978Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMjcxMjM4MDc5MjAzMzozMzAwMDcyNTExMTU4NzE2MDM2Mjk4NzQ4NjI3OTg5Mjk5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788973043601-w7j6",
+      "conversation_id": "conv-1788819008545-cgtr",
+      "direction": "out",
+      "body": "Hola Cari cómo estás? Si los problemas de humedad están resuelto si",
+      "ts": "2026-09-09T16:57:22.623Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0ODk1NjM0MjEyMjMwODozMzAwMDcyNzg3MjA0ODQ4MDE3Mjc5ODU1NjU3NzQ2NDMyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788973050376-voei",
+      "conversation_id": "conv-1788819008545-cgtr",
+      "direction": "out",
+      "body": "Sino no lo recomendamos",
+      "ts": "2026-09-09T16:57:29.260Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0ODk1NjM0MjEyMjMwODozMzAwMDcyNzk5NDQ3NDc0Mjg4MzI5Mzc1OTg3ODk4Nzc3NgZDZD",
       "via": "ig-app"
     }
   ],
