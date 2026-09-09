@@ -131104,6 +131104,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-09T00:15:52.000Z",
       "last_touch_at": "2026-09-09T00:15:52.000Z"
+    },
+    {
+      "id": "local-1788966783758-idfbh",
+      "name": "Arq. Iara Bresca | GGYA",
+      "phone": "+54 9 11 4989-1397",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "Roble de Madera | Piso Prefinished"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Libertador 4612",
+      "created_at": "2026-09-09T15:13:03.096Z",
+      "last_touch_at": "2026-09-09T15:13:08.549Z"
     }
   ],
   "conversations": [
