@@ -136547,7 +136547,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a05eb9fd4a5",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-08T16:37:06.000Z",
       "last_message_preview": "Buenas tardes \r\nEstoy interesada en presupuesto de piso H2O a prueba de agua, color roble Eslavonia XL para 44 metros con zócalos incluidos.",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -137065,11 +137065,12 @@
       "linked_lead_id": "lead-email-1a0815b2ac47",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-08T14:10:30.000Z",
-      "last_message_preview": "Formulario web — 3m² · Con Colocación · CP 1426 · OLLEROS 3006",
+      "last_message_at": "2026-09-09T14:58:08.077Z",
+      "last_message_preview": "Hola Ana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras do",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-08T14:10:30.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-08T14:10:30.000Z",
+      "last_outbound_at": "2026-09-09T14:58:08.077Z"
     },
     {
       "id": "conv-email-1a08385656b7",
@@ -154318,6 +154319,15 @@
       "body": "✉️ Re: Presupuesto Pisos Pacific — Obra Sanchez de Bustamante H2O\n\nBuenas tardes, me podrán cotizar el Roble Eslavonia XL, por 23 m2. Sería\r\nsin instalación con envío a CABA.\r\n\r\nMuchas gracias!!\r\n\r\nEl lun, 3 ago 2026 a las 19:23, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola clara, te comparto el presupuesto NA9905 adjunto. El mismo incluye el\r\n> mínimo de colocación (40m2) y la entrega con descarga.\r\n>\r\n> Cualquier consulta quedo a disposición.\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-09T14:42:26.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788965888077-isuz",
+      "conversation_id": "conv-email-1a0815b2ac47",
+      "direction": "out",
+      "body": "Hola Ana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nPor otro lado, mencionaste 3 m2 de colocación. Me podrás confirmar si ese numero es correcto?\n\n\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-09T14:58:08.077Z",
+      "status": "sent",
+      "wa_id": "1a086ad1e0f8e0cc"
     }
   ],
   "templates": [
