@@ -137332,11 +137332,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788875005472",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-08T13:43:23.998Z",
-      "last_message_preview": "Buen día .\nMe pasarías más información sobre el piso H20",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-08T13:43:23.998Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-09T16:54:40.574Z",
+      "last_message_preview": "Hola Rubén",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-08T13:43:23.998Z",
+      "last_outbound_at": "2026-09-09T16:54:40.574Z"
     },
     {
       "id": "conv-email-1a0815b2ac47",
@@ -154698,6 +154699,16 @@
       "ts": "2026-09-09T16:54:21.287Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMzAwMDcyNDUyNjk5MTAwNjU0MTQzMjUzODExNjY1MzA1NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1788972881209-qsap",
+      "conversation_id": "conv-1788875005472-ehzq",
+      "direction": "out",
+      "body": "Hola Rubén",
+      "ts": "2026-09-09T16:54:40.574Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMjcxMjM4MDc5MjAzMzozMzAwMDcyNDg4Mjc2MTk1OTQwMzIzMTEwNzYzMTU0NjM2OAZDZD",
       "via": "ig-app"
     }
   ],
