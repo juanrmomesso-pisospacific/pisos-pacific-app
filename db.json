@@ -137167,11 +137167,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788640053472",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-09T16:54:21.287Z",
-      "last_message_preview": "Asi te preparamos Presupuesto",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-07T16:46:47.696Z",
+      "unread_count": 2,
+      "last_message_at": "2026-09-09T18:38:57.039Z",
+      "last_message_preview": "Asi te digo",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-09T18:38:57.039Z",
       "last_outbound_at": "2026-09-09T16:54:21.287Z"
     },
     {
@@ -154821,6 +154821,22 @@
       "body": "Hola, ¿cómo están? Soy Maxi. Estuve conociendo Pisos Pacific y me interesó mucho el recorrido de más de 30 años y cómo combinan diseño y fabricación de pisos con una mirada internacional.\n\nLos contacto desde **CARAS DECO** porque creemos que hay un universo de producto y diseño muy interesante para mostrar y contar desde el medio.\n\nMe gustaría comentarles una propuesta editorial y conversar sobre las posibilidades. ¿Podemos coordinar una breve llamada o videollamada?",
       "ts": "2026-09-09T17:41:43.371Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788979132096-d6rm",
+      "conversation_id": "conv-1788640053471-45ca",
+      "direction": "in",
+      "body": "Tienen muestras de pisos",
+      "ts": "2026-09-09T18:38:51.218Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1788979137748-gze4",
+      "conversation_id": "conv-1788640053471-45ca",
+      "direction": "in",
+      "body": "Asi te digo",
+      "ts": "2026-09-09T18:38:57.039Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -164752,7 +164768,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDcyMjE1MzQxOTc0MzQ0MzQ0NTgzOTYyMzYxODU2MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDczODIxODc5MDQ4NTIwMjI5MTIyODU2NTA0NTI0OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDczODM3ODQzOTU2NTc4MjE1MzQ3MTcyMzU2OTE1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ0NTM4MDEwOTkxOTA1MTozMzAwMDc3Njk1NDE3ODYzMTIzNjkxOTYzMTg5MjQ0NzIzMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ0NTM4MDEwOTkxOTA1MTozMzAwMDc3Njk1NDE3ODYzMTIzNjkxOTYzMTg5MjQ0NzIzMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMzAwMDg0MDE4Njc5NzE1OTIzMjUyOTc4MTU3OTg0MTUzNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMzAwMDg0MDI5NDE3MTM3Njg0MDk2Nzk4MDkyMDYwMjYyNAZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
