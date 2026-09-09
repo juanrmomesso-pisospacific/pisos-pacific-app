@@ -131303,6 +131303,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-09T15:37:25.000Z",
       "last_touch_at": "2026-09-09T15:37:25.000Z"
+    },
+    {
+      "id": "lead-instagram-1788975705558",
+      "name": "@maximiliano.correa",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-09T17:41:43.371Z",
+      "last_touch_at": "2026-09-09T17:41:43.371Z"
     }
   ],
   "conversations": [
@@ -137385,6 +137401,20 @@
       "email_subject": "Activación de operaciones | C&M Ship Broker",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-09T15:37:25.000Z"
+    },
+    {
+      "id": "conv-1788975705558-wmjb",
+      "channel": "instagram",
+      "contact_id": "4388502188079326",
+      "contact_name": "@maximiliano.correa",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788975705558",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-09T17:41:43.371Z",
+      "last_message_preview": "Hola, ¿cómo están? Soy Maxi. Estuve conociendo Pisos Pacific y me interesó mucho el recorrido de más de 30 años y cómo combinan diseño y fab",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-09T17:41:43.371Z"
     }
   ],
   "messages": [
@@ -154767,6 +154797,14 @@
       "body": "😀😀😀😀😀😀",
       "ts": "2026-09-09T17:06:52.176Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788975705558-s21p",
+      "conversation_id": "conv-1788975705558-wmjb",
+      "direction": "in",
+      "body": "Hola, ¿cómo están? Soy Maxi. Estuve conociendo Pisos Pacific y me interesó mucho el recorrido de más de 30 años y cómo combinan diseño y fabricación de pisos con una mirada internacional.\n\nLos contacto desde **CARAS DECO** porque creemos que hay un universo de producto y diseño muy interesante para mostrar y contar desde el medio.\n\nMe gustaría comentarles una propuesta editorial y conversar sobre las posibilidades. ¿Podemos coordinar una breve llamada o videollamada?",
+      "ts": "2026-09-09T17:41:43.371Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -164697,7 +164735,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDcyMTkzNjk2OTYxNDUzMjUxMzgwODUxNTA3MjAwMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDcyMjE1MzQxOTc0MzQ0MzQ0NTgzOTYyMzYxODU2MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDczODIxODc5MDQ4NTIwMjI5MTIyODU2NTA0NTI0OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDczODM3ODQzOTU2NTc4MjE1MzQ3MTcyMzU2OTE1MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDczODM3ODQzOTU2NTc4MjE1MzQ3MTcyMzU2OTE1MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ0NTM4MDEwOTkxOTA1MTozMzAwMDc3Njk1NDE3ODYzMTIzNjkxOTYzMTg5MjQ0NzIzMgZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
