@@ -131443,11 +131443,11 @@
       "linked_client_name": null,
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-09-07T14:30:37.034Z",
+      "last_message_at": "2026-09-09T23:09:42.670Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-02T18:36:25.456Z",
-      "last_outbound_at": "2026-09-07T14:30:37.034Z",
+      "last_outbound_at": "2026-09-09T23:09:42.670Z",
       "ignored": true
     },
     {
@@ -155074,6 +155074,16 @@
       "body": "Hola buenas tardes , quisiera saber precio de material y colocación de un piso de spc para 35 metros cuadrados (esto incluye un par de metros más por las dudas ) muchas gracias !! Saludos",
       "ts": "2026-09-09T23:03:30.727Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788995383193-dt24",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-09T23:09:42.670Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAwMTEzOTk3MzE2NDcwOTkyNjE5MjU2NzUxODQ5NDcyMAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
