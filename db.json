@@ -131392,6 +131392,22 @@
       "address": "Baradero",
       "created_at": "2026-09-09T18:34:50.762Z",
       "last_touch_at": "2026-09-09T18:34:53.446Z"
+    },
+    {
+      "id": "lead-instagram-1788982816801",
+      "name": "@ignacio_pasman",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-09T19:40:15.558Z",
+      "last_touch_at": "2026-09-09T19:40:15.558Z"
     }
   ],
   "conversations": [
@@ -137488,6 +137504,20 @@
       "last_message_preview": "Hola, ¿cómo están? Soy Maxi. Estuve conociendo Pisos Pacific y me interesó mucho el recorrido de más de 30 años y cómo combinan diseño y fab",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-09T17:41:43.371Z"
+    },
+    {
+      "id": "conv-1788982816801-8lzj",
+      "channel": "instagram",
+      "contact_id": "1103449725405826",
+      "contact_name": "@ignacio_pasman",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1788982816801",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-09T19:40:15.558Z",
+      "last_message_preview": "Hola cuál es el precio aproximado por metro cuadrado?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-09T19:40:15.558Z"
     }
   ],
   "messages": [
@@ -154894,6 +154924,14 @@
       "body": "Asi te digo",
       "ts": "2026-09-09T18:38:57.039Z",
       "status": "received"
+    },
+    {
+      "id": "m-1788982816801-xdqq",
+      "conversation_id": "conv-1788982816801-8lzj",
+      "direction": "in",
+      "body": "Hola cuál es el precio aproximado por metro cuadrado?",
+      "ts": "2026-09-09T19:40:15.558Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -164827,7 +164865,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAwMDczODM3ODQzOTU2NTc4MjE1MzQ3MTcyMzU2OTE1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTQ0NTM4MDEwOTkxOTA1MTozMzAwMDc3Njk1NDE3ODYzMTIzNjkxOTYzMTg5MjQ0NzIzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMzAwMDg0MDE4Njc5NzE1OTIzMjUyOTc4MTU3OTg0MTUzNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMzAwMDg0MDI5NDE3MTM3Njg0MDk2Nzk4MDkyMDYwMjYyNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDMyNzQyNzE2OTQyODMyNzozMzAwMDg0MDI5NDE3MTM3Njg0MDk2Nzk4MDkyMDYwMjYyNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE3Nzg0NDI4MzE5OTYwNjozMzAwMDkwODE1MDg2MzU5NDQzODk5MjcyNTc3MTU1MDcyMAZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
