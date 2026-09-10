@@ -128752,7 +128752,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-30T15:09:29.000Z",
-      "last_touch_at": "2026-08-25T20:24:33.000Z"
+      "last_touch_at": "2026-09-10T16:06:14.000Z"
     },
     {
       "id": "lead-email-19fb38919e88",
@@ -135465,12 +135465,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fb392d7c0c",
       "status": "closed",
-      "unread_count": 5,
-      "last_message_at": "2026-08-25T20:24:33.000Z",
-      "last_message_preview": "Buen día, Estimada Victoria\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, nos ponemos en contacto para informarle que",
+      "unread_count": 6,
+      "last_message_at": "2026-09-10T16:06:14.000Z",
+      "last_message_preview": "Buen día, Estimado Cliente\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, compartimos Pre-Alert:\r\n\r\n\r\nBooking/MBL #\r\n ",
       "email_subject": "BVLRO2128 || S/  HUSHFLOORS INTERNATIONAL LIMITED  || C/ TOLEDOT INVESTMENT || VOL: 1X20' || POL: SHANGHAI | POD: BALBOA ||",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-25T20:24:33.000Z",
+      "last_inbound_at": "2026-09-10T16:06:14.000Z",
       "ignored": true
     },
     {
@@ -155765,6 +155765,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola, me interesa el H2O. Sería para colocar sobre un piso de madera viejo, con algunos problemas de humedad. Qué habría que hacer para no tener problemas de humedad en el piso nuevo y, a su vez, no tener que sacar todo le piso y hacer una nueva carpeta? Ustedes podrían ofrecerme alguna solución?Gracias,Carina\r\n    El martes, 8 de septiembre de 2026, 08:38:00 a. m. ART, Pisos Pacific <info@pisospacific.com> escribió:  \r\n \r\n Hola Carina, ¡muchas gracias por tu consulta!\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera — Pisos de madera noble prefinished\r\n• Línea H2O — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación. Avisanos si nececesitas que coticemos colocación de zócalos también. \r\n\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\n\r\n\r\n|    |  Juan Rodríguez Momesso Ventas    +54 11 5175-0087\r\n info@pisospacific.com\r\n pisospacific.com      La evolución del piso de madera  |",
       "ts": "2026-09-10T13:52:29.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a08c124442d",
+      "conversation_id": "conv-email-19fb392d7c0c",
+      "direction": "in",
+      "body": "✉️ RE: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X20' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\n\nBuen día, Estimado Cliente\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, compartimos Pre-Alert:\r\n\r\n\r\nBooking/MBL #\r\n 275436330\r\nContenedor #\r\n MSKU7461355\r\nNaviera\r\n MAERSK\r\nBarco & Viaje #\r\nRIO KOBE 634E\r\nETD\r\n 18-AUG\r\nETA\r\n 14-OCT\r\nFlete aplicado\r\n USD 7,350.00\r\nDías Libres\r\n 7 libres en destino\r\nPOL\r\n SHANGHAI\r\nPOD\r\n BALBOA\r\nFinal Destination\r\n BALBOA\r\nComentarios:\r\n ACARREO: USD 235.00\r\n(Balboa Port-Puerta)\r\n\r\n\r\nCualquier consulta adicional, quedo a su disposición.\r\nEstaremos compartiendo la propuesta de liquidación en la brevedad de lo posible.\r\n\r\nThanks,\r\nBest Regards.\r\n[cid:9bb8e01d-333a-4d09-a5f8-2c72a50311c3]\r\n\r\n________________________________\r\nDe: Juan Rosario <jrosario@bvlpanama.com>\r\nEnviado: martes, 25 de agosto de 2026 15:24\r\nPara: Victoria Pisos Pacific <victoria@pisospacific.com>\r\nCc: Giselle Ceballos <gceballos@bvlpanama.com>; Abe Dabah <abedabah@gmail.com>; arieltesone26@gmail.com <arieltesone26@gmail.com>; info@pisospacific.com <info@pisospacific.com>; Joseph Sam <jsam@bvlpanama.com>; INSIDE SALES <insidesales@bvlpanama.com>\r\nAsunto: RE: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X40' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\r\n\r\nBuen día, Estimada Victoria\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, nos ponemos en contacto para informarle que la línea naviera (Maersk) ha notificado un ajuste en la programación del buque",
+      "ts": "2026-09-10T16:06:14.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -163908,7 +163916,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-10T00:02:15.945Z",
     "gmail_seen_ids": [
-      "19f27f0a61737cd5",
       "19f284c5f7a373a4",
       "19f28a5a1b0052bb",
       "19f28f1ce75d6632",
@@ -164707,7 +164714,8 @@
       "1a08b66ef24c7259",
       "1a08b801501c2fe3",
       "1a08b7940c4b4a35",
-      "1a08b9772646054a"
+      "1a08b9772646054a",
+      "1a08c124442d99d6"
     ],
     "cash_sessions": {
       "1136982222": {
