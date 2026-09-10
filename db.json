@@ -132005,6 +132005,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-10T17:14:41.272Z",
       "last_touch_at": "2026-09-10T17:14:41.272Z"
+    },
+    {
+      "id": "lead-email-1a08c6384a92",
+      "name": "Maximiliano Dieguez",
+      "email": "ventasrodavial@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Venta de neumáticos de calle e industriales — [image: logo.jpg]\r\n[image: 236.jpg]\r\n[image: 306.jpg]\r\n[image: 306_2.jpg]\r\n[image: 236_2.jpg]\r\n\r\n*RODAVIAL SRL*\r\n\r\n*SOLUCIONES INTEGRALES EN RODADOS INDUSTRIALES*\r\n\r\nMi nombre es M",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-10T17:34:47.000Z",
+      "last_touch_at": "2026-09-10T17:34:47.000Z"
     }
   ],
   "conversations": [
@@ -138175,6 +138192,21 @@
       "last_message_preview": "Piso spc click de 4mm o 5mm",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-10T17:14:41.272Z"
+    },
+    {
+      "id": "conv-email-1a08c6384a92",
+      "channel": "email",
+      "contact_id": "ventasrodavial@gmail.com",
+      "contact_name": "Maximiliano Dieguez",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a08c6384a92",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-10T17:34:47.000Z",
+      "last_message_preview": "[image: logo.jpg]\r\n[image: 236.jpg]\r\n[image: 306.jpg]\r\n[image: 306_2.jpg]\r\n[image: 236_2.jpg]\r\n\r\n*RODAVIAL SRL*\r\n\r\n*SOLUCIONES INTEGRALES EN",
+      "email_subject": "Venta de neumáticos de calle e industriales",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-10T17:34:47.000Z"
     }
   ],
   "messages": [
@@ -155819,6 +155851,14 @@
       "body": "Piso spc click de 4mm o 5mm",
       "ts": "2026-09-10T17:14:41.272Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a08c6384a92",
+      "conversation_id": "conv-email-1a08c6384a92",
+      "direction": "in",
+      "body": "✉️ Venta de neumáticos de calle e industriales\n\n[image: logo.jpg]\r\n[image: 236.jpg]\r\n[image: 306.jpg]\r\n[image: 306_2.jpg]\r\n[image: 236_2.jpg]\r\n\r\n*RODAVIAL SRL*\r\n\r\n*SOLUCIONES INTEGRALES EN RODADOS INDUSTRIALES*\r\n\r\nMi nombre es Maximiliano Dieguez y me desempeño como Ejecutivo de Cuentas\r\nen Rodavial SRL.\r\n\r\nNos ponemos en contacto con ustedes con el objetivo de presentar nuestra\r\nempresa y ofrecerles una propuesta de valor orientada a convertirnos en un\r\nsocio estratégico para sus operaciones logísticas e industriales.\r\n\r\nEn Rodavial SRL contamos con amplia experiencia en la comercialización y\r\nservicio integral para autoelevadores y equipos de movimiento de\r\nmateriales. Ofrecemos:\r\n\r\n• Cubiertas macizas y neumáticas\r\n• Llantas y aros engomados\r\n• Uñas y componentes especiales\r\n• Fundición de mazas\r\n• Poliuretano importado\r\n• Repuestos importados originales y alternativos\r\n\r\nTrabajamos con las principales marcas del mercado, incluyendo Yale, Clark,\r\nNissan, Hyster, Mitsubishi, Daewoo, entre otras.\r\n\r\nAsimismo, somos representantes oficiales de MICHELIN, BF GOODRICH, RODACO,\r\nSOLIDEAL, CONTINENTAL y CAMSO, además de ser fabricantes de cubiertas\r\nmacizas RODAVIAL.\r\n\r\nNuestro compromiso es brindar soluciones confiables, atención personalizada\r\ny respuestas ágiles para acompañar las necesidades operativas de cada\r\ncliente.\r\n\r\nQuedamos a disposición para coordinar una reunión o enviarles mayor\r\ninformación sobre nuestros productos y servicios.\r\n<https://www.cloudhq.net/>*CONTACTENOS\r\n<maximiliano.dieguez@rodavial.com.ar>* <http",
+      "ts": "2026-09-10T17:34:47.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -163962,7 +164002,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-10T00:02:15.945Z",
     "gmail_seen_ids": [
-      "19f28a5a1b0052bb",
       "19f28f1ce75d6632",
       "19f28ea1b8e83b7c",
       "19f2908ac4d9b73b",
@@ -164761,7 +164800,8 @@
       "1a08b7940c4b4a35",
       "1a08b9772646054a",
       "1a08c124442d99d6",
-      "1a08c29e996523a7"
+      "1a08c29e996523a7",
+      "1a08c6384a9221ea"
     ],
     "cash_sessions": {
       "1136982222": {
