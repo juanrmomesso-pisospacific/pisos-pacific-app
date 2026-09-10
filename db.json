@@ -782,7 +782,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 254.248,
-      "reservedStock": 292.8,
+      "reservedStock": 397,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Notte 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1529,7 +1529,7 @@
       "active": true,
       "margin": 49.9,
       "stock": 0,
-      "reservedStock": 0,
+      "reservedStock": 70,
       "subLine": "Zócalo EPS",
       "shortName": "Zócalo EPS Reforma Line 120mm Blanco",
       "thicknessMm": null,
@@ -1745,7 +1745,7 @@
       "active": true,
       "margin": -100,
       "stock": 0,
-      "reservedStock": 4908.747,
+      "reservedStock": 5008.747,
       "subLine": "Materiales",
       "shortName": "Nylon Manta 200 Micrones",
       "thicknessMm": null,
@@ -1841,7 +1841,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8125.647,
+      "reservedStock": 8229.847,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2393,7 +2393,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 732,
+      "reservedStock": 802,
       "subLine": "Zócalos",
       "shortName": "Colocación Zócalos Pegados y Clavados",
       "thicknessMm": null,
@@ -2441,7 +2441,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 13239,
+      "reservedStock": 13419,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -34188,7 +34188,7 @@
       "currency": "USD",
       "created_at": "2026-09-07T19:07:26.476Z",
       "quote_number": "A3256",
-      "status": "DRAFT"
+      "status": "SENT"
     },
     {
       "id": "local-1788812245730-5nrtt",
@@ -162641,6 +162641,60 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 200,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-10T00:30:39.619Z",
+      "type": "quote_reserve",
+      "ref": "local-1788808047266-q4g1b",
+      "product_id": "PROD-028",
+      "sku": "PROD-028",
+      "qty": 104.2,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-10T00:30:39.619Z",
+      "type": "quote_reserve",
+      "ref": "local-1788808047266-q4g1b",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 104.2,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-10T00:30:39.619Z",
+      "type": "quote_reserve",
+      "ref": "local-1788808047266-q4g1b",
+      "product_id": "PROD-209",
+      "sku": "PROD-209",
+      "qty": 70,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-10T00:30:39.619Z",
+      "type": "quote_reserve",
+      "ref": "local-1788808047266-q4g1b",
+      "product_id": "SERV-129",
+      "sku": "SERV-129",
+      "qty": 70,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-10T00:30:39.619Z",
+      "type": "quote_reserve",
+      "ref": "local-1788808047266-q4g1b",
+      "product_id": "PROD-062",
+      "sku": "PROD-062",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-10T00:30:39.619Z",
+      "type": "quote_reserve",
+      "ref": "local-1788808047266-q4g1b",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 180,
       "warehouse_id": "main"
     }
   ],
