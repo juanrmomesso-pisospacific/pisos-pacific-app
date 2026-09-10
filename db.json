@@ -401,8 +401,8 @@
       "seller_name": "Ariel Tesone",
       "seller_phone": "",
       "title": "Calle 50",
-      "has_iva": false,
-      "price": 39317,
+      "has_iva": true,
+      "price": 42069.19,
       "zoned": false,
       "description": "H2O XL - Roble Clásico 5,5mm x 23cm x 1,50m + 1 más",
       "items": [
@@ -439,7 +439,10 @@
       "quote_number": "A8459",
       "status": "Aceptado",
       "share_token": "eb7914ce2163552c7d5949c2",
-      "sale_id": "local-sale-1784667848927-7ak3"
+      "sale_id": "local-sale-1784667848927-7ak3",
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD"
     }
   ],
   "clients": [
