@@ -138008,12 +138008,12 @@
       "linked_lead_id": "lead-email-1a07deac3182",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-10T13:52:29.000Z",
-      "last_message_preview": "Hola, me interesa el H2O. Sería para colocar sobre un piso de madera viejo, con algunos problemas de humedad. Qué habría que hacer para no t",
+      "last_message_at": "2026-09-10T18:12:57.220Z",
+      "last_message_preview": "Carina, gracias por tu aclaración. \n\nAl colocar un piso que es impermeable, no recomendamos hacerlo sobre un piso que esté con problemas de ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-10T13:52:29.000Z",
-      "last_outbound_at": "2026-09-08T11:37:58.527Z"
+      "last_outbound_at": "2026-09-10T18:12:57.220Z"
     },
     {
       "id": "conv-email-1a07e3feddad",
@@ -155909,6 +155909,15 @@
       "ts": "2026-09-10T18:09:19.903Z",
       "status": "sent",
       "wa_id": "1a08c82869ef9c10"
+    },
+    {
+      "id": "m-1789063977220-kban",
+      "conversation_id": "conv-email-1a07deac3182",
+      "direction": "out",
+      "body": "Carina, gracias por tu aclaración. \n\nAl colocar un piso que es impermeable, no recomendamos hacerlo sobre un piso que esté con problemas de humedad y mucho menos si es madera. \n\nTe explico por qué. La madera es higroscópica, lo que significa es que absorbe y larga humedad. Cuando está con humedad, por lo general se expande, lo que es común. Si la humedad es mucha y el piso no tiene lugar para expandirse se engloba y sale hacia arriba. \n\nEsto es lo que te puede pasar si ponés un piso impermeable arriba de la madera, ya que no permitiría que la humedad salga. \n\nEspero haber aclarado tus dudas!\n\nCualquier cosa, me podes llamar y te ayudo. \n\nGracias,\n\nSaludos,\nJuan",
+      "ts": "2026-09-10T18:12:57.220Z",
+      "status": "sent",
+      "wa_id": "1a08c85d9451c706"
     }
   ],
   "templates": [
