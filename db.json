@@ -36602,6 +36602,18 @@
       "notes": null,
       "name": "Alexia Valenzuela",
       "updated_at": "2026-09-07T19:02:11.940Z"
+    },
+    {
+      "id": "CLI-mtus7b1z-ni66",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Arq. Gaston",
+      "updated_at": "2026-09-10T00:20:53.303Z"
     }
   ],
   "expenses": [],
