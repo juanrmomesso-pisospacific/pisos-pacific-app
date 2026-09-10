@@ -138084,7 +138084,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0815b2ac47",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-10T13:19:22.000Z",
       "last_message_preview": "NO LO PUEDO VER ME LO ENVIARIAN EN PDF POR FAVOR ? GARANTIA DE CUANTOS AÑOS\r\nTIENEN ?\r\n\r\nEl mié, 9 sept 2026 a las 11:58, Pisos Pacific (<in",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -138114,13 +138114,14 @@
       "contact_name": "Rocío Ayelén Gaitán",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a086d13eec2",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-09T15:37:25.000Z",
       "last_message_preview": "Estimados, buenos dias! Como estás?\r\n\r\nMe contacto porque estoy retomando comunicación con algunos contactos con los que buscamos desarrolla",
       "email_subject": "Activación de operaciones | C&M Ship Broker",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-09T15:37:25.000Z"
+      "last_inbound_at": "2026-09-09T15:37:25.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1788975705558-wmjb",
