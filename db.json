@@ -131841,7 +131841,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-08T14:10:30.000Z",
-      "last_touch_at": "2026-09-08T14:10:30.000Z"
+      "last_touch_at": "2026-09-10T13:19:22.000Z"
     },
     {
       "id": "lead-email-1a08385656b7",
@@ -131972,6 +131972,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-10T00:24:50.452Z",
       "last_touch_at": "2026-09-10T00:24:50.452Z"
+    },
+    {
+      "id": "lead-email-1a08b801501c",
+      "name": "Nourchene Jaber",
+      "email": "nourchene.jaber@a400.pt",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Inquiry regarding PEFC/FSC Certification for PACIFIC H2O Flooring (Ref: SM51-2) — Dear Pacific Team,\r\n\r\nI hope this email finds you well.\r\n\r\nWe are currently working on a student residence project in Porto, Portugal-specifically the Forrester Residência Estudant",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-10T13:26:55.000Z",
+      "last_touch_at": "2026-09-10T13:26:55.000Z"
     }
   ],
   "conversations": [
@@ -138017,12 +138034,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0815b2ac47",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-09T14:58:08.077Z",
-      "last_message_preview": "Hola Ana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras do",
+      "unread_count": 1,
+      "last_message_at": "2026-09-10T13:19:22.000Z",
+      "last_message_preview": "NO LO PUEDO VER ME LO ENVIARIAN EN PDF POR FAVOR ? GARANTIA DE CUANTOS AÑOS\r\nTIENEN ?\r\n\r\nEl mié, 9 sept 2026 a las 11:58, Pisos Pacific (<in",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-08T14:10:30.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-10T13:19:22.000Z",
       "last_outbound_at": "2026-09-09T14:58:08.077Z"
     },
     {
@@ -138113,6 +138130,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-10T00:28:15.059Z",
       "last_outbound_at": "2026-09-10T01:57:02.818Z"
+    },
+    {
+      "id": "conv-email-1a08b801501c",
+      "channel": "email",
+      "contact_id": "nourchene.jaber@a400.pt",
+      "contact_name": "Nourchene Jaber",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a08b801501c",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-10T13:26:55.000Z",
+      "last_message_preview": "Dear Pacific Team,\r\n\r\nI hope this email finds you well.\r\n\r\nWe are currently working on a student residence project in Porto, Portugal-specif",
+      "email_subject": "Inquiry regarding PEFC/FSC Certification for PACIFIC H2O Flooring (Ref: SM51-2)",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-10T13:26:55.000Z"
     }
   ],
   "messages": [
@@ -155709,6 +155741,22 @@
       "body": "✉️ Start with these standout sessions at Connect\n\nAgenda_Variant_B Cloudflare Connect · San Francisco Start with the sessions everyone will be talking about. The Connect agenda is live with sessions on AI agents, security, performance, and the infrastructure behind what comes next. Pick your must-watch now and lock in your spot. Build your agenda Not sure where to start? Five worth building around: 01 The agentic Internet: Building and securing what comes next Opening general session with Matthew Prince, Stephanie Cohen, and more · Tue 8:30 AM 02 It’s raining AI: Make Cloudflare Developer Platform your umbrella Alejandro Salinaslock, Block · Tue 12:30 PM 03 Securing and scaling the future of AI and agentic platforms Peter Steinberger, OpenClaw/OpenAI & Stephanie Cohen · Wed 9:00 AM 04 Isolating AI: How Ramp runs agent code for customers on Cloudflare Sandbox SDK Joe Fulgieri & Raphaël Beamonte, Ramp · Wed 11:00 AM 05 Developer tooling in the agentic era Evan You, Creator of Vue.js and Vite · Wed 2:30 PM There are plenty more: hands-on builds, lightning talks, customer stories, and deep dives across AI, security, networks, and web performance. Build your agenda before the best sessions fill up. Claim your seat Start building · Log in · Visit Community Copyright © 2026 Cloudflare, Inc. 101 Townsend Street, San Francisco, CA 94107 cloudflare.com · Privacy policy · Unsubscribe LinkedIn · X · Instagram",
       "ts": "2026-09-10T04:42:40.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a08b801501c",
+      "conversation_id": "conv-email-1a08b801501c",
+      "direction": "in",
+      "body": "✉️ Inquiry regarding PEFC/FSC Certification for PACIFIC H2O Flooring (Ref: SM51-2)\n\nDear Pacific Team,\r\n\r\nI hope this email finds you well.\r\n\r\nWe are currently working on a student residence project in Porto, Portugal-specifically the Forrester Residência Estudantes-and we are specifying the PACIFIC H2O series, 7mm thick flooring in the Smoke/Ash Smoke finish (Reference: SM51-2).\r\n\r\nAs part of our project's LEED v4 certification process, we need to document the environmental and sustainable sourcing attributes of the materials being use. Could you please let us know if this product holds a PEFC certification, FSC certification, or any other certification regarding responsible sourcing ?\r\n\r\nIf such documentation is available, we would greatly appreciate it if you could share the certificates or relevant technical data sheets with us.\r\n\r\nThank you very much for your time and assistance.\r\n\r\n\r\nCom os melhores cumprimentos,\r\nBest Regards\r\n\r\n\r\n\r\n\r\n\r\n\r\nNourchene\r\nJaber\r\nConsultora de Sustentabilidade | Dept. Sustentabilidade\r\nSustainability Consultant | Sustainability Dept.\r\n\r\n\r\n\r\n[cid:image001.png@01DD4130.5B8F0C40]<https://a400.pt/portfolio/>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n[A400]\r\n[cid:image003.png@01DD4130.5B8F0C40]<https://www.facebook.com/A400Engenharia>   [cid:image004.png@01DD4130.5B8F0C40] <https://pt.linkedin.com/company/a400>    [cid:image005.png@01DD4130.5B8F0C40] <https://www.instagram.com/a400.engenharia/>\r\n\r\n(+351) 226 073 725",
+      "ts": "2026-09-10T13:26:55.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a08b7940c4b",
+      "conversation_id": "conv-email-1a0815b2ac47",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nNO LO PUEDO VER ME LO ENVIARIAN EN PDF POR FAVOR ? GARANTIA DE CUANTOS AÑOS\r\nTIENEN ?\r\n\r\nEl mié, 9 sept 2026 a las 11:58, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Ana, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> Por otro lado, mencionaste 3 m2 de colocación. Me podrás confirmar si ese\r\n> numero es correcto?\r\n>\r\n>\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos,\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n\r\n\r\n-- \r\n*Ana Fontán*\r\n\r\n*https://www.anafontan.com <https://www.anafontan.com>*\r\n* https://www.fontango.com.ar <https://www.fontango.com.ar>*\r\n\r\n*https://www.moriryvivirenbuenosaires.com\r\n<https://www.moriryvivirenbuenosaires.com>*\r\n*Tel. Argentina +54 9 11 3703-7500*\r\n\r\n\r\n\r\n©Copyright 2026 Todos los Derechos Reservados Ley 11723.\r\n\r\nAutor: Ana María Fontán\r\n\r\n ® Marcas Registradas Ley 22362.\r\n\r\nTitular: Ana María Fontán\r\n\r\n\r\n\r\n“El contenido de este correo electrónico es de ca",
+      "ts": "2026-09-10T13:19:22.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -163852,8 +163900,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-10T00:02:15.945Z",
     "gmail_seen_ids": [
-      "19f27820d4c46e8e",
-      "19f27df87118564b",
       "19f27df113f6e071",
       "19f27f0a61737cd5",
       "19f284c5f7a373a4",
@@ -164651,7 +164697,9 @@
       "1a089a006728c485",
       "1a08ac369667cb41",
       "1a08b007f3b36226",
-      "1a08b66ef24c7259"
+      "1a08b66ef24c7259",
+      "1a08b801501c2fe3",
+      "1a08b7940c4b4a35"
     ],
     "cash_sessions": {
       "1136982222": {
