@@ -124509,6 +124509,30 @@
       "review_reason": null,
       "source": "internal-transfer",
       "transfer_group": "tg-1789067211684-282kp"
+    },
+    {
+      "id": "mov-1789068244064-fhljn",
+      "date": "2026-09-10T00:00:00.000Z",
+      "flow": "Ingreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "Ingreso Otros",
+      "subcategory": "Paneles",
+      "counterparty": null,
+      "counterparty_type": "client",
+      "client_id": null,
+      "supplier_id": null,
+      "description": "Cobro de Venta de Paneles ",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 1573000,
+      "amount_usd": 1024.76,
+      "exchange_rate": 1534.99,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
