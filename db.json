@@ -138107,11 +138107,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788999893359",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-09-10T00:26:16.081Z",
-      "last_message_preview": "o también tienen pisos flotantes?",
+      "unread_count": 4,
+      "last_message_at": "2026-09-10T00:28:15.059Z",
+      "last_message_preview": "Estaba viendo los saldos y los prefinished y también los h20, y consulto porque al ser de tierra del fuego la instalacion la voy a hacer yo\n",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-10T00:26:16.081Z"
+      "last_inbound_at": "2026-09-10T00:28:15.059Z"
     }
   ],
   "messages": [
@@ -155662,6 +155662,14 @@
       "body": "o también tienen pisos flotantes?",
       "ts": "2026-09-10T00:26:16.081Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789000095739-21et",
+      "conversation_id": "conv-1788999893358-zt2j",
+      "direction": "in",
+      "body": "Estaba viendo los saldos y los prefinished y también los h20, y consulto porque al ser de tierra del fuego la instalacion la voy a hacer yo\ntenia entendido que cuando son de madera hay que hacer una base de madera para clavarlos ahio, pero por lo que veo de estos se encastran, es asi?",
+      "ts": "2026-09-10T00:28:15.059Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -165647,7 +165655,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY4MDk2NDgyMDA2MzMzMTozMzAwMTEzMzExMjAyOTQwODA2MDI4ODkxODg1OTI4NDQ4MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyMzEyNzA3ODc1NjUyOTMwNzEyNTEwNDUwODkyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyNDU0NTYzMzk0NzY0NjYzNzkyOTM3MTAwOTAyNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyNDcwNjYzOTEyMjE3MDMzNDg1NjUwNzAzMTU1MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyNDcwNjYzOTEyMjE3MDMzNDg1NjUwNzAzMTU1MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyNjkwMTQxMjM0ODQwODA5NTg1ODcyNDE3NTg3MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
