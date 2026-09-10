@@ -138108,11 +138108,11 @@
       "linked_lead_id": "lead-instagram-1788999893359",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-10T01:56:20.504Z",
-      "last_message_preview": "Hola Diego cómo estás? Los pisos Prefinished pueden ir sobre Fenolico pegado y clavados\n\nSino también de manera flotante con el macho y hemb",
+      "last_message_at": "2026-09-10T01:56:49.966Z",
+      "last_message_preview": "Los h2O son sistema clic \nNo van pegados\nY tampoco encolados\nVan flotantes y encastrados con su sistema clic",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-10T00:28:15.059Z",
-      "last_outbound_at": "2026-09-10T01:56:20.504Z"
+      "last_outbound_at": "2026-09-10T01:56:49.966Z"
     }
   ],
   "messages": [
@@ -155680,6 +155680,16 @@
       "ts": "2026-09-10T01:56:20.504Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTMyNDQwMDY1MTgyODQ5OTkwMTk0Njc2ODkxNjQ4MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789005410751-1dte",
+      "conversation_id": "conv-1788999893358-zt2j",
+      "direction": "out",
+      "body": "Los h2O son sistema clic \nNo van pegados\nY tampoco encolados\nVan flotantes y encastrados con su sistema clic",
+      "ts": "2026-09-10T01:56:49.966Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTMyNDk0NDE0MjA4NzkzMTA4NTg0NzA0MDg4NDczNgZDZD",
       "via": "ig-app"
     }
   ],
