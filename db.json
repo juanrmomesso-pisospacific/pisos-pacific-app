@@ -131989,6 +131989,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-10T13:26:55.000Z",
       "last_touch_at": "2026-09-10T13:26:55.000Z"
+    },
+    {
+      "id": "lead-instagram-1789060482286",
+      "name": "@federico_coria_",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-10T17:14:41.272Z",
+      "last_touch_at": "2026-09-10T17:14:41.272Z"
     }
   ],
   "conversations": [
@@ -138145,6 +138161,20 @@
       "email_subject": "Inquiry regarding PEFC/FSC Certification for PACIFIC H2O Flooring (Ref: SM51-2)",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-10T13:26:55.000Z"
+    },
+    {
+      "id": "conv-1789060482286-9lhq",
+      "channel": "instagram",
+      "contact_id": "1594324188826395",
+      "contact_name": "@federico_coria_",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1789060482286",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-10T17:14:41.272Z",
+      "last_message_preview": "Piso spc click de 4mm o 5mm",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-10T17:14:41.272Z"
     }
   ],
   "messages": [
@@ -155781,6 +155811,14 @@
       "body": "✉️ RE: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X20' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\n\nBuen día, Estimada Victoria\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, nos ponemos en contacto para informarle que la línea naviera (Maersk) ha notificado un ajuste en la programación del buque para su embarque.\r\nA continuación, le compartimos el detalle actualizado del itinerario de su carga:\r\n\r\nBill of Lading / Booking: 275436330\r\n\r\n  *\r\nContenedor: MSKU7461355 (1x40')\r\n  *\r\nPuerto de Origen: Yangshan SGH Guandong Terminal (Shanghai, China)\r\n  *\r\nPuerto de Destino: Balboa Port Terminal (Panamá)\r\n  *\r\nMotonave de Salida: RIO KOBE / V. 634E\r\n  *\r\nNueva Fecha Estimada de Salida (ETD): 27 de agosto de 2026\r\n  *\r\nNueva Fecha Estimada de Llegada (ETA):  de 14 octubre de 2026\r\n  *\r\nMotivo: Ajustes en la programación y rotación de itinerarios de la naviera.\r\n\r\n\r\nLamentamos este retraso ajeno a nuestro control. Nos mantenemos monitoreando el tránsito del contenedor para mantenerle informado de cualquier novedad adicional durante su travesía.\r\nQuedamos a su entera disposición en caso de requerir alguna consulta adicional.\r\n\r\nSaludos,\r\nBest Regards.\r\n[cid:18c4638f-2585-4534-b799-ab4b0dd96bf1]\r\n\r\n________________________________\r\nDe: Juan Rosario <jrosario@bvlpanama.com>\r\nEnviado: jueves, 10 de septiembre de 2026 11:06\r\nPara: Victoria Pisos Pacific <victoria@pisospacific.com>; arieltesone26@gmail.com <arieltesone26@gmail.com>\r\nCc: Giselle Ceballos <gceballos@bvlpanama.com>; Abe Dabah <abedabah@gmail.com>; info@pisospacific.com <info@pisospacific.com>; Joseph S",
       "ts": "2026-09-10T16:32:17.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789060482286-c3xy",
+      "conversation_id": "conv-1789060482286-9lhq",
+      "direction": "in",
+      "body": "Piso spc click de 4mm o 5mm",
+      "ts": "2026-09-10T17:14:41.272Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -165877,7 +165915,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyMzEyNzA3ODc1NjUyOTMwNzEyNTEwNDUwODkyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyNDU0NTYzMzk0NzY0NjYzNzkyOTM3MTAwOTAyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyNDcwNjYzOTEyMjE3MDMzNDg1NjUwNzAzMTU1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyNjkwMTQxMjM0ODQwODA5NTg1ODcyNDE3NTg3MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyNjkwMTQxMjM0ODQwODA5NTg1ODcyNDE3NTg3MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2MzQ4NTIzOTc0NjAwMjozMzAwMjM0MDgzMDQyMzY2MTIzNzc4OTk4NTI1NzU1MzkyMAZDZD"
     ],
     "last_weekly_reminder": "2026-09-04T12:00:48.219Z",
     "warehouses": [
