@@ -131742,7 +131742,7 @@
       "status": "Contacted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-09-07T22:08:51.000Z",
-      "last_touch_at": "2026-09-08T11:37:07.953Z"
+      "last_touch_at": "2026-09-10T13:52:29.000Z"
     },
     {
       "id": "lead-email-1a07e3feddad",
@@ -137957,12 +137957,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a07deac3182",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-08T11:37:58.527Z",
-      "last_message_preview": "Hola Carina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
+      "unread_count": 1,
+      "last_message_at": "2026-09-10T13:52:29.000Z",
+      "last_message_preview": "Hola, me interesa el H2O. Sería para colocar sobre un piso de madera viejo, con algunos problemas de humedad. Qué habría que hacer para no t",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-07T22:08:51.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-10T13:52:29.000Z",
       "last_outbound_at": "2026-09-08T11:37:58.527Z"
     },
     {
@@ -155757,6 +155757,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nNO LO PUEDO VER ME LO ENVIARIAN EN PDF POR FAVOR ? GARANTIA DE CUANTOS AÑOS\r\nTIENEN ?\r\n\r\nEl mié, 9 sept 2026 a las 11:58, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Ana, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> Por otro lado, mencionaste 3 m2 de colocación. Me podrás confirmar si ese\r\n> numero es correcto?\r\n>\r\n>\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos,\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n\r\n\r\n-- \r\n*Ana Fontán*\r\n\r\n*https://www.anafontan.com <https://www.anafontan.com>*\r\n* https://www.fontango.com.ar <https://www.fontango.com.ar>*\r\n\r\n*https://www.moriryvivirenbuenosaires.com\r\n<https://www.moriryvivirenbuenosaires.com>*\r\n*Tel. Argentina +54 9 11 3703-7500*\r\n\r\n\r\n\r\n©Copyright 2026 Todos los Derechos Reservados Ley 11723.\r\n\r\nAutor: Ana María Fontán\r\n\r\n ® Marcas Registradas Ley 22362.\r\n\r\nTitular: Ana María Fontán\r\n\r\n\r\n\r\n“El contenido de este correo electrónico es de ca",
       "ts": "2026-09-10T13:19:22.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a08b9772646",
+      "conversation_id": "conv-email-1a07deac3182",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola, me interesa el H2O. Sería para colocar sobre un piso de madera viejo, con algunos problemas de humedad. Qué habría que hacer para no tener problemas de humedad en el piso nuevo y, a su vez, no tener que sacar todo le piso y hacer una nueva carpeta? Ustedes podrían ofrecerme alguna solución?Gracias,Carina\r\n    El martes, 8 de septiembre de 2026, 08:38:00 a. m. ART, Pisos Pacific <info@pisospacific.com> escribió:  \r\n \r\n Hola Carina, ¡muchas gracias por tu consulta!\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera — Pisos de madera noble prefinished\r\n• Línea H2O — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación. Avisanos si nececesitas que coticemos colocación de zócalos también. \r\n\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\n\r\n\r\n|    |  Juan Rodríguez Momesso Ventas    +54 11 5175-0087\r\n info@pisospacific.com\r\n pisospacific.com      La evolución del piso de madera  |",
+      "ts": "2026-09-10T13:52:29.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -163900,7 +163908,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-10T00:02:15.945Z",
     "gmail_seen_ids": [
-      "19f27df113f6e071",
       "19f27f0a61737cd5",
       "19f284c5f7a373a4",
       "19f28a5a1b0052bb",
@@ -164699,7 +164706,8 @@
       "1a08b007f3b36226",
       "1a08b66ef24c7259",
       "1a08b801501c2fe3",
-      "1a08b7940c4b4a35"
+      "1a08b7940c4b4a35",
+      "1a08b9772646054a"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -165135,7 +165143,8 @@
       "1a086409220eb78e",
       "1a086ad1e0f8e0cc",
       "1a086af6f02bcf53",
-      "1a08b66ef24c7259"
+      "1a08b66ef24c7259",
+      "1a08b83926445bd6"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
