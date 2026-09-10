@@ -138085,12 +138085,12 @@
       "linked_lead_id": "lead-email-1a0815b2ac47",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-10T13:19:22.000Z",
-      "last_message_preview": "NO LO PUEDO VER ME LO ENVIARIAN EN PDF POR FAVOR ? GARANTIA DE CUANTOS AÑOS\r\nTIENEN ?\r\n\r\nEl mié, 9 sept 2026 a las 11:58, Pisos Pacific (<in",
+      "last_message_at": "2026-09-10T18:09:19.903Z",
+      "last_message_preview": "Hola Ana, aún no te enviamos el presupuesto. \n\nSi tenés por favor el diseño que te interesa mandamelo así te puedo presupuestar. \nPor otro l",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-10T13:19:22.000Z",
-      "last_outbound_at": "2026-09-09T14:58:08.077Z"
+      "last_outbound_at": "2026-09-10T18:09:19.903Z"
     },
     {
       "id": "conv-email-1a08385656b7",
@@ -138219,7 +138219,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a08c6384a92",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-10T17:34:47.000Z",
       "last_message_preview": "[image: logo.jpg]\r\n[image: 236.jpg]\r\n[image: 306.jpg]\r\n[image: 306_2.jpg]\r\n[image: 236_2.jpg]\r\n\r\n*RODAVIAL SRL*\r\n\r\n*SOLUCIONES INTEGRALES EN",
       "email_subject": "Venta de neumáticos de calle e industriales",
@@ -155900,6 +155900,15 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 26.4m² · Con Colocación · CP 1602 · J. a. Roca 1997, Florida",
       "ts": "2026-09-10T17:45:20.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789063759903-r0t9",
+      "conversation_id": "conv-email-1a0815b2ac47",
+      "direction": "out",
+      "body": "Hola Ana, aún no te enviamos el presupuesto. \n\nSi tenés por favor el diseño que te interesa mandamelo así te puedo presupuestar. \nPor otro lado, me podes confirmar los m2 que necesitan?\n\nGracias!\nSaludos,",
+      "ts": "2026-09-10T18:09:19.903Z",
+      "status": "sent",
+      "wa_id": "1a08c82869ef9c10"
     }
   ],
   "templates": [
