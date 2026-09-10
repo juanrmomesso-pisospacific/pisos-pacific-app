@@ -131841,7 +131841,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-08T14:10:30.000Z",
-      "last_touch_at": "2026-09-10T13:19:22.000Z"
+      "last_touch_at": "2026-09-10T18:17:51.000Z"
     },
     {
       "id": "lead-email-1a08385656b7",
@@ -138084,12 +138084,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0815b2ac47",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-10T18:09:19.903Z",
-      "last_message_preview": "Hola Ana, aún no te enviamos el presupuesto. \n\nSi tenés por favor el diseño que te interesa mandamelo así te puedo presupuestar. \nPor otro l",
+      "unread_count": 1,
+      "last_message_at": "2026-09-10T18:17:51.000Z",
+      "last_message_preview": "3 ,x 3,60 //// 10 aprox en total / dan garantia completa? Gracias\r\n\r\nEl jue, 10 sept 2026 a las 15:09, Pisos Pacific (<info@pisospacific.com",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-10T13:19:22.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-10T18:17:51.000Z",
       "last_outbound_at": "2026-09-10T18:09:19.903Z"
     },
     {
@@ -155918,6 +155918,14 @@
       "ts": "2026-09-10T18:12:57.220Z",
       "status": "sent",
       "wa_id": "1a08c85d9451c706"
+    },
+    {
+      "id": "m-email-1a08c8a87cb7",
+      "conversation_id": "conv-email-1a0815b2ac47",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\n3 ,x 3,60 //// 10 aprox en total / dan garantia completa? Gracias\r\n\r\nEl jue, 10 sept 2026 a las 15:09, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Ana, aún no te enviamos el presupuesto.\r\n>\r\n> Si tenés por favor el diseño que te interesa mandamelo así te puedo\r\n> presupuestar.\r\n> Por otro lado, me podes confirmar los m2 que necesitan?\r\n>\r\n> Gracias!\r\n> Saludos,\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n\r\n\r\n-- \r\n*Ana Fontán*\r\n\r\n*https://www.anafontan.com <https://www.anafontan.com>*\r\n* https://www.fontango.com.ar <https://www.fontango.com.ar>*\r\n\r\n*https://www.moriryvivirenbuenosaires.com\r\n<https://www.moriryvivirenbuenosaires.com>*\r\n*Tel. Argentina +54 9 11 3703-7500*\r\n\r\n\r\n\r\n©Copyright 2026 Todos los Derechos Reservados Ley 11723.\r\n\r\nAutor: Ana María Fontán\r\n\r\n ® Marcas Registradas Ley 22362.\r\n\r\nTitular: Ana María Fontán\r\n\r\n\r\n\r\n“El contenido de este correo electrónico es de carácter confidencial, para\r\nuso exclusivo del destinatario, por lo que se prohíbe su divulgación total\r\no parcial a cualquier tercero no autorizado. La revisión, retransmisión,\r\ndistribución o cualquier otro uso o acción relacionada con esta\r\ninformación, ya sea por personas o entidades di",
+      "ts": "2026-09-10T18:17:51.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -164061,7 +164069,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-10T00:02:15.945Z",
     "gmail_seen_ids": [
-      "19f28ea1b8e83b7c",
       "19f2908ac4d9b73b",
       "19f29426157db7f2",
       "19f293ff1e762cbd",
@@ -164860,7 +164867,8 @@
       "1a08c124442d99d6",
       "1a08c29e996523a7",
       "1a08c6384a9221ea",
-      "1a08c6c95b11b797"
+      "1a08c6c95b11b797",
+      "1a08c8a87cb71264"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -165297,7 +165305,9 @@
       "1a086ad1e0f8e0cc",
       "1a086af6f02bcf53",
       "1a08b66ef24c7259",
-      "1a08b83926445bd6"
+      "1a08b83926445bd6",
+      "1a08c85d9451c706",
+      "1a08c82869ef9c10"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
