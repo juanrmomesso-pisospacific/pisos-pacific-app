@@ -126834,7 +126834,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-02T08:35:47.000Z",
-      "last_touch_at": "2026-09-04T04:21:07.000Z"
+      "last_touch_at": "2026-09-10T04:42:40.000Z"
     },
     {
       "id": "lead-email-19f22df2aa8d",
@@ -133826,12 +133826,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f21f84d4ce",
       "status": "closed",
-      "unread_count": 6,
-      "last_message_at": "2026-09-04T04:21:07.000Z",
-      "last_message_preview": "Connect 2026_Email #11_Everyone both.html Fei-Fei Li and Adam Grant join the Connect 2026 main stage. The NextNet Speaker Series is live. Cl",
+      "unread_count": 7,
+      "last_message_at": "2026-09-10T04:42:40.000Z",
+      "last_message_preview": "Agenda_Variant_B Cloudflare Connect · San Francisco Start with the sessions everyone will be talking about. The Connect agenda is live with ",
       "email_subject": "New updates to your AI bot controls.",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-04T04:21:07.000Z",
+      "last_inbound_at": "2026-09-10T04:42:40.000Z",
       "ignored": true
     },
     {
@@ -155701,6 +155701,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTMyNTE4MTIwNDk0MDcxMTM3NDI1Nzg5NzA3ODc4NAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a089a006728",
+      "conversation_id": "conv-email-19f21f84d4ce",
+      "direction": "in",
+      "body": "✉️ Start with these standout sessions at Connect\n\nAgenda_Variant_B Cloudflare Connect · San Francisco Start with the sessions everyone will be talking about. The Connect agenda is live with sessions on AI agents, security, performance, and the infrastructure behind what comes next. Pick your must-watch now and lock in your spot. Build your agenda Not sure where to start? Five worth building around: 01 The agentic Internet: Building and securing what comes next Opening general session with Matthew Prince, Stephanie Cohen, and more · Tue 8:30 AM 02 It’s raining AI: Make Cloudflare Developer Platform your umbrella Alejandro Salinaslock, Block · Tue 12:30 PM 03 Securing and scaling the future of AI and agentic platforms Peter Steinberger, OpenClaw/OpenAI & Stephanie Cohen · Wed 9:00 AM 04 Isolating AI: How Ramp runs agent code for customers on Cloudflare Sandbox SDK Joe Fulgieri & Raphaël Beamonte, Ramp · Wed 11:00 AM 05 Developer tooling in the agentic era Evan You, Creator of Vue.js and Vite · Wed 2:30 PM There are plenty more: hands-on builds, lightning talks, customer stories, and deep dives across AI, security, networks, and web performance. Build your agenda before the best sessions fill up. Claim your seat Start building · Log in · Visit Community Copyright © 2026 Cloudflare, Inc. 101 Townsend Street, San Francisco, CA 94107 cloudflare.com · Privacy policy · Unsubscribe LinkedIn · X · Instagram",
+      "ts": "2026-09-10T04:42:40.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -163844,7 +163852,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-10T00:02:15.945Z",
     "gmail_seen_ids": [
-      "19f23599f34158bb",
       "19f26f30b1ccd803",
       "19f2713daf0ad040",
       "19f2789160188bdf",
@@ -164643,7 +164650,8 @@
       "1a086369b3c52958",
       "1a086409220eb78e",
       "1a0869ee2aeef6d8",
-      "1a086d13eec2c66b"
+      "1a086d13eec2c66b",
+      "1a089a006728c485"
     ],
     "cash_sessions": {
       "1136982222": {
