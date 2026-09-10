@@ -128752,7 +128752,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-30T15:09:29.000Z",
-      "last_touch_at": "2026-09-10T16:06:14.000Z"
+      "last_touch_at": "2026-09-10T16:32:17.000Z"
     },
     {
       "id": "lead-email-19fb38919e88",
@@ -135465,12 +135465,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fb392d7c0c",
       "status": "closed",
-      "unread_count": 6,
-      "last_message_at": "2026-09-10T16:06:14.000Z",
-      "last_message_preview": "Buen día, Estimado Cliente\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, compartimos Pre-Alert:\r\n\r\n\r\nBooking/MBL #\r\n ",
+      "unread_count": 7,
+      "last_message_at": "2026-09-10T16:32:17.000Z",
+      "last_message_preview": "Buen día, Estimada Victoria\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, nos ponemos en contacto para informarle que",
       "email_subject": "BVLRO2128 || S/  HUSHFLOORS INTERNATIONAL LIMITED  || C/ TOLEDOT INVESTMENT || VOL: 1X20' || POL: SHANGHAI | POD: BALBOA ||",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-10T16:06:14.000Z",
+      "last_inbound_at": "2026-09-10T16:32:17.000Z",
       "ignored": true
     },
     {
@@ -155773,6 +155773,14 @@
       "body": "✉️ RE: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X20' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\n\nBuen día, Estimado Cliente\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, compartimos Pre-Alert:\r\n\r\n\r\nBooking/MBL #\r\n 275436330\r\nContenedor #\r\n MSKU7461355\r\nNaviera\r\n MAERSK\r\nBarco & Viaje #\r\nRIO KOBE 634E\r\nETD\r\n 18-AUG\r\nETA\r\n 14-OCT\r\nFlete aplicado\r\n USD 7,350.00\r\nDías Libres\r\n 7 libres en destino\r\nPOL\r\n SHANGHAI\r\nPOD\r\n BALBOA\r\nFinal Destination\r\n BALBOA\r\nComentarios:\r\n ACARREO: USD 235.00\r\n(Balboa Port-Puerta)\r\n\r\n\r\nCualquier consulta adicional, quedo a su disposición.\r\nEstaremos compartiendo la propuesta de liquidación en la brevedad de lo posible.\r\n\r\nThanks,\r\nBest Regards.\r\n[cid:9bb8e01d-333a-4d09-a5f8-2c72a50311c3]\r\n\r\n________________________________\r\nDe: Juan Rosario <jrosario@bvlpanama.com>\r\nEnviado: martes, 25 de agosto de 2026 15:24\r\nPara: Victoria Pisos Pacific <victoria@pisospacific.com>\r\nCc: Giselle Ceballos <gceballos@bvlpanama.com>; Abe Dabah <abedabah@gmail.com>; arieltesone26@gmail.com <arieltesone26@gmail.com>; info@pisospacific.com <info@pisospacific.com>; Joseph Sam <jsam@bvlpanama.com>; INSIDE SALES <insidesales@bvlpanama.com>\r\nAsunto: RE: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X40' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\r\n\r\nBuen día, Estimada Victoria\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, nos ponemos en contacto para informarle que la línea naviera (Maersk) ha notificado un ajuste en la programación del buque",
       "ts": "2026-09-10T16:06:14.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a08c29e9965",
+      "conversation_id": "conv-email-19fb392d7c0c",
+      "direction": "in",
+      "body": "✉️ RE: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X20' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\n\nBuen día, Estimada Victoria\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, nos ponemos en contacto para informarle que la línea naviera (Maersk) ha notificado un ajuste en la programación del buque para su embarque.\r\nA continuación, le compartimos el detalle actualizado del itinerario de su carga:\r\n\r\nBill of Lading / Booking: 275436330\r\n\r\n  *\r\nContenedor: MSKU7461355 (1x40')\r\n  *\r\nPuerto de Origen: Yangshan SGH Guandong Terminal (Shanghai, China)\r\n  *\r\nPuerto de Destino: Balboa Port Terminal (Panamá)\r\n  *\r\nMotonave de Salida: RIO KOBE / V. 634E\r\n  *\r\nNueva Fecha Estimada de Salida (ETD): 27 de agosto de 2026\r\n  *\r\nNueva Fecha Estimada de Llegada (ETA):  de 14 octubre de 2026\r\n  *\r\nMotivo: Ajustes en la programación y rotación de itinerarios de la naviera.\r\n\r\n\r\nLamentamos este retraso ajeno a nuestro control. Nos mantenemos monitoreando el tránsito del contenedor para mantenerle informado de cualquier novedad adicional durante su travesía.\r\nQuedamos a su entera disposición en caso de requerir alguna consulta adicional.\r\n\r\nSaludos,\r\nBest Regards.\r\n[cid:18c4638f-2585-4534-b799-ab4b0dd96bf1]\r\n\r\n________________________________\r\nDe: Juan Rosario <jrosario@bvlpanama.com>\r\nEnviado: jueves, 10 de septiembre de 2026 11:06\r\nPara: Victoria Pisos Pacific <victoria@pisospacific.com>; arieltesone26@gmail.com <arieltesone26@gmail.com>\r\nCc: Giselle Ceballos <gceballos@bvlpanama.com>; Abe Dabah <abedabah@gmail.com>; info@pisospacific.com <info@pisospacific.com>; Joseph S",
+      "ts": "2026-09-10T16:32:17.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -163916,7 +163924,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-10T00:02:15.945Z",
     "gmail_seen_ids": [
-      "19f284c5f7a373a4",
       "19f28a5a1b0052bb",
       "19f28f1ce75d6632",
       "19f28ea1b8e83b7c",
@@ -164715,7 +164722,8 @@
       "1a08b801501c2fe3",
       "1a08b7940c4b4a35",
       "1a08b9772646054a",
-      "1a08c124442d99d6"
+      "1a08c124442d99d6",
+      "1a08c29e996523a7"
     ],
     "cash_sessions": {
       "1136982222": {
