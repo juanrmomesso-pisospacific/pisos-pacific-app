@@ -135196,6 +135196,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-11T16:09:18.000Z",
       "last_touch_at": "2026-09-11T16:09:18.000Z"
+    },
+    {
+      "id": "lead-instagram-1789145375187",
+      "name": "@ailu.alaman",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-11T16:49:33.582Z",
+      "last_touch_at": "2026-09-11T16:49:33.582Z"
     }
   ],
   "conversations": [
@@ -141444,6 +141460,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-11T16:09:18.000Z"
+    },
+    {
+      "id": "conv-1789145375187-3oe3",
+      "channel": "instagram",
+      "contact_id": "1613530113654775",
+      "contact_name": "@ailu.alaman",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1789145375187",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-11T16:49:33.582Z",
+      "last_message_preview": "Hola!! Cómo estás? Mi nombre es Ailén, soy arquitecta, quería ver si me pueden pasar un whatsapp para pedirles presupuesto para revestir 2 e",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-11T16:49:33.582Z"
     }
   ],
   "messages": [
@@ -159258,6 +159288,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY0MDAzOTc1ODY0NzIyNTozMzAwMzg4ODk2MjgxMDQyMDkwNDY1OTM4MzE1NTE2MzEzNgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1789145375187-sers",
+      "conversation_id": "conv-1789145375187-3oe3",
+      "direction": "in",
+      "body": "Hola!! Cómo estás? Mi nombre es Ailén, soy arquitecta, quería ver si me pueden pasar un whatsapp para pedirles presupuesto para revestir 2 escaleras en una obra",
+      "ts": "2026-09-11T16:49:33.582Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -169365,7 +169403,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyNjkwMTQxMjM0ODQwODA5NTg1ODcyNDE3NTg3MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2MzQ4NTIzOTc0NjAwMjozMzAwMjM0MDgzMDQyMzY2MTIzNzc4OTk4NTI1NzU1MzkyMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwMjU2MzYyNTI4NjIxNTU1NDkyNTU0OTcxMDIxMzEyMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzNTQ1OTc3OTEwNTIxMDozMzAwMzg4MjU5ODMxMzU4MTU1NTAyNTA5MzQ4MTk4ODA5NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzNTQ1OTc3OTEwNTIxMDozMzAwMzg4MjU5ODMxMzU4MTU1NTAyNTA5MzQ4MTk4ODA5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkwMTIwNDgxODg1NzI2NTozMzAwMzkwNjgxNzEzNzM0NTU4MDUxNjg5NjQyNjQyNjM2OAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
