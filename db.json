@@ -136324,12 +136324,12 @@
       "contact_name": "@tramma.rugs",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1781802059331",
-      "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-07-03T19:00:30.521Z",
-      "last_message_preview": "💌💌💌💌",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-11T16:27:40.677Z",
+      "last_message_preview": "Quiero esta casa",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-07-03T19:00:30.521Z",
+      "last_inbound_at": "2026-09-11T16:27:40.677Z",
       "last_outbound_at": "2026-07-03T18:59:40.826Z"
     },
     {
@@ -159219,6 +159219,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 12m² · Con Colocación · CP C1425 · Av. Coronel Diaz 1730 piso 6",
       "ts": "2026-09-11T16:09:18.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789144061801-x4qd",
+      "conversation_id": "conv-1781802059331-sohs",
+      "direction": "in",
+      "body": "Quiero esta casa",
+      "ts": "2026-09-11T16:27:40.677Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -169325,7 +169333,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyNDcwNjYzOTEyMjE3MDMzNDg1NjUwNzAzMTU1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkxOTQ1NjkzNzMwNjA2MDozMzAwMTIyNjkwMTQxMjM0ODQwODA5NTg1ODcyNDE3NTg3MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2MzQ4NTIzOTc0NjAwMjozMzAwMjM0MDgzMDQyMzY2MTIzNzc4OTk4NTI1NzU1MzkyMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwMjU2MzYyNTI4NjIxNTU1NDkyNTU0OTcxMDIxMzEyMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwMjU2MzYyNTI4NjIxNTU1NDkyNTU0OTcxMDIxMzEyMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzNTQ1OTc3OTEwNTIxMDozMzAwMzg4MjU5ODMxMzU4MTU1NTAyNTA5MzQ4MTk4ODA5NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
