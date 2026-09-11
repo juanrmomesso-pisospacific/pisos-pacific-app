@@ -141346,11 +141346,11 @@
       "linked_lead_id": "lead-instagram-1789060482286",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-11T16:02:00.626Z",
-      "last_message_preview": "Ok! Nuestro piso tiene 7 mm",
+      "last_message_at": "2026-09-11T16:02:15.210Z",
+      "last_message_preview": "Usd 38 + iva el m2\nHay 10off ahora",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-10T17:14:41.272Z",
-      "last_outbound_at": "2026-09-11T16:02:00.626Z"
+      "last_outbound_at": "2026-09-11T16:02:15.210Z"
     },
     {
       "id": "conv-email-1a08c6384a92",
@@ -159168,6 +159168,16 @@
       "ts": "2026-09-11T16:02:00.626Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2MzQ4NTIzOTc0NjAwMjozMzAwMzg1NDE4OTM4MjYyNjAwMzE4NzI0MzM4NDA0NTU2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789142535594-xbzr",
+      "conversation_id": "conv-1789060482286-9lhq",
+      "direction": "out",
+      "body": "Usd 38 + iva el m2\nHay 10off ahora",
+      "ts": "2026-09-11T16:02:15.210Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2MzQ4NTIzOTc0NjAwMjozMzAwMzg1NDQ1ODQyNDM0ODQ4MTI4ODkxMTMxMTYwMTY2NAZDZD",
       "via": "ig-app"
     }
   ],
