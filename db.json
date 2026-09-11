@@ -135162,6 +135162,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-10T20:35:59.006Z",
       "last_touch_at": "2026-09-10T20:35:59.006Z"
+    },
+    {
+      "id": "lead-email-1a0905db171f",
+      "name": "Camara Nacional en lo Comercial Intendencia",
+      "email": "cncomercial.intendencia@pjn.gov.ar",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: PEDIDO DE PRESUPUESTO — Buenos Aires, 11 de septiembre de 2026 \r\nPor medio del presente, se solicita cotización para la compra directa, provisión y colocación de piso, conforme al siguiente detalle: \r\n\r\n*",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-11T12:07:30.000Z",
+      "last_touch_at": "2026-09-11T12:07:30.000Z"
     }
   ],
   "conversations": [
@@ -141377,6 +141394,21 @@
       "last_message_preview": "hola tienen local? donde puedo ver precios ?",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-10T20:35:59.006Z"
+    },
+    {
+      "id": "conv-email-1a0905db171f",
+      "channel": "email",
+      "contact_id": "cncomercial.intendencia@pjn.gov.ar",
+      "contact_name": "Camara Nacional en lo Comercial Intendencia",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0905db171f",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-11T12:07:30.000Z",
+      "last_message_preview": "Buenos Aires, 11 de septiembre de 2026 \r\nPor medio del presente, se solicita cotización para la compra directa, provisión y colocación de pi",
+      "email_subject": "PEDIDO DE PRESUPUESTO",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-11T12:07:30.000Z"
     }
   ],
   "messages": [
@@ -159087,6 +159119,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nMuchas gracias! Tendría entonces que sacar el piso de madera y hacer una nueva carpeta primero? Ustedes hacen ese trabajo?\r\n    El jueves, 10 de septiembre de 2026, 03:12:59 p. m. ART, Pisos Pacific <info@pisospacific.com> escribió:  \r\n \r\n Carina, gracias por tu aclaración. \r\n\r\nAl colocar un piso que es impermeable, no recomendamos hacerlo sobre un piso que esté con problemas de humedad y mucho menos si es madera. \r\n\r\nTe explico por qué. La madera es higroscópica, lo que significa es que absorbe y larga humedad. Cuando está con humedad, por lo general se expande, lo que es común. Si la humedad es mucha y el piso no tiene lugar para expandirse se engloba y sale hacia arriba. \r\n\r\nEsto es lo que te puede pasar si ponés un piso impermeable arriba de la madera, ya que no permitiría que la humedad salga. \r\n\r\nEspero haber aclarado tus dudas!\r\n\r\nCualquier cosa, me podes llamar y te ayudo. \r\n\r\nGracias,\r\n\r\nSaludos,\r\nJuan\r\n\r\n\r\n|    |  Juan Rodríguez Momesso Ventas    +54 11 5175-0087\r\n info@pisospacific.com\r\n pisospacific.com      La evolución del piso de madera  |",
       "ts": "2026-09-11T11:46:57.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0905db171f",
+      "conversation_id": "conv-email-1a0905db171f",
+      "direction": "in",
+      "body": "✉️ PEDIDO DE PRESUPUESTO\n\nBuenos Aires, 11 de septiembre de 2026 \r\nPor medio del presente, se solicita cotización para la compra directa, provisión y colocación de piso, conforme al siguiente detalle: \r\n\r\n* Superficie: 40 m². \r\n* Opción 1: piso SPC alto transito con manta IXPE, formato rectangular aproximado de 1,22 × 0,18 m, símil madera, color a elegir. \r\n* Opción 2: piso flotante HDF alto transito con manta IXPE, formato rectangular aproximado de 1,22 × 0,18 m, símil madera, color a elegir. \r\n* Zócalos: 30 metros lineales de MDF, a tono con el piso. \r\n* Varillas de desnivel/transicion: 3 unidades. \r\n* Colocación: instalación del piso, manta y zócalos. \r\n* Pulido/ajuste de tres (3) puertas. \r\n\r\nPor ultimo, se hace saber que el trabajo a realizar es en Diagonal Roque Saenz Peña 1211, 4° piso, C.A.B.A. \r\nA la espera de una pronta respuesta, saludo a Ud. \r\n\r\nMatias Gaiteiro \r\nTel.: 4379-2002 \r\n\r\nIntendencia \r\nCámara Nacional de Apelaciones en lo Comercial \r\nPoder Judicial de la Nación",
+      "ts": "2026-09-11T12:07:30.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -167234,7 +167274,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-11T00:01:09.437Z",
     "gmail_seen_ids": [
-      "19f294d078a35c43",
       "19f2949e170fe267",
       "19f295d09567278d",
       "19f29bca62149c4d",
@@ -168033,7 +168072,8 @@
       "1a08ec409372d142",
       "1a08fc254a8509fa",
       "1a09007d6b77fa88",
-      "1a0904adb1aabfcd"
+      "1a0904adb1aabfcd",
+      "1a0905db171fb790"
     ],
     "cash_sessions": {
       "1136982222": {
