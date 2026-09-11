@@ -141389,11 +141389,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789072561380",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-10T20:35:59.006Z",
-      "last_message_preview": "hola tienen local? donde puedo ver precios ?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-10T20:35:59.006Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-11T16:01:29.494Z",
+      "last_message_preview": "Tenemos el deposito en Olivos es con cita previa",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-10T20:35:59.006Z",
+      "last_outbound_at": "2026-09-11T16:01:29.494Z"
     },
     {
       "id": "conv-email-1a0905db171f",
@@ -159127,6 +159128,26 @@
       "body": "✉️ PEDIDO DE PRESUPUESTO\n\nBuenos Aires, 11 de septiembre de 2026 \r\nPor medio del presente, se solicita cotización para la compra directa, provisión y colocación de piso, conforme al siguiente detalle: \r\n\r\n* Superficie: 40 m². \r\n* Opción 1: piso SPC alto transito con manta IXPE, formato rectangular aproximado de 1,22 × 0,18 m, símil madera, color a elegir. \r\n* Opción 2: piso flotante HDF alto transito con manta IXPE, formato rectangular aproximado de 1,22 × 0,18 m, símil madera, color a elegir. \r\n* Zócalos: 30 metros lineales de MDF, a tono con el piso. \r\n* Varillas de desnivel/transicion: 3 unidades. \r\n* Colocación: instalación del piso, manta y zócalos. \r\n* Pulido/ajuste de tres (3) puertas. \r\n\r\nPor ultimo, se hace saber que el trabajo a realizar es en Diagonal Roque Saenz Peña 1211, 4° piso, C.A.B.A. \r\nA la espera de una pronta respuesta, saludo a Ud. \r\n\r\nMatias Gaiteiro \r\nTel.: 4379-2002 \r\n\r\nIntendencia \r\nCámara Nacional de Apelaciones en lo Comercial \r\nPoder Judicial de la Nación",
       "ts": "2026-09-11T12:07:30.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789142482583-7r1k",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "out",
+      "body": "Hola Mica cómo estás?",
+      "ts": "2026-09-11T16:01:21.736Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwMzg1MzQ3MTk5NzA2ODQ1ODIwMDAyNDA0NTU4NDM4NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789142490051-b4pq",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "out",
+      "body": "Tenemos el deposito en Olivos es con cita previa",
+      "ts": "2026-09-11T16:01:29.494Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwMzg1MzYxNTEwNDMwNzk5MTEyNDMzMjQzNTczNDUyOAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
