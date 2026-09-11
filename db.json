@@ -135179,6 +135179,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-11T12:07:30.000Z",
       "last_touch_at": "2026-09-11T12:07:30.000Z"
+    },
+    {
+      "id": "lead-email-1a0913b00ca1",
+      "name": "Carolina esses",
+      "email": "carolinaesses@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Av. Coronel Diaz 1730 piso 6",
+      "postal_code": "C1425",
+      "approx_m2": 12,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 12m² · Con Colocación · CP C1425",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-11T16:09:18.000Z",
+      "last_touch_at": "2026-09-11T16:09:18.000Z"
     }
   ],
   "conversations": [
@@ -141411,6 +141428,21 @@
       "email_subject": "PEDIDO DE PRESUPUESTO",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-11T12:07:30.000Z"
+    },
+    {
+      "id": "conv-email-1a0913b00ca1",
+      "channel": "email",
+      "contact_id": "carolinaesses@gmail.com",
+      "contact_name": "Carolina esses",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0913b00ca1",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-11T16:09:18.000Z",
+      "last_message_preview": "Formulario web — 12m² · Con Colocación · CP C1425 · Av. Coronel Diaz 1730 piso 6",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-11T16:09:18.000Z"
     }
   ],
   "messages": [
@@ -159179,6 +159211,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc2MzQ4NTIzOTc0NjAwMjozMzAwMzg1NDQ1ODQyNDM0ODQ4MTI4ODkxMTMxMTYwMTY2NAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a0913b00ca1",
+      "conversation_id": "conv-email-1a0913b00ca1",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 12m² · Con Colocación · CP C1425 · Av. Coronel Diaz 1730 piso 6",
+      "ts": "2026-09-11T16:09:18.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -167326,7 +167366,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-11T00:01:09.437Z",
     "gmail_seen_ids": [
-      "19f29bca62149c4d",
       "19f2b263ee535e27",
       "19f2c3a77afad228",
       "19f2cafce12edac9",
@@ -168125,7 +168164,8 @@
       "1a0904adb1aabfcd",
       "1a0905db171fb790",
       "1a0908d4b30cf55f",
-      "1a0908d4a7d0d7a6"
+      "1a0908d4a7d0d7a6",
+      "1a0913b00ca15c0e"
     ],
     "cash_sessions": {
       "1136982222": {
