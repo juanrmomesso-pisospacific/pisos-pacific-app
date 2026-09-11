@@ -141390,11 +141390,11 @@
       "linked_lead_id": "lead-instagram-1789072561380",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-11T16:01:29.494Z",
-      "last_message_preview": "Tenemos el deposito en Olivos es con cita previa",
+      "last_message_at": "2026-09-11T16:01:40.959Z",
+      "last_message_preview": "Precios decime de que colección te interesa y te paso!",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-10T20:35:59.006Z",
-      "last_outbound_at": "2026-09-11T16:01:29.494Z"
+      "last_outbound_at": "2026-09-11T16:01:40.959Z"
     },
     {
       "id": "conv-email-1a0905db171f",
@@ -159147,6 +159147,16 @@
       "ts": "2026-09-11T16:01:29.494Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwMzg1MzYxNTEwNDMwNzk5MTEyNDMzMjQzNTczNDUyOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789142501549-1tf6",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "out",
+      "body": "Precios decime de que colección te interesa y te paso!",
+      "ts": "2026-09-11T16:01:40.959Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwMzg1MzgyNjU5ODYwODQyNjE4OTg1MDI0NTMzMjk5MgZDZD",
       "via": "ig-app"
     }
   ],
