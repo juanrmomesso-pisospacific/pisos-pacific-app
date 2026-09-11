@@ -140367,10 +140367,11 @@
       "linked_lead_id": "lead-instagram-1787839755133",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-27T14:09:13.994Z",
-      "last_message_preview": "↩️ Reaccionó: ❤",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-27T14:09:13.994Z"
+      "last_message_at": "2026-09-11T16:33:25.697Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-27T14:09:13.994Z",
+      "last_outbound_at": "2026-09-11T16:33:25.697Z"
     },
     {
       "id": "conv-1787853659842-tf2y",
@@ -159246,6 +159247,16 @@
       "ts": "2026-09-11T16:31:48.179Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzNTQ1OTc3OTEwNTIxMDozMzAwMzg4NzE2MzkyOTQ2NTQwMDg3NzgyNDczNjIzMTQyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789144406283-ayme",
+      "conversation_id": "conv-1787839755133-waik",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-11T16:33:25.697Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY0MDAzOTc1ODY0NzIyNTozMzAwMzg4ODk2MjgxMDQyMDkwNDY1OTM4MzE1NTE2MzEzNgZDZD",
       "via": "ig-app"
     }
   ],
