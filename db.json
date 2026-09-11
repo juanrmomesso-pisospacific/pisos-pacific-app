@@ -136325,12 +136325,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1781802059331",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-11T16:27:40.677Z",
-      "last_message_preview": "Quiero esta casa",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-11T16:31:48.179Z",
+      "last_message_preview": "Es un quincho!!! Jajajaja",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-11T16:27:40.677Z",
-      "last_outbound_at": "2026-07-03T18:59:40.826Z"
+      "last_outbound_at": "2026-09-11T16:31:48.179Z"
     },
     {
       "id": "conv-1781804026379-2ink",
@@ -159227,6 +159227,26 @@
       "body": "Quiero esta casa",
       "ts": "2026-09-11T16:27:40.677Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789144302081-vo3f",
+      "conversation_id": "conv-1781802059331-sohs",
+      "direction": "out",
+      "body": "Jajaj el delirio",
+      "ts": "2026-09-11T16:31:41.606Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzNTQ1OTc3OTEwNTIxMDozMzAwMzg4NzA0MjY2Njk4OTMyNzI0ODg4MzMzNjYwOTc5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789144308753-3oi3",
+      "conversation_id": "conv-1781802059331-sohs",
+      "direction": "out",
+      "body": "Es un quincho!!! Jajajaja",
+      "ts": "2026-09-11T16:31:48.179Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTkzNTQ1OTc3OTEwNTIxMDozMzAwMzg4NzE2MzkyOTQ2NTQwMDg3NzgyNDczNjIzMTQyNAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
