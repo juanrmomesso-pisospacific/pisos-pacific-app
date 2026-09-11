@@ -134849,7 +134849,7 @@
       "status": "Contacted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-09-07T22:08:51.000Z",
-      "last_touch_at": "2026-09-10T13:52:29.000Z"
+      "last_touch_at": "2026-09-11T11:46:57.000Z"
     },
     {
       "id": "lead-email-1a07e3feddad",
@@ -141130,12 +141130,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a07deac3182",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-10T18:12:57.220Z",
-      "last_message_preview": "Carina, gracias por tu aclaración. \n\nAl colocar un piso que es impermeable, no recomendamos hacerlo sobre un piso que esté con problemas de ",
+      "unread_count": 1,
+      "last_message_at": "2026-09-11T11:46:57.000Z",
+      "last_message_preview": "Muchas gracias! Tendría entonces que sacar el piso de madera y hacer una nueva carpeta primero? Ustedes hacen ese trabajo?\r\n    El jueves, 1",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-10T13:52:29.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-11T11:46:57.000Z",
       "last_outbound_at": "2026-09-10T18:12:57.220Z"
     },
     {
@@ -159079,6 +159079,14 @@
       "body": "✉️ Box label of PAC308R film and heating cable price list\n\nDear Daniel,\r\n\r\nPls see the attached box label of PAC308R film\r\nand pls find the attached price list of heating cable.\r\nIf you add heating cables on this Sea shipment, pls let me know model no.\r\nand q'ty.\r\nI will revise \"Balance\" Proforma Invoice later.\r\n\r\nMany thanks\r\n\r\nJoshua\r\nFelix Korea\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 4588 6512\r\nTel. : +82 31 866 5688\r\n\r\n* www.felixkorea.com <http://www.felixkorea.com>*\r\n\r\n\r\n\r\n2026년 9월 4일 (금) 오후 1:26, FELIXKOREA <felixkorea.com@gmail.com>님이 작성:\r\n\r\n> Dear Daniel or Juan,\r\n>\r\n> Pls find the attached packing list and Commercial invoice of Air urgent\r\n> shipment (for 300M2)\r\n> Pls arrange your forwarding agency for Air shipment(EX-work) and let me\r\n> know contact info.\r\n> I will send you a video of Film carbon-printing with PACIFIC/mr. Parquet\r\n> logo during sleeping via Whatsapp.\r\n> It take one more week to finish Silver printing, Orange Color LAMI\r\n> Pressing and Packing.\r\n> Next monday, Pls nominate air forwarding agency based on packing list\r\n> (1pallet)\r\n>\r\n> Best regards,\r\n>\r\n>\r\n> My contact details.:\r\n> Company Name : Felix Korea\r\n> Address: 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> Korea. 11405\r\n> Mob. : +82 10 8288 0491 <010-8288-0491>\r\n> Tel. : +82 31 866 5688 <031-866-5688>\r\n> email : felixkorea.com@gmail.com\r\n>\r\n>\r\n>\r\n>\r\n>\r\n> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> Korea. 11405\r\n> Mob. : +82 10 4588 6512 <010-4588-6512>\r\n> Tel. : +82 31 866 5688 <031-86",
       "ts": "2026-09-11T04:39:29.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0904adb1aa",
+      "conversation_id": "conv-email-1a07deac3182",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nMuchas gracias! Tendría entonces que sacar el piso de madera y hacer una nueva carpeta primero? Ustedes hacen ese trabajo?\r\n    El jueves, 10 de septiembre de 2026, 03:12:59 p. m. ART, Pisos Pacific <info@pisospacific.com> escribió:  \r\n \r\n Carina, gracias por tu aclaración. \r\n\r\nAl colocar un piso que es impermeable, no recomendamos hacerlo sobre un piso que esté con problemas de humedad y mucho menos si es madera. \r\n\r\nTe explico por qué. La madera es higroscópica, lo que significa es que absorbe y larga humedad. Cuando está con humedad, por lo general se expande, lo que es común. Si la humedad es mucha y el piso no tiene lugar para expandirse se engloba y sale hacia arriba. \r\n\r\nEsto es lo que te puede pasar si ponés un piso impermeable arriba de la madera, ya que no permitiría que la humedad salga. \r\n\r\nEspero haber aclarado tus dudas!\r\n\r\nCualquier cosa, me podes llamar y te ayudo. \r\n\r\nGracias,\r\n\r\nSaludos,\r\nJuan\r\n\r\n\r\n|    |  Juan Rodríguez Momesso Ventas    +54 11 5175-0087\r\n info@pisospacific.com\r\n pisospacific.com      La evolución del piso de madera  |",
+      "ts": "2026-09-11T11:46:57.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -167226,7 +167234,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-11T00:01:09.437Z",
     "gmail_seen_ids": [
-      "19f293da521526db",
       "19f294d078a35c43",
       "19f2949e170fe267",
       "19f295d09567278d",
@@ -168025,7 +168032,8 @@
       "1a08c8a87cb71264",
       "1a08ec409372d142",
       "1a08fc254a8509fa",
-      "1a09007d6b77fa88"
+      "1a09007d6b77fa88",
+      "1a0904adb1aabfcd"
     ],
     "cash_sessions": {
       "1136982222": {
