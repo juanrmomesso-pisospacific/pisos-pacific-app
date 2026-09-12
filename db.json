@@ -135379,6 +135379,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-12T16:21:18.000Z",
       "last_touch_at": "2026-09-12T16:21:18.000Z"
+    },
+    {
+      "id": "lead-email-1a097660f3ad",
+      "name": "Alejandro Grunhaut",
+      "email": "alejogrunhaut@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Los Itines 1225",
+      "postal_code": "5009",
+      "approx_m2": 110,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 110m² · Con Colocación · CP 5009",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-12T20:54:02.000Z",
+      "last_touch_at": "2026-09-12T20:54:02.000Z"
     }
   ],
   "conversations": [
@@ -141741,6 +141758,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-12T16:21:18.000Z"
+    },
+    {
+      "id": "conv-email-1a097660f3ad",
+      "channel": "email",
+      "contact_id": "alejogrunhaut@gmail.com",
+      "contact_name": "Alejandro Grunhaut",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a097660f3ad",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-12T20:54:02.000Z",
+      "last_message_preview": "Formulario web — 110m² · Con Colocación · CP 5009 · Los Itines 1225",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-12T20:54:02.000Z"
     }
   ],
   "messages": [
@@ -159653,6 +159685,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 69m² · Sin Colocación · CP 1426 · charcas 3048 caba",
       "ts": "2026-09-12T16:21:18.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a097660f3ad",
+      "conversation_id": "conv-email-1a097660f3ad",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 110m² · Con Colocación · CP 5009 · Los Itines 1225",
+      "ts": "2026-09-12T20:54:02.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -167800,7 +167840,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-12T00:03:09.917Z",
     "gmail_seen_ids": [
-      "19f34c93c44555aa",
       "19f3647c461f95f6",
       "19f3685d3cbc47a4",
       "19f36cd0f34a7a10",
@@ -168599,7 +168638,8 @@
       "1a0950600b31c6a3",
       "1a095b3a674522c0",
       "1a096225efdadea3",
-      "1a0966c5bc724da4"
+      "1a0966c5bc724da4",
+      "1a097660f3ad5ff3"
     ],
     "cash_sessions": {
       "1136982222": {
