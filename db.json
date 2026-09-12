@@ -135362,6 +135362,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-12T15:00:14.000Z",
       "last_touch_at": "2026-09-12T15:00:14.000Z"
+    },
+    {
+      "id": "lead-email-1a0966c5bc72",
+      "name": "ALEJANDRO CANDIA",
+      "email": "alecandia@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "charcas 3048 caba",
+      "postal_code": "1426",
+      "approx_m2": 69,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 69m² · Sin Colocación · CP 1426",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-12T16:21:18.000Z",
+      "last_touch_at": "2026-09-12T16:21:18.000Z"
     }
   ],
   "conversations": [
@@ -141709,6 +141726,21 @@
       "email_subject": "Piso para living",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-12T15:00:14.000Z"
+    },
+    {
+      "id": "conv-email-1a0966c5bc72",
+      "channel": "email",
+      "contact_id": "alecandia@hotmail.com",
+      "contact_name": "ALEJANDRO CANDIA",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0966c5bc72",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-12T16:21:18.000Z",
+      "last_message_preview": "Formulario web — 69m² · Sin Colocación · CP 1426 · charcas 3048 caba",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-12T16:21:18.000Z"
     }
   ],
   "messages": [
@@ -159613,6 +159645,14 @@
       "body": "✉️ Piso para living\n\nConsulta se puede colocar piso de roble o lapacho o similar dejando el\r\nexistente abajo y como se haría en ese caso con los niveles en las\r\nacometidas a baño, cocina y dormitorio\r\n     Y si me pasarías los valores de oferta m2 y flete a villa crespo y\r\ncosto de colocación\r\n   Adolfo gustavo jajam",
       "ts": "2026-09-12T15:00:14.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0966c5bc72",
+      "conversation_id": "conv-email-1a0966c5bc72",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 69m² · Sin Colocación · CP 1426 · charcas 3048 caba",
+      "ts": "2026-09-12T16:21:18.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -167760,7 +167800,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-12T00:03:09.917Z",
     "gmail_seen_ids": [
-      "19f32bbc0a72881c",
       "19f34c93c44555aa",
       "19f3647c461f95f6",
       "19f3685d3cbc47a4",
@@ -168559,7 +168598,8 @@
       "1a0931504a1d4356",
       "1a0950600b31c6a3",
       "1a095b3a674522c0",
-      "1a096225efdadea3"
+      "1a096225efdadea3",
+      "1a0966c5bc724da4"
     ],
     "cash_sessions": {
       "1136982222": {
