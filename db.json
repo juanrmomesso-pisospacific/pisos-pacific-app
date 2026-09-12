@@ -135345,6 +135345,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-12T03:08:47.699Z",
       "last_touch_at": "2026-09-12T03:08:47.699Z"
+    },
+    {
+      "id": "lead-email-1a096225efda",
+      "name": "Adolfo Jajam",
+      "email": "adolgmodigliani@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Piso para living — Consulta se puede colocar piso de roble o lapacho o similar dejando el\r\nexistente abajo y como se haría en ese caso con los niveles en las\r\nacometidas a baño, cocina y dormitorio\r\n",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-12T15:00:14.000Z",
+      "last_touch_at": "2026-09-12T15:00:14.000Z"
     }
   ],
   "conversations": [
@@ -141677,6 +141694,21 @@
       "last_message_preview": "De que zona son ??? Yo soy de zona oeste. Villa madero",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-12T03:10:18.911Z"
+    },
+    {
+      "id": "conv-email-1a096225efda",
+      "channel": "email",
+      "contact_id": "adolgmodigliani@gmail.com",
+      "contact_name": "Adolfo Jajam",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a096225efda",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-12T15:00:14.000Z",
+      "last_message_preview": "Consulta se puede colocar piso de roble o lapacho o similar dejando el\r\nexistente abajo y como se haría en ese caso con los niveles en las\r\n",
+      "email_subject": "Piso para living",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-12T15:00:14.000Z"
     }
   ],
   "messages": [
@@ -159573,6 +159605,14 @@
       "body": "De que zona son ??? Yo soy de zona oeste. Villa madero",
       "ts": "2026-09-12T03:10:18.911Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a096225efda",
+      "conversation_id": "conv-email-1a096225efda",
+      "direction": "in",
+      "body": "✉️ Piso para living\n\nConsulta se puede colocar piso de roble o lapacho o similar dejando el\r\nexistente abajo y como se haría en ese caso con los niveles en las\r\nacometidas a baño, cocina y dormitorio\r\n     Y si me pasarías los valores de oferta m2 y flete a villa crespo y\r\ncosto de colocación\r\n   Adolfo gustavo jajam",
+      "ts": "2026-09-12T15:00:14.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -167720,7 +167760,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-12T00:03:09.917Z",
     "gmail_seen_ids": [
-      "19f2d7a989d3cbb7",
       "19f32bbc0a72881c",
       "19f34c93c44555aa",
       "19f3647c461f95f6",
@@ -168519,7 +168558,8 @@
       "1a0913b00ca15c0e",
       "1a0931504a1d4356",
       "1a0950600b31c6a3",
-      "1a095b3a674522c0"
+      "1a095b3a674522c0",
+      "1a096225efdadea3"
     ],
     "cash_sessions": {
       "1136982222": {
