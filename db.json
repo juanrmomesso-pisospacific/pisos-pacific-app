@@ -141541,11 +141541,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789072561380",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-12T01:18:07.429Z",
-      "last_message_preview": "todo bien, estoy viendo para un local comercial de 30m2. estaba buscando piso vinilico",
+      "unread_count": 3,
+      "last_message_at": "2026-09-12T01:18:25.226Z",
+      "last_message_preview": "📷 Foto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-12T01:18:07.429Z",
+      "last_inbound_at": "2026-09-12T01:18:25.226Z",
       "last_outbound_at": "2026-09-11T16:01:40.959Z"
     },
     {
@@ -159509,6 +159509,24 @@
       "body": "todo bien, estoy viendo para un local comercial de 30m2. estaba buscando piso vinilico",
       "ts": "2026-09-12T01:18:07.429Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789175905580-rjaq",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "in",
+      "body": "algo en este tono",
+      "ts": "2026-09-12T01:18:24.881Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1789175905970-i26t",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "in",
+      "body": "📷 Foto",
+      "ts": "2026-09-12T01:18:25.226Z",
+      "status": "received",
+      "media_url": "/uploads/8f56c73f16dc5f58.jpg",
+      "media_type": "image"
     }
   ],
   "templates": [
@@ -169623,7 +169641,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MDk0NTk2OTg4OTkyMjozMzAwNDE1OTk4MzA2MjQzMzg0NjA4NTE2NTQxMTk5MTU1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4Mjc2OTc2NzcwNzU0NDozMzAwNDQzOTM5MzMzODEyNTgwOTA3MTA1NDI3MTgwNzQ4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDEwMDk2NzM1NTg4Nzc4NDozMzAwNDQ2MTYxNjI4NjYwNDg0MTEzNDgwNTQ4NzcxNDMwNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNDQ2OTY5ODI2NDQ1MjEyMDQ5MjUxNTE2Mzg5Nzg1NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNDQ2OTY5ODI2NDQ1MjEyMDQ5MjUxNTE2Mzg5Nzg1NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNDQ3MDAyMDE5NjQwMjUwNTU3MzEwMzg0MTU3NDkxMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNDQ3MDAyNjU2NTM2MjI1Nzk1MDIxMTA1MTYxODMwNAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
