@@ -141672,11 +141672,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789182529385",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-12T03:08:47.699Z",
-      "last_message_preview": "Me mandas información de los pisos",
+      "unread_count": 2,
+      "last_message_at": "2026-09-12T03:10:18.911Z",
+      "last_message_preview": "De que zona son ??? Yo soy de zona oeste. Villa madero",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-12T03:08:47.699Z"
+      "last_inbound_at": "2026-09-12T03:10:18.911Z"
     }
   ],
   "messages": [
@@ -159565,6 +159565,14 @@
       "body": "Me mandas información de los pisos",
       "ts": "2026-09-12T03:08:47.699Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789182619936-wkbb",
+      "conversation_id": "conv-1789182529385-84f3",
+      "direction": "in",
+      "body": "De que zona son ??? Yo soy de zona oeste. Villa madero",
+      "ts": "2026-09-12T03:10:18.911Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -169682,7 +169690,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNDQ2OTY5ODI2NDQ1MjEyMDQ5MjUxNTE2Mzg5Nzg1NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNDQ3MDAyMDE5NjQwMjUwNTU3MzEwMzg0MTU3NDkxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNDQ3MDAyNjU2NTM2MjI1Nzk1MDIxMTA1MTYxODMwNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY5OTIxOTk5NjU2Mjc3MjozMzAwNDU5MjE4OTYyNjMzMTE5NDM3MTI1Njc1NTQyMTE4NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY5OTIxOTk5NjU2Mjc3MjozMzAwNDU5MjE4OTYyNjMzMTE5NDM3MTI1Njc1NTQyMTE4NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY5OTIxOTk5NjU2Mjc3MjozMzAwNDU5Mzg3MjE4MjAyNjMzNTYyMDAxNDEzNjA5ODgxNgZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
