@@ -141683,12 +141683,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789072561380",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-09-12T01:18:25.226Z",
-      "last_message_preview": "📷 Foto",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-13T22:08:09.282Z",
+      "last_message_preview": "Esta semana lanzamos un tono nuevo",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-12T01:18:25.226Z",
-      "last_outbound_at": "2026-09-11T16:01:40.959Z"
+      "last_outbound_at": "2026-09-13T22:08:09.282Z"
     },
     {
       "id": "conv-email-1a0905db171f",
@@ -159857,6 +159857,26 @@
       "body": "✉️ Piso color roble\n\nHola estimados,\r\nTengo un restaurante y necesitaría sesenta metros cuadrados de piso color\r\nroble.\r\nMuchas gracias,",
       "ts": "2026-09-13T21:08:57.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789337280872-q18r",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "out",
+      "body": "Hola Mica cómo estás?",
+      "ts": "2026-09-13T22:07:59.835Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzQ0Njg2MjY3NDYxMDI3ODIyNTk0MTEzMTk1MjEyOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789337290112-ap99",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "out",
+      "body": "Esta semana lanzamos un tono nuevo",
+      "ts": "2026-09-13T22:08:09.282Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzQ0NzAzNjk0ODM2MTc5MzQ0NTQ4NTM1OTM5ODkxMgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
