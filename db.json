@@ -141824,11 +141824,11 @@
       "linked_lead_id": "lead-instagram-1789307270547",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-13T13:48:54.232Z",
-      "last_message_preview": "Hola Dolores!! Cómo estás?",
+      "last_message_at": "2026-09-13T13:49:40.151Z",
+      "last_message_preview": "Tenemos dos colecciones \nLa h2O que vendría a ser la fusión de patagonia y después todo lo que es la colección de madera que son pisos Prefi",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-13T13:47:48.688Z",
-      "last_outbound_at": "2026-09-13T13:48:54.232Z"
+      "last_outbound_at": "2026-09-13T13:49:40.151Z"
     }
   ],
   "messages": [
@@ -159766,6 +159766,16 @@
       "ts": "2026-09-13T13:48:54.232Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAwNjg5NDQ2Mzc5NzQ2NDUwNTU1MDA2MzMwNzU4NzU4NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789307380757-lhhy",
+      "conversation_id": "conv-1789307270547-vy4y",
+      "direction": "out",
+      "body": "Tenemos dos colecciones \nLa h2O que vendría a ser la fusión de patagonia y después todo lo que es la colección de madera que son pisos Prefinished",
+      "ts": "2026-09-13T13:49:40.151Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAwNjg5NTMxMDg1NTc3NDU3NTc0MDAzMDIzNzU0MDM1MgZDZD",
       "via": "ig-app"
     }
   ],
