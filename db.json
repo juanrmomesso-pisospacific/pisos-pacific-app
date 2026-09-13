@@ -135421,6 +135421,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-12T20:54:02.000Z",
       "last_touch_at": "2026-09-12T20:54:02.000Z"
+    },
+    {
+      "id": "lead-instagram-1789307270547",
+      "name": "@doloresbasavilbaso",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-13T13:47:48.688Z",
+      "last_touch_at": "2026-09-13T13:47:48.688Z"
     }
   ],
   "conversations": [
@@ -141798,6 +141814,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-12T20:54:02.000Z"
+    },
+    {
+      "id": "conv-1789307270547-vy4y",
+      "channel": "instagram",
+      "contact_id": "2535988100147177",
+      "contact_name": "@doloresbasavilbaso",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1789307270547",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-13T13:47:48.688Z",
+      "last_message_preview": "Buen día. Recién los conozco. Son maderas con tratamiento tipo los pisos Patagonia?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-13T13:47:48.688Z"
     }
   ],
   "messages": [
@@ -159718,6 +159748,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 110m² · Con Colocación · CP 5009 · Los Itines 1225",
       "ts": "2026-09-12T20:54:02.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789307270547-z7nl",
+      "conversation_id": "conv-1789307270547-vy4y",
+      "direction": "in",
+      "body": "Buen día. Recién los conozco. Son maderas con tratamiento tipo los pisos Patagonia?",
+      "ts": "2026-09-13T13:47:48.688Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -169838,7 +169876,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNDQ3MDAyMDE5NjQwMjUwNTU3MzEwMzg0MTU3NDkxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNDQ3MDAyNjU2NTM2MjI1Nzk1MDIxMTA1MTYxODMwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY5OTIxOTk5NjU2Mjc3MjozMzAwNDU5MjE4OTYyNjMzMTE5NDM3MTI1Njc1NTQyMTE4NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY5OTIxOTk5NjU2Mjc3MjozMzAwNDU5Mzg3MjE4MjAyNjMzNTYyMDAxNDEzNjA5ODgxNgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY5OTIxOTk5NjU2Mjc3MjozMzAwNDU5Mzg3MjE4MjAyNjMzNTYyMDAxNDEzNjA5ODgxNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAwNjg5MzI1NDcxNjI0OTUxODg0Mzk1OTMzODU5ODQwMAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
