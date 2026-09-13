@@ -135471,6 +135471,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-13T21:08:57.000Z",
       "last_touch_at": "2026-09-13T21:08:57.000Z"
+    },
+    {
+      "id": "lead-instagram-1789342423594",
+      "name": "@yami.0401",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-13T23:33:42.604Z",
+      "last_touch_at": "2026-09-13T23:33:42.604Z"
     }
   ],
   "conversations": [
@@ -141893,6 +141909,20 @@
       "email_subject": "Piso color roble",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-13T21:08:57.000Z"
+    },
+    {
+      "id": "conv-1789342423594-fby7",
+      "channel": "instagram",
+      "contact_id": "2033762657350870",
+      "contact_name": "@yami.0401",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1789342423594",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-13T23:33:42.604Z",
+      "last_message_preview": "Hola, quisiera saber dónde tienen el shorrom quiero pasar a ver el material .gracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-13T23:33:42.604Z"
     }
   ],
   "messages": [
@@ -159897,6 +159927,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzQ0NzMwNTA4OTY0MzM1MzA3NzE2ODk0MzkyMzIwMAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1789342423594-g50p",
+      "conversation_id": "conv-1789342423594-fby7",
+      "direction": "in",
+      "body": "Hola, quisiera saber dónde tienen el shorrom quiero pasar a ver el material .gracias",
+      "ts": "2026-09-13T23:33:42.604Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -170018,7 +170056,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNDQ3MDAyNjU2NTM2MjI1Nzk1MDIxMTA1MTYxODMwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY5OTIxOTk5NjU2Mjc3MjozMzAwNDU5MjE4OTYyNjMzMTE5NDM3MTI1Njc1NTQyMTE4NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY5OTIxOTk5NjU2Mjc3MjozMzAwNDU5Mzg3MjE4MjAyNjMzNTYyMDAxNDEzNjA5ODgxNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAwNjg5MzI1NDcxNjI0OTUxODg0Mzk1OTMzODU5ODQwMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAwNjg5MzI1NDcxNjI0OTUxODg0Mzk1OTMzODU5ODQwMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwNzU0MTEzNTA2NzIwODEzMjUwODIyMjc2NzQ5NzIxNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwNzU0MTczMDAxNDA1MTQxNDc1MDQ4NDg1NzA5NDE0NAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
