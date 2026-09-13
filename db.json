@@ -141823,11 +141823,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789307270547",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-13T13:47:48.688Z",
-      "last_message_preview": "Buen día. Recién los conozco. Son maderas con tratamiento tipo los pisos Patagonia?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-13T13:47:48.688Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-13T13:48:54.232Z",
+      "last_message_preview": "Hola Dolores!! Cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-13T13:47:48.688Z",
+      "last_outbound_at": "2026-09-13T13:48:54.232Z"
     }
   ],
   "messages": [
@@ -159756,6 +159757,16 @@
       "body": "Buen día. Recién los conozco. Son maderas con tratamiento tipo los pisos Patagonia?",
       "ts": "2026-09-13T13:47:48.688Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789307334620-m7f0",
+      "conversation_id": "conv-1789307270547-vy4y",
+      "direction": "out",
+      "body": "Hola Dolores!! Cómo estás?",
+      "ts": "2026-09-13T13:48:54.232Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAwNjg5NDQ2Mzc5NzQ2NDUwNTU1MDA2MzMwNzU4NzU4NAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
