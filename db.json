@@ -141684,11 +141684,11 @@
       "linked_lead_id": "lead-instagram-1789072561380",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-13T22:08:09.282Z",
-      "last_message_preview": "Esta semana lanzamos un tono nuevo",
+      "last_message_at": "2026-09-13T22:08:23.818Z",
+      "last_message_preview": "Apenas llegue te mando",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-12T01:18:25.226Z",
-      "last_outbound_at": "2026-09-13T22:08:09.282Z"
+      "last_outbound_at": "2026-09-13T22:08:23.818Z"
     },
     {
       "id": "conv-email-1a0905db171f",
@@ -159876,6 +159876,26 @@
       "ts": "2026-09-13T22:08:09.282Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzQ0NzAzNjk0ODM2MTc5MzQ0NTQ4NTM1OTM5ODkxMgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789337301024-cb1u",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "out",
+      "body": "Todavía no lo tenemos en el depo",
+      "ts": "2026-09-13T22:08:20.515Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzQ0NzI0NDE0NDEyODEzNzQ3ODkwODYxMzIzMDU5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789337304574-x9kj",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "out",
+      "body": "Apenas llegue te mando",
+      "ts": "2026-09-13T22:08:23.818Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzQ0NzMwNTA4OTY0MzM1MzA3NzE2ODk0MzkyMzIwMAZDZD",
       "via": "ig-app"
     }
   ],
