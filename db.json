@@ -135454,6 +135454,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-13T20:53:55.000Z",
       "last_touch_at": "2026-09-13T20:53:55.000Z"
+    },
+    {
+      "id": "lead-email-1a09c9a4005b",
+      "name": "Ernesto Orlando Alvarez",
+      "email": "eroalvarez60@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Piso color roble — Hola estimados,\r\nTengo un restaurante y necesitaría sesenta metros cuadrados de piso color\r\nroble.\r\nMuchas gracias,",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-13T21:08:57.000Z",
+      "last_touch_at": "2026-09-13T21:08:57.000Z"
     }
   ],
   "conversations": [
@@ -141861,6 +141878,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-13T20:53:55.000Z"
+    },
+    {
+      "id": "conv-email-1a09c9a4005b",
+      "channel": "email",
+      "contact_id": "eroalvarez60@gmail.com",
+      "contact_name": "Ernesto Orlando Alvarez",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a09c9a4005b",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-13T21:08:57.000Z",
+      "last_message_preview": "Hola estimados,\r\nTengo un restaurante y necesitaría sesenta metros cuadrados de piso color\r\nroble.\r\nMuchas gracias,",
+      "email_subject": "Piso color roble",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-13T21:08:57.000Z"
     }
   ],
   "messages": [
@@ -159817,6 +159849,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 105m² · Sin Colocación · CP 2345 · Mariano Moreno 479",
       "ts": "2026-09-13T20:53:55.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a09c9a4005b",
+      "conversation_id": "conv-email-1a09c9a4005b",
+      "direction": "in",
+      "body": "✉️ Piso color roble\n\nHola estimados,\r\nTengo un restaurante y necesitaría sesenta metros cuadrados de piso color\r\nroble.\r\nMuchas gracias,",
+      "ts": "2026-09-13T21:08:57.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -167964,7 +168004,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-13T00:00:34.587Z",
     "gmail_seen_ids": [
-      "19f3762b8936127a",
       "19f3760a5b13d588",
       "19f3778643e6346e",
       "19f380073336a066",
@@ -168763,7 +168802,8 @@
       "1a097f22cac3f5dd",
       "1a09a338b3ca436d",
       "1a09ada03d1c1b22",
-      "1a09c8c4da784f9a"
+      "1a09c8c4da784f9a",
+      "1a09c9a4005ba524"
     ],
     "cash_sessions": {
       "1136982222": {
