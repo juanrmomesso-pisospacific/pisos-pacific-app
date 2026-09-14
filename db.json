@@ -131244,7 +131244,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-07-24T02:56:33.000Z",
-      "last_touch_at": "2026-09-11T04:39:29.000Z"
+      "last_touch_at": "2026-09-14T08:44:28.000Z"
     },
     {
       "id": "lead-instagram-1784916324625",
@@ -138418,12 +138418,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f920e2ca6d",
       "status": "closed",
-      "unread_count": 23,
-      "last_message_at": "2026-09-11T04:39:29.000Z",
-      "last_message_preview": "Dear Daniel,\r\n\r\nPls see the attached box label of PAC308R film\r\nand pls find the attached price list of heating cable.\r\nIf you add heating c",
+      "unread_count": 24,
+      "last_message_at": "2026-09-14T08:44:28.000Z",
+      "last_message_preview": "Dear Mike and Daniel,\r\n\r\nFor 4mm Heating cable (16W/m) price list, pls see the attached price list\r\nagain.\r\nThe 4mm-diameter heating cable h",
       "email_subject": "Re: radiant heating",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-11T04:39:29.000Z",
+      "last_inbound_at": "2026-09-14T08:44:28.000Z",
       "ignored": true
     },
     {
@@ -159978,6 +159978,14 @@
       "body": "Ustedes realizan colocación?",
       "ts": "2026-09-14T01:29:53.675Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a09f1741583",
+      "conversation_id": "conv-email-19f920e2ca6d",
+      "direction": "in",
+      "body": "✉️ Re: Box label of PAC308R film and heating cable price list\n\nDear Mike and Daniel,\r\n\r\nFor 4mm Heating cable (16W/m) price list, pls see the attached price list\r\nagain.\r\nThe 4mm-diameter heating cable has a thinner insulation layer, so 16W is\r\nsuitable and safe.\r\n4mm heating cable's modes require MOQ. Pls see the attached file.\r\nIf you want to test 4mm heating cable, we have some stocks of\r\nENC16-20 (20M) now.\r\nIf you want us to ship it by Sea, pls let me know q'ty of ENC16-20\r\n\r\nDear Daniel, Pls ask your forwarding agency to contact me for Air shipment.\r\nI am still waiting for their Korean contact info.\r\n\r\nJoshua\r\nFelix\r\n\r\n\r\n\r\n\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 4588 6512\r\nTel. : +82 31 866 5688\r\n\r\n* www.felixkorea.com <http://www.felixkorea.com>*\r\n\r\n\r\n\r\n2026년 9월 11일 (금) 오후 1:39, FELIXKOREA <felixkorea.com@gmail.com>님이 작성:\r\n\r\n> Dear Daniel,\r\n>\r\n> Pls see the attached box label of PAC308R film\r\n> and pls find the attached price list of heating cable.\r\n> If you add heating cables on this Sea shipment, pls let me know model no.\r\n> and q'ty.\r\n> I will revise \"Balance\" Proforma Invoice later.\r\n>\r\n> Many thanks\r\n>\r\n> Joshua\r\n> Felix Korea\r\n>\r\n>\r\n> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> Korea. 11405\r\n> Mob. : +82 10 4588 6512 <010-4588-6512>\r\n> Tel. : +82 31 866 5688 <031-866-5688>\r\n>\r\n> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>\r\n>\r\n>\r\n> 2026년 9월 4일 (금) 오후 1:26, FELIXKOREA <felixkorea.com@gmail.com>님이 작성:\r\n>\r\n>> Dear Daniel or Juan,\r\n>>\r\n>> Pls find the attached packi",
+      "ts": "2026-09-14T08:44:28.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -168125,7 +168133,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-14T00:00:34.339Z",
     "gmail_seen_ids": [
-      "19f3760a5b13d588",
       "19f3778643e6346e",
       "19f380073336a066",
       "19f381e4939cca08",
@@ -168924,7 +168931,8 @@
       "1a09a338b3ca436d",
       "1a09ada03d1c1b22",
       "1a09c8c4da784f9a",
-      "1a09c9a4005ba524"
+      "1a09c9a4005ba524",
+      "1a09f174158312ec"
     ],
     "cash_sessions": {
       "1136982222": {
