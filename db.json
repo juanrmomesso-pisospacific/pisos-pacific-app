@@ -160145,6 +160145,15 @@
       "ts": "2026-09-14T17:59:24.169Z",
       "status": "sent",
       "wa_id": "1a0a112e082ef9e8"
+    },
+    {
+      "id": "m-1789408813314-3tja",
+      "conversation_id": "conv-1789182529385-84f3",
+      "direction": "out",
+      "body": "Hola Miriam como estas?",
+      "ts": "2026-09-14T18:00:13.314Z",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"AjTZF0SHy0fEI76CrMj_Xn-\"}}"
     }
   ],
   "templates": [
