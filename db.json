@@ -35321,8 +35321,9 @@
       "currency": "USD",
       "created_at": "2026-09-14T18:36:53.583Z",
       "quote_number": "A2688",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a09c8c4da78"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a09c8c4da78",
+      "share_token": "c8629d421a60b08f9bc537cf"
     }
   ],
   "clients": [
@@ -142489,12 +142490,12 @@
       "linked_lead_id": "lead-email-1a09c8c4da78",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-14T18:22:49.000Z",
-      "last_message_preview": "Hola !! Me interesaban los pisos SPC\r\nSoy Arquitecta y una clienta quiere poner en su casa porque ya tenía colocados de otra marca y le inte",
+      "last_message_at": "2026-09-14T18:48:16.596Z",
+      "last_message_preview": "📄 Presupuesto NA2688 - Obra - Santa Fe - Romina Mabel Pueyo.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T18:22:49.000Z",
-      "last_outbound_at": "2026-09-14T18:01:42.559Z"
+      "last_outbound_at": "2026-09-14T18:48:16.596Z"
     },
     {
       "id": "conv-email-1a09c9a4005b",
@@ -160771,6 +160772,16 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0a1304015116e8"
+    },
+    {
+      "id": "m-1789411696596-vovq",
+      "conversation_id": "conv-email-1a09c8c4da78",
+      "direction": "out",
+      "body": "Hola Romina, perfecto te comparto el presupuesto para la obra de 105m2 y después te armo presupuesto para tu casa con un mejor descuento por atención profesional. \n\nCualquier consulta quedo a disposición y si te parece, pasanos la dirección de tu estudio así te mandamos muestras!\n\nMuchas gracias,\n\nSaludos,\n📄 Presupuesto NA2688 - Obra - Santa Fe - Romina Mabel Pueyo.pdf",
+      "ts": "2026-09-14T18:48:16.596Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a0a13f9fa76ab2e"
     }
   ],
   "templates": [
@@ -170331,7 +170342,8 @@
       "1a0a12784350c76e",
       "1a0a125e750468c9",
       "1a0a123605b99e4c",
-      "1a0a1213f1a068b5"
+      "1a0a1213f1a068b5",
+      "1a0a1304015116e8"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
