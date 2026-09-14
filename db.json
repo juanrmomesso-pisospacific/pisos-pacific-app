@@ -160512,6 +160512,17 @@
       "keywords": "seguimiento,follow up,pudiste ver,sin respuesta,recordatorio,consulta",
       "body": "Hola {nombre}, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos la mejor forma de asesorarte.\n\n¡Muchas gracias!\nSaludos,",
       "stage": "seguimiento"
+    },
+    {
+      "id": "local-1789409214049-bx06h",
+      "name": "Showroom",
+      "channel": "all",
+      "body": "El depósito está en Olivos, a la altura de Thames y Panamericana, y trabajamos con cita previa.\n\nSi te interesa acercarte, te paso un WhatsApp para que puedas coordinar día y horario.\nY si te resulta más cómodo, también tenemos la opción de enviar muestras a domicilio. \nPisos Pacific +54 9 11 2331-3914",
+      "keywords": "Showroom",
+      "stage": "consulta",
+      "status": "approved",
+      "category": "UTILITY",
+      "language": "es_AR"
     }
   ],
   "stock_movements": [
