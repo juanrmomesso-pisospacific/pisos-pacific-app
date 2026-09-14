@@ -135916,7 +135916,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-13T20:53:55.000Z",
-      "last_touch_at": "2026-09-13T20:53:55.000Z"
+      "last_touch_at": "2026-09-14T18:22:49.000Z"
     },
     {
       "id": "lead-email-1a09c9a4005b",
@@ -142373,12 +142373,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a09c8c4da78",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-14T18:01:42.559Z",
-      "last_message_preview": "Hola Romina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
+      "unread_count": 1,
+      "last_message_at": "2026-09-14T18:22:49.000Z",
+      "last_message_preview": "Hola !! Me interesaban los pisos SPC\r\nSoy Arquitecta y una clienta quiere poner en su casa porque ya tenía colocados de otra marca y le inte",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-13T20:53:55.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-14T18:22:49.000Z",
       "last_outbound_at": "2026-09-14T18:01:42.559Z"
     },
     {
@@ -160638,6 +160638,14 @@
       "ts": "2026-09-14T18:27:35.630Z",
       "status": "sent",
       "wa_id": "1a0a12cafd1e4ef0"
+    },
+    {
+      "id": "m-email-1a0a1285b4df",
+      "conversation_id": "conv-email-1a09c8c4da78",
+      "direction": "in",
+      "body": "✉️ RE: Pedido de Presupuesto | Página Web\n\nHola !! Me interesaban los pisos SPC\r\nSoy Arquitecta y una clienta quiere poner en su casa porque ya tenía colocados de otra marca y le interesaba los que tiene 5mm o 6mm\r\nPorque le funcionaron muy bien , con la capa negra pegada por debajo.\r\n\r\nIgualmente yo en mi casa tambien quiero colocar. Tendgo 100m2 aprox que cubrir.\r\n\r\nAguardo información.\r\n\r\nGracias!\r\n\r\nRomina\r\n________________________________\r\nDe: Pisos Pacific <info@pisospacific.com>\r\nEnviado: lunes, 14 de septiembre de 2026 15:01\r\nPara: romipueyo@hotmail.com <romipueyo@hotmail.com>\r\nAsunto: Re: Pedido de Presupuesto | Página Web\r\n\r\nHola Romina, ¡muchas gracias por tu consulta!\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera<https://pisospacific.com/madera> — Pisos de madera noble prefinished\r\n• Línea H2O<https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de agua\r\n\r\n\r\n¡Muchas gracias!\r\nSaludos,\r\n\r\n\r\n[Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087<https://wa.me/5491151750087>\r\ninfo@pisospacific.com<mailto:info@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
+      "ts": "2026-09-14T18:22:49.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -168940,7 +168948,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-14T00:00:34.339Z",
     "gmail_seen_ids": [
-      "19f38887ebd5e825",
       "19f3897302e8b22b",
       "19f38cc7509767e1",
       "19f390f23c8ee88b",
@@ -169739,7 +169746,8 @@
       "1a0a00450fb3b5b6",
       "1a0a0005f31ce6cb",
       "1a0a07a408a0d5a6",
-      "1a0a0818cbaec8bb"
+      "1a0a0818cbaec8bb",
+      "1a0a1285b4df4b48"
     ],
     "cash_sessions": {
       "1136982222": {
