@@ -35139,6 +35139,75 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a06c3aa1772",
       "share_token": "fe8bfe3d86cad897aff5afdf"
+    },
+    {
+      "id": "local-1789410387768-mailo",
+      "client_id": "",
+      "client_name": "Viviana",
+      "client_dni": "",
+      "client_email": "vbp622@gmail.com",
+      "client_phone": "",
+      "client_address": "5100 de Emilio Lamarca, c.a.b.a",
+      "internal_notes": "Formulario web — 12m² · Con Colocación · CP C1425",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Obra CABA - Viviana ",
+      "has_iva": true,
+      "price": 1754.0159999999998,
+      "zoned": false,
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 16.7,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "total": 634.6,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 140,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 140,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 45,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 675,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-14T18:26:27.466Z",
+      "quote_number": "A7704",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a071475a8d6"
     }
   ],
   "clients": [
@@ -135073,10 +135142,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 15m² · Con Colocación · CP 1419",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-05T11:14:56.000Z",
-      "last_touch_at": "2026-09-08T21:34:51.000Z"
+      "last_touch_at": "2026-09-14T18:26:27.766Z"
     },
     {
       "id": "lead-email-1a071ff9c208",
