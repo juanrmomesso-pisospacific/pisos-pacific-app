@@ -38780,6 +38780,15 @@
       "category_default": null,
       "notes": null,
       "name": "AndesMar Cargas"
+    },
+    {
+      "id": "PROV-mu1p5ln7-1szt",
+      "type": "supplier",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null,
+      "name": "Ortos"
     }
   ],
   "categories": [
