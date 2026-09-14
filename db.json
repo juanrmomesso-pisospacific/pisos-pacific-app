@@ -35136,8 +35136,9 @@
       "currency": "USD",
       "created_at": "2026-09-14T18:23:20.567Z",
       "quote_number": "A4449",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a06c3aa1772"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a06c3aa1772",
+      "share_token": "fe8bfe3d86cad897aff5afdf"
     }
   ],
   "clients": [
@@ -141630,12 +141631,12 @@
       "linked_lead_id": "lead-email-1a06c3aa1772",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-09T12:48:28.000Z",
-      "last_message_preview": "Buenos días!\r\nEstoy interesada en la línea de SPC\r\n\r\nEl mar, 8 de sept de 2026, 8:38 a.m., Pisos Pacific <info@pisospacific.com>\r\nescribió:\r",
+      "last_message_at": "2026-09-14T18:23:36.684Z",
+      "last_message_preview": "📄 Presupuesto NA4449 - Cotizacion SPC - Zona Sur - Lihuen Di Marco.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-09T12:48:28.000Z",
-      "last_outbound_at": "2026-09-08T11:38:27.855Z"
+      "last_outbound_at": "2026-09-14T18:23:36.684Z"
     },
     {
       "id": "conv-email-1a06cb4a5107",
@@ -160516,6 +160517,16 @@
       "ts": "2026-09-14T18:22:10.745Z",
       "status": "sent",
       "wa_id": "1a0a127bb46726f1"
+    },
+    {
+      "id": "m-1789410216684-cxtd",
+      "conversation_id": "conv-email-1a06c3aa1772",
+      "direction": "out",
+      "body": "Hola Lihuen, te comparto el presupuesto NA4449 adjunto. Cualquier consulta quedo a disposición.\n📄 Presupuesto NA4449 - Cotizacion SPC - Zona Sur - Lihuen Di Marco.pdf",
+      "ts": "2026-09-14T18:23:36.684Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a0a1290a80397f3"
     }
   ],
   "templates": [
