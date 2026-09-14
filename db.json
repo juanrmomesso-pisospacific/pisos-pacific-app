@@ -141803,12 +141803,12 @@
       "linked_lead_id": "lead-email-1a07deac3182",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-11T11:46:57.000Z",
-      "last_message_preview": "Muchas gracias! Tendría entonces que sacar el piso de madera y hacer una nueva carpeta primero? Ustedes hacen ese trabajo?\r\n    El jueves, 1",
+      "last_message_at": "2026-09-14T18:17:25.456Z",
+      "last_message_preview": "Hola Carina, disculpas por la demora en la respuesta. \n\nPara cotizar el trabajo tengo que ir a ver cómo está el piso. Si está pegado entonce",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-11T11:46:57.000Z",
-      "last_outbound_at": "2026-09-10T18:12:57.220Z"
+      "last_outbound_at": "2026-09-14T18:17:25.456Z"
     },
     {
       "id": "conv-email-1a07e3feddad",
@@ -141879,7 +141879,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0815b2ac47",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-10T18:17:51.000Z",
       "last_message_preview": "3 ,x 3,60 //// 10 aprox en total / dan garantia completa? Gracias\r\n\r\nEl jue, 10 sept 2026 a las 15:09, Pisos Pacific (<info@pisospacific.com",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -160420,6 +160420,15 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0a1213f1a068b5"
+    },
+    {
+      "id": "m-1789409845456-qqqn",
+      "conversation_id": "conv-email-1a07deac3182",
+      "direction": "out",
+      "body": "Hola Carina, disculpas por la demora en la respuesta. \n\nPara cotizar el trabajo tengo que ir a ver cómo está el piso. Si está pegado entonces lo más probable es que te convenga hacerlo con albañil porque vas a tener que picar un poco la carpeta. \n\nSi te parece, podemos coordinar para una visita la semana que viene!\n\nSaludos,\n\nJuan",
+      "ts": "2026-09-14T18:17:25.456Z",
+      "status": "sent",
+      "wa_id": "1a0a123605b99e4c"
     }
   ],
   "templates": [
