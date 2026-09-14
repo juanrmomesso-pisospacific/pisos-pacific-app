@@ -135524,11 +135524,11 @@
       "contact_name": "@juanrmomesso",
       "linked_client_name": null,
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-09-09T23:09:42.670Z",
-      "last_message_preview": "📎 Adjunto",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-02T18:36:25.456Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-14T15:15:21.766Z",
+      "last_message_preview": "🔥",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-14T15:15:21.766Z",
       "last_outbound_at": "2026-09-09T23:09:42.670Z",
       "ignored": true
     },
@@ -159986,6 +159986,14 @@
       "body": "✉️ Re: Box label of PAC308R film and heating cable price list\n\nDear Mike and Daniel,\r\n\r\nFor 4mm Heating cable (16W/m) price list, pls see the attached price list\r\nagain.\r\nThe 4mm-diameter heating cable has a thinner insulation layer, so 16W is\r\nsuitable and safe.\r\n4mm heating cable's modes require MOQ. Pls see the attached file.\r\nIf you want to test 4mm heating cable, we have some stocks of\r\nENC16-20 (20M) now.\r\nIf you want us to ship it by Sea, pls let me know q'ty of ENC16-20\r\n\r\nDear Daniel, Pls ask your forwarding agency to contact me for Air shipment.\r\nI am still waiting for their Korean contact info.\r\n\r\nJoshua\r\nFelix\r\n\r\n\r\n\r\n\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 4588 6512\r\nTel. : +82 31 866 5688\r\n\r\n* www.felixkorea.com <http://www.felixkorea.com>*\r\n\r\n\r\n\r\n2026년 9월 11일 (금) 오후 1:39, FELIXKOREA <felixkorea.com@gmail.com>님이 작성:\r\n\r\n> Dear Daniel,\r\n>\r\n> Pls see the attached box label of PAC308R film\r\n> and pls find the attached price list of heating cable.\r\n> If you add heating cables on this Sea shipment, pls let me know model no.\r\n> and q'ty.\r\n> I will revise \"Balance\" Proforma Invoice later.\r\n>\r\n> Many thanks\r\n>\r\n> Joshua\r\n> Felix Korea\r\n>\r\n>\r\n> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> Korea. 11405\r\n> Mob. : +82 10 4588 6512 <010-4588-6512>\r\n> Tel. : +82 31 866 5688 <031-866-5688>\r\n>\r\n> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>\r\n>\r\n>\r\n> 2026년 9월 4일 (금) 오후 1:26, FELIXKOREA <felixkorea.com@gmail.com>님이 작성:\r\n>\r\n>> Dear Daniel or Juan,\r\n>>\r\n>> Pls find the attached packi",
       "ts": "2026-09-14T08:44:28.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789398922874-kibx",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "in",
+      "body": "🔥",
+      "ts": "2026-09-14T15:15:21.766Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -170112,7 +170120,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwNzU0MTEzNTA2NzIwODEzMjUwODIyMjc2NzQ5NzIxNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwNzU0MTczMDAxNDA1MTQxNDc1MDQ4NDg1NzA5NDE0NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzY3MDIwMjQ3MzU1NjUyODIwMzg2NjE1NTUxNTkwNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzY3MDMyMzU3MDgwNTExNTE2NDU5MTEwMTMxMzAyNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzY3MDMyMzU3MDgwNTExNTE2NDU5MTEwMTMxMzAyNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAwODU4Mzk1NTU5MjA4MTMzNDg1NzE0Nzg1NDM1NjQ4MAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
