@@ -141953,11 +141953,12 @@
       "linked_lead_id": "lead-email-1a08385656b7",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-09T00:15:52.000Z",
-      "last_message_preview": "Formulario web — 13m² · Con Colocación · CP 1900 · 18 590",
+      "last_message_at": "2026-09-14T18:25:05.289Z",
+      "last_message_preview": "Hola Lucas, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-09T00:15:52.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-09T00:15:52.000Z",
+      "last_outbound_at": "2026-09-14T18:25:05.289Z"
     },
     {
       "id": "conv-email-1a086d13eec2",
@@ -160527,6 +160528,15 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0a1290a80397f3"
+    },
+    {
+      "id": "m-1789410305289-tt6s",
+      "conversation_id": "conv-email-1a08385656b7",
+      "direction": "out",
+      "body": "Hola Lucas, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. La misma sería por el mínimo de 45 m2. \n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-14T18:25:05.289Z",
+      "status": "sent",
+      "wa_id": "1a0a12a64da5446f"
     }
   ],
   "templates": [
