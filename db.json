@@ -134142,7 +134142,7 @@
       "status": "Quoted",
       "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-08-22T00:56:08.000Z",
-      "last_touch_at": "2026-09-14T18:31:13.353Z"
+      "last_touch_at": "2026-09-14T20:01:03.000Z"
     },
     {
       "id": "lead-email-1a0270fb075c",
@@ -141198,12 +141198,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a026f7cda12",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-14T18:31:29.225Z",
-      "last_message_preview": "📄 Presupuesto NA9746 - Obra - Cordoba - Maria Elisa Barroso Rodriguez.pdf",
+      "unread_count": 1,
+      "last_message_at": "2026-09-14T20:01:03.000Z",
+      "last_message_preview": "Hola, cómo estas? gracias por el presupuesto. Para la instalación necesito\r\ncomprar algo más?\r\n\r\n*Ab. María Elisa Barroso Rodríguez*\r\n*M.P.:",
       "email_subject": "Re: Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-24T18:19:32.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-14T20:01:03.000Z",
       "last_outbound_at": "2026-09-14T18:31:29.225Z"
     },
     {
@@ -160913,6 +160913,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nGracias! Mirá es para la cocina, me interesa cotizar de la Linea H2O los\r\nmás claritos, el Aspen y el Natural Oak. Serían 12 m aprox. Son flotantes,\r\n¿no?, ¿con el sistema click?\r\nTe dejo mi celular, 1134247364, pero si me das un estimativo de precio voy\r\na saber si podemos avanzar o no.\r\n\r\nun saludo!\r\ncarolina\r\n\r\nEl lun, 14 sept 2026 a las 15:21, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Carolina, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesad@\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos,\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-14T19:42:50.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0a1826e5c0",
+      "conversation_id": "conv-email-1a034fff1d5d",
+      "direction": "in",
+      "body": "✉️ Re: Presupuesto Pisos Pacific — Obra - Cordoba\n\nHola, cómo estas? gracias por el presupuesto. Para la instalación necesito\r\ncomprar algo más?\r\n\r\n*Ab. María Elisa Barroso Rodríguez*\r\n*M.P.: 1-41910*\r\n*Córdoba*\r\n\r\n\r\n\r\nEl lun, 14 sept 2026 a las 15:31, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Maria, te comparto el presupuesto NA9746 adjunto. Cualquier consulta\r\n> quedo a disposición.\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-09-14T20:01:03.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -169215,7 +169223,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-14T00:00:34.339Z",
     "gmail_seen_ids": [
-      "19f38cc7509767e1",
       "19f390f23c8ee88b",
       "19f39163d3be6da8",
       "19f3bad2cdd99462",
@@ -170014,7 +170021,8 @@
       "1a0a07a408a0d5a6",
       "1a0a0818cbaec8bb",
       "1a0a1285b4df4b48",
-      "1a0a171c2b3fb2ca"
+      "1a0a171c2b3fb2ca",
+      "1a0a1826e5c096f7"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -173198,20 +173206,6 @@
       "note": "Aprendida al clasificar \"Hugo Ramirez\""
     },
     {
-      "id": "local-1785193356563-ofc4h",
-      "match": [
-        "IB Proveedores"
-      ],
-      "cuit": null,
-      "counterparty": "IB Proveedores",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"IB Proveedores\""
-    },
-    {
       "id": "local-1785193402105-vragc",
       "match": [
         "PAGO A PROVEEDORES OP.4119128"
@@ -173408,20 +173402,6 @@
       "note": "Aprendida al clasificar \"CRÉDITO POR TRANSFERENCIA\""
     },
     {
-      "id": "local-1785790816865-fvwpu",
-      "match": [
-        "IB Proveedores"
-      ],
-      "cuit": null,
-      "counterparty": "IB Proveedores",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"IB Proveedores\""
-    },
-    {
       "id": "local-1785791989395-0aedu",
       "match": [
         "IMDO"
@@ -173490,20 +173470,6 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"TARJETA MASTER Nro:00090161\""
-    },
-    {
-      "id": "local-1786240382283-pkd17",
-      "match": [
-        "IB Proveedores"
-      ],
-      "cuit": null,
-      "counterparty": "IB Proveedores",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"IB Proveedores\""
     },
     {
       "id": "local-1786240514707-8wbxf",
@@ -173672,20 +173638,6 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"BLOISEQR\""
-    },
-    {
-      "id": "local-1788130072586-9yqxg",
-      "match": [
-        "IB Proveedores"
-      ],
-      "cuit": null,
-      "counterparty": "Matias Pagano",
-      "category": "Venta - Pisos",
-      "subcategory": "H2O HD XL",
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"IB Proveedores\""
     },
     {
       "id": "local-1788206447594-zb16u",
