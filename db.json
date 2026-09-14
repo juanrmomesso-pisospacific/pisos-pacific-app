@@ -142092,10 +142092,11 @@
       "linked_lead_id": "lead-instagram-1789342423594",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-13T23:33:42.604Z",
-      "last_message_preview": "Hola, quisiera saber dónde tienen el shorrom quiero pasar a ver el material .gracias",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-13T23:33:42.604Z"
+      "last_message_at": "2026-09-14T18:10:06.616Z",
+      "last_message_preview": "El depósito está en Olivos, a la altura de Thames y Panamericana, y trabajamos con cita previa.\n\nSi te interesa acercarte, te paso un WhatsA",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-13T23:33:42.604Z",
+      "last_outbound_at": "2026-09-14T18:10:06.616Z"
     }
   ],
   "messages": [
@@ -160221,6 +160222,15 @@
       "ts": "2026-09-14T18:08:36.477Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwODc3NTY5OTk4MTI4ODIwOTg3MjM3NzAzNTYyMDM1MgZDZD"
+    },
+    {
+      "id": "m-1789409406616-2b76",
+      "conversation_id": "conv-1789342423594-fby7",
+      "direction": "out",
+      "body": "El depósito está en Olivos, a la altura de Thames y Panamericana, y trabajamos con cita previa.\n\nSi te interesa acercarte, te paso un WhatsApp para que puedas coordinar día y horario.\nY si te resulta más cómodo, también tenemos la opción de enviar muestras a domicilio. \n\n+54 9 11 2331-3914",
+      "ts": "2026-09-14T18:10:06.616Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwODc3NzM2MzMxOTIyMDcxNTM2Mjc0NDY3MTQwNDAzMgZDZD"
     }
   ],
   "templates": [
