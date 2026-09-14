@@ -141984,13 +141984,14 @@
       "contact_name": "Nourchene Jaber",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a08b801501c",
-      "status": "open",
-      "unread_count": 1,
+      "status": "closed",
+      "unread_count": 0,
       "last_message_at": "2026-09-10T13:26:55.000Z",
       "last_message_preview": "Dear Pacific Team,\r\n\r\nI hope this email finds you well.\r\n\r\nWe are currently working on a student residence project in Porto, Portugal-specif",
       "email_subject": "Inquiry regarding PEFC/FSC Certification for PACIFIC H2O Flooring (Ref: SM51-2)",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-10T13:26:55.000Z"
+      "last_inbound_at": "2026-09-10T13:26:55.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1789060482286-9lhq",
