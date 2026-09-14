@@ -35340,7 +35340,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "Arq. Gladys Dorado",
       "has_iva": true,
-      "price": 18360.298,
+      "price": 17872.147699999998,
       "zoned": false,
       "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada + 4 más",
       "items": [
@@ -35352,9 +35352,9 @@
           "unit_price": 75,
           "cost": 29,
           "category": "Pisos de Madera",
-          "disc_value": 12,
+          "disc_value": 15,
           "total": 13447.5,
-          "discount": 1613.7,
+          "discount": 2017.13,
           "image": "",
           "target_item_index": null
         },
@@ -35411,8 +35411,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 1613.7,
-      "discount_amount": 1613.7,
+      "discount_total": 2017.13,
+      "discount_amount": 2017.13,
       "reseller_id": "CLI-hugo-schellotto",
       "reseller_name": "Hugo Schellotto",
       "currency": "USD",
