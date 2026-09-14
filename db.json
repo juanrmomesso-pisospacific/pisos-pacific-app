@@ -141726,11 +141726,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789072561380",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-13T22:08:23.818Z",
-      "last_message_preview": "Apenas llegue te mando",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-12T01:18:25.226Z",
+      "unread_count": 2,
+      "last_message_at": "2026-09-14T01:29:53.675Z",
+      "last_message_preview": "Ustedes realizan colocación?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-14T01:29:53.675Z",
       "last_outbound_at": "2026-09-13T22:08:23.818Z"
     },
     {
@@ -159962,6 +159962,22 @@
       "body": "Hola, quisiera saber dónde tienen el shorrom quiero pasar a ver el material .gracias",
       "ts": "2026-09-13T23:33:42.604Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789349387892-42gq",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "in",
+      "body": "Dale",
+      "ts": "2026-09-14T01:29:47.110Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1789349394439-iugw",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "in",
+      "body": "Ustedes realizan colocación?",
+      "ts": "2026-09-14T01:29:53.675Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -170085,7 +170101,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY5OTIxOTk5NjU2Mjc3MjozMzAwNDU5Mzg3MjE4MjAyNjMzNTYyMDAxNDEzNjA5ODgxNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAwNjg5MzI1NDcxNjI0OTUxODg0Mzk1OTMzODU5ODQwMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwNzU0MTEzNTA2NzIwODEzMjUwODIyMjc2NzQ5NzIxNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwNzU0MTczMDAxNDA1MTQxNDc1MDQ4NDg1NzA5NDE0NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwNzU0MTczMDAxNDA1MTQxNDc1MDQ4NDg1NzA5NDE0NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzY3MDIwMjQ3MzU1NjUyODIwMzg2NjE1NTUxNTkwNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzY3MDMyMzU3MDgwNTExNTE2NDU5MTEwMTMxMzAyNAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
