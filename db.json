@@ -128790,7 +128790,7 @@
       "client_id": null,
       "supplier_id": null,
       "description": "IB Proveedores",
-      "sale_ref": null,
+      "sale_ref": "A4209",
       "currency": "ARS",
       "amount_ars": 6133101.86,
       "amount_usd": 3969.65,
@@ -128798,10 +128798,11 @@
       "fixed_variable": "Variable",
       "expense_type": null,
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "extracto bancario importado — verificar clasificación y signo",
+      "needs_review": false,
+      "review_reason": null,
       "raw_name": "IB Proveedores",
-      "id": "MOV-IMP-mu1on375-002"
+      "id": "MOV-IMP-mu1on375-002",
+      "linked_sale_id": "local-sale-1788999887432-9eyv"
     },
     {
       "source": "bdc-upload",
@@ -174775,6 +174776,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Debito Transf. HB\""
+    },
+    {
+      "id": "local-1789418750213-wydvv",
+      "match": [
+        "IB Proveedores"
+      ],
+      "cuit": null,
+      "counterparty": "IB Proveedores",
+      "category": "Otros",
+      "subcategory": null,
+      "expense_type": null,
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"IB Proveedores\""
     }
   ],
   "product_aliases": [
