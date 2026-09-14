@@ -142001,7 +142001,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0966c5bc72",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-12T16:21:18.000Z",
       "last_message_preview": "Formulario web — 69m² · Sin Colocación · CP 1426 · charcas 3048 caba",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -142048,11 +142048,12 @@
       "linked_lead_id": "lead-email-1a09c8c4da78",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-13T20:53:55.000Z",
-      "last_message_preview": "Formulario web — 105m² · Sin Colocación · CP 2345 · Mariano Moreno 479",
+      "last_message_at": "2026-09-14T18:01:42.559Z",
+      "last_message_preview": "Hola Romina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-13T20:53:55.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-13T20:53:55.000Z",
+      "last_outbound_at": "2026-09-14T18:01:42.559Z"
     },
     {
       "id": "conv-email-1a09c9a4005b",
@@ -160172,6 +160173,15 @@
       "ts": "2026-09-14T18:00:41.969Z",
       "status": "failed",
       "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"AViLIeC_hm3PAUyTtQ021tc\"}}"
+    },
+    {
+      "id": "m-1789408902559-b0wg",
+      "conversation_id": "conv-email-1a09c8c4da78",
+      "direction": "out",
+      "body": "Hola Romina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-14T18:01:42.559Z",
+      "status": "sent",
+      "wa_id": "1a0a114fcc140262"
     }
   ],
   "templates": [
