@@ -160154,6 +160154,15 @@
       "ts": "2026-09-14T18:00:13.314Z",
       "status": "failed",
       "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"AjTZF0SHy0fEI76CrMj_Xn-\"}}"
+    },
+    {
+      "id": "m-1789408825893-sfni",
+      "conversation_id": "conv-1789182529385-84f3",
+      "direction": "out",
+      "body": "estamos en zona norte. En olivos",
+      "ts": "2026-09-14T18:00:25.893Z",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"A_3bzxoxf5PVeh5kxeLVZiN\"}}"
     }
   ],
   "templates": [
