@@ -37074,6 +37074,18 @@
       ],
       "notes": null,
       "updated_at": "2026-09-10T00:25:15.458Z"
+    },
+    {
+      "id": "CLI-mu1im2wy-bog3",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "arq. Chloe | Constructora SZ",
+      "updated_at": "2026-09-14T17:26:49.666Z"
     }
   ],
   "expenses": [],
