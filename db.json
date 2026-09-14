@@ -142015,13 +142015,14 @@
       "contact_name": "Maximiliano Dieguez",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a08c6384a92",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-10T17:34:47.000Z",
       "last_message_preview": "[image: logo.jpg]\r\n[image: 236.jpg]\r\n[image: 306.jpg]\r\n[image: 306_2.jpg]\r\n[image: 236_2.jpg]\r\n\r\n*RODAVIAL SRL*\r\n\r\n*SOLUCIONES INTEGRALES EN",
       "email_subject": "Venta de neumáticos de calle e industriales",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-10T17:34:47.000Z"
+      "last_inbound_at": "2026-09-10T17:34:47.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a08c6c95b11",
@@ -142032,11 +142033,12 @@
       "linked_lead_id": "lead-email-1a08c6c95b11",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-10T17:45:20.000Z",
-      "last_message_preview": "Formulario web — 26.4m² · Con Colocación · CP 1602 · J. a. Roca 1997, Florida",
+      "last_message_at": "2026-09-14T18:22:10.745Z",
+      "last_message_preview": "Hola Ana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras do",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-10T17:45:20.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-10T17:45:20.000Z",
+      "last_outbound_at": "2026-09-14T18:22:10.745Z"
     },
     {
       "id": "conv-1789072561380-1ij4",
@@ -160449,6 +160451,15 @@
       "ts": "2026-09-14T18:21:57.049Z",
       "status": "sent",
       "wa_id": "1a0a12784350c76e"
+    },
+    {
+      "id": "m-1789410130745-d0v4",
+      "conversation_id": "conv-email-1a08c6c95b11",
+      "direction": "out",
+      "body": "Hola Ana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-14T18:22:10.745Z",
+      "status": "sent",
+      "wa_id": "1a0a127bb46726f1"
     }
   ],
   "templates": [
