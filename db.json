@@ -38798,6 +38798,15 @@
       "category_default": null,
       "notes": null,
       "name": "Panamer"
+    },
+    {
+      "id": "PROV-mu1pe9tv-ul6g",
+      "type": "supplier",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null,
+      "name": "Seguros Almasque"
     }
   ],
   "categories": [
