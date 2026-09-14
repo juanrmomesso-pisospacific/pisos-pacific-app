@@ -35266,6 +35266,63 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a026f7cda12",
       "share_token": "279f03986bdc5b62e14f5d24"
+    },
+    {
+      "id": "local-1789411013941-24gjk",
+      "client_id": "",
+      "client_name": "Romina Mabel Pueyo",
+      "client_dni": "",
+      "client_email": "romipueyo@hotmail.com",
+      "client_phone": "",
+      "client_address": "Mariano Moreno 479",
+      "internal_notes": "Formulario web — 12m² · Con Colocación · CP C1425",
+      "public_notes": "Servicio de entrega sin descarga, valor aproximado. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Obra - Santa Fe",
+      "has_iva": true,
+      "price": 4591.5507,
+      "zoned": false,
+      "description": "H2O HD XL - Notte 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-028",
+          "sku": "PROD-028",
+          "description": "H2O HD XL - Notte 6,5mm x 23cm x 1,50m",
+          "quantity": 106.3,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 12,
+          "total": 4039.4,
+          "discount": 484.73,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 240,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 240,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 484.73,
+      "discount_amount": 484.73,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-14T18:36:53.583Z",
+      "quote_number": "A2688",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a09c8c4da78"
     }
   ],
   "clients": [
@@ -135970,10 +136027,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 105m² · Sin Colocación · CP 2345",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-09-13T20:53:55.000Z",
-      "last_touch_at": "2026-09-14T18:34:45.778Z"
+      "last_touch_at": "2026-09-14T18:36:53.888Z"
     },
     {
       "id": "lead-email-1a09c9a4005b",
