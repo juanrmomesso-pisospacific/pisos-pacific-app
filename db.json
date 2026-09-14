@@ -38789,6 +38789,15 @@
       "category_default": null,
       "notes": null,
       "name": "Ortos"
+    },
+    {
+      "id": "PROV-mu1p75z2-t59t",
+      "type": "supplier",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null,
+      "name": "Panamer"
     }
   ],
   "categories": [
