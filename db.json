@@ -141868,11 +141868,11 @@
       "linked_lead_id": "lead-instagram-1789072561380",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-14T01:29:53.675Z",
-      "last_message_preview": "Ustedes realizan colocación?",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-14T18:08:36.477Z",
+      "last_message_preview": "si hacemos colocaciones!",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T01:29:53.675Z",
-      "last_outbound_at": "2026-09-13T22:08:23.818Z"
+      "last_outbound_at": "2026-09-14T18:08:36.477Z"
     },
     {
       "id": "conv-email-1a0905db171f",
@@ -160212,6 +160212,15 @@
       "ts": "2026-09-14T18:05:42.699Z",
       "status": "sent",
       "wa_id": "1a0a118a7c487068"
+    },
+    {
+      "id": "m-1789409316477-8veh",
+      "conversation_id": "conv-1789072561380-1ij4",
+      "direction": "out",
+      "body": "si hacemos colocaciones!",
+      "ts": "2026-09-14T18:08:36.477Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwODc3NTY5OTk4MTI4ODIwOTg3MjM3NzAzNTYyMDM1MgZDZD"
     }
   ],
   "templates": [
