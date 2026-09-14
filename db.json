@@ -590,7 +590,7 @@
       "active": true,
       "margin": 171,
       "stock": 1314.95,
-      "reservedStock": 938.33,
+      "reservedStock": 1120.4,
       "subLine": "Colección Madera",
       "shortName": "Roble Light Brushed 14/3mm x 19x190",
       "thicknessMm": 14,
@@ -754,7 +754,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 938.5653279999999,
-      "reservedStock": 4496.64,
+      "reservedStock": 4536.152000000001,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1841,7 +1841,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8229.847,
+      "reservedStock": 8231.847,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -1865,7 +1865,7 @@
       "active": true,
       "margin": 172.9,
       "stock": 0,
-      "reservedStock": 6414.63,
+      "reservedStock": 6578.63,
       "subLine": "Colocación Piso",
       "shortName": "Colocación Prefinished Sobre Manta",
       "thicknessMm": null,
@@ -2105,7 +2105,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 166,
+      "reservedStock": 188,
       "subLine": "Escalera",
       "shortName": "Colocación Pedada/Frentín H2O",
       "thicknessMm": null,
@@ -2129,7 +2129,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 43,
+      "reservedStock": 49,
       "subLine": "Escalera",
       "shortName": "Colocación Compensados y Descansos",
       "thicknessMm": null,
@@ -2321,7 +2321,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 66,
+      "reservedStock": 69.15,
       "subLine": "Revestimientos",
       "shortName": "Colocación Revestimiento Cielo Raso PVC/Madera",
       "thicknessMm": null,
@@ -2441,7 +2441,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 13419,
+      "reservedStock": 13769,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -2507,7 +2507,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 209,
+      "reservedStock": 225,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -2543,7 +2543,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 294,
+      "reservedStock": 318,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -3163,7 +3163,7 @@
       "cost": 11,
       "currency": "USD",
       "stock": 84,
-      "reservedStock": 15,
+      "reservedStock": 32,
       "active": true,
       "margin": 173,
       "createdAt": "2026-07-14T22:45:33.721Z",
@@ -34378,7 +34378,7 @@
       "currency": "USD",
       "created_at": "2026-09-08T00:21:15.737Z",
       "quote_number": "A5123",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1788826226537-c1eik"
     },
     {
@@ -34588,7 +34588,7 @@
       "currency": "USD",
       "created_at": "2026-09-09T15:15:49.058Z",
       "quote_number": "A9912",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1788966783758-idfbh"
     },
     {
@@ -34903,7 +34903,7 @@
       "currency": "USD",
       "created_at": "2026-09-14T17:39:36.383Z",
       "quote_number": "A8799",
-      "status": "DRAFT"
+      "status": "SENT"
     }
   ],
   "clients": [
@@ -142061,7 +142061,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a09c9a4005b",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-13T21:08:57.000Z",
       "last_message_preview": "Hola estimados,\r\nTengo un restaurante y necesitaría sesenta metros cuadrados de piso color\r\nroble.\r\nMuchas gracias,",
       "email_subject": "Piso color roble",
@@ -167150,6 +167150,150 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 180,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:41.611Z",
+      "type": "quote_reserve",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 4.1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:41.611Z",
+      "type": "quote_reserve",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "SERV-126",
+      "sku": "SERV-126",
+      "qty": 3.15,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:41.611Z",
+      "type": "quote_reserve",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 6.192,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:41.611Z",
+      "type": "quote_reserve",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:41.611Z",
+      "type": "quote_reserve",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 10.42,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:41.611Z",
+      "type": "quote_reserve",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:51.223Z",
+      "type": "quote_reserve",
+      "ref": "local-1788966949716-qtxg5",
+      "product_id": "PROD-201",
+      "sku": "PROD-201",
+      "qty": 182.07,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:51.223Z",
+      "type": "quote_reserve",
+      "ref": "local-1788966949716-qtxg5",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": 164,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:51.223Z",
+      "type": "quote_reserve",
+      "ref": "local-1788966949716-qtxg5",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 200,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:56.259Z",
+      "type": "quote_reserve",
+      "ref": "local-1788826875945-2qxbe",
+      "product_id": "local-1784069133996-uwvg1",
+      "sku": "PROD - 102983",
+      "qty": 17,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:56.259Z",
+      "type": "quote_reserve",
+      "ref": "local-1788826875945-2qxbe",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 18.8,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:56.259Z",
+      "type": "quote_reserve",
+      "ref": "local-1788826875945-2qxbe",
+      "product_id": "111223",
+      "sku": "111223",
+      "qty": 16,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:56.259Z",
+      "type": "quote_reserve",
+      "ref": "local-1788826875945-2qxbe",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 150,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:56.259Z",
+      "type": "quote_reserve",
+      "ref": "local-1788826875945-2qxbe",
+      "product_id": "SERV-118",
+      "sku": "SERV-118",
+      "qty": 6,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:56.259Z",
+      "type": "quote_reserve",
+      "ref": "local-1788826875945-2qxbe",
+      "product_id": "SERV-117",
+      "sku": "SERV-117",
+      "qty": 22,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-14T17:54:56.259Z",
+      "type": "quote_reserve",
+      "ref": "local-1788826875945-2qxbe",
+      "product_id": "1534",
+      "sku": "1534",
+      "qty": 24,
       "warehouse_id": "main"
     }
   ],
