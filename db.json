@@ -136862,6 +136862,22 @@
       "address": "Vicente Lopez",
       "created_at": "2026-09-14T19:58:10.313Z",
       "last_touch_at": "2026-09-14T19:59:10.581Z"
+    },
+    {
+      "id": "lead-instagram-1789421824662",
+      "name": "@martinfabian212",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-14T21:37:03.504Z",
+      "last_touch_at": "2026-09-14T21:37:03.504Z"
     }
   ],
   "conversations": [
@@ -143324,6 +143340,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-13T23:33:42.604Z",
       "last_outbound_at": "2026-09-14T18:10:06.616Z"
+    },
+    {
+      "id": "conv-1789421824662-wzq1",
+      "channel": "instagram",
+      "contact_id": "2197251394179133",
+      "contact_name": "@martinfabian212",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1789421824662",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-14T21:37:03.504Z",
+      "last_message_preview": "Hola, que tal!\nBuenas tardes, quería consultar si tienen showroom? Y por qué zona están?\nGracias..",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-14T21:37:03.504Z"
     }
   ],
   "messages": [
@@ -161595,6 +161625,14 @@
       "body": "✉️ Re: Presupuesto Pisos Pacific — Obra - Cordoba\n\nHola, cómo estas? gracias por el presupuesto. Para la instalación necesito\r\ncomprar algo más?\r\n\r\n*Ab. María Elisa Barroso Rodríguez*\r\n*M.P.: 1-41910*\r\n*Córdoba*\r\n\r\n\r\n\r\nEl lun, 14 sept 2026 a las 15:31, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Maria, te comparto el presupuesto NA9746 adjunto. Cualquier consulta\r\n> quedo a disposición.\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-14T20:01:03.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789421824662-d5md",
+      "conversation_id": "conv-1789421824662-wzq1",
+      "direction": "in",
+      "body": "Hola, que tal!\nBuenas tardes, quería consultar si tienen showroom? Y por qué zona están?\nGracias..",
+      "ts": "2026-09-14T21:37:03.504Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -171894,7 +171932,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwNzU0MTczMDAxNDA1MTQxNDc1MDQ4NDg1NzA5NDE0NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzY3MDIwMjQ3MzU1NjUyODIwMzg2NjE1NTUxNTkwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzY3MDMyMzU3MDgwNTExNTE2NDU5MTEwMTMxMzAyNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAwODU4Mzk1NTU5MjA4MTMzNDg1NzE0Nzg1NDM1NjQ4MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAwODU4Mzk1NTU5MjA4MTMzNDg1NzE0Nzg1NDM1NjQ4MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAwOTAwNjQxODA5MDA5NDkzNjQ5NzQ5OTk3NDY2NDE5MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
