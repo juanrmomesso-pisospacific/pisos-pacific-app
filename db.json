@@ -135541,10 +135541,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: Piso para living — Consulta se puede colocar piso de roble o lapacho o similar dejando el\r\nexistente abajo y como se haría en ese caso con los niveles en las\r\nacometidas a baño, cocina y dormitorio\r\n",
-      "status": "New",
-      "assigned_seller": "",
+      "status": "Contacted",
+      "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-09-12T15:00:14.000Z",
-      "last_touch_at": "2026-09-12T15:00:14.000Z"
+      "last_touch_at": "2026-09-14T18:05:48.108Z"
     },
     {
       "id": "lead-email-1a0966c5bc72",
@@ -141872,7 +141872,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0905db171f",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-11T12:07:30.000Z",
       "last_message_preview": "Buenos Aires, 11 de septiembre de 2026 \r\nPor medio del presente, se solicita cotización para la compra directa, provisión y colocación de pi",
       "email_subject": "PEDIDO DE PRESUPUESTO",
@@ -141987,11 +141987,12 @@
       "linked_lead_id": "lead-email-1a096225efda",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-12T15:00:14.000Z",
-      "last_message_preview": "Consulta se puede colocar piso de roble o lapacho o similar dejando el\r\nexistente abajo y como se haría en ese caso con los niveles en las\r\n",
+      "last_message_at": "2026-09-14T18:05:42.699Z",
+      "last_message_preview": "Hola Adolfo, ¿cómo estás?\n\nPoder colocar, se puede, pero hiciste la pregunta exacta. El piso de roble o de lapacho, como mínimo tiene 12mm d",
       "email_subject": "Piso para living",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-12T15:00:14.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-12T15:00:14.000Z",
+      "last_outbound_at": "2026-09-14T18:05:42.699Z"
     },
     {
       "id": "conv-email-1a0966c5bc72",
@@ -160192,6 +160193,15 @@
       "ts": "2026-09-14T18:02:11.396Z",
       "status": "sent",
       "wa_id": "1a0a1156dd311087"
+    },
+    {
+      "id": "m-1789409142699-vkr5",
+      "conversation_id": "conv-email-1a096225efda",
+      "direction": "out",
+      "body": "Hola Adolfo, ¿cómo estás?\n\nPoder colocar, se puede, pero hiciste la pregunta exacta. El piso de roble o de lapacho, como mínimo tiene 12mm de altura. Esto implicaría que si estabas a nivel con el piso original y las acometidas, entonces te va a quedar muy alto. \n\nSe pueden agregar varillas de desnivel de acero pero eso es a criterio y gusto tuyo!\n\nPor otro lado, hay que considerar también las alturas de las puertas, que probablemente tengas que cepillar. \n\nCuántos m2 necesitas cubrir? En base a eso puedo presupuestarte distintas opciones. Si el valor te parece que se ajusta a tu presupuesto, la semana que viene hacemos una visita técnica y te llevo opciones para que podamos ver bien los niveles.\n\nMuchas gracias! \nSaludos,",
+      "ts": "2026-09-14T18:05:42.699Z",
+      "status": "sent",
+      "wa_id": "1a0a118a7c487068"
     }
   ],
   "templates": [
