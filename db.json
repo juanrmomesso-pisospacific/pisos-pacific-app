@@ -35082,6 +35082,62 @@
       "created_at": "2026-09-14T18:16:00.345Z",
       "quote_number": "A6403",
       "status": "DRAFT"
+    },
+    {
+      "id": "local-1789410201007-8xie5",
+      "client_id": "",
+      "client_name": "Lihuen Di Marco",
+      "client_dni": "",
+      "client_email": "dimarcomarialihuen@gmail.com",
+      "client_phone": "",
+      "client_address": "",
+      "internal_notes": "Formulario web — 12m² · Con Colocación · CP C1425",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Cotizacion SPC - Zona Sur",
+      "has_iva": true,
+      "price": 647.5920000000001,
+      "zoned": false,
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 10.4,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "total": 395.2,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 140,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 140,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-14T18:23:20.567Z",
+      "quote_number": "A4449",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a06c3aa1772"
     }
   ],
   "clients": [
@@ -134966,10 +135022,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 10m² · Sin Colocación · CP 1842",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-04T11:42:56.000Z",
-      "last_touch_at": "2026-09-09T12:48:28.000Z"
+      "last_touch_at": "2026-09-14T18:23:21.096Z"
     },
     {
       "id": "lead-email-1a06cb4a5107",
