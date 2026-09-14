@@ -140989,13 +140989,14 @@
       "contact_name": "Juan Rozenbeim",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a036782d7b8",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-25T01:10:39.000Z",
       "last_message_preview": "Formulario web — 3.332m² · Con Colocación · CP 1416 · Av San Martin 3057",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-25T01:10:39.000Z"
+      "last_inbound_at": "2026-08-25T01:10:39.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a039852a3ce",
@@ -141826,11 +141827,12 @@
       "linked_lead_id": "lead-email-1a077dbea19c",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-06T17:54:55.000Z",
-      "last_message_preview": "Formulario web — 30m² · Con Colocación · CP 1712 · Almafuerte 2137",
+      "last_message_at": "2026-09-14T18:27:35.630Z",
+      "last_message_preview": "Hola IGNACIO, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-06T17:54:55.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-06T17:54:55.000Z",
+      "last_outbound_at": "2026-09-14T18:27:35.630Z"
     },
     {
       "id": "conv-1788721527142-l5mf",
@@ -160627,6 +160629,15 @@
       "ts": "2026-09-14T18:27:13.631Z",
       "status": "sent",
       "wa_id": "1a0a12c59675c13b"
+    },
+    {
+      "id": "m-1789410455630-uwbr",
+      "conversation_id": "conv-email-1a077dbea19c",
+      "direction": "out",
+      "body": "Hola IGNACIO, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\n\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-14T18:27:35.630Z",
+      "status": "sent",
+      "wa_id": "1a0a12cafd1e4ef0"
     }
   ],
   "templates": [
