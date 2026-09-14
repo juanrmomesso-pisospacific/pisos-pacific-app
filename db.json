@@ -38807,6 +38807,15 @@
       "category_default": null,
       "notes": null,
       "name": "Seguros Almasque"
+    },
+    {
+      "id": "PROV-mu1pfbhx-jpxw",
+      "type": "supplier",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null,
+      "name": "Escribania Susana"
     }
   ],
   "categories": [
