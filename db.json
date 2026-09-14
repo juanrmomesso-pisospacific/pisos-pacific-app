@@ -143334,11 +143334,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789342423594",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-14T18:10:06.616Z",
-      "last_message_preview": "El depósito está en Olivos, a la altura de Thames y Panamericana, y trabajamos con cita previa.\n\nSi te interesa acercarte, te paso un WhatsA",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-13T23:33:42.604Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-14T22:51:01.468Z",
+      "last_message_preview": "Gracias mando mje",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-14T22:51:01.468Z",
       "last_outbound_at": "2026-09-14T18:10:06.616Z"
     },
     {
@@ -161633,6 +161633,14 @@
       "body": "Hola, que tal!\nBuenas tardes, quería consultar si tienen showroom? Y por qué zona están?\nGracias..",
       "ts": "2026-09-14T21:37:03.504Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789426263034-8nbk",
+      "conversation_id": "conv-1789342423594-fby7",
+      "direction": "in",
+      "body": "Gracias mando mje",
+      "ts": "2026-09-14T22:51:01.468Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -171933,7 +171941,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzY3MDIwMjQ3MzU1NjUyODIwMzg2NjE1NTUxNTkwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NTcyNDU1MzAyOTc4MzozMzAwNzY3MDMyMzU3MDgwNTExNTE2NDU5MTEwMTMxMzAyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAwODU4Mzk1NTU5MjA4MTMzNDg1NzE0Nzg1NDM1NjQ4MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAwOTAwNjQxODA5MDA5NDkzNjQ5NzQ5OTk3NDY2NDE5MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAwOTAwNjQxODA5MDA5NDkzNjQ5NzQ5OTk3NDY2NDE5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwOTA4ODI4NDA4NzE2ODYzODgxMzgxMTM5ODE0ODA5NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
