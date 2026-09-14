@@ -136065,6 +136065,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-13T23:33:42.604Z",
       "last_touch_at": "2026-09-13T23:33:42.604Z"
+    },
+    {
+      "id": "local-1789415890527-l1a6d",
+      "name": "Arq. Ailén Alamán",
+      "phone": "‪+54 9 3489 65‑6353‬",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "New",
+      "assigned_seller": "",
+      "address": "Vicente Lopez",
+      "created_at": "2026-09-14T19:58:10.313Z",
+      "last_touch_at": "2026-09-14T19:58:10.313Z"
     }
   ],
   "conversations": [
