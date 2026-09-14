@@ -142078,7 +142078,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789342423594",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-13T23:33:42.604Z",
       "last_message_preview": "Hola, quisiera saber dónde tienen el shorrom quiero pasar a ver el material .gracias",
       "last_message_direction": "in",
@@ -160163,6 +160163,15 @@
       "ts": "2026-09-14T18:00:25.893Z",
       "status": "failed",
       "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"A_3bzxoxf5PVeh5kxeLVZiN\"}}"
+    },
+    {
+      "id": "m-1789408841969-zht7",
+      "conversation_id": "conv-1789182529385-84f3",
+      "direction": "out",
+      "body": "podes pasar por el deposito con cita previa",
+      "ts": "2026-09-14T18:00:41.969Z",
+      "status": "failed",
+      "error": "{\"error\":{\"message\":\"This message is sent outside of allowed window.\",\"type\":\"IGApiException\",\"code\":10,\"error_subcode\":2534022,\"fbtrace_id\":\"AViLIeC_hm3PAUyTtQ021tc\"}}"
     }
   ],
   "templates": [
