@@ -141533,11 +141533,12 @@
       "linked_lead_id": "lead-email-1a0603a4356b",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-02T03:47:05.000Z",
-      "last_message_preview": "Formulario web — 30m² · Sin Colocación · CP 1842 · Liniers 365",
+      "last_message_at": "2026-09-14T18:27:13.631Z",
+      "last_message_preview": "Hola Fernando, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestr",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-02T03:47:05.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-02T03:47:05.000Z",
+      "last_outbound_at": "2026-09-14T18:27:13.631Z"
     },
     {
       "id": "conv-1788370090533-mwpb",
@@ -160617,6 +160618,15 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0a12be12e768f0"
+    },
+    {
+      "id": "m-1789410433631-evj9",
+      "conversation_id": "conv-email-1a0603a4356b",
+      "direction": "out",
+      "body": "Hola Fernando, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-14T18:27:13.631Z",
+      "status": "sent",
+      "wa_id": "1a0a12c59675c13b"
     }
   ],
   "templates": [
