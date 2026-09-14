@@ -141880,12 +141880,12 @@
       "linked_lead_id": "lead-email-1a0815b2ac47",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-10T18:17:51.000Z",
-      "last_message_preview": "3 ,x 3,60 //// 10 aprox en total / dan garantia completa? Gracias\r\n\r\nEl jue, 10 sept 2026 a las 15:09, Pisos Pacific (<info@pisospacific.com",
+      "last_message_at": "2026-09-14T18:20:10.893Z",
+      "last_message_preview": "Ana, si, los pisos colocados por nosotros tienen garantía. Igualmente, por favor compartinos el modelo que te gustaría cotizar así te mando ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-10T18:17:51.000Z",
-      "last_outbound_at": "2026-09-10T18:09:19.903Z"
+      "last_outbound_at": "2026-09-14T18:20:10.893Z"
     },
     {
       "id": "conv-email-1a08385656b7",
@@ -160429,6 +160429,15 @@
       "ts": "2026-09-14T18:17:25.456Z",
       "status": "sent",
       "wa_id": "1a0a123605b99e4c"
+    },
+    {
+      "id": "m-1789410010893-ii9t",
+      "conversation_id": "conv-email-1a0815b2ac47",
+      "direction": "out",
+      "body": "Ana, si, los pisos colocados por nosotros tienen garantía. Igualmente, por favor compartinos el modelo que te gustaría cotizar así te mando el presupuesto.\n\nSi necesitas, puedo pasarte las opciones pero están todas en nuestra web!\n\nSaludos,\n\nJuan",
+      "ts": "2026-09-14T18:20:10.893Z",
+      "status": "sent",
+      "wa_id": "1a0a125e750468c9"
     }
   ],
   "templates": [
