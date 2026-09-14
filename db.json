@@ -127633,6 +127633,33 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mtz1sqor-001"
+    },
+    {
+      "date": "2026-09-13T00:00:00.000Z",
+      "flow": "Ingreso",
+      "caja_id": "CAJ-002",
+      "caja_name": "Mercado Pago",
+      "category": "Otros Gastos y Ajustes",
+      "subcategory": "Ajuste",
+      "counterparty": "MOV ENTRE CUENTAS",
+      "counterparty_type": null,
+      "client_id": null,
+      "supplier_id": null,
+      "description": "Fondeo Mercado Pago (cuenta propia)",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 1100000,
+      "amount_usd": 716.61,
+      "exchange_rate": 1535,
+      "fixed_variable": "Variable",
+      "expense_type": null,
+      "transfer": true,
+      "needs_review": false,
+      "review_reason": null,
+      "source": "mp-api",
+      "mp_op_id": "178847775112",
+      "classified_by": "fondeo propio (payer = la cuenta)",
+      "id": "MOV-MPAUTO-mu0h8l5v-001"
     }
   ],
   "containers": [
@@ -168079,8 +168106,8 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": 103161976,
-    "mp_last_sync": "2026-09-13T00:00:34.587Z",
+    "mp_pending_job": null,
+    "mp_last_sync": "2026-09-14T00:00:34.339Z",
     "gmail_seen_ids": [
       "19f3760a5b13d588",
       "19f3778643e6346e",
@@ -170551,7 +170578,7 @@
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
-    "mp_pending_at": "2026-09-13T23:59:35.949Z",
+    "mp_pending_at": null,
     "receipt_next": 112,
     "receipt_signature": "firma-juan.png",
     "receipt_signer": "Juan Rodriguez Momesso"
