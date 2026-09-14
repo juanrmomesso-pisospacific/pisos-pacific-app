@@ -37625,6 +37625,18 @@
       "notes": null,
       "name": "arq. Chloe | Constructora SZ",
       "updated_at": "2026-09-14T17:26:49.666Z"
+    },
+    {
+      "id": "CLI-mu1o2uu5-gioc",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Arq. Gladys Dorado",
+      "updated_at": "2026-09-14T19:59:50.429Z"
     }
   ],
   "expenses": [],
