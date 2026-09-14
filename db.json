@@ -123277,12 +123277,12 @@
       "flow": "Egreso",
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Sin clasificar",
-      "subcategory": null,
-      "counterparty": null,
-      "counterparty_type": null,
+      "category": "Bienes de Capital",
+      "subcategory": "Compra Flota",
+      "counterparty": "VolksWagen",
+      "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-015",
       "description": "DÉBITO POR DEBIN",
       "sale_ref": null,
       "currency": "ARS",
@@ -123290,10 +123290,10 @@
       "amount_usd": 2959.43,
       "exchange_rate": 1545,
       "fixed_variable": "Variable",
-      "expense_type": null,
+      "expense_type": "Depreciación y Amortización",
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "Descriptor genérico del banco (Debito Transf. HB / DEBIN) — asignar proveedor y categoría reales",
+      "needs_review": false,
+      "review_reason": null,
       "raw_name": "DÉBITO POR DEBIN",
       "classified_by": "descripción de movimiento entre cuentas",
       "id": "MOV-IMP-mtebzxsa-025"
@@ -174383,6 +174383,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Debito Transf. HB\""
+    },
+    {
+      "id": "local-1789417657337-wqigl",
+      "match": [
+        "DÉBITO POR DEBIN"
+      ],
+      "cuit": null,
+      "counterparty": "VolksWagen",
+      "category": "Bienes de Capital",
+      "subcategory": "Compra Flota",
+      "expense_type": "Depreciación y Amortización",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"DÉBITO POR DEBIN\""
     }
   ],
   "product_aliases": [
