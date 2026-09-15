@@ -143899,11 +143899,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789502769905",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-15T20:06:08.283Z",
-      "last_message_preview": "Hola buenas tardes estoy interesado en sus pisos tienen algun número de WhatsApp",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-15T20:06:08.283Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-15T22:30:44.140Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-15T20:06:08.283Z",
+      "last_outbound_at": "2026-09-15T22:30:44.140Z"
     }
   ],
   "messages": [
@@ -162384,6 +162385,46 @@
       "ts": "2026-09-15T22:30:26.103Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTAzMzE2NTY2NDM4MDQ1NzozMzAxMDY1OTI5NDMxMTI2Mjk1Nzk3NzY4MzMyNDA0MzI2NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789511438498-elff",
+      "conversation_id": "conv-1789502769905-0m4m",
+      "direction": "out",
+      "body": "Hola cómo estás?",
+      "ts": "2026-09-15T22:30:38.031Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzMjUyNTY2MDc4NzM3NzozMzAxMDY1OTUxNDM0NTg1MjQ5Njg0ODUxMjI0NTMwMTI0OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789511442335-ajmg",
+      "conversation_id": "conv-1789502769905-0m4m",
+      "direction": "out",
+      "body": "Sii te paso",
+      "ts": "2026-09-15T22:30:41.914Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzMjUyNTY2MDc4NzM3NzozMzAxMDY1OTU4NTk3MTY2MzU5NjI0MzEyODc3MDYyNTUzNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789511444255-belj",
+      "conversation_id": "conv-1789502769905-0m4m",
+      "direction": "out",
+      "body": "+54 9 11 2331-3914",
+      "ts": "2026-09-15T22:30:43.901Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzMjUyNTY2MDc4NzM3NzozMzAxMDY1OTYyMjYzMTkxMTExMTU5NDI0ODQzMTk5MjgzMgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789511444512-say8",
+      "conversation_id": "conv-1789502769905-0m4m",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-15T22:30:44.140Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzMjUyNTY2MDc4NzM3NzozMzAxMDY1OTYyNzA0MjA2NjQ1MTAxNjM1OTQ4NDU4ODAzMgZDZD",
       "via": "ig-app"
     }
   ],
