@@ -137289,6 +137289,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-15T15:30:06.000Z",
       "last_touch_at": "2026-09-15T15:30:06.000Z"
+    },
+    {
+      "id": "lead-instagram-1789496549093",
+      "name": "@jaime_bosch",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-15T18:22:27.453Z",
+      "last_touch_at": "2026-09-15T18:22:27.453Z"
     }
   ],
   "conversations": [
@@ -143811,6 +143827,20 @@
       "email_subject": "回复：NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-15T15:30:06.000Z"
+    },
+    {
+      "id": "conv-1789496549093-tamw",
+      "channel": "instagram",
+      "contact_id": "2086095322033597",
+      "contact_name": "@jaime_bosch",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1789496549093",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-15T18:22:27.453Z",
+      "last_message_preview": "Buenas como estas? Queria saber si tienen un numero de wpp para hacer un presupuesto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-15T18:22:27.453Z"
     }
   ],
   "messages": [
@@ -162200,6 +162230,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzAxMDM4NDAyMzM2OTk0NDEzMjg1OTY3MTc0OTg1MzE4NAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1789496549093-npzu",
+      "conversation_id": "conv-1789496549093-tamw",
+      "direction": "in",
+      "body": "Buenas como estas? Queria saber si tienen un numero de wpp para hacer un presupuesto",
+      "ts": "2026-09-15T18:22:27.453Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -172521,7 +172559,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAwODU4Mzk1NTU5MjA4MTMzNDg1NzE0Nzg1NDM1NjQ4MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAwOTAwNjQxODA5MDA5NDkzNjQ5NzQ5OTk3NDY2NDE5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwOTA4ODI4NDA4NzE2ODYzODgxMzgxMTM5ODE0ODA5NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzAxMDA5NjE4NzE4MTU0NzEwOTE5NjIwNTU1OTY0NDE2MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzAxMDA5NjE4NzE4MTU0NzEwOTE5NjIwNTU1OTY0NDE2MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTAzMzE2NTY2NDM4MDQ1NzozMzAxMDM4NDgzMTY1NjU5MjM2MTAyMTcyMzc0MDQ3MTI5NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
