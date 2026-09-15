@@ -143761,11 +143761,11 @@
       "linked_lead_id": "lead-instagram-1789421824662",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-15T18:21:06.633Z",
-      "last_message_preview": "Es con cita previa",
+      "last_message_at": "2026-09-15T18:21:18.837Z",
+      "last_message_preview": "À la altura de panamericana y Debenedetti",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T21:37:03.504Z",
-      "last_outbound_at": "2026-09-15T18:21:06.633Z"
+      "last_outbound_at": "2026-09-15T18:21:18.837Z"
     },
     {
       "id": "conv-email-1a0a2783a477",
@@ -162168,6 +162168,16 @@
       "ts": "2026-09-15T18:21:06.633Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAxMDM4MzM0MDgwMzA0MDMwMjExMjkyNjQwNjI3OTE2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789496479265-eszt",
+      "conversation_id": "conv-1789421824662-wzq1",
+      "direction": "out",
+      "body": "À la altura de panamericana y Debenedetti",
+      "ts": "2026-09-15T18:21:18.837Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAxMDM4MzU2NTkyMzI2ODA1NDg5Njk2Mjc0MTIwNzA0MAZDZD",
       "via": "ig-app"
     }
   ],
