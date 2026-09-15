@@ -137354,6 +137354,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-15T22:30:59.000Z",
       "last_touch_at": "2026-09-15T22:30:59.000Z"
+    },
+    {
+      "id": "lead-email-1a0a75a66d37",
+      "name": "Macarena",
+      "email": "makiita33@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Avellaneda 4836",
+      "postal_code": "1766",
+      "approx_m2": 56,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 56m² · Con Colocación · CP 1766",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-15T23:15:14.000Z",
+      "last_touch_at": "2026-09-15T23:15:14.000Z"
     }
   ],
   "conversations": [
@@ -143935,6 +143952,21 @@
       "last_message_preview": "Vengo de recibir el numero por Instagram",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-15T22:31:20.000Z"
+    },
+    {
+      "id": "conv-email-1a0a75a66d37",
+      "channel": "email",
+      "contact_id": "makiita33@hotmail.com",
+      "contact_name": "Macarena",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0a75a66d37",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-15T23:15:14.000Z",
+      "last_message_preview": "Formulario web — 56m² · Con Colocación · CP 1766 · Avellaneda 4836",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-15T23:15:14.000Z"
     }
   ],
   "messages": [
@@ -162472,6 +162504,14 @@
       "body": "Vengo de recibir el numero por Instagram",
       "ts": "2026-09-15T22:31:20.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0a75a66d37",
+      "conversation_id": "conv-email-1a0a75a66d37",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 56m² · Con Colocación · CP 1766 · Avellaneda 4836",
+      "ts": "2026-09-15T23:15:14.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -170792,7 +170832,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-15T00:03:33.740Z",
     "gmail_seen_ids": [
-      "19f3d19dca298017",
       "19f3d2c5c8b84d6f",
       "19f3d80cbb76642d",
       "19f3d8581f5982cb",
@@ -171591,7 +171630,8 @@
       "1a0a526bacfbf90c",
       "1a0a5acaa2899bb8",
       "1a0a5b0c1f15c294",
-      "1a0a67a1bce61e85"
+      "1a0a67a1bce61e85",
+      "1a0a75a66d37e534"
     ],
     "cash_sessions": {
       "1136982222": {
