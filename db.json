@@ -262,7 +262,7 @@
       "active": true,
       "margin": 159,
       "stock": 2989.5,
-      "reservedStock": 4901.64,
+      "reservedStock": 6468.64,
       "subLine": "Colección Madera",
       "shortName": "Roble Kitsilano 12/1 Veta Tallada",
       "thicknessMm": 12,
@@ -2441,7 +2441,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 13769,
+      "reservedStock": 13771,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -16712,6 +16712,71 @@
       "reseller_name": "",
       "currency": "USD",
       "commission_amount": 0
+    },
+    {
+      "id": "local-sale-1789483538339-ymmr",
+      "quote_id": "local-1785188889307-3lm19",
+      "quote_number": "A5211",
+      "title": "Cotización Barbara Moyano Gacitua / Florencia Rausch",
+      "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada + 1 más",
+      "internal_notes": "",
+      "public_notes": "Se debe hacer inspeccion previa. Las medidas no fueron verificadas en obra",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "local-1782234641739-np6n6",
+      "client_name": "Barbara Moyano gacitua",
+      "client_dni": "",
+      "client_email": "bmoyanogacitua@gmail.com",
+      "client_phone": "",
+      "client_address": "Proyecto viviendas Villa Crespo",
+      "contract_total": 95771.5,
+      "items": [
+        {
+          "product_id": "PROD-010",
+          "sku": "PROD-010",
+          "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada",
+          "quantity": 1567,
+          "unit_price": 70,
+          "cost": 29,
+          "category": "Pisos de Madera",
+          "disc_kind": "amount",
+          "disc_value": 31340,
+          "total": 109690,
+          "discount": 31340,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 2,
+          "unit_price": 400,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 800,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 31340,
+      "status": "Confirmado",
+      "created_at": "2026-09-15T14:45:38.339Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 95771.5
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -26114,7 +26179,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Barbara Moyano Gacitua / Florencia Rausch",
       "has_iva": true,
-      "price": 95779.97,
+      "price": 95771.5,
       "zoned": false,
       "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada + 1 más",
       "items": [
@@ -26122,13 +26187,13 @@
           "product_id": "PROD-010",
           "sku": "PROD-010",
           "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada",
-          "quantity": 1567.1,
+          "quantity": 1567,
           "unit_price": 70,
           "cost": 29,
           "category": "Pisos de Madera",
           "disc_kind": "amount",
           "disc_value": 31340,
-          "total": 109697,
+          "total": 109690,
           "discount": 31340,
           "image": "",
           "target_item_index": null
@@ -26151,8 +26216,12 @@
       "discount_amount": 31340,
       "created_at": "2026-07-27T21:48:08.897Z",
       "quote_number": "A5211",
-      "status": "DRAFT",
-      "lead_id": "local-1785188519268-0f3os"
+      "status": "ACCEPTED",
+      "lead_id": "local-1785188519268-0f3os",
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "sale_id": "local-sale-1789483538339-ymmr"
     },
     {
       "id": "local-1785188954442-cpo6f",
@@ -169189,6 +169258,24 @@
       "product_id": "1534",
       "sku": "1534",
       "qty": 24,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-15T14:45:33.241Z",
+      "type": "quote_reserve",
+      "ref": "local-1785188889307-3lm19",
+      "product_id": "PROD-010",
+      "sku": "PROD-010",
+      "qty": 1567,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-15T14:45:33.241Z",
+      "type": "quote_reserve",
+      "ref": "local-1785188889307-3lm19",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 2,
       "warehouse_id": "main"
     }
   ],
