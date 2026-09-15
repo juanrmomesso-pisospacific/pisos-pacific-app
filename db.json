@@ -137272,6 +137272,23 @@
       "address": "Arcos 1874, Belgrano",
       "created_at": "2026-09-15T14:08:35.115Z",
       "last_touch_at": "2026-09-15T14:08:38.365Z"
+    },
+    {
+      "id": "lead-email-1a0a5b0c1f15",
+      "name": "Frank",
+      "email": "frank_ljs@163.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: 回复：NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm — Hello Victoria\nWe are happy to see your mail !\nI will arrange and make new PI for you\nAt same time , we will pay more attention and find solutions for your questions\nBR\nFrank\n\n----",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-15T15:30:06.000Z",
+      "last_touch_at": "2026-09-15T15:30:06.000Z"
     }
   ],
   "conversations": [
@@ -143777,6 +143794,21 @@
       "last_message_preview": "📲 Te mencionó en una historia",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-15T14:01:40.004Z"
+    },
+    {
+      "id": "conv-email-1a0a5b0c1f15",
+      "channel": "email",
+      "contact_id": "frank_ljs@163.com",
+      "contact_name": "Frank",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0a5b0c1f15",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-15T15:30:06.000Z",
+      "last_message_preview": "Hello Victoria\nWe are happy to see your mail !\nI will arrange and make new PI for you\nAt same time , we will pay more attention and find sol",
+      "email_subject": "回复：NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-15T15:30:06.000Z"
     }
   ],
   "messages": [
@@ -162098,6 +162130,14 @@
       "status": "received",
       "media_url": "/uploads/2ba721dd45ab68f6.jpg",
       "media_type": "image"
+    },
+    {
+      "id": "m-email-1a0a5b0c1f15",
+      "conversation_id": "conv-email-1a0a5b0c1f15",
+      "direction": "in",
+      "body": "✉️ 回复：NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm\n\nHello Victoria\nWe are happy to see your mail !\nI will arrange and make new PI for you\nAt same time , we will pay more attention and find solutions for your questions\nBR\nFrank\n\n---- 回复的原邮件 ----\n| 发件人 | Victoria Pisos Pacific<victoria@pisospacific.com> |\n| 发送日期 | 2026年09月15日 23:25 |\n| 收件人 | Rala Qin<rala_lam@163.com>,\nMerry Zhang<merry_lam@126.com>,\nFrank <frank_ljs@163.com> |\n| 抄送人 | info pisos<info@pisospacific.com>,\nMiguel G. Collado<mike@pisospacific.com> |\n| 主题 | NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm |\n\nHi Frank/Rala and Mary\n\nWe would like to place a new order, similar to our previous orders.\n\nWe are very happy with the quality of the orders we have been receiving, especially with the straight and uniform boards and the low number of knots. We would like to maintain this same quality for this new order.\n\nThe order details are listed below.\n\n| Barcode | Name  | Specification | Pallets | Quantity | Unit Price | Amount |\n| xxx-Color same as Kitsilano Oak | Oak 1 strip Multi-layer 4B T&G Grade ABC Light Brushed Matt Lac                 | 1900*190*12/1 | 8 | 1155.20 | 15.00 | 17328.00 |\n| xxx-Color same as Oak Verona | Oak 1 strip Multi-layer 4B T&G Grade ABC Light Brushed Matt Lac                 | 1900*190*12/1 | 4 | 577.60 | 15.00 | 8664.00 |\n|  Poplar plywood,10 pieces/box(3 layer of short planks, ) ;0.3mm bevel on 4sides, natural colour putty. |\n|   |   |   | 12 | 1732.80 |   | 25992.00 |\n| Total： |   | MM | 1*20 | m2 | USD | USD |\n\nOne small point t",
+      "ts": "2026-09-15T15:30:06.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -170418,7 +170458,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-15T00:03:33.740Z",
     "gmail_seen_ids": [
-      "19f3cb5a6124c0f7",
       "19f3d211b997f815",
       "19f3d19dca298017",
       "19f3d2c5c8b84d6f",
@@ -171217,7 +171256,8 @@
       "1a0a49c72dcebf61",
       "1a0a52b7341ebc77",
       "1a0a526bacfbf90c",
-      "1a0a5acaa2899bb8"
+      "1a0a5acaa2899bb8",
+      "1a0a5b0c1f15c294"
     ],
     "cash_sessions": {
       "1136982222": {
