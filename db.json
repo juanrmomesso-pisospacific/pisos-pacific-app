@@ -35606,6 +35606,50 @@
       "quote_number": "A8861",
       "status": "DRAFT",
       "lead_id": "local-1789481315403-1bz6g"
+    },
+    {
+      "id": "local-1789481665449-uov5d",
+      "client_id": "",
+      "client_name": "Tribeca Desarrolladora  | Juan Martin Resti",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 5809-6208",
+      "client_address": "Arcos 1874, Belgrano",
+      "internal_notes": "",
+      "public_notes": "Las medidas deben ser verificadas en obra. Incluye manta apta losa radiante de 2 mm. Incluye materiales necesarios para la instalacion. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Tribeca Desarrolladora  | Juan Martin Resti",
+      "has_iva": true,
+      "price": 30492,
+      "zoned": false,
+      "description": "Servicio - Colocación Prefinished Sobre Manta",
+      "items": [
+        {
+          "product_id": "SERV-107",
+          "sku": "SERV-107",
+          "description": "Servicio - Colocación Prefinished Sobre Manta",
+          "quantity": 1260,
+          "unit_price": 25,
+          "cost": 7.33,
+          "category": "Servicio",
+          "disc_value": 20,
+          "total": 31500,
+          "discount": 6300,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 6300,
+      "discount_amount": 6300,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-15T14:14:25.228Z",
+      "quote_number": "A9216",
+      "status": "DRAFT",
+      "lead_id": "local-1789481315403-1bz6g"
     }
   ],
   "clients": [
