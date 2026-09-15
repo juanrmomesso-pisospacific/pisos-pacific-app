@@ -137315,12 +137315,12 @@
       "contact_name": "@juanrmomesso",
       "linked_client_name": null,
       "status": "closed",
-      "unread_count": 1,
-      "last_message_at": "2026-09-14T15:15:21.766Z",
-      "last_message_preview": "🔥",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-15T18:26:24.698Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T15:15:21.766Z",
-      "last_outbound_at": "2026-09-09T23:09:42.670Z",
+      "last_outbound_at": "2026-09-15T18:26:24.698Z",
       "ignored": true
     },
     {
@@ -162238,6 +162238,16 @@
       "body": "Buenas como estas? Queria saber si tienen un numero de wpp para hacer un presupuesto",
       "ts": "2026-09-15T18:22:27.453Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789496785252-ul3i",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-15T18:26:24.698Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxMDM4OTIwODA2MDQ0MDY2MDMwMDQ3MzYxMTMyMTM0NAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
