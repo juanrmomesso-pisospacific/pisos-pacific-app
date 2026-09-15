@@ -7648,7 +7648,7 @@
           "category": "Servicio"
         }
       ],
-      "status": "Programado",
+      "status": "En proceso",
       "delivery_status": "Acopiado",
       "created_at": "2025-12-23T00:00:00.000Z",
       "fecha_pendiente": false,
@@ -7684,6 +7684,12 @@
           "to": "Programado",
           "at": "2026-08-14T14:50:54.897Z",
           "by": "Victoria Gonzalez Collado"
+        },
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-09-15T14:48:05.044Z",
+          "by": "Admin User"
         }
       ]
     },
@@ -13702,7 +13708,7 @@
       ],
       "zoned": true,
       "discount_total": 934.4,
-      "status": "Programado",
+      "status": "En proceso",
       "created_at": "2026-07-16T16:11:58.495Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -13715,7 +13721,15 @@
       "stock_deducted": false,
       "seller_name": "Victoria Gonzalez Collado",
       "delivery_date": "2026-09-14",
-      "delivery_date_to": "2026-09-22"
+      "delivery_date_to": "2026-09-22",
+      "status_log": [
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-09-15T14:48:05.046Z",
+          "by": "Admin User"
+        }
+      ]
     },
     {
       "id": "local-sale-1784220177182-wn6q",
@@ -13939,7 +13953,7 @@
       ],
       "zoned": false,
       "discount_total": 139.65,
-      "status": "Programado",
+      "status": "En proceso",
       "created_at": "2026-07-19T13:08:01.690Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -13960,6 +13974,12 @@
           "to": "Programado",
           "at": "2026-08-10T13:32:56.068Z",
           "by": "Victoria Gonzalez Collado"
+        },
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-09-15T14:48:05.045Z",
+          "by": "Admin User"
         }
       ]
     },
