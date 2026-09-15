@@ -143761,11 +143761,11 @@
       "linked_lead_id": "lead-instagram-1789421824662",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-15T18:20:24.053Z",
-      "last_message_preview": "Hola Martin",
+      "last_message_at": "2026-09-15T18:21:06.633Z",
+      "last_message_preview": "Es con cita previa",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T21:37:03.504Z",
-      "last_outbound_at": "2026-09-15T18:20:24.053Z"
+      "last_outbound_at": "2026-09-15T18:21:06.633Z"
     },
     {
       "id": "conv-email-1a0a2783a477",
@@ -162148,6 +162148,26 @@
       "ts": "2026-09-15T18:20:24.053Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAxMDM4MjU1NTMzMjEzNjgwMTA1NDA5MTA3NDYwMDk2MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789496459822-4hfl",
+      "conversation_id": "conv-1789421824662-wzq1",
+      "direction": "out",
+      "body": "Nuestro deposito queda en Olivos",
+      "ts": "2026-09-15T18:20:59.254Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAxMDM4MzIwNDY3NDU3Mjk4NzE1NDQxNTU4MzQ5NDE0NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789496467123-pakr",
+      "conversation_id": "conv-1789421824662-wzq1",
+      "direction": "out",
+      "body": "Es con cita previa",
+      "ts": "2026-09-15T18:21:06.633Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAxMDM4MzM0MDgwMzA0MDMwMjExMjkyNjQwNjI3OTE2OAZDZD",
       "via": "ig-app"
     }
   ],
