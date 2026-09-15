@@ -137338,6 +137338,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-15T20:06:08.283Z",
       "last_touch_at": "2026-09-15T20:06:08.283Z"
+    },
+    {
+      "id": "lead-whatsapp-1789511461717",
+      "name": "😎 JR El NeNe 😎",
+      "email": "",
+      "phone": "5491123212300",
+      "source": "WhatsApp",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde whatsapp",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-15T22:30:59.000Z",
+      "last_touch_at": "2026-09-15T22:30:59.000Z"
     }
   ],
   "conversations": [
@@ -143905,6 +143921,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-15T20:06:08.283Z",
       "last_outbound_at": "2026-09-15T22:30:44.140Z"
+    },
+    {
+      "id": "conv-1789511461715-61f5",
+      "channel": "whatsapp",
+      "contact_id": "5491123212300",
+      "contact_name": "😎 JR El NeNe 😎",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-whatsapp-1789511461717",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-15T22:30:59.000Z",
+      "last_message_preview": "Hola",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-15T22:30:59.000Z"
     }
   ],
   "messages": [
@@ -162426,6 +162456,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzMjUyNTY2MDc4NzM3NzozMzAxMDY1OTYyNzA0MjA2NjQ1MTAxNjM1OTQ4NDU4ODAzMgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1789511461717-vk8v",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "in",
+      "body": "Hola",
+      "ts": "2026-09-15T22:30:59.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -172750,7 +172788,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzAxMDA5NjE4NzE4MTU0NzEwOTE5NjIwNTU1OTY0NDE2MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTAzMzE2NTY2NDM4MDQ1NzozMzAxMDM4NDgzMTY1NjU5MjM2MTAyMTcyMzc0MDQ3MTI5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzMjUyNTY2MDc4NzM3NzozMzAxMDQ5OTU4NTcxODg4NTcyMzAzMzExODI0MDE0NTQwOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAxMDYxMDA5NzY5Mzc1NTk4MzYxOTcxMDcyNjk2MzIwMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAxMDYxMDA5NzY5Mzc1NTk4MzYxOTcxMDcyNjk2MzIwMAZDZD",
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDQTIzMjJGQkM3MUU5NkU5QTRFOENDODhBM0ZEOTE0AA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
