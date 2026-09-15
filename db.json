@@ -133225,7 +133225,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-29T04:37:49.000Z",
-      "last_touch_at": "2026-08-20T00:57:57.000Z"
+      "last_touch_at": "2026-09-15T00:48:37.000Z"
     },
     {
       "id": "lead-instagram-1785337451526",
@@ -140358,12 +140358,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fac2a34f88",
       "status": "closed",
-      "unread_count": 6,
-      "last_message_at": "2026-08-20T00:57:57.000Z",
-      "last_message_preview": "Dear Victoria\r\n\r\n \r\n\r\nIt is correct\r\n\r\n \r\n\r\nBest regards,\r\n\r\n \r\n\r\nTracy\r\n\r\nCollyer Logistics North China Ltd. Dalian Branch,\r\n\r\nTel: +86-411",
+      "unread_count": 7,
+      "last_message_at": "2026-09-15T00:48:37.000Z",
+      "last_message_preview": "Dear Victoria\r\n\r\n \r\n\r\nOld problem, We don’t receive the local payment from Young.\r\n\r\n \r\n\r\nBest regards,\r\n\r\n \r\n\r\nTracy\r\n\r\nCollyer Logistics N",
       "email_subject": "RE: MANAGE DOCUMENTATION SHANGHAI - COLON, PANAMA | PDPG 2624 | 1 x 10 ft",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T00:57:57.000Z",
+      "last_inbound_at": "2026-09-15T00:48:37.000Z",
       "ignored": true
     },
     {
@@ -161706,6 +161706,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 8m² · Con Colocación · CP 1650 · Presidente Mont 3265",
       "ts": "2026-09-15T00:29:43.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0a289cb8a5",
+      "conversation_id": "conv-email-19fac2a34f88",
+      "direction": "in",
+      "body": "✉️ RE: MANAGE DOCUMENTATION SHANGHAI - COLON, PANAMA | PDPG 2624 | 1 x 10 ft\n\nDear Victoria\r\n\r\n \r\n\r\nOld problem, We don’t receive the local payment from Young.\r\n\r\n \r\n\r\nBest regards,\r\n\r\n \r\n\r\nTracy\r\n\r\nCollyer Logistics North China Ltd. Dalian Branch,\r\n\r\nTel: +86-411-82740169\r\n\r\nCell:+8618640809118\r\n\r\nSkype:t.yang@dal.collyerlogistics.com\r\n\r\nWeb:  <http://www.collyerlogistics.com/> www.collyerlogistics.com\r\n\r\n \r\n\r\n- as agents of Collyer Container Line - This message is intended for the recipient(s) named above. It may contain confidential or privileged information. If you are not the intended recipient, please notify the sender immediately by replying to this message and then delete it from your system. Do not copy, use or circulate this communication. Thank you.\r\n\r\n \r\n\r\nFrom: Victoria Pisos Pacific <victoria@pisospacific.com> \r\nSent: Monday, September 14, 2026 11:12 PM\r\nTo: Tracy Yang <t.yang@dal.collyerlogistics.com>\r\nCc: info pisos <info@pisospacific.com>\r\nSubject: Re: MANAGE DOCUMENTATION SHANGHAI - COLON, PANAMA | PDPG 2624 | 1 x 10 ft\r\n\r\n \r\n\r\nHi Tracy! Please could you send me this?\r\n\r\n \r\n\r\nEl El vie, 4 sept 2026 a la(s) 17:31, Victoria Pisos Pacific <victoria@pisospacific.com <mailto:victoria@pisospacific.com> > escribió:\r\n\r\nHi Tracy,\r\n\r\nCould you please request the telex release? The container is already paid.\r\n\r\nPlease arrange this with Young.\r\n\r\nBest regards,\r\nVictoria\r\n\r\n \r\n\r\nEl mié, 19 ago 2026 a las 21:57, Tracy Yang (<t.yang@dal.collyerlogistics.com <mailto:t.yang@dal.collyerlogistics.com> >) escribió:\r\n\r\nDear Victoria\r\n\r\n \r\n\r\nIt is correct\r",
+      "ts": "2026-09-15T00:48:37.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -170008,7 +170016,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-15T00:03:33.740Z",
     "gmail_seen_ids": [
-      "19f3bad2cdd99462",
       "19f3bd5a17308626",
       "19f3c0e5c873a24b",
       "19f3c6d7069b6839",
@@ -170807,7 +170814,8 @@
       "1a0a171c2b3fb2ca",
       "1a0a1826e5c096f7",
       "1a0a19ceb2cfa69f",
-      "1a0a2783a4770bb7"
+      "1a0a2783a4770bb7",
+      "1a0a289cb8a5e302"
     ],
     "cash_sessions": {
       "1136982222": {
