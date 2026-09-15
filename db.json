@@ -143930,11 +143930,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-15T22:30:59.000Z",
-      "last_message_preview": "Hola",
+      "unread_count": 2,
+      "last_message_at": "2026-09-15T22:31:20.000Z",
+      "last_message_preview": "Vengo de recibir el numero por Instagram",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-15T22:30:59.000Z"
+      "last_inbound_at": "2026-09-15T22:31:20.000Z"
     }
   ],
   "messages": [
@@ -162464,6 +162464,14 @@
       "body": "Hola",
       "ts": "2026-09-15T22:30:59.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789511481391-kbci",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "in",
+      "body": "Vengo de recibir el numero por Instagram",
+      "ts": "2026-09-15T22:31:20.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -172789,7 +172797,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTAzMzE2NTY2NDM4MDQ1NzozMzAxMDM4NDgzMTY1NjU5MjM2MTAyMTcyMzc0MDQ3MTI5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzMjUyNTY2MDc4NzM3NzozMzAxMDQ5OTU4NTcxODg4NTcyMzAzMzExODI0MDE0NTQwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAxMDYxMDA5NzY5Mzc1NTk4MzYxOTcxMDcyNjk2MzIwMAZDZD",
-      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDQTIzMjJGQkM3MUU5NkU5QTRFOENDODhBM0ZEOTE0AA=="
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDQTIzMjJGQkM3MUU5NkU5QTRFOENDODhBM0ZEOTE0AA==",
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNTQxM0QwMkJFODA4OUZBNTYzODJENURDRUI4MkI0AA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
