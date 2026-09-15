@@ -143869,11 +143869,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789496549093",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-15T18:22:27.453Z",
-      "last_message_preview": "Buenas como estas? Queria saber si tienen un numero de wpp para hacer un presupuesto",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-15T18:22:27.453Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-15T22:30:03.757Z",
+      "last_message_preview": "Hola Jaime cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-15T18:22:27.453Z",
+      "last_outbound_at": "2026-09-15T22:30:03.757Z"
     },
     {
       "id": "conv-email-1a0a67a1bce6",
@@ -162344,6 +162345,16 @@
       "body": "Hola que tal!\nPerdón la demora, pero me queda lejos como para poder ir. De todas maneras muchas gracias por tomarse el tiempo de contestar.",
       "ts": "2026-09-15T21:45:59.149Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789511404299-ihar",
+      "conversation_id": "conv-1789496549093-tamw",
+      "direction": "out",
+      "body": "Hola Jaime cómo estás?",
+      "ts": "2026-09-15T22:30:03.757Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTAzMzE2NTY2NDM4MDQ1NzozMzAxMDY1ODg4MjA5Mzg2MzUyNjQzODI0NDU2OTg0MTY2NAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
