@@ -4,13 +4,16 @@ export type TaskStatus = "pendiente" | "completada" | "cancelada"
 /** Captured during the on-site measurement visit. Stored on both task.medicion_data
  *  and the linked sale.medicion_data so the Remito can prefill from it. */
 export type MedicionExtra = { description: string; quantity: number; sku?: string }
+export type ChecklistEntry = { v?: "si" | "no" | "na"; note?: string }
 export type MedicionData = {
   m2_medidos?: number
   m2_cotizados?: number       // snapshot of the quoted total for side-by-side comparison
+  ml_zocalo?: number          // metros lineales de zócalo (protocolo de inspección)
   superficie?: string
   observaciones?: string
   extras?: string             // legacy free-text (kept for back-compat — new flow uses extras_items)
   extras_items?: MedicionExtra[]
+  checklist?: Record<string, ChecklistEntry>   // protocolo de inspección de obra
   recorded_at?: string
   recorded_by?: string
 }

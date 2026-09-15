@@ -377,8 +377,60 @@ export async function reciboPdf(data) {
   return toBuffer(doc);
 }
 
+// Protocolo de inspección de obra (checklist). Cabezal Pacific + datos de la obra +
+// mediciones + grupos de ítems con Sí/No/N-A marcado y notas. data.groups = [{title, items:[{label, v, note}]}].
+export async function inspeccionPdf(data) {
+  const doc = newDoc();
+  doc.save();
+  doc.scale(PX);
+  const MH = drawMasthead(doc, 'PROTOCOLO DE INSPECCIÓN DE OBRA', [{ t: `Fecha ${data.fecha || ''}`, hot: true }]);
+  let y = MH + 20;
+  // Datos de la obra (2 columnas)
+  const col2 = PAGE.w / 2 + 6;
+  const field = (lbl, val, x) => { line(doc, lbl.toUpperCase(), x, y, { font: 'semi', size: 8, color: C.ink3, cs: 0.8 }); line(doc, String(val || '—'), x, y + 11, { size: 11.5, color: C.ink }); };
+  field('Cliente', data.cliente, PADX); field('Teléfono', data.telefono, col2); y += 30;
+  field('Dirección / Obra', data.obra, PADX); field('Venta N°', data.numero, col2); y += 30;
+  field('Piso', data.piso, PADX); field('Zócalos', data.zocalos, col2); y += 34;
+  // Mediciones
+  hline(doc, PADX, y, PAGE.w - PADX, C.hair); y += 10;
+  line(doc, 'MEDICIONES', PADX, y, { font: 'semi', size: 8.5, color: C.ink3, cs: 1 }); y += 14;
+  field('m² medidos', data.m2 != null ? `${data.m2} m²` : '—', PADX); field('ml de zócalo', data.ml != null ? `${data.ml} ml` : '—', col2); y += 30;
+  field('Tipo de superficie', data.superficie, PADX); y += 34;
+  // Checklist por grupos
+  const boxW = 15, gapx = 4;
+  for (const g of (data.groups || [])) {
+    if (y > PAGE.h - 120) { /* protocolo largo: pdfkit no pagina (height=1e6), pero mantenemos 1 pág — cabe holgado */ }
+    hline(doc, PADX, y, PAGE.w - PADX, C.hair); y += 9;
+    line(doc, (g.title || '').toUpperCase(), PADX, y, { font: 'semi', size: 8.5, color: C.ink3, cs: 1 });
+    // encabezado Sí/No/N-A a la derecha
+    const optX = PAGE.w - PADX - (boxW * 3 + gapx * 2);
+    ['Sí', 'No', 'N/A'].forEach((h, i) => line(doc, h, optX + i * (boxW + gapx) + boxW / 2, y, { size: 7.5, color: C.ink3, align: 'center' }));
+    y += 15;
+    for (const it of (g.items || [])) {
+      line(doc, it.label || '', PADX, y + 1, { size: 10.5, color: C.ink });
+      ['si', 'no', 'na'].forEach((v, i) => {
+        const bx = optX + i * (boxW + gapx);
+        doc.rect(bx, y - 2, boxW, 13).lineWidth(0.8).strokeColor(C.ink2).stroke();
+        if (it.v === v) { line(doc, '✕', bx + boxW / 2, y, { font: 'semi', size: 10, color: C.ink, align: 'center' }); }
+      });
+      y += 16;
+      if (it.note) { line(doc, `↳ ${it.note}`, PADX + 8, y - 3, { size: 9, color: C.ink3 }); y += 13; }
+    }
+    y += 4;
+  }
+  // Observaciones generales
+  if (data.observaciones) {
+    hline(doc, PADX, y, PAGE.w - PADX, C.hair); y += 9;
+    line(doc, 'OBSERVACIONES', PADX, y, { font: 'semi', size: 8.5, color: C.ink3, cs: 1 }); y += 14;
+    para(doc, String(data.observaciones), PADX, y, BODY_W, { size: 10.5, color: C.ink2 });
+  }
+  doc.restore();
+  return toBuffer(doc);
+}
+
 export function generatePdf(data) {
   if (data?.doc_type === 'remito') return remitoPdf(data);
   if (data?.doc_type === 'recibo') return reciboPdf(data);
+  if (data?.doc_type === 'inspeccion') return inspeccionPdf(data);
   return presupuestoPdf(data);
 }

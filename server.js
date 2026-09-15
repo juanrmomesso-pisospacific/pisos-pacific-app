@@ -19,6 +19,7 @@ import { normProd } from './integrations/product-match.mjs';
 import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
 import { montoALetras } from './pdf/num2words.mjs';
+import { INSPECCION_GROUPS } from './pdf/inspeccion.mjs';
 import { computeCommission as computeResellerCommission } from './integrations/reseller.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -3177,6 +3178,34 @@ app.get('/api/sales/:id/pdf', (req, res) => {
   const s = db.sales.find(x => x.id === req.params.id);
   if (!s) return res.sendStatus(404);
   renderPdf(presupuestoData(s), res, pdfFilename(`Presupuesto N${s.quote_number || s.id}`, s.title, s.client_name));
+});
+// Protocolo de inspección de obra (checklist de la medición) → PDF imprimible.
+function inspeccionData(s) {
+  const loc = db.settings.locale || 'es-AR';
+  const md = s.medicion_data || {};
+  const cl = md.checklist || {};
+  const groups = INSPECCION_GROUPS.map(g => ({
+    title: g.title,
+    items: g.items.map(it => ({ label: it.label, v: cl[it.key]?.v || null, note: cl[it.key]?.note || null })),
+  }));
+  const piso = (s.items || []).find(it => { const p = db.products.find(x => x.sku === it.sku); return p && p.stockTrack && p.kind !== 'panel'; });
+  return {
+    doc_type: 'inspeccion',
+    fecha: md.recorded_at ? new Date(md.recorded_at).toLocaleDateString(loc) : new Date().toLocaleDateString(loc),
+    cliente: s.client_name || '', telefono: s.client_phone || '',
+    obra: s.title || s.client_address || '', numero: s.quote_number || s.id || '',
+    piso: piso ? piso.description : '—', zocalos: '—',
+    m2: md.m2_medidos != null ? md.m2_medidos : (md.m2_cotizados ?? null),
+    ml: md.ml_zocalo != null ? md.ml_zocalo : null,
+    superficie: md.superficie || '—',
+    observaciones: md.observaciones || '',
+    groups,
+  };
+}
+app.get('/api/sales/:id/inspeccion-pdf', (req, res) => {
+  const s = db.sales.find(x => x.id === req.params.id);
+  if (!s) return res.sendStatus(404);
+  renderPdf(inspeccionData(s), res, pdfFilename(`Protocolo inspeccion`, s.quote_number || s.id, s.client_name));
 });
 
 // ---------- Compartir presupuesto (WhatsApp PDF + link público para Instagram) ----------

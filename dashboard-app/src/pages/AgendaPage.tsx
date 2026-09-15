@@ -14,6 +14,7 @@ import { fmtMoney, cn, appLocale } from "@/lib/utils"
 import { TopbarActions } from "@/contexts/TopbarActionsContext"
 import type { Sale, Container, Product } from "@/lib/types"
 import { type Task, type TaskType, TASK_TYPE_LABEL, TASK_TYPE_ORDER } from "@/lib/tasks"
+import { INSPECCION_GROUPS, CHECK_LABEL, checklistDone, type Checklist, type ChecklistValue } from "@/lib/inspeccion"
 import { ContainerImportForm } from "@/components/forms/ContainerImportForm"
 import { ContainerDetailSheet } from "@/components/forms/ContainerDetailSheet"
 import { SearchPicker } from "@/components/SearchPicker"
@@ -932,9 +933,11 @@ function EditTaskSheet({ task, crews, onClose }: { task: Task | null; crews: str
 function MedicionFormSheet({ task, sale, allTasks, onClose }: { task: Task | null; sale: Sale | null; allTasks: Task[]; onClose: () => void }) {
   const navigate = useNavigate()
   const [m2, setM2] = useState<number>(0)
+  const [mlZocalo, setMlZocalo] = useState<number>(0)
   const [superficie, setSuperficie] = useState<string>("Contrapiso nuevo")
   const [observaciones, setObservaciones] = useState<string>("")
   const [extrasItems, setExtrasItems] = useState<ExtraRow[]>([])
+  const [checklist, setChecklist] = useState<Checklist>({})
   const [markDone, setMarkDone] = useState<boolean>(true)
   const update = useAction(api.update)
   const create = useAction(api.create)
@@ -944,9 +947,11 @@ function MedicionFormSheet({ task, sale, allTasks, onClose }: { task: Task | nul
     if (!task) return
     const d = task.medicion_data ?? {}
     setM2(d.m2_medidos ?? quotedTotalM2 ?? 0)
+    setMlZocalo(d.ml_zocalo ?? 0)
     setSuperficie(d.superficie ?? "Contrapiso nuevo")
     setObservaciones(d.observaciones ?? "")
     setExtrasItems(d.extras_items ?? (d.extras ? [{ description: d.extras, quantity: 1 }] : []))
+    setChecklist(d.checklist ?? {})
     setMarkDone(task.status !== "completada")
   }, [task?.id])
 
@@ -954,12 +959,17 @@ function MedicionFormSheet({ task, sale, allTasks, onClose }: { task: Task | nul
   const addExtra = () => setExtrasItems(prev => [...prev, { description: "", quantity: 1 }])
   const updateExtra = (i: number, patch: Partial<ExtraRow>) => setExtrasItems(prev => prev.map((r, idx) => idx === i ? { ...r, ...patch } : r))
   const removeExtra = (i: number) => setExtrasItems(prev => prev.filter((_, idx) => idx !== i))
+  const setCheck = (key: string, v: ChecklistValue) => setChecklist(prev => ({ ...prev, [key]: { ...prev[key], v: prev[key]?.v === v ? undefined : v } }))
+  const setCheckNote = (key: string, note: string) => setChecklist(prev => ({ ...prev, [key]: { ...prev[key], note } }))
+  const checkCount = checklistDone(checklist)
   const diff = m2 - quotedTotalM2
   const diffPct = quotedTotalM2 > 0 ? (diff / quotedTotalM2) * 100 : 0
 
   const submit = async () => {
     const cleanExtras = extrasItems.filter(x => (x.description ?? "").trim() && (Number(x.quantity) || 0) > 0)
-    const payload = { m2_medidos: m2 || undefined, m2_cotizados: quotedTotalM2 || undefined, superficie, observaciones: observaciones || undefined, extras_items: cleanExtras.length > 0 ? cleanExtras : undefined, recorded_at: new Date().toISOString(), recorded_by: task.assigned_seller }
+    // Solo persistir entradas del checklist con valor o nota (no ensuciar con {} vacíos).
+    const cleanChecklist = Object.fromEntries(Object.entries(checklist).filter(([, e]) => e?.v || (e?.note ?? "").trim()))
+    const payload = { m2_medidos: m2 || undefined, m2_cotizados: quotedTotalM2 || undefined, ml_zocalo: mlZocalo || undefined, superficie, observaciones: observaciones || undefined, extras_items: cleanExtras.length > 0 ? cleanExtras : undefined, checklist: Object.keys(cleanChecklist).length > 0 ? cleanChecklist : undefined, recorded_at: new Date().toISOString(), recorded_by: task.assigned_seller }
     await update.run("tasks", task.id, { medicion_data: payload, status: markDone ? "completada" : task.status, completed_at: markDone ? new Date().toISOString() : undefined })
     if (sale) {
       // La medición ARMA el remito: materiales de la venta + extras detectados. Solo si la
@@ -992,8 +1002,44 @@ function MedicionFormSheet({ task, sale, allTasks, onClose }: { task: Task | nul
             <Input type="number" step="0.1" min={0} value={m2} onChange={(e) => setM2(Number(e.target.value) || 0)} />
             {quotedTotalM2 > 0 && <div className="text-[11px] mt-1 tabular">Cotizado: <span className="text-foreground">{quotedTotalM2}</span> · Medido: <span className="text-foreground">{m2 || "—"}</span>{m2 > 0 && <span className={cn("ml-1 font-medium", Math.abs(diff) < 0.5 ? "text-muted-foreground" : diff > 0 ? "text-amber-700" : "text-blue-700")}> · {diff > 0 ? "+" : ""}{diff.toFixed(1)} m² ({diffPct >= 0 ? "+" : ""}{diffPct.toFixed(1)}%)</span>}</div>}
           </div>
+          <div><label className="text-sm font-medium block mb-1">ml de zócalo</label><Input type="number" step="0.1" min={0} value={mlZocalo || ""} onChange={(e) => setMlZocalo(Number(e.target.value) || 0)} placeholder="Metros lineales de zócalo" /></div>
           <div><label className="text-sm font-medium block mb-1">Tipo de superficie</label><select value={superficie} onChange={(e) => setSuperficie(e.target.value)} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm"><option>Contrapiso nuevo</option><option>Contrapiso existente</option><option>Piso de madera existente</option><option>Cemento alisado</option><option>Cerámico (a remover)</option><option>Otro</option></select></div>
           <div><label className="text-sm font-medium block mb-1">Observaciones</label><Input value={observaciones} onChange={(e) => setObservaciones(e.target.value)} placeholder="Nivelación, humedad, escalones, etc." /></div>
+
+          {/* Protocolo de inspección de obra — checklist Sí/No/N-A + nota por ítem */}
+          <div className="rounded-md border border-border">
+            <div className="px-3 py-2 border-b border-border flex items-center justify-between">
+              <div className="text-sm font-medium">Protocolo de inspección</div>
+              <div className="text-[10px] text-muted-foreground tabular">{checkCount}/{INSPECCION_GROUPS.flatMap(g => g.items).length} respondidos</div>
+            </div>
+            <div className="p-3 space-y-3">
+              {INSPECCION_GROUPS.map((g) => (
+                <div key={g.title} className="space-y-1.5">
+                  <div className="text-[10px] uppercase tracking-wide text-muted-foreground">{g.title}</div>
+                  {g.items.map((it) => {
+                    const cur = checklist[it.key]?.v
+                    return (
+                      <div key={it.key} className="space-y-1">
+                        <div className="flex items-center gap-2">
+                          <div className="flex-1 min-w-0 text-xs" title={it.hint}>{it.label}{it.hint && <span className="text-muted-foreground"> *</span>}</div>
+                          <div className="inline-flex rounded-md border border-input overflow-hidden shrink-0">
+                            {(["si", "no", "na"] as ChecklistValue[]).map((v) => (
+                              <button key={v} type="button" onClick={() => setCheck(it.key, v)}
+                                className={cn("px-2 h-7 text-[11px] border-l first:border-l-0 border-input",
+                                  cur === v ? (v === "si" ? "bg-emerald-600 text-white" : v === "no" ? "bg-red-600 text-white" : "bg-muted-foreground text-background") : "bg-transparent hover:bg-accent")}>
+                                {CHECK_LABEL[v]}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                        {cur && <Input value={checklist[it.key]?.note ?? ""} onChange={(e) => setCheckNote(it.key, e.target.value)} placeholder={it.hint || "Nota (opcional)"} className="h-7 text-[11px]" />}
+                      </div>
+                    )
+                  })}
+                </div>
+              ))}
+            </div>
+          </div>
           <div>
             <div className="flex items-center justify-between mb-1.5"><label className="text-sm font-medium">Extras detectados</label><button type="button" onClick={addExtra} className="text-xs text-primary hover:underline inline-flex items-center gap-1"><Plus className="h-3 w-3" />Agregar</button></div>
             {extrasItems.length === 0 ? <div className="text-[11px] text-muted-foreground italic border border-dashed border-border rounded-md p-2 text-center">Sin extras. Agregá zócalos, narices, ajustes, etc.</div> : <div className="space-y-2">{extrasItems.map((row, i) => <div key={i} className="grid grid-cols-[1fr_72px_28px] gap-1.5 items-center"><Input value={row.description} onChange={(e) => updateExtra(i, { description: e.target.value })} placeholder="Descripción del extra" className="h-8 text-xs" /><Input type="number" step="0.1" min={0} value={row.quantity} onChange={(e) => updateExtra(i, { quantity: Number(e.target.value) || 0 })} className="h-8 text-xs" /><button type="button" onClick={() => removeExtra(i)} className="h-8 w-7 inline-flex items-center justify-center text-muted-foreground hover:text-destructive" aria-label="Quitar">×</button></div>)}</div>}
@@ -1001,9 +1047,11 @@ function MedicionFormSheet({ task, sale, allTasks, onClose }: { task: Task | nul
           <label className="flex items-center gap-2 text-xs text-muted-foreground"><input type="checkbox" checked={markDone} onChange={(e) => setMarkDone(e.target.checked)} />Marcar la medición como completada</label>
           <div className="flex items-center gap-2 pt-1 flex-wrap">
             <Button onClick={submit} disabled={update.busy}>{update.busy ? "Guardando…" : "Guardar medición"}</Button>
+            {sale && <Button variant="outline" onClick={() => window.open(`/api/sales/${sale.id}/inspeccion-pdf`, "_blank")}>Protocolo (PDF)</Button>}
             {sale && <Button variant="outline" onClick={() => { onClose(); navigate(`/ventas?sale=${sale.id}`) }}>Ver venta</Button>}
             <Button variant="outline" onClick={onClose}>Cancelar</Button>
           </div>
+          <div className="text-[11px] text-muted-foreground">El "Protocolo (PDF)" abre el checklist impreso con lo cargado (guardá primero para incluir los últimos cambios).</div>
           <div className="text-[11px] text-muted-foreground">Al guardar se arma el remito con los materiales de la venta + los extras, y se crea la tarea Remito para el día de la entrega.</div>
         </div>
       </SheetContent>

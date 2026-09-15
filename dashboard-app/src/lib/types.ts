@@ -107,10 +107,12 @@ export type Sale = {
   medicion_data?: {
     m2_medidos?: number
     m2_cotizados?: number
+    ml_zocalo?: number                                  // metros lineales de zócalo (protocolo)
     superficie?: string
     observaciones?: string
     extras?: string
     extras_items?: { description: string; quantity: number; sku?: string }[]
+    checklist?: Record<string, { v?: "si" | "no" | "na"; note?: string }>   // protocolo de inspección
     recorded_at?: string
     recorded_by?: string
   }
