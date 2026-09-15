@@ -136903,6 +136903,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-14T21:37:03.504Z",
       "last_touch_at": "2026-09-14T21:37:03.504Z"
+    },
+    {
+      "id": "lead-email-1a0a2783a477",
+      "name": "Raul",
+      "email": "chaparroraulantonio@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Presidente Mont 3265",
+      "postal_code": "1650",
+      "approx_m2": 8,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 8m² · Con Colocación · CP 1650",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-15T00:29:43.000Z",
+      "last_touch_at": "2026-09-15T00:29:43.000Z"
     }
   ],
   "conversations": [
@@ -143379,6 +143396,21 @@
       "last_message_preview": "Hola, que tal!\nBuenas tardes, quería consultar si tienen showroom? Y por qué zona están?\nGracias..",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-14T21:37:03.504Z"
+    },
+    {
+      "id": "conv-email-1a0a2783a477",
+      "channel": "email",
+      "contact_id": "chaparroraulantonio@gmail.com",
+      "contact_name": "Raul",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0a2783a477",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-15T00:29:43.000Z",
+      "last_message_preview": "Formulario web — 8m² · Con Colocación · CP 1650 · Presidente Mont 3265",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-15T00:29:43.000Z"
     }
   ],
   "messages": [
@@ -161666,6 +161698,14 @@
       "body": "Gracias mando mje",
       "ts": "2026-09-14T22:51:01.468Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0a2783a477",
+      "conversation_id": "conv-email-1a0a2783a477",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 8m² · Con Colocación · CP 1650 · Presidente Mont 3265",
+      "ts": "2026-09-15T00:29:43.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -169968,7 +170008,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-15T00:03:33.740Z",
     "gmail_seen_ids": [
-      "19f39163d3be6da8",
       "19f3bad2cdd99462",
       "19f3bd5a17308626",
       "19f3c0e5c873a24b",
@@ -170767,7 +170806,8 @@
       "1a0a1285b4df4b48",
       "1a0a171c2b3fb2ca",
       "1a0a1826e5c096f7",
-      "1a0a19ceb2cfa69f"
+      "1a0a19ceb2cfa69f",
+      "1a0a2783a4770bb7"
     ],
     "cash_sessions": {
       "1136982222": {
