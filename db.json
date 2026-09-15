@@ -143760,11 +143760,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789421824662",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-14T21:37:03.504Z",
-      "last_message_preview": "Hola, que tal!\nBuenas tardes, quería consultar si tienen showroom? Y por qué zona están?\nGracias..",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-14T21:37:03.504Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-15T18:20:24.053Z",
+      "last_message_preview": "Hola Martin",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-14T21:37:03.504Z",
+      "last_outbound_at": "2026-09-15T18:20:24.053Z"
     },
     {
       "id": "conv-email-1a0a2783a477",
@@ -162138,6 +162139,16 @@
       "body": "✉️ 回复：NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm\n\nHello Victoria\nWe are happy to see your mail !\nI will arrange and make new PI for you\nAt same time , we will pay more attention and find solutions for your questions\nBR\nFrank\n\n---- 回复的原邮件 ----\n| 发件人 | Victoria Pisos Pacific<victoria@pisospacific.com> |\n| 发送日期 | 2026年09月15日 23:25 |\n| 收件人 | Rala Qin<rala_lam@163.com>,\nMerry Zhang<merry_lam@126.com>,\nFrank <frank_ljs@163.com> |\n| 抄送人 | info pisos<info@pisospacific.com>,\nMiguel G. Collado<mike@pisospacific.com> |\n| 主题 | NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm |\n\nHi Frank/Rala and Mary\n\nWe would like to place a new order, similar to our previous orders.\n\nWe are very happy with the quality of the orders we have been receiving, especially with the straight and uniform boards and the low number of knots. We would like to maintain this same quality for this new order.\n\nThe order details are listed below.\n\n| Barcode | Name  | Specification | Pallets | Quantity | Unit Price | Amount |\n| xxx-Color same as Kitsilano Oak | Oak 1 strip Multi-layer 4B T&G Grade ABC Light Brushed Matt Lac                 | 1900*190*12/1 | 8 | 1155.20 | 15.00 | 17328.00 |\n| xxx-Color same as Oak Verona | Oak 1 strip Multi-layer 4B T&G Grade ABC Light Brushed Matt Lac                 | 1900*190*12/1 | 4 | 577.60 | 15.00 | 8664.00 |\n|  Poplar plywood,10 pieces/box(3 layer of short planks, ) ;0.3mm bevel on 4sides, natural colour putty. |\n|   |   |   | 12 | 1732.80 |   | 25992.00 |\n| Total： |   | MM | 1*20 | m2 | USD | USD |\n\nOne small point t",
       "ts": "2026-09-15T15:30:06.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789496424645-gles",
+      "conversation_id": "conv-1789421824662-wzq1",
+      "direction": "out",
+      "body": "Hola Martin",
+      "ts": "2026-09-15T18:20:24.053Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAxMDM4MjU1NTMzMjEzNjgwMTA1NDA5MTA3NDYwMDk2MAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
