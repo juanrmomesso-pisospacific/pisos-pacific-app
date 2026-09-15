@@ -137322,6 +137322,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-15T19:10:14.000Z",
       "last_touch_at": "2026-09-15T19:10:14.000Z"
+    },
+    {
+      "id": "lead-instagram-1789502769905",
+      "name": "@jrelnenevzla",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-15T20:06:08.283Z",
+      "last_touch_at": "2026-09-15T20:06:08.283Z"
     }
   ],
   "conversations": [
@@ -143873,6 +143889,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-15T19:10:14.000Z"
+    },
+    {
+      "id": "conv-1789502769905-0m4m",
+      "channel": "instagram",
+      "contact_id": "1372666868186739",
+      "contact_name": "@jrelnenevzla",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1789502769905",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-15T20:06:08.283Z",
+      "last_message_preview": "Hola buenas tardes estoy interesado en sus pisos tienen algun número de WhatsApp",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-15T20:06:08.283Z"
     }
   ],
   "messages": [
@@ -162298,6 +162328,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 130m² · Con Colocación · CP 1429 · Garcia del Rio 2477",
       "ts": "2026-09-15T19:10:14.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789502769905-me3i",
+      "conversation_id": "conv-1789502769905-0m4m",
+      "direction": "in",
+      "body": "Hola buenas tardes estoy interesado en sus pisos tienen algun número de WhatsApp",
+      "ts": "2026-09-15T20:06:08.283Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -172620,7 +172658,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAwOTAwNjQxODA5MDA5NDkzNjQ5NzQ5OTk3NDY2NDE5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTYyOTExOTgxMzYyNjQyODozMzAwOTA4ODI4NDA4NzE2ODYzODgxMzgxMTM5ODE0ODA5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzAxMDA5NjE4NzE4MTU0NzEwOTE5NjIwNTU1OTY0NDE2MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTAzMzE2NTY2NDM4MDQ1NzozMzAxMDM4NDgzMTY1NjU5MjM2MTAyMTcyMzc0MDQ3MTI5NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTAzMzE2NTY2NDM4MDQ1NzozMzAxMDM4NDgzMTY1NjU5MjM2MTAyMTcyMzc0MDQ3MTI5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzMjUyNTY2MDc4NzM3NzozMzAxMDQ5OTU4NTcxODg4NTcyMzAzMzExODI0MDE0NTQwOAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
