@@ -144648,11 +144648,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-16T18:06:02.053Z",
-      "last_message_preview": "pero arregla con el directamente",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-16T14:49:21.000Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T18:51:44.000Z",
+      "last_message_preview": "dale gracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T18:51:44.000Z",
       "last_outbound_at": "2026-09-16T18:06:02.053Z"
     },
     {
@@ -163875,6 +163875,14 @@
       "body": "📎 Mensaje (reaction)",
       "ts": "2026-09-16T18:07:09.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789584705466-yxgg",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "in",
+      "body": "dale gracias",
+      "ts": "2026-09-16T18:51:44.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -174242,7 +174250,8 @@
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDMUUzNUYyM0YyNEEzQ0M1NTVGMEJGREE2N0IzMzJBAA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDRDMzQjQzODc1REQyNzA1RTNFNjVDMURDMzlFNjczAA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDOUI4MkJEOUYzQ0IzM0Y0Mjg1MkE3M0I2NzQxQzhEAA==",
-      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDRDZBQzQxODMwQ0YwOTAzMEM3MDcwQkIyNDE3OTEzAA=="
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDRDZBQzQxODMwQ0YwOTAzMEM3MDcwQkIyNDE3OTEzAA==",
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFjNFQjA0N0ZCNTY1NzlEMzQ4MjgyQkYA"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
