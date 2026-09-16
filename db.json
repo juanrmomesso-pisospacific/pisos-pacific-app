@@ -144387,11 +144387,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-16T14:48:24.000Z",
-      "last_message_preview": "Dale pasame el wpp para coordinar visita por favor",
+      "unread_count": 3,
+      "last_message_at": "2026-09-16T14:49:21.000Z",
+      "last_message_preview": "El viernes iria con un cliente",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T14:48:24.000Z",
+      "last_inbound_at": "2026-09-16T14:49:21.000Z",
       "last_outbound_at": "2026-09-16T14:47:56.781Z"
     },
     {
@@ -163382,6 +163382,22 @@
       "body": "Dale pasame el wpp para coordinar visita por favor",
       "ts": "2026-09-16T14:48:24.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789570156128-4uqn",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "in",
+      "body": "Despues nosotros somos unos constructora y estamos queriendo usar estos pisos, a mi me encantaria ir al showroom y si se puede llevarme alguna muestra",
+      "ts": "2026-09-16T14:49:15.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1789570162725-irjx",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "in",
+      "body": "El viernes iria con un cliente",
+      "ts": "2026-09-16T14:49:21.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173734,7 +173750,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyODQyMTAyMTIxMzA1ODozMzAxMTczNTgxMzEwOTUyNzU5MTM2NTc3MjYzMTM0MzEwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyODQyMTAyMTIxMzA1ODozMzAxMTczNjAyOTE3NjI1OTM3MzQ2OTgyNDQxOTEwMjcyMAZDZD",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBOTBEQzFEMUFGRDkyQzRFRDVCAA==",
-      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQkRGNDhEMEYwMkRERDZCRjNDAA=="
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQkRGNDhEMEYwMkRERDZCRjNDAA==",
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBMTZBOEM2NTQ2MjIxRTkzNUUxAA==",
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBOEUxRTI0QjIwMTg1NUZBNTVBAA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
