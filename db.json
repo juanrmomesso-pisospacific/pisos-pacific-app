@@ -136988,7 +136988,7 @@
       "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-11T12:07:30.000Z",
-      "last_touch_at": "2026-09-14T18:13:10.638Z"
+      "last_touch_at": "2026-09-16T11:06:56.000Z"
     },
     {
       "id": "lead-email-1a0913b00ca1",
@@ -143644,12 +143644,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0905db171f",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-14T18:15:05.652Z",
-      "last_message_preview": "📄 Presupuesto NA5860 - H2O Camara Nacional en lo Comercial - Matias Gaiteiro.pdf",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T11:06:56.000Z",
+      "last_message_preview": "Buenos Aires, 16 de septiembre de 2026 \r\nPor recibido, gracias por la pronta respuesta. \r\n\r\nIntendencia \r\nCámara Nacional de Apelaciones en ",
       "email_subject": "PEDIDO DE PRESUPUESTO",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-11T12:07:30.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T11:06:56.000Z",
       "last_outbound_at": "2026-09-14T18:15:05.652Z"
     },
     {
@@ -162564,6 +162564,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 60572851963c4b47a4659665011b4781\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-14 00:00:00 UTC to 2026-09-15 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-16T08:26:00.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0a9e6091ce",
+      "conversation_id": "conv-email-1a0905db171f",
+      "direction": "in",
+      "body": "✉️ Re: Presupuesto Pisos Pacific — H2O Camara Nacional en lo Comercial\n\nBuenos Aires, 16 de septiembre de 2026 \r\nPor recibido, gracias por la pronta respuesta. \r\n\r\nIntendencia \r\nCámara Nacional de Apelaciones en lo Comercial \r\nPoder Judicial de la Nación \r\n\r\n\r\nDe: \"Pisos Pacific\" <info@pisospacific.com> \r\nPara: \"cncomercial intendencia\" <cncomercial.intendencia@pjn.gov.ar> \r\nEnviados: Lunes, 14 de Septiembre 2026 15:15:05 \r\nAsunto: Presupuesto Pisos Pacific — H2O Camara Nacional en lo Comercial \r\n\r\n⚠️Seguridad Informática le informa que este mail \"Presupuesto Pisos Pacific — H2O Camara Nacional en lo Comercial\" es un mail EXTERNO y puede ser un mail de PHISHING .\r\nRecuerde  que nunca nadie del PJN solicitará a través de ningún medio:teléfono, mensaje de texto, correo electrónico o whatsapp, su usuario, contraseñas/claves o datos personales privados.\r\n⚠️ Este correo NO fue enviado por el PJN . El remitente identificado es info@pisospacific.com , que no pertenece a los dominios oficiales del Poder Judicial de la Nación.\r\nSi este correo le pide algún dato o no reconoce al remitente, ignore y elimine el mensaje inmediatamente \r\nHola Matias, muchas gracias por tu consulta. Te agradezco la claridad de la solicitud del presupuesto. Adjunto te comparto el presupuesto NA5860. \r\n\r\nCualquier consulta quedo a disposición. \r\n\r\nEn caso de que el presupuesto se ajuste a los valores esperados, puedo acercarte muestras en cualquier momento de la semana. \r\n\r\nMuchas gracias, \r\n\r\nSaludos, \r\n\r\n\r\n\t\r\nJuan Rodríguez Momesso \r\nVentas \r\n[ https://wa.me/5491151750087 | +54",
+      "ts": "2026-09-16T11:06:56.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -170884,7 +170892,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-16T00:01:52.128Z",
     "gmail_seen_ids": [
-      "19f3fad4957366bd",
       "19f40314265e0479",
       "19f40720cb18d7d1",
       "19f407a3ce6aaa22",
@@ -171683,7 +171690,8 @@
       "1a0a7c347ac2fa6b",
       "1a0a7da05dc7a644",
       "1a0a952a63d97ba2",
-      "1a0a9c552726d0df"
+      "1a0a9c552726d0df",
+      "1a0a9e6091ced35a"
     ],
     "cash_sessions": {
       "1136982222": {
