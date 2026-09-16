@@ -957,18 +957,20 @@ app.get('/api/sales',    (_, res) => {
   // Con el módulo finanzas APAGADO los cobros van directo a financial_position (cobro manual en
   // la venta) y el cashflow no es fuente: no derivar cashflow_paid o pisaría el saldo real con
   // datos viejos del ledger (el front le da precedencia a cashflow_paid).
-  const paidByRef = {};
+  // Cobro conciliado desde el cashflow: en la MONEDA de la venta (ARS para paneles, USD para el
+  // resto) — así el saldo derivado no mezcla pesos con dólares.
+  const paidUsd = {}, paidArs = {};
   if (moduleOn('finanzas')) for (const m of db.cashflow) {
     if (m.sale_ref && (m.flow || '').toLowerCase() === 'ingreso') {
-      paidByRef[m.sale_ref] = (paidByRef[m.sale_ref] || 0) + (m.amount_usd || 0);
+      paidUsd[m.sale_ref] = (paidUsd[m.sale_ref] || 0) + (m.amount_usd || 0);
+      paidArs[m.sale_ref] = (paidArs[m.sale_ref] || 0) + (m.amount_ars || 0);
     }
   }
   res.json(db.sales.map(s => {
     const out = { ...s, ...saleMargin(s) };
-    const cashflow_paid = paidByRef[s.quote_number];
-    // Ventas en pesos (paneles): contract_total está en ARS y cashflow_paid suma amount_usd →
-    // no mezclar. El saldo cae a financial_position (en la moneda de la venta).
-    if (cashflow_paid != null && s.currency !== 'ARS') {
+    const isArs = s.currency === 'ARS';
+    const cashflow_paid = (isArs ? paidArs : paidUsd)[s.quote_number];
+    if (cashflow_paid != null) {
       const paid = Math.round(cashflow_paid * 100) / 100;
       out.cashflow_paid = paid;
       out.cashflow_balance_due = Math.round((s.contract_total - paid) * 100) / 100;

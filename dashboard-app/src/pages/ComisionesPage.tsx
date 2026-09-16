@@ -57,6 +57,7 @@ export default function ComisionesPage() {
           <Tile label="Pagado" value={fmtMoney(totals.pagado)} />
           <Tile label="Pendiente de pago" value={fmtMoney(pendiente)} accent={pendiente > 0.5} />
         </div>
+        <p className="text-[11px] text-muted-foreground">La comisión ya está descontada del margen en el P&L (se computa al vender). Al pagarla, marcala <b>Pagada</b> acá — <b>no la cargues como gasto en el CashFlow</b> (sería contarla dos veces); si la registrás como movimiento de caja, marcala <b>Fuera del P&L</b>.</p>
 
         {groups.length === 0 ? (
           <Card><CardContent className="py-10 text-center text-sm text-muted-foreground">

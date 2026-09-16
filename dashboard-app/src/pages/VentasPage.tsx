@@ -569,6 +569,7 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   const quotes = useApi<Quote[]>("/api/quotes").data ?? []
   const cajas = useApi<Caja[]>("/api/cajas").data ?? []
   const cashflow = useApi<CashflowMovement[]>("/api/cashflow").data ?? []
+  const blue = useApi<{ promedio?: number }>("/api/fx/blue").data?.promedio || 1400   // para cobros en pesos (paneles)
   const products = useApi<Product[]>("/api/products").data ?? []
   // Registrar cobro
   const [payAmount, setPayAmount] = useState<number>(0)
@@ -638,14 +639,21 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
     }
     if (!payCaja) return
     const caja = cajas.find(c => c.id === payCaja)
+    // Cobro consciente de la moneda de la venta: paneles (currency ARS) se cobran en pesos y se
+    // consolidan a USD al blue; el resto (pisos) es USD nativo. La categoría sigue al producto.
+    const amt = Math.round(payAmount * 100) / 100
+    const isArs = sale.currency === "ARS"
+    const money = isArs
+      ? { currency: "ARS", amount_ars: amt, amount_usd: Math.round((amt / blue) * 100) / 100, exchange_rate: blue, category: "Venta - No Pisos" }
+      : { currency: "USD", amount_ars: null, amount_usd: amt, exchange_rate: null, category: "Venta - Pisos" }
     await createMov.run("cashflow", {
       flow: "Ingreso", date: (payDate || new Date().toISOString().slice(0, 10)) + "T00:00:00.000Z",
       caja_id: payCaja, caja_name: caja?.name ?? "",
-      category: "Venta - Pisos", subcategory: null,
+      subcategory: null,
       counterparty: sale.client_name, counterparty_type: "client",
       description: `Cobro - ${sale.title || sale.client_name}`, sale_ref: sale.quote_number,
-      currency: "USD", amount_ars: null, amount_usd: Math.round(payAmount * 100) / 100, exchange_rate: null,
       fixed_variable: null, expense_type: null, transfer: false, needs_review: false, review_reason: null,
+      ...money,
     })
     onClose(); onChanged()
   }
