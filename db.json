@@ -141764,13 +141764,14 @@
       "contact_name": "Aldana Bartolozzi",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ff6f4d2630",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-12T17:11:07.000Z",
       "last_message_preview": "Formulario web — 36m² · Sin Colocación · Maipú 37",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-12T17:11:07.000Z"
+      "last_inbound_at": "2026-08-12T17:11:07.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1786561374558-4xy6",
