@@ -144048,11 +144048,12 @@
       "linked_lead_id": "lead-email-1a0a2783a477",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-15T00:29:43.000Z",
-      "last_message_preview": "Formulario web — 8m² · Con Colocación · CP 1650 · Presidente Mont 3265",
+      "last_message_at": "2026-09-16T13:47:22.694Z",
+      "last_message_preview": "Hola Raúl, ¿cómo estás?\n\nContanos qué colección te interesa y te pasamos el presupuesto.\n\nPara una superficie de 8 m² no realizamos la coloc",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-15T00:29:43.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-15T00:29:43.000Z",
+      "last_outbound_at": "2026-09-16T13:47:22.694Z"
     },
     {
       "id": "conv-1789480901918-b86i",
@@ -144077,7 +144078,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0a5b0c1f15",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-15T15:30:06.000Z",
       "last_message_preview": "Hello Victoria\nWe are happy to see your mail !\nI will arrange and make new PI for you\nAt same time , we will pay more attention and find sol",
       "email_subject": "回复：NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm",
@@ -144107,7 +144108,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0a67a1bce6",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-15T19:10:14.000Z",
       "last_message_preview": "Formulario web — 130m² · Con Colocación · CP 1429 · Garcia del Rio 2477",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -162841,6 +162842,15 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 50m² · Sin Colocación · CP 5900 · Rucci 685",
       "ts": "2026-09-16T13:12:52.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789566442694-wx6j",
+      "conversation_id": "conv-email-1a0a2783a477",
+      "direction": "out",
+      "body": "Hola Raúl, ¿cómo estás?\n\nContanos qué colección te interesa y te pasamos el presupuesto.\n\nPara una superficie de 8 m² no realizamos la colocación, pero podemos recomendarte instaladores con los que trabajamos habitualmente.\n\n¡Saludos!\nEquipo Pacific",
+      "ts": "2026-09-16T13:47:22.694Z",
+      "status": "sent",
+      "wa_id": "1a0aa78dca6b8270"
     }
   ],
   "templates": [
