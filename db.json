@@ -11766,7 +11766,7 @@
       ],
       "zoned": false,
       "discount_total": 319,
-      "status": "Programado",
+      "status": "En proceso",
       "created_at": "2026-06-15T18:32:07.583Z",
       "has_iva": true,
       "financial_position": {
@@ -11786,6 +11786,12 @@
           "to": "Programado",
           "at": "2026-08-14T13:36:57.825Z",
           "by": "Victoria Gonzalez Collado"
+        },
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-09-16T18:59:11.531Z",
+          "by": "Admin User"
         }
       ]
     },
