@@ -137920,10 +137920,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: FW: Pedido de cotação — Exmos. Senhores,\r\n\r\nA GotFlow (Grupo Transfor) encontra-se a responder a um pedido de cotação relativo à obra do cliente, na qual constam itens com referência (abaixo indicada).\r\nD",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-16T12:18:55.000Z",
-      "last_touch_at": "2026-09-16T12:18:55.000Z"
+      "last_touch_at": "2026-09-16T18:03:16.840Z"
     },
     {
       "id": "lead-email-1a0aa5947558",
@@ -137954,10 +137954,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: Consulta x revestimiento escalera — Hola, soy Carolina de City Bell, partido de la plata y queria averiguar x revestimiento simil madera para escaleras.\r\n\r\nMe comentan si hacen ustedes la obra o si tienen algun conta",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-16T13:55:22.000Z",
-      "last_touch_at": "2026-09-16T14:11:26.000Z"
+      "last_touch_at": "2026-09-16T18:03:09.261Z"
     },
     {
       "id": "lead-email-1a0aaaa13d60",
@@ -137987,10 +137987,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-16T14:43:04.304Z",
-      "last_touch_at": "2026-09-16T14:43:04.304Z"
+      "last_touch_at": "2026-09-16T18:03:04.342Z"
     },
     {
       "id": "local-1789570377808-x4lfi",
@@ -138019,10 +138019,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-16T16:07:15.522Z",
-      "last_touch_at": "2026-09-16T16:07:15.522Z"
+      "last_touch_at": "2026-09-16T18:02:58.159Z"
     }
   ],
   "conversations": [
