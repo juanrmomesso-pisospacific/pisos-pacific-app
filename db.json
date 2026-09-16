@@ -144764,11 +144764,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789574836892",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-16T16:07:15.522Z",
-      "last_message_preview": "Estoy interesado en pisos de madera",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T16:07:15.522Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-16T19:53:34.581Z",
+      "last_message_preview": "Hola cómo estás? Me avisaron que ya estás hablando x WhatsApp",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-16T16:07:15.522Z",
+      "last_outbound_at": "2026-09-16T19:53:34.581Z"
     }
   ],
   "messages": [
@@ -163897,6 +163898,16 @@
       "body": "✉️ Re: Comex+Cargo // Momesso // Cotizacion JR007 | Wall panles | Shanghai - Buenos Aires | 20 ft // CCF-MI-00000105\n\nBuenas tardes Cami, Vicky,\r\nAdjuntamos el b/l final de la carga.\r\nAdemás informamos que realizará el trasbordo en Tanger el 24/SEP al buque\r\nSAN RAPHAEL MAERSK, el cual tiene estimado de arribo a Buenos Aires para el\r\n*17/OCT*:\r\n\r\n[image: image.png]\r\n\r\nLes notificaremos en cuanto confirmemos el trasbordo.\r\n\r\nSaludos,\r\n\r\n\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\nCarolina Lodovico\r\n*Customer Comex+ Cargo*\r\nCel WhatsApp: (+54)115-761-1787\r\n\r\n*Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nAv. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\n\r\nEl mié, 19 ago 2026 a la(s) 11:54 a.m., Customer Comex+ Cargo (\r\nCustomerCargo@grupocomexmas.com) escribió:\r\n\r\n> Buenos días Vicky, Cami\r\n> Confirmamos el on board de la carga de referencia:\r\n>\r\n> *ETD DALIAN: 19/AUG*\r\n> *VSL: KOTA LUKIS *\r\n> *ETA BUENOS AIRES: 10/OCT*\r\n>\r\n> [image: image.png]\r\n>\r\n>\r\n> Saludos,\r\n>\r\n>\r\n>\r\n> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n> Cordiali Saluti*\r\n> Carolina Lodovico\r\n> *Customer Comex+ Cargo*\r\n> Cel WhatsApp: (+54)115-761-1787\r\n>\r\n> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n> Tel.: (+54)114331-2207/1893\r\n> Av. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\n> Argentina\r\n>\r\n>\r\n> El mar, 18 ago 2026 a la(s) 11:20 a.m., Customer Comex+ Cargo (\r\n> CustomerCargo@grupocomexmas.com) escribió:\r\n>\r\n>> Genial Cami!! 🙌🏼\r\n>> Les inform",
       "ts": "2026-09-16T19:06:24.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789588415101-ouzr",
+      "conversation_id": "conv-1789574836892-jp74",
+      "direction": "out",
+      "body": "Hola cómo estás? Me avisaron que ya estás hablando x WhatsApp",
+      "ts": "2026-09-16T19:53:34.581Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5OTA1MDYzNzQzODcyNDozMzAxMjA3OTQ4MTA1NzAzMzkyMzg3MjYwMjc2NDM0NTM0NAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
