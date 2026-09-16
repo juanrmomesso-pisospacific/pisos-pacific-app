@@ -139213,13 +139213,14 @@
       "contact_name": "@marce.cunarro",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1782490260580",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-07-27T19:41:43.888Z",
       "last_message_preview": "Muchas gracias ya escribí",
       "last_message_direction": "in",
       "last_inbound_at": "2026-07-27T19:41:43.888Z",
-      "last_outbound_at": "2026-07-27T19:38:37.683Z"
+      "last_outbound_at": "2026-07-27T19:38:37.683Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19f08d81d4c7",
@@ -140285,13 +140286,14 @@
       "contact_name": "@valuzapata",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1784602375773",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-07-28T13:36:30.095Z",
       "last_message_preview": "Gracias por responderme 🙌🏻",
       "last_message_direction": "in",
       "last_inbound_at": "2026-07-28T13:36:30.095Z",
-      "last_outbound_at": "2026-07-21T19:19:15.618Z"
+      "last_outbound_at": "2026-07-21T19:19:15.618Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19f8525d75d9",
@@ -140473,13 +140475,14 @@
       "contact_name": "@chunacougnet",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1784916324625",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-07-27T16:05:47.874Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
       "last_inbound_at": "2026-07-27T16:05:47.874Z",
-      "last_outbound_at": "2026-07-27T15:18:20.456Z"
+      "last_outbound_at": "2026-07-27T15:18:20.456Z",
+      "ignored": true
     },
     {
       "id": "conv-1784917400689-sike",
@@ -140877,13 +140880,14 @@
       "contact_name": "@oliviacorderoo",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1785243551325",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-07-28T18:49:56.185Z",
       "last_message_preview": "Dale escribime y te Paso la dirc x ahi",
       "last_message_direction": "in",
       "last_inbound_at": "2026-07-28T18:49:56.185Z",
-      "last_outbound_at": "2026-07-28T18:49:43.934Z"
+      "last_outbound_at": "2026-07-28T18:49:43.934Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fa8f8408a1",
@@ -140908,13 +140912,14 @@
       "contact_name": "@leledefilippi",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1785250945446",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-07-28T19:37:58.078Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
       "last_inbound_at": "2026-07-28T19:37:58.078Z",
-      "last_outbound_at": "2026-07-28T19:33:18.055Z"
+      "last_outbound_at": "2026-07-28T19:33:18.055Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fa98b77b2f",
@@ -140939,13 +140944,14 @@
       "contact_name": "@daniel.marengo.7",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1785267543222",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-07-30T18:28:33.585Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
       "last_inbound_at": "2026-07-30T18:28:33.585Z",
-      "last_outbound_at": "2026-07-30T18:28:21.968Z"
+      "last_outbound_at": "2026-07-30T18:28:21.968Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19faa66d0cb9",
@@ -140970,13 +140976,14 @@
       "contact_name": "@estudio.doheijo",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1785271020605",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-07-28T20:42:08.159Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
       "last_inbound_at": "2026-07-28T20:42:08.159Z",
-      "last_outbound_at": "2026-07-28T20:42:02.235Z"
+      "last_outbound_at": "2026-07-28T20:42:02.235Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fac2a34f88",
@@ -141099,13 +141106,14 @@
       "contact_name": "@sofiaberetervide",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1785458768776",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-01T13:20:01.759Z",
       "last_message_preview": "Muchas grs! te escribo en estos días",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-01T13:20:01.759Z",
-      "last_outbound_at": "2026-08-01T12:57:28.641Z"
+      "last_outbound_at": "2026-08-01T12:57:28.641Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fbb0157d18",
@@ -141130,12 +141138,13 @@
       "contact_name": "@juliamacchi.arq",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1785619246658",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-01T21:20:45.381Z",
       "last_message_preview": "📲 Te mencionó en una historia",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-01T21:20:45.381Z"
+      "last_inbound_at": "2026-08-01T21:20:45.381Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fc2291fb25",
@@ -141271,12 +141280,13 @@
       "contact_name": "@manolarm",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1785772188043",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-03T15:49:55.373Z",
       "last_message_preview": "Esas son las que quierooo",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-03T15:49:55.373Z"
+      "last_inbound_at": "2026-08-03T15:49:55.373Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fc8cc7dca0",
@@ -141317,13 +141327,14 @@
       "contact_name": "@verogerszkowicz",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1785848114628",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-04T17:08:43.160Z",
       "last_message_preview": "Siiii vieron ???",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-04T17:08:43.160Z",
-      "last_outbound_at": "2026-08-04T14:48:08.320Z"
+      "last_outbound_at": "2026-08-04T14:48:08.320Z",
+      "ignored": true
     },
     {
       "id": "conv-1785848133297-vq2k",
@@ -141442,13 +141453,14 @@
       "contact_name": "@alexisleandro_05",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786025663809",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-06T15:46:13.923Z",
       "last_message_preview": "Háblame y te paso todo bien",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-06T15:46:13.923Z",
-      "last_outbound_at": "2026-08-06T15:42:03.297Z"
+      "last_outbound_at": "2026-08-06T15:42:03.297Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fd96d3b2f4",
