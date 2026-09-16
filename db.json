@@ -6924,9 +6924,9 @@
         }
       ],
       "source": "excel-import",
-      "delivery_date": "2026-11-03",
-      "delivery_date_to": "2026-11-06",
-      "delivery_crew": "Gastón Aguilera",
+      "delivery_date": "2026-10-05",
+      "delivery_date_to": "2026-10-09",
+      "delivery_crew": "Ariel Ernesto Garcia",
       "status_log": [
         {
           "from": "Confirmado",
@@ -144353,11 +144353,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-16T14:26:33.201Z",
-      "last_message_preview": "📎 PHOTO-2026-04-28-11-40-59_2.jpg",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-16T14:19:40.000Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T14:41:57.000Z",
+      "last_message_preview": "Buenísimo gracias!",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T14:41:57.000Z",
       "last_outbound_at": "2026-09-16T14:26:33.201Z"
     },
     {
@@ -163224,6 +163224,14 @@
       "ts": "2026-09-16T14:26:33.201Z",
       "status": "delivered",
       "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEjI5MDA0Q0MwOTAyQUE1N0FDRgA="
+    },
+    {
+      "id": "m-1789569718474-i13i",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "in",
+      "body": "Buenísimo gracias!",
+      "ts": "2026-09-16T14:41:57.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173571,7 +173579,8 @@
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBNEQ2NzEzMzU1Q0NGOEYyMzUwAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBNEZEQTU1QzRERTJBMkZFMTYxAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQUZBQTJDOEYyMkI1MkZCRjJFAA==",
-      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBRTQ0MjQ5MEFDNTJBMUQ1OTU5AA=="
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBRTQ0MjQ5MEFDNTJBMUQ1OTU5AA==",
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQTZCMDRFMkFCN0E2NEVGMzcxAA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
