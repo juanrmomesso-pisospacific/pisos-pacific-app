@@ -144482,10 +144482,11 @@
       "linked_lead_id": "lead-instagram-1789569785628",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T14:43:16.017Z",
-      "last_message_preview": "Quiero pedir una cotización y nadie me contesta",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T14:43:16.017Z"
+      "last_message_at": "2026-09-16T14:46:52.315Z",
+      "last_message_preview": "ahi te respondieron me avisaron!!",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-16T14:43:16.017Z",
+      "last_outbound_at": "2026-09-16T14:46:52.315Z"
     }
   ],
   "messages": [
@@ -163345,6 +163346,15 @@
       "body": "Tienen showroom?",
       "ts": "2026-09-16T14:46:03.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789570012315-e7fx",
+      "conversation_id": "conv-1789569785628-dily",
+      "direction": "out",
+      "body": "ahi te respondieron me avisaron!!",
+      "ts": "2026-09-16T14:46:52.315Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyODQyMTAyMTIxMzA1ODozMzAxMTc0MDAxNDUxNTg2NjM3MTY5Mjk4NDAxNzA5MjYwOAZDZD"
     }
   ],
   "templates": [
