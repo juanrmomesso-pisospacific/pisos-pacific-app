@@ -144305,11 +144305,11 @@
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T14:19:40.000Z",
-      "last_message_preview": "Un tono medio oscuro",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-16T14:25:12.238Z",
+      "last_message_preview": "te paso el catalogo. Podria ser el notte xl",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T14:19:40.000Z",
-      "last_outbound_at": "2026-09-16T14:18:30.646Z"
+      "last_outbound_at": "2026-09-16T14:25:12.238Z"
     },
     {
       "id": "conv-email-1a0aa08db535",
@@ -163148,6 +163148,24 @@
       "ts": "2026-09-16T14:21:54.659Z",
       "status": "sent",
       "wa_id": "1a0aa98792418ba4"
+    },
+    {
+      "id": "m-1789568705579-020l",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "out",
+      "body": "📎 Catalogo_Pacific_Argentina_2025_CS.pdf",
+      "ts": "2026-09-16T14:25:05.579Z",
+      "status": "delivered",
+      "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEjdEQTI5NjhFNDg1MDhFMzdGNQA="
+    },
+    {
+      "id": "m-1789568712238-or9p",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "out",
+      "body": "te paso el catalogo. Podria ser el notte xl",
+      "ts": "2026-09-16T14:25:12.238Z",
+      "status": "delivered",
+      "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEjRDNTI5MkU5MjhEOEYxMDEzQQA="
     }
   ],
   "templates": [
