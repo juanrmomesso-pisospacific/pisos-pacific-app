@@ -144304,11 +144304,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-16T14:18:55.000Z",
-      "last_message_preview": "Estoy buscando un simil madera",
+      "unread_count": 2,
+      "last_message_at": "2026-09-16T14:19:40.000Z",
+      "last_message_preview": "Un tono medio oscuro",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T14:18:55.000Z",
+      "last_inbound_at": "2026-09-16T14:19:40.000Z",
       "last_outbound_at": "2026-09-16T14:18:30.646Z"
     },
     {
@@ -163131,6 +163131,14 @@
       "body": "Estoy buscando un simil madera",
       "ts": "2026-09-16T14:18:55.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789568381140-r9n7",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "in",
+      "body": "Un tono medio oscuro",
+      "ts": "2026-09-16T14:19:40.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173474,7 +173482,8 @@
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNTQxM0QwMkJFODA4OUZBNTYzODJENURDRUI4MkI0AA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBNEQ2NzEzMzU1Q0NGOEYyMzUwAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBNEZEQTU1QzRERTJBMkZFMTYxAA==",
-      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQUZBQTJDOEYyMkI1MkZCRjJFAA=="
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQUZBQTJDOEYyMkI1MkZCRjJFAA==",
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBRTQ0MjQ5MEFDNTJBMUQ1OTU5AA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
