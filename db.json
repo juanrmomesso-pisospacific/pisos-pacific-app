@@ -144444,11 +144444,11 @@
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T15:47:30.717Z",
-      "last_message_preview": "Estás interesado en el H2O? (es el de SPC que se banca el agua)",
+      "last_message_at": "2026-09-16T15:48:02.726Z",
+      "last_message_preview": "El m2 de H2O tiene un valor de USD 38 + IVA. Cada caja incluye 2,084m2",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T15:19:32.000Z",
-      "last_outbound_at": "2026-09-16T15:47:30.717Z"
+      "last_outbound_at": "2026-09-16T15:48:02.726Z"
     },
     {
       "id": "conv-email-1a0a75a66d37",
@@ -163518,6 +163518,15 @@
       "ts": "2026-09-16T15:47:30.717Z",
       "status": "delivered",
       "wa_id": "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABEYEjQ3NjZDNTY0ODdBRDZBNzQ1NgA="
+    },
+    {
+      "id": "m-1789573682726-r3jr",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "out",
+      "body": "El m2 de H2O tiene un valor de USD 38 + IVA. Cada caja incluye 2,084m2",
+      "ts": "2026-09-16T15:48:02.726Z",
+      "status": "delivered",
+      "wa_id": "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABEYEkFFMkJDQzg5MUM2NTEzQTBBMwA="
     }
   ],
   "templates": [
