@@ -137480,7 +137480,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-15T23:15:14.000Z",
-      "last_touch_at": "2026-09-15T23:15:14.000Z"
+      "last_touch_at": "2026-09-16T13:52:45.000Z"
     },
     {
       "id": "lead-whatsapp-1789559134669",
@@ -137548,6 +137548,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-16T13:12:52.000Z",
       "last_touch_at": "2026-09-16T13:12:52.000Z"
+    },
+    {
+      "id": "lead-email-1a0aa803bbdd",
+      "name": "carolina zuljevic",
+      "email": "carito_zuljevic@live.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Consulta x revestimiento escalera — Hola, soy Carolina de City Bell, partido de la plata y queria averiguar x revestimiento simil madera para escaleras.\r\n\r\nMe comentan si hacen ustedes la obra o si tienen algun conta",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-16T13:55:22.000Z",
+      "last_touch_at": "2026-09-16T13:55:22.000Z"
     }
   ],
   "conversations": [
@@ -144153,12 +144170,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0a75a66d37",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-16T13:49:09.430Z",
-      "last_message_preview": "Hola Macarena, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestr",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T13:52:45.000Z",
+      "last_message_preview": "Libra h2o modelo Aspen xl\r\n\r\nObtener Outlook para Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\nFrom: Pisos Pacific <in",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-15T23:15:14.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T13:52:45.000Z",
       "last_outbound_at": "2026-09-16T13:49:09.430Z"
     },
     {
@@ -144220,6 +144237,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-16T13:12:52.000Z"
+    },
+    {
+      "id": "conv-email-1a0aa803bbdd",
+      "channel": "email",
+      "contact_id": "carito_zuljevic@live.com",
+      "contact_name": "carolina zuljevic",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0aa803bbdd",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T13:55:22.000Z",
+      "last_message_preview": "Hola, soy Carolina de City Bell, partido de la plata y queria averiguar x revestimiento simil madera para escaleras.\r\n\r\nMe comentan si hacen",
+      "email_subject": "Consulta x revestimiento escalera",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T13:55:22.000Z"
     }
   ],
   "messages": [
@@ -162881,6 +162913,22 @@
       "ts": "2026-09-16T13:50:40.967Z",
       "status": "sent",
       "wa_id": "1a0aa7be3cb852e5"
+    },
+    {
+      "id": "m-email-1a0aa803bbdd",
+      "conversation_id": "conv-email-1a0aa803bbdd",
+      "direction": "in",
+      "body": "✉️ Consulta x revestimiento escalera\n\nHola, soy Carolina de City Bell, partido de la plata y queria averiguar x revestimiento simil madera para escaleras.\r\n\r\nMe comentan si hacen ustedes la obra o si tienen algun contacto que pueda realizar el trabajo y cuanto sale el puso en si.\r\nMi idea es hacer exactamente li que tienen en la ultima publicacion del feed.\r\n\r\n\r\nSaludos\r\n\r\n\r\nCarolina\r\n11  31757355\r\n\r\nObtener Outlook para iOS<https://aka.ms/o0ukef>",
+      "ts": "2026-09-16T13:55:22.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a0aa7dd28ba",
+      "conversation_id": "conv-email-1a0a75a66d37",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nLibra h2o modelo Aspen xl\r\n\r\nObtener Outlook para Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\nFrom: Pisos Pacific <info@pisospacific.com>\r\nSent: Wednesday, 16 September 2026 10:49:09\r\nTo: makiita33@hotmail.com <makiita33@hotmail.com>\r\nSubject: Re: Pedido de Presupuesto | Página Web\r\n\r\nHola Macarena, ¡muchas gracias por tu consulta!\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera<https://pisospacific.com/madera> — Pisos de madera noble prefinished\r\n• Línea H2O<https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación.\r\n\r\n¡Muchas gracias!\r\nSaludos, Equipo Pacific\r\n\r\n\r\n[Pisos Pacific]\r\nVictoria Collado\r\nVentas\r\n\r\n+54 11 3698-2222<https://wa.me/5491136982222>\r\nvictoria@pisospacific.com<mailto:victoria@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
+      "ts": "2026-09-16T13:52:45.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -171205,8 +171253,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-16T00:01:52.128Z",
     "gmail_seen_ids": [
-      "19f41e45c6f4f6e3",
-      "19f41df94c104e68",
       "19f41ddddaf17c79",
       "19f41ed29acd1ea3",
       "19f41eb268463698",
@@ -172004,7 +172050,9 @@
       "1a0aa27eec28ece0",
       "1a0aa4d168e9d9ec",
       "1a0aa59475589a0b",
-      "1a0aa6940071f8d6"
+      "1a0aa6940071f8d6",
+      "1a0aa803bbdd5e9c",
+      "1a0aa7dd28bae3b1"
     ],
     "cash_sessions": {
       "1136982222": {
