@@ -35809,6 +35809,50 @@
       "quote_number": "A9209",
       "status": "DRAFT",
       "share_token": "2bad0d135fdacb9643037043"
+    },
+    {
+      "id": "local-1789567736904-qt1ui",
+      "client_id": "",
+      "client_name": "carolina esses",
+      "client_dni": "",
+      "client_email": "carolinaesses@gmail.com",
+      "client_phone": "",
+      "client_address": "",
+      "internal_notes": "Lead automático desde instagram",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "carolina esses",
+      "has_iva": true,
+      "price": 513.1368,
+      "zoned": false,
+      "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m",
+      "items": [
+        {
+          "product_id": "PROD-190",
+          "sku": "PROD-190",
+          "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m",
+          "quantity": 12.4,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 471.2,
+          "discount": 47.12,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 47.12,
+      "discount_amount": 47.12,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-16T14:08:56.688Z",
+      "quote_number": "A4781",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a0913b00ca1"
     }
   ],
   "clients": [
@@ -137084,10 +137128,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 12m² · Con Colocación · CP C1425",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-11T16:09:18.000Z",
-      "last_touch_at": "2026-09-14T19:42:50.000Z"
+      "last_touch_at": "2026-09-16T14:08:56.954Z"
     },
     {
       "id": "lead-instagram-1789145375187",
