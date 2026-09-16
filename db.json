@@ -144618,11 +144618,11 @@
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T16:15:48.000Z",
-      "last_message_preview": "Tienen cuotas sin interes ?",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-16T18:06:52.435Z",
+      "last_message_preview": "no manejamos cuotas!",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T16:15:48.000Z",
-      "last_outbound_at": "2026-09-16T16:02:41.381Z"
+      "last_outbound_at": "2026-09-16T18:06:52.435Z"
     },
     {
       "id": "conv-email-1a0a75a66d37",
@@ -163858,6 +163858,15 @@
       "ts": "2026-09-16T18:06:02.053Z",
       "status": "delivered",
       "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEjk2RUJEQjk4RkFFMkY3Qjc0MAA="
+    },
+    {
+      "id": "m-1789582012435-jml0",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "out",
+      "body": "no manejamos cuotas!",
+      "ts": "2026-09-16T18:06:52.435Z",
+      "status": "read",
+      "wa_id": "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABEYEjlFMjkxMDVDOTc0OTdDQzIzOQA="
     }
   ],
   "templates": [
