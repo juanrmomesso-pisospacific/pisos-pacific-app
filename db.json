@@ -142702,14 +142702,15 @@
       "contact_name": "María Elisa Barroso Rodríguez",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a026f7cda12",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-14T20:01:03.000Z",
       "last_message_preview": "Hola, cómo estas? gracias por el presupuesto. Para la instalación necesito\r\ncomprar algo más?\r\n\r\n*Ab. María Elisa Barroso Rodríguez*\r\n*M.P.:",
       "email_subject": "Re: Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-14T20:01:03.000Z",
-      "last_outbound_at": "2026-09-14T18:31:29.225Z"
+      "last_outbound_at": "2026-09-14T18:31:29.225Z",
+      "ignored": true
     },
     {
       "id": "conv-1787618959518-o27x",
@@ -143937,14 +143938,15 @@
       "contact_name": "Camara Nacional en lo Comercial Intendencia",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0905db171f",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-16T11:06:56.000Z",
       "last_message_preview": "Buenos Aires, 16 de septiembre de 2026 \r\nPor recibido, gracias por la pronta respuesta. \r\n\r\nIntendencia \r\nCámara Nacional de Apelaciones en ",
       "email_subject": "PEDIDO DE PRESUPUESTO",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-16T11:06:56.000Z",
-      "last_outbound_at": "2026-09-14T18:15:05.652Z"
+      "last_outbound_at": "2026-09-14T18:15:05.652Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0913b00ca1",
@@ -144209,13 +144211,14 @@
       "contact_name": "Frank",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0a5b0c1f15",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-15T15:30:06.000Z",
       "last_message_preview": "Hello Victoria\nWe are happy to see your mail !\nI will arrange and make new PI for you\nAt same time , we will pay more attention and find sol",
       "email_subject": "回复：NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-15T15:30:06.000Z"
+      "last_inbound_at": "2026-09-15T15:30:06.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1789496549093-tamw",
@@ -144330,13 +144333,14 @@
       "contact_name": "Sérgio Pereira",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0aa27eec28",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-16T12:18:55.000Z",
       "last_message_preview": "Exmos. Senhores,\r\n\r\nA GotFlow (Grupo Transfor) encontra-se a responder a um pedido de cotação relativo à obra do cliente, na qual constam it",
       "email_subject": "FW: Pedido de cotação",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T12:18:55.000Z"
+      "last_inbound_at": "2026-09-16T12:18:55.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0aa5947558",
