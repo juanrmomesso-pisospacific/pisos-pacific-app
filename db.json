@@ -144184,11 +144184,12 @@
       "linked_lead_id": "lead-email-1a0aa08db535",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T11:45:01.000Z",
-      "last_message_preview": "Formulario web — 30m² · Con Colocación · CP 1704 · Rodríguez Peña 38",
+      "last_message_at": "2026-09-16T13:50:40.967Z",
+      "last_message_preview": "Hola Ailin, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T11:45:01.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-16T11:45:01.000Z",
+      "last_outbound_at": "2026-09-16T13:50:40.967Z"
     },
     {
       "id": "conv-email-1a0aa27eec28",
@@ -162871,6 +162872,15 @@
       "ts": "2026-09-16T13:49:09.430Z",
       "status": "sent",
       "wa_id": "1a0aa7a7c03a4148"
+    },
+    {
+      "id": "m-1789566640967-0m12",
+      "conversation_id": "conv-email-1a0aa08db535",
+      "direction": "out",
+      "body": "Hola Ailin, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Equipo Pacific",
+      "ts": "2026-09-16T13:50:40.967Z",
+      "status": "sent",
+      "wa_id": "1a0aa7be3cb852e5"
     }
   ],
   "templates": [
