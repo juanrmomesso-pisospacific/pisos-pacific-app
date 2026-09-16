@@ -144305,11 +144305,11 @@
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T14:25:12.238Z",
-      "last_message_preview": "te paso el catalogo. Podria ser el notte xl",
+      "last_message_at": "2026-09-16T14:26:33.201Z",
+      "last_message_preview": "📎 PHOTO-2026-04-28-11-40-59_2.jpg",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T14:19:40.000Z",
-      "last_outbound_at": "2026-09-16T14:25:12.238Z"
+      "last_outbound_at": "2026-09-16T14:26:33.201Z"
     },
     {
       "id": "conv-email-1a0aa08db535",
@@ -163166,6 +163166,15 @@
       "ts": "2026-09-16T14:25:12.238Z",
       "status": "delivered",
       "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEjRDNTI5MkU5MjhEOEYxMDEzQQA="
+    },
+    {
+      "id": "m-1789568793201-8ypp",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "out",
+      "body": "📎 PHOTO-2026-04-28-11-40-59_2.jpg",
+      "ts": "2026-09-16T14:26:33.201Z",
+      "status": "sent",
+      "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEjI5MDA0Q0MwOTAyQUE1N0FDRgA="
     }
   ],
   "templates": [
