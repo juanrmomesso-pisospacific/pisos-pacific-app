@@ -144459,11 +144459,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-16T16:15:07.000Z",
-      "last_message_preview": "En pesos por favor",
+      "unread_count": 2,
+      "last_message_at": "2026-09-16T16:15:35.000Z",
+      "last_message_preview": "Aceptan tarjeta de crédito ?",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T16:15:07.000Z",
+      "last_inbound_at": "2026-09-16T16:15:35.000Z",
       "last_outbound_at": "2026-09-16T16:02:41.381Z"
     },
     {
@@ -163631,6 +163631,14 @@
       "body": "En pesos por favor",
       "ts": "2026-09-16T16:15:07.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789575336108-4uen",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "in",
+      "body": "Aceptan tarjeta de crédito ?",
+      "ts": "2026-09-16T16:15:35.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173995,7 +174003,8 @@
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNDY1Q0E1NDc0RkQyRTc1M0JGMzNDMjNEOTU2MDMxAA==",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5OTA1MDYzNzQzODcyNDozMzAxMTgyODk5MTY0MzAwMDE4NTYzNDY5OTAyMDg2MTQ0MAZDZD",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDQjVBQzMyRTg3RUEwODcwNjY1NDYzQjM4REM4QkRFAA==",
-      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDMUUzNUYyM0YyNEEzQ0M1NTVGMEJGREE2N0IzMzJBAA=="
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDMUUzNUYyM0YyNEEzQ0M1NTVGMEJGREE2N0IzMzJBAA==",
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDRDMzQjQzODc1REQyNzA1RTNFNjVDMURDMzlFNjczAA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
