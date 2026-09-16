@@ -143806,7 +143806,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0905db171f",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-16T11:06:56.000Z",
       "last_message_preview": "Buenos Aires, 16 de septiembre de 2026 \r\nPor recibido, gracias por la pronta respuesta. \r\n\r\nIntendencia \r\nCámara Nacional de Apelaciones en ",
       "email_subject": "PEDIDO DE PRESUPUESTO",
@@ -144154,11 +144154,12 @@
       "linked_lead_id": "lead-email-1a0a75a66d37",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-15T23:15:14.000Z",
-      "last_message_preview": "Formulario web — 56m² · Con Colocación · CP 1766 · Avellaneda 4836",
+      "last_message_at": "2026-09-16T13:49:09.430Z",
+      "last_message_preview": "Hola Macarena, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestr",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-15T23:15:14.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-15T23:15:14.000Z",
+      "last_outbound_at": "2026-09-16T13:49:09.430Z"
     },
     {
       "id": "conv-1789559134669-tqfc",
@@ -162861,6 +162862,15 @@
       "ts": "2026-09-16T13:48:31.773Z",
       "status": "sent",
       "wa_id": "1a0aa79ebc494d3f"
+    },
+    {
+      "id": "m-1789566549430-w9t2",
+      "conversation_id": "conv-email-1a0a75a66d37",
+      "direction": "out",
+      "body": "Hola Macarena, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Equipo Pacific",
+      "ts": "2026-09-16T13:49:09.430Z",
+      "status": "sent",
+      "wa_id": "1a0aa7a7c03a4148"
     }
   ],
   "templates": [
