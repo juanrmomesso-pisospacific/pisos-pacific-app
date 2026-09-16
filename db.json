@@ -144388,11 +144388,11 @@
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T14:46:03.000Z",
-      "last_message_preview": "Tienen showroom?",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-16T14:47:56.781Z",
+      "last_message_preview": "El depósito está en Olivos, a la altura de Thames y Panamericana, y trabajamos con cita previa.\n\nSi te interesa acercarte, te paso un WhatsA",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T14:46:03.000Z",
-      "last_outbound_at": "2026-09-16T14:45:59.849Z"
+      "last_outbound_at": "2026-09-16T14:47:56.781Z"
     },
     {
       "id": "conv-email-1a0aa08db535",
@@ -163365,6 +163365,15 @@
       "ts": "2026-09-16T14:47:28.208Z",
       "status": "sent",
       "wa_id": "1a0aaafe1170fb5b"
+    },
+    {
+      "id": "m-1789570076781-o5v7",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "out",
+      "body": "El depósito está en Olivos, a la altura de Thames y Panamericana, y trabajamos con cita previa.\n\nSi te interesa acercarte, te paso un WhatsApp para que puedas coordinar día y horario.\nY si te resulta más cómodo, también tenemos la opción de enviar muestras a domicilio.",
+      "ts": "2026-09-16T14:47:56.781Z",
+      "status": "delivered",
+      "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEjRCOUYzRjY3NzFDQTFBRDY3MgA="
     }
   ],
   "templates": [
