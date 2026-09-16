@@ -138057,11 +138057,11 @@
       "linked_client_name": null,
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T17:26:46.989Z",
+      "last_message_at": "2026-09-16T21:06:20.800Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T15:15:21.766Z",
-      "last_outbound_at": "2026-09-16T17:26:46.989Z",
+      "last_outbound_at": "2026-09-16T21:06:20.800Z",
       "ignored": true
     },
     {
@@ -163956,6 +163956,16 @@
       "body": "Si si gracias",
       "ts": "2026-09-16T20:26:47.433Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789592781330-ei7f",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-16T21:06:20.800Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxMjE2MDAyMzU5MzU2MDg2MjU0MTU1NjA3MTAwNjIwOAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
