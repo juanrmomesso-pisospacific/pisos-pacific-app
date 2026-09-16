@@ -144020,11 +144020,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-16T11:45:31.000Z",
-      "last_message_preview": "Buenos dias mi nombre es Jaime, me gustaria hacer un presupuesto",
+      "unread_count": 2,
+      "last_message_at": "2026-09-16T11:45:52.000Z",
+      "last_message_preview": "Queria saber si los pisos son me madera o simil madera",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T11:45:31.000Z"
+      "last_inbound_at": "2026-09-16T11:45:52.000Z"
     }
   ],
   "messages": [
@@ -162610,6 +162610,14 @@
       "body": "Buenos dias mi nombre es Jaime, me gustaria hacer un presupuesto",
       "ts": "2026-09-16T11:45:31.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789559153516-zyhx",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "in",
+      "body": "Queria saber si los pisos son me madera o simil madera",
+      "ts": "2026-09-16T11:45:52.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -172937,7 +172945,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAxMDYxMDA5NzY5Mzc1NTk4MzYxOTcxMDcyNjk2MzIwMAZDZD",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDQTIzMjJGQkM3MUU5NkU5QTRFOENDODhBM0ZEOTE0AA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNTQxM0QwMkJFODA4OUZBNTYzODJENURDRUI4MkI0AA==",
-      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBNEQ2NzEzMzU1Q0NGOEYyMzUwAA=="
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBNEQ2NzEzMzU1Q0NGOEYyMzUwAA==",
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBNEZEQTU1QzRERTJBMkZFMTYxAA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
