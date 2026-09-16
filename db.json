@@ -132917,7 +132917,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-22T21:04:04.000Z",
-      "last_touch_at": "2026-08-21T12:58:54.000Z"
+      "last_touch_at": "2026-09-16T01:34:24.000Z"
     },
     {
       "id": "lead-instagram-1784843470497",
@@ -140278,12 +140278,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f8ba4c1c23",
       "status": "closed",
-      "unread_count": 4,
-      "last_message_at": "2026-08-21T12:58:54.000Z",
-      "last_message_preview": "thank you\r\n\r\nEl jue, 20 ago 2026 a la(s) 1:29 a.m., FELIXKOREA (felixkorea.com@gmail.com)\r\nescribió:\r\n\r\n> Dear Mike, Daniel.\r\n>\r\n> Attached,",
+      "unread_count": 5,
+      "last_message_at": "2026-09-16T01:34:24.000Z",
+      "last_message_preview": "Joshua,\r\n\r\nplease add 60 units of 6 mm x 15 mts cable.\r\n\r\nthanks a lot.\r\n\r\n\r\n\r\n\r\n*Daniel La Buonora */Director\r\n\r\nMontevideo: Av Italia 5030",
       "email_subject": "Re: draft por favor chequear Daniel Juan",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-21T12:58:54.000Z",
+      "last_inbound_at": "2026-09-16T01:34:24.000Z",
       "ignored": true
     },
     {
@@ -162548,6 +162548,14 @@
       "body": "✉️ Updates to managing AI crawlers on your account\n\nAI Bot Controls                                                                                                                                                                                                                                 Updates to managing AI crawlers on your account Bryan Becker Director, Product Security at Cloudflare About a year ago, we launched Content Independence Day and introduced a simple way to block AI bots from scraping your sites without your explicit permission. We're writing to let you know about changes to our controls for AI crawlers taking effect today, and rolling out over the coming week. These changes give you more precise control over how different types of AI crawlers interact with your content. What's changing? - Smarter security setting options for Training crawlers: Starting September 15, the recommended setting for AI Training crawlers will shift from Block to Disallow AI Training. Disallow AI Training allows major search crawlers - like Applebot, Googlebot and Bingbot - to index your site for search results while instructing them not to use your content for training. - Automatic migration: If you previously had \"Block AI Bots\" or \"Managed Robots.txt\" enabled, your settings will be migrated automatically, over the next week, to the new Search, Training, and Agent controls. If Block AI Bots was set to Block, you'll now have Search: Allow, Training: Disallow AI Training, and Agent: Block on pages with ads. These changes take effect",
       "ts": "2026-09-16T01:09:46.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0a7da05dc7",
+      "conversation_id": "conv-email-19f8ba4c1c23",
+      "direction": "in",
+      "body": "✉️ Re: heating cable and the balance PI\n\nJoshua,\r\n\r\nplease add 60 units of 6 mm x 15 mts cable.\r\n\r\nthanks a lot.\r\n\r\n\r\n\r\n\r\n*Daniel La Buonora */Director\r\n\r\nMontevideo: Av Italia 5030.\r\n\r\nCarrasco: Via Disegno.\r\n\r\nPunta del Este: Open Mall, Calle San Francisco.\r\n\r\nMiami: 1221 Brickell Ave #900.\r\n\r\n\r\n\r\n    www.mrparquet.com.uy\r\n\r\n\r\nOn Tue, Sep 15, 2026 at 4:39 AM FELIXKOREA <felixkorea.com@gmail.com> wrote:\r\n\r\n> Dear Daniel and Mike,\r\n>\r\n> Good morning.\r\n> Have you checked price list of 6mm and 4mm heating cable?\r\n> Do you want us to add  \"*6mm *thickness * 15M* (shortest) heating cable\"\r\n> 30rolls on Sea shipment ?\r\n> Pls confirm, Accordingly I will add it and send \"Balance PI\" for your\r\n> remaining payment soon.\r\n>\r\n> I will arrange the schedule of Air shipment and Sea shipment through your\r\n> DMCOMEX forwarding agency.\r\n>\r\n> Joshua\r\n> Felix Korea\r\n>\r\n>\r\n>\r\n> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> <https://www.google.com/maps/search/861-4+Samil-Ro,+Nam-Myeon,+Yangju-Si,%C2%A0Gyeonggi-Do,+Korea?entry=gmail&source=g>\r\n> Korea\r\n> <https://www.google.com/maps/search/861-4+Samil-Ro,+Nam-Myeon,+Yangju-Si,%C2%A0Gyeonggi-Do,+Korea?entry=gmail&source=g>.\r\n> 11405\r\n> Mob. : +82 10 4588 6512 <010-4588-6512>\r\n> Tel. : +82 31 866 5688 <031-866-5688>\r\n>\r\n> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>\r\n>\r\n>\r\n> 2026년 9월 14일 (월) 오후 5:44, FELIXKOREA <felixkorea.com@gmail.com>님이 작성:\r\n>\r\n>> Dear Mike and Daniel,\r\n>>\r\n>> For 4mm Heating cable (16W/m) price list, pls see the attached price list\r\n>> again.\r\n>> The 4m",
+      "ts": "2026-09-16T01:34:24.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -170868,7 +170876,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-16T00:01:52.128Z",
     "gmail_seen_ids": [
-      "19f3d80cbb76642d",
       "19f3d8581f5982cb",
       "19f3da287b59036e",
       "19f3fad4957366bd",
@@ -171667,7 +171674,8 @@
       "1a0a5b0c1f15c294",
       "1a0a67a1bce61e85",
       "1a0a75a66d37e534",
-      "1a0a7c347ac2fa6b"
+      "1a0a7c347ac2fa6b",
+      "1a0a7da05dc7a644"
     ],
     "cash_sessions": {
       "1136982222": {
