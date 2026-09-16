@@ -144443,11 +144443,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-16T15:51:14.732Z",
-      "last_message_preview": "ese es el más económico que tenemos!",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-16T15:50:25.000Z",
+      "unread_count": 2,
+      "last_message_at": "2026-09-16T15:51:54.000Z",
+      "last_message_preview": "Q vale la instalación",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T15:51:54.000Z",
       "last_outbound_at": "2026-09-16T15:51:14.732Z"
     },
     {
@@ -144474,7 +144474,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
-      "unread_count": 3,
+      "unread_count": 0,
       "last_message_at": "2026-09-16T14:49:21.000Z",
       "last_message_preview": "El viernes iria con un cliente",
       "last_message_direction": "in",
@@ -163542,8 +163542,24 @@
       "direction": "out",
       "body": "ese es el más económico que tenemos!",
       "ts": "2026-09-16T15:51:14.732Z",
-      "status": "delivered",
+      "status": "read",
       "wa_id": "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABEYEkIyRDA4MkRGMDhFOEUxMjdCRAA="
+    },
+    {
+      "id": "m-1789573907015-775x",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "in",
+      "body": "Ah ok",
+      "ts": "2026-09-16T15:51:45.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1789573915023-ly6p",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "in",
+      "body": "Q vale la instalación",
+      "ts": "2026-09-16T15:51:54.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173902,7 +173918,9 @@
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBOEUxRTI0QjIwMTg1NUZBNTVBAA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDMDJGMTQzQzJFMjRBQzAzRDU4RDBDNzQwMjI2NTc0AA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDMUQ2MkREOEZFMkQ2RUY5RDg2QjFEMzA5QTlCMjUwAA==",
-      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNjk5M0FGRjZFOEJERTRBMTUzMTAwNzlBODRDRDgxAA=="
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNjk5M0FGRjZFOEJERTRBMTUzMTAwNzlBODRDRDgxAA==",
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNEMyMkVGNTlBOEQwMUI1RUJDQUU5RjlCNjg0ODk3AA==",
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNzA2NDlBQUI1QzJEMUJGMjg0MzQ2RUM1M0NBM0U1AA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
