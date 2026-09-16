@@ -144443,11 +144443,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-16T15:17:59.000Z",
-      "last_message_preview": "Hola muy bien gracias",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T15:19:32.000Z",
+      "last_message_preview": "Me pasas los precios de las cajas y cuanto espacio cubre",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T15:17:59.000Z",
+      "last_inbound_at": "2026-09-16T15:19:32.000Z",
       "last_outbound_at": "2026-09-16T14:45:42.145Z"
     },
     {
@@ -163501,6 +163501,14 @@
       "body": "Hola muy bien gracias",
       "ts": "2026-09-16T15:17:59.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789571972988-xk0l",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "in",
+      "body": "Me pasas los precios de las cajas y cuanto espacio cubre",
+      "ts": "2026-09-16T15:19:32.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173857,7 +173865,8 @@
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQkRGNDhEMEYwMkRERDZCRjNDAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBMTZBOEM2NTQ2MjIxRTkzNUUxAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBOEUxRTI0QjIwMTg1NUZBNTVBAA==",
-      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDMDJGMTQzQzJFMjRBQzAzRDU4RDBDNzQwMjI2NTc0AA=="
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDMDJGMTQzQzJFMjRBQzAzRDU4RDBDNzQwMjI2NTc0AA==",
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDMUQ2MkREOEZFMkQ2RUY5RDg2QjFEMzA5QTlCMjUwAA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
