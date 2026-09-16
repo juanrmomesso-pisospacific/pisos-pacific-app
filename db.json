@@ -144459,11 +144459,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-16T16:02:41.381Z",
-      "last_message_preview": "La colocación vale 15usd + IVA el m2. pero al ser pocos metros, tendrías que pagar el mínimo de 40 M2",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-16T15:52:28.000Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T16:13:21.000Z",
+      "last_message_preview": "Me podrias hacer un presupuesto con instalación",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T16:13:21.000Z",
       "last_outbound_at": "2026-09-16T16:02:41.381Z"
     },
     {
@@ -163615,6 +163615,14 @@
       "body": "Estoy interesado en pisos de madera",
       "ts": "2026-09-16T16:07:15.522Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789575203341-rqhw",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "in",
+      "body": "Me podrias hacer un presupuesto con instalación",
+      "ts": "2026-09-16T16:13:21.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173977,7 +173985,8 @@
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNEMyMkVGNTlBOEQwMUI1RUJDQUU5RjlCNjg0ODk3AA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNzA2NDlBQUI1QzJEMUJGMjg0MzQ2RUM1M0NBM0U1AA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNDY1Q0E1NDc0RkQyRTc1M0JGMzNDMjNEOTU2MDMxAA==",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5OTA1MDYzNzQzODcyNDozMzAxMTgyODk5MTY0MzAwMDE4NTYzNDY5OTAyMDg2MTQ0MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5OTA1MDYzNzQzODcyNDozMzAxMTgyODk5MTY0MzAwMDE4NTYzNDY5OTAyMDg2MTQ0MAZDZD",
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDQjVBQzMyRTg3RUEwODcwNjY1NDYzQjM4REM4QkRFAA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
