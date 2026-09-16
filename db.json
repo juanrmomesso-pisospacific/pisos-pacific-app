@@ -137531,6 +137531,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-16T12:18:55.000Z",
       "last_touch_at": "2026-09-16T12:18:55.000Z"
+    },
+    {
+      "id": "lead-email-1a0aa5947558",
+      "name": "Emilia",
+      "email": "emiliavirili@yahoo.com.ar",
+      "phone": "",
+      "source": "Web",
+      "address": "Rucci 685",
+      "postal_code": "5900",
+      "approx_m2": 50,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 50m² · Sin Colocación · CP 5900",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-16T13:12:52.000Z",
+      "last_touch_at": "2026-09-16T13:12:52.000Z"
     }
   ],
   "conversations": [
@@ -144171,6 +144188,21 @@
       "email_subject": "FW: Pedido de cotação",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-16T12:18:55.000Z"
+    },
+    {
+      "id": "conv-email-1a0aa5947558",
+      "channel": "email",
+      "contact_id": "emiliavirili@yahoo.com.ar",
+      "contact_name": "Emilia",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0aa5947558",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T13:12:52.000Z",
+      "last_message_preview": "Formulario web — 50m² · Sin Colocación · CP 5900 · Rucci 685",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T13:12:52.000Z"
     }
   ],
   "messages": [
@@ -162788,6 +162820,14 @@
       "body": "✉️ FW: Pedido de cotação\n\nExmos. Senhores,\r\n\r\nA GotFlow (Grupo Transfor) encontra-se a responder a um pedido de cotação relativo à obra do cliente, na qual constam itens com referência (abaixo indicada).\r\nDeste modo, solicitamos a vossa colaboração para a elaboração de uma proposta comercial com base nas especificações constantes no mapa anexo.\r\nPedimos a gentileza de incluir na vossa proposta as seguintes informações:\r\n\r\n\r\n  *   Preços unitários e totais;\r\n  *   Prazos de entrega;\r\n  *   Condições de pagamento;\r\n  *   Condições de transporte e montagem;\r\n  *   Validade da proposta.\r\n\r\n\r\n7.3\r\nMadeira\r\n\r\n\r\n\r\n\r\n\r\n7.3.1\r\nFornecimento e assentamento de pavimento vinílico composto por madeira, pedra e polímero da marca PACIFIC série H20 com 7mm de espessura, Ref. Carvalho Esloveno, incluindo peças e/ou outros elementos com dimensões especificas, cortes, remates, todos os trabalhos e materiais necessários a um perfeito acabamento, tudo de acordo com as peças escritas e desenhadas do projecto. (7.3.1)\r\nm²\r\n4 464,74\r\n\r\n\r\n\r\n\r\nDesde já agradecemos a vossa atenção e colaboração, ficando ao dispor para quaisquer esclarecimentos adicionais.\r\n\r\n\r\n\r\nAtentamente\r\n\r\n[cid:image001.png@01DD45DD.B4F92A20]\r\ngotflow.pt<http://gotflow.pt/>\r\nLinkedin<https://www.linkedin.com/company/gotflow/> I Facebook<http://www.facebook.com/gotflow2018> I Instagram<https://www.instagram.com/gotflow_think_design_build/?igsh=NW1vNTA1ZzFvYWcy>",
       "ts": "2026-09-16T12:18:55.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0aa5947558",
+      "conversation_id": "conv-email-1a0aa5947558",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 50m² · Sin Colocación · CP 5900 · Rucci 685",
+      "ts": "2026-09-16T13:12:52.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -171108,7 +171148,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-16T00:01:52.128Z",
     "gmail_seen_ids": [
-      "19f419dfb16183e5",
       "19f41e586b44bf5f",
       "19f41e45c6f4f6e3",
       "19f41df94c104e68",
@@ -171907,7 +171946,8 @@
       "1a0aa08db535f0a0",
       "1a0aa1c4572a846a",
       "1a0aa27eec28ece0",
-      "1a0aa4d168e9d9ec"
+      "1a0aa4d168e9d9ec",
+      "1a0aa59475589a0b"
     ],
     "cash_sessions": {
       "1136982222": {
