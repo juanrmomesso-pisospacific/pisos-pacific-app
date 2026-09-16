@@ -137849,6 +137849,22 @@
       "address": "Olivos",
       "created_at": "2026-09-16T14:52:57.596Z",
       "last_touch_at": "2026-09-16T14:53:00.980Z"
+    },
+    {
+      "id": "lead-instagram-1789574836892",
+      "name": "@ponchito_cba",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-16T16:07:15.522Z",
+      "last_touch_at": "2026-09-16T16:07:15.522Z"
     }
   ],
   "conversations": [
@@ -144575,6 +144591,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T14:43:16.017Z",
       "last_outbound_at": "2026-09-16T14:46:52.315Z"
+    },
+    {
+      "id": "conv-1789574836892-jp74",
+      "channel": "instagram",
+      "contact_id": "38464877353126894",
+      "contact_name": "@ponchito_cba",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1789574836892",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T16:07:15.522Z",
+      "last_message_preview": "Estoy interesado en pisos de madera",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T16:07:15.522Z"
     }
   ],
   "messages": [
@@ -163577,6 +163607,14 @@
       "ts": "2026-09-16T16:02:41.381Z",
       "status": "read",
       "wa_id": "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABEYEkFCQjM2RjIyMzhGM0EyQzJBQwA="
+    },
+    {
+      "id": "m-1789574836892-lzoq",
+      "conversation_id": "conv-1789574836892-jp74",
+      "direction": "in",
+      "body": "Estoy interesado en pisos de madera",
+      "ts": "2026-09-16T16:07:15.522Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173938,7 +173976,8 @@
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNjk5M0FGRjZFOEJERTRBMTUzMTAwNzlBODRDRDgxAA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNEMyMkVGNTlBOEQwMUI1RUJDQUU5RjlCNjg0ODk3AA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNzA2NDlBQUI1QzJEMUJGMjg0MzQ2RUM1M0NBM0U1AA==",
-      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNDY1Q0E1NDc0RkQyRTc1M0JGMzNDMjNEOTU2MDMxAA=="
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNDY1Q0E1NDc0RkQyRTc1M0JGMzNDMjNEOTU2MDMxAA==",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5OTA1MDYzNzQzODcyNDozMzAxMTgyODk5MTY0MzAwMDE4NTYzNDY5OTAyMDg2MTQ0MAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
