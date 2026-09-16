@@ -143884,12 +143884,12 @@
       "linked_lead_id": "lead-email-1a0913b00ca1",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-14T19:42:50.000Z",
-      "last_message_preview": "Gracias! Mirá es para la cocina, me interesa cotizar de la Linea H2O los\r\nmás claritos, el Aspen y el Natural Oak. Serían 12 m aprox. Son fl",
+      "last_message_at": "2026-09-16T14:09:46.568Z",
+      "last_message_preview": "Hola Carolina, como estas? \nPara una superficie de 12 m² no realizamos la colocación, pero podemos recomendarte instaladores con los que tra",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T19:42:50.000Z",
-      "last_outbound_at": "2026-09-14T18:21:57.049Z"
+      "last_outbound_at": "2026-09-16T14:09:46.568Z"
     },
     {
       "id": "conv-1789145375187-3oe3",
@@ -162973,6 +162973,24 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nLibra h2o modelo Aspen xl\r\n\r\nObtener Outlook para Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\nFrom: Pisos Pacific <info@pisospacific.com>\r\nSent: Wednesday, 16 September 2026 10:49:09\r\nTo: makiita33@hotmail.com <makiita33@hotmail.com>\r\nSubject: Re: Pedido de Presupuesto | Página Web\r\n\r\nHola Macarena, ¡muchas gracias por tu consulta!\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera<https://pisospacific.com/madera> — Pisos de madera noble prefinished\r\n• Línea H2O<https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación.\r\n\r\n¡Muchas gracias!\r\nSaludos, Equipo Pacific\r\n\r\n\r\n[Pisos Pacific]\r\nVictoria Collado\r\nVentas\r\n\r\n+54 11 3698-2222<https://wa.me/5491136982222>\r\nvictoria@pisospacific.com<mailto:victoria@pisospacific.com>\r\npisospacific.com<https://pisospacific.com>\r\n[Instagram]<https://www.instagram.com/pisospacific/> [Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera",
       "ts": "2026-09-16T13:52:45.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789567773750-86hb",
+      "conversation_id": "conv-email-1a0913b00ca1",
+      "direction": "out",
+      "body": "📎 Presupuesto_NA4781_-_carolina_esses_-_carolina_esses.pdf",
+      "ts": "2026-09-16T14:09:33.750Z",
+      "status": "sent",
+      "wa_id": "1a0aa8d2bedc64b0"
+    },
+    {
+      "id": "m-1789567786568-j3i9",
+      "conversation_id": "conv-email-1a0913b00ca1",
+      "direction": "out",
+      "body": "Hola Carolina, como estas? \nPara una superficie de 12 m² no realizamos la colocación, pero podemos recomendarte instaladores con los que trabajamos habitualmente.\nSi son sistema clic.\nTe paso el presupuesto solo por el material y si queres avanzar estamos en contacto.",
+      "ts": "2026-09-16T14:09:46.568Z",
+      "status": "sent",
+      "wa_id": "1a0aa8d5c280b349"
     }
   ],
   "templates": [
