@@ -144618,10 +144618,10 @@
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T18:06:52.435Z",
-      "last_message_preview": "no manejamos cuotas!",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-16T16:15:48.000Z",
+      "last_message_at": "2026-09-16T18:07:09.000Z",
+      "last_message_preview": "📎 Mensaje (reaction)",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T18:07:09.000Z",
       "last_outbound_at": "2026-09-16T18:06:52.435Z"
     },
     {
@@ -163867,6 +163867,14 @@
       "ts": "2026-09-16T18:06:52.435Z",
       "status": "read",
       "wa_id": "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABEYEjlFMjkxMDVDOTc0OTdDQzIzOQA="
+    },
+    {
+      "id": "m-1789582030259-xm8r",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "in",
+      "body": "📎 Mensaje (reaction)",
+      "ts": "2026-09-16T18:07:09.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -174233,7 +174241,8 @@
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDQjVBQzMyRTg3RUEwODcwNjY1NDYzQjM4REM4QkRFAA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDMUUzNUYyM0YyNEEzQ0M1NTVGMEJGREE2N0IzMzJBAA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDRDMzQjQzODc1REQyNzA1RTNFNjVDMURDMzlFNjczAA==",
-      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDOUI4MkJEOUYzQ0IzM0Y0Mjg1MkE3M0I2NzQxQzhEAA=="
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDOUI4MkJEOUYzQ0IzM0Y0Mjg1MkE3M0I2NzQxQzhEAA==",
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDRDZBQzQxODMwQ0YwOTAzMEM3MDcwQkIyNDE3OTEzAA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
