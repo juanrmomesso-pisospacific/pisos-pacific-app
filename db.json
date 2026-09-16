@@ -144444,11 +144444,11 @@
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T15:50:25.000Z",
-      "last_message_preview": "Y el mas económico ?",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-16T15:51:14.732Z",
+      "last_message_preview": "ese es el más económico que tenemos!",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T15:50:25.000Z",
-      "last_outbound_at": "2026-09-16T15:48:02.726Z"
+      "last_outbound_at": "2026-09-16T15:51:14.732Z"
     },
     {
       "id": "conv-email-1a0a75a66d37",
@@ -163535,6 +163535,15 @@
       "body": "Y el mas económico ?",
       "ts": "2026-09-16T15:50:25.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789573874732-u8lo",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "out",
+      "body": "ese es el más económico que tenemos!",
+      "ts": "2026-09-16T15:51:14.732Z",
+      "status": "delivered",
+      "wa_id": "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABEYEkIyRDA4MkRGMDhFOEUxMjdCRAA="
     }
   ],
   "templates": [
