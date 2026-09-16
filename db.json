@@ -144649,11 +144649,11 @@
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T18:05:13.390Z",
-      "last_message_preview": "Jaime perfecto! paso el numero de Juan uno de los dueños.\n1151750087",
+      "last_message_at": "2026-09-16T18:06:02.053Z",
+      "last_message_preview": "pero arregla con el directamente",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T14:49:21.000Z",
-      "last_outbound_at": "2026-09-16T18:05:13.390Z"
+      "last_outbound_at": "2026-09-16T18:06:02.053Z"
     },
     {
       "id": "conv-email-1a0aa08db535",
@@ -163840,6 +163840,24 @@
       "ts": "2026-09-16T18:05:13.390Z",
       "status": "delivered",
       "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEkM5MDg0NEE5QTc2NjczNTU3MgA="
+    },
+    {
+      "id": "m-1789581953410-s38e",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "out",
+      "body": "justo el viernes estamos cerrados porque estamos remodelando el espacio de showroom y recibiendo contenedor el Lunes.",
+      "ts": "2026-09-16T18:05:53.410Z",
+      "status": "delivered",
+      "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEjIxMTFDNjY2OTNGNjE1RjZDOQA="
+    },
+    {
+      "id": "m-1789581962053-jqi7",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "out",
+      "body": "pero arregla con el directamente",
+      "ts": "2026-09-16T18:06:02.053Z",
+      "status": "delivered",
+      "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEjk2RUJEQjk4RkFFMkY3Qjc0MAA="
     }
   ],
   "templates": [
