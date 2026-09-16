@@ -3,6 +3,7 @@ import { FormSheet, FieldLabel } from "./FormSheet"
 import { Input } from "@/components/ui/input"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { cajasHint } from "@/lib/boxes"
+import { productUnit, UNIT_OPTIONS, type Unit } from "@/lib/panels"
 import type { Product } from "@/lib/types"
 
 const CATEGORIES = ["Pisos H2O", "Pisos de Madera", "Paneles", "Zócalo", "Zócalos", "Deck", "Servicio", "Extras"]
@@ -33,11 +34,13 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
     // categoría "Paneles" debe quedar con kind:'panel'+unit:'u' para comportarse como panel en
     // todo el resto de la app (no solo en este form).
     const panel = v.kind === "panel" || /panel/i.test(v.category || "")
+    // Unidad de venta elegida por el usuario (m²/ml/u). Los paneles quedan siempre en "u".
+    const unitField = { unit: v.unit || productUnit(v as Product) }
     const kindUnit = panel ? { kind: "panel", unit: "u" } : {}
     if (isEdit) {
       const body: Record<string, unknown> = {
         name: v.name, sku: v.sku, category: v.category, price, cost, currency: v.currency, margin,
-        stockTrack: !!v.stockTrack, ...kindUnit,
+        stockTrack: !!v.stockTrack, ...unitField, ...kindUnit,
         m2_por_caja: Number(v.m2_por_caja) || 0,
         updatedAt: new Date().toISOString(),
       }
@@ -51,7 +54,7 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
     const body = {
       name: v.name, sku: v.sku, category: v.category, price, cost, currency: v.currency,
       stock: Number(v.stock) || 0, reservedStock: Number(v.reservedStock) || 0,
-      m2_por_caja: Number(v.m2_por_caja) || 0, ...kindUnit,
+      m2_por_caja: Number(v.m2_por_caja) || 0, ...unitField, ...kindUnit,
       active: true, margin,
       createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
     }
@@ -60,10 +63,11 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
   }
 
   const cats = CATEGORIES.includes(v.category || "") ? CATEGORIES : [...CATEGORIES, v.category || ""]
-  // Pisos: llevan stock y se cargan por cajas cerradas → mostramos m²/caja y la equivalencia.
-  // Paneles llevan stock pero se venden por unidad → sin m²/caja.
   const isPanel = v.kind === "panel" || /panel/i.test(v.category || "")
-  const isFloor = (!!v.stockTrack || /piso/i.test(v.category || "")) && !isPanel
+  const unit: Unit = isPanel ? "u" : productUnit(v as Product)   // panel siempre "u"
+  const unitLbl = unit === "u" ? "u" : unit === "ml" ? "ml" : "m²"
+  // m²/caja solo aplica a productos vendidos por m² (pisos).
+  const isFloor = unit === "m2" && (!!v.stockTrack || /piso/i.test(v.category || ""))
   const m2caja = Number(v.m2_por_caja) || 0
   return (
     <FormSheet open={open} onOpenChange={onOpenChange}
@@ -103,11 +107,18 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
         </div>
         {!isEdit && (
           <div>
-            <FieldLabel>Stock inicial (m²)</FieldLabel>
+            <FieldLabel>Stock inicial ({unitLbl})</FieldLabel>
             <Input type="number" min={0} value={v.stock ?? 0} onChange={(e) => setV({ ...v, stock: Number(e.target.value) })} />
             {isFloor && m2caja > 0 && <p className="text-[11px] text-muted-foreground mt-1">{cajasHint(Number(v.stock) || 0, m2caja)}</p>}
           </div>
         )}
+      </div>
+      <div>
+        <FieldLabel>Unidad de venta</FieldLabel>
+        <select value={unit} disabled={isPanel} onChange={(e) => setV({ ...v, unit: e.target.value as Unit })} className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm disabled:opacity-60">
+          {UNIT_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+        </select>
+        <p className="text-[11px] text-muted-foreground mt-1">{isPanel ? "Los paneles se venden por unidad." : "Cómo se cotiza/mide este producto (pisos m², zócalos ml, narices/accesorios por unidad)."}</p>
       </div>
       {isFloor && (
         <div>
@@ -125,7 +136,7 @@ export function ProductForm({ open, onOpenChange, initial, editProduct }: { open
           </label>
           {v.stockTrack && (
             <div>
-              <FieldLabel>Stock físico</FieldLabel>
+              <FieldLabel>Stock físico ({unitLbl})</FieldLabel>
               <Input type="number" min={0} step="0.1" value={v.stock ?? 0} onChange={(e) => setV({ ...v, stock: Number(e.target.value) })} />
               {m2caja > 0 && <p className="text-[11px] text-muted-foreground mt-1">{cajasHint(Number(v.stock) || 0, m2caja)}</p>}
               <p className="text-[11px] text-muted-foreground mt-1">El cambio queda registrado como ajuste manual en Movimientos (auditoría).</p>

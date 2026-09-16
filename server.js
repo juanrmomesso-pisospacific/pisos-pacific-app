@@ -390,6 +390,17 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
   if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill m²/caja: ${n} productos`); }
 }
 
+// Backfill de unidad de venta (sep-2026): los zócalos se venden por metro lineal → unit=ml.
+// Idempotente (solo si no tienen `unit`); universal (aplica a cualquier instancia). Las narices
+// y otros accesorios por unidad los define el dueño desde el alta (no se adivinan por nombre).
+{
+  let n = 0;
+  for (const p of db.products || []) {
+    if (p && p.unit == null && /z[oó]calo/i.test(p.category || '')) { p.unit = 'ml'; n++; }
+  }
+  if (n) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log(`Backfill unidad zócalos → ml: ${n} productos`); }
+}
+
 // Seed de paneles ACUDESIGN (sep-2026). Acupanel 2,4 × 0,36 m, se venden POR UNIDAD y se
 // cotizan EN PESOS (precio fijo $72.000 ARS, lo ajusta el dueño); el COSTO es US$29,52
 // (importado). currency:'ARS' → el presupuesto sale en pesos; el P&L convierte el ingreso a USD
@@ -3065,8 +3076,9 @@ function presupuestoData(rec) {
     const isEntrega = /entrega/i.test(it.description || '') || it.sku === 'SERV-131';
     const qty = Number(it.quantity) || 0;
     const p = bySku.get(it.sku);
-    const isPanel = p && p.kind === 'panel';
-    const qtyCell = isPanel ? `${qty} u` : `${qty} m2${boxSuffix(it)}`;
+    // Unidad de venta del producto: m2 (pisos, con cajas) · ml (zócalos) · u (narices/paneles).
+    const unit = (p && (p.unit || (p.kind === 'panel' ? 'u' : 'm2'))) || 'm2';
+    const qtyCell = unit === 'u' ? `${qty} u` : unit === 'ml' ? `${qty} ml` : `${qty} m2${boxSuffix(it)}`;
     return [it.description || it.sku || '', isEntrega ? '—' : qtyCell, isEntrega ? '—' : money(it.unit_price), money(lineTotal(it))];
   };
   // Descuento por ítem: el ítem a precio bruto + una sub-fila "Descuento" (solo si tiene).
