@@ -131335,7 +131335,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-09-16T08:26:00.000Z"
+      "last_touch_at": "2026-09-16T12:06:12.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -138971,12 +138971,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 50,
-      "last_message_at": "2026-09-16T08:26:00.000Z",
+      "unread_count": 51,
+      "last_message_at": "2026-09-16T12:06:12.000Z",
       "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-14 00:00:00 UTC to 2026-09-15 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T08:26:00.000Z",
+      "last_inbound_at": "2026-09-16T12:06:12.000Z",
       "ignored": true
     },
     {
@@ -162658,6 +162658,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 30m² · Con Colocación · CP 1704 · Rodríguez Peña 38",
       "ts": "2026-09-16T11:45:01.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0aa1c4572a",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: f4da5270cb254103bc0da2799117c117\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-14 00:00:00 UTC to 2026-09-15 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-09-16T12:06:12.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -170978,7 +170986,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-16T00:01:52.128Z",
     "gmail_seen_ids": [
-      "19f40720cb18d7d1",
       "19f407a3ce6aaa22",
       "19f4140023c67971",
       "19f419dfb16183e5",
@@ -171777,7 +171784,8 @@
       "1a0a952a63d97ba2",
       "1a0a9c552726d0df",
       "1a0a9e6091ced35a",
-      "1a0aa08db535f0a0"
+      "1a0aa08db535f0a0",
+      "1a0aa1c4572a846a"
     ],
     "cash_sessions": {
       "1136982222": {
