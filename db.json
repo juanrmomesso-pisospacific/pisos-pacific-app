@@ -137746,6 +137746,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-16T14:41:07.000Z",
       "last_touch_at": "2026-09-16T14:41:07.000Z"
+    },
+    {
+      "id": "lead-instagram-1789569785628",
+      "name": "@eugetarraf",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-16T14:43:04.304Z",
+      "last_touch_at": "2026-09-16T14:43:04.304Z"
     }
   ],
   "conversations": [
@@ -144455,6 +144471,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-16T14:41:07.000Z"
+    },
+    {
+      "id": "conv-1789569785628-dily",
+      "channel": "instagram",
+      "contact_id": "1097735546242668",
+      "contact_name": "@eugetarraf",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1789569785628",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T14:43:04.304Z",
+      "last_message_preview": "Hola por q no contestan el wa?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T14:43:04.304Z"
     }
   ],
   "messages": [
@@ -163272,6 +163302,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 65m² · Sin Colocación · CP 9410 · Neuquén 320",
       "ts": "2026-09-16T14:41:07.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789569785628-zoiq",
+      "conversation_id": "conv-1789569785628-dily",
+      "direction": "in",
+      "body": "Hola por q no contestan el wa?",
+      "ts": "2026-09-16T14:43:04.304Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173620,7 +173658,8 @@
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBNEZEQTU1QzRERTJBMkZFMTYxAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQUZBQTJDOEYyMkI1MkZCRjJFAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBRTQ0MjQ5MEFDNTJBMUQ1OTU5AA==",
-      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQTZCMDRFMkFCN0E2NEVGMzcxAA=="
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQTZCMDRFMkFCN0E2NEVGMzcxAA==",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyODQyMTAyMTIxMzA1ODozMzAxMTczNTgxMzEwOTUyNzU5MTM2NTc3MjYzMTM0MzEwNAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
