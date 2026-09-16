@@ -144444,11 +144444,11 @@
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T15:19:32.000Z",
-      "last_message_preview": "Me pasas los precios de las cajas y cuanto espacio cubre",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-16T15:47:30.717Z",
+      "last_message_preview": "Estás interesado en el H2O? (es el de SPC que se banca el agua)",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T15:19:32.000Z",
-      "last_outbound_at": "2026-09-16T14:45:42.145Z"
+      "last_outbound_at": "2026-09-16T15:47:30.717Z"
     },
     {
       "id": "conv-email-1a0a75a66d37",
@@ -163509,6 +163509,15 @@
       "body": "Me pasas los precios de las cajas y cuanto espacio cubre",
       "ts": "2026-09-16T15:19:32.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789573650717-5t6n",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "out",
+      "body": "Estás interesado en el H2O? (es el de SPC que se banca el agua)",
+      "ts": "2026-09-16T15:47:30.717Z",
+      "status": "delivered",
+      "wa_id": "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABEYEjQ3NjZDNTY0ODdBRDZBNzQ1NgA="
     }
   ],
   "templates": [
