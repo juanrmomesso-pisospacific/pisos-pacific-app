@@ -144444,11 +144444,11 @@
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T15:52:28.000Z",
-      "last_message_preview": "Es una habitación 4x4",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-16T16:02:41.381Z",
+      "last_message_preview": "La colocación vale 15usd + IVA el m2. pero al ser pocos metros, tendrías que pagar el mínimo de 40 M2",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T15:52:28.000Z",
-      "last_outbound_at": "2026-09-16T15:51:14.732Z"
+      "last_outbound_at": "2026-09-16T16:02:41.381Z"
     },
     {
       "id": "conv-email-1a0a75a66d37",
@@ -163568,6 +163568,15 @@
       "body": "Es una habitación 4x4",
       "ts": "2026-09-16T15:52:28.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789574561381-4ihj",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "out",
+      "body": "La colocación vale 15usd + IVA el m2. pero al ser pocos metros, tendrías que pagar el mínimo de 40 M2",
+      "ts": "2026-09-16T16:02:41.381Z",
+      "status": "sent",
+      "wa_id": "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABEYEkFCQjM2RjIyMzhGM0EyQzJBQwA="
     }
   ],
   "templates": [
