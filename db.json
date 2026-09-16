@@ -15847,7 +15847,7 @@
       ],
       "zoned": false,
       "discount_total": 771.18,
-      "status": "Confirmado",
+      "status": "Programado",
       "created_at": "2026-08-26T21:21:29.897Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -15858,7 +15858,18 @@
       },
       "stock_reserved": true,
       "stock_deducted": false,
-      "seller_name": "Victoria Gonzalez Collado"
+      "seller_name": "Victoria Gonzalez Collado",
+      "delivery_date": "2026-09-21",
+      "delivery_date_to": "2026-09-23",
+      "delivery_crew": "Hugo Ramirez",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Programado",
+          "at": "2026-09-16T14:32:27.533Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     },
     {
       "id": "local-sale-1788005505785-ibt1",
@@ -163211,7 +163222,7 @@
       "direction": "out",
       "body": "📎 PHOTO-2026-04-28-11-40-59_2.jpg",
       "ts": "2026-09-16T14:26:33.201Z",
-      "status": "sent",
+      "status": "delivered",
       "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEjI5MDA0Q0MwOTAyQUE1N0FDRgA="
     }
   ],
@@ -174798,6 +174809,17 @@
       "assigned_seller": "Hugo Ramirez",
       "status": "pendiente",
       "created_at": "2026-08-31T19:29:37.349Z"
+    },
+    {
+      "id": "local-1789569147763-53yz1",
+      "type": "medicion",
+      "title": "Medición previa · Tamy Selvood",
+      "due_date": "2026-09-19",
+      "assigned_seller": "Hugo Ramirez",
+      "status": "pendiente",
+      "sale_id": "local-sale-1787779289897-giig",
+      "notes": "Santa Teresa Lote 283",
+      "created_at": "2026-09-16T14:32:27.583Z"
     }
   ],
   "password_resets": {},
