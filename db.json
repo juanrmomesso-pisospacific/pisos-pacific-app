@@ -144382,11 +144382,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789480901918",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-15T18:21:43.635Z",
-      "last_message_preview": "🔥🔥🔥",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-15T14:01:40.004Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T16:16:37.297Z",
+      "last_message_preview": "↩️ Reaccionó: ❤",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T16:16:37.297Z",
       "last_outbound_at": "2026-09-15T18:21:43.635Z"
     },
     {
@@ -163646,6 +163646,14 @@
       "direction": "in",
       "body": "Tienen cuotas sin interes ?",
       "ts": "2026-09-16T16:15:48.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1789575398032-fu5j",
+      "conversation_id": "conv-1789480901918-b86i",
+      "direction": "in",
+      "body": "↩️ Reaccionó: ❤",
+      "ts": "2026-09-16T16:16:37.297Z",
       "status": "received"
     }
   ],
