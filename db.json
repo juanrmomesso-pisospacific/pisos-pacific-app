@@ -35921,8 +35921,9 @@
       "currency": "USD",
       "created_at": "2026-09-16T14:13:18.364Z",
       "quote_number": "A7250",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a0a75a66d37"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a0a75a66d37",
+      "share_token": "619d40e451f364b7f95d27d4"
     }
   ],
   "clients": [
@@ -144285,12 +144286,12 @@
       "linked_lead_id": "lead-email-1a0a75a66d37",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T13:52:45.000Z",
-      "last_message_preview": "Libra h2o modelo Aspen xl\r\n\r\nObtener Outlook para Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\nFrom: Pisos Pacific <in",
+      "last_message_at": "2026-09-16T14:14:51.682Z",
+      "last_message_preview": "📄 Presupuesto NA7250 - Macarena - Obra Avellaneda - Macarena - Obra Avellaneda.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T13:52:45.000Z",
-      "last_outbound_at": "2026-09-16T13:49:09.430Z"
+      "last_outbound_at": "2026-09-16T14:14:51.682Z"
     },
     {
       "id": "conv-1789559134669-tqfc",
@@ -144361,7 +144362,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0aa803bbdd",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-09-16T14:11:26.000Z",
       "last_message_preview": "Formulario web — 15m² · Con Colocación · CP 1896 · 481 bis #1544",
       "email_subject": "Consulta x revestimiento escalera",
@@ -163079,6 +163080,16 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 15m² · Con Colocación · CP 1896 · 481 bis #1544",
       "ts": "2026-09-16T14:11:26.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789568091682-fz6q",
+      "conversation_id": "conv-email-1a0a75a66d37",
+      "direction": "out",
+      "body": "Hola Macarena, te comparto el presupuesto NA7250 adjunto. Cualquier consulta quedo a disposición.\n📄 Presupuesto NA7250 - Macarena - Obra Avellaneda - Macarena - Obra Avellaneda.pdf",
+      "ts": "2026-09-16T14:14:51.682Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a0aa9205cd6682f"
     }
   ],
   "templates": [
@@ -172669,7 +172680,12 @@
       "1a0aa7be3cb852e5",
       "1a0aa7a7c03a4148",
       "1a0aa79ebc494d3f",
-      "1a0aa78dca6b8270"
+      "1a0aa78dca6b8270",
+      "1a0aa8eb2112708d",
+      "1a0aa8d5c280b349",
+      "1a0aa8d2bedc64b0",
+      "1a0aa894c4de27e1",
+      "1a0aa8908b9276b9"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
