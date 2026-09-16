@@ -144649,11 +144649,11 @@
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T14:49:21.000Z",
-      "last_message_preview": "El viernes iria con un cliente",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-16T18:05:13.390Z",
+      "last_message_preview": "Jaime perfecto! paso el numero de Juan uno de los dueños.\n1151750087",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T14:49:21.000Z",
-      "last_outbound_at": "2026-09-16T14:47:56.781Z"
+      "last_outbound_at": "2026-09-16T18:05:13.390Z"
     },
     {
       "id": "conv-email-1a0aa08db535",
@@ -163831,6 +163831,15 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxMTkxNzAwOTY3Mzc4OTgwMzc2ODU1NjY1NzA0OTYwMAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1789581913390-90j2",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "out",
+      "body": "Jaime perfecto! paso el numero de Juan uno de los dueños.\n1151750087",
+      "ts": "2026-09-16T18:05:13.390Z",
+      "status": "delivered",
+      "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEkM5MDg0NEE5QTc2NjczNTU3MgA="
     }
   ],
   "templates": [
