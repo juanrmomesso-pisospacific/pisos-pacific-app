@@ -11777,8 +11777,8 @@
       "stock_reserved": true,
       "stock_deducted": false,
       "seller_name": "Victoria Gonzalez Collado",
-      "delivery_date": "2026-09-28",
-      "delivery_date_to": "2026-09-30",
+      "delivery_date": "2026-09-09",
+      "delivery_date_to": "2026-09-11",
       "delivery_crew": "Gastón Aguilera",
       "status_log": [
         {
@@ -14003,8 +14003,8 @@
       "stock_reserved": true,
       "stock_deducted": false,
       "seller_name": "Juan Rodriguez Momesso",
-      "delivery_date": "2026-09-24",
-      "delivery_date_to": "2026-09-26",
+      "delivery_date": "2026-09-28",
+      "delivery_date_to": "2026-09-30",
       "delivery_crew": "Hugo Ramirez",
       "status_log": [
         {
