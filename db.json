@@ -144480,11 +144480,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789569785628",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-16T14:43:04.304Z",
-      "last_message_preview": "Hola por q no contestan el wa?",
+      "unread_count": 2,
+      "last_message_at": "2026-09-16T14:43:16.017Z",
+      "last_message_preview": "Quiero pedir una cotización y nadie me contesta",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T14:43:04.304Z"
+      "last_inbound_at": "2026-09-16T14:43:16.017Z"
     }
   ],
   "messages": [
@@ -163310,6 +163310,14 @@
       "body": "Hola por q no contestan el wa?",
       "ts": "2026-09-16T14:43:04.304Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789569796783-6s31",
+      "conversation_id": "conv-1789569785628-dily",
+      "direction": "in",
+      "body": "Quiero pedir una cotización y nadie me contesta",
+      "ts": "2026-09-16T14:43:16.017Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173659,7 +173667,8 @@
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQUZBQTJDOEYyMkI1MkZCRjJFAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBRTQ0MjQ5MEFDNTJBMUQ1OTU5AA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQTZCMDRFMkFCN0E2NEVGMzcxAA==",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyODQyMTAyMTIxMzA1ODozMzAxMTczNTgxMzEwOTUyNzU5MTM2NTc3MjYzMTM0MzEwNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyODQyMTAyMTIxMzA1ODozMzAxMTczNTgxMzEwOTUyNzU5MTM2NTc3MjYzMTM0MzEwNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIyODQyMTAyMTIxMzA1ODozMzAxMTczNjAyOTE3NjI1OTM3MzQ2OTgyNDQxOTEwMjcyMAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
