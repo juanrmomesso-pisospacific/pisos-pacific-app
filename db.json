@@ -144443,11 +144443,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-16T15:51:54.000Z",
-      "last_message_preview": "Q vale la instalación",
+      "unread_count": 3,
+      "last_message_at": "2026-09-16T15:52:28.000Z",
+      "last_message_preview": "Es una habitación 4x4",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T15:51:54.000Z",
+      "last_inbound_at": "2026-09-16T15:52:28.000Z",
       "last_outbound_at": "2026-09-16T15:51:14.732Z"
     },
     {
@@ -163560,6 +163560,14 @@
       "body": "Q vale la instalación",
       "ts": "2026-09-16T15:51:54.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789573949529-tfmh",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "in",
+      "body": "Es una habitación 4x4",
+      "ts": "2026-09-16T15:52:28.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173920,7 +173928,8 @@
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDMUQ2MkREOEZFMkQ2RUY5RDg2QjFEMzA5QTlCMjUwAA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNjk5M0FGRjZFOEJERTRBMTUzMTAwNzlBODRDRDgxAA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNEMyMkVGNTlBOEQwMUI1RUJDQUU5RjlCNjg0ODk3AA==",
-      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNzA2NDlBQUI1QzJEMUJGMjg0MzQ2RUM1M0NBM0U1AA=="
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNzA2NDlBQUI1QzJEMUJGMjg0MzQ2RUM1M0NBM0U1AA==",
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNDY1Q0E1NDc0RkQyRTc1M0JGMzNDMjNEOTU2MDMxAA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
