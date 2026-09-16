@@ -144368,12 +144368,12 @@
       "linked_lead_id": "lead-email-1a0aa803bbdd",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T14:16:18.561Z",
-      "last_message_preview": "Hola Carolina, ¿cómo estás?\n\nTe vamos a estar contactando por WhatsApp para pedirte algunos detalles de la escalera que querés revestir y as",
+      "last_message_at": "2026-09-16T14:21:54.659Z",
+      "last_message_preview": "no nos deja escribirte por whatsapp te mando el numero de victoria para que la contactes!\n1136982222",
       "email_subject": "Consulta x revestimiento escalera",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T14:11:26.000Z",
-      "last_outbound_at": "2026-09-16T14:16:18.561Z"
+      "last_outbound_at": "2026-09-16T14:21:54.659Z"
     }
   ],
   "messages": [
@@ -163139,6 +163139,15 @@
       "body": "Un tono medio oscuro",
       "ts": "2026-09-16T14:19:40.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789568514659-u5zi",
+      "conversation_id": "conv-email-1a0aa803bbdd",
+      "direction": "out",
+      "body": "no nos deja escribirte por whatsapp te mando el numero de victoria para que la contactes!\n1136982222",
+      "ts": "2026-09-16T14:21:54.659Z",
+      "status": "sent",
+      "wa_id": "1a0aa98792418ba4"
     }
   ],
   "templates": [
