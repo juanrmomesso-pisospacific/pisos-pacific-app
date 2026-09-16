@@ -144357,10 +144357,11 @@
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-15T22:31:20.000Z",
-      "last_message_preview": "Vengo de recibir el numero por Instagram",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-15T22:31:20.000Z"
+      "last_message_at": "2026-09-16T14:45:42.145Z",
+      "last_message_preview": "Hola ¿cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-15T22:31:20.000Z",
+      "last_outbound_at": "2026-09-16T14:45:42.145Z"
     },
     {
       "id": "conv-email-1a0a75a66d37",
@@ -163318,6 +163319,15 @@
       "body": "Quiero pedir una cotización y nadie me contesta",
       "ts": "2026-09-16T14:43:16.017Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789569942145-w3pw",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "out",
+      "body": "Hola ¿cómo estás?",
+      "ts": "2026-09-16T14:45:42.145Z",
+      "status": "delivered",
+      "wa_id": "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABEYEkIxNEE1QUUzRUM3QzBENDAyNQA="
     }
   ],
   "templates": [
