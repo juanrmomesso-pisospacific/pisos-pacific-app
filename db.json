@@ -131751,7 +131751,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-02T08:35:47.000Z",
-      "last_touch_at": "2026-09-10T04:42:40.000Z"
+      "last_touch_at": "2026-09-16T01:09:46.000Z"
     },
     {
       "id": "lead-email-19f22df2aa8d",
@@ -139253,12 +139253,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f21f84d4ce",
       "status": "closed",
-      "unread_count": 7,
-      "last_message_at": "2026-09-10T04:42:40.000Z",
-      "last_message_preview": "Agenda_Variant_B Cloudflare Connect · San Francisco Start with the sessions everyone will be talking about. The Connect agenda is live with ",
+      "unread_count": 8,
+      "last_message_at": "2026-09-16T01:09:46.000Z",
+      "last_message_preview": "AI Bot Controls                                                                                                                             ",
       "email_subject": "New updates to your AI bot controls.",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-10T04:42:40.000Z",
+      "last_inbound_at": "2026-09-16T01:09:46.000Z",
       "ignored": true
     },
     {
@@ -162540,6 +162540,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 56m² · Con Colocación · CP 1766 · Avellaneda 4836",
       "ts": "2026-09-15T23:15:14.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0a7c347ac2",
+      "conversation_id": "conv-email-19f21f84d4ce",
+      "direction": "in",
+      "body": "✉️ Updates to managing AI crawlers on your account\n\nAI Bot Controls                                                                                                                                                                                                                                 Updates to managing AI crawlers on your account Bryan Becker Director, Product Security at Cloudflare About a year ago, we launched Content Independence Day and introduced a simple way to block AI bots from scraping your sites without your explicit permission. We're writing to let you know about changes to our controls for AI crawlers taking effect today, and rolling out over the coming week. These changes give you more precise control over how different types of AI crawlers interact with your content. What's changing? - Smarter security setting options for Training crawlers: Starting September 15, the recommended setting for AI Training crawlers will shift from Block to Disallow AI Training. Disallow AI Training allows major search crawlers - like Applebot, Googlebot and Bingbot - to index your site for search results while instructing them not to use your content for training. - Automatic migration: If you previously had \"Block AI Bots\" or \"Managed Robots.txt\" enabled, your settings will be migrated automatically, over the next week, to the new Search, Training, and Agent controls. If Block AI Bots was set to Block, you'll now have Search: Allow, Training: Disallow AI Training, and Agent: Block on pages with ads. These changes take effect",
+      "ts": "2026-09-16T01:09:46.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -170860,7 +170868,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-16T00:01:52.128Z",
     "gmail_seen_ids": [
-      "19f3d2c5c8b84d6f",
       "19f3d80cbb76642d",
       "19f3d8581f5982cb",
       "19f3da287b59036e",
@@ -171659,7 +171666,8 @@
       "1a0a5acaa2899bb8",
       "1a0a5b0c1f15c294",
       "1a0a67a1bce61e85",
-      "1a0a75a66d37e534"
+      "1a0a75a66d37e534",
+      "1a0a7c347ac2fa6b"
     ],
     "cash_sessions": {
       "1136982222": {
