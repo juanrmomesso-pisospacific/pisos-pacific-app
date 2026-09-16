@@ -60,7 +60,8 @@
       "stockTrack": false,
       "active": true,
       "currency": "USD",
-      "reservedStock": 0
+      "reservedStock": 0,
+      "unit": "ml"
     },
     {
       "id": "local-1784253275914-ib7b6",
@@ -72,7 +73,8 @@
       "stock": 0,
       "stockTrack": false,
       "active": true,
-      "currency": "USD"
+      "currency": "USD",
+      "unit": "ml"
     },
     {
       "id": "local-1784253276150-gnrw9",
@@ -84,7 +86,8 @@
       "stock": 0,
       "stockTrack": false,
       "active": true,
-      "currency": "USD"
+      "currency": "USD",
+      "unit": "ml"
     },
     {
       "id": "local-1784253276369-0svb6",
@@ -96,7 +99,8 @@
       "stock": 0,
       "stockTrack": false,
       "active": true,
-      "currency": "USD"
+      "currency": "USD",
+      "unit": "ml"
     },
     {
       "id": "local-1787060520611-cat0",
@@ -971,7 +975,7 @@
     },
     "locale": "es-PA",
     "updatedAt": "2026-07-17T01:53:18.716Z",
-    "last_daily_pending_digest": "2026-09-08"
+    "last_daily_pending_digest": "2026-09-16"
   },
   "password_resets": {}
 }
