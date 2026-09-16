@@ -144305,10 +144305,11 @@
       "linked_lead_id": "lead-whatsapp-1789559134669",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T11:45:52.000Z",
-      "last_message_preview": "Queria saber si los pisos son me madera o simil madera",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T11:45:52.000Z"
+      "last_message_at": "2026-09-16T14:18:12.821Z",
+      "last_message_preview": "Hola Jaime como estas?\nTenemos dos colecciones\nLa  coleccion de madera que son los pisos prefinsihed\ny la coleccion H2O que son los simil ma",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-16T11:45:52.000Z",
+      "last_outbound_at": "2026-09-16T14:18:12.821Z"
     },
     {
       "id": "conv-email-1a0aa08db535",
@@ -163104,6 +163105,15 @@
       "ts": "2026-09-16T14:16:18.561Z",
       "status": "sent",
       "wa_id": "1a0aa935929e8d3d"
+    },
+    {
+      "id": "m-1789568292821-5i53",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "out",
+      "body": "Hola Jaime como estas?\nTenemos dos colecciones\nLa  coleccion de madera que son los pisos prefinsihed\ny la coleccion H2O que son los simil madera sistema clic. Compuesto de piedra polimero y madera",
+      "ts": "2026-09-16T14:18:12.821Z",
+      "status": "delivered",
+      "wa_id": "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABEYEjM1Njg1QTIwNzZDMkY3NjVGRQA="
     }
   ],
   "templates": [
