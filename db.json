@@ -137399,6 +137399,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-15T23:15:14.000Z",
       "last_touch_at": "2026-09-15T23:15:14.000Z"
+    },
+    {
+      "id": "lead-whatsapp-1789559134669",
+      "name": "Jaime",
+      "email": "",
+      "phone": "5491165654891",
+      "source": "WhatsApp",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde whatsapp",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-16T11:45:31.000Z",
+      "last_touch_at": "2026-09-16T11:45:31.000Z"
     }
   ],
   "conversations": [
@@ -143995,6 +144011,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-15T23:15:14.000Z"
+    },
+    {
+      "id": "conv-1789559134669-tqfc",
+      "channel": "whatsapp",
+      "contact_id": "5491165654891",
+      "contact_name": "Jaime",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-whatsapp-1789559134669",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T11:45:31.000Z",
+      "last_message_preview": "Buenos dias mi nombre es Jaime, me gustaria hacer un presupuesto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T11:45:31.000Z"
     }
   ],
   "messages": [
@@ -162572,6 +162602,14 @@
       "body": "✉️ Re: Presupuesto Pisos Pacific — H2O Camara Nacional en lo Comercial\n\nBuenos Aires, 16 de septiembre de 2026 \r\nPor recibido, gracias por la pronta respuesta. \r\n\r\nIntendencia \r\nCámara Nacional de Apelaciones en lo Comercial \r\nPoder Judicial de la Nación \r\n\r\n\r\nDe: \"Pisos Pacific\" <info@pisospacific.com> \r\nPara: \"cncomercial intendencia\" <cncomercial.intendencia@pjn.gov.ar> \r\nEnviados: Lunes, 14 de Septiembre 2026 15:15:05 \r\nAsunto: Presupuesto Pisos Pacific — H2O Camara Nacional en lo Comercial \r\n\r\n⚠️Seguridad Informática le informa que este mail \"Presupuesto Pisos Pacific — H2O Camara Nacional en lo Comercial\" es un mail EXTERNO y puede ser un mail de PHISHING .\r\nRecuerde  que nunca nadie del PJN solicitará a través de ningún medio:teléfono, mensaje de texto, correo electrónico o whatsapp, su usuario, contraseñas/claves o datos personales privados.\r\n⚠️ Este correo NO fue enviado por el PJN . El remitente identificado es info@pisospacific.com , que no pertenece a los dominios oficiales del Poder Judicial de la Nación.\r\nSi este correo le pide algún dato o no reconoce al remitente, ignore y elimine el mensaje inmediatamente \r\nHola Matias, muchas gracias por tu consulta. Te agradezco la claridad de la solicitud del presupuesto. Adjunto te comparto el presupuesto NA5860. \r\n\r\nCualquier consulta quedo a disposición. \r\n\r\nEn caso de que el presupuesto se ajuste a los valores esperados, puedo acercarte muestras en cualquier momento de la semana. \r\n\r\nMuchas gracias, \r\n\r\nSaludos, \r\n\r\n\r\n\t\r\nJuan Rodríguez Momesso \r\nVentas \r\n[ https://wa.me/5491151750087 | +54",
       "ts": "2026-09-16T11:06:56.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789559134669-ez02",
+      "conversation_id": "conv-1789559134669-tqfc",
+      "direction": "in",
+      "body": "Buenos dias mi nombre es Jaime, me gustaria hacer un presupuesto",
+      "ts": "2026-09-16T11:45:31.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -172898,7 +172936,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzMjUyNTY2MDc4NzM3NzozMzAxMDQ5OTU4NTcxODg4NTcyMzAzMzExODI0MDE0NTQwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI5OTM5ODkwNzMzNDc4NjozMzAxMDYxMDA5NzY5Mzc1NTk4MzYxOTcxMDcyNjk2MzIwMAZDZD",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDQTIzMjJGQkM3MUU5NkU5QTRFOENDODhBM0ZEOTE0AA==",
-      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNTQxM0QwMkJFODA4OUZBNTYzODJENURDRUI4MkI0AA=="
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDNTQxM0QwMkJFODA4OUZBNTYzODJENURDRUI4MkI0AA==",
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBNEQ2NzEzMzU1Q0NGOEYyMzUwAA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
