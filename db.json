@@ -163415,7 +163415,7 @@
       "direction": "out",
       "body": "Hola ¿cómo estás?",
       "ts": "2026-09-16T14:45:42.145Z",
-      "status": "delivered",
+      "status": "read",
       "wa_id": "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABEYEkIxNEE1QUUzRUM3QzBENDAyNQA="
     },
     {
@@ -173091,7 +173091,8 @@
       "1a0aa8908b9276b9",
       "1a0aa98792418ba4",
       "1a0aa935929e8d3d",
-      "1a0aa9205cd6682f"
+      "1a0aa9205cd6682f",
+      "1a0aaafe1170fb5b"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
