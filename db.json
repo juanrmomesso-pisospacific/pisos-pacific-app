@@ -137876,11 +137876,11 @@
       "linked_client_name": null,
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-09-15T18:28:02.766Z",
-      "last_message_preview": "Estos son los que digo que están pisando fuerte",
+      "last_message_at": "2026-09-16T17:26:46.989Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T15:15:21.766Z",
-      "last_outbound_at": "2026-09-15T18:28:02.766Z",
+      "last_outbound_at": "2026-09-16T17:26:46.989Z",
       "ignored": true
     },
     {
@@ -163663,6 +163663,16 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenas, todo recibido!\r\nTe pregunto: el presupuesto que me mandaron incluye todo el material? Es\r\ndecir: no requiere manta o manto (no sé cómo se dice:). Yo lo voy a colocar\r\nsobre cerámicos en la cocina. Resiste bien el agua? Y es ignífugo, no? Por\r\núltimo: se puede ir a ver?\r\n\r\nUn saludo!\r\n\r\nEl mié, 16 sept 2026 a las 11:09, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Carolina, como estas?\r\n> Para una superficie de 12 m² no realizamos la colocación, pero podemos\r\n> recomendarte instaladores con los que trabajamos habitualmente.\r\n> Si son sistema clic.\r\n> Te paso el presupuesto solo por el material y si queres avanzar estamos en\r\n> contacto.\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-16T17:02:59.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789579607729-9oyh",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-16T17:26:46.989Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxMTkxNzAwOTY3Mzc4OTgwMzc2ODU1NjY1NzA0OTYwMAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
