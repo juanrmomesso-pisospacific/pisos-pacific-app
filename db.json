@@ -137762,6 +137762,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-16T14:43:04.304Z",
       "last_touch_at": "2026-09-16T14:43:04.304Z"
+    },
+    {
+      "id": "local-1789570377808-x4lfi",
+      "name": "Romina Di Landro",
+      "phone": "1167604206",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "Roble Veta tallada 12 cm"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "",
+      "address": "Olivos",
+      "created_at": "2026-09-16T14:52:57.596Z",
+      "last_touch_at": "2026-09-16T14:53:00.980Z"
     }
   ],
   "conversations": [
