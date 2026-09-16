@@ -144109,11 +144109,12 @@
       "linked_lead_id": "lead-email-1a0a67a1bce6",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-15T19:10:14.000Z",
-      "last_message_preview": "Formulario web — 130m² · Con Colocación · CP 1429 · Garcia del Rio 2477",
+      "last_message_at": "2026-09-16T13:48:31.773Z",
+      "last_message_preview": "Hola Simon, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-15T19:10:14.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-15T19:10:14.000Z",
+      "last_outbound_at": "2026-09-16T13:48:31.773Z"
     },
     {
       "id": "conv-1789502769905-0m4m",
@@ -144152,7 +144153,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0a75a66d37",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-15T23:15:14.000Z",
       "last_message_preview": "Formulario web — 56m² · Con Colocación · CP 1766 · Avellaneda 4836",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -162851,6 +162852,15 @@
       "ts": "2026-09-16T13:47:22.694Z",
       "status": "sent",
       "wa_id": "1a0aa78dca6b8270"
+    },
+    {
+      "id": "m-1789566511773-2hqz",
+      "conversation_id": "conv-email-1a0a67a1bce6",
+      "direction": "out",
+      "body": "Hola Simon, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Equipo Pacific",
+      "ts": "2026-09-16T13:48:31.773Z",
+      "status": "sent",
+      "wa_id": "1a0aa79ebc494d3f"
     }
   ],
   "templates": [
