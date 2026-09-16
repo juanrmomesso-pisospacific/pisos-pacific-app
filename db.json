@@ -137729,6 +137729,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-16T13:55:22.000Z",
       "last_touch_at": "2026-09-16T14:11:26.000Z"
+    },
+    {
+      "id": "lead-email-1a0aaaa13d60",
+      "name": "Fernando",
+      "email": "efgalvan86@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Neuquén 320",
+      "postal_code": "9410",
+      "approx_m2": 65,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 65m² · Sin Colocación · CP 9410",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-16T14:41:07.000Z",
+      "last_touch_at": "2026-09-16T14:41:07.000Z"
     }
   ],
   "conversations": [
@@ -144423,6 +144440,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T14:11:26.000Z",
       "last_outbound_at": "2026-09-16T14:21:54.659Z"
+    },
+    {
+      "id": "conv-email-1a0aaaa13d60",
+      "channel": "email",
+      "contact_id": "efgalvan86@gmail.com",
+      "contact_name": "Fernando",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0aaaa13d60",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T14:41:07.000Z",
+      "last_message_preview": "Formulario web — 65m² · Sin Colocación · CP 9410 · Neuquén 320",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T14:41:07.000Z"
     }
   ],
   "messages": [
@@ -163232,6 +163264,14 @@
       "body": "Buenísimo gracias!",
       "ts": "2026-09-16T14:41:57.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0aaaa13d60",
+      "conversation_id": "conv-email-1a0aaaa13d60",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 65m² · Sin Colocación · CP 9410 · Neuquén 320",
+      "ts": "2026-09-16T14:41:07.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -171556,7 +171596,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-16T00:01:52.128Z",
     "gmail_seen_ids": [
-      "19f41ed29acd1ea3",
       "19f41eb268463698",
       "19f42617c34036b0",
       "19f425f4ec16b0e5",
@@ -172355,7 +172394,8 @@
       "1a0aa6940071f8d6",
       "1a0aa803bbdd5e9c",
       "1a0aa7dd28bae3b1",
-      "1a0aa8ee5b09547e"
+      "1a0aa8ee5b09547e",
+      "1a0aaaa13d60ef43"
     ],
     "cash_sessions": {
       "1136982222": {
