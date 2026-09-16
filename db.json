@@ -144443,11 +144443,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1789511461717",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-16T14:45:42.145Z",
-      "last_message_preview": "Hola ¿cómo estás?",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-15T22:31:20.000Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-16T15:17:59.000Z",
+      "last_message_preview": "Hola muy bien gracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-16T15:17:59.000Z",
       "last_outbound_at": "2026-09-16T14:45:42.145Z"
     },
     {
@@ -163493,6 +163493,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuen día, necesito presupuesto de Linea H20 roble eslovenia por 70m2, y\r\nterminación para 16 escalones.\r\n\r\n*C.P. GALVA**N, **Fernando*\r\n\r\nEl mié, 16 de sept de 2026, 11:47, Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola Fernando, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Equipo Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-16T14:51:24.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789571880101-rrqr",
+      "conversation_id": "conv-1789511461715-61f5",
+      "direction": "in",
+      "body": "Hola muy bien gracias",
+      "ts": "2026-09-16T15:17:59.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173848,7 +173856,8 @@
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBOTBEQzFEMUFGRDkyQzRFRDVCAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBQkRGNDhEMEYwMkRERDZCRjNDAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBMTZBOEM2NTQ2MjIxRTkzNUUxAA==",
-      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBOEUxRTI0QjIwMTg1NUZBNTVBAA=="
+      "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFDNBOEUxRTI0QjIwMTg1NUZBNTVBAA==",
+      "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDMDJGMTQzQzJFMjRBQzAzRDU4RDBDNzQwMjI2NTc0AA=="
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
