@@ -145096,11 +145096,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789650743414",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-17T13:24:39.364Z",
-      "last_message_preview": "Hola Sole cómo estás? \nEl piso se puede trapear pero NO baldear. Es apto cocina y baños pero es importante que se entienda la diferencia. \nS",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-17T13:12:49.813Z",
+      "unread_count": 2,
+      "last_message_at": "2026-09-17T13:38:06.640Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-17T13:38:06.640Z",
       "last_outbound_at": "2026-09-17T13:24:39.364Z"
     }
   ],
@@ -164430,6 +164430,22 @@
       "body": "Muchas gracias!",
       "ts": "2026-09-17T13:28:13.892Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789652286881-e1vi",
+      "conversation_id": "conv-1789650743414-hnv5",
+      "direction": "in",
+      "body": "1138522327",
+      "ts": "2026-09-17T13:38:06.345Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1789652287271-bxzu",
+      "conversation_id": "conv-1789650743414-hnv5",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-17T13:38:06.640Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -174808,7 +174824,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzIyOTczMjA1OTU5NDY3ODc4NTA1MDI1MTYyNDQ0OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI0NjY1OTA4MDk0MzQwNzMyODM0NjkyODg0MDcwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI0NjY3MzAzNzUxMDE2NTgyNDAzNTQ1NzMzNTI5NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI0Njc3ODMwNzgzOTcxOTE2NzUxMzAxNzE4ODM1MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI0Njc3ODMwNzgzOTcxOTE2NzUxMzAxNzE4ODM1MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzI1NzcwNzE1MjQ1OTk0MDA1MTQ0NDUyODMxNjQxNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzI1NzcxMjU3ODk1NzA5MDk1ODY1NzAzNjc0Njc1MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
