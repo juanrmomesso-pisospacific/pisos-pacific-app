@@ -138314,11 +138314,11 @@
       "linked_client_name": null,
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T21:06:20.800Z",
+      "last_message_at": "2026-09-17T14:07:40.570Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T15:15:21.766Z",
-      "last_outbound_at": "2026-09-16T21:06:20.800Z",
+      "last_outbound_at": "2026-09-17T14:07:40.570Z",
       "ignored": true
     },
     {
@@ -164552,6 +164552,16 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 100m² · Sin Colocación · CP 1667 · Tortuguitas",
       "ts": "2026-09-17T14:03:54.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789654060980-7dxe",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-17T14:07:40.570Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxMzI5MDQzNTgxMjA3NzU5NDkxMzE3NjgxNzc2MjMwNAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
