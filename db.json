@@ -144862,12 +144862,12 @@
       "linked_lead_id": "lead-email-1a09c9a4005b",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-14T17:56:31.153Z",
-      "last_message_preview": "Hola Ernesto, ¡muchas gracias por tu consulta!\n\nPara ayudarte con la cotización, por favor compartinos si estás buscando pisos de SPC o piso",
+      "last_message_at": "2026-09-17T14:59:38.080Z",
+      "last_message_preview": "Hola, ¿cómo estás?\n\nQueríamos hacer seguimiento de tu consulta. Para poder avanzar con el presupuesto, ¿nos confirmás qué colección te inter",
       "email_subject": "Piso color roble",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-13T21:08:57.000Z",
-      "last_outbound_at": "2026-09-14T17:56:31.153Z"
+      "last_outbound_at": "2026-09-17T14:59:38.080Z"
     },
     {
       "id": "conv-1789342423594-fby7",
@@ -164760,6 +164760,15 @@
       "ts": "2026-09-17T14:59:15.030Z",
       "status": "sent",
       "wa_id": "1a0afe10501af043"
+    },
+    {
+      "id": "m-1789657178080-ozqk",
+      "conversation_id": "conv-email-1a09c9a4005b",
+      "direction": "out",
+      "body": "Hola, ¿cómo estás?\n\nQueríamos hacer seguimiento de tu consulta. Para poder avanzar con el presupuesto, ¿nos confirmás qué colección te interesa?\n\nSi tenés alguna duda entre las opciones, contanos y te ayudamos a elegir.\n\nSaludos,\nEquipo Pacific",
+      "ts": "2026-09-17T14:59:38.080Z",
+      "status": "sent",
+      "wa_id": "1a0afe15eb382105"
     }
   ],
   "templates": [
