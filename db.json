@@ -145095,11 +145095,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789650743414",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-17T13:12:49.813Z",
-      "last_message_preview": "Quería averiguar por opciones de pisos simil madera  sistema click que sean aptos agua para trapear\nCocina\n, incluso para poner en baño",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T13:12:49.813Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-17T13:24:39.364Z",
+      "last_message_preview": "Hola Sole cómo estás? \nEl piso se puede trapear pero NO baldear. Es apto cocina y baños pero es importante que se entienda la diferencia. \nS",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-17T13:12:49.813Z",
+      "last_outbound_at": "2026-09-17T13:24:39.364Z"
     }
   ],
   "messages": [
@@ -164374,6 +164375,16 @@
       "body": "Quería averiguar por opciones de pisos simil madera  sistema click que sean aptos agua para trapear\nCocina\n, incluso para poner en baño",
       "ts": "2026-09-17T13:12:49.813Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789651479718-opzs",
+      "conversation_id": "conv-1789650743414-hnv5",
+      "direction": "out",
+      "body": "Hola Sole cómo estás? \nEl piso se puede trapear pero NO baldear. Es apto cocina y baños pero es importante que se entienda la diferencia. \nSi queres déjame un número de WhatsApp y te van a estar contactando",
+      "ts": "2026-09-17T13:24:39.364Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzI0MjgyMDk3ODYxNzQ3MjY5MjMyNzIzMjMwNzIwMAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
