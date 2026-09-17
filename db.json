@@ -138401,10 +138401,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 100m² · Sin Colocación · CP 1667",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-17T14:03:54.000Z",
-      "last_touch_at": "2026-09-17T14:20:22.274Z"
+      "last_touch_at": "2026-09-17T14:56:35.625Z"
     }
   ],
   "conversations": [
@@ -174328,7 +174328,8 @@
       "1a0afbb86735ecea",
       "1a0afc42c1b82640",
       "1a0afc3905f93db9",
-      "1a0afbf1ab5d3c16"
+      "1a0afbf1ab5d3c16",
+      "1a0afcf629707a53"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
