@@ -133571,7 +133571,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-07-24T02:56:33.000Z",
-      "last_touch_at": "2026-09-17T01:53:14.000Z"
+      "last_touch_at": "2026-09-17T04:59:43.000Z"
     },
     {
       "id": "lead-instagram-1784916324625",
@@ -141116,12 +141116,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f920e2ca6d",
       "status": "closed",
-      "unread_count": 26,
-      "last_message_at": "2026-09-17T01:53:14.000Z",
-      "last_message_preview": "Dear Daniel.\r\n\r\nSorry for the stocks.\r\nI have checked with our factory director.\r\nWe don't have 6mm thickness heating cable (15M) stock, so ",
+      "unread_count": 27,
+      "last_message_at": "2026-09-17T04:59:43.000Z",
+      "last_message_preview": "Dear Daniel, Mike,\r\n\r\nThanks for your confirmation of adding 5mm heating cable(15M) 60roll.\r\nI added it to the remaining proforma invoice an",
       "email_subject": "Re: radiant heating",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T01:53:14.000Z",
+      "last_inbound_at": "2026-09-17T04:59:43.000Z",
       "ignored": true
     },
     {
@@ -164171,6 +164171,14 @@
       "body": "Respondan...",
       "ts": "2026-09-17T02:50:15.599Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0adbcbb431",
+      "conversation_id": "conv-email-19f920e2ca6d",
+      "direction": "in",
+      "body": "✉️ The balance(remaining payment) Proforma invoice\n\nDear Daniel, Mike,\r\n\r\nThanks for your confirmation of adding 5mm heating cable(15M) 60roll.\r\nI added it to the remaining proforma invoice and will add it together on\r\nsea shipment\r\n\r\nThe attached is \"Balance(the remaining) proforma invoice\". Pls check it and\r\nkindly make your payment soon.\r\nThe Last box of heating film is only 72M, so I adjusted the unit price on\r\nthe last film's box.\r\nOnce you pay, pls let me know with a bank receipt.\r\n\r\nHow about arranging Air and Sea shipment schedule with forwarding\r\nagency(DMcomex).?\r\nWe are read to ship your cargo by Air and 1x20f't by Sea\r\n\r\nAwaiting your reply soon.\r\nJoshua\r\nFelix Korea\r\n\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 4588 6512\r\nTel. : +82 31 866 5688\r\n\r\n* www.felixkorea.com <http://www.felixkorea.com>*\r\n\r\n\r\n\r\n2026년 9월 17일 (목) 오전 11:29, Daniel La Buonora <daniel@mrparquet.com.uy>님이 작성:\r\n\r\n> sorry, I meant:\r\n> 5mm thickness heating cable (15M) : 60rolls  (Excel or Navita brand),\r\n> USD15/roll\r\n>\r\n>\r\n> *Daniel La Buonora */Director\r\n>\r\n> Montevideo: Av Italia 5030\r\n> <https://www.google.com/maps/search/Av+Italia+5030?entry=gmail&source=g>.\r\n>\r\n> Carrasco: Via Disegno.\r\n>\r\n> Punta del Este: Open Mall, Calle San Francisco.\r\n>\r\n> Miami: 1221 Brickell Ave #900\r\n> <https://www.google.com/maps/search/Miami:+1221+Brickell+Ave+%23900?entry=gmail&source=g>\r\n> .\r\n>\r\n>\r\n>\r\n>     www.mrparquet.com.uy\r\n>\r\n>\r\n> On Wed, Sep 16, 2026 at 10:53 PM FELIXKOREA <felixkorea.com@gmail.com>\r\n> wrote:\r\n>\r\n>",
+      "ts": "2026-09-17T04:59:43.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -172495,7 +172503,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-17T01:38:31.050Z",
     "gmail_seen_ids": [
-      "19f438ada1042a3a",
       "19f440cee9c2e494",
       "19f44963a7e2d6b5",
       "19f45fb2fcb3fbaf",
@@ -173294,7 +173301,8 @@
       "1a0abd39be67e2b3",
       "1a0ac7fe33f1f083",
       "1a0ad12021772a8b",
-      "1a0ad32fc0668a5b"
+      "1a0ad32fc0668a5b",
+      "1a0adbcbb431e69a"
     ],
     "cash_sessions": {
       "1136982222": {
