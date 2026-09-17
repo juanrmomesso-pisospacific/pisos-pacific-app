@@ -145159,11 +145159,12 @@
       "linked_lead_id": "lead-email-1a0afae5f7d3",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T14:03:54.000Z",
-      "last_message_preview": "Formulario web — 100m² · Sin Colocación · CP 1667 · Tortuguitas",
+      "last_message_at": "2026-09-17T14:18:17.737Z",
+      "last_message_preview": "Hola juan, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T14:03:54.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-17T14:03:54.000Z",
+      "last_outbound_at": "2026-09-17T14:18:17.737Z"
     }
   ],
   "messages": [
@@ -164562,6 +164563,15 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxMzI5MDQzNTgxMjA3NzU5NDkxMzE3NjgxNzc2MjMwNAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1789654697737-wmuy",
+      "conversation_id": "conv-email-1a0afae5f7d3",
+      "direction": "out",
+      "body": "Hola juan, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\nMuchas gracias!\nSaludos, Equipo Pacific",
+      "ts": "2026-09-17T14:18:17.737Z",
+      "status": "sent",
+      "wa_id": "1a0afbb86735ecea"
     }
   ],
   "templates": [
