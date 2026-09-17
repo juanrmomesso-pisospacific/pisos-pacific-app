@@ -138437,6 +138437,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-17T15:54:26.142Z",
       "last_touch_at": "2026-09-17T15:54:26.142Z"
+    },
+    {
+      "id": "local-1789666653613-7u6t6",
+      "name": "Sofia Garcia del Rio",
+      "phone": "",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Contacted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Local Palermo | Gorriti y Malabia",
+      "created_at": "2026-09-17T17:37:33.078Z",
+      "last_touch_at": "2026-09-17T17:37:35.777Z"
     }
   ],
   "conversations": [
