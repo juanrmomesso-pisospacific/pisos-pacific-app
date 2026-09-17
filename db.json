@@ -138204,6 +138204,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-16T23:14:17.000Z",
       "last_touch_at": "2026-09-16T23:14:17.000Z"
+    },
+    {
+      "id": "lead-email-1a0af3434f1c",
+      "name": "María Pecchinenda",
+      "email": "maria@infodesarrollos.com.ar",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Consulta — Hola ,\r\n\r\n\r\nEspero que estés muy bien.\r\n\r\n\r\nQueríamos consultarte si en **Pisos Pacific** ya están elaborando el plan de comunicación para el próximo año o para cuándo lo tienen pr",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-17T11:50:28.000Z",
+      "last_touch_at": "2026-09-17T11:50:28.000Z"
     }
   ],
   "conversations": [
@@ -144975,6 +144992,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-16T23:14:17.000Z"
+    },
+    {
+      "id": "conv-email-1a0af3434f1c",
+      "channel": "email",
+      "contact_id": "maria@infodesarrollos.com.ar",
+      "contact_name": "María Pecchinenda",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0af3434f1c",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-17T11:50:28.000Z",
+      "last_message_preview": "Hola ,\r\n\r\n\r\nEspero que estés muy bien.\r\n\r\n\r\nQueríamos consultarte si en **Pisos Pacific** ya están elaborando el plan de comunicación para e",
+      "email_subject": "Consulta",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-17T11:50:28.000Z"
     }
   ],
   "messages": [
@@ -164189,6 +164221,14 @@
       "status": "received",
       "media_url": "/uploads/c782386be280a9e6.mp4",
       "media_type": "video"
+    },
+    {
+      "id": "m-email-1a0af3434f1c",
+      "conversation_id": "conv-email-1a0af3434f1c",
+      "direction": "in",
+      "body": "✉️ Consulta\n\nHola ,\r\n\r\n\r\nEspero que estés muy bien.\r\n\r\n\r\nQueríamos consultarte si en **Pisos Pacific** ya están elaborando el plan de comunicación para el próximo año o para cuándo lo tienen previsto.\r\n\r\n\r\nLos productos y servicios que ustedes comercializan son de suma utilidad para la industria. En ese sentido, estamos seguros de que podemos aportarles un valor, ya que somos el banco de datos de excelencia del sector. Nos encantaría enviarles una propuesta integral para que evalúen sumarse a **[Info Construcción](http://r.info-news-portal.ar/mk/cl/f/sh/7nVU1aA2nfsTSXgdUePjIN9dVVe4t2R/CoLGLQ_2v1Q0)** (*Noticias & Negocios de la Industria de la Construcción, la Vivienda y el Real Estate*).\r\n\r\n\r\nDe cara al cierre de año, ponemos a disposición una seria de alternativas para armar un **Plan de Trabajo a la medida de** **Pisos Pacific**, con beneficios especiales. La idea es construir juntos la alternativa que mejor se ajuste a sus necesidades.\r\n\r\n\r\nComo referencia de nuestra trayectoria, somos los desarrolladores de un ecosistema de medios especializado que incluye a [Info Textil](http://r.info-news-portal.ar/mk/cl/f/sh/7nVU1aA2nfuMS4BwTDeBKjTRfs8rcyx/8jUxOsewKLM9), [Info Calzado](http://r.info-news-portal.ar/mk/cl/f/sh/7nVU1aA2nfwFRahFRmsdN5nFqEdeMvT/YPa1zH-gHYTv), [Info Gastronómica](http://r.info-news-portal.ar/mk/cl/f/sh/7nVU1aA2nfy8R7CYQM75PS740b8R6rz/q0AMoGK2en1H), [Info Hotelera,](http://r.info-news-portal.ar/mk/cl/f/sh/7nVU1aA2ng01QdhrOvLXRoQsAxdDqoV/debepIsRhkI7)  [Info Arte](http://",
+      "ts": "2026-09-17T11:50:28.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -172513,7 +172553,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-17T01:38:31.050Z",
     "gmail_seen_ids": [
-      "19f4673553ea0873",
       "19f46c3f60fbde58",
       "19f4729c23338658",
       "19f4be21abcb8a96",
@@ -173312,7 +173351,8 @@
       "1a0adbcbb431e69a",
       "1a0ae2c7c472b571",
       "1a0ae9577e28d9d0",
-      "1a0af02a0aaabc9e"
+      "1a0af02a0aaabc9e",
+      "1a0af3434f1c1688"
     ],
     "cash_sessions": {
       "1136982222": {
