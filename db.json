@@ -138557,7 +138557,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-16T23:14:17.000Z",
-      "last_touch_at": "2026-09-17T14:27:10.579Z"
+      "last_touch_at": "2026-09-17T17:58:25.000Z"
     },
     {
       "id": "lead-email-1a0af3434f1c",
@@ -145512,12 +145512,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0ac7fe33f1",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-17T14:27:04.709Z",
-      "last_message_preview": "Hola Delfina, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos",
+      "unread_count": 1,
+      "last_message_at": "2026-09-17T17:58:25.000Z",
+      "last_message_preview": "Hola Victoria\r\n\r\nMe interesa línea h20. Especifícamente el roble Eslavonia xl\r\n\r\nEl El jue, 17 sept 2026 a la(s) 11:27, Pisos Pacific <info@",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-16T23:14:17.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-17T17:58:25.000Z",
       "last_outbound_at": "2026-09-17T14:27:04.709Z"
     },
     {
@@ -165240,6 +165240,14 @@
       "body": "El tema de la calefacción? No lo aislara demasiado?",
       "ts": "2026-09-17T17:41:59.730Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0b08539edd",
+      "conversation_id": "conv-email-1a0ac7fe33f1",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Victoria\r\n\r\nMe interesa línea h20. Especifícamente el roble Eslavonia xl\r\n\r\nEl El jue, 17 sept 2026 a la(s) 11:27, Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola Delfina, como estas?\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n>\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Equipo Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-09-17T17:58:25.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173753,7 +173761,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-17T01:38:31.050Z",
     "gmail_seen_ids": [
-      "19f4d3668dc106ee",
       "19f4dfe93aca8c4b",
       "19f4ea336609b0aa",
       "19f4fcf002ff76a8",
@@ -174552,7 +174559,8 @@
       "1a0afae5f7d3d6db",
       "1a0afe92db9d46dc",
       "1a0b009bd4091115",
-      "1a0b028825934217"
+      "1a0b028825934217",
+      "1a0b08539edd81bf"
     ],
     "cash_sessions": {
       "1136982222": {
