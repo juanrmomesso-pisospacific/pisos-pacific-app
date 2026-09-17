@@ -145095,11 +145095,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789650743414",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-17T13:12:21.846Z",
-      "last_message_preview": "Hola!",
+      "unread_count": 2,
+      "last_message_at": "2026-09-17T13:12:49.813Z",
+      "last_message_preview": "Quería averiguar por opciones de pisos simil madera  sistema click que sean aptos agua para trapear\nCocina\n, incluso para poner en baño",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T13:12:21.846Z"
+      "last_inbound_at": "2026-09-17T13:12:49.813Z"
     }
   ],
   "messages": [
@@ -164366,6 +164366,14 @@
       "body": "Hola!",
       "ts": "2026-09-17T13:12:21.846Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789650770613-t105",
+      "conversation_id": "conv-1789650743414-hnv5",
+      "direction": "in",
+      "body": "Quería averiguar por opciones de pisos simil madera  sistema click que sean aptos agua para trapear\nCocina\n, incluso para poner en baño",
+      "ts": "2026-09-17T13:12:49.813Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -174740,7 +174748,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAxMjU0MDY2ODQ0NDA2MzE0OTg5MjkwMzUyMzg0NDA5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA1MTUyNjE5NDE2NTIzNDozMzAxMzEzMjMxNDg5MTQzMTQxMTU5OTc1OTc1Mzg3MTM2MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzE3MDcwNDYxNTcwNjM0Mjg3OTQ5OTE1NDA5NjEyOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzIyOTIxNjE2MjA2NzI2Njc3NjI2NTgzNDYyNzA3MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzIyOTIxNjE2MjA2NzI2Njc3NjI2NTgzNDYyNzA3MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzIyOTczMjA1OTU5NDY3ODc4NTA1MDI1MTYyNDQ0OAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
