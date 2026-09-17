@@ -145335,11 +145335,11 @@
       "linked_lead_id": "lead-instagram-1789660467799",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T16:44:43.722Z",
-      "last_message_preview": "Hola cómo estás?",
+      "last_message_at": "2026-09-17T16:44:55.497Z",
+      "last_message_preview": "Sii se puede siempre y cuando el porcelanato esté nivelado y plano",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T15:54:26.142Z",
-      "last_outbound_at": "2026-09-17T16:44:43.722Z"
+      "last_outbound_at": "2026-09-17T16:44:55.497Z"
     }
   ],
   "messages": [
@@ -164895,6 +164895,16 @@
       "ts": "2026-09-17T16:44:43.722Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzQ2NDI2MjI4NjI1NjI1NjE5MzM3MDU4MDMyMDI1NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789663495765-r3lv",
+      "conversation_id": "conv-1789660467798-wzf5",
+      "direction": "out",
+      "body": "Sii se puede siempre y cuando el porcelanato esté nivelado y plano",
+      "ts": "2026-09-17T16:44:55.497Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzQ2NDQ3OTUwNzk3NTU3ODI0MDUyNDgxMzg2MDg2NAZDZD",
       "via": "ig-app"
     }
   ],
