@@ -145082,11 +145082,11 @@
       "linked_lead_id": "lead-instagram-1789647572516",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T13:25:08.109Z",
-      "last_message_preview": "Holaaa como estas? Si obvio! Semana que viene salen los envíos de muestrarios al interior",
+      "last_message_at": "2026-09-17T13:27:03.049Z",
+      "last_message_preview": "Me pasas los siguientes datos: \nNombre completo DNI teléfono y dirección completa",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T12:19:29.928Z",
-      "last_outbound_at": "2026-09-17T13:25:08.109Z"
+      "last_outbound_at": "2026-09-17T13:27:03.049Z"
     },
     {
       "id": "conv-1789650743414-hnv5",
@@ -164395,6 +164395,16 @@
       "ts": "2026-09-17T13:25:08.109Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI0MzM1MTIyMTIwMDA3MzM4OTEyMzMzNDgzMjEyOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789651623808-fhzp",
+      "conversation_id": "conv-1789647572516-e5zk",
+      "direction": "out",
+      "body": "Me pasas los siguientes datos: \nNombre completo DNI teléfono y dirección completa",
+      "ts": "2026-09-17T13:27:03.049Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI0NTQ3MTQ4ODI0ODM1ODM2NjEzMTA4OTU3MTg0MAZDZD",
       "via": "ig-app"
     }
   ],
