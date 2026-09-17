@@ -142851,11 +142851,11 @@
       "linked_lead_id": "lead-instagram-1787160038154",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T11:58:50.942Z",
-      "last_message_preview": "Hola Pato!! Perdón la demora en responder. Nos entró en spam",
+      "last_message_at": "2026-09-17T12:03:20.968Z",
+      "last_message_preview": "Si la carpeta para poder colocar tiene que estar nivelada",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-19T17:24:07.586Z",
-      "last_outbound_at": "2026-09-17T11:58:50.942Z"
+      "last_outbound_at": "2026-09-17T12:03:20.968Z"
     },
     {
       "id": "conv-1787178823156-st6z",
@@ -164239,6 +164239,16 @@
       "ts": "2026-09-17T11:58:50.942Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMzAxMzE0Nzg0OTM1NTM5NzEwMjYzMDM2NjQ3NzI4NzQyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789646601333-w7nw",
+      "conversation_id": "conv-1787160038154-v9mv",
+      "direction": "out",
+      "body": "Si la carpeta para poder colocar tiene que estar nivelada",
+      "ts": "2026-09-17T12:03:20.968Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMzAxMzE1MjgzMDQ0MTQxMzIwOTI4MzgxNTQzMTczMzI0OAZDZD",
       "via": "ig-app"
     }
   ],
