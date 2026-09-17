@@ -145419,11 +145419,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789660467799",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-17T16:44:55.497Z",
-      "last_message_preview": "Sii se puede siempre y cuando el porcelanato esté nivelado y plano",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-17T15:54:26.142Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-17T17:41:59.730Z",
+      "last_message_preview": "El tema de la calefacción? No lo aislara demasiado?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-17T17:41:59.730Z",
       "last_outbound_at": "2026-09-17T16:44:55.497Z"
     }
   ],
@@ -165017,6 +165017,14 @@
       "body": "No tengo la medida exacto pero según el plano me daría unos 25 m2+ 10 % unos 28 m2",
       "ts": "2026-09-17T16:52:00.539Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789666920295-5e2o",
+      "conversation_id": "conv-1789660467798-wzf5",
+      "direction": "in",
+      "body": "El tema de la calefacción? No lo aislara demasiado?",
+      "ts": "2026-09-17T17:41:59.730Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -175603,7 +175611,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAxMzM4NDk3NjMyMjQ1NTg1Njg3NzIzNjA2OTA3Mjg5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzQwODU5Nzc2ODMxNzA5MjE0MDc0MjUzNTU0NDgzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY4MDk2NDgyMDA2MzMzMTozMzAxMzQ3MTk1MTc5ODI2MDE3MzAzMDk2NDU0MjMwODM1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY4MDk2NDgyMDA2MzMzMTozMzAxMzQ3MjMyMDE0MDI0NDg0NTk0ODg5ODE2MzgxODQ5NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY4MDk2NDgyMDA2MzMzMTozMzAxMzQ3MjMyMDE0MDI0NDg0NTk0ODg5ODE2MzgxODQ5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzUyNzY0NTQ1MTUyMTg4MjY3ODU5NTk4NjM5MTA0MAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
