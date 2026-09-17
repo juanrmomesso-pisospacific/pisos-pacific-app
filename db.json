@@ -138238,6 +138238,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-17T11:55:52.000Z",
       "last_touch_at": "2026-09-17T11:55:52.000Z"
+    },
+    {
+      "id": "lead-instagram-1789647572516",
+      "name": "@fluir.muebles",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-17T12:19:29.928Z",
+      "last_touch_at": "2026-09-17T12:19:29.928Z"
     }
   ],
   "conversations": [
@@ -145040,6 +145056,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-17T11:55:52.000Z"
+    },
+    {
+      "id": "conv-1789647572516-e5zk",
+      "channel": "instagram",
+      "contact_id": "1629990938831086",
+      "contact_name": "@fluir.muebles",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1789647572516",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-17T12:19:29.928Z",
+      "last_message_preview": "Hola! Buen día! Podrán enviarme un catálogo con muestras? Me interesa la línea h20. Tengo un estudio de interiorismo en Gualeguaychú, Entre ",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-17T12:19:29.928Z"
     }
   ],
   "messages": [
@@ -164290,6 +164320,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 1809m² · Con Colocación · CP 1426 · Olleros",
       "ts": "2026-09-17T11:55:52.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789647572516-nq39",
+      "conversation_id": "conv-1789647572516-e5zk",
+      "direction": "in",
+      "body": "Hola! Buen día! Podrán enviarme un catálogo con muestras? Me interesa la línea h20. Tengo un estudio de interiorismo en Gualeguaychú, Entre Ríos. Gracias!",
+      "ts": "2026-09-17T12:19:29.928Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -174661,7 +174699,8 @@
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFjNFQjA0N0ZCNTY1NzlEMzQ4MjgyQkYA",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5OTA1MDYzNzQzODcyNDozMzAxMjExNjI0MjY4MjM5NDQ2Nzg1NDE0MTc4NTg5OTAwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAxMjU0MDY2ODQ0NDA2MzE0OTg5MjkwMzUyMzg0NDA5NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA1MTUyNjE5NDE2NTIzNDozMzAxMzEzMjMxNDg5MTQzMTQxMTU5OTc1OTc1Mzg3MTM2MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA1MTUyNjE5NDE2NTIzNDozMzAxMzEzMjMxNDg5MTQzMTQxMTU5OTc1OTc1Mzg3MTM2MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzE3MDcwNDYxNTcwNjM0Mjg3OTQ5OTE1NDA5NjEyOAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
