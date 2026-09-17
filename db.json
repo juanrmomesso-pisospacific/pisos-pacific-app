@@ -138738,6 +138738,23 @@
       "address": "A confirmar",
       "created_at": "2026-09-17T17:54:13.440Z",
       "last_touch_at": "2026-09-17T17:54:15.856Z"
+    },
+    {
+      "id": "lead-email-1a0b1c0d1ef9",
+      "name": "Gonzalo",
+      "email": "gonzaloguerra89@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Rojas 1365",
+      "postal_code": "1416",
+      "approx_m2": 20,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 20m² · Con Colocación · CP 1416",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-17T23:43:18.000Z",
+      "last_touch_at": "2026-09-17T23:43:18.000Z"
     }
   ],
   "conversations": [
@@ -145641,6 +145658,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T17:41:59.730Z",
       "last_outbound_at": "2026-09-17T18:27:33.411Z"
+    },
+    {
+      "id": "conv-email-1a0b1c0d1ef9",
+      "channel": "email",
+      "contact_id": "gonzaloguerra89@gmail.com",
+      "contact_name": "Gonzalo",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0b1c0d1ef9",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-17T23:43:18.000Z",
+      "last_message_preview": "Formulario web — 20m² · Con Colocación · CP 1416 · Rojas 1365",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-17T23:43:18.000Z"
     }
   ],
   "messages": [
@@ -165266,6 +165298,14 @@
       "body": "✉️ Re: The balance(remaining payment) Proforma invoice\n\nHi Joshua,\r\n\r\nplease find the soft copy attached,\r\n\r\nbest\r\n\r\n\r\nEl jue, 17 sept 2026 a la(s) 2:00 a.m., FELIXKOREA (felixkorea.com@gmail.com)\r\nescribió:\r\n\r\n> Dear Daniel, Mike,\r\n>\r\n> Thanks for your confirmation of adding 5mm heating cable(15M) 60roll.\r\n> I added it to the remaining proforma invoice and will add it together on\r\n> sea shipment\r\n>\r\n> The attached is \"Balance(the remaining) proforma invoice\". Pls check it\r\n> and kindly make your payment soon.\r\n> The Last box of heating film is only 72M, so I adjusted the unit price on\r\n> the last film's box.\r\n> Once you pay, pls let me know with a bank receipt.\r\n>\r\n> How about arranging Air and Sea shipment schedule with forwarding\r\n> agency(DMcomex).?\r\n> We are read to ship your cargo by Air and 1x20f't by Sea\r\n>\r\n> Awaiting your reply soon.\r\n> Joshua\r\n> Felix Korea\r\n>\r\n>\r\n>\r\n> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> <https://www.google.com/maps/search/861-4+Samil-Ro,+Nam-Myeon,+Yangju-Si,%C2%A0Gyeonggi-Do,+Korea?entry=gmail&source=g>\r\n> Korea\r\n> <https://www.google.com/maps/search/861-4+Samil-Ro,+Nam-Myeon,+Yangju-Si,%C2%A0Gyeonggi-Do,+Korea?entry=gmail&source=g>.\r\n> 11405\r\n> Mob. : +82 10 4588 6512 <+82%2010-4588-6512>\r\n> Tel. : +82 31 866 5688 <+82%2031-866-5688>\r\n>\r\n> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>\r\n>\r\n>\r\n> 2026년 9월 17일 (목) 오전 11:29, Daniel La Buonora <daniel@mrparquet.com.uy>님이\r\n> 작성:\r\n>\r\n>> sorry, I meant:\r\n>> 5mm thickness heating cable (15M) : 60rolls  (Excel or Navita brand),\r\n>> USD1",
       "ts": "2026-09-17T23:18:55.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0b1c0d1ef9",
+      "conversation_id": "conv-email-1a0b1c0d1ef9",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 20m² · Con Colocación · CP 1416 · Rojas 1365",
+      "ts": "2026-09-17T23:43:18.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173779,7 +173819,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-17T01:38:31.050Z",
     "gmail_seen_ids": [
-      "19f4ea336609b0aa",
       "19f4fcf002ff76a8",
       "19f50b0caf07c985",
       "19f51428526f3e24",
@@ -174578,7 +174617,8 @@
       "1a0b009bd4091115",
       "1a0b028825934217",
       "1a0b08539edd81bf",
-      "1a0b1aab45dec94d"
+      "1a0b1aab45dec94d",
+      "1a0b1c0d1ef98681"
     ],
     "cash_sessions": {
       "1136982222": {
