@@ -144815,12 +144815,12 @@
       "linked_lead_id": "lead-email-1a097660f3ad",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-14T17:59:24.169Z",
-      "last_message_preview": "Hola Alejandro, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuest",
+      "last_message_at": "2026-09-17T14:57:39.134Z",
+      "last_message_preview": "Hola Alejandro, ¿cómo estás?\n\nQueríamos hacer seguimiento de tu consulta. Para poder avanzar con el presupuesto, ¿nos confirmás qué colecció",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-12T20:54:02.000Z",
-      "last_outbound_at": "2026-09-14T17:59:24.169Z"
+      "last_outbound_at": "2026-09-17T14:57:39.134Z"
     },
     {
       "id": "conv-1789307270547-vy4y",
@@ -144970,12 +144970,12 @@
       "linked_lead_id": "lead-email-1a0a67a1bce6",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T13:48:31.773Z",
-      "last_message_preview": "Hola Simon, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras ",
+      "last_message_at": "2026-09-17T14:57:56.799Z",
+      "last_message_preview": "Hola Simon, ¿cómo estás?\n\nQueríamos hacer seguimiento de tu consulta. Para poder avanzar con el presupuesto, ¿nos confirmás qué colección te",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-15T19:10:14.000Z",
-      "last_outbound_at": "2026-09-16T13:48:31.773Z"
+      "last_outbound_at": "2026-09-17T14:57:56.799Z"
     },
     {
       "id": "conv-1789502769905-0m4m",
@@ -164724,6 +164724,24 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0afcf629707a53"
+    },
+    {
+      "id": "m-1789657059134-rcfw",
+      "conversation_id": "conv-email-1a097660f3ad",
+      "direction": "out",
+      "body": "Hola Alejandro, ¿cómo estás?\n\nQueríamos hacer seguimiento de tu consulta. Para poder avanzar con el presupuesto, ¿nos confirmás qué colección te interesa?\n\nSi tenés alguna duda entre las opciones, contanos y te ayudamos a elegir.\n\nSaludos,\nEquipo Pacific",
+      "ts": "2026-09-17T14:57:39.134Z",
+      "status": "sent",
+      "wa_id": "1a0afdf8f43b2556"
+    },
+    {
+      "id": "m-1789657076799-7zao",
+      "conversation_id": "conv-email-1a0a67a1bce6",
+      "direction": "out",
+      "body": "Hola Simon, ¿cómo estás?\n\nQueríamos hacer seguimiento de tu consulta. Para poder avanzar con el presupuesto, ¿nos confirmás qué colección te interesa?\n\nSi tenés alguna duda entre las opciones, contanos y te ayudamos a elegir.\n\nSaludos,\nEquipo Pacific",
+      "ts": "2026-09-17T14:57:56.799Z",
+      "status": "sent",
+      "wa_id": "1a0afdfd24952344"
     }
   ],
   "templates": [
