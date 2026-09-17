@@ -142851,10 +142851,11 @@
       "linked_lead_id": "lead-instagram-1787160038154",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-08-19T17:24:07.586Z",
-      "last_message_preview": "Hay q sacar el piso que esta ,no?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-08-19T17:24:07.586Z"
+      "last_message_at": "2026-09-17T11:58:50.942Z",
+      "last_message_preview": "Hola Pato!! Perdón la demora en responder. Nos entró en spam",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-08-19T17:24:07.586Z",
+      "last_outbound_at": "2026-09-17T11:58:50.942Z"
     },
     {
       "id": "conv-1787178823156-st6z",
@@ -164229,6 +164230,16 @@
       "body": "✉️ Consulta\n\nHola ,\r\n\r\n\r\nEspero que estés muy bien.\r\n\r\n\r\nQueríamos consultarte si en **Pisos Pacific** ya están elaborando el plan de comunicación para el próximo año o para cuándo lo tienen previsto.\r\n\r\n\r\nLos productos y servicios que ustedes comercializan son de suma utilidad para la industria. En ese sentido, estamos seguros de que podemos aportarles un valor, ya que somos el banco de datos de excelencia del sector. Nos encantaría enviarles una propuesta integral para que evalúen sumarse a **[Info Construcción](http://r.info-news-portal.ar/mk/cl/f/sh/7nVU1aA2nfsTSXgdUePjIN9dVVe4t2R/CoLGLQ_2v1Q0)** (*Noticias & Negocios de la Industria de la Construcción, la Vivienda y el Real Estate*).\r\n\r\n\r\nDe cara al cierre de año, ponemos a disposición una seria de alternativas para armar un **Plan de Trabajo a la medida de** **Pisos Pacific**, con beneficios especiales. La idea es construir juntos la alternativa que mejor se ajuste a sus necesidades.\r\n\r\n\r\nComo referencia de nuestra trayectoria, somos los desarrolladores de un ecosistema de medios especializado que incluye a [Info Textil](http://r.info-news-portal.ar/mk/cl/f/sh/7nVU1aA2nfuMS4BwTDeBKjTRfs8rcyx/8jUxOsewKLM9), [Info Calzado](http://r.info-news-portal.ar/mk/cl/f/sh/7nVU1aA2nfwFRahFRmsdN5nFqEdeMvT/YPa1zH-gHYTv), [Info Gastronómica](http://r.info-news-portal.ar/mk/cl/f/sh/7nVU1aA2nfy8R7CYQM75PS740b8R6rz/q0AMoGK2en1H), [Info Hotelera,](http://r.info-news-portal.ar/mk/cl/f/sh/7nVU1aA2ng01QdhrOvLXRoQsAxdDqoV/debepIsRhkI7)  [Info Arte](http://",
       "ts": "2026-09-17T11:50:28.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789646331569-haqg",
+      "conversation_id": "conv-1787160038154-v9mv",
+      "direction": "out",
+      "body": "Hola Pato!! Perdón la demora en responder. Nos entró en spam",
+      "ts": "2026-09-17T11:58:50.942Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMzAxMzE0Nzg0OTM1NTM5NzEwMjYzMDM2NjQ3NzI4NzQyNAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
