@@ -138221,6 +138221,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-17T11:50:28.000Z",
       "last_touch_at": "2026-09-17T11:50:28.000Z"
+    },
+    {
+      "id": "lead-email-1a0af39255b3",
+      "name": "Rosario",
+      "email": "rmaffrand@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Olleros",
+      "postal_code": "1426",
+      "approx_m2": 1809,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 1809m² · Con Colocación · CP 1426",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-17T11:55:52.000Z",
+      "last_touch_at": "2026-09-17T11:55:52.000Z"
     }
   ],
   "conversations": [
@@ -145008,6 +145025,21 @@
       "email_subject": "Consulta",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-17T11:50:28.000Z"
+    },
+    {
+      "id": "conv-email-1a0af39255b3",
+      "channel": "email",
+      "contact_id": "rmaffrand@gmail.com",
+      "contact_name": "Rosario",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0af39255b3",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-17T11:55:52.000Z",
+      "last_message_preview": "Formulario web — 1809m² · Con Colocación · CP 1426 · Olleros",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-17T11:55:52.000Z"
     }
   ],
   "messages": [
@@ -164250,6 +164282,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTExMjMyMTc3NjQ5MzUwMjozMzAxMzE1MjgzMDQ0MTQxMzIwOTI4MzgxNTQzMTczMzI0OAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a0af39255b3",
+      "conversation_id": "conv-email-1a0af39255b3",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 1809m² · Con Colocación · CP 1426 · Olleros",
+      "ts": "2026-09-17T11:55:52.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -172574,7 +172614,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-17T01:38:31.050Z",
     "gmail_seen_ids": [
-      "19f46c3f60fbde58",
       "19f4729c23338658",
       "19f4be21abcb8a96",
       "19f4be38bc10adc3",
@@ -173373,7 +173412,8 @@
       "1a0ae2c7c472b571",
       "1a0ae9577e28d9d0",
       "1a0af02a0aaabc9e",
-      "1a0af3434f1c1688"
+      "1a0af3434f1c1688",
+      "1a0af39255b32845"
     ],
     "cash_sessions": {
       "1136982222": {
