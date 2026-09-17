@@ -133894,7 +133894,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-22T21:04:04.000Z",
-      "last_touch_at": "2026-09-17T02:29:42.000Z"
+      "last_touch_at": "2026-09-17T23:18:55.000Z"
     },
     {
       "id": "lead-instagram-1784843470497",
@@ -141619,12 +141619,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f8ba4c1c23",
       "status": "closed",
-      "unread_count": 6,
-      "last_message_at": "2026-09-17T02:29:42.000Z",
-      "last_message_preview": "sorry, I meant:\r\n5mm thickness heating cable (15M) : 60rolls  (Excel or Navita brand),\r\nUSD15/roll\r\n\r\n\r\n*Daniel La Buonora */Director\r\n\r\nMon",
+      "unread_count": 7,
+      "last_message_at": "2026-09-17T23:18:55.000Z",
+      "last_message_preview": "Hi Joshua,\r\n\r\nplease find the soft copy attached,\r\n\r\nbest\r\n\r\n\r\nEl jue, 17 sept 2026 a la(s) 2:00 a.m., FELIXKOREA (felixkorea.com@gmail.com)",
       "email_subject": "Re: draft por favor chequear Daniel Juan",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T02:29:42.000Z",
+      "last_inbound_at": "2026-09-17T23:18:55.000Z",
       "ignored": true
     },
     {
@@ -165258,6 +165258,14 @@
       "ts": "2026-09-17T18:27:33.411Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzU3ODA2Njc1NTYxNzQ4MTAzNDY2ODIyMzQ5NjE5MgZDZD"
+    },
+    {
+      "id": "m-email-1a0b1aab45de",
+      "conversation_id": "conv-email-19f8ba4c1c23",
+      "direction": "in",
+      "body": "✉️ Re: The balance(remaining payment) Proforma invoice\n\nHi Joshua,\r\n\r\nplease find the soft copy attached,\r\n\r\nbest\r\n\r\n\r\nEl jue, 17 sept 2026 a la(s) 2:00 a.m., FELIXKOREA (felixkorea.com@gmail.com)\r\nescribió:\r\n\r\n> Dear Daniel, Mike,\r\n>\r\n> Thanks for your confirmation of adding 5mm heating cable(15M) 60roll.\r\n> I added it to the remaining proforma invoice and will add it together on\r\n> sea shipment\r\n>\r\n> The attached is \"Balance(the remaining) proforma invoice\". Pls check it\r\n> and kindly make your payment soon.\r\n> The Last box of heating film is only 72M, so I adjusted the unit price on\r\n> the last film's box.\r\n> Once you pay, pls let me know with a bank receipt.\r\n>\r\n> How about arranging Air and Sea shipment schedule with forwarding\r\n> agency(DMcomex).?\r\n> We are read to ship your cargo by Air and 1x20f't by Sea\r\n>\r\n> Awaiting your reply soon.\r\n> Joshua\r\n> Felix Korea\r\n>\r\n>\r\n>\r\n> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> <https://www.google.com/maps/search/861-4+Samil-Ro,+Nam-Myeon,+Yangju-Si,%C2%A0Gyeonggi-Do,+Korea?entry=gmail&source=g>\r\n> Korea\r\n> <https://www.google.com/maps/search/861-4+Samil-Ro,+Nam-Myeon,+Yangju-Si,%C2%A0Gyeonggi-Do,+Korea?entry=gmail&source=g>.\r\n> 11405\r\n> Mob. : +82 10 4588 6512 <+82%2010-4588-6512>\r\n> Tel. : +82 31 866 5688 <+82%2031-866-5688>\r\n>\r\n> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>\r\n>\r\n>\r\n> 2026년 9월 17일 (목) 오전 11:29, Daniel La Buonora <daniel@mrparquet.com.uy>님이\r\n> 작성:\r\n>\r\n>> sorry, I meant:\r\n>> 5mm thickness heating cable (15M) : 60rolls  (Excel or Navita brand),\r\n>> USD1",
+      "ts": "2026-09-17T23:18:55.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173771,7 +173779,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-17T01:38:31.050Z",
     "gmail_seen_ids": [
-      "19f4dfe93aca8c4b",
       "19f4ea336609b0aa",
       "19f4fcf002ff76a8",
       "19f50b0caf07c985",
@@ -174570,7 +174577,8 @@
       "1a0afe92db9d46dc",
       "1a0b009bd4091115",
       "1a0b028825934217",
-      "1a0b08539edd81bf"
+      "1a0b08539edd81bf",
+      "1a0b1aab45dec94d"
     ],
     "cash_sessions": {
       "1136982222": {
