@@ -138577,11 +138577,27 @@
         "H2O"
       ],
       "notes": "",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "Victoria Gonzalez Collado",
       "address": "",
       "created_at": "2026-09-17T17:43:37.635Z",
-      "last_touch_at": "2026-09-17T17:43:41.984Z"
+      "last_touch_at": "2026-09-17T17:54:18.324Z"
+    },
+    {
+      "id": "local-1789667653832-ydiml",
+      "name": "Micaela Garcia",
+      "phone": "+54 9 11 2264-7441",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Contacted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "A confirmar",
+      "created_at": "2026-09-17T17:54:13.440Z",
+      "last_touch_at": "2026-09-17T17:54:15.856Z"
     }
   ],
   "conversations": [
