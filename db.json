@@ -141148,11 +141148,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1784917400689",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-03T20:42:23.863Z",
-      "last_message_preview": "↩️ Reaccionó: ❤",
+      "unread_count": 1,
+      "last_message_at": "2026-09-17T11:44:48.817Z",
+      "last_message_preview": "📲 Te mencionó en una historia",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-03T20:42:23.863Z",
+      "last_inbound_at": "2026-09-17T11:44:48.817Z",
       "last_outbound_at": "2026-09-03T20:26:23.462Z"
     },
     {
@@ -164179,6 +164179,16 @@
       "body": "✉️ The balance(remaining payment) Proforma invoice\n\nDear Daniel, Mike,\r\n\r\nThanks for your confirmation of adding 5mm heating cable(15M) 60roll.\r\nI added it to the remaining proforma invoice and will add it together on\r\nsea shipment\r\n\r\nThe attached is \"Balance(the remaining) proforma invoice\". Pls check it and\r\nkindly make your payment soon.\r\nThe Last box of heating film is only 72M, so I adjusted the unit price on\r\nthe last film's box.\r\nOnce you pay, pls let me know with a bank receipt.\r\n\r\nHow about arranging Air and Sea shipment schedule with forwarding\r\nagency(DMcomex).?\r\nWe are read to ship your cargo by Air and 1x20f't by Sea\r\n\r\nAwaiting your reply soon.\r\nJoshua\r\nFelix Korea\r\n\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 4588 6512\r\nTel. : +82 31 866 5688\r\n\r\n* www.felixkorea.com <http://www.felixkorea.com>*\r\n\r\n\r\n\r\n2026년 9월 17일 (목) 오전 11:29, Daniel La Buonora <daniel@mrparquet.com.uy>님이 작성:\r\n\r\n> sorry, I meant:\r\n> 5mm thickness heating cable (15M) : 60rolls  (Excel or Navita brand),\r\n> USD15/roll\r\n>\r\n>\r\n> *Daniel La Buonora */Director\r\n>\r\n> Montevideo: Av Italia 5030\r\n> <https://www.google.com/maps/search/Av+Italia+5030?entry=gmail&source=g>.\r\n>\r\n> Carrasco: Via Disegno.\r\n>\r\n> Punta del Este: Open Mall, Calle San Francisco.\r\n>\r\n> Miami: 1221 Brickell Ave #900\r\n> <https://www.google.com/maps/search/Miami:+1221+Brickell+Ave+%23900?entry=gmail&source=g>\r\n> .\r\n>\r\n>\r\n>\r\n>     www.mrparquet.com.uy\r\n>\r\n>\r\n> On Wed, Sep 16, 2026 at 10:53 PM FELIXKOREA <felixkorea.com@gmail.com>\r\n> wrote:\r\n>\r\n>",
       "ts": "2026-09-17T04:59:43.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789645489815-5ez6",
+      "conversation_id": "conv-1784917400689-sike",
+      "direction": "in",
+      "body": "📲 Te mencionó en una historia",
+      "ts": "2026-09-17T11:44:48.817Z",
+      "status": "received",
+      "media_url": "/uploads/c782386be280a9e6.mp4",
+      "media_type": "video"
     }
   ],
   "templates": [
@@ -174549,7 +174559,8 @@
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDRDZBQzQxODMwQ0YwOTAzMEM3MDcwQkIyNDE3OTEzAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFjNFQjA0N0ZCNTY1NzlEMzQ4MjgyQkYA",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5OTA1MDYzNzQzODcyNDozMzAxMjExNjI0MjY4MjM5NDQ2Nzg1NDE0MTc4NTg5OTAwOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAxMjU0MDY2ODQ0NDA2MzE0OTg5MjkwMzUyMzg0NDA5NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAxMjU0MDY2ODQ0NDA2MzE0OTg5MjkwMzUyMzg0NDA5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA1MTUyNjE5NDE2NTIzNDozMzAxMzEzMjMxNDg5MTQzMTQxMTU5OTc1OTc1Mzg3MTM2MAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
