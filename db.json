@@ -133571,7 +133571,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-07-24T02:56:33.000Z",
-      "last_touch_at": "2026-09-15T07:39:31.000Z"
+      "last_touch_at": "2026-09-17T01:53:14.000Z"
     },
     {
       "id": "lead-instagram-1784916324625",
@@ -141116,12 +141116,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f920e2ca6d",
       "status": "closed",
-      "unread_count": 25,
-      "last_message_at": "2026-09-15T07:39:31.000Z",
-      "last_message_preview": "Dear Daniel and Mike,\r\n\r\nGood morning.\r\nHave you checked price list of 6mm and 4mm heating cable?\r\nDo you want us to add  \"*6mm *thickness *",
+      "unread_count": 26,
+      "last_message_at": "2026-09-17T01:53:14.000Z",
+      "last_message_preview": "Dear Daniel.\r\n\r\nSorry for the stocks.\r\nI have checked with our factory director.\r\nWe don't have 6mm thickness heating cable (15M) stock, so ",
       "email_subject": "Re: radiant heating",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-15T07:39:31.000Z",
+      "last_inbound_at": "2026-09-17T01:53:14.000Z",
       "ignored": true
     },
     {
@@ -164147,6 +164147,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 100m² · Sin Colocación · CP Radio: Sin Colocación · Mendoza",
       "ts": "2026-09-16T23:14:17.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0ad1202177",
+      "conversation_id": "conv-email-19f920e2ca6d",
+      "direction": "in",
+      "body": "✉️ Re: heating cable and the balance PI\n\nDear Daniel.\r\n\r\nSorry for the stocks.\r\nI have checked with our factory director.\r\nWe don't have 6mm thickness heating cable (15M) stock, so we have to\r\nproduce newly. but it takes one month to produce newly.\r\nInstead of 6mm thickness heating cable (15M),\r\nI'd like to suggest the stocks of instant shipping possibility on sea\r\nshipment as below.\r\n<possible stocks>\r\n5mm thickness heating cable (15M) : 60rolls  (Excel or Navita brand),\r\nUSD15/roll\r\n4mm thickness heating cable (15M) : 19rolls (Excel brand) USD13.6/roll\r\n\r\nPls confirm this so that I can send you \"balance(the remaining) PI\" for\r\nyour payment.\r\n\r\nJoshua\r\nFelix Korea\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 4588 6512\r\nTel. : +82 31 866 5688\r\n\r\n* www.felixkorea.com <http://www.felixkorea.com>*\r\n\r\n\r\n\r\n2026년 9월 16일 (수) 오전 10:34, Daniel La Buonora <daniel@mrparquet.com.uy>님이 작성:\r\n\r\n> Joshua,\r\n>\r\n> please add 60 units of 6 mm x 15 mts cable.\r\n>\r\n> thanks a lot.\r\n>\r\n>\r\n>\r\n>\r\n> *Daniel La Buonora */Director\r\n>\r\n> Montevideo: Av Italia 5030\r\n> <https://www.google.com/maps/search/Av+Italia+5030?entry=gmail&source=g>.\r\n>\r\n> Carrasco: Via Disegno.\r\n>\r\n> Punta del Este: Open Mall, Calle San Francisco.\r\n>\r\n> Miami: 1221 Brickell Ave #900\r\n> <https://www.google.com/maps/search/Miami:+1221+Brickell+Ave+%23900?entry=gmail&source=g>\r\n> .\r\n>\r\n>\r\n>\r\n>     www.mrparquet.com.uy\r\n>\r\n>\r\n> On Tue, Sep 15, 2026 at 4:39 AM FELIXKOREA <felixkorea.com@gmail.com>\r\n> wrote:\r\n>\r\n>> Dear Daniel and Mike,\r\n",
+      "ts": "2026-09-17T01:53:14.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -172471,7 +172479,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-17T01:38:31.050Z",
     "gmail_seen_ids": [
-      "19f4304e307f9ae8",
       "19f431a2eb9b6abf",
       "19f438ada1042a3a",
       "19f440cee9c2e494",
@@ -173270,7 +173277,8 @@
       "1a0ab7b5ce08a6bc",
       "1a0ab9d8ae8e8e38",
       "1a0abd39be67e2b3",
-      "1a0ac7fe33f1f083"
+      "1a0ac7fe33f1f083",
+      "1a0ad12021772a8b"
     ],
     "cash_sessions": {
       "1136982222": {
