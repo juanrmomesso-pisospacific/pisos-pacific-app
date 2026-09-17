@@ -145334,11 +145334,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789660467799",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-17T15:54:26.142Z",
-      "last_message_preview": "Buen día! Cómo están??\nConsulta.. se puede aplicar por encima de un porcelato existente con losa radiante?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T15:54:26.142Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-17T16:44:43.722Z",
+      "last_message_preview": "Hola cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-17T15:54:26.142Z",
+      "last_outbound_at": "2026-09-17T16:44:43.722Z"
     }
   ],
   "messages": [
@@ -164885,6 +164886,16 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola! La línea H20. Enviado desde mi iPhone El 17 sept 2026, a la(s) 11:27, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: ﻿ Hola Delfina, como estas? Para avanzar con el presupuesto, comentanos",
       "ts": "2026-09-17T16:17:07.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789663484186-zewk",
+      "conversation_id": "conv-1789660467798-wzf5",
+      "direction": "out",
+      "body": "Hola cómo estás?",
+      "ts": "2026-09-17T16:44:43.722Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzQ2NDI2MjI4NjI1NjI1NjE5MzM3MDU4MDMyMDI1NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
