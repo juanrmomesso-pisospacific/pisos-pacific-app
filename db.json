@@ -36208,6 +36208,63 @@
       "quote_number": "A3405",
       "status": "DRAFT",
       "lead_id": "lead-email-1a0aa803bbdd"
+    },
+    {
+      "id": "local-1789655924063-bdnzv",
+      "client_id": "",
+      "client_name": "Fernando Galvan",
+      "client_dni": "",
+      "client_email": "efgalvan86@gmail.com",
+      "client_phone": "",
+      "client_address": "Neuquén 320",
+      "internal_notes": "Formulario web — 65m² · Sin Colocación · CP 9410",
+      "public_notes": "El envio se cotiza aparte una vez aprobado el presupuesto. Trabajamos con Andesmar o Viacargo",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Fernando",
+      "has_iva": true,
+      "price": 3551.0838000000003,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 70.9,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 2694.2000000000003,
+          "discount": 269.42,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1784069133996-uwvg1",
+          "sku": "PROD - 102983",
+          "description": "H2O HD - Nariz Volada - Canada - Roble Eslavonia XL",
+          "quantity": 17,
+          "unit_price": 30,
+          "cost": 11,
+          "category": "Pisos H2O",
+          "total": 510,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 269.42,
+      "discount_amount": 269.42,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-17T14:38:43.786Z",
+      "quote_number": "A6257",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a0aaaa13d60"
     }
   ],
   "clients": [
@@ -138118,10 +138175,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 65m² · Sin Colocación · CP 9410",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-16T14:41:07.000Z",
-      "last_touch_at": "2026-09-16T14:51:24.000Z"
+      "last_touch_at": "2026-09-17T14:38:44.105Z"
     },
     {
       "id": "lead-instagram-1789569785628",
@@ -174213,7 +174270,10 @@
       "1a0aa9205cd6682f",
       "1a0aaafe1170fb5b",
       "1a0af5eb765abfce",
-      "1a0afbb86735ecea"
+      "1a0afbb86735ecea",
+      "1a0afc42c1b82640",
+      "1a0afc3905f93db9",
+      "1a0afbf1ab5d3c16"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
