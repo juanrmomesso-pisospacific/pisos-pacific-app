@@ -138250,10 +138250,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-17T12:19:29.928Z",
-      "last_touch_at": "2026-09-17T12:19:29.928Z"
+      "last_touch_at": "2026-09-17T14:20:30.275Z"
     },
     {
       "id": "lead-instagram-1789650743414",
@@ -138266,10 +138266,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-17T13:12:21.846Z",
-      "last_touch_at": "2026-09-17T13:12:21.846Z"
+      "last_touch_at": "2026-09-17T14:20:42.374Z"
     },
     {
       "id": "lead-instagram-1789653390897",
@@ -138282,10 +138282,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-17T13:56:29.297Z",
-      "last_touch_at": "2026-09-17T13:56:29.297Z"
+      "last_touch_at": "2026-09-17T14:20:25.591Z"
     },
     {
       "id": "lead-email-1a0afae5f7d3",
@@ -138299,10 +138299,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 100m² · Sin Colocación · CP 1667",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-17T14:03:54.000Z",
-      "last_touch_at": "2026-09-17T14:03:54.000Z"
+      "last_touch_at": "2026-09-17T14:20:22.274Z"
     }
   ],
   "conversations": [
@@ -145129,7 +145129,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789650743414",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-09-17T13:38:06.640Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
@@ -145145,10 +145145,11 @@
       "linked_lead_id": "lead-instagram-1789653390897",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T13:56:29.297Z",
-      "last_message_preview": "Hola!!! Estoy interesada en ver los pisos de ustedes. Donde se pueden ir a ver? Gracias!!",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T13:56:29.297Z"
+      "last_message_at": "2026-09-17T14:20:16.397Z",
+      "last_message_preview": "Hola Luli! como estas?\nEl depósito está en Olivos, a la altura de Thames y Panamericana, y trabajamos con cita previa.\n\nSi te interesa acerc",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-17T13:56:29.297Z",
+      "last_outbound_at": "2026-09-17T14:20:16.397Z"
     },
     {
       "id": "conv-email-1a0afae5f7d3",
@@ -164572,6 +164573,15 @@
       "ts": "2026-09-17T14:18:17.737Z",
       "status": "sent",
       "wa_id": "1a0afbb86735ecea"
+    },
+    {
+      "id": "m-1789654816397-pj3d",
+      "conversation_id": "conv-1789653390897-8yyb",
+      "direction": "out",
+      "body": "Hola Luli! como estas?\nEl depósito está en Olivos, a la altura de Thames y Panamericana, y trabajamos con cita previa.\n\nSi te interesa acercarte, te paso un WhatsApp para que puedas coordinar día y horario.\nY si te resulta más cómodo, también tenemos la opción de enviar muestras a domicilio.",
+      "ts": "2026-09-17T14:20:16.397Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE1NDYwMzk5NzE4MTUwMjozMzAxMzMwNDM2OTkwMzcxMDQ5MjgxOTUzNTUyNDAwMzg0MAZDZD"
     }
   ],
   "templates": [
