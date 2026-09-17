@@ -138200,10 +138200,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 100m² · Sin Colocación · CP Radio: Sin Colocación",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-16T23:14:17.000Z",
-      "last_touch_at": "2026-09-16T23:14:17.000Z"
+      "last_touch_at": "2026-09-17T14:27:10.579Z"
     },
     {
       "id": "lead-email-1a0af3434f1c",
@@ -145054,7 +145054,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0abd39be67",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-16T20:06:06.000Z",
       "last_message_preview": "Formulario web — 65m² · Con Colocación · CP 1425 · Lafinur 3231",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -145070,11 +145070,12 @@
       "linked_lead_id": "lead-email-1a0ac7fe33f1",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T23:14:17.000Z",
-      "last_message_preview": "Formulario web — 100m² · Sin Colocación · CP Radio: Sin Colocación · Mendoza",
+      "last_message_at": "2026-09-17T14:27:04.709Z",
+      "last_message_preview": "Hola Delfina, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T23:14:17.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-16T23:14:17.000Z",
+      "last_outbound_at": "2026-09-17T14:27:04.709Z"
     },
     {
       "id": "conv-email-1a0af3434f1c",
@@ -164592,6 +164593,15 @@
       "ts": "2026-09-17T14:22:12.293Z",
       "status": "sent",
       "wa_id": "1a0afbf1ab5d3c16"
+    },
+    {
+      "id": "m-1789655224709-mbi2",
+      "conversation_id": "conv-email-1a0ac7fe33f1",
+      "direction": "out",
+      "body": "Hola Delfina, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\n\n\n¡Muchas gracias!\nSaludos, Equipo Pacific",
+      "ts": "2026-09-17T14:27:04.709Z",
+      "status": "sent",
+      "wa_id": "1a0afc3905f93db9"
     }
   ],
   "templates": [
