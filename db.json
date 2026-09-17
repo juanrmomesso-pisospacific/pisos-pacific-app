@@ -138286,6 +138286,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-17T13:56:29.297Z",
       "last_touch_at": "2026-09-17T13:56:29.297Z"
+    },
+    {
+      "id": "lead-email-1a0afae5f7d3",
+      "name": "juan",
+      "email": "juanilopardo@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Tortuguitas",
+      "postal_code": "1667",
+      "approx_m2": 100,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 100m² · Sin Colocación · CP 1667",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-17T14:03:54.000Z",
+      "last_touch_at": "2026-09-17T14:03:54.000Z"
     }
   ],
   "conversations": [
@@ -145132,6 +145149,21 @@
       "last_message_preview": "Hola!!! Estoy interesada en ver los pisos de ustedes. Donde se pueden ir a ver? Gracias!!",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-17T13:56:29.297Z"
+    },
+    {
+      "id": "conv-email-1a0afae5f7d3",
+      "channel": "email",
+      "contact_id": "juanilopardo@hotmail.com",
+      "contact_name": "juan",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0afae5f7d3",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-17T14:03:54.000Z",
+      "last_message_preview": "Formulario web — 100m² · Sin Colocación · CP 1667 · Tortuguitas",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-17T14:03:54.000Z"
     }
   ],
   "messages": [
@@ -164512,6 +164544,14 @@
       "body": "Hola!!! Estoy interesada en ver los pisos de ustedes. Donde se pueden ir a ver? Gracias!!",
       "ts": "2026-09-17T13:56:29.297Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0afae5f7d3",
+      "conversation_id": "conv-email-1a0afae5f7d3",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 100m² · Sin Colocación · CP 1667 · Tortuguitas",
+      "ts": "2026-09-17T14:03:54.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -172836,7 +172876,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-17T01:38:31.050Z",
     "gmail_seen_ids": [
-      "19f4be21abcb8a96",
       "19f4be38bc10adc3",
       "19f4c0ba6843515c",
       "19f4d00c688a97a8",
@@ -173635,7 +173674,8 @@
       "1a0af02a0aaabc9e",
       "1a0af3434f1c1688",
       "1a0af39255b32845",
-      "1a0af5eb765abfce"
+      "1a0af5eb765abfce",
+      "1a0afae5f7d3d6db"
     ],
     "cash_sessions": {
       "1136982222": {
