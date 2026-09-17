@@ -142374,12 +142374,13 @@
       "contact_name": "@expomadera_arquitectura.net.ar",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786116260038",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-07T15:24:32.548Z",
       "last_message_preview": "🎥 Video",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-07T15:24:32.548Z"
+      "last_inbound_at": "2026-08-07T15:24:32.548Z",
+      "ignored": true
     },
     {
       "id": "conv-1786133223797-x2f5",
@@ -142403,13 +142404,14 @@
       "contact_name": "@giselaghelfi",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786156433603",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-11T01:06:23.353Z",
       "last_message_preview": "↩️ Reaccionó: ❤",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-11T01:06:23.353Z",
-      "last_outbound_at": "2026-08-10T17:45:36.632Z"
+      "last_outbound_at": "2026-08-10T17:45:36.632Z",
+      "ignored": true
     },
     {
       "id": "conv-1786219040720-7yeb",
@@ -142418,13 +142420,14 @@
       "contact_name": "@lgh.studio",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786219040720",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-08T20:39:40.701Z",
       "last_message_preview": "↩️ Reaccionó: ❤",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-08T20:39:40.701Z",
-      "last_outbound_at": "2026-08-08T20:14:01.536Z"
+      "last_outbound_at": "2026-08-08T20:14:01.536Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fe8a90fff0",
@@ -142561,12 +142564,13 @@
       "contact_name": "@alexisnoguera628",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786479396006",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-11T20:16:34.491Z",
       "last_message_preview": "Hola como estas soy alexis soy colocador si me pueden tener en cuenta tengo todas las herramientas gracias",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-11T20:16:34.491Z"
+      "last_inbound_at": "2026-08-11T20:16:34.491Z",
+      "ignored": true
     },
     {
       "id": "conv-1786484029126-n6hd",
@@ -142575,12 +142579,13 @@
       "contact_name": "@minifletes.m.g.o",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786484029126",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-20T17:55:08.312Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-20T17:55:08.312Z"
+      "last_inbound_at": "2026-08-20T17:55:08.312Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19ff3888e0b8",
@@ -142956,13 +142961,14 @@
       "contact_name": "@pezzonifraquelli.studio",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787100106970",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-19T10:44:37.167Z",
       "last_message_preview": "🥰🥰",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-19T10:44:37.167Z",
-      "last_outbound_at": "2026-08-19T01:11:45.093Z"
+      "last_outbound_at": "2026-08-19T01:11:45.093Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0193e3525b",
@@ -143063,13 +143069,14 @@
       "contact_name": "@lucianoaguilo",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787188700131",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-20T12:33:47.060Z",
       "last_message_preview": "Muchas gracias",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-20T12:33:47.060Z",
-      "last_outbound_at": "2026-08-20T10:58:33.003Z"
+      "last_outbound_at": "2026-08-20T10:58:33.003Z",
+      "ignored": true
     },
     {
       "id": "conv-1787223010753-in1g",
@@ -143219,12 +143226,13 @@
       "contact_name": "@raulg_claros",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787369665060",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-22T03:35:08.046Z",
       "last_message_preview": "Me pasarian precios, modelos, formas de pago y si hacen envios al interior? Gracias",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-22T03:35:08.046Z"
+      "last_inbound_at": "2026-08-22T03:35:08.046Z",
+      "ignored": true
     },
     {
       "id": "conv-1787404599766-2ycf",
