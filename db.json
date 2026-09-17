@@ -145079,12 +145079,12 @@
       "linked_lead_id": "lead-email-1a0aa5947558",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T14:11:14.131Z",
-      "last_message_preview": "Hola Emilia, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
+      "last_message_at": "2026-09-17T14:58:14.393Z",
+      "last_message_preview": "Hola, ¿cómo estás?\n\nQueríamos hacer seguimiento de tu consulta. Para poder avanzar con el presupuesto, ¿nos confirmás qué colección te inter",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T13:12:52.000Z",
-      "last_outbound_at": "2026-09-16T14:11:14.131Z"
+      "last_outbound_at": "2026-09-17T14:58:14.393Z"
     },
     {
       "id": "conv-email-1a0aa803bbdd",
@@ -164742,6 +164742,15 @@
       "ts": "2026-09-17T14:57:56.799Z",
       "status": "sent",
       "wa_id": "1a0afdfd24952344"
+    },
+    {
+      "id": "m-1789657094393-78dp",
+      "conversation_id": "conv-email-1a0aa5947558",
+      "direction": "out",
+      "body": "Hola, ¿cómo estás?\n\nQueríamos hacer seguimiento de tu consulta. Para poder avanzar con el presupuesto, ¿nos confirmás qué colección te interesa?\n\nSi tenés alguna duda entre las opciones, contanos y te ayudamos a elegir.\n\nSaludos,\nEquipo Pacific",
+      "ts": "2026-09-17T14:58:14.393Z",
+      "status": "sent",
+      "wa_id": "1a0afe0184bc7838"
     }
   ],
   "templates": [
