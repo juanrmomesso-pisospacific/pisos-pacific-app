@@ -138405,6 +138405,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-17T14:03:54.000Z",
       "last_touch_at": "2026-09-17T14:56:35.625Z"
+    },
+    {
+      "id": "lead-instagram-1789659186403",
+      "name": "@fletesmarinelli",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-17T15:33:04.717Z",
+      "last_touch_at": "2026-09-17T15:33:04.717Z"
     }
   ],
   "conversations": [
@@ -145279,6 +145295,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T14:03:54.000Z",
       "last_outbound_at": "2026-09-17T14:18:17.737Z"
+    },
+    {
+      "id": "conv-1789659186403-mwlv",
+      "channel": "instagram",
+      "contact_id": "1966237470740655",
+      "contact_name": "@fletesmarinelli",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1789659186403",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-09-17T15:33:05.621Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-17T15:33:05.621Z"
     }
   ],
   "messages": [
@@ -164785,6 +164815,22 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola. Gracias por el correo. La cotización se las pido respecto del SPC.\r\n\r\nGracias\r\n\r\nRosario Maffrand\r\n\r\nEl jue, 17 de sept de 2026, 11:22, Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola Rosario, como estas?\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> Muchas gracias!\r\n> Te dejo el numero de Victoria por si queres hablar directamente por\r\n> whatsapp.\r\n> 1136982222\r\n>\r\n> Saludos, Equipo Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-17T15:07:55.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789659186403-l6wr",
+      "conversation_id": "conv-1789659186403-mwlv",
+      "direction": "in",
+      "body": "Hola soy Mauro de Fletes Marinelli. Nos encontramos en zona norte y hacemos viajes por todo Gba y CABA.\n🔹Repartos\n🔹 Mudanzas\n🔹 Flete y Miniflete\n🔹 Traslados\n\nSi estan interesados o quieren solicitar presupuesto no duden en consultame\n\nMuchas gracias \n\n📱1169508834",
+      "ts": "2026-09-17T15:33:04.717Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1789659186571-zrel",
+      "conversation_id": "conv-1789659186403-mwlv",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-17T15:33:05.621Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -175366,7 +175412,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzI1NzcwNzE1MjQ1OTk0MDA1MTQ0NDUyODMxNjQxNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzI1NzcxMjU3ODk1NzA5MDk1ODY1NzAzNjc0Njc1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI2NzM3MjA0Mjg1MjA4Njk5OTUzMjc0NTc4NTM0NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE1NDYwMzk5NzE4MTUwMjozMzAxMzI3ODA1MzAyNjA5ODQ2MTAzMDI5MjY4OTc4MDczNgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE1NDYwMzk5NzE4MTUwMjozMzAxMzI3ODA1MzAyNjA5ODQ2MTAzMDI5MjY4OTc4MDczNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAxMzM4NDk1OTY0MDY1OTM2MjY1MjA2NjkzMjU4ODU0NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAxMzM4NDk3NjMyMjQ1NTg1Njg3NzIzNjA2OTA3Mjg5NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
