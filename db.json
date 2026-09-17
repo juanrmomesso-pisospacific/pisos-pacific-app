@@ -145081,11 +145081,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789647572516",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-17T13:27:03.049Z",
-      "last_message_preview": "Me pasas los siguientes datos: \nNombre completo DNI teléfono y dirección completa",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-17T12:19:29.928Z",
+      "unread_count": 3,
+      "last_message_at": "2026-09-17T13:28:13.892Z",
+      "last_message_preview": "Muchas gracias!",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-17T13:28:13.892Z",
       "last_outbound_at": "2026-09-17T13:27:03.049Z"
     },
     {
@@ -164406,6 +164406,30 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI0NTQ3MTQ4ODI0ODM1ODM2NjEzMTA4OTU3MTg0MAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1789651688576-8ybv",
+      "conversation_id": "conv-1789647572516-e5zk",
+      "direction": "in",
+      "body": "Genial, la dirección es \nChalup 65, Gualeguaychú, Entre Ríos, CP:2820\nA nombre de Paola Sommer, \ndni 28458072\nCel: 1157976915\nEs un local de deco muebles y estudio de interiorismo, Espacio Pi se llama el local",
+      "ts": "2026-09-17T13:28:07.428Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1789651689400-5cy8",
+      "conversation_id": "conv-1789647572516-e5zk",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-17T13:28:08.185Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1789651695021-orhw",
+      "conversation_id": "conv-1789647572516-e5zk",
+      "direction": "in",
+      "body": "Muchas gracias!",
+      "ts": "2026-09-17T13:28:13.892Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -174781,7 +174805,10 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA1MTUyNjE5NDE2NTIzNDozMzAxMzEzMjMxNDg5MTQzMTQxMTU5OTc1OTc1Mzg3MTM2MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzE3MDcwNDYxNTcwNjM0Mjg3OTQ5OTE1NDA5NjEyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzIyOTIxNjE2MjA2NzI2Njc3NjI2NTgzNDYyNzA3MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzIyOTczMjA1OTU5NDY3ODc4NTA1MDI1MTYyNDQ0OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MDc5MTI3NDM5NTQyOTozMzAxMzIyOTczMjA1OTU5NDY3ODc4NTA1MDI1MTYyNDQ0OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI0NjY1OTA4MDk0MzQwNzMyODM0NjkyODg0MDcwNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI0NjY3MzAzNzUxMDE2NTgyNDAzNTQ1NzMzNTI5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI0Njc3ODMwNzgzOTcxOTE2NzUxMzAxNzE4ODM1MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
