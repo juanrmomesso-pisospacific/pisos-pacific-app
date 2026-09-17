@@ -143522,11 +143522,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787978533315",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-09T17:06:52.176Z",
-      "last_message_preview": "😀😀😀😀😀😀",
+      "unread_count": 1,
+      "last_message_at": "2026-09-17T02:50:15.599Z",
+      "last_message_preview": "Respondan...",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-09T17:06:52.176Z",
+      "last_inbound_at": "2026-09-17T02:50:15.599Z",
       "last_outbound_at": "2026-09-09T16:51:04.073Z"
     },
     {
@@ -164163,6 +164163,14 @@
       "body": "✉️ Re: heating cable and the balance PI\n\nsorry, I meant:\r\n5mm thickness heating cable (15M) : 60rolls  (Excel or Navita brand),\r\nUSD15/roll\r\n\r\n\r\n*Daniel La Buonora */Director\r\n\r\nMontevideo: Av Italia 5030.\r\n\r\nCarrasco: Via Disegno.\r\n\r\nPunta del Este: Open Mall, Calle San Francisco.\r\n\r\nMiami: 1221 Brickell Ave #900.\r\n\r\n\r\n\r\n    www.mrparquet.com.uy\r\n\r\n\r\nOn Wed, Sep 16, 2026 at 10:53 PM FELIXKOREA <felixkorea.com@gmail.com>\r\nwrote:\r\n\r\n> Dear Daniel.\r\n>\r\n> Sorry for the stocks.\r\n> I have checked with our factory director.\r\n> We don't have 6mm thickness heating cable (15M) stock, so we have to\r\n> produce newly. but it takes one month to produce newly.\r\n> Instead of 6mm thickness heating cable (15M),\r\n> I'd like to suggest the stocks of instant shipping possibility on sea\r\n> shipment as below.\r\n> <possible stocks>\r\n> 5mm thickness heating cable (15M) : 60rolls  (Excel or Navita brand),\r\n> USD15/roll\r\n> 4mm thickness heating cable (15M) : 19rolls (Excel brand) USD13.6/roll\r\n>\r\n> Pls confirm this so that I can send you \"balance(the remaining) PI\" for\r\n> your payment.\r\n>\r\n> Joshua\r\n> Felix Korea\r\n>\r\n>\r\n> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n> <https://www.google.com/maps/search/861-4+Samil-Ro,+Nam-Myeon,+Yangju-Si,%C2%A0Gyeonggi-Do,+Korea?entry=gmail&source=g>\r\n> Korea\r\n> <https://www.google.com/maps/search/861-4+Samil-Ro,+Nam-Myeon,+Yangju-Si,%C2%A0Gyeonggi-Do,+Korea?entry=gmail&source=g>.\r\n> 11405\r\n> Mob. : +82 10 4588 6512\r\n> Tel. : +82 31 866 5688\r\n>\r\n> * www.felixkorea.com <http://www.felixkorea.com>*\r\n>\r",
       "ts": "2026-09-17T02:29:42.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789613416584-8noc",
+      "conversation_id": "conv-1787978533314-xewb",
+      "direction": "in",
+      "body": "Respondan...",
+      "ts": "2026-09-17T02:50:15.599Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -174532,7 +174540,8 @@
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDOUI4MkJEOUYzQ0IzM0Y0Mjg1MkE3M0I2NzQxQzhEAA==",
       "wamid.HBgNNTQ5MTEyMzIxMjMwMBUCABIYIEFDRDZBQzQxODMwQ0YwOTAzMEM3MDcwQkIyNDE3OTEzAA==",
       "wamid.HBgNNTQ5MTE2NTY1NDg5MRUCABIYFjNFQjA0N0ZCNTY1NzlEMzQ4MjgyQkYA",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5OTA1MDYzNzQzODcyNDozMzAxMjExNjI0MjY4MjM5NDQ2Nzg1NDE0MTc4NTg5OTAwOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA5OTA1MDYzNzQzODcyNDozMzAxMjExNjI0MjY4MjM5NDQ2Nzg1NDE0MTc4NTg5OTAwOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk5ODAwMTk4MjYzMzc5ODozMzAxMjU0MDY2ODQ0NDA2MzE0OTg5MjkwMzUyMzg0NDA5NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
