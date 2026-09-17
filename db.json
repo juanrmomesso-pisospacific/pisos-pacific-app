@@ -145082,11 +145082,11 @@
       "linked_lead_id": "lead-instagram-1789647572516",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T13:42:39.630Z",
-      "last_message_preview": "Genial cuando las mandamos te pasamos el número de seguimiento",
+      "last_message_at": "2026-09-17T13:42:51.700Z",
+      "last_message_preview": "Trabajamos con Vía cargo o Andesmar",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T13:28:13.892Z",
-      "last_outbound_at": "2026-09-17T13:42:39.630Z"
+      "last_outbound_at": "2026-09-17T13:42:51.700Z"
     },
     {
       "id": "conv-1789650743414-hnv5",
@@ -164455,6 +164455,16 @@
       "ts": "2026-09-17T13:42:39.630Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI2Mjc0ODM2NDkxODkzMTk0MjMwMjMwMjYwMTIxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789652572490-srop",
+      "conversation_id": "conv-1789647572516-e5zk",
+      "direction": "out",
+      "body": "Trabajamos con Vía cargo o Andesmar",
+      "ts": "2026-09-17T13:42:51.700Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk0NTA2MDM2NDQ2NjQ3NDozMzAxMzI2Mjk3MTAxNTczNjM5NTgxMTA2MjA5MTM1MDAxNgZDZD",
       "via": "ig-app"
     }
   ],
