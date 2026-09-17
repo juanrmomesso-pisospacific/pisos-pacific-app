@@ -144598,11 +144598,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1788995012756",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-17T16:51:40.571Z",
-      "last_message_preview": "Hola buenas tardes , quisiera saber precio de material y colocación de un piso de spc para 28 metros cuadrados (esto incluye un par de metro",
+      "unread_count": 2,
+      "last_message_at": "2026-09-17T16:52:00.539Z",
+      "last_message_preview": "No tengo la medida exacto pero según el plano me daría unos 25 m2+ 10 % unos 28 m2",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T16:51:40.571Z"
+      "last_inbound_at": "2026-09-17T16:52:00.539Z"
     },
     {
       "id": "conv-1788999893358-zt2j",
@@ -164924,6 +164924,14 @@
       "body": "Hola buenas tardes , quisiera saber precio de material y colocación de un piso de spc para 28 metros cuadrados (esto incluye un par de metros más por las dudas ) muchas gracias !! Saludos",
       "ts": "2026-09-17T16:51:40.571Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789663920977-udmt",
+      "conversation_id": "conv-1788995012756-5120",
+      "direction": "in",
+      "body": "No tengo la medida exacto pero según el plano me daría unos 25 m2+ 10 % unos 28 m2",
+      "ts": "2026-09-17T16:52:00.539Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -175509,7 +175517,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAxMzM4NDk1OTY0MDY1OTM2MjY1MjA2NjkzMjU4ODU0NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAxMzM4NDk3NjMyMjQ1NTg1Njg3NzIzNjA2OTA3Mjg5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzQwODU5Nzc2ODMxNzA5MjE0MDc0MjUzNTU0NDgzMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY4MDk2NDgyMDA2MzMzMTozMzAxMzQ3MTk1MTc5ODI2MDE3MzAzMDk2NDU0MjMwODM1MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY4MDk2NDgyMDA2MzMzMTozMzAxMzQ3MTk1MTc5ODI2MDE3MzAzMDk2NDU0MjMwODM1MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY4MDk2NDgyMDA2MzMzMTozMzAxMzQ3MjMyMDE0MDI0NDg0NTk0ODg5ODE2MzgxODQ5NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
