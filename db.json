@@ -138234,10 +138234,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 1809m² · Con Colocación · CP 1426",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-17T11:55:52.000Z",
-      "last_touch_at": "2026-09-17T11:55:52.000Z"
+      "last_touch_at": "2026-09-17T14:22:15.689Z"
     },
     {
       "id": "lead-instagram-1789647572516",
@@ -145100,11 +145100,12 @@
       "linked_lead_id": "lead-email-1a0af39255b3",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T11:55:52.000Z",
-      "last_message_preview": "Formulario web — 1809m² · Con Colocación · CP 1426 · Olleros",
+      "last_message_at": "2026-09-17T14:22:12.293Z",
+      "last_message_preview": "Hola Rosario, como estas? \n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de piso",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T11:55:52.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-17T11:55:52.000Z",
+      "last_outbound_at": "2026-09-17T14:22:12.293Z"
     },
     {
       "id": "conv-1789647572516-e5zk",
@@ -164582,6 +164583,15 @@
       "ts": "2026-09-17T14:20:16.397Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE1NDYwMzk5NzE4MTUwMjozMzAxMzMwNDM2OTkwMzcxMDQ5MjgxOTUzNTUyNDAwMzg0MAZDZD"
+    },
+    {
+      "id": "m-1789654932293-vsc2",
+      "conversation_id": "conv-email-1a0af39255b3",
+      "direction": "out",
+      "body": "Hola Rosario, como estas? \n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\nMuchas gracias!\nTe dejo el numero de Victoria por si queres hablar directamente por whatsapp. \n1136982222\n\nSaludos, Equipo Pacific",
+      "ts": "2026-09-17T14:22:12.293Z",
+      "status": "sent",
+      "wa_id": "1a0afbf1ab5d3c16"
     }
   ],
   "templates": [
@@ -174182,7 +174192,8 @@
       "1a0aa935929e8d3d",
       "1a0aa9205cd6682f",
       "1a0aaafe1170fb5b",
-      "1a0af5eb765abfce"
+      "1a0af5eb765abfce",
+      "1a0afbb86735ecea"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
