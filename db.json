@@ -173977,8 +173977,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-18T01:38:18.175Z",
     "gmail_seen_ids": [
-      "19f5c877e0a1e508",
-      "19f5d37ff2b0c7fb",
       "19f5d49b93bec9b0",
       "19f5da9c0bbba34a",
       "19f5dac8f2783978",
@@ -174776,7 +174774,9 @@
       "1a0b4851316cf9c8",
       "1a0b49a17066b32e",
       "1a0b4b6adc0a3b3c",
-      "1a0b4c14d1c97064"
+      "1a0b4c14d1c97064",
+      "1a0b4d617e4f0367",
+      "1a0b4d617d9666a1"
     ],
     "cash_sessions": {
       "1136982222": {
