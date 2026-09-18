@@ -139469,11 +139469,11 @@
       "linked_client_name": null,
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T16:48:28.509Z",
+      "last_message_at": "2026-09-18T20:38:46.443Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T15:15:21.766Z",
-      "last_outbound_at": "2026-09-17T16:48:28.509Z",
+      "last_outbound_at": "2026-09-18T20:38:46.443Z",
       "ignored": true
     },
     {
@@ -166283,6 +166283,16 @@
       "body": "Buenismo, recordá que la bonificación se puede mejorar según la cantidad",
       "ts": "2026-09-18T19:19:41.668Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789763927071-7nbu",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-18T20:38:46.443Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxNTMxNzEwMzQ2MzcyMjk1OTY5Mzc4NDA4NTk1NDU2MAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
