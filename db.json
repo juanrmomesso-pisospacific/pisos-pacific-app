@@ -36608,6 +36608,50 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a097660f3ad",
       "share_token": "abb448dfbe5eb06a52c5f948"
+    },
+    {
+      "id": "local-1789741020199-pkw9c",
+      "client_id": "",
+      "client_name": "Delfina Carbonellana",
+      "client_dni": "",
+      "client_email": "carbonellanadelfina@gmail.com",
+      "client_phone": "",
+      "client_address": "Mendoza",
+      "internal_notes": "Formulario web — 100m² · Sin Colocación · CP Radio: Sin Colocación",
+      "public_notes": "El servicio de entrega se cotiza por via cargo o Andesmar una vez que el cliente quiera avanzar.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Cotización Delfina",
+      "has_iva": true,
+      "price": 3908.3,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 100,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 15,
+          "total": 3800,
+          "discount": 570,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 570,
+      "discount_amount": 570,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-18T14:16:59.950Z",
+      "quote_number": "A8231",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a0ac7fe33f1"
     }
   ],
   "clients": [
@@ -138626,10 +138670,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 100m² · Sin Colocación · CP Radio: Sin Colocación",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-16T23:14:17.000Z",
-      "last_touch_at": "2026-09-17T17:58:25.000Z"
+      "last_touch_at": "2026-09-18T14:17:00.249Z"
     },
     {
       "id": "lead-email-1a0af3434f1c",
