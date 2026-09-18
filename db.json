@@ -138849,11 +138849,11 @@
         "H2O"
       ],
       "notes": "",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "Victoria Gonzalez Collado",
       "address": "A confirmar",
       "created_at": "2026-09-17T17:54:13.440Z",
-      "last_touch_at": "2026-09-17T17:54:15.856Z"
+      "last_touch_at": "2026-09-18T14:18:14.680Z"
     },
     {
       "id": "lead-email-1a0b1c0d1ef9",
@@ -145647,7 +145647,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0abd39be67",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-17T16:17:07.000Z",
       "last_message_preview": "Hola! La línea H20. Enviado desde mi iPhone El 17 sept 2026, a la(s) 11:27, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: ﻿ Hola Del",
       "email_subject": "Pedido de Presupuesto | Página Web",
