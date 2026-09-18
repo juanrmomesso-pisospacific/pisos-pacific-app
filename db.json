@@ -36812,6 +36812,64 @@
       "quote_number": "A7313",
       "status": "DRAFT",
       "lead_id": "lead-email-1a09c9a4005b"
+    },
+    {
+      "id": "local-1789742326359-rxfqb",
+      "client_id": "",
+      "client_name": "Rosario Maffrand",
+      "client_dni": "",
+      "client_email": "rmaffrand@gmail.com",
+      "client_phone": "",
+      "client_address": "Obra Olleros",
+      "internal_notes": "Formulario web — 1809m² · Con Colocación · CP 1426",
+      "public_notes": "Las medidas deberán verificarse en obra. Para la correcta colocación, la carpeta debe encontrarse nivelada, plana y en condiciones adecuadas.\nEl presupuesto incluye envío y descarga en planta baja.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Rosario Maffrand",
+      "has_iva": true,
+      "price": 80332.263,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 1809,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 35,
+          "total": 68742,
+          "discount": 24059.7,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 1809,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "disc_value": 20,
+          "total": 27135,
+          "discount": 5427,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 29486.7,
+      "discount_amount": 29486.7,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-18T14:38:46.047Z",
+      "quote_number": "A8739",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a0af39255b3"
     }
   ],
   "clients": [
@@ -138864,10 +138922,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 1809m² · Con Colocación · CP 1426",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-17T11:55:52.000Z",
-      "last_touch_at": "2026-09-17T15:07:55.000Z"
+      "last_touch_at": "2026-09-18T14:38:46.326Z"
     },
     {
       "id": "lead-instagram-1789647572516",
