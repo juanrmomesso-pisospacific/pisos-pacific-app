@@ -141734,14 +141734,15 @@
       "contact_name": "Luciano",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f6fb9bfc7e",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-07-17T17:28:03.109Z",
       "last_message_preview": "Hola Luciano, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-07-17T10:57:51.000Z",
-      "last_outbound_at": "2026-07-17T17:28:03.109Z"
+      "last_outbound_at": "2026-07-17T17:28:03.109Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19f703db8541",
@@ -141766,14 +141767,15 @@
       "contact_name": "Nair",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f709bfe551",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-07-17T17:34:27.751Z",
       "last_message_preview": "Hola Nair, muchas gracias por comunicarte con nosotros. \n\nMe gustaría que podamos hablar para entender más lo que estás buscando. Entiendo q",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-07-17T15:04:57.000Z",
-      "last_outbound_at": "2026-07-17T17:34:27.751Z"
+      "last_outbound_at": "2026-07-17T17:34:27.751Z",
+      "ignored": true
     },
     {
       "id": "conv-1784315043466-9lbq",
