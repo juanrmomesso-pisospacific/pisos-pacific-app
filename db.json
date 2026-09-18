@@ -145741,11 +145741,11 @@
       "linked_lead_id": "lead-instagram-1789660467799",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-18T13:02:04.754Z",
-      "last_message_preview": "El valor aprox ? Podrán informarme?",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-18T14:15:26.239Z",
+      "last_message_preview": "usd 38 + iva m2.\nEstamos con 10off",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-18T13:02:04.754Z",
-      "last_outbound_at": "2026-09-17T18:27:33.411Z"
+      "last_outbound_at": "2026-09-18T14:15:26.239Z"
     },
     {
       "id": "conv-email-1a0b1c0d1ef9",
@@ -165529,6 +165529,25 @@
       "ts": "2026-09-18T14:14:07.716Z",
       "status": "sent",
       "wa_id": "1a0b4de11055cdfb"
+    },
+    {
+      "id": "m-1789740926104-4l41",
+      "conversation_id": "conv-1789660467798-wzf5",
+      "direction": "out",
+      "body": "usd 38 + iva m2.\nEstamos con 10off",
+      "ts": "2026-09-18T14:15:25.683Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxNDg5MjgxNDMzMzA0Nzc5NDY2OTUyODc3NTkxNzU2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789740926239-ohji",
+      "conversation_id": "conv-1789660467798-wzf5",
+      "direction": "out",
+      "body": "usd 38 + iva m2.\nEstamos con 10off",
+      "ts": "2026-09-18T14:15:26.239Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxNDg5MjgxNDMzMzA0Nzc5NDY2OTUyODc3NTkxNzU2OAZDZD"
     }
   ],
   "templates": [
