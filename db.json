@@ -138459,10 +138459,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde whatsapp",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-16T11:45:31.000Z",
-      "last_touch_at": "2026-09-16T11:45:31.000Z"
+      "last_touch_at": "2026-09-18T14:14:55.483Z"
     },
     {
       "id": "lead-email-1a0aa08db535",
@@ -138643,10 +138643,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: Consulta — Hola ,\r\n\r\n\r\nEspero que estés muy bien.\r\n\r\n\r\nQueríamos consultarte si en **Pisos Pacific** ya están elaborando el plan de comunicación para el próximo año o para cuándo lo tienen pr",
-      "status": "New",
+      "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-09-17T11:50:28.000Z",
-      "last_touch_at": "2026-09-17T11:50:28.000Z"
+      "last_touch_at": "2026-09-18T14:14:41.416Z"
     },
     {
       "id": "lead-email-1a0af39255b3",
@@ -138741,10 +138741,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-09-17T15:33:04.717Z",
-      "last_touch_at": "2026-09-17T15:33:04.717Z"
+      "last_touch_at": "2026-09-18T14:14:45.584Z"
     },
     {
       "id": "lead-instagram-1789660467799",
