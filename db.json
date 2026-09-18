@@ -139119,6 +139119,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-18T10:53:13.000Z",
       "last_touch_at": "2026-09-18T14:14:23.084Z"
+    },
+    {
+      "id": "lead-email-1a0b51d876dd",
+      "name": "Nuñez Nicholson Arquitectos",
+      "email": "estudionuneznicholson@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: OBS | Presupuesto pisos — Buen día,\r\n\r\nMi nombre es Luján, arquitecta del estudio Nuñez Nicholson.\r\nEstamos proyectando una reforma en San Fernando, y queríamos cotizar con\r\nustedes la provisión y colocació",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-18T15:23:15.000Z",
+      "last_touch_at": "2026-09-18T15:23:15.000Z"
     }
   ],
   "conversations": [
@@ -146055,6 +146072,21 @@
       "email_subject": "C1087 - Residência de estudantes Almada | Vinilico",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-18T10:53:13.000Z"
+    },
+    {
+      "id": "conv-email-1a0b51d876dd",
+      "channel": "email",
+      "contact_id": "estudionuneznicholson@gmail.com",
+      "contact_name": "Nuñez Nicholson Arquitectos",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0b51d876dd",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-18T15:23:15.000Z",
+      "last_message_preview": "Buen día,\r\n\r\nMi nombre es Luján, arquitecta del estudio Nuñez Nicholson.\r\nEstamos proyectando una reforma en San Fernando, y queríamos cotiz",
+      "email_subject": "OBS | Presupuesto pisos",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-18T15:23:15.000Z"
     }
   ],
   "messages": [
@@ -165883,6 +165915,14 @@
       "ts": "2026-09-18T14:44:08.028Z",
       "status": "sent",
       "wa_id": "1a0b4f98bdb1e4e7"
+    },
+    {
+      "id": "m-email-1a0b51d876dd",
+      "conversation_id": "conv-email-1a0b51d876dd",
+      "direction": "in",
+      "body": "✉️ OBS | Presupuesto pisos\n\nBuen día,\r\n\r\nMi nombre es Luján, arquitecta del estudio Nuñez Nicholson.\r\nEstamos proyectando una reforma en San Fernando, y queríamos cotizar con\r\nustedes la provisión y colocación de piso de madera en Roble Europeo Veta\r\nTallada o Roble Americano:\r\n- 45m2 + desperdicio.\r\n- También quisiera saber si colocan pisadas y alzadas de escaleras, en caso\r\nde que lo hicieran también me interesa cotizarlo, son 2 escaleras de 2\r\ntramos, de 2,16 de largo x 1,72 de ancho, con 13 escalones cada una.\r\n\r\nEspero su respuesta, gracias!\r\n\r\nSaludos cordiales,\r\n\r\nArq. Ma. Luján Nicholson Duelo\r\nArq. Fernando Nuñez",
+      "ts": "2026-09-18T15:23:15.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -174396,7 +174436,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-18T01:38:18.175Z",
     "gmail_seen_ids": [
-      "19f5d49b93bec9b0",
       "19f5da9c0bbba34a",
       "19f5dac8f2783978",
       "19f5dc16424fa2b2",
@@ -175195,7 +175234,8 @@
       "1a0b4b6adc0a3b3c",
       "1a0b4c14d1c97064",
       "1a0b4d617e4f0367",
-      "1a0b4d617d9666a1"
+      "1a0b4d617d9666a1",
+      "1a0b51d876ddcbd9"
     ],
     "cash_sessions": {
       "1136982222": {
