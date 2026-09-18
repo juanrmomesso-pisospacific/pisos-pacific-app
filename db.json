@@ -139469,11 +139469,11 @@
       "linked_client_name": null,
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-09-18T20:38:46.443Z",
-      "last_message_preview": "📎 Adjunto",
+      "last_message_at": "2026-09-18T20:39:08.730Z",
+      "last_message_preview": "Cómo se ponen",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T15:15:21.766Z",
-      "last_outbound_at": "2026-09-18T20:38:46.443Z",
+      "last_outbound_at": "2026-09-18T20:39:08.730Z",
       "ignored": true
     },
     {
@@ -166292,6 +166292,36 @@
       "ts": "2026-09-18T20:38:46.443Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxNTMxNzEwMzQ2MzcyMjk1OTY5Mzc4NDA4NTk1NDU2MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789763944271-jcy0",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "Increíble",
+      "ts": "2026-09-18T20:39:03.870Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxNTMxNzQyNDkzNTg4ODI0ODczNzE2MjE4OTYwMjgxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789763945839-or1x",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "Es así",
+      "ts": "2026-09-18T20:39:05.441Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxNTMxNzQ1MzkwMjgxMDQ2NzY4MzI3MTA5MjIwNzYxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789763949353-r05c",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "Cómo se ponen",
+      "ts": "2026-09-18T20:39:08.730Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxNTMxNzUxNDU4MjI4Njc0MDI1MDQ5MjI2OTQ5NDI3MgZDZD",
       "via": "ig-app"
     }
   ],
