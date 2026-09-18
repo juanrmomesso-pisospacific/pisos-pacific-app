@@ -139468,12 +139468,12 @@
       "contact_name": "@juanrmomesso",
       "linked_client_name": null,
       "status": "closed",
-      "unread_count": 2,
-      "last_message_at": "2026-09-18T20:56:12.676Z",
-      "last_message_preview": "Pero es al pedo!",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-18T22:48:03.380Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-18T20:56:12.676Z",
-      "last_outbound_at": "2026-09-18T20:39:08.730Z",
+      "last_outbound_at": "2026-09-18T22:48:03.380Z",
       "ignored": true
     },
     {
@@ -166339,6 +166339,16 @@
       "body": "Pero es al pedo!",
       "ts": "2026-09-18T20:56:12.676Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789771683893-q3jy",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-18T22:48:03.380Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxNTQ2MDE5MzY5MjAxODk4NzM2NDYyNjIxNzMwNDA2NAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
