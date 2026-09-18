@@ -145423,7 +145423,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a09c9a4005b",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-17T15:43:30.000Z",
       "last_message_preview": "Hola Victoria!\r\nEstaríamos necesitando cien metros cuadrados, aproximadamente, de piso\r\nflotante color roble, simil madera,\r\nSi podes cotiza",
       "email_subject": "Piso color roble",
@@ -175486,7 +175486,11 @@
       "1a0afdf8f43b2556",
       "1a0b426b76634bab",
       "1a0b485154a42e46",
-      "1a0b4851316cf9c8"
+      "1a0b4851316cf9c8",
+      "1a0b4e3b181eaf42",
+      "1a0b4e166b5744ed",
+      "1a0b4de11055cdfb",
+      "1a0b4dd651da3073"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
