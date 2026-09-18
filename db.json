@@ -144587,12 +144587,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787709823306",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-18T12:46:06.829Z",
-      "last_message_preview": "Buenos dias !!!! les llego el mail?",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-18T19:01:01.384Z",
+      "last_message_preview": "Estamos evaluando",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-18T12:46:06.829Z",
-      "last_outbound_at": "2026-08-26T09:41:46.266Z"
+      "last_outbound_at": "2026-09-18T19:01:01.384Z"
     },
     {
       "id": "conv-email-1a03bf74fd5c",
@@ -166245,6 +166245,36 @@
       "body": "✉️ OBS | Presupuesto pisos\n\nBuen día,\r\n\r\nMi nombre es Luján, arquitecta del estudio Nuñez Nicholson.\r\nEstamos proyectando una reforma en San Fernando, y queríamos cotizar con\r\nustedes la provisión y colocación de piso de madera en Roble Europeo Veta\r\nTallada o Roble Americano:\r\n- 45m2 + desperdicio.\r\n- También quisiera saber si colocan pisadas y alzadas de escaleras, en caso\r\nde que lo hicieran también me interesa cotizarlo, son 2 escaleras de 2\r\ntramos, de 2,16 de largo x 1,72 de ancho, con 13 escalones cada una.\r\n\r\nEspero su respuesta, gracias!\r\n\r\nSaludos cordiales,\r\n\r\nArq. Ma. Luján Nicholson Duelo\r\nArq. Fernando Nuñez",
       "ts": "2026-09-18T15:23:15.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789758053425-b6s2",
+      "conversation_id": "conv-1787709823306-0j30",
+      "direction": "out",
+      "body": "Hola Siii",
+      "ts": "2026-09-18T19:00:52.830Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ0ODc4NDYzNzIxMjY5MDozMzAxNTIwODc1NDQxNTgwNDQzNTQ1Njc2MTAwMTkzNDg0OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789758058920-45e0",
+      "conversation_id": "conv-1787709823306-0j30",
+      "direction": "out",
+      "body": "Muchas gracias",
+      "ts": "2026-09-18T19:00:58.455Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ0ODc4NDYzNzIxMjY5MDozMzAxNTIwODg1ODE5NTU0NDgzMzkyNDEzODI0MzQ1NzAyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789758061955-r99z",
+      "conversation_id": "conv-1787709823306-0j30",
+      "direction": "out",
+      "body": "Estamos evaluando",
+      "ts": "2026-09-18T19:01:01.384Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ0ODc4NDYzNzIxMjY5MDozMzAxNTIwODkxMjIxODU1MDQwMDk4MTQxNTEzOTIxMzMxMgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
