@@ -145189,11 +145189,11 @@
       "linked_lead_id": "lead-instagram-1789307270547",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-18T01:16:32.744Z",
-      "last_message_preview": "La línea fusión de patagonia",
+      "last_message_at": "2026-09-18T01:16:59.208Z",
+      "last_message_preview": "Si solo trapo húmedo o algún líquido apto pisos de madera sin cerca solo ph neutro",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-18T00:04:07.325Z",
-      "last_outbound_at": "2026-09-18T01:16:32.744Z"
+      "last_outbound_at": "2026-09-18T01:16:59.208Z"
     },
     {
       "id": "conv-email-1a09c8c4da78",
@@ -165331,6 +165331,16 @@
       "ts": "2026-09-18T01:16:32.744Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxNDAzMDc0Mzc1MjgzNzM1MzE1MTU0MTgwMjk1ODg0OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1789694219611-f8p3",
+      "conversation_id": "conv-1789307270547-vy4y",
+      "direction": "out",
+      "body": "Si solo trapo húmedo o algún líquido apto pisos de madera sin cerca solo ph neutro",
+      "ts": "2026-09-18T01:16:59.208Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxNDAzMTIzMTk0NDIwMzcxNjY3NTk3MDMzMjA5ODU2MAZDZD",
       "via": "ig-app"
     }
   ],
