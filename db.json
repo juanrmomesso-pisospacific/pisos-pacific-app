@@ -138781,6 +138781,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-17T23:43:18.000Z",
       "last_touch_at": "2026-09-17T23:43:18.000Z"
+    },
+    {
+      "id": "lead-email-1a0b426443d0",
+      "name": "José Moreira",
+      "email": "jose.moreira@enescoord.pt",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: C1087 - Residência de estudantes Almada | Vinilico — Bom dia,\r\n\r\nUtilizámos um dos vossos vinílicos numa residência de estudantes na Caparica, na qual estamos a fazer uma outra residência da mesma dimensão uns metros ao lado.\r\n\r\nTemo",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-18T10:53:13.000Z",
+      "last_touch_at": "2026-09-18T10:53:13.000Z"
     }
   ],
   "conversations": [
@@ -145699,6 +145716,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-17T23:43:18.000Z"
+    },
+    {
+      "id": "conv-email-1a0b426443d0",
+      "channel": "email",
+      "contact_id": "jose.moreira@enescoord.pt",
+      "contact_name": "José Moreira",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0b426443d0",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-18T10:53:13.000Z",
+      "last_message_preview": "Bom dia,\r\n\r\nUtilizámos um dos vossos vinílicos numa residência de estudantes na Caparica, na qual estamos a fazer uma outra residência da me",
+      "email_subject": "C1087 - Residência de estudantes Almada | Vinilico",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-18T10:53:13.000Z"
     }
   ],
   "messages": [
@@ -165384,6 +165416,14 @@
       "body": "Gracias",
       "ts": "2026-09-18T01:42:26.874Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0b426443d0",
+      "conversation_id": "conv-email-1a0b426443d0",
+      "direction": "in",
+      "body": "✉️ C1087 - Residência de estudantes Almada | Vinilico\n\nBom dia,\r\n\r\nUtilizámos um dos vossos vinílicos numa residência de estudantes na Caparica, na qual estamos a fazer uma outra residência da mesma dimensão uns metros ao lado.\r\n\r\nTemos previso em projeto aplicar o vinílico Gerflor creation 70 1077 Tatami Savane, no entanto, estamos à procura de otimizações com produtos equivalentes.\r\n\r\nFace ao exposto vimos solicitar a apresentação de uma solução idêntica da vossa parte bem como o custo m2 da solução.\r\n\r\nObrigado,\r\n\r\nCom os melhores cumprimentos,\r\n[cid:image001.png@01DD4764.46FB29F0]\r\n[cid:image002.png@01DD4764.46FB29F0]<https://www.enescoord.pt/>\r\n[cid:image001.png@01DD4764.46FB29F0]\r\nJosé Moreira\r\nEngº Civil\r\n[cid:image001.png@01DD4764.46FB29F0]\r\n+351 934 000 947\r\njose.moreira@enescoord.pt<mailto:pedro.neves@enescoord.pt>\r\nwww.enescoord.pt<https://www.enescoord.pt/>\r\n\r\n[cid:image003.png@01DD4764.46FB29F0]<https://www.instagram.com/enescoord/>\r\n\r\n[cid:image004.png@01DD4764.46FB29F0]<https://www.linkedin.com/company/enescoord/>\r\n[cid:image001.png@01DD4764.46FB29F0]\r\nBRANCH LISBOA\r\nRua Francisco Stromp, nº14B\r\nPiso -1 / Escritório 2\r\n1600-464 Lisboa\r\n+351 211 312 136\r\n\r\nHEADQUARTERS PORTO\r\nRua O Primeiro de Janeiro, 131\r\n4100-366 Porto\r\n+351 223 395 810",
+      "ts": "2026-09-18T10:53:13.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173897,7 +173937,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-18T01:38:18.175Z",
     "gmail_seen_ids": [
-      "19f51428526f3e24",
       "19f55c3ac373776c",
       "19f56a37a1bcf3ab",
       "19f57763aa50b66a",
@@ -174696,7 +174735,8 @@
       "1a0b1aab45dec94d",
       "1a0b1c0d1ef98681",
       "1a0b3dd9ee50280a",
-      "1a0b3f899dda467b"
+      "1a0b3f899dda467b",
+      "1a0b426443d0e47c"
     ],
     "cash_sessions": {
       "1136982222": {
