@@ -139359,6 +139359,22 @@
       "address": "3 de febrero 1654 piso 13",
       "created_at": "2026-09-18T18:16:58.301Z",
       "last_touch_at": "2026-09-18T18:17:02.234Z"
+    },
+    {
+      "id": "local-1789756852337-tpbqy",
+      "name": "Toia Paillot",
+      "phone": "+54 9 11 4980-9359",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "",
+      "created_at": "2026-09-18T18:40:51.460Z",
+      "last_touch_at": "2026-09-18T18:40:54.794Z"
     }
   ],
   "conversations": [
