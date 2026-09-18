@@ -145188,12 +145188,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789307270547",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-18T00:04:07.325Z",
-      "last_message_preview": "A los Prefinished se les puede pasar solo trapo húmedo?",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-18T01:16:32.744Z",
+      "last_message_preview": "La línea fusión de patagonia",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-18T00:04:07.325Z",
-      "last_outbound_at": "2026-09-13T13:49:40.151Z"
+      "last_outbound_at": "2026-09-18T01:16:32.744Z"
     },
     {
       "id": "conv-email-1a09c8c4da78",
@@ -165322,6 +165322,16 @@
       "body": "A los Prefinished se les puede pasar solo trapo húmedo?",
       "ts": "2026-09-18T00:04:07.325Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789694193092-2xjy",
+      "conversation_id": "conv-1789307270547-vy4y",
+      "direction": "out",
+      "body": "La línea fusión de patagonia",
+      "ts": "2026-09-18T01:16:32.744Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxNDAzMDc0Mzc1MjgzNzM1MzE1MTU0MTgwMjk1ODg0OAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
