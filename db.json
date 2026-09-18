@@ -36721,8 +36721,9 @@
       "currency": "USD",
       "created_at": "2026-09-18T14:19:57.363Z",
       "quote_number": "A7366",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a0abd39be67"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a0abd39be67",
+      "share_token": "cb60e2420f98ab4ea2854a4f"
     }
   ],
   "clients": [
@@ -145718,12 +145719,12 @@
       "linked_lead_id": "lead-email-1a0abd39be67",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T16:17:07.000Z",
-      "last_message_preview": "Hola! La línea H20. Enviado desde mi iPhone El 17 sept 2026, a la(s) 11:27, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: ﻿ Hola Del",
+      "last_message_at": "2026-09-18T14:20:16.080Z",
+      "last_message_preview": "📄 Presupuesto NA7366 - Cotizacion Delfina Fite - Delfina Fite.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T16:17:07.000Z",
-      "last_outbound_at": "2026-09-17T14:27:44.708Z"
+      "last_outbound_at": "2026-09-18T14:20:16.080Z"
     },
     {
       "id": "conv-email-1a0ac7fe33f1",
@@ -165673,6 +165674,16 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0b4e166b5744ed"
+    },
+    {
+      "id": "m-1789741216080-t2al",
+      "conversation_id": "conv-email-1a0abd39be67",
+      "direction": "out",
+      "body": "Hola Delfina, te comparto el presupuesto NA7366 adjunto. Cualquier consulta quedo a disposición.\n📄 Presupuesto NA7366 - Cotizacion Delfina Fite - Delfina Fite.pdf",
+      "ts": "2026-09-18T14:20:16.080Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a0b4e3b181eaf42"
     }
   ],
   "templates": [
