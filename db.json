@@ -143925,11 +143925,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787709823306",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-08-26T13:21:07.950Z",
-      "last_message_preview": "Hola cómo estas ? Ya te envié los catálogos por mail",
+      "unread_count": 1,
+      "last_message_at": "2026-09-18T12:46:06.829Z",
+      "last_message_preview": "Buenos dias !!!! les llego el mail?",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-26T13:21:07.950Z",
+      "last_inbound_at": "2026-09-18T12:46:06.829Z",
       "last_outbound_at": "2026-08-26T09:41:46.266Z"
     },
     {
@@ -165432,6 +165432,14 @@
       "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 6c5971c637754ff389d4354644404f5e\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-16 00:00:00 UTC to 2026-09-17 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-18T12:07:46.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789735567637-8ohh",
+      "conversation_id": "conv-1787709823306-0j30",
+      "direction": "in",
+      "body": "Buenos dias !!!! les llego el mail?",
+      "ts": "2026-09-18T12:46:06.829Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -176025,7 +176033,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzUyNzY0NTQ1MTUyMTg4MjY3ODU5NTk4NjM5MTA0MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxMzk1MDE0NDI1MjE5Mjg2NTgwMTIwODEwOTk4OTg4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxMzk1MDU4NDkzMzEyMTMxNzI1OTI5NTgxMjc0NzI2NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxNDA1OTQxMjQwNzQwMDg2ODY3MzcxMTc2MzM1NzY5NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxNDA1OTQxMjQwNzQwMDg2ODY3MzcxMTc2MzM1NzY5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ0ODc4NDYzNzIxMjY5MDozMzAxNDc5Mzk2MDkyNzM2Mzk2NDExNDMzMjUwNTA3OTgwOAZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
