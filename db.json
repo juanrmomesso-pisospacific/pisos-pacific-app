@@ -139136,6 +139136,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-18T15:23:15.000Z",
       "last_touch_at": "2026-09-18T15:23:15.000Z"
+    },
+    {
+      "id": "local-1789755419149-9z2dg",
+      "name": "Rosario - GGYA",
+      "phone": "",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "Kitsilano"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "3 de febrero 1654 piso 13",
+      "created_at": "2026-09-18T18:16:58.301Z",
+      "last_touch_at": "2026-09-18T18:17:02.234Z"
     }
   ],
   "conversations": [
