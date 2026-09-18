@@ -145214,11 +145214,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789307270547",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-18T01:16:59.208Z",
-      "last_message_preview": "Si solo trapo húmedo o algún líquido apto pisos de madera sin cerca solo ph neutro",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-18T00:04:07.325Z",
+      "unread_count": 2,
+      "last_message_at": "2026-09-18T01:42:26.874Z",
+      "last_message_preview": "Gracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-18T01:42:26.874Z",
       "last_outbound_at": "2026-09-18T01:16:59.208Z"
     },
     {
@@ -165368,6 +165368,22 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxNDAzMTIzMTk0NDIwMzcxNjY3NTk3MDMzMjA5ODU2MAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1789695743910-a507",
+      "conversation_id": "conv-1789307270547-vy4y",
+      "direction": "in",
+      "body": "↩️ Reaccionó: 👍",
+      "ts": "2026-09-18T01:42:23.180Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1789695747432-q35n",
+      "conversation_id": "conv-1789307270547-vy4y",
+      "direction": "in",
+      "body": "Gracias",
+      "ts": "2026-09-18T01:42:26.874Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -175957,7 +175973,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY4MDk2NDgyMDA2MzMzMTozMzAxMzQ3MjMyMDE0MDI0NDg0NTk0ODg5ODE2MzgxODQ5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzUyNzY0NTQ1MTUyMTg4MjY3ODU5NTk4NjM5MTA0MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxMzk1MDE0NDI1MjE5Mjg2NTgwMTIwODEwOTk4OTg4OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxMzk1MDU4NDkzMzEyMTMxNzI1OTI5NTgxMjc0NzI2NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxMzk1MDU4NDkzMzEyMTMxNzI1OTI5NTgxMjc0NzI2NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxNDA1OTQxMjQwNzQwMDg2ODY3MzcxMTc2MzM1NzY5NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
