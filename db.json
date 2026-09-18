@@ -36563,6 +36563,50 @@
       "created_at": "2026-09-17T18:05:12.243Z",
       "quote_number": "A6492",
       "status": "DRAFT"
+    },
+    {
+      "id": "local-1789740744199-num6j",
+      "client_id": "",
+      "client_name": "Alejandro Grunhaut",
+      "client_dni": "",
+      "client_email": "alejogrunhaut@gmail.com",
+      "client_phone": "",
+      "client_address": "Los Itines 1225 | Cordoba",
+      "internal_notes": "Formulario web — 110m² · Con Colocación · CP 5009",
+      "public_notes": "El envio se cotiza una vez aceptada la cotizacion. Trabajamos con via cargo o Andesmar. No incluye colocacion. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Alejandro Grunhaut",
+      "has_iva": true,
+      "price": 4314.7632,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 110.4,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 15,
+          "total": 4195.2,
+          "discount": 629.28,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 629.28,
+      "discount_amount": 629.28,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-18T14:12:23.969Z",
+      "quote_number": "A7547",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a097660f3ad"
     }
   ],
   "clients": [
@@ -138152,10 +138196,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 110m² · Con Colocación · CP 5009",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-12T20:54:02.000Z",
-      "last_touch_at": "2026-09-18T13:30:51.000Z"
+      "last_touch_at": "2026-09-18T14:12:24.255Z"
     },
     {
       "id": "lead-instagram-1789307270547",
