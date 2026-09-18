@@ -132338,7 +132338,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-09-16T12:06:12.000Z"
+      "last_touch_at": "2026-09-18T12:07:46.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -140337,12 +140337,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 51,
-      "last_message_at": "2026-09-16T12:06:12.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-14 00:00:00 UTC to 2026-09-15 00:00:00 UTC.",
+      "unread_count": 52,
+      "last_message_at": "2026-09-18T12:07:46.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-16 00:00:00 UTC to 2026-09-17 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T12:06:12.000Z",
+      "last_inbound_at": "2026-09-18T12:07:46.000Z",
       "ignored": true
     },
     {
@@ -165424,6 +165424,14 @@
       "body": "✉️ C1087 - Residência de estudantes Almada | Vinilico\n\nBom dia,\r\n\r\nUtilizámos um dos vossos vinílicos numa residência de estudantes na Caparica, na qual estamos a fazer uma outra residência da mesma dimensão uns metros ao lado.\r\n\r\nTemos previso em projeto aplicar o vinílico Gerflor creation 70 1077 Tatami Savane, no entanto, estamos à procura de otimizações com produtos equivalentes.\r\n\r\nFace ao exposto vimos solicitar a apresentação de uma solução idêntica da vossa parte bem como o custo m2 da solução.\r\n\r\nObrigado,\r\n\r\nCom os melhores cumprimentos,\r\n[cid:image001.png@01DD4764.46FB29F0]\r\n[cid:image002.png@01DD4764.46FB29F0]<https://www.enescoord.pt/>\r\n[cid:image001.png@01DD4764.46FB29F0]\r\nJosé Moreira\r\nEngº Civil\r\n[cid:image001.png@01DD4764.46FB29F0]\r\n+351 934 000 947\r\njose.moreira@enescoord.pt<mailto:pedro.neves@enescoord.pt>\r\nwww.enescoord.pt<https://www.enescoord.pt/>\r\n\r\n[cid:image003.png@01DD4764.46FB29F0]<https://www.instagram.com/enescoord/>\r\n\r\n[cid:image004.png@01DD4764.46FB29F0]<https://www.linkedin.com/company/enescoord/>\r\n[cid:image001.png@01DD4764.46FB29F0]\r\nBRANCH LISBOA\r\nRua Francisco Stromp, nº14B\r\nPiso -1 / Escritório 2\r\n1600-464 Lisboa\r\n+351 211 312 136\r\n\r\nHEADQUARTERS PORTO\r\nRua O Primeiro de Janeiro, 131\r\n4100-366 Porto\r\n+351 223 395 810",
       "ts": "2026-09-18T10:53:13.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0b46a6fc03",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 6c5971c637754ff389d4354644404f5e\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-16 00:00:00 UTC to 2026-09-17 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-09-18T12:07:46.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173937,8 +173945,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-18T01:38:18.175Z",
     "gmail_seen_ids": [
-      "19f56a37a1bcf3ab",
-      "19f57763aa50b66a",
       "19f5ac214250a40e",
       "19f5ae8d8f1cbff1",
       "19f5b6076e408006",
@@ -174736,7 +174742,9 @@
       "1a0b3dd9ee50280a",
       "1a0b3f899dda467b",
       "1a0b426443d0e47c",
-      "1a0b44833b656f58"
+      "1a0b44833b656f58",
+      "1a0b46d7eed74a16",
+      "1a0b46a6fc0356fc"
     ],
     "cash_sessions": {
       "1136982222": {
