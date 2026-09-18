@@ -36605,8 +36605,9 @@
       "currency": "USD",
       "created_at": "2026-09-18T14:12:23.969Z",
       "quote_number": "A7547",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a097660f3ad"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a097660f3ad",
+      "share_token": "abb448dfbe5eb06a52c5f948"
     }
   ],
   "clients": [
@@ -145260,12 +145261,12 @@
       "linked_lead_id": "lead-email-1a097660f3ad",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-18T13:30:51.000Z",
-      "last_message_preview": "Hola Victoria!\r\nDale, te confirmo la linea H2O. Roble Eslavonia XL\r\nRoble Eslavonia XL\r\n<https://pisospacific.com/pisos-vinilicos-spc-h2o/es",
+      "last_message_at": "2026-09-18T14:13:23.661Z",
+      "last_message_preview": "📄 Presupuesto NA7547 - Alejandro Grunhaut - Alejandro Grunhaut.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-18T13:30:51.000Z",
-      "last_outbound_at": "2026-09-17T14:57:39.134Z"
+      "last_outbound_at": "2026-09-18T14:13:23.661Z"
     },
     {
       "id": "conv-1789307270547-vy4y",
@@ -165508,6 +165509,16 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Victoria!\r\nDale, te confirmo la linea H2O. Roble Eslavonia XL\r\nRoble Eslavonia XL\r\n<https://pisospacific.com/pisos-vinilicos-spc-h2o/eslavonia-xl-medida-grande>\r\n\r\nEl jue, 17 sept 2026 a las 11:57, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Alejandro, ¿cómo estás?\r\n>\r\n> Queríamos hacer seguimiento de tu consulta. Para poder avanzar con el\r\n> presupuesto, ¿nos confirmás qué colección te interesa?\r\n>\r\n> Si tenés alguna duda entre las opciones, contanos y te ayudamos a elegir.\r\n>\r\n> Saludos,\r\n> Equipo Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n\r\n\r\n-- \r\nAtte\r\nAlejandro M. Grunhaut",
       "ts": "2026-09-18T13:30:51.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789740803661-llbr",
+      "conversation_id": "conv-email-1a097660f3ad",
+      "direction": "out",
+      "body": "Hola Alejandro, te comparto el presupuesto NA7547 adjunto. La colocacion no esta incluida ya que es en Cordoba y nosotros estamos en Buenos Aires. El envio se cotiza una vez que quieras avanzar. Trabajamos con Via Cargo o Andesmar. \nCualquier consulta quedo a disposición.\n📄 Presupuesto NA7547 - Alejandro Grunhaut - Alejandro Grunhaut.pdf",
+      "ts": "2026-09-18T14:13:23.661Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a0b4dd651da3073"
     }
   ],
   "templates": [
