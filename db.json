@@ -36650,8 +36650,9 @@
       "currency": "USD",
       "created_at": "2026-09-18T14:16:59.950Z",
       "quote_number": "A8231",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a0ac7fe33f1"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a0ac7fe33f1",
+      "share_token": "991e7770308e28f09f00e080"
     }
   ],
   "clients": [
@@ -145663,12 +145664,12 @@
       "linked_lead_id": "lead-email-1a0ac7fe33f1",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T17:58:25.000Z",
-      "last_message_preview": "Hola Victoria\r\n\r\nMe interesa línea h20. Especifícamente el roble Eslavonia xl\r\n\r\nEl El jue, 17 sept 2026 a la(s) 11:27, Pisos Pacific <info@",
+      "last_message_at": "2026-09-18T14:17:45.920Z",
+      "last_message_preview": "📄 Presupuesto NA8231 - Cotizacion Delfina - Delfina Carbonellana.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T17:58:25.000Z",
-      "last_outbound_at": "2026-09-17T14:27:04.709Z"
+      "last_outbound_at": "2026-09-18T14:17:45.920Z"
     },
     {
       "id": "conv-email-1a0af3434f1c",
@@ -165592,6 +165593,16 @@
       "ts": "2026-09-18T14:15:26.239Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxNDg5MjgxNDMzMzA0Nzc5NDY2OTUyODc3NTkxNzU2OAZDZD"
+    },
+    {
+      "id": "m-1789741065920-pycf",
+      "conversation_id": "conv-email-1a0ac7fe33f1",
+      "direction": "out",
+      "body": "Hola Delfina, te comparto el presupuesto NA8231 adjunto.\nEl envio se cotiza con Via cargo o Andesmar una vez quieras avanzar.\n\nCualquier consulta quedo a disposición.\n📄 Presupuesto NA8231 - Cotizacion Delfina - Delfina Carbonellana.pdf",
+      "ts": "2026-09-18T14:17:45.920Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a0b4e166b5744ed"
     }
   ],
   "templates": [
