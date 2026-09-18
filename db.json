@@ -145188,11 +145188,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789307270547",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-13T13:49:40.151Z",
-      "last_message_preview": "Tenemos dos colecciones \nLa h2O que vendría a ser la fusión de patagonia y después todo lo que es la colección de madera que son pisos Prefi",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-13T13:47:48.688Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-18T00:03:43.436Z",
+      "last_message_preview": "Que quiere decir que son la fusión de Patagonia?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-18T00:03:43.436Z",
       "last_outbound_at": "2026-09-13T13:49:40.151Z"
     },
     {
@@ -165306,6 +165306,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 20m² · Con Colocación · CP 1416 · Rojas 1365",
       "ts": "2026-09-17T23:43:18.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789689824542-c1hs",
+      "conversation_id": "conv-1789307270547-vy4y",
+      "direction": "in",
+      "body": "Que quiere decir que son la fusión de Patagonia?",
+      "ts": "2026-09-18T00:03:43.436Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -175893,7 +175901,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzQwODU5Nzc2ODMxNzA5MjE0MDc0MjUzNTU0NDgzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY4MDk2NDgyMDA2MzMzMTozMzAxMzQ3MTk1MTc5ODI2MDE3MzAzMDk2NDU0MjMwODM1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY4MDk2NDgyMDA2MzMzMTozMzAxMzQ3MjMyMDE0MDI0NDg0NTk0ODg5ODE2MzgxODQ5NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzUyNzY0NTQ1MTUyMTg4MjY3ODU5NTk4NjM5MTA0MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk2MjczNDQ0OTcxMTA3NjozMzAxMzUyNzY0NTQ1MTUyMTg4MjY3ODU5NTk4NjM5MTA0MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcwNzU4NjI4MjM5MjE1NjozMzAxMzk1MDE0NDI1MjE5Mjg2NTgwMTIwODEwOTk4OTg4OAZDZD"
     ],
     "last_weekly_reminder": "2026-09-11T12:59:33.698Z",
     "warehouses": [
