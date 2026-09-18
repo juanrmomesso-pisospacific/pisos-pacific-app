@@ -36868,8 +36868,9 @@
       "currency": "USD",
       "created_at": "2026-09-18T14:38:46.047Z",
       "quote_number": "A8739",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a0af39255b3"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a0af39255b3",
+      "share_token": "2ea7267e2d0b311651a5ee11"
     }
   ],
   "clients": [
@@ -145912,12 +145913,12 @@
       "linked_lead_id": "lead-email-1a0af39255b3",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T15:07:55.000Z",
-      "last_message_preview": "Hola. Gracias por el correo. La cotización se las pido respecto del SPC.\r\n\r\nGracias\r\n\r\nRosario Maffrand\r\n\r\nEl jue, 17 de sept de 2026, 11:22",
+      "last_message_at": "2026-09-18T14:40:44.435Z",
+      "last_message_preview": "📄 Presupuesto NA8739 - Rosario Maffrand - Rosario Maffrand.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T15:07:55.000Z",
-      "last_outbound_at": "2026-09-17T14:22:12.293Z"
+      "last_outbound_at": "2026-09-18T14:40:44.435Z"
     },
     {
       "id": "conv-1789647572516-e5zk",
@@ -165830,6 +165831,16 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0b4e3b181eaf42"
+    },
+    {
+      "id": "m-1789742444435-ig4s",
+      "conversation_id": "conv-email-1a0af39255b3",
+      "direction": "out",
+      "body": "Hola Rosario, ¿cómo estás?\n\nTe comparto adjunto el presupuesto NA8739.\n\nPor tratarse de una obra mayorista, el presupuesto contempla un **35% de descuento en el producto y un 20% de descuento en la colocación**.\n\nLas medidas deberán verificarse en obra. Para la correcta colocación, la carpeta debe encontrarse nivelada, plana y en condiciones adecuadas.\n\nEl presupuesto incluye **envío y descarga en planta baja**.\n\nCualquier consulta, quedo a disposición.\n\nMuchas gracias,\nVicky\n📄 Presupuesto NA8739 - Rosario Maffrand - Rosario Maffrand.pdf",
+      "ts": "2026-09-18T14:40:44.435Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a0b4f66f6a46709"
     }
   ],
   "templates": [
