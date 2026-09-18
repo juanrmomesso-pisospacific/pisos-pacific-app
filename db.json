@@ -144716,12 +144716,12 @@
       "linked_lead_id": "lead-email-1a0603a4356b",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-14T18:27:13.631Z",
-      "last_message_preview": "Hola Fernando, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestr",
+      "last_message_at": "2026-09-18T14:43:59.231Z",
+      "last_message_preview": "Hola, ¿cómo estás?\n\nTe escribo para hacer un breve seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quier",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-02T03:47:05.000Z",
-      "last_outbound_at": "2026-09-14T18:27:13.631Z"
+      "last_outbound_at": "2026-09-18T14:43:59.231Z"
     },
     {
       "id": "conv-1788370090533-mwpb",
@@ -145009,12 +145009,12 @@
       "linked_lead_id": "lead-email-1a077dbea19c",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-14T18:27:35.630Z",
-      "last_message_preview": "Hola IGNACIO, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestra",
+      "last_message_at": "2026-09-18T14:44:08.028Z",
+      "last_message_preview": "Hola, ¿cómo estás?\n\nTe escribo para hacer un breve seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quier",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-06T17:54:55.000Z",
-      "last_outbound_at": "2026-09-14T18:27:35.630Z"
+      "last_outbound_at": "2026-09-18T14:44:08.028Z"
     },
     {
       "id": "conv-1788721527142-l5mf",
@@ -145346,12 +145346,12 @@
       "linked_lead_id": "lead-email-1a08c6c95b11",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-14T18:22:10.745Z",
-      "last_message_preview": "Hola Ana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras do",
+      "last_message_at": "2026-09-18T14:43:43.623Z",
+      "last_message_preview": "Hola, ¿cómo estás?\n\nTe escribo para hacer un breve seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quier",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-10T17:45:20.000Z",
-      "last_outbound_at": "2026-09-14T18:22:10.745Z"
+      "last_outbound_at": "2026-09-18T14:43:43.623Z"
     },
     {
       "id": "conv-1789072561380-1ij4",
@@ -165843,6 +165843,33 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0b4f66f6a46709"
+    },
+    {
+      "id": "m-1789742623623-f0qy",
+      "conversation_id": "conv-email-1a08c6c95b11",
+      "direction": "out",
+      "body": "Hola, ¿cómo estás?\n\nTe escribo para hacer un breve seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, contanos qué modelo o colección estás buscando y avanzamos con el presupuesto.\n\n¡Muchas gracias!\nSaludos,\nVicky",
+      "ts": "2026-09-18T14:43:43.623Z",
+      "status": "sent",
+      "wa_id": "1a0b4f92a8424034"
+    },
+    {
+      "id": "m-1789742639231-47it",
+      "conversation_id": "conv-email-1a0603a4356b",
+      "direction": "out",
+      "body": "Hola, ¿cómo estás?\n\nTe escribo para hacer un breve seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, contanos qué modelo o colección estás buscando y avanzamos con el presupuesto.\n\n¡Muchas gracias!\nSaludos,\nVicky",
+      "ts": "2026-09-18T14:43:59.231Z",
+      "status": "sent",
+      "wa_id": "1a0b4f968d3f1b51"
+    },
+    {
+      "id": "m-1789742648028-acuj",
+      "conversation_id": "conv-email-1a077dbea19c",
+      "direction": "out",
+      "body": "Hola, ¿cómo estás?\n\nTe escribo para hacer un breve seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, contanos qué modelo o colección estás buscando y avanzamos con el presupuesto.\n\n¡Muchas gracias!\nSaludos,\nVicky",
+      "ts": "2026-09-18T14:44:08.028Z",
+      "status": "sent",
+      "wa_id": "1a0b4f98bdb1e4e7"
     }
   ],
   "templates": [
