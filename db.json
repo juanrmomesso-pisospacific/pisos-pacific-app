@@ -138155,7 +138155,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-12T20:54:02.000Z",
-      "last_touch_at": "2026-09-12T20:54:02.000Z"
+      "last_touch_at": "2026-09-18T13:30:51.000Z"
     },
     {
       "id": "lead-instagram-1789307270547",
@@ -145215,12 +145215,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a097660f3ad",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-17T14:57:39.134Z",
-      "last_message_preview": "Hola Alejandro, ¿cómo estás?\n\nQueríamos hacer seguimiento de tu consulta. Para poder avanzar con el presupuesto, ¿nos confirmás qué colecció",
+      "unread_count": 1,
+      "last_message_at": "2026-09-18T13:30:51.000Z",
+      "last_message_preview": "Hola Victoria!\r\nDale, te confirmo la linea H2O. Roble Eslavonia XL\r\nRoble Eslavonia XL\r\n<https://pisospacific.com/pisos-vinilicos-spc-h2o/es",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-12T20:54:02.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-18T13:30:51.000Z",
       "last_outbound_at": "2026-09-17T14:57:39.134Z"
     },
     {
@@ -165456,6 +165456,14 @@
       "body": "✉️ Re: Comex+Cargo // Momesso // Cotizacion JR007 | Wall panles | Shanghai - Buenos Aires | 20 ft // CCF-MI-00000105\n\n😃\r\n\r\nCamila Cerveri reaccionó a través de Gmail\r\n<https://www.google.com/gmail/about/?utm_source=gmail-in-product&utm_medium=et&utm_campaign=emojireactionemail#app>\r\n\r\nEl mié, 16 sept 2026 a la(s) 4:07 p.m., Customer Comex+ Cargo (\r\nCustomerCargo@grupocomexmas.com) escribió:\r\n\r\n> Buenas tardes Cami, Vicky,\r\n> Adjuntamos el b/l final de la carga.\r\n> Además informamos que realizará el trasbordo en Tanger el 24/SEP al buque\r\n> SAN RAPHAEL MAERSK, el cual tiene estimado de arribo a Buenos Aires para el\r\n> *17/OCT*:\r\n>\r\n> [image: image.png]\r\n>\r\n> Les notificaremos en cuanto confirmemos el trasbordo.\r\n>\r\n> Saludos,\r\n>\r\n>\r\n>\r\n>\r\n>\r\n> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n> Cordiali Saluti*\r\n> Carolina Lodovico\r\n> *Customer Comex+ Cargo*\r\n> Cel WhatsApp: (+54)115-761-1787\r\n>\r\n> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n> Tel.: (+54)114331-2207/1893\r\n> Av. Alicia Moreau de Justo 1150 – Of. A\r\n> <https://www.google.com/maps/search/Av.+Alicia+Moreau+de+Justo+1150+%E2%80%93+Of.+A?entry=gmail&source=g>-103// (C1107AAX)\r\n> – C.A.B.A., Argentina\r\n>\r\n>\r\n> El mié, 19 ago 2026 a la(s) 11:54 a.m., Customer Comex+ Cargo (\r\n> CustomerCargo@grupocomexmas.com) escribió:\r\n>\r\n>> Buenos días Vicky, Cami\r\n>> Confirmamos el on board de la carga de referencia:\r\n>>\r\n>> *ETD DALIAN: 19/AUG*\r\n>> *VSL: KOTA LUKIS *\r\n>> *ETA BUENOS AIRES: 10/OCT*\r\n>>\r\n>> [image: image.png]\r\n>>\r\n>>\r\n>> Saludos,\r\n>>\r\n>>\r\n>>\r\n>> *Saludos cordiales | Best Regards! | Hälsningar | Grüß",
       "ts": "2026-09-18T12:58:33.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0b4b6adc0a",
+      "conversation_id": "conv-email-1a097660f3ad",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Victoria!\r\nDale, te confirmo la linea H2O. Roble Eslavonia XL\r\nRoble Eslavonia XL\r\n<https://pisospacific.com/pisos-vinilicos-spc-h2o/eslavonia-xl-medida-grande>\r\n\r\nEl jue, 17 sept 2026 a las 11:57, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Alejandro, ¿cómo estás?\r\n>\r\n> Queríamos hacer seguimiento de tu consulta. Para poder avanzar con el\r\n> presupuesto, ¿nos confirmás qué colección te interesa?\r\n>\r\n> Si tenés alguna duda entre las opciones, contanos y te ayudamos a elegir.\r\n>\r\n> Saludos,\r\n> Equipo Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n\r\n\r\n-- \r\nAtte\r\nAlejandro M. Grunhaut",
+      "ts": "2026-09-18T13:30:51.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -173969,7 +173977,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-18T01:38:18.175Z",
     "gmail_seen_ids": [
-      "19f5c10bc313e7a0",
       "19f5c47f6aede350",
       "19f5c877e0a1e508",
       "19f5d37ff2b0c7fb",
@@ -174768,7 +174775,8 @@
       "1a0b46a6fc0356fc",
       "1a0b485154a42e46",
       "1a0b4851316cf9c8",
-      "1a0b49a17066b32e"
+      "1a0b49a17066b32e",
+      "1a0b4b6adc0a3b3c"
     ],
     "cash_sessions": {
       "1136982222": {
