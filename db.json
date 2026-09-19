@@ -146566,11 +146566,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789775664200",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-18T23:54:22.082Z",
-      "last_message_preview": "Hola! Cómo estás?\nTienen showroom? \nGracias",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-18T23:54:22.082Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-19T10:54:30.916Z",
+      "last_message_preview": "Hola José cómo estás? Si nuestro deposito está en olivos a la altura de Debenedetti y panamericana. Es con cita previa! Si te interesa pasar",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-18T23:54:22.082Z",
+      "last_outbound_at": "2026-09-19T10:54:30.916Z"
     },
     {
       "id": "conv-email-1a0b75b17964",
@@ -166550,6 +166551,16 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 100m² · Sin Colocación · CP 1417 · Pasaje Columbia 4987",
       "ts": "2026-09-19T01:49:54.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789815271721-4siz",
+      "conversation_id": "conv-1789775664200-pctp",
+      "direction": "out",
+      "body": "Hola José cómo estás? Si nuestro deposito está en olivos a la altura de Debenedetti y panamericana. Es con cita previa! Si te interesa pasar avísanos!",
+      "ts": "2026-09-19T10:54:30.916Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE3MTA2NTQzMTUzMDcxNzozMzAxNjI2NDI0MTgwNjg2NTk5NDk1MzA2NTU4NDY1NjM4NAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
