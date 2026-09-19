@@ -139591,6 +139591,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-19T01:49:54.000Z",
       "last_touch_at": "2026-09-19T01:49:54.000Z"
+    },
+    {
+      "id": "lead-email-1a0b9b3da2f7",
+      "name": "Norma Beatriz Gonzalez",
+      "email": "norma.online@yahoo.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Casa",
+      "postal_code": "1840",
+      "approx_m2": 38,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 38m² · Sin Colocación · CP 1840",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-19T12:46:06.000Z",
+      "last_touch_at": "2026-09-19T12:46:06.000Z"
     }
   ],
   "conversations": [
@@ -146587,6 +146604,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-19T01:49:54.000Z"
+    },
+    {
+      "id": "conv-email-1a0b9b3da2f7",
+      "channel": "email",
+      "contact_id": "norma.online@yahoo.com",
+      "contact_name": "Norma Beatriz Gonzalez",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0b9b3da2f7",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-19T12:46:06.000Z",
+      "last_message_preview": "Formulario web — 38m² · Sin Colocación · CP 1840 · Casa",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-19T12:46:06.000Z"
     }
   ],
   "messages": [
@@ -166569,6 +166601,14 @@
       "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: c2bcd2ee3a35436887537c19f7685cb8\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-17 00:00:00 UTC to 2026-09-18 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-19T12:03:11.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0b9b3da2f7",
+      "conversation_id": "conv-email-1a0b9b3da2f7",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 38m² · Sin Colocación · CP 1840 · Casa",
+      "ts": "2026-09-19T12:46:06.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -175082,8 +175122,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-19T01:39:03.440Z",
     "gmail_seen_ids": [
-      "19f5ea9e6a6f147f",
-      "19f5f2e6a369cedf",
       "19f607fd8fd72309",
       "19f607f78ff99bf8",
       "19f609ecc54c4c5f",
@@ -175881,7 +175919,9 @@
       "1a0b6e83acec9ae5",
       "1a0b75b179643cb1",
       "1a0b93d68372712f",
-      "1a0b98cac3d8f493"
+      "1a0b98cac3d8f493",
+      "1a0b9b3da2f753b3",
+      "1a0b9ab6f1b51a86"
     ],
     "cash_sessions": {
       "1136982222": {
