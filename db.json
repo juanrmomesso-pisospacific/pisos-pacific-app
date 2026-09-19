@@ -139625,6 +139625,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-19T17:33:44.000Z",
       "last_touch_at": "2026-09-19T17:33:44.000Z"
+    },
+    {
+      "id": "lead-email-1a0bac5bca1f",
+      "name": "Pablo Proserpio",
+      "email": "pablo.proserpio@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Presupuesto — Hola, buenas tardes! Quisiera saber el valor de estos dos pisos Roble 9cm\r\nlacquered y\r\nRoble Veta Tallada 12 cm, la superficie a cubrir son 40m2 aprox. Desde ya\r\nmuchas gracias.\r\n",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-19T17:45:03.000Z",
+      "last_touch_at": "2026-09-19T17:45:03.000Z"
     }
   ],
   "conversations": [
@@ -146651,6 +146668,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-19T17:33:44.000Z"
+    },
+    {
+      "id": "conv-email-1a0bac5bca1f",
+      "channel": "email",
+      "contact_id": "pablo.proserpio@gmail.com",
+      "contact_name": "Pablo Proserpio",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0bac5bca1f",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-19T17:45:03.000Z",
+      "last_message_preview": "Hola, buenas tardes! Quisiera saber el valor de estos dos pisos Roble 9cm\r\nlacquered y\r\nRoble Veta Tallada 12 cm, la superficie a cubrir son",
+      "email_subject": "Presupuesto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-19T17:45:03.000Z"
     }
   ],
   "messages": [
@@ -166649,6 +166681,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 100m² · Sin Colocación · CP 5000 · Cordoba",
       "ts": "2026-09-19T17:33:44.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0bac5bca1f",
+      "conversation_id": "conv-email-1a0bac5bca1f",
+      "direction": "in",
+      "body": "✉️ Presupuesto\n\nHola, buenas tardes! Quisiera saber el valor de estos dos pisos Roble 9cm\r\nlacquered y\r\nRoble Veta Tallada 12 cm, la superficie a cubrir son 40m2 aprox. Desde ya\r\nmuchas gracias.\r\n\r\n\r\n*.......…...............*\r\n*Pablo Proserpio *\r\nDiseñador Gráfico\r\n<   1535024114   >\r\n..........................",
+      "ts": "2026-09-19T17:45:03.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -175162,7 +175202,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-19T01:39:03.440Z",
     "gmail_seen_ids": [
-      "19f607f78ff99bf8",
       "19f609ecc54c4c5f",
       "19f61196a0bcc82e",
       "19f61ae4929fe9de",
@@ -175961,7 +176000,8 @@
       "1a0b98cac3d8f493",
       "1a0b9b3da2f753b3",
       "1a0b9ab6f1b51a86",
-      "1a0babb3320f5fb4"
+      "1a0babb3320f5fb4",
+      "1a0bac5bca1ff264"
     ],
     "cash_sessions": {
       "1136982222": {
