@@ -139608,6 +139608,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-19T12:46:06.000Z",
       "last_touch_at": "2026-09-19T12:46:06.000Z"
+    },
+    {
+      "id": "lead-email-1a0babb3320f",
+      "name": "MARIA RAQUEL PRIOLO",
+      "email": "mariaraquelpriolo1@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Cordoba",
+      "postal_code": "5000",
+      "approx_m2": 100,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 100m² · Sin Colocación · CP 5000",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-19T17:33:44.000Z",
+      "last_touch_at": "2026-09-19T17:33:44.000Z"
     }
   ],
   "conversations": [
@@ -146619,6 +146636,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-19T12:46:06.000Z"
+    },
+    {
+      "id": "conv-email-1a0babb3320f",
+      "channel": "email",
+      "contact_id": "mariaraquelpriolo1@gmail.com",
+      "contact_name": "MARIA RAQUEL PRIOLO",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0babb3320f",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-19T17:33:44.000Z",
+      "last_message_preview": "Formulario web — 100m² · Sin Colocación · CP 5000 · Cordoba",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-19T17:33:44.000Z"
     }
   ],
   "messages": [
@@ -166609,6 +166641,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 38m² · Sin Colocación · CP 1840 · Casa",
       "ts": "2026-09-19T12:46:06.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0babb3320f",
+      "conversation_id": "conv-email-1a0babb3320f",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 100m² · Sin Colocación · CP 5000 · Cordoba",
+      "ts": "2026-09-19T17:33:44.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -175122,7 +175162,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-19T01:39:03.440Z",
     "gmail_seen_ids": [
-      "19f607fd8fd72309",
       "19f607f78ff99bf8",
       "19f609ecc54c4c5f",
       "19f61196a0bcc82e",
@@ -175921,7 +175960,8 @@
       "1a0b93d68372712f",
       "1a0b98cac3d8f493",
       "1a0b9b3da2f753b3",
-      "1a0b9ab6f1b51a86"
+      "1a0b9ab6f1b51a86",
+      "1a0babb3320f5fb4"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -176419,7 +176459,8 @@
       "1a0b4f98bdb1e4e7",
       "1a0b4f968d3f1b51",
       "1a0b4f92a8424034",
-      "1a0b4f66f6a46709"
+      "1a0b4f66f6a46709",
+      "1a0b9ab6f1b51a86"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
