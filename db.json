@@ -139015,7 +139015,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-15T00:29:43.000Z",
-      "last_touch_at": "2026-09-15T00:29:43.000Z"
+      "last_touch_at": "2026-09-20T21:38:04.000Z"
     },
     {
       "id": "lead-instagram-1789480901918",
@@ -146205,12 +146205,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0a2783a477",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-16T13:47:22.694Z",
-      "last_message_preview": "Hola Raúl, ¿cómo estás?\n\nContanos qué colección te interesa y te pasamos el presupuesto.\n\nPara una superficie de 8 m² no realizamos la coloc",
+      "unread_count": 1,
+      "last_message_at": "2026-09-20T21:38:04.000Z",
+      "last_message_preview": "Muchas gracias por la respuesta. En sí estamos buscando una opción de los\r\nvinílicos SPC con un tono similar a estos porcelanatos pecan vite",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-15T00:29:43.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-20T21:38:04.000Z",
       "last_outbound_at": "2026-09-16T13:47:22.694Z"
     },
     {
@@ -166756,6 +166756,14 @@
       "body": "✉️ Attending October Canton Fair 2026? Invitation from DM Floor (Rigid Core Flooring Manufacturer)\n\nHello,\r\nI hope you are doing well.\r\n\r\nMy name is Eddy from DM Floor, a professional flooring manufacturer in Changzhou, China, with several years of experience and an annual production capacity of&nbsp; more than 20 million m². We specialize in MGO flooring, MFB, CWC flooring, and waterproof laminate flooring.\r\n\r\nWe can also provide vinyl flooring i.e Spc and Lvt flooring.\r\n\r\nMay I ask please if you are planning to visit China for the Canton Fair this October?\r\n\r\nIf so, we would be pleased to invite you to visit our factory in Changzhou city and see our production, quality control, and latest flooring range.\r\n\r\nOur MGO Flooring is PVC-free, formaldehyde-free, and VOC-free with Class A (ASTM E84-19b) fire proof capacity, AC4–AC5 wear resistance, and ≤3% thickness swelling after 24 hours of water soaking. As it contains no PVC, it also offers excellent temperature stability without the expansion and shrinkage concerns commonly associated with PVC-based SPC and LVT flooring. It is suitable for under floor heating and available in both plank and tile formats.\r\n\r\nOur Ultra Waterproof CWC Flooring is a PVC-free carbon wood composite flooring with ≤5% edge swelling after 24 hours of water soaking, AC2–AC4 wear resistance, and good resistance to dents and scratches. Its lightweight construction can also help reduce transportation and handling costs.It is also light in weight, around 56% lighter in weight than SPC flooring, whereby we can load 4,000 Sqm per container, which also saves",
       "ts": "2026-09-20T08:58:07.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0c0c16aad8",
+      "conversation_id": "conv-email-1a0a2783a477",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nMuchas gracias por la respuesta. En sí estamos buscando una opción de los\r\nvinílicos SPC con un tono similar a estos porcelanatos pecan vite\r\n<https://www.viteporcellanato.com/porcellanato-31-pecan>, que es un roble\r\nnatural. ¿Qué diferencias hay entre las distintas líneas que ofrecen? y\r\n¿Qué precios tienen?\r\n\r\nDesde ya muchas gracias.\r\n\r\nSaludos\r\n\r\nEl mié, 16 sept 2026 a la(s) 10:47 a.m., Pisos Pacific (\r\ninfo@pisospacific.com) escribió:\r\n\r\n> Hola Raúl, ¿cómo estás?\r\n>\r\n> Contanos qué colección te interesa y te pasamos el presupuesto.\r\n>\r\n> Para una superficie de 8 m² no realizamos la colocación, pero podemos\r\n> recomendarte instaladores con los que trabajamos habitualmente.\r\n>\r\n> ¡Saludos!\r\n> Equipo Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-09-20T21:38:04.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -175269,7 +175277,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-20T01:38:18.221Z",
     "gmail_seen_ids": [
-      "19f629a37deddcd0",
       "19f639a7e0866b51",
       "19f63aaa48814819",
       "19f64661982babed",
@@ -176068,7 +176075,8 @@
       "1a0bdeb5ab445a2e",
       "1a0be1775c83f92e",
       "1a0be591440ab921",
-      "1a0bed1cb44f86e5"
+      "1a0bed1cb44f86e5",
+      "1a0c0c16aad89640"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -176567,7 +176575,8 @@
       "1a0b4f968d3f1b51",
       "1a0b4f92a8424034",
       "1a0b4f66f6a46709",
-      "1a0b9ab6f1b51a86"
+      "1a0b9ab6f1b51a86",
+      "1a0bed1cb44f86e5"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
