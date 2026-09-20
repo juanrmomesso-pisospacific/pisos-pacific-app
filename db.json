@@ -136708,7 +136708,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-08-19T08:56:07.000Z",
-      "last_touch_at": "2026-08-21T08:58:11.000Z"
+      "last_touch_at": "2026-09-20T08:58:07.000Z"
     },
     {
       "id": "lead-instagram-1787143584228",
@@ -144268,12 +144268,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0193e3525b",
       "status": "closed",
-      "unread_count": 1,
-      "last_message_at": "2026-08-21T08:58:11.000Z",
-      "last_message_preview": "Hello\r\n\r\nWe hope this email finds you well. My name is Eddy from DM Floor, an eco-friendly rigid core flooring manufacturer.\r\n\r\n\r\nWe came ac",
+      "unread_count": 2,
+      "last_message_at": "2026-09-20T08:58:07.000Z",
+      "last_message_preview": "Hello,\r\nI hope you are doing well.\r\n\r\nMy name is Eddy from DM Floor, a professional flooring manufacturer in Changzhou, China, with several ",
       "email_subject": "OEM Factory Price Eco-Friendly Rigid core Flooring",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-21T08:58:11.000Z",
+      "last_inbound_at": "2026-09-20T08:58:07.000Z",
       "ignored": true
     },
     {
@@ -166748,6 +166748,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: bae7d9e091fb4365be506958327ca628\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-18 00:00:00 UTC to 2026-09-19 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-20T08:25:11.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0be1775c83",
+      "conversation_id": "conv-email-1a0193e3525b",
+      "direction": "in",
+      "body": "✉️ Attending October Canton Fair 2026? Invitation from DM Floor (Rigid Core Flooring Manufacturer)\n\nHello,\r\nI hope you are doing well.\r\n\r\nMy name is Eddy from DM Floor, a professional flooring manufacturer in Changzhou, China, with several years of experience and an annual production capacity of&nbsp; more than 20 million m². We specialize in MGO flooring, MFB, CWC flooring, and waterproof laminate flooring.\r\n\r\nWe can also provide vinyl flooring i.e Spc and Lvt flooring.\r\n\r\nMay I ask please if you are planning to visit China for the Canton Fair this October?\r\n\r\nIf so, we would be pleased to invite you to visit our factory in Changzhou city and see our production, quality control, and latest flooring range.\r\n\r\nOur MGO Flooring is PVC-free, formaldehyde-free, and VOC-free with Class A (ASTM E84-19b) fire proof capacity, AC4–AC5 wear resistance, and ≤3% thickness swelling after 24 hours of water soaking. As it contains no PVC, it also offers excellent temperature stability without the expansion and shrinkage concerns commonly associated with PVC-based SPC and LVT flooring. It is suitable for under floor heating and available in both plank and tile formats.\r\n\r\nOur Ultra Waterproof CWC Flooring is a PVC-free carbon wood composite flooring with ≤5% edge swelling after 24 hours of water soaking, AC2–AC4 wear resistance, and good resistance to dents and scratches. Its lightweight construction can also help reduce transportation and handling costs.It is also light in weight, around 56% lighter in weight than SPC flooring, whereby we can load 4,000 Sqm per container, which also saves",
+      "ts": "2026-09-20T08:58:07.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -175261,7 +175269,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-20T01:38:18.221Z",
     "gmail_seen_ids": [
-      "19f61ae4929fe9de",
       "19f6211f58c64fa8",
       "19f629b0ea8de225",
       "19f629a37deddcd0",
@@ -176060,7 +176067,8 @@
       "1a0babb3320f5fb4",
       "1a0bac5bca1ff264",
       "1a0bd61a064a8381",
-      "1a0bdeb5ab445a2e"
+      "1a0bdeb5ab445a2e",
+      "1a0be1775c83f92e"
     ],
     "cash_sessions": {
       "1136982222": {
