@@ -131221,6 +131221,28 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "local-1790024739522-1h0u0",
+      "flow": "Ingreso",
+      "date": "2026-09-21T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "subcategory": null,
+      "counterparty": "Arq. Gaston",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra - 114 - Edificio",
+      "sale_ref": "A4590",
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null,
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 429,
+      "exchange_rate": null,
+      "category": "Venta - Pisos"
     }
   ],
   "containers": [
