@@ -140050,11 +140050,11 @@
       "linked_client_name": null,
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-09-18T22:48:03.380Z",
-      "last_message_preview": "📎 Adjunto",
+      "last_message_at": "2026-09-21T21:55:02.262Z",
+      "last_message_preview": "Mira la escalera",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-18T20:56:12.676Z",
-      "last_outbound_at": "2026-09-18T22:48:03.380Z",
+      "last_outbound_at": "2026-09-21T21:55:02.262Z",
       "ignored": true
     },
     {
@@ -167437,6 +167437,26 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMDE3MTM0ODQwODU1MTYwOTc0NzAwMjU5ODg4MzMyOAZDZD"
+    },
+    {
+      "id": "m-1790027702668-gn6u",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-21T21:55:01.854Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAyMDE4MjkwMDk1Nzc2OTcwMDc2NzUxMjQ5NjQzOTI5NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1790027703124-8m4a",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "Mira la escalera",
+      "ts": "2026-09-21T21:55:02.262Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAyMDE4MjkwODQ5MzY1MjAzNjUwMzQxMjIzMjE1OTIzMgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
@@ -177278,7 +177298,8 @@
       "1a0c5dc21e876c8f",
       "1a0c5db9da4bd801",
       "1a0c5db2d783c063",
-      "1a0c5dad10bb2341"
+      "1a0c5dad10bb2341",
+      "1a0c5e8ddd71e5b5"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
