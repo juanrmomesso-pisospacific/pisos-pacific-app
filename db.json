@@ -139791,10 +139791,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: OBS | Presupuesto pisos — Buen día,\r\n\r\nMi nombre es Luján, arquitecta del estudio Nuñez Nicholson.\r\nEstamos proyectando una reforma en San Fernando, y queríamos cotizar con\r\nustedes la provisión y colocació",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-18T15:23:15.000Z",
-      "last_touch_at": "2026-09-21T21:25:58.000Z"
+      "last_touch_at": "2026-09-21T21:39:36.381Z"
     },
     {
       "id": "local-1789755419149-9z2dg",
@@ -139957,10 +139957,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-21T14:19:03.348Z",
-      "last_touch_at": "2026-09-21T14:19:03.348Z"
+      "last_touch_at": "2026-09-21T21:39:42.716Z"
     },
     {
       "id": "lead-instagram-1790009310723",
@@ -139990,10 +139990,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: RV: Presupuesto Piso Pre Finish — Hola, buenas tardes\r\n\r\nMe pongo en contacto porque necesito cotizar para la refacción de una casa, la provisión y colocación de piso de madera pre finished\r\n\r\nLa casa se encuentra ",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-21T18:20:31.000Z",
-      "last_touch_at": "2026-09-21T18:20:31.000Z"
+      "last_touch_at": "2026-09-21T21:39:39.783Z"
     }
   ],
   "conversations": [
@@ -147097,11 +147097,12 @@
       "linked_lead_id": "lead-email-1a0c532e3cff",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-21T18:20:31.000Z",
-      "last_message_preview": "Hola, buenas tardes\r\n\r\nMe pongo en contacto porque necesito cotizar para la refacción de una casa, la provisión y colocación de piso de made",
+      "last_message_at": "2026-09-21T21:39:27.728Z",
+      "last_message_preview": "Hola Dolores como estas? \nPerfecto mañana te estamos mandando las opciones.\nEl depósito está en Olivos, a la altura de Thames y Panamericana",
       "email_subject": "RV: Presupuesto Piso Pre Finish",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-21T18:20:31.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-21T18:20:31.000Z",
+      "last_outbound_at": "2026-09-21T21:39:27.728Z"
     }
   ],
   "messages": [
@@ -167372,6 +167373,15 @@
       "body": "✉️ Re: OBS | Presupuesto pisos\n\nPerfecto!\r\n\r\nTe dejo mi número (Lujan) 1167669735\r\n\r\n\r\nSaludos cordiales,\r\n\r\nArq. Ma. Luján Nicholson Duelo\r\nArq. Fernando Nuñez\r\n\r\n\r\n\r\n\r\n\r\nEl El lun, 21 sept 2026 a la(s) 6:24 p. m., Pisos Pacific <\r\ninfo@pisospacific.com> escribió:\r\n\r\n> Hola Luján y Fernando, ¿cómo están?\r\n>\r\n> ¡Perfecto! Sí, podemos cotizarlo. Tenemos distintas opciones en madera y\r\n> también realizamos trabajos de revestimiento de escaleras.\r\n>\r\n> Les paso el contacto de Victoria para que puedan comunicarse con ella\r\n> mañana: **11 3698-2222**.\r\n>\r\n> Si prefieren, también pueden dejarme un número de WhatsApp y les enviamos\r\n> por ahí catálogos, fotos y opciones para que puedan ver.\r\n>\r\n> ¡Gracias!\r\n> Equipo Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-21T21:25:58.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790026767728-9xwi",
+      "conversation_id": "conv-email-1a0c532e3cff",
+      "direction": "out",
+      "body": "Hola Dolores como estas? \nPerfecto mañana te estamos mandando las opciones.\nEl depósito está en Olivos, a la altura de Thames y Panamericana, y trabajamos con cita previa.\n\nSi te interesa acercarte, te paso un WhatsApp para que puedas coordinar día y horario.\nY si te resulta más cómodo, también tenemos la opción de enviar muestras a domicilio. \n\nSaludos, Victoria Collado\n1136982222",
+      "ts": "2026-09-21T21:39:27.728Z",
+      "status": "sent",
+      "wa_id": "1a0c5e8ddd71e5b5"
     }
   ],
   "templates": [
@@ -177206,7 +177216,14 @@
       "1a0b4f66f6a46709",
       "1a0b9ab6f1b51a86",
       "1a0bed1cb44f86e5",
-      "1a0c3f82844a1e5e"
+      "1a0c3f82844a1e5e",
+      "1a0c5e611bb07938",
+      "1a0c5e2ad2f93550",
+      "1a0c5e1e92142871",
+      "1a0c5dc21e876c8f",
+      "1a0c5db9da4bd801",
+      "1a0c5db2d783c063",
+      "1a0c5dad10bb2341"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
