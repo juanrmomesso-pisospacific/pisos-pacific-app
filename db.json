@@ -30972,9 +30972,9 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Emilia Pascarelli",
       "has_iva": true,
-      "price": 5316.6916,
+      "price": 6449.2516,
       "zoned": false,
-      "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m + 5 más",
+      "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m + 6 más",
       "items": [
         {
           "product_id": "PROD-190",
@@ -31054,10 +31054,24 @@
           "discount": 0,
           "image": "",
           "target_item_index": null
+        },
+        {
+          "product_id": "SERV-115",
+          "sku": "SERV-115",
+          "description": "Servicio - Nivelación de Carpeta - incluye Materiales",
+          "quantity": 65,
+          "unit_price": 18,
+          "cost": 10,
+          "category": "Servicio",
+          "disc_value": 20,
+          "total": 1170,
+          "discount": 234,
+          "image": "",
+          "target_item_index": null
         }
       ],
-      "discount_total": 304,
-      "discount_amount": 304,
+      "discount_total": 538,
+      "discount_amount": 538,
       "created_at": "2026-08-25T16:46:38.487Z",
       "quote_number": "A4209",
       "status": "ACCEPTED",
