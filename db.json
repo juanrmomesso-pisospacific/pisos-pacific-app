@@ -139873,10 +139873,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 100m² · Sin Colocación · CP 1417",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-19T01:49:54.000Z",
-      "last_touch_at": "2026-09-19T01:49:54.000Z"
+      "last_touch_at": "2026-09-21T21:40:17.183Z"
     },
     {
       "id": "lead-email-1a0b9b3da2f7",
@@ -139890,10 +139890,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 38m² · Sin Colocación · CP 1840",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-19T12:46:06.000Z",
-      "last_touch_at": "2026-09-19T12:46:06.000Z"
+      "last_touch_at": "2026-09-21T21:40:26.533Z"
     },
     {
       "id": "lead-email-1a0babb3320f",
@@ -144569,7 +144569,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0193e3525b",
       "status": "closed",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-09-20T08:58:07.000Z",
       "last_message_preview": "Hello,\r\nI hope you are doing well.\r\n\r\nMy name is Eddy from DM Floor, a professional flooring manufacturer in Changzhou, China, with several ",
       "email_subject": "OEM Factory Price Eco-Friendly Rigid core Flooring",
