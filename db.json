@@ -131199,6 +131199,28 @@
       "raw_name": "ADRIANMARRACCINO",
       "classified_by": "nickname del perfil MP (user 173302986)",
       "id": "MOV-MPAUTO-muakszqm-001"
+    },
+    {
+      "id": "local-1790017422019-mtx3s",
+      "flow": "Ingreso",
+      "date": "2026-09-15T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Arq. Gaston",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra - 114 - Edificio",
+      "sale_ref": "A4590",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 2750,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
