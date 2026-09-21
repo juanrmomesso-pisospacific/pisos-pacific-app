@@ -146915,11 +146915,12 @@
       "linked_lead_id": "lead-email-1a0b75b17964",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-19T01:49:54.000Z",
-      "last_message_preview": "Formulario web — 100m² · Sin Colocación · CP 1417 · Pasaje Columbia 4987",
+      "last_message_at": "2026-09-21T21:24:59.425Z",
+      "last_message_preview": "Hola Alejandro, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuest",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-19T01:49:54.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-19T01:49:54.000Z",
+      "last_outbound_at": "2026-09-21T21:24:59.425Z"
     },
     {
       "id": "conv-email-1a0b9b3da2f7",
@@ -146929,7 +146930,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0b9b3da2f7",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-19T12:46:06.000Z",
       "last_message_preview": "Formulario web — 38m² · Sin Colocación · CP 1840 · Casa",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -167221,6 +167222,15 @@
       "ts": "2026-09-21T21:24:30.636Z",
       "status": "sent",
       "wa_id": "1a0c5db2d783c063"
+    },
+    {
+      "id": "m-1790025899425-y230",
+      "conversation_id": "conv-email-1a0b75b17964",
+      "direction": "out",
+      "body": "Hola Alejandro, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\n¡Muchas gracias!\nSaludos, Equipo Pisos Pacific",
+      "ts": "2026-09-21T21:24:59.425Z",
+      "status": "sent",
+      "wa_id": "1a0c5db9da4bd801"
     }
   ],
   "templates": [
