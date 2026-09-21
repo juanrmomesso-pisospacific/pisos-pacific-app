@@ -40658,6 +40658,15 @@
       "category_default": null,
       "notes": null,
       "name": "BORDERS PARKING"
+    },
+    {
+      "id": "PROV-mubqjhxe-1fvj",
+      "type": "supplier",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null,
+      "name": "Arq. Gastón"
     }
   ],
   "categories": [
