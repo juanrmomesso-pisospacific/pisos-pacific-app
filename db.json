@@ -146820,11 +146820,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790000345117",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-21T14:19:03.348Z",
-      "last_message_preview": "Hola quiero pedirte presuepuesto",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-21T14:19:03.348Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-21T14:35:04.601Z",
+      "last_message_preview": "Hola Jess cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-21T14:19:03.348Z",
+      "last_outbound_at": "2026-09-21T14:35:04.601Z"
     }
   ],
   "messages": [
@@ -166879,6 +166880,16 @@
       "body": "Hola quiero pedirte presuepuesto",
       "ts": "2026-09-21T14:19:03.348Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790001305214-d9d7",
+      "conversation_id": "conv-1790000345117-9cde",
+      "direction": "out",
+      "body": "Hola Jess cómo estás?",
+      "ts": "2026-09-21T14:35:04.601Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTY5NTk1NzU4NjkzMTY3Njk5NDk5ODIyNzY5NzY2NAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
