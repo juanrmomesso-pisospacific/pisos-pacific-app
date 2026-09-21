@@ -139786,6 +139786,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-21T16:48:28.043Z",
       "last_touch_at": "2026-09-21T16:48:28.043Z"
+    },
+    {
+      "id": "lead-email-1a0c532e3cff",
+      "name": "Dolores Rubio",
+      "email": "mdrarq@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: RV: Presupuesto Piso Pre Finish — Hola, buenas tardes\r\n\r\nMe pongo en contacto porque necesito cotizar para la refacción de una casa, la provisión y colocación de piso de madera pre finished\r\n\r\nLa casa se encuentra ",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-21T18:20:31.000Z",
+      "last_touch_at": "2026-09-21T18:20:31.000Z"
     }
   ],
   "conversations": [
@@ -146872,6 +146889,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-21T16:48:48.568Z",
       "last_outbound_at": "2026-09-21T17:53:16.629Z"
+    },
+    {
+      "id": "conv-email-1a0c532e3cff",
+      "channel": "email",
+      "contact_id": "mdrarq@gmail.com",
+      "contact_name": "Dolores Rubio",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0c532e3cff",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-21T18:20:31.000Z",
+      "last_message_preview": "Hola, buenas tardes\r\n\r\nMe pongo en contacto porque necesito cotizar para la refacción de una casa, la provisión y colocación de piso de made",
+      "email_subject": "RV: Presupuesto Piso Pre Finish",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-21T18:20:31.000Z"
     }
   ],
   "messages": [
@@ -167026,6 +167058,14 @@
       "body": "Gracias",
       "ts": "2026-09-21T18:03:26.014Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0c532e3cff",
+      "conversation_id": "conv-email-1a0c532e3cff",
+      "direction": "in",
+      "body": "✉️ RV: Presupuesto Piso Pre Finish\n\nHola, buenas tardes\r\n\r\nMe pongo en contacto porque necesito cotizar para la refacción de una casa, la provisión y colocación de piso de madera pre finished\r\n\r\nLa casa se encuentra en el barrio de Colegiales\r\nLes adjunto  los planos (marque en violeta lo que iría con piso pre finish)\r\n\r\n\r\n  *\r\nPLANTA BAJA = 40 m2\r\n\r\nAcceso = 5.40 m2\r\nLiving = 30 m2\r\nCirculación + escalones = 4.50 m2\r\n\r\nSe coloca sobre manta eléctrica\r\n\r\n\r\n  *\r\nPLANTA ALTA = 60 m2\r\n\r\n\r\nSector Suite = 27 m2\r\nSector pasillo + dormitorios frente = 32 m2\r\nSe coloca sobre manta eléctrica\r\n\r\nNo está calculado desperdicio\r\n\r\nEn cuanto al producto para cotizar me interesa aquellos que son de 4 mm de espesor la capa de madera\r\nPuede ser\r\n\r\n\r\n  *\r\nRoble Europeo Handsculped\r\n  *\r\nRoble Europeo Veta Cerrada\r\n\r\nEn el caso de avanzar tienen un showroom para ir a ver los productos y ver las opciones?\r\n\r\nDesde ya muchas Gracias\r\n\r\n\r\nArq. Dolores Rubio\r\n11 3439 3497\r\nMDR arq",
+      "ts": "2026-09-21T18:20:31.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -175543,7 +175583,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-21T01:38:06.958Z",
     "gmail_seen_ids": [
-      "19f6525f1c0267e0",
       "19f654b21f73d1b9",
       "19f656abef05e5c4",
       "19f65ab4c1d8b40a",
@@ -176342,7 +176381,8 @@
       "1a0c3f82844a1e5e",
       "1a0c40da436e08ae",
       "1a0c43275027ca6e",
-      "1a0c45e077856d34"
+      "1a0c45e077856d34",
+      "1a0c532e3cff0b77"
     ],
     "cash_sessions": {
       "1136982222": {
