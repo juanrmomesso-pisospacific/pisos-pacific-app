@@ -146851,12 +146851,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790000345117",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-21T15:44:43.825Z",
-      "last_message_preview": "H2o",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-21T17:53:37.654Z",
+      "last_message_preview": "Perfecto jess en un rato te mandamos!",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-21T15:44:43.825Z",
-      "last_outbound_at": "2026-09-21T14:35:34.580Z"
+      "last_outbound_at": "2026-09-21T17:53:37.654Z"
     },
     {
       "id": "conv-1790009310723-m3cf",
@@ -167007,6 +167007,16 @@
       "ts": "2026-09-21T17:53:16.629Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAxOTkxNTMyNjc4OTI5NjE3NDA4Mzk4NTIwNTM2MjY4OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1790013218289-wk0j",
+      "conversation_id": "conv-1790000345117-9cde",
+      "direction": "out",
+      "body": "Perfecto jess en un rato te mandamos!",
+      "ts": "2026-09-21T17:53:37.654Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTkxNTcxNDYyNTgzNjg3NzU4NjMyMDM5Mzc2NDg2NAZDZD",
       "via": "ig-app"
     }
   ],
