@@ -146697,11 +146697,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789775664200",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-19T10:54:30.916Z",
-      "last_message_preview": "Hola José cómo estás? Si nuestro deposito está en olivos a la altura de Debenedetti y panamericana. Es con cita previa! Si te interesa pasar",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-18T23:54:22.082Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-21T13:47:36.748Z",
+      "last_message_preview": "Buenísimo, gracias!",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-21T13:47:36.748Z",
       "last_outbound_at": "2026-09-19T10:54:30.916Z"
     },
     {
@@ -166793,6 +166793,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nMuchas gracias por la respuesta. En sí estamos buscando una opción de los\r\nvinílicos SPC con un tono similar a estos porcelanatos pecan vite\r\n<https://www.viteporcellanato.com/porcellanato-31-pecan>, que es un roble\r\nnatural. ¿Qué diferencias hay entre las distintas líneas que ofrecen? y\r\n¿Qué precios tienen?\r\n\r\nDesde ya muchas gracias.\r\n\r\nSaludos\r\n\r\nEl mié, 16 sept 2026 a la(s) 10:47 a.m., Pisos Pacific (\r\ninfo@pisospacific.com) escribió:\r\n\r\n> Hola Raúl, ¿cómo estás?\r\n>\r\n> Contanos qué colección te interesa y te pasamos el presupuesto.\r\n>\r\n> Para una superficie de 8 m² no realizamos la colocación, pero podemos\r\n> recomendarte instaladores con los que trabajamos habitualmente.\r\n>\r\n> ¡Saludos!\r\n> Equipo Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-20T21:38:04.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1789998457927-zu3i",
+      "conversation_id": "conv-1789775664200-pctp",
+      "direction": "in",
+      "body": "Buenísimo, gracias!",
+      "ts": "2026-09-21T13:47:36.748Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -177403,7 +177411,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQ0ODc4NDYzNzIxMjY5MDozMzAxNTIyOTU3NzgxMjA5Nzk5MTQ0MTk3MTA5NjMyMjA0OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxNTMzNjMyMzUyNTgzNzYwMDU5MTc5MzEzNjU5OTA0MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxNTMzNjQwMzA1NzQyNTE0Nzg4ODMzMzMyNjY0NzI5NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE3MTA2NTQzMTUzMDcxNzozMzAxNTUzMzU4Nzc5ODQxMjk4MDg2MDQ0MDQ4NDUxMTc0NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE3MTA2NTQzMTUzMDcxNzozMzAxNTUzMzU4Nzc5ODQxMjk4MDg2MDQ0MDQ4NDUxMTc0NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE3MTA2NTQzMTUzMDcxNzozMzAxOTY0MzQyMzk2NzgxMDIyODk1NjYzMTc0NjQ3ODA4MAZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
