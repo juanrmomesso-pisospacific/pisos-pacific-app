@@ -37217,6 +37217,77 @@
       "quote_number": "A6984",
       "status": "DRAFT",
       "lead_id": "local-1789756852337-tpbqy"
+    },
+    {
+      "id": "local-1790026233756-p1f94",
+      "client_id": "",
+      "client_name": "Jessica Basista",
+      "client_dni": "",
+      "client_email": "jvbasista@hotmail.com",
+      "client_phone": "",
+      "client_address": "",
+      "internal_notes": "Email: OBS | Presupuesto pisos — Buen día,\r\n\r\nMi nombre es Luján, arquitecta del estudio Nuñez Nicholson.\r\nEstamos proyectando una reforma en San Fernando, y queríamos cotizar con\r\nustedes la provisión y colocació",
+      "public_notes": "Las medidas deberán ser verificadas en obra, al igual que el estado y las condiciones de la carpeta, previo a la colocación.\n",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Obra Malabia",
+      "has_iva": true,
+      "price": 8372.7644,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 141.7,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 5384.599999999999,
+          "discount": 538.46,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 141,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "disc_value": 10,
+          "total": 2115,
+          "discount": 211.5,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 170,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 170,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 749.96,
+      "discount_amount": 749.96,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-21T21:30:33.434Z",
+      "quote_number": "A3567",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a0c43275027"
     }
   ],
   "clients": [
@@ -139869,10 +139940,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 141m² · Con Colocación · CP Radio: Con Colocación",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-21T13:40:35.000Z",
-      "last_touch_at": "2026-09-21T13:40:35.000Z"
+      "last_touch_at": "2026-09-21T21:30:33.688Z"
     },
     {
       "id": "lead-instagram-1790000345117",
