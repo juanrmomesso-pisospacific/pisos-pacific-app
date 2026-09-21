@@ -147064,12 +147064,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790000345117",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-21T18:03:26.014Z",
-      "last_message_preview": "Gracias",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-09-21T21:32:07.621Z",
+      "last_message_preview": "Cualquier cosa estamos a disposición",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-21T18:03:26.014Z",
-      "last_outbound_at": "2026-09-21T17:53:37.654Z"
+      "last_outbound_at": "2026-09-21T21:32:07.621Z"
     },
     {
       "id": "conv-1790009310723-m3cf",
@@ -167324,6 +167324,26 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0c5e1e92142871"
+    },
+    {
+      "id": "m-1790026323577-2lfw",
+      "conversation_id": "conv-1790000345117-9cde",
+      "direction": "out",
+      "body": "Hola Jess! Ahí nos avisaron que lo enviaron por mail",
+      "ts": "2026-09-21T21:32:03.063Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAyMDE1NzQ2Njc1ODU5NTU4OTkyMzI0MzE4NTY2ODA5NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1790026328015-i643",
+      "conversation_id": "conv-1790000345117-9cde",
+      "direction": "out",
+      "body": "Cualquier cosa estamos a disposición",
+      "ts": "2026-09-21T21:32:07.621Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAyMDE1NzU1MDgzNDQyNzg1OTMxMzY4OTE1OTAwODI1NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
