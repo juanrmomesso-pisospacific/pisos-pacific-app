@@ -147035,11 +147035,12 @@
       "linked_lead_id": "lead-email-1a0bac5bca1f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-19T17:45:03.000Z",
-      "last_message_preview": "Hola, buenas tardes! Quisiera saber el valor de estos dos pisos Roble 9cm\r\nlacquered y\r\nRoble Veta Tallada 12 cm, la superficie a cubrir son",
+      "last_message_at": "2026-09-21T21:36:24.576Z",
+      "last_message_preview": "Hola Pablo, ¿cómo estás?\n\nTe paso el link de nuestra página donde podés ver todos los precios de la liquidación:\nhttps://pisospacific.com/li",
       "email_subject": "Presupuesto",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-19T17:45:03.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-19T17:45:03.000Z",
+      "last_outbound_at": "2026-09-21T21:36:24.576Z"
     },
     {
       "id": "conv-email-1a0c43275027",
@@ -167354,6 +167355,15 @@
       "ts": "2026-09-21T21:32:42.135Z",
       "status": "sent",
       "wa_id": "1a0c5e2ad2f93550"
+    },
+    {
+      "id": "m-1790026584576-abz5",
+      "conversation_id": "conv-email-1a0bac5bca1f",
+      "direction": "out",
+      "body": "Hola Pablo, ¿cómo estás?\n\nTe paso el link de nuestra página donde podés ver todos los precios de la liquidación:\nhttps://pisospacific.com/liquidacion\n\nSi te interesa alguno de los modelos, avisame y te armo un presupuesto formal con el detalle.\n\n¡Cualquier consulta, estoy a disposición!\nVictoria Collado\n1136982222",
+      "ts": "2026-09-21T21:36:24.576Z",
+      "status": "sent",
+      "wa_id": "1a0c5e611bb07938"
     }
   ],
   "templates": [
