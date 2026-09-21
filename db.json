@@ -147126,11 +147126,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790009310723",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-21T21:44:35.941Z",
-      "last_message_preview": "📄 Presupuesto NA5499 - Obra Villa gesell - Juli Rodriguez.pdf",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-21T19:55:07.716Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-21T23:45:56.713Z",
+      "last_message_preview": "Con colocacion no?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-21T23:45:56.713Z",
       "last_outbound_at": "2026-09-21T21:44:35.941Z"
     },
     {
@@ -167457,6 +167457,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAyMDE4MjkwODQ5MzY1MjAzNjUwMzQxMjIzMjE1OTIzMgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1790034357856-afyo",
+      "conversation_id": "conv-1790009310723-m3cf",
+      "direction": "in",
+      "body": "Con colocacion no?",
+      "ts": "2026-09-21T23:45:56.713Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -178105,7 +178113,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAxOTg0Mzk3MzY1NTk5Mzg3NTQyNjE2NDk0Njc2Mzc3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTkyNjU2Nzk2NTA1NTkxMjcwMTU1ODQ1MDU1MjgzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMDA1MDA2NjQwNDczNjI1NzYzMjU5NzkyNzAwMjExMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMDA1MDE5MjU0NjMyMDc5ODUyNTQ5NDYwMDQwMDg5NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMDA1MDE5MjU0NjMyMDc5ODUyNTQ5NDYwMDQwMDg5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMDMwNTY2MTQ0MTE5MDMxNDM1NDg2MzI0NTM2MTE1MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
