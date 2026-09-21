@@ -131113,6 +131113,35 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mu95ddrh-002"
+    },
+    {
+      "date": "2026-09-20T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-002",
+      "caja_name": "Mercado Pago",
+      "category": "Sin clasificar",
+      "subcategory": null,
+      "counterparty": "ADRIANMARRACCINO",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": null,
+      "description": "MP API · SETTLEMENT · available_money · op 180073176236",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 13000,
+      "amount_usd": 8.44,
+      "exchange_rate": 1540,
+      "fixed_variable": "Variable",
+      "expense_type": "Otros Gastos y Ajustes",
+      "transfer": false,
+      "needs_review": true,
+      "review_reason": "nombre estimado del perfil de MP — confirmar y clasificar",
+      "source": "mp-api",
+      "mp_op_id": "180073176236",
+      "mp_user_id": "173302986",
+      "raw_name": "ADRIANMARRACCINO",
+      "classified_by": "nickname del perfil MP (user 173302986)",
+      "id": "MOV-MPAUTO-muakszqm-001"
     }
   ],
   "containers": [
@@ -175274,8 +175303,8 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": 103248723,
-    "mp_last_sync": "2026-09-20T01:38:18.221Z",
+    "mp_pending_job": null,
+    "mp_last_sync": "2026-09-21T01:38:06.958Z",
     "gmail_seen_ids": [
       "19f639a7e0866b51",
       "19f63aaa48814819",
@@ -177896,7 +177925,7 @@
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
-    "mp_pending_at": "2026-09-21T01:36:57.160Z",
+    "mp_pending_at": null,
     "receipt_next": 112,
     "receipt_signature": "firma-juan.png",
     "receipt_signer": "Juan Rodriguez Momesso"
