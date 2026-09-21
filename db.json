@@ -146867,11 +146867,11 @@
       "linked_lead_id": "lead-instagram-1790009310723",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-21T17:53:00.781Z",
-      "last_message_preview": "Con colocación?",
+      "last_message_at": "2026-09-21T17:53:16.629Z",
+      "last_message_preview": "Si es así en qué zona sería? Y es sobre un piso existente o carpeta?",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-21T16:48:48.568Z",
-      "last_outbound_at": "2026-09-21T17:53:00.781Z"
+      "last_outbound_at": "2026-09-21T17:53:16.629Z"
     }
   ],
   "messages": [
@@ -166997,6 +166997,16 @@
       "ts": "2026-09-21T17:53:00.781Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAxOTkxNTAzNDQ0OTM3MjgyNDM3NTMwMTAwNTkwMTgyNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1790013197566-wjwx",
+      "conversation_id": "conv-1790009310723-m3cf",
+      "direction": "out",
+      "body": "Si es así en qué zona sería? Y es sobre un piso existente o carpeta?",
+      "ts": "2026-09-21T17:53:16.629Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAxOTkxNTMyNjc4OTI5NjE3NDA4Mzk4NTIwNTM2MjY4OAZDZD",
       "via": "ig-app"
     }
   ],
