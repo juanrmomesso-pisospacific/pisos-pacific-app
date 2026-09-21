@@ -147019,11 +147019,12 @@
       "linked_lead_id": "lead-email-1a0babb3320f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-19T17:33:44.000Z",
-      "last_message_preview": "Formulario web — 100m² · Sin Colocación · CP 5000 · Cordoba",
+      "last_message_at": "2026-09-21T21:32:42.135Z",
+      "last_message_preview": "Hola Maria, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-19T17:33:44.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-19T17:33:44.000Z",
+      "last_outbound_at": "2026-09-21T21:32:42.135Z"
     },
     {
       "id": "conv-email-1a0bac5bca1f",
@@ -147033,7 +147034,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0bac5bca1f",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-19T17:45:03.000Z",
       "last_message_preview": "Hola, buenas tardes! Quisiera saber el valor de estos dos pisos Roble 9cm\r\nlacquered y\r\nRoble Veta Tallada 12 cm, la superficie a cubrir son",
       "email_subject": "Presupuesto",
@@ -167344,6 +167345,15 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAyMDE1NzU1MDgzNDQyNzg1OTMxMzY4OTE1OTAwODI1NgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1790026362135-7zvh",
+      "conversation_id": "conv-email-1a0babb3320f",
+      "direction": "out",
+      "body": "Hola Maria, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-09-21T21:32:42.135Z",
+      "status": "sent",
+      "wa_id": "1a0c5e2ad2f93550"
     }
   ],
   "templates": [
