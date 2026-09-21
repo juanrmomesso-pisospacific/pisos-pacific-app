@@ -146866,11 +146866,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790009310723",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-21T16:48:48.568Z",
-      "last_message_preview": "Quisiera cotizar 40 mts2 de la linea h20 de roble eslavonia",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-21T16:48:48.568Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-21T17:53:00.781Z",
+      "last_message_preview": "Con colocación?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-21T16:48:48.568Z",
+      "last_outbound_at": "2026-09-21T17:53:00.781Z"
     }
   ],
   "messages": [
@@ -166977,6 +166978,26 @@
       "body": "Quisiera cotizar 40 mts2 de la linea h20 de roble eslavonia",
       "ts": "2026-09-21T16:48:48.568Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790013175813-jyte",
+      "conversation_id": "conv-1790009310723-m3cf",
+      "direction": "out",
+      "body": "Perfecto",
+      "ts": "2026-09-21T17:52:54.917Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAxOTkxNDkyNjI3Mzg4Mzk5MzYwNzM3OTg3MTU5NjU0NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1790013181302-d64g",
+      "conversation_id": "conv-1790009310723-m3cf",
+      "direction": "out",
+      "body": "Con colocación?",
+      "ts": "2026-09-21T17:53:00.781Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAxOTkxNTAzNDQ0OTM3MjgyNDM3NTMwMTAwNTkwMTgyNAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
