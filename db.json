@@ -139739,6 +139739,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-21T13:40:35.000Z",
       "last_touch_at": "2026-09-21T13:40:35.000Z"
+    },
+    {
+      "id": "lead-instagram-1790000345117",
+      "name": "@jessbasok",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-21T14:19:03.348Z",
+      "last_touch_at": "2026-09-21T14:19:03.348Z"
     }
   ],
   "conversations": [
@@ -146795,6 +146811,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-21T13:40:35.000Z"
+    },
+    {
+      "id": "conv-1790000345117-9cde",
+      "channel": "instagram",
+      "contact_id": "965440786604880",
+      "contact_name": "@jessbasok",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790000345117",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-21T14:19:03.348Z",
+      "last_message_preview": "Hola quiero pedirte presuepuesto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-21T14:19:03.348Z"
     }
   ],
   "messages": [
@@ -166841,6 +166871,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 141m² · Con Colocación · CP Radio: Con Colocación · Malabia",
       "ts": "2026-09-21T13:40:35.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790000345117-uq44",
+      "conversation_id": "conv-1790000345117-9cde",
+      "direction": "in",
+      "body": "Hola quiero pedirte presuepuesto",
+      "ts": "2026-09-21T14:19:03.348Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -177452,7 +177490,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxNTMzNjMyMzUyNTgzNzYwMDU5MTc5MzEzNjU5OTA0MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxNTMzNjQwMzA1NzQyNTE0Nzg4ODMzMzMyNjY0NzI5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE3MTA2NTQzMTUzMDcxNzozMzAxNTUzMzU4Nzc5ODQxMjk4MDg2MDQ0MDQ4NDUxMTc0NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE3MTA2NTQzMTUzMDcxNzozMzAxOTY0MzQyMzk2NzgxMDIyODk1NjYzMTc0NjQ3ODA4MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE3MTA2NTQzMTUzMDcxNzozMzAxOTY0MzQyMzk2NzgxMDIyODk1NjYzMTc0NjQ3ODA4MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTY3ODIyNTYwODIyMTUzNzQ1NjgyMzE0NTA3MDU5MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
