@@ -146947,11 +146947,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790009310723",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-21T17:53:16.629Z",
-      "last_message_preview": "Si es así en qué zona sería? Y es sobre un piso existente o carpeta?",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-21T16:48:48.568Z",
+      "unread_count": 2,
+      "last_message_at": "2026-09-21T19:55:07.716Z",
+      "last_message_preview": "En villa gesell",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-21T19:55:07.716Z",
       "last_outbound_at": "2026-09-21T17:53:16.629Z"
     },
     {
@@ -167130,6 +167130,22 @@
       "body": "✉️ RV: Presupuesto Piso Pre Finish\n\nHola, buenas tardes\r\n\r\nMe pongo en contacto porque necesito cotizar para la refacción de una casa, la provisión y colocación de piso de madera pre finished\r\n\r\nLa casa se encuentra en el barrio de Colegiales\r\nLes adjunto  los planos (marque en violeta lo que iría con piso pre finish)\r\n\r\n\r\n  *\r\nPLANTA BAJA = 40 m2\r\n\r\nAcceso = 5.40 m2\r\nLiving = 30 m2\r\nCirculación + escalones = 4.50 m2\r\n\r\nSe coloca sobre manta eléctrica\r\n\r\n\r\n  *\r\nPLANTA ALTA = 60 m2\r\n\r\n\r\nSector Suite = 27 m2\r\nSector pasillo + dormitorios frente = 32 m2\r\nSe coloca sobre manta eléctrica\r\n\r\nNo está calculado desperdicio\r\n\r\nEn cuanto al producto para cotizar me interesa aquellos que son de 4 mm de espesor la capa de madera\r\nPuede ser\r\n\r\n\r\n  *\r\nRoble Europeo Handsculped\r\n  *\r\nRoble Europeo Veta Cerrada\r\n\r\nEn el caso de avanzar tienen un showroom para ir a ver los productos y ver las opciones?\r\n\r\nDesde ya muchas Gracias\r\n\r\n\r\nArq. Dolores Rubio\r\n11 3439 3497\r\nMDR arq",
       "ts": "2026-09-21T18:20:31.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790020502241-eekk",
+      "conversation_id": "conv-1790009310723-m3cf",
+      "direction": "in",
+      "body": "Piso ceramico!",
+      "ts": "2026-09-21T19:55:00.878Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1790020508728-36q0",
+      "conversation_id": "conv-1790009310723-m3cf",
+      "direction": "in",
+      "body": "En villa gesell",
+      "ts": "2026-09-21T19:55:07.716Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -177764,7 +177780,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTc3MzA1MDY2NzcwNjgxMDI5NTAwMDg1Njc4ODk5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAxOTg0MzU5NTAyODY5NTAwMjgxODE0NDA0OTgyMzc0NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAxOTg0Mzk3MzY1NTk5Mzg3NTQyNjE2NDk0Njc2Mzc3NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTkyNjU2Nzk2NTA1NTkxMjcwMTU1ODQ1MDU1MjgzMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTkyNjU2Nzk2NTA1NTkxMjcwMTU1ODQ1MDU1MjgzMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMDA1MDA2NjQwNDczNjI1NzYzMjU5NzkyNzAwMjExMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMDA1MDE5MjU0NjMyMDc5ODUyNTQ5NDYwMDQwMDg5NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
