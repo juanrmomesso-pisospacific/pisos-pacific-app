@@ -146884,11 +146884,12 @@
       "linked_lead_id": "lead-email-1a0b6e83acec",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-18T23:44:27.000Z",
-      "last_message_preview": "Formulario web — 60m² · Con Colocación · CP C1427 · 14 de Julio 1024",
+      "last_message_at": "2026-09-21T21:24:30.636Z",
+      "last_message_preview": "Hola Alejandra, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuest",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-18T23:44:27.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-18T23:44:27.000Z",
+      "last_outbound_at": "2026-09-21T21:24:30.636Z"
     },
     {
       "id": "conv-1789775664200-pctp",
@@ -146913,7 +146914,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0b75b17964",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-19T01:49:54.000Z",
       "last_message_preview": "Formulario web — 100m² · Sin Colocación · CP 1417 · Pasaje Columbia 4987",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -167211,6 +167212,15 @@
       "ts": "2026-09-21T21:24:06.967Z",
       "status": "sent",
       "wa_id": "1a0c5dad10bb2341"
+    },
+    {
+      "id": "m-1790025870636-n4cp",
+      "conversation_id": "conv-email-1a0b6e83acec",
+      "direction": "out",
+      "body": "Hola Alejandra, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Equipo Pacific",
+      "ts": "2026-09-21T21:24:30.636Z",
+      "status": "sent",
+      "wa_id": "1a0c5db2d783c063"
     }
   ],
   "templates": [
