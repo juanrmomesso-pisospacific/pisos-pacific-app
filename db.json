@@ -139770,6 +139770,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-21T14:19:03.348Z",
       "last_touch_at": "2026-09-21T14:19:03.348Z"
+    },
+    {
+      "id": "lead-instagram-1790009310723",
+      "name": "@rodriguezjuli5",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-21T16:48:28.043Z",
+      "last_touch_at": "2026-09-21T16:48:28.043Z"
     }
   ],
   "conversations": [
@@ -146841,6 +146857,20 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-21T15:44:43.825Z",
       "last_outbound_at": "2026-09-21T14:35:34.580Z"
+    },
+    {
+      "id": "conv-1790009310723-m3cf",
+      "channel": "instagram",
+      "contact_id": "1749268809635227",
+      "contact_name": "@rodriguezjuli5",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790009310723",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-21T16:48:28.043Z",
+      "last_message_preview": "Hola!",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-21T16:48:28.043Z"
     }
   ],
   "messages": [
@@ -166931,6 +166961,14 @@
       "body": "H2o",
       "ts": "2026-09-21T15:44:43.825Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790009310723-xc0h",
+      "conversation_id": "conv-1790009310723-m3cf",
+      "direction": "in",
+      "body": "Hola!",
+      "ts": "2026-09-21T16:48:28.043Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -177549,7 +177587,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE3MTA2NTQzMTUzMDcxNzozMzAxOTY0MzQyMzk2NzgxMDIyODk1NjYzMTc0NjQ3ODA4MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTY3ODIyNTYwODIyMTUzNzQ1NjgyMzE0NTA3MDU5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTc3MjE2MDY4NTUyMDM4MTAzNzY4ODU5NTE1Mjg5NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTc3MzA1MDY2NzcwNjgxMDI5NTAwMDg1Njc4ODk5MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTc3MzA1MDY2NzcwNjgxMDI5NTAwMDg1Njc4ODk5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAxOTg0MzU5NTAyODY5NTAwMjgxODE0NDA0OTgyMzc0NAZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
