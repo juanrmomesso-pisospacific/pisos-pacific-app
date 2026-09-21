@@ -34834,8 +34834,8 @@
       "seller_name": "Juan Rodriguez Momesso",
       "seller_phone": "+54 9 11 51750087",
       "title": "Obra - 114 - Edificio",
-      "has_iva": true,
-      "price": 6157.6900000000005,
+      "has_iva": false,
+      "price": 5089,
       "zoned": false,
       "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
       "items": [
