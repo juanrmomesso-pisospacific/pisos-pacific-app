@@ -146835,11 +146835,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790000345117",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-21T14:35:34.580Z",
-      "last_message_preview": "Para pasarte presupuesto necesitamos los siguientes datos! \n- que colección de piso te interesa?\n- cantidad de m2 aprox?\n- Es una obra nueva",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-21T14:19:03.348Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-21T15:43:55.579Z",
+      "last_message_preview": "Jvbasista@hotmail.com\n141 mtrs cin colocacion y zocalo\nEs una renodelacion parte hay ceramico y parte xarpeta nueva\nEl piso click \nPalermo",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-21T15:43:55.579Z",
       "last_outbound_at": "2026-09-21T14:35:34.580Z"
     }
   ],
@@ -166915,6 +166915,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTY5NjUxMDU5OTYyMTc1OTk1NjY1MzU1ODQ2NDUxMgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1790005436532-awfd",
+      "conversation_id": "conv-1790000345117-9cde",
+      "direction": "in",
+      "body": "Jvbasista@hotmail.com\n141 mtrs cin colocacion y zocalo\nEs una renodelacion parte hay ceramico y parte xarpeta nueva\nEl piso click \nPalermo",
+      "ts": "2026-09-21T15:43:55.579Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -177531,7 +177539,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAxNTMzNjQwMzA1NzQyNTE0Nzg4ODMzMzMyNjY0NzI5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE3MTA2NTQzMTUzMDcxNzozMzAxNTUzMzU4Nzc5ODQxMjk4MDg2MDQ0MDQ4NDUxMTc0NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE3MTA2NTQzMTUzMDcxNzozMzAxOTY0MzQyMzk2NzgxMDIyODk1NjYzMTc0NjQ3ODA4MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTY3ODIyNTYwODIyMTUzNzQ1NjgyMzE0NTA3MDU5MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTY3ODIyNTYwODIyMTUzNzQ1NjgyMzE0NTA3MDU5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI2NTI2OTI0NzE3NDcxMzozMzAxOTc3MjE2MDY4NTUyMDM4MTAzNzY4ODU5NTE1Mjg5NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
