@@ -37289,6 +37289,50 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a0c43275027",
       "share_token": "e5109faf9a5b5ca8f1a0e7a6"
+    },
+    {
+      "id": "local-1790026978147-lmocq",
+      "client_id": "",
+      "client_name": "Juli Rodriguez",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "",
+      "internal_notes": "Lead automático desde instagram",
+      "public_notes": "La entrega se cotizará una vez que el cliente decida avanzar, a través de Viacargo o Andesmar.\n\nLas medidas indicadas fueron proporcionadas por el cliente y deberán ser verificadas en obra antes de la colocación.\n",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Obra Villa gesell",
+      "has_iva": true,
+      "price": 1725.6294,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 41.7,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 1584.6000000000001,
+          "discount": 158.46,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 158.46,
+      "discount_amount": 158.46,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-21T21:42:57.988Z",
+      "quote_number": "A5499",
+      "status": "DRAFT",
+      "lead_id": "lead-instagram-1790009310723"
     }
   ],
   "clients": [
@@ -139973,10 +140017,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-21T16:48:28.043Z",
-      "last_touch_at": "2026-09-21T16:48:28.043Z"
+      "last_touch_at": "2026-09-21T21:42:58.230Z"
     },
     {
       "id": "lead-email-1a0c532e3cff",
