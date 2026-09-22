@@ -37710,7 +37710,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "Obra Estudio Harmony",
       "has_iva": true,
-      "price": 2758.8,
+      "price": 2836.9660000000003,
       "zoned": false,
       "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m + 2 más",
       "items": [
@@ -37718,11 +37718,11 @@
           "product_id": "local-1790089780830-ghwcm",
           "sku": "PROD-400",
           "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
-          "quantity": 40,
+          "quantity": 41.7,
           "unit_price": 38,
           "cost": 16,
           "category": "Pisos H2O",
-          "total": 1520,
+          "total": 1584.6000000000001,
           "discount": 0,
           "image": "",
           "target_item_index": null
