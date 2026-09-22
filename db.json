@@ -134018,7 +134018,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-06T07:14:51.000Z",
-      "last_touch_at": "2026-09-07T09:28:33.000Z"
+      "last_touch_at": "2026-09-22T07:47:52.000Z"
     },
     {
       "id": "lead-email-19f381e4939c",
@@ -142128,12 +142128,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f3647c461f",
       "status": "closed",
-      "unread_count": 11,
-      "last_message_at": "2026-09-07T09:28:33.000Z",
-      "last_message_preview": "Hi Victoria,\r\n\r\nThey factory passed me 3 times the TDS but it was not correct, I instructed him how to do it right, now they don't reply me,",
+      "unread_count": 12,
+      "last_message_at": "2026-09-22T07:47:52.000Z",
+      "last_message_preview": "Hi Victoria,\r\n\r\nSorry they are kinda slow. still not complete. this verison still not complete, but i can share with you at the moment.\r\nBec",
       "email_subject": "RE: New order of wall panels | Argentina",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-07T09:28:33.000Z",
+      "last_inbound_at": "2026-09-22T07:47:52.000Z",
       "last_outbound_at": "2026-07-15T00:12:41.000Z",
       "ignored": true
     },
@@ -167554,6 +167554,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMDM0NDQ0ODg1MTczNzE4MTAxNDUyMTQ2NzEwOTM3NgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a0c81642957",
+      "conversation_id": "conv-email-19f3647c461f",
+      "direction": "in",
+      "body": "✉️ RE: RE: Re: Re: Exterior and Interior panel\n\nHi Victoria,\r\n\r\nSorry they are kinda slow. still not complete. this verison still not complete, but i can share with you at the moment.\r\nBecause they have 2 types of lac, i requested them to mark one with B1 fire proof, the lac name and test result, the other one with B2 without fire proof, the lac name and test result.\r\nThey are not coming back yet, when they finally complete the file, i will send you again.\r\n\r\nIf you need anything specific, pls let me know.\r\nThank you\r\n \r\n \r\n*******     ********    ********     ********    ********     ********    ********     ********    ********     ********    ********     ********  \r\nATTENTION: Our bank information remains always the same if no further notification, pls CALL us to double check if you received scam mails asking to pay to a new account\r\n \r\n \r\nThanks & B.rgs\r\nGina Bao/Cfloor Service\r\n \r\nAddress: Room 1108/1109, Tower A. \r\nShiAo International center, \r\nNo 101 ShaoYaoJu Bei Li. \r\nChaoYang District. Beijing 100029 China.\r\n \r\nTel: 0086 10 84351355 \r\nMobile: +86 132 6001 6981\r\nEmail: gina@cfloor.net\r\nWebsite: www.cfloor.net\r\n \r\n \r\n--------------- Original Message ----------\r\nFrom: Cfloor-Gina<gina@cfloor.net>; \r\nTo: Victoria Pisos Pacific <victoria@pisospacific.com>; \r\nCC: info pisos <info@pisospacific.com>; \r\nSent: 2026-09-07 17:28\r\nSubject: RE: Re: Re: Exterior and Interior panel\r\n\r\n\r\nHi Victoria,\r\n \r\nThey factory passed me 3 times the TDS but it was not correct, I instructed him how to do it right, now they don't reply me, j",
+      "ts": "2026-09-22T07:47:52.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -176088,7 +176096,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-22T01:38:18.801Z",
     "gmail_seen_ids": [
-      "19f65dce69d3605e",
       "19f65d1eb97d310f",
       "19f65d104c9b131e",
       "19f6681004dc9394",
@@ -176887,7 +176894,8 @@
       "1a0c539bbab56f80",
       "1a0c5d23c9264f7c",
       "1a0c5cee8a71fa27",
-      "1a0c5dcb12b76448"
+      "1a0c5dcb12b76448",
+      "1a0c8164295783d6"
     ],
     "cash_sessions": {
       "1136982222": {
