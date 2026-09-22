@@ -37425,7 +37425,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "Obra Departamento Propio - Vte Lopez",
       "has_iva": true,
-      "price": 2812.7660000000005,
+      "price": 2621.0294000000004,
       "zoned": false,
       "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
       "items": [
@@ -37437,8 +37437,9 @@
           "unit_price": 38,
           "cost": 16.33,
           "category": "Pisos H2O",
+          "disc_value": 10,
           "total": 1584.6000000000001,
-          "discount": 0,
+          "discount": 158.46,
           "image": "",
           "target_item_index": null
         },
@@ -37469,8 +37470,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 0,
-      "discount_amount": 0,
+      "discount_total": 158.46,
+      "discount_amount": 158.46,
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
