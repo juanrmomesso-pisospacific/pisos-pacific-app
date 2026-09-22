@@ -147088,13 +147088,14 @@
       "contact_name": "María Pecchinenda",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0af3434f1c",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-17T11:50:28.000Z",
       "last_message_preview": "Hola ,\r\n\r\n\r\nEspero que estés muy bien.\r\n\r\n\r\nQueríamos consultarte si en **Pisos Pacific** ya están elaborando el plan de comunicación para e",
       "email_subject": "Consulta",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T11:50:28.000Z"
+      "last_inbound_at": "2026-09-17T11:50:28.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0af39255b3",
