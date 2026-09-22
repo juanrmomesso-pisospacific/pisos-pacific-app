@@ -39748,6 +39748,18 @@
       "notes": null,
       "name": "Daniela Ibañez",
       "updated_at": "2026-09-18T18:38:29.683Z"
+    },
+    {
+      "id": "CLI-mucx74zk-6qtg",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Gerardo Duran",
+      "updated_at": "2026-09-22T17:00:34.688Z"
     }
   ],
   "expenses": [],
