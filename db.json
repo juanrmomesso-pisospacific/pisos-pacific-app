@@ -147127,11 +147127,11 @@
       "linked_lead_id": "lead-instagram-1790009310723",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-21T23:45:56.713Z",
-      "last_message_preview": "Con colocacion no?",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-22T00:20:59.383Z",
+      "last_message_preview": "Colocacion en Villa Gesell no tenemos pero podemos recomendarte a Gastón que trabaja con nosotros",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-21T23:45:56.713Z",
-      "last_outbound_at": "2026-09-21T21:44:35.941Z"
+      "last_outbound_at": "2026-09-22T00:20:59.383Z"
     },
     {
       "id": "conv-email-1a0c532e3cff",
@@ -167465,6 +167465,16 @@
       "body": "Con colocacion no?",
       "ts": "2026-09-21T23:45:56.713Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790036460245-esr3",
+      "conversation_id": "conv-1790009310723-m3cf",
+      "direction": "out",
+      "body": "Colocacion en Villa Gesell no tenemos pero podemos recomendarte a Gastón que trabaja con nosotros",
+      "ts": "2026-09-22T00:20:59.383Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMDM0NDQ0ODg1MTczNzE4MTAxNDUyMTQ2NzEwOTM3NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
