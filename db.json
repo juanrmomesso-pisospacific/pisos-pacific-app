@@ -39804,37 +39804,10 @@
       "notes": null,
       "name": "Hugo Ramirez",
       "updated_at": "2026-08-30T22:38:47.552Z",
-      "reseller": true,
-      "reseller_mode": "comision",
-      "reseller_comision": {
-        "type": "price_list",
-        "price_list": {
-          "PROD-022": 25,
-          "PROD-023": 25,
-          "PROD-024": 25,
-          "PROD-025": 25,
-          "PROD-026": 25,
-          "PROD-027": 25,
-          "PROD-028": 25,
-          "PROD-190": 25,
-          "PROD-202": 25,
-          "PROD-029": 25,
-          "PROD-030": 25,
-          "PROD-031": 25,
-          "PROD-032": 25,
-          "PROD-033": 25,
-          "PROD-034": 25,
-          "PROD-035": 25,
-          "PROD-036": 25,
-          "PROD-037": 25,
-          "PROD-038": 25,
-          "PROD-400": 25,
-          "PROD-201": 65,
-          "PROD-004": 75,
-          "PROD-010": 48.75,
-          "PROD-011": 48.75
-        }
-      }
+      "reseller": false,
+      "reseller_mode": null,
+      "reseller_comision": null,
+      "reseller_reventa": null
     },
     {
       "id": "CLI-mthkis2o-h3za",
@@ -39942,7 +39915,32 @@
       "reseller_mode": "comision",
       "reseller_comision": {
         "type": "price_list",
-        "price_list": {}
+        "price_list": {
+          "PROD-022": 25,
+          "PROD-023": 25,
+          "PROD-024": 25,
+          "PROD-025": 25,
+          "PROD-026": 25,
+          "PROD-027": 25,
+          "PROD-028": 25,
+          "PROD-190": 25,
+          "PROD-202": 25,
+          "PROD-029": 25,
+          "PROD-030": 25,
+          "PROD-031": 25,
+          "PROD-032": 25,
+          "PROD-033": 25,
+          "PROD-034": 25,
+          "PROD-035": 25,
+          "PROD-036": 25,
+          "PROD-037": 25,
+          "PROD-038": 25,
+          "PROD-400": 25,
+          "PROD-201": 65,
+          "PROD-004": 75,
+          "PROD-010": 48.75,
+          "PROD-011": 48.75
+        }
       }
     },
     {
