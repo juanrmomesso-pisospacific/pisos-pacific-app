@@ -40074,6 +40074,18 @@
       "notes": null,
       "name": "Gerardo Duran",
       "updated_at": "2026-09-22T17:00:34.688Z"
+    },
+    {
+      "id": "CLI-mud2rkwa-8ppd",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Elizabeth Dacoba",
+      "updated_at": "2026-09-22T19:36:26.506Z"
     }
   ],
   "expenses": [],
