@@ -147373,11 +147373,11 @@
       "linked_lead_id": "lead-instagram-1790009310723",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-22T13:46:46.619Z",
-      "last_message_preview": "Genial! Y eso seria adicional entiendo no?",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-22T16:10:00.003Z",
+      "last_message_preview": "Sisi eso lo arreglas con el directamente",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-22T13:46:46.619Z",
-      "last_outbound_at": "2026-09-22T00:20:59.383Z"
+      "last_outbound_at": "2026-09-22T16:10:00.003Z"
     },
     {
       "id": "conv-email-1a0c532e3cff",
@@ -167768,6 +167768,16 @@
       "body": "✉️ Opciones de suministro SPC para Pisos Pacific\n\nHola equipo de Pisos Pacific,\r\n\r\nHe visto su trayectoria en pisos de madera y la forma en que han\r\nincorporado opciones SPC para los interiores actuales. La combinación\r\nde productos y servicios que manejan permite acompañar distintos\r\nproyectos de interior sin limitarse a una sola solución.\r\n\r\nPor eso quise presentarme. Soy Weston de Anyway Flooring, fabricante\r\nchino de pisos SPC y LVT. Trabajamos con importadores y distribuidores\r\nque quieren complementar sus líneas actuales con opciones flexibles de\r\ndiseños, capas de uso, acabados superficiales y base integrada.\r\n\r\n¿Estarían abiertos a revisar opciones adicionales de suministro de SPC\r\npara futuras actualizaciones de su gama?\r\n\r\nSi les parece útil, con gusto puedo enviarles nuestro catálogo de\r\nproductos. Incluye colecciones de SPC y LVT en tablón y espiga,\r\nespecificaciones disponibles, diseños, acabados superficiales,\r\nopciones de base integrada, accesorios e información técnica.\r\n\r\nSaludos cordiales,\r\nWeston Li\r\nAnyway Flooring\r\nhttps://www.anywayflooring.com/",
       "ts": "2026-09-22T13:52:41.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790093400819-s75v",
+      "conversation_id": "conv-1790009310723-m3cf",
+      "direction": "out",
+      "body": "Sisi eso lo arreglas con el directamente",
+      "ts": "2026-09-22T16:10:00.003Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMTM5NDgxNzkxMDExMDU4NjYzODc0MDY3Mjc0MTM3NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
