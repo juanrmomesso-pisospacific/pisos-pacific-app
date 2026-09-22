@@ -147415,13 +147415,14 @@
       "contact_name": "Weston Li",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0c964169e9",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-22T13:52:41.000Z",
       "last_message_preview": "Hola equipo de Pisos Pacific,\r\n\r\nHe visto su trayectoria en pisos de madera y la forma en que han\r\nincorporado opciones SPC para los interio",
       "email_subject": "Opciones de suministro SPC para Pisos Pacific",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-22T13:52:41.000Z"
+      "last_inbound_at": "2026-09-22T13:52:41.000Z",
+      "ignored": true
     }
   ],
   "messages": [
