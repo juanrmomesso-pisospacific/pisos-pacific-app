@@ -9,9 +9,28 @@ import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { DataState } from "@/components/ui/data-state"
 import { fmtMoney, fmtInt, appLocale } from "@/lib/utils"
+import { ClientForm } from "@/components/forms/ClientForm"
+import { SearchPicker } from "@/components/SearchPicker"
+import { UserPlus, Pencil } from "lucide-react"
 import type { Sale } from "@/lib/types"
+import type { ResellerFields } from "@/lib/reseller"
 
-type Client = { id: string; name: string; reseller?: boolean; reseller_mode?: string }
+type Client = { id: string; name: string } & ResellerFields & Record<string, unknown>
+
+// Resumen de la config de un revendedor (para la lista de gestión).
+function resellerSummary(c: Client): string {
+  if (c.reseller_mode === "comision") {
+    const k = c.reseller_comision
+    if (k?.type === "pct") return `Comisión ${k.pct ?? 0}%`
+    if (k?.type === "per_m2") return `Comisión $${k.per_m2 ?? 0}/m²`
+    if (k?.type === "tiered_m2") return "Comisión por escala (m²)"
+    if (k?.type === "price_list") return `Comisión por lista (${Object.keys(k.price_list ?? {}).length} precios)`
+    return "Comisión"
+  }
+  const r = c.reseller_reventa
+  if (r?.mode === "lista") return `Mayorista · lista de precios (${Object.keys(r.price_list ?? {}).length})`
+  return `Mayorista · ${r?.desc_acuerdo ?? 0}% + tramos por volumen`
+}
 
 const COM_LABEL: Record<string, string> = { pct: "%", per_m2: "$/m²", tiered_m2: "escala m²" }
 
@@ -20,6 +39,9 @@ export default function ComisionesPage() {
   const sales = salesApi.data ?? []
   const clients = useApi<Client[]>("/api/clients").data ?? []
   const markPaid = useAction(api.commissionPaid)
+  const [editClient, setEditClient] = useState<Client | null>(null)
+  const [adding, setAdding] = useState(false)
+  const resellers = useMemo(() => clients.filter(c => c.reseller).sort((a, b) => a.name.localeCompare(b.name)), [clients])
 
   // Ventas con comisión (revendedor asignado + monto), excluyendo canceladas.
   const rows = useMemo(() => sales.filter(s =>
@@ -52,6 +74,44 @@ export default function ComisionesPage() {
   return (
     <DataState loading={salesApi.loading} error={salesApi.error} hasData={sales.length > 0} onRetry={salesApi.refetch}>
       <div className="px-4 lg:px-6 space-y-4">
+        {/* ---- Gestión de revendedores (dónde se carga la comisión / lista de precios) ---- */}
+        <Card>
+          <CardHeader className="pb-2 flex-row items-center justify-between space-y-0">
+            <div>
+              <CardTitle className="text-base">Revendedores</CardTitle>
+              <p className="text-[11px] text-muted-foreground mt-0.5">Arquitectos con comisión y mayoristas con su lista de precios. La config vive en la ficha del cliente.</p>
+            </div>
+            <Button size="sm" onClick={() => setAdding(a => !a)}><UserPlus className="h-4 w-4" />Agregar revendedor</Button>
+          </CardHeader>
+          <CardContent className="pt-0 space-y-2">
+            {adding && (
+              <div className="rounded-md border border-dashed border-border p-2 bg-muted/20">
+                <div className="text-[10px] uppercase tracking-wide text-muted-foreground mb-1">Elegí un cliente para marcarlo revendedor</div>
+                <SearchPicker
+                  items={clients.filter(c => !c.reseller).map(c => ({ id: c.id, label: c.name }))}
+                  placeholder="Buscar cliente…"
+                  onPick={(id) => { const c = clients.find(x => x.id === id); if (c) { setEditClient({ ...c, reseller: true } as Client); setAdding(false) } }}
+                />
+                <p className="text-[10px] text-muted-foreground mt-1">Se abre su ficha con "Es revendedor" activado — elegí comisión o mayorista y guardá.</p>
+              </div>
+            )}
+            {resellers.length === 0 ? (
+              <div className="text-xs text-muted-foreground italic py-2">Sin revendedores cargados. Agregá uno para configurar su comisión o lista de precios.</div>
+            ) : (
+              <div className="divide-y divide-border rounded-md border border-border">
+                {resellers.map(c => (
+                  <div key={c.id} className="flex items-center gap-2 px-3 py-2 text-sm">
+                    <span className="flex-1 truncate font-medium">{c.name}</span>
+                    <Badge variant={c.reseller_mode === "comision" ? "muted" : "outline"} className="text-[10px]">{c.reseller_mode === "comision" ? "Comisión" : "Mayorista"}</Badge>
+                    <span className="text-xs text-muted-foreground hidden sm:block max-w-[220px] truncate">{resellerSummary(c)}</span>
+                    <Button size="sm" variant="outline" className="h-7" onClick={() => setEditClient(c)}><Pencil className="h-3.5 w-3.5" />Editar</Button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
         <div className="grid grid-cols-3 gap-3">
           <Tile label="Comisión generada" value={fmtMoney(totals.generado)} />
           <Tile label="Pagado" value={fmtMoney(totals.pagado)} />
@@ -114,6 +174,7 @@ export default function ComisionesPage() {
           )
         })}
       </div>
+      {editClient && <ClientForm key={editClient.id} open editClient={editClient as never} onOpenChange={(o) => { if (!o) setEditClient(null) }} />}
     </DataState>
   )
 }
