@@ -3456,6 +3456,23 @@
       "stockTrack": true,
       "createdAt": "2026-09-04T12:01:17.110Z",
       "updatedAt": "2026-09-04T12:01:17.110Z"
+    },
+    {
+      "id": "local-1790089780830-ghwcm",
+      "name": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
+      "sku": "PROD-400",
+      "category": "Pisos H2O",
+      "price": 38,
+      "cost": 16,
+      "currency": "USD",
+      "stock": 0,
+      "reservedStock": 0,
+      "m2_por_caja": 2.084,
+      "unit": "m2",
+      "active": true,
+      "margin": 138,
+      "createdAt": "2026-09-22T15:09:40.556Z",
+      "updatedAt": "2026-09-22T15:09:40.556Z"
     }
   ],
   "sales": [
@@ -131778,6 +131795,76 @@
       "eta": "2026-07-04",
       "notes": "",
       "received_at": "2026-07-11T20:29:28.990Z"
+    },
+    {
+      "id": "QI628A",
+      "status": "in_transit",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "SPC FLOORING 1524x228x5+1.5mm, 6PCS/BOX",
+          "quantity": 583.75,
+          "unit_cost_usd": 16
+        },
+        {
+          "product_id": "PROD-028",
+          "sku": "PROD-028",
+          "description": "SPC FLOORING 1524x228x5+1.5mm, 6PCS/BOX",
+          "quantity": 583.75,
+          "unit_cost_usd": 16
+        },
+        {
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "SPC FLOORING 1524x228x5+1.5mm, 6PCS/BOX",
+          "quantity": 583.75,
+          "unit_cost_usd": 16
+        },
+        {
+          "product_id": "local-1784069289316-bpuc9",
+          "sku": "PROD - 102989",
+          "description": "Aura",
+          "quantity": 100,
+          "unit_cost_usd": 16
+        },
+        {
+          "product_id": "PROD-078",
+          "sku": "PROD-078",
+          "description": "",
+          "quantity": 100,
+          "unit_cost_usd": 5
+        }
+      ],
+      "warehouse_id": "main",
+      "vessel": "MCS RAISHMI",
+      "supplier": "Hushfloors",
+      "etd": "2026-08-30",
+      "eta": "2026-09-21",
+      "notes": "",
+      "documents": [
+        {
+          "id": "doc-a993d768",
+          "url": "https://pisos-pacific.onrender.com/uploads/341ab60317c3a4d4-PAPERWORK_PDPG_2619.xls",
+          "filename": "PAPERWORK_PDPG_2619.xls",
+          "kind": "other",
+          "uploaded_at": "2026-09-22T15:09:51.697Z"
+        },
+        {
+          "id": "doc-2a7ce698",
+          "url": "https://pisos-pacific.onrender.com/uploads/f5d2b6a3de0b2761-CCF_001295.pdf",
+          "filename": "CCF_001295.pdf",
+          "kind": "other",
+          "uploaded_at": "2026-09-22T15:09:52.370Z"
+        },
+        {
+          "id": "doc-ada586d9",
+          "url": "https://pisos-pacific.onrender.com/uploads/f54455ef1a81618f-26001IC04182849E.pdf",
+          "filename": "26001IC04182849E.pdf",
+          "kind": "other",
+          "uploaded_at": "2026-09-22T15:09:53.056Z"
+        }
+      ]
     }
   ],
   "leads": [
@@ -181287,8 +181374,8 @@
     {
       "id": "pa-46f3ed4d",
       "alias": "aura",
-      "raw": "AURA",
-      "product_id": "local-1782930311636-1b4g3"
+      "raw": "Aura",
+      "product_id": "local-1784069289316-bpuc9"
     },
     {
       "id": "pa-366c7f35",
@@ -181301,6 +181388,12 @@
       "alias": "verona",
       "raw": "Verona",
       "product_id": "PROD-011"
+    },
+    {
+      "id": "pa-55ef19d6",
+      "alias": "spc flooring 1524x228x5 1 5mm 6pcs box",
+      "raw": "SPC FLOORING 1524x228x5+1.5mm, 6PCS/BOX",
+      "product_id": "PROD-202"
     }
   ],
   "reconciliations": [
