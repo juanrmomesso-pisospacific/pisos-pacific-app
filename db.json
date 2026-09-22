@@ -147213,13 +147213,14 @@
       "contact_name": "José Moreira",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0b426443d0",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-18T10:53:13.000Z",
       "last_message_preview": "Bom dia,\r\n\r\nUtilizámos um dos vossos vinílicos numa residência de estudantes na Caparica, na qual estamos a fazer uma outra residência da me",
       "email_subject": "C1087 - Residência de estudantes Almada | Vinilico",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-18T10:53:13.000Z"
+      "last_inbound_at": "2026-09-18T10:53:13.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0b51d876dd",
