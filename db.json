@@ -3465,14 +3465,15 @@
       "price": 38,
       "cost": 16,
       "currency": "USD",
-      "stock": 0,
+      "stock": 583.5,
       "reservedStock": 0,
       "m2_por_caja": 2.084,
       "unit": "m2",
       "active": true,
       "margin": 138,
       "createdAt": "2026-09-22T15:09:40.556Z",
-      "updatedAt": "2026-09-22T15:09:40.556Z"
+      "updatedAt": "2026-09-22T15:10:37.238Z",
+      "stockTrack": true
     }
   ],
   "sales": [
@@ -175204,6 +175205,15 @@
       "product_id": "PROD-078",
       "sku": "PROD-078",
       "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-22T15:10:37.514Z",
+      "type": "manual_adjustment",
+      "ref": "edit-info@pisospacific.com",
+      "product_id": "local-1790089780830-ghwcm",
+      "sku": "PROD-400",
+      "qty": 583.5,
       "warehouse_id": "main"
     }
   ],
