@@ -168085,6 +168085,17 @@
       "status": "approved",
       "category": "UTILITY",
       "language": "es_AR"
+    },
+    {
+      "id": "local-1790092811228-rv8qp",
+      "name": "Seguimiento",
+      "channel": "all",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, contanos qué modelo o colección estás buscando y avanzamos con el presupuesto.\n\n¡Muchas gracias!\nSaludos,",
+      "keywords": "seguimiento",
+      "stage": "seguimiento",
+      "status": "approved",
+      "category": "UTILITY",
+      "language": "es_AR"
     }
   ],
   "stock_movements": [
