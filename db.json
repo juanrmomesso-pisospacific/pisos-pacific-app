@@ -753,7 +753,7 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 823.9653279999999,
+      "stock": 1407.7153279999998,
       "reservedStock": 4450.552000000001,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
@@ -781,7 +781,7 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 254.248,
+      "stock": 837.998,
       "reservedStock": 397,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Notte 6,5x23x150",
@@ -837,7 +837,7 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 126.96800000000002,
+      "stock": 710.7180000000001,
       "reservedStock": 2056.236,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
@@ -1714,7 +1714,7 @@
       "currency": "USD",
       "active": true,
       "margin": 166.7,
-      "stock": 0,
+      "stock": 100,
       "reservedStock": 87,
       "subLine": "Terminaciones",
       "shortName": "Varilla L SPC",
@@ -3295,7 +3295,7 @@
       "price": 30,
       "cost": 11,
       "currency": "USD",
-      "stock": 0,
+      "stock": 100,
       "reservedStock": 0,
       "active": true,
       "margin": 173,
@@ -131798,7 +131798,7 @@
     },
     {
       "id": "QI628A",
-      "status": "in_transit",
+      "status": "received",
       "items": [
         {
           "product_id": "PROD-027",
@@ -131864,7 +131864,8 @@
           "kind": "other",
           "uploaded_at": "2026-09-22T15:09:53.056Z"
         }
-      ]
+      ],
+      "received_at": "2026-09-22T15:10:18.689Z"
     }
   ],
   "leads": [
@@ -175158,6 +175159,51 @@
       "product_id": "PROD-027",
       "sku": "PROD-027",
       "qty": -114.6,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-22T15:10:18.689Z",
+      "type": "container_receive",
+      "ref": "QI628A",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 583.75,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-22T15:10:18.689Z",
+      "type": "container_receive",
+      "ref": "QI628A",
+      "product_id": "PROD-028",
+      "sku": "PROD-028",
+      "qty": 583.75,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-22T15:10:18.689Z",
+      "type": "container_receive",
+      "ref": "QI628A",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": 583.75,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-22T15:10:18.689Z",
+      "type": "container_receive",
+      "ref": "QI628A",
+      "product_id": "local-1784069289316-bpuc9",
+      "sku": "PROD - 102989",
+      "qty": 100,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-22T15:10:18.689Z",
+      "type": "container_receive",
+      "ref": "QI628A",
+      "product_id": "PROD-078",
+      "sku": "PROD-078",
+      "qty": 100,
       "warehouse_id": "main"
     }
   ],
