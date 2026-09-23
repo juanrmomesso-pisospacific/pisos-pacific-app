@@ -37919,7 +37919,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "MDR ARQ.",
       "has_iva": true,
-      "price": 14484.91,
+      "price": 14222.34,
       "zoned": true,
       "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed + 2 más",
       "items": [
@@ -37947,8 +37947,9 @@
           "cost": 7.33,
           "category": "Servicio",
           "zone": "Planta Baja + Planta Alta",
+          "disc_value": 10,
           "total": 2000,
-          "discount": 0,
+          "discount": 200,
           "image": "",
           "target_item_index": null
         },
@@ -37961,21 +37962,23 @@
           "cost": 0,
           "category": "Servicio",
           "zone": "Planta Baja + Planta Alta",
+          "disc_value": 10,
           "total": 170,
-          "discount": 0,
+          "discount": 17,
           "image": "",
           "target_item_index": null
         }
       ],
-      "discount_total": 1089,
-      "discount_amount": 1089,
+      "discount_total": 1306,
+      "discount_amount": 1306,
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
       "created_at": "2026-09-23T21:01:38.431Z",
       "quote_number": "A6379",
       "status": "DRAFT",
-      "lead_id": "lead-email-1a0c532e3cff"
+      "lead_id": "lead-email-1a0c532e3cff",
+      "share_token": "9bfcdd0e7982db40f70804ef"
     }
   ],
   "clients": [
