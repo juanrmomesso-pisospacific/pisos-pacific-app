@@ -148058,10 +148058,11 @@
       "linked_lead_id": "lead-instagram-1790172632843",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-23T14:17:42.447Z",
-      "last_message_preview": "Cantidad 40mts² \nLocalidad. Haedo chico",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-23T14:17:42.447Z"
+      "last_message_at": "2026-09-23T16:08:19.017Z",
+      "last_message_preview": "Hola Gabriel, soy Juan! Te mando el presupuesto por celular al que me llamaste!",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-23T14:17:42.447Z",
+      "last_outbound_at": "2026-09-23T16:08:19.017Z"
     },
     {
       "id": "conv-1790177716893-p1nf",
@@ -168547,6 +168548,16 @@
       "body": "📎 Adjunto",
       "ts": "2026-09-23T15:35:16.334Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790179699496-kdeq",
+      "conversation_id": "conv-1790172632842-3ump",
+      "direction": "out",
+      "body": "Hola Gabriel, soy Juan! Te mando el presupuesto por celular al que me llamaste!",
+      "ts": "2026-09-23T16:08:19.017Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg0OTkzMDU5NDY1NDczMDozMzAyMjk4Njc1MzcxODU5ODQ0MTM0MzMxODY5MjQ2MjU5MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
