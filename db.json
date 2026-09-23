@@ -148186,11 +148186,11 @@
       "linked_lead_id": "lead-instagram-1790183520734",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-23T17:17:07.156Z",
-      "last_message_preview": "Habría que remodelar todo, está así",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-23T19:08:24.187Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-23T17:17:07.156Z",
-      "last_outbound_at": "2026-09-23T17:16:27.485Z"
+      "last_outbound_at": "2026-09-23T19:08:24.187Z"
     }
   ],
   "messages": [
@@ -168745,6 +168745,16 @@
       "body": "Habría que remodelar todo, está así",
       "ts": "2026-09-23T17:17:07.156Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790190504931-f7od",
+      "conversation_id": "conv-1790183520734-zr2o",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-23T19:08:24.187Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyMzE4NjA3Mzk0MDAxNDg4NTAxODEwMTMwNDI2MjY1NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
