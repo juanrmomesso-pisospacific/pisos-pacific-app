@@ -148186,10 +148186,11 @@
       "linked_lead_id": "lead-instagram-1790183520734",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-23T17:11:59.612Z",
-      "last_message_preview": "Hola cómo estás? Me estoy por mudar junto a mi novio y buscábamos algo así! Tenemos que cambiar los pisos del departamento, habría que cubri",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-23T17:11:59.612Z"
+      "last_message_at": "2026-09-23T17:15:34.042Z",
+      "last_message_preview": "Hola Tati como estas?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-23T17:11:59.612Z",
+      "last_outbound_at": "2026-09-23T17:15:34.042Z"
     }
   ],
   "messages": [
@@ -168691,6 +168692,15 @@
       "body": "Hola cómo estás? Me estoy por mudar junto a mi novio y buscábamos algo así! Tenemos que cambiar los pisos del departamento, habría que cubrir aprox 44m! Te quería consultar precios y qué tipo de pisos recomendaban! Gracias :(",
       "ts": "2026-09-23T17:11:59.612Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790183734042-xiiz",
+      "conversation_id": "conv-1790183520734-zr2o",
+      "direction": "out",
+      "body": "Hola Tati como estas?",
+      "ts": "2026-09-23T17:15:34.042Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyMzA2MTE4MjE1NTQ3ODQ0NDgxMTc4NDgyNTA3Nzc2MAZDZD"
     }
   ],
   "templates": [
