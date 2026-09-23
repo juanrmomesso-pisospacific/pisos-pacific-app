@@ -140797,6 +140797,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-22T13:52:41.000Z",
       "last_touch_at": "2026-09-22T13:52:41.000Z"
+    },
+    {
+      "id": "lead-instagram-1790172632843",
+      "name": "@gaby450r",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-23T14:10:31.221Z",
+      "last_touch_at": "2026-09-23T14:10:31.221Z"
     }
   ],
   "conversations": [
@@ -147927,6 +147943,20 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-22T13:52:41.000Z",
       "ignored": true
+    },
+    {
+      "id": "conv-1790172632842-3ump",
+      "channel": "instagram",
+      "contact_id": "1136062025418694",
+      "contact_name": "@gaby450r",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790172632843",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-23T14:10:31.221Z",
+      "last_message_preview": "Buenos días. Me interesa los pisos spc",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-23T14:10:31.221Z"
     }
   ],
   "messages": [
@@ -168336,6 +168366,14 @@
       "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 886192e200c64d92b13fd9cc1c40ea51\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-21 00:00:00 UTC to 2026-09-22 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-23T12:05:42.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790172632843-b5q7",
+      "conversation_id": "conv-1790172632842-3ump",
+      "direction": "in",
+      "body": "Buenos días. Me interesa los pisos spc",
+      "ts": "2026-09-23T14:10:31.221Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -179079,7 +179117,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMDMwNTY2MTQ0MTE5MDMxNDM1NDg2MzI0NTM2MTE1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMTIzNjI5Nzk0NTE0MzE2OTIzODkwNzU5NzM1NzA1NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMTQxNjQ2Mzk4NDIwNTk3MjkxNDIxNDYxMjc2MjYyNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODcyNjU0MTQ3NjY2MzcxOTozMzAyMTQzODczNjM1NjY3NzQ2Njc4NjQ5MzI4MjM4NTkyMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODcyNjU0MTQ3NjY2MzcxOTozMzAyMTQzODczNjM1NjY3NzQ2Njc4NjQ5MzI4MjM4NTkyMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg0OTkzMDU5NDY1NDczMDozMzAyMjg1NjM3NTg5NDE5Njk3ODE1NTU1MDAxNDQzOTQyNAZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
