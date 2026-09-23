@@ -147952,11 +147952,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790172632843",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-23T14:10:31.221Z",
-      "last_message_preview": "Buenos días. Me interesa los pisos spc",
+      "unread_count": 3,
+      "last_message_at": "2026-09-23T14:10:48.283Z",
+      "last_message_preview": "Muchas gracias",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-23T14:10:31.221Z"
+      "last_inbound_at": "2026-09-23T14:10:48.283Z"
     }
   ],
   "messages": [
@@ -168374,6 +168374,22 @@
       "body": "Buenos días. Me interesa los pisos spc",
       "ts": "2026-09-23T14:10:31.221Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790172646958-0ptj",
+      "conversation_id": "conv-1790172632842-3ump",
+      "direction": "in",
+      "body": "Quisiera consultar el valor del mt² y dónde están ubicados?",
+      "ts": "2026-09-23T14:10:45.769Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1790172648817-78xn",
+      "conversation_id": "conv-1790172632842-3ump",
+      "direction": "in",
+      "body": "Muchas gracias",
+      "ts": "2026-09-23T14:10:48.283Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -179118,7 +179134,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMTIzNjI5Nzk0NTE0MzE2OTIzODkwNzU5NzM1NzA1NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyMjc3NDkxMTE4NDIyNTozMzAyMTQxNjQ2Mzk4NDIwNTk3MjkxNDIxNDYxMjc2MjYyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODcyNjU0MTQ3NjY2MzcxOTozMzAyMTQzODczNjM1NjY3NzQ2Njc4NjQ5MzI4MjM4NTkyMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg0OTkzMDU5NDY1NDczMDozMzAyMjg1NjM3NTg5NDE5Njk3ODE1NTU1MDAxNDQzOTQyNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg0OTkzMDU5NDY1NDczMDozMzAyMjg1NjM3NTg5NDE5Njk3ODE1NTU1MDAxNDQzOTQyNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg0OTkzMDU5NDY1NDczMDozMzAyMjg1NjY0NDI2MDEyMjk4NzExNjg2ODUxODU0MzM2MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg0OTkzMDU5NDY1NDczMDozMzAyMjg1NjY5MDYzMzg5MDk3NjEwNTMwMDQ4Mzg5OTM5MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
