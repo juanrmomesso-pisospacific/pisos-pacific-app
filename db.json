@@ -135718,7 +135718,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-07-24T02:56:33.000Z",
-      "last_touch_at": "2026-09-17T04:59:43.000Z"
+      "last_touch_at": "2026-09-23T01:04:14.000Z"
     },
     {
       "id": "lead-instagram-1784916324625",
@@ -143711,12 +143711,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f920e2ca6d",
       "status": "closed",
-      "unread_count": 27,
-      "last_message_at": "2026-09-17T04:59:43.000Z",
-      "last_message_preview": "Dear Daniel, Mike,\r\n\r\nThanks for your confirmation of adding 5mm heating cable(15M) 60roll.\r\nI added it to the remaining proforma invoice an",
+      "unread_count": 28,
+      "last_message_at": "2026-09-23T01:04:14.000Z",
+      "last_message_preview": "Dear Daniel,\r\n\r\nPls find the shipping documents(CI PL, Airway Bill) for Air shipment.\r\n\r\nJoshua\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, G",
       "email_subject": "Re: radiant heating",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T04:59:43.000Z",
+      "last_inbound_at": "2026-09-23T01:04:14.000Z",
       "ignored": true
     },
     {
@@ -168312,6 +168312,14 @@
       "body": "Que lindoooo",
       "ts": "2026-09-22T16:49:40.827Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0cbcb21e25",
+      "conversation_id": "conv-email-19f920e2ca6d",
+      "direction": "in",
+      "body": "✉️ Re: Air Shipment --> shipping documents\n\nDear Daniel,\r\n\r\nPls find the shipping documents(CI PL, Airway Bill) for Air shipment.\r\n\r\nJoshua\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 4588 6512\r\nTel. : +82 31 866 5688\r\n\r\n* www.felixkorea.com <http://www.felixkorea.com>*\r\n\r\n\r\n\r\n2026년 9월 18일 (금) 오전 8:19, Daniel La Buonora <daniel@mrparquet.com.uy>님이 작성:\r\n\r\n> Hi Joshua,\r\n>\r\n> please find the soft copy attached,\r\n>\r\n> best\r\n>\r\n>\r\n> El jue, 17 sept 2026 a la(s) 2:00 a.m., FELIXKOREA (\r\n> felixkorea.com@gmail.com) escribió:\r\n>\r\n>> Dear Daniel, Mike,\r\n>>\r\n>> Thanks for your confirmation of adding 5mm heating cable(15M) 60roll.\r\n>> I added it to the remaining proforma invoice and will add it together on\r\n>> sea shipment\r\n>>\r\n>> The attached is \"Balance(the remaining) proforma invoice\". Pls check it\r\n>> and kindly make your payment soon.\r\n>> The Last box of heating film is only 72M, so I adjusted the unit price on\r\n>> the last film's box.\r\n>> Once you pay, pls let me know with a bank receipt.\r\n>>\r\n>> How about arranging Air and Sea shipment schedule with forwarding\r\n>> agency(DMcomex).?\r\n>> We are read to ship your cargo by Air and 1x20f't by Sea\r\n>>\r\n>> Awaiting your reply soon.\r\n>> Joshua\r\n>> Felix Korea\r\n>>\r\n>>\r\n>>\r\n>> 861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\n>> <https://www.google.com/maps/search/861-4+Samil-Ro,+Nam-Myeon,+Yangju-Si,%C2%A0Gyeonggi-Do,+Korea?entry=gmail&source=g>\r\n>> Korea\r\n>> <https://www.google.com/maps/search/861-4+Samil-Ro,+Nam-Myeon,+Yangju-Si,%C2%A0Gy",
+      "ts": "2026-09-23T01:04:14.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -176935,7 +176943,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-22T23:56:03.569Z",
     "gmail_seen_ids": [
-      "19f6ace824ffadf9",
       "19f6ae141f53d99c",
       "19f6bfb0bfe954fa",
       "19f6c27b8d85eb5c",
@@ -177734,7 +177741,8 @@
       "1a0c91e83cfdef88",
       "1a0c93549fc32002",
       "1a0c946e6fba26c2",
-      "1a0c964169e986c3"
+      "1a0c964169e986c3",
+      "1a0cbcb21e25927e"
     ],
     "cash_sessions": {
       "1136982222": {
