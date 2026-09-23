@@ -136579,7 +136579,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-30T15:09:29.000Z",
-      "last_touch_at": "2026-09-10T16:32:17.000Z"
+      "last_touch_at": "2026-09-23T16:52:09.000Z"
     },
     {
       "id": "lead-email-19fb38919e88",
@@ -144481,12 +144481,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fb392d7c0c",
       "status": "closed",
-      "unread_count": 7,
-      "last_message_at": "2026-09-10T16:32:17.000Z",
-      "last_message_preview": "Buen día, Estimada Victoria\r\n\r\nEspero que se encuentre muy bien.\r\nPor medio del presente correo, nos ponemos en contacto para informarle que",
+      "unread_count": 8,
+      "last_message_at": "2026-09-23T16:52:09.000Z",
+      "last_message_preview": "Buen día, Estimado cliente\r\n\r\nEsperamos que se encuentre bien.\r\nPor medio del presente correo, le confirmamos que el embarque correspondient",
       "email_subject": "BVLRO2128 || S/  HUSHFLOORS INTERNATIONAL LIMITED  || C/ TOLEDOT INVESTMENT || VOL: 1X20' || POL: SHANGHAI | POD: BALBOA ||",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-10T16:32:17.000Z",
+      "last_inbound_at": "2026-09-23T16:52:09.000Z",
       "ignored": true
     },
     {
@@ -168635,6 +168635,14 @@
       "body": "Hola Juan dale.. lo espero",
       "ts": "2026-09-23T16:13:31.355Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0cf2ec2703",
+      "conversation_id": "conv-email-19fb392d7c0c",
+      "direction": "in",
+      "body": "✉️ RE: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X20' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\n\nBuen día, Estimado cliente\r\n\r\nEsperamos que se encuentre bien.\r\nPor medio del presente correo, le confirmamos que el embarque correspondiente al B/L 275436330 ha completado su transbordo y ha zarpado exitosamente del puerto de Yokohama, Japón.\r\nA continuación, le compartimos los detalles del itinerario:\r\n\r\n\r\n  *\r\nBill of Lading (BL): 275436330\r\n  *\r\nMotonave / Viaje: REN JIAN 8 / 636E\r\n  *\r\nPuerto de Transbordo (POL): Yokohama, Japón (Maersk Yokohama Terminal)\r\n  *\r\nPuerto de Destino (POD): Balboa, Panamá (Balboa Port Terminal\r\n\r\nContinuaremos monitoreando el tránsito de la carga y le mantendremos informado sobre cualquier novedad previa a su llegada.\r\nQuedamos a su disposición ante cualquier consulta adicional.\r\n\r\nSaludos,\r\nBest Regards.\r\n[cid:33785316-fc60-44a8-aa8a-ef3b11d8bdcd]\r\n________________________________\r\nDe: Victoria Pisos Pacific <victoria@pisospacific.com>\r\nEnviado: lunes, 21 de septiembre de 2026 16:14\r\nPara: Juan Rosario <jrosario@bvlpanama.com>\r\nCc: arieltesone26@gmail.com <arieltesone26@gmail.com>; Giselle Ceballos <gceballos@bvlpanama.com>; Abe Dabah <abedabah@gmail.com>; info@pisospacific.com <info@pisospacific.com>; Joseph Sam <jsam@bvlpanama.com>; INSIDE SALES <insidesales@bvlpanama.com>\r\nAsunto: Re: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X20' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\r\n\r\nHola a todos,\r\n\r\nAdjunto el telex release firmado para que dispongan de to",
+      "ts": "2026-09-23T16:52:09.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -177258,7 +177266,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-22T23:56:03.569Z",
     "gmail_seen_ids": [
-      "19f6dcfcb0a2faa9",
       "19f6e17078b8f822",
       "19f6e1226f2e8e7a",
       "19f6f250f42b7a2a",
@@ -178057,7 +178064,8 @@
       "1a0ce12d211874ed",
       "1a0ce285fdf47e22",
       "1a0ce551ecca51bc",
-      "1a0cebb68905c587"
+      "1a0cebb68905c587",
+      "1a0cf2ec27039ff7"
     ],
     "cash_sessions": {
       "1136982222": {
