@@ -141432,6 +141432,22 @@
       "address": "Ayres La Taba",
       "created_at": "2026-09-23T21:57:36.142Z",
       "last_touch_at": "2026-09-23T21:57:38.725Z"
+    },
+    {
+      "id": "local-1790201167074-kzwvz",
+      "name": "Teresa Michelson",
+      "phone": "+54 9 11 5313-7378",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Martindale",
+      "created_at": "2026-09-23T22:06:06.906Z",
+      "last_touch_at": "2026-09-23T22:06:15.023Z"
     }
   ],
   "conversations": [
