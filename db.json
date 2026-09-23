@@ -754,7 +754,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1407.7153279999998,
-      "reservedStock": 4450.552000000001,
+      "reservedStock": 4429.84,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1859,7 +1859,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8246.847,
+      "reservedStock": 8244.847,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2339,7 +2339,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 69.15,
+      "reservedStock": 66,
       "subLine": "Revestimientos",
       "shortName": "Colocación Revestimiento Cielo Raso PVC/Madera",
       "thicknessMm": null,
@@ -35142,7 +35142,7 @@
       "currency": "USD",
       "created_at": "2026-09-14T17:39:36.383Z",
       "quote_number": "A8799",
-      "status": "SENT"
+      "status": "REJECTED"
     },
     {
       "id": "local-1789409590701-gft4c",
@@ -176653,6 +176653,60 @@
       "product_id": "local-1790089780830-ghwcm",
       "sku": "PROD-400",
       "qty": 583.5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-23T21:47:13.631Z",
+      "type": "quote_release",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": -4.1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-23T21:47:13.631Z",
+      "type": "quote_release",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "SERV-126",
+      "sku": "SERV-126",
+      "qty": -3.15,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-23T21:47:13.631Z",
+      "type": "quote_release",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": -6.192,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-23T21:47:13.631Z",
+      "type": "quote_release",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": -1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-23T21:47:13.631Z",
+      "type": "quote_release",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": -10.42,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-23T21:47:13.631Z",
+      "type": "quote_release",
+      "ref": "local-1789407576649-dsv2r",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": -1,
       "warehouse_id": "main"
     }
   ],
