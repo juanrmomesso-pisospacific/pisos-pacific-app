@@ -140813,6 +140813,38 @@
       "assigned_seller": "",
       "created_at": "2026-09-23T14:10:31.221Z",
       "last_touch_at": "2026-09-23T14:10:31.221Z"
+    },
+    {
+      "id": "lead-instagram-1790177716893",
+      "name": "@moni.stork",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-23T15:35:15.570Z",
+      "last_touch_at": "2026-09-23T15:35:15.570Z"
+    },
+    {
+      "id": "lead-instagram-1790177717022",
+      "name": "@moni.stork",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-23T15:35:16.334Z",
+      "last_touch_at": "2026-09-23T15:35:16.334Z"
     }
   ],
   "conversations": [
@@ -147958,6 +147990,34 @@
       "last_message_preview": "Cantidad 40mts² \nLocalidad. Haedo chico",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-23T14:17:42.447Z"
+    },
+    {
+      "id": "conv-1790177716893-p1nf",
+      "channel": "instagram",
+      "contact_id": "1409990891200772",
+      "contact_name": "@moni.stork",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790177716893",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-23T15:35:15.570Z",
+      "last_message_preview": "Bien fía, mi nombre es Mónica Stork\nQuisiera presupuesto para colocación de piso de madera o prefinished en plata baja de mi casa ( actualme",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-23T15:35:15.570Z"
+    },
+    {
+      "id": "conv-1790177717022-vewn",
+      "channel": "instagram",
+      "contact_id": "1409990891200772",
+      "contact_name": "@moni.stork",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790177717022",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-23T15:35:16.334Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-23T15:35:16.334Z"
     }
   ],
   "messages": [
@@ -168399,6 +168459,22 @@
       "body": "Cantidad 40mts² \nLocalidad. Haedo chico",
       "ts": "2026-09-23T14:17:42.447Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790177716893-51i6",
+      "conversation_id": "conv-1790177716893-p1nf",
+      "direction": "in",
+      "body": "Bien fía, mi nombre es Mónica Stork\nQuisiera presupuesto para colocación de piso de madera o prefinished en plata baja de mi casa ( actualmente hay alfombra )\nVivo en la Lucila ( Vte López) \nMi celu es 1153151566",
+      "ts": "2026-09-23T15:35:15.570Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1790177717022-lvun",
+      "conversation_id": "conv-1790177717022-vewn",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-23T15:35:16.334Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -179146,7 +179222,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg0OTkzMDU5NDY1NDczMDozMzAyMjg1NjM3NTg5NDE5Njk3ODE1NTU1MDAxNDQzOTQyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg0OTkzMDU5NDY1NDczMDozMzAyMjg1NjY0NDI2MDEyMjk4NzExNjg2ODUxODU0MzM2MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg0OTkzMDU5NDY1NDczMDozMzAyMjg1NjY5MDYzMzg5MDk3NjEwNTMwMDQ4Mzg5OTM5MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg0OTkzMDU5NDY1NDczMDozMzAyMjg2NDMzMDYxNDg5Mjg2ODc2Mjc3Nzg4MzI0NjU5MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTg0OTkzMDU5NDY1NDczMDozMzAyMjg2NDMzMDYxNDg5Mjg2ODc2Mjc3Nzg4MzI0NjU5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI5Njc1MzY4NTEyNTUzMTk1NjozMzAyMjk1MDE2NTU4NzAyNDE3OTY1NjczNjYzNjkyODAwMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI5Njc1MzY4NTEyNTUzMTk1NjozMzAyMjk1MDE3OTY4MjQ5NDkyMTAyNzQ1ODA4OTA5MTA3MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
