@@ -146141,13 +146141,14 @@
       "contact_name": "@psfanatico2025",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787978533315",
-      "status": "open",
+      "status": "closed",
       "unread_count": 1,
       "last_message_at": "2026-09-17T02:50:15.599Z",
       "last_message_preview": "Respondan...",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-17T02:50:15.599Z",
-      "last_outbound_at": "2026-09-09T16:51:04.073Z"
+      "last_outbound_at": "2026-09-09T16:51:04.073Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a04d3963422",
