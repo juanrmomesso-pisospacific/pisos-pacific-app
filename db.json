@@ -148186,11 +148186,11 @@
       "linked_lead_id": "lead-instagram-1790183520734",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-23T17:15:34.042Z",
-      "last_message_preview": "Hola Tati como estas?",
+      "last_message_at": "2026-09-23T17:16:08.807Z",
+      "last_message_preview": "La foto es de la coleccion de madera pisos prefinished",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-23T17:11:59.612Z",
-      "last_outbound_at": "2026-09-23T17:15:34.042Z"
+      "last_outbound_at": "2026-09-23T17:16:08.807Z"
     }
   ],
   "messages": [
@@ -168701,6 +168701,15 @@
       "ts": "2026-09-23T17:15:34.042Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyMzA2MTE4MjE1NTQ3ODQ0NDgxMTc4NDgyNTA3Nzc2MAZDZD"
+    },
+    {
+      "id": "m-1790183768807-1bpi",
+      "conversation_id": "conv-1790183520734-zr2o",
+      "direction": "out",
+      "body": "La foto es de la coleccion de madera pisos prefinished",
+      "ts": "2026-09-23T17:16:08.807Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyMzA2MTgyNDgyMDE1NjM4Mjc0MTEwNDIyOTg3NTcxMgZDZD"
     }
   ],
   "templates": [
