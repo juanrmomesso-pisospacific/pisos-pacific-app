@@ -40455,6 +40455,18 @@
       "notes": null,
       "name": "Elizabeth Dacoba",
       "updated_at": "2026-09-22T19:36:26.506Z"
+    },
+    {
+      "id": "CLI-muem71ob-n9os",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Arq. Mariana massa",
+      "updated_at": "2026-09-23T21:28:06.971Z"
     }
   ],
   "expenses": [],
