@@ -13944,22 +13944,8 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Lote 298",
-      "contract_total": 6762.8473,
+      "contract_total": 6763,
       "items": [
-        {
-          "product_id": "PROD-031",
-          "sku": "PROD-031",
-          "description": "H2O - Aspen 5,5mm x 18cm x 1,20m",
-          "quantity": 73.5,
-          "unit_price": 38,
-          "cost": 16.13,
-          "category": "Pisos H2O",
-          "disc_value": 5,
-          "total": 2793,
-          "discount": 139.65,
-          "image": "",
-          "target_item_index": null
-        },
         {
           "product_id": "SERV-126",
           "sku": "SERV-126",
@@ -14011,6 +13997,17 @@
           "discount": 0,
           "image": "",
           "target_item_index": null
+        },
+        {
+          "product_id": "PROD-190",
+          "sku": "PROD-190",
+          "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m",
+          "quantity": 73.5,
+          "unit_price": 38,
+          "total": 2793,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "discount": 0
         }
       ],
       "zoned": false,
@@ -14020,9 +14017,9 @@
       "has_iva": true,
       "iva_mode": "full",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 6763,
         "total_paid": 0,
-        "balance_due": 6762.8473
+        "balance_due": 6763
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -14043,7 +14040,8 @@
           "at": "2026-09-15T14:48:05.045Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "commission_amount": 0
     },
     {
       "id": "local-sale-1784575626536-dzvs",
