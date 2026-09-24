@@ -141644,6 +141644,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-24T01:06:03.752Z",
       "last_touch_at": "2026-09-24T01:06:03.752Z"
+    },
+    {
+      "id": "lead-email-1a0d43a1137e",
+      "name": "Valentín",
+      "email": "valenrivadeneyra@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Calle 11 N 621",
+      "postal_code": "6600",
+      "approx_m2": 30,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 30m² · Sin Colocación · CP 6600",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-24T16:22:49.000Z",
+      "last_touch_at": "2026-09-24T16:22:49.000Z"
     }
   ],
   "conversations": [
@@ -148878,6 +148895,21 @@
       "last_message_preview": "Hola, tienen sede en mar del plata?",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-24T01:06:03.752Z"
+    },
+    {
+      "id": "conv-email-1a0d43a1137e",
+      "channel": "email",
+      "contact_id": "valenrivadeneyra@gmail.com",
+      "contact_name": "Valentín",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0d43a1137e",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-24T16:22:49.000Z",
+      "last_message_preview": "Formulario web — 30m² · Sin Colocación · CP 6600 · Calle 11 N 621",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-24T16:22:49.000Z"
     }
   ],
   "messages": [
@@ -169518,6 +169550,14 @@
       "body": "Dale si podés con la colación mejor! Gracias",
       "ts": "2026-09-24T12:00:05.596Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0d43a1137e",
+      "conversation_id": "conv-email-1a0d43a1137e",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 30m² · Sin Colocación · CP 6600 · Calle 11 N 621",
+      "ts": "2026-09-24T16:22:49.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -178195,7 +178235,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-23T23:56:15.587Z",
     "gmail_seen_ids": [
-      "19f6fb9bfc7e76ec",
       "19f6ffa2977b2d84",
       "19f6ffa28734d496",
       "19f703db85416f97",
@@ -178994,7 +179033,8 @@
       "1a0d2a7c7a73a433",
       "1a0d2db9d79f40c1",
       "1a0d319a12b1ef08",
-      "1a0d37b7bb81fc6c"
+      "1a0d37b7bb81fc6c",
+      "1a0d43a1137e6925"
     ],
     "cash_sessions": {
       "1136982222": {
