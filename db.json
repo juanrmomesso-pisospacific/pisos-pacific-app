@@ -146805,12 +146805,13 @@
       "linked_lead_id": "lead-email-1a03e3b3bcf8",
       "status": "closed",
       "unread_count": 1,
-      "last_message_at": "2026-08-28T17:23:00.000Z",
-      "last_message_preview": "Buenos días !!!\r\n\r\nMi nombre es Veronica Diaz de la empresa Funktion, adjunto lo solicitado.\r\n\r\nCualquier duda o consulta estoy a su disposi",
+      "last_message_at": "2026-09-24T11:00:00.000Z",
+      "last_message_preview": "Hola Verónica,\r\n\r\nDisculpa la demora en responder.\r\n\r\nCon respecto a las varillas planas y de desnivel, disponemos del mismo\r\nmaterial que e",
       "email_subject": "re: Catalogo de Perfiles FUNKTION",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-08-28T17:23:00.000Z",
-      "ignored": true
+      "ignored": true,
+      "last_outbound_at": "2026-09-24T11:00:00.000Z"
     },
     {
       "id": "conv-email-1a03eec5d8ca",
@@ -169501,6 +169502,14 @@
       "body": "✉️ Coming to the Canton Fair This October? Let’s Meet at DM Floor\n\nHello,\r\n\r\nI hope you are doing well.\r\n\r\nMy name is Eddy from DM Floor, an Ecofriendly rigid core flooring manufacturer in Jiangsu, China. We have over 30 years of manufacturing experience and an annual production capacity of more than 20 million m².\r\n\r\nI am reaching out because we have developed flooring solutions that may help distributors and importers expand their product range with more stable, waterproof, PVC-free, TVOC- and formaldehyde-free flooring options.\r\n\r\nOur MGO and CWC flooring are PVC-free, so they do not expand or shrink due to temperature changes. MGO has less than 3% edge swelling, while CWC has less than 5% after 24 hours of water immersion. MGO is also suitable for all underfloor heating systems.\r\n\r\nCWC is about 56% lighter than SPC where by we can load almost 4,000 m² of 5mm CWC flooring per container, which can help improve loading efficiency and reduce shipping costs. Its bending strength is around 40 MPa, compared with about 20 MPa for SPC which allows it to support heavy loads with out cracking.\r\n\r\nWe also offer waterproof laminate, SPC, and LVT, with OEM options for colors, designs, and packaging.\r\n\r\nWill you be visiting the Canton Fair this October? If so, I would be glad to invite you to visit our factory in Jiangsu, see our production lines, and discuss products that may fit your market.\r\n\r\nKindly feel free to share them with me you travel dates, and I can arrange a convenient visit.\r\n\r\nWe will also be glad to share with our catalog.\r\n\r\nLooking f",
       "ts": "2026-09-24T08:57:16.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-emailout-1a0d3127e0aa",
+      "conversation_id": "conv-email-1a03e3b3bcf8",
+      "direction": "out",
+      "body": "✉️ Re: Catalogo de Perfiles FUNKTION\n\nHola Verónica,\r\n\r\nDisculpa la demora en responder.\r\n\r\nCon respecto a las varillas planas y de desnivel, disponemos del mismo\r\nmaterial que el piso. Adjunto imágenes de las varillas que solemos utilizar\r\n(modelos L y J), las cuales son aptas para pisos de 6.5 mm, 14 mm y 17 mm\r\nde espesor.\r\n\r\nQuedo a disposición si llegan a tener opciones y precios.\r\nSaludos, Victoria Collado\r\n1136982222\r\n\r\n\r\nEl mié, 26 ago 2026 a las 10:21, <ventas@funktionargentina.com.ar> escribió:\r\n\r\n> Estimados,\r\n>\r\n> Mi nombre es Verónica Díaz y me comunico en representación de Funktion\r\n> Argentina, empresa dedicada a la fabricación y comercialización de perfiles\r\n> de aluminio para terminaciones de pisos.\r\n>\r\n> Nos especializamos en ofrecer productos de excelente calidad, diseñados\r\n> para brindar terminaciones estéticas, duraderas y funcionales para\r\n> proyectos residenciales, comerciales e industriales.\r\n>\r\n> Nos gustaría presentarles nuestra línea de perfiles de aluminio y evaluar\r\n> la posibilidad de convertirnos en uno de sus proveedores.\r\n>\r\n> ¿Qué ofrecemos?\r\n>\r\n> Perfiles y varillas de aluminio para pisos y revestimientos.\r\n>\r\n> Productos de alta calidad y excelente terminación.\r\n>\r\n> Amplio stock y variedad de modelos.\r\n>\r\n> Asesoramiento comercial y técnico.\r\n>\r\n> Atención personalizada.\r\n>\r\n> Cotizaciones rápidas y envíos a todo el país.\r\n>\r\n> Será un gusto enviarles nuestro catálogo y una propuesta comercial\r\n> adaptada a sus necesidades.\r\n>\r\n> Quedo a disposición para coordinar una reunión",
+      "ts": "2026-09-24T11:00:00.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -178178,7 +178187,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-23T23:56:15.587Z",
     "gmail_seen_ids": [
-      "19f6f7bd4b0e10fe",
       "19f6f8ce4e469643",
       "19f6fb9bfc7e76ec",
       "19f6ffa2977b2d84",
@@ -178977,7 +178985,8 @@
       "1a0d1821b0e067a4",
       "1a0d2858370dc1a2",
       "1a0d2a7c7a73a433",
-      "1a0d2db9d79f40c1"
+      "1a0d2db9d79f40c1",
+      "1a0d319a12b1ef08"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -179488,7 +179497,8 @@
       "1a0c5dad10bb2341",
       "1a0c5e8ddd71e5b5",
       "1a0c91e83cfdef88",
-      "1a0ce551ecca51bc"
+      "1a0ce551ecca51bc",
+      "1a0d3127e0aa2499"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
