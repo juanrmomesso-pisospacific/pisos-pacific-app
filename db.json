@@ -15914,7 +15914,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "A confirmar",
-      "contract_total": 4377.42184,
+      "contract_total": 3618,
       "items": [
         {
           "product_id": "PROD-027",
@@ -16025,16 +16025,17 @@
       "discount_total": 0,
       "status": "Confirmado",
       "created_at": "2026-08-29T12:11:45.785Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 3618,
         "total_paid": 0,
-        "balance_due": 4377.42184
+        "balance_due": 3618
       },
       "stock_reserved": true,
       "stock_deducted": false,
-      "seller_name": "Juan Rodriguez Momesso"
+      "seller_name": "Juan Rodriguez Momesso",
+      "iva_amount": 0
     },
     {
       "id": "local-sale-1788129923090-btob",
