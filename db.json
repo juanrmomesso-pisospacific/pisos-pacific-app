@@ -148830,11 +148830,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790183520734",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-23T19:08:24.187Z",
-      "last_message_preview": "📎 Adjunto",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-23T17:17:07.156Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-24T12:00:05.596Z",
+      "last_message_preview": "Dale si podés con la colación mejor! Gracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-24T12:00:05.596Z",
       "last_outbound_at": "2026-09-23T19:08:24.187Z"
     },
     {
@@ -169510,6 +169510,14 @@
       "body": "✉️ Re: Catalogo de Perfiles FUNKTION\n\nHola Verónica,\r\n\r\nDisculpa la demora en responder.\r\n\r\nCon respecto a las varillas planas y de desnivel, disponemos del mismo\r\nmaterial que el piso. Adjunto imágenes de las varillas que solemos utilizar\r\n(modelos L y J), las cuales son aptas para pisos de 6.5 mm, 14 mm y 17 mm\r\nde espesor.\r\n\r\nQuedo a disposición si llegan a tener opciones y precios.\r\nSaludos, Victoria Collado\r\n1136982222\r\n\r\n\r\nEl mié, 26 ago 2026 a las 10:21, <ventas@funktionargentina.com.ar> escribió:\r\n\r\n> Estimados,\r\n>\r\n> Mi nombre es Verónica Díaz y me comunico en representación de Funktion\r\n> Argentina, empresa dedicada a la fabricación y comercialización de perfiles\r\n> de aluminio para terminaciones de pisos.\r\n>\r\n> Nos especializamos en ofrecer productos de excelente calidad, diseñados\r\n> para brindar terminaciones estéticas, duraderas y funcionales para\r\n> proyectos residenciales, comerciales e industriales.\r\n>\r\n> Nos gustaría presentarles nuestra línea de perfiles de aluminio y evaluar\r\n> la posibilidad de convertirnos en uno de sus proveedores.\r\n>\r\n> ¿Qué ofrecemos?\r\n>\r\n> Perfiles y varillas de aluminio para pisos y revestimientos.\r\n>\r\n> Productos de alta calidad y excelente terminación.\r\n>\r\n> Amplio stock y variedad de modelos.\r\n>\r\n> Asesoramiento comercial y técnico.\r\n>\r\n> Atención personalizada.\r\n>\r\n> Cotizaciones rápidas y envíos a todo el país.\r\n>\r\n> Será un gusto enviarles nuestro catálogo y una propuesta comercial\r\n> adaptada a sus necesidades.\r\n>\r\n> Quedo a disposición para coordinar una reunión",
       "ts": "2026-09-24T11:00:00.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-1790251206646-a727",
+      "conversation_id": "conv-1790183520734-zr2o",
+      "direction": "in",
+      "body": "Dale si podés con la colación mejor! Gracias",
+      "ts": "2026-09-24T12:00:05.596Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -180323,7 +180331,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyMzA2MjkwNDQ0NDYxMTc3MDYwMzUyNTc0NzI0NTA1NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NDU0MDUzOTY4MTcyNDozMzAyMzE5MTM0NzI2ODIyMzQ5MTI3NzcyMTI1MzcwNzc3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjY2MTk1Mjk3MTM5NTIxMzozMzAyMzMwMDAyNTM1NDA3MzM2NTY5MzQzMTY1MDcxMzYwMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE1NzAyNDI5MjAwMjMwMzozMzAyMzU4MTkzMzAyODM5NTEzNjUzNTc1NzU4ODUyOTE1MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE1NzAyNDI5MjAwMjMwMzozMzAyMzU4MTkzMzAyODM5NTEzNjUzNTc1NzU4ODUyOTE1MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyNDMwNTgxNzI4OTY0OTQ1ODE4OTU3MjU1MzgzNDQ5NgZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
