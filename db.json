@@ -141628,6 +141628,22 @@
       "address": "Martindale",
       "created_at": "2026-09-23T22:06:06.906Z",
       "last_touch_at": "2026-09-23T22:06:15.023Z"
+    },
+    {
+      "id": "lead-instagram-1790211965375",
+      "name": "@cammila.antonella",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-24T01:06:03.752Z",
+      "last_touch_at": "2026-09-24T01:06:03.752Z"
     }
   ],
   "conversations": [
@@ -148846,6 +148862,20 @@
       "last_message_preview": "Pregunta. El piso H20 ed resistente al agua ascendente también? Que espesor tiene arriba de contrapiso?",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-23T20:51:21.506Z"
+    },
+    {
+      "id": "conv-1790211965375-g0x3",
+      "channel": "instagram",
+      "contact_id": "29601232986133330",
+      "contact_name": "@cammila.antonella",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790211965375",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-24T01:06:03.752Z",
+      "last_message_preview": "Hola, tienen sede en mar del plata?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-24T01:06:03.752Z"
     }
   ],
   "messages": [
@@ -169446,6 +169476,14 @@
       "body": "Pregunta. El piso H20 ed resistente al agua ascendente también? Que espesor tiene arriba de contrapiso?",
       "ts": "2026-09-23T20:51:21.506Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790211965375-ocei",
+      "conversation_id": "conv-1790211965375-g0x3",
+      "direction": "in",
+      "body": "Hola, tienen sede en mar del plata?",
+      "ts": "2026-09-24T01:06:03.752Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -180257,7 +180295,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyMzA2MjgzNDExODk4MjUzMzc1NjE3OTU0ODQ3MTI5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyMzA2MjkwNDQ0NDYxMTc3MDYwMzUyNTc0NzI0NTA1NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NDU0MDUzOTY4MTcyNDozMzAyMzE5MTM0NzI2ODIyMzQ5MTI3NzcyMTI1MzcwNzc3NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjY2MTk1Mjk3MTM5NTIxMzozMzAyMzMwMDAyNTM1NDA3MzM2NTY5MzQzMTY1MDcxMzYwMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjY2MTk1Mjk3MTM5NTIxMzozMzAyMzMwMDAyNTM1NDA3MzM2NTY5MzQzMTY1MDcxMzYwMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE1NzAyNDI5MjAwMjMwMzozMzAyMzU4MTkzMzAyODM5NTEzNjUzNTc1NzU4ODUyOTE1MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
