@@ -134809,7 +134809,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-09-23T12:05:42.000Z"
+      "last_touch_at": "2026-09-24T08:25:58.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -143183,12 +143183,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 56,
-      "last_message_at": "2026-09-23T12:05:42.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-21 00:00:00 UTC to 2026-09-22 00:00:00 UTC.",
+      "unread_count": 57,
+      "last_message_at": "2026-09-24T08:25:58.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-22 00:00:00 UTC to 2026-09-23 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-23T12:05:42.000Z",
+      "last_inbound_at": "2026-09-24T08:25:58.000Z",
       "ignored": true
     },
     {
@@ -169485,6 +169485,14 @@
       "body": "Hola, tienen sede en mar del plata?",
       "ts": "2026-09-24T01:06:03.752Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0d2858370d",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: a1d1ce3e892341b4a33502b3083a76a5\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-22 00:00:00 UTC to 2026-09-23 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-09-24T08:25:58.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -178162,7 +178170,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-23T23:56:15.587Z",
     "gmail_seen_ids": [
-      "19f6e1226f2e8e7a",
       "19f6f250f42b7a2a",
       "19f6f2da425144c0",
       "19f6f7bd4b0e10fe",
@@ -178961,7 +178968,8 @@
       "1a0ce551ecca51bc",
       "1a0cebb68905c587",
       "1a0cf2ec27039ff7",
-      "1a0d1821b0e067a4"
+      "1a0d1821b0e067a4",
+      "1a0d2858370dc1a2"
     ],
     "cash_sessions": {
       "1136982222": {
