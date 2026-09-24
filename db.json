@@ -128600,12 +128600,12 @@
       "caja_name": "Banco de Comercio - Cuenta USD",
       "category": "Venta - Pisos",
       "subcategory": "H2O HD XL",
-      "counterparty": "Matias Pagano",
+      "counterparty": "Barbara Moyano gacitua",
       "counterparty_type": "client",
       "client_id": null,
       "supplier_id": null,
       "description": "IB Proveedores",
-      "sale_ref": null,
+      "sale_ref": "A5211",
       "currency": "USD",
       "amount_ars": 43378347.85,
       "amount_usd": 28259.51,
@@ -128617,7 +128617,8 @@
       "review_reason": null,
       "raw_name": "IB Proveedores",
       "classified_by": "regla \"ib proveedores\" → Matias Pagano (aprendida)",
-      "id": "MOV-IMP-mtvxoayj-002"
+      "id": "MOV-IMP-mtvxoayj-002",
+      "linked_sale_id": "local-sale-1789483538339-ymmr"
     },
     {
       "source": "bdc-upload",
