@@ -146865,12 +146865,13 @@
       "contact_name": "@marianaarbol",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787853659842",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-27T18:00:57.578Z",
       "last_message_preview": "Hola quiero pedir un presupuesto para un departamento de aprox 65 mts cuadrados. Por aca o me pasas un WhatsApp?\nGracias",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-27T18:00:57.578Z"
+      "last_inbound_at": "2026-08-27T18:00:57.578Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0445fdecad",
