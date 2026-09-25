@@ -148078,12 +148078,12 @@
       "linked_lead_id": "lead-email-1a0913b00ca1",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T17:02:59.000Z",
-      "last_message_preview": "Buenas, todo recibido!\r\nTe pregunto: el presupuesto que me mandaron incluye todo el material? Es\r\ndecir: no requiere manta o manto (no sé có",
+      "last_message_at": "2026-09-25T11:39:24.602Z",
+      "last_message_preview": "Hola Caro, ¿cómo estás?\n\nSí, el presupuesto incluye todo el material necesario. La manta ya viene incorporada y pegada en la parte posterior",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T17:02:59.000Z",
-      "last_outbound_at": "2026-09-16T14:09:46.568Z"
+      "last_outbound_at": "2026-09-25T11:39:24.602Z"
     },
     {
       "id": "conv-1789145375187-3oe3",
@@ -169763,6 +169763,15 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NDU0MDUzOTY4MTcyNDozMzAyNTg2ODU4MDY4MjM0Mzc3ODg5NzQ0NzI5OTg0MjA0OAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1790336364602-3p14",
+      "conversation_id": "conv-email-1a0913b00ca1",
+      "direction": "out",
+      "body": "Hola Caro, ¿cómo estás?\n\nSí, el presupuesto incluye todo el material necesario. La manta ya viene incorporada y pegada en la parte posterior del piso, por lo que no necesitás comprar una manta adicional.\n\nSi lo vas a colocar sobre los cerámicos de la cocina, lo ideal es que la superficie esté lo más nivelada, firme y pareja posible. Esto es muy importante para lograr una buena firmeza en la pisada y evitar que, con el tiempo, el movimiento de una base despareja pueda afectar el sistema click.\n\nEl piso es waterproof, es decir, repele el agua, no la absorbe y no queda marcado ante salpicaduras o derrames. Lo que no recomendamos es colocarlo en situaciones donde haya humedad constante proveniente desde abajo del piso.\n\nTambién es ignífugo.\n\nY sí, por supuesto, podés venir a verlo. Podemos coordinar una visita a nuestro depósito en Olivos, con cita previa, para que puedas ver los modelos y las muestras.\n\nTe dejo mi teléfono para coordinar: 11 3698-2222\n\n¡Cualquier otra consulta, escribime!",
+      "ts": "2026-09-25T11:39:24.602Z",
+      "status": "sent",
+      "wa_id": "1a0d85cee5c924fa"
     }
   ],
   "templates": [
