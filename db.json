@@ -149032,11 +149032,12 @@
       "linked_lead_id": "lead-email-1a0d43a1137e",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-24T16:22:49.000Z",
-      "last_message_preview": "Formulario web — 30m² · Sin Colocación · CP 6600 · Calle 11 N 621",
+      "last_message_at": "2026-09-25T11:41:54.728Z",
+      "last_message_preview": "Hola Valentín, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestr",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-24T16:22:49.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-24T16:22:49.000Z",
+      "last_outbound_at": "2026-09-25T11:41:54.728Z"
     },
     {
       "id": "conv-1790327244235-1zhj",
@@ -169784,6 +169785,15 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0d85ed2225cde5"
+    },
+    {
+      "id": "m-1790336514728-rt3s",
+      "conversation_id": "conv-email-1a0d43a1137e",
+      "direction": "out",
+      "body": "Hola Valentín, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\n\n¡Muchas gracias!\nSaludos, Victoria",
+      "ts": "2026-09-25T11:41:54.728Z",
+      "status": "sent",
+      "wa_id": "1a0d85f3bcd4de83"
     }
   ],
   "templates": [
