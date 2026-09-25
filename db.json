@@ -141916,6 +141916,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-25T12:06:54.000Z",
       "last_touch_at": "2026-09-25T12:06:54.000Z"
+    },
+    {
+      "id": "lead-instagram-1790344958890",
+      "name": "@dvl_arquitectura",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-25T14:02:37.014Z",
+      "last_touch_at": "2026-09-25T14:02:37.014Z"
     }
   ],
   "conversations": [
@@ -149199,6 +149215,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-25T12:06:54.000Z",
       "last_outbound_at": "2026-09-25T13:25:52.788Z"
+    },
+    {
+      "id": "conv-1790344958890-tirt",
+      "channel": "instagram",
+      "contact_id": "1689642869555688",
+      "contact_name": "@dvl_arquitectura",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790344958890",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-25T14:02:37.014Z",
+      "last_message_preview": "Hola! Buen día. Quería saber si se podía pedir muestrario de los pisos!!",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-25T14:02:37.014Z"
     }
   ],
   "messages": [
@@ -170000,6 +170030,14 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0d8c24ac0d4458"
+    },
+    {
+      "id": "m-1790344958890-guwi",
+      "conversation_id": "conv-1790344958890-tirt",
+      "direction": "in",
+      "body": "Hola! Buen día. Quería saber si se podía pedir muestrario de los pisos!!",
+      "ts": "2026-09-25T14:02:37.014Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -179994,7 +180032,9 @@
       "1a0d85f3bcd4de83",
       "1a0d85ed2225cde5",
       "1a0d8a1d75b2036d",
-      "1a0d8a1d6c835c82"
+      "1a0d8a1d6c835c82",
+      "1a0d8c24ac0d4458",
+      "1a0d8be69e95d841"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -180826,7 +180866,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY2MTcxNDU1NjQ3OTc0NTozMzAyNTcwODQ3MTAwNjMwMjQxMjI4NTY1NDE0NDY0NzE2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc1ODgxNjcwMDEwMjg2MzozMzAyNTk0ODAwMzY5NTE3NzgwOTQyNjQ5NDA5NzcxOTI5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc1ODgxNjcwMDEwMjg2MzozMzAyNTk0ODE2OTIxNTc0NjM0NzQ4NjA0NTI3ODMwNjMwNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU5ODYyMTY5MDA5MzUyNjozMzAyNTk1MjQ3OTczNDI0NDI4MjQxMTkyNzcwMDc2NjcyMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU5ODYyMTY5MDA5MzUyNjozMzAyNTk1MjQ3OTczNDI0NDI4MjQxMTkyNzcwMDc2NjcyMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY2Mjg2MDQ2NjkyMzYyMjozMzAyNjAzNTIyNTcwOTc5ODIwOTMyNDcxNDEyNTQyNjY4OAZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
