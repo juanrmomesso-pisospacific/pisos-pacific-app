@@ -36090,8 +36090,8 @@
       "seller_name": "Victoria Gonzalez Collado",
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Romina Di Landro",
-      "has_iva": true,
-      "price": 5396.6,
+      "has_iva": false,
+      "price": 4460,
       "zoned": false,
       "description": "Madera - 12 cm Roble - Veta Tallada + 2 más",
       "items": [
