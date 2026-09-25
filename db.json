@@ -141768,6 +141768,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-24T16:22:49.000Z",
       "last_touch_at": "2026-09-24T16:22:49.000Z"
+    },
+    {
+      "id": "lead-instagram-1790327244235",
+      "name": "@pilar.roig",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-25T09:07:22.422Z",
+      "last_touch_at": "2026-09-25T09:07:22.422Z"
     }
   ],
   "conversations": [
@@ -149017,6 +149033,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-24T16:22:49.000Z"
+    },
+    {
+      "id": "conv-1790327244235-1zhj",
+      "channel": "instagram",
+      "contact_id": "1998274588246436",
+      "contact_name": "@pilar.roig",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790327244235",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-09-25T09:07:23.606Z",
+      "last_message_preview": "📷 Foto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-25T09:07:23.606Z"
     }
   ],
   "messages": [
@@ -169673,6 +169703,24 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 792fc50285144dde8282bbe38ed88f0b\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-23 00:00:00 UTC to 2026-09-24 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-25T08:24:50.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790327244235-g1xk",
+      "conversation_id": "conv-1790327244235-1zhj",
+      "direction": "in",
+      "body": "comupex.com",
+      "ts": "2026-09-25T09:07:22.422Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1790327244772-3oll",
+      "conversation_id": "conv-1790327244235-1zhj",
+      "direction": "in",
+      "body": "📷 Foto",
+      "ts": "2026-09-25T09:07:23.606Z",
+      "status": "received",
+      "media_url": "/uploads/fcc0267b5eb5ffd8.jpg",
+      "media_type": "image"
     }
   ],
   "templates": [
@@ -180489,7 +180537,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjY2MTk1Mjk3MTM5NTIxMzozMzAyMzMwMDAyNTM1NDA3MzM2NTY5MzQzMTY1MDcxMzYwMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE1NzAyNDI5MjAwMjMwMzozMzAyMzU4MTkzMzAyODM5NTEzNjUzNTc1NzU4ODUyOTE1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyNDMwNTgxNzI4OTY0OTQ1ODE4OTU3MjU1MzgzNDQ5NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyMzc2MTIwMjYyODk4NDg3MjEzMTcwNDExNDkwNTA4OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyMzc2MTIwMjYyODk4NDg3MjEzMTcwNDExNDkwNTA4OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY2MTcxNDU1NjQ3OTc0NTozMzAyNTcwODQ0OTE2MjEyOTI0ODgwMDY0NTg1OTc3MDM2OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY2MTcxNDU1NjQ3OTc0NTozMzAyNTcwODQ3MTAwNjMwMjQxMjI4NTY1NDE0NDY0NzE2OAZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
