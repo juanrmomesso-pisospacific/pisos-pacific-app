@@ -142057,10 +142057,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-25T14:02:37.014Z",
-      "last_touch_at": "2026-09-25T14:02:37.014Z"
+      "last_touch_at": "2026-09-25T16:55:18.820Z"
     },
     {
       "id": "local-1790355084440-cb2xa",
@@ -149370,10 +149370,11 @@
       "linked_lead_id": "lead-instagram-1790344958890",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-25T14:02:37.014Z",
-      "last_message_preview": "Hola! Buen día. Quería saber si se podía pedir muestrario de los pisos!!",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-25T14:02:37.014Z"
+      "last_message_at": "2026-09-25T16:55:14.182Z",
+      "last_message_preview": "Hola como estas? obvio pasanos direccion que semana que viene hacemos las entregas!",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-25T14:02:37.014Z",
+      "last_outbound_at": "2026-09-25T16:55:14.182Z"
     }
   ],
   "messages": [
@@ -170191,6 +170192,15 @@
       "body": "Caballito!",
       "ts": "2026-09-25T15:57:10.712Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790355314182-ggsw",
+      "conversation_id": "conv-1790344958890-tirt",
+      "direction": "out",
+      "body": "Hola como estas? obvio pasanos direccion que semana que viene hacemos las entregas!",
+      "ts": "2026-09-25T16:55:14.182Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY2Mjg2MDQ2NjkyMzYyMjozMzAyNjIyNjI3NTA1NDU3NTk4ODE4MzQ2NzU3MzY0MTIxNgZDZD"
     }
   ],
   "templates": [
