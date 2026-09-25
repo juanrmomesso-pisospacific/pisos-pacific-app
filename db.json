@@ -142164,6 +142164,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-25T23:06:38.000Z",
       "last_touch_at": "2026-09-25T23:06:38.000Z"
+    },
+    {
+      "id": "lead-email-1a0daf3a9518",
+      "name": "Guillermo",
+      "email": "guillehaiuk@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "caba",
+      "postal_code": "1425",
+      "approx_m2": 24,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 24m² · Con Colocación · CP 1425",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-25T23:43:16.000Z",
+      "last_touch_at": "2026-09-25T23:43:16.000Z"
     }
   ],
   "conversations": [
@@ -149477,6 +149494,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-25T23:06:38.000Z"
+    },
+    {
+      "id": "conv-email-1a0daf3a9518",
+      "channel": "email",
+      "contact_id": "guillehaiuk@gmail.com",
+      "contact_name": "Guillermo",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0daf3a9518",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-25T23:43:16.000Z",
+      "last_message_preview": "Formulario web — 24m² · Con Colocación · CP 1425 · caba",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-25T23:43:16.000Z"
     }
   ],
   "messages": [
@@ -170327,6 +170359,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 17m² · Con Colocación · CP C1416 · Tres Arroyos 2954",
       "ts": "2026-09-25T23:06:38.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0daf3a9518",
+      "conversation_id": "conv-email-1a0daf3a9518",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 24m² · Con Colocación · CP 1425 · caba",
+      "ts": "2026-09-25T23:43:16.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -179001,10 +179041,9 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": null,
+    "mp_pending_job": 103309063,
     "mp_last_sync": "2026-09-24T23:57:10.402Z",
     "gmail_seen_ids": [
-      "19f74a14dc2d8197",
       "19f74be4c9033db8",
       "19f7519691c0114a",
       "19f754482a5319d3",
@@ -179803,7 +179842,8 @@
       "1a0d8a1d75b2036d",
       "1a0d8a1d6c835c82",
       "1a0da7ad8f97aaf0",
-      "1a0dad21eecf1ebd"
+      "1a0dad21eecf1ebd",
+      "1a0daf3a95187d3f"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -181681,7 +181721,7 @@
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
-    "mp_pending_at": null,
+    "mp_pending_at": "2026-09-25T23:54:42.679Z",
     "receipt_next": 112,
     "receipt_signature": "firma-juan.png",
     "receipt_signer": "Juan Rodriguez Momesso"
