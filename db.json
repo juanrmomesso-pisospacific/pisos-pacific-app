@@ -145464,11 +145464,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1785619246658",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-08-01T21:20:45.381Z",
-      "last_message_preview": "📲 Te mencionó en una historia",
+      "unread_count": 1,
+      "last_message_at": "2026-09-25T12:47:51.346Z",
+      "last_message_preview": "😍",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-01T21:20:45.381Z",
+      "last_inbound_at": "2026-09-25T12:47:51.346Z",
       "ignored": true
     },
     {
@@ -169927,6 +169927,14 @@
       "body": "Tenes estas fotos?",
       "ts": "2026-09-25T12:43:57.672Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790340472070-cu1b",
+      "conversation_id": "conv-1785619246658-5m1w",
+      "direction": "in",
+      "body": "😍",
+      "ts": "2026-09-25T12:47:51.346Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -180750,7 +180758,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY2MTcxNDU1NjQ3OTc0NTozMzAyNTcwODQ0OTE2MjEyOTI0ODgwMDY0NTg1OTc3MDM2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODY2MTcxNDU1NjQ3OTc0NTozMzAyNTcwODQ3MTAwNjMwMjQxMjI4NTY1NDE0NDY0NzE2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc1ODgxNjcwMDEwMjg2MzozMzAyNTk0ODAwMzY5NTE3NzgwOTQyNjQ5NDA5NzcxOTI5NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc1ODgxNjcwMDEwMjg2MzozMzAyNTk0ODE2OTIxNTc0NjM0NzQ4NjA0NTI3ODMwNjMwNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc1ODgxNjcwMDEwMjg2MzozMzAyNTk0ODE2OTIxNTc0NjM0NzQ4NjA0NTI3ODMwNjMwNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU5ODYyMTY5MDA5MzUyNjozMzAyNTk1MjQ3OTczNDI0NDI4MjQxMTkyNzcwMDc2NjcyMAZDZD"
     ],
     "last_weekly_reminder": "2026-09-18T12:36:55.070Z",
     "warehouses": [
