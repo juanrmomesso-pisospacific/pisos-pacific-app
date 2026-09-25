@@ -36906,8 +36906,9 @@
       "currency": "USD",
       "created_at": "2026-09-18T14:26:09.824Z",
       "quote_number": "A7313",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a09c9a4005b"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a09c9a4005b",
+      "share_token": "15314cef6176a0f2f65517e9"
     },
     {
       "id": "local-1789742326359-rxfqb",
@@ -148257,12 +148258,12 @@
       "linked_lead_id": "lead-email-1a09c9a4005b",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T15:43:30.000Z",
-      "last_message_preview": "Hola Victoria!\r\nEstaríamos necesitando cien metros cuadrados, aproximadamente, de piso\r\nflotante color roble, simil madera,\r\nSi podes cotiza",
+      "last_message_at": "2026-09-25T11:41:28.466Z",
+      "last_message_preview": "📄 Presupuesto NA7313 - Cotizacion Ernesto Orlando Alvarez - Ernesto Orlando Alvarez.pdf",
       "email_subject": "Piso color roble",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T15:43:30.000Z",
-      "last_outbound_at": "2026-09-17T14:59:38.080Z"
+      "last_outbound_at": "2026-09-25T11:41:28.466Z"
     },
     {
       "id": "conv-1789342423594-fby7",
@@ -148301,14 +148302,15 @@
       "contact_name": "Raul",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0a2783a477",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-20T21:38:04.000Z",
       "last_message_preview": "Muchas gracias por la respuesta. En sí estamos buscando una opción de los\r\nvinílicos SPC con un tono similar a estos porcelanatos pecan vite",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-20T21:38:04.000Z",
-      "last_outbound_at": "2026-09-16T13:47:22.694Z"
+      "last_outbound_at": "2026-09-16T13:47:22.694Z",
+      "ignored": true
     },
     {
       "id": "conv-1789480901918-b86i",
@@ -149029,7 +149031,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0d43a1137e",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-24T16:22:49.000Z",
       "last_message_preview": "Formulario web — 30m² · Sin Colocación · CP 6600 · Calle 11 N 621",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -169772,6 +169774,16 @@
       "ts": "2026-09-25T11:39:24.602Z",
       "status": "sent",
       "wa_id": "1a0d85cee5c924fa"
+    },
+    {
+      "id": "m-1790336488466-nb5a",
+      "conversation_id": "conv-email-1a09c9a4005b",
+      "direction": "out",
+      "body": "Hola Ernesto, ¿cómo estás?\n\nTe comparto adjunto el presupuesto NA7313.\n\nDisculpas por la demora en responder. Recién vimos tu mensaje porque nos había llegado a la carpeta de correo no deseado.\n\nCualquier consulta, quedo a disposición.\n\nSaludos,\nVictoria\n📄 Presupuesto NA7313 - Cotizacion Ernesto Orlando Alvarez - Ernesto Orlando Alvarez.pdf",
+      "ts": "2026-09-25T11:41:28.466Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a0d85ed2225cde5"
     }
   ],
   "templates": [
@@ -179761,7 +179773,8 @@
       "1a0c91e83cfdef88",
       "1a0ce551ecca51bc",
       "1a0d3127e0aa2499",
-      "1a0d37b7bb81fc6c"
+      "1a0d37b7bb81fc6c",
+      "1a0d85cee5c924fa"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
