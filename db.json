@@ -38458,8 +38458,9 @@
       "currency": "USD",
       "created_at": "2026-09-25T13:29:32.534Z",
       "quote_number": "A6315",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a0d43a1137e"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a0d43a1137e",
+      "share_token": "f3de4236902180b0ca394f22"
     }
   ],
   "clients": [
@@ -149162,12 +149163,12 @@
       "linked_lead_id": "lead-email-1a0d43a1137e",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-25T11:51:12.000Z",
-      "last_message_preview": "Buenos días Victoria.\r\n\r\nEstoy interesado en el modelo línea H2O (pisos SPC).\r\n\r\nEl El vie, 25 sept 2026 a la(s) 8:41 a. m., Pisos Pacific <",
+      "last_message_at": "2026-09-25T13:30:07.227Z",
+      "last_message_preview": "📄 Presupuesto NA6315 - Obra Mercedes - Valentin Rivadeneyra.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-25T11:51:12.000Z",
-      "last_outbound_at": "2026-09-25T11:41:54.728Z"
+      "last_outbound_at": "2026-09-25T13:30:07.227Z"
     },
     {
       "id": "conv-1790327244235-1zhj",
@@ -169989,6 +169990,16 @@
       "ts": "2026-09-25T13:25:52.788Z",
       "status": "sent",
       "wa_id": "1a0d8be69e95d841"
+    },
+    {
+      "id": "m-1790343007227-3qip",
+      "conversation_id": "conv-email-1a0d43a1137e",
+      "direction": "out",
+      "body": "Hola Valentin, te comparto el presupuesto NA6315 adjunto. Cualquier consulta quedo a disposición.\n📄 Presupuesto NA6315 - Obra Mercedes - Valentin Rivadeneyra.pdf",
+      "ts": "2026-09-25T13:30:07.227Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a0d8c24ac0d4458"
     }
   ],
   "templates": [
