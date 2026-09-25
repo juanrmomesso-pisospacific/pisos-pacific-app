@@ -149014,10 +149014,11 @@
       "linked_lead_id": "lead-instagram-1790211965375",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-24T01:06:03.752Z",
-      "last_message_preview": "Hola, tienen sede en mar del plata?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-24T01:06:03.752Z"
+      "last_message_at": "2026-09-25T11:31:13.322Z",
+      "last_message_preview": "Pero hacemos envíos a todo el país si te interesa",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-24T01:06:03.752Z",
+      "last_outbound_at": "2026-09-25T11:31:13.322Z"
     },
     {
       "id": "conv-email-1a0d43a1137e",
@@ -169721,6 +169722,26 @@
       "status": "received",
       "media_url": "/uploads/fcc0267b5eb5ffd8.jpg",
       "media_type": "image"
+    },
+    {
+      "id": "m-1790335865177-9j6q",
+      "conversation_id": "conv-1790211965375-g0x3",
+      "direction": "out",
+      "body": "Hola Cam no!",
+      "ts": "2026-09-25T11:31:04.373Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE1NzAyNDI5MjAwMjMwMzozMzAyNTg2NzQ5NjA5MDAzMjYzODAzMjQ1Mzg1NTg3MDk3NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1790335873934-qzfj",
+      "conversation_id": "conv-1790211965375-g0x3",
+      "direction": "out",
+      "body": "Pero hacemos envíos a todo el país si te interesa",
+      "ts": "2026-09-25T11:31:13.322Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE1NzAyNDI5MjAwMjMwMzozMzAyNTg2NzY2MTE1OTY3MDUxNzIxMDE3NTA0NzIwNDg2NAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
