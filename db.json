@@ -38347,6 +38347,75 @@
       "quote_number": "A6798",
       "status": "DRAFT",
       "lead_id": "local-1790201167074-kzwvz"
+    },
+    {
+      "id": "local-1790337452363-iaebz",
+      "client_id": "CLI-004",
+      "client_name": "Agustina Lando",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Colghan | Estomba y Ibera",
+      "internal_notes": "",
+      "public_notes": "Las medidas deberán verificarse en obra. Para una correcta colocación, la carpeta debe encontrarse nivelada, firme y en condiciones adecuadas para recibir el piso.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Quincho",
+      "has_iva": true,
+      "price": 1892.0043999999998,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+          "quantity": 29.2,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 1109.6,
+          "discount": 110.96,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 27,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 405,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 160,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 160,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 110.96,
+      "discount_amount": 110.96,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-25T11:57:32.217Z",
+      "quote_number": "A1177",
+      "status": "DRAFT"
     }
   ],
   "clients": [
@@ -179792,7 +179861,9 @@
       "1a0ce551ecca51bc",
       "1a0d3127e0aa2499",
       "1a0d37b7bb81fc6c",
-      "1a0d85cee5c924fa"
+      "1a0d85cee5c924fa",
+      "1a0d85f3bcd4de83",
+      "1a0d85ed2225cde5"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
