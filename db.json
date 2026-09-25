@@ -149177,11 +149177,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790183520734",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-25T11:31:44.214Z",
-      "last_message_preview": "Dale!! En que zona es?",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-24T12:00:05.596Z",
+      "unread_count": 1,
+      "last_message_at": "2026-09-25T15:57:10.712Z",
+      "last_message_preview": "Caballito!",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-25T15:57:10.712Z",
       "last_outbound_at": "2026-09-25T11:31:44.214Z"
     },
     {
@@ -170096,6 +170096,14 @@
       "body": "Hola! Buen día. Quería saber si se podía pedir muestrario de los pisos!!",
       "ts": "2026-09-25T14:02:37.014Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790351831709-w3vc",
+      "conversation_id": "conv-1790183520734-zr2o",
+      "direction": "in",
+      "body": "Caballito!",
+      "ts": "2026-09-25T15:57:10.712Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -180925,7 +180933,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc1ODgxNjcwMDEwMjg2MzozMzAyNTk0ODAwMzY5NTE3NzgwOTQyNjQ5NDA5NzcxOTI5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc1ODgxNjcwMDEwMjg2MzozMzAyNTk0ODE2OTIxNTc0NjM0NzQ4NjA0NTI3ODMwNjMwNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU5ODYyMTY5MDA5MzUyNjozMzAyNTk1MjQ3OTczNDI0NDI4MjQxMTkyNzcwMDc2NjcyMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY2Mjg2MDQ2NjkyMzYyMjozMzAyNjAzNTIyNTcwOTc5ODIwOTMyNDcxNDEyNTQyNjY4OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY2Mjg2MDQ2NjkyMzYyMjozMzAyNjAzNTIyNTcwOTc5ODIwOTMyNDcxNDEyNTQyNjY4OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyNjE2MjAyMzA0ODM0NzAxOTUwOTA4ODMwNzM4MDIyNAZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
