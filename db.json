@@ -36091,7 +36091,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Romina Di Landro",
       "has_iva": true,
-      "price": 6001.6,
+      "price": 5396.6,
       "zoned": false,
       "description": "Madera - 12 cm Roble - Veta Tallada + 2 más",
       "items": [
@@ -36104,9 +36104,9 @@
           "cost": 36,
           "category": "Pisos de Madera",
           "disc_kind": "amount",
-          "disc_value": 2400,
+          "disc_value": 2900,
           "total": 5670,
-          "discount": 2400,
+          "discount": 2900,
           "image": "",
           "target_item_index": null
         },
@@ -36118,6 +36118,7 @@
           "unit_price": 20,
           "cost": 7.33,
           "category": "Servicio",
+          "disc_value": 0,
           "total": 1600,
           "discount": 0,
           "image": "",
@@ -36137,8 +36138,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 2400,
-      "discount_amount": 2400,
+      "discount_total": 2900,
+      "discount_amount": 2900,
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
