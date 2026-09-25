@@ -148985,11 +148985,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790190791819",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-23T19:13:10.055Z",
-      "last_message_preview": "Hola, qué precio tiene el metro de ese Piso",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-23T19:13:10.055Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-25T11:32:03.169Z",
+      "last_message_preview": "Hola María! De que piso?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-23T19:13:10.055Z",
+      "last_outbound_at": "2026-09-25T11:32:03.169Z"
     },
     {
       "id": "conv-1790196683300-j50q",
@@ -169751,6 +169752,16 @@
       "ts": "2026-09-25T11:31:44.214Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyNTg2ODIzMTAxMzA5NDI0MTMzNjA4MTAxMTE3OTUyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1790335923727-1ut5",
+      "conversation_id": "conv-1790190791819-a4rs",
+      "direction": "out",
+      "body": "Hola María! De que piso?",
+      "ts": "2026-09-25T11:32:03.169Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3NDU0MDUzOTY4MTcyNDozMzAyNTg2ODU4MDY4MjM0Mzc3ODg5NzQ0NzI5OTg0MjA0OAZDZD",
       "via": "ig-app"
     }
   ],
