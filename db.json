@@ -148971,11 +148971,11 @@
       "linked_lead_id": "lead-instagram-1790183520734",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-24T12:00:05.596Z",
-      "last_message_preview": "Dale si podés con la colación mejor! Gracias",
-      "last_message_direction": "in",
+      "last_message_at": "2026-09-25T11:31:44.214Z",
+      "last_message_preview": "Dale!! En que zona es?",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-24T12:00:05.596Z",
-      "last_outbound_at": "2026-09-23T19:08:24.187Z"
+      "last_outbound_at": "2026-09-25T11:31:44.214Z"
     },
     {
       "id": "conv-1790190791819-a4rs",
@@ -169741,6 +169741,16 @@
       "ts": "2026-09-25T11:31:13.322Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE1NzAyNDI5MjAwMjMwMzozMzAyNTg2NzY2MTE1OTY3MDUxNzIxMDE3NTA0NzIwNDg2NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1790335904692-x747",
+      "conversation_id": "conv-1790183520734-zr2o",
+      "direction": "out",
+      "body": "Dale!! En que zona es?",
+      "ts": "2026-09-25T11:31:44.214Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyNTg2ODIzMTAxMzA5NDI0MTMzNjA4MTAxMTE3OTUyMAZDZD",
       "via": "ig-app"
     }
   ],
