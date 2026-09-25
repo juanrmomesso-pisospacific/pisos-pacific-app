@@ -142147,6 +142147,23 @@
       "address": "Palermo",
       "created_at": "2026-09-25T16:51:24.226Z",
       "last_touch_at": "2026-09-25T16:51:26.725Z"
+    },
+    {
+      "id": "lead-email-1a0dad21eecf",
+      "name": "marcelo schlimovich",
+      "email": "marcelosch@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Tres Arroyos 2954",
+      "postal_code": "C1416",
+      "approx_m2": 17,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 17m² · Con Colocación · CP C1416",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-25T23:06:38.000Z",
+      "last_touch_at": "2026-09-25T23:06:38.000Z"
     }
   ],
   "conversations": [
@@ -149445,6 +149462,21 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-25T17:03:41.614Z",
       "last_outbound_at": "2026-09-25T16:55:14.182Z"
+    },
+    {
+      "id": "conv-email-1a0dad21eecf",
+      "channel": "email",
+      "contact_id": "marcelosch@gmail.com",
+      "contact_name": "marcelo schlimovich",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0dad21eecf",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-25T23:06:38.000Z",
+      "last_message_preview": "Formulario web — 17m² · Con Colocación · CP C1416 · Tres Arroyos 2954",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-25T23:06:38.000Z"
     }
   ],
   "messages": [
@@ -170287,6 +170319,14 @@
       "body": "✉️ Re: Presupuesto Pisos Pacific — Obra Mercedes\n\nPerfecto, muchas gracias. Lo consulto y cualquier cosa te aviso.\r\n\r\nSaludos.\r\n\r\nEl El vie, 25 sept 2026 a la(s) 10:30 a. m., Pisos Pacific <\r\ninfo@pisospacific.com> escribió:\r\n\r\n> Hola Valentin, te comparto el presupuesto NA6315 adjunto. Cualquier\r\n> consulta quedo a disposición.\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-25T21:31:05.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0dad21eecf",
+      "conversation_id": "conv-email-1a0dad21eecf",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 17m² · Con Colocación · CP C1416 · Tres Arroyos 2954",
+      "ts": "2026-09-25T23:06:38.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -178964,7 +179004,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-24T23:57:10.402Z",
     "gmail_seen_ids": [
-      "19f7179782c080f4",
       "19f74a14dc2d8197",
       "19f74be4c9033db8",
       "19f7519691c0114a",
@@ -179763,7 +179802,8 @@
       "1a0d87653b803bfd",
       "1a0d8a1d75b2036d",
       "1a0d8a1d6c835c82",
-      "1a0da7ad8f97aaf0"
+      "1a0da7ad8f97aaf0",
+      "1a0dad21eecf1ebd"
     ],
     "cash_sessions": {
       "1136982222": {
