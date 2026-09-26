@@ -129347,8 +129347,8 @@
       "flow": "Ingreso",
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Venta - Pisos",
-      "subcategory": "H2O HD XL",
+      "category": "Ingreso Otros",
+      "subcategory": "Paneles",
       "counterparty": "Matias Pagano",
       "counterparty_type": "client",
       "client_id": null,
@@ -184288,6 +184288,20 @@
       "counterparty": "IB Proveedores",
       "category": "Otros",
       "subcategory": null,
+      "expense_type": null,
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"IB Proveedores\""
+    },
+    {
+      "id": "local-1790418939741-s50rv",
+      "match": [
+        "IB Proveedores"
+      ],
+      "cuit": null,
+      "counterparty": "Matias Pagano",
+      "category": "Ingreso Otros",
+      "subcategory": "Paneles",
       "expense_type": null,
       "personal": false,
       "source": "learned",
