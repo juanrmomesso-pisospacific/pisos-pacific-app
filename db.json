@@ -42241,6 +42241,15 @@
       "category_default": null,
       "notes": null,
       "name": "comez"
+    },
+    {
+      "id": "PROV-muib6vz6-0oer",
+      "type": "supplier",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null,
+      "name": "SteelCenter"
     }
   ],
   "categories": [
