@@ -136154,7 +136154,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-11T06:13:13.000Z",
-      "last_touch_at": "2026-07-11T06:13:13.000Z"
+      "last_touch_at": "2026-09-26T09:32:53.000Z"
     },
     {
       "id": "lead-instagram-1783760696566",
@@ -144495,13 +144495,13 @@
       "contact_name": "Miguel Ventura",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f4fcf002ff",
-      "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-07-11T06:13:13.000Z",
-      "last_message_preview": "Formulario web — 62.1m² · Con Colocación · Rua dos Ciprestes, N.78 1º Dto, Herdade Aroeira, 2820-555",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-26T09:32:53.000Z",
+      "last_message_preview": "Bom dia,\r\n\r\nEstaria interessado na aquisição de 39 unidades (+- 69m2) do vosso pavimento vinílico Pacific H2O Eslavônia com réguas do tamanh",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-07-11T06:13:13.000Z"
+      "last_inbound_at": "2026-09-26T09:32:53.000Z"
     },
     {
       "id": "conv-1783760696566-oa86",
@@ -170453,6 +170453,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: fe32c8103f9a4e8f9b820720da53e1a2\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-24 00:00:00 UTC to 2026-09-25 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-26T08:23:44.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0dd0f7fe2e",
+      "conversation_id": "conv-email-19f4fcf002ff",
+      "direction": "in",
+      "body": "✉️ Pedido de orcamento\n\nBom dia,\r\n\r\nEstaria interessado na aquisição de 39 unidades (+- 69m2) do vosso pavimento vinílico Pacific H2O Eslavônia com réguas do tamanho 1200 x 180 x 6,5 mm.\r\n\r\nGostaria de saber se efetuam venda direta ou recomendação distribuidor para a zona de Lisboa / Margem Sul, respetivo orçamento e prazo previsto para entrega.\r\n\r\nCom os melhores cumprimentos,\r\n\r\nMiguel Ventura\r\n913780049",
+      "ts": "2026-09-26T09:32:53.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -179130,7 +179138,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-25T23:57:21.306Z",
     "gmail_seen_ids": [
-      "19f7519691c0114a",
       "19f754482a5319d3",
       "19f79791de6fe454",
       "19f79cd7cca1c149",
@@ -179929,7 +179936,8 @@
       "1a0da7ad8f97aaf0",
       "1a0dad21eecf1ebd",
       "1a0daf3a95187d3f",
-      "1a0dcd033f95c377"
+      "1a0dcd033f95c377",
+      "1a0dd0f7fe2e8793"
     ],
     "cash_sessions": {
       "1136982222": {
