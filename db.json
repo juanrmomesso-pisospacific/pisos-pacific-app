@@ -144156,6 +144156,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-26T13:37:53.461Z",
       "last_touch_at": "2026-09-26T13:37:53.461Z"
+    },
+    {
+      "id": "lead-email-1a0de41bd4d1",
+      "name": "sergio casillo",
+      "email": "scasillo007@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Coronel Juan Casacuberta 1730",
+      "postal_code": "B1712",
+      "approx_m2": 40,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 40m² · Con Colocación · CP B1712",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-26T15:07:24.000Z",
+      "last_touch_at": "2026-09-26T15:07:24.000Z"
     }
   ],
   "conversations": [
@@ -151513,6 +151530,21 @@
       "last_message_preview": "Buen dia cómo está? Soy Ricardo Kinetz de Aserradero Kinetz, tenemos un depósito en merlo y un Aserradero en misiones hace mas de 30 año",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-26T13:37:53.461Z"
+    },
+    {
+      "id": "conv-email-1a0de41bd4d1",
+      "channel": "email",
+      "contact_id": "scasillo007@gmail.com",
+      "contact_name": "sergio casillo",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0de41bd4d1",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-26T15:07:24.000Z",
+      "last_message_preview": "Formulario web — 40m² · Con Colocación · CP B1712 · Coronel Juan Casacuberta 1730",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-26T15:07:24.000Z"
     }
   ],
   "messages": [
@@ -172413,6 +172445,14 @@
       "body": "Buen dia cómo está? Soy Ricardo Kinetz de Aserradero Kinetz, tenemos un depósito en merlo y un Aserradero en misiones hace mas de 30 años!\n\nVendemos madera seca de horno, un amplio stock de petiribí, paraíso, guatambú, loro blanco, todo tipo de cedros, kiri y mucho más. Ademas pisos y tableros.\nLe gustaría ver una lista de precios?",
       "ts": "2026-09-26T13:37:53.461Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0de41bd4d1",
+      "conversation_id": "conv-email-1a0de41bd4d1",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 40m² · Con Colocación · CP B1712 · Coronel Juan Casacuberta 1730",
+      "ts": "2026-09-26T15:07:24.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181128,7 +181168,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-25T23:57:21.306Z",
     "gmail_seen_ids": [
-      "19f7a3c6b8f1a803",
       "19f7a4cfe5369eed",
       "19f7a645802382f7",
       "19f7a63f3ccec362",
@@ -181927,7 +181966,8 @@
       "1a0dd0f7fe2e8793",
       "1a0dd7b644a680e0",
       "1a0ddb4f55319792",
-      "1a0ddc40f175c90d"
+      "1a0ddc40f175c90d",
+      "1a0de41bd4d1b918"
     ],
     "cash_sessions": {
       "1136982222": {
