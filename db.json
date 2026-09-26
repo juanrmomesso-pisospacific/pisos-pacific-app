@@ -42232,6 +42232,15 @@
       "category_default": null,
       "notes": null,
       "name": "Arq. Gastón"
+    },
+    {
+      "id": "PROV-muib5wro-4ijo",
+      "type": "supplier",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null,
+      "name": "comez"
     }
   ],
   "categories": [
@@ -134947,12 +134956,12 @@
       "flow": "Egreso",
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Otros",
-      "subcategory": null,
-      "counterparty": "Debito Transf. HB",
+      "category": "Importaciones",
+      "subcategory": "Despachante Aduana",
+      "counterparty": "COMEX",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-035",
       "description": "Debito Transf. HB",
       "sale_ref": null,
       "currency": "ARS",
@@ -134960,10 +134969,10 @@
       "amount_usd": 450.18,
       "exchange_rate": 1550,
       "fixed_variable": "Variable",
-      "expense_type": null,
+      "expense_type": "COGS",
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "extracto bancario importado — verificar clasificación y signo",
+      "needs_review": false,
+      "review_reason": null,
       "raw_name": "Debito Transf. HB",
       "id": "MOV-IMP-muiaqese-050"
     },
@@ -186228,6 +186237,20 @@
       "counterparty": "COMEX",
       "category": "Importaciones",
       "subcategory": "Navieras",
+      "expense_type": "COGS",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Debito Transf. HB\""
+    },
+    {
+      "id": "local-1790422230359-iuvq7",
+      "match": [
+        "Debito Transf. HB"
+      ],
+      "cuit": null,
+      "counterparty": "COMEX",
+      "category": "Importaciones",
+      "subcategory": "Despachante Aduana",
       "expense_type": "COGS",
       "personal": false,
       "source": "learned",
