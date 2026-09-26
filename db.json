@@ -41146,6 +41146,18 @@
       "notes": null,
       "name": "Arq. Jaime Bosch",
       "updated_at": "2026-09-26T10:57:12.700Z"
+    },
+    {
+      "id": "CLI-muib1kp3-61ff",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Arq. Maria Llauro",
+      "updated_at": "2026-09-26T11:27:00.615Z"
     }
   ],
   "expenses": [],
