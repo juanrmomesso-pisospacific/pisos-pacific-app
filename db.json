@@ -15142,7 +15142,7 @@
       ],
       "zoned": false,
       "discount_total": 1003.2,
-      "status": "En proceso",
+      "status": "Finalizado",
       "created_at": "2026-08-09T01:51:22.852Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -15168,6 +15168,12 @@
           "from": "Programado",
           "to": "En proceso",
           "at": "2026-08-20T15:29:06.086Z",
+          "by": "Admin User"
+        },
+        {
+          "from": "En proceso",
+          "to": "Finalizado",
+          "at": "2026-09-26T10:34:23.471Z",
           "by": "Admin User"
         }
       ],
