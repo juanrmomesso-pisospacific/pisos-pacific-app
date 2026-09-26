@@ -144140,6 +144140,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-26T12:50:08.000Z",
       "last_touch_at": "2026-09-26T12:50:08.000Z"
+    },
+    {
+      "id": "lead-instagram-1790429874973",
+      "name": "@ricardokinetz",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-26T13:37:53.461Z",
+      "last_touch_at": "2026-09-26T13:37:53.461Z"
     }
   ],
   "conversations": [
@@ -151483,6 +151499,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-26T12:50:08.000Z"
+    },
+    {
+      "id": "conv-1790429874973-2gq4",
+      "channel": "instagram",
+      "contact_id": "1104800672007232",
+      "contact_name": "@ricardokinetz",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790429874973",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-26T13:37:53.461Z",
+      "last_message_preview": "Buen dia cómo está? Soy Ricardo Kinetz de Aserradero Kinetz, tenemos un depósito en merlo y un Aserradero en misiones hace mas de 30 año",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-26T13:37:53.461Z"
     }
   ],
   "messages": [
@@ -172375,6 +172405,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 150m² · Sin Colocación · CP 8200 · Don Bosco 951 Esquel Prov. Chubut",
       "ts": "2026-09-26T12:50:08.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790429874973-3um8",
+      "conversation_id": "conv-1790429874973-2gq4",
+      "direction": "in",
+      "body": "Buen dia cómo está? Soy Ricardo Kinetz de Aserradero Kinetz, tenemos un depósito en merlo y un Aserradero en misiones hace mas de 30 años!\n\nVendemos madera seca de horno, un amplio stock de petiribí, paraíso, guatambú, loro blanco, todo tipo de cedros, kiri y mucho más. Ademas pisos y tableros.\nLe gustaría ver una lista de precios?",
+      "ts": "2026-09-26T13:37:53.461Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -183245,7 +183283,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU5ODYyMTY5MDA5MzUyNjozMzAyNTk1MjQ3OTczNDI0NDI4MjQxMTkyNzcwMDc2NjcyMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY2Mjg2MDQ2NjkyMzYyMjozMzAyNjAzNTIyNTcwOTc5ODIwOTMyNDcxNDEyNTQyNjY4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyNjE2MjAyMzA0ODM0NzAxOTUwOTA4ODMwNzM4MDIyNAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY2Mjg2MDQ2NjkyMzYyMjozMzAyNjIzNTY0MjIwNjc3MTE1Mjk0ODQzNDY5NzE5MTQyNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY2Mjg2MDQ2NjkyMzYyMjozMzAyNjIzNTY0MjIwNjc3MTE1Mjk0ODQzNDY5NzE5MTQyNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3MTY3NTQ1OTk4ODMyOTozMzAyNzYwMTY1NzY2MDYwOTIxNTc2MzM4MjU2OTc5NTU4NAZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
