@@ -133008,8 +133008,8 @@
       "flow": "Ingreso",
       "caja_id": "CAJ-002",
       "caja_name": "Mercado Pago",
-      "category": "Venta - No Pisos",
-      "subcategory": null,
+      "category": "Ingreso Otros",
+      "subcategory": "Paneles",
       "counterparty": "YULIANA FAGGI",
       "counterparty_type": "client",
       "client_id": null,
@@ -133023,8 +133023,8 @@
       "fixed_variable": "Variable",
       "expense_type": null,
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "nombre estimado del perfil de MP — confirmar y clasificar",
+      "needs_review": false,
+      "review_reason": null,
       "source": "mp-api",
       "mp_op_id": "180509149504",
       "mp_user_id": "54053203",
@@ -181733,6 +181733,16 @@
         "expense_type": "Otros Gastos y Ajustes",
         "learned_at": "2026-09-26T10:45:38.292Z"
       },
+      "54053203": {
+        "counterparty": "YULIANA FAGGI",
+        "counterparty_type": "client",
+        "supplier_id": null,
+        "client_id": null,
+        "category": "Ingreso Otros",
+        "subcategory": "Paneles",
+        "expense_type": null,
+        "learned_at": "2026-09-26T10:51:45.382Z"
+      },
       "54463733": {
         "counterparty": "FLOYD CATERING",
         "counterparty_type": "supplier",
@@ -184817,6 +184827,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"FLOYD CATERING\""
+    },
+    {
+      "id": "local-1790419905578-h6f6u",
+      "match": [
+        "YULIANA FAGGI"
+      ],
+      "cuit": null,
+      "counterparty": "YULIANA FAGGI",
+      "category": "Ingreso Otros",
+      "subcategory": "Paneles",
+      "expense_type": null,
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"YULIANA FAGGI\""
     }
   ],
   "product_aliases": [
