@@ -184395,20 +184395,6 @@
       "note": "Aprendida al clasificar \"ANDESMARCARGASSOCIEDADANONI\""
     },
     {
-      "id": "local-1789417628770-9xhls",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "BONA",
-      "category": "Instalaciones",
-      "subcategory": "Insumos Generales Colocación",
-      "expense_type": "Gastos de Instalaciones y Suministros",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
       "id": "local-1789417657337-wqigl",
       "match": [
         "DÉBITO POR DEBIN"
@@ -184423,48 +184409,6 @@
       "note": "Aprendida al clasificar \"DÉBITO POR DEBIN\""
     },
     {
-      "id": "local-1789417881977-360sm",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "Panamer",
-      "category": "Bienes de Capital",
-      "subcategory": "Compra Flota",
-      "expense_type": "Depreciación y Amortización",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
-      "id": "local-1789417910884-4o8qp",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "Borassi",
-      "category": "Administración",
-      "subcategory": "Contador",
-      "expense_type": "Gastos Administrativos",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
-      "id": "local-1789417946980-b46z9",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "Panamer",
-      "category": "Bienes de Capital",
-      "subcategory": "Compra Flota",
-      "expense_type": "Depreciación y Amortización",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
       "id": "local-1789418143651-totbn",
       "match": [
         "JULIANA ZACH"
@@ -184477,62 +184421,6 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"JULIANA ZACH\""
-    },
-    {
-      "id": "local-1789418217162-hlk5z",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "Seguros Almasque",
-      "category": "HR",
-      "subcategory": "Seguros",
-      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
-      "id": "local-1789418262455-9s7fr",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "Escribania Susana",
-      "category": "Administración",
-      "subcategory": "Contador",
-      "expense_type": "Gastos Administrativos",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
-      "id": "local-1789418315735-chyl3",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "Martin Fuentes",
-      "category": "Bienes de Capital",
-      "subcategory": "Maquinaria",
-      "expense_type": "Depreciación y Amortización",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
-      "id": "local-1789418355325-hgwfx",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "BORDERS PARKING",
-      "category": "Flota",
-      "subcategory": "Gastos por Mantenimiento Auto",
-      "expense_type": "Gastos de Flota/Vehículos",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
     },
     {
       "id": "local-1789418526998-8p0k6",
@@ -184687,48 +184575,6 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332022\""
-    },
-    {
-      "id": "local-1789418623782-kuo18",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "Ariel Ernesto Garcia",
-      "category": "HR",
-      "subcategory": "Pago Instalaciones",
-      "expense_type": "Gastos de Instalaciones y Suministros",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
-      "id": "local-1789418750213-wydvv",
-      "match": [
-        "IB Proveedores"
-      ],
-      "cuit": null,
-      "counterparty": "IB Proveedores",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"IB Proveedores\""
-    },
-    {
-      "id": "local-1790418939741-s50rv",
-      "match": [
-        "IB Proveedores"
-      ],
-      "cuit": null,
-      "counterparty": "Matias Pagano",
-      "category": "Ingreso Otros",
-      "subcategory": "Paneles",
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"IB Proveedores\""
     },
     {
       "id": "local-1790419490849-0vm8p",
