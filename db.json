@@ -144123,6 +144123,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-25T23:43:16.000Z",
       "last_touch_at": "2026-09-25T23:43:16.000Z"
+    },
+    {
+      "id": "lead-email-1a0ddc40f175",
+      "name": "Esteban",
+      "email": "estebansardi@yahoo.com.ar",
+      "phone": "",
+      "source": "Web",
+      "address": "Don Bosco 951 Esquel Prov. Chubut",
+      "postal_code": "8200",
+      "approx_m2": 150,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 150m² · Sin Colocación · CP 8200",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-26T12:50:08.000Z",
+      "last_touch_at": "2026-09-26T12:50:08.000Z"
     }
   ],
   "conversations": [
@@ -151451,6 +151468,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-25T23:43:16.000Z"
+    },
+    {
+      "id": "conv-email-1a0ddc40f175",
+      "channel": "email",
+      "contact_id": "estebansardi@yahoo.com.ar",
+      "contact_name": "Esteban",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0ddc40f175",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-26T12:50:08.000Z",
+      "last_message_preview": "Formulario web — 150m² · Sin Colocación · CP 8200 · Don Bosco 951 Esquel Prov. Chubut",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-26T12:50:08.000Z"
     }
   ],
   "messages": [
@@ -172335,6 +172367,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc1ODgxNjcwMDEwMjg2MzozMzAyNzQzMjYyMzc1OTA5OTk5MzA5ODQ3OTM1NTI5Nzc5MgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a0ddc40f175",
+      "conversation_id": "conv-email-1a0ddc40f175",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 150m² · Sin Colocación · CP 8200 · Don Bosco 951 Esquel Prov. Chubut",
+      "ts": "2026-09-26T12:50:08.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181050,7 +181090,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-25T23:57:21.306Z",
     "gmail_seen_ids": [
-      "19f79cd7cca1c149",
       "19f7a3c6b8f1a803",
       "19f7a4cfe5369eed",
       "19f7a645802382f7",
@@ -181849,7 +181888,8 @@
       "1a0dcd033f95c377",
       "1a0dd0f7fe2e8793",
       "1a0dd7b644a680e0",
-      "1a0ddb4f55319792"
+      "1a0ddb4f55319792",
+      "1a0ddc40f175c90d"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -182369,7 +182409,8 @@
       "1a0d8a1d75b2036d",
       "1a0d8a1d6c835c82",
       "1a0d8c24ac0d4458",
-      "1a0d8be69e95d841"
+      "1a0d8be69e95d841",
+      "1a0ddb4f55319792"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
