@@ -144173,6 +144173,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-26T15:07:24.000Z",
       "last_touch_at": "2026-09-26T15:07:24.000Z"
+    },
+    {
+      "id": "lead-email-1a0de8f37793",
+      "name": "denise musinszky",
+      "email": "dmusinszky@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "avenida Bartolomé Mitre 6669 Wilde",
+      "postal_code": "1875",
+      "approx_m2": 30,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 30m² · Sin Colocación · CP 1875",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-26T16:32:02.000Z",
+      "last_touch_at": "2026-09-26T16:32:02.000Z"
     }
   ],
   "conversations": [
@@ -151545,6 +151562,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-26T15:07:24.000Z"
+    },
+    {
+      "id": "conv-email-1a0de8f37793",
+      "channel": "email",
+      "contact_id": "dmusinszky@gmail.com",
+      "contact_name": "denise musinszky",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0de8f37793",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-26T16:32:02.000Z",
+      "last_message_preview": "Formulario web — 30m² · Sin Colocación · CP 1875 · avenida Bartolomé Mitre 6669 Wilde",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-26T16:32:02.000Z"
     }
   ],
   "messages": [
@@ -172453,6 +172485,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 40m² · Con Colocación · CP B1712 · Coronel Juan Casacuberta 1730",
       "ts": "2026-09-26T15:07:24.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0de8f37793",
+      "conversation_id": "conv-email-1a0de8f37793",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 30m² · Sin Colocación · CP 1875 · avenida Bartolomé Mitre 6669 Wilde",
+      "ts": "2026-09-26T16:32:02.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181168,7 +181208,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-25T23:57:21.306Z",
     "gmail_seen_ids": [
-      "19f7a4cfe5369eed",
       "19f7a645802382f7",
       "19f7a63f3ccec362",
       "19f7a6adf1316695",
@@ -181967,7 +182006,8 @@
       "1a0dd7b644a680e0",
       "1a0ddb4f55319792",
       "1a0ddc40f175c90d",
-      "1a0de41bd4d1b918"
+      "1a0de41bd4d1b918",
+      "1a0de8f3779380f1"
     ],
     "cash_sessions": {
       "1136982222": {
