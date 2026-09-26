@@ -42456,14 +42456,6 @@
       "notes": null
     },
     {
-      "id": "CAT-030",
-      "flow": "Egreso",
-      "category": "Flota",
-      "subcategory": "flete",
-      "active": true,
-      "notes": null
-    },
-    {
       "id": "CAT-031",
       "flow": "Egreso",
       "category": "HR",
@@ -42476,14 +42468,6 @@
       "flow": "Egreso",
       "category": "HR",
       "subcategory": "Pago Instalaciones",
-      "active": true,
-      "notes": null
-    },
-    {
-      "id": "CAT-033",
-      "flow": "Egreso",
-      "category": "HR",
-      "subcategory": "Pago instalaciones",
       "active": true,
       "notes": null
     },
@@ -42508,14 +42492,6 @@
       "flow": "Egreso",
       "category": "HR",
       "subcategory": "Viaticos",
-      "active": true,
-      "notes": null
-    },
-    {
-      "id": "CAT-037",
-      "flow": "Egreso",
-      "category": "HR",
-      "subcategory": "gastos personales",
       "active": true,
       "notes": null
     },
@@ -42576,14 +42552,6 @@
       "notes": null
     },
     {
-      "id": "CAT-045",
-      "flow": "Egreso",
-      "category": "Impuestos",
-      "subcategory": "iNGResos Brutos y Otros Impuestos",
-      "active": true,
-      "notes": null
-    },
-    {
       "id": "CAT-046",
       "flow": "Egreso",
       "category": "Instalaciones",
@@ -42640,14 +42608,6 @@
       "notes": null
     },
     {
-      "id": "CAT-053",
-      "flow": "Egreso",
-      "category": "Otros",
-      "subcategory": "OTRos",
-      "active": true,
-      "notes": null
-    },
-    {
       "id": "CAT-054",
       "flow": "Egreso",
       "category": "Otros",
@@ -42659,7 +42619,7 @@
       "id": "CAT-055",
       "flow": "Egreso",
       "category": "Otros Gastos y Ajustes",
-      "subcategory": "Ajustes",
+      "subcategory": "Ajuste",
       "active": true,
       "notes": null
     },
