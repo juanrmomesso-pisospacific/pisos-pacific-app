@@ -1,6 +1,14 @@
 // Tipos de gasto canónicos (dimensión primaria del P&L) y su asociación con categorías.
 // Usado por los formularios de movimiento (CashflowForm) y gasto en efectivo (CashQuickForm).
 
+// Descriptores bancarios GENÉRICOS (el banco los usa para muchas contrapartes distintas): NUNCA
+// se aprende una cp_rule sobre ellos (mis-atribuiría todo a un proveedor fijo). El backend también
+// lo rechaza. Mirror de import/statements.mjs (GENERIC_BANK_DESCRIPTOR) — mantener en sync.
+const GENERIC_BANK_DESCRIPTOR = /transf\.?\s*hb|debito transf|d[eé]bito por|cr[eé]dito por|ib proveedores|\bdebin\b|mov(imiento)? entre cuentas|transferencia (inmediata|recibida|enviada|a cuenta)|pago de servicios tarjeta|dep[oó]sito autoservicio|cuenta propia|su pago en pesos/i
+export function isGenericBankDescriptor(name?: string | null): boolean {
+  return !!name && GENERIC_BANK_DESCRIPTOR.test(name)
+}
+
 export const EXPENSE_TYPES = [
   "COGS", "Gastos de Instalaciones y Suministros", "Gastos Administrativos",
   "Gastos de Personal (HR y Mano de Obra)", "Marketing y Ventas",

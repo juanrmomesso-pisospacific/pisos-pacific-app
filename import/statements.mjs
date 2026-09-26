@@ -178,6 +178,18 @@ const VEP_CHANNEL = /pago de servicios tarjeta/i;
 // filtra). Interés del banco ("Remuneración de Saldo", "Intereses Ganados") y DPF (plazo fijo).
 const FINANCIAL = /remuneraci[oó]n de saldo|intereses ganados|\bdpf\b|plazo fijo/i;
 
+// Descriptores bancarios GENÉRICOS: el banco los usa para MUCHAS contrapartes reales distintas
+// (no identifican a un proveedor/cliente concreto). NUNCA deben aprenderse como cp_rule — si no,
+// la próxima importación mis-atribuye TODOS los movimientos con ese descriptor a un proveedor fijo
+// (footgun recurrente: HB→Ariel, IB Proveedores→Matias Pagano; ver CLAUDE.md 10/9-14/9-26/9).
+// El backend rechaza crear reglas sobre estos (POST /api/cp_rules) y el Libro no ofrece "recordar".
+// Mirror en dashboard-app/src/lib/cashflow.ts (isGenericBankDescriptor) — mantener en sync.
+const GENERIC_BANK_DESCRIPTOR = /transf\.?\s*hb|debito transf|d[eé]bito por|cr[eé]dito por|ib proveedores|\bdebin\b|mov(imiento)? entre cuentas|transferencia (inmediata|recibida|enviada|a cuenta)|pago de servicios tarjeta|dep[oó]sito autoservicio|cuenta propia|su pago en pesos/i;
+export function isGenericBankDescriptor(name) {
+  const t = norm(name);
+  return !!t && GENERIC_BANK_DESCRIPTOR.test(t);
+}
+
 function classifyBank(desc) {
   const t = norm(desc);
   if (VEP_CHANNEL.test(t)) return { review_reason: '¿VEP (nacionalización→COGS / carga Google Ads→Marketing) o pago de resumen de tarjeta?', why: 'canal de pagos/VEP de BBVA — ambiguo, decide el dueño' };

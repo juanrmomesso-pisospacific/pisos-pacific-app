@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcryptjs';
-import { parseStatement, CAJA as IMPORT_CAJA } from './import/statements.mjs';
+import { parseStatement, CAJA as IMPORT_CAJA, isGenericBankDescriptor } from './import/statements.mjs';
 import { startMpReport, getMpReport, parseSettlementBuffer, backfillMpUserMap, mpUserEntry, MP_UNLEARNABLE, MP_CAJA_ID } from './import/mp-api.mjs';
 import { getBlueRate, configureFx, lastBlue } from './import/fx.mjs';
 import { handleInbound, sendOutbound, sendWhatsAppDocument, refreshIgToken, createWaTemplate, listWaTemplates, sendWhatsAppTemplate } from './integrations/meta.mjs';
@@ -2126,6 +2126,15 @@ const MODULE_OF = { cashflow: 'finanzas', cajas: 'finanzas', cp_rules: 'finanzas
   const guard = [...modGuard, ...(ADMIN_ONLY_WRITE.has(name) ? [requireAdmin] : [])];
   const delGuard = [...modGuard, ...((ADMIN_ONLY_WRITE.has(name) || ADMIN_ONLY_DELETE.has(name)) ? [requireAdmin] : [])];
   app.post(`/api/${name}`, ...guard, (req, res) => {
+    // Guard anti-footgun: nunca aprender una cp_rule sobre un descriptor bancario GENÉRICO
+    // ("Debito Transf. HB", "IB Proveedores", "DÉBITO POR DEBIN", "Transferencia inmediata"…) —
+    // reclasificaría TODOS los movimientos con ese texto a un proveedor fijo. El banco no dice la
+    // contraparte real en esos casos → van a revisión, se clasifican uno por uno (ver CLAUDE.md).
+    if (name === 'cp_rules') {
+      const keys = Array.isArray(req.body?.match) ? req.body.match : [req.body?.match];
+      const bad = keys.find((k) => isGenericBankDescriptor(k));
+      if (bad) return res.status(422).json({ error: `descriptor bancario genérico ("${bad}") — no se puede crear una regla (mis-atribuiría todos los movimientos con ese texto). Clasificá el movimiento sin recordar la regla.` });
+    }
     const id = req.body.id ?? `local-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;
     const row = { id, ...req.body };
     if (name === 'sales' && row.reseller_id) applyCommission(row);   // congela comisión en venta directa

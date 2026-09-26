@@ -9,7 +9,7 @@ import { useApi } from "@/lib/api"
 import { api, useAction, refresh } from "@/lib/mutations"
 import { saldoDe } from "@/lib/sales"
 import type { Category, Supplier, CashflowMovement, Sale, Caja } from "@/lib/types"
-import { EXPENSE_TYPES, categoriesForType } from "@/lib/cashflow"
+import { EXPENSE_TYPES, categoriesForType, isGenericBankDescriptor } from "@/lib/cashflow"
 import { fmtMoney, appLocale } from "@/lib/utils"
 
 type ClientLite = { id: string; name: string }
@@ -27,7 +27,10 @@ export function ClassifyMovementForm({ mov, open, onOpenChange }: { mov: Cashflo
   // La regla se aprende sobre el descriptor CRUDO del extracto (raw_name): es el texto que va a
   // volver a aparecer en la próxima importación. counterparty puede venir ya reescrito.
   const originalName = mov?.raw_name || mov?.counterparty || ""
-  const learnable = !isUnnamed(originalName)
+  // No se aprende regla sobre movimientos sin nombre NI sobre descriptores bancarios genéricos
+  // ("Debito Transf. HB", "IB Proveedores", "DÉBITO POR DEBIN"…): reclasificarían todo a un
+  // proveedor fijo (footgun recurrente). Esos se clasifican uno por uno, sin recordar.
+  const learnable = !isUnnamed(originalName) && !isGenericBankDescriptor(originalName)
 
   // Moneda nativa del movimiento + tipo de cambio (para recalcular la otra moneda al editar el monto).
   const cur = (mov?.currency || "ARS").toUpperCase()
