@@ -132722,12 +132722,12 @@
       "flow": "Egreso",
       "caja_id": "CAJ-002",
       "caja_name": "Mercado Pago",
-      "category": "Sin clasificar",
-      "subcategory": null,
-      "counterparty": "ADRIANMARRACCINO",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "counterparty": "Pipi & Juan",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-024",
       "description": "MP API · SETTLEMENT · available_money · op 180073176236",
       "sale_ref": null,
       "currency": "ARS",
@@ -132735,10 +132735,10 @@
       "amount_usd": 8.44,
       "exchange_rate": 1540,
       "fixed_variable": "Variable",
-      "expense_type": "Otros Gastos y Ajustes",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "nombre estimado del perfil de MP — confirmar y clasificar",
+      "needs_review": false,
+      "review_reason": null,
       "source": "mp-api",
       "mp_op_id": "180073176236",
       "mp_user_id": "173302986",
@@ -181803,6 +181803,16 @@
         "expense_type": "Gastos de Flota/Vehículos",
         "learned_at": "2026-07-22T14:44:39.464Z"
       },
+      "173302986": {
+        "counterparty": "Pipi & Juan",
+        "counterparty_type": "supplier",
+        "supplier_id": "PROV-024",
+        "client_id": null,
+        "category": "HR",
+        "subcategory": "Sueldos",
+        "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+        "learned_at": "2026-09-26T10:48:47.546Z"
+      },
       "202268582": {
         "counterparty": "Pipi & Juan",
         "counterparty_type": "supplier",
@@ -184735,6 +184745,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"SANITARIOS ARIETA\""
+    },
+    {
+      "id": "local-1790419727746-t1t2j",
+      "match": [
+        "ADRIANMARRACCINO"
+      ],
+      "cuit": null,
+      "counterparty": "Pipi & Juan",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"ADRIANMARRACCINO\""
     }
   ],
   "product_aliases": [
