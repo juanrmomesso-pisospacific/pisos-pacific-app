@@ -129511,12 +129511,12 @@
       "caja_name": "Banco de Comercio - Cuenta Pesos",
       "category": "Venta - Pisos",
       "subcategory": "H2O HD XL",
-      "counterparty": "Matias Pagano",
+      "counterparty": "Agustina Lando",
       "counterparty_type": "client",
       "client_id": null,
       "supplier_id": null,
       "description": "IB Proveedores",
-      "sale_ref": null,
+      "sale_ref": "A3838",
       "currency": "ARS",
       "amount_ars": 3547538.5,
       "amount_usd": 2311.1,
@@ -129528,7 +129528,8 @@
       "review_reason": null,
       "raw_name": "IB Proveedores",
       "classified_by": "regla \"ib proveedores\" → Matias Pagano (aprendida)",
-      "id": "MOV-IMP-mtvxsmnu-021"
+      "id": "MOV-IMP-mtvxsmnu-021",
+      "linked_sale_id": "local-sale-1786240282851-lm97"
     },
     {
       "source": "bdc-upload",
