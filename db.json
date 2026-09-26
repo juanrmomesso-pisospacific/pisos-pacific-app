@@ -41158,6 +41158,18 @@
       "notes": null,
       "name": "Arq. Maria Llauro",
       "updated_at": "2026-09-26T11:27:00.615Z"
+    },
+    {
+      "id": "CLI-muib87ye-pgvu",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Martini Zerbetto",
+      "updated_at": "2026-09-26T11:32:10.694Z"
     }
   ],
   "expenses": [],
@@ -134858,11 +134870,11 @@
       "flow": "Ingreso",
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Otros",
-      "subcategory": null,
-      "counterparty": "IB Proveedores",
+      "category": "Ingreso Otros",
+      "subcategory": "Paneles",
+      "counterparty": "Martini Zerbetto",
       "counterparty_type": "client",
-      "client_id": null,
+      "client_id": "CLI-muib87ye-pgvu",
       "supplier_id": null,
       "description": "IB Proveedores",
       "sale_ref": null,
@@ -134873,8 +134885,8 @@
       "fixed_variable": "Variable",
       "expense_type": null,
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "extracto bancario importado — verificar clasificación y signo",
+      "needs_review": false,
+      "review_reason": null,
       "raw_name": "IB Proveedores",
       "id": "MOV-IMP-muiaqese-046"
     },
@@ -186278,6 +186290,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Debito Transf. HB\""
+    },
+    {
+      "id": "local-1790422332119-dskrk",
+      "match": [
+        "IB Proveedores"
+      ],
+      "cuit": null,
+      "counterparty": "Martini Zerbetto",
+      "category": "Ingreso Otros",
+      "subcategory": "Paneles",
+      "expense_type": null,
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"IB Proveedores\""
     }
   ],
   "product_aliases": [
