@@ -184358,6 +184358,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"IB Proveedores\""
+    },
+    {
+      "id": "local-1790419490849-0vm8p",
+      "match": [
+        "DEPOSITO AUTOSERVICIO PLUS Nro:13332022"
+      ],
+      "cuit": null,
+      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332022",
+      "category": "Otros",
+      "subcategory": null,
+      "expense_type": null,
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332022\""
     }
   ],
   "product_aliases": [
