@@ -41222,15 +41222,6 @@
       "notes": "Importador China - Pisos"
     },
     {
-      "id": "PROV-003",
-      "name": "Martin",
-      "type": "Producto - Pisos",
-      "stock_code": "21",
-      "category_default": "Producto",
-      "active": true,
-      "notes": "Importador China - Pisos"
-    },
-    {
       "id": "PROV-004",
       "name": "Maggie",
       "type": "Producto - Pisos",
@@ -41798,16 +41789,6 @@
       "notes": null
     },
     {
-      "id": "PROV-066",
-      "name": "Soda Belen",
-      "type": "Otros",
-      "stock_code": null,
-      "category_default": null,
-      "active": true,
-      "notes": "Agua depósito.",
-      "cuit": "30-52895171-2"
-    },
-    {
       "id": "PROV-067",
       "name": "LOSMAC - Prestigio",
       "type": "Otros",
@@ -41908,15 +41889,6 @@
       "type": "Insumos",
       "active": true,
       "notes": "Ferretería."
-    },
-    {
-      "id": "local-1781615964525-51lbx",
-      "name": "Otr",
-      "type": "supplier",
-      "active": true,
-      "stock_code": null,
-      "category_default": null,
-      "notes": null
     },
     {
       "id": "local-1781616810115-8t4fm",
@@ -42052,15 +42024,6 @@
       "category_default": null,
       "notes": null,
       "name": "BONA"
-    },
-    {
-      "id": "PROV-mqv8ks8b-h8op",
-      "type": "supplier",
-      "active": true,
-      "stock_code": null,
-      "category_default": null,
-      "notes": null,
-      "name": "Losmac"
     },
     {
       "id": "PROV-mqvjhqc3-yhb4",
@@ -79827,10 +79790,10 @@
       "caja_name": "Mercado Pago",
       "category": "Otros",
       "subcategory": "Otros",
-      "counterparty": "Soda Belen",
+      "counterparty": "Soda Belén SRL",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-mqv8kp80-2za0",
       "description": "Soda para DEPO 2 bidones",
       "sale_ref": null,
       "currency": "ARS",
@@ -83739,10 +83702,10 @@
       "caja_name": "Mercado Pago",
       "category": "Otros",
       "subcategory": "Otros",
-      "counterparty": "Soda Belen",
+      "counterparty": "Soda Belén SRL",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-mqv8kp80-2za0",
       "description": "Soda para DEPO 1 bidones",
       "sale_ref": null,
       "currency": "ARS",
@@ -93867,10 +93830,10 @@
       "caja_name": "Banco de Comercio - Cuenta Pesos",
       "category": "Administración",
       "subcategory": "Varios",
-      "counterparty": "Soda Belen",
+      "counterparty": "Soda Belén SRL",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-mqv8kp80-2za0",
       "description": "Bidón de Agua - Depósito",
       "sale_ref": null,
       "currency": "ARS",
@@ -100680,10 +100643,10 @@
       "caja_name": "Banco de Comercio - Cuenta Pesos",
       "category": "Otros",
       "subcategory": null,
-      "counterparty": "Losmac",
+      "counterparty": "LOSMAC - Prestigio",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": "PROV-mqv8ks8b-h8op",
+      "supplier_id": "PROV-067",
       "description": "Debito Transf. HB",
       "sale_ref": null,
       "currency": "ARS",
@@ -183122,7 +183085,7 @@
         "Soda Belen"
       ],
       "cuit": "30528951712",
-      "counterparty": "Soda Belen",
+      "counterparty": "Soda Belén SRL",
       "category": "Otros",
       "expense_type": "Otros Gastos y Ajustes",
       "personal": false,
