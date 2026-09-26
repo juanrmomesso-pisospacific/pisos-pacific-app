@@ -184372,6 +184372,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332022\""
+    },
+    {
+      "id": "local-1790419503058-zu956",
+      "match": [
+        "DEPOSITO AUTOSERVICIO PLUS Nro:13332022"
+      ],
+      "cuit": null,
+      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332022",
+      "category": "Otros",
+      "subcategory": null,
+      "expense_type": null,
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332022\""
     }
   ],
   "product_aliases": [
