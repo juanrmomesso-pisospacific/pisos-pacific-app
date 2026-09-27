@@ -144341,6 +144341,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-27T20:08:28.000Z",
       "last_touch_at": "2026-09-27T20:06:50.000Z"
+    },
+    {
+      "id": "lead-email-1a0e487ef0c5",
+      "name": "Mora",
+      "email": "garciaguerrero.arq@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Dr Peré 1278, Tandil",
+      "postal_code": "7000",
+      "approx_m2": 80,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 80m² · Sin Colocación · CP 7000",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-27T20:21:48.000Z",
+      "last_touch_at": "2026-09-27T20:21:48.000Z"
     }
   ],
   "conversations": [
@@ -151773,6 +151790,21 @@
       "email_subject": "(sin asunto)",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-27T20:08:28.000Z"
+    },
+    {
+      "id": "conv-email-1a0e487ef0c5",
+      "channel": "email",
+      "contact_id": "garciaguerrero.arq@gmail.com",
+      "contact_name": "Mora",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0e487ef0c5",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-27T20:21:48.000Z",
+      "last_message_preview": "Formulario web — 80m² · Sin Colocación · CP 7000 · Dr Peré 1278, Tandil",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-27T20:21:48.000Z"
     }
   ],
   "messages": [
@@ -172747,6 +172779,14 @@
       "body": "✉️ (sin asunto)\n\nY....,.",
       "ts": "2026-09-27T20:06:50.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0e487ef0c5",
+      "conversation_id": "conv-email-1a0e487ef0c5",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 80m² · Sin Colocación · CP 7000 · Dr Peré 1278, Tandil",
+      "ts": "2026-09-27T20:21:48.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181462,7 +181502,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-27T19:48:31.217Z",
     "gmail_seen_ids": [
-      "19f7fc10b3b81ead",
       "19f7fbe988684efc",
       "19f7fbcdcccea292",
       "19f7fef6eef9ab51",
@@ -182261,7 +182300,8 @@
       "1a0e47bedc89ba64",
       "1a0e47afc4ebb4b2",
       "1a0e47abedf759f1",
-      "1a0e47a6b791b10a"
+      "1a0e47a6b791b10a",
+      "1a0e487ef0c5b5b2"
     ],
     "cash_sessions": {
       "1136982222": {
