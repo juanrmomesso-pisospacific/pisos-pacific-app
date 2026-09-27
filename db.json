@@ -144324,6 +144324,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-27T15:25:11.000Z",
       "last_touch_at": "2026-09-27T15:25:11.000Z"
+    },
+    {
+      "id": "lead-email-1a0e47bedc89",
+      "name": "Estela Torres",
+      "email": "estelaadelinatorres123@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: (sin asunto) — De donde sos yo de gral Villegas provincia de buenos aires",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-27T20:08:28.000Z",
+      "last_touch_at": "2026-09-27T20:06:50.000Z"
     }
   ],
   "conversations": [
@@ -151741,6 +151758,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-27T15:25:11.000Z"
+    },
+    {
+      "id": "conv-email-1a0e47bedc89",
+      "channel": "email",
+      "contact_id": "estelaadelinatorres123@gmail.com",
+      "contact_name": "Estela Torres",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0e47bedc89",
+      "status": "open",
+      "unread_count": 4,
+      "last_message_at": "2026-09-27T20:08:28.000Z",
+      "last_message_preview": "De donde sos yo de gral Villegas provincia de buenos aires",
+      "email_subject": "(sin asunto)",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-27T20:08:28.000Z"
     }
   ],
   "messages": [
@@ -172683,6 +172715,38 @@
       "status": "received",
       "media_url": "/uploads/3997139d3149a786.jpg",
       "media_type": "image"
+    },
+    {
+      "id": "m-email-1a0e47bedc89",
+      "conversation_id": "conv-email-1a0e47bedc89",
+      "direction": "in",
+      "body": "✉️ (sin asunto)\n\nDe donde sos yo de gral Villegas provincia de buenos aires",
+      "ts": "2026-09-27T20:08:28.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a0e47afc4eb",
+      "conversation_id": "conv-email-1a0e47bedc89",
+      "direction": "in",
+      "body": "✉️ (sin asunto)\n\nDe donde sos",
+      "ts": "2026-09-27T20:07:29.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a0e47abedf7",
+      "conversation_id": "conv-email-1a0e47bedc89",
+      "direction": "in",
+      "body": "✉️ (sin asunto)\n\nDe donde sos",
+      "ts": "2026-09-27T20:07:13.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a0e47a6b791",
+      "conversation_id": "conv-email-1a0e47bedc89",
+      "direction": "in",
+      "body": "✉️ (sin asunto)\n\nY....,.",
+      "ts": "2026-09-27T20:06:50.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181398,10 +181462,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-27T19:48:31.217Z",
     "gmail_seen_ids": [
-      "19f7ed29e49e9117",
-      "19f7eed856c1889a",
-      "19f7f051d74ff42c",
-      "19f7f8dfaf8ef110",
       "19f7fc10b3b81ead",
       "19f7fbe988684efc",
       "19f7fbcdcccea292",
@@ -182197,7 +182257,11 @@
       "1a0df396e15654fe",
       "1a0e266d6eeb32d8",
       "1a0e2e7d63a4542b",
-      "1a0e37860fb5fd4c"
+      "1a0e37860fb5fd4c",
+      "1a0e47bedc89ba64",
+      "1a0e47afc4ebb4b2",
+      "1a0e47abedf759f1",
+      "1a0e47a6b791b10a"
     ],
     "cash_sessions": {
       "1136982222": {
