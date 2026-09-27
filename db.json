@@ -144358,6 +144358,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-27T20:21:48.000Z",
       "last_touch_at": "2026-09-27T20:21:48.000Z"
+    },
+    {
+      "id": "lead-email-1a0e4a56265b",
+      "name": "Teresa Baisi",
+      "email": "terebaisi@yahoo.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Pablo Coster 1129",
+      "postal_code": "1661",
+      "approx_m2": 29,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 29m² · Con Colocación · CP 1661",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-27T20:53:58.000Z",
+      "last_touch_at": "2026-09-27T20:53:58.000Z"
     }
   ],
   "conversations": [
@@ -151805,6 +151822,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-27T20:21:48.000Z"
+    },
+    {
+      "id": "conv-email-1a0e4a56265b",
+      "channel": "email",
+      "contact_id": "terebaisi@yahoo.com",
+      "contact_name": "Teresa Baisi",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0e4a56265b",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-27T20:53:58.000Z",
+      "last_message_preview": "Formulario web — 29m² · Con Colocación · CP 1661 · Pablo Coster 1129",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-27T20:53:58.000Z"
     }
   ],
   "messages": [
@@ -172787,6 +172819,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 80m² · Sin Colocación · CP 7000 · Dr Peré 1278, Tandil",
       "ts": "2026-09-27T20:21:48.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0e4a56265b",
+      "conversation_id": "conv-email-1a0e4a56265b",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 29m² · Con Colocación · CP 1661 · Pablo Coster 1129",
+      "ts": "2026-09-27T20:53:58.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181502,7 +181542,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-27T19:48:31.217Z",
     "gmail_seen_ids": [
-      "19f7fbe988684efc",
       "19f7fbcdcccea292",
       "19f7fef6eef9ab51",
       "19f800a6bf841402",
@@ -182301,7 +182340,8 @@
       "1a0e47afc4ebb4b2",
       "1a0e47abedf759f1",
       "1a0e47a6b791b10a",
-      "1a0e487ef0c5b5b2"
+      "1a0e487ef0c5b5b2",
+      "1a0e4a56265b6440"
     ],
     "cash_sessions": {
       "1136982222": {
