@@ -144862,6 +144862,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-28T18:34:29.000Z",
       "last_touch_at": "2026-09-28T18:34:29.000Z"
+    },
+    {
+      "id": "lead-instagram-1790632026769",
+      "name": "@jacek.kaminski.1422",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-28T21:47:04.739Z",
+      "last_touch_at": "2026-09-28T21:47:04.739Z"
     }
   ],
   "conversations": [
@@ -152426,6 +152442,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-28T18:34:29.000Z"
+    },
+    {
+      "id": "conv-1790632026769-vpkk",
+      "channel": "instagram",
+      "contact_id": "1432393928851069",
+      "contact_name": "@jacek.kaminski.1422",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790632026769",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-09-28T21:47:09.034Z",
+      "last_message_preview": "📷 Foto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-28T21:47:09.034Z"
     }
   ],
   "messages": [
@@ -173649,6 +173679,29 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 70m² · Sin Colocación · CP 5000 · BEDOYA 987, BEDOYA 987",
       "ts": "2026-09-28T18:34:29.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790632026769-hgjs",
+      "conversation_id": "conv-1790632026769-vpkk",
+      "direction": "in",
+      "body": "📷 Foto",
+      "ts": "2026-09-28T21:47:04.739Z",
+      "status": "received",
+      "media_url": "/uploads/633aea7c208bb8b9.jpg",
+      "media_type": "image"
+    },
+    {
+      "id": "m-1790632029761-v0yx",
+      "conversation_id": "conv-1790632026769-vpkk",
+      "direction": "in",
+      "body": "📷 Foto",
+      "ts": "2026-09-28T21:47:09.034Z",
+      "status": "received",
+      "media": {
+        "source": "ig-url",
+        "url": "https://lookaside.fbsbx.com/ig_messaging_cdn/?asset_id=1631255835247238&signature=Ab0ITm0UorpTXpRHd4SL574waR0eiqUkli4TeygOWwT78dzRbEgm1UJ1Z8JoTF6_322_Q1oayAif2pzibPGu3YsN-u-TOY0iWb-wjBle4q7l1MxrD40OL-mOKXtWqTdGGSZWKnApkw1tKQCrLGrGFVzwpodPt07J7GNZ2zHfEnlPHDqaMvXolAFwjv5aiY1KIxJCF-_41uxJLgYo-Uum-EBBbShyeD8",
+        "kind": "file"
+      }
     }
   ],
   "templates": [
@@ -184583,7 +184636,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY2Mjg2MDQ2NjkyMzYyMjozMzAyNjIzNTY0MjIwNjc3MTE1Mjk0ODQzNDY5NzE5MTQyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3MTY3NTQ1OTk4ODMyOTozMzAyNzYwMTY1NzY2MDYwOTIxNTc2MzM4MjU2OTc5NTU4NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA1MTUyNjE5NDE2NTIzNDozMzAyOTQ3NTQxOTYxMDI2NzMyODI5NTg5MTQzOTE5MDAxNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE1MTM1NjA2MDEyOTEwODozMzAzMDE1NDE3NTYwMDMzNTk5NjkyNTM1NDg5NTczNjgzMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE1MTM1NjA2MDEyOTEwODozMzAzMDE1NDE3NTYwMDMzNTk5NjkyNTM1NDg5NTczNjgzMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0NTg0NzU2OTMyOTQ4MzozMzAzMTMzMDY5MDU1MjU5NDE3ODUwNTUzNTg1MzE2NjU5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0NTg0NzU2OTMyOTQ4MzozMzAzMTMzMDc2OTc4MDM2Mzg1MDkwODA3OTcyODA5OTMyOAZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
