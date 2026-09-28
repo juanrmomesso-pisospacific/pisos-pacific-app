@@ -144391,6 +144391,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-28T04:04:05.735Z",
       "last_touch_at": "2026-09-28T04:04:05.735Z"
+    },
+    {
+      "id": "lead-email-1a0e6942eb3d",
+      "name": "Ivy",
+      "email": "ivy@sintopworks.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Nueva solución de pisos rígidos de alto rendimiento – MSPC — Estimado equipo comercial,\r\n\r\n \r\n\r\nEspero que se encuentren muy bien.\r\n\r\n \r\n\r\nSomos un fabricante especializado en pisos con más de 23 años de experiencia en mercados internacional",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-28T05:54:22.000Z",
+      "last_touch_at": "2026-09-28T05:54:22.000Z"
     }
   ],
   "conversations": [
@@ -151867,6 +151884,21 @@
       "last_message_preview": "Hola! Tienen wp?",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-28T04:04:05.735Z"
+    },
+    {
+      "id": "conv-email-1a0e6942eb3d",
+      "channel": "email",
+      "contact_id": "ivy@sintopworks.com",
+      "contact_name": "Ivy",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0e6942eb3d",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-28T05:54:22.000Z",
+      "last_message_preview": "Estimado equipo comercial,\r\n\r\n \r\n\r\nEspero que se encuentren muy bien.\r\n\r\n \r\n\r\nSomos un fabricante especializado en pisos con más de 23 años ",
+      "email_subject": "Nueva solución de pisos rígidos de alto rendimiento – MSPC",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-28T05:54:22.000Z"
     }
   ],
   "messages": [
@@ -172865,6 +172897,14 @@
       "body": "Hola! Tienen wp?",
       "ts": "2026-09-28T04:04:05.735Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0e6942eb3d",
+      "conversation_id": "conv-email-1a0e6942eb3d",
+      "direction": "in",
+      "body": "✉️ Nueva solución de pisos rígidos de alto rendimiento – MSPC\n\nEstimado equipo comercial,\r\n\r\n \r\n\r\nEspero que se encuentren muy bien.\r\n\r\n \r\n\r\nSomos un fabricante especializado en pisos con más de 23 años de experiencia en mercados internacionales.\r\n\r\n \r\n\r\nNos gustaría presentarles una nueva generación de pisos rígidos: MSPC, desarrollada con una tecnología avanzada para ofrecer un nivel excepcional de resistencia al desgaste y a los rayones.\r\n\r\n \r\n\r\nA diferencia de los pisos SPC tradicionales, MSPC ofrece:\r\n\r\n• Resistencia superior a rayones y abrasión\r\n• Superficie altamente durable, diseñada para mantener su apariencia incluso bajo uso intensivo\r\n• Excelente resistencia al desgaste para aplicaciones residenciales y comerciales\r\n• Resistencia al agua\r\n• Fácil limpieza y bajo mantenimiento\r\n \r\n\r\nGracias a estas características, MSPC puede ser una solución ideal para distribuidores que buscan ofrecer una categoría de piso de mayor valor agregado, especialmente para proyectos residenciales, comerciales y áreas de alto tránsito.\r\n\r\n \r\n\r\nSabemos que el mercado de pisos rígidos continúa evolucionando y que los clientes buscan productos con mejores prestaciones y mayor diferenciación.\r\n\r\nNos gustaría compartir con ustedes información técnica, videos de prueba y muestras para su evaluación.\r\n\r\n \r\n\r\n¿Estarían interesados en conocer más sobre esta nueva solución MSPC?\r\n\r\n \r\n\r\nQuedamos atentos a sus comentarios.\r\n\r\n \r\n\r\nSaludos cordiales,\r\nIvy\r\nSintop Works New Material \r\n\r\nChangzhou, Jiangsu, China\r\n\r\nWhatsapp: +86 138 6066 1561",
+      "ts": "2026-09-28T05:54:22.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181580,7 +181620,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-27T19:48:31.217Z",
     "gmail_seen_ids": [
-      "19f7fbcdcccea292",
       "19f7fef6eef9ab51",
       "19f800a6bf841402",
       "19f805b83d4578e8",
@@ -182379,7 +182418,8 @@
       "1a0e47abedf759f1",
       "1a0e47a6b791b10a",
       "1a0e487ef0c5b5b2",
-      "1a0e4a56265b6440"
+      "1a0e4a56265b6440",
+      "1a0e6942eb3d6a9f"
     ],
     "cash_sessions": {
       "1136982222": {
