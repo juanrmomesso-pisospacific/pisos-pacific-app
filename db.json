@@ -144408,6 +144408,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-28T05:54:22.000Z",
       "last_touch_at": "2026-09-28T05:54:22.000Z"
+    },
+    {
+      "id": "lead-email-1a0e83a7ebed",
+      "name": "Gabriela Terzano",
+      "email": "gabyterzano@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Stella Maris 900. San Isidro",
+      "postal_code": "1642",
+      "approx_m2": 60,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 60m² · Con Colocación · CP 1642",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-28T13:35:42.000Z",
+      "last_touch_at": "2026-09-28T13:35:42.000Z"
     }
   ],
   "conversations": [
@@ -151899,6 +151916,21 @@
       "email_subject": "Nueva solución de pisos rígidos de alto rendimiento – MSPC",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-28T05:54:22.000Z"
+    },
+    {
+      "id": "conv-email-1a0e83a7ebed",
+      "channel": "email",
+      "contact_id": "gabyterzano@gmail.com",
+      "contact_name": "Gabriela Terzano",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0e83a7ebed",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-28T13:35:42.000Z",
+      "last_message_preview": "Formulario web — 60m² · Con Colocación · CP 1642 · Stella Maris 900. San Isidro",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-28T13:35:42.000Z"
     }
   ],
   "messages": [
@@ -172931,6 +172963,14 @@
       "body": "↩️ Reaccionó: ❤",
       "ts": "2026-09-28T12:22:09.790Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0e83a7ebed",
+      "conversation_id": "conv-email-1a0e83a7ebed",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 60m² · Con Colocación · CP 1642 · Stella Maris 900. San Isidro",
+      "ts": "2026-09-28T13:35:42.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181646,7 +181686,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-27T19:48:31.217Z",
     "gmail_seen_ids": [
-      "19f8094081499bb4",
       "19f80c9a1502a252",
       "19f80ce04ff950a4",
       "19f813310c6da0ab",
@@ -182445,7 +182484,8 @@
       "1a0e7ab1cfb33a7f",
       "1a0e7b19820c2e61",
       "1a0e7cbd0e272146",
-      "1a0e80e300d76228"
+      "1a0e80e300d76228",
+      "1a0e83a7ebed7ffe"
     ],
     "cash_sessions": {
       "1136982222": {
