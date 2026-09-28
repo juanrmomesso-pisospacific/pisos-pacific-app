@@ -144421,10 +144421,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 60m² · Con Colocación · CP 1642",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-28T13:35:42.000Z",
-      "last_touch_at": "2026-09-28T13:35:42.000Z"
+      "last_touch_at": "2026-09-28T16:52:15.102Z"
     },
     {
       "id": "lead-email-1a0e8a4f2409",
@@ -151916,7 +151916,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0e4a56265b",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-27T20:53:58.000Z",
       "last_message_preview": "Formulario web — 29m² · Con Colocación · CP 1661 · Pablo Coster 1129",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -151961,11 +151961,12 @@
       "linked_lead_id": "lead-email-1a0e83a7ebed",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-28T13:35:42.000Z",
-      "last_message_preview": "Formulario web — 60m² · Con Colocación · CP 1642 · Stella Maris 900. San Isidro",
+      "last_message_at": "2026-09-28T16:52:00.453Z",
+      "last_message_preview": "Hola Gabriela, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestr",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-28T13:35:42.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-28T13:35:42.000Z",
+      "last_outbound_at": "2026-09-28T16:52:00.453Z"
     },
     {
       "id": "conv-email-1a0e8a4f2409",
@@ -173081,6 +173082,15 @@
       "ts": "2026-09-28T16:51:22.687Z",
       "status": "sent",
       "wa_id": "1a0e8eda061e71fa"
+    },
+    {
+      "id": "m-1790614320453-zrry",
+      "conversation_id": "conv-email-1a0e83a7ebed",
+      "direction": "out",
+      "body": "Hola Gabriela, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-09-28T16:52:00.453Z",
+      "status": "sent",
+      "wa_id": "1a0e8ee354e66ca4"
     }
   ],
   "templates": [
