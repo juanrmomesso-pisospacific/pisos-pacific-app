@@ -144250,7 +144250,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-25T23:06:38.000Z",
-      "last_touch_at": "2026-09-28T16:54:24.143Z"
+      "last_touch_at": "2026-09-28T18:25:16.000Z"
     },
     {
       "id": "lead-email-1a0daf3a9518",
@@ -151811,12 +151811,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0dad21eecf",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-28T16:53:25.607Z",
-      "last_message_preview": "Hola marcelo, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestra",
+      "unread_count": 1,
+      "last_message_at": "2026-09-28T18:25:16.000Z",
+      "last_message_preview": "Hola Juan!\r\nLínea H2O por favor\r\n\r\nEl lun, 28 sept 2026 a la(s) 1:53 p.m., Pisos Pacific (info@pisospacific.com)\r\nescribió:\r\n\r\n> Hola marcel",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-25T23:06:38.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-28T18:25:16.000Z",
       "last_outbound_at": "2026-09-28T16:53:25.607Z"
     },
     {
@@ -173260,6 +173260,14 @@
       "body": "✉️ Re: (sin asunto)\n\nGracias por responder.\r\n\r\nEl lun, 28 sept 2026, 12:46, Pisos Pacific <info@pisospacific.com> escribió:\r\n\r\n> Hola Estela! Cómo estás? Nos encontramos en Munro! Qué necesitabas?\r\n>\r\n> Saludos,\r\n>\r\n> Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-28T17:15:00.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0e943c9079",
+      "conversation_id": "conv-email-1a0dad21eecf",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Juan!\r\nLínea H2O por favor\r\n\r\nEl lun, 28 sept 2026 a la(s) 1:53 p.m., Pisos Pacific (info@pisospacific.com)\r\nescribió:\r\n\r\n> Hola marcelo, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-09-28T18:25:16.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181975,7 +181983,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-27T19:48:31.217Z",
     "gmail_seen_ids": [
-      "19f8220750024045",
       "19f824be4779d5bf",
       "19f82ca3cf2a9afd",
       "19f83fa2422b77a3",
@@ -182774,7 +182781,8 @@
       "1a0e8cac0971feab",
       "1a0e8f748e3dc5c3",
       "1a0e8efd5357eda0",
-      "1a0e903784210e96"
+      "1a0e903784210e96",
+      "1a0e943c90793708"
     ],
     "cash_sessions": {
       "1136982222": {
