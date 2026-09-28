@@ -144156,7 +144156,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-25T12:06:54.000Z",
-      "last_touch_at": "2026-09-25T16:55:36.037Z"
+      "last_touch_at": "2026-09-28T11:34:36.000Z"
     },
     {
       "id": "lead-instagram-1790344958890",
@@ -151684,12 +151684,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0d87653b80",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-25T13:25:52.788Z",
-      "last_message_preview": "Hola Luciana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
+      "unread_count": 1,
+      "last_message_at": "2026-09-28T11:34:36.000Z",
+      "last_message_preview": "Hola Victoria!\r\nNecesito tu asesoramiento!\r\nDebo cubrir 15mtrs2, en mi dormitorio, busco algo de alto tránsito. Y que\r\ntengas en oferta!\r\nGr",
       "email_subject": "Precios de pisos en oferta",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-25T12:06:54.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-28T11:34:36.000Z",
       "last_outbound_at": "2026-09-25T13:25:52.788Z"
     },
     {
@@ -172915,6 +172915,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAzMDQ4NDUyMjExMjkyMzE0ODcwOTIzODI3OTI0MTcyOAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a0e7cbd0e27",
+      "conversation_id": "conv-email-1a0d87653b80",
+      "direction": "in",
+      "body": "✉️ Re: Precios de pisos en oferta\n\nHola Victoria!\r\nNecesito tu asesoramiento!\r\nDebo cubrir 15mtrs2, en mi dormitorio, busco algo de alto tránsito. Y que\r\ntengas en oferta!\r\nGracias\r\nLuciana!\r\nEl El vie, 25 sept 2026 a la(s) 10:25 a. m., Pisos Pacific <\r\ninfo@pisospacific.com> escribió:\r\n\r\n> Hola Luciana, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> si hacmos envio al interior. Trabjamos con Viacargo o Andesmar\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Victoria\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-09-28T11:34:36.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181630,7 +181638,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-27T19:48:31.217Z",
     "gmail_seen_ids": [
-      "19f80548b63409fd",
       "19f8084083d6911b",
       "19f8094081499bb4",
       "19f80c9a1502a252",
@@ -182429,7 +182436,8 @@
       "1a0e6942eb3d6a9f",
       "1a0e72b1d481c361",
       "1a0e7ab1cfb33a7f",
-      "1a0e7b19820c2e61"
+      "1a0e7b19820c2e61",
+      "1a0e7cbd0e272146"
     ],
     "cash_sessions": {
       "1136982222": {
