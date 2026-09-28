@@ -144504,6 +144504,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-28T16:13:16.000Z",
       "last_touch_at": "2026-09-28T16:49:37.544Z"
+    },
+    {
+      "id": "lead-email-1a0e94c0cd62",
+      "name": "Paula Origlia",
+      "email": "paaulaoriglia@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "BEDOYA 987, BEDOYA 987",
+      "postal_code": "5000",
+      "approx_m2": 70,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 70m² · Sin Colocación · CP 5000",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-28T18:34:29.000Z",
+      "last_touch_at": "2026-09-28T18:34:29.000Z"
     }
   ],
   "conversations": [
@@ -152053,6 +152070,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-28T16:13:16.000Z",
       "last_outbound_at": "2026-09-28T16:49:28.361Z"
+    },
+    {
+      "id": "conv-email-1a0e94c0cd62",
+      "channel": "email",
+      "contact_id": "paaulaoriglia@gmail.com",
+      "contact_name": "Paula Origlia",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0e94c0cd62",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-28T18:34:29.000Z",
+      "last_message_preview": "Formulario web — 70m² · Sin Colocación · CP 5000 · BEDOYA 987, BEDOYA 987",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-28T18:34:29.000Z"
     }
   ],
   "messages": [
@@ -173268,6 +173300,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Juan!\r\nLínea H2O por favor\r\n\r\nEl lun, 28 sept 2026 a la(s) 1:53 p.m., Pisos Pacific (info@pisospacific.com)\r\nescribió:\r\n\r\n> Hola marcelo, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-28T18:25:16.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0e94c0cd62",
+      "conversation_id": "conv-email-1a0e94c0cd62",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 70m² · Sin Colocación · CP 5000 · BEDOYA 987, BEDOYA 987",
+      "ts": "2026-09-28T18:34:29.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181983,7 +182023,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-27T19:48:31.217Z",
     "gmail_seen_ids": [
-      "19f824be4779d5bf",
       "19f82ca3cf2a9afd",
       "19f83fa2422b77a3",
       "19f8431191df53e5",
@@ -182782,7 +182821,8 @@
       "1a0e8f748e3dc5c3",
       "1a0e8efd5357eda0",
       "1a0e903784210e96",
-      "1a0e943c90793708"
+      "1a0e943c90793708",
+      "1a0e94c0cd62c225"
     ],
     "cash_sessions": {
       "1136982222": {
