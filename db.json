@@ -41327,6 +41327,18 @@
       "notes": null,
       "name": "Martini Zerbetto",
       "updated_at": "2026-09-26T11:32:10.694Z"
+    },
+    {
+      "id": "CLI-mulovsg7-mraq",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Vivienne Massa",
+      "updated_at": "2026-09-28T20:17:43.879Z"
     }
   ],
   "expenses": [],
