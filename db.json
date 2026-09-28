@@ -38956,6 +38956,49 @@
       "created_at": "2026-09-28T20:22:44.923Z",
       "quote_number": "A7541",
       "status": "DRAFT"
+    },
+    {
+      "id": "local-1790627584132-cvro3",
+      "client_id": "CLI-005",
+      "client_name": "Consumidor Final",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Retira en Obra",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Obra Nuñez - Clásico",
+      "has_iva": true,
+      "price": 552.3166,
+      "zoned": false,
+      "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+      "items": [
+        {
+          "product_id": "PROD-033",
+          "sku": "PROD-033",
+          "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+          "quantity": 15.4,
+          "unit_price": 38,
+          "cost": 16.13,
+          "category": "Pisos H2O",
+          "disc_value": 22,
+          "total": 585.2,
+          "discount": 128.74,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 128.74,
+      "discount_amount": 128.74,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-09-28T20:33:03.396Z",
+      "quote_number": "A3055",
+      "status": "DRAFT"
     }
   ],
   "clients": [
