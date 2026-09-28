@@ -144442,6 +144442,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-28T15:31:58.000Z",
       "last_touch_at": "2026-09-28T15:31:58.000Z"
+    },
+    {
+      "id": "lead-email-1a0e8cac0971",
+      "name": "Sofia Del Bono",
+      "email": "sdelbono.parq@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Rodriguez Peña 1465",
+      "postal_code": "1021",
+      "approx_m2": 105,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 105m² · Con Colocación · CP 1021",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-28T16:13:16.000Z",
+      "last_touch_at": "2026-09-28T16:13:16.000Z"
     }
   ],
   "conversations": [
@@ -151964,6 +151981,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-28T15:31:58.000Z"
+    },
+    {
+      "id": "conv-email-1a0e8cac0971",
+      "channel": "email",
+      "contact_id": "sdelbono.parq@gmail.com",
+      "contact_name": "Sofia Del Bono",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0e8cac0971",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-28T16:13:16.000Z",
+      "last_message_preview": "Formulario web — 105m² · Con Colocación · CP 1021 · Rodriguez Peña 1465",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-28T16:13:16.000Z"
     }
   ],
   "messages": [
@@ -173021,6 +173053,14 @@
       "ts": "2026-09-28T15:46:30.506Z",
       "status": "sent",
       "wa_id": "1a0e8b23c1094604"
+    },
+    {
+      "id": "m-email-1a0e8cac0971",
+      "conversation_id": "conv-email-1a0e8cac0971",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 105m² · Con Colocación · CP 1021 · Rodriguez Peña 1465",
+      "ts": "2026-09-28T16:13:16.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181736,7 +181776,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-27T19:48:31.217Z",
     "gmail_seen_ids": [
-      "19f80ce04ff950a4",
       "19f813310c6da0ab",
       "19f8145464ac2bd6",
       "19f8140017d18854",
@@ -182535,7 +182574,8 @@
       "1a0e7cbd0e272146",
       "1a0e80e300d76228",
       "1a0e83a7ebed7ffe",
-      "1a0e8a4f2409ced3"
+      "1a0e8a4f2409ced3",
+      "1a0e8cac0971feab"
     ],
     "cash_sessions": {
       "1136982222": {
