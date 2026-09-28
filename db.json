@@ -144375,6 +144375,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-27T20:53:58.000Z",
       "last_touch_at": "2026-09-27T20:53:58.000Z"
+    },
+    {
+      "id": "lead-instagram-1790568247461",
+      "name": "@camercado_",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-28T04:04:05.735Z",
+      "last_touch_at": "2026-09-28T04:04:05.735Z"
     }
   ],
   "conversations": [
@@ -151837,6 +151853,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-27T20:53:58.000Z"
+    },
+    {
+      "id": "conv-1790568247461-de47",
+      "channel": "instagram",
+      "contact_id": "900818019635365",
+      "contact_name": "@camercado_",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790568247461",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-28T04:04:05.735Z",
+      "last_message_preview": "Hola! Tienen wp?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-28T04:04:05.735Z"
     }
   ],
   "messages": [
@@ -172827,6 +172857,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 29m² · Con Colocación · CP 1661 · Pablo Coster 1129",
       "ts": "2026-09-27T20:53:58.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790568247461-jmdo",
+      "conversation_id": "conv-1790568247461-de47",
+      "direction": "in",
+      "body": "Hola! Tienen wp?",
+      "ts": "2026-09-28T04:04:05.735Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -183700,7 +183738,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3OTM1Nzg2MjM1Njg4ODozMzAyNjE2MjAyMzA0ODM0NzAxOTUwOTA4ODMwNzM4MDIyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTY2Mjg2MDQ2NjkyMzYyMjozMzAyNjIzNTY0MjIwNjc3MTE1Mjk0ODQzNDY5NzE5MTQyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3MTY3NTQ1OTk4ODMyOTozMzAyNzYwMTY1NzY2MDYwOTIxNTc2MzM4MjU2OTc5NTU4NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA1MTUyNjE5NDE2NTIzNDozMzAyOTQ3NTQxOTYxMDI2NzMyODI5NTg5MTQzOTE5MDAxNgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA1MTUyNjE5NDE2NTIzNDozMzAyOTQ3NTQxOTYxMDI2NzMyODI5NTg5MTQzOTE5MDAxNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE1MTM1NjA2MDEyOTEwODozMzAzMDE1NDE3NTYwMDMzNTk5NjkyNTM1NDg5NTczNjgzMgZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
