@@ -144419,11 +144419,11 @@
       "linked_client_name": null,
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-09-21T21:55:02.262Z",
-      "last_message_preview": "Mira la escalera",
+      "last_message_at": "2026-09-28T09:02:33.856Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-18T20:56:12.676Z",
-      "last_outbound_at": "2026-09-21T21:55:02.262Z",
+      "last_outbound_at": "2026-09-28T09:02:33.856Z",
       "ignored": true
     },
     {
@@ -172905,6 +172905,16 @@
       "body": "✉️ Nueva solución de pisos rígidos de alto rendimiento – MSPC\n\nEstimado equipo comercial,\r\n\r\n \r\n\r\nEspero que se encuentren muy bien.\r\n\r\n \r\n\r\nSomos un fabricante especializado en pisos con más de 23 años de experiencia en mercados internacionales.\r\n\r\n \r\n\r\nNos gustaría presentarles una nueva generación de pisos rígidos: MSPC, desarrollada con una tecnología avanzada para ofrecer un nivel excepcional de resistencia al desgaste y a los rayones.\r\n\r\n \r\n\r\nA diferencia de los pisos SPC tradicionales, MSPC ofrece:\r\n\r\n• Resistencia superior a rayones y abrasión\r\n• Superficie altamente durable, diseñada para mantener su apariencia incluso bajo uso intensivo\r\n• Excelente resistencia al desgaste para aplicaciones residenciales y comerciales\r\n• Resistencia al agua\r\n• Fácil limpieza y bajo mantenimiento\r\n \r\n\r\nGracias a estas características, MSPC puede ser una solución ideal para distribuidores que buscan ofrecer una categoría de piso de mayor valor agregado, especialmente para proyectos residenciales, comerciales y áreas de alto tránsito.\r\n\r\n \r\n\r\nSabemos que el mercado de pisos rígidos continúa evolucionando y que los clientes buscan productos con mejores prestaciones y mayor diferenciación.\r\n\r\nNos gustaría compartir con ustedes información técnica, videos de prueba y muestras para su evaluación.\r\n\r\n \r\n\r\n¿Estarían interesados en conocer más sobre esta nueva solución MSPC?\r\n\r\n \r\n\r\nQuedamos atentos a sus comentarios.\r\n\r\n \r\n\r\nSaludos cordiales,\r\nIvy\r\nSintop Works New Material \r\n\r\nChangzhou, Jiangsu, China\r\n\r\nWhatsapp: +86 138 6066 1561",
       "ts": "2026-09-28T05:54:22.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790586154432-l0ap",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-28T09:02:33.856Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAzMDQ4NDUyMjExMjkyMzE0ODcwOTIzODI3OTI0MTcyOAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
