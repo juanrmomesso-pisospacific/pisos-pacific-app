@@ -144878,6 +144878,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-28T21:47:04.739Z",
       "last_touch_at": "2026-09-28T21:47:04.739Z"
+    },
+    {
+      "id": "lead-email-1a0ea5b97c1e",
+      "name": "Vanina",
+      "email": "summovanina@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Juan Agustín García 3427",
+      "postal_code": "1407",
+      "approx_m2": 15,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 15m² · Con Colocación · CP 1407",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-28T23:31:05.000Z",
+      "last_touch_at": "2026-09-28T23:31:05.000Z"
     }
   ],
   "conversations": [
@@ -152456,6 +152473,21 @@
       "last_message_preview": "📷 Foto",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-28T21:47:09.034Z"
+    },
+    {
+      "id": "conv-email-1a0ea5b97c1e",
+      "channel": "email",
+      "contact_id": "summovanina@hotmail.com",
+      "contact_name": "Vanina",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0ea5b97c1e",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-28T23:31:05.000Z",
+      "last_message_preview": "Formulario web — 15m² · Con Colocación · CP 1407 · Juan Agustín García 3427",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-28T23:31:05.000Z"
     }
   ],
   "messages": [
@@ -173696,12 +173728,15 @@
       "direction": "in",
       "body": "📷 Foto",
       "ts": "2026-09-28T21:47:09.034Z",
-      "status": "received",
-      "media": {
-        "source": "ig-url",
-        "url": "https://lookaside.fbsbx.com/ig_messaging_cdn/?asset_id=1631255835247238&signature=Ab0ITm0UorpTXpRHd4SL574waR0eiqUkli4TeygOWwT78dzRbEgm1UJ1Z8JoTF6_322_Q1oayAif2pzibPGu3YsN-u-TOY0iWb-wjBle4q7l1MxrD40OL-mOKXtWqTdGGSZWKnApkw1tKQCrLGrGFVzwpodPt07J7GNZ2zHfEnlPHDqaMvXolAFwjv5aiY1KIxJCF-_41uxJLgYo-Uum-EBBbShyeD8",
-        "kind": "file"
-      }
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a0ea5b97c1e",
+      "conversation_id": "conv-email-1a0ea5b97c1e",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 15m² · Con Colocación · CP 1407 · Juan Agustín García 3427",
+      "ts": "2026-09-28T23:31:05.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -182462,7 +182497,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-28T19:51:42.151Z",
     "gmail_seen_ids": [
-      "19f82ca3cf2a9afd",
       "19f83fa2422b77a3",
       "19f8431191df53e5",
       "19f849cce1094aed",
@@ -183261,7 +183295,8 @@
       "1a0e8efd5357eda0",
       "1a0e903784210e96",
       "1a0e943c90793708",
-      "1a0e94c0cd62c225"
+      "1a0e94c0cd62c225",
+      "1a0ea5b97c1e87fa"
     ],
     "cash_sessions": {
       "1136982222": {
