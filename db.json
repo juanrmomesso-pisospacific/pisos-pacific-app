@@ -144425,6 +144425,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-28T13:35:42.000Z",
       "last_touch_at": "2026-09-28T13:35:42.000Z"
+    },
+    {
+      "id": "lead-email-1a0e8a4f2409",
+      "name": "Rosana Aguirre",
+      "email": "rosanaaguirre2611@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Calle pública G 6253",
+      "postal_code": "5011",
+      "approx_m2": 21,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 21m² · Sin Colocación · CP 5011",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-28T15:31:58.000Z",
+      "last_touch_at": "2026-09-28T15:31:58.000Z"
     }
   ],
   "conversations": [
@@ -151931,6 +151948,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-28T13:35:42.000Z"
+    },
+    {
+      "id": "conv-email-1a0e8a4f2409",
+      "channel": "email",
+      "contact_id": "rosanaaguirre2611@gmail.com",
+      "contact_name": "Rosana Aguirre",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0e8a4f2409",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-28T15:31:58.000Z",
+      "last_message_preview": "Formulario web — 21m² · Sin Colocación · CP 5011 · Calle pública G 6253",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-28T15:31:58.000Z"
     }
   ],
   "messages": [
@@ -172971,6 +173003,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 60m² · Con Colocación · CP 1642 · Stella Maris 900. San Isidro",
       "ts": "2026-09-28T13:35:42.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0e8a4f2409",
+      "conversation_id": "conv-email-1a0e8a4f2409",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 21m² · Sin Colocación · CP 5011 · Calle pública G 6253",
+      "ts": "2026-09-28T15:31:58.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181686,7 +181726,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-27T19:48:31.217Z",
     "gmail_seen_ids": [
-      "19f80c9a1502a252",
       "19f80ce04ff950a4",
       "19f813310c6da0ab",
       "19f8145464ac2bd6",
@@ -182485,7 +182524,8 @@
       "1a0e7b19820c2e61",
       "1a0e7cbd0e272146",
       "1a0e80e300d76228",
-      "1a0e83a7ebed7ffe"
+      "1a0e83a7ebed7ffe",
+      "1a0e8a4f2409ced3"
     ],
     "cash_sessions": {
       "1136982222": {
