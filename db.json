@@ -144385,7 +144385,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-27T20:08:28.000Z",
-      "last_touch_at": "2026-09-28T15:46:52.383Z"
+      "last_touch_at": "2026-09-28T17:15:00.000Z"
     },
     {
       "id": "lead-email-1a0e487ef0c5",
@@ -151938,11 +151938,11 @@
       "linked_lead_id": "lead-email-1a0e47bedc89",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-28T15:46:30.506Z",
-      "last_message_preview": "Hola Estela! Cómo estás? Nos encontramos en Munro! Qué necesitabas?\n\nSaludos,\n\nPisos Pacific",
+      "last_message_at": "2026-09-28T17:15:00.000Z",
+      "last_message_preview": "Gracias por responder.\r\n\r\nEl lun, 28 sept 2026, 12:46, Pisos Pacific <info@pisospacific.com> escribió:\r\n\r\n> Hola Estela! Cómo estás? Nos enc",
       "email_subject": "(sin asunto)",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-27T20:08:28.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-28T17:15:00.000Z",
       "last_outbound_at": "2026-09-28T15:46:30.506Z"
     },
     {
@@ -173252,6 +173252,14 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0e904abac63ded"
+    },
+    {
+      "id": "m-email-1a0e90378421",
+      "conversation_id": "conv-email-1a0e47bedc89",
+      "direction": "in",
+      "body": "✉️ Re: (sin asunto)\n\nGracias por responder.\r\n\r\nEl lun, 28 sept 2026, 12:46, Pisos Pacific <info@pisospacific.com> escribió:\r\n\r\n> Hola Estela! Cómo estás? Nos encontramos en Munro! Qué necesitabas?\r\n>\r\n> Saludos,\r\n>\r\n> Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-09-28T17:15:00.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -181967,7 +181975,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-27T19:48:31.217Z",
     "gmail_seen_ids": [
-      "19f8140017d18854",
       "19f8220750024045",
       "19f824be4779d5bf",
       "19f82ca3cf2a9afd",
@@ -182766,7 +182773,8 @@
       "1a0e8a4f2409ced3",
       "1a0e8cac0971feab",
       "1a0e8f748e3dc5c3",
-      "1a0e8efd5357eda0"
+      "1a0e8efd5357eda0",
+      "1a0e903784210e96"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -183302,7 +183310,8 @@
       "1a0e8eeae0fc01b8",
       "1a0e8ee354e66ca4",
       "1a0e8eda061e71fa",
-      "1a0e8ebe3f02e4df"
+      "1a0e8ebe3f02e4df",
+      "1a0e904abac63ded"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
