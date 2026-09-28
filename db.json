@@ -38884,7 +38884,8 @@
       "currency": "USD",
       "created_at": "2026-09-28T19:04:52.757Z",
       "quote_number": "A9185",
-      "status": "DRAFT"
+      "status": "DRAFT",
+      "share_token": "1da1d827991fc4c1653dccfc"
     }
   ],
   "clients": [
