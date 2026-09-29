@@ -145317,6 +145317,23 @@
       "address": "Barrio cerrado El encuentro",
       "created_at": "2026-09-29T20:20:41.592Z",
       "last_touch_at": "2026-09-29T20:20:44.110Z"
+    },
+    {
+      "id": "lead-email-1a0eee1c944f",
+      "name": "Alejandra",
+      "email": "alestaiger@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Capitan juan de san martin 878",
+      "postal_code": "1609",
+      "approx_m2": 56,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 56m² · Con Colocación · CP 1609",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-29T20:36:09.000Z",
+      "last_touch_at": "2026-09-29T20:36:09.000Z"
     }
   ],
   "conversations": [
@@ -152957,6 +152974,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-29T17:54:55.000Z"
+    },
+    {
+      "id": "conv-email-1a0eee1c944f",
+      "channel": "email",
+      "contact_id": "alestaiger@gmail.com",
+      "contact_name": "Alejandra",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0eee1c944f",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-29T20:36:09.000Z",
+      "last_message_preview": "Formulario web — 56m² · Con Colocación · CP 1609 · Capitan juan de san martin 878",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-29T20:36:09.000Z"
     }
   ],
   "messages": [
@@ -174282,6 +174314,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 45m² · Con Colocación · CP 1638 · Doctor Eduardo Madero 870",
       "ts": "2026-09-29T17:54:55.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0eee1c944f",
+      "conversation_id": "conv-email-1a0eee1c944f",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 56m² · Con Colocación · CP 1609 · Capitan juan de san martin 878",
+      "ts": "2026-09-29T20:36:09.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -183087,7 +183127,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-29T19:48:54.152Z",
     "gmail_seen_ids": [
-      "19f87811c9479774",
       "19f88666cec42917",
       "19f886d1bbec222d",
       "19f88a79cf5a7f2c",
@@ -183886,7 +183925,8 @@
       "1a0ed972a9594ac8",
       "1a0eddea734d9ddf",
       "1a0ee03efd84cd05",
-      "1a0ee4e2ec8eb595"
+      "1a0ee4e2ec8eb595",
+      "1a0eee1c944f933c"
     ],
     "cash_sessions": {
       "1136982222": {
