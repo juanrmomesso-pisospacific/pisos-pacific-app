@@ -14699,7 +14699,15 @@
       "stock_deducted": false,
       "seller_name": "Victoria Gonzalez Collado",
       "iva_amount": 0,
-      "commission_amount": 0
+      "commission_amount": 0,
+      "remito_items": [
+        {
+          "description": "H2OHD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 384,
+          "unit": "m²"
+        }
+      ],
+      "remito_confirmed": false
     },
     {
       "id": "local-sale-1785098651769-1nb0",
