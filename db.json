@@ -152580,11 +152580,11 @@
       "linked_lead_id": "lead-instagram-1790196683300",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-29T22:41:57.776Z",
-      "last_message_preview": "Disculpas por la demora en la respuesta",
+      "last_message_at": "2026-09-29T22:42:35.193Z",
+      "last_message_preview": "El piso H2O necesita ser colocado con una barrera de vapor para la humedad ascendente ya que la misma puede percudir el piso desde abajo",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-23T20:51:21.506Z",
-      "last_outbound_at": "2026-09-29T22:41:57.776Z"
+      "last_outbound_at": "2026-09-29T22:42:35.193Z"
     },
     {
       "id": "conv-1790211965375-g0x3",
@@ -174391,6 +174391,16 @@
       "ts": "2026-09-29T22:41:57.776Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjY2MTk1Mjk3MTM5NTIxMzozMzAzMjk4NTIzNTA1MzA5NzgyNzQ3Njk1OTI2NzkxMzcyOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1790721755559-t0t2",
+      "conversation_id": "conv-1790196683300-j50q",
+      "direction": "out",
+      "body": "El piso H2O necesita ser colocado con una barrera de vapor para la humedad ascendente ya que la misma puede percudir el piso desde abajo",
+      "ts": "2026-09-29T22:42:35.193Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjY2MTk1Mjk3MTM5NTIxMzozMzAzMjk4NTkyNTI3MzExMzA1MjU0ODAyODU0NzcyNzM2MAZDZD",
       "via": "ig-app"
     }
   ],
