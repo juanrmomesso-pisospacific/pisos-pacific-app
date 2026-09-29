@@ -152579,11 +152579,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790196683300",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-23T20:51:21.506Z",
-      "last_message_preview": "Pregunta. El piso H20 ed resistente al agua ascendente también? Que espesor tiene arriba de contrapiso?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-23T20:51:21.506Z"
+      "unread_count": 0,
+      "last_message_at": "2026-09-29T22:41:47.531Z",
+      "last_message_preview": "Hola Juan Ignacio, cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-23T20:51:21.506Z",
+      "last_outbound_at": "2026-09-29T22:41:47.531Z"
     },
     {
       "id": "conv-1790211965375-g0x3",
@@ -174370,6 +174371,16 @@
       "ts": "2026-09-29T22:41:18.895Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE1MTM1NjA2MDEyOTEwODozMzAzMjk4NDUxNzgyMDc3NzM4NTUxMDA0NTE3NDcyNjY1NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1790721708185-zto1",
+      "conversation_id": "conv-1790196683300-j50q",
+      "direction": "out",
+      "body": "Hola Juan Ignacio, cómo estás?",
+      "ts": "2026-09-29T22:41:47.531Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjY2MTk1Mjk3MTM5NTIxMzozMzAzMjk4NTA0NjA2ODMyNjE2Nzg5MTA3OTU2MDQyOTU2OAZDZD",
       "via": "ig-app"
     }
   ],
