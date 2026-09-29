@@ -144858,10 +144858,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 70m² · Sin Colocación · CP 5000",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-28T18:34:29.000Z",
-      "last_touch_at": "2026-09-28T18:34:29.000Z"
+      "last_touch_at": "2026-09-29T14:09:41.030Z"
     },
     {
       "id": "lead-instagram-1790632026769",
@@ -152471,11 +152471,12 @@
       "linked_lead_id": "lead-email-1a0e94c0cd62",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-28T18:34:29.000Z",
-      "last_message_preview": "Formulario web — 70m² · Sin Colocación · CP 5000 · BEDOYA 987, BEDOYA 987",
+      "last_message_at": "2026-09-29T14:09:33.289Z",
+      "last_message_preview": "Hola Paula, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-28T18:34:29.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-28T18:34:29.000Z",
+      "last_outbound_at": "2026-09-29T14:09:33.289Z"
     },
     {
       "id": "conv-1790632026769-vpkk",
@@ -152499,7 +152500,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0ea5b97c1e",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-28T23:31:05.000Z",
       "last_message_preview": "Formulario web — 15m² · Con Colocación · CP 1407 · Juan Agustín García 3427",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -173793,6 +173794,15 @@
       "body": "✉️ para pedir presupuestos\n\nWhatsApp 11 2308 1515",
       "ts": "2026-09-29T13:05:56.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790690973289-wfbn",
+      "conversation_id": "conv-email-1a0e94c0cd62",
+      "direction": "out",
+      "body": "Hola Paula, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-09-29T14:09:33.289Z",
+      "status": "sent",
+      "wa_id": "1a0ed7fd592ec6e1"
     }
   ],
   "templates": [
