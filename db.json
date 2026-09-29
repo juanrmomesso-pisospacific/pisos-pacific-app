@@ -144930,6 +144930,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-29T16:33:40.000Z",
       "last_touch_at": "2026-09-29T16:33:40.000Z"
+    },
+    {
+      "id": "lead-email-1a0ee4e2ec8e",
+      "name": "Maria Sol",
+      "email": "youbrandingideas@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Doctor Eduardo Madero 870",
+      "postal_code": "1638",
+      "approx_m2": 45,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 45m² · Con Colocación · CP 1638",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-29T17:54:55.000Z",
+      "last_touch_at": "2026-09-29T17:54:55.000Z"
     }
   ],
   "conversations": [
@@ -152555,6 +152572,21 @@
       "email_subject": "invitation to Expo CIHAC # B114 # HM Floors",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-29T16:33:40.000Z"
+    },
+    {
+      "id": "conv-email-1a0ee4e2ec8e",
+      "channel": "email",
+      "contact_id": "youbrandingideas@gmail.com",
+      "contact_name": "Maria Sol",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0ee4e2ec8e",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-29T17:54:55.000Z",
+      "last_message_preview": "Formulario web — 45m² · Con Colocación · CP 1638 · Doctor Eduardo Madero 870",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-29T17:54:55.000Z"
     }
   ],
   "messages": [
@@ -173872,6 +173904,14 @@
       "body": "✉️ invitation to Expo CIHAC # B114 # HM Floors\n\nDear Juan, dear Victoria,\r\n\r\nHow are you? This is Alice from HM Floors. We are manufacturer of engineered wood flooring since 2006 year with 3 factories located in China and Vietnam. We met at Domotex Shanghai this May and hereby with sincerity I'd like to invite you to visit our booth # B114 in coming Expo CIHAC held in Mexico city from Oct 14th to Oct 16th 2026. We will show our main product ranges including trendy new designs. Welcome and look forward to meeting you again in Mexico:)\r\n\r\nExhibition：Expo CIHAC\r\nAddress：Av. del Conscripto 311, Lomas de Sotelo, Hipódromo de las Américas, Miguel Hidalgo, 11200 CDMX\r\nDate：Oct.14th - Oct.16th, 2026 11:00-19:00\r\nBooth number: B114\r\n\r\nTo have a better understanding about our company and products, below is brief introduction about HM Floors for your reference,\r\nLarge Capacity: 3 Millions sqm in China and 9 millions sqm in Vietnam; \r\nGlobal Markets: We exported to 40+ different countries and regions like US, Canada, UK, 10+ EU countries, Australia, New Zealand, Mideast, Mexico, Chile, Colombia, SEA, etc… \r\nWide product ranges: 1000+ colors, 20+ collections and always new creating.  \r\nR&D strength: Product innovation is one of our key to satisfy the market demand. We have individual 3,000 SQM workshop and created and developing 10,000+ sqm samples every year. We will continuously develop and invest to upgrading the new facility and production system to enhance our competitive advantages.   \r\nSolid and strong Supply Chain: We are build",
       "ts": "2026-09-29T16:33:40.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0ee4e2ec8e",
+      "conversation_id": "conv-email-1a0ee4e2ec8e",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 45m² · Con Colocación · CP 1638 · Doctor Eduardo Madero 870",
+      "ts": "2026-09-29T17:54:55.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -182632,7 +182672,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-28T19:51:42.151Z",
     "gmail_seen_ids": [
-      "19f865e869963184",
       "19f87811c9479774",
       "19f88666cec42917",
       "19f886d1bbec222d",
@@ -183431,7 +183470,8 @@
       "1a0ed45b884217ae",
       "1a0ed972a9594ac8",
       "1a0eddea734d9ddf",
-      "1a0ee03efd84cd05"
+      "1a0ee03efd84cd05",
+      "1a0ee4e2ec8eb595"
     ],
     "cash_sessions": {
       "1136982222": {
