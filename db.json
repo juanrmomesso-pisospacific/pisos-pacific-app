@@ -39317,6 +39317,49 @@
       "quote_number": "A3508",
       "status": "DRAFT",
       "lead_id": "local-1790713241803-mirod"
+    },
+    {
+      "id": "local-1790723786181-ecdan",
+      "client_id": "CLI-munamb82-o1m1",
+      "client_name": "Arq. Carlos Levit",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "A confirmar",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Obra Edificio",
+      "has_iva": true,
+      "price": 45520.2,
+      "zoned": false,
+      "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
+      "items": [
+        {
+          "product_id": "local-1790089780830-ghwcm",
+          "sku": "PROD-400",
+          "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
+          "quantity": 1500,
+          "unit_price": 38,
+          "cost": 16,
+          "category": "Pisos H2O",
+          "disc_value": 34,
+          "total": 57000,
+          "discount": 19380,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 19380,
+      "discount_amount": 19380,
+      "reseller_id": "CLI-hugo-schellotto",
+      "reseller_name": "Hugo Schellotto",
+      "currency": "USD",
+      "created_at": "2026-09-29T23:16:26.046Z",
+      "quote_number": "A1366",
+      "status": "DRAFT"
     }
   ],
   "clients": [
