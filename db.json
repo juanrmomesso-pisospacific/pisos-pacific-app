@@ -14640,19 +14640,19 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Centauros - General Rodriguez",
-      "contract_total": 15275,
+      "contract_total": 15589,
       "items": [
         {
           "product_id": "PROD-027",
           "sku": "PROD-027",
           "description": "H2OHD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
-          "quantity": 378,
+          "quantity": 383.49,
           "unit_price": 38,
           "cost": 16.33,
           "category": "Pisos H2O",
           "disc_kind": "amount",
           "disc_value": 4534,
-          "total": 14364,
+          "total": 14572.62,
           "discount": 4534,
           "image": "",
           "target_item_index": null
@@ -14661,11 +14661,11 @@
           "product_id": "SERV-106",
           "sku": "SERV-106",
           "description": "Servicio - Colocación H2O",
-          "quantity": 343,
+          "quantity": 350,
           "unit_price": 15,
           "cost": 6,
           "category": "Servicio",
-          "total": 5145,
+          "total": 5250,
           "discount": 0,
           "image": "",
           "target_item_index": null
@@ -14691,14 +14691,15 @@
       "has_iva": false,
       "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 15275,
+        "total_invoiced": 15589,
         "total_paid": 0,
-        "balance_due": 15275
+        "balance_due": 15589
       },
       "stock_reserved": true,
       "stock_deducted": false,
       "seller_name": "Victoria Gonzalez Collado",
-      "iva_amount": 0
+      "iva_amount": 0,
+      "commission_amount": 0
     },
     {
       "id": "local-sale-1785098651769-1nb0",
