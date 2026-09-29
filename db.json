@@ -41541,6 +41541,18 @@
       "notes": null,
       "name": "Vivienne Massa",
       "updated_at": "2026-09-28T20:17:43.879Z"
+    },
+    {
+      "id": "CLI-mun3wsjn-jsij",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Arq. Paula Origlia",
+      "updated_at": "2026-09-29T20:06:11.075Z"
     }
   ],
   "expenses": [],
