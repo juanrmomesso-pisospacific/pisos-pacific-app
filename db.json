@@ -16809,22 +16809,8 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Obra Caballito",
-      "contract_total": 1595.5059999999999,
+      "contract_total": 1517,
       "items": [
-        {
-          "product_id": "PROD-027",
-          "sku": "PROD-027",
-          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
-          "quantity": 33,
-          "unit_price": 38,
-          "cost": 16.33,
-          "category": "Pisos H2O",
-          "disc_value": 10,
-          "total": 1254,
-          "discount": 125.4,
-          "image": "",
-          "target_item_index": null
-        },
         {
           "product_id": "SERV-131",
           "sku": "SERV-131",
@@ -16837,6 +16823,17 @@
           "discount": 0,
           "image": "",
           "target_item_index": null
+        },
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 31.29,
+          "unit_price": 38,
+          "total": 1189.02,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "discount": 0
         }
       ],
       "zoned": false,
@@ -16846,9 +16843,9 @@
       "has_iva": true,
       "iva_mode": "full",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 1517,
         "total_paid": 0,
-        "balance_due": 1595.5059999999999
+        "balance_due": 1517
       },
       "stock_reserved": true,
       "stock_deducted": false,
