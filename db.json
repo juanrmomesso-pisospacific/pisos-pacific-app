@@ -754,7 +754,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1213.4453279999998,
-      "reservedStock": 4235.57,
+      "reservedStock": 4143.57,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -10434,7 +10434,7 @@
           "category": "Pisos H2O"
         }
       ],
-      "status": "Confirmado",
+      "status": "Cancelado",
       "delivery_status": "Acopiado",
       "created_at": "2026-04-23T00:00:00.000Z",
       "fecha_pendiente": false,
@@ -10448,11 +10448,19 @@
         "total_paid": 0,
         "balance_due": 2300
       },
-      "stock_reserved": true,
+      "stock_reserved": false,
       "stock_deducted": false,
       "seller_name": "",
       "payments": [],
-      "source": "planilla-reciente"
+      "source": "planilla-reciente",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Cancelado",
+          "at": "2026-09-29T21:13:44.309Z",
+          "by": "Admin User"
+        }
+      ]
     },
     {
       "id": "0000127",
@@ -182064,6 +182072,15 @@
       "product_id": "PROD-027",
       "sku": "PROD-027",
       "qty": -81.27,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-29T21:13:44.309Z",
+      "type": "sale_cancel_release",
+      "ref": "0000126",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": -92,
       "warehouse_id": "main"
     }
   ],
