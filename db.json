@@ -18521,21 +18521,21 @@
       "title": "Centauros - General Rodriguez",
       "description": "H2OHD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
       "created_at": "2026-05-11T21:57:01.839Z",
-      "price": 18482.75,
+      "price": 18796.14,
       "has_iva": true,
       "items": [
         {
           "product_id": "PROD-027",
           "sku": "PROD-027",
           "description": "H2OHD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
-          "quantity": 378,
+          "quantity": 384,
           "unit_price": 38,
           "cost": 16.33,
           "category": "Pisos H2O",
           "disc_kind": "amount",
-          "disc_value": 4534,
-          "total": 14364,
-          "discount": 4534,
+          "disc_value": 4608,
+          "total": 14592,
+          "discount": 4608,
           "image": "",
           "target_item_index": null
         },
@@ -18543,11 +18543,11 @@
           "product_id": "SERV-106",
           "sku": "SERV-106",
           "description": "Servicio - Colocación H2O",
-          "quantity": 343,
+          "quantity": 350,
           "unit_price": 15,
           "cost": 6,
           "category": "Servicio",
-          "total": 5145,
+          "total": 5250,
           "discount": 0,
           "image": "",
           "target_item_index": null
@@ -18566,15 +18566,18 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 4534,
+      "discount_total": 4608,
       "status": "ACCEPTED",
       "source": "vercel",
       "internal_notes": "",
       "public_notes": "",
       "payment_terms": "Anticipo 80% · Conforme 20%",
       "zoned": false,
-      "discount_amount": 4534,
-      "sale_id": "local-sale-1784797365504-3npc"
+      "discount_amount": 4608,
+      "sale_id": "local-sale-1784797365504-3npc",
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD"
     },
     {
       "id": "uSuFHxQtV1ixvCMKkOx3",
