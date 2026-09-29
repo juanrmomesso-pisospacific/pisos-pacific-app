@@ -41781,6 +41781,18 @@
       "notes": null,
       "name": "Arq. Paula Origlia",
       "updated_at": "2026-09-29T20:06:11.075Z"
+    },
+    {
+      "id": "CLI-munamb82-o1m1",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Arq. Carlos Levit",
+      "updated_at": "2026-09-29T23:13:59.378Z"
     }
   ],
   "expenses": [],
