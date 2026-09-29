@@ -145227,6 +145227,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-29T17:54:55.000Z",
       "last_touch_at": "2026-09-29T17:54:55.000Z"
+    },
+    {
+      "id": "local-1790713241803-mirod",
+      "name": "Graciela de Tezanos Pinto",
+      "phone": "+54 9 11 6996-2112",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Barrio cerrado El encuentro",
+      "created_at": "2026-09-29T20:20:41.592Z",
+      "last_touch_at": "2026-09-29T20:20:44.110Z"
     }
   ],
   "conversations": [
