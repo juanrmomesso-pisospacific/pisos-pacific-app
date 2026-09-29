@@ -151788,11 +151788,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789659186403",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-09-17T15:33:05.621Z",
+      "unread_count": 4,
+      "last_message_at": "2026-09-29T11:19:59.857Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-17T15:33:05.621Z"
+      "last_inbound_at": "2026-09-29T11:19:59.857Z"
     },
     {
       "id": "conv-1789660467798-wzf5",
@@ -173737,6 +173737,22 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 15m² · Con Colocación · CP 1407 · Juan Agustín García 3427",
       "ts": "2026-09-28T23:31:05.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790680799966-ky79",
+      "conversation_id": "conv-1789659186403-mwlv",
+      "direction": "in",
+      "body": "Hola soy Mauro de Fletes Marinelli. Nos encontramos en zona norte y hacemos viajes por todo Gba y CABA.\n\n\nSi estan interesados o quieren solicitar presupuesto no duden en consultame\n\nMuchas gracias \n\n📱1169508834",
+      "ts": "2026-09-29T11:19:59.373Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1790680800358-zswe",
+      "conversation_id": "conv-1789659186403-mwlv",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-09-29T11:19:59.857Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -184673,7 +184689,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDA1MTUyNjE5NDE2NTIzNDozMzAyOTQ3NTQxOTYxMDI2NzMyODI5NTg5MTQzOTE5MDAxNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE1MTM1NjA2MDEyOTEwODozMzAzMDE1NDE3NTYwMDMzNTk5NjkyNTM1NDg5NTczNjgzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0NTg0NzU2OTMyOTQ4MzozMzAzMTMzMDY5MDU1MjU5NDE3ODUwNTUzNTg1MzE2NjU5MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0NTg0NzU2OTMyOTQ4MzozMzAzMTMzMDc2OTc4MDM2Mzg1MDkwODA3OTcyODA5OTMyOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0NTg0NzU2OTMyOTQ4MzozMzAzMTMzMDc2OTc4MDM2Mzg1MDkwODA3OTcyODA5OTMyOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAzMjIzMDQyMzc0NzA0NDE2NjY5ODk0NzExMDI0MDI1NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAzMjIzMDQzMjY2ODkyMjYxODQxMzAxNDAwNjYyODM1MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
