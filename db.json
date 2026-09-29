@@ -144913,6 +144913,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-29T13:05:56.000Z",
       "last_touch_at": "2026-09-29T13:05:56.000Z"
+    },
+    {
+      "id": "lead-email-1a0ee03efd84",
+      "name": "alice@hmfloors.com",
+      "email": "alice@hmfloors.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: invitation to Expo CIHAC # B114 # HM Floors — Dear Juan, dear Victoria,\r\n\r\nHow are you? This is Alice from HM Floors. We are manufacturer of engineered wood flooring since 2006 year with 3 factories located in China and Vietna",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-29T16:33:40.000Z",
+      "last_touch_at": "2026-09-29T16:33:40.000Z"
     }
   ],
   "conversations": [
@@ -152523,6 +152540,21 @@
       "email_subject": "para pedir presupuestos",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-29T13:05:56.000Z"
+    },
+    {
+      "id": "conv-email-1a0ee03efd84",
+      "channel": "email",
+      "contact_id": "alice@hmfloors.com",
+      "contact_name": "alice@hmfloors.com",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0ee03efd84",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-29T16:33:40.000Z",
+      "last_message_preview": "Dear Juan, dear Victoria,\r\n\r\nHow are you? This is Alice from HM Floors. We are manufacturer of engineered wood flooring since 2006 year with",
+      "email_subject": "invitation to Expo CIHAC # B114 # HM Floors",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-29T16:33:40.000Z"
     }
   ],
   "messages": [
@@ -173832,6 +173864,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzAzMjU3MDQ5Njk2NTEzNjY0MzQwNzkyMTAxNDYzNjU0NAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a0ee03efd84",
+      "conversation_id": "conv-email-1a0ee03efd84",
+      "direction": "in",
+      "body": "✉️ invitation to Expo CIHAC # B114 # HM Floors\n\nDear Juan, dear Victoria,\r\n\r\nHow are you? This is Alice from HM Floors. We are manufacturer of engineered wood flooring since 2006 year with 3 factories located in China and Vietnam. We met at Domotex Shanghai this May and hereby with sincerity I'd like to invite you to visit our booth # B114 in coming Expo CIHAC held in Mexico city from Oct 14th to Oct 16th 2026. We will show our main product ranges including trendy new designs. Welcome and look forward to meeting you again in Mexico:)\r\n\r\nExhibition：Expo CIHAC\r\nAddress：Av. del Conscripto 311, Lomas de Sotelo, Hipódromo de las Américas, Miguel Hidalgo, 11200 CDMX\r\nDate：Oct.14th - Oct.16th, 2026 11:00-19:00\r\nBooth number: B114\r\n\r\nTo have a better understanding about our company and products, below is brief introduction about HM Floors for your reference,\r\nLarge Capacity: 3 Millions sqm in China and 9 millions sqm in Vietnam; \r\nGlobal Markets: We exported to 40+ different countries and regions like US, Canada, UK, 10+ EU countries, Australia, New Zealand, Mideast, Mexico, Chile, Colombia, SEA, etc… \r\nWide product ranges: 1000+ colors, 20+ collections and always new creating.  \r\nR&D strength: Product innovation is one of our key to satisfy the market demand. We have individual 3,000 SQM workshop and created and developing 10,000+ sqm samples every year. We will continuously develop and invest to upgrading the new facility and production system to enhance our competitive advantages.   \r\nSolid and strong Supply Chain: We are build",
+      "ts": "2026-09-29T16:33:40.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -182592,7 +182632,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-28T19:51:42.151Z",
     "gmail_seen_ids": [
-      "19f8661effd2a52a",
       "19f865e869963184",
       "19f87811c9479774",
       "19f88666cec42917",
@@ -183391,7 +183430,8 @@
       "1a0ed4108af2cd56",
       "1a0ed45b884217ae",
       "1a0ed972a9594ac8",
-      "1a0eddea734d9ddf"
+      "1a0eddea734d9ddf",
+      "1a0ee03efd84cd05"
     ],
     "cash_sessions": {
       "1136982222": {
