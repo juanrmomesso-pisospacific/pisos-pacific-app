@@ -152580,11 +152580,11 @@
       "linked_lead_id": "lead-instagram-1790196683300",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-29T22:41:47.531Z",
-      "last_message_preview": "Hola Juan Ignacio, cómo estás?",
+      "last_message_at": "2026-09-29T22:41:57.776Z",
+      "last_message_preview": "Disculpas por la demora en la respuesta",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-23T20:51:21.506Z",
-      "last_outbound_at": "2026-09-29T22:41:47.531Z"
+      "last_outbound_at": "2026-09-29T22:41:57.776Z"
     },
     {
       "id": "conv-1790211965375-g0x3",
@@ -174381,6 +174381,16 @@
       "ts": "2026-09-29T22:41:47.531Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjY2MTk1Mjk3MTM5NTIxMzozMzAzMjk4NTA0NjA2ODMyNjE2Nzg5MTA3OTU2MDQyOTU2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1790721718375-cif2",
+      "conversation_id": "conv-1790196683300-j50q",
+      "direction": "out",
+      "body": "Disculpas por la demora en la respuesta",
+      "ts": "2026-09-29T22:41:57.776Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjY2MTk1Mjk3MTM5NTIxMzozMzAzMjk4NTIzNTA1MzA5NzgyNzQ3Njk1OTI2NzkxMzcyOAZDZD",
       "via": "ig-app"
     }
   ],
