@@ -144895,6 +144895,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-28T23:31:05.000Z",
       "last_touch_at": "2026-09-28T23:31:05.000Z"
+    },
+    {
+      "id": "lead-email-1a0ed45b8842",
+      "name": "Ernesto Luis Ferro",
+      "email": "ferro.ernesto@yahoo.com.ar",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: para pedir presupuestos — WhatsApp 11 2308 1515",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-29T13:05:56.000Z",
+      "last_touch_at": "2026-09-29T13:05:56.000Z"
     }
   ],
   "conversations": [
@@ -152488,6 +152505,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-28T23:31:05.000Z"
+    },
+    {
+      "id": "conv-email-1a0ed45b8842",
+      "channel": "email",
+      "contact_id": "ferro.ernesto@yahoo.com.ar",
+      "contact_name": "Ernesto Luis Ferro",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0ed45b8842",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-29T13:05:56.000Z",
+      "last_message_preview": "WhatsApp 11 2308 1515",
+      "email_subject": "para pedir presupuestos",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-29T13:05:56.000Z"
     }
   ],
   "messages": [
@@ -173753,6 +173785,14 @@
       "body": "📎 Adjunto",
       "ts": "2026-09-29T11:19:59.857Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0ed45b8842",
+      "conversation_id": "conv-email-1a0ed45b8842",
+      "direction": "in",
+      "body": "✉️ para pedir presupuestos\n\nWhatsApp 11 2308 1515",
+      "ts": "2026-09-29T13:05:56.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -182513,7 +182553,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-28T19:51:42.151Z",
     "gmail_seen_ids": [
-      "19f851ea3d47ebe2",
       "19f85bcdab66cae4",
       "19f8601e29f2d2bd",
       "19f8661effd2a52a",
@@ -183312,7 +183351,8 @@
       "1a0ec2ff79c66f27",
       "1a0ececb6dff218c",
       "1a0ed348cb896d14",
-      "1a0ed4108af2cd56"
+      "1a0ed4108af2cd56",
+      "1a0ed45b884217ae"
     ],
     "cash_sessions": {
       "1136982222": {
