@@ -38998,7 +38998,8 @@
       "currency": "USD",
       "created_at": "2026-09-28T20:33:03.396Z",
       "quote_number": "A3055",
-      "status": "DRAFT"
+      "status": "DRAFT",
+      "share_token": "3e1a6c364fc0a2bdbc58a544"
     }
   ],
   "clients": [
@@ -183910,7 +183911,9 @@
       "1a0e8eda061e71fa",
       "1a0e8ebe3f02e4df",
       "1a0e904abac63ded",
-      "1a0ed348cb896d14"
+      "1a0ed348cb896d14",
+      "1a0ed806ddb92458",
+      "1a0ed7fd592ec6e1"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
