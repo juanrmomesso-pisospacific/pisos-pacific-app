@@ -16565,7 +16565,7 @@
       ],
       "zoned": false,
       "discount_total": 1020.32,
-      "status": "Confirmado",
+      "status": "Programado",
       "created_at": "2026-09-09T16:33:29.802Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -16580,7 +16580,18 @@
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "delivery_date": "2026-10-01",
+      "delivery_date_to": "2026-10-01",
+      "delivery_crew": "Externo",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Programado",
+          "at": "2026-09-30T20:51:09.859Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     },
     {
       "id": "local-sale-1788999887432-9eyv",
@@ -187432,6 +187443,17 @@
       "sale_id": "local-sale-1788999915458-0uyq",
       "notes": "Chacras el chaja",
       "created_at": "2026-09-30T20:49:19.391Z"
+    },
+    {
+      "id": "local-1790801470124-ggi7n",
+      "type": "medicion",
+      "title": "Medición previa · Solana Ottaviani",
+      "due_date": "2026-09-29",
+      "assigned_seller": "Externo",
+      "status": "pendiente",
+      "sale_id": "local-sale-1788971609802-uvv0",
+      "notes": "Obra Nuñez",
+      "created_at": "2026-09-30T20:51:09.753Z"
     }
   ],
   "password_resets": {},
