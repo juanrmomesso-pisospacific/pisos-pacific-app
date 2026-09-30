@@ -16711,7 +16711,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Chacras el chaja",
-      "contract_total": 9649.145,
+      "contract_total": 7975,
       "items": [
         {
           "product_id": "PROD-026",
@@ -16801,12 +16801,12 @@
       "discount_total": 820.5,
       "status": "Confirmado",
       "created_at": "2026-09-10T00:25:15.459Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
-        "total_paid": 0,
-        "balance_due": 9649.145
+        "total_invoiced": 7975,
+        "total_paid": 4000,
+        "balance_due": 3975
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -16814,7 +16814,8 @@
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "iva_amount": 0
     },
     {
       "id": "local-sale-1788999931613-vt70",
