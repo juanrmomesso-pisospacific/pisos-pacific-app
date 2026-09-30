@@ -138096,7 +138096,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-09-26T08:23:44.000Z"
+      "last_touch_at": "2026-09-30T08:27:26.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -146956,12 +146956,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 59,
-      "last_message_at": "2026-09-26T08:23:44.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-24 00:00:00 UTC to 2026-09-25 00:00:00 UTC.",
+      "unread_count": 60,
+      "last_message_at": "2026-09-30T08:27:26.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-28 00:00:00 UTC to 2026-09-29 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-26T08:23:44.000Z",
+      "last_inbound_at": "2026-09-30T08:27:26.000Z",
       "ignored": true
     },
     {
@@ -174481,6 +174481,14 @@
       "body": "✉️ 回复：NEW ORDER 2631 - 2 CNTS - BUENOS AIRES, ARGENTINA\n\nHI Victoria\n\nUpdated the PI, the PO is 2631\n\nBest regards\nLI\n\n在 2026年9月30日 14:56，leeofchina<leeofchina@163.com> 写道：\n\nHI Victoria\n\nPI attached for new orders, please check and confirm to start the production.\n\nBlack box HD for Argentina.\n\nLabel on accessory box, too.\n\nBest regards\nLi\n\n在 2026年9月30日 07:26，Victoria Pisos Pacific<victoria@pisospacific.com> 写道：\n\nHi Young, I hope you are doing well.\nPlease find below a new order for Buenos Aires | Order number: PDPG 2731\n2 CONTAINERS\n\n1 CONTAINER | HD SIZE: 5mm/0.3mmWL | 1.5mm EVA= Total thickness 6.5mm | 1524x228x6.5mm\n5 P Zenith XL HD   MP88208-10 / MP88209-10\n5 P Aura XL HD    MP88208-1 & 88209-1 (EIR)\n5 P Notte XL HD   ZXE 2004 008\n5 P Clasico XL HD  TW6151-15 EIR\nLIGHT TEXTURE CODE: 89021 FOR ALL OF THEM\n\n2 CONTAINER | HD SIZE: 5mm/0.3mmWL | 1.5mm EVA= Total thickness 6.5mm | 1524x228x6.5mm\n10 P Eslavonia XL HD      LS105-1\n10 P Natural Oak XL HD   ZXE 2004 003\nLIGHT TEXTURE CODE: 89021 FOR ALL OF THEM\n\nAccessories\nCANADA Bullnose\n- Aura 50 PCS\n- Clasico 100 PCS\n- Aspen 50 PCS\n- Eslavonia 100 PCS\n- Natural Oak 100 PCS\n- Zenith 100 PCS\n\nSPC L-Shape 15*6\n\n- Aura 100 u\n- Clasico 100 u\n- Aspen 50 u\n- Eslavonia 100 u\n- Natural Oak 100 u\n- Zenith 50 u\n\nPlease assure in the box we have the following information: you can add a sticker to every box. ALSO FOR ACCESSORIES BOX\n\n- Product code number: S/C\n- Business name: Juan Rodriguez Momesso\n- Cuit: 23-38258718-9\n- Origin: China\n\nBOX PACIFIC BLACK\nCLICK SOUTH AMERICA- NO PATENT\nPALLETS W",
       "ts": "2026-09-30T07:04:22.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0f16d032f4",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: cff4f548964149fcafb6e151980e3ae4\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-28 00:00:00 UTC to 2026-09-29 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-09-30T08:27:26.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -183394,7 +183402,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-29T19:48:54.152Z",
     "gmail_seen_ids": [
-      "19f891fd5ec91d94",
       "19f894bf9264d68f",
       "19f89b394348a2d9",
       "19f89c32af84d012",
@@ -184193,7 +184200,8 @@
       "1a0eee1c944f933c",
       "1a0ef7e4223594e3",
       "1a0f11993f025e37",
-      "1a0f12121801b774"
+      "1a0f12121801b774",
+      "1a0f16d032f44c6d"
     ],
     "cash_sessions": {
       "1136982222": {
