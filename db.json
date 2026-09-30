@@ -145529,6 +145529,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-30T13:32:43.286Z",
       "last_touch_at": "2026-09-30T13:32:43.286Z"
+    },
+    {
+      "id": "lead-instagram-1790798109360",
+      "name": "@ch.styling",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-30T19:55:07.413Z",
+      "last_touch_at": "2026-09-30T19:55:07.413Z"
     }
   ],
   "conversations": [
@@ -153217,6 +153233,20 @@
       "last_message_preview": "Buen día , una consulta\nHacen arreglos para baños sin obra",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-30T13:32:43.286Z"
+    },
+    {
+      "id": "conv-1790798109360-oduo",
+      "channel": "instagram",
+      "contact_id": "1342127134491344",
+      "contact_name": "@ch.styling",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790798109360",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-09-30T19:55:13.332Z",
+      "last_message_preview": "por un piso de pvc",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-30T19:55:13.332Z"
     }
   ],
   "messages": [
@@ -174698,6 +174728,22 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenas tardes,\r\n\r\nEl modelo que necesito es el siguiente: H2O HD XL - Roble Eslavonia 6,5mm x\r\n23cm x 1,50m\r\n\r\nGracias\r\n\r\nAlejandra\r\n\r\nEl mié, 30 sept 2026 a las 14:10, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Alejandra, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-09-30T17:56:08.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790798109360-7m56",
+      "conversation_id": "conv-1790798109360-oduo",
+      "direction": "in",
+      "body": "hola, nos gustaria realizar una cotizacion",
+      "ts": "2026-09-30T19:55:07.413Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1790798114061-rup9",
+      "conversation_id": "conv-1790798109360-oduo",
+      "direction": "in",
+      "body": "por un piso de pvc",
+      "ts": "2026-09-30T19:55:13.332Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -185797,7 +185843,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0NTg0NzU2OTMyOTQ4MzozMzAzMTMzMDc2OTc4MDM2Mzg1MDkwODA3OTcyODA5OTMyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAzMjIzMDQyMzc0NzA0NDE2NjY5ODk0NzExMDI0MDI1NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAzMjIzMDQzMjY2ODkyMjYxODQxMzAxNDAwNjYyODM1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNDk5NDYyMDQ0MTU3MDozMzAzMzk3MTEzMDY5NDE5MzU3NjI2MzkxMDk2MzU0NDA2NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNDk5NDYyMDQ0MTU3MDozMzAzMzk3MTEzMDY5NDE5MzU3NjI2MzkxMDk2MzU0NDA2NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNDM5NDM3NTE0ODAwOTgwODc0MTQ0ODUxNjg5NDcyMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNDM5NDQ4NDMzMDk0OTEyMDM1MDk0MzEwMzE1NjIyNAZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
