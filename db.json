@@ -136271,6 +136271,28 @@
       "amount_usd": 2400,
       "exchange_rate": null,
       "category": "Venta - Pisos"
+    },
+    {
+      "id": "local-1790801793638-dndcj",
+      "flow": "Ingreso",
+      "date": "2026-09-30T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Lucia Racedo",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra Beccar - Escaleras Luli Racedo",
+      "sale_ref": "A9732",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 3,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
