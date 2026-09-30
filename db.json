@@ -137840,7 +137840,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-22T12:03:51.000Z",
-      "last_touch_at": "2026-08-04T05:53:01.000Z"
+      "last_touch_at": "2026-09-30T06:56:07.000Z"
     },
     {
       "id": "lead-email-19eef49c3872",
@@ -146735,12 +146735,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19eef374d23d",
       "status": "closed",
-      "unread_count": 6,
-      "last_message_at": "2026-08-07T12:24:21.000Z",
-      "last_message_preview": "Hey Young!! Thanks for sharing.\r\n\r\nJust one question, it is not completely clear to me if this is with the HD\r\nthickness (5 + 1,5) or regula",
+      "unread_count": 7,
+      "last_message_at": "2026-09-30T06:56:07.000Z",
+      "last_message_preview": "HI Victoria\n\nPI attached for new orders, please check and confirm to start the production.\n\nBlack box HD for Argentina.\n\nLabel on accessory ",
       "email_subject": "回复：Pacific Certifications - Request",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-08-04T05:53:01.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-30T06:56:07.000Z",
       "last_outbound_at": "2026-08-07T12:24:21.000Z",
       "ignored": true
     },
@@ -174465,6 +174465,14 @@
       "body": "↩️ Reaccionó: ❤",
       "ts": "2026-09-29T22:43:29.751Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0f11993f02",
+      "conversation_id": "conv-email-19eef374d23d",
+      "direction": "in",
+      "body": "✉️ 回复：NEW ORDER 2631 - 2 CNTS - BUENOS AIRES, ARGENTINA\n\nHI Victoria\n\nPI attached for new orders, please check and confirm to start the production.\n\nBlack box HD for Argentina.\n\nLabel on accessory box, too.\n\nBest regards\nLi\n\n在 2026年9月30日 07:26，Victoria Pisos Pacific<victoria@pisospacific.com> 写道：\n\nHi Young, I hope you are doing well.\nPlease find below a new order for Buenos Aires | Order number: PDPG 2731\n2 CONTAINERS\n\n1 CONTAINER | HD SIZE: 5mm/0.3mmWL | 1.5mm EVA= Total thickness 6.5mm | 1524x228x6.5mm\n5 P Zenith XL HD   MP88208-10 / MP88209-10\n5 P Aura XL HD    MP88208-1 & 88209-1 (EIR)\n5 P Notte XL HD   ZXE 2004 008\n5 P Clasico XL HD  TW6151-15 EIR\nLIGHT TEXTURE CODE: 89021 FOR ALL OF THEM\n\n2 CONTAINER | HD SIZE: 5mm/0.3mmWL | 1.5mm EVA= Total thickness 6.5mm | 1524x228x6.5mm\n10 P Eslavonia XL HD      LS105-1\n10 P Natural Oak XL HD   ZXE 2004 003\nLIGHT TEXTURE CODE: 89021 FOR ALL OF THEM\n\nAccessories\nCANADA Bullnose\n- Aura 50 PCS\n- Clasico 100 PCS\n- Aspen 50 PCS\n- Eslavonia 100 PCS\n- Natural Oak 100 PCS\n- Zenith 100 PCS\n\nSPC L-Shape 15*6\n\n- Aura 100 u\n- Clasico 100 u\n- Aspen 50 u\n- Eslavonia 100 u\n- Natural Oak 100 u\n- Zenith 50 u\n\nPlease assure in the box we have the following information: you can add a sticker to every box. ALSO FOR ACCESSORIES BOX\n\n- Product code number: S/C\n- Business name: Juan Rodriguez Momesso\n- Cuit: 23-38258718-9\n- Origin: China\n\nBOX PACIFIC BLACK\nCLICK SOUTH AMERICA- NO PATENT\nPALLETS WE USE ALWAYS FOR ARGENTINA (attached photo)",
+      "ts": "2026-09-30T06:56:07.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -183378,7 +183386,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-29T19:48:54.152Z",
     "gmail_seen_ids": [
-      "19f886d1bbec222d",
       "19f88a79cf5a7f2c",
       "19f891fd5ec91d94",
       "19f894bf9264d68f",
@@ -184177,7 +184184,8 @@
       "1a0ee03efd84cd05",
       "1a0ee4e2ec8eb595",
       "1a0eee1c944f933c",
-      "1a0ef7e4223594e3"
+      "1a0ef7e4223594e3",
+      "1a0f11993f025e37"
     ],
     "cash_sessions": {
       "1136982222": {
