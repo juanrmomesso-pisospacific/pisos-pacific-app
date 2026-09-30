@@ -145046,7 +145046,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-25T23:43:16.000Z",
-      "last_touch_at": "2026-09-28T16:54:27.636Z"
+      "last_touch_at": "2026-09-30T16:08:22.000Z"
     },
     {
       "id": "lead-email-1a0ddc40f175",
@@ -152774,12 +152774,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0daf3a9518",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-28T16:54:06.086Z",
-      "last_message_preview": "Hola Guillermo, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuest",
+      "unread_count": 2,
+      "last_message_at": "2026-09-30T16:10:36.000Z",
+      "last_message_preview": "PErdon, este estilo me gusta Roble Europeo Veta Cerrada\r\nEstoy buscando con tablones anchos intercalados de color claro dado como es\r\nel dep",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-25T23:43:16.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-30T16:10:36.000Z",
       "last_outbound_at": "2026-09-28T16:54:06.086Z"
     },
     {
@@ -174567,6 +174567,22 @@
       "body": "Buen día , una consulta\nHacen arreglos para baños sin obra",
       "ts": "2026-09-30T13:32:43.286Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0f315992d6",
+      "conversation_id": "conv-email-1a0daf3a9518",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nPErdon, este estilo me gusta Roble Europeo Veta Cerrada\r\nEstoy buscando con tablones anchos intercalados de color claro dado como es\r\nel departamento.\r\n\r\n\r\n\r\nEl mié, 30 sept 2026 a las 13:08, Guillermo Haiuk (<guillehaiuk@gmail.com>)\r\nescribió:\r\n\r\n> Estimados, como estan? no puedo entrar al link de pisos de madera que es\r\n> el que estoy buscando.\r\n> slds\r\n> Guillermo\r\n>\r\n> El lun, 28 sept 2026 a las 13:54, Pisos Pacific (<info@pisospacific.com>)\r\n> escribió:\r\n>\r\n>> Hola Guillermo, ¡muchas gracias por tu consulta!\r\n>>\r\n>> Para avanzar con el presupuesto, comentanos en qué modelo estás\r\n>> interesado dentro de nuestras dos líneas de pisos:\r\n>>\r\n>> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n>> noble prefinished\r\n>> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n>> agua\r\n>>\r\n>> El presupuesto incluye materiales y mano de obra de colocación.\r\n>>\r\n>> ¡Muchas gracias!\r\n>> Saludos, Pisos Pacific\r\n>>\r\n>>\r\n>> [image: Pisos Pacific]\r\n>> Juan Rodríguez Momesso\r\n>> Ventas\r\n>>\r\n>> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n>> info@pisospacific.com\r\n>> pisospacific.com\r\n>> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n>> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n>> La evolución del piso de madera\r\n>>\r\n>\r\n>\r\n> --\r\n> Guillermo Haiuk\r\n> celular 1167156104\r\n>\r\n> *\"Cualquiera que haya padecido una dictadura, incluso la más blanda, ha\r\n> comprobado que el sostén más sólido de esos regíme",
+      "ts": "2026-09-30T16:10:36.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a0f3138c95c",
+      "conversation_id": "conv-email-1a0daf3a9518",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nEstimados, como estan? no puedo entrar al link de pisos de madera que es el\r\nque estoy buscando.\r\nslds\r\nGuillermo\r\n\r\nEl lun, 28 sept 2026 a las 13:54, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Guillermo, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n\r\n\r\n-- \r\nGuillermo Haiuk\r\ncelular 1167156104\r\n\r\n*\"Cualquiera que haya padecido una dictadura, incluso la más blanda, ha\r\ncomprobado que el sostén más sólido de esos regímenes que anulan la\r\nlibertad, la crítica, la información sin orejeras y hacen escarnio de los\r\nderechos humanos y la soberanía individual, son esos individuos sin\r\ncualidades, burócratas de oficio y de alma, que hacen mover las palancas de\r\nla corrupción y la violencia, de las torturas y los atropello",
+      "ts": "2026-09-30T16:08:22.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -183480,8 +183496,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-29T19:48:54.152Z",
     "gmail_seen_ids": [
-      "19f8b43d08fc103f",
-      "19f8b567f074d516",
       "19f8b57dcedfb0aa",
       "19f8ba4c1c231bb7",
       "19f8b9ef1fc9865d",
@@ -184279,7 +184293,9 @@
       "1a0f1e5e8382c7aa",
       "1a0f21908af7a210",
       "1a0f25aeaf8e9b75",
-      "1a0f267f2b93a355"
+      "1a0f267f2b93a355",
+      "1a0f315992d619f7",
+      "1a0f3138c95c4d3a"
     ],
     "cash_sessions": {
       "1136982222": {
