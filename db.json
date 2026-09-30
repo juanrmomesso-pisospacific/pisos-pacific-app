@@ -145545,6 +145545,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-30T19:55:07.413Z",
       "last_touch_at": "2026-09-30T19:55:07.413Z"
+    },
+    {
+      "id": "lead-email-1a0f3edc9e4a",
+      "name": "Eduardo",
+      "email": "ealanzi66@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Matheu 2925",
+      "postal_code": "7600",
+      "approx_m2": 400,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 400m² · Con Colocación · CP 7600",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-30T20:07:21.000Z",
+      "last_touch_at": "2026-09-30T20:07:21.000Z"
     }
   ],
   "conversations": [
@@ -153247,6 +153264,21 @@
       "last_message_preview": "por un piso de pvc",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-30T19:55:13.332Z"
+    },
+    {
+      "id": "conv-email-1a0f3edc9e4a",
+      "channel": "email",
+      "contact_id": "ealanzi66@gmail.com",
+      "contact_name": "Eduardo",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0f3edc9e4a",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-30T20:07:21.000Z",
+      "last_message_preview": "Formulario web — 400m² · Con Colocación · CP 7600 · Matheu 2925",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-30T20:07:21.000Z"
     }
   ],
   "messages": [
@@ -174744,6 +174776,14 @@
       "body": "por un piso de pvc",
       "ts": "2026-09-30T19:55:13.332Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0f3edc9e4a",
+      "conversation_id": "conv-email-1a0f3edc9e4a",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 400m² · Con Colocación · CP 7600 · Matheu 2925",
+      "ts": "2026-09-30T20:07:21.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -183657,7 +183697,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-30T19:49:50.124Z",
     "gmail_seen_ids": [
-      "19f8bb557c7c83f5",
       "19f8bb23696d58a8",
       "19f8c565ead13da2",
       "19f8d054af70bc17",
@@ -184456,7 +184495,8 @@
       "1a0f3138c95c4d3a",
       "1a0f36685abc57e3",
       "1a0f377bddbedeb3",
-      "1a0f375d26ed4aeb"
+      "1a0f375d26ed4aeb",
+      "1a0f3edc9e4a066e"
     ],
     "cash_sessions": {
       "1136982222": {
