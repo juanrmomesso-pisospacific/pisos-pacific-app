@@ -145417,6 +145417,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-29T20:36:09.000Z",
       "last_touch_at": "2026-09-29T20:36:09.000Z"
+    },
+    {
+      "id": "lead-email-1a0f21908af7",
+      "name": "MYRIAM HUGI",
+      "email": "myriamhugi@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Presupuesto — Buen dia, quisiera que me coticen un piso flotantes resistente al agua con\r\nmanta y encastre clic para una superficie de 60 más\r\nPor favor enviar cotización a\r\nPaolagallo2023@gmail",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-30T11:35:08.000Z",
+      "last_touch_at": "2026-09-30T11:35:08.000Z"
     }
   ],
   "conversations": [
@@ -153074,6 +153091,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-29T20:36:09.000Z"
+    },
+    {
+      "id": "conv-email-1a0f21908af7",
+      "channel": "email",
+      "contact_id": "myriamhugi@gmail.com",
+      "contact_name": "MYRIAM HUGI",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0f21908af7",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-30T11:35:08.000Z",
+      "last_message_preview": "Buen dia, quisiera que me coticen un piso flotantes resistente al agua con\r\nmanta y encastre clic para una superficie de 60 más\r\nPor favor e",
+      "email_subject": "Presupuesto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-30T11:35:08.000Z"
     }
   ],
   "messages": [
@@ -174489,6 +174521,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: cff4f548964149fcafb6e151980e3ae4\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-28 00:00:00 UTC to 2026-09-29 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-09-30T08:27:26.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0f21908af7",
+      "conversation_id": "conv-email-1a0f21908af7",
+      "direction": "in",
+      "body": "✉️ Presupuesto\n\nBuen dia, quisiera que me coticen un piso flotantes resistente al agua con\r\nmanta y encastre clic para una superficie de 60 más\r\nPor favor enviar cotización a\r\nPaolagallo2023@gmail.com\r\nMuchas gracias",
+      "ts": "2026-09-30T11:35:08.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -183402,7 +183442,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-29T19:48:54.152Z",
     "gmail_seen_ids": [
-      "19f89b394348a2d9",
       "19f89c32af84d012",
       "19f8ae1948edcb56",
       "19f8b43d08fc103f",
@@ -184201,7 +184240,8 @@
       "1a0f11993f025e37",
       "1a0f12121801b774",
       "1a0f16d032f44c6d",
-      "1a0f1e5e8382c7aa"
+      "1a0f1e5e8382c7aa",
+      "1a0f21908af7a210"
     ],
     "cash_sessions": {
       "1136982222": {
