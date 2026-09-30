@@ -145434,6 +145434,22 @@
       "assigned_seller": "",
       "created_at": "2026-09-30T11:35:08.000Z",
       "last_touch_at": "2026-09-30T11:35:08.000Z"
+    },
+    {
+      "id": "lead-instagram-1790775165262",
+      "name": "@bianideesposito",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-09-30T13:32:43.286Z",
+      "last_touch_at": "2026-09-30T13:32:43.286Z"
     }
   ],
   "conversations": [
@@ -153106,6 +153122,20 @@
       "email_subject": "Presupuesto",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-30T11:35:08.000Z"
+    },
+    {
+      "id": "conv-1790775165262-7k5r",
+      "channel": "instagram",
+      "contact_id": "975122058958389",
+      "contact_name": "@bianideesposito",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790775165262",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-09-30T13:32:43.286Z",
+      "last_message_preview": "Buen día , una consulta\nHacen arreglos para baños sin obra",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-30T13:32:43.286Z"
     }
   ],
   "messages": [
@@ -174529,6 +174559,14 @@
       "body": "✉️ Presupuesto\n\nBuen dia, quisiera que me coticen un piso flotantes resistente al agua con\r\nmanta y encastre clic para una superficie de 60 más\r\nPor favor enviar cotización a\r\nPaolagallo2023@gmail.com\r\nMuchas gracias",
       "ts": "2026-09-30T11:35:08.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790775165262-u83m",
+      "conversation_id": "conv-1790775165262-7k5r",
+      "direction": "in",
+      "body": "Buen día , una consulta\nHacen arreglos para baños sin obra",
+      "ts": "2026-09-30T13:32:43.286Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -185625,7 +185663,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0NTg0NzU2OTMyOTQ4MzozMzAzMTMzMDY5MDU1MjU5NDE3ODUwNTUzNTg1MzE2NjU5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI0NTg0NzU2OTMyOTQ4MzozMzAzMTMzMDc2OTc4MDM2Mzg1MDkwODA3OTcyODA5OTMyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAzMjIzMDQyMzc0NzA0NDE2NjY5ODk0NzExMDI0MDI1NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAzMjIzMDQzMjY2ODkyMjYxODQxMzAxNDAwNjYyODM1MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAzMjIzMDQzMjY2ODkyMjYxODQxMzAxNDAwNjYyODM1MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNDk5NDYyMDQ0MTU3MDozMzAzMzk3MTEzMDY5NDE5MzU3NjI2MzkxMDk2MzU0NDA2NAZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
