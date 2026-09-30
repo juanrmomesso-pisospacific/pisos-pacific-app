@@ -17016,7 +17016,7 @@
       "client_email": "",
       "client_phone": "+54 9 11 5815-7737",
       "client_address": "Martindale - Pilar",
-      "contract_total": 10278.829,
+      "contract_total": 8495,
       "items": [
         {
           "product_id": "PROD-022",
@@ -17036,12 +17036,12 @@
       "discount_total": 1499.1,
       "status": "Confirmado",
       "created_at": "2026-09-30T20:43:15.402Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 8495,
         "total_paid": 0,
-        "balance_due": 10278.829
+        "balance_due": 8495
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -17049,7 +17049,8 @@
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "iva_amount": 0
     }
   ],
   "quotes": [
