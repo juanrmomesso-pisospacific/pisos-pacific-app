@@ -837,8 +837,8 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 710.7180000000001,
-      "reservedStock": 2056.236,
+      "stock": 700.2980000000001,
+      "reservedStock": 2045.8159999999998,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -2123,7 +2123,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 226,
+      "reservedStock": 217,
       "subLine": "Escalera",
       "shortName": "Colocación Pedada/Frentín H2O",
       "thicknessMm": null,
@@ -2147,7 +2147,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 56,
+      "reservedStock": 51,
       "subLine": "Escalera",
       "shortName": "Colocación Compensados y Descansos",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15116,
+      "reservedStock": 14936,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -2525,7 +2525,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 232,
+      "reservedStock": 223,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -2561,7 +2561,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 363,
+      "reservedStock": 349,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -3138,7 +3138,7 @@
       "cost": 6.67,
       "currency": "USD",
       "stock": 0,
-      "reservedStock": 14,
+      "reservedStock": 0,
       "active": true,
       "margin": 50,
       "createdAt": "2026-07-08T19:45:32.559Z",
@@ -3216,8 +3216,8 @@
       "price": 30,
       "cost": 11,
       "currency": "USD",
-      "stock": 24,
-      "reservedStock": 58,
+      "stock": 10,
+      "reservedStock": 44,
       "active": true,
       "margin": 173,
       "createdAt": "2026-07-14T22:45:48.504Z",
@@ -16338,7 +16338,7 @@
       ],
       "zoned": false,
       "discount_total": 1570.96,
-      "status": "Confirmado",
+      "status": "Finalizado",
       "created_at": "2026-09-03T17:36:57.414Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -16347,12 +16347,20 @@
         "total_paid": 0,
         "balance_due": 905.6799999999998
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Victoria Gonzalez Collado",
       "reseller_id": "",
       "reseller_name": "",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Finalizado",
+          "at": "2026-09-30T20:53:18.373Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     },
     {
       "id": "local-sale-1788459575322-xjy3",
@@ -182682,6 +182690,78 @@
       "product_id": "SERV-115",
       "sku": "SERV-115",
       "qty": -106,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-30T20:53:18.373Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788457017414-p1au",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": -10.42,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-30T20:53:18.373Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788457017414-p1au",
+      "product_id": "SERV-117",
+      "sku": "SERV-117",
+      "qty": -9,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-30T20:53:18.374Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788457017414-p1au",
+      "product_id": "SERV-118",
+      "sku": "SERV-118",
+      "qty": -5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-30T20:53:18.374Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788457017414-p1au",
+      "product_id": "1534",
+      "sku": "1534",
+      "qty": -14,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-30T20:53:18.374Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788457017414-p1au",
+      "product_id": "111223",
+      "sku": "111223",
+      "qty": -9,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-30T20:53:18.374Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788457017414-p1au",
+      "product_id": "local-1783539932685-ogl79",
+      "sku": "SERV-01202",
+      "qty": -14,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-30T20:53:18.374Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788457017414-p1au",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": -180,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-09-30T20:53:18.374Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788457017414-p1au",
+      "product_id": "local-1784069148766-cotkf",
+      "sku": "PROD - 102984",
+      "qty": -14,
       "warehouse_id": "main"
     }
   ],
