@@ -136175,6 +136175,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-muoirmb0-003"
+    },
+    {
+      "id": "local-1790801310562-i2wsy",
+      "flow": "Ingreso",
+      "date": "2026-09-23T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "subcategory": null,
+      "counterparty": "Patricia Ordoñez | Carlos Melhem",
+      "counterparty_type": "client",
+      "description": "Cobro - Cotización Patricia Ordoñez | Carlos Melhem",
+      "sale_ref": "A7112",
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null,
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 4000,
+      "exchange_rate": null,
+      "category": "Venta - Pisos"
     }
   ],
   "containers": [
