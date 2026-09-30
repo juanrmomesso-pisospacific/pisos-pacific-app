@@ -136214,6 +136214,28 @@
       "amount_usd": 4000,
       "exchange_rate": null,
       "category": "Venta - Pisos"
+    },
+    {
+      "id": "local-1790801443000-eabo8",
+      "flow": "Ingreso",
+      "date": "2026-09-11T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "subcategory": null,
+      "counterparty": "Solana Ottaviani",
+      "counterparty_type": "client",
+      "description": "Cobro - Reforma",
+      "sale_ref": "A6396",
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null,
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 2400,
+      "exchange_rate": null,
+      "category": "Venta - Pisos"
     }
   ],
   "containers": [
