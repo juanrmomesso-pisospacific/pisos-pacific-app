@@ -145413,10 +145413,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 56m² · Con Colocación · CP 1609",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-29T20:36:09.000Z",
-      "last_touch_at": "2026-09-29T20:36:09.000Z"
+      "last_touch_at": "2026-09-30T17:10:09.713Z"
     },
     {
       "id": "lead-email-1a0f21908af7",
@@ -153103,11 +153103,12 @@
       "linked_lead_id": "lead-email-1a0eee1c944f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-29T20:36:09.000Z",
-      "last_message_preview": "Formulario web — 56m² · Con Colocación · CP 1609 · Capitan juan de san martin 878",
+      "last_message_at": "2026-09-30T17:10:02.793Z",
+      "last_message_preview": "Hola Alejandra, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuest",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-29T20:36:09.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-29T20:36:09.000Z",
+      "last_outbound_at": "2026-09-30T17:10:02.793Z"
     },
     {
       "id": "conv-email-1a0f21908af7",
@@ -153117,7 +153118,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0f21908af7",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-30T11:35:08.000Z",
       "last_message_preview": "Buen dia, quisiera que me coticen un piso flotantes resistente al agua con\r\nmanta y encastre clic para una superficie de 60 más\r\nPor favor e",
       "email_subject": "Presupuesto",
@@ -174593,6 +174594,15 @@
       "ts": "2026-09-30T17:09:25.548Z",
       "status": "sent",
       "wa_id": "1a0f34adfc0e9789"
+    },
+    {
+      "id": "m-1790788202793-z99b",
+      "conversation_id": "conv-email-1a0eee1c944f",
+      "direction": "out",
+      "body": "Hola Alejandra, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación.\n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-09-30T17:10:02.793Z",
+      "status": "sent",
+      "wa_id": "1a0f34b7025d5f47"
     }
   ],
   "templates": [
