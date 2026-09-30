@@ -35784,7 +35784,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "Arq. Gladys Dorado",
       "has_iva": true,
-      "price": 14838.472000000002,
+      "price": 14669.072,
       "zoned": false,
       "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada + 4 más",
       "items": [
@@ -35846,10 +35846,10 @@
           "sku": "SERV-131",
           "description": "Servicio de Entrega",
           "quantity": 140,
-          "unit_price": 1,
+          "unit_price": 0,
           "cost": 0,
           "category": "Servicio",
-          "total": 140,
+          "total": 0,
           "discount": 0,
           "image": "",
           "target_item_index": null
