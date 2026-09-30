@@ -145383,7 +145383,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-29T17:54:55.000Z",
-      "last_touch_at": "2026-09-30T17:09:31.715Z"
+      "last_touch_at": "2026-09-30T17:58:11.000Z"
     },
     {
       "id": "local-1790713241803-mirod",
@@ -145416,7 +145416,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-29T20:36:09.000Z",
-      "last_touch_at": "2026-09-30T17:10:09.713Z"
+      "last_touch_at": "2026-09-30T17:56:08.000Z"
     },
     {
       "id": "lead-email-1a0f21908af7",
@@ -153086,12 +153086,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0ee4e2ec8e",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-30T17:09:25.548Z",
-      "last_message_preview": "Hola Maria, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
+      "unread_count": 1,
+      "last_message_at": "2026-09-30T17:58:11.000Z",
+      "last_message_preview": "Buenas tardes,\r\n\r\nGracias por la respuesta,\r\n\r\nMe gustaría cotizar ambas opciones para evaluarlo.\r\n\r\nEl mié, 30 sept 2026 a las 14:09, Pisos",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-29T17:54:55.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-30T17:58:11.000Z",
       "last_outbound_at": "2026-09-30T17:09:25.548Z"
     },
     {
@@ -153102,12 +153102,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0eee1c944f",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-30T17:10:02.793Z",
-      "last_message_preview": "Hola Alejandra, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuest",
+      "unread_count": 1,
+      "last_message_at": "2026-09-30T17:56:08.000Z",
+      "last_message_preview": "Buenas tardes,\r\n\r\nEl modelo que necesito es el siguiente: H2O HD XL - Roble Eslavonia 6,5mm x\r\n23cm x 1,50m\r\n\r\nGracias\r\n\r\nAlejandra\r\n\r\nEl mi",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-29T20:36:09.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-09-30T17:56:08.000Z",
       "last_outbound_at": "2026-09-30T17:10:02.793Z"
     },
     {
@@ -174603,6 +174603,22 @@
       "ts": "2026-09-30T17:10:02.793Z",
       "status": "sent",
       "wa_id": "1a0f34b7025d5f47"
+    },
+    {
+      "id": "m-email-1a0f377bddbe",
+      "conversation_id": "conv-email-1a0ee4e2ec8e",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenas tardes,\r\n\r\nGracias por la respuesta,\r\n\r\nMe gustaría cotizar ambas opciones para evaluarlo.\r\n\r\nEl mié, 30 sept 2026 a las 14:09, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Maria, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n\r\n\r\n-- \r\n+54 9 1167025745\r\nBarrio Núñez",
+      "ts": "2026-09-30T17:58:11.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a0f375d26ed",
+      "conversation_id": "conv-email-1a0eee1c944f",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenas tardes,\r\n\r\nEl modelo que necesito es el siguiente: H2O HD XL - Roble Eslavonia 6,5mm x\r\n23cm x 1,50m\r\n\r\nGracias\r\n\r\nAlejandra\r\n\r\nEl mié, 30 sept 2026 a las 14:10, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Alejandra, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera <https://pisospacific.com/madera> — Pisos de madera\r\n> noble prefinished\r\n> • Línea H2O <https://pisospacific.com/h2o> — Pisos SPC 100% a prueba de\r\n> agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-09-30T17:56:08.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -183516,8 +183532,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-29T19:48:54.152Z",
     "gmail_seen_ids": [
-      "19f8ba4c1c231bb7",
-      "19f8b9ef1fc9865d",
       "19f8bb557c7c83f5",
       "19f8bb23696d58a8",
       "19f8c565ead13da2",
@@ -184315,7 +184329,9 @@
       "1a0f267f2b93a355",
       "1a0f315992d619f7",
       "1a0f3138c95c4d3a",
-      "1a0f36685abc57e3"
+      "1a0f36685abc57e3",
+      "1a0f377bddbedeb3",
+      "1a0f375d26ed4aeb"
     ],
     "cash_sessions": {
       "1136982222": {
