@@ -13942,7 +13942,7 @@
       "quote_id": "local-1782159525066-nviyu",
       "quote_number": "A8862",
       "title": "Obra Golf de Nordelta",
-      "description": "H2O - Aspen 5,5mm x 18cm x 1,20m + 4 más",
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 4 más",
       "internal_notes": "",
       "public_notes": "",
       "payment_terms": "Anticipo 80% · Conforme 20%",
@@ -184506,6 +184506,10 @@
     "q4438RxlRASn1w5MP6RzIB0JzsGIKwun": {
       "userId": "u-admin",
       "expires": 1792067444464
+    },
+    "lGZItcpPcthx-p4ieN92yppLO-6jaXE6": {
+      "userId": "u-admin",
+      "expires": 1792067883344
     }
   },
   "settings": {
