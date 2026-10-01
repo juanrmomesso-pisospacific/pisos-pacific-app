@@ -145937,6 +145937,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-01T03:12:17.000Z",
       "last_touch_at": "2026-10-01T03:12:17.000Z"
+    },
+    {
+      "id": "lead-email-1a0f76b5f1ff",
+      "name": "Laura",
+      "email": "laurafreiga@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Lavalle 1959",
+      "postal_code": "1646",
+      "approx_m2": 35,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 35m² · Sin Colocación · CP 1646",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-01T12:23:23.000Z",
+      "last_touch_at": "2026-10-01T12:23:23.000Z"
     }
   ],
   "conversations": [
@@ -153684,6 +153701,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-01T03:12:17.000Z"
+    },
+    {
+      "id": "conv-email-1a0f76b5f1ff",
+      "channel": "email",
+      "contact_id": "laurafreiga@gmail.com",
+      "contact_name": "Laura",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0f76b5f1ff",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-01T12:23:23.000Z",
+      "last_message_preview": "Formulario web — 35m² · Sin Colocación · CP 1646 · Lavalle 1959",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-01T12:23:23.000Z"
     }
   ],
   "messages": [
@@ -175213,6 +175245,14 @@
       "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 9afcf5c481ad45e2af903fd96db4f4d6\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-29 00:00:00 UTC to 2026-09-30 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-01T12:05:43.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0f76b5f1ff",
+      "conversation_id": "conv-email-1a0f76b5f1ff",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 35m² · Sin Colocación · CP 1646 · Lavalle 1959",
+      "ts": "2026-10-01T12:23:23.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -184305,8 +184345,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-30T19:49:50.124Z",
     "gmail_seen_ids": [
-      "19f8f015b420f2a8",
-      "19f8f938c93098c5",
       "19f8f8f8c27c26d0",
       "19f8fbe28ceaaa0c",
       "19f920e2ca6dcd92",
@@ -185104,7 +185142,9 @@
       "1a0f572d3af3334c",
       "1a0f6dd1985dd6f7",
       "1a0f7161ae7b02cc",
-      "1a0f75b7970710ec"
+      "1a0f75b7970710ec",
+      "1a0f76b5f1ff0da6",
+      "1a0f768256180c68"
     ],
     "cash_sessions": {
       "1136982222": {
