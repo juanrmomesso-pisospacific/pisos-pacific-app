@@ -146487,6 +146487,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-01T15:41:23.374Z",
       "last_touch_at": "2026-10-01T15:41:23.374Z"
+    },
+    {
+      "id": "local-1790871400999-f0zd6",
+      "name": "Sol- CH Estudio",
+      "phone": " 11 6435-1398",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Palermo",
+      "created_at": "2026-10-01T16:16:40.693Z",
+      "last_touch_at": "2026-10-01T16:16:43.459Z"
     }
   ],
   "conversations": [
