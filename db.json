@@ -154257,10 +154257,11 @@
       "linked_lead_id": "lead-instagram-1790869285091",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-01T15:43:44.844Z",
-      "last_message_preview": "Agradezco la respuesta. Un cordial saludo",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-01T15:43:44.844Z"
+      "last_message_at": "2026-10-01T15:57:56.904Z",
+      "last_message_preview": "Hola Alejandra, muchas gracias por contactarte con nosotros!",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-01T15:43:44.844Z",
+      "last_outbound_at": "2026-10-01T15:57:56.904Z"
     }
   ],
   "messages": [
@@ -175830,6 +175831,15 @@
       "body": "Agradezco la respuesta. Un cordial saludo",
       "ts": "2026-10-01T15:43:44.844Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790870276904-90bh",
+      "conversation_id": "conv-1790869285091-zr39",
+      "direction": "out",
+      "body": "Hola Alejandra, muchas gracias por contactarte con nosotros!",
+      "ts": "2026-10-01T15:57:56.904Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcyNTY2MDE5MjAwNzcyMzkyNzUyMDY2MzMwNjI0MAZDZD"
     }
   ],
   "templates": [
