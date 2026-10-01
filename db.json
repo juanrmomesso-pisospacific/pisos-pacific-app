@@ -145826,6 +145826,23 @@
       "assigned_seller": "",
       "created_at": "2026-09-30T23:05:06.000Z",
       "last_touch_at": "2026-09-30T23:05:06.000Z"
+    },
+    {
+      "id": "lead-email-1a0f572d3af3",
+      "name": "Alberto",
+      "email": "escorpio301070@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Bidegain 4355",
+      "postal_code": "1235",
+      "approx_m2": 60,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 60m² · Sin Colocación · CP 1235",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-01T03:12:17.000Z",
+      "last_touch_at": "2026-10-01T03:12:17.000Z"
     }
   ],
   "conversations": [
@@ -153558,6 +153575,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-30T23:05:06.000Z"
+    },
+    {
+      "id": "conv-email-1a0f572d3af3",
+      "channel": "email",
+      "contact_id": "escorpio301070@gmail.com",
+      "contact_name": "Alberto",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0f572d3af3",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-01T03:12:17.000Z",
+      "last_message_preview": "Formulario web — 60m² · Sin Colocación · CP 1235 · Bidegain 4355",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-01T03:12:17.000Z"
     }
   ],
   "messages": [
@@ -175071,6 +175103,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 55m² · Sin Colocación · CP B1727HZO · Avellaneda 2039",
       "ts": "2026-09-30T23:05:06.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0f572d3af3",
+      "conversation_id": "conv-email-1a0f572d3af3",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 60m² · Sin Colocación · CP 1235 · Bidegain 4355",
+      "ts": "2026-10-01T03:12:17.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -184150,7 +184190,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-30T19:49:50.124Z",
     "gmail_seen_ids": [
-      "19f8c565ead13da2",
       "19f8d054af70bc17",
       "19f8e478dadcdc4e",
       "19f8e77674841c83",
@@ -184949,7 +184988,8 @@
       "1a0f377bddbedeb3",
       "1a0f375d26ed4aeb",
       "1a0f3edc9e4a066e",
-      "1a0f49087300cd22"
+      "1a0f49087300cd22",
+      "1a0f572d3af3334c"
     ],
     "cash_sessions": {
       "1136982222": {
