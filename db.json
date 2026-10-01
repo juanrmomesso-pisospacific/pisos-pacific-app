@@ -153820,12 +153820,13 @@
       "contact_name": "@fletesmarinelli",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789659186403",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-29T11:19:59.857Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-29T11:19:59.857Z"
+      "last_inbound_at": "2026-09-29T11:19:59.857Z",
+      "ignored": true
     },
     {
       "id": "conv-1789660467798-wzf5",
@@ -154504,12 +154505,13 @@
       "contact_name": "@jacek.kaminski.1422",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790632026769",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-28T21:47:09.034Z",
       "last_message_preview": "📷 Foto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-28T21:47:09.034Z"
+      "last_inbound_at": "2026-09-28T21:47:09.034Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0ea5b97c1e",
@@ -154612,7 +154614,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790775165262",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-01T16:02:05.198Z",
       "last_message_preview": "Gracias",
       "last_message_direction": "in",
@@ -154628,11 +154630,11 @@
       "linked_lead_id": "lead-instagram-1790798109360",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-01T16:04:31.845Z",
-      "last_message_preview": "Hola! Estamos en contacto por wsp",
-      "last_message_direction": "in",
+      "last_message_at": "2026-10-01T16:41:18.041Z",
+      "last_message_preview": "❤️",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-01T16:04:31.845Z",
-      "last_outbound_at": "2026-10-01T15:59:57.433Z"
+      "last_outbound_at": "2026-10-01T16:41:18.041Z"
     },
     {
       "id": "conv-email-1a0f3edc9e4a",
@@ -176423,6 +176425,15 @@
       "ts": "2026-10-01T16:41:06.071Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTc3MzQyMjM3MTg2MTQwMDkzMTUwMjE0ODAyNjM2OAZDZD"
+    },
+    {
+      "id": "m-1790872878041-a4s3",
+      "conversation_id": "conv-1790798109360-oduo",
+      "direction": "out",
+      "body": "❤️",
+      "ts": "2026-10-01T16:41:18.041Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNTc3MzY0MDc3ODA2NDYwNjY5NTYyMDQwMDM4MTk1MgZDZD"
     }
   ],
   "templates": [
