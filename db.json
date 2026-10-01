@@ -154272,11 +154272,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790869285091",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-01T15:59:27.848Z",
-      "last_message_preview": "El piso se coloca sin pegamento, pero se recomienda siempre agregar Nylon como barrera de vapor.",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-01T15:43:44.844Z",
+      "unread_count": 2,
+      "last_message_at": "2026-10-01T16:06:59.417Z",
+      "last_message_preview": "Lindo día",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-01T16:06:59.417Z",
       "last_outbound_at": "2026-10-01T15:59:27.848Z"
     }
   ],
@@ -175928,6 +175928,22 @@
       "body": "Hola! Estamos en contacto por wsp",
       "ts": "2026-10-01T16:04:31.845Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790870811556-38ox",
+      "conversation_id": "conv-1790869285091-zr39",
+      "direction": "in",
+      "body": "Muchas gracias por la pronta respuesta. Se que el baño son 6 mtrs. Pero seguramente agregue el pasillo. En cuanto hable con el colocado. Me contacto y hablamos del transporte también",
+      "ts": "2026-10-01T16:06:50.801Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1790870820055-e77p",
+      "conversation_id": "conv-1790869285091-zr39",
+      "direction": "in",
+      "body": "Lindo día",
+      "ts": "2026-10-01T16:06:59.417Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -187319,7 +187335,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwOTYzMTgxMzQwNzI5OTgwNzQzMzYzNTkyMTkyMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwOTk0OTUzMTEwNjc2NzUyODcwNjY5OTE2NTY5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNDk5NDYyMDQ0MTU3MDozMzAzNTczMDI0NzQ4MzgxMTk4MDU2ODk1NTM4MjEzNjgzMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNTczMjk1MjY1NTE4NTM5MzU5NjMwMzA2OTQxMzM3NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNTczMjk1MjY1NTE4NTM5MzU5NjMwMzA2OTQxMzM3NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTczNTUxNTk0MDc4ODg3OTI4NDA5NDAzNjM0NDgzMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTczNTY3NDg2MzgyNDA1OTE0OTIwMjk1MjgxNDU5MgZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
