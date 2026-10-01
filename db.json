@@ -753,7 +753,7 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 1213.4453279999998,
+      "stock": 1294.7153279999998,
       "reservedStock": 4143.57,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
@@ -16488,7 +16488,7 @@
       ],
       "zoned": false,
       "discount_total": 0,
-      "status": "Finalizado",
+      "status": "Cancelado",
       "created_at": "2026-09-07T18:43:28.515Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -16498,7 +16498,7 @@
         "balance_due": 3088
       },
       "stock_reserved": false,
-      "stock_deducted": true,
+      "stock_deducted": false,
       "seller_name": "Victoria Gonzalez Collado",
       "reseller_id": "",
       "reseller_name": "",
@@ -16510,6 +16510,12 @@
           "to": "Finalizado",
           "at": "2026-09-29T21:13:12.276Z",
           "by": "Admin User"
+        },
+        {
+          "from": "Finalizado",
+          "to": "Cancelado",
+          "at": "2026-10-01T12:11:21.463Z",
+          "by": "Victoria Gonzalez Collado"
         }
       ],
       "iva_amount": 0
@@ -183011,6 +183017,15 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": -275,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-01T12:11:21.463Z",
+      "type": "sale_cancel_restock",
+      "ref": "local-sale-1788806608515-w851",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 81.27,
       "warehouse_id": "main"
     }
   ],
