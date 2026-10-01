@@ -810,7 +810,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 378.4,
-      "reservedStock": 92.4,
+      "reservedStock": 196.60000000000002,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Aspen 6,5x23x150",
       "thicknessMm": 6.5,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 14840,
+      "reservedStock": 14841,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -40304,7 +40304,7 @@
       "currency": "USD",
       "created_at": "2026-10-01T16:25:31.630Z",
       "quote_number": "A7752",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1785180143629-y3hbq"
     },
     {
@@ -184511,6 +184511,24 @@
       "ref": "local-1784046348249-mtwb1",
       "product_id": "PROD-063",
       "sku": "PROD-063",
+      "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-01T17:01:14.794Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871931919-tbaez",
+      "product_id": "PROD-190",
+      "sku": "PROD-190",
+      "qty": 104.2,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-01T17:01:14.794Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871931919-tbaez",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
       "qty": 1,
       "warehouse_id": "main"
     }
