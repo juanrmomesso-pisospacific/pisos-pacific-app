@@ -136667,6 +136667,28 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "local-1790858550214-0xb97",
+      "flow": "Ingreso",
+      "date": "2026-10-01T00:00:00.000Z",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Valu Mavkinlay",
+      "counterparty_type": "client",
+      "description": "Cobro - Cotización Valu Mavkinlay ",
+      "sale_ref": "A8969",
+      "currency": "ARS",
+      "amount_ars": 447840,
+      "amount_usd": 288,
+      "exchange_rate": 1555,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
