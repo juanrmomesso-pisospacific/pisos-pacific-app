@@ -39450,6 +39450,62 @@
       "created_at": "2026-09-29T23:16:26.046Z",
       "quote_number": "A1366",
       "status": "DRAFT"
+    },
+    {
+      "id": "local-1790857240503-f7kc6",
+      "client_id": "CLI-mupi3v0o-v28y",
+      "client_name": "El Taller GPF",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Tortugas Chico",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Proyecto Casa",
+      "has_iva": true,
+      "price": 1669.7999999999995,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 106.3,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 100,
+          "total": 4039.4,
+          "discount": 4039.4,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 92,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 1380,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 4039.4,
+      "discount_amount": 4039.4,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-10-01T12:20:40.230Z",
+      "quote_number": "A6208",
+      "status": "DRAFT"
     }
   ],
   "clients": [
