@@ -146656,6 +146656,22 @@
       "address": "Palermo",
       "created_at": "2026-10-01T16:16:40.693Z",
       "last_touch_at": "2026-10-01T16:16:43.459Z"
+    },
+    {
+      "id": "local-1790871793051-y1uhf",
+      "name": "Pilar Gondell",
+      "phone": " 3442 48-8024",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "",
+      "address": "Entre Rios - Concepcion del Uruguya",
+      "created_at": "2026-10-01T16:23:12.698Z",
+      "last_touch_at": "2026-10-01T16:23:15.581Z"
     }
   ],
   "conversations": [
