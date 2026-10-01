@@ -154182,7 +154182,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790798109360",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-09-30T19:55:13.332Z",
       "last_message_preview": "por un piso de pvc",
       "last_message_direction": "in",
@@ -154257,11 +154257,11 @@
       "linked_lead_id": "lead-instagram-1790869285091",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-01T15:59:07.596Z",
-      "last_message_preview": "Hacemos envíos a mar del plata! Respecto a tus consultas. El cepillado de puertas va a depender de cuánto tengas actualmente entre la puerta",
+      "last_message_at": "2026-10-01T15:59:27.848Z",
+      "last_message_preview": "El piso se coloca sin pegamento, pero se recomienda siempre agregar Nylon como barrera de vapor.",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-01T15:43:44.844Z",
-      "last_outbound_at": "2026-10-01T15:59:07.596Z"
+      "last_outbound_at": "2026-10-01T15:59:27.848Z"
     }
   ],
   "messages": [
@@ -175849,6 +175849,15 @@
       "ts": "2026-10-01T15:59:07.596Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcyNjk2ODk1NjM4Mzk3MjE4Nzg3OTQ4OTE0Mjc4NAZDZD"
+    },
+    {
+      "id": "m-1790870367848-2xcs",
+      "conversation_id": "conv-1790869285091-zr39",
+      "direction": "out",
+      "body": "El piso se coloca sin pegamento, pero se recomienda siempre agregar Nylon como barrera de vapor.",
+      "ts": "2026-10-01T15:59:27.848Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcyNzM0MTY4MTE0OTAxNjMyMjUzOTE4ODY0OTk4NAZDZD"
     }
   ],
   "templates": [
