@@ -146431,9 +146431,9 @@
       "interested_products": [],
       "notes": "Formulario web — 17m² · Con Colocación · CP C1416",
       "status": "Contacted",
-      "assigned_seller": "",
+      "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-09-25T23:06:38.000Z",
-      "last_touch_at": "2026-09-28T18:25:16.000Z"
+      "last_touch_at": "2026-10-01T17:06:12.189Z"
     },
     {
       "id": "lead-email-1a0daf3a9518",
@@ -154306,7 +154306,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0dad21eecf",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-28T18:25:16.000Z",
       "last_message_preview": "Hola Juan!\r\nLínea H2O por favor\r\n\r\nEl lun, 28 sept 2026 a la(s) 1:53 p.m., Pisos Pacific (info@pisospacific.com)\r\nescribió:\r\n\r\n> Hola marcel",
       "email_subject": "Pedido de Presupuesto | Página Web",
