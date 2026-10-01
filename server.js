@@ -1138,8 +1138,8 @@ const LINK_STYLE = 'color:#1d4ed8;text-decoration:underline;';
 // linkean a la web, y cualquier URL pegada queda clickeable. No toca chat (WA/IG van como texto).
 function linkifyEmail(html) {
   return html
-    .replace(/Colecci[oó]n\s+Madera/gi, `<a href="https://pisospacific.com/madera" style="${LINK_STYLE}">$&</a>`)
-    .replace(/L[ií]nea\s+H2O/gi, `<a href="https://pisospacific.com/h2o" style="${LINK_STYLE}">$&</a>`)
+    .replace(/Colecci[oó]n\s+Madera/gi, `<a href="https://pisospacific.com/pisos-madera-natural-ingenieria" style="${LINK_STYLE}">$&</a>`)
+    .replace(/L[ií]nea\s+H2O/gi, `<a href="https://pisospacific.com/pisos-vinilicos-spc-h2o" style="${LINK_STYLE}">$&</a>`)
     .replace(/(^|[\s(])((?:https?:\/\/|www\.)[^\s<)]+)/gi, (_m, pre, url) => `${pre}<a href="${/^https?:\/\//i.test(url) ? url : 'https://' + url}" style="${LINK_STYLE}">${url}</a>`);
 }
 function emailHtml(body, sig) {
