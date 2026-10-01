@@ -16589,7 +16589,7 @@
       ],
       "zoned": false,
       "discount_total": 1020.32,
-      "status": "Programado",
+      "status": "En proceso",
       "created_at": "2026-09-09T16:33:29.802Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -16613,6 +16613,12 @@
           "from": "Confirmado",
           "to": "Programado",
           "at": "2026-09-30T20:51:09.859Z",
+          "by": "Victoria Gonzalez Collado"
+        },
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-10-01T12:10:25.846Z",
           "by": "Victoria Gonzalez Collado"
         }
       ]
@@ -185533,7 +185539,8 @@
       "1a0ef71c95a305e3",
       "1a0f25aeaf8e9b75",
       "1a0f34b7025d5f47",
-      "1a0f34adfc0e9789"
+      "1a0f34adfc0e9789",
+      "1a0f74b9af36ff4b"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
