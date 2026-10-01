@@ -35016,7 +35016,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Arq. Julieta Piñeiro",
       "has_iva": true,
-      "price": 1595.5059999999999,
+      "price": 1521.0184,
       "zoned": false,
       "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 1 más",
       "items": [
@@ -35024,13 +35024,13 @@
           "product_id": "PROD-027",
           "sku": "PROD-027",
           "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
-          "quantity": 33,
+          "quantity": 31.2,
           "unit_price": 38,
           "cost": 16.33,
           "category": "Pisos H2O",
           "disc_value": 10,
-          "total": 1254,
-          "discount": 125.4,
+          "total": 1185.6,
+          "discount": 118.56,
           "image": "",
           "target_item_index": null
         },
@@ -35048,8 +35048,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 125.4,
-      "discount_amount": 125.4,
+      "discount_total": 118.56,
+      "discount_amount": 118.56,
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
