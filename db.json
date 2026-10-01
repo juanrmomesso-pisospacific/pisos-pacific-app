@@ -150621,13 +150621,14 @@
       "contact_name": "@maia_kaminsky",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786463273708",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-24T20:52:09.250Z",
       "last_message_preview": "Gracias, me comunico",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-24T20:52:09.250Z",
-      "last_outbound_at": "2026-08-24T18:07:32.928Z"
+      "last_outbound_at": "2026-08-24T18:07:32.928Z",
+      "ignored": true
     },
     {
       "id": "conv-1786479396006-83u4",
@@ -151126,13 +151127,14 @@
       "contact_name": "@virginialpgn",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787178823156",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-27T11:31:12.120Z",
       "last_message_preview": "Muchas gracias",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-27T11:31:12.120Z",
-      "last_outbound_at": "2026-08-25T22:34:31.376Z"
+      "last_outbound_at": "2026-08-25T22:34:31.376Z",
+      "ignored": true
     },
     {
       "id": "conv-1787188700131-9dmw",
@@ -151359,13 +151361,14 @@
       "contact_name": "@anajupiterph",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787448248514",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-23T22:27:54.032Z",
       "last_message_preview": "Ok. Gracias por la explicación!",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-23T22:27:54.032Z",
-      "last_outbound_at": "2026-08-23T17:53:15.986Z"
+      "last_outbound_at": "2026-08-23T17:53:15.986Z",
+      "ignored": true
     },
     {
       "id": "conv-1787449293163-o9g0",
@@ -151389,12 +151392,13 @@
       "contact_name": "@tute.rm",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787449356379",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-23T01:42:34.992Z",
       "last_message_preview": "😍",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-23T01:42:34.992Z"
+      "last_inbound_at": "2026-08-23T01:42:34.992Z",
+      "ignored": true
     },
     {
       "id": "conv-1787449374823-bovn",
@@ -151403,12 +151407,13 @@
       "contact_name": "@vickycampelo_",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787449374823",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-23T01:42:53.252Z",
       "last_message_preview": "😍",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-23T01:42:53.252Z"
+      "last_inbound_at": "2026-08-23T01:42:53.252Z",
+      "ignored": true
     },
     {
       "id": "conv-1787501773113-hc02",
@@ -151432,12 +151437,13 @@
       "contact_name": "@gavinaalvarado",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787526506304",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-23T23:08:52.353Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-23T23:08:52.353Z"
+      "last_inbound_at": "2026-08-23T23:08:52.353Z",
+      "ignored": true
     },
     {
       "id": "conv-1787533348550-xcch",
@@ -151446,13 +151452,14 @@
       "contact_name": "@maba_maga",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787533348550",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-24T19:08:03.393Z",
       "last_message_preview": "↩️ Reaccionó: ❤",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-24T19:08:03.393Z",
-      "last_outbound_at": "2026-08-24T18:23:39.041Z"
+      "last_outbound_at": "2026-08-24T18:23:39.041Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a03459c2313",
@@ -151477,13 +151484,14 @@
       "contact_name": "@bgmservicios.instalaciones",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787585365250",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-24T18:26:17.381Z",
       "last_message_preview": "↩️ Reaccionó: ❤",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-24T18:26:17.381Z",
-      "last_outbound_at": "2026-08-24T18:25:59.869Z"
+      "last_outbound_at": "2026-08-24T18:25:59.869Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a03472cf81a",
@@ -151667,13 +151675,14 @@
       "contact_name": "@elclosetdemegg",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787809597980",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-31T16:56:58.810Z",
       "last_message_preview": "Muchas gracias ❤️❤️",
       "last_message_direction": "in",
       "last_inbound_at": "2026-08-31T16:56:58.810Z",
-      "last_outbound_at": "2026-08-31T16:55:41.537Z"
+      "last_outbound_at": "2026-08-31T16:55:41.537Z",
+      "ignored": true
     },
     {
       "id": "conv-1787839755133-waik",
@@ -151775,12 +151784,13 @@
       "contact_name": "@rondaarq",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787944218618",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-08-28T19:10:17.199Z",
       "last_message_preview": "📷 Foto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-28T19:10:17.199Z"
+      "last_inbound_at": "2026-08-28T19:10:17.199Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a04b56ebaeb",
@@ -154246,7 +154256,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790869285091",
       "status": "open",
-      "unread_count": 4,
+      "unread_count": 0,
       "last_message_at": "2026-10-01T15:43:44.844Z",
       "last_message_preview": "Agradezco la respuesta. Un cordial saludo",
       "last_message_direction": "in",
