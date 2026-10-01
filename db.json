@@ -40004,6 +40004,63 @@
       "quote_number": "A7769",
       "status": "DRAFT",
       "lead_id": "local-1790871400999-f0zd6"
+    },
+    {
+      "id": "local-1790871773230-tpaaa",
+      "client_id": "",
+      "client_name": "MYRIAM HUGI",
+      "client_dni": "",
+      "client_email": "myriamhugi@gmail.com",
+      "client_phone": "",
+      "client_address": "",
+      "internal_notes": "",
+      "public_notes": "Verificar medidas en obra. No incluye el envío.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización MYRIAM HUGI",
+      "has_iva": true,
+      "price": 3571.92,
+      "zoned": false,
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 60,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 2280,
+          "discount": 228,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 60,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 900,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 228,
+      "discount_amount": 228,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-10-01T16:22:54.929Z",
+      "quote_number": "A1054",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a0f21908af7"
     }
   ],
   "clients": [
@@ -146463,10 +146520,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: Presupuesto — Buen dia, quisiera que me coticen un piso flotantes resistente al agua con\r\nmanta y encastre clic para una superficie de 60 más\r\nPor favor enviar cotización a\r\nPaolagallo2023@gmail",
-      "status": "New",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-09-30T11:35:08.000Z",
-      "last_touch_at": "2026-09-30T11:35:08.000Z"
+      "last_touch_at": "2026-10-01T16:22:55.421Z"
     },
     {
       "id": "lead-instagram-1790775165262",
@@ -186636,7 +186693,11 @@
       "1a0f34b7025d5f47",
       "1a0f34adfc0e9789",
       "1a0f74b9af36ff4b",
-      "1a0f768256180c68"
+      "1a0f768256180c68",
+      "1a0f83fd75fd2254",
+      "1a0f83f48ef19cf1",
+      "1a0f83eb63171b2f",
+      "1a0f83e0028045a9"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
