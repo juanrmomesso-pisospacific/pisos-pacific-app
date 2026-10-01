@@ -138435,7 +138435,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-09-30T08:27:26.000Z"
+      "last_touch_at": "2026-10-01T12:05:43.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -147395,12 +147395,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 60,
-      "last_message_at": "2026-09-30T08:27:26.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-28 00:00:00 UTC to 2026-09-29 00:00:00 UTC.",
+      "unread_count": 61,
+      "last_message_at": "2026-10-01T12:05:43.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-29 00:00:00 UTC to 2026-09-30 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-30T08:27:26.000Z",
+      "last_inbound_at": "2026-10-01T12:05:43.000Z",
       "ignored": true
     },
     {
@@ -175124,6 +175124,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 60m² · Sin Colocación · CP 1235 · Bidegain 4355",
       "ts": "2026-10-01T03:12:17.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0f75b79707",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 9afcf5c481ad45e2af903fd96db4f4d6\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-09-29 00:00:00 UTC to 2026-09-30 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-10-01T12:05:43.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -184212,7 +184220,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-09-30T19:49:50.124Z",
     "gmail_seen_ids": [
-      "19f8e77674841c83",
       "19f8f015b420f2a8",
       "19f8f938c93098c5",
       "19f8f8f8c27c26d0",
@@ -185011,7 +185018,8 @@
       "1a0f49087300cd22",
       "1a0f572d3af3334c",
       "1a0f6dd1985dd6f7",
-      "1a0f7161ae7b02cc"
+      "1a0f7161ae7b02cc",
+      "1a0f75b7970710ec"
     ],
     "cash_sessions": {
       "1136982222": {
