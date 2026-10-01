@@ -52,11 +52,26 @@ export function tierRate(m2, tiers) {
  *   type 'tiered_m2' → escala por m²: $/m² del tramo (plano) × m² de piso
  * Devuelve { amount, type, m2, base } (amount en la moneda de los ítems).
  */
-export function computeCommission(comision, items, products) {
+// Descuento resuelto ($) de una línea: desde disc_value/disc_kind o el discount ya guardado.
+function lineDiscount(it) {
+  const g = (Number(it.quantity) || 0) * (Number(it.unit_price) || 0);
+  if (it.disc_value && it.disc_value > 0) {
+    const amt = it.disc_kind === 'amount' ? Number(it.disc_value) : g * Number(it.disc_value) / 100;
+    return Math.min(g, r2(amt));
+  }
+  return Math.min(g, Math.max(0, Number(it.discount) || 0));
+}
+
+// opts.splitDiscount: solo aplica a 'price_list' (valor fijo) — reparte el descuento del piso a
+// medias con el revendedor. En 'pct' el % ya se calcula sobre el precio FINAL (con descuento).
+export function computeCommission(comision, items, products, opts = {}) {
   const { m2, amount } = floorStats(items, products);
-  if (!comision || !comision.type) return { amount: 0, type: null, m2, base: amount };
+  let floorDisc = 0;
+  for (const it of items || []) if (isFloorLine(it, products)) floorDisc += lineDiscount(it);
+  floorDisc = r2(floorDisc);
+  if (!comision || !comision.type) return { amount: 0, type: null, m2, base: amount, floorDisc };
   let val = 0;
-  if (comision.type === 'pct') val = amount * (Number(comision.pct) || 0) / 100;
+  if (comision.type === 'pct') val = Math.max(0, amount - floorDisc) * (Number(comision.pct) || 0) / 100;   // % sobre el precio final (ya con descuento)
   else if (comision.type === 'per_m2') val = m2 * (Number(comision.per_m2) || 0);
   else if (comision.type === 'tiered_m2') {
     const rate = tierRate(m2, (comision.tiers || []).map((t) => ({ upto_m2: t.upto_m2, rate: t.per_m2 })));
@@ -68,8 +83,12 @@ export function computeCommission(comision, items, products) {
       if (!isFloorLine(it, products)) continue;
       const rp = pl[it.sku || ''];
       if (rp == null) continue;
-      val += Math.max(0, (Number(it.unit_price) || 0) - rp) * (Number(it.quantity) || 0);
+      let lineComm = Math.max(0, (Number(it.unit_price) || 0) - rp) * (Number(it.quantity) || 0);
+      // Valor fijo: el descuento del piso se reparte a medias (si no, el revendedor cobra el total y
+      // Pacific absorbe todo el descuento). Opcional por presupuesto (sale.commission_split_discount).
+      if (opts.splitDiscount) lineComm -= lineDiscount(it) * 0.5;
+      val += Math.max(0, lineComm);
     }
   }
-  return { amount: r2(val), type: comision.type, m2, base: amount };
+  return { amount: r2(val), type: comision.type, m2, base: amount, floorDisc };
 }

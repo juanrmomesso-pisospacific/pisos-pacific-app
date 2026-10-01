@@ -58,6 +58,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
   const [hasIva, setHasIva] = useState<boolean>(editQuote?.has_iva ?? true)   // las cotizaciones salen siempre con IVA por defecto
   const [items, setItems] = useState<LineItem[]>(editItems)
   const [commissionResellerId, setCommissionResellerId] = useState<string>((editQuote as any)?.reseller_id ?? "")
+  const [commissionSplitDiscount, setCommissionSplitDiscount] = useState<boolean>((editQuote as any)?.commission_split_discount !== false)   // valor fijo: a medias por default
   const [changingIdx, setChangingIdx] = useState<number | null>(null)  // ítem cuyo diseño se está reemplazando
   const [zoned, setZoned] = useState<boolean>(editQuote?.zoned ?? false)
   const [zones, setZones] = useState<string[]>(() => {
@@ -253,6 +254,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
       // Revendedor por comisión (el backend congela la comisión al convertir a venta).
       reseller_id: commissionResellerId || "",
       reseller_name: allClients.find(c => c.id === commissionResellerId)?.name || "",
+      commission_split_discount: commissionSplitDiscount,   // valor fijo: repartir el descuento a medias
       currency,   // ARS para paneles (ACUDESIGN), USD para el resto
     }
     const r = isEdit
@@ -439,7 +441,7 @@ export function QuoteForm({ open, onOpenChange, prefill, editQuote, onCreated }:
         </div>
       )}
       {!reventaReseller && (
-        <CommissionResellerPicker clients={allClients} items={items} products={products} value={commissionResellerId} onChange={setCommissionResellerId} help />
+        <CommissionResellerPicker clients={allClients} items={items} products={products} value={commissionResellerId} onChange={setCommissionResellerId} splitDiscount={commissionSplitDiscount} onSplitChange={setCommissionSplitDiscount} help />
       )}
 
       <div className="pt-2">

@@ -8,16 +8,21 @@ type ResellerClient = { id: string; name: string; phones?: string[] } & Reseller
 
 // Selector de "Revendedor por comisión" (aparte del cliente). Usado por QuoteForm y SaleForm.
 // El cliente paga precio de lista; la comisión se calcula sobre los pisos y se guarda en la venta.
-export function CommissionResellerPicker({ clients, items, products, value, onChange, help }: {
+export function CommissionResellerPicker({ clients, items, products, value, onChange, help, splitDiscount = true, onSplitChange }: {
   clients: ResellerClient[]
   items: LineLike[]
   products: Product[]
   value: string
   onChange: (id: string) => void
   help?: boolean
+  splitDiscount?: boolean              // valor fijo: ¿repartir el descuento del piso a medias?
+  onSplitChange?: (v: boolean) => void
 }) {
   const reseller = clients.find(c => c.id === value && c.reseller && c.reseller_mode === "comision") || null
-  const est = reseller ? computeCommission(reseller.reseller_comision, items, products) : null
+  const est = reseller ? computeCommission(reseller.reseller_comision, items, products, { splitDiscount }) : null
+  // El toggle "a medias" solo aplica a comisión de valor fijo (price_list) y cuando hay descuento en pisos.
+  const isPriceList = reseller?.reseller_comision?.type === "price_list"
+  const hasFloorDisc = !!est && (est as { floorDisc?: number }).floorDisc! > 0
   return (
     <div>
       <FieldLabel>Revendedor por comisión (opcional)</FieldLabel>
@@ -33,7 +38,13 @@ export function CommissionResellerPicker({ clients, items, products, value, onCh
           onPick={onChange}
         />
       )}
-      {help && <p className="text-[11px] text-muted-foreground mt-1">El cliente paga precio de lista; la comisión se calcula sobre los pisos y se guarda en la venta.</p>}
+      {reseller && isPriceList && hasFloorDisc && onSplitChange && (
+        <label className="flex items-start gap-2 mt-2 text-[12px] cursor-pointer">
+          <input type="checkbox" checked={splitDiscount} onChange={(e) => onSplitChange(e.target.checked)} className="mt-0.5" />
+          <span>Repartir el descuento <b>a medias</b> con el revendedor <span className="text-muted-foreground">(valor fijo: si no, cobra la comisión completa y Pacific absorbe todo el descuento)</span></span>
+        </label>
+      )}
+      {help && <p className="text-[11px] text-muted-foreground mt-1">El cliente paga precio de lista; la comisión se calcula sobre los pisos y se guarda en la venta. En comisión por % va sobre el precio final (con descuento).</p>}
     </div>
   )
 }

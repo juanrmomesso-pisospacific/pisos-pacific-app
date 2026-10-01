@@ -2980,7 +2980,10 @@ function applyCommission(sale) {
   // La comisión depende de la obra: 7% es el default sugerido (config del revendedor) pero se
   // puede EDITAR por venta. Un override manual no se recalcula (ni al editar los ítems).
   if (sale.commission_override) return;
-  const { amount, type, m2 } = computeResellerCommission(rc.reseller_comision, sale.items || [], db.products);
+  // Valor fijo (price_list): el descuento del piso se reparte a medias con el revendedor por defecto
+  // (se puede apagar por venta con commission_split_discount:false). No afecta a % (va sobre el neto).
+  const splitDiscount = sale.commission_split_discount !== false;
+  const { amount, type, m2 } = computeResellerCommission(rc.reseller_comision, sale.items || [], db.products, { splitDiscount });
   sale.commission_amount = amount;
   sale.commission_type = type;
   sale.commission_m2 = m2;
@@ -3043,6 +3046,7 @@ function convertQuoteToSale(q) {
     seller_name: q.seller_name ?? '',
     reseller_id: q.reseller_id || '',
     reseller_name: q.reseller_name || '',
+    commission_split_discount: q.commission_split_discount !== false,   // valor fijo: a medias (default)
     currency: q.currency || 'USD',
   };
   applyCommission(sale);   // congela la comisión del revendedor (si hay) sobre los pisos

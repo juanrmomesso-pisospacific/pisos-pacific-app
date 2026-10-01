@@ -25,6 +25,7 @@ export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
   const [hasIva, setHasIva] = useState<boolean>(false)
   const [reserve, setReserve] = useState<boolean>(true)
   const [resellerId, setResellerId] = useState<string>("")
+  const [splitDiscount, setSplitDiscount] = useState<boolean>(true)
   const create = useAction(api.create)
 
   const { tax } = useConfig()   // impuesto por config de la operación
@@ -63,6 +64,7 @@ export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
       stock_deducted: false,
       reseller_id: resellerId || "",
       reseller_name: clients.find(c => c.id === resellerId)?.name || "",
+      commission_split_discount: splitDiscount,
     }
     const r = await create.run("sales", body)
     if (r) { onOpenChange(false); refresh() }
@@ -85,7 +87,7 @@ export function SaleForm({ open, onOpenChange }: { open: boolean; onOpenChange: 
         <FieldLabel>Título / referencia</FieldLabel>
         <Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Obra Pilar" />
       </div>
-      <CommissionResellerPicker clients={clients} items={items} products={products} value={resellerId} onChange={setResellerId} />
+      <CommissionResellerPicker clients={clients} items={items} products={products} value={resellerId} onChange={setResellerId} splitDiscount={splitDiscount} onSplitChange={setSplitDiscount} />
       <div className="pt-2">
         <div className="flex items-center justify-between mb-2">
           <FieldLabel>Items</FieldLabel>

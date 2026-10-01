@@ -29,9 +29,19 @@ export type ResellerFields = {
   reseller_comision?: ComisionConfig
 }
 
-export type LineLike = { product_id?: string; sku?: string; quantity: number; unit_price: number }
+export type LineLike = { product_id?: string; sku?: string; quantity: number; unit_price: number; disc_kind?: "pct" | "amount"; disc_value?: number; discount?: number }
 
 const r2 = (n: number) => Math.round((Number(n) || 0) * 100) / 100
+
+/** Descuento resuelto ($) de una línea: desde disc_value/disc_kind (preview) o discount (guardado). */
+export function lineDiscount(it: LineLike): number {
+  const g = (Number(it.quantity) || 0) * (Number(it.unit_price) || 0)
+  if (it.disc_value && it.disc_value > 0) {
+    const amt = it.disc_kind === "amount" ? Number(it.disc_value) : g * Number(it.disc_value) / 100
+    return Math.min(g, r2(amt))
+  }
+  return Math.min(g, Math.max(0, Number(it.discount) || 0))
+}
 
 export function isFloorLine(it: LineLike, products: Product[]): boolean {
   const p = products.find((x) => (it.sku && x.sku === it.sku) || (it.product_id && x.id === it.product_id))
@@ -85,11 +95,17 @@ export function reventaBreakdown(reventa: ReventaConfig | undefined, floorM2: nu
   return { acuerdo, volumen, total: r2(acuerdo + volumen) }
 }
 
-export function computeCommission(comision: ComisionConfig | undefined, items: LineLike[], products: Product[]) {
+// opts.splitDiscount: solo aplica a 'price_list' (valor fijo) — reparte el descuento del piso a
+// medias con el revendedor. En 'pct' el % ya se calcula sobre el precio FINAL (con descuento), así
+// que no necesita reparto. 'per_m2'/'tiered_m2' son por m² → un descuento de precio no los afecta.
+export function computeCommission(comision: ComisionConfig | undefined, items: LineLike[], products: Product[], opts: { splitDiscount?: boolean } = {}) {
   const { m2, amount } = floorStats(items, products)
-  if (!comision || !comision.type) return { amount: 0, type: null as ComisionConfig["type"] | null, m2, base: amount }
+  let floorDisc = 0
+  for (const it of items) if (isFloorLine(it, products)) floorDisc += lineDiscount(it)
+  floorDisc = r2(floorDisc)
+  if (!comision || !comision.type) return { amount: 0, type: null as ComisionConfig["type"] | null, m2, base: amount, floorDisc }
   let val = 0
-  if (comision.type === "pct") val = amount * (Number(comision.pct) || 0) / 100
+  if (comision.type === "pct") val = Math.max(0, amount - floorDisc) * (Number(comision.pct) || 0) / 100   // % sobre el precio final (ya con descuento)
   else if (comision.type === "per_m2") val = m2 * (Number(comision.per_m2) || 0)
   else if (comision.type === "tiered_m2") {
     const rate = tierRate(m2, (comision.tiers || []).map((t) => ({ upto_m2: t.upto_m2, rate: t.per_m2 })))
@@ -102,10 +118,14 @@ export function computeCommission(comision: ComisionConfig | undefined, items: L
       if (!isFloorLine(it, products)) continue
       const rp = pl[it.sku || ""]
       if (rp == null) continue
-      val += Math.max(0, (Number(it.unit_price) || 0) - rp) * (Number(it.quantity) || 0)
+      let lineComm = Math.max(0, (Number(it.unit_price) || 0) - rp) * (Number(it.quantity) || 0)
+      // Valor fijo: el descuento del piso se reparte a medias (si no, el revendedor cobra el total y
+      // Pacific absorbe todo el descuento). Opcional por presupuesto.
+      if (opts.splitDiscount) lineComm -= lineDiscount(it) * 0.5
+      val += Math.max(0, lineComm)
     }
   }
-  return { amount: r2(val), type: comision.type, m2, base: amount }
+  return { amount: r2(val), type: comision.type, m2, base: amount, floorDisc }
 }
 
 export const DEFAULT_REVENTA: ReventaConfig = {
