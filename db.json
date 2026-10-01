@@ -725,8 +725,8 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 773.8153279999999,
-      "reservedStock": 1070.1,
+      "stock": 742.525328,
+      "reservedStock": 1038.81,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Natural Oak 6,5x23x150",
       "thicknessMm": 6.5,
@@ -16946,14 +16946,30 @@
         "total_paid": 454.55,
         "balance_due": 799.45
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Victoria Gonzalez Collado",
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
       "commission_amount": 0,
-      "iva_amount": 0
+      "iva_amount": 0,
+      "material_deliveries": [
+        {
+          "id": "DEL-mupx1sa1",
+          "date": "2026-10-01",
+          "note": null,
+          "by": "Victoria Gonzalez Collado",
+          "items": [
+            {
+              "sku": "PROD-026",
+              "product_id": "PROD-026",
+              "quantity": 31.29
+            }
+          ]
+        }
+      ],
+      "material_delivery_date": "2026-10-01"
     },
     {
       "id": "local-sale-1789483538339-ymmr",
@@ -184980,6 +184996,15 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-01T19:17:25.225Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788999931613-vt70",
+      "product_id": "PROD-026",
+      "sku": "PROD-026",
+      "qty": -31.29,
       "warehouse_id": "main"
     }
   ],
