@@ -40610,6 +40610,50 @@
       "quote_number": "A4518",
       "status": "DRAFT",
       "lead_id": "local-1790201167074-kzwvz"
+    },
+    {
+      "id": "local-1790881899104-ei71k",
+      "client_id": "",
+      "client_name": "Teresa Michelson",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 5313-7378",
+      "client_address": "Martindale",
+      "internal_notes": "",
+      "public_notes": "Se deberá verificar en obra el estado de la carpeta y determinar si es necesario realizar una nivelación general.\n\nEn los sectores donde sea necesario nivelar o realizar desbaste, especialmente en las zonas con piedritas, se deberá trabajar con especial cuidado, ya que no está permitido picar la carpeta debido a la presencia de losa radiante.\n",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Cotización Teresa Michelson - Nivelacion",
+      "has_iva": true,
+      "price": 2904,
+      "zoned": false,
+      "description": "Servicio - Nivelación de Carpeta - incluye Materiales",
+      "items": [
+        {
+          "product_id": "SERV-115",
+          "sku": "SERV-115",
+          "description": "Servicio - Nivelación de Carpeta - incluye Materiales",
+          "quantity": 200,
+          "unit_price": 16,
+          "category": "Servicio",
+          "cost": 10,
+          "disc_value": 25,
+          "total": 3200,
+          "discount": 800,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 800,
+      "discount_amount": 800,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-10-01T19:11:38.907Z",
+      "quote_number": "A9460",
+      "status": "DRAFT",
+      "lead_id": "local-1790201167074-kzwvz"
     }
   ],
   "clients": [
@@ -187479,7 +187523,8 @@
       "1a0f83fd75fd2254",
       "1a0f83f48ef19cf1",
       "1a0f83eb63171b2f",
-      "1a0f83e0028045a9"
+      "1a0f83e0028045a9",
+      "1a0f8d94aded2069"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
