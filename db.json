@@ -40442,8 +40442,9 @@
       "currency": "USD",
       "created_at": "2026-10-01T19:02:36.322Z",
       "quote_number": "A5114",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a0dad21eecf"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a0dad21eecf",
+      "share_token": "64961252b268e1a7495ce84f"
     }
   ],
   "clients": [
@@ -154376,12 +154377,12 @@
       "linked_lead_id": "lead-email-1a0dad21eecf",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-28T18:25:16.000Z",
-      "last_message_preview": "Hola Juan!\r\nLínea H2O por favor\r\n\r\nEl lun, 28 sept 2026 a la(s) 1:53 p.m., Pisos Pacific (info@pisospacific.com)\r\nescribió:\r\n\r\n> Hola marcel",
+      "last_message_at": "2026-10-01T19:03:05.256Z",
+      "last_message_preview": "📄 Presupuesto NA5114 - Departamento Villa del Parque - Marcelo Schlimovich.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-28T18:25:16.000Z",
-      "last_outbound_at": "2026-09-28T16:53:25.607Z"
+      "last_outbound_at": "2026-10-01T19:03:05.256Z"
     },
     {
       "id": "conv-email-1a0daf3a9518",
@@ -176588,6 +176589,16 @@
       "body": "✉️ Re: Comex+Cargo // Momesso // Cotizacion JR007 | Wall panles | Shanghai - Buenos Aires | 20 ft // CCF-MI-00000105\n\nHola Vicky,\r\nBuenas tardes!\r\n\r\nTe comparto debajo el tracking actualizado con el trasbordo en el puerto de\r\nTANGER.\r\nLa carga mantiene su estimado de arribo para el 17/OCT a bordo del buque\r\nSAN RAPHAEL MAERSK:\r\n\r\n[image: image.png]\r\n\r\nSaludos,\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\nCarolina Lodovico\r\n*Customer Comex+ Cargo*\r\nCel WhatsApp: (+54)115-761-1787\r\n\r\n*Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nAv. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\n\r\nEl vie, 18 sept 2026 a la(s) 10:42 a.m., Victoria Pisos Pacific (\r\nvictoria@pisospacific.com) escribió:\r\n\r\n> Gracias Caro!!\r\n>\r\n> El mié, 16 sept 2026 a las 16:07, Customer Comex+ Cargo (<\r\n> CustomerCargo@grupocomexmas.com>) escribió:\r\n>\r\n>> Buenas tardes Cami, Vicky,\r\n>> Adjuntamos el b/l final de la carga.\r\n>> Además informamos que realizará el trasbordo en Tanger el 24/SEP al buque\r\n>> SAN RAPHAEL MAERSK, el cual tiene estimado de arribo a Buenos Aires para el\r\n>> *17/OCT*:\r\n>>\r\n>> [image: image.png]\r\n>>\r\n>> Les notificaremos en cuanto confirmemos el trasbordo.\r\n>>\r\n>> Saludos,\r\n>>\r\n>>\r\n>>\r\n>>\r\n>>\r\n>> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n>> Cordiali Saluti*\r\n>> Carolina Lodovico\r\n>> *Customer Comex+ Cargo*\r\n>> Cel WhatsApp: (+54)115-761-1787\r\n>>\r\n>> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n>> Tel.: (+54)114331-2207/1893\r\n>> Av. Alicia Moreau de Ju",
       "ts": "2026-10-01T18:40:01.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790881385256-lz3c",
+      "conversation_id": "conv-email-1a0dad21eecf",
+      "direction": "out",
+      "body": "Hola Marcelo, te comparto el presupuesto NA5114 adjunto. El presupuesto incluye colocación por el minimo de 40m2. Cualquier consulta quedo a disposición.\n📄 Presupuesto NA5114 - Departamento Villa del Parque - Marcelo Schlimovich.pdf",
+      "ts": "2026-10-01T19:03:05.256Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a0f8d94aded2069"
     }
   ],
   "templates": [
