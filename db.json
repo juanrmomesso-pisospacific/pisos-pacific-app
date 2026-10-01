@@ -16470,7 +16470,7 @@
       "client_email": "",
       "client_phone": "‪+54 9 11 3781‑0272‬",
       "client_address": "Coghlan",
-      "contract_total": 3736.7945999999997,
+      "contract_total": 3088,
       "items": [
         {
           "product_id": "PROD-027",
@@ -16490,12 +16490,12 @@
       "discount_total": 0,
       "status": "Finalizado",
       "created_at": "2026-09-07T18:43:28.515Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 3088,
         "total_paid": 0,
-        "balance_due": 3736.7945999999997
+        "balance_due": 3088
       },
       "stock_reserved": false,
       "stock_deducted": true,
@@ -16511,7 +16511,8 @@
           "at": "2026-09-29T21:13:12.276Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "iva_amount": 0
     },
     {
       "id": "local-sale-1788971609802-uvv0",
