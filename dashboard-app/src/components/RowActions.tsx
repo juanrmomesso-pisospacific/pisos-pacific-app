@@ -15,7 +15,7 @@ import { DeliveryScheduler } from "@/components/DeliveryScheduler"
 import { useModules, moduleOn } from "@/contexts/ConfigContext"
 import { saldoDe, cobradoDe } from "@/lib/sales"
 import { registrarCobroVenta } from "@/lib/cobro"
-import { fmtMoney, cn, appLocale } from "@/lib/utils"
+import { fmtMoney, fmtInt, cn, appLocale } from "@/lib/utils"
 import type { Quote, Sale, Caja } from "@/lib/types"
 
 // ---------- Quote row actions ----------
@@ -437,12 +437,17 @@ function PaymentDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChan
   const modules = useModules()
   const finanzasOn = moduleOn(modules, "finanzas")
   const cajas = useApi<Caja[]>("/api/cajas").data ?? []
+  const blue = useApi<{ promedio?: number }>("/api/fx/blue").data?.promedio || 1400
   const due = saldoDe(sale)
   const [amount, setAmount] = useState<number>(due)
   const [method, setMethod] = useState<string>(methods[0] ?? "")
   const [notes, setNotes] = useState<string>("")
   const [cajaId, setCajaId] = useState<string>("")
   const [date, setDate] = useState<string>(new Date().toISOString().slice(0, 10))
+  // Moneda del cobro (una venta en USD se puede cobrar en pesos al dólar del día) + TC.
+  const [currency, setCurrency] = useState<"USD" | "ARS">(sale.currency === "ARS" ? "ARS" : "USD")
+  const [tc, setTc] = useState<number>(blue)
+  useEffect(() => { setTc(blue) }, [blue])
   // Con finanzas el cobro es un movimiento de caja: default a la caja de efectivo (o la primera).
   useEffect(() => {
     if (cajaId || !cajas.length) return
@@ -453,8 +458,9 @@ function PaymentDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChan
 
   const submit = async () => {
     if (amount <= 0) return
+    if (finanzasOn && currency === "ARS" && tc <= 0) return
     const caja = cajas.find((c) => c.id === cajaId)
-    const r = await cobrar.run({ sale, amount, finanzasOn, cajaId, cajaName: caja?.name, date, method, notes })
+    const r = await cobrar.run({ sale, amount, finanzasOn, cajaId, cajaName: caja?.name, date, method, notes, currency, exchangeRate: tc })
     if (r) { onOpenChange(false); refresh() }
   }
 
@@ -471,15 +477,36 @@ function PaymentDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChan
             <div className="flex justify-between mt-1"><span className="text-muted-foreground">Ya cobrado</span><span className="tabular">{fmtMoney(cobradoDe(sale))}</span></div>
             <div className="flex justify-between mt-1 font-medium"><span>Saldo</span><span className="tabular">{fmtMoney(due)}</span></div>
           </div>
-          <div>
-            <label className="text-sm font-medium block mb-1">Monto</label>
-            <Input type="number" min={0} value={amount} onChange={(e) => setAmount(Number(e.target.value) || 0)} />
-            <div className="mt-2 flex gap-1">
-              {[due, due/2, due/4].filter(v => v > 0).map((v, i) => (
-                <Button key={i} type="button" size="sm" variant="outline" className="h-7 text-xs" onClick={() => setAmount(Math.round(v * 100) / 100)}>{fmtMoney(v)}</Button>
+          {finanzasOn && (
+            <div className="inline-flex rounded-md border border-border overflow-hidden text-xs">
+              {(["USD", "ARS"] as const).map(c => (
+                <button key={c} type="button" onClick={() => setCurrency(c)}
+                  className={cn("px-3 py-1", currency === c ? "bg-primary text-primary-foreground" : "bg-transparent text-muted-foreground")}>
+                  {c === "USD" ? "US$" : "Pesos"}
+                </button>
               ))}
             </div>
+          )}
+          <div>
+            <label className="text-sm font-medium block mb-1">Monto ({currency === "ARS" ? "$" : "US$"})</label>
+            <Input type="number" min={0} value={amount} onChange={(e) => setAmount(Number(e.target.value) || 0)} />
+            <div className="mt-2 flex gap-1">
+              {(() => {
+                const dueInPay = currency === "ARS" && sale.currency !== "ARS" ? due * tc
+                  : currency === "USD" && sale.currency === "ARS" ? due / (tc || 1) : due
+                return [dueInPay, dueInPay/2, dueInPay/4].filter(v => v > 0).map((v, i) => (
+                  <Button key={i} type="button" size="sm" variant="outline" className="h-7 text-xs" onClick={() => setAmount(Math.round(v * 100) / 100)}>{currency === "ARS" ? "$" : "US$"}{fmtInt(v)}</Button>
+                ))
+              })()}
+            </div>
           </div>
+          {finanzasOn && currency === "ARS" && (
+            <div>
+              <label className="text-sm font-medium block mb-1">Tipo de cambio <span className="text-muted-foreground font-normal">(blue hoy: {fmtInt(blue)})</span></label>
+              <Input type="number" min={0} step="0.01" value={tc === 0 ? "" : tc} onChange={(e) => setTc(Number(e.target.value) || 0)} />
+              {amount > 0 && tc > 0 && <p className="text-[11px] text-muted-foreground mt-1">≈ US$ {fmtMoney(amount / tc)}{sale.currency !== "ARS" && ` · cubre US$${fmtMoney(Math.min(amount / tc, due))} del saldo`}</p>}
+            </div>
+          )}
           {finanzasOn ? (
             <>
               <div className="grid grid-cols-2 gap-2">
@@ -509,7 +536,7 @@ function PaymentDrawer({ open, onOpenChange, sale }: { open: boolean; onOpenChan
             <Input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Comprobante, transferencia ID…" />
           </div>
           <div className="flex items-center gap-2 pt-2">
-            <Button onClick={submit} disabled={cobrar.busy || amount <= 0 || (finanzasOn && !cajaId)}>{cobrar.busy ? "Registrando…" : `Registrar ${fmtMoney(amount)}`}</Button>
+            <Button onClick={submit} disabled={cobrar.busy || amount <= 0 || (finanzasOn && !cajaId) || (finanzasOn && currency === "ARS" && tc <= 0)}>{cobrar.busy ? "Registrando…" : `Registrar ${currency === "ARS" ? "$" + fmtInt(amount) : fmtMoney(amount)}`}</Button>
             {cobrar.error && <span className="text-xs text-destructive">{cobrar.error}</span>}
           </div>
           {(sale.payments && sale.payments.length > 0) && (

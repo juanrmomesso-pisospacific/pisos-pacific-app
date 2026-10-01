@@ -25,6 +25,7 @@ import { useConfig, useModules, moduleOn, taxWord } from "@/contexts/ConfigConte
 import { materialState, MATERIAL_LABEL } from "@/lib/calendar"
 import { saleMaterialsForRemito, looseUnit } from "@/lib/remito"
 import { cobradoDe, saldoDe, tieneSaldo, cobranzaNivel, finalizadaEl } from "@/lib/sales"
+import { registrarCobroVenta } from "@/lib/cobro"
 import { openPacificPdf } from "@/lib/pdf"
 import { cajasHint } from "@/lib/boxes"
 import { productUnitLabel } from "@/lib/panels"
@@ -575,6 +576,9 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   const [payAmount, setPayAmount] = useState<number>(0)
   const [payCaja, setPayCaja] = useState("")
   const [payDate, setPayDate] = useState("")
+  // Moneda del cobro (una venta en USD se puede cobrar en pesos al dólar del día) + TC.
+  const [payCurrency, setPayCurrency] = useState<"USD" | "ARS">("USD")
+  const [payTc, setPayTc] = useState<number>(blue)
   // Recibo de un cobro: el cobro elegido + concepto editable (vacío = automático del server).
   const [receiptFor, setReceiptFor] = useState<string | null>(null)
   const [receiptConcept, setReceiptConcept] = useState("")
@@ -590,8 +594,7 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
   const [editOpen, setEditOpen] = useState(false)
   const [deliverOpen, setDeliverOpen] = useState(false)
   const update = useAction(api.update)
-  const createMov = useAction(api.create)
-  const payDirect = useAction(api.salePayment)
+  const cobrar = useAction(registrarCobroVenta)
   const conversations = useApi<any[]>("/api/conversations").data ?? []
   const navigate = useNavigate()
   const openChat = () => {
@@ -605,6 +608,8 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
     setPayAmount(0)
     setPayCaja("")
     setPayDate(new Date().toISOString().slice(0, 10))
+    setPayCurrency(sale.currency === "ARS" ? "ARS" : "USD")
+    setPayTc(blue)
     // El remito SIEMPRE parte de los materiales de la venta: si todavía no hay uno guardado,
     // precargar pisos+terminaciones (el inspector ajusta/suma extras y guarda). Antes arrancaba
     // vacío y el botón "Cargar de la venta" era opcional → remitos sin los pisos (bug 17/7).
@@ -630,32 +635,14 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
         .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
   const registrarCobro = async () => {
     if (payAmount <= 0) return
-    // Operación SIN módulo finanzas: el cobro va directo a la venta (financial_position) —
-    // no hay extractos que dupliquen. Con finanzas, el cobro es un movimiento de caja.
-    if (!finanzasOn) {
-      const r = await payDirect.run(sale.id, Math.round(payAmount * 100) / 100, undefined, undefined, payDate || undefined)
-      if (r) { onClose(); onChanged() }
-      return
-    }
-    if (!payCaja) return
+    if (finanzasOn && !payCaja) return
     const caja = cajas.find(c => c.id === payCaja)
-    // Cobro consciente de la moneda de la venta: paneles (currency ARS) se cobran en pesos y se
-    // consolidan a USD al blue; el resto (pisos) es USD nativo. La categoría sigue al producto.
-    const amt = Math.round(payAmount * 100) / 100
-    const isArs = sale.currency === "ARS"
-    const money = isArs
-      ? { currency: "ARS", amount_ars: amt, amount_usd: Math.round((amt / blue) * 100) / 100, exchange_rate: blue, category: "Venta - No Pisos" }
-      : { currency: "USD", amount_ars: null, amount_usd: amt, exchange_rate: null, category: "Venta - Pisos" }
-    await createMov.run("cashflow", {
-      flow: "Ingreso", date: (payDate || new Date().toISOString().slice(0, 10)) + "T00:00:00.000Z",
-      caja_id: payCaja, caja_name: caja?.name ?? "",
-      subcategory: null,
-      counterparty: sale.client_name, counterparty_type: "client",
-      description: `Cobro - ${sale.title || sale.client_name}`, sale_ref: sale.quote_number,
-      fixed_variable: null, expense_type: null, transfer: false, needs_review: false, review_reason: null,
-      ...money,
+    const r = await cobrar.run({
+      sale, amount: payAmount, finanzasOn,
+      cajaId: payCaja, cajaName: caja?.name, date: payDate || undefined,
+      currency: payCurrency, exchangeRate: payTc,
     })
-    onClose(); onChanged()
+    if (r) { onClose(); onChanged() }
   }
 
   // Preparación del remito (inspección): parte de los m² de piso y se agregan terminaciones.
@@ -725,14 +712,30 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
         {/* Cobros — acción principal, arriba de todo (antes estaba a 4-5 scrolls, debajo del remito) */}
         <div className="mt-4">
           <DetailSection title="Cobros">
-            {due > 0.5 ? (
+            {due > 0.5 ? (() => {
+              // El saldo (due) está en la moneda de la venta. El cobro puede entrar en otra moneda
+              // (ej. venta USD cobrada en pesos): mostramos "Todo" y el equivalente en el TC elegido.
+              const dueInPay = payCurrency === "ARS" && sale.currency !== "ARS" ? due * payTc
+                : payCurrency === "USD" && sale.currency === "ARS" ? due / (payTc || 1) : due
+              const eqUsd = payCurrency === "ARS" ? payAmount / (payTc || 1) : payAmount
+              return (
               <div className="rounded-md border border-border p-2.5 space-y-2 bg-muted/20">
+                {finanzasOn && (
+                  <div className="inline-flex rounded-md border border-border overflow-hidden text-xs">
+                    {(["USD", "ARS"] as const).map(c => (
+                      <button key={c} type="button" onClick={() => setPayCurrency(c)}
+                        className={cn("px-2.5 py-1", payCurrency === c ? "bg-primary text-primary-foreground" : "bg-transparent text-muted-foreground")}>
+                        {c === "USD" ? "US$" : "Pesos"}
+                      </button>
+                    ))}
+                  </div>
+                )}
                 <div className="grid grid-cols-2 gap-2">
                   <div>
-                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Monto (US$)</div>
+                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Monto ({payCurrency === "ARS" ? "$" : "US$"})</div>
                     <div className="flex gap-1">
                       <Input type="number" min={0} step="0.01" value={payAmount === 0 ? "" : payAmount} placeholder="0" onChange={(e) => setPayAmount(Number(e.target.value) || 0)} className="h-8" />
-                      <Button type="button" variant="outline" size="sm" className="h-8 px-2 text-xs shrink-0" onClick={() => setPayAmount(Math.round(due * 100) / 100)}>Todo</Button>
+                      <Button type="button" variant="outline" size="sm" className="h-8 px-2 text-xs shrink-0" onClick={() => setPayAmount(Math.round(dueInPay * 100) / 100)}>Todo</Button>
                     </div>
                   </div>
                   <div>
@@ -740,6 +743,13 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
                     <Input type="date" value={payDate} onChange={(e) => setPayDate(e.target.value)} className="h-8" />
                   </div>
                 </div>
+                {finanzasOn && payCurrency === "ARS" && (
+                  <div>
+                    <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Tipo de cambio (blue hoy: {fmtInt(blue)})</div>
+                    <Input type="number" min={0} step="0.01" value={payTc === 0 ? "" : payTc} onChange={(e) => setPayTc(Number(e.target.value) || 0)} className="h-8" />
+                    {payAmount > 0 && payTc > 0 && <div className="text-[11px] text-muted-foreground mt-0.5">≈ US$ {fmtMoney(eqUsd)} {sale.currency !== "ARS" && `· cubre US$${fmtMoney(Math.min(eqUsd, due))} del saldo`}</div>}
+                  </div>
+                )}
                 {finanzasOn && (
                   <div>
                     <div className="text-[10px] uppercase text-muted-foreground mb-0.5">Caja</div>
@@ -749,10 +759,11 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
                     </select>
                   </div>
                 )}
-                <Button size="sm" onClick={registrarCobro} disabled={createMov.busy || payDirect.busy || payAmount <= 0 || (finanzasOn && !payCaja)}>{createMov.busy || payDirect.busy ? "Registrando…" : "Registrar cobro"}</Button>
-                {(createMov.error || payDirect.error) && <div className="text-[11px] text-destructive">{createMov.error || payDirect.error}</div>}
+                <Button size="sm" onClick={registrarCobro} disabled={cobrar.busy || payAmount <= 0 || (finanzasOn && !payCaja) || (payCurrency === "ARS" && payTc <= 0)}>{cobrar.busy ? "Registrando…" : "Registrar cobro"}</Button>
+                {cobrar.error && <div className="text-[11px] text-destructive">{cobrar.error}</div>}
               </div>
-            ) : (
+              )
+            })() : (
               <div className="text-xs text-emerald-700">Saldado ✓</div>
             )}
             {cobros.length > 0 && (
