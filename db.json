@@ -16073,7 +16073,7 @@
       ],
       "zoned": false,
       "discount_total": 0,
-      "status": "Confirmado",
+      "status": "En proceso",
       "created_at": "2026-08-29T12:11:45.785Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -16085,7 +16085,18 @@
       "stock_reserved": true,
       "stock_deducted": false,
       "seller_name": "Juan Rodriguez Momesso",
-      "iva_amount": 0
+      "iva_amount": 0,
+      "delivery_date": "2026-10-01",
+      "delivery_date_to": "2026-10-01",
+      "delivery_crew": "Ariel Ernesto Garcia",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "En proceso",
+          "at": "2026-10-01T15:12:21.729Z",
+          "by": "Admin User"
+        }
+      ]
     },
     {
       "id": "local-sale-1788129923090-btob",
@@ -188530,6 +188541,17 @@
       "sale_id": "local-sale-1788971609802-uvv0",
       "notes": "Obra Nuñez",
       "created_at": "2026-09-30T20:51:09.753Z"
+    },
+    {
+      "id": "local-1790867541975-v4wxi",
+      "type": "medicion",
+      "title": "Medición previa · Arq. Agustina Bilbao",
+      "due_date": "2026-09-29",
+      "assigned_seller": "Ariel Ernesto Garcia",
+      "status": "pendiente",
+      "sale_id": "local-sale-1788005505785-ibt1",
+      "notes": "A confirmar",
+      "created_at": "2026-10-01T15:12:21.676Z"
     }
   ],
   "password_resets": {},
