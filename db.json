@@ -154183,10 +154183,11 @@
       "linked_lead_id": "lead-instagram-1790798109360",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-30T19:55:13.332Z",
-      "last_message_preview": "por un piso de pvc",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-30T19:55:13.332Z"
+      "last_message_at": "2026-10-01T15:59:44.836Z",
+      "last_message_preview": "Hola, cómo estás? Muchas gracias por tu consulta!!",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-30T19:55:13.332Z",
+      "last_outbound_at": "2026-10-01T15:59:44.836Z"
     },
     {
       "id": "conv-email-1a0f3edc9e4a",
@@ -175858,6 +175859,15 @@
       "ts": "2026-10-01T15:59:27.848Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcyNzM0MTY4MTE0OTAxNjMyMjUzOTE4ODY0OTk4NAZDZD"
+    },
+    {
+      "id": "m-1790870384836-1khb",
+      "conversation_id": "conv-1790798109360-oduo",
+      "direction": "out",
+      "body": "Hola, cómo estás? Muchas gracias por tu consulta!!",
+      "ts": "2026-10-01T15:59:44.836Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNTcyNzY1MDIyMzMwODg1NDU3MjE2NTMxMTIzNDA0OAZDZD"
     }
   ],
   "templates": [
