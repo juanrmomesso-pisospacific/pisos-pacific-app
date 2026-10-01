@@ -17072,7 +17072,7 @@
       "quote_id": "local-1788806959923-t6f1a",
       "quote_number": "A7106",
       "title": "Cotización Sol Rossi",
-      "description": "H2O HD - Roble Eslavonia 7mm x 18cm x 1,20m",
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
       "internal_notes": "",
       "public_notes": " Es requerimiento que la carpeta este en condiciones para poder colocar. No incluye zocalos. Recomendamos instalar una vez colocadas las ventanas y cuando falte la ultima mano de pintura. Definir con el arq. si enviamos o no varillas de terminacion para los baños. No incluye envio. No incluye colocacion.",
       "payment_terms": "Anticipo 80% · Conforme 20%",
@@ -17085,17 +17085,17 @@
       "contract_total": 8495,
       "items": [
         {
-          "product_id": "PROD-022",
-          "sku": "PROD-022",
-          "description": "H2O HD - Roble Eslavonia 7mm x 18cm x 1,20m",
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
           "quantity": 263,
           "unit_price": 38,
+          "total": 9994,
+          "cost": 16.33,
           "category": "Pisos H2O",
           "disc_value": 15,
-          "total": 9994,
-          "discount": 1499.1,
-          "image": "",
-          "target_item_index": null
+          "disc_kind": "pct",
+          "discount": 1499.1
         }
       ],
       "zoned": false,
@@ -17192,7 +17192,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Ayres La Taba",
-      "contract_total": 348.48,
+      "contract_total": 288,
       "items": [
         {
           "product_id": "SERV-124",
@@ -17213,12 +17213,12 @@
       "discount_total": 192,
       "status": "Confirmado",
       "created_at": "2026-10-01T12:35:44.284Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 288,
         "total_paid": 0,
-        "balance_due": 348.48
+        "balance_due": 288
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -17226,7 +17226,8 @@
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "iva_amount": 0
     }
   ],
   "quotes": [
