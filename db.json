@@ -39410,7 +39410,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "Obra Edificio",
       "has_iva": true,
-      "price": 49005,
+      "price": 46282.5,
       "zoned": false,
       "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
       "items": [
@@ -39419,11 +39419,11 @@
           "sku": "PROD-400",
           "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
           "quantity": 1500,
-          "unit_price": 27,
+          "unit_price": 25.5,
           "cost": 16,
           "category": "Pisos H2O",
           "disc_value": 0,
-          "total": 40500,
+          "total": 38250,
           "discount": 0,
           "image": "",
           "target_item_index": null
