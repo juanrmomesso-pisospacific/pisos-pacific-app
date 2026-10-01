@@ -154170,11 +154170,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790775165262",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-01T16:01:12.129Z",
-      "last_message_preview": "nosotros hacemos colocación de pisos aun en casas sin obra",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-30T13:32:43.286Z",
+      "unread_count": 1,
+      "last_message_at": "2026-10-01T16:02:05.198Z",
+      "last_message_preview": "Gracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-01T16:02:05.198Z",
       "last_outbound_at": "2026-10-01T16:01:12.129Z"
     },
     {
@@ -175900,6 +175900,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNDk5NDYyMDQ0MTU3MDozMzAzNTcyOTI2ODU0NTQzMDQzNjA2MDIyOTYyMzg3MzUzNgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1790870525903-qufa",
+      "conversation_id": "conv-1790775165262-7k5r",
+      "direction": "in",
+      "body": "Gracias",
+      "ts": "2026-10-01T16:02:05.198Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -187289,7 +187297,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwNzMzOTg4MTE2MTU3OTA3NDE0OTM0Nzc1Mzk4NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwODQ4Njc0NjMyMzQwNTM2MTE3MzkwODk0Njk0NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwOTYzMTgxMzQwNzI5OTgwNzQzMzYzNTkyMTkyMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwOTk0OTUzMTEwNjc2NzUyODcwNjY5OTE2NTY5NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwOTk0OTUzMTEwNjc2NzUyODcwNjY5OTE2NTY5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNDk5NDYyMDQ0MTU3MDozMzAzNTczMDI0NzQ4MzgxMTk4MDU2ODk1NTM4MjEzNjgzMgZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
