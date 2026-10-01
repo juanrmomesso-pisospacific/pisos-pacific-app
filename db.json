@@ -2291,7 +2291,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 40,
+      "reservedStock": 0,
       "subLine": "Limpieza",
       "shortName": "Limpieza Pro Clean - H2O",
       "thicknessMm": null,
@@ -17211,7 +17211,7 @@
       ],
       "zoned": false,
       "discount_total": 192,
-      "status": "Confirmado",
+      "status": "Finalizado",
       "created_at": "2026-10-01T12:35:44.284Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -17220,14 +17220,22 @@
         "total_paid": 0,
         "balance_due": 288
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Juan Rodriguez Momesso",
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
       "commission_amount": 0,
-      "iva_amount": 0
+      "iva_amount": 0,
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Finalizado",
+          "at": "2026-10-01T12:42:48.134Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     }
   ],
   "quotes": [
@@ -183396,6 +183404,15 @@
       "product_id": "SERV-124",
       "sku": "SERV-124",
       "qty": 40,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-01T12:42:48.134Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1790858144284-7ih8",
+      "product_id": "SERV-124",
+      "sku": "SERV-124",
+      "qty": -40,
       "warehouse_id": "main"
     }
   ],
