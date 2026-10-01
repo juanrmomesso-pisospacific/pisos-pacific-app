@@ -3474,6 +3474,23 @@
       "createdAt": "2026-09-22T15:09:40.556Z",
       "updatedAt": "2026-09-22T15:10:37.238Z",
       "stockTrack": true
+    },
+    {
+      "id": "local-1790886373458-7ne0a",
+      "name": "Autonivelante Mapei",
+      "sku": "PROD-675",
+      "category": "Extras",
+      "price": 20,
+      "cost": 18,
+      "currency": "USD",
+      "stock": 0,
+      "reservedStock": 0,
+      "m2_por_caja": 0,
+      "unit": "u",
+      "active": true,
+      "margin": 11,
+      "createdAt": "2026-10-01T20:26:13.106Z",
+      "updatedAt": "2026-10-01T20:26:13.106Z"
     }
   ],
   "sales": [
