@@ -153966,13 +153966,14 @@
       "contact_name": "@camercado_",
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790568247461",
-      "status": "open",
-      "unread_count": 1,
+      "status": "closed",
+      "unread_count": 0,
       "last_message_at": "2026-09-29T22:43:29.751Z",
       "last_message_preview": "↩️ Reaccionó: ❤",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-29T22:43:29.751Z",
-      "last_outbound_at": "2026-09-29T22:41:18.895Z"
+      "last_outbound_at": "2026-09-29T22:41:18.895Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0e6942eb3d",
@@ -154061,7 +154062,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790632026769",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-09-28T21:47:09.034Z",
       "last_message_preview": "📷 Foto",
       "last_message_direction": "in",
@@ -154168,7 +154169,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790775165262",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-30T13:32:43.286Z",
       "last_message_preview": "Buen día , una consulta\nHacen arreglos para baños sin obra",
       "last_message_direction": "in",
@@ -154183,11 +154184,11 @@
       "linked_lead_id": "lead-instagram-1790798109360",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-01T15:59:44.836Z",
-      "last_message_preview": "Hola, cómo estás? Muchas gracias por tu consulta!!",
+      "last_message_at": "2026-10-01T15:59:57.433Z",
+      "last_message_preview": "Contame qué estás buscando (producto, m² aproximados y zona de la obra) y te ayudo con todo.",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-30T19:55:13.332Z",
-      "last_outbound_at": "2026-10-01T15:59:44.836Z"
+      "last_outbound_at": "2026-10-01T15:59:57.433Z"
     },
     {
       "id": "conv-email-1a0f3edc9e4a",
@@ -175868,6 +175869,15 @@
       "ts": "2026-10-01T15:59:44.836Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNTcyNzY1MDIyMzMwODg1NDU3MjE2NTMxMTIzNDA0OAZDZD"
+    },
+    {
+      "id": "m-1790870397433-lhr2",
+      "conversation_id": "conv-1790798109360-oduo",
+      "direction": "out",
+      "body": "Contame qué estás buscando (producto, m² aproximados y zona de la obra) y te ayudo con todo.",
+      "ts": "2026-10-01T15:59:57.433Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNTcyNzg4Njc5OTM4ODk1MjI0MzUyODUxOTM4NTA4OAZDZD"
     }
   ],
   "templates": [
