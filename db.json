@@ -155147,11 +155147,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790869285091",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-01T16:41:06.071Z",
-      "last_message_preview": "dale, perfecto! Cualquier duda nos avisas!",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-01T16:06:59.417Z",
+      "unread_count": 1,
+      "last_message_at": "2026-10-01T23:09:20.896Z",
+      "last_message_preview": "↩️ Reaccionó: ❤",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-01T23:09:20.896Z",
       "last_outbound_at": "2026-10-01T16:41:06.071Z"
     }
   ],
@@ -176899,6 +176899,14 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a0f8d94aded2069"
+    },
+    {
+      "id": "m-1790896161822-rs22",
+      "conversation_id": "conv-1790869285091-zr39",
+      "direction": "in",
+      "body": "↩️ Reaccionó: ❤",
+      "ts": "2026-10-01T23:09:20.896Z",
+      "status": "received"
     }
   ],
   "templates": [
