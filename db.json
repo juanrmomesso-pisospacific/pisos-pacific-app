@@ -41942,6 +41942,18 @@
       ],
       "notes": null,
       "updated_at": "2026-09-30T20:43:15.402Z"
+    },
+    {
+      "id": "CLI-mupi3v0o-v28y",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "El Taller GPF",
+      "updated_at": "2026-10-01T12:19:07.848Z"
     }
   ],
   "expenses": [],
