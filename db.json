@@ -154246,11 +154246,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1790869285091",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-10-01T15:42:25.546Z",
-      "last_message_preview": "Si tengo que cepillar la puerta del baño, al hacer la locación arriba de los cerámicos",
+      "unread_count": 3,
+      "last_message_at": "2026-10-01T15:43:27.620Z",
+      "last_message_preview": "Y por último costo del mtr 2 y si lleva algún tipo de pegamento?",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-01T15:42:25.546Z"
+      "last_inbound_at": "2026-10-01T15:43:27.620Z"
     }
   ],
   "messages": [
@@ -175804,6 +175804,14 @@
       "body": "Si tengo que cepillar la puerta del baño, al hacer la locación arriba de los cerámicos",
       "ts": "2026-10-01T15:42:25.546Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790869408158-2pws",
+      "conversation_id": "conv-1790869285091-zr39",
+      "direction": "in",
+      "body": "Y por último costo del mtr 2 y si lleva algún tipo de pegamento?",
+      "ts": "2026-10-01T15:43:27.620Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -187191,7 +187199,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNDM5NDM3NTE0ODAwOTgwODc0MTQ0ODUxNjg5NDcyMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNDM5NDQ4NDMzMDk0OTEyMDM1MDk0MzEwMzE1NjIyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwNzMzOTg4MTE2MTU3OTA3NDE0OTM0Nzc1Mzk4NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwODQ4Njc0NjMyMzQwNTM2MTE3MzkwODk0Njk0NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwODQ4Njc0NjMyMzQwNTM2MTE3MzkwODk0Njk0NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwOTYzMTgxMzQwNzI5OTgwNzQzMzYzNTkyMTkyMAZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
