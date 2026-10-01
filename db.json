@@ -146459,6 +146459,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-01T12:23:23.000Z",
       "last_touch_at": "2026-10-01T12:23:23.000Z"
+    },
+    {
+      "id": "lead-instagram-1790869285091",
+      "name": "@alegomezvolpe",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-01T15:41:23.374Z",
+      "last_touch_at": "2026-10-01T15:41:23.374Z"
     }
   ],
   "conversations": [
@@ -154221,6 +154237,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-01T12:23:23.000Z"
+    },
+    {
+      "id": "conv-1790869285091-zr39",
+      "channel": "instagram",
+      "contact_id": "2569370746933633",
+      "contact_name": "@alegomezvolpe",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1790869285091",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-01T15:41:23.374Z",
+      "last_message_preview": "Buenos días, consulto por piso H20. Hacen envío a Mar del Plata, o lugar que lo trabaje aquí?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-01T15:41:23.374Z"
     }
   ],
   "messages": [
@@ -175758,6 +175788,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 35m² · Sin Colocación · CP 1646 · Lavalle 1959",
       "ts": "2026-10-01T12:23:23.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790869285091-kh7y",
+      "conversation_id": "conv-1790869285091-zr39",
+      "direction": "in",
+      "body": "Buenos días, consulto por piso H20. Hacen envío a Mar del Plata, o lugar que lo trabaje aquí?",
+      "ts": "2026-10-01T15:41:23.374Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -187143,7 +187181,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI3ODQzMDc0MjY0OTU0NzozMzAzMjIzMDQzMjY2ODkyMjYxODQxMzAxNDAwNjYyODM1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNDk5NDYyMDQ0MTU3MDozMzAzMzk3MTEzMDY5NDE5MzU3NjI2MzkxMDk2MzU0NDA2NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNDM5NDM3NTE0ODAwOTgwODc0MTQ0ODUxNjg5NDcyMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNDM5NDQ4NDMzMDk0OTEyMDM1MDk0MzEwMzE1NjIyNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNDM5NDQ4NDMzMDk0OTEyMDM1MDk0MzEwMzE1NjIyNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcwNzMzOTg4MTE2MTU3OTA3NDE0OTM0Nzc1Mzk4NAZDZD"
     ],
     "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
     "warehouses": [
