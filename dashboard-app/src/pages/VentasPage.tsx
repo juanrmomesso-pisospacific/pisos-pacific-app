@@ -1076,7 +1076,9 @@ function EditSaleItemsSheet({ sale, products, open, onOpenChange, onChanged }: {
   const confirm = useConfirm()
   const save = useAction(api.saleEditItems)
   const [items, setItems] = useState<any[]>([])
-  useEffect(() => { if (open && sale) setItems((sale.items ?? []).map((it) => ({ ...it }))) }, [open, sale])
+  // Descuento general (a nivel venta) — para ventas donde el descuento no está por ítem.
+  const [generalDisc, setGeneralDisc] = useState<number>(0)
+  useEffect(() => { if (open && sale) { setItems((sale.items ?? []).map((it) => ({ ...it }))); setGeneralDisc(Number(sale.discount_total) || 0) } }, [open, sale])
   if (!sale) return null
 
   const isDiscountRow = (it: any) => it.product_id === "discount" || /^descuento/i.test(it.description || "")
@@ -1091,7 +1093,7 @@ function EditSaleItemsSheet({ sale, products, open, onOpenChange, onChanged }: {
   const subtotal = real.reduce((s, it) => s + itemGross(it), 0)
   // Mismo criterio que el backend: descuentos por ítem si los hay, si no preservar el de la venta.
   const anyItemDisc = items.some((it) => Number(it.disc_value) > 0)
-  const discount = anyItemDisc ? real.reduce((s, it) => s + itemDisc(it), 0) : (Number(sale.discount_total) || 0)
+  const discount = anyItemDisc ? real.reduce((s, it) => s + itemDisc(it), 0) : (Number(generalDisc) || 0)
   const net = Math.max(0, subtotal - discount)
   // IVA derivado del total original (preserva el tratamiento real, robusto a flags inconsistentes).
   let total: number, iva: number
@@ -1110,6 +1112,8 @@ function EditSaleItemsSheet({ sale, products, open, onOpenChange, onChanged }: {
 
   const setQty = (i: number, v: number) => setItems(items.map((it, idx) => idx === i ? { ...it, quantity: v } : it))
   const setPrice = (i: number, v: number) => setItems(items.map((it, idx) => idx === i ? { ...it, unit_price: v } : it))
+  const setItemDiscVal = (i: number, v: number) => setItems(items.map((it, idx) => idx === i ? { ...it, disc_value: v, disc_kind: it.disc_kind || "pct" } : it))
+  const setItemDiscKind = (i: number, k: "pct" | "amount") => setItems(items.map((it, idx) => idx === i ? { ...it, disc_kind: k } : it))
   const removeItem = (i: number) => setItems(items.filter((_, idx) => idx !== i))
   const addProduct = (pid: string) => {
     const p = products.find((x) => x.id === pid); if (!p) return
@@ -1122,7 +1126,7 @@ function EditSaleItemsSheet({ sale, products, open, onOpenChange, onChanged }: {
       const ok = await confirm({ title: "El total queda por debajo de lo cobrado", description: `El nuevo total (${fmtMoney(total)}) es menor que lo ya cobrado (${fmtMoney(paid)}). Quedaría saldo a favor del cliente. ¿Continuar?`, confirmLabel: "Sí, guardar", destructive: true })
       if (!ok) return
     }
-    const r = await save.run(sale!.id, items)
+    const r = await save.run(sale!.id, items, anyItemDisc ? undefined : (Number(generalDisc) || 0))
     if (r) { onChanged(); refresh(); onOpenChange(false) }
   }
 
@@ -1156,6 +1160,24 @@ function EditSaleItemsSheet({ sale, products, open, onOpenChange, onChanged }: {
                 </label>
                 <div className="text-sm tabular shrink-0 pb-1.5 w-24 text-right">{fmtMoney(itemGross(it))}</div>
               </div>
+              <div className="flex items-end gap-2">
+                <label className="text-[10px] text-muted-foreground flex-1">Descuento
+                  <div className="flex gap-1 mt-0.5">
+                    <Input type="number" min={0} step="0.01" value={!it.disc_value ? "" : it.disc_value} placeholder="0" onChange={(e) => setItemDiscVal(i, Number(e.target.value) || 0)} className="h-8" />
+                    <div className="inline-flex rounded-md border border-input overflow-hidden shrink-0">
+                      {(["pct", "amount"] as const).map(k => (
+                        <button key={k} type="button" onClick={() => setItemDiscKind(i, k)}
+                          className={cn("px-2 text-xs", (it.disc_kind || "pct") === k ? "bg-primary text-primary-foreground" : "bg-transparent text-muted-foreground")}>
+                          {k === "pct" ? "%" : "US$"}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </label>
+                <div className="text-[11px] tabular shrink-0 pb-1.5 w-24 text-right">
+                  {itemDisc(it) > 0 ? <span className="text-emerald-700">-{fmtMoney(itemDisc(it))}</span> : <span className="text-muted-foreground">sin desc.</span>}
+                </div>
+              </div>
             </div>
             )
           })}
@@ -1166,7 +1188,14 @@ function EditSaleItemsSheet({ sale, products, open, onOpenChange, onChanged }: {
         </div>
         <div className="mt-4 rounded-lg border border-border p-3 text-sm space-y-1 tabular">
           <div className="flex justify-between text-muted-foreground"><span>Subtotal</span><span>{fmtMoney(subtotal)}</span></div>
-          {discount > 0 && <div className="flex justify-between text-muted-foreground"><span>Descuentos</span><span>-{fmtMoney(discount)}</span></div>}
+          {anyItemDisc ? (
+            <div className="flex justify-between text-muted-foreground"><span>Descuentos (por ítem)</span><span>-{fmtMoney(discount)}</span></div>
+          ) : (
+            <div className="flex justify-between items-center text-muted-foreground">
+              <span>Descuento general (US$)</span>
+              <Input type="number" min={0} step="0.01" value={generalDisc === 0 ? "" : generalDisc} placeholder="0" onChange={(e) => setGeneralDisc(Number(e.target.value) || 0)} className="h-7 w-28 text-right" />
+            </div>
+          )}
           <div className="flex justify-between text-muted-foreground"><span>IVA{iva <= 0 ? " (sin IVA)" : ""}</span><span>{fmtMoney(iva)}</span></div>
           <div className="flex justify-between font-semibold border-t border-border pt-1"><span>Total</span><span>{fmtMoney(total)}</span></div>
           <div className="flex justify-between text-xs pt-1"><span className="text-muted-foreground">Antes: {fmtMoney(sale.contract_total)}</span><span className={cn(newBalance > 0.5 ? "text-amber-700" : "text-emerald-700")}>Nuevo saldo {fmtMoney(newBalance)}</span></div>

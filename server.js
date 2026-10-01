@@ -1773,9 +1773,12 @@ app.patch('/api/sales/:id/edit-items', requireAdmin, (req, res) => {
   // Descuento: si hay descuentos POR ÍTEM se recalculan; si no, se preserva el descuento a
   // nivel venta (ventas migradas: el descuento no está en los ítems sino en discount_total).
   const anyItemDisc = norm.some((it) => Number(it.disc_value) > 0);
+  // Descuento general (a nivel venta): el editor puede mandarlo explícito (discount_total) — así
+  // es visible y ajustable; si no viene, se preserva el guardado. Los descuentos por ítem ganan.
+  const generalDisc = req.body?.discount_total != null ? Math.max(0, Number(req.body.discount_total) || 0) : (Number(s.discount_total) || 0);
   const discount_total = anyItemDisc
     ? Math.round(real.reduce((a, it) => a + (Number(it.discount) || 0), 0) * 100) / 100
-    : (Number(s.discount_total) || 0);
+    : generalDisc;
   const net = Math.max(0, gross - discount_total);
   // IVA: se PRESERVA el tratamiento real de la venta derivándolo del total original (la bandera
   // has_iva/iva_mode puede estar inconsistente en datos migrados). factor ≈ 1.0 (sin IVA) o ≈ 1.21.
@@ -1793,6 +1796,10 @@ app.patch('/api/sales/:id/edit-items', requireAdmin, (req, res) => {
   s.items = norm;
   s.discount_total = discount_total;
   s.contract_total = contract_total;
+  // Regenerar el resumen (quedaba congelado con el producto viejo: al cambiar Aspen→Roble Clásico
+  // seguía diciendo "Aspen"). Toma el ítem real de mayor monto (el producto principal) + "+ N más".
+  const headline = real.slice().sort((a, b) => (Number(b.total) || 0) - (Number(a.total) || 0))[0];
+  if (headline) s.description = String(headline.description || '') + (real.length > 1 ? ` + ${real.length - 1} más` : '');
   const paid = Number(s.financial_position?.total_paid) || 0;
   s.financial_position = { total_invoiced: contract_total, total_paid: paid, balance_due: Math.max(0, contract_total - paid) };
   applyCommission(s);   // recalcula la comisión del revendedor (los pisos pueden haber cambiado)
