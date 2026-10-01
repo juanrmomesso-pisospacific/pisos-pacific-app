@@ -16897,7 +16897,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Obra Caballito",
-      "contract_total": 1517,
+      "contract_total": 1254,
       "items": [
         {
           "product_id": "SERV-131",
@@ -16928,12 +16928,12 @@
       "discount_total": 125.4,
       "status": "Confirmado",
       "created_at": "2026-09-10T00:25:31.613Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 1517,
-        "total_paid": 0,
-        "balance_due": 1517
+        "total_invoiced": 1254,
+        "total_paid": 454.55,
+        "balance_due": 799.45
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -16941,7 +16941,8 @@
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "iva_amount": 0
     },
     {
       "id": "local-sale-1789483538339-ymmr",
@@ -136824,6 +136825,28 @@
       "amount_ars": 447840,
       "amount_usd": 288,
       "exchange_rate": 1555,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
+    },
+    {
+      "id": "local-1790864977621-w7miq",
+      "flow": "Ingreso",
+      "date": "2026-09-23T00:00:00.000Z",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Arq. Julieta Piñeiro",
+      "counterparty_type": "client",
+      "description": "Cobro - Arq. Julieta Piñeiro",
+      "sale_ref": "A1513",
+      "currency": "ARS",
+      "amount_ars": 700000,
+      "amount_usd": 454.55,
+      "exchange_rate": 1540,
       "fixed_variable": null,
       "expense_type": null,
       "transfer": false,
