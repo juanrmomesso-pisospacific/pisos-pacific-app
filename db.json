@@ -754,7 +754,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1294.7153279999998,
-      "reservedStock": 4143.57,
+      "reservedStock": 4224.84,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -17117,6 +17117,57 @@
       "currency": "USD",
       "commission_amount": 0,
       "iva_amount": 0
+    },
+    {
+      "id": "local-sale-1790857921928-e17x",
+      "quote_id": "local-1790857911297-h94fg",
+      "quote_number": "A8859",
+      "title": "Paula Lacruz",
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mtrl9oqq-aelr",
+      "client_name": "Paula Lacruz",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "‪+54 9 11 3781‑0272‬",
+      "client_address": "Coghlan",
+      "contract_total": 2779.43,
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 81.27,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 3088.2599999999998,
+          "discount": 308.83,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 308.83,
+      "status": "Confirmado",
+      "created_at": "2026-10-01T12:32:01.928Z",
+      "has_iva": false,
+      "iva_mode": "none",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 2779.43
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -39519,6 +39570,50 @@
       "created_at": "2026-10-01T12:20:40.230Z",
       "quote_number": "A6208",
       "status": "DRAFT"
+    },
+    {
+      "id": "local-1790857911297-h94fg",
+      "client_id": "CLI-mtrl9oqq-aelr",
+      "client_name": "Paula Lacruz",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "‪+54 9 11 3781‑0272‬",
+      "client_address": "Coghlan",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Paula Lacruz",
+      "has_iva": false,
+      "price": 2779.43,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 81.27,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 3088.2599999999998,
+          "discount": 308.83,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 308.83,
+      "discount_amount": 308.83,
+      "reseller_id": "",
+      "reseller_name": "",
+      "currency": "USD",
+      "created_at": "2026-10-01T12:31:51.118Z",
+      "quote_number": "A8859",
+      "status": "Aceptado",
+      "sale_id": "local-sale-1790857921928-e17x"
     }
   ],
   "clients": [
@@ -183156,6 +183251,15 @@
       "sku": "PROD-027",
       "qty": 81.27,
       "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-01T12:31:58.711Z",
+      "type": "quote_reserve",
+      "ref": "local-1790857911297-h94fg",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 81.27,
+      "warehouse_id": "main"
     }
   ],
   "users": [
@@ -185689,7 +185793,8 @@
       "1a0f25aeaf8e9b75",
       "1a0f34b7025d5f47",
       "1a0f34adfc0e9789",
-      "1a0f74b9af36ff4b"
+      "1a0f74b9af36ff4b",
+      "1a0f768256180c68"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
