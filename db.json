@@ -25649,7 +25649,7 @@
       "discount_amount": 278.54,
       "created_at": "2026-07-16T12:49:34.812Z",
       "quote_number": "A4147",
-      "status": "Aceptado",
+      "status": "REJECTED",
       "sale_id": "local-sale-1784576623008-nyh6"
     },
     {
