@@ -154257,11 +154257,11 @@
       "linked_lead_id": "lead-instagram-1790869285091",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-01T15:57:56.904Z",
-      "last_message_preview": "Hola Alejandra, muchas gracias por contactarte con nosotros!",
+      "last_message_at": "2026-10-01T15:59:07.596Z",
+      "last_message_preview": "Hacemos envíos a mar del plata! Respecto a tus consultas. El cepillado de puertas va a depender de cuánto tengas actualmente entre la puerta",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-01T15:43:44.844Z",
-      "last_outbound_at": "2026-10-01T15:57:56.904Z"
+      "last_outbound_at": "2026-10-01T15:59:07.596Z"
     }
   ],
   "messages": [
@@ -175840,6 +175840,15 @@
       "ts": "2026-10-01T15:57:56.904Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcyNTY2MDE5MjAwNzcyMzkyNzUyMDY2MzMwNjI0MAZDZD"
+    },
+    {
+      "id": "m-1790870347596-sjhu",
+      "conversation_id": "conv-1790869285091-zr39",
+      "direction": "out",
+      "body": "Hacemos envíos a mar del plata! Respecto a tus consultas. El cepillado de puertas va a depender de cuánto tengas actualmente entre la puerta y el piso. El H2O agrega aprox. 7mm de altura.",
+      "ts": "2026-10-01T15:59:07.596Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTcyNjk2ODk1NjM4Mzk3MjE4Nzg3OTQ4OTE0Mjc4NAZDZD"
     }
   ],
   "templates": [
