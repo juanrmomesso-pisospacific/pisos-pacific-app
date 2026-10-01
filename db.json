@@ -39468,7 +39468,7 @@
       "has_iva": true,
       "price": 1669.7999999999995,
       "zoned": false,
-      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 1 más",
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
       "items": [
         {
           "product_id": "PROD-027",
@@ -39493,6 +39493,19 @@
           "cost": 6,
           "category": "Servicio",
           "total": 1380,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 0,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 0,
           "discount": 0,
           "image": "",
           "target_item_index": null
