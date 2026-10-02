@@ -147740,6 +147740,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-02T17:29:18.000Z",
       "last_touch_at": "2026-10-02T17:29:18.000Z"
+    },
+    {
+      "id": "lead-email-1a0fe7e8235a",
+      "name": "Jorge Schenone",
+      "email": "jschenone05@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: (sin asunto) — Buenas tardes..tengo necediysr reemplazar piso dormitorio de lajitas rojas\r\nAlverdi por estan muy resbaladisas por tener mas de 50 años\r\nEl piso que lo reemplarasaria seris por el.",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-02T21:21:27.000Z",
+      "last_touch_at": "2026-10-02T21:21:27.000Z"
     }
   ],
   "conversations": [
@@ -155569,6 +155586,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-02T17:29:18.000Z"
+    },
+    {
+      "id": "conv-email-1a0fe7e8235a",
+      "channel": "email",
+      "contact_id": "jschenone05@gmail.com",
+      "contact_name": "Jorge Schenone",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0fe7e8235a",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-02T21:21:27.000Z",
+      "last_message_preview": "Buenas tardes..tengo necediysr reemplazar piso dormitorio de lajitas rojas\r\nAlverdi por estan muy resbaladisas por tener mas de 50 años\r\nEl ",
+      "email_subject": "(sin asunto)",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-02T21:21:27.000Z"
     }
   ],
   "messages": [
@@ -177381,6 +177413,14 @@
       "body": "✉️ Re: para pedir presupuestos\n\nHola Victoria, seguimos x whatsapp?\r\n11 2308 1515 gracias.\r\n\r\nYahoo Mail: busca, organiza, toma el control de tu buzón \r\n \r\n  El vie, 2 de oct de 2026 a la(s) 14:20, Pisos Pacific<info@pisospacific.com> escribió:   Hola Ernesto, ¡muchas gracias por tu consulta!\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera — Pisos de madera noble prefinished\r\n• Línea H2O — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\r\n\r\n¡Muchas gracias!\r\nSaludos, Victoria \r\n1136982222\r\n\r\n\r\n|    |  Victoria Collado Ventas    +54 11 3698-2222\r\n victoria@pisospacific.com\r\n pisospacific.com      La evolución del piso de madera  |",
       "ts": "2026-10-02T18:11:32.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0fe7e8235a",
+      "conversation_id": "conv-email-1a0fe7e8235a",
+      "direction": "in",
+      "body": "✉️ (sin asunto)\n\nBuenas tardes..tengo necediysr reemplazar piso dormitorio de lajitas rojas\r\nAlverdi por estan muy resbaladisas por tener mas de 50 años\r\nEl piso que lo reemplarasaria seris por el.ROBLE CLASICO XL,-1524 × 2,28X6\r\n5. NECESITARIS MS.INFORMACION\r\n MUCHAS GRACIAS",
+      "ts": "2026-10-02T21:21:27.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -186756,7 +186796,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-02T01:20:40.473Z",
     "gmail_seen_ids": [
-      "19f996d02758d5b0",
       "19f9a22bd52977ba",
       "19f9bee740ab218a",
       "19f9db92965bfc40",
@@ -187555,7 +187594,8 @@
       "1a0fd6fa84d7cc23",
       "1a0fda9cfeeb1b3d",
       "1a0fdd09fa68960d",
-      "1a0fdee50b626ce6"
+      "1a0fdee50b626ce6",
+      "1a0fe7e8235ae77e"
     ],
     "cash_sessions": {
       "1136982222": {
