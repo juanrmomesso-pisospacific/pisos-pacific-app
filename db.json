@@ -147432,6 +147432,23 @@
       "address": "Entre Rios - Concepcion del Uruguya",
       "created_at": "2026-10-01T16:23:12.698Z",
       "last_touch_at": "2026-10-01T16:23:15.581Z"
+    },
+    {
+      "id": "lead-email-1a0fc8a80ec5",
+      "name": "Leandro Hof",
+      "email": "leandro.hof@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: presupuesto — buen día, tengo que cubrir un espacio de 54 m2. y me gustaría hacer\r\npresupuesto con alguno de sus productos en liquidación. cómo podríamos\r\nhacer?\r\nmuchas gracias !",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-02T12:15:17.000Z",
+      "last_touch_at": "2026-10-02T12:15:17.000Z"
     }
   ],
   "conversations": [
@@ -155229,6 +155246,21 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-01T23:09:20.896Z",
       "last_outbound_at": "2026-10-01T16:41:06.071Z"
+    },
+    {
+      "id": "conv-email-1a0fc8a80ec5",
+      "channel": "email",
+      "contact_id": "leandro.hof@gmail.com",
+      "contact_name": "Leandro Hof",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0fc8a80ec5",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-02T12:15:17.000Z",
+      "last_message_preview": "buen día, tengo que cubrir un espacio de 54 m2. y me gustaría hacer\r\npresupuesto con alguno de sus productos en liquidación. cómo podríamos\r",
+      "email_subject": "presupuesto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-02T12:15:17.000Z"
     }
   ],
   "messages": [
@@ -176999,6 +177031,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola gracias por la respuesta Estoy interesada en los pisos SPC Gracias Laura El 1 oct 2026, a la(s) 13:15, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: ﻿ Hola Laura, ¡muchas gracias por tu",
       "ts": "2026-10-02T02:04:47.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0fc8a80ec5",
+      "conversation_id": "conv-email-1a0fc8a80ec5",
+      "direction": "in",
+      "body": "✉️ presupuesto\n\nbuen día, tengo que cubrir un espacio de 54 m2. y me gustaría hacer\r\npresupuesto con alguno de sus productos en liquidación. cómo podríamos\r\nhacer?\r\nmuchas gracias !",
+      "ts": "2026-10-02T12:15:17.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -186374,7 +186414,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-02T01:20:40.473Z",
     "gmail_seen_ids": [
-      "19f939c220d1da01",
       "19f93e33a12f9741",
       "19f9427b71eb4a44",
       "19f9427b60eb0b19",
@@ -187173,7 +187212,8 @@
       "1a0f9d5f8e4a8453",
       "1a0fa5b94c7a9184",
       "1a0fc04451d7e377",
-      "1a0fc56799eec97b"
+      "1a0fc56799eec97b",
+      "1a0fc8a80ec50bb3"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -187724,7 +187764,9 @@
       "1a0f83f48ef19cf1",
       "1a0f83eb63171b2f",
       "1a0f83e0028045a9",
-      "1a0f8d94aded2069"
+      "1a0f8d94aded2069",
+      "1a0fc8d77ced3785",
+      "1a0fc8d775b79747"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -188579,14 +188621,14 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTczNTUxNTk0MDc4ODg3OTI4NDA5NDAzNjM0NDgzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTczNTY3NDg2MzgyNDA1OTE0OTIwMjk1MjgxNDU5MgZDZD"
     ],
-    "last_weekly_reminder": "2026-09-25T12:54:40.041Z",
+    "last_weekly_reminder": "2026-10-02T12:18:43.959Z",
     "warehouses": [
       {
         "id": "main",
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-10-01",
+    "last_daily_task_reminder": "2026-10-02",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -189150,7 +189192,7 @@
         "learned_at": "2026-09-26T10:46:00.268Z"
       }
     },
-    "last_daily_pending_digest": "2026-10-01",
+    "last_daily_pending_digest": "2026-10-02",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
