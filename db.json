@@ -43287,6 +43287,18 @@
       "notes": null,
       "name": "Paula De Elia",
       "updated_at": "2026-10-01T16:02:18.886Z"
+    },
+    {
+      "id": "CLI-mur4emky-s4ji",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Alejandra Staiger",
+      "updated_at": "2026-10-02T15:31:07.858Z"
     }
   ],
   "expenses": [],
@@ -187776,7 +187788,8 @@
       "1a0f83e0028045a9",
       "1a0f8d94aded2069",
       "1a0fc8d77ced3785",
-      "1a0fc8d775b79747"
+      "1a0fc8d775b79747",
+      "1a0fcc57d292c4ea"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
