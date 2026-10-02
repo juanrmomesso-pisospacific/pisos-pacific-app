@@ -31649,7 +31649,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Emilia Pascarelli",
       "has_iva": true,
-      "price": 6449.2516,
+      "price": 6548.4716,
       "zoned": false,
       "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m + 6 más",
       "items": [
@@ -31694,14 +31694,15 @@
           "target_item_index": null
         },
         {
-          "product_id": "ZOC-MDF-07",
-          "sku": "ZOC-MDF-07",
-          "description": "Zócalo MDF 7cm",
+          "product_id": "PROD-201Z",
+          "sku": "PROD-201Z",
+          "description": "Zócalo EPS 70mm - Plain Blanco",
           "quantity": 41,
-          "unit_price": 3,
-          "cost": 1.29,
+          "unit_price": 5,
+          "cost": 2.75,
           "category": "Zócalos",
-          "total": 123,
+          "disc_value": 0,
+          "total": 205,
           "discount": 0,
           "image": "",
           "target_item_index": null
@@ -31757,7 +31758,8 @@
       "reseller_name": "",
       "currency": "USD",
       "sale_id": "local-sale-1788999887432-9eyv",
-      "share_token": "58375fa52dca466a6f2cbde0"
+      "share_token": "58375fa52dca466a6f2cbde0",
+      "commission_split_discount": true
     },
     {
       "id": "local-1787676601309-qakuh",
