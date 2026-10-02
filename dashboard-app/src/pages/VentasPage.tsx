@@ -712,6 +712,9 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
         {/* Cobros — acción principal, arriba de todo (antes estaba a 4-5 scrolls, debajo del remito) */}
         <div className="mt-4">
           <DetailSection title="Cobros">
+            <button type="button" className="text-[11px] text-primary hover:underline mb-2" onClick={() => window.open(`/api/sales/${sale.id}/estado-cuenta-pdf`, "_blank")}>
+              📄 Estado de cuenta (PDF) — detalle, pagos y saldo para el cliente
+            </button>
             {due > 0.5 ? (() => {
               // El saldo (due) está en la moneda de la venta. El cobro puede entrar en otra moneda
               // (ej. venta USD cobrada en pesos): mostramos "Todo" y el equivalente en el TC elegido.

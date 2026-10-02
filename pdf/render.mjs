@@ -428,9 +428,82 @@ export async function inspeccionPdf(data) {
   return toBuffer(doc);
 }
 
+// Estado de cuenta de una venta (para compartir al cliente): detalle de ítems + totales +
+// cobros con fecha + SALDO. Cabezal por marca (Pacific USD / AcuDesign pesos). data.rows =
+// [[detalle, cant, p.unit, total]]; data.cobros = [{fecha, forma, monto}]; strings ya formateados.
+export async function estadoCuentaPdf(data) {
+  const doc = newDoc();
+  doc.save();
+  doc.scale(PX);
+  const MH = drawMasthead(doc, 'ESTADO DE CUENTA', [
+    { t: `Venta N° ${data.numero || '—'}` },
+    { t: `Fecha ${data.fecha || ''}`, hot: true },
+  ], data.logo || 'pacific_lockup_arg_white.png');
+  let y = MH + 22;
+  const col2 = PAGE.w / 2 + 6;
+  const field = (lbl, val, x) => { line(doc, lbl.toUpperCase(), x, y, { font: 'semi', size: 8, color: C.ink3, cs: 0.8 }); line(doc, String(val || '—'), x, y + 11, { size: 11.5, color: C.ink }); };
+  field('Cliente', data.cliente, PADX); field('Teléfono', data.telefono, col2); y += 30;
+  field('Obra / Dirección', data.obra, PADX); field('Email', data.email, col2); y += 36;
+
+  // --- Detalle de la venta ---
+  const totX = PAGE.w - PADX, puX = totX - 120, qtyX = puX - 95, descR = qtyX - 14;
+  hline(doc, PADX, y, PAGE.w - PADX, C.hair); y += 9;
+  line(doc, 'DETALLE DE LA VENTA', PADX, y, { font: 'semi', size: 8.5, color: C.ink3, cs: 1 });
+  line(doc, 'CANT', qtyX, y, { font: 'semi', size: 8, color: C.ink3, align: 'right' });
+  line(doc, 'P. UNIT', puX, y, { font: 'semi', size: 8, color: C.ink3, align: 'right' });
+  line(doc, 'TOTAL', totX, y, { font: 'semi', size: 8, color: C.ink3, align: 'right' });
+  y += 15;
+  for (const r of (data.rows || [])) {
+    const isSub = /^descuento/i.test(r[0] || '');
+    const h = para(doc, r[0] || '', PADX, y, descR - PADX, { size: 10.5, color: isSub ? C.ink3 : C.ink, draw: true });
+    if (r[1] && r[1] !== '—') line(doc, String(r[1]), qtyX, y, { size: 10.5, color: C.ink2, align: 'right' });
+    if (r[2] && r[2] !== '—') line(doc, String(r[2]), puX, y, { size: 10.5, color: C.ink2, align: 'right' });
+    line(doc, String(r[3] || ''), totX, y, { size: 10.5, color: isSub ? C.ink3 : C.ink, align: 'right' });
+    y += Math.max(h, 13) + 5;
+  }
+  y += 2; hline(doc, PADX, y, PAGE.w - PADX, C.hair); y += 10;
+  // Totales (alineados a la derecha)
+  const totRow = (lbl, val, hot) => { line(doc, lbl, puX, y, { size: hot ? 12 : 10.5, font: hot ? 'semi' : 'reg', color: hot ? C.ink : C.ink2, align: 'right' }); line(doc, String(val || ''), totX, y, { size: hot ? 12 : 10.5, font: hot ? 'semi' : 'reg', color: C.ink, align: 'right' }); y += hot ? 20 : 16; };
+  if (data.subtotal) totRow('Subtotal', data.subtotal);
+  if (data.descuento) totRow('Descuento', '-' + data.descuento);
+  if (data.iva && data.has_iva) totRow(data.iva_label || 'IVA', data.iva);
+  totRow('Total', data.total, true);
+
+  // --- Cobros ---
+  y += 10;
+  hline(doc, PADX, y, PAGE.w - PADX, C.hair); y += 9;
+  line(doc, 'PAGOS RECIBIDOS', PADX, y, { font: 'semi', size: 8.5, color: C.ink3, cs: 1 });
+  line(doc, 'MONTO', totX, y, { font: 'semi', size: 8, color: C.ink3, align: 'right' });
+  y += 15;
+  if ((data.cobros || []).length) {
+    for (const c of data.cobros) {
+      line(doc, c.fecha || '', PADX, y, { size: 10.5, color: C.ink2 });
+      line(doc, c.forma || '', PADX + 90, y, { size: 10.5, color: C.ink3 });
+      line(doc, String(c.monto || ''), totX, y, { size: 10.5, color: C.ink, align: 'right' });
+      y += 16;
+    }
+  } else {
+    line(doc, 'Sin pagos registrados.', PADX, y, { size: 10.5, color: C.ink3 }); y += 16;
+  }
+  y += 2; hline(doc, PADX, y, PAGE.w - PADX, C.hair); y += 10;
+  totRow('Total cobrado', data.cobrado);
+
+  // --- SALDO (caja destacada) ---
+  y += 10;
+  const boxH = 48;
+  doc.rect(PADX, y, PAGE.w - PADX * 2, boxH).fill(C.ink);
+  line(doc, 'SALDO PENDIENTE', PADX + 16, y + 11, { font: 'semi', size: 9, color: '#ffffff', cs: 1.2, opacity: 0.8 });
+  line(doc, String(data.saldo || ''), totX - 16, y + 12, { font: 'bold', size: 22, color: '#ffffff', align: 'right' });
+  y += boxH + 16;
+  if (data.forma_pago) line(doc, `Condición de pago: ${data.forma_pago}`, PADX, y, { size: 9.5, color: C.ink3 });
+  doc.restore();
+  return toBuffer(doc);
+}
+
 export function generatePdf(data) {
   if (data?.doc_type === 'remito') return remitoPdf(data);
   if (data?.doc_type === 'recibo') return reciboPdf(data);
   if (data?.doc_type === 'inspeccion') return inspeccionPdf(data);
+  if (data?.doc_type === 'estado_cuenta') return estadoCuentaPdf(data);
   return presupuestoPdf(data);
 }

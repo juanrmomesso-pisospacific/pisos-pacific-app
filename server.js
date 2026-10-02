@@ -3242,6 +3242,67 @@ app.get('/api/sales/:id/inspeccion-pdf', (req, res) => {
   renderPdf(inspeccionData(s), res, pdfFilename(`Protocolo inspeccion`, s.quote_number || s.id, s.client_name));
 });
 
+// Estado de cuenta de una venta para compartir al cliente: detalle + total + pagos + saldo.
+// Los cobros se resuelven igual que en el detalle de Ventas: con finanzas = ingresos del cashflow
+// linkeados (sale_ref); sin finanzas = pagos directos (sale.payments). Monto en la moneda de la venta.
+function estadoCuentaData(s) {
+  const loc = db.settings.locale || 'es-AR';
+  const bySku = new Map(db.products.map(p => [p.sku, p]));
+  const curr = s.currency === 'ARS' ? 'ARS' : 'USD';
+  const money = curr === 'ARS'
+    ? (n) => '$ ' + Number(n || 0).toLocaleString(loc, { maximumFractionDigits: 0 })
+    : usdFmt;
+  const items = (s.items || []).filter(it => it && it.product_id !== 'discount' && !/^descuento/i.test(it.description || ''));
+  const lineTotal = (it) => Number(it.total) || (Number(it.quantity) || 0) * (Number(it.unit_price) || 0);
+  const lineDisc = (it) => Math.max(0, Number(it.discount) || 0);
+  const rowOf = (it) => {
+    const qty = Number(it.quantity) || 0;
+    const p = bySku.get(it.sku);
+    const unit = (p && (p.unit || (p.kind === 'panel' ? 'u' : 'm2'))) || 'm2';
+    const isEntrega = /entrega/i.test(it.description || '') || it.sku === 'SERV-131';
+    const qtyCell = isEntrega ? '—' : (unit === 'u' ? `${qty} u` : unit === 'ml' ? `${qty} ml` : `${qty} m2`);
+    return [it.description || it.sku || '', qtyCell, isEntrega ? '—' : money(it.unit_price), money(lineTotal(it))];
+  };
+  const rows = items.flatMap(it => {
+    const r = [rowOf(it)];
+    const d = lineDisc(it);
+    if (d > 0) { const pct = (it.disc_kind === 'pct' && it.disc_value) ? ` (${it.disc_value}%)` : ''; r.push([`Descuento${pct}`, '—', '—', '-' + money(d)]); }
+    return r;
+  });
+  const gross = items.reduce((a, it) => a + lineTotal(it), 0);
+  const discount = Number(s.discount_total || s.discount_amount || 0);
+  const hasItemDisc = items.some(it => lineDisc(it) > 0);
+  if (!hasItemDisc && discount > 0) rows.push(['Descuento', '—', '—', '-' + money(discount)]);
+  const net = Math.max(0, gross - discount);
+  const total = Number(s.contract_total) || net;
+  const iva = Math.max(0, total - net);   // IVA derivado del total real (robusto a flags inconsistentes)
+  const finanzasOn = moduleOn('finanzas');
+  const cobrosRaw = finanzasOn
+    ? db.cashflow.filter(m => m.flow === 'Ingreso' && m.sale_ref === s.quote_number).sort((a, b) => (a.date || '').localeCompare(b.date || ''))
+      .map(m => ({ date: m.date, forma: m.caja_name || '', amt: curr === 'ARS' ? (Number(m.amount_ars) || 0) : (Number(m.amount_usd) || 0) }))
+    : (s.payments || []).map(p => ({ date: p.ts, forma: p.method || 'Cobro directo', amt: Number(p.amount) || 0 }));
+  const cobros = cobrosRaw.map(c => ({ fecha: c.date ? new Date(c.date).toLocaleDateString(loc) : '', forma: c.forma, monto: money(c.amt) }));
+  const cobrado = cobrosRaw.reduce((a, c) => a + c.amt, 0);
+  const saldo = Math.max(0, total - cobrado);
+  return {
+    doc_type: 'estado_cuenta',
+    fecha: new Date().toLocaleDateString(loc),
+    numero: s.quote_number || s.id || '',
+    cliente: s.client_name || '', telefono: s.client_phone || '', email: s.client_email || '',
+    obra: s.title || s.client_address || '',
+    rows, has_iva: iva > 0.5, iva_label: taxLabel(),
+    subtotal: money(net), descuento: null, iva: money(iva), total: money(total),
+    cobros, cobrado: money(cobrado), saldo: money(saldo),
+    forma_pago: s.payment_terms || 'Anticipo 80% · Conforme 20%',
+    empresa: brandFor(curr).empresa, logo: brandFor(curr).logoWhite,
+  };
+}
+app.get('/api/sales/:id/estado-cuenta-pdf', (req, res) => {
+  const s = db.sales.find(x => x.id === req.params.id);
+  if (!s) return res.sendStatus(404);
+  renderPdf(estadoCuentaData(s), res, pdfFilename(`Estado de cuenta N${s.quote_number || s.id}`, s.client_name));
+});
+
 // ---------- Compartir presupuesto (WhatsApp PDF + link público para Instagram) ----------
 // Link público (sin login) al PDF de la cotización; protegido por un token aleatorio.
 app.get('/p/q/:id/:token', (req, res) => {
