@@ -11186,24 +11186,25 @@
       "id": "0000135",
       "quote_number": "0000135",
       "title": "Haras Capilla Del Señor - Obra Cielorraso",
-      "description": "H2O HD XL - Roble Eslavonia 7mm x 23cm x 1,50m",
+      "description": "H2OHD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
       "client_id": "",
       "client_name": "Arq. Chloé - Constructora SZ",
       "client_dni": "123123123",
       "client_email": "",
       "client_phone": "",
       "client_address": "Haras Capilla Del Señor - Obra Cielorraso",
-      "contract_total": 15562,
+      "contract_total": 14270,
       "items": [
         {
           "product_id": "PROD-027",
           "sku": "PROD-027",
           "description": "H2OHD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
-          "quantity": 210,
+          "quantity": 179.2,
           "unit_price": 38,
-          "total": 7980,
+          "total": 6809.6,
           "cost": 16.33,
-          "category": "Pisos H2O"
+          "category": "Pisos H2O",
+          "discount": 0
         },
         {
           "product_id": "SERV-106",
@@ -11213,17 +11214,19 @@
           "unit_price": 32,
           "total": 5728,
           "cost": 6,
-          "category": "Servicio"
+          "category": "Servicio",
+          "discount": 0
         },
         {
           "product_id": "SERV-131",
           "sku": "SERV-131",
           "description": "Servicio de Entrega",
-          "quantity": 350,
+          "quantity": 450,
           "unit_price": 1,
-          "total": 350,
+          "total": 450,
           "cost": 0,
-          "category": "Servicio"
+          "category": "Servicio",
+          "discount": 0
         }
       ],
       "status": "En proceso",
@@ -11236,16 +11239,16 @@
       "comentarios": null,
       "payment_state": "Pendiente",
       "financial_position": {
-        "total_invoiced": 12861,
+        "total_invoiced": 14270,
         "total_paid": 0,
-        "balance_due": 12861
+        "balance_due": 14270
       },
       "stock_reserved": true,
       "stock_deducted": false,
       "seller_name": "",
       "payments": [],
       "source": "planilla-reciente+vercel",
-      "discount_total": 1197,
+      "discount_total": 1168,
       "vercel_qnum": "A0072",
       "iva_mode": "full",
       "iva_amount": 2701,
@@ -11259,7 +11262,8 @@
           "at": "2026-08-25T14:25:40.042Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "commission_amount": 0
     },
     {
       "id": "0000136",
