@@ -155316,11 +155316,12 @@
       "linked_lead_id": "lead-email-1a0ed45b8842",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-29T13:05:56.000Z",
-      "last_message_preview": "WhatsApp 11 2308 1515",
+      "last_message_at": "2026-10-02T17:20:55.384Z",
+      "last_message_preview": "Hola Ernesto, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestra",
       "email_subject": "para pedir presupuestos",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-09-29T13:05:56.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-09-29T13:05:56.000Z",
+      "last_outbound_at": "2026-10-02T17:20:55.384Z"
     },
     {
       "id": "conv-email-1a0ee03efd84",
@@ -177295,6 +177296,15 @@
       "ts": "2026-10-02T13:19:56.075Z",
       "status": "sent",
       "wa_id": "1a0fcc57d292c4ea"
+    },
+    {
+      "id": "m-1790961655384-pce7",
+      "conversation_id": "conv-email-1a0ed45b8842",
+      "direction": "out",
+      "body": "Hola Ernesto, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos, Victoria \n1136982222",
+      "ts": "2026-10-02T17:20:55.384Z",
+      "status": "sent",
+      "wa_id": "1a0fda21d5df2fc9"
     }
   ],
   "templates": [
