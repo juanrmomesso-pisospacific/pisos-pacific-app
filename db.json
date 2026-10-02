@@ -147445,10 +147445,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: presupuesto — buen día, tengo que cubrir un espacio de 54 m2. y me gustaría hacer\r\npresupuesto con alguno de sus productos en liquidación. cómo podríamos\r\nhacer?\r\nmuchas gracias !",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-02T12:15:17.000Z",
-      "last_touch_at": "2026-10-02T12:15:17.000Z"
+      "last_touch_at": "2026-10-02T13:20:02.606Z"
     }
   ],
   "conversations": [
@@ -155256,11 +155256,12 @@
       "linked_lead_id": "lead-email-1a0fc8a80ec5",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-02T12:15:17.000Z",
-      "last_message_preview": "buen día, tengo que cubrir un espacio de 54 m2. y me gustaría hacer\r\npresupuesto con alguno de sus productos en liquidación. cómo podríamos\r",
+      "last_message_at": "2026-10-02T13:19:56.075Z",
+      "last_message_preview": "Hola Leandro, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestra",
       "email_subject": "presupuesto",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-02T12:15:17.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-02T12:15:17.000Z",
+      "last_outbound_at": "2026-10-02T13:19:56.075Z"
     }
   ],
   "messages": [
@@ -177039,6 +177040,15 @@
       "body": "✉️ presupuesto\n\nbuen día, tengo que cubrir un espacio de 54 m2. y me gustaría hacer\r\npresupuesto con alguno de sus productos en liquidación. cómo podríamos\r\nhacer?\r\nmuchas gracias !",
       "ts": "2026-10-02T12:15:17.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1790947196075-ev3h",
+      "conversation_id": "conv-email-1a0fc8a80ec5",
+      "direction": "out",
+      "body": "Hola Leandro, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-10-02T13:19:56.075Z",
+      "status": "sent",
+      "wa_id": "1a0fcc57d292c4ea"
     }
   ],
   "templates": [
