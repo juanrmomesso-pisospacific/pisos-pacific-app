@@ -147457,7 +147457,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-29T13:05:56.000Z",
-      "last_touch_at": "2026-09-29T13:05:56.000Z"
+      "last_touch_at": "2026-10-02T18:11:32.000Z"
     },
     {
       "id": "lead-email-1a0ee03efd84",
@@ -155360,12 +155360,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0ed45b8842",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-02T17:20:55.384Z",
-      "last_message_preview": "Hola Ernesto, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestra",
+      "unread_count": 1,
+      "last_message_at": "2026-10-02T18:11:32.000Z",
+      "last_message_preview": "Hola Victoria, seguimos x whatsapp?\r\n11 2308 1515 gracias.\r\n\r\nYahoo Mail: busca, organiza, toma el control de tu buzón \r\n \r\n  El vie, 2 de o",
       "email_subject": "para pedir presupuestos",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-29T13:05:56.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-02T18:11:32.000Z",
       "last_outbound_at": "2026-10-02T17:20:55.384Z"
     },
     {
@@ -177373,6 +177373,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 18m² · Con Colocación · CP 1674 · Pastorino 428, Saenz Peña",
       "ts": "2026-10-02T17:29:18.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0fdd09fa68",
+      "conversation_id": "conv-email-1a0ed45b8842",
+      "direction": "in",
+      "body": "✉️ Re: para pedir presupuestos\n\nHola Victoria, seguimos x whatsapp?\r\n11 2308 1515 gracias.\r\n\r\nYahoo Mail: busca, organiza, toma el control de tu buzón \r\n \r\n  El vie, 2 de oct de 2026 a la(s) 14:20, Pisos Pacific<info@pisospacific.com> escribió:   Hola Ernesto, ¡muchas gracias por tu consulta!\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera — Pisos de madera noble prefinished\r\n• Línea H2O — Pisos SPC 100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la dirección de entrega así la agregamos en la cotización.\r\n\r\n¡Muchas gracias!\r\nSaludos, Victoria \r\n1136982222\r\n\r\n\r\n|    |  Victoria Collado Ventas    +54 11 3698-2222\r\n victoria@pisospacific.com\r\n pisospacific.com      La evolución del piso de madera  |",
+      "ts": "2026-10-02T18:11:32.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -186748,7 +186756,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-02T01:20:40.473Z",
     "gmail_seen_ids": [
-      "19f98bcb62f7c754",
       "19f994e129710994",
       "19f996d02758d5b0",
       "19f9a22bd52977ba",
@@ -187547,7 +187554,8 @@
       "1a0fcb2e738f40cf",
       "1a0fd7052177f34c",
       "1a0fd6fa84d7cc23",
-      "1a0fda9cfeeb1b3d"
+      "1a0fda9cfeeb1b3d",
+      "1a0fdd09fa68960d"
     ],
     "cash_sessions": {
       "1136982222": {
