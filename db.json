@@ -16677,7 +16677,7 @@
       "client_email": "",
       "client_phone": "1163210317",
       "client_address": "Palermo",
-      "contract_total": 6928,
+      "contract_total": 6549,
       "items": [
         {
           "product_id": "PROD-190",
@@ -16777,9 +16777,9 @@
       "has_iva": true,
       "iva_mode": "full",
       "financial_position": {
-        "total_invoiced": 6928,
-        "total_paid": 0,
-        "balance_due": 6928
+        "total_invoiced": 6549,
+        "total_paid": 3969.65,
+        "balance_due": 2579.35
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -16798,7 +16798,8 @@
           "at": "2026-09-23T21:26:22.318Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "iva_amount": 1137
     },
     {
       "id": "local-sale-1788999915458-0uyq",
