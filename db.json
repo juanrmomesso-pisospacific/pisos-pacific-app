@@ -11193,7 +11193,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Haras Capilla Del Señor - Obra Cielorraso",
-      "contract_total": 14270,
+      "contract_total": 14302,
       "items": [
         {
           "product_id": "PROD-027",
@@ -11239,9 +11239,9 @@
       "comentarios": null,
       "payment_state": "Pendiente",
       "financial_position": {
-        "total_invoiced": 14270,
-        "total_paid": 0,
-        "balance_due": 14270
+        "total_invoiced": 14302,
+        "total_paid": 10020.12,
+        "balance_due": 4281.879999999999
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -11251,7 +11251,7 @@
       "discount_total": 1168,
       "vercel_qnum": "A0072",
       "iva_mode": "full",
-      "iva_amount": 2701,
+      "iva_amount": 2482,
       "delivery_date": "2026-09-08",
       "delivery_date_to": "2026-09-17",
       "delivery_crew": "Hugo Ramirez",
