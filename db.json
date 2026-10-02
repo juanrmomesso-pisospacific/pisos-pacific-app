@@ -40935,7 +40935,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización CDW | Leti & Nati",
       "has_iva": true,
-      "price": 3624.7727999999997,
+      "price": 3994.3794,
       "zoned": false,
       "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m + 2 más",
       "items": [
@@ -40943,13 +40943,13 @@
           "product_id": "local-1790089780830-ghwcm",
           "sku": "PROD-400",
           "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
-          "quantity": 60.4,
+          "quantity": 66.7,
           "unit_price": 38,
           "cost": 16,
           "category": "Pisos H2O",
           "disc_value": 10,
-          "total": 2295.2,
-          "discount": 229.52,
+          "total": 2534.6,
+          "discount": 253.46,
           "image": "",
           "target_item_index": null
         },
@@ -40957,11 +40957,11 @@
           "product_id": "SERV-106",
           "sku": "SERV-106",
           "description": "Servicio - Colocación H2O",
-          "quantity": 54,
+          "quantity": 60,
           "unit_price": 15,
           "cost": 6,
           "category": "Servicio",
-          "total": 810,
+          "total": 900,
           "discount": 0,
           "image": "",
           "target_item_index": null
@@ -40980,8 +40980,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 229.52,
-      "discount_amount": 229.52,
+      "discount_total": 253.46,
+      "discount_amount": 253.46,
       "reseller_id": "",
       "reseller_name": "",
       "commission_split_discount": true,
@@ -188100,7 +188100,8 @@
       "1a0f8d94aded2069",
       "1a0fc8d77ced3785",
       "1a0fc8d775b79747",
-      "1a0fcc57d292c4ea"
+      "1a0fcc57d292c4ea",
+      "1a0fda21d5df2fc9"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
