@@ -147383,7 +147383,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-01T12:23:23.000Z",
-      "last_touch_at": "2026-10-01T16:15:36.484Z"
+      "last_touch_at": "2026-10-02T02:04:47.000Z"
     },
     {
       "id": "lead-instagram-1790869285091",
@@ -155207,12 +155207,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0f76b5f1ff",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-01T16:15:28.427Z",
-      "last_message_preview": "Hola Laura, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
+      "unread_count": 1,
+      "last_message_at": "2026-10-02T02:04:47.000Z",
+      "last_message_preview": "Hola gracias por la respuesta Estoy interesada en los pisos SPC Gracias Laura El 1 oct 2026, a la(s) 13:15, Pisos Pacific &lt;info@pisospaci",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-01T12:23:23.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-02T02:04:47.000Z",
       "last_outbound_at": "2026-10-01T16:15:28.427Z"
     },
     {
@@ -176991,6 +176991,14 @@
       "body": "✉️ Fwd: Delivery Status Notification (Failure)\n\n---------- Forwarded message ---------\r\nDe: Mail Delivery Subsystem <mailer-daemon@googlemail.com>\r\nDate: jue, 1 oct 2026, 18:09\r\nSubject: Delivery Status Notification (Failure)\r\nTo: <estelaadelinatorres123@gmail.com>\r\n\r\n\r\n[image: Icono de error]\r\nEl mensaje se ha bloqueado\r\nTu mensaje para *no_responder_.it@claro.com.ar* se ha bloqueado. Consulta\r\nmás información en los siguientes datos técnicos.\r\nMÁS INFORMACIÓN <https://aka.ms/EXOSmtpErrors>\r\n[image: Advertencia] Este enlace te llevará a un sitio de terceros\r\nEsta es la respuesta del servidor remoto:\r\n\r\n550 5.4.1 Recipient address rejected: Access denied. For more information\r\nsee https://aka.ms/EXOSmtpErrors [BY1PEPF0001AE17.namprd04.prod.outlook.com\r\n2026-10-01T21:09:14.707Z 08DF1C955C6B2875]",
       "ts": "2026-10-01T23:38:51.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0fa5b94c7a",
+      "conversation_id": "conv-email-1a0f76b5f1ff",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola gracias por la respuesta Estoy interesada en los pisos SPC Gracias Laura El 1 oct 2026, a la(s) 13:15, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: ﻿ Hola Laura, ¡muchas gracias por tu",
+      "ts": "2026-10-02T02:04:47.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -186366,7 +186374,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-02T01:20:40.473Z",
     "gmail_seen_ids": [
-      "19f9206e939d1d27",
       "19f923f679b1bfca",
       "19f936ca84a7ea7c",
       "19f939c220d1da01",
@@ -187165,7 +187172,8 @@
       "1a0f768256180c68",
       "1a0f85e1495ccffa",
       "1a0f8c4d1d357bc4",
-      "1a0f9d5f8e4a8453"
+      "1a0f9d5f8e4a8453",
+      "1a0fa5b94c7a9184"
     ],
     "cash_sessions": {
       "1136982222": {
