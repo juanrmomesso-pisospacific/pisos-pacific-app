@@ -145486,7 +145486,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-06T04:41:00.000Z",
-      "last_touch_at": "2026-09-06T04:41:00.000Z"
+      "last_touch_at": "2026-10-03T05:37:20.000Z"
     },
     {
       "id": "lead-email-1a077dbea19c",
@@ -153811,12 +153811,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a075050f3c0",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-09-08T11:39:36.767Z",
-      "last_message_preview": "Hola Laura, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesad@ dentro de nuestras ",
+      "unread_count": 1,
+      "last_message_at": "2026-10-03T05:37:20.000Z",
+      "last_message_preview": "Formulario web — 21m² · Con Colocación · CP 5519 · Remedios de Escalada 1618, Dorrego, Guaymallén, Mendoza",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-06T04:41:00.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-03T05:37:20.000Z",
       "last_outbound_at": "2026-09-08T11:39:36.767Z"
     },
     {
@@ -177597,6 +177597,14 @@
       "body": "✉️ Pisos flotantes\n\nMe podría pasar cotización de pisos para cubrir una superficie de 45 M2 y\r\nvalor del zócalo por metro",
       "ts": "2026-10-03T03:33:22.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1004456357",
+      "conversation_id": "conv-email-1a075050f3c0",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 21m² · Con Colocación · CP 5519 · Remedios de Escalada 1618, Dorrego, Guaymallén, Mendoza",
+      "ts": "2026-10-03T05:37:20.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -186972,7 +186980,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-02T23:41:27.065Z",
     "gmail_seen_ids": [
-      "19f9db92965bfc40",
       "19f9dd7c8feb6ed6",
       "19f9e746f98b0dbf",
       "19fa0882e330e0ad",
@@ -187771,7 +187778,8 @@
       "1a0fdee50b626ce6",
       "1a0fe7e8235ae77e",
       "1a0ff3ab527b72ba",
-      "1a0ffd309ada4f65"
+      "1a0ffd309ada4f65",
+      "1a100445635738d5"
     ],
     "cash_sessions": {
       "1136982222": {
