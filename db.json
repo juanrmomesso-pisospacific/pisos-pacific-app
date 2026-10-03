@@ -139582,6 +139582,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1791026459139-t2elt",
+      "date": "2026-10-03T00:00:00.000Z",
+      "flow": "Ingreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Ingreso Otros",
+      "subcategory": "Paneles",
+      "counterparty": null,
+      "counterparty_type": "client",
+      "client_id": null,
+      "supplier_id": null,
+      "description": "Venta paneles maldo",
+      "sale_ref": null,
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 800,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
