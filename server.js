@@ -1915,7 +1915,10 @@ app.post('/api/suppliers/register-link', requireAdmin, (req, res) => {
     db.suppliers.push(target);
   }
   for (const m of affected) { m.supplier_id = target.id; m.counterparty = target.name; m.counterparty_type = 'supplier'; }
-  if (learn && name && normSup(name) !== normSup(target.name)) {
+  // Vincular re-apunta los movimientos actuales, pero NO aprende una regla sobre un descriptor
+  // bancario genérico ("Debito Transf. HB", "IB Proveedores", "DÉBITO POR DEBIN"…): reclasificaría
+  // TODOS los movimientos con ese texto a un proveedor fijo (mismo guard que POST /api/cp_rules).
+  if (learn && name && normSup(name) !== normSup(target.name) && !isGenericBankDescriptor(name)) {
     db.cp_rules = db.cp_rules || [];
     db.cp_rules.push({ id: `cpr-${Date.now().toString(36)}`, match: [String(name)], cuit: null, counterparty: target.name, category: null, expense_type: null, personal: false, source: 'learned', note: `Vinculado desde "${name}"` });
   }
