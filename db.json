@@ -147893,6 +147893,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-02T21:21:27.000Z",
       "last_touch_at": "2026-10-02T21:21:27.000Z"
+    },
+    {
+      "id": "lead-email-1a0ffd309ada",
+      "name": "Sonia Huizenga",
+      "email": "soniahuizenga72@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Pisos flotantes — Me podría pasar cotización de pisos para cubrir una superficie de 45 M2 y\r\nvalor del zócalo por metro",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-03T03:33:22.000Z",
+      "last_touch_at": "2026-10-03T03:33:22.000Z"
     }
   ],
   "conversations": [
@@ -155737,6 +155754,21 @@
       "email_subject": "(sin asunto)",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-02T21:21:27.000Z"
+    },
+    {
+      "id": "conv-email-1a0ffd309ada",
+      "channel": "email",
+      "contact_id": "soniahuizenga72@gmail.com",
+      "contact_name": "Sonia Huizenga",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a0ffd309ada",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-03T03:33:22.000Z",
+      "last_message_preview": "Me podría pasar cotización de pisos para cubrir una superficie de 45 M2 y\r\nvalor del zócalo por metro",
+      "email_subject": "Pisos flotantes",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-03T03:33:22.000Z"
     }
   ],
   "messages": [
@@ -177557,6 +177589,14 @@
       "body": "✉️ (sin asunto)\n\nBuenas tardes..tengo necediysr reemplazar piso dormitorio de lajitas rojas\r\nAlverdi por estan muy resbaladisas por tener mas de 50 años\r\nEl piso que lo reemplarasaria seris por el.ROBLE CLASICO XL,-1524 × 2,28X6\r\n5. NECESITARIS MS.INFORMACION\r\n MUCHAS GRACIAS",
       "ts": "2026-10-02T21:21:27.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a0ffd309ada",
+      "conversation_id": "conv-email-1a0ffd309ada",
+      "direction": "in",
+      "body": "✉️ Pisos flotantes\n\nMe podría pasar cotización de pisos para cubrir una superficie de 45 M2 y\r\nvalor del zócalo por metro",
+      "ts": "2026-10-03T03:33:22.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -186932,7 +186972,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-02T23:41:27.065Z",
     "gmail_seen_ids": [
-      "19f9bee740ab218a",
       "19f9db92965bfc40",
       "19f9dd7c8feb6ed6",
       "19f9e746f98b0dbf",
@@ -187731,7 +187770,8 @@
       "1a0fdd09fa68960d",
       "1a0fdee50b626ce6",
       "1a0fe7e8235ae77e",
-      "1a0ff3ab527b72ba"
+      "1a0ff3ab527b72ba",
+      "1a0ffd309ada4f65"
     ],
     "cash_sessions": {
       "1136982222": {
