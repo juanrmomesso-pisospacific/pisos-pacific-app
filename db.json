@@ -139174,6 +139174,30 @@
       "review_reason": null,
       "source": "internal-transfer",
       "transfer_group": "tg-1791025311083-cip7z"
+    },
+    {
+      "id": "mov-1791025373335-oro77",
+      "date": "2026-09-28T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "Otros",
+      "subcategory": "Otros",
+      "counterparty": "Otros",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-008",
+      "description": "Gastos de Compra de Electricidad para Showroom",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 265000,
+      "amount_usd": 172.08,
+      "exchange_rate": 1539.98,
+      "fixed_variable": "Variable",
+      "expense_type": "Otros Gastos y Ajustes",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
