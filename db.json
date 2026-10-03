@@ -149335,6 +149335,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-03T03:33:22.000Z",
       "last_touch_at": "2026-10-03T03:33:22.000Z"
+    },
+    {
+      "id": "lead-email-1a1020710f21",
+      "name": "Bernardo",
+      "email": "bghervas@yahoo.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Pilar, Buenos Aires",
+      "postal_code": "1629",
+      "approx_m2": 130,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 130m² · Con Colocación · CP 1629",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-03T13:49:39.000Z",
+      "last_touch_at": "2026-10-03T13:49:39.000Z"
     }
   ],
   "conversations": [
@@ -157194,6 +157211,21 @@
       "email_subject": "Pisos flotantes",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-03T03:33:22.000Z"
+    },
+    {
+      "id": "conv-email-1a1020710f21",
+      "channel": "email",
+      "contact_id": "bghervas@yahoo.com",
+      "contact_name": "Bernardo",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a1020710f21",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-03T13:49:39.000Z",
+      "last_message_preview": "Formulario web — 130m² · Con Colocación · CP 1629 · Pilar, Buenos Aires",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-03T13:49:39.000Z"
     }
   ],
   "messages": [
@@ -179030,6 +179062,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 21m² · Con Colocación · CP 5519 · Remedios de Escalada 1618, Dorrego, Guaymallén, Mendoza",
       "ts": "2026-10-03T05:37:20.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1020710f21",
+      "conversation_id": "conv-email-1a1020710f21",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 130m² · Con Colocación · CP 1629 · Pilar, Buenos Aires",
+      "ts": "2026-10-03T13:49:39.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -188429,7 +188469,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-02T23:41:27.065Z",
     "gmail_seen_ids": [
-      "19fa0a02cc1d3fcb",
       "19fa0ad747f87012",
       "19fa0f8d75a3b9a2",
       "19fa115c9260387b",
@@ -189228,7 +189267,8 @@
       "1a100445635738d5",
       "1a101223cf4de8fa",
       "1a1012d637d3ad5e",
-      "1a101ca13bd2edd0"
+      "1a101ca13bd2edd0",
+      "1a1020710f2131a8"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -189783,7 +189823,8 @@
       "1a0fc8d77ced3785",
       "1a0fc8d775b79747",
       "1a0fcc57d292c4ea",
-      "1a0fda21d5df2fc9"
+      "1a0fda21d5df2fc9",
+      "1a101ca13bd2edd0"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
