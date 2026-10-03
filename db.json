@@ -139462,6 +139462,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1791025726689-zdqje",
+      "date": "2026-10-02T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "HR",
+      "subcategory": "Pago Instalaciones",
+      "counterparty": "Ariel Ernesto Garcia",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-016",
+      "description": "Incluye 400 de anticipo",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 1010000,
+      "amount_usd": 651.61,
+      "exchange_rate": 1550.01,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
