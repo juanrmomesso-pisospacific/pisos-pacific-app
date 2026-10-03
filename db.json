@@ -191280,20 +191280,6 @@
       "note": "Aprendida al clasificar \"COMEX\""
     },
     {
-      "id": "local-1783103746033-1fzpv",
-      "match": [
-        "CRÉDITO POR CREDIN"
-      ],
-      "cuit": null,
-      "counterparty": "CRÉDITO POR CREDIN",
-      "category": "Ingreso Otros",
-      "subcategory": "Paneles",
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"CRÉDITO POR CREDIN\""
-    },
-    {
       "id": "local-1783172893889-ayd1e",
       "match": [
         "Charly Fletes"
@@ -191560,20 +191546,6 @@
       "note": "Aprendida al clasificar \"Carlos Vera\""
     },
     {
-      "id": "local-1785789496036-hngs9",
-      "match": [
-        "CRÉDITO POR TRANSFERENCIA"
-      ],
-      "cuit": null,
-      "counterparty": "CRÉDITO POR TRANSFERENCIA",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"CRÉDITO POR TRANSFERENCIA\""
-    },
-    {
       "id": "local-1785791989395-0aedu",
       "match": [
         "IMDO"
@@ -191600,34 +191572,6 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Arq. Guillermina Frangi\""
-    },
-    {
-      "id": "local-1786239807748-rv965",
-      "match": [
-        "PAGO DE SERVICIOS TARJETA 17230770 OP1031"
-      ],
-      "cuit": null,
-      "counterparty": "Google",
-      "category": "Marketing",
-      "subcategory": "Google Ads",
-      "expense_type": "Marketing y Ventas",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"PAGO DE SERVICIOS TARJETA 17230770 OP1031\""
-    },
-    {
-      "id": "local-1786239898183-jrp02",
-      "match": [
-        "PAGO DE SERVICIOS TARJETA 17230770 OP8052"
-      ],
-      "cuit": null,
-      "counterparty": "ARCA",
-      "category": "Impuestos",
-      "subcategory": "Ingresos Brutos y Otros Impuestos",
-      "expense_type": "Impuestos y Tasas",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"PAGO DE SERVICIOS TARJETA 17230770 OP8052\""
     },
     {
       "id": "local-1786239958179-aq224",
@@ -191700,20 +191644,6 @@
       "note": "Aprendida al clasificar \"Comi Trf >250\""
     },
     {
-      "id": "local-1786978906108-ovra5",
-      "match": [
-        "CRÉDITO POR TRANSFERENCIA"
-      ],
-      "cuit": null,
-      "counterparty": "CRÉDITO POR TRANSFERENCIA",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"CRÉDITO POR TRANSFERENCIA\""
-    },
-    {
       "id": "local-1786981626883-1897f",
       "match": [
         "Pipi & Juan"
@@ -191726,20 +191656,6 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Pipi & Juan\""
-    },
-    {
-      "id": "local-1787394997931-13y38",
-      "match": [
-        "PAGO DE SERVICIOS TARJETA 17230770 OP2483"
-      ],
-      "cuit": null,
-      "counterparty": "Google",
-      "category": "Marketing",
-      "subcategory": "Google Ads",
-      "expense_type": "Marketing y Ventas",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"PAGO DE SERVICIOS TARJETA 17230770 OP2483\""
     },
     {
       "id": "local-1787859616419-84lrx",
@@ -191938,20 +191854,6 @@
       "note": "Aprendida al clasificar \"ANDESMARCARGASSOCIEDADANONI\""
     },
     {
-      "id": "local-1789417657337-wqigl",
-      "match": [
-        "DÉBITO POR DEBIN"
-      ],
-      "cuit": null,
-      "counterparty": "VolksWagen",
-      "category": "Bienes de Capital",
-      "subcategory": "Compra Flota",
-      "expense_type": "Depreciación y Amortización",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DÉBITO POR DEBIN\""
-    },
-    {
       "id": "local-1789418143651-totbn",
       "match": [
         "JULIANA ZACH"
@@ -191964,188 +191866,6 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"JULIANA ZACH\""
-    },
-    {
-      "id": "local-1789418526998-8p0k6",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332002"
-      ],
-      "cuit": null,
-      "counterparty": "SAMACO",
-      "category": "Venta - Pisos",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332002\""
-    },
-    {
-      "id": "local-1789418532970-cf7fb",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332004"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332004",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332004\""
-    },
-    {
-      "id": "local-1789418539024-zrb70",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332006"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332006",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332006\""
-    },
-    {
-      "id": "local-1789418544963-5suz0",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332008"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332008",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332008\""
-    },
-    {
-      "id": "local-1789418550935-q76qr",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332010"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332010",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332010\""
-    },
-    {
-      "id": "local-1789418556630-80o9h",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332012"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332012",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332012\""
-    },
-    {
-      "id": "local-1789418563581-7ahs1",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332014"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332014",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332014\""
-    },
-    {
-      "id": "local-1789418569430-c8sns",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332016"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332016",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332016\""
-    },
-    {
-      "id": "local-1789418574951-m1f4y",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332018"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332018",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332018\""
-    },
-    {
-      "id": "local-1789418579872-rmhb2",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332020"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332020",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332020\""
-    },
-    {
-      "id": "local-1789418586070-05937",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332022"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332022",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332022\""
-    },
-    {
-      "id": "local-1790419490849-0vm8p",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332022"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332022",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332022\""
-    },
-    {
-      "id": "local-1790419503058-zu956",
-      "match": [
-        "DEPOSITO AUTOSERVICIO PLUS Nro:13332022"
-      ],
-      "cuit": null,
-      "counterparty": "DEPOSITO AUTOSERVICIO PLUS Nro:13332022",
-      "category": "Otros",
-      "subcategory": null,
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"DEPOSITO AUTOSERVICIO PLUS Nro:13332022\""
     },
     {
       "id": "local-1790419538504-6g0q4",
@@ -192230,118 +191950,6 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"YULIANA FAGGI\""
-    },
-    {
-      "id": "local-1790422031414-3gv7g",
-      "match": [
-        "IB Proveedores"
-      ],
-      "cuit": null,
-      "counterparty": "Arq. Maria Llauro",
-      "category": "Ingreso Otros",
-      "subcategory": "Paneles",
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"IB Proveedores\""
-    },
-    {
-      "id": "local-1790422101794-v34wu",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "COMEX",
-      "category": "Importaciones",
-      "subcategory": "Gastos Locales Importacion",
-      "expense_type": "COGS",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
-      "id": "local-1790422121659-yqr03",
-      "match": [
-        "PAGO DE SERVICIOS TARJETA 17230770 OP7874"
-      ],
-      "cuit": null,
-      "counterparty": "Google",
-      "category": "Marketing",
-      "subcategory": "Google Ads",
-      "expense_type": "Marketing y Ventas",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"PAGO DE SERVICIOS TARJETA 17230770 OP7874\""
-    },
-    {
-      "id": "local-1790422191801-xznst",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "COMEX",
-      "category": "Importaciones",
-      "subcategory": "Navieras",
-      "expense_type": "COGS",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
-      "id": "local-1790422230359-iuvq7",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "COMEX",
-      "category": "Importaciones",
-      "subcategory": "Despachante Aduana",
-      "expense_type": "COGS",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
-      "id": "local-1790422284741-ba6up",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "SteelCenter",
-      "category": "Otros",
-      "subcategory": "Otros",
-      "expense_type": "Otros Gastos y Ajustes",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
-    },
-    {
-      "id": "local-1790422332119-dskrk",
-      "match": [
-        "IB Proveedores"
-      ],
-      "cuit": null,
-      "counterparty": "Martini Zerbetto",
-      "category": "Ingreso Otros",
-      "subcategory": "Paneles",
-      "expense_type": null,
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"IB Proveedores\""
-    },
-    {
-      "id": "local-1790422365883-mnex0",
-      "match": [
-        "Debito Transf. HB"
-      ],
-      "cuit": null,
-      "counterparty": "Atrim",
-      "category": "Instalaciones",
-      "subcategory": "Insumos Generales Colocación",
-      "expense_type": "Gastos de Instalaciones y Suministros",
-      "personal": false,
-      "source": "learned",
-      "note": "Aprendida al clasificar \"Debito Transf. HB\""
     }
   ],
   "product_aliases": [
