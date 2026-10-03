@@ -139414,6 +139414,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1791025636987-dpusr",
+      "date": "2026-09-30T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "Instalaciones",
+      "subcategory": "Insumos Generales Colocación",
+      "counterparty": "Otros",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-008",
+      "description": "Compra ferreteria",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 40000,
+      "amount_usd": 25.97,
+      "exchange_rate": 1540.24,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
