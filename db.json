@@ -139198,6 +139198,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1791025415234-a7f8m",
+      "date": "2026-09-28T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "Otros",
+      "subcategory": "Otros",
+      "counterparty": "Otros",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-008",
+      "description": "Placas de Fenolico para el piso Showroom",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 360000,
+      "amount_usd": 233.77,
+      "exchange_rate": 1539.98,
+      "fixed_variable": "Variable",
+      "expense_type": "Otros Gastos y Ajustes",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
