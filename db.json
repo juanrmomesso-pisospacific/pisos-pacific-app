@@ -139486,6 +139486,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1791025746689-3qfc0",
+      "date": "2026-10-02T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "HR",
+      "subcategory": "Pago Instalaciones",
+      "counterparty": "Hugo Ramirez",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-017",
+      "description": "Pago cielorraso nordelta",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 1600000,
+      "amount_usd": 1032.26,
+      "exchange_rate": 1550,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
