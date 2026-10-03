@@ -149403,6 +149403,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-03T20:13:26.000Z",
       "last_touch_at": "2026-10-03T20:13:26.000Z"
+    },
+    {
+      "id": "lead-instagram-1791067179018",
+      "name": "@bfuentes2002",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-03T22:39:37.490Z",
+      "last_touch_at": "2026-10-03T22:39:37.490Z"
     }
   ],
   "conversations": [
@@ -157322,6 +157338,20 @@
       "email_subject": "Informacion de precios.",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-03T20:13:26.000Z"
+    },
+    {
+      "id": "conv-1791067179018-sjtg",
+      "channel": "instagram",
+      "contact_id": "2454684345022546",
+      "contact_name": "@bfuentes2002",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1791067179018",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-03T22:39:37.490Z",
+      "last_message_preview": "Como salieron anoche?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-03T22:39:37.490Z"
     }
   ],
   "messages": [
@@ -179190,6 +179220,14 @@
       "body": "✉️ Informacion de precios.\n\nHola. Es para una superficie de 100mts aprox.\r\n\r\nNecesitariab precios de distintas opciones.\r\nGracias\r\n\r\nGuillermo",
       "ts": "2026-10-03T20:13:26.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791067179018-quww",
+      "conversation_id": "conv-1791067179018-sjtg",
+      "direction": "in",
+      "body": "Como salieron anoche?",
+      "ts": "2026-10-03T22:39:37.490Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -190797,7 +190835,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDIxNDk5NDYyMDQ0MTU3MDozMzAzNTczMDI0NzQ4MzgxMTk4MDU2ODk1NTM4MjEzNjgzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNTczMjk1MjY1NTE4NTM5MzU5NjMwMzA2OTQxMzM3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTczNTUxNTk0MDc4ODg3OTI4NDA5NDAzNjM0NDgzMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTczNTY3NDg2MzgyNDA1OTE0OTIwMjk1MjgxNDU5MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTczNTY3NDg2MzgyNDA1OTE0OTIwMjk1MjgxNDU5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MTQzOTE5NDM1NTc2MjozMzAzOTM1Nzg0MTk4MDM2NTY5Nzg0NjY0MjM0OTE3ODg4MAZDZD"
     ],
     "last_weekly_reminder": "2026-10-02T12:18:43.959Z",
     "warehouses": [
