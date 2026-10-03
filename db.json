@@ -43591,9 +43591,10 @@
       "currency": "USD",
       "active": true,
       "notes": "Cuenta corriente en dólares",
-      "anchor_date": "2026-06-22",
-      "anchor_usd": 21812,
-      "anchor_note": "Ancla 22/6: BdC USD u$s21.812 (informado por el dueño)"
+      "anchor_date": "2026-10-03",
+      "anchor_usd": 1301.81,
+      "anchor_note": "Conciliación a extracto real BdC USD 03/10 (auditoría jul-sep: julio y agosto exactos, sept -$8; gap US$5.384 corregido = cambio con masota movido a efectivo USD + 2 movs cargados)",
+      "anchor_ars": null
     },
     {
       "id": "CAJ-005",
@@ -193494,6 +193495,19 @@
       "sys_usd": 2501.15,
       "adj_usd": -198.63,
       "note": "Conciliación a extracto real BdC Pesos 03/10 (auditoría jul-sep: agosto exacto al centavo, sept residuo $3.566; gap de $6,18M corregido = 2 internos + pago Hugo movido a efectivo)",
+      "anchored": true
+    },
+    {
+      "caja_id": "CAJ-004",
+      "caja_name": "Banco de Comercio - Cuenta USD",
+      "ts": "2026-10-03T12:01:13.397Z",
+      "real": 1301.81,
+      "currency": "USD",
+      "blue": 1550,
+      "real_usd": 1301.81,
+      "sys_usd": 1309.76,
+      "adj_usd": -7.95,
+      "note": "Conciliación a extracto real BdC USD 03/10 (auditoría jul-sep: julio y agosto exactos, sept -$8; gap US$5.384 corregido = cambio con masota movido a efectivo USD + 2 movs cargados)",
       "anchored": true
     }
   ]
