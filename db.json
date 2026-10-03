@@ -139042,14 +139042,14 @@
       "amount_usd": 373.13,
       "counterparty": "Pedro Boll",
       "counterparty_type": "client",
-      "category": null,
+      "category": "Alquiler",
       "subcategory": null,
       "expense_type": null,
-      "transfer": false,
-      "description": "Transferencia inmediata - Pedro Boll (CUIT 20-40903813-2)",
+      "transfer": true,
+      "description": "Alquiler - Pedro Boll (inquilino depto)",
       "raw_name": "Transferencia inmediata",
-      "needs_review": true,
-      "review_reason": "ingreso por transferencia — asignar a la venta del cliente"
+      "needs_review": false,
+      "review_reason": null
     },
     {
       "id": "mov-1791024708162-km5x4",
