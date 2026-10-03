@@ -139558,6 +139558,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1791026442472-hwl26",
+      "date": "2026-10-03T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "counterparty": "Maldo",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-021",
+      "description": "Sueldo + 200 COMISION",
+      "sale_ref": null,
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 800,
+      "exchange_rate": null,
+      "fixed_variable": "Fijo",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
