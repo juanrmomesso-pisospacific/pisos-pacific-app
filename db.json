@@ -43579,10 +43579,10 @@
       "currency": "ARS",
       "active": true,
       "notes": "Cuenta corriente en pesos",
-      "anchor_date": "2026-07-19",
-      "anchor_usd": 11169.74,
-      "anchor_note": "Ancla al saldo real del extracto BdC 17/7 (carga semanal 19/7)",
-      "anchor_ars": 16977999.01
+      "anchor_date": "2026-10-03",
+      "anchor_usd": 2302.52,
+      "anchor_note": "Conciliación a extracto real BdC Pesos 03/10 (auditoría jul-sep: agosto exacto al centavo, sept residuo $3.566; gap de $6,18M corregido = 2 internos + pago Hugo movido a efectivo)",
+      "anchor_ars": 3568912.52
     },
     {
       "id": "CAJ-004",
@@ -193435,6 +193435,19 @@
       "sys_usd": 0,
       "adj_usd": 634.3,
       "note": "Arqueo físico 31/8: 980.000 pesos.",
+      "anchored": true
+    },
+    {
+      "caja_id": "CAJ-003",
+      "caja_name": "Banco de Comercio - Cuenta Pesos",
+      "ts": "2026-10-03T11:52:42.890Z",
+      "real": 3568912.52,
+      "currency": "ARS",
+      "blue": 1550,
+      "real_usd": 2302.52,
+      "sys_usd": 2501.15,
+      "adj_usd": -198.63,
+      "note": "Conciliación a extracto real BdC Pesos 03/10 (auditoría jul-sep: agosto exacto al centavo, sept residuo $3.566; gap de $6,18M corregido = 2 internos + pago Hugo movido a efectivo)",
       "anchored": true
     }
   ]
