@@ -138333,8 +138333,8 @@
       "flow": "Egreso",
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Logística",
-      "subcategory": "Flete",
+      "category": "Marketing",
+      "subcategory": "Material de Promoción",
       "counterparty": "Federal Express",
       "counterparty_type": "supplier",
       "client_id": null,
@@ -138346,7 +138346,7 @@
       "amount_usd": 25.43,
       "exchange_rate": 1550,
       "fixed_variable": "Variable",
-      "expense_type": "Gastos de Instalaciones y Suministros",
+      "expense_type": "Marketing y Ventas",
       "transfer": false,
       "needs_review": false,
       "review_reason": null,
@@ -138763,12 +138763,12 @@
       "flow": "Egreso",
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Flota",
+      "category": "HR",
       "subcategory": "Seguros",
-      "counterparty": "Barbuss Risk Seguros",
+      "counterparty": "HDI Seguros",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-006",
       "description": "Debito Transf. HB",
       "sale_ref": null,
       "currency": "ARS",
@@ -138776,7 +138776,7 @@
       "amount_usd": 69.06,
       "exchange_rate": 1550,
       "fixed_variable": "Variable",
-      "expense_type": "Gastos de Flota/Vehículos",
+      "expense_type": "Gastos de Personal (HR y Mano de Obra)",
       "transfer": false,
       "needs_review": false,
       "review_reason": null,
@@ -187658,6 +187658,10 @@
     "OxX7DMo364U-RHULWgLlZegSeIehu2yD": {
       "userId": "u-admin",
       "expires": 1792233564140
+    },
+    "t4IvM3-onI3tXXvCCLFrmLA-ERRXlwLu": {
+      "userId": "u-admin",
+      "expires": 1792233898734
     }
   },
   "settings": {
