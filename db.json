@@ -149352,6 +149352,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-03T13:49:39.000Z",
       "last_touch_at": "2026-10-03T13:49:39.000Z"
+    },
+    {
+      "id": "lead-email-1a1020fcec55",
+      "name": "Solange",
+      "email": "solvanopstal@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Corrientes 1500, caba",
+      "postal_code": "1042",
+      "approx_m2": 60,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 60m² · Con Colocación · CP 1042",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-03T13:59:12.000Z",
+      "last_touch_at": "2026-10-03T13:59:12.000Z"
     }
   ],
   "conversations": [
@@ -157226,6 +157243,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-03T13:49:39.000Z"
+    },
+    {
+      "id": "conv-email-1a1020fcec55",
+      "channel": "email",
+      "contact_id": "solvanopstal@gmail.com",
+      "contact_name": "Solange",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a1020fcec55",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-03T13:59:12.000Z",
+      "last_message_preview": "Formulario web — 60m² · Con Colocación · CP 1042 · Corrientes 1500, caba",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-03T13:59:12.000Z"
     }
   ],
   "messages": [
@@ -179070,6 +179102,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 130m² · Con Colocación · CP 1629 · Pilar, Buenos Aires",
       "ts": "2026-10-03T13:49:39.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1020fcec55",
+      "conversation_id": "conv-email-1a1020fcec55",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 60m² · Con Colocación · CP 1042 · Corrientes 1500, caba",
+      "ts": "2026-10-03T13:59:12.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -188469,8 +188509,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-02T23:41:27.065Z",
     "gmail_seen_ids": [
-      "19fa0ad747f87012",
-      "19fa0f8d75a3b9a2",
       "19fa115c9260387b",
       "19fa1e61b9b310ca",
       "19fa2162dc461f6c",
@@ -189268,7 +189306,9 @@
       "1a101223cf4de8fa",
       "1a1012d637d3ad5e",
       "1a101ca13bd2edd0",
-      "1a1020710f2131a8"
+      "1a1020710f2131a8",
+      "1a1021636d1851d4",
+      "1a1020fcec55fb63"
     ],
     "cash_sessions": {
       "1136982222": {
