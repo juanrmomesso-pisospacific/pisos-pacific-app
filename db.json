@@ -149444,6 +149444,40 @@
       "assigned_seller": "",
       "created_at": "2026-10-03T22:39:37.490Z",
       "last_touch_at": "2026-10-03T22:39:37.490Z"
+    },
+    {
+      "id": "lead-email-1a104af78215",
+      "name": "Gus",
+      "email": "martinez.ga@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Gral. Juan Lavalle 1354",
+      "postal_code": "1638",
+      "approx_m2": 45,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 45m² · Con Colocación · CP 1638",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-04T02:12:50.000Z",
+      "last_touch_at": "2026-10-04T02:12:50.000Z"
+    },
+    {
+      "id": "lead-email-1a104ab236c6",
+      "name": "Yanina",
+      "email": "ycajoto@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Juramento",
+      "postal_code": "1430",
+      "approx_m2": 30,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 30m² · Con Colocación · CP 1430",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-04T02:08:06.000Z",
+      "last_touch_at": "2026-10-04T02:08:06.000Z"
     }
   ],
   "conversations": [
@@ -157377,6 +157411,36 @@
       "last_message_preview": "Como salieron anoche?",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-03T22:39:37.490Z"
+    },
+    {
+      "id": "conv-email-1a104af78215",
+      "channel": "email",
+      "contact_id": "martinez.ga@gmail.com",
+      "contact_name": "Gus",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a104af78215",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-04T02:12:50.000Z",
+      "last_message_preview": "Formulario web — 45m² · Con Colocación · CP 1638 · Gral. Juan Lavalle 1354",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-04T02:12:50.000Z"
+    },
+    {
+      "id": "conv-email-1a104ab236c6",
+      "channel": "email",
+      "contact_id": "ycajoto@hotmail.com",
+      "contact_name": "Yanina",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a104ab236c6",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-04T02:08:06.000Z",
+      "last_message_preview": "Formulario web — 30m² · Con Colocación · CP 1430 · Juramento",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-04T02:08:06.000Z"
     }
   ],
   "messages": [
@@ -179253,6 +179317,22 @@
       "body": "Como salieron anoche?",
       "ts": "2026-10-03T22:39:37.490Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a104af78215",
+      "conversation_id": "conv-email-1a104af78215",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 45m² · Con Colocación · CP 1638 · Gral. Juan Lavalle 1354",
+      "ts": "2026-10-04T02:12:50.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a104ab236c6",
+      "conversation_id": "conv-email-1a104ab236c6",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 30m² · Con Colocación · CP 1430 · Juramento",
+      "ts": "2026-10-04T02:08:06.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -188652,8 +188732,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-03T22:44:03.829Z",
     "gmail_seen_ids": [
-      "19fa2162dc461f6c",
-      "19fa2d1304aabdde",
       "19fa2df9bcf1d1b2",
       "19fa30c7c4934cd0",
       "19fa3449dbdcd94a",
@@ -189451,7 +189529,9 @@
       "1a1021636d1851d4",
       "1a1020fcec55fb63",
       "1a10367ce88837a5",
-      "1a103669d6a616e0"
+      "1a103669d6a616e0",
+      "1a104af78215d27b",
+      "1a104ab236c60179"
     ],
     "cash_sessions": {
       "1136982222": {
