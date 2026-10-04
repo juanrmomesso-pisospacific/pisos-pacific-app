@@ -188729,7 +188729,7 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": null,
+    "mp_pending_job": 103434742,
     "mp_last_sync": "2026-10-03T22:44:03.829Z",
     "gmail_seen_ids": [
       "19fa33c14b711942",
@@ -190087,7 +190087,8 @@
       "1a0fc8d775b79747",
       "1a0fcc57d292c4ea",
       "1a0fda21d5df2fc9",
-      "1a101ca13bd2edd0"
+      "1a101ca13bd2edd0",
+      "1a106f06f0aab816"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -191544,7 +191545,7 @@
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
-    "mp_pending_at": null,
+    "mp_pending_at": "2026-10-04T22:43:05.503Z",
     "receipt_next": 112,
     "receipt_signature": "firma-juan.png",
     "receipt_signer": "Juan Rodriguez Momesso"
