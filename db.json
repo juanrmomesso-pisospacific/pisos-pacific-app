@@ -43681,6 +43681,18 @@
       "notes": null,
       "name": "Alejandra Staiger",
       "updated_at": "2026-10-02T15:31:07.858Z"
+    },
+    {
+      "id": "CLI-muvbdap3-ibu6",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Lola Scarpatti",
+      "updated_at": "2026-10-05T13:57:07.815Z"
     }
   ],
   "expenses": [],
