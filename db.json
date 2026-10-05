@@ -149162,10 +149162,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: para pedir presupuestos — WhatsApp 11 2308 1515",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-29T13:05:56.000Z",
-      "last_touch_at": "2026-10-02T18:11:32.000Z"
+      "last_touch_at": "2026-10-05T13:12:19.836Z"
     },
     {
       "id": "lead-email-1a0ee03efd84",
@@ -157455,7 +157455,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0fe7e8235a",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-02T21:21:27.000Z",
       "last_message_preview": "Buenas tardes..tengo necediysr reemplazar piso dormitorio de lajitas rojas\r\nAlverdi por estan muy resbaladisas por tener mas de 50 años\r\nEl ",
       "email_subject": "(sin asunto)",
