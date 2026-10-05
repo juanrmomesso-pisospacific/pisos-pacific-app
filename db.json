@@ -142049,7 +142049,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-17T10:03:36.000Z",
-      "last_touch_at": "2026-07-31T01:34:13.000Z"
+      "last_touch_at": "2026-10-05T23:22:47.000Z"
     },
     {
       "id": "local-1781697527047-g12vp",
@@ -151461,12 +151461,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ed5094a970",
       "status": "closed",
-      "unread_count": 1,
-      "last_message_at": "2026-07-31T01:34:13.000Z",
-      "last_message_preview": "Get 50% off through August 14. Plus, the July Update brings new capabilities and reliability improvements to Agents.\r\n\r\n                    ",
+      "unread_count": 2,
+      "last_message_at": "2026-10-05T23:22:47.000Z",
+      "last_message_preview": "Skills, 3D, new models, CMS Lists, and more\r\n\r\n                                                  \r\n                                         ",
       "email_subject": "We’ve updated Framer’s legal terms",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-07-31T01:34:13.000Z",
+      "last_inbound_at": "2026-10-05T23:22:47.000Z",
       "ignored": true
     },
     {
@@ -180530,6 +180530,14 @@
       "body": "👏",
       "ts": "2026-10-05T21:59:29.134Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a10e60803be",
+      "conversation_id": "conv-email-19ed5094a970",
+      "direction": "in",
+      "body": "✉️ Framer Monthly\n\nSkills, 3D, new models, CMS Lists, and more\r\n\r\n                                                  \r\n                                                   \r\n                                                   \r\n                                                   \r\n                                                   \r\n                                                   \r\n                                                 \r\n \r\n\r\nhttps://framer.link/v5Lc0bh\r\n\r\n \r\nThis September, we introduced Skills for the Agent, editable 3D transforms for your designs, and CMS Lists for repeating content.\r\nYou’ll also find new Agent models, pinned projects, Marketplace Analytics, and 17 new Academy lessons.\r\n \r\n \r\nSkills\r\nSave guidance for the Agent as a reusable Skill, from your design system and brand voice to your CMS workflow. Use it again\r\nwithout repeating the same instructions. Explore Skills. [https://www.framer.com/skills]\r\n \r\n\r\nhttps://www.framer.com/skills\r\n\r\n \r\n \r\nAgents: 3D Transforms\r\nAsk the Agent to add perspective and depth to your design, then adjust the result on the Canvas. Every Frame and Effect stays\r\neditable, so you can refine the details. Explore 3D Transforms.\r\n[https://www.framer.com/blog/teaching-the-framer-agent-to-design-in-3d/]\r\n \r\n\r\nhttps://www.framer.com/blog/teaching-the-framer-agent-to-design-in-3d/\r\n\r\n \r\n \r\nCMS List Field\r\nGroup FAQs, features, or steps in a list instead of separate numbered fields. Use Repeat to design a card for each row and manage\r\nall the content i",
+      "ts": "2026-10-05T23:22:47.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -190050,7 +190058,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-05T22:44:15.874Z",
     "gmail_seen_ids": [
-      "19fa4e8654a0d8cd",
       "19fa4fa3ef04f9e0",
       "19fa505783ab4a41",
       "19fa501935321e70",
@@ -190849,7 +190856,8 @@
       "1a10c4784fa66337",
       "1a10c752d660c594",
       "1a10cd8e2e89b4c0",
-      "1a10d9f4fafe5c66"
+      "1a10d9f4fafe5c66",
+      "1a10e60803bef4c3"
     ],
     "cash_sessions": {
       "1136982222": {
