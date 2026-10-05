@@ -157440,11 +157440,12 @@
       "linked_lead_id": "lead-email-1a0fda9cfeeb",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-02T17:29:18.000Z",
-      "last_message_preview": "Formulario web — 18m² · Con Colocación · CP 1674 · Pastorino 428, Saenz Peña",
+      "last_message_at": "2026-10-05T13:11:20.510Z",
+      "last_message_preview": "Hola mabel, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-02T17:29:18.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-02T17:29:18.000Z",
+      "last_outbound_at": "2026-10-05T13:11:20.510Z"
     },
     {
       "id": "conv-email-1a0fe7e8235a",
@@ -179471,6 +179472,15 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 30m² · Con Colocación · CP 1430 · Juramento",
       "ts": "2026-10-04T02:08:06.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791205880510-p1xg",
+      "conversation_id": "conv-email-1a0fda9cfeeb",
+      "direction": "out",
+      "body": "Hola mabel, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-10-05T13:11:20.510Z",
+      "status": "sent",
+      "wa_id": "1a10c30b3846c838"
     }
   ],
   "templates": [
