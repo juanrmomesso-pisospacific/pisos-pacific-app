@@ -157535,11 +157535,12 @@
       "linked_lead_id": "lead-email-1a103669d6a6",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-03T20:13:26.000Z",
-      "last_message_preview": "Hola. Es para una superficie de 100mts aprox.\r\n\r\nNecesitariab precios de distintas opciones.\r\nGracias\r\n\r\nGuillermo",
+      "last_message_at": "2026-10-05T13:18:43.150Z",
+      "last_message_preview": "Hola Guillermo, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuest",
       "email_subject": "Informacion de precios.",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-03T20:13:26.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-03T20:13:26.000Z",
+      "last_outbound_at": "2026-10-05T13:18:43.150Z"
     },
     {
       "id": "conv-1791067179018-sjtg",
@@ -179530,6 +179531,15 @@
       "ts": "2026-10-05T13:18:01.620Z",
       "status": "sent",
       "wa_id": "1a10c36d16d75a83"
+    },
+    {
+      "id": "m-1791206323150-4qul",
+      "conversation_id": "conv-email-1a103669d6a6",
+      "direction": "out",
+      "body": "Hola Guillermo, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Victoria.\n1136982222",
+      "ts": "2026-10-05T13:18:43.150Z",
+      "status": "sent",
+      "wa_id": "1a10c3773d204f49"
     }
   ],
   "templates": [
