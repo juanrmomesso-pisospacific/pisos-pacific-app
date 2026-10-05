@@ -41567,8 +41567,9 @@
       "currency": "USD",
       "created_at": "2026-10-05T20:46:06.655Z",
       "quote_number": "A2651",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a0ee4e2ec8e"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a0ee4e2ec8e",
+      "share_token": "f849f131c7f2705981841dd2"
     }
   ],
   "clients": [
@@ -157847,12 +157848,12 @@
       "linked_lead_id": "lead-email-1a0ee4e2ec8e",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-05T20:46:47.071Z",
-      "last_message_preview": "📄 Presupuesto NA4093 - Obra Vicente Lopez - Maria Sol.pdf",
+      "last_message_at": "2026-10-05T20:47:33.210Z",
+      "last_message_preview": "📄 Presupuesto NA2651 - Obra Vicente Lopez - Madera - Maria Sol.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-30T17:58:11.000Z",
-      "last_outbound_at": "2026-10-05T20:46:47.071Z"
+      "last_outbound_at": "2026-10-05T20:47:33.210Z"
     },
     {
       "id": "conv-email-1a0eee1c944f",
@@ -180265,6 +180266,16 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a10dd1aa00be3b0"
+    },
+    {
+      "id": "m-1791233253210-79xt",
+      "conversation_id": "conv-email-1a0ee4e2ec8e",
+      "direction": "out",
+      "body": "Hola Maria, te comparto el presupuesto NA2651 adjunto. Este es por nuestra madera de roble de 19cm. Cualquier consulta quedo a disposición.\n📄 Presupuesto NA2651 - Obra Vicente Lopez - Madera - Maria Sol.pdf",
+      "ts": "2026-10-05T20:47:33.210Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a10dd25edc64dc2"
     }
   ],
   "templates": [
