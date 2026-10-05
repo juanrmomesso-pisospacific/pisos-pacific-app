@@ -141258,7 +141258,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-06-16T10:18:02.000Z",
-      "last_touch_at": "2026-08-13T10:42:54.000Z"
+      "last_touch_at": "2026-10-05T19:51:21.000Z"
     },
     {
       "id": "lead-email-19ed02043ea4",
@@ -150727,13 +150727,13 @@
       "contact_name": "MIKE",
       "linked_client_name": null,
       "status": "closed",
-      "unread_count": 3,
-      "last_message_at": "2026-08-13T10:42:54.000Z",
-      "last_message_preview": "la bronco?\r\n\r\n---------- Forwarded message ---------\r\nDe: Dr. Patricio G. Borassi <pborassi@solucionesimpositivas.com>\r\nDate: mié, 12 ago 20",
+      "unread_count": 4,
+      "last_message_at": "2026-10-05T19:51:21.000Z",
+      "last_message_preview": "---------- Forwarded message ---------\r\nDe: Daniel La Buonora <daniel@mrparquet.com.uy>\r\nDate: lun, 5 oct 2026 a las 18:29\r\nSubject: Fwd: [Q",
       "email_subject": "Fwd: heating JIANGSU TIANCHUANG NEW MATERIAL CO., LTD",
       "linked_lead_id": "lead-email-19ecfb703b23",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-08-13T10:42:54.000Z",
+      "last_inbound_at": "2026-10-05T19:51:21.000Z",
       "ignored": true
     },
     {
@@ -179850,6 +179850,14 @@
       "body": "✉️ Re: Pisos flotantes\n\nHola buenas tardes estoy interesada en la línea H2O para cubrir 45 M2. En\r\ncuanto a colocación la vivienda se encuentra en Santa Rosa La Pampa. Si\r\nnomes posible la colocación por lo menos los materiales y los hago colocar\r\nacá\r\nGracias espero respuesta\r\n\r\nEl lun, 5 de oct de 2026, 10:15, Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola Sonia, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a prueba de agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-10-05T16:14:50.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a10d9f4fafe",
+      "conversation_id": "conv-email-19ecfb703b23",
+      "direction": "in",
+      "body": "✉️ Fwd: [QuoteFlow] Competencia — informe semanal (28-set. – 05 oct. 2026)\n\n---------- Forwarded message ---------\r\nDe: Daniel La Buonora <daniel@mrparquet.com.uy>\r\nDate: lun, 5 oct 2026 a las 18:29\r\nSubject: Fwd: [QuoteFlow] Competencia — informe semanal (28-set. – 05 oct.\r\n2026)\r\nTo: Mike <patagoniamike@gmail.com>\r\n\r\n\r\nFYI\r\n\r\n---------- Forwarded message ---------\r\nDe: Flow <admin@mrparquet.com.uy>\r\nDate: lun, 5 oct 2026 a la(s) 8:00 a.m.\r\nSubject: [QuoteFlow] Competencia — informe semanal (28-set. – 05 oct. 2026)\r\nTo: <daniel@mrparquet.com.uy>\r\n\r\n\r\nQuoteFlow\r\nInforme semanal de competencia\r\n\r\nHola Daniel La Buonora,\r\n\r\nResumen de la competencia del *28-set.* al *05 oct. 2026*.\r\n27 bajaron 17 subieron 3 sin stock 1 con stock 35 nuevos 2 fuera\r\n\r\nBajaron de precio (27)\r\n\r\nProdeco · Deck Simil Madera Para Exterior en WPC Cafe Maderado\r\n\r\n$ 250,00 → $ 212,00 · -15.2% · promo\r\n\r\nProdeco · Deck Simil Madera Para Exterior en WPC Cafe\r\n\r\n$ 250,00 → $ 212,00 · -15.2% · promo\r\n\r\nProdeco · Deck Simil Madera Para Exterior en WPC Teak\r\n\r\n$ 250,00 → $ 212,00 · -15.2% · promo\r\n\r\nProdeco · Deck Simil Madera Para Exterior en WPC Silver Grey Maderado\r\n\r\n$ 250,00 → $ 212,00 · -15.2% · promo\r\n\r\nProdeco · Flotante Alto Transito Residencial Agt 7.5mm Pigato 24hs Water\r\nResistant\r\n\r\n$ 1.738,00 → $ 1.477,00 · -15.0% · promo\r\n\r\nProdeco · Piso Flotante Alto Transito Residencial Agt 8mm Verona 24hs Water\r\nResistant\r\n\r\n$ 1.738,00 → $ 1.477,00 · -15.0% · promo\r\n\r\nProdeco · Piso Flotante Alto Transito Comercial Agt 8mm Tibet 24hs Water\r\nResistant\r\n\r\n$ 1.812,00 → $ 1.540,00 · -",
+      "ts": "2026-10-05T19:51:21.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -189357,7 +189365,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-04T22:44:04.941Z",
     "gmail_seen_ids": [
-      "19fa4ec5cfc9e17a",
       "19fa4e8654a0d8cd",
       "19fa4fa3ef04f9e0",
       "19fa505783ab4a41",
@@ -190156,7 +190163,8 @@
       "1a10c16ca193c678",
       "1a10c4784fa66337",
       "1a10c752d660c594",
-      "1a10cd8e2e89b4c0"
+      "1a10cd8e2e89b4c0",
+      "1a10d9f4fafe5c66"
     ],
     "cash_sessions": {
       "1136982222": {
