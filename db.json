@@ -149663,7 +149663,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-04T02:08:06.000Z",
-      "last_touch_at": "2026-10-05T13:20:13.809Z"
+      "last_touch_at": "2026-10-05T13:36:02.000Z"
     },
     {
       "id": "local-1791204188045-0342n",
@@ -157677,12 +157677,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a104ab236c6",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-05T13:19:58.957Z",
-      "last_message_preview": "Hola Yanina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
+      "unread_count": 1,
+      "last_message_at": "2026-10-05T13:36:02.000Z",
+      "last_message_preview": "Buen día! Linea h20 Gracias! El 5 oct 2026 10:19, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: Hola Yanina, ¡muchas gracias por tu ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-04T02:08:06.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-05T13:36:02.000Z",
       "last_outbound_at": "2026-10-05T13:19:58.957Z"
     },
     {
@@ -179688,6 +179688,14 @@
       "body": "👏",
       "ts": "2026-10-05T13:23:51.800Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a10c4784fa6",
+      "conversation_id": "conv-email-1a104ab236c6",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuen día! Linea h20 Gracias! El 5 oct 2026 10:19, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: Hola Yanina, ¡muchas gracias por tu consulta! Para avanzar con el presupuesto, comentanos en qué",
+      "ts": "2026-10-05T13:36:02.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -189087,7 +189095,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-04T22:44:04.941Z",
     "gmail_seen_ids": [
-      "19fa460aa9a2268d",
       "19fa4a0c0d9687e7",
       "19fa4ede9c4d2e06",
       "19fa4ec5cfc9e17a",
@@ -189886,7 +189893,8 @@
       "1a1098a9fd4f63f1",
       "1a10b6f9cb3f3f36",
       "1a10bc580da721c0",
-      "1a10c16ca193c678"
+      "1a10c16ca193c678",
+      "1a10c4784fa66337"
     ],
     "cash_sessions": {
       "1136982222": {
