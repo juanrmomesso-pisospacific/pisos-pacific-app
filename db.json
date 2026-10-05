@@ -41425,8 +41425,9 @@
       "currency": "USD",
       "created_at": "2026-10-05T20:42:33.469Z",
       "quote_number": "A6114",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a104ab236c6"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a104ab236c6",
+      "share_token": "2d662c3eba2b874ee08ad7d5"
     }
   ],
   "clients": [
@@ -157498,7 +157499,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0e47bedc89",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-01T23:38:51.000Z",
       "last_message_preview": "---------- Forwarded message ---------\r\nDe: Mail Delivery Subsystem <mailer-daemon@googlemail.com>\r\nDate: jue, 1 oct 2026, 18:09\r\nSubject: D",
       "email_subject": "(sin asunto)",
@@ -158018,12 +158019,12 @@
       "linked_lead_id": "lead-email-1a104ab236c6",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-05T13:36:02.000Z",
-      "last_message_preview": "Buen día! Linea h20 Gracias! El 5 oct 2026 10:19, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: Hola Yanina, ¡muchas gracias por tu ",
+      "last_message_at": "2026-10-05T20:43:09.353Z",
+      "last_message_preview": "📄 Presupuesto NA6114 - Obra Juramento - Yanina Cajoto.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-05T13:36:02.000Z",
-      "last_outbound_at": "2026-10-05T13:19:58.957Z"
+      "last_outbound_at": "2026-10-05T20:43:09.353Z"
     },
     {
       "id": "conv-1791206633783-ctsl",
@@ -180102,6 +180103,16 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a10dcbc2aa41411"
+    },
+    {
+      "id": "m-1791232989353-wmjy",
+      "conversation_id": "conv-email-1a104ab236c6",
+      "direction": "out",
+      "body": "Hola Yanina, te comparto el presupuesto NA6114 adjunto. \nEl presupuesto incluye el valor por el minimo de colocación que son 40m2. \nCualquier consulta quedo a disposición.\n📄 Presupuesto NA6114 - Obra Juramento - Yanina Cajoto.pdf",
+      "ts": "2026-10-05T20:43:09.353Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a10dce5907ac13b"
     }
   ],
   "templates": [
@@ -190989,7 +191000,9 @@
       "1a10c3637419c038",
       "1a10c35450a3d72c",
       "1a10c349bb3aeb33",
-      "1a10c33efee56931"
+      "1a10c33efee56931",
+      "1a10dcbc2aa41411",
+      "1a10dc83369c1e1b"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
