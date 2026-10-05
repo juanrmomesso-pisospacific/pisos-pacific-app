@@ -157456,11 +157456,12 @@
       "linked_lead_id": "lead-email-1a0fe7e8235a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-02T21:21:27.000Z",
-      "last_message_preview": "Buenas tardes..tengo necediysr reemplazar piso dormitorio de lajitas rojas\r\nAlverdi por estan muy resbaladisas por tener mas de 50 años\r\nEl ",
+      "last_message_at": "2026-10-05T13:14:52.716Z",
+      "last_message_preview": "Hola Jorge! Cómo estás? Necesitamos ir a ver el estado del piso y ver si podríamos nivelar sobre él. El retiro de las lajitas sería un traba",
       "email_subject": "(sin asunto)",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-02T21:21:27.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-02T21:21:27.000Z",
+      "last_outbound_at": "2026-10-05T13:14:52.716Z"
     },
     {
       "id": "conv-email-1a0ffd309ada",
@@ -179481,6 +179482,15 @@
       "ts": "2026-10-05T13:11:20.510Z",
       "status": "sent",
       "wa_id": "1a10c30b3846c838"
+    },
+    {
+      "id": "m-1791206092716-9i2l",
+      "conversation_id": "conv-email-1a0fe7e8235a",
+      "direction": "out",
+      "body": "Hola Jorge! Cómo estás? Necesitamos ir a ver el estado del piso y ver si podríamos nivelar sobre él. El retiro de las lajitas sería un trabajo de albanilería.\n\nSaludos, Pisos Pacific",
+      "ts": "2026-10-05T13:14:52.716Z",
+      "status": "sent",
+      "wa_id": "1a10c33efee56931"
     }
   ],
   "templates": [
@@ -190237,7 +190247,8 @@
       "1a0fda21d5df2fc9",
       "1a101ca13bd2edd0",
       "1a106f06f0aab816",
-      "1a10c16ca193c678"
+      "1a10c16ca193c678",
+      "1a10c30b3846c838"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
