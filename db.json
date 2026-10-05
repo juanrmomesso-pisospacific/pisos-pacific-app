@@ -41354,8 +41354,9 @@
       "currency": "USD",
       "created_at": "2026-10-05T20:39:55.684Z",
       "quote_number": "A5281",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a0f76b5f1ff"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a0f76b5f1ff",
+      "share_token": "4ecbe2037320618e4b147289"
     }
   ],
   "clients": [
@@ -157758,12 +157759,12 @@
       "linked_lead_id": "lead-email-1a0f76b5f1ff",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-02T02:04:47.000Z",
-      "last_message_preview": "Hola gracias por la respuesta Estoy interesada en los pisos SPC Gracias Laura El 1 oct 2026, a la(s) 13:15, Pisos Pacific &lt;info@pisospaci",
+      "last_message_at": "2026-10-05T20:40:20.322Z",
+      "last_message_preview": "📄 Presupuesto NA5281 - Obra San Fernando - Laura Freiga.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-02T02:04:47.000Z",
-      "last_outbound_at": "2026-10-01T16:15:28.427Z"
+      "last_outbound_at": "2026-10-05T20:40:20.322Z"
     },
     {
       "id": "conv-1790869285091-zr39",
@@ -180021,6 +180022,16 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a10dc83369c1e1b"
+    },
+    {
+      "id": "m-1791232820322-8yzb",
+      "conversation_id": "conv-email-1a0f76b5f1ff",
+      "direction": "out",
+      "body": "Hola Laura, te comparto el presupuesto NA5281 adjunto. Cualquier consulta quedo a disposición.\n📄 Presupuesto NA5281 - Obra San Fernando - Laura Freiga.pdf",
+      "ts": "2026-10-05T20:40:20.322Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a10dcbc2aa41411"
     }
   ],
   "templates": [
