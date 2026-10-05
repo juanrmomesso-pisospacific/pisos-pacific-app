@@ -149850,6 +149850,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-05T13:23:51.800Z",
       "last_touch_at": "2026-10-05T13:23:51.800Z"
+    },
+    {
+      "id": "lead-instagram-1791231510199",
+      "name": "@lospinosrevestimientos",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-05T20:18:28.005Z",
+      "last_touch_at": "2026-10-05T20:18:28.005Z"
     }
   ],
   "conversations": [
@@ -157836,6 +157852,20 @@
       "last_message_preview": "👏",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-05T13:23:51.800Z"
+    },
+    {
+      "id": "conv-1791231510199-4gjh",
+      "channel": "instagram",
+      "contact_id": "1824245562259914",
+      "contact_name": "@lospinosrevestimientos",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1791231510199",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-05T20:18:28.005Z",
+      "last_message_preview": "Hola! Me pasas info mayorista? Gracias",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-05T20:18:28.005Z"
     }
   ],
   "messages": [
@@ -179858,6 +179888,14 @@
       "body": "✉️ Fwd: [QuoteFlow] Competencia — informe semanal (28-set. – 05 oct. 2026)\n\n---------- Forwarded message ---------\r\nDe: Daniel La Buonora <daniel@mrparquet.com.uy>\r\nDate: lun, 5 oct 2026 a las 18:29\r\nSubject: Fwd: [QuoteFlow] Competencia — informe semanal (28-set. – 05 oct.\r\n2026)\r\nTo: Mike <patagoniamike@gmail.com>\r\n\r\n\r\nFYI\r\n\r\n---------- Forwarded message ---------\r\nDe: Flow <admin@mrparquet.com.uy>\r\nDate: lun, 5 oct 2026 a la(s) 8:00 a.m.\r\nSubject: [QuoteFlow] Competencia — informe semanal (28-set. – 05 oct. 2026)\r\nTo: <daniel@mrparquet.com.uy>\r\n\r\n\r\nQuoteFlow\r\nInforme semanal de competencia\r\n\r\nHola Daniel La Buonora,\r\n\r\nResumen de la competencia del *28-set.* al *05 oct. 2026*.\r\n27 bajaron 17 subieron 3 sin stock 1 con stock 35 nuevos 2 fuera\r\n\r\nBajaron de precio (27)\r\n\r\nProdeco · Deck Simil Madera Para Exterior en WPC Cafe Maderado\r\n\r\n$ 250,00 → $ 212,00 · -15.2% · promo\r\n\r\nProdeco · Deck Simil Madera Para Exterior en WPC Cafe\r\n\r\n$ 250,00 → $ 212,00 · -15.2% · promo\r\n\r\nProdeco · Deck Simil Madera Para Exterior en WPC Teak\r\n\r\n$ 250,00 → $ 212,00 · -15.2% · promo\r\n\r\nProdeco · Deck Simil Madera Para Exterior en WPC Silver Grey Maderado\r\n\r\n$ 250,00 → $ 212,00 · -15.2% · promo\r\n\r\nProdeco · Flotante Alto Transito Residencial Agt 7.5mm Pigato 24hs Water\r\nResistant\r\n\r\n$ 1.738,00 → $ 1.477,00 · -15.0% · promo\r\n\r\nProdeco · Piso Flotante Alto Transito Residencial Agt 8mm Verona 24hs Water\r\nResistant\r\n\r\n$ 1.738,00 → $ 1.477,00 · -15.0% · promo\r\n\r\nProdeco · Piso Flotante Alto Transito Comercial Agt 8mm Tibet 24hs Water\r\nResistant\r\n\r\n$ 1.812,00 → $ 1.540,00 · -",
       "ts": "2026-10-05T19:51:21.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791231510199-ysti",
+      "conversation_id": "conv-1791231510199-4gjh",
+      "direction": "in",
+      "body": "Hola! Me pasas info mayorista? Gracias",
+      "ts": "2026-10-05T20:18:28.005Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -191587,7 +191625,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTczNTUxNTk0MDc4ODg3OTI4NDA5NDAzNjM0NDgzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTczNTY3NDg2MzgyNDA1OTE0OTIwMjk1MjgxNDU5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MTQzOTE5NDM1NTc2MjozMzAzOTM1Nzg0MTk4MDM2NTY5Nzg0NjY0MjM0OTE3ODg4MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA0MTkzMDMxOTk1MTQzMDkwNDgwNTcxOTg1NDI4NDgwMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA0MTkzMDMxOTk1MTQzMDkwNDgwNTcxOTg1NDI4NDgwMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0MjM4OTIwNDk0NjMwMTc3Nzc0NDk4ODE0NDE0MDI4OAZDZD"
     ],
     "last_weekly_reminder": "2026-10-02T12:18:43.959Z",
     "warehouses": [
