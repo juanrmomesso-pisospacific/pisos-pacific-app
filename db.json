@@ -149632,6 +149632,22 @@
       "address": "Martinez",
       "created_at": "2026-10-05T13:22:04.908Z",
       "last_touch_at": "2026-10-05T13:22:07.592Z"
+    },
+    {
+      "id": "lead-instagram-1791206633783",
+      "name": "@hschelotto",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-05T13:23:51.800Z",
+      "last_touch_at": "2026-10-05T13:23:51.800Z"
     }
   ],
   "conversations": [
@@ -157604,6 +157620,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-04T02:08:06.000Z",
       "last_outbound_at": "2026-10-05T13:19:58.957Z"
+    },
+    {
+      "id": "conv-1791206633783-ctsl",
+      "channel": "instagram",
+      "contact_id": "1254623083500085",
+      "contact_name": "@hschelotto",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1791206633783",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-05T13:23:51.800Z",
+      "last_message_preview": "👏",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-05T13:23:51.800Z"
     }
   ],
   "messages": [
@@ -179586,6 +179616,14 @@
       "ts": "2026-10-05T13:20:47.729Z",
       "status": "sent",
       "wa_id": "1a10c395aadbb8ff"
+    },
+    {
+      "id": "m-1791206633783-o13l",
+      "conversation_id": "conv-1791206633783-ctsl",
+      "direction": "in",
+      "body": "👏",
+      "ts": "2026-10-05T13:23:51.800Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -191197,7 +191235,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTk4NTcwNzExNzQzNjc2MDozMzAzNTczMjk1MjY1NTE4NTM5MzU5NjMwMzA2OTQxMzM3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTczNTUxNTk0MDc4ODg3OTI4NDA5NDAzNjM0NDgzMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTI4NjQ1NzQ0ODQxMjQ0MjozMzAzNTczNTY3NDg2MzgyNDA1OTE0OTIwMjk1MjgxNDU5MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MTQzOTE5NDM1NTc2MjozMzAzOTM1Nzg0MTk4MDM2NTY5Nzg0NjY0MjM0OTE3ODg4MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2Mjc3MTQzOTE5NDM1NTc2MjozMzAzOTM1Nzg0MTk4MDM2NTY5Nzg0NjY0MjM0OTE3ODg4MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA0MTkzMDMxOTk1MTQzMDkwNDgwNTcxOTg1NDI4NDgwMAZDZD"
     ],
     "last_weekly_reminder": "2026-10-02T12:18:43.959Z",
     "warehouses": [
