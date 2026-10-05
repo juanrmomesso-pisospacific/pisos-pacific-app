@@ -149461,10 +149461,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: (sin asunto) — Buenas tardes..tengo necediysr reemplazar piso dormitorio de lajitas rojas\r\nAlverdi por estan muy resbaladisas por tener mas de 50 años\r\nEl piso que lo reemplarasaria seris por el.",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-02T21:21:27.000Z",
-      "last_touch_at": "2026-10-02T21:21:27.000Z"
+      "last_touch_at": "2026-10-05T13:15:11.479Z"
     },
     {
       "id": "lead-email-1a0ffd309ada",
@@ -157471,7 +157471,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0ffd309ada",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-03T03:33:22.000Z",
       "last_message_preview": "Me podría pasar cotización de pisos para cubrir una superficie de 45 M2 y\r\nvalor del zócalo por metro",
       "email_subject": "Pisos flotantes",
