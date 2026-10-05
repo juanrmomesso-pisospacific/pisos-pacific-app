@@ -149616,6 +149616,22 @@
       "address": "Mirabilia Palermo",
       "created_at": "2026-10-05T12:43:07.886Z",
       "last_touch_at": "2026-10-05T12:43:11.451Z"
+    },
+    {
+      "id": "local-1791206525181-nnjrv",
+      "name": "Paz Pucheta ",
+      "phone": "1162176955",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Martinez",
+      "created_at": "2026-10-05T13:22:04.908Z",
+      "last_touch_at": "2026-10-05T13:22:07.592Z"
     }
   ],
   "conversations": [
