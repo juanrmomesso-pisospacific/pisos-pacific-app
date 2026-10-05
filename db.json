@@ -149512,10 +149512,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 60m² · Con Colocación · CP 1042",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-03T13:59:12.000Z",
-      "last_touch_at": "2026-10-03T13:59:12.000Z"
+      "last_touch_at": "2026-10-05T13:18:16.822Z"
     },
     {
       "id": "lead-email-1a10367ce888",
@@ -157504,11 +157504,12 @@
       "linked_lead_id": "lead-email-1a1020fcec55",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-03T13:59:12.000Z",
-      "last_message_preview": "Formulario web — 60m² · Con Colocación · CP 1042 · Corrientes 1500, caba",
+      "last_message_at": "2026-10-05T13:18:01.620Z",
+      "last_message_preview": "Hola Solange, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-03T13:59:12.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-03T13:59:12.000Z",
+      "last_outbound_at": "2026-10-05T13:18:01.620Z"
     },
     {
       "id": "conv-email-1a10367ce888",
@@ -157533,7 +157534,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a103669d6a6",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-03T20:13:26.000Z",
       "last_message_preview": "Hola. Es para una superficie de 100mts aprox.\r\n\r\nNecesitariab precios de distintas opciones.\r\nGracias\r\n\r\nGuillermo",
       "email_subject": "Informacion de precios.",
@@ -179520,6 +179521,15 @@
       "ts": "2026-10-05T13:17:22.237Z",
       "status": "sent",
       "wa_id": "1a10c3637419c038"
+    },
+    {
+      "id": "m-1791206281620-a377",
+      "conversation_id": "conv-email-1a1020fcec55",
+      "direction": "out",
+      "body": "Hola Solange, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-10-05T13:18:01.620Z",
+      "status": "sent",
+      "wa_id": "1a10c36d16d75a83"
     }
   ],
   "templates": [
