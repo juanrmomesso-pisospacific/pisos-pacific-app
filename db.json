@@ -41357,6 +41357,76 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a0f76b5f1ff",
       "share_token": "4ecbe2037320618e4b147289"
+    },
+    {
+      "id": "local-1791232953600-c101c",
+      "client_id": "",
+      "client_name": "Yanina Cajoto",
+      "client_dni": "",
+      "client_email": "ycajoto@hotmail.com",
+      "client_phone": "",
+      "client_address": "Juramento",
+      "internal_notes": "Email: Pisos flotantes — Me podría pasar cotización de pisos para cubrir una superficie de 45 M2 y\r\nvalor del zócalo por metro",
+      "public_notes": "Presupuesto no incluye servicio de entrega. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Obra Juramento",
+      "has_iva": true,
+      "price": 2310.3740000000003,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+          "quantity": 31.3,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "total": 1189.4,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 120,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 120,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 40,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 600,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "created_at": "2026-10-05T20:42:33.469Z",
+      "quote_number": "A6114",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a104ab236c6"
     }
   ],
   "clients": [
@@ -149914,10 +149984,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 30m² · Con Colocación · CP 1430",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-10-04T02:08:06.000Z",
-      "last_touch_at": "2026-10-05T20:41:00.068Z"
+      "last_touch_at": "2026-10-05T20:42:33.798Z"
     },
     {
       "id": "local-1791204188045-0342n",
