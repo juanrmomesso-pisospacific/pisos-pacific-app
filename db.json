@@ -178,7 +178,7 @@
       "active": true,
       "margin": 94.4,
       "stock": 473.80000000000007,
-      "reservedStock": 71.5,
+      "reservedStock": 120.1,
       "subLine": "Saldos Obra Grande",
       "shortName": "Roble 12cm Veta Tallada",
       "thicknessMm": 10,
@@ -41240,7 +41240,7 @@
       "currency": "USD",
       "created_at": "2026-10-05T16:46:16.085Z",
       "quote_number": "A1844",
-      "status": "DRAFT"
+      "status": "ACCEPTED"
     }
   ],
   "clients": [
@@ -188186,6 +188186,15 @@
       "sku": "SERV-105",
       "qty": 40,
       "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T20:32:13.608Z",
+      "type": "quote_reserve",
+      "ref": "local-1791218776426-7pxzg",
+      "product_id": "PROD-007",
+      "sku": "PROD-007",
+      "qty": 48.6,
+      "warehouse_id": "main"
     }
   ],
   "users": [
@@ -189346,6 +189355,10 @@
     "8oOe2GvI38BwkRTvi1OrjWqBt8Fq4cOe": {
       "userId": "u-admin",
       "expires": 1792240480137
+    },
+    "-IcSghAB_84uyuSWYmk1GaBgrjUigJ3e": {
+      "userId": "u-admin",
+      "expires": 1792441925049
     }
   },
   "settings": {
