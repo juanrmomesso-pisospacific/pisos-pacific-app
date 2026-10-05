@@ -157498,14 +157498,15 @@
       "contact_name": "Estela Torres",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0e47bedc89",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-01T23:38:51.000Z",
       "last_message_preview": "---------- Forwarded message ---------\r\nDe: Mail Delivery Subsystem <mailer-daemon@googlemail.com>\r\nDate: jue, 1 oct 2026, 18:09\r\nSubject: D",
       "email_subject": "(sin asunto)",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-01T23:38:51.000Z",
-      "last_outbound_at": "2026-09-28T15:46:30.506Z"
+      "last_outbound_at": "2026-09-28T15:46:30.506Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0e487ef0c5",
@@ -157704,7 +157705,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0ee4e2ec8e",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-09-30T17:58:11.000Z",
       "last_message_preview": "Buenas tardes,\r\n\r\nGracias por la respuesta,\r\n\r\nMe gustaría cotizar ambas opciones para evaluarlo.\r\n\r\nEl mié, 30 sept 2026 a las 14:09, Pisos",
       "email_subject": "Pedido de Presupuesto | Página Web",
