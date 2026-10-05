@@ -147055,10 +147055,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 21m² · Con Colocación · CP 5519",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-06T04:41:00.000Z",
-      "last_touch_at": "2026-10-03T05:37:20.000Z"
+      "last_touch_at": "2026-10-05T13:16:35.200Z"
     },
     {
       "id": "lead-email-1a077dbea19c",
@@ -155518,12 +155518,12 @@
       "linked_lead_id": "lead-email-1a075050f3c0",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-03T05:37:20.000Z",
-      "last_message_preview": "Formulario web — 21m² · Con Colocación · CP 5519 · Remedios de Escalada 1618, Dorrego, Guaymallén, Mendoza",
+      "last_message_at": "2026-10-05T13:16:20.033Z",
+      "last_message_preview": "Hola Laura, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-03T05:37:20.000Z",
-      "last_outbound_at": "2026-09-08T11:39:36.767Z"
+      "last_outbound_at": "2026-10-05T13:16:20.033Z"
     },
     {
       "id": "conv-email-1a077dbea19c",
@@ -157487,7 +157487,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a1020710f21",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-03T13:49:39.000Z",
       "last_message_preview": "Formulario web — 130m² · Con Colocación · CP 1629 · Pilar, Buenos Aires",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -179501,6 +179501,15 @@
       "ts": "2026-10-05T13:15:36.971Z",
       "status": "sent",
       "wa_id": "1a10c349bb3aeb33"
+    },
+    {
+      "id": "m-1791206180033-an81",
+      "conversation_id": "conv-email-1a075050f3c0",
+      "direction": "out",
+      "body": "Hola Laura, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-10-05T13:16:20.033Z",
+      "status": "sent",
+      "wa_id": "1a10c35450a3d72c"
     }
   ],
   "templates": [
