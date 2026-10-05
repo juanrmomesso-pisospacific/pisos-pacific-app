@@ -157566,11 +157566,12 @@
       "linked_lead_id": "lead-email-1a104af78215",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-04T02:12:50.000Z",
-      "last_message_preview": "Formulario web — 45m² · Con Colocación · CP 1638 · Gral. Juan Lavalle 1354",
+      "last_message_at": "2026-10-05T13:20:47.729Z",
+      "last_message_preview": "Hola Gus, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras do",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-04T02:12:50.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-04T02:12:50.000Z",
+      "last_outbound_at": "2026-10-05T13:20:47.729Z"
     },
     {
       "id": "conv-email-1a104ab236c6",
@@ -179560,6 +179561,15 @@
       "ts": "2026-10-05T13:19:58.957Z",
       "status": "sent",
       "wa_id": "1a10c389a60bda61"
+    },
+    {
+      "id": "m-1791206447729-q6th",
+      "conversation_id": "conv-email-1a104af78215",
+      "direction": "out",
+      "body": "Hola Gus, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-10-05T13:20:47.729Z",
+      "status": "sent",
+      "wa_id": "1a10c395aadbb8ff"
     }
   ],
   "templates": [
