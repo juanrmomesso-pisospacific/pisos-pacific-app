@@ -149495,10 +149495,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 130m² · Con Colocación · CP 1629",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-03T13:49:39.000Z",
-      "last_touch_at": "2026-10-03T13:49:39.000Z"
+      "last_touch_at": "2026-10-05T13:17:38.920Z"
     },
     {
       "id": "lead-email-1a1020fcec55",
@@ -157488,11 +157488,12 @@
       "linked_lead_id": "lead-email-1a1020710f21",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-03T13:49:39.000Z",
-      "last_message_preview": "Formulario web — 130m² · Con Colocación · CP 1629 · Pilar, Buenos Aires",
+      "last_message_at": "2026-10-05T13:17:22.237Z",
+      "last_message_preview": "Hola Bernardo, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestr",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-03T13:49:39.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-03T13:49:39.000Z",
+      "last_outbound_at": "2026-10-05T13:17:22.237Z"
     },
     {
       "id": "conv-email-1a1020fcec55",
@@ -157502,7 +157503,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a1020fcec55",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-03T13:59:12.000Z",
       "last_message_preview": "Formulario web — 60m² · Con Colocación · CP 1042 · Corrientes 1500, caba",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -179510,6 +179511,15 @@
       "ts": "2026-10-05T13:16:20.033Z",
       "status": "sent",
       "wa_id": "1a10c35450a3d72c"
+    },
+    {
+      "id": "m-1791206242237-mlhf",
+      "conversation_id": "conv-email-1a1020710f21",
+      "direction": "out",
+      "body": "Hola Bernardo, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Victoria.\n1136982222",
+      "ts": "2026-10-05T13:17:22.237Z",
+      "status": "sent",
+      "wa_id": "1a10c3637419c038"
     }
   ],
   "templates": [
