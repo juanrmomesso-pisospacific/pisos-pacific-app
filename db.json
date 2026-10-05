@@ -149627,7 +149627,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-03T03:33:22.000Z",
-      "last_touch_at": "2026-10-05T13:15:51.877Z"
+      "last_touch_at": "2026-10-05T16:14:50.000Z"
     },
     {
       "id": "lead-email-1a1020710f21",
@@ -157649,12 +157649,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0ffd309ada",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-05T13:15:36.971Z",
-      "last_message_preview": "Hola Sonia, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
+      "unread_count": 1,
+      "last_message_at": "2026-10-05T16:14:50.000Z",
+      "last_message_preview": "Hola buenas tardes estoy interesada en la línea H2O para cubrir 45 M2. En\r\ncuanto a colocación la vivienda se encuentra en Santa Rosa La Pam",
       "email_subject": "Pisos flotantes",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-03T03:33:22.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-05T16:14:50.000Z",
       "last_outbound_at": "2026-10-05T13:15:36.971Z"
     },
     {
@@ -179786,6 +179786,14 @@
       "body": "✉️ Re: Informacion de precios.\n\nVictoria buen día. Sería sobre la Colección madera. Muchas gracias\r\n\r\nEl lun, 5 oct 2026 a las 10:18, Pisos Pacific (<info@pisospacific.com>)\r\nescribió:\r\n\r\n> Hola Guillermo, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a prueba de agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Victoria.\r\n> 1136982222\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>\r\n\r\n\r\n-- \r\n*Guillermo Santipolio*\r\n     11 5813 4027",
       "ts": "2026-10-05T14:25:55.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a10cd8e2e89",
+      "conversation_id": "conv-email-1a0ffd309ada",
+      "direction": "in",
+      "body": "✉️ Re: Pisos flotantes\n\nHola buenas tardes estoy interesada en la línea H2O para cubrir 45 M2. En\r\ncuanto a colocación la vivienda se encuentra en Santa Rosa La Pampa. Si\r\nnomes posible la colocación por lo menos los materiales y los hago colocar\r\nacá\r\nGracias espero respuesta\r\n\r\nEl lun, 5 de oct de 2026, 10:15, Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola Sonia, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a prueba de agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-10-05T16:14:50.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -189185,7 +189193,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-04T22:44:04.941Z",
     "gmail_seen_ids": [
-      "19fa4ede9c4d2e06",
       "19fa4ec5cfc9e17a",
       "19fa4e8654a0d8cd",
       "19fa4fa3ef04f9e0",
@@ -189984,7 +189991,8 @@
       "1a10bc580da721c0",
       "1a10c16ca193c678",
       "1a10c4784fa66337",
-      "1a10c752d660c594"
+      "1a10c752d660c594",
+      "1a10cd8e2e89b4c0"
     ],
     "cash_sessions": {
       "1136982222": {
