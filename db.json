@@ -726,7 +726,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 742.525328,
-      "reservedStock": 1038.81,
+      "reservedStock": 1086.71,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Natural Oak 6,5x23x150",
       "thicknessMm": 6.5,
@@ -754,7 +754,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1213.4453279999998,
-      "reservedStock": 4283.07,
+      "reservedStock": 4341.469999999999,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1368,7 +1368,7 @@
       "active": true,
       "margin": 50.1,
       "stock": 0,
-      "reservedStock": 264,
+      "reservedStock": 297,
       "subLine": "Zócalo MDF",
       "shortName": "Zócalo MDF a Medida",
       "thicknessMm": null,
@@ -1835,7 +1835,7 @@
       "active": true,
       "margin": 25,
       "stock": 0,
-      "reservedStock": 0,
+      "reservedStock": 40,
       "subLine": "Nivelación",
       "shortName": "Nivelación Carpeta",
       "thicknessMm": null,
@@ -1859,7 +1859,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8201.847,
+      "reservedStock": 8306.747,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2075,7 +2075,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 40,
+      "reservedStock": 76,
       "subLine": "Nivelación",
       "shortName": "Nivelación Carpeta + Materiales",
       "thicknessMm": null,
@@ -2267,7 +2267,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 370,
+      "reservedStock": 406,
       "subLine": "Demolición",
       "shortName": "Retiro de Piso Existente (Alfombra)",
       "thicknessMm": null,
@@ -2411,7 +2411,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 627,
+      "reservedStock": 660,
       "subLine": "Zócalos",
       "shortName": "Colocación Zócalos Pegados y Clavados",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 14844,
+      "reservedStock": 15164,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -3484,7 +3484,7 @@
       "cost": 18,
       "currency": "USD",
       "stock": 0,
-      "reservedStock": 0,
+      "reservedStock": 27,
       "m2_por_caja": 0,
       "unit": "u",
       "active": true,
@@ -40801,7 +40801,7 @@
       "currency": "USD",
       "created_at": "2026-10-01T20:28:03.584Z",
       "quote_number": "A7863",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1789570377808-x4lfi"
     },
     {
@@ -40923,7 +40923,7 @@
       "currency": "USD",
       "created_at": "2026-10-02T16:05:18.434Z",
       "quote_number": "A4114",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1790871400999-f0zd6"
     },
     {
@@ -41196,7 +41196,7 @@
       "currency": "USD",
       "created_at": "2026-10-05T13:59:39.073Z",
       "quote_number": "A5627",
-      "status": "DRAFT"
+      "status": "SENT"
     }
   ],
   "clients": [
@@ -187975,6 +187975,114 @@
       "product_id": "PROD-026",
       "sku": "PROD-026",
       "qty": -31.29,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:20.103Z",
+      "type": "quote_reserve",
+      "ref": "local-1791208779394-2laj7",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 58.4,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:20.103Z",
+      "type": "quote_reserve",
+      "ref": "local-1791208779394-2laj7",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 57,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:20.103Z",
+      "type": "quote_reserve",
+      "ref": "local-1791208779394-2laj7",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 150,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:24.211Z",
+      "type": "quote_reserve",
+      "ref": "local-1790957118804-75cko",
+      "product_id": "PROD-026",
+      "sku": "PROD-026",
+      "qty": 47.9,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:24.211Z",
+      "type": "quote_reserve",
+      "ref": "local-1790957118804-75cko",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 47.9,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:24.211Z",
+      "type": "quote_reserve",
+      "ref": "local-1790957118804-75cko",
+      "product_id": "SERV-123",
+      "sku": "SERV-123",
+      "qty": 36,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:24.211Z",
+      "type": "quote_reserve",
+      "ref": "local-1790957118804-75cko",
+      "product_id": "SERV-115",
+      "sku": "SERV-115",
+      "qty": 36,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:24.211Z",
+      "type": "quote_reserve",
+      "ref": "local-1790957118804-75cko",
+      "product_id": "PROD-080",
+      "sku": "PROD-080",
+      "qty": 33,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:24.211Z",
+      "type": "quote_reserve",
+      "ref": "local-1790957118804-75cko",
+      "product_id": "SERV-129",
+      "sku": "SERV-129",
+      "qty": 33,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:24.211Z",
+      "type": "quote_reserve",
+      "ref": "local-1790957118804-75cko",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 170,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:31.430Z",
+      "type": "quote_reserve",
+      "ref": "local-1790886484023-d6iml",
+      "product_id": "local-1790886373458-7ne0a",
+      "sku": "PROD-675",
+      "qty": 27,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-05T16:44:31.430Z",
+      "type": "quote_reserve",
+      "ref": "local-1790886484023-d6iml",
+      "product_id": "SERV-105",
+      "sku": "SERV-105",
+      "qty": 40,
       "warehouse_id": "main"
     }
   ],
