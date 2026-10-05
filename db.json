@@ -41296,8 +41296,9 @@
       "currency": "USD",
       "created_at": "2026-10-05T20:34:47.802Z",
       "quote_number": "A7351",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a0ffd309ada"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a0ffd309ada",
+      "share_token": "11e37fc852ae32e6c78ad309"
     }
   ],
   "clients": [
@@ -157779,12 +157780,12 @@
       "linked_lead_id": "lead-email-1a0ffd309ada",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-05T16:14:50.000Z",
-      "last_message_preview": "Hola buenas tardes estoy interesada en la línea H2O para cubrir 45 M2. En\r\ncuanto a colocación la vivienda se encuentra en Santa Rosa La Pam",
+      "last_message_at": "2026-10-05T20:36:26.711Z",
+      "last_message_preview": "📄 Presupuesto NA7351 - Obra La Pampa Sta Rosa - Sonia Huizenga.pdf",
       "email_subject": "Pisos flotantes",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-05T16:14:50.000Z",
-      "last_outbound_at": "2026-10-05T13:15:36.971Z"
+      "last_outbound_at": "2026-10-05T20:36:26.711Z"
     },
     {
       "id": "conv-email-1a1020710f21",
@@ -157842,7 +157843,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a103669d6a6",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-05T14:25:55.000Z",
       "last_message_preview": "Victoria buen día. Sería sobre la Colección madera. Muchas gracias\r\n\r\nEl lun, 5 oct 2026 a las 10:18, Pisos Pacific (<info@pisospacific.com>",
       "email_subject": "Informacion de precios.",
@@ -179953,6 +179954,16 @@
       "body": "Hola! Me pasas info mayorista? Gracias",
       "ts": "2026-10-05T20:18:28.005Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791232586711-80hm",
+      "conversation_id": "conv-email-1a0ffd309ada",
+      "direction": "out",
+      "body": "Hola Sonia, te comparto el presupuesto NA7351 adjunto. \nLas entregas las realizamos usando Via Cargo o Andesmar, el que nos cotize mejor. Para realizar esa cotización necesito que me compartas dirección de entrega. \nCualquier consulta quedo a disposición.\n📄 Presupuesto NA7351 - Obra La Pampa Sta Rosa - Sonia Huizenga.pdf",
+      "ts": "2026-10-05T20:36:26.711Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a10dc83369c1e1b"
     }
   ],
   "templates": [
