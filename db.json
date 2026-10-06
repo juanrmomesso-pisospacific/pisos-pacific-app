@@ -447,6 +447,50 @@
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD"
+    },
+    {
+      "id": "local-1791309212488-2xfoh",
+      "client_id": "CLI-muwz8ku1-jlnb",
+      "client_name": "The group",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Punta pacifica",
+      "internal_notes": "Nada",
+      "public_notes": "Banco aliado",
+      "payment_terms": "Anticipo 50% · Conforme 50%",
+      "seller_name": "Ariel Tesone",
+      "seller_phone": "",
+      "title": "The group",
+      "has_iva": true,
+      "price": 23968,
+      "zoned": false,
+      "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+      "items": [
+        {
+          "product_id": "local-1784253275294-26edf",
+          "sku": "PA-XL-OAK",
+          "description": "H2O XL - Natural Oak 5,5mm x 23cm x 1,50m",
+          "quantity": 800,
+          "unit_price": 28,
+          "cost": 0,
+          "category": "Pisos H2O",
+          "zone": "Planta Baja",
+          "total": 22400,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "created_at": "2026-10-06T17:53:32.312Z",
+      "quote_number": "A1400",
+      "status": "DRAFT"
     }
   ],
   "clients": [
