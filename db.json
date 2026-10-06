@@ -837,8 +837,8 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 700.2980000000001,
-      "reservedStock": 2045.8159999999998,
+      "stock": 622.2980000000001,
+      "reservedStock": 1967.8159999999998,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1691,7 +1691,7 @@
       "active": true,
       "margin": 20,
       "stock": 0,
-      "reservedStock": 9,
+      "reservedStock": 7,
       "subLine": "Terminaciones",
       "shortName": "Varilla Aluminio Transición",
       "thicknessMm": null,
@@ -1763,7 +1763,7 @@
       "active": true,
       "margin": -100,
       "stock": 0,
-      "reservedStock": 5153.747,
+      "reservedStock": 5075.747,
       "subLine": "Materiales",
       "shortName": "Nylon Manta 200 Micrones",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 14714,
+      "reservedStock": 14713,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -16640,7 +16640,7 @@
       ],
       "zoned": false,
       "discount_total": 1020.32,
-      "status": "En proceso",
+      "status": "Finalizado",
       "created_at": "2026-09-09T16:33:29.802Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -16649,8 +16649,8 @@
         "total_paid": 0,
         "balance_due": 2371.2
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Victoria Gonzalez Collado",
       "reseller_id": "",
       "reseller_name": "",
@@ -16670,6 +16670,12 @@
           "from": "Programado",
           "to": "En proceso",
           "at": "2026-10-01T12:10:25.846Z",
+          "by": "Victoria Gonzalez Collado"
+        },
+        {
+          "from": "En proceso",
+          "to": "Finalizado",
+          "at": "2026-10-06T20:34:23.474Z",
           "by": "Victoria Gonzalez Collado"
         }
       ]
@@ -189209,6 +189215,42 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": -450,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-06T20:34:23.474Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788971609802-uvv0",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": -78,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-06T20:34:23.474Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788971609802-uvv0",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": -1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-06T20:34:23.474Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788971609802-uvv0",
+      "product_id": "PROD-062",
+      "sku": "PROD-062",
+      "qty": -78,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-06T20:34:23.474Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788971609802-uvv0",
+      "product_id": "PROD-063",
+      "sku": "PROD-063",
+      "qty": -2,
       "warehouse_id": "main"
     }
   ],
