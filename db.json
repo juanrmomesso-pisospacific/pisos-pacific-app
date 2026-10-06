@@ -158592,11 +158592,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791231510199",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-06T17:13:53.457Z",
-      "last_message_preview": "Hola cómo estás? Tenes algún WhatsApp",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-05T20:18:28.005Z",
+      "unread_count": 1,
+      "last_message_at": "2026-10-06T17:21:12.945Z",
+      "last_message_preview": "Buenas!!",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-06T17:21:12.945Z",
       "last_outbound_at": "2026-10-06T17:13:53.457Z"
     },
     {
@@ -180838,6 +180838,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc3ODcxNDI3ODQwOTQzMTA1NjUwMjYzMTY5NDMzNgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1791307273652-6sb8",
+      "conversation_id": "conv-1791231510199-4gjh",
+      "direction": "in",
+      "body": "Buenas!!",
+      "ts": "2026-10-06T17:21:12.945Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -192624,7 +192632,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0MjgxNzE3MDk2MDA3MjMzNTQ3NzAxMDM3NzczNjE5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0MjgxNzc5MzQ4MTk5NDEwMjgxNTg0ODI4MTQwNzQ4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0MjgxNzgwMTcxOTA3NDA3NDI4MTU5NTQ5MzE1NDgxNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA1MDQ5NzEwOTMwOTM2NjozMzA0Mjg2MTA0MDUxMTQ1OTU2NjE3NzI2NzI0OTg0MDEyOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA1MDQ5NzEwOTMwOTM2NjozMzA0Mjg2MTA0MDUxMTQ1OTU2NjE3NzI2NzI0OTg0MDEyOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc4NjgyMTM5MTQyMTI1MDM2OTM3MzE0ODgwNzE2OAZDZD"
     ],
     "last_weekly_reminder": "2026-10-02T12:18:43.959Z",
     "warehouses": [
