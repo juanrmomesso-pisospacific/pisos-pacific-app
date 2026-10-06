@@ -158592,11 +158592,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791231510199",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-06T17:21:12.945Z",
-      "last_message_preview": "Buenas!!",
+      "unread_count": 3,
+      "last_message_at": "2026-10-06T17:21:25.763Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-06T17:21:12.945Z",
+      "last_inbound_at": "2026-10-06T17:21:25.763Z",
       "last_outbound_at": "2026-10-06T17:13:53.457Z"
     },
     {
@@ -180846,6 +180846,22 @@
       "body": "Buenas!!",
       "ts": "2026-10-06T17:21:12.945Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791307285977-qwub",
+      "conversation_id": "conv-1791231510199-4gjh",
+      "direction": "in",
+      "body": "2241548657\nMi nombre es Diego",
+      "ts": "2026-10-06T17:21:25.451Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1791307287010-tlit",
+      "conversation_id": "conv-1791231510199-4gjh",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-10-06T17:21:25.763Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -192633,7 +192649,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0MjgxNzc5MzQ4MTk5NDEwMjgxNTg0ODI4MTQwNzQ4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0MjgxNzgwMTcxOTA3NDA3NDI4MTU5NTQ5MzE1NDgxNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA1MDQ5NzEwOTMwOTM2NjozMzA0Mjg2MTA0MDUxMTQ1OTU2NjE3NzI2NzI0OTg0MDEyOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc4NjgyMTM5MTQyMTI1MDM2OTM3MzE0ODgwNzE2OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc4NjgyMTM5MTQyMTI1MDM2OTM3MzE0ODgwNzE2OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc4NzA1MjA4Njk3NDQ4NTI0NzMxMDY1NDYwMzI2NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc4NzA1Nzg1NTA2ODQ0MjkxMTQ3NjYzOTg1ODY4OAZDZD"
     ],
     "last_weekly_reminder": "2026-10-02T12:18:43.959Z",
     "warehouses": [
