@@ -158592,11 +158592,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791231510199",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-05T20:18:28.005Z",
-      "last_message_preview": "Hola! Me pasas info mayorista? Gracias",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-05T20:18:28.005Z"
+      "unread_count": 0,
+      "last_message_at": "2026-10-06T17:13:53.457Z",
+      "last_message_preview": "Hola cómo estás? Tenes algún WhatsApp",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-05T20:18:28.005Z",
+      "last_outbound_at": "2026-10-06T17:13:53.457Z"
     },
     {
       "id": "conv-email-1a10f0f1e650",
@@ -180826,6 +180827,16 @@
       "ts": "2026-10-06T17:12:44.863Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0Mzc3NzQ0ODkzMjM5Mjk2MzUwMzM0NzM3ODE1OTYxNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1791306834195-5qti",
+      "conversation_id": "conv-1791231510199-4gjh",
+      "direction": "out",
+      "body": "Hola cómo estás? Tenes algún WhatsApp",
+      "ts": "2026-10-06T17:13:53.457Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc3ODcxNDI3ODQwOTQzMTA1NjUwMjYzMTY5NDMzNgZDZD",
       "via": "ig-app"
     }
   ],
