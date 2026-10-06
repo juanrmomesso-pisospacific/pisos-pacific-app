@@ -150441,6 +150441,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-05T20:18:28.005Z",
       "last_touch_at": "2026-10-05T20:18:28.005Z"
+    },
+    {
+      "id": "lead-email-1a10f0f1e650",
+      "name": "Camila",
+      "email": "camilabader0@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Arribeños 1740",
+      "postal_code": "1426",
+      "approx_m2": 40,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 40m² · Con Colocación · CP 1426",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-06T02:33:30.000Z",
+      "last_touch_at": "2026-10-06T02:33:30.000Z"
     }
   ],
   "conversations": [
@@ -158442,6 +158459,21 @@
       "last_message_preview": "Hola! Me pasas info mayorista? Gracias",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-05T20:18:28.005Z"
+    },
+    {
+      "id": "conv-email-1a10f0f1e650",
+      "channel": "email",
+      "contact_id": "camilabader0@gmail.com",
+      "contact_name": "Camila",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a10f0f1e650",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-06T02:33:30.000Z",
+      "last_message_preview": "Formulario web — 40m² · Con Colocación · CP 1426 · Arribeños 1740",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-06T02:33:30.000Z"
     }
   ],
   "messages": [
@@ -180538,6 +180570,14 @@
       "body": "✉️ Framer Monthly\n\nSkills, 3D, new models, CMS Lists, and more\r\n\r\n                                                  \r\n                                                   \r\n                                                   \r\n                                                   \r\n                                                   \r\n                                                   \r\n                                                 \r\n \r\n\r\nhttps://framer.link/v5Lc0bh\r\n\r\n \r\nThis September, we introduced Skills for the Agent, editable 3D transforms for your designs, and CMS Lists for repeating content.\r\nYou’ll also find new Agent models, pinned projects, Marketplace Analytics, and 17 new Academy lessons.\r\n \r\n \r\nSkills\r\nSave guidance for the Agent as a reusable Skill, from your design system and brand voice to your CMS workflow. Use it again\r\nwithout repeating the same instructions. Explore Skills. [https://www.framer.com/skills]\r\n \r\n\r\nhttps://www.framer.com/skills\r\n\r\n \r\n \r\nAgents: 3D Transforms\r\nAsk the Agent to add perspective and depth to your design, then adjust the result on the Canvas. Every Frame and Effect stays\r\neditable, so you can refine the details. Explore 3D Transforms.\r\n[https://www.framer.com/blog/teaching-the-framer-agent-to-design-in-3d/]\r\n \r\n\r\nhttps://www.framer.com/blog/teaching-the-framer-agent-to-design-in-3d/\r\n\r\n \r\n \r\nCMS List Field\r\nGroup FAQs, features, or steps in a list instead of separate numbered fields. Use Repeat to design a card for each row and manage\r\nall the content i",
       "ts": "2026-10-05T23:22:47.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a10f0f1e650",
+      "conversation_id": "conv-email-1a10f0f1e650",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 40m² · Con Colocación · CP 1426 · Arribeños 1740",
+      "ts": "2026-10-06T02:33:30.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -190058,7 +190098,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-05T22:44:15.874Z",
     "gmail_seen_ids": [
-      "19fa4fa3ef04f9e0",
       "19fa505783ab4a41",
       "19fa501935321e70",
       "19fa4fd10a05de5c",
@@ -190857,7 +190896,8 @@
       "1a10c752d660c594",
       "1a10cd8e2e89b4c0",
       "1a10d9f4fafe5c66",
-      "1a10e60803bef4c3"
+      "1a10e60803bef4c3",
+      "1a10f0f1e6500dfc"
     ],
     "cash_sessions": {
       "1136982222": {
