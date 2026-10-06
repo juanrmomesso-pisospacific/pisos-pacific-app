@@ -140648,6 +140648,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-muvu772a-009"
+    },
+    {
+      "id": "local-1791288093413-5bk6i",
+      "flow": "Ingreso",
+      "date": "2026-09-12T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Gaby Fischer",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra ZenCity - Puerto Madero ",
+      "sale_ref": "A6329",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 1240,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
