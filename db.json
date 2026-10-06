@@ -150620,6 +150620,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-06T03:24:46.262Z",
       "last_touch_at": "2026-10-06T03:24:46.262Z"
+    },
+    {
+      "id": "lead-email-1a11306c9583",
+      "name": "Hanna Joy Ballesteros",
+      "email": "hanna.ballesteros@freightcom.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Quick Shipping Rate Comparison — Hi,\r\n\r\nI noticed you ship products.\r\n\r\n\r\n\r\nI'm not emailing to ask you to switch providers.\r\n\r\n\r\n\r\nI'd simply like to quote a recent shipment and show you what rates are available ",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-06T21:02:50.000Z",
+      "last_touch_at": "2026-10-06T21:02:50.000Z"
     }
   ],
   "conversations": [
@@ -158667,6 +158684,21 @@
       "last_message_preview": "Hola~",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-06T03:24:46.262Z"
+    },
+    {
+      "id": "conv-email-1a11306c9583",
+      "channel": "email",
+      "contact_id": "hanna.ballesteros@freightcom.com",
+      "contact_name": "Hanna Joy Ballesteros",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a11306c9583",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-06T21:02:50.000Z",
+      "last_message_preview": "Hi,\r\n\r\nI noticed you ship products.\r\n\r\n\r\n\r\nI'm not emailing to ask you to switch providers.\r\n\r\n\r\n\r\nI'd simply like to quote a recent shipmen",
+      "email_subject": "Quick Shipping Rate Comparison",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-06T21:02:50.000Z"
     }
   ],
   "messages": [
@@ -180886,6 +180918,14 @@
       "body": "📎 Adjunto",
       "ts": "2026-10-06T17:21:25.763Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a11306c9583",
+      "conversation_id": "conv-email-1a11306c9583",
+      "direction": "in",
+      "body": "✉️ Quick Shipping Rate Comparison\n\nHi,\r\n\r\nI noticed you ship products.\r\n\r\n\r\n\r\nI'm not emailing to ask you to switch providers.\r\n\r\n\r\n\r\nI'd simply like to quote a recent shipment and show you what rates are available through Freightcom's carrier network.\r\n\r\n\r\n\r\nIf we're not competitive, at least you'll know your current pricing is strong.\r\n\r\n\r\n\r\nCan you send me the details of a recent shipment?\r\n\r\n\r\nRegards,\r\n\r\n[signature_232045547]<https://cDQVM04.na1.hs-sales-engage.com/Ctc/T+23284/cDQVM04/Jks2-6qcW69sMD-6lZ3nHN6m6YZ1x-2dRW2c-DcP7k5nG8W8RQ3Xt2xlVGzV-XZJy4HRrRTW55GvM62HCsDJN8TL6gKH2l-5W3sXthg7K2RfRW1VBgTL2H1qTqW1qKqFD8d_67DW7ZFcCW2G1BcTW8bk32_5BCxZFN4fQqBtYnlbcW3_thJw4lWJ7VVbYGs65NnN9xW36jgdp5KdqhTW5ldxHQ5MmfJ-V61t9D7_Q5xCVF4c647-zgSrW2dhGZp3b3LYdML_Kq_XG8hXf51wD3204>\r\n[signature_606978787]<https://cDQVM04.na1.hs-sales-engage.com/Ctc/T+23284/cDQVM04/Jks2-6qcW69sMD-6lZ3nHN6m6YZ1x-2dRW2c-DcP7k5nG8W8RQ3Xt2xlVGzV-XZJy4HRrRTW55GvM62HCsDJN8TL6gKH2l-5W3sXthg7K2RfRW1VBgTL2H1qTqW1qKqFD8d_67DW7ZFcCW2G1BcTW8bk32_5BCxZFN4fQqBtYnlbcW3_thJw4lWJ7VVbYGs65NnN9xW36jgdp5KdqhTW5ldxHQ5MmfJ-V61t9D7_Q5xCVF4c647-zgSrW2dhGZp3b3LYdML_Kq_XG8hXf51wD3204>\r\nHanna Joy Ballesteros | Sales Support\r\nT (289) 875-4259  TF (866) 285-8667 x 233\r\n[signature_1308053949]<https://cDQVM04.na1.hs-sales-engage.com/Ctc/T+23284/cDQVM04/Jks2-6qcW69sMD-6lZ3lNW33YwKV1CvW7kW1Pr--92f_w-YW3PRYhm3QJtv8W5XxQJ385JXHZW7TGCCd5m2wYGW7KvnRQ4xxq3qW8T45ZP5vbRX8V-j02_5CSm4CW3k-PK82-rgsZW8v5Khl30VQ94W38VprY8z4GW_W83xBwV6LwbT3W8h5N-S5rVRXXW5cd5c760Hyy3W6RL1QR2ThLVqW8ZPq7W7xt",
+      "ts": "2026-10-06T21:02:50.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -190536,7 +190576,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-05T22:44:15.874Z",
     "gmail_seen_ids": [
-      "19fa69ac3fada023",
       "19fa7f00f6289047",
       "19fa7edf67b53492",
       "19fa8060f6e16b2b",
@@ -191335,7 +191374,8 @@
       "1a1113d27f884af1",
       "1a11140c847359f9",
       "1a1114d9dac65eac",
-      "1a11214266385cd2"
+      "1a11214266385cd2",
+      "1a11306c9583105c"
     ],
     "cash_sessions": {
       "1136982222": {
