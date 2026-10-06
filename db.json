@@ -487,6 +487,18 @@
       "notes": null,
       "name": "Az developers",
       "updated_at": "2026-07-20T20:55:50.270Z"
+    },
+    {
+      "id": "CLI-muwz8ku1-jlnb",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "The group",
+      "updated_at": "2026-10-06T17:53:04.633Z"
     }
   ],
   "expenses": [],
