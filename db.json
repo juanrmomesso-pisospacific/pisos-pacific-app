@@ -753,8 +753,8 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 1213.4453279999998,
-      "reservedStock": 4341.469999999999,
+      "stock": 1034.2453279999997,
+      "reservedStock": 4162.2699999999995,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1859,7 +1859,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8306.747,
+      "reservedStock": 8127.746999999999,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15164,
+      "reservedStock": 14714,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -11235,7 +11235,7 @@
           "discount": 0
         }
       ],
-      "status": "En proceso",
+      "status": "Finalizado",
       "delivery_status": "Acopiado",
       "created_at": "2026-05-01T00:00:00.000Z",
       "fecha_pendiente": false,
@@ -11249,8 +11249,8 @@
         "total_paid": 10020.12,
         "balance_due": 4281.879999999999
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "",
       "payments": [],
       "source": "planilla-reciente+vercel",
@@ -11267,6 +11267,12 @@
           "to": "En proceso",
           "at": "2026-08-25T14:25:40.042Z",
           "by": "Admin User"
+        },
+        {
+          "from": "En proceso",
+          "to": "Finalizado",
+          "at": "2026-10-06T13:44:09.219Z",
+          "by": "Victoria Gonzalez Collado"
         }
       ],
       "commission_amount": 0
@@ -189002,6 +189008,33 @@
       "product_id": "PROD-007",
       "sku": "PROD-007",
       "qty": 48.6,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-06T13:44:09.220Z",
+      "type": "sale_deduct",
+      "ref": "0000135",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": -179.2,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-06T13:44:09.220Z",
+      "type": "sale_deduct",
+      "ref": "0000135",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": -179,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-06T13:44:09.220Z",
+      "type": "sale_deduct",
+      "ref": "0000135",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": -450,
       "warehouse_id": "main"
     }
   ],
