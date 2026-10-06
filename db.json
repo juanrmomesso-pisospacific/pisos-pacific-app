@@ -158623,11 +158623,11 @@
       "linked_lead_id": "lead-instagram-1791254709978",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-06T17:12:07.326Z",
-      "last_message_preview": "Es un piso Prefinished",
+      "last_message_at": "2026-10-06T17:12:44.863Z",
+      "last_message_preview": "99 usd + iva el m2 \nDescuento del 10% \nTe queda en 90 usd m2",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-06T02:45:42.283Z",
-      "last_outbound_at": "2026-10-06T17:12:07.326Z"
+      "last_outbound_at": "2026-10-06T17:12:44.863Z"
     },
     {
       "id": "conv-1791257087859-l5as",
@@ -180816,6 +180816,16 @@
       "ts": "2026-10-06T17:12:07.326Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0Mzc3Njc1NjQ5ODQ3MzMwMTY4MTk1MjU1MTYwMDEyOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1791306765217-z0lv",
+      "conversation_id": "conv-1791254709978-r3o5",
+      "direction": "out",
+      "body": "99 usd + iva el m2 \nDescuento del 10% \nTe queda en 90 usd m2",
+      "ts": "2026-10-06T17:12:44.863Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0Mzc3NzQ0ODkzMjM5Mjk2MzUwMzM0NzM3ODE1OTYxNgZDZD",
       "via": "ig-app"
     }
   ],
