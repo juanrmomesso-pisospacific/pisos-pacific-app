@@ -158622,11 +158622,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791254709978",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-10-06T02:45:42.283Z",
-      "last_message_preview": "Me dirías cuál piso es ese y el precio del m2",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-06T02:45:42.283Z"
+      "unread_count": 0,
+      "last_message_at": "2026-10-06T17:12:07.326Z",
+      "last_message_preview": "Es un piso Prefinished",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-06T02:45:42.283Z",
+      "last_outbound_at": "2026-10-06T17:12:07.326Z"
     },
     {
       "id": "conv-1791257087859-l5as",
@@ -180796,6 +180797,26 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola! En la linea H2O. Tienen showroom para ir a ver los pisos?\r\n\r\n\r\nEl El mar, 6 oct 2026 a la(s) 10:15 a. m., Pisos Pacific <\r\ninfo@pisospacific.com> escribió:\r\n\r\n> Hola Camila, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a prueba de agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-10-06T16:37:40.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791306722958-bj98",
+      "conversation_id": "conv-1791254709978-r3o5",
+      "direction": "out",
+      "body": "Hola cómo estás? \nRoble veta tallada natural",
+      "ts": "2026-10-06T17:12:02.305Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0Mzc3NjY2Mzg4NDMyNTczMDEwMjA4MjM4ODYyMzM2MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1791306727640-wr1k",
+      "conversation_id": "conv-1791254709978-r3o5",
+      "direction": "out",
+      "body": "Es un piso Prefinished",
+      "ts": "2026-10-06T17:12:07.326Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0Mzc3Njc1NjQ5ODQ3MzMwMTY4MTk1MjU1MTYwMDEyOAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
