@@ -17453,6 +17453,58 @@
       "reseller_name": "",
       "currency": "USD",
       "commission_amount": 0
+    },
+    {
+      "id": "local-sale-1791295990241-3awx",
+      "quote_id": "local-1791218776426-7pxzg",
+      "quote_number": "A1844",
+      "title": "Obra Roble 12CM",
+      "description": "Madera - 12 cm Roble - Veta Tallada",
+      "internal_notes": "",
+      "public_notes": "Dolar promedio entre las dos puntas del Blue.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-muvhemou-u2gt",
+      "client_name": "Juan Etchemendy",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Retiro en deposito",
+      "contract_total": 2058.21,
+      "items": [
+        {
+          "product_id": "PROD-007",
+          "sku": "PROD-007",
+          "description": "Madera - 12 cm Roble - Veta Tallada",
+          "quantity": 48.6,
+          "unit_price": 70,
+          "cost": 36,
+          "category": "Pisos de Madera",
+          "disc_value": 50,
+          "total": 3402,
+          "discount": 1701,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 1701,
+      "status": "Confirmado",
+      "created_at": "2026-10-06T14:13:10.241Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 2058.21
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Juan Rodriguez Momesso",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -41246,7 +41298,8 @@
       "currency": "USD",
       "created_at": "2026-10-05T16:46:16.085Z",
       "quote_number": "A1844",
-      "status": "ACCEPTED"
+      "status": "ACCEPTED",
+      "sale_id": "local-sale-1791295990241-3awx"
     },
     {
       "id": "local-1791232487948-ns3n1",
@@ -44150,7 +44203,9 @@
       "dni": "",
       "emails": [],
       "phones": [],
-      "addresses": [],
+      "addresses": [
+        "Retiro en deposito"
+      ],
       "notes": null,
       "name": "Juan Etchemendy",
       "updated_at": "2026-10-05T16:46:07.710Z"
