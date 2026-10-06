@@ -726,7 +726,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 742.525328,
-      "reservedStock": 1086.71,
+      "reservedStock": 1199.71,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Natural Oak 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1859,7 +1859,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8127.746999999999,
+      "reservedStock": 8229.747,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 14713,
+      "reservedStock": 14913,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -32333,7 +32333,7 @@
       "discount_amount": 429.4,
       "created_at": "2026-08-26T12:52:38.250Z",
       "quote_number": "A2560",
-      "status": "DRAFT",
+      "status": "ACCEPTED",
       "lead_id": "local-1787748466872-lpspz",
       "share_token": "2a2421609a20dc76df8d67ab"
     },
@@ -189239,6 +189239,33 @@
       "product_id": "PROD-063",
       "sku": "PROD-063",
       "qty": -2,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-06T20:39:44.111Z",
+      "type": "quote_reserve",
+      "ref": "local-1787748758858-q333r",
+      "product_id": "PROD-026",
+      "sku": "PROD-026",
+      "qty": 113,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-06T20:39:44.111Z",
+      "type": "quote_reserve",
+      "ref": "local-1787748758858-q333r",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 102,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-06T20:39:44.111Z",
+      "type": "quote_reserve",
+      "ref": "local-1787748758858-q333r",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 200,
       "warehouse_id": "main"
     }
   ],
