@@ -195252,6 +195252,16 @@
       "due_date_to": "2026-10-16",
       "status": "pendiente",
       "created_at": "2026-10-07T14:51:13.103Z"
+    },
+    {
+      "id": "local-1791384717417-xb9zt",
+      "type": "reparacion",
+      "title": "Showroom",
+      "due_date": "2026-10-19",
+      "due_date_to": "2026-10-20",
+      "assigned_seller": "Hugo Ramirez",
+      "status": "pendiente",
+      "created_at": "2026-10-07T14:51:59.285Z"
     }
   ],
   "password_resets": {},
