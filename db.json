@@ -151402,6 +151402,23 @@
       "address": "Olavarria 1150 - Barracas",
       "created_at": "2026-10-07T13:38:21.910Z",
       "last_touch_at": "2026-10-07T13:38:31.625Z"
+    },
+    {
+      "id": "lead-email-1a1178ece000",
+      "name": "Graciela Fernández",
+      "email": "grafer65@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "RIO NEGRO 664 Bella Vista pcia Bs As",
+      "postal_code": "1661",
+      "approx_m2": 13,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 13m² · Con Colocación · CP 1661",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-07T18:09:56.000Z",
+      "last_touch_at": "2026-10-07T18:09:56.000Z"
     }
   ],
   "conversations": [
@@ -159495,6 +159512,21 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-07T15:20:10.000Z",
       "last_outbound_at": "2026-10-07T13:00:56.585Z"
+    },
+    {
+      "id": "conv-email-1a1178ece000",
+      "channel": "email",
+      "contact_id": "grafer65@gmail.com",
+      "contact_name": "Graciela Fernández",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a1178ece000",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-07T18:09:56.000Z",
+      "last_message_preview": "Formulario web — 13m² · Con Colocación · CP 1661 · RIO NEGRO 664 Bella Vista pcia Bs As",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-07T18:09:56.000Z"
     }
   ],
   "messages": [
@@ -181894,6 +181926,14 @@
       "body": "👏",
       "ts": "2026-10-07T17:03:35.200Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1178ece000",
+      "conversation_id": "conv-email-1a1178ece000",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 13m² · Con Colocación · CP 1661 · RIO NEGRO 664 Bella Vista pcia Bs As",
+      "ts": "2026-10-07T18:09:56.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -191575,7 +191615,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-06T22:45:43.759Z",
     "gmail_seen_ids": [
-      "19fa95b474d98576",
       "19fa96b7addb9881",
       "19fa98b77b2f8bbc",
       "19fa9afff36db00e",
@@ -192374,7 +192413,8 @@
       "1a1165b6c3cd3309",
       "1a11673bce546f2e",
       "1a1167ce95e203e6",
-      "1a116f397b4cd470"
+      "1a116f397b4cd470",
+      "1a1178ece000521c"
     ],
     "cash_sessions": {
       "1136982222": {
