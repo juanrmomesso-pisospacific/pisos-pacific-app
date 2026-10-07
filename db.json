@@ -41780,8 +41780,9 @@
       "currency": "USD",
       "created_at": "2026-10-07T13:26:00.708Z",
       "quote_number": "A4549",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a103669d6a6"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a103669d6a6",
+      "share_token": "8a14c547c05ca62a2ec4d64e"
     }
   ],
   "clients": [
@@ -158792,12 +158793,12 @@
       "linked_lead_id": "lead-email-1a103669d6a6",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-07T13:25:07.771Z",
-      "last_message_preview": "📄 Presupuesto NA9743 - OPCION 1 - Roble veta tallada Natural - Guillermo Santipolio.pdf",
+      "last_message_at": "2026-10-07T13:26:51.648Z",
+      "last_message_preview": "📄 Presupuesto NA4549 - OPCION 2 - Roble Europeo Verona Kitsilano - Guillermo Santipolio.pdf",
       "email_subject": "Informacion de precios.",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-05T14:25:55.000Z",
-      "last_outbound_at": "2026-10-07T13:25:07.771Z"
+      "last_outbound_at": "2026-10-07T13:26:51.648Z"
     },
     {
       "id": "conv-1791067179018-sjtg",
@@ -181312,6 +181313,16 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a1168a086613da5"
+    },
+    {
+      "id": "m-1791379611648-e8la",
+      "conversation_id": "conv-email-1a103669d6a6",
+      "direction": "out",
+      "body": "Hola Guillermo, ¿cómo estás?\n\nTe comparto adjunto el presupuesto NA4549, correspondiente a otra de las opciones.\n\nCualquier consulta, quedo a disposición.\n\nSaludos,\nVicky\n📄 Presupuesto NA4549 - OPCION 2 - Roble Europeo Verona Kitsilano - Guillermo Santipolio.pdf",
+      "ts": "2026-10-07T13:26:51.648Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a1168b9e9cc30a6"
     }
   ],
   "templates": [
