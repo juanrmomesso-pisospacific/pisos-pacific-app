@@ -141496,6 +141496,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mux9oxjj-002"
+    },
+    {
+      "id": "local-1791397929801-zyfx6",
+      "flow": "Ingreso",
+      "date": "2026-10-07T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Romina Di Landro",
+      "counterparty_type": "client",
+      "description": "Cobro - Cotización Romina Di Landro",
+      "sale_ref": "A2207",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 4400,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
