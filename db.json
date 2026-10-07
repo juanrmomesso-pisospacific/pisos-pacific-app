@@ -17617,6 +17617,71 @@
           "by": "Admin User"
         }
       ]
+    },
+    {
+      "id": "local-sale-1791398004778-c5bh",
+      "quote_id": "local-1790886484023-d6iml",
+      "quote_number": "A7863",
+      "title": "Cotización Romina Di Landro - Nivelacion de Carpeta",
+      "description": "Autonivelante Mapei + 1 más",
+      "internal_notes": "",
+      "public_notes": "Inlcuye el desbaste en las dos habitaciones de 9 m2 aprox.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-muy7zco9-7vbc",
+      "client_name": "Romina Di Landro",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "1167604206",
+      "client_address": "Olivos",
+      "contract_total": 990,
+      "items": [
+        {
+          "product_id": "local-1790886373458-7ne0a",
+          "sku": "PROD-675",
+          "description": "Autonivelante Mapei",
+          "quantity": 27,
+          "unit_price": 20,
+          "cost": 18,
+          "category": "Extras",
+          "total": 540,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-105",
+          "sku": "SERV-105",
+          "description": "Servicio de Nivelación Carpeta",
+          "quantity": 40,
+          "unit_price": 15,
+          "cost": 4,
+          "category": "Servicio",
+          "disc_value": 25,
+          "total": 600,
+          "discount": 150,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 150,
+      "status": "Confirmado",
+      "created_at": "2026-10-07T18:33:24.778Z",
+      "has_iva": false,
+      "iva_mode": "none",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 990
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -40934,7 +40999,7 @@
     },
     {
       "id": "local-1790886484023-d6iml",
-      "client_id": "",
+      "client_id": "CLI-muy7zco9-7vbc",
       "client_name": "Romina Di Landro",
       "client_dni": "",
       "client_email": "",
@@ -40987,8 +41052,9 @@
       "currency": "USD",
       "created_at": "2026-10-01T20:28:03.584Z",
       "quote_number": "A7863",
-      "status": "SENT",
-      "lead_id": "local-1789570377808-x4lfi"
+      "status": "Aceptado",
+      "lead_id": "local-1789570377808-x4lfi",
+      "sale_id": "local-sale-1791398004778-c5bh"
     },
     {
       "id": "local-1790957118804-75cko",
