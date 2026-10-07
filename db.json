@@ -150520,10 +150520,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-10-03T22:39:37.490Z",
-      "last_touch_at": "2026-10-03T22:39:37.490Z"
+      "last_touch_at": "2026-10-07T13:02:18.986Z"
     },
     {
       "id": "lead-email-1a104af78215",
@@ -150651,10 +150651,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-06T02:45:08.089Z",
-      "last_touch_at": "2026-10-06T02:45:08.089Z"
+      "last_touch_at": "2026-10-07T13:02:06.538Z"
     },
     {
       "id": "lead-instagram-1791257087859",
@@ -158657,7 +158657,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791067179018",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-03T22:39:37.490Z",
       "last_message_preview": "Como salieron anoche?",
       "last_message_direction": "in",
@@ -158748,7 +158748,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791254709978",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-06T21:56:44.597Z",
       "last_message_preview": "Genial",
       "last_message_direction": "in",
