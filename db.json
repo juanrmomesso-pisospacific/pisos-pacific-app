@@ -6959,8 +6959,8 @@
         }
       ],
       "source": "excel-import",
-      "delivery_date": "2026-10-05",
-      "delivery_date_to": "2026-10-09",
+      "delivery_date": "2026-10-21",
+      "delivery_date_to": "2026-10-25",
       "delivery_crew": "Ariel Ernesto Garcia",
       "status_log": [
         {
@@ -14071,8 +14071,8 @@
       "stock_reserved": true,
       "stock_deducted": false,
       "seller_name": "Juan Rodriguez Momesso",
-      "delivery_date": "2026-09-28",
-      "delivery_date_to": "2026-09-30",
+      "delivery_date": "2026-10-05",
+      "delivery_date_to": "2026-10-10",
       "delivery_crew": "Hugo Ramirez",
       "status_log": [
         {
