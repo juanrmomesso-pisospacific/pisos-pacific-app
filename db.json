@@ -150983,6 +150983,20 @@
       "assigned_seller": "",
       "created_at": "2026-10-07T01:36:18.000Z",
       "last_touch_at": "2026-10-07T13:01:02.941Z"
+    },
+    {
+      "id": "local-1791380302476-0q9se",
+      "name": "Antonella Jotayan",
+      "phone": "+54 9 11 3350-7561",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Olavarria 1150 - Barracas",
+      "created_at": "2026-10-07T13:38:21.910Z",
+      "last_touch_at": "2026-10-07T13:38:31.625Z"
     }
   ],
   "conversations": [
