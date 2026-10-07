@@ -195233,6 +195233,16 @@
       "sale_id": "local-sale-1791384336873-z0ax",
       "notes": "Olivos",
       "created_at": "2026-10-07T14:46:12.833Z"
+    },
+    {
+      "id": "local-1791384578412-fpiuu",
+      "type": "reparacion",
+      "title": "Newman Mar",
+      "due_date": "2026-10-13",
+      "due_date_to": "2026-10-15",
+      "assigned_seller": "Hugo Ramirez",
+      "status": "pendiente",
+      "created_at": "2026-10-07T14:49:40.213Z"
     }
   ],
   "password_resets": {},
