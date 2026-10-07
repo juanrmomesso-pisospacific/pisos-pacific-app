@@ -159359,11 +159359,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791336879293",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-07T13:01:38.557Z",
-      "last_message_preview": "Hola Cami como estas? que necesitas saber? precio o como se colocan?",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-07T01:34:37.458Z",
+      "unread_count": 2,
+      "last_message_at": "2026-10-07T14:11:45.848Z",
+      "last_message_preview": "si precio y si colocan",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-07T14:11:45.848Z",
       "last_outbound_at": "2026-10-07T13:01:38.557Z"
     },
     {
@@ -181748,6 +181748,22 @@
       "ts": "2026-10-07T13:29:16.498Z",
       "status": "sent",
       "wa_id": "1a1168dd420feb74"
+    },
+    {
+      "id": "m-1791382301760-d4ue",
+      "conversation_id": "conv-1791336879292-7yya",
+      "direction": "in",
+      "body": "Hola",
+      "ts": "2026-10-07T14:11:40.905Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1791382306437-h4to",
+      "conversation_id": "conv-1791336879292-7yya",
+      "direction": "in",
+      "body": "si precio y si colocan",
+      "ts": "2026-10-07T14:11:45.848Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -193654,7 +193670,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc4NzA1Nzg1NTA2ODQ0MjkxMTQ3NjYzOTg1ODY4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0NDA5MTc3NjU1MjMyMjY4MzE2NzEwMTI5OTk4MjMzNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0NDMzMjkyODI3NTkzNTgzMjEwNzQ3OTI1NDE3MTY0OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA1MDQ5NzEwOTMwOTM2NjozMzA0NDYzNDk0MDIyMTcyMzkwMjIxNDAxNzE2NDI0NzA0MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA1MDQ5NzEwOTMwOTM2NjozMzA0NDYzNDk0MDIyMTcyMzkwMjIxNDAxNzE2NDI0NzA0MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0NTE3MDg0Mjk4MDgwODA0MTc2NzE1OTMwODc0Njc1MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0NTE3MDkzNDE1NTExMzQ1MTQxNzcwNDEyOTg4ODI1NgZDZD"
     ],
     "last_weekly_reminder": "2026-10-02T12:18:43.959Z",
     "warehouses": [
