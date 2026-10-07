@@ -150704,6 +150704,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-07T01:34:37.458Z",
       "last_touch_at": "2026-10-07T01:34:37.458Z"
+    },
+    {
+      "id": "lead-email-1a114e1af46f",
+      "name": "Walter Marino",
+      "email": "wmediciones@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Precio — Necesito entre18 y 20 m2 . Podrian pasarme precios? Gracias",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-07T01:36:18.000Z",
+      "last_touch_at": "2026-10-07T01:36:18.000Z"
     }
   ],
   "conversations": [
@@ -158780,6 +158797,21 @@
       "last_message_preview": "Hola! me darían info para colocación de pisos PVC",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-07T01:34:37.458Z"
+    },
+    {
+      "id": "conv-email-1a114e1af46f",
+      "channel": "email",
+      "contact_id": "wmediciones@gmail.com",
+      "contact_name": "Walter Marino",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a114e1af46f",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-07T01:36:18.000Z",
+      "last_message_preview": "Necesito entre18 y 20 m2 . Podrian pasarme precios? Gracias",
+      "email_subject": "Precio",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-07T01:36:18.000Z"
     }
   ],
   "messages": [
@@ -181023,6 +181055,14 @@
       "body": "Hola! me darían info para colocación de pisos PVC",
       "ts": "2026-10-07T01:34:37.458Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a114e1af46f",
+      "conversation_id": "conv-email-1a114e1af46f",
+      "direction": "in",
+      "body": "✉️ Precio\n\nNecesito entre18 y 20 m2 . Podrian pasarme precios? Gracias",
+      "ts": "2026-10-07T01:36:18.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -190673,7 +190713,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-06T22:45:43.759Z",
     "gmail_seen_ids": [
-      "19fa8060f6e16b2b",
       "19fa845b58416418",
       "19fa893cc443c263",
       "19fa8a2c0eae5014",
@@ -191472,7 +191511,8 @@
       "1a11214266385cd2",
       "1a11306c9583105c",
       "1a113300e84724ed",
-      "1a1135f489db5787"
+      "1a1135f489db5787",
+      "1a114e1af46f9f54"
     ],
     "cash_sessions": {
       "1136982222": {
