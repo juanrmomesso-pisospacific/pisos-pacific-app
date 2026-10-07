@@ -259,6 +259,17 @@ export async function presupuestoPdf(data) {
       line(doc, empresa.web || 'pisospacific.com', w, y + 8.5 * 1.25 + 4 + 2, { font: 'semi', size: 10.5, color: C.ink2, cs: 0.42, align: 'right' });
     }
     y += 8.5 * 1.25 + 4 + 12.5 * 1.25;
+    // Datos bancarios para transferencia (aclaratoria, config de la operación).
+    // Solo aparece si la operación lo tiene cargado (empresa.bank_note); AR lo deja vacío.
+    if (empresa.bank_note) {
+      y += 10;
+      if (draw) hline(doc, 0, y, w, C.hair, 1);
+      y += 11;
+      if (draw) line(doc, 'DATOS PARA TRANSFERENCIA', 0, y, { font: 'semi', size: 8.5, color: C.ink3, cs: 1.02 });
+      const by = y + 8.5 * 1.25 + 3;
+      const bh = para(doc, String(empresa.bank_note), 0, by, w, { size: 10.5, color: C.ink2, draw });
+      y = by + bh;
+    }
     return y - y0;
   };
 

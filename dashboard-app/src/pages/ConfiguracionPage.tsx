@@ -18,7 +18,7 @@ type MpSettings = { enabled: boolean; access_token: string; public_key: string }
 type Seller = { name: string; phone?: string }
 type Settings = {
   integrations?: { mercadopago?: MpSettings }
-  company?: { name?: string; web?: string; email?: string; warranty?: string; fx_note?: string }
+  company?: { name?: string; web?: string; email?: string; warranty?: string; fx_note?: string; bank_note?: string }
   tax?: { rate?: number; label?: string }
   currency?: { local?: string; fx_provider?: string; fx_rate?: number }
   locale?: string
@@ -76,7 +76,7 @@ const MODULE_META: { key: string; label: string; desc: string }[] = [
   { key: "reportes", label: "Reportes", desc: "Reportes avanzados." },
 ]
 function OperationSection({ settings }: { settings: Settings }) {
-  const [company, setCompany] = useState({ name: "", web: "", email: "", ...settings.company })
+  const [company, setCompany] = useState({ name: "", web: "", email: "", bank_note: "", ...settings.company })
   const [taxLabel, setTaxLabel] = useState(settings.tax?.label ?? "IVA 21%")
   const [taxPct, setTaxPct] = useState(Math.round(((settings.tax?.rate ?? 0.21) * 100) * 100) / 100)
   const [curLocal, setCurLocal] = useState(settings.currency?.local ?? "ARS")
@@ -131,6 +131,14 @@ function OperationSection({ settings }: { settings: Settings }) {
             <label className="text-xs space-y-1"><span className="text-muted-foreground">Email</span>
               <Input value={company.email} onChange={(e) => setCompany({ ...company, email: e.target.value })} /></label>
           </div>
+          <label className="text-xs space-y-1 block mt-2"><span className="text-muted-foreground">Datos bancarios (base del PDF de cotización)</span>
+            <textarea
+              value={company.bank_note ?? ""}
+              onChange={(e) => setCompany({ ...company, bank_note: e.target.value })}
+              rows={2}
+              placeholder="Ej.: Banco Aliado // Cuenta Corriente No. 1510056025 // Pacific Northwest 18, S.A."
+              className="w-full rounded-md border border-input bg-transparent px-2 py-1.5 text-sm" />
+            <span className="text-muted-foreground">Si queda vacío no aparece en el PDF.</span></label>
         </div>
         <div>
           <div className="text-sm font-medium mb-2">Impuesto de las ventas</div>
