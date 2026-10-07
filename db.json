@@ -41688,8 +41688,9 @@
       "currency": "USD",
       "created_at": "2026-10-07T13:05:57.492Z",
       "quote_number": "A6124",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a0e487ef0c5"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a0e487ef0c5",
+      "share_token": "68949e039c64e99311dd0dc5"
     }
   ],
   "clients": [
@@ -158243,12 +158244,12 @@
       "linked_lead_id": "lead-email-1a0e487ef0c5",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-28T17:01:42.000Z",
-      "last_message_preview": "Hola!! Buenas tardes!\r\n\r\nPara colección madera por favor!\r\n\r\nOn Mon, Sep 28, 2026 at 1:59 PM Pisos Pacific <info@pisospacific.com> wrote:\r\n\r",
+      "last_message_at": "2026-10-07T13:06:44.149Z",
+      "last_message_preview": "📄 Presupuesto NA6124 - Cotizacion Arq. Mora Garcia Guerrero - Arq. Mora Garcia Guerrero.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-28T17:01:42.000Z",
-      "last_outbound_at": "2026-09-28T16:59:10.512Z"
+      "last_outbound_at": "2026-10-07T13:06:44.149Z"
     },
     {
       "id": "conv-email-1a0e4a56265b",
@@ -181165,6 +181166,16 @@
       "ts": "2026-10-07T13:01:38.557Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0NTA5MzMxODE1OTMwMDUyNTU4ODMyOTQ1ODA0MDgzMgZDZD"
+    },
+    {
+      "id": "m-1791378404149-mcc3",
+      "conversation_id": "conv-email-1a0e487ef0c5",
+      "direction": "out",
+      "body": "Hola Mora como estas? perdon la demora en respuesta te comparto el presupuesto NA6124 adjunto. Cualquier consulta quedo a disposición.\n📄 Presupuesto NA6124 - Cotizacion Arq. Mora Garcia Guerrero - Arq. Mora Garcia Guerrero.pdf",
+      "ts": "2026-10-07T13:06:44.149Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a1167932f88c39d"
     }
   ],
   "templates": [
