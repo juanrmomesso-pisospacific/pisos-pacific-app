@@ -41737,6 +41737,51 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a103669d6a6",
       "share_token": "eb4d9dd3ba90105f6c7855b6"
+    },
+    {
+      "id": "local-1791379560848-m0n2q",
+      "client_id": "",
+      "client_name": "Guillermo Santipolio",
+      "client_dni": "",
+      "client_email": "santipoguille@gmail.com",
+      "client_phone": "",
+      "client_address": "",
+      "internal_notes": "Email: Precio — Necesito entre18 y 20 m2 . Podrian pasarme precios? Gracias",
+      "public_notes": "El costo del envío puede variar según la empresa de transporte elegida. Trabajamos habitualmente con Vía Cargo y Andesmar, aunque también podemos coordinar el despacho con el expreso que indique el cliente.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "OPCION 2 - Roble Europeo Verona/ Kitsilano",
+      "has_iva": true,
+      "price": 8085.825,
+      "zoned": false,
+      "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada",
+      "items": [
+        {
+          "product_id": "PROD-010",
+          "sku": "PROD-010",
+          "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada",
+          "quantity": 99,
+          "unit_price": 75,
+          "cost": 29,
+          "category": "Pisos de Madera",
+          "disc_value": 10,
+          "total": 7425,
+          "discount": 742.5,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 742.5,
+      "discount_amount": 742.5,
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "created_at": "2026-10-07T13:26:00.708Z",
+      "quote_number": "A4549",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a103669d6a6"
     }
   ],
   "clients": [
