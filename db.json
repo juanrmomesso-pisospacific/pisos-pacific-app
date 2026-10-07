@@ -149813,7 +149813,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-25T12:06:54.000Z",
-      "last_touch_at": "2026-09-28T11:34:36.000Z"
+      "last_touch_at": "2026-10-07T13:10:33.000Z"
     },
     {
       "id": "lead-instagram-1790344958890",
@@ -158069,12 +158069,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0d87653b80",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-07T13:10:03.138Z",
-      "last_message_preview": "Hola Luciana, ¿cómo estás? Perdón por la demora en responder.\n\nEn ese caso, la Colección H2O sería la opción ideal. El valor es de USD 38 + ",
+      "unread_count": 1,
+      "last_message_at": "2026-10-07T13:10:33.000Z",
+      "last_message_preview": "Gracias!\r\nYa compré!\r\n\r\nEl El mié, 7 oct 2026 a la(s) 10:10 a. m., Pisos Pacific <\r\ninfo@pisospacific.com> escribió:\r\n\r\n> Hola Luciana, ¿cóm",
       "email_subject": "Precios de pisos en oferta",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-28T11:34:36.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-07T13:10:33.000Z",
       "last_outbound_at": "2026-10-07T13:10:03.138Z"
     },
     {
@@ -158449,12 +158449,12 @@
       "linked_lead_id": "lead-email-1a0eee1c944f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-01T16:48:18.000Z",
-      "last_message_preview": "Buenas tardes,\r\nPor favor me podrían enviar el presupuesto?\r\nMuchas gracias\r\nSaludos,\r\n\r\nAlejandra\r\n\r\nEl mié, 30 sept 2026 a las 14:56, Marí",
+      "last_message_at": "2026-10-07T13:19:22.545Z",
+      "last_message_preview": "Buenas tardes, Alejandra:\n\nAntes que nada, disculpas por la demora en responder.\n\nMuchas gracias por tu mensaje. Te cuento que, por el momen",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-01T16:48:18.000Z",
-      "last_outbound_at": "2026-09-30T17:10:02.793Z"
+      "last_outbound_at": "2026-10-07T13:19:22.545Z"
     },
     {
       "id": "conv-email-1a0f21908af7",
@@ -181194,6 +181194,23 @@
       "ts": "2026-10-07T13:10:03.138Z",
       "status": "sent",
       "wa_id": "1a1167c3decd4944"
+    },
+    {
+      "id": "m-email-1a1167ce95e2",
+      "conversation_id": "conv-email-1a0d87653b80",
+      "direction": "in",
+      "body": "✉️ Re: Precios de pisos en oferta\n\nGracias!\r\nYa compré!\r\n\r\nEl El mié, 7 oct 2026 a la(s) 10:10 a. m., Pisos Pacific <\r\ninfo@pisospacific.com> escribió:\r\n\r\n> Hola Luciana, ¿cómo estás? Perdón por la demora en responder.\r\n>\r\n> En ese caso, la Colección H2O sería la opción ideal. El valor es de USD 38\r\n> + IVA por m² y actualmente tenemos un 10% de descuento.\r\n>\r\n> Cualquier consulta, quedo a disposición.\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-10-07T13:10:33.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1791379162545-kmbh",
+      "conversation_id": "conv-email-1a0eee1c944f",
+      "direction": "out",
+      "body": "Buenas tardes, Alejandra:\n\nAntes que nada, disculpas por la demora en responder.\n\nMuchas gracias por tu mensaje. Te cuento que, por el momento, no contamos con stock disponible de ese modelo. La próxima disponibilidad está prevista para la tercera semana de noviembre.\n\nSi te parece, podemos avanzar igualmente con el presupuesto para que tengas el valor de referencia y reservar el material para cuando ingrese.\n\nQuedo a disposición por cualquier consulta.\n\nSaludos,\nVicky",
+      "ts": "2026-10-07T13:19:22.545Z",
+      "status": "sent",
+      "wa_id": "1a11684c52ca319d"
     }
   ],
   "templates": [
@@ -190844,7 +190861,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-06T22:45:43.759Z",
     "gmail_seen_ids": [
-      "19fa94b6341cef9c",
       "19fa95e007ea27aa",
       "19fa95b474d98576",
       "19fa96b7addb9881",
@@ -191643,7 +191659,8 @@
       "1a116130f5c9c2d0",
       "1a11640b8000a8d4",
       "1a1165b6c3cd3309",
-      "1a11673bce546f2e"
+      "1a11673bce546f2e",
+      "1a1167ce95e203e6"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -192220,7 +192237,12 @@
       "1a1113d27f884af1",
       "1a1115af639b9456",
       "1a1165b6c3cd3309",
-      "1a11673e5ca590a6"
+      "1a11673e5ca590a6",
+      "1a11680767abdd3d",
+      "1a1167ecfbc61d07",
+      "1a1167c3decd4944",
+      "1a1167ad430e7d8c",
+      "1a1167932f88c39d"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
