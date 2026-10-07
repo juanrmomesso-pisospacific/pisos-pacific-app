@@ -17665,7 +17665,7 @@
       ],
       "zoned": false,
       "discount_total": 150,
-      "status": "Confirmado",
+      "status": "En proceso",
       "created_at": "2026-10-07T18:33:24.778Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -17681,7 +17681,16 @@
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "delivery_date": "2026-10-07",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "En proceso",
+          "at": "2026-10-07T19:45:33.816Z",
+          "by": "Admin User"
+        }
+      ]
     }
   ],
   "quotes": [
@@ -195408,6 +195417,17 @@
       "assigned_seller": "Hugo Ramirez",
       "status": "pendiente",
       "created_at": "2026-10-07T14:51:59.285Z"
+    },
+    {
+      "id": "local-1791402334169-bmh63",
+      "type": "medicion",
+      "title": "Medición previa · Romina Di Landro",
+      "due_date": "2026-10-05",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "status": "pendiente",
+      "sale_id": "local-sale-1791398004778-c5bh",
+      "notes": "Olivos",
+      "created_at": "2026-10-07T19:45:33.783Z"
     }
   ],
   "password_resets": {},
