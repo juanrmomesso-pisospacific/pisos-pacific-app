@@ -41734,8 +41734,9 @@
       "currency": "USD",
       "created_at": "2026-10-07T13:23:30.459Z",
       "quote_number": "A9743",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a103669d6a6"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a103669d6a6",
+      "share_token": "eb4d9dd3ba90105f6c7855b6"
     }
   ],
   "clients": [
@@ -158746,12 +158747,12 @@
       "linked_lead_id": "lead-email-1a103669d6a6",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-05T14:25:55.000Z",
-      "last_message_preview": "Victoria buen día. Sería sobre la Colección madera. Muchas gracias\r\n\r\nEl lun, 5 oct 2026 a las 10:18, Pisos Pacific (<info@pisospacific.com>",
+      "last_message_at": "2026-10-07T13:25:07.771Z",
+      "last_message_preview": "📄 Presupuesto NA9743 - OPCION 1 - Roble veta tallada Natural - Guillermo Santipolio.pdf",
       "email_subject": "Informacion de precios.",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-05T14:25:55.000Z",
-      "last_outbound_at": "2026-10-05T13:18:43.150Z"
+      "last_outbound_at": "2026-10-07T13:25:07.771Z"
     },
     {
       "id": "conv-1791067179018-sjtg",
@@ -181256,6 +181257,16 @@
       "ts": "2026-10-07T13:19:22.545Z",
       "status": "sent",
       "wa_id": "1a11684c52ca319d"
+    },
+    {
+      "id": "m-1791379507771-nkt2",
+      "conversation_id": "conv-email-1a103669d6a6",
+      "direction": "out",
+      "body": "Hola Guillermo, ¿cómo estás?\n\nTe comparto adjunto el presupuesto NA9743.\n\nEn otro mail te voy a enviar las otras opciones para que puedas evaluarlas.\n\nCualquier consulta, quedo a disposición.\n\nSaludos,\nVicky\n📄 Presupuesto NA9743 - OPCION 1 - Roble veta tallada Natural - Guillermo Santipolio.pdf",
+      "ts": "2026-10-07T13:25:07.771Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a1168a086613da5"
     }
   ],
   "templates": [
