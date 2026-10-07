@@ -158355,12 +158355,12 @@
       "linked_lead_id": "lead-email-1a0e94c0cd62",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-29T14:34:47.000Z",
-      "last_message_preview": "Hola como estas ? No encuentro el presupesto, donde esta adjuntado ? No\r\nnecesito colocacion porque esto es en córdoba capital\r\n\r\n\r\n*Arq. Es",
+      "last_message_at": "2026-10-07T13:08:30.999Z",
+      "last_message_preview": "Hola Paula, ¿cómo estás?\n\nNo te enviamos todavía el presupuesto porque necesitamos saber qué colección te interesa para poder cotizarte corr",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-29T14:34:47.000Z",
-      "last_outbound_at": "2026-09-29T14:09:33.289Z"
+      "last_outbound_at": "2026-10-07T13:08:30.999Z"
     },
     {
       "id": "conv-1790632026769-vpkk",
@@ -181176,6 +181176,15 @@
       "status": "sent",
       "template_name": "presupuesto",
       "wa_id": "1a1167932f88c39d"
+    },
+    {
+      "id": "m-1791378510999-kzg7",
+      "conversation_id": "conv-email-1a0e94c0cd62",
+      "direction": "out",
+      "body": "Hola Paula, ¿cómo estás?\n\nNo te enviamos todavía el presupuesto porque necesitamos saber qué colección te interesa para poder cotizarte correctamente.\n\nTenemos dos opciones:\n\n* **Colección Madera:** pisos de madera noble prefinished.\n* **Línea H2O:** pisos con sistema click.\n\nSi nos contás cuál de las dos te interesa, avanzamos con el presupuesto.\n\n¡Muchas gracias!",
+      "ts": "2026-10-07T13:08:30.999Z",
+      "status": "sent",
+      "wa_id": "1a1167ad430e7d8c"
     }
   ],
   "templates": [
