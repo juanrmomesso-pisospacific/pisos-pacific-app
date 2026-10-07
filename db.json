@@ -150688,6 +150688,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-06T21:02:50.000Z",
       "last_touch_at": "2026-10-06T21:02:50.000Z"
+    },
+    {
+      "id": "lead-instagram-1791336879293",
+      "name": "@cam_sci",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-07T01:34:37.458Z",
+      "last_touch_at": "2026-10-07T01:34:37.458Z"
     }
   ],
   "conversations": [
@@ -158750,6 +158766,20 @@
       "email_subject": "Quick Shipping Rate Comparison",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-06T21:02:50.000Z"
+    },
+    {
+      "id": "conv-1791336879292-7yya",
+      "channel": "instagram",
+      "contact_id": "4560128560934402",
+      "contact_name": "@cam_sci",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1791336879293",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-07T01:34:37.458Z",
+      "last_message_preview": "Hola! me darían info para colocación de pisos PVC",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-07T01:34:37.458Z"
     }
   ],
   "messages": [
@@ -180985,6 +181015,14 @@
       "body": "Genial",
       "ts": "2026-10-06T21:56:44.597Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791336879293-79xi",
+      "conversation_id": "conv-1791336879292-7yya",
+      "direction": "in",
+      "body": "Hola! me darían info para colocación de pisos PVC",
+      "ts": "2026-10-07T01:34:37.458Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -192874,7 +192912,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc4NjgyMTM5MTQyMTI1MDM2OTM3MzE0ODgwNzE2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc4NzA1MjA4Njk3NDQ4NTI0NzMxMDY1NDYwMzI2NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc4NzA1Nzg1NTA2ODQ0MjkxMTQ3NjYzOTg1ODY4OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0NDA5MTc3NjU1MjMyMjY4MzE2NzEwMTI5OTk4MjMzNgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0NDA5MTc3NjU1MjMyMjY4MzE2NzEwMTI5OTk4MjMzNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0NDMzMjkyODI3NTkzNTgzMjEwNzQ3OTI1NDE3MTY0OAZDZD"
     ],
     "last_weekly_reminder": "2026-10-02T12:18:43.959Z",
     "warehouses": [
