@@ -159384,11 +159384,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791206633783",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-10-05T21:59:29.134Z",
+      "unread_count": 3,
+      "last_message_at": "2026-10-07T17:03:35.200Z",
       "last_message_preview": "👏",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-05T21:59:29.134Z"
+      "last_inbound_at": "2026-10-07T17:03:35.200Z"
     },
     {
       "id": "conv-1791231510199-4gjh",
@@ -181886,6 +181886,14 @@
       "body": "✉️ Re: Precio\n\nPodrías decirme los precios? Cual me aconsejas para 2 dormitorios, aprox\r\n20m2? Gs.\r\n\r\nEl mié, 7 oct 2026 a la(s) 10:01 a.m., Pisos Pacific (info@pisospacific.com)\r\nescribió:\r\n\r\n> Hola Walter, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a prueba de agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación. También\r\n> compartinos la dirección de entrega así la agregamos en la cotización.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Equipo Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-10-07T15:20:10.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791392616078-bct2",
+      "conversation_id": "conv-1791206633783-ctsl",
+      "direction": "in",
+      "body": "👏",
+      "ts": "2026-10-07T17:03:35.200Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -193821,7 +193829,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0NDMzMjkyODI3NTkzNTgzMjEwNzQ3OTI1NDE3MTY0OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA1MDQ5NzEwOTMwOTM2NjozMzA0NDYzNDk0MDIyMTcyMzkwMjIxNDAxNzE2NDI0NzA0MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0NTE3MDg0Mjk4MDgwODA0MTc2NzE1OTMwODc0Njc1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0NTE3MDkzNDE1NTExMzQ1MTQxNzcwNDEyOTg4ODI1NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0NTE3MDkzNDE1NTExMzQ1MTQxNzcwNDEyOTg4ODI1NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA0NTM2MTEwODEyODIyNzA4MzY3MTkxMTE1OTMwMDA5NgZDZD"
     ],
     "last_weekly_reminder": "2026-10-02T12:18:43.959Z",
     "warehouses": [
