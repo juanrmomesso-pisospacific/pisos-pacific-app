@@ -178,7 +178,7 @@
       "active": true,
       "margin": 94.4,
       "stock": 425.20000000000005,
-      "reservedStock": 71.5,
+      "reservedStock": 152.5,
       "subLine": "Saldos Obra Grande",
       "shortName": "Roble 12cm Veta Tallada",
       "thicknessMm": 10,
@@ -1883,7 +1883,7 @@
       "active": true,
       "margin": 172.9,
       "stock": 0,
-      "reservedStock": 8061.63,
+      "reservedStock": 8141.63,
       "subLine": "Colocación Piso",
       "shortName": "Colocación Prefinished Sobre Manta",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15093,
+      "reservedStock": 15094,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -11743,7 +11743,7 @@
       ],
       "zoned": false,
       "discount_total": 675,
-      "status": "Programado",
+      "status": "En proceso",
       "created_at": "2026-06-15T18:28:23.174Z",
       "has_iva": true,
       "financial_position": {
@@ -11761,6 +11761,12 @@
           "from": "Confirmado",
           "to": "Programado",
           "at": "2026-08-14T13:31:07.482Z",
+          "by": "Admin User"
+        },
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-10-07T14:45:45.890Z",
           "by": "Admin User"
         }
       ]
@@ -17520,6 +17526,86 @@
           "by": "Admin User"
         }
       ]
+    },
+    {
+      "id": "local-sale-1791384336873-z0ax",
+      "quote_id": "local-1789570468049-bys3q",
+      "quote_number": "A2207",
+      "title": "Cotización Romina Di Landro",
+      "description": "Madera - 12 cm Roble - Veta Tallada + 2 más",
+      "internal_notes": "",
+      "public_notes": "Se deben verificar medidas en obra.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-muy7zco9-7vbc",
+      "client_name": "Romina Di Landro",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "1167604206",
+      "client_address": "Olivos",
+      "contract_total": 4460,
+      "items": [
+        {
+          "product_id": "PROD-007",
+          "sku": "PROD-007",
+          "description": "Madera - 12 cm Roble - Veta Tallada",
+          "quantity": 81,
+          "unit_price": 70,
+          "cost": 36,
+          "category": "Pisos de Madera",
+          "disc_kind": "amount",
+          "disc_value": 2900,
+          "total": 5670,
+          "discount": 2900,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-107",
+          "sku": "SERV-107",
+          "description": "Servicio - Colocación Prefinished Sobre Manta",
+          "quantity": 80,
+          "unit_price": 20,
+          "cost": 7.33,
+          "category": "Servicio",
+          "disc_value": 0,
+          "total": 1600,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 90,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 90,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 2900,
+      "status": "Confirmado",
+      "created_at": "2026-10-07T14:45:36.873Z",
+      "has_iva": false,
+      "iva_mode": "none",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 4460
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -36826,7 +36912,7 @@
     },
     {
       "id": "local-1789570468049-bys3q",
-      "client_id": "",
+      "client_id": "CLI-muy7zco9-7vbc",
       "client_name": "Romina Di Landro",
       "client_dni": "",
       "client_email": "",
@@ -36893,8 +36979,9 @@
       "currency": "USD",
       "created_at": "2026-09-16T14:54:27.645Z",
       "quote_number": "A2207",
-      "status": "DRAFT",
-      "lead_id": "local-1789570377808-x4lfi"
+      "status": "Aceptado",
+      "lead_id": "local-1789570377808-x4lfi",
+      "sale_id": "local-sale-1791384336873-z0ax"
     },
     {
       "id": "local-1789580130173-29j5l",
@@ -44765,6 +44852,22 @@
       "notes": null,
       "name": "Martina Iglesias",
       "updated_at": "2026-10-07T13:34:44.408Z"
+    },
+    {
+      "id": "CLI-muy7zco9-7vbc",
+      "type": "client",
+      "active": true,
+      "name": "Romina Di Landro",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        "1167604206"
+      ],
+      "addresses": [
+        "Olivos"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-07T14:45:36.873Z"
     }
   ],
   "expenses": [],
@@ -159359,7 +159462,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791336879293",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-10-07T14:11:45.848Z",
       "last_message_preview": "si precio y si colocan",
       "last_message_direction": "in",
@@ -190188,6 +190291,33 @@
       "product_id": "PROD-007",
       "sku": "PROD-007",
       "qty": -48.6,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-07T14:45:31.718Z",
+      "type": "quote_reserve",
+      "ref": "local-1789570468049-bys3q",
+      "product_id": "PROD-007",
+      "sku": "PROD-007",
+      "qty": 81,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-07T14:45:31.718Z",
+      "type": "quote_reserve",
+      "ref": "local-1789570468049-bys3q",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": 80,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-07T14:45:31.718Z",
+      "type": "quote_reserve",
+      "ref": "local-1789570468049-bys3q",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 1,
       "warehouse_id": "main"
     }
   ],
