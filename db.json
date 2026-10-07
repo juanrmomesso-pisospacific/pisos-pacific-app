@@ -41691,6 +41691,51 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a0e487ef0c5",
       "share_token": "68949e039c64e99311dd0dc5"
+    },
+    {
+      "id": "local-1791379410632-wpw5t",
+      "client_id": "",
+      "client_name": "Guillermo Santipolio",
+      "client_dni": "",
+      "client_email": "santipoguille@gmail.com",
+      "client_phone": "",
+      "client_address": "",
+      "internal_notes": "Email: Precio — Necesito entre18 y 20 m2 . Podrian pasarme precios? Gracias",
+      "public_notes": "El costo del envío puede variar según la empresa de transporte elegida. Trabajamos habitualmente con Vía Cargo y Andesmar, aunque también podemos coordinar el despacho con el expreso que indique el cliente.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "OPCION 1 - Roble veta tallada Natural",
+      "has_iva": true,
+      "price": 10781.1,
+      "zoned": false,
+      "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed",
+      "items": [
+        {
+          "product_id": "PROD-201",
+          "sku": "PROD-201",
+          "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed",
+          "quantity": 100,
+          "unit_price": 99,
+          "cost": 34.01,
+          "category": "Pisos de Madera",
+          "disc_value": 10,
+          "total": 9900,
+          "discount": 990,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 990,
+      "discount_amount": 990,
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "created_at": "2026-10-07T13:23:30.459Z",
+      "quote_number": "A9743",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a103669d6a6"
     }
   ],
   "clients": [
@@ -150563,10 +150608,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: Informacion de precios. — Hola. Es para una superficie de 100mts aprox.\r\n\r\nNecesitariab precios de distintas opciones.\r\nGracias\r\n\r\nGuillermo",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "",
       "created_at": "2026-10-03T20:13:26.000Z",
-      "last_touch_at": "2026-10-05T14:25:55.000Z"
+      "last_touch_at": "2026-10-07T13:23:30.717Z"
     },
     {
       "id": "lead-instagram-1791067179018",
