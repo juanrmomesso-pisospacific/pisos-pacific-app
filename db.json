@@ -158763,11 +158763,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791257087859",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-06T03:24:46.262Z",
-      "last_message_preview": "Hola~",
+      "unread_count": 1,
+      "last_message_at": "2026-10-07T06:07:29.558Z",
+      "last_message_preview": "¡Hola! Soy Mike, de una fábrica de pisos SPC y LVT en China. ¡Un placer conocerte! Si se puede, ¿tu empresa tiene planes de importar pisos d",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-06T03:24:46.262Z"
+      "last_inbound_at": "2026-10-07T06:07:29.558Z"
     },
     {
       "id": "conv-email-1a11306c9583",
@@ -181063,6 +181063,14 @@
       "body": "✉️ Precio\n\nNecesito entre18 y 20 m2 . Podrian pasarme precios? Gracias",
       "ts": "2026-10-07T01:36:18.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791353250388-f8y5",
+      "conversation_id": "conv-1791257087859-l5as",
+      "direction": "in",
+      "body": "¡Hola! Soy Mike, de una fábrica de pisos SPC y LVT en China. ¡Un placer conocerte! Si se puede, ¿tu empresa tiene planes de importar pisos desde China? 😊",
+      "ts": "2026-10-07T06:07:29.558Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -192953,7 +192961,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc4NzA1MjA4Njk3NDQ4NTI0NzMxMDY1NDYwMzI2NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI4NjU4MzkzOTkzNTgzNjU2NjozMzA0Mzc4NzA1Nzg1NTA2ODQ0MjkxMTQ3NjYzOTg1ODY4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTcyMTIxNTE3NDM1MTE0MTozMzA0NDA5MTc3NjU1MjMyMjY4MzE2NzEwMTI5OTk4MjMzNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0NDMzMjkyODI3NTkzNTgzMjEwNzQ3OTI1NDE3MTY0OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0NDMzMjkyODI3NTkzNTgzMjEwNzQ3OTI1NDE3MTY0OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTA1MDQ5NzEwOTMwOTM2NjozMzA0NDYzNDk0MDIyMTcyMzkwMjIxNDAxNzE2NDI0NzA0MAZDZD"
     ],
     "last_weekly_reminder": "2026-10-02T12:18:43.959Z",
     "warehouses": [
