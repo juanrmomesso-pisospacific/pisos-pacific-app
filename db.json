@@ -158070,12 +158070,12 @@
       "linked_lead_id": "lead-email-1a0d87653b80",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-28T11:34:36.000Z",
-      "last_message_preview": "Hola Victoria!\r\nNecesito tu asesoramiento!\r\nDebo cubrir 15mtrs2, en mi dormitorio, busco algo de alto tránsito. Y que\r\ntengas en oferta!\r\nGr",
+      "last_message_at": "2026-10-07T13:10:03.138Z",
+      "last_message_preview": "Hola Luciana, ¿cómo estás? Perdón por la demora en responder.\n\nEn ese caso, la Colección H2O sería la opción ideal. El valor es de USD 38 + ",
       "email_subject": "Precios de pisos en oferta",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-09-28T11:34:36.000Z",
-      "last_outbound_at": "2026-09-25T13:25:52.788Z"
+      "last_outbound_at": "2026-10-07T13:10:03.138Z"
     },
     {
       "id": "conv-1790344958890-tirt",
@@ -181185,6 +181185,15 @@
       "ts": "2026-10-07T13:08:30.999Z",
       "status": "sent",
       "wa_id": "1a1167ad430e7d8c"
+    },
+    {
+      "id": "m-1791378603138-9wum",
+      "conversation_id": "conv-email-1a0d87653b80",
+      "direction": "out",
+      "body": "Hola Luciana, ¿cómo estás? Perdón por la demora en responder.\n\nEn ese caso, la Colección H2O sería la opción ideal. El valor es de USD 38 + IVA por m² y actualmente tenemos un 10% de descuento.\n\nCualquier consulta, quedo a disposición.",
+      "ts": "2026-10-07T13:10:03.138Z",
+      "status": "sent",
+      "wa_id": "1a1167c3decd4944"
     }
   ],
   "templates": [
