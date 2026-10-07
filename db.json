@@ -44435,6 +44435,18 @@
       "notes": null,
       "name": "Juan Etchemendy",
       "updated_at": "2026-10-05T16:46:07.710Z"
+    },
+    {
+      "id": "CLI-muy5g7g8-kqas",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Martina Iglesias",
+      "updated_at": "2026-10-07T13:34:44.408Z"
     }
   ],
   "expenses": [],
