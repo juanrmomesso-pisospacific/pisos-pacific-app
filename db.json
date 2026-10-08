@@ -159955,11 +159955,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791479628835",
       "status": "open",
-      "unread_count": 5,
-      "last_message_at": "2026-10-08T17:15:06.864Z",
-      "last_message_preview": "Estoy yendo a la zona de olivos y quería saber si es posible pasar x las muestras?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-08T17:15:06.864Z"
+      "unread_count": 0,
+      "last_message_at": "2026-10-08T19:41:39.291Z",
+      "last_message_preview": "A qué hora podrías pasar?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-08T17:15:06.864Z",
+      "last_outbound_at": "2026-10-08T19:41:39.291Z"
     }
   ],
   "messages": [
@@ -182534,6 +182535,36 @@
       "body": "Estoy yendo a la zona de olivos y quería saber si es posible pasar x las muestras?",
       "ts": "2026-10-08T17:15:06.864Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791488489166-3s2v",
+      "conversation_id": "conv-1791479628834-5rh4",
+      "direction": "out",
+      "body": "Hola!",
+      "ts": "2026-10-08T19:41:28.703Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0NzEyOTY2MjExNzY3NzQ1NjM5ODQ2NTk1NzM2MzcxMgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1791488494697-ozcg",
+      "conversation_id": "conv-1791479628834-5rh4",
+      "direction": "out",
+      "body": "Estamos acá!",
+      "ts": "2026-10-08T19:41:34.306Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0NzEyOTc2NTQ3NDYxODQ4MDY5NjQyMDI3NTg0NzE2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1791488499804-t5i5",
+      "conversation_id": "conv-1791479628834-5rh4",
+      "direction": "out",
+      "body": "A qué hora podrías pasar?",
+      "ts": "2026-10-08T19:41:39.291Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0NzEyOTg1NzQyNjg1OTk4MTQyMzQ0NDMwNzczODYyNAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
