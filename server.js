@@ -18,7 +18,6 @@ import { findClientMatch } from './integrations/client-match.mjs';
 import { normProd } from './integrations/product-match.mjs';
 import { touchConv } from './integrations/conv.mjs';
 import { generatePdf } from './pdf/render.mjs';
-import { montoALetras } from './pdf/num2words.mjs';
 import { INSPECCION_GROUPS } from './pdf/inspeccion.mjs';
 import { computeCommission as computeResellerCommission } from './integrations/reseller.mjs';
 
@@ -438,9 +437,7 @@ if (!Array.isArray(db.product_aliases)) db.product_aliases = [];
   if (db.products.some(p => p.sku === 'PROD-026')) {
     let ch = false;
     if (db.settings.receipt_next == null) { db.settings.receipt_next = 112; ch = true; }
-    if (db.settings.receipt_signature == null) { db.settings.receipt_signature = 'firma-juan.png'; ch = true; }
-    if (db.settings.receipt_signer == null) { db.settings.receipt_signer = 'Juan Rodriguez Momesso'; ch = true; }
-    if (ch) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log('Config recibos: N° inicial + firma'); }
+    if (ch) { try { fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2)); } catch { /* noop */ } console.log('Config recibos: N° inicial'); }
   }
 }
 
@@ -2913,10 +2910,8 @@ app.post('/api/sales/:id/receipt', requireAdmin, (req, res) => {
     db.receipts.push(rec);
   }
   rec.amount = amount; rec.currency = currency; rec.method = method; rec.date = date;
-  rec.client = s.client_name || '';
-  rec.concept = String(req.body?.concept || '').trim() || defaultReceiptConcept(s);
-  // La aclaración es quien firma: por defecto el firmante configurado (dueño de la firma), no la empresa.
-  rec.signer = String(req.body?.signer || '').trim() || db.settings.receipt_signer || s.seller_name || companyCfg().name;
+  // Observaciones del recibo: lo que escriba el usuario (vacío = sin bloque Observaciones).
+  rec.concept = String(req.body?.concept || '').trim();
   save();
   res.json({ no: rec.no });
 });
@@ -3160,33 +3155,86 @@ function presupuestoData(rec) {
   if (!hasItemDisc && discount > 0) rows.push(['Descuento', '—', '—', '-' + money(discount)]);
   return { ...base, mode: 'single', rows };
 }
-// Concepto por defecto del recibo (editable al emitir). "Pago de venta N° X por anticipo/saldo de <producto>".
-function defaultReceiptConcept(s) {
-  const floor = (s.items || []).find(it => { const p = db.products.find(x => x.sku === it.sku); return p && p.stockTrack; });
-  const prod = floor ? (floor.description || floor.category || 'productos') : ((s.items || [])[0]?.description || 'productos');
-  const paid = Number(s.financial_position?.total_paid) || 0;
-  const etapa = paid < (Number(s.contract_total) || 0) ? 'anticipo' : 'saldo';
-  return `Pago de venta N° ${s.quote_number || s.id} por ${etapa} de ${prod}.`;
+// Nº de recibo mostrado: punto de venta (fiscal.puntos_venta[0] o 0001) + secuencial a 8 dígitos.
+// Ej: 0001-00000112. Interno/no fiscal — el formato imita el talonario sin ser un CAE de ARCA.
+function fmtReceiptNo(no) {
+  const pv = String(db.settings.fiscal?.puntos_venta?.[0] ?? '0001').padStart(4, '0');
+  return `N° ${pv}-${String(Number(no) || 0).padStart(8, '0')}`;
 }
-// Datos del recibo → PDF (doc_type 'recibo'). Marca ACUDESIGN si el cobro es en pesos (paneles).
+// Datos del recibo → PDF (doc_type 'recibo', handoff "Recibo de Pago"). El "plan de pagos" se
+// DERIVA de los cobros reales de la venta (cada cobro = fila pagada) + una fila "Pendiente" por el
+// saldo. Marca Pacific/Global Build (USD) o ACUDESIGN (ARS, paneles). IVA incluido si la venta lo tiene.
 function reciboData(rec) {
   const loc = db.settings.locale || 'es-AR';
+  const s = db.sales.find(x => x.id === rec.sale_id) || {};
+  const cli = db.clients.find(c => c.id === s.client_id) || {};
   const curr = rec.currency === 'ARS' ? 'ARS' : 'USD';
-  const total = curr === 'ARS'
-    ? '$ ' + Number(rec.amount || 0).toLocaleString(loc, { maximumFractionDigits: 2 })
-    : 'u$ ' + Number(rec.amount || 0).toLocaleString(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const brand = brandFor(curr);
+  const nf = new Intl.NumberFormat(loc, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const fmt = (n) => `${curr} ${nf.format(Number(n) || 0)}`;
+  const d = (iso) => iso ? new Date(iso).toLocaleDateString(loc, { day: '2-digit', month: '2-digit', year: 'numeric' }) : '';
+
+  // Cobros reales de la venta, en la moneda de la venta (cashflow con finanzas, o pagos directos).
+  const cfC = db.cashflow.filter(m => m.flow === 'Ingreso' && m.sale_ref === s.quote_number)
+    .map(m => ({ ref: m.id, amt: curr === 'ARS' ? (Number(m.amount_ars) || 0) : (Number(m.amount_usd) || 0), date: m.date }));
+  let pays = cfC.length ? cfC : (s.payments || []).map((p, i) => ({ ref: `pay-${i}`, amt: Number(p.amount) || 0, date: p.ts }));
+  if (!pays.length) pays = [{ ref: rec.cobro_ref, amt: Number(rec.amount) || 0, date: rec.date }];
+  pays.sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
+
+  const total = Number(s.contract_total) || pays.reduce((a, p) => a + p.amt, 0);
+  const paid = pays.reduce((a, p) => a + p.amt, 0);
+  const saldo = Math.max(0, total - paid);
+  const conIva = !!(s.has_iva || s.iva_mode === '21' || Number(s.iva_amount) > 0);
+  const rate = taxRate();
+  const neto = (n) => conIva ? n / (1 + rate) : n;
+  const ivaOf = (n) => n - neto(n);
+
+  const rows = pays.map((p, i) => ({
+    n: String(i + 1).padStart(2, '0'),
+    neto: fmt(neto(p.amt)), iva: fmt(ivaOf(p.amt)), total: fmt(p.amt),
+    estado: d(p.date), color: '#1A1815', weight: p.ref === rec.cobro_ref ? 'semi' : 'reg',
+  }));
+  if (saldo > 0.5) rows.push({
+    n: String(pays.length + 1).padStart(2, '0'),
+    neto: fmt(neto(saldo)), iva: fmt(ivaOf(saldo)), total: fmt(saldo),
+    estado: 'Pendiente', color: '#9E978E', weight: 'reg',
+  });
+
+  const curIdx = pays.findIndex(p => p.ref === rec.cobro_ref);
+  const curAmt = (pays[curIdx] || {}).amt ?? (Number(rec.amount) || 0);
+  const nTot = rows.length;
+  const pagoLinea = (nTot === 1 ? 'Pago único' : `Pago ${(curIdx >= 0 ? curIdx + 1 : 1)} de ${nTot}`) + (conIva ? ' · IVA incluido' : '');
+
+  // Emisor fiscal: Global Build SRL (USD) o AcuDesign (ARS). CUIT solo si está cargado. Lee
+  // db.settings.fiscal directo (con default propio) para NO depender del scaffolding ARCA.
+  const f = { razon_social: 'GLOBAL BUILD SRL', cuit: '', ...(db.settings.fiscal || {}) };
+  const empresaName = curr === 'ARS' ? (brand.empresa.name || 'AcuDesign') : (f.razon_social || companyCfg().name);
+  const empresaLine = [empresaName, (curr === 'ARS' ? '' : f.cuit) && `CUIT ${f.cuit}`].filter(Boolean).join(' · ');
+  // Cliente: razón social/CUIT si es RI; si no, nombre + DNI.
+  const clienteId = cli.cuit ? `CUIT ${cli.cuit}` : ((cli.dni || s.client_dni) ? `DNI ${cli.dni || s.client_dni}` : '');
+  const clienteDir = (cli.addresses && cli.addresses[0]) || s.client_address || '';
+
   return {
     doc_type: 'recibo',
-    fecha: rec.date ? new Date(rec.date).toLocaleDateString(loc) : new Date().toLocaleDateString(loc),
-    numero: String(rec.no).padStart(6, '0'),
-    client: rec.client || '',
-    words: montoALetras(rec.amount, curr),
-    method: String(rec.method || 'Efectivo').toUpperCase(),
-    concept: rec.concept || '',
-    total,
-    signer: rec.signer || companyCfg().name,
-    logo: brandFor(curr).logoDark,
-    signature: db.settings.receipt_signature || null,   // PNG de firma (si el dueño lo carga)
+    logo: curr === 'ARS' ? brand.logoDark : 'pacific_logo_black.png',
+    empresaLine,
+    numero: fmtReceiptNo(rec.no),
+    copiaLabel: rec.copia === 'duplicado' ? ' · DUPLICADO' : '',
+    fecha: d(rec.date) || d(new Date().toISOString()),
+    clienteName: cli.razon_social || s.client_name || cli.name || '',
+    clienteId, clienteDir,
+    obraDir: s.client_address || clienteDir || '',
+    obraL2: s.quote_number ? `Presupuesto N° ${s.quote_number}` : '',
+    obraL3: s.id && s.id !== s.quote_number ? `Pedido N° ${s.id}` : '',
+    conIva, ivaPct: `${Math.round(rate * 100)}%`,
+    montoPago: fmt(curAmt), pagoNeto: fmt(neto(curAmt)), pagoIva: fmt(ivaOf(curAmt)),
+    pagoLinea,
+    metodoLinea: rec.method ? String(rec.method) : '',
+    rows,
+    total: fmt(total), totalIva: fmt(ivaOf(total)), pagado: fmt(paid), saldo: fmt(saldo),
+    observaciones: rec.concept || '',
+    firmaEmpresa: `Firma y aclaración · ${empresaName}`,
+    web: brand.empresa.web || companyCfg().web,
   };
 }
 // Nombre de archivo seguro para Content-Disposition: sin acentos ni caracteres ilegales.

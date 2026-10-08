@@ -781,8 +781,8 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
                     </div>
                     {receiptFor === m.id && (
                       <div className="rounded-md border border-dashed border-border p-2 mt-1 space-y-1.5 bg-muted/20">
-                        <div className="text-[10px] uppercase tracking-wide text-muted-foreground">Concepto (opcional · vacío = automático)</div>
-                        <Input value={receiptConcept} onChange={(e) => setReceiptConcept(e.target.value)} placeholder="Pago de venta N°… (automático)" className="h-8 text-xs" />
+                        <div className="text-[10px] uppercase tracking-wide text-muted-foreground">Observaciones (opcional)</div>
+                        <Input value={receiptConcept} onChange={(e) => setReceiptConcept(e.target.value)} placeholder="Ej: El saldo se abona antes de la entrega…" className="h-8 text-xs" />
                         <div className="flex items-center gap-2">
                           <Button size="sm" className="h-7" disabled={mintReceipt.busy} onClick={async () => {
                             const r = await mintReceipt.run(sale.id, { cobro_ref: m.id, concept: receiptConcept.trim() || undefined })

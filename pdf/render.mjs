@@ -381,30 +381,122 @@ export async function remitoPdf(data) {
   return toBuffer(doc);
 }
 
-// Recibo de cobro (fondo blanco, logo oscuro). Layout del modelo: fecha + N° arriba a la
-// derecha; Recibí de / La suma de / forma de pago / Por concepto de / Total; firma + aclaración.
+// Recibo de pago (handoff "Recibo de Pago", oct-2026, alta fidelidad). Fondo blanco, líneas de
+// 1px, sin cajas ni fondos de color. Espacio de diseño propio A4 a 96dpi (794×1123 px) — se usa
+// la escala sRPX en vez de PX (el resto de la app dibuja en 720×1018). Fuente Inter (Gotham no
+// licenciada). Bloques: encabezado · cliente/obra · pago recibido (con desglose IVA) · plan de
+// pagos (filas pagadas + saldo pendiente) + resumen · observaciones · firmas (empresa+cliente,
+// a mano) · pie. Todo en una hoja; las firmas y el pie van anclados abajo. NO es comprobante fiscal.
 export async function reciboPdf(data) {
   const doc = newDoc();
   doc.save();
-  doc.scale(PX);
-  const R = PAGE.w - PADX;
-  try { doc.image(ASSET(data.logo || 'pacific_lockup_arg.png'), PADX, 40, { height: 42 }); } catch { /* sin logo */ }
-  line(doc, `Fecha: ${data.fecha || ''}`, R, 62, { size: 12.5, align: 'right', color: C.ink });
-  line(doc, `Recibo N: ${data.numero || ''}`, R, 82, { size: 12.5, align: 'right', color: C.ink });
-  let y = 170;
-  const row = (txt) => { const h = para(doc, txt, PADX, y, BODY_W, { size: 13, color: C.ink }); y += h + 22; };
-  row(`Recibí de: ${data.client || ''}`);
-  row(`La suma de: ${data.words || ''}`);
-  row(`forma de pago: ${data.method || ''}`);
-  row(`Por concepto de: ${data.concept || ''}`);
-  line(doc, `Total: ${data.total || ''}`, PADX, y, { size: 14, font: 'semi', color: C.ink });
-  y += 70;
-  line(doc, 'Firma y aclaración:', PADX, y, { size: 13, color: C.ink });
-  y += 22;
-  if (data.signature) { try { doc.image(ASSET(data.signature), PADX, y, { height: 62 }); } catch { /* sin firma */ } }
-  y += 70;
-  hline(doc, PADX, y, PADX + 230, C.ink2, 0.8);
-  line(doc, data.signer || '', PADX, y + 7, { size: 12, color: C.ink });
+  const sRPX = 595.28 / 794;                 // A4 width / 794px de diseño (96dpi)
+  doc.scale(sRPX);
+  const I = { i900: '#1A1815', i800: '#262320', i700: '#3D3935', i500: '#7A746C', i400: '#9E978E', i300: '#C4BEB6', i200: '#E5E1DC', i150: '#EDE9E4' };
+  const LX = 64, RX = 730, CW = RX - LX;      // padding lateral 64 → ancho útil 666
+  const eyebrow = (txt, x, y, color = I.i500, em = 0.18) =>
+    line(doc, txt, x, y, { font: 'semi', size: 9.5, cs: 9.5 * em, color });
+
+  // --- 1. Encabezado ---
+  try { doc.image(ASSET(data.logo || 'pacific_logo_black.png'), LX, 56, { width: 150 }); } catch { /* sin logo */ }
+  if (data.empresaLine) line(doc, data.empresaLine, LX, 92, { size: 11, color: I.i500 });
+  line(doc, `RECIBO${data.copiaLabel || ''}`, RX, 56, { font: 'semi', size: 9.5, cs: 9.5 * 0.2, color: I.i900, align: 'right' });
+  line(doc, data.numero || '', RX, 72, { size: 11, color: I.i500, align: 'right' });
+  line(doc, data.fecha || '', RX, 88, { size: 11, color: I.i500, align: 'right' });
+
+  // --- 2. Cliente / Obra ---
+  let y = 140;
+  const colW2 = (CW - 40) / 2, obraX = LX + colW2 + 40;
+  eyebrow('CLIENTE', LX, y); eyebrow('OBRA', obraX, y);
+  const idLine = (x, name, l2, l3) => {
+    let yy = y + 20;
+    line(doc, name || '', x, yy, { size: 13, color: I.i900 }); yy += 19;
+    if (l2) { line(doc, l2, x, yy, { size: 11, color: I.i800 }); yy += 16; }
+    if (l3) para(doc, l3, x, yy, colW2, { size: 11, color: I.i800 });
+  };
+  idLine(LX, data.clienteName, data.clienteId, data.clienteDir);
+  idLine(obraX, data.obraDir, data.obraL2, data.obraL3);
+  y += 20 + 19 + 16 + 24;                     // alto del bloque cliente/obra
+
+  // --- 3. Pago recibido ---
+  hline(doc, LX, y, RX, I.i900, 1); const y3 = y + 28;
+  eyebrow('RECIBIMOS', LX, y3);
+  line(doc, data.montoPago || '', LX, y3 + 14, { size: 40, color: I.i900 });
+  line(doc, data.pagoLinea || '', LX, y3 + 66, { size: 11, color: I.i800 });
+  if (data.metodoLinea) line(doc, data.metodoLinea, LX, y3 + 82, { size: 11, color: I.i500 });
+  if (data.conIva) {
+    const bL = RX - 260;
+    const irow = (lbl, val, yy, top) => {
+      if (top) hline(doc, bL, yy - 6, RX, I.i200, 1);
+      line(doc, lbl, bL, yy, { size: 11, color: top ? I.i900 : I.i500, font: top ? 'semi' : 'reg' });
+      line(doc, val, RX, yy, { size: 11, color: I.i900, font: top ? 'semi' : 'reg', align: 'right' });
+    };
+    irow('Importe neto', data.pagoNeto, y3 + 34);
+    irow(`IVA ${data.ivaPct}`, data.pagoIva, y3 + 51);
+    irow('Total', data.montoPago, y3 + 74, true);
+  }
+  y = y3 + 130;
+
+  // --- 4. Plan de pagos ---
+  eyebrow('PLAN DE PAGOS', LX, y); y += 24;
+  const iva = !!data.conIva;
+  // columnas (right edges). Con IVA: PAGO|NETO|IVA|TOTAL|PAGADO ; sin: PAGO|IMPORTE|PAGADO.
+  const c1R = LX + 202.5, c2R = LX + 357, c3R = LX + 511.5, c4R = RX;   // con IVA
+  const impR = LX + 357, pagR = RX;                                      // sin IVA
+  const hz = { font: 'semi', size: 9, cs: 9 * 0.14, color: I.i900 };
+  line(doc, 'PAGO', LX, y, hz);
+  if (iva) {
+    line(doc, 'NETO', c1R, y, { ...hz, align: 'right' });
+    line(doc, 'IVA', c2R, y, { ...hz, align: 'right' });
+    line(doc, 'TOTAL', c3R, y, { ...hz, align: 'right' });
+    line(doc, 'PAGADO', c4R, y, { ...hz, align: 'right' });
+  } else {
+    line(doc, 'IMPORTE', impR, y, { ...hz, align: 'right' });
+    line(doc, 'PAGADO', pagR, y, { ...hz, align: 'right' });
+  }
+  y += 14; hline(doc, LX, y, RX, I.i900, 1); y += 9;
+  for (const c of (data.rows || [])) {
+    const o = { size: 11, color: c.color, font: c.weight || 'reg' };
+    line(doc, c.n, LX, y, o);
+    if (iva) {
+      line(doc, c.neto, c1R, y, { ...o, align: 'right' });
+      line(doc, c.iva, c2R, y, { ...o, align: 'right' });
+      line(doc, c.total, c3R, y, { ...o, align: 'right' });
+      line(doc, c.estado, c4R, y, { ...o, align: 'right' });
+    } else {
+      line(doc, c.total, impR, y, { ...o, align: 'right' });
+      line(doc, c.estado, pagR, y, { ...o, align: 'right' });
+    }
+    y += 18; hline(doc, LX, y, RX, I.i150, 1); y += 9;
+  }
+  // Resumen (derecha, 260px)
+  y += 11; const sL = RX - 260;
+  const srow = (lbl, val, hot) => {
+    if (hot) { hline(doc, sL, y, RX, I.i900, 1); y += 8; }
+    line(doc, lbl, sL, y, { size: 11, color: hot ? I.i900 : I.i500, font: hot ? 'semi' : 'reg' });
+    line(doc, val, RX, y, { size: 11, color: I.i900, font: hot ? 'semi' : 'reg', align: 'right' });
+    y += 17;
+  };
+  srow('Total del pedido', data.total);
+  if (iva) srow(`IVA incluido (${data.ivaPct})`, data.totalIva);
+  srow('Pagado a la fecha', data.pagado);
+  srow('Saldo pendiente', data.saldo, true);
+
+  // --- 5. Observaciones (opcional) ---
+  if (data.observaciones) {
+    y += 24; eyebrow('OBSERVACIONES', LX, y);
+    para(doc, String(data.observaciones), LX, y + 16, CW, { size: 11, color: I.i800 });
+  }
+
+  // --- 6. Firmas + 7. Pie (anclados al pie de la hoja) ---
+  const footY = 1123 - 44 - 10, signY = footY - 48;
+  const colWS = (CW - 56) / 2, col2S = LX + colWS + 56;
+  hline(doc, LX, signY, LX + colWS, I.i300, 1);
+  hline(doc, col2S, signY, col2S + colWS, I.i300, 1);
+  line(doc, data.firmaEmpresa || 'Firma y aclaración', LX, signY + 6, { size: 11, color: I.i500 });
+  line(doc, 'Firma y aclaración · Cliente', col2S, signY + 6, { size: 11, color: I.i500 });
+  line(doc, 'Documento no válido como factura.', LX, footY, { size: 9.5, color: I.i400 });
+  if (data.web) line(doc, data.web, RX, footY, { size: 9.5, color: I.i400, align: 'right' });
   doc.restore();
   return toBuffer(doc);
 }
