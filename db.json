@@ -17692,6 +17692,136 @@
           "by": "Admin User"
         }
       ]
+    },
+    {
+      "id": "local-sale-1791488923925-qrvj",
+      "quote_id": "local-1790957118804-75cko",
+      "quote_number": "A4114",
+      "title": "Obra Bellini",
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 6 más",
+      "internal_notes": "",
+      "public_notes": "Presupuesto incluye desarmado de piso existente. Carpeta liviana y nivelada de 2cm y colocación de pisos y zócalos con los materiales e insumos incluidos. \n\nNo incluye descarga ni desecho del piso existente. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-muzy90k5-p42r",
+      "client_name": "Sol- CH Estudio",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": " 11 6435-1398",
+      "client_address": "Palermo",
+      "contract_total": 4602.2108,
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 47.9,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 1820.2,
+          "discount": 182.02,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 47.9,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 718.5,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-123",
+          "sku": "SERV-123",
+          "description": "Retiro de Piso Existente - Alfombra",
+          "quantity": 36,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 187.20000000000002,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-115",
+          "sku": "SERV-115",
+          "description": "Servicio - Nivelación de Carpeta - incluye Materiales",
+          "quantity": 36,
+          "unit_price": 20,
+          "cost": 10,
+          "category": "Servicio",
+          "total": 720,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-080",
+          "sku": "PROD-080",
+          "description": "Zócalo MDF - A Medida (moldura y medida a definir)",
+          "quantity": 33,
+          "unit_price": 6,
+          "cost": 3.43,
+          "category": "Zócalos",
+          "total": 198,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-129",
+          "sku": "SERV-129",
+          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+          "quantity": 33,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 171.6,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 170,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 170,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 182.02,
+      "status": "Confirmado",
+      "created_at": "2026-10-08T19:48:43.925Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 4602.2108
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Juan Rodriguez Momesso",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -41095,7 +41225,7 @@
     },
     {
       "id": "local-1790957118804-75cko",
-      "client_id": "",
+      "client_id": "CLI-muzy90k5-p42r",
       "client_name": "Sol- CH Estudio",
       "client_dni": "",
       "client_email": "",
@@ -41212,8 +41342,9 @@
       "currency": "USD",
       "created_at": "2026-10-02T16:05:18.434Z",
       "quote_number": "A4114",
-      "status": "SENT",
-      "lead_id": "local-1790871400999-f0zd6"
+      "status": "Aceptado",
+      "lead_id": "local-1790871400999-f0zd6",
+      "sale_id": "local-sale-1791488923925-qrvj"
     },
     {
       "id": "local-1790958088520-phetq",
@@ -45074,6 +45205,22 @@
       ],
       "notes": null,
       "updated_at": "2026-10-07T14:45:36.873Z"
+    },
+    {
+      "id": "CLI-muzy90k5-p42r",
+      "type": "client",
+      "active": true,
+      "name": "Sol- CH Estudio",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        " 11 6435-1398"
+      ],
+      "addresses": [
+        "Palermo"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-08T19:48:43.925Z"
     }
   ],
   "expenses": [],
