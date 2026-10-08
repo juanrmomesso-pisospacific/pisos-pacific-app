@@ -141618,6 +141618,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-muyt2291-001"
+    },
+    {
+      "id": "local-1791422581883-muv12",
+      "flow": "Ingreso",
+      "date": "2026-10-07T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Arq. Julieta Piñeiro",
+      "counterparty_type": "client",
+      "description": "Cobro - Arq. Julieta Piñeiro",
+      "sale_ref": "A1513",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 799,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
