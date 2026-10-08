@@ -151532,7 +151532,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-07T01:36:18.000Z",
-      "last_touch_at": "2026-10-07T15:20:10.000Z"
+      "last_touch_at": "2026-10-08T12:00:56.000Z"
     },
     {
       "id": "local-1791380302476-0q9se",
@@ -159741,12 +159741,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a114e1af46f",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-08T01:17:56.561Z",
-      "last_message_preview": "Hola, ¿cómo estás?\n\nPara superficies de 20 m² no trabajamos con colocación, ya que nuestro servicio de colocación es a partir de los 40 m².\n",
+      "unread_count": 1,
+      "last_message_at": "2026-10-08T12:00:56.000Z",
+      "last_message_preview": "Muchas gracias.\r\n\r\nEl mié, 7 de oct de 2026, 22:17, Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola, ¿cómo estás?\r\n>\r\n> Para supe",
       "email_subject": "Precio",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-07T15:20:10.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-08T12:00:56.000Z",
       "last_outbound_at": "2026-10-08T01:17:56.561Z"
     },
     {
@@ -182228,6 +182228,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: f8f5ca0a709d4710b7878f75737cbf73\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-06 00:00:00 UTC to 2026-10-07 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-08T08:26:35.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a11b638ccc3",
+      "conversation_id": "conv-email-1a114e1af46f",
+      "direction": "in",
+      "body": "✉️ Re: Precio\n\nMuchas gracias.\r\n\r\nEl mié, 7 de oct de 2026, 22:17, Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola, ¿cómo estás?\r\n>\r\n> Para superficies de 20 m² no trabajamos con colocación, ya que nuestro\r\n> servicio de colocación es a partir de los 40 m².\r\n>\r\n> De todas formas, podemos recomendarte un equipo de colocadores de\r\n> confianza para que puedas realizar la obra.\r\n>\r\n> Si te interesa, podemos cotizarte y venderte únicamente el material.\r\n>\r\n> Puede ser:\r\n> - Roble americano 120 X 1200 mm USD 40 m2 + iva\r\n>\r\n> - Roble Europeo 190 x 1900 mm USD 68 + IVA m2\r\n>\r\n> - Roble natural veta tallada 190 x 1900 USD 90 + IVA m2\r\n>\r\n> Quedamos a disposición.\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-10-08T12:00:56.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -192044,7 +192052,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-08T00:35:35.269Z",
     "gmail_seen_ids": [
-      "19faa8c3175c9273",
       "19faa8b1c6c4af63",
       "19faa8aac0cfc4d7",
       "19faa88a75148bc9",
@@ -192843,7 +192850,8 @@
       "1a11933aa04f5807",
       "1a1197bbd2043290",
       "1a11a9f1b26b7fa5",
-      "1a11aee863bb4c50"
+      "1a11aee863bb4c50",
+      "1a11b638ccc32546"
     ],
     "cash_sessions": {
       "1136982222": {
