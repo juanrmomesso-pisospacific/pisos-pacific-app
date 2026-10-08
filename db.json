@@ -15813,7 +15813,7 @@
       "client_email": "",
       "client_phone": "+54 9 11 4178-0018",
       "client_address": "Santa Teresa Lote 283",
-      "contract_total": 7724.3616999999995,
+      "contract_total": 6384,
       "items": [
         {
           "product_id": "PROD-027",
@@ -15954,12 +15954,12 @@
       "discount_total": 771.18,
       "status": "Finalizado",
       "created_at": "2026-08-26T21:21:29.897Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
-        "total_paid": 0,
-        "balance_due": 7724.3616999999995
+        "total_invoiced": 6384,
+        "total_paid": 3000,
+        "balance_due": 3384
       },
       "stock_reserved": false,
       "stock_deducted": true,
@@ -15986,7 +15986,8 @@
           "at": "2026-09-29T21:12:38.542Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "iva_amount": 0
     },
     {
       "id": "local-sale-1788005505785-ibt1",
