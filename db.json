@@ -159629,12 +159629,12 @@
       "linked_lead_id": "lead-email-1a114e1af46f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-07T15:20:10.000Z",
-      "last_message_preview": "Podrías decirme los precios? Cual me aconsejas para 2 dormitorios, aprox\r\n20m2? Gs.\r\n\r\nEl mié, 7 oct 2026 a la(s) 10:01 a.m., Pisos Pacific ",
+      "last_message_at": "2026-10-08T01:17:56.561Z",
+      "last_message_preview": "Hola, ¿cómo estás?\n\nPara superficies de 20 m² no trabajamos con colocación, ya que nuestro servicio de colocación es a partir de los 40 m².\n",
       "email_subject": "Precio",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-07T15:20:10.000Z",
-      "last_outbound_at": "2026-10-07T13:00:56.585Z"
+      "last_outbound_at": "2026-10-08T01:17:56.561Z"
     },
     {
       "id": "conv-email-1a1178ece000",
@@ -182067,6 +182067,15 @@
       "ts": "2026-10-08T01:14:00.661Z",
       "status": "sent",
       "wa_id": "1a119130962ca317"
+    },
+    {
+      "id": "m-1791422276561-38rp",
+      "conversation_id": "conv-email-1a114e1af46f",
+      "direction": "out",
+      "body": "Hola, ¿cómo estás?\n\nPara superficies de 20 m² no trabajamos con colocación, ya que nuestro servicio de colocación es a partir de los 40 m².\n\nDe todas formas, podemos recomendarte un equipo de colocadores de confianza para que puedas realizar la obra.\n\nSi te interesa, podemos cotizarte y venderte únicamente el material.\n\nPuede ser:\n- Roble americano 120 X 1200 mm USD 40 m2 + iva\n\n- Roble Europeo 190 x 1900 mm USD 68 + IVA m2\n\n- Roble natural veta tallada 190 x 1900 USD 90 + IVA m2\n\nQuedamos a disposición.",
+      "ts": "2026-10-08T01:17:56.561Z",
+      "status": "sent",
+      "wa_id": "1a11916a24ac8096"
     }
   ],
   "templates": [
