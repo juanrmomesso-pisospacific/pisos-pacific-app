@@ -196080,6 +196080,15 @@
       "sale_id": "local-sale-1791398004778-c5bh",
       "notes": "Olivos",
       "created_at": "2026-10-07T19:45:33.783Z"
+    },
+    {
+      "id": "local-1791484156602-m8hwl",
+      "type": "medicion",
+      "title": "Medicion Nacho Verona",
+      "due_date": "2026-10-08",
+      "assigned_seller": "Juan Rodriguez Momesso",
+      "status": "pendiente",
+      "created_at": "2026-10-08T18:29:16.376Z"
     }
   ],
   "password_resets": {},
