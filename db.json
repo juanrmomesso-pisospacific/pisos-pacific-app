@@ -158829,14 +158829,15 @@
       "contact_name": "Luciana Galeazzi",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0d87653b80",
-      "status": "open",
-      "unread_count": 1,
+      "status": "closed",
+      "unread_count": 0,
       "last_message_at": "2026-10-07T13:10:33.000Z",
       "last_message_preview": "Gracias!\r\nYa compré!\r\n\r\nEl El mié, 7 oct 2026 a la(s) 10:10 a. m., Pisos Pacific <\r\ninfo@pisospacific.com> escribió:\r\n\r\n> Hola Luciana, ¿cóm",
       "email_subject": "Precios de pisos en oferta",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-07T13:10:33.000Z",
-      "last_outbound_at": "2026-10-07T13:10:03.138Z"
+      "last_outbound_at": "2026-10-07T13:10:03.138Z",
+      "ignored": true
     },
     {
       "id": "conv-1790344958890-tirt",
@@ -159627,7 +159628,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a114e1af46f",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-07T15:20:10.000Z",
       "last_message_preview": "Podrías decirme los precios? Cual me aconsejas para 2 dormitorios, aprox\r\n20m2? Gs.\r\n\r\nEl mié, 7 oct 2026 a la(s) 10:01 a.m., Pisos Pacific ",
       "email_subject": "Precio",
