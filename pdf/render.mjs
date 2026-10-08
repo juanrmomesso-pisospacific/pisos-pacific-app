@@ -70,6 +70,28 @@ function para(doc, str, x, y, w, { font = 'reg', size = 12, color = C.ink, draw 
 const hline = (doc, x1, y, x2, color = C.hair, lw = 1) =>
   doc.moveTo(x1, y).lineTo(x2, y).lineWidth(lw).strokeColor(color).stroke();
 
+// Medios de pago de la entidad del país (handoff "Medios de pago por país", oct-2026).
+// Config estructurada de la operación (empresa.payment); se arma 1–2 líneas omitiendo lo que
+// falte. Sin razón social (ni dirección/teléfono) → [] y no se dibuja el bloque.
+// L1: "razón social · dirección · Teléfono: tel"
+// L2 (solo si hay transferencia.banco): "Para pagos por transferencia: banco · Cuenta No: … · CBU: … · Alias: …"
+function paymentLines(p) {
+  if (!p || typeof p !== 'object') return [];
+  const s = (v) => String(v ?? '').trim();
+  const l1 = [s(p.razon_social), s(p.direccion), s(p.telefono) && `Teléfono: ${s(p.telefono)}`].filter(Boolean);
+  if (!l1.length) return [];
+  const lines = [l1.join(' · ')];
+  const t = p.transferencia;
+  if (t && s(t.banco)) {
+    const l2 = [`Para pagos por transferencia: ${s(t.banco)}`,
+      s(t.cuenta) && `Cuenta No: ${s(t.cuenta)}`,
+      s(t.cbu) && `CBU: ${s(t.cbu)}`,
+      s(t.alias) && `Alias: ${s(t.alias)}`].filter(Boolean);
+    lines.push(l2.join(' · '));
+  }
+  return lines;
+}
+
 // Banda oscura superior (común a presupuesto y remito): lockup + título + meta.
 // meta = [{ t, hot }] — los "hot" van en semibold blanco pleno. Devuelve la altura.
 function drawMasthead(doc, title, meta = [], logo = 'pacific_lockup_arg_white.png') {
@@ -259,16 +281,15 @@ export async function presupuestoPdf(data) {
       line(doc, empresa.web || 'pisospacific.com', w, y + 8.5 * 1.25 + 4 + 2, { font: 'semi', size: 10.5, color: C.ink2, cs: 0.42, align: 'right' });
     }
     y += 8.5 * 1.25 + 4 + 12.5 * 1.25;
-    // Datos bancarios para transferencia (aclaratoria, config de la operación).
-    // Solo aparece si la operación lo tiene cargado (empresa.bank_note); AR lo deja vacío.
-    if (empresa.bank_note) {
-      y += 10;
-      if (draw) hline(doc, 0, y, w, C.hair, 1);
-      y += 11;
-      if (draw) line(doc, 'DATOS PARA TRANSFERENCIA', 0, y, { font: 'semi', size: 8.5, color: C.ink3, cs: 1.02 });
-      const by = y + 8.5 * 1.25 + 3;
-      const bh = para(doc, String(empresa.bank_note), 0, by, w, { size: 10.5, color: C.ink2, draw });
-      y = by + bh;
+    // Medios de pago de la entidad del país: al pie, debajo de Contacto, gris chico,
+    // sin eyebrow/caja/línea (14px de separación). Sin datos configurados → no se dibuja.
+    const payLines = paymentLines(empresa.payment);
+    if (payLines.length) {
+      y += 14;                                        // separación footer ↔ bloque
+      for (const ln of payLines) {
+        const h = para(doc, ln, 0, y, w, { size: 8.5, color: '#7A746C', draw });   // --ink-500 del handoff
+        y += h + 1;                                   // gap 1px entre líneas
+      }
     }
     return y - y0;
   };

@@ -16,9 +16,13 @@ import { KeyRound, Trash2 } from "lucide-react"
 
 type MpSettings = { enabled: boolean; access_token: string; public_key: string }
 type Seller = { name: string; phone?: string }
+type PaymentInfo = {
+  razon_social?: string; direccion?: string; telefono?: string
+  transferencia?: { banco?: string; cuenta?: string; cbu?: string; alias?: string }
+}
 type Settings = {
   integrations?: { mercadopago?: MpSettings }
-  company?: { name?: string; web?: string; email?: string; warranty?: string; fx_note?: string; bank_note?: string }
+  company?: { name?: string; web?: string; email?: string; warranty?: string; fx_note?: string; payment?: PaymentInfo }
   tax?: { rate?: number; label?: string }
   currency?: { local?: string; fx_provider?: string; fx_rate?: number }
   locale?: string
@@ -76,7 +80,12 @@ const MODULE_META: { key: string; label: string; desc: string }[] = [
   { key: "reportes", label: "Reportes", desc: "Reportes avanzados." },
 ]
 function OperationSection({ settings }: { settings: Settings }) {
-  const [company, setCompany] = useState({ name: "", web: "", email: "", bank_note: "", ...settings.company })
+  const [company, setCompany] = useState({ name: "", web: "", email: "", ...settings.company })
+  const [payment, setPayment] = useState(() => {
+    const p = settings.company?.payment ?? {}, t = p.transferencia ?? {}
+    return { razon_social: p.razon_social ?? "", direccion: p.direccion ?? "", telefono: p.telefono ?? "",
+             banco: t.banco ?? "", cuenta: t.cuenta ?? "", cbu: t.cbu ?? "", alias: t.alias ?? "" }
+  })
   const [taxLabel, setTaxLabel] = useState(settings.tax?.label ?? "IVA 21%")
   const [taxPct, setTaxPct] = useState(Math.round(((settings.tax?.rate ?? 0.21) * 100) * 100) / 100)
   const [curLocal, setCurLocal] = useState(settings.currency?.local ?? "ARS")
@@ -100,8 +109,12 @@ function OperationSection({ settings }: { settings: Settings }) {
     }
     setSaving(true); setMsg(null)
     try {
+      const payClean = {
+        razon_social: payment.razon_social.trim(), direccion: payment.direccion.trim(), telefono: payment.telefono.trim(),
+        transferencia: { banco: payment.banco.trim(), cuenta: payment.cuenta.trim(), cbu: payment.cbu.trim(), alias: payment.alias.trim() },
+      }
       await patchSettings({
-        company,
+        company: { ...company, payment: payClean },
         tax: { label: taxLabel, rate: Math.max(0, Number(taxPct) || 0) / 100 },
         currency: { local: curLocal.trim().toUpperCase() || "ARS", fx_provider: fxProvider, fx_rate: 1 },
         locale: locale.trim() || "es-AR",
@@ -131,14 +144,29 @@ function OperationSection({ settings }: { settings: Settings }) {
             <label className="text-xs space-y-1"><span className="text-muted-foreground">Email</span>
               <Input value={company.email} onChange={(e) => setCompany({ ...company, email: e.target.value })} /></label>
           </div>
-          <label className="text-xs space-y-1 block mt-2"><span className="text-muted-foreground">Datos bancarios (base del PDF de cotización)</span>
-            <textarea
-              value={company.bank_note ?? ""}
-              onChange={(e) => setCompany({ ...company, bank_note: e.target.value })}
-              rows={2}
-              placeholder="Ej.: Banco Aliado // Cuenta Corriente No. 1510056025 // Pacific Northwest 18, S.A."
-              className="w-full rounded-md border border-input bg-transparent px-2 py-1.5 text-sm" />
-            <span className="text-muted-foreground">Si queda vacío no aparece en el PDF.</span></label>
+          <div className="mt-3 space-y-2">
+            <div className="text-sm font-medium">Medios de pago (pie del PDF de cotización)</div>
+            <div className="text-xs text-muted-foreground">Datos de la entidad del país. Salen al pie del presupuesto en gris chico. Los campos vacíos no se imprimen; sin razón social no aparece el bloque.</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              <label className="text-xs space-y-1"><span className="text-muted-foreground">Razón social</span>
+                <Input value={payment.razon_social} onChange={(e) => setPayment({ ...payment, razon_social: e.target.value })} /></label>
+              <label className="text-xs space-y-1"><span className="text-muted-foreground">Dirección</span>
+                <Input value={payment.direccion} onChange={(e) => setPayment({ ...payment, direccion: e.target.value })} /></label>
+              <label className="text-xs space-y-1"><span className="text-muted-foreground">Teléfono</span>
+                <Input value={payment.telefono} onChange={(e) => setPayment({ ...payment, telefono: e.target.value })} /></label>
+            </div>
+            <div className="text-xs text-muted-foreground pt-1">Transferencia (2ª línea; se muestra solo si hay banco)</div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <label className="text-xs space-y-1"><span className="text-muted-foreground">Banco</span>
+                <Input value={payment.banco} onChange={(e) => setPayment({ ...payment, banco: e.target.value })} /></label>
+              <label className="text-xs space-y-1"><span className="text-muted-foreground">Cuenta No.</span>
+                <Input value={payment.cuenta} onChange={(e) => setPayment({ ...payment, cuenta: e.target.value })} /></label>
+              <label className="text-xs space-y-1"><span className="text-muted-foreground">CBU</span>
+                <Input value={payment.cbu} onChange={(e) => setPayment({ ...payment, cbu: e.target.value })} /></label>
+              <label className="text-xs space-y-1"><span className="text-muted-foreground">Alias</span>
+                <Input value={payment.alias} onChange={(e) => setPayment({ ...payment, alias: e.target.value })} /></label>
+            </div>
+          </div>
         </div>
         <div>
           <div className="text-sm font-medium mb-2">Impuesto de las ventas</div>
