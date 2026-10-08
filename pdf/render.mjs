@@ -593,6 +593,21 @@ export async function estadoCuentaPdf(data) {
   if (data.iva && data.has_iva) totRow(data.iva_label || 'IVA', data.iva);
   totRow('Total', data.total, true);
 
+  // --- Plan de pagos (cuotas que el cliente tiene que pagar: anticipo + conforme) ---
+  if ((data.cuotas || []).length) {
+    y += 12; hline(doc, PADX, y, PAGE.w - PADX, C.hair); y += 9;
+    line(doc, 'PLAN DE PAGOS', PADX, y, { font: 'semi', size: 8.5, color: C.ink3, cs: 1 });
+    line(doc, 'MONTO', puX, y, { font: 'semi', size: 8, color: C.ink3, align: 'right' });
+    line(doc, 'ESTADO', totX, y, { font: 'semi', size: 8, color: C.ink3, align: 'right' });
+    y += 15;
+    for (const c of data.cuotas) {
+      line(doc, String(c.label || ''), PADX, y, { size: 10.5, color: C.ink });
+      line(doc, String(c.monto || ''), puX, y, { size: 10.5, color: C.ink2, align: 'right' });
+      line(doc, String(c.estado || ''), totX, y, { size: 10.5, color: c.pend ? C.ink3 : C.ink, align: 'right' });
+      y += 16;
+    }
+  }
+
   // --- Cobros ---
   y += 10;
   hline(doc, PADX, y, PAGE.w - PADX, C.hair); y += 9;

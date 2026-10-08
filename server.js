@@ -3161,6 +3161,31 @@ function fmtReceiptNo(no) {
   const pv = String(db.settings.fiscal?.puntos_venta?.[0] ?? '0001').padStart(4, '0');
   return `N° ${pv}-${String(Number(no) || 0).padStart(8, '0')}`;
 }
+// Plan de CUOTAS derivado de la condición de pago ("Anticipo 80% · Conforme 20%") aplicado al
+// total. Cada cuota = {label, pct, amount, estado: paid|partial|pending, date}. Marca pagado/parcial/
+// pendiente aplicando los cobros reales en orden (anticipo primero) y la fecha en que se cubrió.
+// cobros = [{amt, date}]. Si la condición no trae %, cae a una sola cuota "Pago total" por el total.
+function planDeCuotas(paymentTerms, total, cobros) {
+  const txt = String(paymentTerms || 'Anticipo 80% · Conforme 20%');
+  const segs = [...txt.matchAll(/([A-Za-zÁÉÍÓÚÑáéíóúñ][A-Za-zÁÉÍÓÚÑáéíóúñ\s]*?)\s*(\d+(?:[.,]\d+)?)\s*%/g)]
+    .map(m => ({ label: m[1].trim(), pct: parseFloat(m[2].replace(',', '.')) })).filter(x => x.pct > 0);
+  const sumPct = segs.reduce((a, x) => a + x.pct, 0);
+  const cuotas = (segs.length && sumPct > 0)
+    ? segs.map(x => ({ label: x.label, pct: x.pct, amount: total * x.pct / sumPct }))
+    : [{ label: 'Pago total', pct: 100, amount: total }];
+  const sorted = [...(cobros || [])].sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
+  const paidTotal = sorted.reduce((a, x) => a + (Number(x.amt) || 0), 0);
+  let acc = 0;
+  return cuotas.map((c) => {
+    const start = acc, end = acc + c.amount; acc = end;
+    let estado = 'pending', date = null;
+    if (paidTotal >= end - 0.5) {
+      estado = 'paid';
+      let run = 0; for (const x of sorted) { run += Number(x.amt) || 0; if (run >= end - 0.5) { date = x.date; break; } }
+    } else if (paidTotal > start + 0.5) { estado = 'partial'; }
+    return { ...c, estado, date };
+  });
+}
 // Datos del recibo → PDF (doc_type 'recibo', handoff "Recibo de Pago"). El "plan de pagos" se
 // DERIVA de los cobros reales de la venta (cada cobro = fila pagada) + una fila "Pendiente" por el
 // saldo. Marca Pacific/Global Build (USD) o ACUDESIGN (ARS, paneles). IVA incluido si la venta lo tiene.
@@ -3189,21 +3214,25 @@ function reciboData(rec) {
   const neto = (n) => conIva ? n / (1 + rate) : n;
   const ivaOf = (n) => n - neto(n);
 
-  const rows = pays.map((p, i) => ({
+  // Plan de pagos = CUOTAS de la condición de pago (anticipo/conforme), no los cobros sueltos.
+  const cuotas = planDeCuotas(s.payment_terms, total, pays);
+  const estadoCuota = (c) => c.estado === 'paid' ? d(c.date) : c.estado === 'partial' ? 'Parcial' : 'Pendiente';
+  const rows = cuotas.map((c, i) => ({
     n: String(i + 1).padStart(2, '0'),
-    neto: fmt(neto(p.amt)), iva: fmt(ivaOf(p.amt)), total: fmt(p.amt),
-    estado: d(p.date), color: '#1A1815', weight: p.ref === rec.cobro_ref ? 'semi' : 'reg',
+    neto: fmt(neto(c.amount)), iva: fmt(ivaOf(c.amount)), total: fmt(c.amount),
+    estado: estadoCuota(c),
+    color: c.estado === 'pending' ? '#9E978E' : '#1A1815',
+    weight: 'reg',
   }));
-  if (saldo > 0.5) rows.push({
-    n: String(pays.length + 1).padStart(2, '0'),
-    neto: fmt(neto(saldo)), iva: fmt(ivaOf(saldo)), total: fmt(saldo),
-    estado: 'Pendiente', color: '#9E978E', weight: 'reg',
-  });
-
-  const curIdx = pays.findIndex(p => p.ref === rec.cobro_ref);
-  const curAmt = (pays[curIdx] || {}).amt ?? (Number(rec.amount) || 0);
-  const nTot = rows.length;
-  const pagoLinea = (nTot === 1 ? 'Pago único' : `Pago ${(curIdx >= 0 ? curIdx + 1 : 1)} de ${nTot}`) + (conIva ? ' · IVA incluido' : '');
+  // Cuota que cubre ESTE pago (la 1ª no saldada antes de este cobro) → se resalta en negrita.
+  const thisAmt = (pays.find(p => p.ref === rec.cobro_ref) || {}).amt ?? (Number(rec.amount) || 0);
+  const paidBefore = paid - thisAmt;
+  let accB = 0, curCuota = cuotas.length - 1;
+  for (let i = 0; i < cuotas.length; i++) { accB += cuotas[i].amount; if (accB > paidBefore + 0.5) { curCuota = i; break; } }
+  if (rows[curCuota]) rows[curCuota].weight = 'semi';
+  const curAmt = thisAmt;
+  const nTot = cuotas.length;
+  const pagoLinea = (nTot === 1 ? 'Pago único' : `Pago ${curCuota + 1} de ${nTot}`) + (conIva ? ' · IVA incluido' : '');
 
   // Emisor fiscal: Global Build SRL (USD) o AcuDesign (ARS). CUIT solo si está cargado. Lee
   // db.settings.fiscal directo (con default propio) para NO depender del scaffolding ARCA.
@@ -3335,6 +3364,14 @@ function estadoCuentaData(s) {
   const cobros = cobrosRaw.map(c => ({ fecha: c.date ? new Date(c.date).toLocaleDateString(loc) : '', forma: c.forma, monto: money(c.amt) }));
   const cobrado = cobrosRaw.reduce((a, c) => a + c.amt, 0);
   const saldo = Math.max(0, total - cobrado);
+  // Plan de pagos (cuotas de la condición de pago) para mostrarle al cliente qué tiene que pagar.
+  const pctLbl = (p) => Number.isInteger(p) ? `${p}%` : `${p}%`;
+  const cuotas = planDeCuotas(s.payment_terms, total, cobrosRaw).map(c => ({
+    label: c.label === 'Pago total' ? c.label : `${c.label} (${pctLbl(c.pct)})`,
+    monto: money(c.amount),
+    estado: c.estado === 'paid' ? (c.date ? new Date(c.date).toLocaleDateString(loc) : 'Pagado') : c.estado === 'partial' ? 'Parcial' : 'Pendiente',
+    pend: c.estado !== 'paid',
+  }));
   return {
     doc_type: 'estado_cuenta',
     fecha: new Date().toLocaleDateString(loc),
@@ -3343,7 +3380,7 @@ function estadoCuentaData(s) {
     obra: s.title || s.client_address || '',
     rows, has_iva: iva > 0.5, iva_label: taxLabel(),
     subtotal: money(net), descuento: null, iva: money(iva), total: money(total),
-    cobros, cobrado: money(cobrado), saldo: money(saldo),
+    cuotas, cobros, cobrado: money(cobrado), saldo: money(saldo),
     forma_pago: s.payment_terms || 'Anticipo 80% · Conforme 20%',
     empresa: brandFor(curr).empresa, logo: brandFor(curr).logoWhite,
   };
