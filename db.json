@@ -159832,11 +159832,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791476006048",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-08T16:13:24.364Z",
-      "last_message_preview": "Hola Fonde puedo ir a ver los pisos?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-08T16:13:24.364Z"
+      "unread_count": 0,
+      "last_message_at": "2026-10-08T16:24:01.022Z",
+      "last_message_preview": "Hola Rochi cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-08T16:13:24.364Z",
+      "last_outbound_at": "2026-10-08T16:24:01.022Z"
     }
   ],
   "messages": [
@@ -182331,6 +182332,16 @@
       "body": "Hola Fonde puedo ir a ver los pisos?",
       "ts": "2026-10-08T16:13:24.364Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791476641476-p5ss",
+      "conversation_id": "conv-1791476006048-odng",
+      "direction": "out",
+      "body": "Hola Rochi cómo estás?",
+      "ts": "2026-10-08T16:24:01.022Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE4NTU4MTUyNTgwMzIzOTozMzA0NjkxMTExMDk2Mjg4OTc5MzM3ODI3NjgyMTk1ODY1NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
