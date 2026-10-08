@@ -151577,10 +151577,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 3m² · Con Colocación · CP 1430",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-08T01:49:38.000Z",
-      "last_touch_at": "2026-10-08T01:49:38.000Z"
+      "last_touch_at": "2026-10-08T15:43:36.635Z"
     }
   ],
   "conversations": [
@@ -159774,11 +159774,12 @@
       "linked_lead_id": "lead-email-1a11933aa04f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-08T01:49:38.000Z",
-      "last_message_preview": "Formulario web — 3m² · Con Colocación · CP 1430 · La Pampa 4275",
+      "last_message_at": "2026-10-08T15:43:32.891Z",
+      "last_message_preview": "Hola Gustavo como estas?\n\nPara superficies menores a 40 m² no realizamos la colocación. Podemos venderte el material si te interesa pero no ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-08T01:49:38.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-08T01:49:38.000Z",
+      "last_outbound_at": "2026-10-08T15:43:32.891Z"
     }
   ],
   "messages": [
@@ -182236,6 +182237,15 @@
       "body": "✉️ Re: Precio\n\nMuchas gracias.\r\n\r\nEl mié, 7 de oct de 2026, 22:17, Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola, ¿cómo estás?\r\n>\r\n> Para superficies de 20 m² no trabajamos con colocación, ya que nuestro\r\n> servicio de colocación es a partir de los 40 m².\r\n>\r\n> De todas formas, podemos recomendarte un equipo de colocadores de\r\n> confianza para que puedas realizar la obra.\r\n>\r\n> Si te interesa, podemos cotizarte y venderte únicamente el material.\r\n>\r\n> Puede ser:\r\n> - Roble americano 120 X 1200 mm USD 40 m2 + iva\r\n>\r\n> - Roble Europeo 190 x 1900 mm USD 68 + IVA m2\r\n>\r\n> - Roble natural veta tallada 190 x 1900 USD 90 + IVA m2\r\n>\r\n> Quedamos a disposición.\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-10-08T12:00:56.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791474212891-544y",
+      "conversation_id": "conv-email-1a11933aa04f",
+      "direction": "out",
+      "body": "Hola Gustavo como estas?\n\nPara superficies menores a 40 m² no realizamos la colocación. Podemos venderte el material si te interesa pero no realizar el trabajo. \nSaludos, Pisos Pacific",
+      "ts": "2026-10-08T15:43:32.891Z",
+      "status": "sent",
+      "wa_id": "1a11c2f1f842f87e"
     }
   ],
   "templates": [
