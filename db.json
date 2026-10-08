@@ -151879,6 +151879,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-08T17:13:46.782Z",
       "last_touch_at": "2026-10-08T17:13:46.782Z"
+    },
+    {
+      "id": "lead-email-1a11db8c196f",
+      "name": "Erik Suarez",
+      "email": "erik@superiorhousing-uy.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Consulta de costo por m2 — Buenas, como estas? Me gustaria saber el precio por caja y cuantos m2 trae\r\ncada una para el piso Roble Verona (12/1 mm x 190 mm x 1900 mm). Muchas\r\ngracias!\r\nhttps://pisospacific.",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-08T22:53:17.000Z",
+      "last_touch_at": "2026-10-08T22:53:17.000Z"
     }
   ],
   "conversations": [
@@ -160108,6 +160125,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-08T17:15:06.864Z",
       "last_outbound_at": "2026-10-08T19:41:39.291Z"
+    },
+    {
+      "id": "conv-email-1a11db8c196f",
+      "channel": "email",
+      "contact_id": "erik@superiorhousing-uy.com",
+      "contact_name": "Erik Suarez",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a11db8c196f",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-08T22:53:17.000Z",
+      "last_message_preview": "Buenas, como estas? Me gustaria saber el precio por caja y cuantos m2 trae\r\ncada una para el piso Roble Verona (12/1 mm x 190 mm x 1900 mm).",
+      "email_subject": "Consulta de costo por m2",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-08T22:53:17.000Z"
     }
   ],
   "messages": [
@@ -182712,6 +182744,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0NzEyOTg1NzQyNjg1OTk4MTQyMzQ0NDMwNzczODYyNAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a11db8c196f",
+      "conversation_id": "conv-email-1a11db8c196f",
+      "direction": "in",
+      "body": "✉️ Consulta de costo por m2\n\nBuenas, como estas? Me gustaria saber el precio por caja y cuantos m2 trae\r\ncada una para el piso Roble Verona (12/1 mm x 190 mm x 1900 mm). Muchas\r\ngracias!\r\nhttps://pisospacific.com/pisos-madera-natural-ingenieria/roble-verona\r\n<https://api.whatsapp.com/send?phone=59898597271&text=Contacto>\r\n<https://www.facebook.com/Superior-Housing-Uruguay-101646435773062>\r\n<https://www.instagram.com/superiorhousing_uy/>",
+      "ts": "2026-10-08T22:53:17.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -192532,7 +192572,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-08T00:35:35.269Z",
     "gmail_seen_ids": [
-      "19faa8aac0cfc4d7",
       "19faa88a75148bc9",
       "19fab5716ee12c55",
       "19fac2a34f88792a",
@@ -193331,7 +193370,8 @@
       "1a11a9f1b26b7fa5",
       "1a11aee863bb4c50",
       "1a11b638ccc32546",
-      "1a11b7d04a448672"
+      "1a11b7d04a448672",
+      "1a11db8c196f9eca"
     ],
     "cash_sessions": {
       "1136982222": {
