@@ -153300,7 +153300,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f10c540c11",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-08T03:08:12.000Z",
       "last_message_preview": "Hi Victoria,\n\nPlease check and confirm attached the PI.\nVery noted for the end darker boards.\n\nBR\nRala\nTel/WeChat/WhatsApp:008615699576792\n-",
       "email_subject": "Re: PROFORMA INVOICE LAM-PA2601",
@@ -193454,7 +193454,8 @@
       "1a11684c52ca319d",
       "1a11916a24ac8096",
       "1a119130962ca317",
-      "1a11b7d04a448672"
+      "1a11b7d04a448672",
+      "1a11c2f1f842f87e"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
