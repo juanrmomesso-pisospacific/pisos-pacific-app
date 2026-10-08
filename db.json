@@ -143682,7 +143682,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-10-07T12:04:58.000Z"
+      "last_touch_at": "2026-10-08T08:26:35.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -153124,12 +153124,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 62,
-      "last_message_at": "2026-10-07T12:04:58.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-05 00:00:00 UTC to 2026-10-06 00:00:00 UTC.",
+      "unread_count": 63,
+      "last_message_at": "2026-10-08T08:26:35.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-06 00:00:00 UTC to 2026-10-07 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-07T12:04:58.000Z",
+      "last_inbound_at": "2026-10-08T08:26:35.000Z",
       "ignored": true
     },
     {
@@ -182220,6 +182220,14 @@
       "body": "✉️ Re: NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm\n\nHi Victoria,\n\nPlease check and confirm attached the PI.\nVery noted for the end darker boards.\n\nBR\nRala\nTel/WeChat/WhatsApp:008615699576792\n---- Replied Message ----\n| From | Victoria Pisos Pacific<victoria@pisospacific.com> |\n| Date | 10/8/2026 09:34 |\n| To | rala_lam@163.com<rala_lam@163.com> |\n| Cc | 张海晶<merry_lam@126.com> ,\ninfo pisos<info@pisospacific.com> ,\nMike<mike@pisospacific.com> ,\nFrank<frank_ljs@163.com> |\n| Subject | Re: NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm |\n\nHi Rala,\n\nWe will order one 40 ft container.\n\nOrder details:\n\n15 pallets Kitsilano 12/1 – 190 x 1900 x 12/1 mm\n\n9 pallets Verona 12/1 – 190 x 1900 x 12/1 mm\n\nPlease confirm the quantities and availability.\n\nAnd pay attention to the ends of the boards that arrive slightly darker.\n\nBest regards,\nVictoria\n\nEl mar, 15 sept 2026 a las 12:30, Frank (<frank_ljs@163.com>) escribió:\n\nHello Victoria\nWe are happy to see your mail !\nI will arrange and make new PI for you\nAt same time , we will pay more attention and find solutions for your questions\nBR\nFrank\n\n---- 回复的原邮件 ----\n| 发件人 | Victoria Pisos Pacific<victoria@pisospacific.com> |\n| 发送日期 | 2026年09月15日 23:25 |\n| 收件人 | Rala Qin<rala_lam@163.com>,\nMerry Zhang<merry_lam@126.com>,\nFrank <frank_ljs@163.com> |\n| 抄送人 | info pisos<info@pisospacific.com>,\nMiguel G. Collado<mike@pisospacific.com> |\n| 主题 | NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm |\n\nHi Frank/Rala and Mary\n\nWe would like to place a new order, similar to our previous ord",
       "ts": "2026-10-08T03:08:12.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a11a9f1b26b",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: f8f5ca0a709d4710b7878f75737cbf73\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-06 00:00:00 UTC to 2026-10-07 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-10-08T08:26:35.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -192036,7 +192044,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-08T00:35:35.269Z",
     "gmail_seen_ids": [
-      "19faa2e5cad79180",
       "19faa66d0cb9a2f6",
       "19faa8c3175c9273",
       "19faa8b1c6c4af63",
@@ -192835,7 +192842,8 @@
       "1a119119ac541a2b",
       "1a11926430023a86",
       "1a11933aa04f5807",
-      "1a1197bbd2043290"
+      "1a1197bbd2043290",
+      "1a11a9f1b26b7fa5"
     ],
     "cash_sessions": {
       "1136982222": {
