@@ -1110,7 +1110,16 @@
       "web": "pisospacific.com",
       "email": "arieltesone26@gmail.com",
       "warranty": "Válida si la instalación la realiza Pacific",
-      "fx_note": "Valores en dólares (USD)"
+      "fx_note": "Valores en dólares (USD)",
+      "payment": {
+        "razon_social": "Pacific Northwest 18, S.A.",
+        "direccion": "Torre inteligente Credicorp bank calle 50, piso 31",
+        "telefono": "310-4523",
+        "transferencia": {
+          "banco": "Banco Aliado",
+          "cuenta": "1510056025"
+        }
+      }
     },
     "tax": {
       "rate": 0.07,
