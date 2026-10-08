@@ -159727,11 +159727,11 @@
       "linked_lead_id": "lead-instagram-1791336879293",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-07T14:11:45.848Z",
-      "last_message_preview": "si precio y si colocan",
-      "last_message_direction": "in",
+      "last_message_at": "2026-10-08T15:46:25.027Z",
+      "last_message_preview": "Y si hacemos colocaciones a partir de los 40 m2",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-07T14:11:45.848Z",
-      "last_outbound_at": "2026-10-07T13:01:38.557Z"
+      "last_outbound_at": "2026-10-08T15:46:25.027Z"
     },
     {
       "id": "conv-email-1a114e1af46f",
@@ -182246,6 +182246,26 @@
       "ts": "2026-10-08T15:43:32.891Z",
       "status": "sent",
       "wa_id": "1a11c2f1f842f87e"
+    },
+    {
+      "id": "m-1791474376910-jgmx",
+      "conversation_id": "conv-1791336879292-7yya",
+      "direction": "out",
+      "body": "Toda la colección sale usd 38 el m2 + iva",
+      "ts": "2026-10-08T15:46:16.207Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0Njg2OTMzMjUwMDEzNjcwNzkwMzgzODc5MjcxMjE5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1791474385578-yewo",
+      "conversation_id": "conv-1791336879292-7yya",
+      "direction": "out",
+      "body": "Y si hacemos colocaciones a partir de los 40 m2",
+      "ts": "2026-10-08T15:46:25.027Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDE2MzE2MTU5MjI2NTQyNDozMzA0Njg2OTQ5NTIwNTY3Njc2MDA4MzA5MTI2ODA0Mjc1MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
