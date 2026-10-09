@@ -142333,6 +142333,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mv0brxk9-005"
+    },
+    {
+      "id": "local-1791568591010-plmng",
+      "flow": "Ingreso",
+      "date": "2026-10-09T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Arq. Clara Granja",
+      "counterparty_type": "client",
+      "description": "Cobro - Cotización Arq. Clara Granja",
+      "sale_ref": "A5689",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 2600,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
