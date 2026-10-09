@@ -160695,11 +160695,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791583179738",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-09T21:59:37.944Z",
-      "last_message_preview": "📲 Te mencionó en una historia",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-09T21:59:37.944Z"
+      "unread_count": 0,
+      "last_message_at": "2026-10-09T22:13:36.682Z",
+      "last_message_preview": "🔥",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-09T21:59:37.944Z",
+      "last_outbound_at": "2026-10-09T22:13:36.682Z"
     }
   ],
   "messages": [
@@ -183397,6 +183398,16 @@
       "ts": "2026-10-09T22:13:12.138Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzA0ODg5MTM4OTUzNjgzNjk0NjQ0ODMzOTc1NjM4NDI1NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1791584017195-wtud",
+      "conversation_id": "conv-1791583179738-jav7",
+      "direction": "out",
+      "body": "🔥",
+      "ts": "2026-10-09T22:13:36.682Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE2MDUwODY1NzU1NTE5NDozMzA0ODg5MTg0MjI5MDAxNTY5NjAxNjc1ODk5OTYxMzQ0MAZDZD",
       "via": "ig-app"
     }
   ],
