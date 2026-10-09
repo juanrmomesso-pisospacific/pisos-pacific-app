@@ -152047,6 +152047,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-09T01:16:32.000Z",
       "last_touch_at": "2026-10-09T14:03:13.129Z"
+    },
+    {
+      "id": "local-1791555502075-2juov",
+      "name": "Flor Allende",
+      "phone": "+54 9 11 6750-1553",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "Madera prefinished"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Guido 2660 piso 11",
+      "created_at": "2026-10-09T14:18:21.757Z",
+      "last_touch_at": "2026-10-09T14:18:25.807Z"
     }
   ],
   "conversations": [
