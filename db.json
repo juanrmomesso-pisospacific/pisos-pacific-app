@@ -17839,7 +17839,7 @@
       "client_email": "",
       "client_phone": "+54 9 11 3138-3693",
       "client_address": "San Isidro",
-      "contract_total": 3761.4543999999996,
+      "contract_total": 3109,
       "items": [
         {
           "product_id": "PROD-027",
@@ -17928,12 +17928,12 @@
       "discount_total": 259.32,
       "status": "Confirmado",
       "created_at": "2026-10-09T17:00:36.159Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 3109,
         "total_paid": 0,
-        "balance_due": 3761.4543999999996
+        "balance_due": 3109
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -17942,7 +17942,8 @@
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "iva_amount": 0
     }
   ],
   "quotes": [
