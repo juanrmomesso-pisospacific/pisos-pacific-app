@@ -152421,11 +152421,11 @@
       "linked_client_name": null,
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-09-29T16:27:14.779Z",
+      "last_message_at": "2026-10-09T22:13:12.138Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-28T12:22:09.790Z",
-      "last_outbound_at": "2026-09-29T16:27:14.779Z",
+      "last_outbound_at": "2026-10-09T22:13:12.138Z",
       "ignored": true
     },
     {
@@ -183388,6 +183388,16 @@
       "status": "received",
       "media_url": "/uploads/5a8caa9248b9c6fd.jpg",
       "media_type": "image"
+    },
+    {
+      "id": "m-1791583994137-bruk",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-10-09T22:13:12.138Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzA0ODg5MTM4OTUzNjgzNjk0NjQ0ODMzOTc1NjM4NDI1NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
