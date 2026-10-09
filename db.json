@@ -17708,7 +17708,7 @@
       "client_email": "",
       "client_phone": " 11 6435-1398",
       "client_address": "Palermo",
-      "contract_total": 4602.2108,
+      "contract_total": 3803,
       "items": [
         {
           "product_id": "PROD-026",
@@ -17807,12 +17807,12 @@
       "discount_total": 182.02,
       "status": "Confirmado",
       "created_at": "2026-10-08T19:48:43.925Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 3803,
         "total_paid": 0,
-        "balance_due": 4602.2108
+        "balance_due": 3803
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -17821,7 +17821,8 @@
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "iva_amount": 0
     }
   ],
   "quotes": [
