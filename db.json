@@ -17823,6 +17823,126 @@
       "currency": "USD",
       "commission_amount": 0,
       "iva_amount": 0
+    },
+    {
+      "id": "local-sale-1791565236159-ks2t",
+      "quote_id": "local-1785870979071-6qe4h",
+      "quote_number": "A5689",
+      "title": "Cotización Arq. Clara Granja",
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 5 más",
+      "internal_notes": "",
+      "public_notes": "Se deben verificar medidas en obra.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mv17ongf-ce24",
+      "client_name": "Arq. Clara Granja",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 3138-3693",
+      "client_address": "San Isidro",
+      "contract_total": 3761.4543999999996,
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 56.2,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 2135.6,
+          "discount": 213.56,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-201Z",
+          "sku": "PROD-201Z",
+          "description": "Zócalo EPS 70mm - Plain Blanco",
+          "quantity": 42,
+          "unit_price": 4.5,
+          "cost": 2.75,
+          "category": "Zócalos",
+          "total": 189,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 50,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 750,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-129",
+          "sku": "SERV-129",
+          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+          "quantity": 38,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 197.6,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1784069133996-uwvg1",
+          "sku": "PROD - 102983",
+          "description": "H2O HD - Nariz Volada - Canada - Roble Eslavonia XL",
+          "quantity": 2,
+          "unit_price": 30,
+          "cost": 11,
+          "category": "Pisos H2O",
+          "disc_kind": "amount",
+          "disc_value": 10,
+          "total": 60,
+          "discount": 10,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-063",
+          "sku": "PROD-063",
+          "description": "Varilla de Transición - Aluminio",
+          "quantity": 1,
+          "unit_price": 35.76,
+          "cost": 29.8,
+          "category": "Terminaciones",
+          "disc_value": 100,
+          "total": 35.76,
+          "discount": 35.76,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 259.32,
+      "status": "Confirmado",
+      "created_at": "2026-10-09T17:00:36.159Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 3761.4543999999996
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -28574,7 +28694,7 @@
     },
     {
       "id": "local-1785870979071-6qe4h",
-      "client_id": "",
+      "client_id": "CLI-mv17ongf-ce24",
       "client_name": "Arq. Clara Granja",
       "client_dni": "",
       "client_email": "",
@@ -28682,7 +28802,8 @@
       "lead_id": "local-1785870787225-g6a1r",
       "reseller_id": "",
       "reseller_name": "",
-      "currency": "USD"
+      "currency": "USD",
+      "sale_id": "local-sale-1791565236159-ks2t"
     },
     {
       "id": "local-1785873691480-m5lnr",
@@ -45375,6 +45496,22 @@
       ],
       "notes": null,
       "updated_at": "2026-10-08T19:48:43.925Z"
+    },
+    {
+      "id": "CLI-mv17ongf-ce24",
+      "type": "client",
+      "active": true,
+      "name": "Arq. Clara Granja",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        "+54 9 11 3138-3693"
+      ],
+      "addresses": [
+        "San Isidro"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-09T17:00:36.159Z"
     }
   ],
   "expenses": [],
