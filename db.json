@@ -195013,14 +195013,14 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0Njk2NzAwMzI4MTQ0MjQxMTEwMTIzMzg4OTY3MzIxNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0Njk2NzY2NTc3MjI1NjYwNDMzOTg4NDA1MTY2MDgwMAZDZD"
     ],
-    "last_weekly_reminder": "2026-10-02T12:18:43.959Z",
+    "last_weekly_reminder": "2026-10-09T12:05:58.180Z",
     "warehouses": [
       {
         "id": "main",
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-10-08",
+    "last_daily_task_reminder": "2026-10-09",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -195584,7 +195584,7 @@
         "learned_at": "2026-09-26T10:46:00.268Z"
       }
     },
-    "last_daily_pending_digest": "2026-10-08",
+    "last_daily_pending_digest": "2026-10-09",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
