@@ -160286,11 +160286,12 @@
       "linked_lead_id": "lead-email-1a11db8c196f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-08T22:53:17.000Z",
-      "last_message_preview": "Buenas, como estas? Me gustaria saber el precio por caja y cuantos m2 trae\r\ncada una para el piso Roble Verona (12/1 mm x 190 mm x 1900 mm).",
+      "last_message_at": "2026-10-09T14:07:54.085Z",
+      "last_message_preview": "Hola Erik, ¿cómo estás?\n\nTe paso el contacto de Diego, de Mr. Parquet, que están en Uruguay:\n\n+598 93 959 677\n\nYa le avisé que lo ibas a con",
       "email_subject": "Consulta de costo por m2",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-08T22:53:17.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-08T22:53:17.000Z",
+      "last_outbound_at": "2026-10-09T14:07:54.085Z"
     },
     {
       "id": "conv-email-1a11e3bb935f",
@@ -182952,6 +182953,15 @@
       "ts": "2026-10-09T14:03:01.699Z",
       "status": "sent",
       "wa_id": "1a120f974d9346ba"
+    },
+    {
+      "id": "m-1791554874085-fmzp",
+      "conversation_id": "conv-email-1a11db8c196f",
+      "direction": "out",
+      "body": "Hola Erik, ¿cómo estás?\n\nTe paso el contacto de Diego, de Mr. Parquet, que están en Uruguay:\n\n+598 93 959 677\n\nYa le avisé que lo ibas a contactar.\n\n¡Saludos!",
+      "ts": "2026-10-09T14:07:54.085Z",
+      "status": "sent",
+      "wa_id": "1a120fdeb8a7bfe8"
     }
   ],
   "templates": [
@@ -194163,7 +194173,8 @@
       "1a11b7d04a448672",
       "1a11c2f1f842f87e",
       "1a1208e4b7a77dab",
-      "1a1208e4a5752957"
+      "1a1208e4a5752957",
+      "1a120f974d9346ba"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
