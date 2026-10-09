@@ -160270,11 +160270,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791479628835",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-08T19:41:39.291Z",
-      "last_message_preview": "A qué hora podrías pasar?",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-08T17:15:06.864Z",
+      "unread_count": 2,
+      "last_message_at": "2026-10-09T14:01:51.823Z",
+      "last_message_preview": "Gracias igual!!",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-09T14:01:51.823Z",
       "last_outbound_at": "2026-10-08T19:41:39.291Z"
     },
     {
@@ -182926,6 +182926,22 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 34m² · Con Colocación · CP 1416 · Tres Arroyos 2183",
       "ts": "2026-10-09T01:16:32.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791554507540-4nqn",
+      "conversation_id": "conv-1791479628834-5rh4",
+      "direction": "in",
+      "body": "Hola ya hable con Hugo y me dio lo que tenía",
+      "ts": "2026-10-09T14:01:46.602Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1791554512545-sfnv",
+      "conversation_id": "conv-1791479628834-5rh4",
+      "direction": "in",
+      "body": "Gracias igual!!",
+      "ts": "2026-10-09T14:01:51.823Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -195013,7 +195029,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0Njk2NjIyNjEwNTMwMTg1MDIyNjYzNTUzNzY0NTU2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0Njk2NjUyMDkyNjM0OTE3MTMzNzQwMTg0ODU2MTY2NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0Njk2NzAwMzI4MTQ0MjQxMTEwMTIzMzg4OTY3MzIxNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0Njk2NzY2NTc3MjI1NjYwNDMzOTg4NDA1MTY2MDgwMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0Njk2NzY2NTc3MjI1NjYwNDMzOTg4NDA1MTY2MDgwMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0ODM0NzQ3NzQwNDYyOTk5NDY5MTY0OTIzNjYzMTU1MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0ODM0NzU3MzcwNjQ2NjE3NDA0Njc5NTg2MzE2Mjg4MAZDZD"
     ],
     "last_weekly_reminder": "2026-10-09T12:05:58.180Z",
     "warehouses": [
