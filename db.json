@@ -143937,7 +143937,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-22T12:03:51.000Z",
-      "last_touch_at": "2026-09-30T07:04:22.000Z"
+      "last_touch_at": "2026-10-09T15:02:04.000Z"
     },
     {
       "id": "lead-email-19eef49c3872",
@@ -153495,12 +153495,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19eef374d23d",
       "status": "closed",
-      "unread_count": 8,
-      "last_message_at": "2026-09-30T07:04:22.000Z",
-      "last_message_preview": "HI Victoria\n\nUpdated the PI, the PO is 2631\n\nBest regards\nLI\n\n在 2026年9月30日 14:56，leeofchina<leeofchina@163.com> 写道：\n\nHI Victoria\n\nPI attache",
+      "unread_count": 9,
+      "last_message_at": "2026-10-09T15:02:04.000Z",
+      "last_message_preview": "HI Victoria\n\nPI attached for new order, please check and confirm\n\nLI\n\n在 2026年10月8日 08:11，Victoria Pisos Pacific<victoria@pisospacific.com> 写",
       "email_subject": "回复：Pacific Certifications - Request",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-30T07:04:22.000Z",
+      "last_inbound_at": "2026-10-09T15:02:04.000Z",
       "last_outbound_at": "2026-08-07T12:24:21.000Z",
       "ignored": true
     },
@@ -183089,6 +183089,14 @@
       "ts": "2026-10-09T14:07:54.085Z",
       "status": "sent",
       "wa_id": "1a120fdeb8a7bfe8"
+    },
+    {
+      "id": "m-email-1a1212fc934b",
+      "conversation_id": "conv-email-19eef374d23d",
+      "direction": "in",
+      "body": "✉️ 回复：NEW ORDER URUGUAY PDPG 2632 | 2 X 20 CONTAINER\n\nHI Victoria\n\nPI attached for new order, please check and confirm\n\nLI\n\n在 2026年10月8日 08:11，Victoria Pisos Pacific<victoria@pisospacific.com> 写道：\n\nHi Young,\nI hope you are doing well.\n\nPlease find below a new order for Uruguay (PDPG 2632)\nAll items should have a 0.5mm wear layer. URUGUAY TEXTURE 86167 #\n\nCNT 1:\n-10 P Notte XL HD  ZXE 2004 008\n-10 P Eslavonia XL HD LS105-1\n\nCNT 2:\n-10 P Clasico HD TW6151-15 EIR\n-5 P California XL HD ZXE 2004 003\n-5 P Aspen HD TW9531-4\n\nShipping & Packaging Requirements:\n- Box: Pacific Heavy Duty (Grey Box)\n- Click: South America\n- Pallets: Euro Pallets (Important)\n- Patent: No patent\n\nPlease keep us updated on the delivery schedule. If there is any possibility of expediting the container with the Clásico, it would be very helpful for us.\nPlease also ensure strict quality control throughout the production and loading process.\nKindly send us the order confirmation for our final verification.\nBest regards,\nVictoria",
+      "ts": "2026-10-09T15:02:04.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -192909,7 +192917,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-09T02:07:21.513Z",
     "gmail_seen_ids": [
-      "19fad303ffb4d688",
       "19fad2c634a37b3b",
       "19fad5ce18b4be6c",
       "19fadb774bd7dcaf",
@@ -193708,7 +193715,8 @@
       "1a120167a346f742",
       "1a1208e4b7a77dab",
       "1a1208e4a5752957",
-      "1a120a1a59279f61"
+      "1a120a1a59279f61",
+      "1a1212fc934bf39a"
     ],
     "cash_sessions": {
       "1136982222": {
