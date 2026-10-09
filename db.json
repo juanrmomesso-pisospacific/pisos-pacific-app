@@ -152360,7 +152360,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-09T01:16:32.000Z",
-      "last_touch_at": "2026-10-09T14:03:13.129Z"
+      "last_touch_at": "2026-10-09T19:38:39.000Z"
     },
     {
       "id": "local-1791555502075-2juov",
@@ -160648,12 +160648,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a11e3bb935f",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-09T14:03:01.699Z",
-      "last_message_preview": "Hola Cristina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestr",
+      "unread_count": 1,
+      "last_message_at": "2026-10-09T19:38:39.000Z",
+      "last_message_preview": "Hola, Línea H2O, modelo roble Eslavonia Gracias El 9 oct 2026 11:03 am, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: Hola Cristina,",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-09T01:16:32.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-09T19:38:39.000Z",
       "last_outbound_at": "2026-10-09T14:03:01.699Z"
     },
     {
@@ -183340,6 +183340,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 130m² · Con Colocación · CP 1021 · R. Peña 1465",
       "ts": "2026-10-09T18:38:34.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1222ceba95",
+      "conversation_id": "conv-email-1a11e3bb935f",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola, Línea H2O, modelo roble Eslavonia Gracias El 9 oct 2026 11:03 am, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: Hola Cristina, ¡muchas gracias por tu consulta! Para avanzar con el",
+      "ts": "2026-10-09T19:38:39.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -193164,7 +193172,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-09T02:07:21.513Z",
     "gmail_seen_ids": [
-      "19fad5ce18b4be6c",
       "19fadb774bd7dcaf",
       "19fadbe5d4d7de2e",
       "19fadc91d254cbfa",
@@ -193963,7 +193970,8 @@
       "1a1208e4a5752957",
       "1a120a1a59279f61",
       "1a1212fc934bf39a",
-      "1a121f5bcf427646"
+      "1a121f5bcf427646",
+      "1a1222ceba956610"
     ],
     "cash_sessions": {
       "1136982222": {
