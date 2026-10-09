@@ -152394,6 +152394,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-09T18:38:34.000Z",
       "last_touch_at": "2026-10-09T18:38:34.000Z"
+    },
+    {
+      "id": "lead-instagram-1791583179738",
+      "name": "@bmestudio",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-09T21:59:37.944Z",
+      "last_touch_at": "2026-10-09T21:59:37.944Z"
     }
   ],
   "conversations": [
@@ -160670,6 +160686,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-09T18:38:34.000Z"
+    },
+    {
+      "id": "conv-1791583179738-jav7",
+      "channel": "instagram",
+      "contact_id": "3754218628074628",
+      "contact_name": "@bmestudio",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1791583179738",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-09T21:59:37.944Z",
+      "last_message_preview": "📲 Te mencionó en una historia",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-09T21:59:37.944Z"
     }
   ],
   "messages": [
@@ -183348,6 +183378,16 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola, Línea H2O, modelo roble Eslavonia Gracias El 9 oct 2026 11:03 am, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: Hola Cristina, ¡muchas gracias por tu consulta! Para avanzar con el",
       "ts": "2026-10-09T19:38:39.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791583179738-6kkt",
+      "conversation_id": "conv-1791583179738-jav7",
+      "direction": "in",
+      "body": "📲 Te mencionó en una historia",
+      "ts": "2026-10-09T21:59:37.944Z",
+      "status": "received",
+      "media_url": "/uploads/5a8caa9248b9c6fd.jpg",
+      "media_type": "image"
     }
   ],
   "templates": [
@@ -195443,7 +195483,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0Njk2NzAwMzI4MTQ0MjQxMTEwMTIzMzg4OTY3MzIxNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0Njk2NzY2NTc3MjI1NjYwNDMzOTg4NDA1MTY2MDgwMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0ODM0NzQ3NzQwNDYyOTk5NDY5MTY0OTIzNjYzMTU1MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0ODM0NzU3MzcwNjQ2NjE3NDA0Njc5NTg2MzE2Mjg4MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0ODM0NzU3MzcwNjQ2NjE3NDA0Njc5NTg2MzE2Mjg4MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE2MDUwODY1NzU1NTE5NDozMzA0ODg3NjM3MDMwOTA4Mjg5MjM4NDAzMDAyNDUzMTk2OAZDZD"
     ],
     "last_weekly_reminder": "2026-10-09T12:05:58.180Z",
     "warehouses": [
