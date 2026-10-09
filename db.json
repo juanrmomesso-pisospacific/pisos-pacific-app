@@ -152009,10 +152009,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-08T17:13:46.782Z",
-      "last_touch_at": "2026-10-08T17:13:46.782Z"
+      "last_touch_at": "2026-10-09T14:03:25.429Z"
     },
     {
       "id": "lead-email-1a11db8c196f",
@@ -152043,10 +152043,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 34m² · Con Colocación · CP 1416",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-09T01:16:32.000Z",
-      "last_touch_at": "2026-10-09T01:16:32.000Z"
+      "last_touch_at": "2026-10-09T14:03:13.129Z"
     }
   ],
   "conversations": [
@@ -160270,7 +160270,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791479628835",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-10-09T14:01:51.823Z",
       "last_message_preview": "Gracias igual!!",
       "last_message_direction": "in",
@@ -160301,11 +160301,12 @@
       "linked_lead_id": "lead-email-1a11e3bb935f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-09T01:16:32.000Z",
-      "last_message_preview": "Formulario web — 34m² · Con Colocación · CP 1416 · Tres Arroyos 2183",
+      "last_message_at": "2026-10-09T14:03:01.699Z",
+      "last_message_preview": "Hola Cristina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestr",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-09T01:16:32.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-09T01:16:32.000Z",
+      "last_outbound_at": "2026-10-09T14:03:01.699Z"
     }
   ],
   "messages": [
@@ -182942,6 +182943,15 @@
       "body": "Gracias igual!!",
       "ts": "2026-10-09T14:01:51.823Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791554581699-ffqc",
+      "conversation_id": "conv-email-1a11e3bb935f",
+      "direction": "out",
+      "body": "Hola Cristina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-10-09T14:03:01.699Z",
+      "status": "sent",
+      "wa_id": "1a120f974d9346ba"
     }
   ],
   "templates": [
