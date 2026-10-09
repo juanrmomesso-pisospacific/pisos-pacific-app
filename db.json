@@ -152377,6 +152377,23 @@
       "address": "Guido 2660 piso 11",
       "created_at": "2026-10-09T14:18:21.757Z",
       "last_touch_at": "2026-10-09T14:18:25.807Z"
+    },
+    {
+      "id": "lead-email-1a121f5bcf42",
+      "name": "Cynthia Janson",
+      "email": "cynthia.janson@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "R. Peña 1465",
+      "postal_code": "1021",
+      "approx_m2": 130,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 130m² · Con Colocación · CP 1021",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-09T18:38:34.000Z",
+      "last_touch_at": "2026-10-09T18:38:34.000Z"
     }
   ],
   "conversations": [
@@ -160638,6 +160655,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-09T01:16:32.000Z",
       "last_outbound_at": "2026-10-09T14:03:01.699Z"
+    },
+    {
+      "id": "conv-email-1a121f5bcf42",
+      "channel": "email",
+      "contact_id": "cynthia.janson@gmail.com",
+      "contact_name": "Cynthia Janson",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a121f5bcf42",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-09T18:38:34.000Z",
+      "last_message_preview": "Formulario web — 130m² · Con Colocación · CP 1021 · R. Peña 1465",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-09T18:38:34.000Z"
     }
   ],
   "messages": [
@@ -183300,6 +183332,14 @@
       "body": "✉️ 回复：NEW ORDER URUGUAY PDPG 2632 | 2 X 20 CONTAINER\n\nHI Victoria\n\nPI attached for new order, please check and confirm\n\nLI\n\n在 2026年10月8日 08:11，Victoria Pisos Pacific<victoria@pisospacific.com> 写道：\n\nHi Young,\nI hope you are doing well.\n\nPlease find below a new order for Uruguay (PDPG 2632)\nAll items should have a 0.5mm wear layer. URUGUAY TEXTURE 86167 #\n\nCNT 1:\n-10 P Notte XL HD  ZXE 2004 008\n-10 P Eslavonia XL HD LS105-1\n\nCNT 2:\n-10 P Clasico HD TW6151-15 EIR\n-5 P California XL HD ZXE 2004 003\n-5 P Aspen HD TW9531-4\n\nShipping & Packaging Requirements:\n- Box: Pacific Heavy Duty (Grey Box)\n- Click: South America\n- Pallets: Euro Pallets (Important)\n- Patent: No patent\n\nPlease keep us updated on the delivery schedule. If there is any possibility of expediting the container with the Clásico, it would be very helpful for us.\nPlease also ensure strict quality control throughout the production and loading process.\nKindly send us the order confirmation for our final verification.\nBest regards,\nVictoria",
       "ts": "2026-10-09T15:02:04.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a121f5bcf42",
+      "conversation_id": "conv-email-1a121f5bcf42",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 130m² · Con Colocación · CP 1021 · R. Peña 1465",
+      "ts": "2026-10-09T18:38:34.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -193124,7 +193164,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-09T02:07:21.513Z",
     "gmail_seen_ids": [
-      "19fad2c634a37b3b",
       "19fad5ce18b4be6c",
       "19fadb774bd7dcaf",
       "19fadbe5d4d7de2e",
@@ -193923,7 +193962,8 @@
       "1a1208e4b7a77dab",
       "1a1208e4a5752957",
       "1a120a1a59279f61",
-      "1a1212fc934bf39a"
+      "1a1212fc934bf39a",
+      "1a121f5bcf427646"
     ],
     "cash_sessions": {
       "1136982222": {
