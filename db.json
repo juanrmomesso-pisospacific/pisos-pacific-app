@@ -152435,6 +152435,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-09T21:59:37.944Z",
       "last_touch_at": "2026-10-09T21:59:37.944Z"
+    },
+    {
+      "id": "lead-email-1a126c9c805f",
+      "name": "barbara tejero",
+      "email": "barbitejero9@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "obispo oro 345",
+      "postal_code": "5000",
+      "approx_m2": 35,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 35m² · Con Colocación · CP 5000",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-10T17:08:39.000Z",
+      "last_touch_at": "2026-10-10T17:08:39.000Z"
     }
   ],
   "conversations": [
@@ -160726,6 +160743,21 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-09T22:51:07.323Z",
       "last_outbound_at": "2026-10-09T22:13:36.682Z"
+    },
+    {
+      "id": "conv-email-1a126c9c805f",
+      "channel": "email",
+      "contact_id": "barbitejero9@gmail.com",
+      "contact_name": "barbara tejero",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a126c9c805f",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-10T17:08:39.000Z",
+      "last_message_preview": "Formulario web — 35m² · Con Colocación · CP 5000 · obispo oro 345",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-10T17:08:39.000Z"
     }
   ],
   "messages": [
@@ -183536,6 +183568,14 @@
       "body": "Gracias",
       "ts": "2026-10-10T16:34:40.128Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a126c9c805f",
+      "conversation_id": "conv-email-1a126c9c805f",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 35m² · Con Colocación · CP 5000 · obispo oro 345",
+      "ts": "2026-10-10T17:08:39.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -193360,7 +193400,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-10T02:07:32.446Z",
     "gmail_seen_ids": [
-      "19faf49ffcc3ac64",
       "19fafa258ab12f50",
       "19fb17c5bcefee36",
       "19fb21f8fc46754f",
@@ -194159,7 +194198,8 @@
       "1a124d828d9a3983",
       "1a124ea8e6738293",
       "1a1253ffddba4e79",
-      "1a125b4a650025bd"
+      "1a125b4a650025bd",
+      "1a126c9c805f6bf9"
     ],
     "cash_sessions": {
       "1136982222": {
