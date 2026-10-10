@@ -152452,6 +152452,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-10T17:08:39.000Z",
       "last_touch_at": "2026-10-10T17:08:39.000Z"
+    },
+    {
+      "id": "lead-email-1a1278424886",
+      "name": "Natacha",
+      "email": "naa34834530@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Balcarce 190",
+      "postal_code": "1722",
+      "approx_m2": 60,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 60m² · Sin Colocación · CP 1722",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-10T20:32:13.000Z",
+      "last_touch_at": "2026-10-10T20:32:13.000Z"
     }
   ],
   "conversations": [
@@ -160758,6 +160775,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-10T17:08:39.000Z"
+    },
+    {
+      "id": "conv-email-1a1278424886",
+      "channel": "email",
+      "contact_id": "naa34834530@gmail.com",
+      "contact_name": "Natacha",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a1278424886",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-10T20:32:13.000Z",
+      "last_message_preview": "Formulario web — 60m² · Sin Colocación · CP 1722 · Balcarce 190",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-10T20:32:13.000Z"
     }
   ],
   "messages": [
@@ -183584,6 +183616,14 @@
       "body": "Los mejores",
       "ts": "2026-10-10T18:50:06.339Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1278424886",
+      "conversation_id": "conv-email-1a1278424886",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 60m² · Sin Colocación · CP 1722 · Balcarce 190",
+      "ts": "2026-10-10T20:32:13.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -193408,7 +193448,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-10T02:07:32.446Z",
     "gmail_seen_ids": [
-      "19fafa258ab12f50",
       "19fb17c5bcefee36",
       "19fb21f8fc46754f",
       "19fb245c50e071a4",
@@ -194207,7 +194246,8 @@
       "1a124ea8e6738293",
       "1a1253ffddba4e79",
       "1a125b4a650025bd",
-      "1a126c9c805f6bf9"
+      "1a126c9c805f6bf9",
+      "1a12784248867c3e"
     ],
     "cash_sessions": {
       "1136982222": {
