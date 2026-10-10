@@ -157697,11 +157697,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787809597980",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-10-10T13:31:59.636Z",
-      "last_message_preview": "Hola Meg! Los sábados no!",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-10T00:23:19.457Z",
+      "unread_count": 1,
+      "last_message_at": "2026-10-10T16:00:12.716Z",
+      "last_message_preview": "↩️ Reaccionó: ❤",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-10T16:00:12.716Z",
       "last_outbound_at": "2026-10-10T13:31:59.636Z",
       "ignored": true
     },
@@ -183494,6 +183494,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMzA0OTkwODMxMjM3ODUxNzMyNTgyNjI1NTkyMzE4MzYxNgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1791648013614-hxk5",
+      "conversation_id": "conv-1787809597980-13lp",
+      "direction": "in",
+      "body": "↩️ Reaccionó: ❤",
+      "ts": "2026-10-10T16:00:12.716Z",
+      "status": "received"
     }
   ],
   "templates": [
