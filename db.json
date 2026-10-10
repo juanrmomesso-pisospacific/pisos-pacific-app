@@ -160466,11 +160466,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791206633783",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-07T17:03:35.200Z",
+      "unread_count": 1,
+      "last_message_at": "2026-10-10T00:41:00.605Z",
       "last_message_preview": "👏",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-07T17:03:35.200Z"
+      "last_inbound_at": "2026-10-10T00:41:00.605Z"
     },
     {
       "id": "conv-1791231510199-4gjh",
@@ -183425,6 +183425,14 @@
       "body": "Hola! Perdón la hora. Atienen los sábados?",
       "ts": "2026-10-10T00:23:19.457Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791592861532-yt4n",
+      "conversation_id": "conv-1791206633783-ctsl",
+      "direction": "in",
+      "body": "👏",
+      "ts": "2026-10-10T00:41:00.605Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -195522,7 +195530,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0ODM0NzQ3NzQwNDYyOTk5NDY5MTY0OTIzNjYzMTU1MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0OTM2MTU0MjI4NDY3NTozMzA0ODM0NzU3MzcwNjQ2NjE3NDA0Njc5NTg2MzE2Mjg4MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTE2MDUwODY1NzU1NTE5NDozMzA0ODg3NjM3MDMwOTA4Mjg5MjM4NDAzMDAyNDUzMTk2OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMzA0OTAzNTQwOTE1NDk2OTY0MDgzMzY5MzI5OTc2OTM0NAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMzA0OTAzNTQwOTE1NDk2OTY0MDgzMzY5MzI5OTc2OTM0NAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA0OTA1NDk4Mzg4MjIyODYyMzI4NzY3OTA4NDEzNDQwMAZDZD"
     ],
     "last_weekly_reminder": "2026-10-09T12:05:58.180Z",
     "warehouses": [
