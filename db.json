@@ -157697,12 +157697,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1787809597980",
       "status": "closed",
-      "unread_count": 1,
-      "last_message_at": "2026-10-10T00:23:19.457Z",
-      "last_message_preview": "Hola! Perdón la hora. Atienen los sábados?",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-10-10T13:31:59.636Z",
+      "last_message_preview": "Hola Meg! Los sábados no!",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-10T00:23:19.457Z",
-      "last_outbound_at": "2026-08-31T16:55:41.537Z",
+      "last_outbound_at": "2026-10-10T13:31:59.636Z",
       "ignored": true
     },
     {
@@ -183483,6 +183483,16 @@
       "ts": "2026-10-10T13:31:38.897Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODcxNjcwNTY1MDk4MDYzNTozMzA0OTkwNzkyOTgxNTE2Mjg4MzIzNDUzMzE1OTczMTIwMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1791639120363-u7s5",
+      "conversation_id": "conv-1787809597980-13lp",
+      "direction": "out",
+      "body": "Hola Meg! Los sábados no!",
+      "ts": "2026-10-10T13:31:59.636Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMzA0OTkwODMxMjM3ODUxNzMyNTgyNjI1NTkyMzE4MzYxNgZDZD",
       "via": "ig-app"
     }
   ],
