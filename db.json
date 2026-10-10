@@ -153963,12 +153963,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1782322592227",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-10T02:19:29.258Z",
-      "last_message_preview": "Como vende pacific carajooooo",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-10-10T13:31:38.897Z",
+      "last_message_preview": "Jajajajaj",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-10T02:19:29.258Z",
-      "last_outbound_at": "2026-07-09T19:22:59.754Z"
+      "last_outbound_at": "2026-10-10T13:31:38.897Z"
     },
     {
       "id": "conv-email-19efea816c74",
@@ -183474,6 +183474,16 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 9bb6a5b485464d52ac363f561333daa8\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-08 00:00:00 UTC to 2026-10-09 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-10T08:25:12.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791639099420-i23n",
+      "conversation_id": "conv-1782322592227-8xky",
+      "direction": "out",
+      "body": "Jajajajaj",
+      "ts": "2026-10-10T13:31:38.897Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODcxNjcwNTY1MDk4MDYzNTozMzA0OTkwNzkyOTgxNTE2Mjg4MzIzNDUzMzE1OTczMTIwMAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
