@@ -152494,6 +152494,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-10T20:32:13.000Z",
       "last_touch_at": "2026-10-10T20:32:13.000Z"
+    },
+    {
+      "id": "lead-email-1a12bb9827a1",
+      "name": "amalia nuñez",
+      "email": "amnunez666@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "San Luis 2594",
+      "postal_code": "B7600",
+      "approx_m2": 14,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 14m² · Con Colocación · CP B7600",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-11T16:08:59.000Z",
+      "last_touch_at": "2026-10-11T16:08:59.000Z"
     }
   ],
   "conversations": [
@@ -160815,6 +160832,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-10T20:32:13.000Z"
+    },
+    {
+      "id": "conv-email-1a12bb9827a1",
+      "channel": "email",
+      "contact_id": "amnunez666@gmail.com",
+      "contact_name": "amalia nuñez",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a12bb9827a1",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-11T16:08:59.000Z",
+      "last_message_preview": "Formulario web — 14m² · Con Colocación · CP B7600 · San Luis 2594",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-11T16:08:59.000Z"
     }
   ],
   "messages": [
@@ -183657,6 +183689,14 @@
       "body": "✉️ Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 02636719423a4530b4f67ff355d6d45a\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-09 00:00:00 UTC to 2026-10-10 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-11T12:03:46.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a12bb9827a1",
+      "conversation_id": "conv-email-1a12bb9827a1",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 14m² · Con Colocación · CP B7600 · San Luis 2594",
+      "ts": "2026-10-11T16:08:59.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -193481,7 +193521,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-11T02:06:59.150Z",
     "gmail_seen_ids": [
-      "19fb253201add6a0",
       "19fb28bda4db4fe1",
       "19fb2ef79bcd1d83",
       "19fb375fe09cb706",
@@ -194280,7 +194319,8 @@
       "1a12784248867c3e",
       "1a12a47bcba05049",
       "1a12adb02a7f3100",
-      "1a12ad90951dc9cf"
+      "1a12ad90951dc9cf",
+      "1a12bb9827a177e5"
     ],
     "cash_sessions": {
       "1136982222": {
