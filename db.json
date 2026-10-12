@@ -152580,6 +152580,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-12T11:34:20.000Z",
       "last_touch_at": "2026-10-12T11:34:20.000Z"
+    },
+    {
+      "id": "lead-email-1a130e7f462a",
+      "name": "Ornella Gisbert",
+      "email": "orne@ornegisbert.com.ar",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Solicitud de presupuesto — Hola, buen día. Quisiera solicitar un presupuesto para piso de madera natural premium, tipo entablonado, para la planta alta de una vivienda en Ciudad Autonoma de Buenos Aires.\r\n\r\n",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-12T16:17:26.000Z",
+      "last_touch_at": "2026-10-12T16:17:26.000Z"
     }
   ],
   "conversations": [
@@ -160931,6 +160948,21 @@
       "last_unsupported_reply_at": "2026-10-12T11:34:23.882Z",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-12T11:34:20.000Z"
+    },
+    {
+      "id": "conv-email-1a130e7f462a",
+      "channel": "email",
+      "contact_id": "orne@ornegisbert.com.ar",
+      "contact_name": "Ornella Gisbert",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a130e7f462a",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-12T16:17:26.000Z",
+      "last_message_preview": "Hola, buen día. Quisiera solicitar un presupuesto para piso de madera natural premium, tipo entablonado, para la planta alta de una vivienda",
+      "email_subject": "Solicitud de presupuesto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-12T16:17:26.000Z"
     }
   ],
   "messages": [
@@ -183819,6 +183851,14 @@
       "ts": "2026-10-12T11:34:25.003Z",
       "status": "sent",
       "via": "auto-unsupported"
+    },
+    {
+      "id": "m-email-1a130e7f462a",
+      "conversation_id": "conv-email-1a130e7f462a",
+      "direction": "in",
+      "body": "✉️ Solicitud de presupuesto\n\nHola, buen día. Quisiera solicitar un presupuesto para piso de madera natural premium, tipo entablonado, para la planta alta de una vivienda en Ciudad Autonoma de Buenos Aires.\r\n\r\nLa superficie estimada es de 85 m².\r\n\r\nMe interesa que me pasen diferentes opciones de maderas. Adjunto foto de un piso que me gusto mucho. \r\n\r\nVoy a poner losa radiante asi que entiendo que seria de ingeniería la mejor opción.\r\n\r\nQuisiera saber:￼\r\nPrecio por m² de material.\r\n\r\nCosto de colocación y terminación.\r\n\r\nPlazos de entrega y garantía.\r\n\r\n¡Muchas gracias!",
+      "ts": "2026-10-12T16:17:26.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -193643,7 +193683,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-12T02:07:21.192Z",
     "gmail_seen_ids": [
-      "19fb392d7c0c8f8c",
       "19fb38919e88f508",
       "19fb435c5c364982",
       "19fb4466a5a510cb",
@@ -194442,7 +194481,8 @@
       "1a12bb9827a177e5",
       "1a12f87bfe676fb9",
       "1a12fe37017881c3",
-      "1a130015f68c0822"
+      "1a130015f68c0822",
+      "1a130e7f462a1995"
     ],
     "cash_sessions": {
       "1136982222": {
