@@ -18107,8 +18107,8 @@
       "iva_mode": "none",
       "financial_position": {
         "total_invoiced": 508,
-        "total_paid": 614.1,
-        "balance_due": 0
+        "total_paid": 0,
+        "balance_due": 508
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -18118,7 +18118,8 @@
       "commission_split_discount": true,
       "currency": "USD",
       "commission_amount": 0,
-      "iva_amount": 0
+      "iva_amount": 0,
+      "balance_due": 508
     }
   ],
   "quotes": [
@@ -196621,6 +196622,10 @@
     "Bjow-YhtE2qO4PmeJatbCoJUabz-Ez5F": {
       "userId": "u-admin",
       "expires": 1793133089422
+    },
+    "WrJYBC7jaQpbyQQM3wSLh-2l80PqXCLn": {
+      "userId": "u-admin",
+      "expires": 1793133165223
     }
   },
   "settings": {
