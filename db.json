@@ -43801,7 +43801,13 @@
       "addresses": [],
       "active": true,
       "notes": null,
-      "updated_at": "2026-06-03T19:46:57.827Z"
+      "updated_at": "2026-10-13T14:58:20.675Z",
+      "reseller": true,
+      "reseller_mode": "comision",
+      "reseller_comision": {
+        "type": "pct",
+        "pct": 7
+      }
     },
     {
       "id": "CLI-034",
