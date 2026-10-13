@@ -152926,10 +152926,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 60m² · Sin Colocación · CP 1722",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-10T20:32:13.000Z",
-      "last_touch_at": "2026-10-10T20:32:13.000Z"
+      "last_touch_at": "2026-10-13T13:51:08.281Z"
     },
     {
       "id": "lead-email-1a12bb9827a1",
@@ -161331,11 +161331,12 @@
       "linked_lead_id": "lead-email-1a1278424886",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-10T20:32:13.000Z",
-      "last_message_preview": "Formulario web — 60m² · Sin Colocación · CP 1722 · Balcarce 190",
+      "last_message_at": "2026-10-13T13:50:57.700Z",
+      "last_message_preview": "Hola Natacha, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-10T20:32:13.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-10T20:32:13.000Z",
+      "last_outbound_at": "2026-10-13T13:50:57.700Z"
     },
     {
       "id": "conv-email-1a12bb9827a1",
@@ -161345,7 +161346,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a12bb9827a1",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-11T16:08:59.000Z",
       "last_message_preview": "Formulario web — 14m² · Con Colocación · CP B7600 · San Luis 2594",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -184318,6 +184319,15 @@
       "ts": "2026-10-13T13:49:49.136Z",
       "status": "sent",
       "wa_id": "1a13586cca4ebb3c"
+    },
+    {
+      "id": "m-1791899457700-0td5",
+      "conversation_id": "conv-email-1a1278424886",
+      "direction": "out",
+      "body": "Hola Natacha, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-10-13T13:50:57.700Z",
+      "status": "sent",
+      "wa_id": "1a13587d927cd4cf"
     }
   ],
   "templates": [
@@ -195602,7 +195612,10 @@
       "1a125b4a650025bd",
       "1a12adb02a7f3100",
       "1a130015f68c0822",
-      "1a13527bab24e86c"
+      "1a13527bab24e86c",
+      "1a13587d927cd4cf",
+      "1a13586cca4ebb3c",
+      "1a135841d4242c68"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
