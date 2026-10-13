@@ -290,7 +290,7 @@
       "active": true,
       "margin": 159,
       "stock": 1740.2000000000003,
-      "reservedStock": 599.63,
+      "reservedStock": 621.63,
       "subLine": "Colección Madera",
       "shortName": "Roble Verona 12/1 Veta Tallada",
       "thicknessMm": 12,
@@ -1667,7 +1667,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 26.459999999999994,
+      "reservedStock": 29.459999999999994,
       "subLine": "Terminaciones",
       "shortName": "Cuartacaña MDF Blanco",
       "thicknessMm": null,
@@ -1883,7 +1883,7 @@
       "active": true,
       "margin": 172.9,
       "stock": 0,
-      "reservedStock": 8307.630000000001,
+      "reservedStock": 8327.630000000001,
       "subLine": "Colocación Piso",
       "shortName": "Colocación Prefinished Sobre Manta",
       "thicknessMm": null,
@@ -2411,7 +2411,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 780,
+      "reservedStock": 886.6,
       "subLine": "Zócalos",
       "shortName": "Colocación Zócalos Pegados y Clavados",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15097,
+      "reservedStock": 15098,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -2856,7 +2856,7 @@
       "active": true,
       "margin": 50,
       "stock": 0,
-      "reservedStock": 0,
+      "reservedStock": 1,
       "subLine": "Varilla L INOX",
       "shortName": "Varilla L Acero Inox 12mm",
       "thicknessMm": null,
@@ -9403,7 +9403,7 @@
           "category": "Pisos de Madera"
         }
       ],
-      "status": "Programado",
+      "status": "En proceso",
       "delivery_status": "Acopiado",
       "created_at": "2026-03-19T00:00:00.000Z",
       "fecha_pendiente": false,
@@ -9440,6 +9440,12 @@
           "to": "Programado",
           "at": "2026-08-26T15:17:41.181Z",
           "by": "Admin User"
+        },
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-10-13T11:57:54.383Z",
+          "by": "Victoria Gonzalez Collado"
         }
       ]
     },
@@ -17944,6 +17950,174 @@
       "currency": "USD",
       "commission_amount": 0,
       "iva_amount": 0
+    },
+    {
+      "id": "local-sale-1791892689136-yi4g",
+      "quote_id": "local-1791555764181-wahud",
+      "quote_number": "A3235",
+      "title": "Cotización Flor Allende",
+      "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada + 5 más",
+      "internal_notes": "",
+      "public_notes": "Para la colocación del piso, será necesario retirar la alfombra existente y los zócalos actuales.\n",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mv6mn3sg-ktf2",
+      "client_name": "Flor Allende",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 6750-1553",
+      "client_address": "Guido 2660 piso 11",
+      "contract_total": 2570.1852000000003,
+      "items": [
+        {
+          "product_id": "PROD-011",
+          "sku": "PROD-011",
+          "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada",
+          "quantity": 22,
+          "unit_price": 75,
+          "cost": 29,
+          "category": "Pisos de Madera",
+          "disc_value": 10,
+          "total": 1650,
+          "discount": 165,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-107",
+          "sku": "SERV-107",
+          "description": "Servicio - Colocación Prefinished Sobre Manta",
+          "quantity": 20,
+          "unit_price": 20,
+          "cost": 7.33,
+          "category": "Servicio",
+          "total": 400,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 170,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 170,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-129",
+          "sku": "SERV-129",
+          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+          "quantity": 9,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 46.800000000000004,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "VAR-INOX-12",
+          "sku": "VAR-INOX-12",
+          "description": "Varilla L Acero Inox 12mm",
+          "quantity": 1,
+          "unit_price": 13.32,
+          "cost": 8.88,
+          "category": "Terminaciones",
+          "total": 13.32,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-060",
+          "sku": "PROD-060",
+          "description": "Cuartacaña MDF - Blanca",
+          "quantity": 3,
+          "unit_price": 3,
+          "cost": 0,
+          "category": "Terminaciones",
+          "total": 9,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 165,
+      "status": "Confirmado",
+      "created_at": "2026-10-13T11:58:09.136Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 2570.1852000000003
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
+    },
+    {
+      "id": "local-sale-1791892698049-0ivt",
+      "quote_id": "local-1791565131860-erc4s",
+      "quote_number": "A5440",
+      "title": "Obra Casa - Zocalos",
+      "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-muy7zco9-7vbc",
+      "client_name": "Romina Di Landro",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "1167604206",
+      "client_address": "Olivos",
+      "contract_total": 614.0992,
+      "items": [
+        {
+          "product_id": "SERV-129",
+          "sku": "SERV-129",
+          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+          "quantity": 97.6,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 507.52,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 0,
+      "status": "Confirmado",
+      "created_at": "2026-10-13T11:58:18.050Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 614.0992
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Juan Rodriguez Momesso",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -42723,7 +42897,7 @@
     },
     {
       "id": "local-1791555764181-wahud",
-      "client_id": "",
+      "client_id": "CLI-mv6mn3sg-ktf2",
       "client_name": "Flor Allende",
       "client_dni": "",
       "client_email": "",
@@ -42828,8 +43002,9 @@
       "currency": "USD",
       "created_at": "2026-10-09T14:22:43.932Z",
       "quote_number": "A3235",
-      "status": "DRAFT",
-      "lead_id": "local-1791555502075-2juov"
+      "status": "ACCEPTED",
+      "lead_id": "local-1791555502075-2juov",
+      "sale_id": "local-sale-1791892689136-yi4g"
     },
     {
       "id": "local-1791565131860-erc4s",
@@ -42872,7 +43047,8 @@
       "currency": "USD",
       "created_at": "2026-10-09T16:58:51.650Z",
       "quote_number": "A5440",
-      "status": "DRAFT"
+      "status": "Aceptado",
+      "sale_id": "local-sale-1791892698049-0ivt"
     }
   ],
   "clients": [
@@ -45513,6 +45689,22 @@
       ],
       "notes": null,
       "updated_at": "2026-10-09T17:00:36.159Z"
+    },
+    {
+      "id": "CLI-mv6mn3sg-ktf2",
+      "type": "client",
+      "active": true,
+      "name": "Flor Allende",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        "+54 9 11 6750-1553"
+      ],
+      "addresses": [
+        "Guido 2660 piso 11"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-13T11:58:09.136Z"
     }
   ],
   "expenses": [],
@@ -152622,6 +152814,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-12T16:17:26.000Z",
       "last_touch_at": "2026-10-12T16:17:26.000Z"
+    },
+    {
+      "id": "local-1791892660948-mmf0s",
+      "name": "Nacho Velasco",
+      "phone": "+54 9 11 4199-8637",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "Madera"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Nicaragua 6045, Palermo  Depto 1005",
+      "created_at": "2026-10-13T11:57:40.725Z",
+      "last_touch_at": "2026-10-13T11:57:49.344Z"
     }
   ],
   "conversations": [
@@ -192470,6 +192678,69 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T11:58:02.963Z",
+      "type": "quote_reserve",
+      "ref": "local-1791555764181-wahud",
+      "product_id": "PROD-011",
+      "sku": "PROD-011",
+      "qty": 22,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T11:58:02.963Z",
+      "type": "quote_reserve",
+      "ref": "local-1791555764181-wahud",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": 20,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T11:58:02.963Z",
+      "type": "quote_reserve",
+      "ref": "local-1791555764181-wahud",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T11:58:02.963Z",
+      "type": "quote_reserve",
+      "ref": "local-1791555764181-wahud",
+      "product_id": "SERV-129",
+      "sku": "SERV-129",
+      "qty": 9,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T11:58:02.963Z",
+      "type": "quote_reserve",
+      "ref": "local-1791555764181-wahud",
+      "product_id": "VAR-INOX-12",
+      "sku": "VAR-INOX-12",
+      "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T11:58:02.963Z",
+      "type": "quote_reserve",
+      "ref": "local-1791555764181-wahud",
+      "product_id": "PROD-060",
+      "sku": "PROD-060",
+      "qty": 3,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T11:58:13.617Z",
+      "type": "quote_reserve",
+      "ref": "local-1791565131860-erc4s",
+      "product_id": "SERV-129",
+      "sku": "SERV-129",
+      "qty": 97.6,
       "warehouse_id": "main"
     }
   ],
