@@ -43424,18 +43424,18 @@
     },
     {
       "id": "local-q-1791920279404-cxu4",
-      "client_id": "CLI-munamb82-o1m1",
-      "client_name": "Arq. Carlos Levit",
+      "client_id": "CLI-mv739wwe-c9bw",
+      "client_name": "Arq. Carolina Lin - Quisu Desarrollos",
       "client_dni": "",
       "client_email": "",
       "client_phone": "",
-      "client_address": "A confirmar",
+      "client_address": "Calle Lambaré 1020",
       "internal_notes": "",
       "public_notes": "",
       "payment_terms": "Anticipo 80% · Conforme 20%",
       "seller_name": "Juan Rodriguez Momesso",
       "seller_phone": "+54 9 11 51750087",
-      "title": "Obra Edificio",
+      "title": "Obra Edificio Lambaré -  Villa Crespo - Calle Lambaré 1020 ",
       "has_iva": true,
       "price": 46282.5,
       "zoned": false,
@@ -43463,7 +43463,8 @@
       "currency": "USD",
       "created_at": "2026-10-13T19:37:59.404Z",
       "quote_number": "A4886",
-      "status": "DRAFT"
+      "status": "DRAFT",
+      "commission_split_discount": true
     }
   ],
   "clients": [
