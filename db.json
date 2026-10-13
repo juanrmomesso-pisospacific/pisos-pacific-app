@@ -152943,10 +152943,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 14m² · Con Colocación · CP B7600",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-11T16:08:59.000Z",
-      "last_touch_at": "2026-10-11T16:08:59.000Z"
+      "last_touch_at": "2026-10-13T13:51:45.215Z"
     },
     {
       "id": "lead-whatsapp-1791804863882",
@@ -161347,11 +161347,12 @@
       "linked_lead_id": "lead-email-1a12bb9827a1",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-11T16:08:59.000Z",
-      "last_message_preview": "Formulario web — 14m² · Con Colocación · CP B7600 · San Luis 2594",
+      "last_message_at": "2026-10-13T13:51:37.620Z",
+      "last_message_preview": "Hola Amalia, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-11T16:08:59.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-11T16:08:59.000Z",
+      "last_outbound_at": "2026-10-13T13:51:37.620Z"
     },
     {
       "id": "conv-1791804863881-zz67",
@@ -161361,7 +161362,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1791804863882",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-12T11:34:20.000Z",
       "last_message_preview": "📎 Mensaje que WhatsApp no entrega por API (encuesta / foto de una sola vez) — se le pidió al cliente que lo reenvíe",
       "last_unsupported_reply_at": "2026-10-12T11:34:23.882Z",
@@ -184328,6 +184329,15 @@
       "ts": "2026-10-13T13:50:57.700Z",
       "status": "sent",
       "wa_id": "1a13587d927cd4cf"
+    },
+    {
+      "id": "m-1791899497620-1w6s",
+      "conversation_id": "conv-email-1a12bb9827a1",
+      "direction": "out",
+      "body": "Hola Amalia, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-10-13T13:51:37.620Z",
+      "status": "sent",
+      "wa_id": "1a1358874e3d36c5"
     }
   ],
   "templates": [
