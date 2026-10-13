@@ -18083,7 +18083,7 @@
       "client_email": "",
       "client_phone": "1167604206",
       "client_address": "Olivos",
-      "contract_total": 614.0992,
+      "contract_total": 508,
       "items": [
         {
           "product_id": "SERV-129",
@@ -18103,12 +18103,12 @@
       "discount_total": 0,
       "status": "Confirmado",
       "created_at": "2026-10-13T11:58:18.050Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
-        "total_paid": 0,
-        "balance_due": 614.0992
+        "total_invoiced": 508,
+        "total_paid": 614.1,
+        "balance_due": 0
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -18117,7 +18117,8 @@
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "iva_amount": 0
     }
   ],
   "quotes": [
