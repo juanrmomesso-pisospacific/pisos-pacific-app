@@ -46094,10 +46094,10 @@
       "currency": "ARS",
       "active": true,
       "notes": "Cuenta corriente principal",
-      "anchor_date": "2026-07-19",
-      "anchor_usd": 128.03,
-      "anchor_note": "Ancla al saldo real del extracto BBVA 14/7 (sin movimientos posteriores; carga semanal 19/7)",
-      "anchor_ars": 194603.47
+      "anchor_date": "2026-10-13",
+      "anchor_usd": 337.66,
+      "anchor_note": "Conciliación carga Oct 2026",
+      "anchor_ars": 519989
     },
     {
       "id": "CAJ-002",
@@ -46117,10 +46117,10 @@
       "currency": "ARS",
       "active": true,
       "notes": "Cuenta corriente en pesos",
-      "anchor_date": "2026-10-03",
-      "anchor_usd": 2302.52,
-      "anchor_note": "Conciliación a extracto real BdC Pesos 03/10 (auditoría jul-sep: agosto exacto al centavo, sept residuo $3.566; gap de $6,18M corregido = 2 internos + pago Hugo movido a efectivo)",
-      "anchor_ars": 3568912.52
+      "anchor_date": "2026-10-13",
+      "anchor_usd": 2604.46,
+      "anchor_note": "Conciliación carga Oct 2026",
+      "anchor_ars": 4010866
     },
     {
       "id": "CAJ-004",
@@ -196470,6 +196470,10 @@
     "_e_Pb1ZDY-1_dR5nOeCVifQTExYrNboe": {
       "userId": "u-admin",
       "expires": 1793121640519
+    },
+    "XhB4j7tV2Jd6XcKz93zAFu0v3RPKudGJ": {
+      "userId": "u-admin",
+      "expires": 1793121676789
     }
   },
   "settings": {
@@ -201752,6 +201756,32 @@
       "sys_usd": 1309.76,
       "adj_usd": -7.95,
       "note": "Conciliación a extracto real BdC USD 03/10 (auditoría jul-sep: julio y agosto exactos, sept -$8; gap US$5.384 corregido = cambio con masota movido a efectivo USD + 2 movs cargados)",
+      "anchored": true
+    },
+    {
+      "caja_id": "CAJ-003",
+      "caja_name": "Banco de Comercio - Cuenta Pesos",
+      "ts": "2026-10-13T17:21:17.112Z",
+      "real": 4010866,
+      "currency": "ARS",
+      "blue": 1540,
+      "real_usd": 2604.46,
+      "sys_usd": 2597.14,
+      "adj_usd": 7.32,
+      "note": "Conciliación carga Oct 2026",
+      "anchored": true
+    },
+    {
+      "caja_id": "CAJ-001",
+      "caja_name": "BBVA",
+      "ts": "2026-10-13T17:21:17.417Z",
+      "real": 519989,
+      "currency": "ARS",
+      "blue": 1540,
+      "real_usd": 337.66,
+      "sys_usd": 320.96,
+      "adj_usd": 16.7,
+      "note": "Conciliación carga Oct 2026",
       "anchored": true
     }
   ]
