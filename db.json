@@ -145059,28 +145059,6 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
-    },
-    {
-      "id": "local-1791923213331-i8x2h",
-      "flow": "Ingreso",
-      "date": "2026-10-13T00:00:00.000Z",
-      "caja_id": "CAJ-005",
-      "caja_name": "Efectivo USD",
-      "category": "Venta - Pisos",
-      "subcategory": null,
-      "counterparty": "Romina Di Landro",
-      "counterparty_type": "client",
-      "description": "Cobro - Obra Casa - Zocalos",
-      "sale_ref": "A5440",
-      "currency": "USD",
-      "amount_ars": null,
-      "amount_usd": 614.1,
-      "exchange_rate": null,
-      "fixed_variable": null,
-      "expense_type": null,
-      "transfer": false,
-      "needs_review": false,
-      "review_reason": null
     }
   ],
   "containers": [
