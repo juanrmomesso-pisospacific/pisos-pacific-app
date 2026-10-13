@@ -200417,6 +200417,15 @@
       "status": "pendiente",
       "sale_id": "local-sale-1791488923925-qrvj",
       "created_at": "2026-10-13T20:06:31.170Z"
+    },
+    {
+      "id": "local-1791922071271-2902x",
+      "type": "otro",
+      "title": "Obra Paneles - Vicente Lopez",
+      "due_date": "2026-10-13",
+      "assigned_seller": "Hugo Ramirez",
+      "status": "pendiente",
+      "created_at": "2026-10-13T20:07:50.901Z"
     }
   ],
   "password_resets": {},
