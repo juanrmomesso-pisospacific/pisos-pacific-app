@@ -152830,6 +152830,23 @@
       "address": "Nicaragua 6045, Palermo  Depto 1005",
       "created_at": "2026-10-13T11:57:40.725Z",
       "last_touch_at": "2026-10-13T11:57:49.344Z"
+    },
+    {
+      "id": "lead-email-1a135258c4bc",
+      "name": "David Ybarra",
+      "email": "hectory@xwf.google.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Equipo de Pacific Rim - pisospacific.com, no olvidéis agendar una cita individualizada con un experto de Google Ads\r\n — Tu ID de cliente: 443-235-5149\r\n\r\nHola, equipo de Pacific Rim - pisospacific.com:\r\n\r\nHe observado que todavía no has agendado ninguna llamada, así que vuelvo a  \r\nescribirte para p",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-13T12:03:35.000Z",
+      "last_touch_at": "2026-10-13T12:03:35.000Z"
     }
   ],
   "conversations": [
@@ -161196,6 +161213,21 @@
       "email_subject": "Solicitud de presupuesto",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-12T16:17:26.000Z"
+    },
+    {
+      "id": "conv-email-1a135258c4bc",
+      "channel": "email",
+      "contact_id": "hectory@xwf.google.com",
+      "contact_name": "David Ybarra",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a135258c4bc",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-13T12:03:35.000Z",
+      "last_message_preview": "Tu ID de cliente: 443-235-5149\r\n\r\nHola, equipo de Pacific Rim - pisospacific.com:\r\n\r\nHe observado que todavía no has agendado ninguna llamad",
+      "email_subject": "Equipo de Pacific Rim - pisospacific.com, no olvidéis agendar una cita individualizada con un experto de Google Ads\r\n",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-13T12:03:35.000Z"
     }
   ],
   "messages": [
@@ -184092,6 +184124,14 @@
       "body": "✉️ Solicitud de presupuesto\n\nHola, buen día. Quisiera solicitar un presupuesto para piso de madera natural premium, tipo entablonado, para la planta alta de una vivienda en Ciudad Autonoma de Buenos Aires.\r\n\r\nLa superficie estimada es de 85 m².\r\n\r\nMe interesa que me pasen diferentes opciones de maderas. Adjunto foto de un piso que me gusto mucho. \r\n\r\nVoy a poner losa radiante asi que entiendo que seria de ingeniería la mejor opción.\r\n\r\nQuisiera saber:￼\r\nPrecio por m² de material.\r\n\r\nCosto de colocación y terminación.\r\n\r\nPlazos de entrega y garantía.\r\n\r\n¡Muchas gracias!",
       "ts": "2026-10-12T16:17:26.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a135258c4bc",
+      "conversation_id": "conv-email-1a135258c4bc",
+      "direction": "in",
+      "body": "✉️ Equipo de Pacific Rim - pisospacific.com, no olvidéis agendar una cita individualizada con un experto de Google Ads\r\n\n\nTu ID de cliente: 443-235-5149\r\n\r\nHola, equipo de Pacific Rim - pisospacific.com:\r\n\r\nHe observado que todavía no has agendado ninguna llamada, así que vuelvo a  \r\nescribirte para proponerte esta consulta sin coste, que ofrecemos a  \r\nclientes valiosos como tú.\r\n\r\nSolo tienes que hacer clic abajo y elegir la hora que mejor te venga. Nos  \r\nencargaremos de revisar tu cuenta y recopilar información útil antes de  \r\nnuestra cita.\r\n\r\nConcertar  \r\nllamada<https://c.gle/AAuDWvkPhTnaarlRQfg7LG2Ne_TOL8FZEGl6friWA_7m2t0T1hvchSsa6ZC2FLftgzYHOZO2fszrW8WbMAeyyuroN9kg-Wv2wInhLYwUmEkAyQz34fTcc-BDYG6laaE79kfXSPyFzBXqJWw9v9fPI0-iLELIWeNn3t6o3s8JAuiI88RiQjX-OChQ5fgOonP-LlnGJpAEdQJh2AvE_hpXHfMkGPTDX3QYbDrOeF1BRzDkJqI6KK2U696QGnY4I6y21PUucRDw1UM2CJOcDZBdNNh0qiRWEltFdnTiC0epZvW_NOtE7E7oW1S-I1j4EPX-rRFaSVenL0nl5011HhzgcRNBFz-nvub65sTdxFQZ2vTuUuypVB0ICC0seEzLGNj3Uh-bEslB6Ai2a4Y4IziT-yWJc7RVwMI>\r\n\r\nDurante la llamada, podemos comentar estrategias personalizadas para  \r\nayudarte a aprovechar mejor tu presupuesto, adelantarte a las tendencias  \r\ndel sector y descubrir nuevas oportunidades de crecimiento. Programa una  \r\nllamada<https://c.gle/AAuDWvn4KfQU_XzJLnA7LY9q3hNRahBb82mvRX_oHmiudyeqJl6BWFXKGrz-ROdSFGnjhqgY1iQEcCInuaXRrpVFIsd81VfvDGMeSWV6hWP1jS59WwZPlrCb64GjEZookd4TEq0jbWyjZmzU7yoXamnDnd7VhqeJXjgWIu_VZmXHzhBIr01yLS9x4K-7ayTd3B00pkz4S1dCWJaSnPjxETwNzF6Ykn8YCrnti46GeuCLP-LK54qYW8CWeWlv-ikiPwUNxDjmYnTRZXFLYHoCwu35k02XB1tysEouoUH0EVvPrUcsX_chCK3aoY0sSPVFXzZBdwKNqyrjnJS2Cx2x9N0Z6i1rMAIIw4nRQPdHj9Ql5i",
+      "ts": "2026-10-13T12:03:35.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -193979,8 +194019,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-13T08:07:30.104Z",
     "gmail_seen_ids": [
-      "19fb490f2f8bba8d",
-      "19fb4d8ef4624481",
       "19fb5764798fa350",
       "19fb5cec1c8d262d",
       "19fb69a0469f9a05",
@@ -194778,7 +194816,9 @@
       "1a1346f568fa7e77",
       "1a134992afd01578",
       "1a13497cefbfbf1a",
-      "1a134abb779d4064"
+      "1a134abb779d4064",
+      "1a13527bab24e86c",
+      "1a135258c4bc3a78"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -195375,7 +195415,8 @@
       "1a120fdeb8a7bfe8",
       "1a125b4a650025bd",
       "1a12adb02a7f3100",
-      "1a130015f68c0822"
+      "1a130015f68c0822",
+      "1a13527bab24e86c"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -196270,7 +196311,7 @@
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-10-12",
+    "last_daily_task_reminder": "2026-10-13",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -196834,7 +196875,7 @@
         "learned_at": "2026-09-26T10:46:00.268Z"
       }
     },
-    "last_daily_pending_digest": "2026-10-12",
+    "last_daily_pending_digest": "2026-10-13",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
