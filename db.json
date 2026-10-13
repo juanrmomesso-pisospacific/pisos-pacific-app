@@ -152976,10 +152976,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: Solicitud de presupuesto — Hola, buen día. Quisiera solicitar un presupuesto para piso de madera natural premium, tipo entablonado, para la planta alta de una vivienda en Ciudad Autonoma de Buenos Aires.\r\n\r\n",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-12T16:17:26.000Z",
-      "last_touch_at": "2026-10-12T16:17:26.000Z"
+      "last_touch_at": "2026-10-13T14:15:24.235Z"
     },
     {
       "id": "local-1791892660948-mmf0s",
@@ -195635,7 +195635,9 @@
       "1a13527bab24e86c",
       "1a13587d927cd4cf",
       "1a13586cca4ebb3c",
-      "1a135841d4242c68"
+      "1a135841d4242c68",
+      "1a1358e2f7789266",
+      "1a1358874e3d36c5"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
