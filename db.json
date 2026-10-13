@@ -161284,11 +161284,12 @@
       "linked_lead_id": "lead-email-1a121f5bcf42",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-09T18:38:34.000Z",
-      "last_message_preview": "Formulario web — 130m² · Con Colocación · CP 1021 · R. Peña 1465",
+      "last_message_at": "2026-10-13T13:46:53.145Z",
+      "last_message_preview": "Hola Cynthia, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-09T18:38:34.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-09T18:38:34.000Z",
+      "last_outbound_at": "2026-10-13T13:46:53.145Z"
     },
     {
       "id": "conv-1791583179738-jav7",
@@ -184298,6 +184299,15 @@
       "body": "✉️ Equipo de Pacific Rim - pisospacific.com, no olvidéis agendar una cita individualizada con un experto de Google Ads\r\n\n\nTu ID de cliente: 443-235-5149\r\n\r\nHola, equipo de Pacific Rim - pisospacific.com:\r\n\r\nHe observado que todavía no has agendado ninguna llamada, así que vuelvo a  \r\nescribirte para proponerte esta consulta sin coste, que ofrecemos a  \r\nclientes valiosos como tú.\r\n\r\nSolo tienes que hacer clic abajo y elegir la hora que mejor te venga. Nos  \r\nencargaremos de revisar tu cuenta y recopilar información útil antes de  \r\nnuestra cita.\r\n\r\nConcertar  \r\nllamada<https://c.gle/AAuDWvkPhTnaarlRQfg7LG2Ne_TOL8FZEGl6friWA_7m2t0T1hvchSsa6ZC2FLftgzYHOZO2fszrW8WbMAeyyuroN9kg-Wv2wInhLYwUmEkAyQz34fTcc-BDYG6laaE79kfXSPyFzBXqJWw9v9fPI0-iLELIWeNn3t6o3s8JAuiI88RiQjX-OChQ5fgOonP-LlnGJpAEdQJh2AvE_hpXHfMkGPTDX3QYbDrOeF1BRzDkJqI6KK2U696QGnY4I6y21PUucRDw1UM2CJOcDZBdNNh0qiRWEltFdnTiC0epZvW_NOtE7E7oW1S-I1j4EPX-rRFaSVenL0nl5011HhzgcRNBFz-nvub65sTdxFQZ2vTuUuypVB0ICC0seEzLGNj3Uh-bEslB6Ai2a4Y4IziT-yWJc7RVwMI>\r\n\r\nDurante la llamada, podemos comentar estrategias personalizadas para  \r\nayudarte a aprovechar mejor tu presupuesto, adelantarte a las tendencias  \r\ndel sector y descubrir nuevas oportunidades de crecimiento. Programa una  \r\nllamada<https://c.gle/AAuDWvn4KfQU_XzJLnA7LY9q3hNRahBb82mvRX_oHmiudyeqJl6BWFXKGrz-ROdSFGnjhqgY1iQEcCInuaXRrpVFIsd81VfvDGMeSWV6hWP1jS59WwZPlrCb64GjEZookd4TEq0jbWyjZmzU7yoXamnDnd7VhqeJXjgWIu_VZmXHzhBIr01yLS9x4K-7ayTd3B00pkz4S1dCWJaSnPjxETwNzF6Ykn8YCrnti46GeuCLP-LK54qYW8CWeWlv-ikiPwUNxDjmYnTRZXFLYHoCwu35k02XB1tysEouoUH0EVvPrUcsX_chCK3aoY0sSPVFXzZBdwKNqyrjnJS2Cx2x9N0Z6i1rMAIIw4nRQPdHj9Ql5i",
       "ts": "2026-10-13T12:03:35.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791899213145-x89r",
+      "conversation_id": "conv-email-1a121f5bcf42",
+      "direction": "out",
+      "body": "Hola Cynthia, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación.\n\n¡Muchas gracias!\nSaludos, Victoria\n113698222",
+      "ts": "2026-10-13T13:46:53.145Z",
+      "status": "sent",
+      "wa_id": "1a135841d4242c68"
     }
   ],
   "templates": [
