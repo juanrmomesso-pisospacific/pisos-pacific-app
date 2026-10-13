@@ -2,10 +2,12 @@
 // Carga de extractos OCTUBRE 2026 (BdC Pesos + BBVA + resúmenes de tarjeta Sep).
 // Aplica VÍA LA API del server corriendo (no edita el db.json directo → el server no lo pisa).
 // Re-ejecutable + idempotente: deduplica por id determinístico + ventana (caja/flujo/±3d/monto).
-// Uso en la SHELL de Render (misma instancia que el server):
-//   ADMIN_PASS='tu-password' node scripts/load-oct-2026.mjs           → DRY-RUN (no toca nada)
-//   ADMIN_PASS='tu-password' node scripts/load-oct-2026.mjs --commit  → aplica (POST por API)
+// Uso en la SHELL de Render (misma instancia que el server). Pregunta usuario/contraseña:
+//   node scripts/load-oct-2026.mjs             → DRY-RUN (no toca nada, solo muestra)
+//   node scripts/load-oct-2026.mjs --commit    → aplica (POST por API, el server guarda)
+// (también acepta ADMIN_EMAIL/ADMIN_PASS por env si preferís no tipearlos)
 import { windowKeys } from '../import/dedup.mjs';
+import readline from 'node:readline';
 
 const COMMIT = process.argv.includes('--commit');
 const BASE = process.env.BASE || `http://127.0.0.1:${process.env.PORT || 10000}`;
@@ -98,7 +100,23 @@ const BBVA_MOV = [
 const ALL = [...CARD, ...BDC_MOV, ...BBVA_MOV];
 
 // ===================== API del server (aplica en memoria + guarda, sin pisar) =====================
-if (!ADMIN_PASS) { console.error('Falta ADMIN_PASS. Corré: ADMIN_PASS=\'tu-password\' node scripts/load-oct-2026.mjs'); process.exit(1); }
+// Credenciales: por env (ADMIN_EMAIL/ADMIN_PASS) o, si faltan, se preguntan acá (sin comillas,
+// sin que queden en el historial). La contraseña se tipea oculta.
+function prompt(q, hidden = false) {
+  return new Promise((res) => {
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+    if (hidden) {
+      process.stdout.write(q);
+      rl._writeToOutput = () => {};           // no mostrar lo tipeado
+      rl.question('', (a) => { process.stdout.write('\n'); rl.close(); res(a.trim()); });
+    } else {
+      rl.question(q, (a) => { rl.close(); res(a.trim()); });
+    }
+  });
+}
+const email = ADMIN_EMAIL && ADMIN_PASS ? ADMIN_EMAIL : (ADMIN_EMAIL || (await prompt('Usuario [info@pisospacific.com]: ')) || 'info@pisospacific.com');
+const pass = ADMIN_PASS || (await prompt('Contraseña: ', true));
+if (!pass) { console.error('Sin contraseña — cancelado.'); process.exit(1); }
 let COOKIE = '';
 async function api(method, path, body) {
   const r = await fetch(BASE + path, {
@@ -110,7 +128,12 @@ async function api(method, path, body) {
   const ct = r.headers.get('content-type') || '';
   return ct.includes('json') ? r.json() : r.text();
 }
-await api('POST', '/api/auth/login', { email: ADMIN_EMAIL, password: ADMIN_PASS });
+try {
+  await api('POST', '/api/auth/login', { email, password: pass });
+} catch (e) {
+  if (String(e.message).includes('401')) { console.error(`\n❌ Usuario o contraseña incorrectos (probé con "${email}"). Verificá que puedas entrar con esos datos en la app, y volvé a correr.\n`); process.exit(1); }
+  console.error(`\n❌ No pude conectar al server (${BASE}). ¿El servicio está corriendo? Error: ${e.message}\n`); process.exit(1);
+}
 const liveCashflow = await api('GET', '/api/cashflow');
 const liveRules = await api('GET', '/api/cp_rules');
 console.log(`conectado a ${BASE} — cashflow vivo: ${liveCashflow.length} · cp_rules: ${liveRules.length}`);
