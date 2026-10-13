@@ -43065,7 +43065,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Nacho Velasco",
       "has_iva": true,
-      "price": 13552.605,
+      "price": 13532.277000000002,
       "zoned": false,
       "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada + 4 más",
       "items": [
@@ -43078,9 +43078,9 @@
           "cost": 29,
           "category": "Pisos de Madera",
           "disc_kind": "amount",
-          "disc_value": 920,
+          "disc_value": 936.8,
           "total": 8782.5,
-          "discount": 920,
+          "discount": 936.8,
           "image": "",
           "target_item_index": null
         },
@@ -43137,8 +43137,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 920,
-      "discount_amount": 920,
+      "discount_total": 936.8,
+      "discount_amount": 936.8,
       "reseller_id": "",
       "reseller_name": "",
       "commission_split_discount": true,
