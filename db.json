@@ -2411,7 +2411,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 971.6,
+      "reservedStock": 874,
       "subLine": "Zócalos",
       "shortName": "Colocación Zócalos Pegados y Clavados",
       "thicknessMm": null,
@@ -18113,7 +18113,7 @@
       ],
       "zoned": false,
       "discount_total": 0,
-      "status": "Confirmado",
+      "status": "Finalizado",
       "created_at": "2026-10-13T11:58:18.050Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -18122,8 +18122,8 @@
         "total_paid": 0,
         "balance_due": 508
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Juan Rodriguez Momesso",
       "reseller_id": "",
       "reseller_name": "",
@@ -18131,7 +18131,15 @@
       "currency": "USD",
       "commission_amount": 0,
       "iva_amount": 0,
-      "balance_due": 508
+      "balance_due": 508,
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Finalizado",
+          "at": "2026-10-13T20:40:28.865Z",
+          "by": "Admin User"
+        }
+      ]
     }
   ],
   "quotes": [
@@ -145116,6 +145124,28 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "local-1791924022658-09uz0",
+      "flow": "Ingreso",
+      "date": "2026-10-09T00:00:00.000Z",
+      "caja_id": "CAJ-004",
+      "caja_name": "Banco de Comercio - Cuenta USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Romina Di Landro",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra Casa - Zocalos",
+      "sale_ref": "A5440",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 100,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
@@ -195478,6 +195508,15 @@
       "product_id": "SERV-105",
       "sku": "SERV-105",
       "qty": -40,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T20:40:28.865Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1791892698049-0ivt",
+      "product_id": "SERV-129",
+      "sku": "SERV-129",
+      "qty": -97.6,
       "warehouse_id": "main"
     }
   ],
