@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 // Carga de extractos OCTUBRE 2026 (BdC Pesos + BBVA + resúmenes de tarjeta Sep).
-// Re-ejecutable + idempotente: lee el db VIVO (DB_PATH), deduplica por id determinístico
-// y por ventana (misma caja/flujo/±3d/monto), hace BACKUP antes de escribir.
-// Uso en Render One-Off Job:
-//   node scripts/load-oct-2026.mjs           → DRY-RUN (no toca nada, imprime todo)
-//   node scripts/load-oct-2026.mjs --commit  → aplica (backup + escribe db.json)
-import fs from 'node:fs';
+// Aplica VÍA LA API del server corriendo (no edita el db.json directo → el server no lo pisa).
+// Re-ejecutable + idempotente: deduplica por id determinístico + ventana (caja/flujo/±3d/monto).
+// Uso en la SHELL de Render (misma instancia que el server):
+//   ADMIN_PASS='tu-password' node scripts/load-oct-2026.mjs           → DRY-RUN (no toca nada)
+//   ADMIN_PASS='tu-password' node scripts/load-oct-2026.mjs --commit  → aplica (POST por API)
 import { windowKeys } from '../import/dedup.mjs';
 
 const COMMIT = process.argv.includes('--commit');
-const DB_PATH = process.env.DB_PATH || '/var/data/db.json';
+const BASE = process.env.BASE || `http://127.0.0.1:${process.env.PORT || 10000}`;
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'info@pisospacific.com';
+const ADMIN_PASS = process.env.ADMIN_PASS || '';
 const RATE = 1500;            // blue aprox oct-26 para amount_usd de cajas ARS (consolidación)
 const TC_CARD = 1548;         // TC efectivo del pago de tarjeta (verificado)
 const usd = (ars) => Math.round((ars / RATE) * 100) / 100;
@@ -96,13 +97,28 @@ const BBVA_MOV = [
 
 const ALL = [...CARD, ...BDC_MOV, ...BBVA_MOV];
 
-// ===================== dedup contra el db vivo =====================
-const db = JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
-db.cashflow = db.cashflow || [];
-const existingIds = new Set(db.cashflow.map(m => m.id));
+// ===================== API del server (aplica en memoria + guarda, sin pisar) =====================
+if (!ADMIN_PASS) { console.error('Falta ADMIN_PASS. Corré: ADMIN_PASS=\'tu-password\' node scripts/load-oct-2026.mjs'); process.exit(1); }
+let COOKIE = '';
+async function api(method, path, body) {
+  const r = await fetch(BASE + path, {
+    method, headers: { 'Content-Type': 'application/json', ...(COOKIE ? { Cookie: COOKIE } : {}) },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  const sc = r.headers.get('set-cookie'); if (sc) COOKIE = sc.split(';')[0];
+  if (!r.ok) throw new Error(`${method} ${path} → ${r.status} ${await r.text().catch(() => '')}`);
+  const ct = r.headers.get('content-type') || '';
+  return ct.includes('json') ? r.json() : r.text();
+}
+await api('POST', '/api/auth/login', { email: ADMIN_EMAIL, password: ADMIN_PASS });
+const liveCashflow = await api('GET', '/api/cashflow');
+const liveRules = await api('GET', '/api/cp_rules');
+console.log(`conectado a ${BASE} — cashflow vivo: ${liveCashflow.length} · cp_rules: ${liveRules.length}`);
+
+const existingIds = new Set(liveCashflow.map(m => m.id));
 // índice ventana por caja+flujo
 const idx = new Set();
-for (const m of db.cashflow) {
+for (const m of liveCashflow) {
   const amt = m.currency === 'USD' ? m.amount_usd : m.amount_ars;
   for (const k of windowKeys(String(m.date || '').slice(0, 10), amt, m.flow)) idx.add(m.caja_id + '|' + k);
 }
@@ -122,14 +138,13 @@ for (const m of ALL) {
 const GENERIC = /transf\.?\s*hb|debito transf|d[eé]bito por|cr[eé]dito por|ib proveedores|\bdebin\b|mov(imiento)? entre cuentas|transferencia (inmediata|recibida|enviada)|pago de servicios tarjeta|dep[oó]sito autoservicio|su pago en pesos/i;
 const ruleStr = (r) => [].concat(r.match || [], r.name || [], r.pattern || []).join(' · ');
 const isBadRule = (r) => r.source !== 'seed' && GENERIC.test(ruleStr(r));
-const badRules = (db.cp_rules || []).filter(isBadRule);
+const badRules = (liveRules || []).filter(isBadRule);
 
 // ===================== reporte =====================
 const fmt = (n) => '$ ' + Math.round(n).toLocaleString('es-AR');
-console.log(`\n=== CARGA OCT 2026 (${COMMIT ? 'COMMIT' : 'DRY-RUN'}) · DB_PATH=${DB_PATH} ===`);
-console.log(`cashflow actual: ${db.cashflow.length} movimientos\n`);
+console.log(`\n=== CARGA OCT 2026 (${COMMIT ? 'COMMIT' : 'DRY-RUN'}) ===\n`);
 console.log(`--- A AGREGAR (${toAdd.length}) ---`);
-let addImport = 0, addReview = 0;
+let addReview = 0;
 for (const m of toAdd) {
   const flag = m.transfer ? '[transfer]' : m.needs_review ? '[REVISIÓN]' : '';
   console.log(`  ${m.date.slice(5, 10)} ${m.caja_id} ${m.flow.padEnd(7)} ${fmt(m.amount_ars ?? m.amount_usd).padStart(16)}  ${(m.category || '').padEnd(14)} ${flag}  ${m.description?.slice(0, 50) || m.counterparty}`);
@@ -141,16 +156,12 @@ console.log(`--- cp_rules genéricas a BORRAR (${badRules.length}) ---`);
 for (const r of badRules) console.log(`  ${ruleStr(r)} → ${r.counterparty || r.category || '?'}`);
 console.log();
 
-if (!COMMIT) { console.log('DRY-RUN: no se escribió nada. Corré con --commit para aplicar.\n'); process.exit(0); }
+if (!COMMIT) { console.log('DRY-RUN: no se tocó nada. Corré con --commit para aplicar vía API.\n'); process.exit(0); }
 
-// ---------- COMMIT: backup + escribir ----------
-const bak = `${DB_PATH}.bak-oct2026-${Date.now()}`;
-fs.copyFileSync(DB_PATH, bak);
-db.cashflow.push(...toAdd);
-db.cp_rules = (db.cp_rules || []).filter(r => !isBadRule(r));
-const tmp = `${DB_PATH}.tmp`;
-fs.writeFileSync(tmp, JSON.stringify(db, null, 2));
-fs.renameSync(tmp, DB_PATH);
-console.log(`✅ COMMIT: +${toAdd.length} movimientos, -${badRules.length} reglas genéricas.`);
-console.log(`   Backup: ${bak}`);
-console.log(`   cashflow ahora: ${db.cashflow.length}\n`);
+// ---------- COMMIT: aplicar vía API (el server guarda; no se pisa nada) ----------
+let okAdd = 0, okDel = 0;
+for (const m of toAdd) { await api('POST', '/api/cashflow', m); okAdd++; }
+for (const r of badRules) { await api('DELETE', `/api/cp_rules/${r.id}`); okDel++; }
+console.log(`✅ COMMIT: +${okAdd} movimientos, -${okDel} reglas genéricas (vía API, server guardó).\n`);
+console.log('Siguiente: en la app, clasificá los movimientos a revisión y conciliá las cajas');
+console.log('(BdC $4.010.866 · BBVA $519.989). Falta aún: efectivo, MP y reconciliación.\n');
