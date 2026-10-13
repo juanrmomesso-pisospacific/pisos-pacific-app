@@ -46126,6 +46126,18 @@
       ],
       "notes": null,
       "updated_at": "2026-10-13T11:58:09.136Z"
+    },
+    {
+      "id": "CLI-mv739wwe-c9bw",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Arq. Carolina Lin - Quisu Desarrollos",
+      "updated_at": "2026-10-13T19:43:47.150Z"
     }
   ],
   "expenses": [],
