@@ -161378,11 +161378,12 @@
       "linked_lead_id": "lead-email-1a130e7f462a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-12T16:17:26.000Z",
-      "last_message_preview": "Hola, buen día. Quisiera solicitar un presupuesto para piso de madera natural premium, tipo entablonado, para la planta alta de una vivienda",
+      "last_message_at": "2026-10-13T13:57:53.878Z",
+      "last_message_preview": "Hola Ornella! Cómo estás? Gracias por contactarte con nosotros. Te paso mi número de WhatsApp así podemos hablar mejor! \n\nSaludos, Victoria\n",
       "email_subject": "Solicitud de presupuesto",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-12T16:17:26.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-12T16:17:26.000Z",
+      "last_outbound_at": "2026-10-13T13:57:53.878Z"
     },
     {
       "id": "conv-email-1a135258c4bc",
@@ -184338,6 +184339,15 @@
       "ts": "2026-10-13T13:51:37.620Z",
       "status": "sent",
       "wa_id": "1a1358874e3d36c5"
+    },
+    {
+      "id": "m-1791899873878-ekzs",
+      "conversation_id": "conv-email-1a130e7f462a",
+      "direction": "out",
+      "body": "Hola Ornella! Cómo estás? Gracias por contactarte con nosotros. Te paso mi número de WhatsApp así podemos hablar mejor! \n\nSaludos, Victoria\n1136982222",
+      "ts": "2026-10-13T13:57:53.878Z",
+      "status": "sent",
+      "wa_id": "1a1358e2f7789266"
     }
   ],
   "templates": [
