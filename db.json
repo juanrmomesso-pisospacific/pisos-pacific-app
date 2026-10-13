@@ -155168,6 +155168,22 @@
       "address": "Pilar",
       "created_at": "2026-10-13T15:55:29.918Z",
       "last_touch_at": "2026-10-13T15:55:32.602Z"
+    },
+    {
+      "id": "lead-instagram-1791918324161",
+      "name": "@victoria_traverso",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-13T19:05:22.555Z",
+      "last_touch_at": "2026-10-13T19:05:22.555Z"
     }
   ],
   "conversations": [
@@ -163554,6 +163570,20 @@
       "email_subject": "Equipo de Pacific Rim - pisospacific.com, no olvidéis agendar una cita individualizada con un experto de Google Ads\r\n",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-13T12:03:35.000Z"
+    },
+    {
+      "id": "conv-1791918324161-xlhz",
+      "channel": "instagram",
+      "contact_id": "906996722348633",
+      "contact_name": "@victoria_traverso",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1791918324161",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-13T19:05:22.555Z",
+      "last_message_preview": "Hola! Buenas tardes Donde se pueden ir a ver?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-13T19:05:22.555Z"
     }
   ],
   "messages": [
@@ -186529,6 +186559,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzA1NDk1MDY3MTkyOTU0NzU0ODMzMzYwODU0NDUwMTc2MAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1791918324162-r75d",
+      "conversation_id": "conv-1791918324161-xlhz",
+      "direction": "in",
+      "body": "Hola! Buenas tardes Donde se pueden ir a ver?",
+      "ts": "2026-10-13T19:05:22.555Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -198833,7 +198871,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMzA1MDA3MjY1MTIyMjE5NTgzOTI4NTkzNDIwMTc2NTg4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIzNjczODA1Njg2NjMxMzozMzA1MDExMDQ5Nzc3MjUzNjEwNjc1Nzc0NDcyMTEzMzU2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODczODg0MjI0ODc2Njk3NTozMzA1MDI2MDM5OTg5ODczMDM1NDgyOTI4MDE3MjU3MjY3MgZDZD",
-      "wamid.HBgMNDQ3OTc0OTA0OTk1FQIAEhgSMUQ1OUNFQTIzMTlDMDg0NUE1AA=="
+      "wamid.HBgMNDQ3OTc0OTA0OTk1FQIAEhgSMUQ1OUNFQTIzMTlDMDg0NUE1AA==",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NTA1ODY5NzE3MjA2NDM1OTM2NDEwMDg4ODcyMzQ1NgZDZD"
     ],
     "last_weekly_reminder": "2026-10-09T12:05:58.180Z",
     "warehouses": [
