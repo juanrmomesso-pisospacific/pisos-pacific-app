@@ -155179,11 +155179,11 @@
       "linked_client_name": null,
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-10-09T22:13:12.138Z",
+      "last_message_at": "2026-10-13T17:27:46.495Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-28T12:22:09.790Z",
-      "last_outbound_at": "2026-10-09T22:13:12.138Z",
+      "last_outbound_at": "2026-10-13T17:27:46.495Z",
       "ignored": true
     },
     {
@@ -186519,6 +186519,16 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenas! Buscaba la línea spc sin colocación\r\n\r\nEl El mar, 13 oct 2026 a la(s) 10:50 a. m., Pisos Pacific <\r\ninfo@pisospacific.com> escribió:\r\n\r\n> Hola Natacha, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a prueba de agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-10-13T16:00:50.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791912467059-vcdh",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-10-13T17:27:46.495Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzA1NDk1MDY3MTkyOTU0NzU0ODMzMzYwODU0NDUwMTc2MAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
