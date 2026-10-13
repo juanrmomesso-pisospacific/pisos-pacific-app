@@ -177,8 +177,8 @@
       "currency": "USD",
       "active": true,
       "margin": 94.4,
-      "stock": 425.20000000000005,
-      "reservedStock": 152.5,
+      "stock": 344.20000000000005,
+      "reservedStock": 71.5,
       "subLine": "Saldos Obra Grande",
       "shortName": "Roble 12cm Veta Tallada",
       "thicknessMm": 10,
@@ -1835,7 +1835,7 @@
       "active": true,
       "margin": 25,
       "stock": 0,
-      "reservedStock": 40,
+      "reservedStock": 0,
       "subLine": "Nivelación",
       "shortName": "Nivelación Carpeta",
       "thicknessMm": null,
@@ -1883,7 +1883,7 @@
       "active": true,
       "margin": 172.9,
       "stock": 0,
-      "reservedStock": 8427.630000000001,
+      "reservedStock": 8347.630000000001,
       "subLine": "Colocación Piso",
       "shortName": "Colocación Prefinished Sobre Manta",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15269,
+      "reservedStock": 15268,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -3484,7 +3484,7 @@
       "cost": 18,
       "currency": "USD",
       "stock": 0,
-      "reservedStock": 27,
+      "reservedStock": 0,
       "m2_por_caja": 0,
       "unit": "u",
       "active": true,
@@ -17596,7 +17596,7 @@
       ],
       "zoned": false,
       "discount_total": 2900,
-      "status": "En proceso",
+      "status": "Finalizado",
       "created_at": "2026-10-07T14:45:36.873Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -17605,8 +17605,8 @@
         "total_paid": 0,
         "balance_due": 4460
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Victoria Gonzalez Collado",
       "reseller_id": "",
       "reseller_name": "",
@@ -17621,6 +17621,12 @@
           "from": "Confirmado",
           "to": "En proceso",
           "at": "2026-10-07T14:46:12.864Z",
+          "by": "Admin User"
+        },
+        {
+          "from": "En proceso",
+          "to": "Finalizado",
+          "at": "2026-10-13T20:39:44.627Z",
           "by": "Admin User"
         }
       ]
@@ -17672,7 +17678,7 @@
       ],
       "zoned": false,
       "discount_total": 150,
-      "status": "En proceso",
+      "status": "Finalizado",
       "created_at": "2026-10-07T18:33:24.778Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -17681,8 +17687,8 @@
         "total_paid": 0,
         "balance_due": 990
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Victoria Gonzalez Collado",
       "reseller_id": "",
       "reseller_name": "",
@@ -17695,6 +17701,12 @@
           "from": "Confirmado",
           "to": "En proceso",
           "at": "2026-10-07T19:45:33.816Z",
+          "by": "Admin User"
+        },
+        {
+          "from": "En proceso",
+          "to": "Finalizado",
+          "at": "2026-10-13T20:39:52.609Z",
           "by": "Admin User"
         }
       ]
@@ -145082,6 +145094,28 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "local-1791923979154-9be2c",
+      "flow": "Ingreso",
+      "date": "2026-10-13T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Romina Di Landro",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra Casa - Zocalos",
+      "sale_ref": "A5440",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 400,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
@@ -195399,6 +195433,51 @@
       "product_id": "SERV-129",
       "sku": "SERV-129",
       "qty": 85,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T20:39:44.627Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1791384336873-z0ax",
+      "product_id": "PROD-007",
+      "sku": "PROD-007",
+      "qty": -81,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T20:39:44.627Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1791384336873-z0ax",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": -80,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T20:39:44.627Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1791384336873-z0ax",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": -1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T20:39:52.609Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1791398004778-c5bh",
+      "product_id": "local-1790886373458-7ne0a",
+      "sku": "PROD-675",
+      "qty": -27,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-13T20:39:52.609Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1791398004778-c5bh",
+      "product_id": "SERV-105",
+      "sku": "SERV-105",
+      "qty": -40,
       "warehouse_id": "main"
     }
   ],
