@@ -153057,7 +153057,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-10T20:32:13.000Z",
-      "last_touch_at": "2026-10-13T13:51:08.281Z"
+      "last_touch_at": "2026-10-13T16:00:50.000Z"
     },
     {
       "id": "lead-email-1a12bb9827a1",
@@ -161474,12 +161474,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a1278424886",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-13T13:50:57.700Z",
-      "last_message_preview": "Hola Natacha, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
+      "unread_count": 1,
+      "last_message_at": "2026-10-13T16:00:50.000Z",
+      "last_message_preview": "Buenas! Buscaba la línea spc sin colocación\r\n\r\nEl El mar, 13 oct 2026 a la(s) 10:50 a. m., Pisos Pacific <\r\ninfo@pisospacific.com> escribió:",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-10T20:32:13.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-13T16:00:50.000Z",
       "last_outbound_at": "2026-10-13T13:50:57.700Z"
     },
     {
@@ -184500,6 +184500,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Victoria ! buenos días\r\nGracias Por la respuesta\r\n\r\nTe pido el de madera prefinished, colocado en un departamento de CABA\r\n\r\nmuchas gracias\r\nCynthia\r\n\r\nOn Tue, 13 Oct 2026 at 10:46, Pisos Pacific <info@pisospacific.com> wrote:\r\n\r\n> Hola Cynthia, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a prueba de agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Victoria\r\n> 113698222\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-10-13T15:18:19.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a135fef1c0a",
+      "conversation_id": "conv-email-1a1278424886",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenas! Buscaba la línea spc sin colocación\r\n\r\nEl El mar, 13 oct 2026 a la(s) 10:50 a. m., Pisos Pacific <\r\ninfo@pisospacific.com> escribió:\r\n\r\n> Hola Natacha, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a prueba de agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-10-13T16:00:50.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -194387,7 +194395,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-13T08:07:30.104Z",
     "gmail_seen_ids": [
-      "19fb69a0469f9a05",
       "19fb745efaafb8af",
       "19fb769058d519b5",
       "19fb77b0ba9ee4b9",
@@ -195186,7 +195193,8 @@
       "1a13527bab24e86c",
       "1a135258c4bc3a78",
       "1a1355a5289de718",
-      "1a135d80936d47a0"
+      "1a135d80936d47a0",
+      "1a135fef1c0a6545"
     ],
     "cash_sessions": {
       "1136982222": {
