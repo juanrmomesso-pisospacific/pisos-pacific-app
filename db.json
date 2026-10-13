@@ -198049,7 +198049,8 @@
       "1a13586cca4ebb3c",
       "1a135841d4242c68",
       "1a1358e2f7789266",
-      "1a1358874e3d36c5"
+      "1a1358874e3d36c5",
+      "1a136dd382f3683e"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -200361,8 +200362,8 @@
       "id": "local-1791384578412-fpiuu",
       "type": "reparacion",
       "title": "Newman Maria",
-      "due_date": "2026-10-21",
-      "due_date_to": "2026-10-15",
+      "due_date": "2026-10-19",
+      "due_date_to": "2026-10-21",
       "assigned_seller": "Hugo Ramirez",
       "status": "pendiente",
       "created_at": "2026-10-07T14:49:40.213Z"
@@ -200371,8 +200372,8 @@
       "id": "local-1791384671232-h86cf",
       "type": "reparacion",
       "title": "Reparación Juncal",
-      "due_date": "2026-10-15",
-      "due_date_to": "2026-10-16",
+      "due_date": "2026-10-14",
+      "due_date_to": "2026-10-15",
       "status": "pendiente",
       "created_at": "2026-10-07T14:51:13.103Z",
       "assigned_seller": "Hugo Ramirez"
@@ -200381,7 +200382,7 @@
       "id": "local-1791384717417-xb9zt",
       "type": "reparacion",
       "title": "Showroom",
-      "due_date": "2026-10-19",
+      "due_date": "2026-10-22",
       "due_date_to": "2026-10-20",
       "assigned_seller": "Hugo Ramirez",
       "status": "pendiente",
@@ -200406,6 +200407,16 @@
       "assigned_seller": "Juan Rodriguez Momesso",
       "status": "pendiente",
       "created_at": "2026-10-08T18:29:16.376Z"
+    },
+    {
+      "id": "local-1791921991687-ufhf2",
+      "type": "reparacion",
+      "title": "Carpeta y desmonte del piso. ",
+      "due_date": "2026-10-13",
+      "assigned_seller": "Hugo Ramirez",
+      "status": "pendiente",
+      "sale_id": "local-sale-1791488923925-qrvj",
+      "created_at": "2026-10-13T20:06:31.170Z"
     }
   ],
   "password_resets": {},
