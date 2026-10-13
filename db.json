@@ -145036,6 +145036,28 @@
       "review_reason": null,
       "source": "internal-transfer",
       "transfer_group": "tg-1791911990210-cukxb"
+    },
+    {
+      "id": "local-1791923132535-o73z0",
+      "flow": "Ingreso",
+      "date": "2026-10-13T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Arq. Catalina Pezzoni Fraquelli",
+      "counterparty_type": "client",
+      "description": "Cobro - Arq. Catalina Pezzoni Fraquelli",
+      "sale_ref": "A8696",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 2200,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
