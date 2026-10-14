@@ -161158,12 +161158,12 @@
       "linked_lead_id": "lead-email-1a05eb9fd4a5",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-09T15:00:39.264Z",
-      "last_message_preview": "📄 Presupuesto NA3417 - Obra Belgrano - Marcela.pdf",
+      "last_message_at": "2026-10-14T11:48:07.755Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-08T16:37:06.000Z",
-      "last_outbound_at": "2026-09-09T15:00:39.264Z"
+      "last_outbound_at": "2026-10-14T11:48:07.755Z"
     },
     {
       "id": "conv-1788299640128-iesj",
@@ -186938,6 +186938,15 @@
       "body": "✉️ Re: Comex+Cargo // Momesso // Cotizacion JR007 | Wall panles | Shanghai - Buenos Aires | 20 ft // CCF-MI-00000105\n\nHola Vicky, buen dia\r\n\r\nLo preparo y se los envio.\r\n\r\nSaludos\r\n\r\n\r\n\r\n\r\nEl mar, 13 oct 2026 a la(s) 5:23 p.m., Victoria Pisos Pacific (\r\nvictoria@pisospacific.com) escribió:\r\n\r\n> Cami cuando puedas me pasas el presupuesto de costos estimado.\r\n> Esta arribando el 17-10\r\n>\r\n> El vie, 7 ago 2026 a las 10:00, Victoria Pisos Pacific (<\r\n> victoria@pisospacific.com>) escribió:\r\n>\r\n>> Hola Cami,\r\n>>\r\n>> ¿Cómo estás? Te adjunto la documentación borrador que recibí de la\r\n>> fábrica. Una vez que se realice la carga, te enviaré los datos finales.\r\n>>\r\n>> Por favor, tené en cuenta que la mercadería viene suelta por bultos y no\r\n>> está paletizada. Te lo comento para ir coordinando la recepción, ya que irá\r\n>> directamente al depósito y no se desconsolida en Grama, aunque esto último\r\n>> lo definiremos más adelante.\r\n>>\r\n>> Saludos,\r\n>>\r\n>> Victoria González Collado\r\n>>\r\n>>\r\n>> El mié, 5 ago 2026 a las 15:28, Camila Cerveri (<\r\n>> camilac@grupocomexmas.com>) escribió:\r\n>>\r\n>>> Hola Caro, buenas tardes\r\n>>>\r\n>>> @Victoria V <victoria@pisospacific.com> Vicky, tenes los documentos\r\n>>> finales de esta orden? Así puedo revisar el draft del BL.\r\n>>>\r\n>>> Saludos\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>> El mié, 5 ago 2026 a la(s) 3:08 p.m., Customer Comex+ Cargo (\r\n>>> CustomerCargo@grupocomexmas.com) escribió:\r\n>>>\r\n>>>> Buenas tardes Vicky, Cami,\r\n>>>> Informamos que estamos trabajando en la reserva para la salida del\r\n>>>> 19/AGO que sería la primera disponible, estamos aguardando liberación del\r\n>>>> espac",
       "ts": "2026-10-14T11:21:38.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791978487755-glqv",
+      "conversation_id": "conv-email-1a05eb9fd4a5",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que tengas, nos encontramos a disposición.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T11:48:07.755Z",
+      "status": "sent",
+      "wa_id": "1a13a3dbf8706a08"
     }
   ],
   "templates": [
