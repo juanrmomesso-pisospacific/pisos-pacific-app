@@ -163201,14 +163201,15 @@
       "contact_name": "Ernesto Luis Ferro",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0ed45b8842",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-02T18:11:32.000Z",
       "last_message_preview": "Hola Victoria, seguimos x whatsapp?\r\n11 2308 1515 gracias.\r\n\r\nYahoo Mail: busca, organiza, toma el control de tu buzón \r\n \r\n  El vie, 2 de o",
       "email_subject": "para pedir presupuestos",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-02T18:11:32.000Z",
-      "last_outbound_at": "2026-10-02T17:20:55.384Z"
+      "last_outbound_at": "2026-10-02T17:20:55.384Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0ee03efd84",
@@ -163668,14 +163669,15 @@
       "contact_name": "Walter Marino",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a114e1af46f",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-08T12:00:56.000Z",
       "last_message_preview": "Muchas gracias.\r\n\r\nEl mié, 7 de oct de 2026, 22:17, Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola, ¿cómo estás?\r\n>\r\n> Para supe",
       "email_subject": "Precio",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-08T12:00:56.000Z",
-      "last_outbound_at": "2026-10-08T01:17:56.561Z"
+      "last_outbound_at": "2026-10-08T01:17:56.561Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a1178ece000",
