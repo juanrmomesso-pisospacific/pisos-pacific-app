@@ -154846,9 +154846,9 @@
       "interested_products": [],
       "notes": "Formulario web — 80m² · Sin Colocación · CP 7000",
       "status": "Quoted",
-      "assigned_seller": "",
+      "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-09-27T20:21:48.000Z",
-      "last_touch_at": "2026-10-07T13:05:57.790Z"
+      "last_touch_at": "2026-10-14T19:05:42.276Z"
     },
     {
       "id": "lead-email-1a0e4a56265b",
@@ -163939,12 +163939,12 @@
       "linked_lead_id": "lead-email-1a1020fcec55",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-05T13:18:01.620Z",
-      "last_message_preview": "Hola Solange, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
+      "last_message_at": "2026-10-14T19:05:15.114Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, con",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-03T13:59:12.000Z",
-      "last_outbound_at": "2026-10-05T13:18:01.620Z"
+      "last_outbound_at": "2026-10-14T19:05:15.114Z"
     },
     {
       "id": "conv-email-1a10367ce888",
@@ -163953,14 +163953,15 @@
       "contact_name": "Gisela Rodriguez",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a10367ce888",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-05T13:19:23.247Z",
       "last_message_preview": "Hola Gisela, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-03T20:14:56.000Z",
-      "last_outbound_at": "2026-10-05T13:19:23.247Z"
+      "last_outbound_at": "2026-10-05T13:19:23.247Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a103669d6a6",
@@ -164001,12 +164002,12 @@
       "linked_lead_id": "lead-email-1a104af78215",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-05T13:20:47.729Z",
-      "last_message_preview": "Hola Gus, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras do",
+      "last_message_at": "2026-10-14T19:05:34.997Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, con",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-04T02:12:50.000Z",
-      "last_outbound_at": "2026-10-05T13:20:47.729Z"
+      "last_outbound_at": "2026-10-14T19:05:34.997Z"
     },
     {
       "id": "conv-email-1a104ab236c6",
@@ -187610,6 +187611,24 @@
       "ts": "2026-10-14T19:03:47.294Z",
       "status": "sent",
       "wa_id": "1a13bcc9a75c175f"
+    },
+    {
+      "id": "m-1792004715114-y0p9",
+      "conversation_id": "conv-email-1a1020fcec55",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, contanos qué modelo o colección estás buscando y avanzamos con el presupuesto.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T19:05:15.114Z",
+      "status": "sent",
+      "wa_id": "1a13bcdf0b2a2357"
+    },
+    {
+      "id": "m-1792004734997-xr37",
+      "conversation_id": "conv-email-1a104af78215",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, contanos qué modelo o colección estás buscando y avanzamos con el presupuesto.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T19:05:34.997Z",
+      "status": "sent",
+      "wa_id": "1a13bce3e0355e55"
     }
   ],
   "templates": [
