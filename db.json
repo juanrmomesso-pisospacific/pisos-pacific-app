@@ -162372,12 +162372,12 @@
       "linked_lead_id": "lead-email-1a0abd39be67",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-18T14:20:16.080Z",
-      "last_message_preview": "📄 Presupuesto NA7366 - Cotizacion Delfina Fite - Delfina Fite.pdf",
+      "last_message_at": "2026-10-14T12:05:56.393Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T16:17:07.000Z",
-      "last_outbound_at": "2026-09-18T14:20:16.080Z"
+      "last_outbound_at": "2026-10-14T12:05:56.393Z"
     },
     {
       "id": "conv-email-1a0ac7fe33f1",
@@ -187012,6 +187012,15 @@
       "ts": "2026-10-14T11:56:27.569Z",
       "status": "sent",
       "wa_id": "1a13a455eef28673"
+    },
+    {
+      "id": "m-1791979556393-7d52",
+      "conversation_id": "conv-email-1a0abd39be67",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que tengas, nos encontramos a disposición.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T12:05:56.393Z",
+      "status": "sent",
+      "wa_id": "1a13a4e0c23ee35b"
     }
   ],
   "templates": [
