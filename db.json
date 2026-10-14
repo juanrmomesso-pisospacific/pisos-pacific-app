@@ -28920,7 +28920,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Arq. Clara Granja",
       "has_iva": true,
-      "price": 3761.4543999999996,
+      "price": 3888.5044,
       "zoned": false,
       "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 5 más",
       "items": [
@@ -28939,14 +28939,14 @@
           "target_item_index": null
         },
         {
-          "product_id": "PROD-201Z",
-          "sku": "PROD-201Z",
-          "description": "Zócalo EPS 70mm - Plain Blanco",
+          "product_id": "ZOC-MAD-07",
+          "sku": "ZOC-MAD-07",
+          "description": "Zócalo Madera Lustrada 7cm",
           "quantity": 42,
-          "unit_price": 4.5,
-          "cost": 2.75,
+          "unit_price": 7,
+          "cost": 4.75,
           "category": "Zócalos",
-          "total": 189,
+          "total": 294,
           "discount": 0,
           "image": "",
           "target_item_index": null
@@ -29016,7 +29016,8 @@
       "reseller_id": "",
       "reseller_name": "",
       "currency": "USD",
-      "sale_id": "local-sale-1791565236159-ks2t"
+      "sale_id": "local-sale-1791565236159-ks2t",
+      "commission_split_discount": true
     },
     {
       "id": "local-1785873691480-m5lnr",
