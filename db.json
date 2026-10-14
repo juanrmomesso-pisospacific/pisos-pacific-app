@@ -155529,9 +155529,9 @@
       "interested_products": [],
       "notes": "Formulario web — 40m² · Con Colocación · CP 1426",
       "status": "Contacted",
-      "assigned_seller": "",
+      "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-10-06T02:33:30.000Z",
-      "last_touch_at": "2026-10-06T16:37:40.000Z"
+      "last_touch_at": "2026-10-14T19:06:54.042Z"
     },
     {
       "id": "lead-instagram-1791254709978",
@@ -164155,14 +164155,15 @@
       "contact_name": "Graciela Fernández",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a1178ece000",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-08T01:14:00.661Z",
       "last_message_preview": "Hola, ¿cómo estás?\n\nPara superficies de 13 m² no trabajamos con colocación, ya que nuestro servicio de colocación es a partir de los 40 m².\n",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-07T18:09:56.000Z",
-      "last_outbound_at": "2026-10-08T01:14:00.661Z"
+      "last_outbound_at": "2026-10-08T01:14:00.661Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a11933aa04f",
@@ -164171,14 +164172,15 @@
       "contact_name": "Gustavo",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a11933aa04f",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-08T15:43:32.891Z",
       "last_message_preview": "Hola Gustavo como estas?\n\nPara superficies menores a 40 m² no realizamos la colocación. Podemos venderte el material si te interesa pero no ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-08T01:49:38.000Z",
-      "last_outbound_at": "2026-10-08T15:43:32.891Z"
+      "last_outbound_at": "2026-10-08T15:43:32.891Z",
+      "ignored": true
     },
     {
       "id": "conv-1791476006048-odng",
@@ -199288,7 +199290,19 @@
       "1a13a421a78526fa",
       "1a13a4158e4bd666",
       "1a13a6a221f0113b",
-      "1a13b744e5105ee4"
+      "1a13b744e5105ee4",
+      "1a13bce3e0355e55",
+      "1a13bcdf0b2a2357",
+      "1a13bcc9a75c175f",
+      "1a13bcbccb34c156",
+      "1a13bcb9e86f91b9",
+      "1a13bcb27d26cd4c",
+      "1a13bca843159400",
+      "1a13bca08cecdab5",
+      "1a13bc9b307ba66f",
+      "1a13bc80136623b9",
+      "1a13bc782c476187",
+      "1a13bc727356f793"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
