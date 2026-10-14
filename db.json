@@ -198519,7 +198519,12 @@
       "1a13a26cc0fb8d97",
       "1a13a40ea6582912",
       "1a13a3eb876b2289",
-      "1a13a3dbf8706a08"
+      "1a13a3dbf8706a08",
+      "1a13a4e0c23ee35b",
+      "1a13a455eef28673",
+      "1a13a426e2267de1",
+      "1a13a421a78526fa",
+      "1a13a4158e4bd666"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -199416,7 +199421,7 @@
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-10-13",
+    "last_daily_task_reminder": "2026-10-14",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -199980,7 +199985,7 @@
         "learned_at": "2026-09-26T10:46:00.268Z"
       }
     },
-    "last_daily_pending_digest": "2026-10-13",
+    "last_daily_pending_digest": "2026-10-14",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
