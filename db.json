@@ -157093,13 +157093,14 @@
       "contact_name": "Rala Qin",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f10c540c11",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-08T03:08:12.000Z",
       "last_message_preview": "Hi Victoria,\n\nPlease check and confirm attached the PI.\nVery noted for the end darker boards.\n\nBR\nRala\nTel/WeChat/WhatsApp:008615699576792\n-",
       "email_subject": "Re: PROFORMA INVOICE LAM-PA2601",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-08T03:08:12.000Z"
+      "last_inbound_at": "2026-10-08T03:08:12.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19f13d3442c3",
@@ -163507,13 +163508,14 @@
       "contact_name": "Hanna Joy Ballesteros",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a11306c9583",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-06T21:02:50.000Z",
       "last_message_preview": "Hi,\r\n\r\nI noticed you ship products.\r\n\r\n\r\n\r\nI'm not emailing to ask you to switch providers.\r\n\r\n\r\n\r\nI'd simply like to quote a recent shipmen",
       "email_subject": "Quick Shipping Rate Comparison",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-06T21:02:50.000Z"
+      "last_inbound_at": "2026-10-06T21:02:50.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1791336879292-7yya",
@@ -163632,7 +163634,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a11e3bb935f",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-09T19:38:39.000Z",
       "last_message_preview": "Hola, Línea H2O, modelo roble Eslavonia Gracias El 9 oct 2026 11:03 am, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: Hola Cristina,",
       "email_subject": "Pedido de Presupuesto | Página Web",
