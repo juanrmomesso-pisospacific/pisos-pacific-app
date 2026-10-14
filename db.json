@@ -155263,9 +155263,9 @@
       "interested_products": [],
       "notes": "Email: presupuesto — buen día, tengo que cubrir un espacio de 54 m2. y me gustaría hacer\r\npresupuesto con alguno de sus productos en liquidación. cómo podríamos\r\nhacer?\r\nmuchas gracias !",
       "status": "Contacted",
-      "assigned_seller": "",
+      "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-10-02T12:15:17.000Z",
-      "last_touch_at": "2026-10-02T13:20:02.606Z"
+      "last_touch_at": "2026-10-14T19:03:48.779Z"
     },
     {
       "id": "local-1790958012372-3metl",
@@ -163856,12 +163856,12 @@
       "linked_lead_id": "lead-email-1a0fc8a80ec5",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-02T13:19:56.075Z",
-      "last_message_preview": "Hola Leandro, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestra",
+      "last_message_at": "2026-10-14T19:03:47.294Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, con",
       "email_subject": "presupuesto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-02T12:15:17.000Z",
-      "last_outbound_at": "2026-10-02T13:19:56.075Z"
+      "last_outbound_at": "2026-10-14T19:03:47.294Z"
     },
     {
       "id": "conv-email-1a0fda9cfeeb",
@@ -163870,14 +163870,15 @@
       "contact_name": "mabel",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0fda9cfeeb",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-05T13:11:20.510Z",
       "last_message_preview": "Hola mabel, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-02T17:29:18.000Z",
-      "last_outbound_at": "2026-10-05T13:11:20.510Z"
+      "last_outbound_at": "2026-10-05T13:11:20.510Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0fe7e8235a",
@@ -187598,6 +187599,15 @@
       "ts": "2026-10-14T19:02:54.565Z",
       "status": "sent",
       "wa_id": "1a13bcbccb34c156"
+    },
+    {
+      "id": "m-1792004627294-wz33",
+      "conversation_id": "conv-email-1a0fc8a80ec5",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, contanos qué modelo o colección estás buscando y avanzamos con el presupuesto.\n\nTe dejo mi celular si te es más simple la comunicación por WhatsApp. +5411 51750087\n\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T19:03:47.294Z",
+      "status": "sent",
+      "wa_id": "1a13bcc9a75c175f"
     }
   ],
   "templates": [
