@@ -17857,7 +17857,7 @@
       "client_email": "",
       "client_phone": "+54 9 11 3138-3693",
       "client_address": "San Isidro",
-      "contract_total": 3109,
+      "contract_total": 3214,
       "items": [
         {
           "product_id": "PROD-027",
@@ -17870,19 +17870,6 @@
           "disc_value": 10,
           "total": 2135.6,
           "discount": 213.56,
-          "image": "",
-          "target_item_index": null
-        },
-        {
-          "product_id": "PROD-201Z",
-          "sku": "PROD-201Z",
-          "description": "Zócalo EPS 70mm - Plain Blanco",
-          "quantity": 42,
-          "unit_price": 4.5,
-          "cost": 2.75,
-          "category": "Zócalos",
-          "total": 189,
-          "discount": 0,
           "image": "",
           "target_item_index": null
         },
@@ -17940,6 +17927,17 @@
           "discount": 35.76,
           "image": "",
           "target_item_index": null
+        },
+        {
+          "product_id": "ZOC-MAD-07",
+          "sku": "ZOC-MAD-07",
+          "description": "Zócalo Madera Lustrada 7cm",
+          "quantity": 42,
+          "unit_price": 7,
+          "total": 294,
+          "cost": 4.75,
+          "category": "Zócalos",
+          "discount": 0
         }
       ],
       "zoned": false,
@@ -17949,9 +17947,9 @@
       "has_iva": false,
       "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 3109,
+        "total_invoiced": 3214,
         "total_paid": 0,
-        "balance_due": 3109
+        "balance_due": 3214
       },
       "stock_reserved": true,
       "stock_deducted": false,
