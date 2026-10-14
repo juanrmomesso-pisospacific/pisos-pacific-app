@@ -590,7 +590,7 @@
       "active": true,
       "margin": 171,
       "stock": 1314.95,
-      "reservedStock": 1174.9,
+      "reservedStock": 1333.8,
       "subLine": "Colección Madera",
       "shortName": "Roble Light Brushed 14/3mm x 19x190",
       "thicknessMm": 14,
@@ -754,7 +754,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 1034.2453279999997,
-      "reservedStock": 4162.2699999999995,
+      "reservedStock": 4268.57,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1763,7 +1763,7 @@
       "active": true,
       "margin": -100,
       "stock": 0,
-      "reservedStock": 5075.747,
+      "reservedStock": 5201.747,
       "subLine": "Materiales",
       "shortName": "Nylon Manta 200 Micrones",
       "thicknessMm": null,
@@ -1787,7 +1787,7 @@
       "active": true,
       "margin": -100,
       "stock": 0,
-      "reservedStock": 4867.1,
+      "reservedStock": 4993.1,
       "subLine": "Materiales",
       "shortName": "Bajo Piso EVA 2mm Aluminizado",
       "thicknessMm": null,
@@ -1859,7 +1859,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8447.747,
+      "reservedStock": 8539.747,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -1883,7 +1883,7 @@
       "active": true,
       "margin": 172.9,
       "stock": 0,
-      "reservedStock": 8347.630000000001,
+      "reservedStock": 8473.630000000001,
       "subLine": "Colocación Piso",
       "shortName": "Colocación Prefinished Sobre Manta",
       "thicknessMm": null,
@@ -2099,7 +2099,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 202,
+      "reservedStock": 208,
       "subLine": "Escalera",
       "shortName": "Colocación Pedada/Frentín Madera",
       "thicknessMm": null,
@@ -2147,7 +2147,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 54,
+      "reservedStock": 69,
       "subLine": "Escalera",
       "shortName": "Colocación Compensados y Descansos",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15268,
+      "reservedStock": 15429,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -2543,7 +2543,7 @@
       "active": true,
       "margin": 50,
       "stock": 0,
-      "reservedStock": 255,
+      "reservedStock": 276,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -2561,7 +2561,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 370,
+      "reservedStock": 391,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -3341,7 +3341,7 @@
       "cost": 18,
       "currency": "USD",
       "stock": 0,
-      "reservedStock": 20,
+      "reservedStock": 40,
       "active": true,
       "margin": 56,
       "createdAt": "2026-08-28T21:11:03.436Z",
@@ -3466,7 +3466,7 @@
       "cost": 16,
       "currency": "USD",
       "stock": 583.5,
-      "reservedStock": 91.7,
+      "reservedStock": 1591.7,
       "m2_por_caja": 2.084,
       "unit": "m2",
       "active": true,
@@ -18305,7 +18305,7 @@
       ],
       "zoned": false,
       "discount_total": 574.92,
-      "status": "Confirmado",
+      "status": "Programado",
       "created_at": "2026-10-14T15:24:08.905Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -18313,6 +18313,69 @@
         "total_invoiced": 0,
         "total_paid": 0,
         "balance_due": 6501.281600000001
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0,
+      "delivery_date": "2026-10-15",
+      "delivery_date_to": "2026-10-19",
+      "delivery_crew": "Gastón Aguilera",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Programado",
+          "at": "2026-10-14T15:24:32.065Z",
+          "by": "Admin User"
+        }
+      ]
+    },
+    {
+      "id": "local-sale-1791992691357-vafn",
+      "quote_id": "local-1790871931919-tbaez",
+      "quote_number": "A7752",
+      "title": "Cotización Arq. Pilar gondell",
+      "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m",
+      "internal_notes": "",
+      "public_notes": "El costo del envío puede variar según la empresa de transporte elegida. Trabajamos habitualmente con Vía Cargo y Andesmar, aunque también podemos coordinar el despacho con el expreso que indique el cliente.\n",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mv8a6hzx-hh39",
+      "client_name": "Arq. Pilar gondell",
+      "client_dni": "",
+      "client_email": "pilar.gondell@hotmail.com",
+      "client_phone": "",
+      "client_address": "Concepcion del Uruguay, Entre Ríos",
+      "contract_total": 4072.4485999999997,
+      "items": [
+        {
+          "product_id": "PROD-190",
+          "sku": "PROD-190",
+          "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m",
+          "quantity": 104.2,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 15,
+          "total": 3959.6,
+          "discount": 593.94,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 593.94,
+      "status": "Confirmado",
+      "created_at": "2026-10-14T15:44:51.357Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 4072.4485999999997
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -40735,7 +40798,7 @@
       "currency": "USD",
       "created_at": "2026-09-29T23:16:26.046Z",
       "quote_number": "A1366",
-      "status": "DRAFT"
+      "status": "SENT"
     },
     {
       "id": "local-1790857240503-f7kc6",
@@ -40804,7 +40867,7 @@
       "currency": "USD",
       "created_at": "2026-10-01T12:20:40.230Z",
       "quote_number": "A6208",
-      "status": "DRAFT"
+      "status": "SENT"
     },
     {
       "id": "local-1790857911297-h94fg",
@@ -41270,12 +41333,12 @@
       "currency": "USD",
       "created_at": "2026-10-01T16:23:48.736Z",
       "quote_number": "A3535",
-      "status": "DRAFT",
+      "status": "SENT",
       "commission_split_discount": true
     },
     {
       "id": "local-1790871931919-tbaez",
-      "client_id": "",
+      "client_id": "CLI-mv8a6hzx-hh39",
       "client_name": "Arq. Pilar gondell",
       "client_dni": "",
       "client_email": "pilar.gondell@hotmail.com",
@@ -41316,7 +41379,8 @@
       "quote_number": "A7752",
       "status": "ACCEPTED",
       "lead_id": "local-1785180143629-y3hbq",
-      "commission_split_discount": true
+      "commission_split_discount": true,
+      "sale_id": "local-sale-1791992691357-vafn"
     },
     {
       "id": "local-1790873717757-puvo0",
@@ -46490,6 +46554,22 @@
       ],
       "notes": null,
       "updated_at": "2026-10-14T15:24:08.905Z"
+    },
+    {
+      "id": "CLI-mv8a6hzx-hh39",
+      "type": "client",
+      "active": true,
+      "name": "Arq. Pilar gondell",
+      "dni": "",
+      "emails": [
+        "pilar.gondell@hotmail.com"
+      ],
+      "phones": [],
+      "addresses": [
+        "Concepcion del Uruguay, Entre Ríos"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-14T15:44:51.357Z"
     }
   ],
   "expenses": [],
@@ -196045,6 +196125,141 @@
       "sku": "PROD-011",
       "qty": -22,
       "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:00.502Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871828926-4195d",
+      "product_id": "PROD-201",
+      "sku": "PROD-201",
+      "qty": 141.6,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:00.502Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871828926-4195d",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": 126,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:00.502Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871828926-4195d",
+      "product_id": "SERV-116",
+      "sku": "SERV-116",
+      "qty": 6,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:00.502Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871828926-4195d",
+      "product_id": "prod-123344",
+      "sku": "prod-123344",
+      "qty": 21,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:00.502Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871828926-4195d",
+      "product_id": "local-1787951463606-9ixis",
+      "sku": "PROD-53",
+      "qty": 20,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:00.502Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871828926-4195d",
+      "product_id": "PROD-201",
+      "sku": "PROD-201",
+      "qty": 17.3,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:00.502Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871828926-4195d",
+      "product_id": "PROD-072",
+      "sku": "PROD-072",
+      "qty": 126,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:00.502Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871828926-4195d",
+      "product_id": "PROD-062",
+      "sku": "PROD-062",
+      "qty": 126,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:00.502Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871828926-4195d",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 160,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:00.502Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871828926-4195d",
+      "product_id": "SERV-118",
+      "sku": "SERV-118",
+      "qty": 15,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:00.502Z",
+      "type": "quote_reserve",
+      "ref": "local-1790871828926-4195d",
+      "product_id": "1534",
+      "sku": "1534",
+      "qty": 21,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:13.203Z",
+      "type": "quote_reserve",
+      "ref": "local-1790857240503-f7kc6",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 106.3,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:13.203Z",
+      "type": "quote_reserve",
+      "ref": "local-1790857240503-f7kc6",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 92,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:13.203Z",
+      "type": "quote_reserve",
+      "ref": "local-1790857240503-f7kc6",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T15:32:18.778Z",
+      "type": "quote_reserve",
+      "ref": "local-1790723786181-ecdan",
+      "product_id": "local-1790089780830-ghwcm",
+      "sku": "PROD-400",
+      "qty": 1500,
+      "warehouse_id": "main"
     }
   ],
   "users": [
@@ -201164,6 +201379,17 @@
       "sale_id": "local-sale-1791892689136-yi4g",
       "notes": "Guido 2660 piso 11",
       "created_at": "2026-10-14T15:22:18.162Z"
+    },
+    {
+      "id": "local-1791991472369-zm76b",
+      "type": "medicion",
+      "title": "Medición previa · Guada Orellano",
+      "due_date": "2026-10-13",
+      "assigned_seller": "Gaston Aguilera",
+      "status": "pendiente",
+      "sale_id": "local-sale-1791991448905-7qje",
+      "notes": "Mirabilia Palermo",
+      "created_at": "2026-10-14T15:24:32.112Z"
     }
   ],
   "password_resets": {},
