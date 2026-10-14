@@ -162227,12 +162227,12 @@
       "linked_lead_id": "lead-email-1a0a75a66d37",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-16T14:14:51.682Z",
-      "last_message_preview": "📄 Presupuesto NA7250 - Macarena - Obra Avellaneda - Macarena - Obra Avellaneda.pdf",
+      "last_message_at": "2026-10-14T11:52:03.499Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T13:52:45.000Z",
-      "last_outbound_at": "2026-09-16T14:14:51.682Z"
+      "last_outbound_at": "2026-10-14T11:52:03.499Z"
     },
     {
       "id": "conv-1789559134669-tqfc",
@@ -162305,14 +162305,15 @@
       "contact_name": "carolina zuljevic",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0aa803bbdd",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-16T14:21:54.659Z",
       "last_message_preview": "no nos deja escribirte por whatsapp te mando el numero de victoria para que la contactes!\n1136982222",
       "email_subject": "Consulta x revestimiento escalera",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T14:11:26.000Z",
-      "last_outbound_at": "2026-09-16T14:21:54.659Z"
+      "last_outbound_at": "2026-09-16T14:21:54.659Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0aaaa13d60",
@@ -186971,6 +186972,15 @@
       "ts": "2026-10-14T11:51:35.597Z",
       "status": "sent",
       "wa_id": "1a13a40ea6582912"
+    },
+    {
+      "id": "m-1791978723499-jjw4",
+      "conversation_id": "conv-email-1a0a75a66d37",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que tengas, nos encontramos a disposición.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T11:52:03.499Z",
+      "status": "sent",
+      "wa_id": "1a13a4158e4bd666"
     }
   ],
   "templates": [
