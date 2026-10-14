@@ -162479,12 +162479,12 @@
       "linked_lead_id": "lead-email-1a0afae5f7d3",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T14:18:17.737Z",
-      "last_message_preview": "Hola juan, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras dos líneas de pisos:\n\n",
+      "last_message_at": "2026-10-14T11:52:53.607Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T14:03:54.000Z",
-      "last_outbound_at": "2026-09-17T14:18:17.737Z"
+      "last_outbound_at": "2026-10-14T11:52:53.607Z"
     },
     {
       "id": "conv-1789659186403-mwlv",
@@ -186981,6 +186981,15 @@
       "ts": "2026-10-14T11:52:03.499Z",
       "status": "sent",
       "wa_id": "1a13a4158e4bd666"
+    },
+    {
+      "id": "m-1791978773607-ntb9",
+      "conversation_id": "conv-email-1a0afae5f7d3",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que tengas, nos encontramos a disposición.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T11:52:53.607Z",
+      "status": "sent",
+      "wa_id": "1a13a421a78526fa"
     }
   ],
   "templates": [
