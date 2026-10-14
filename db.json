@@ -155398,9 +155398,9 @@
       "interested_products": [],
       "notes": "Email: Informacion de precios. — Hola. Es para una superficie de 100mts aprox.\r\n\r\nNecesitariab precios de distintas opciones.\r\nGracias\r\n\r\nGuillermo",
       "status": "Quoted",
-      "assigned_seller": "",
+      "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-10-03T20:13:26.000Z",
-      "last_touch_at": "2026-10-07T13:23:30.717Z"
+      "last_touch_at": "2026-10-14T19:06:31.825Z"
     },
     {
       "id": "lead-instagram-1791067179018",
@@ -163617,14 +163617,15 @@
       "contact_name": "Paula Origlia",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0e94c0cd62",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-07T13:08:30.999Z",
       "last_message_preview": "Hola Paula, ¿cómo estás?\n\nNo te enviamos todavía el presupuesto porque necesitamos saber qué colección te interesa para poder cotizarte corr",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-29T14:34:47.000Z",
-      "last_outbound_at": "2026-10-07T13:08:30.999Z"
+      "last_outbound_at": "2026-10-07T13:08:30.999Z",
+      "ignored": true
     },
     {
       "id": "conv-1790632026769-vpkk",
