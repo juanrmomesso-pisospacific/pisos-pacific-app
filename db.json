@@ -162324,12 +162324,12 @@
       "linked_lead_id": "lead-email-1a0aaaa13d60",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-17T14:39:59.276Z",
-      "last_message_preview": "📄 Presupuesto NA6257 - Cotizacion Fernando - Fernando Galvan.pdf",
+      "last_message_at": "2026-10-14T11:53:14.847Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T14:51:24.000Z",
-      "last_outbound_at": "2026-09-17T14:39:59.276Z"
+      "last_outbound_at": "2026-10-14T11:53:14.847Z"
     },
     {
       "id": "conv-1789569785628-dily",
@@ -186990,6 +186990,15 @@
       "ts": "2026-10-14T11:52:53.607Z",
       "status": "sent",
       "wa_id": "1a13a421a78526fa"
+    },
+    {
+      "id": "m-1791978794847-f6ta",
+      "conversation_id": "conv-email-1a0aaaa13d60",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que tengas, nos encontramos a disposición.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T11:53:14.847Z",
+      "status": "sent",
+      "wa_id": "1a13a426e2267de1"
     }
   ],
   "templates": [
