@@ -163763,14 +163763,15 @@
       "contact_name": "Erik Suarez",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a11db8c196f",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-09T14:07:54.085Z",
       "last_message_preview": "Hola Erik, ¿cómo estás?\n\nTe paso el contacto de Diego, de Mr. Parquet, que están en Uruguay:\n\n+598 93 959 677\n\nYa le avisé que lo ibas a con",
       "email_subject": "Consulta de costo por m2",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-08T22:53:17.000Z",
-      "last_outbound_at": "2026-10-09T14:07:54.085Z"
+      "last_outbound_at": "2026-10-09T14:07:54.085Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a11e3bb935f",
