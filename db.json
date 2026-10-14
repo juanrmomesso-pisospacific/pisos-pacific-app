@@ -155834,6 +155834,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-13T19:05:22.555Z",
       "last_touch_at": "2026-10-13T19:05:22.555Z"
+    },
+    {
+      "id": "lead-email-1a13b276b35a",
+      "name": "Victoria traverso",
+      "email": "victoria_traverso@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Ex combatiente juan c reguera 1899, San Fernando",
+      "postal_code": "1646",
+      "approx_m2": 150,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 150m² · Sin Colocación · CP 1646",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-14T16:03:20.000Z",
+      "last_touch_at": "2026-10-14T16:03:20.000Z"
     }
   ],
   "conversations": [
@@ -164260,6 +164277,21 @@
       "last_message_preview": "Hola",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-14T16:02:19.326Z"
+    },
+    {
+      "id": "conv-email-1a13b276b35a",
+      "channel": "email",
+      "contact_id": "victoria_traverso@hotmail.com",
+      "contact_name": "Victoria traverso",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a13b276b35a",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-14T16:03:20.000Z",
+      "last_message_preview": "Formulario web — 150m² · Sin Colocación · CP 1646 · Ex combatiente juan c reguera 1899, San Fernando",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-14T16:03:20.000Z"
     }
   ],
   "messages": [
@@ -187367,6 +187399,14 @@
       "body": "Hola",
       "ts": "2026-10-14T16:02:19.326Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a13b276b35a",
+      "conversation_id": "conv-email-1a13b276b35a",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 150m² · Sin Colocación · CP 1646 · Ex combatiente juan c reguera 1899, San Fernando",
+      "ts": "2026-10-14T16:03:20.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -197610,7 +197650,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-14T07:37:47.320Z",
     "gmail_seen_ids": [
-      "19fb815d467f63b8",
       "19fb893f0cae89e7",
       "19fba865d8577525",
       "19fba85f15463a11",
@@ -198409,7 +198448,8 @@
       "1a139ef1e9776e12",
       "1a13a2632510f7bc",
       "1a13a6a221f0113b",
-      "1a13a8089629c9d0"
+      "1a13a8089629c9d0",
+      "1a13b276b35af3ba"
     ],
     "cash_sessions": {
       "1136982222": {
