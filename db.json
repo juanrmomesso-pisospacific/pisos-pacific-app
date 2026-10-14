@@ -163888,14 +163888,15 @@
       "contact_name": "Jorge Schenone",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0fe7e8235a",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-05T13:14:52.716Z",
       "last_message_preview": "Hola Jorge! Cómo estás? Necesitamos ir a ver el estado del piso y ver si podríamos nivelar sobre él. El retiro de las lajitas sería un traba",
       "email_subject": "(sin asunto)",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-02T21:21:27.000Z",
-      "last_outbound_at": "2026-10-05T13:14:52.716Z"
+      "last_outbound_at": "2026-10-05T13:14:52.716Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0ffd309ada",
