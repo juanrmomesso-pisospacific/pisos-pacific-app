@@ -164379,11 +164379,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791918324161",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-10-14T16:02:19.326Z",
-      "last_message_preview": "Hola",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-14T16:02:19.326Z"
+      "unread_count": 0,
+      "last_message_at": "2026-10-14T19:25:17.016Z",
+      "last_message_preview": "Hola Victoria, cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-14T16:02:19.326Z",
+      "last_outbound_at": "2026-10-14T19:25:17.016Z"
     },
     {
       "id": "conv-email-1a13b276b35a",
@@ -187660,6 +187661,16 @@
       "ts": "2026-10-14T19:24:52.354Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIxMTIzMTEwNjM5MTQzODozMzA1NjY3NDA3NDg0NzY5MTkzMzE2MzAyNzE2NTA4NTY5NgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1792005917579-bno5",
+      "conversation_id": "conv-1791918324161-xlhz",
+      "direction": "out",
+      "body": "Hola Victoria, cómo estás?",
+      "ts": "2026-10-14T19:25:17.016Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NjY3NDUyOTc4MzQ1MjU0ODA0NDYxMzEzNjQxNjc2OAZDZD",
       "via": "ig-app"
     }
   ],
