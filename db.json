@@ -158875,14 +158875,15 @@
       "contact_name": "Lourdes",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fa8f8408a1",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-08T12:23:32.686Z",
       "last_message_preview": "Hola Lourdes, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-07-28T13:44:28.000Z",
-      "last_outbound_at": "2026-09-08T12:23:32.686Z"
+      "last_outbound_at": "2026-09-08T12:23:32.686Z",
+      "ignored": true
     },
     {
       "id": "conv-1785250945445-5q87",
@@ -159478,14 +159479,15 @@
       "contact_name": "Mariana",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fda3d71b41",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-08T12:23:59.351Z",
       "last_message_preview": "Hola Mariana, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-07T03:21:26.000Z",
-      "last_outbound_at": "2026-09-08T12:23:59.351Z"
+      "last_outbound_at": "2026-09-08T12:23:59.351Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19fdbfc50044",
@@ -159899,14 +159901,15 @@
       "contact_name": "Lorena",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ffd8d127fd",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-08T12:23:48.033Z",
       "last_message_preview": "Hola Lorena, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-08-13T23:55:08.000Z",
-      "last_outbound_at": "2026-09-08T12:23:48.033Z"
+      "last_outbound_at": "2026-09-08T12:23:48.033Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0026a1a52a",
