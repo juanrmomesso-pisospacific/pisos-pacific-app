@@ -156335,7 +156335,7 @@
       "contact_id": "estudiobourguetarq@gmail.com",
       "contact_name": "silvina",
       "linked_client_name": null,
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-08T12:24:38.484Z",
       "last_message_preview": "Hola Silvina, espero que te encuentres bien!\n\nQuería saber si habías podido ver mi mensaje. Cualquier duda que tengas, nos avisás y buscamos",
@@ -156343,7 +156343,8 @@
       "linked_lead_id": "lead-email-19ecbcacd6ca",
       "last_message_direction": "out",
       "last_inbound_at": "2026-06-15T14:58:45.000Z",
-      "last_outbound_at": "2026-09-08T12:24:38.484Z"
+      "last_outbound_at": "2026-09-08T12:24:38.484Z",
+      "ignored": true
     },
     {
       "id": "conv-email-19ecc771055b",
