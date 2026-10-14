@@ -196831,7 +196831,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-13T08:07:30.104Z",
     "gmail_seen_ids": [
-      "19fb769058d519b5",
       "19fb77b0ba9ee4b9",
       "19fb7b6c22fb4d6c",
       "19fb80d44b9135fa",
@@ -197630,7 +197629,8 @@
       "1a1355a5289de718",
       "1a135d80936d47a0",
       "1a135fef1c0a6545",
-      "1a136ef8422d0a3f"
+      "1a136ef8422d0a3f",
+      "1a138d73d07dc649"
     ],
     "cash_sessions": {
       "1136982222": {
