@@ -155895,10 +155895,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 150m² · Sin Colocación · CP 1646",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-14T16:03:20.000Z",
-      "last_touch_at": "2026-10-14T16:03:20.000Z"
+      "last_touch_at": "2026-10-14T17:38:17.759Z"
     }
   ],
   "conversations": [
@@ -199122,7 +199122,8 @@
       "1a13a426e2267de1",
       "1a13a421a78526fa",
       "1a13a4158e4bd666",
-      "1a13a6a221f0113b"
+      "1a13a6a221f0113b",
+      "1a13b744e5105ee4"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
