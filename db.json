@@ -162544,14 +162544,15 @@
       "contact_name": "Nuñez Nicholson Arquitectos",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0b51d876dd",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-21T21:25:58.000Z",
       "last_message_preview": "Perfecto!\r\n\r\nTe dejo mi número (Lujan) 1167669735\r\n\r\n\r\nSaludos cordiales,\r\n\r\nArq. Ma. Luján Nicholson Duelo\r\nArq. Fernando Nuñez\r\n\r\n\r\n\r\n\r\n\r\n",
       "email_subject": "OBS | Presupuesto pisos",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-21T21:25:58.000Z",
-      "last_outbound_at": "2026-09-21T21:24:06.967Z"
+      "last_outbound_at": "2026-09-21T21:24:06.967Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0b6e83acec",
@@ -162837,14 +162838,15 @@
       "contact_name": "Valentín",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0d43a1137e",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-25T21:31:05.000Z",
       "last_message_preview": "Perfecto, muchas gracias. Lo consulto y cualquier cosa te aviso.\r\n\r\nSaludos.\r\n\r\nEl El vie, 25 sept 2026 a la(s) 10:30 a. m., Pisos Pacific <",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-25T21:31:05.000Z",
-      "last_outbound_at": "2026-09-25T13:30:07.227Z"
+      "last_outbound_at": "2026-09-25T13:30:07.227Z",
+      "ignored": true
     },
     {
       "id": "conv-1790327244235-1zhj",
