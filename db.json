@@ -17823,7 +17823,7 @@
       ],
       "zoned": false,
       "discount_total": 182.02,
-      "status": "Confirmado",
+      "status": "Programado",
       "created_at": "2026-10-08T19:48:43.925Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -17840,7 +17840,17 @@
       "commission_split_discount": true,
       "currency": "USD",
       "commission_amount": 0,
-      "iva_amount": 0
+      "iva_amount": 0,
+      "delivery_date": "2026-10-16",
+      "delivery_crew": "Hugo Ramirez",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Programado",
+          "at": "2026-10-14T15:20:43.605Z",
+          "by": "Admin User"
+        }
+      ]
     },
     {
       "id": "local-sale-1791565236159-ks2t",
@@ -200953,10 +200963,21 @@
       "id": "local-1791922071271-2902x",
       "type": "otro",
       "title": "Obra Paneles - Vicente Lopez",
-      "due_date": "2026-10-16",
+      "due_date": "2026-10-15",
       "assigned_seller": "Hugo Ramirez",
       "status": "pendiente",
       "created_at": "2026-10-13T20:07:50.901Z"
+    },
+    {
+      "id": "local-1791991243839-ayleg",
+      "type": "medicion",
+      "title": "Medición previa · Sol- CH Estudio",
+      "due_date": "2026-10-12",
+      "assigned_seller": "Hugo Ramirez",
+      "status": "pendiente",
+      "sale_id": "local-sale-1791488923925-qrvj",
+      "notes": "Palermo",
+      "created_at": "2026-10-14T15:20:43.584Z"
     }
   ],
   "password_resets": {},
