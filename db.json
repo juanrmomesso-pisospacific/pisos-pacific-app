@@ -145146,6 +145146,31 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "date": "2026-10-13T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-002",
+      "caja_name": "Mercado Pago",
+      "category": "Flota",
+      "subcategory": "Peajes",
+      "counterparty": "Peajes (AUSOL/AUSA/AUBASA)",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": null,
+      "description": "Peajes MP (agrupados del día, API)",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 1994.73,
+      "amount_usd": 1.3,
+      "exchange_rate": 1540,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Flota/Vehículos",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null,
+      "source": "mp-api",
+      "id": "MOV-MPAUTO-mv7ss4l4-001"
     }
   ],
   "containers": [
@@ -196828,8 +196853,8 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": 103586177,
-    "mp_last_sync": "2026-10-13T08:07:30.104Z",
+    "mp_pending_job": null,
+    "mp_last_sync": "2026-10-14T07:37:47.320Z",
     "gmail_seen_ids": [
       "19fb77b0ba9ee4b9",
       "19fb7b6c22fb4d6c",
@@ -199725,7 +199750,7 @@
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
-    "mp_pending_at": "2026-10-14T07:36:38.159Z",
+    "mp_pending_at": null,
     "receipt_next": 112,
     "receipt_signature": "firma-juan.png",
     "receipt_signer": "Juan Rodriguez Momesso"
