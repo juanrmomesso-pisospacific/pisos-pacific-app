@@ -7755,8 +7755,8 @@
       "source": "excel-import+vercel+vercel",
       "discount_total": 4194.48,
       "vercel_qnum": "A0063",
-      "delivery_date": "2026-10-14",
-      "delivery_date_to": "2026-10-19",
+      "delivery_date": "2026-10-20",
+      "delivery_date_to": "2026-10-25",
       "status_log": [
         {
           "from": "Confirmado",
@@ -9431,8 +9431,8 @@
       "source": "excel-import+vercel+vercel",
       "discount_total": 0,
       "vercel_qnum": "A0056",
-      "delivery_date": "2026-10-13",
-      "delivery_date_to": "2026-10-16",
+      "delivery_date": "2026-10-19",
+      "delivery_date_to": "2026-10-22",
       "delivery_crew": "Gastón Aguilera",
       "status_log": [
         {
@@ -13835,8 +13835,8 @@
       "stock_reserved": true,
       "stock_deducted": false,
       "seller_name": "Victoria Gonzalez Collado",
-      "delivery_date": "2026-10-14",
-      "delivery_date_to": "2026-10-22",
+      "delivery_date": "2026-10-28",
+      "delivery_date_to": "2026-11-05",
       "status_log": [
         {
           "from": "Programado",
@@ -18070,7 +18070,7 @@
       ],
       "zoned": false,
       "discount_total": 165,
-      "status": "Confirmado",
+      "status": "En proceso",
       "created_at": "2026-10-13T11:58:09.136Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -18102,7 +18102,18 @@
           ]
         }
       ],
-      "material_delivery_date": "2026-10-14"
+      "material_delivery_date": "2026-10-14",
+      "delivery_date": "2026-10-14",
+      "delivery_date_to": "2026-10-14",
+      "delivery_crew": "Gastón Aguilera",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "En proceso",
+          "at": "2026-10-14T15:22:18.142Z",
+          "by": "Admin User"
+        }
+      ]
     },
     {
       "id": "local-sale-1791892698049-0ivt",
@@ -200978,6 +200989,17 @@
       "sale_id": "local-sale-1791488923925-qrvj",
       "notes": "Palermo",
       "created_at": "2026-10-14T15:20:43.584Z"
+    },
+    {
+      "id": "local-1791991338411-01q7c",
+      "type": "medicion",
+      "title": "Medición previa · Flor Allende",
+      "due_date": "2026-10-12",
+      "assigned_seller": "Gastón Aguilera",
+      "status": "pendiente",
+      "sale_id": "local-sale-1791892689136-yi4g",
+      "notes": "Guido 2660 piso 11",
+      "created_at": "2026-10-14T15:22:18.162Z"
     }
   ],
   "password_resets": {},
