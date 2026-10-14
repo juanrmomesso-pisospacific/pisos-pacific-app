@@ -41379,9 +41379,9 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Arq. Pilar gondell",
       "has_iva": true,
-      "price": 4072.4485999999997,
+      "price": 4314.448600000001,
       "zoned": false,
-      "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m",
+      "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m + 1 más",
       "items": [
         {
           "product_id": "PROD-190",
@@ -41394,6 +41394,19 @@
           "disc_value": 15,
           "total": 3959.6,
           "discount": 593.94,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 200,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 200,
+          "discount": 0,
           "image": "",
           "target_item_index": null
         }
