@@ -157618,13 +157618,14 @@
       "contact_name": "Miguel Ventura",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f4fcf002ff",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-26T09:32:53.000Z",
       "last_message_preview": "Bom dia,\r\n\r\nEstaria interessado na aquisição de 39 unidades (+- 69m2) do vosso pavimento vinílico Pacific H2O Eslavônia com réguas do tamanh",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-26T09:32:53.000Z"
+      "last_inbound_at": "2026-09-26T09:32:53.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1783760696566-oa86",
@@ -162959,13 +162960,14 @@
       "contact_name": "Ivy",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0e6942eb3d",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-28T05:54:22.000Z",
       "last_message_preview": "Estimado equipo comercial,\r\n\r\n \r\n\r\nEspero que se encuentren muy bien.\r\n\r\n \r\n\r\nSomos un fabricante especializado en pisos con más de 23 años ",
       "email_subject": "Nueva solución de pisos rígidos de alto rendimiento – MSPC",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-28T05:54:22.000Z"
+      "last_inbound_at": "2026-09-28T05:54:22.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0e83a7ebed",
@@ -163085,13 +163087,14 @@
       "contact_name": "alice@hmfloors.com",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0ee03efd84",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-29T16:33:40.000Z",
       "last_message_preview": "Dear Juan, dear Victoria,\r\n\r\nHow are you? This is Alice from HM Floors. We are manufacturer of engineered wood flooring since 2006 year with",
       "email_subject": "invitation to Expo CIHAC # B114 # HM Floors",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-29T16:33:40.000Z"
+      "last_inbound_at": "2026-09-29T16:33:40.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0ee4e2ec8e",
