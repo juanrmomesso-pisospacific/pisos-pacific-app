@@ -164287,11 +164287,12 @@
       "linked_lead_id": "lead-email-1a13b276b35a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-14T16:03:20.000Z",
-      "last_message_preview": "Formulario web — 150m² · Sin Colocación · CP 1646 · Ex combatiente juan c reguera 1899, San Fernando",
+      "last_message_at": "2026-10-14T17:27:20.859Z",
+      "last_message_preview": "Hola Victoria, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestr",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-14T16:03:20.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-14T16:03:20.000Z",
+      "last_outbound_at": "2026-10-14T17:27:20.859Z"
     }
   ],
   "messages": [
@@ -187407,6 +187408,15 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 150m² · Sin Colocación · CP 1646 · Ex combatiente juan c reguera 1899, San Fernando",
       "ts": "2026-10-14T16:03:20.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791998840859-gl7n",
+      "conversation_id": "conv-email-1a13b276b35a",
+      "direction": "out",
+      "body": "Hola Victoria, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Victoria\n1136982222",
+      "ts": "2026-10-14T17:27:20.859Z",
+      "status": "sent",
+      "wa_id": "1a13b744e5105ee4"
     }
   ],
   "templates": [
