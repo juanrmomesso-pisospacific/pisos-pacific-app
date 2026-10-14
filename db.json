@@ -163268,13 +163268,14 @@
       "contact_name": "MYRIAM HUGI",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0f21908af7",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-30T11:35:08.000Z",
       "last_message_preview": "Buen dia, quisiera que me coticen un piso flotantes resistente al agua con\r\nmanta y encastre clic para una superficie de 60 más\r\nPor favor e",
       "email_subject": "Presupuesto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-30T11:35:08.000Z"
+      "last_inbound_at": "2026-09-30T11:35:08.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1790775165262-7k5r",
