@@ -155347,9 +155347,9 @@
       "interested_products": [],
       "notes": "Formulario web — 130m² · Con Colocación · CP 1629",
       "status": "Contacted",
-      "assigned_seller": "",
+      "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-10-03T13:49:39.000Z",
-      "last_touch_at": "2026-10-05T13:17:38.920Z"
+      "last_touch_at": "2026-10-14T19:04:41.515Z"
     },
     {
       "id": "lead-email-1a1020fcec55",
@@ -161924,14 +161924,15 @@
       "contact_name": "Laura Ellena",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a075050f3c0",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-05T13:16:20.033Z",
       "last_message_preview": "Hola Laura, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-03T05:37:20.000Z",
-      "last_outbound_at": "2026-10-05T13:16:20.033Z"
+      "last_outbound_at": "2026-10-05T13:16:20.033Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a077dbea19c",
