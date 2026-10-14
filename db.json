@@ -161988,12 +161988,12 @@
       "linked_lead_id": "lead-email-1a096225efda",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-14T18:05:42.699Z",
-      "last_message_preview": "Hola Adolfo, ¿cómo estás?\n\nPoder colocar, se puede, pero hiciste la pregunta exacta. El piso de roble o de lapacho, como mínimo tiene 12mm d",
+      "last_message_at": "2026-10-14T11:49:11.605Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que ",
       "email_subject": "Piso para living",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-12T15:00:14.000Z",
-      "last_outbound_at": "2026-09-14T18:05:42.699Z"
+      "last_outbound_at": "2026-10-14T11:49:11.605Z"
     },
     {
       "id": "conv-email-1a0966c5bc72",
@@ -186947,6 +186947,15 @@
       "ts": "2026-10-14T11:48:07.755Z",
       "status": "sent",
       "wa_id": "1a13a3dbf8706a08"
+    },
+    {
+      "id": "m-1791978551605-9fk9",
+      "conversation_id": "conv-email-1a096225efda",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que tengas, nos encontramos a disposición.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T11:49:11.605Z",
+      "status": "sent",
+      "wa_id": "1a13a3eb876b2289"
     }
   ],
   "templates": [
