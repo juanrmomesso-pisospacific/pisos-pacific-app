@@ -153156,9 +153156,9 @@
       "interested_products": [],
       "notes": "Formulario web — 110m² · Con Colocación · CP 5009",
       "status": "Quoted",
-      "assigned_seller": "",
+      "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-09-12T20:54:02.000Z",
-      "last_touch_at": "2026-09-18T14:12:24.255Z"
+      "last_touch_at": "2026-10-14T11:56:42.135Z"
     },
     {
       "id": "lead-instagram-1789307270547",
@@ -162525,14 +162525,15 @@
       "contact_name": "Gonzalo",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0b1c0d1ef9",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-18T14:14:07.716Z",
       "last_message_preview": "Hola Gonzalo, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-17T23:43:18.000Z",
-      "last_outbound_at": "2026-09-18T14:14:07.716Z"
+      "last_outbound_at": "2026-09-18T14:14:07.716Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0b426443d0",
