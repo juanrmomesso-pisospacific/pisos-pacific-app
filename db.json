@@ -289,8 +289,8 @@
       "currency": "USD",
       "active": true,
       "margin": 159,
-      "stock": 1740.2000000000003,
-      "reservedStock": 731.43,
+      "stock": 1718.2000000000003,
+      "reservedStock": 709.43,
       "subLine": "Colección Madera",
       "shortName": "Roble Verona 12/1 Veta Tallada",
       "thicknessMm": 12,
@@ -18071,14 +18071,30 @@
         "total_paid": 0,
         "balance_due": 2570.1852000000003
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Victoria Gonzalez Collado",
       "reseller_id": "",
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "material_deliveries": [
+        {
+          "id": "DEL-mv87k4wn",
+          "date": "2026-10-14",
+          "note": null,
+          "by": "Victoria Gonzalez Collado",
+          "items": [
+            {
+              "sku": "PROD-011",
+              "product_id": "PROD-011",
+              "quantity": 22
+            }
+          ]
+        }
+      ],
+      "material_delivery_date": "2026-10-14"
     },
     {
       "id": "local-sale-1791892698049-0ivt",
@@ -195813,6 +195829,15 @@
       "product_id": "SERV-129",
       "sku": "SERV-129",
       "qty": -97.6,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-14T14:31:28.727Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1791892689136-yi4g",
+      "product_id": "PROD-011",
+      "sku": "PROD-011",
+      "qty": -22,
       "warehouse_id": "main"
     }
   ],
