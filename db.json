@@ -160259,12 +160259,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1786568709286",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-14T01:22:56.673Z",
-      "last_message_preview": "Hola en dónde está el show room. Me dirías días y horarios para visitarlo.",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-10-14T19:24:52.354Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-14T01:22:56.673Z",
-      "last_outbound_at": "2026-08-14T00:24:30.238Z"
+      "last_outbound_at": "2026-10-14T19:24:52.354Z"
     },
     {
       "id": "conv-email-19ff7ca2a289",
@@ -187641,6 +187641,26 @@
       "ts": "2026-10-14T19:07:18.216Z",
       "status": "sent",
       "wa_id": "1a13bcfd2574ef01"
+    },
+    {
+      "id": "m-1792005892262-0w72",
+      "conversation_id": "conv-1786568709286-k3ux",
+      "direction": "out",
+      "body": "Hola Marcela, cómo estás? Soy Juan Rodriguez Momesso. Te dejo mi celular para que podamos coordinar una visita al Showroom. 1151750087",
+      "ts": "2026-10-14T19:24:51.696Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIxMTIzMTEwNjM5MTQzODozMzA1NjY3NDA2MjcxMDg5NjQ3NzUzODc4NTkwMzUwOTUwNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1792005892765-fvov",
+      "conversation_id": "conv-1786568709286-k3ux",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-10-14T19:24:52.354Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIxMTIzMTEwNjM5MTQzODozMzA1NjY3NDA3NDg0NzY5MTkzMzE2MzAyNzE2NTA4NTY5NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
@@ -199311,7 +199331,8 @@
       "1a13bc9b307ba66f",
       "1a13bc80136623b9",
       "1a13bc782c476187",
-      "1a13bc727356f793"
+      "1a13bc727356f793",
+      "1a13bcfd2574ef01"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
