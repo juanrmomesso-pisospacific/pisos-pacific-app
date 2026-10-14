@@ -18339,7 +18339,7 @@
       "quote_id": "local-1790871931919-tbaez",
       "quote_number": "A7752",
       "title": "Cotización Arq. Pilar gondell",
-      "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m",
+      "description": "H2O HD XL - Aspen 6,5mm x 23cm x 1,50m + 1 más",
       "internal_notes": "",
       "public_notes": "El costo del envío puede variar según la empresa de transporte elegida. Trabajamos habitualmente con Vía Cargo y Andesmar, aunque también podemos coordinar el despacho con el expreso que indique el cliente.\n",
       "payment_terms": "Anticipo 80% · Conforme 20%",
@@ -18349,7 +18349,7 @@
       "client_email": "pilar.gondell@hotmail.com",
       "client_phone": "",
       "client_address": "Concepcion del Uruguay, Entre Ríos",
-      "contract_total": 4072.4485999999997,
+      "contract_total": 4315,
       "items": [
         {
           "product_id": "PROD-190",
@@ -18364,6 +18364,17 @@
           "discount": 593.94,
           "image": "",
           "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 200,
+          "total": 200,
+          "cost": 0,
+          "category": "Servicio",
+          "discount": 0
         }
       ],
       "zoned": false,
@@ -18373,9 +18384,9 @@
       "has_iva": true,
       "iva_mode": "full",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 4315,
         "total_paid": 0,
-        "balance_due": 4072.4485999999997
+        "balance_due": 4315
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -18384,7 +18395,8 @@
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "iva_amount": 749
     }
   ],
   "quotes": [
