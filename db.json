@@ -43558,6 +43558,63 @@
       "status": "Enviado",
       "lead_id": "lead-email-1a11e3bb935f",
       "share_token": "61079e6a40086df48d3b6848"
+    },
+    {
+      "id": "local-1791977496543-rrmhl",
+      "client_id": "",
+      "client_name": "Natacha",
+      "client_dni": "",
+      "client_email": "naa34834530@gmail.com",
+      "client_phone": "",
+      "client_address": "CP 1722 · Balcarce 190",
+      "internal_notes": "Formulario web — 34m² · Con Colocación · CP 1416",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Cotización Natacha",
+      "has_iva": true,
+      "price": 2970.792,
+      "zoned": false,
+      "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "local-1790089780830-ghwcm",
+          "sku": "PROD-400",
+          "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
+          "quantity": 60.4,
+          "unit_price": 38,
+          "cost": 16,
+          "category": "Pisos H2O",
+          "total": 2295.2,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 160,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 160,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "created_at": "2026-10-14T11:31:36.369Z",
+      "quote_number": "A6256",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a1278424886"
     }
   ],
   "clients": [
@@ -155327,10 +155384,10 @@
       "needs_placement": false,
       "interested_products": [],
       "notes": "Formulario web — 60m² · Sin Colocación · CP 1722",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-10-10T20:32:13.000Z",
-      "last_touch_at": "2026-10-14T11:30:40.940Z"
+      "last_touch_at": "2026-10-14T11:31:36.576Z"
     },
     {
       "id": "lead-email-1a12bb9827a1",
