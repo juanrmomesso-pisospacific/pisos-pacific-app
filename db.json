@@ -162330,14 +162330,15 @@
       "contact_name": "Carolina esses",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0913b00ca1",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-25T11:39:24.602Z",
       "last_message_preview": "Hola Caro, ¿cómo estás?\n\nSí, el presupuesto incluye todo el material necesario. La manta ya viene incorporada y pegada en la parte posterior",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T17:02:59.000Z",
-      "last_outbound_at": "2026-09-25T11:39:24.602Z"
+      "last_outbound_at": "2026-09-25T11:39:24.602Z",
+      "ignored": true
     },
     {
       "id": "conv-1789145375187-3oe3",
