@@ -43487,6 +43487,76 @@
       "quote_number": "A4886",
       "status": "DRAFT",
       "commission_split_discount": true
+    },
+    {
+      "id": "local-1791976901984-9idiy",
+      "client_id": "",
+      "client_name": "Cristina Foggia",
+      "client_dni": "",
+      "client_email": "csfoggia@hotmail.com",
+      "client_phone": "",
+      "client_address": "Tres Arroyos 2183, CABA",
+      "internal_notes": "Formulario web — 60m² · Sin Colocación · CP 1722",
+      "public_notes": "Colocación sobre piso nivelado. Incluye el mínimo de colocación de 40m2. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Cristina Foggia",
+      "has_iva": true,
+      "price": 2535.192,
+      "zoned": false,
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 35.4,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "total": 1345.2,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 150,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 150,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 40,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 600,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 0,
+      "discount_amount": 0,
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "created_at": "2026-10-14T11:21:41.443Z",
+      "quote_number": "A1797",
+      "status": "DRAFT",
+      "lead_id": "lead-email-1a11e3bb935f"
     }
   ],
   "clients": [
@@ -155173,10 +155243,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 34m² · Con Colocación · CP 1416",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "Juan Rodriguez Momesso",
       "created_at": "2026-10-09T01:16:32.000Z",
-      "last_touch_at": "2026-10-14T11:19:15.700Z"
+      "last_touch_at": "2026-10-14T11:21:41.682Z"
     },
     {
       "id": "local-1791555502075-2juov",
