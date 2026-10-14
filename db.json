@@ -163079,12 +163079,12 @@
       "linked_lead_id": "lead-email-1a0babb3320f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-21T21:32:42.135Z",
-      "last_message_preview": "Hola Maria, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
+      "last_message_at": "2026-10-14T18:58:45.882Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, con",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-19T17:33:44.000Z",
-      "last_outbound_at": "2026-09-21T21:32:42.135Z"
+      "last_outbound_at": "2026-10-14T18:58:45.882Z"
     },
     {
       "id": "conv-email-1a0bac5bca1f",
@@ -163093,14 +163093,15 @@
       "contact_name": "Pablo Proserpio",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0bac5bca1f",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-21T21:36:24.576Z",
       "last_message_preview": "Hola Pablo, ¿cómo estás?\n\nTe paso el link de nuestra página donde podés ver todos los precios de la liquidación:\nhttps://pisospacific.com/li",
       "email_subject": "Presupuesto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-19T17:45:03.000Z",
-      "last_outbound_at": "2026-09-21T21:36:24.576Z"
+      "last_outbound_at": "2026-09-21T21:36:24.576Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0c43275027",
@@ -187527,6 +187528,15 @@
       "ts": "2026-10-14T18:58:13.560Z",
       "status": "sent",
       "wa_id": "1a13bc782c476187"
+    },
+    {
+      "id": "m-1792004325882-viuy",
+      "conversation_id": "conv-email-1a0babb3320f",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, contanos qué modelo o colección estás buscando y avanzamos con el presupuesto.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T18:58:45.882Z",
+      "status": "sent",
+      "wa_id": "1a13bc80136623b9"
     }
   ],
   "templates": [
