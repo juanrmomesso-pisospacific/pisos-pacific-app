@@ -162179,14 +162179,15 @@
       "contact_name": "Simon",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0a67a1bce6",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-17T14:57:56.799Z",
       "last_message_preview": "Hola Simon, ¿cómo estás?\n\nQueríamos hacer seguimiento de tu consulta. Para poder avanzar con el presupuesto, ¿nos confirmás qué colección te",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-15T19:10:14.000Z",
-      "last_outbound_at": "2026-09-17T14:57:56.799Z"
+      "last_outbound_at": "2026-09-17T14:57:56.799Z",
+      "ignored": true
     },
     {
       "id": "conv-1789502769905-0m4m",
