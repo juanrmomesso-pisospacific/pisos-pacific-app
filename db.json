@@ -749,7 +749,8 @@
       "currency": "USD",
       "created_at": "2026-10-14T17:03:44.637Z",
       "quote_number": "A1998",
-      "status": "DRAFT"
+      "status": "DRAFT",
+      "share_token": "c74e7a77d97c7b86df88c9cf"
     }
   ],
   "clients": [
