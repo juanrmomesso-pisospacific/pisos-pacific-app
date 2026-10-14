@@ -163471,12 +163471,12 @@
       "linked_lead_id": "lead-email-1a0e37860fb5",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-28T16:58:13.667Z",
-      "last_message_preview": "Hola Victor, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado dentro de nuestras",
+      "last_message_at": "2026-10-14T19:02:12.204Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, con",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-27T15:25:11.000Z",
-      "last_outbound_at": "2026-09-28T16:58:13.667Z"
+      "last_outbound_at": "2026-10-14T19:02:12.204Z"
     },
     {
       "id": "conv-email-1a0e47bedc89",
@@ -163583,14 +163583,15 @@
       "contact_name": "Rosana Aguirre",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0e8a4f2409",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-28T17:16:32.411Z",
       "last_message_preview": "📄 Presupuesto NA9320 - Cotizacion Rosana Cordoba - Rosana Aguirre.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-28T16:53:34.000Z",
-      "last_outbound_at": "2026-09-28T17:16:32.411Z"
+      "last_outbound_at": "2026-09-28T17:16:32.411Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0e8cac0971",
@@ -163646,14 +163647,15 @@
       "contact_name": "Vanina",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0ea5b97c1e",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-29T14:10:11.762Z",
       "last_message_preview": "Hola Vanina, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-28T23:31:05.000Z",
-      "last_outbound_at": "2026-09-29T14:10:11.762Z"
+      "last_outbound_at": "2026-09-29T14:10:11.762Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0ed45b8842",
@@ -187569,6 +187571,15 @@
       "ts": "2026-10-14T19:01:30.511Z",
       "status": "sent",
       "wa_id": "1a13bca843159400"
+    },
+    {
+      "id": "m-1792004532204-9vx1",
+      "conversation_id": "conv-email-1a0e37860fb5",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCuando quieras, contanos qué modelo o colección estás buscando y avanzamos con el presupuesto.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T19:02:12.204Z",
+      "status": "sent",
+      "wa_id": "1a13bcb27d26cd4c"
     }
   ],
   "templates": [
