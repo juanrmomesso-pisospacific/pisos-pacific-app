@@ -163582,11 +163582,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791206633783",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-10T00:41:00.605Z",
+      "unread_count": 2,
+      "last_message_at": "2026-10-14T12:51:08.577Z",
       "last_message_preview": "👏",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-10T00:41:00.605Z"
+      "last_inbound_at": "2026-10-14T12:51:08.577Z"
     },
     {
       "id": "conv-1791231510199-4gjh",
@@ -187021,6 +187021,14 @@
       "ts": "2026-10-14T12:05:56.393Z",
       "status": "sent",
       "wa_id": "1a13a4e0c23ee35b"
+    },
+    {
+      "id": "m-1791982269521-bq91",
+      "conversation_id": "conv-1791206633783-ctsl",
+      "direction": "in",
+      "body": "👏",
+      "ts": "2026-10-14T12:51:08.577Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -199412,7 +199420,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODczODg0MjI0ODc2Njk3NTozMzA1MDI2MDM5OTg5ODczMDM1NDgyOTI4MDE3MjU3MjY3MgZDZD",
       "wamid.HBgMNDQ3OTc0OTA0OTk1FQIAEhgSMUQ1OUNFQTIzMTlDMDg0NUE1AA==",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NTA1ODY5NzE3MjA2NDM1OTM2NDEwMDg4ODcyMzQ1NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIxMTIzMTEwNjM5MTQzODozMzA1NTQ3NjU5MTg4NTEzMzcxMzI0NDU4NDEyODAyMDQ4MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIxMTIzMTEwNjM5MTQzODozMzA1NTQ3NjU5MTg4NTEzMzcxMzI0NDU4NDEyODAyMDQ4MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA1NjIzODI5MzA3NDcyNTMwNzg3ODUyNzExMzEwMTMxMgZDZD"
     ],
     "last_weekly_reminder": "2026-10-09T12:05:58.180Z",
     "warehouses": [
