@@ -18379,7 +18379,7 @@
       ],
       "zoned": false,
       "discount_total": 593.94,
-      "status": "Confirmado",
+      "status": "En proceso",
       "created_at": "2026-10-14T15:44:51.357Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -18412,7 +18412,16 @@
           ]
         }
       ],
-      "material_delivery_date": "2026-10-14"
+      "material_delivery_date": "2026-10-14",
+      "delivery_date": "2026-10-14",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "En proceso",
+          "at": "2026-10-14T18:42:54.635Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     }
   ],
   "quotes": [
@@ -201570,6 +201579,17 @@
       "sale_id": "local-sale-1791991448905-7qje",
       "notes": "Mirabilia Palermo",
       "created_at": "2026-10-14T15:24:32.112Z"
+    },
+    {
+      "id": "local-1792003374854-626hf",
+      "type": "medicion",
+      "title": "Medición previa · Arq. Pilar gondell",
+      "due_date": "2026-10-12",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "status": "pendiente",
+      "sale_id": "local-sale-1791992691357-vafn",
+      "notes": "Concepcion del Uruguay, Entre Ríos",
+      "created_at": "2026-10-14T18:42:54.729Z"
     }
   ],
   "password_resets": {},
