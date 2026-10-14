@@ -164255,11 +164255,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791918324161",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-13T19:05:22.555Z",
-      "last_message_preview": "Hola! Buenas tardes Donde se pueden ir a ver?",
+      "unread_count": 2,
+      "last_message_at": "2026-10-14T16:02:19.326Z",
+      "last_message_preview": "Hola",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-13T19:05:22.555Z"
+      "last_inbound_at": "2026-10-14T16:02:19.326Z"
     }
   ],
   "messages": [
@@ -187359,6 +187359,14 @@
       "body": "👏",
       "ts": "2026-10-14T12:51:08.577Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791993740153-bf1q",
+      "conversation_id": "conv-1791918324161-xlhz",
+      "direction": "in",
+      "body": "Hola",
+      "ts": "2026-10-14T16:02:19.326Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -199905,7 +199913,8 @@
       "wamid.HBgMNDQ3OTc0OTA0OTk1FQIAEhgSMUQ1OUNFQTIzMTlDMDg0NUE1AA==",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NTA1ODY5NzE3MjA2NDM1OTM2NDEwMDg4ODcyMzQ1NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIxMTIzMTEwNjM5MTQzODozMzA1NTQ3NjU5MTg4NTEzMzcxMzI0NDU4NDEyODAyMDQ4MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA1NjIzODI5MzA3NDcyNTMwNzg3ODUyNzExMzEwMTMxMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA1NjIzODI5MzA3NDcyNTMwNzg3ODUyNzExMzEwMTMxMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NjQ0OTg5MTA1MjU3NjY4MjQ4Njg0NzA3MDI3MzUzNgZDZD"
     ],
     "last_weekly_reminder": "2026-10-09T12:05:58.180Z",
     "warehouses": [
