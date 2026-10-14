@@ -145316,6 +145316,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mv7ss4l4-001"
+    },
+    {
+      "id": "local-1791988307710-cn39v",
+      "flow": "Ingreso",
+      "date": "2026-10-14T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Flor Allende",
+      "counterparty_type": "client",
+      "description": "Cobro - Cotización Flor Allende",
+      "sale_ref": "A3235",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 1300,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
