@@ -164380,11 +164380,11 @@
       "linked_lead_id": "lead-instagram-1791918324161",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-14T19:25:17.016Z",
-      "last_message_preview": "Hola Victoria, cómo estás?",
+      "last_message_at": "2026-10-14T19:26:17.182Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-14T16:02:19.326Z",
-      "last_outbound_at": "2026-10-14T19:25:17.016Z"
+      "last_outbound_at": "2026-10-14T19:26:17.182Z"
     },
     {
       "id": "conv-email-1a13b276b35a",
@@ -187671,6 +187671,36 @@
       "ts": "2026-10-14T19:25:17.016Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NjY3NDUyOTc4MzQ1MjU0ODA0NDYxMzEzNjQxNjc2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1792005973022-oguz",
+      "conversation_id": "conv-1791918324161-xlhz",
+      "direction": "out",
+      "body": "Soy Juan, te dejo mi celular para que podamos coordinar una visita por nuestro depósito o para que te acercemos muestras.",
+      "ts": "2026-10-14T19:26:12.581Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NjY3NTU1NDc2MjAyOTYwODQ1Njg4MTAzODE2Mzk2OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1792005977221-9j0j",
+      "conversation_id": "conv-1791918324161-xlhz",
+      "direction": "out",
+      "body": "1151750087",
+      "ts": "2026-10-14T19:26:16.782Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NjY3NTYzMjI2ODIxOTk5NjY5MjMzMzU4OTQzMDI3MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1792005977714-of0r",
+      "conversation_id": "conv-1791918324161-xlhz",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-10-14T19:26:17.182Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NjY3NTYzOTYzNzI1MTUzMjI4MTUzMDQzMDc4MzQ4OAZDZD",
       "via": "ig-app"
     }
   ],
