@@ -162290,14 +162290,15 @@
       "contact_name": "Emilia",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0aa5947558",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-17T14:58:14.393Z",
       "last_message_preview": "Hola, ¿cómo estás?\n\nQueríamos hacer seguimiento de tu consulta. Para poder avanzar con el presupuesto, ¿nos confirmás qué colección te inter",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T13:12:52.000Z",
-      "last_outbound_at": "2026-09-17T14:58:14.393Z"
+      "last_outbound_at": "2026-09-17T14:58:14.393Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0aa803bbdd",
