@@ -162056,12 +162056,12 @@
       "linked_lead_id": "lead-email-1a09c8c4da78",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-09-14T18:48:16.596Z",
-      "last_message_preview": "📄 Presupuesto NA2688 - Obra - Santa Fe - Romina Mabel Pueyo.pdf",
+      "last_message_at": "2026-10-14T11:51:35.597Z",
+      "last_message_preview": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-14T18:22:49.000Z",
-      "last_outbound_at": "2026-09-14T18:48:16.596Z"
+      "last_outbound_at": "2026-10-14T11:51:35.597Z"
     },
     {
       "id": "conv-email-1a09c9a4005b",
@@ -162256,14 +162256,15 @@
       "contact_name": "Ailin",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0aa08db535",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-16T13:50:40.967Z",
       "last_message_preview": "Hola Ailin, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-16T11:45:01.000Z",
-      "last_outbound_at": "2026-09-16T13:50:40.967Z"
+      "last_outbound_at": "2026-09-16T13:50:40.967Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0aa27eec28",
@@ -186961,6 +186962,15 @@
       "ts": "2026-10-14T11:49:11.605Z",
       "status": "sent",
       "wa_id": "1a13a3eb876b2289"
+    },
+    {
+      "id": "m-1791978695597-241c",
+      "conversation_id": "conv-email-1a09c8c4da78",
+      "direction": "out",
+      "body": "Hola, cómo estás?\n\nTe escribo para hacer un seguimiento de tu consulta y saber si pudiste ver nuestro mensaje anterior.\n\nCualquier duda que tengas, nos encontramos a disposición.\n\n¡Muchas gracias!\nSaludos,",
+      "ts": "2026-10-14T11:51:35.597Z",
+      "status": "sent",
+      "wa_id": "1a13a40ea6582912"
     }
   ],
   "templates": [
@@ -198456,7 +198466,10 @@
       "1a1358874e3d36c5",
       "1a136dd382f3683e",
       "1a13a2ed9935442e",
-      "1a13a26cc0fb8d97"
+      "1a13a26cc0fb8d97",
+      "1a13a40ea6582912",
+      "1a13a3eb876b2289",
+      "1a13a3dbf8706a08"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
