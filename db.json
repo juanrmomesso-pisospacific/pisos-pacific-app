@@ -145654,6 +145654,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1791999204855-2z4ao",
+      "date": "2026-10-14T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Administración",
+      "subcategory": "Alquiler",
+      "counterparty": "Agroalimentos",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-060",
+      "description": "Alquiler Mes Octubre",
+      "sale_ref": null,
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 2500,
+      "exchange_rate": null,
+      "fixed_variable": "Fijo",
+      "expense_type": "Gastos Administrativos",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
