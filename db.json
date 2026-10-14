@@ -43555,8 +43555,9 @@
       "currency": "USD",
       "created_at": "2026-10-14T11:21:41.443Z",
       "quote_number": "A1797",
-      "status": "DRAFT",
-      "lead_id": "lead-email-1a11e3bb935f"
+      "status": "Enviado",
+      "lead_id": "lead-email-1a11e3bb935f",
+      "share_token": "61079e6a40086df48d3b6848"
     }
   ],
   "clients": [
@@ -163705,12 +163706,12 @@
       "linked_lead_id": "lead-email-1a11e3bb935f",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-09T19:38:39.000Z",
-      "last_message_preview": "Hola, Línea H2O, modelo roble Eslavonia Gracias El 9 oct 2026 11:03 am, Pisos Pacific &lt;info@pisospacific.com&gt; escribió: Hola Cristina,",
+      "last_message_at": "2026-10-14T11:23:03.799Z",
+      "last_message_preview": "📄 Presupuesto NA1797 - Cristina Foggia - Cristina Foggia.pdf",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-09T19:38:39.000Z",
-      "last_outbound_at": "2026-10-09T14:03:01.699Z"
+      "last_outbound_at": "2026-10-14T11:23:03.799Z"
     },
     {
       "id": "conv-email-1a121f5bcf42",
@@ -163720,7 +163721,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a121f5bcf42",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-13T15:18:19.000Z",
       "last_message_preview": "Hola Victoria ! buenos días\r\nGracias Por la respuesta\r\n\r\nTe pido el de madera prefinished, colocado en un departamento de CABA\r\n\r\nmuchas gra",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -163829,13 +163830,14 @@
       "contact_name": "David Ybarra",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a135258c4bc",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-13T12:03:35.000Z",
       "last_message_preview": "Tu ID de cliente: 443-235-5149\r\n\r\nHola, equipo de Pacific Rim - pisospacific.com:\r\n\r\nHe observado que todavía no has agendado ninguna llamad",
       "email_subject": "Equipo de Pacific Rim - pisospacific.com, no olvidéis agendar una cita individualizada con un experto de Google Ads\r\n",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-13T12:03:35.000Z"
+      "last_inbound_at": "2026-10-13T12:03:35.000Z",
+      "ignored": true
     },
     {
       "id": "conv-1791918324161-xlhz",
@@ -186841,6 +186843,16 @@
       "body": "Hola en dónde está el show room. Me dirías días y horarios para visitarlo.",
       "ts": "2026-10-14T01:22:56.673Z",
       "status": "received"
+    },
+    {
+      "id": "m-1791976983799-sazq",
+      "conversation_id": "conv-email-1a11e3bb935f",
+      "direction": "out",
+      "body": "Hola Cristina, te comparto el presupuesto NA1797 adjunto. Cualquier consulta quedo a disposición.\n\nRespecto al modelo en el que estás interesada, para avanzar necesito entender los tiempos de la obra, ya que para el corto plazo no contamos con stock inmediato de ese modelo.\n\nTenemos otros diseños parecidos que también pueden interesarte!\n\nSaludos,\n📄 Presupuesto NA1797 - Cristina Foggia - Cristina Foggia.pdf",
+      "ts": "2026-10-14T11:23:03.799Z",
+      "status": "sent",
+      "template_name": "presupuesto",
+      "wa_id": "1a13a26cc0fb8d97"
     }
   ],
   "templates": [
