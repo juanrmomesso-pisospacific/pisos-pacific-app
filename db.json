@@ -146363,6 +146363,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mv988g7v-002"
+    },
+    {
+      "id": "local-1792083619755-zska4",
+      "flow": "Ingreso",
+      "date": "2026-10-15T00:00:00.000Z",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Sol- CH Estudio",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra Bellini",
+      "sale_ref": "A4114",
+      "currency": "ARS",
+      "amount_ars": 4620000,
+      "amount_usd": 3000,
+      "exchange_rate": 1540,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
