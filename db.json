@@ -41205,7 +41205,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "Obra Simon ",
       "has_iva": true,
-      "price": 20815.400100000003,
+      "price": 20769.6621,
       "zoned": true,
       "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed + 10 más",
       "items": [
@@ -41263,9 +41263,9 @@
           "cost": 20,
           "category": "Pisos de Madera",
           "zone": "Escalera",
-          "disc_value": 10,
+          "disc_value": 16,
           "total": 630,
-          "discount": 63,
+          "discount": 100.8,
           "image": "",
           "target_item_index": null
         },
@@ -41371,8 +41371,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 4481.22,
-      "discount_amount": 4481.22,
+      "discount_total": 4519.02,
+      "discount_amount": 4519.02,
       "reseller_id": "CLI-hugo-schellotto",
       "reseller_name": "Hugo Schellotto",
       "currency": "USD",
