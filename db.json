@@ -44502,6 +44502,50 @@
       "quote_number": "A9236",
       "status": "DRAFT",
       "lead_id": "lead-email-1a130e7f462a"
+    },
+    {
+      "id": "local-1792084083077-0ol2z",
+      "client_id": "CLI-mv9scss4-s9m5",
+      "client_name": "Ale Toyo Garcia",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Retira en Depósito",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Obra CABA - Ale Toyo",
+      "has_iva": false,
+      "price": 1459.85,
+      "zoned": false,
+      "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
+      "items": [
+        {
+          "product_id": "local-1790089780830-ghwcm",
+          "sku": "PROD-400",
+          "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
+          "quantity": 43.8,
+          "unit_price": 38,
+          "cost": 16,
+          "category": "Pisos H2O",
+          "disc_value": 12.29,
+          "total": 1664.3999999999999,
+          "discount": 204.55,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 204.55,
+      "discount_amount": 204.55,
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "created_at": "2026-10-15T17:08:02.544Z",
+      "quote_number": "A4120",
+      "status": "DRAFT"
     }
   ],
   "clients": [
