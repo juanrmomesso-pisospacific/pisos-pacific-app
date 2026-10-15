@@ -164501,12 +164501,12 @@
       "linked_lead_id": "lead-email-1a121f5bcf42",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-15T09:28:13.000Z",
-      "last_message_preview": "Hola buenos dias\r\nPudieron ver este presupuesto?\r\nMuchas gracias\r\nCynthia\r\n\r\nEl mar, 13 de oct de 2026, 12:18 p.m., Cynthia Janson <\r\ncynthi",
+      "last_message_at": "2026-10-15T12:35:52.000Z",
+      "last_message_preview": "Hola Cynthia, ¡disculpa la demora en responder!\r\n\r\nAdjunto 2 presupuestos. Ambos son pisos de roble europeo prefinished con\r\nveta tallada.\r\n",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-15T09:28:13.000Z",
-      "last_outbound_at": "2026-10-13T13:46:53.145Z"
+      "last_outbound_at": "2026-10-15T12:35:52.000Z"
     },
     {
       "id": "conv-1791583179738-jav7",
@@ -187965,6 +187965,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola buenos dias\r\nPudieron ver este presupuesto?\r\nMuchas gracias\r\nCynthia\r\n\r\nEl mar, 13 de oct de 2026, 12:18 p.m., Cynthia Janson <\r\ncynthia.janson@gmail.com> escribió:\r\n\r\n> Hola Victoria ! buenos días\r\n> Gracias Por la respuesta\r\n>\r\n> Te pido el de madera prefinished, colocado en un departamento de CABA\r\n>\r\n> muchas gracias\r\n> Cynthia\r\n>\r\n> On Tue, 13 Oct 2026 at 10:46, Pisos Pacific <info@pisospacific.com> wrote:\r\n>\r\n>> Hola Cynthia, ¡muchas gracias por tu consulta!\r\n>>\r\n>> Para avanzar con el presupuesto, comentanos en qué modelo estás\r\n>> interesada dentro de nuestras dos líneas de pisos:\r\n>>\r\n>> • Colección Madera\r\n>> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n>> madera noble prefinished\r\n>> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n>> SPC 100% a prueba de agua\r\n>>\r\n>> El presupuesto incluye materiales y mano de obra de colocación.\r\n>>\r\n>> ¡Muchas gracias!\r\n>> Saludos, Victoria\r\n>> 113698222\r\n>>\r\n>>\r\n>> [image: Pisos Pacific]\r\n>> Juan Rodríguez Momesso\r\n>> Ventas\r\n>>\r\n>> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n>> info@pisospacific.com\r\n>> pisospacific.com\r\n>> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n>> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n>> La evolución del piso de madera\r\n>>\r\n>",
       "ts": "2026-10-15T09:28:13.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-emailout-1a13f8fd369d",
+      "conversation_id": "conv-email-1a121f5bcf42",
+      "direction": "out",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Cynthia, ¡disculpa la demora en responder!\r\n\r\nAdjunto 2 presupuestos. Ambos son pisos de roble europeo prefinished con\r\nveta tallada.\r\n\r\nRoble Europeo Veta Tallada - Light Brushed\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-europeo-veta-tallada>\r\nRoble Kitsilano - Light Brushed\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-kitsilano>\r\n(Este\r\npresupuesto aplica para el Verona\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-verona>\r\ntambién)\r\n\r\nSi te interesa, con gusto te acercamos muestras de todas las opciones, o\r\npodemos agendar una visita a nuestro depósito en Olivos para que puedas ver\r\nlas tablas en persona y conocer todas las alternativas disponibles.\r\n\r\nQuedamos a tu disposición por cualquier duda o consulta.\r\n\r\nSaludos,\r\n\r\n\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl jue, 15 oct 2026 a las 6:28, Cynthia Janson (<cynthia.janson@gmail.com>)\r\nescribió:\r\n\r\n> Hola buenos dias\r\n> Pudieron ver este presupuesto?\r\n> Muchas gracias\r\n> Cynthia\r\n>\r\n> El mar, 13 de oct de 2026, 12:18 p.m., Cynthia Janson <\r\n> cynthia.janson@gmail.com> escribió:\r\n>\r\n>> Hola Victoria ! buenos días\r\n>> Gracias Por la respuesta\r\n>>\r\n>> Te pido el de madera prefin",
+      "ts": "2026-10-15T12:35:52.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -199636,7 +199644,9 @@
       "1a13bc80136623b9",
       "1a13bc782c476187",
       "1a13bc727356f793",
-      "1a13bcfd2574ef01"
+      "1a13bcfd2574ef01",
+      "1a13f907eb08b671",
+      "1a13f8fd369deb8f"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -200535,7 +200545,7 @@
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-10-14",
+    "last_daily_task_reminder": "2026-10-15",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -201099,7 +201109,7 @@
         "learned_at": "2026-09-26T10:46:00.268Z"
       }
     },
-    "last_daily_pending_digest": "2026-10-14",
+    "last_daily_pending_digest": "2026-10-15",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
