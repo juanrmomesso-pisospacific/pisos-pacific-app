@@ -18305,7 +18305,7 @@
       ],
       "zoned": false,
       "discount_total": 574.92,
-      "status": "Programado",
+      "status": "En proceso",
       "created_at": "2026-10-14T15:24:08.905Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -18330,6 +18330,12 @@
           "from": "Confirmado",
           "to": "Programado",
           "at": "2026-10-14T15:24:32.065Z",
+          "by": "Admin User"
+        },
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-10-15T16:59:38.188Z",
           "by": "Admin User"
         }
       ]
@@ -200089,7 +200095,8 @@
       "1a13bcfd2574ef01",
       "1a13f907eb08b671",
       "1a13f8fd369deb8f",
-      "1a13fa07a8ca8222"
+      "1a13fa07a8ca8222",
+      "1a13ffd89ded18a8"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
