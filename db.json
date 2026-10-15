@@ -148590,7 +148590,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-06-29T14:40:02.000Z",
-      "last_touch_at": "2026-10-14T11:21:38.000Z"
+      "last_touch_at": "2026-10-15T14:30:58.000Z"
     },
     {
       "id": "lead-instagram-1782746611795",
@@ -158330,12 +158330,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f13d3442c3",
       "status": "closed",
-      "unread_count": 1,
-      "last_message_at": "2026-10-14T11:21:38.000Z",
-      "last_message_preview": "Hola Vicky, buen dia\r\n\r\nLo preparo y se los envio.\r\n\r\nSaludos\r\n\r\n\r\n\r\n\r\nEl mar, 13 oct 2026 a la(s) 5:23 p.m., Victoria Pisos Pacific (\r\nvict",
+      "unread_count": 2,
+      "last_message_at": "2026-10-15T14:30:58.000Z",
+      "last_message_preview": "Hola Vicky, buen dia\r\n\r\nEstoy realizando el presupuesto y queria confirmar con vos si la factura\r\nque me enviaste es la final, porque me hab",
       "email_subject": "Re: Comex+Cargo // Juan Momesso // COTIZACION FLETE 40 pies | Shanghai - Buenos Aires | LAM-PA2601 -- PCCF1488 -- CCF1203 ** CCF-MI-00000043",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-14T11:21:38.000Z",
+      "last_inbound_at": "2026-10-15T14:30:58.000Z",
       "last_outbound_at": "2026-07-01T16:38:25.000Z",
       "ignored": true
     },
@@ -188407,6 +188407,14 @@
       "body": "Buenos días!quería averiguar si me pueden asesorar para cambiar mi piso por el H20 .Ustedes realizan colocación?",
       "ts": "2026-10-15T14:16:03.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a13ffa421bb",
+      "conversation_id": "conv-email-19f13d3442c3",
+      "direction": "in",
+      "body": "✉️ Re: Comex+Cargo // Momesso // Cotizacion JR007 | Wall panles | Shanghai - Buenos Aires | 20 ft // CCF-MI-00000105\n\nHola Vicky, buen dia\r\n\r\nEstoy realizando el presupuesto y queria confirmar con vos si la factura\r\nque me enviaste es la final, porque me habias mencionado lo siguiente:\r\n\r\n[image: image.png]\r\nPor otro lado, si tenes el packing final con los pesos compartimelo porfa.\r\n\r\nSaludos\r\n\r\n\r\n\r\n\r\n\r\n\r\nEl mar, 13 oct 2026 a la(s) 5:23 p.m., Victoria Pisos Pacific (\r\nvictoria@pisospacific.com) escribió:\r\n\r\n> Cami cuando puedas me pasas el presupuesto de costos estimado.\r\n> Esta arribando el 17-10\r\n>\r\n> El vie, 7 ago 2026 a las 10:00, Victoria Pisos Pacific (<\r\n> victoria@pisospacific.com>) escribió:\r\n>\r\n>> Hola Cami,\r\n>>\r\n>> ¿Cómo estás? Te adjunto la documentación borrador que recibí de la\r\n>> fábrica. Una vez que se realice la carga, te enviaré los datos finales.\r\n>>\r\n>> Por favor, tené en cuenta que la mercadería viene suelta por bultos y no\r\n>> está paletizada. Te lo comento para ir coordinando la recepción, ya que irá\r\n>> directamente al depósito y no se desconsolida en Grama, aunque esto último\r\n>> lo definiremos más adelante.\r\n>>\r\n>> Saludos,\r\n>>\r\n>> Victoria González Collado\r\n>>\r\n>>\r\n>> El mié, 5 ago 2026 a las 15:28, Camila Cerveri (<\r\n>> camilac@grupocomexmas.com>) escribió:\r\n>>\r\n>>> Hola Caro, buenas tardes\r\n>>>\r\n>>> @Victoria V <victoria@pisospacific.com> Vicky, tenes los documentos\r\n>>> finales de esta orden? Así puedo revisar el draft del BL.\r\n>>>\r\n>>> Saludos\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>> El mié, 5 ago 2026 a la(s) 3:08 p.m., Customer Comex+ Cargo (\r\n>>> CustomerCargo@grupocomexm",
+      "ts": "2026-10-15T14:30:58.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -198650,7 +198658,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-15T07:38:09.307Z",
     "gmail_seen_ids": [
-      "19fbf408cb963aef",
       "19fc0d03c0eb4b84",
       "19fc1928122426e5",
       "19fc1c62be594c6f",
@@ -199449,7 +199456,8 @@
       "1a13eda5f8ada7f0",
       "1a13ee43996beab3",
       "1a13f0616d5915e6",
-      "1a13f907eb08b671"
+      "1a13f907eb08b671",
+      "1a13ffa421bbf418"
     ],
     "cash_sessions": {
       "1136982222": {
