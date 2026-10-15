@@ -164983,12 +164983,12 @@
       "linked_lead_id": "lead-email-1a130e7f462a",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-13T13:57:53.878Z",
-      "last_message_preview": "Hola Ornella! Cómo estás? Gracias por contactarte con nosotros. Te paso mi número de WhatsApp así podemos hablar mejor! \n\nSaludos, Victoria\n",
+      "last_message_at": "2026-10-15T12:54:03.000Z",
+      "last_message_preview": "Hola Ornella,\r\n\r\nAdjunto 3 presupuestos. Ambos son pisos de roble europeo prefinished con\r\nveta tallada.\r\n\r\nRoble Europeo Veta Tallada - Lig",
       "email_subject": "Solicitud de presupuesto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-12T16:17:26.000Z",
-      "last_outbound_at": "2026-10-13T13:57:53.878Z"
+      "last_outbound_at": "2026-10-15T12:54:03.000Z"
     },
     {
       "id": "conv-email-1a135258c4bc",
@@ -188361,6 +188361,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Cynthia, ¡disculpa la demora en responder!\r\n\r\nAdjunto 2 presupuestos. Ambos son pisos de roble europeo prefinished con\r\nveta tallada.\r\n\r\nRoble Europeo Veta Tallada - Light Brushed\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-europeo-veta-tallada>\r\nRoble Kitsilano - Light Brushed\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-kitsilano>\r\n(Este\r\npresupuesto aplica para el Verona\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-verona>\r\ntambién)\r\n\r\nSi te interesa, con gusto te acercamos muestras de todas las opciones, o\r\npodemos agendar una visita a nuestro depósito en Olivos para que puedas ver\r\nlas tablas en persona y conocer todas las alternativas disponibles.\r\n\r\nQuedamos a tu disposición por cualquier duda o consulta.\r\n\r\nSaludos,\r\n\r\n\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl jue, 15 oct 2026 a las 6:28, Cynthia Janson (<cynthia.janson@gmail.com>)\r\nescribió:\r\n\r\n> Hola buenos dias\r\n> Pudieron ver este presupuesto?\r\n> Muchas gracias\r\n> Cynthia\r\n>\r\n> El mar, 13 de oct de 2026, 12:18 p.m., Cynthia Janson <\r\n> cynthia.janson@gmail.com> escribió:\r\n>\r\n>> Hola Victoria ! buenos días\r\n>> Gracias Por la respuesta\r\n>>\r\n>> Te pido el de madera prefin",
       "ts": "2026-10-15T12:35:52.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-emailout-1a13fa07a8ca",
+      "conversation_id": "conv-email-1a130e7f462a",
+      "direction": "out",
+      "body": "✉️ Re: Solicitud de presupuesto\n\nHola Ornella,\r\n\r\nAdjunto 3 presupuestos. Ambos son pisos de roble europeo prefinished con\r\nveta tallada.\r\n\r\nRoble Europeo Veta Tallada - Light Brushed\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-europeo-veta-tallada>\r\nRoble Kitsilano - Light Brushed\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-kitsilano>\r\nRoble Verona - Light Brushed\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-verona>\r\n\r\nPor la foto que nos compartiste cualquiera de estos 3 puede gustarte. La\r\nunica diferencia que noto es que nuestras tablas son de 19 cm de ancho x\r\n1,90 m de largo.\r\n\r\nSi te interesa, con gusto te acercamos muestras de todas las opciones, o\r\npodemos agendar una visita a nuestro depósito en Olivos para que puedas ver\r\nlas tablas en persona y conocer todas las alternativas disponibles.\r\n\r\nQuedamos a tu disposición por cualquier duda o consulta.\r\n\r\nSaludos,\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl lun, 12 oct 2026 a las 13:17, Ornella Gisbert (<orne@ornegisbert.com.ar>)\r\nescribió:\r\n\r\n> Hola, buen día. Quisiera solicitar un presupuesto para piso de madera\r\n> natural premium, tipo entablonado, para la planta alta de una vivienda en\r\n> Ciudad Autonoma de Bu",
+      "ts": "2026-10-15T12:54:03.000Z",
+      "status": "sent"
     }
   ],
   "templates": [
@@ -200034,7 +200042,8 @@
       "1a13bc727356f793",
       "1a13bcfd2574ef01",
       "1a13f907eb08b671",
-      "1a13f8fd369deb8f"
+      "1a13f8fd369deb8f",
+      "1a13fa07a8ca8222"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
