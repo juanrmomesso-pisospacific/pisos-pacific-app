@@ -155813,7 +155813,7 @@
       "status": "Contacted",
       "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-10-09T18:38:34.000Z",
-      "last_touch_at": "2026-10-14T19:08:14.873Z"
+      "last_touch_at": "2026-10-15T09:28:13.000Z"
     },
     {
       "id": "lead-instagram-1791583179738",
@@ -164306,12 +164306,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a121f5bcf42",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-13T15:18:19.000Z",
-      "last_message_preview": "Hola Victoria ! buenos días\r\nGracias Por la respuesta\r\n\r\nTe pido el de madera prefinished, colocado en un departamento de CABA\r\n\r\nmuchas gra",
+      "unread_count": 1,
+      "last_message_at": "2026-10-15T09:28:13.000Z",
+      "last_message_preview": "Hola buenos dias\r\nPudieron ver este presupuesto?\r\nMuchas gracias\r\nCynthia\r\n\r\nEl mar, 13 de oct de 2026, 12:18 p.m., Cynthia Janson <\r\ncynthi",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-13T15:18:19.000Z",
+      "last_inbound_at": "2026-10-15T09:28:13.000Z",
       "last_outbound_at": "2026-10-13T13:46:53.145Z"
     },
     {
@@ -187763,6 +187763,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: bf8aabb77e3149699519cd220bb26e59\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-13 00:00:00 UTC to 2026-10-14 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-15T08:25:02.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a13ee43996b",
+      "conversation_id": "conv-email-1a121f5bcf42",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola buenos dias\r\nPudieron ver este presupuesto?\r\nMuchas gracias\r\nCynthia\r\n\r\nEl mar, 13 de oct de 2026, 12:18 p.m., Cynthia Janson <\r\ncynthia.janson@gmail.com> escribió:\r\n\r\n> Hola Victoria ! buenos días\r\n> Gracias Por la respuesta\r\n>\r\n> Te pido el de madera prefinished, colocado en un departamento de CABA\r\n>\r\n> muchas gracias\r\n> Cynthia\r\n>\r\n> On Tue, 13 Oct 2026 at 10:46, Pisos Pacific <info@pisospacific.com> wrote:\r\n>\r\n>> Hola Cynthia, ¡muchas gracias por tu consulta!\r\n>>\r\n>> Para avanzar con el presupuesto, comentanos en qué modelo estás\r\n>> interesada dentro de nuestras dos líneas de pisos:\r\n>>\r\n>> • Colección Madera\r\n>> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n>> madera noble prefinished\r\n>> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n>> SPC 100% a prueba de agua\r\n>>\r\n>> El presupuesto incluye materiales y mano de obra de colocación.\r\n>>\r\n>> ¡Muchas gracias!\r\n>> Saludos, Victoria\r\n>> 113698222\r\n>>\r\n>>\r\n>> [image: Pisos Pacific]\r\n>> Juan Rodríguez Momesso\r\n>> Ventas\r\n>>\r\n>> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n>> info@pisospacific.com\r\n>> pisospacific.com\r\n>> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n>> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n>> La evolución del piso de madera\r\n>>\r\n>",
+      "ts": "2026-10-15T09:28:13.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -198006,7 +198014,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-15T07:38:09.307Z",
     "gmail_seen_ids": [
-      "19fbcac9e107de5e",
       "19fbccc3891a2466",
       "19fbd3c31c0a81d7",
       "19fbf408cb963aef",
@@ -198805,7 +198812,8 @@
       "1a13c390ebecf8ec",
       "1a13eaa346aaa646",
       "1a13eda620163be7",
-      "1a13eda5f8ada7f0"
+      "1a13eda5f8ada7f0",
+      "1a13ee43996beab3"
     ],
     "cash_sessions": {
       "1136982222": {
