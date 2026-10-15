@@ -156578,6 +156578,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-14T16:03:20.000Z",
       "last_touch_at": "2026-10-14T17:38:17.759Z"
+    },
+    {
+      "id": "lead-whatsapp-1792073766137",
+      "name": "Marcela",
+      "email": "",
+      "phone": "5491155952935",
+      "source": "WhatsApp",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde whatsapp",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-15T14:16:03.000Z",
+      "last_touch_at": "2026-10-15T14:16:03.000Z"
     }
   ],
   "conversations": [
@@ -165036,6 +165052,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-14T16:03:20.000Z",
       "last_outbound_at": "2026-10-14T17:27:20.859Z"
+    },
+    {
+      "id": "conv-1792073766137-x5jz",
+      "channel": "whatsapp",
+      "contact_id": "5491155952935",
+      "contact_name": "Marcela",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-whatsapp-1792073766137",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-15T14:16:03.000Z",
+      "last_message_preview": "Buenos días!quería averiguar si me pueden asesorar para cambiar mi piso por el H20 .Ustedes realizan colocación?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-15T14:16:03.000Z"
     }
   ],
   "messages": [
@@ -188369,6 +188399,14 @@
       "body": "✉️ Re: Solicitud de presupuesto\n\nHola Ornella,\r\n\r\nAdjunto 3 presupuestos. Ambos son pisos de roble europeo prefinished con\r\nveta tallada.\r\n\r\nRoble Europeo Veta Tallada - Light Brushed\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-europeo-veta-tallada>\r\nRoble Kitsilano - Light Brushed\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-kitsilano>\r\nRoble Verona - Light Brushed\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria/roble-verona>\r\n\r\nPor la foto que nos compartiste cualquiera de estos 3 puede gustarte. La\r\nunica diferencia que noto es que nuestras tablas son de 19 cm de ancho x\r\n1,90 m de largo.\r\n\r\nSi te interesa, con gusto te acercamos muestras de todas las opciones, o\r\npodemos agendar una visita a nuestro depósito en Olivos para que puedas ver\r\nlas tablas en persona y conocer todas las alternativas disponibles.\r\n\r\nQuedamos a tu disposición por cualquier duda o consulta.\r\n\r\nSaludos,\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl lun, 12 oct 2026 a las 13:17, Ornella Gisbert (<orne@ornegisbert.com.ar>)\r\nescribió:\r\n\r\n> Hola, buen día. Quisiera solicitar un presupuesto para piso de madera\r\n> natural premium, tipo entablonado, para la planta alta de una vivienda en\r\n> Ciudad Autonoma de Bu",
       "ts": "2026-10-15T12:54:03.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-1792073766137-jsyw",
+      "conversation_id": "conv-1792073766137-x5jz",
+      "direction": "in",
+      "body": "Buenos días!quería averiguar si me pueden asesorar para cambiar mi piso por el H20 .Ustedes realizan colocación?",
+      "ts": "2026-10-15T14:16:03.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -200933,7 +200971,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NTA1ODY5NzE3MjA2NDM1OTM2NDEwMDg4ODcyMzQ1NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTIxMTIzMTEwNjM5MTQzODozMzA1NTQ3NjU5MTg4NTEzMzcxMzI0NDU4NDEyODAyMDQ4MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA1NjIzODI5MzA3NDcyNTMwNzg3ODUyNzExMzEwMTMxMgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NjQ0OTg5MTA1MjU3NjY4MjQ4Njg0NzA3MDI3MzUzNgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NjQ0OTg5MTA1MjU3NjY4MjQ4Njg0NzA3MDI3MzUzNgZDZD",
+      "wamid.HBgNNTQ5MTE1NTk1MjkzNRUCABIYFDNBMUY2NjVFREIwRThBREZCNEIzAA=="
     ],
     "last_weekly_reminder": "2026-10-09T12:05:58.180Z",
     "warehouses": [
