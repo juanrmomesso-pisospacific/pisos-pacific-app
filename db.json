@@ -148689,7 +148689,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-10-15T08:25:02.000Z"
+      "last_touch_at": "2026-10-16T08:26:51.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -158429,12 +158429,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 66,
-      "last_message_at": "2026-10-15T08:25:02.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-13 00:00:00 UTC to 2026-10-14 00:00:00 UTC.",
+      "unread_count": 67,
+      "last_message_at": "2026-10-16T08:26:51.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-14 00:00:00 UTC to 2026-10-15 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-15T08:25:02.000Z",
+      "last_inbound_at": "2026-10-16T08:26:51.000Z",
       "ignored": true
     },
     {
@@ -188706,6 +188706,14 @@
       "body": "✉️ Re: Comex+Cargo // Momesso // Cotizacion JR007 | Wall panles | Shanghai - Buenos Aires | 20 ft // CCF-MI-00000105\n\nHola Vicky, buen dia\r\n\r\nEstoy realizando el presupuesto y queria confirmar con vos si la factura\r\nque me enviaste es la final, porque me habias mencionado lo siguiente:\r\n\r\n[image: image.png]\r\nPor otro lado, si tenes el packing final con los pesos compartimelo porfa.\r\n\r\nSaludos\r\n\r\n\r\n\r\n\r\n\r\n\r\nEl mar, 13 oct 2026 a la(s) 5:23 p.m., Victoria Pisos Pacific (\r\nvictoria@pisospacific.com) escribió:\r\n\r\n> Cami cuando puedas me pasas el presupuesto de costos estimado.\r\n> Esta arribando el 17-10\r\n>\r\n> El vie, 7 ago 2026 a las 10:00, Victoria Pisos Pacific (<\r\n> victoria@pisospacific.com>) escribió:\r\n>\r\n>> Hola Cami,\r\n>>\r\n>> ¿Cómo estás? Te adjunto la documentación borrador que recibí de la\r\n>> fábrica. Una vez que se realice la carga, te enviaré los datos finales.\r\n>>\r\n>> Por favor, tené en cuenta que la mercadería viene suelta por bultos y no\r\n>> está paletizada. Te lo comento para ir coordinando la recepción, ya que irá\r\n>> directamente al depósito y no se desconsolida en Grama, aunque esto último\r\n>> lo definiremos más adelante.\r\n>>\r\n>> Saludos,\r\n>>\r\n>> Victoria González Collado\r\n>>\r\n>>\r\n>> El mié, 5 ago 2026 a las 15:28, Camila Cerveri (<\r\n>> camilac@grupocomexmas.com>) escribió:\r\n>>\r\n>>> Hola Caro, buenas tardes\r\n>>>\r\n>>> @Victoria V <victoria@pisospacific.com> Vicky, tenes los documentos\r\n>>> finales de esta orden? Así puedo revisar el draft del BL.\r\n>>>\r\n>>> Saludos\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>> El mié, 5 ago 2026 a la(s) 3:08 p.m., Customer Comex+ Cargo (\r\n>>> CustomerCargo@grupocomexm",
       "ts": "2026-10-15T14:30:58.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a143d23afc1",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: df254cce67474825a3582a796a8b081e\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-14 00:00:00 UTC to 2026-10-15 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-10-16T08:26:51.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -198949,8 +198957,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-16T07:38:20.073Z",
     "gmail_seen_ids": [
-      "19fc2291fb25b85a",
-      "19fc2628ddb59567",
       "19fc30d4cb18f77e",
       "19fc32f7935de069",
       "19fc32dcca0cf9a4",
@@ -199748,7 +199754,9 @@
       "1a141105114ebee2",
       "1a141364dd84e8d4",
       "1a1412d2c273e1e6",
-      "1a1413d99d93844c"
+      "1a1413d99d93844c",
+      "1a143d23afc1f341",
+      "1a143d021ee109b7"
     ],
     "cash_sessions": {
       "1136982222": {
