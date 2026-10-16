@@ -47462,6 +47462,14 @@
       "anchor_usd": 634.3,
       "anchor_ars": 980000,
       "anchor_note": "Arqueo físico 31/8: 980.000 pesos."
+    },
+    {
+      "id": "CAJ-010",
+      "name": "BNA - Cuenta USD",
+      "type": "Banco",
+      "currency": "USD",
+      "active": true,
+      "notes": "Banco de la Nación Argentina - cuenta en dólares"
     }
   ],
   "suppliers": [
@@ -198928,6 +198936,10 @@
     "lHwg6zLaxSRnE0ZbQnP0Bis37-zcJMsP": {
       "userId": "u-admin",
       "expires": 1793388030624
+    },
+    "R3A9r7GvuP4IiTCjd6WXHTM_eKGCY2o7": {
+      "userId": "u-admin",
+      "expires": 1793388056921
     }
   },
   "settings": {
