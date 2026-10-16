@@ -146760,6 +146760,30 @@
       "review_reason": null,
       "source": "internal-transfer",
       "transfer_group": "tg-1792178724626-pa857"
+    },
+    {
+      "id": "mov-1792178794024-e6cu6",
+      "date": "2026-10-16T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-010",
+      "caja_name": "BNA - Cuenta USD",
+      "category": "Importaciones",
+      "subcategory": "Navieras",
+      "counterparty": "COMEX",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-035",
+      "description": "Pago Flete JR007",
+      "sale_ref": null,
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 8884,
+      "exchange_rate": null,
+      "fixed_variable": "Variable",
+      "expense_type": "COGS",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
