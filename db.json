@@ -201007,7 +201007,8 @@
       "1a13fa07a8ca8222",
       "1a13ffd89ded18a8",
       "1a144b6db03b1fe3",
-      "1a144b6db72b7d84"
+      "1a144b6db72b7d84",
+      "1a149e1fdd34a5f5"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -201899,7 +201900,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA1NjIzODI5MzA3NDcyNTMwNzg3ODUyNzExMzEwMTMxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MDQzMjg2Mzg1ODUyODQ3NDozMzA1NjQ0OTg5MTA1MjU3NjY4MjQ4Njg0NzA3MDI3MzUzNgZDZD",
       "wamid.HBgNNTQ5MTE1NTk1MjkzNRUCABIYFDNBMUY2NjVFREIwRThBREZCNEIzAA==",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMzA1OTQ0MjI3NTY3MTgwNTQxNDMwMjI5MDAxODMwNDAwMAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMzA1OTQ0MjI3NTY3MTgwNTQxNDMwMjI5MDAxODMwNDAwMAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMzA2MDg2ODk1OTkzNzcyNDE2ODExODQwNzQyMTQ5MzI0OAZDZD"
     ],
     "last_weekly_reminder": "2026-10-16T12:36:36.308Z",
     "warehouses": [
@@ -201908,7 +201910,7 @@
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-10-16",
+    "last_daily_task_reminder": "2026-10-17",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -202472,7 +202474,7 @@
         "learned_at": "2026-09-26T10:46:00.268Z"
       }
     },
-    "last_daily_pending_digest": "2026-10-16",
+    "last_daily_pending_digest": "2026-10-17",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
