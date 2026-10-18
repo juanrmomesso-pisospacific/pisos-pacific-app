@@ -157379,7 +157379,7 @@
       "status": "Quoted",
       "assigned_seller": "Victoria Gonzalez Collado",
       "created_at": "2026-10-12T16:17:26.000Z",
-      "last_touch_at": "2026-10-15T12:44:55.387Z"
+      "last_touch_at": "2026-10-18T23:22:09.000Z"
     },
     {
       "id": "local-1791892660948-mmf0s",
@@ -165882,12 +165882,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a130e7f462a",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-15T12:54:03.000Z",
-      "last_message_preview": "Hola Ornella,\r\n\r\nAdjunto 3 presupuestos. Ambos son pisos de roble europeo prefinished con\r\nveta tallada.\r\n\r\nRoble Europeo Veta Tallada - Lig",
+      "unread_count": 1,
+      "last_message_at": "2026-10-18T23:22:09.000Z",
+      "last_message_preview": "Muchas gracias juan! Estaré analizando tu presupuesto junto con otros que tengo y cualquier cosa te escribo nuevamente. Te super agradezco!\r",
       "email_subject": "Solicitud de presupuesto",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-12T16:17:26.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-18T23:22:09.000Z",
       "last_outbound_at": "2026-10-15T12:54:03.000Z"
     },
     {
@@ -189339,6 +189339,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 1d3c3d102a10495f9c71ed56020ec003\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-16 00:00:00 UTC to 2026-10-17 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-18T08:25:19.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a15152dd35c",
+      "conversation_id": "conv-email-1a130e7f462a",
+      "direction": "in",
+      "body": "✉️ Re: Solicitud de presupuesto\n\nMuchas gracias juan! Estaré analizando tu presupuesto junto con otros que tengo y cualquier cosa te escribo nuevamente. Te super agradezco!\r\n\r\n> El 15 oct 2026, a las 9:54 a. m., info pisos <info@pisospacific.com> escribió:\r\n> \r\n> Hola Ornella,\r\n> \r\n> Adjunto 3 presupuestos. Ambos son pisos de roble europeo prefinished con veta tallada.\r\n> \r\n> Roble Europeo Veta Tallada - Light Brushed <https://pisospacific.com/pisos-madera-natural-ingenieria/roble-europeo-veta-tallada>\r\n> Roble Kitsilano - Light Brushed <https://pisospacific.com/pisos-madera-natural-ingenieria/roble-kitsilano> \r\n> Roble Verona - Light Brushed <https://pisospacific.com/pisos-madera-natural-ingenieria/roble-verona>\r\n> \r\n> Por la foto que nos compartiste cualquiera de estos 3 puede gustarte. La unica diferencia que noto es que nuestras tablas son de 19 cm de ancho x 1,90 m de largo. \r\n> \r\n> Si te interesa, con gusto te acercamos muestras de todas las opciones, o podemos agendar una visita a nuestro depósito en Olivos para que puedas ver las tablas en persona y conocer todas las alternativas disponibles.\r\n> \r\n> Quedamos a tu disposición por cualquier duda o consulta.\r\n> \r\n> Saludos,\r\n> \r\n> \t\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>  \r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com <mailto:info@pisospacific.com>\r\n> pisospacific.com <https://pisospacific.com/>\r\n>  <https://www.instagram.com/pisospacific/>  <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso d",
+      "ts": "2026-10-18T23:22:09.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -199606,7 +199614,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-18T08:42:59.225Z",
     "gmail_seen_ids": [
-      "19fc7d22c649c8c4",
       "19fc7d00146ef835",
       "19fc7dba1d6e0977",
       "19fc7f2de0691697",
@@ -200405,7 +200412,8 @@
       "1a14da26bdefa03c",
       "1a14e1d8c9c5f21b",
       "1a14e6469e7a585d",
-      "1a14f085839f0bba"
+      "1a14f085839f0bba",
+      "1a15152dd35cfaa7"
     ],
     "cash_sessions": {
       "1136982222": {
