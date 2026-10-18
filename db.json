@@ -149257,7 +149257,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-10-16T12:02:54.000Z"
+      "last_touch_at": "2026-10-18T08:25:19.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -158997,12 +158997,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 68,
-      "last_message_at": "2026-10-16T12:02:54.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-14 00:00:00 UTC to 2026-10-15 00:00:00 UTC.",
+      "unread_count": 69,
+      "last_message_at": "2026-10-18T08:25:19.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-16 00:00:00 UTC to 2026-10-17 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-16T12:02:54.000Z",
+      "last_inbound_at": "2026-10-18T08:25:19.000Z",
       "ignored": true
     },
     {
@@ -189306,6 +189306,14 @@
       "body": "✉️ **AVISO DE ARRIBO** Re: Comex+Cargo // Momesso // Cotizacion JR007 | Wall panles | Shanghai - Buenos Aires | 20 ft // CCF-MI-00000105\n\nHola Vicky,\r\nBuenos días!\r\n\r\nInformamos que el arribo del buque SAN RAPHAEL MAERSK se mantiene para\r\nmañana en Terminal 4:\r\n[image: image.png]\r\n\r\nVolveremos con la confirmación de arribo.\r\n\r\nSaludos,\r\n\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\nCarolina Lodovico\r\n*Customer Comex+ Cargo*\r\nCel WhatsApp: (+54)115-761-1787\r\n\r\n*Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nAv. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\n\r\nEl jue, 1 oct 2026 a la(s) 3:40 p.m., Customer Comex+ Cargo (\r\nCustomerCargo@grupocomexmas.com) escribió:\r\n\r\n> Hola Vicky,\r\n> Buenas tardes!\r\n>\r\n> Te comparto debajo el tracking actualizado con el trasbordo en el puerto\r\n> de TANGER.\r\n> La carga mantiene su estimado de arribo para el 17/OCT a bordo del buque\r\n> SAN RAPHAEL MAERSK:\r\n>\r\n> [image: image.png]\r\n>\r\n> Saludos,\r\n>\r\n>\r\n>\r\n> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n> Cordiali Saluti*\r\n> Carolina Lodovico\r\n> *Customer Comex+ Cargo*\r\n> Cel WhatsApp: (+54)115-761-1787\r\n>\r\n> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n> Tel.: (+54)114331-2207/1893\r\n> Av. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\n> Argentina\r\n>\r\n>\r\n> El vie, 18 sept 2026 a la(s) 10:42 a.m., Victoria Pisos Pacific (\r\n> victoria@pisospacific.com) escribió:\r\n>\r\n>> Gracias Caro!!\r\n>>\r\n>> El mié, 16 sept 2026 a las 16:07, Customer Comex+ Cargo (<\r\n>> CustomerCarg",
       "ts": "2026-10-16T12:18:40.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a14e1d8c9c5",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 1d3c3d102a10495f9c71ed56020ec003\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-16 00:00:00 UTC to 2026-10-17 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-10-18T08:25:19.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -199573,7 +199581,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-17T08:43:22.546Z",
     "gmail_seen_ids": [
-      "19fc77b4ba995df8",
       "19fc788e8caef02f",
       "19fc7c67aa588e35",
       "19fc7d22c649c8c4",
@@ -200372,7 +200379,8 @@
       "1a1494bb34c3f58c",
       "1a149e1fdd34a5f5",
       "1a14ccc3a5ede952",
-      "1a14da26bdefa03c"
+      "1a14da26bdefa03c",
+      "1a14e1d8c9c5f21b"
     ],
     "cash_sessions": {
       "1136982222": {
