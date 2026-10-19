@@ -726,7 +726,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 742.525328,
-      "reservedStock": 1199.71,
+      "reservedStock": 1224.71,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Natural Oak 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1667,7 +1667,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 29.459999999999994,
+      "reservedStock": 51.459999999999994,
       "subLine": "Terminaciones",
       "shortName": "Cuartacaña MDF Blanco",
       "thicknessMm": null,
@@ -1859,7 +1859,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8539.747,
+      "reservedStock": 8562.747,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2075,7 +2075,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 76,
+      "reservedStock": 81,
       "subLine": "Nivelación",
       "shortName": "Nivelación Carpeta + Materiales",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15429,
+      "reservedStock": 15430,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -40144,7 +40144,7 @@
       "currency": "USD",
       "created_at": "2026-09-25T11:57:32.217Z",
       "quote_number": "A1177",
-      "status": "DRAFT",
+      "status": "ACCEPTED",
       "commission_split_discount": true
     },
     {
@@ -199603,6 +199603,51 @@
       "product_id": "PROD-190",
       "sku": "PROD-190",
       "qty": -104.2,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-19T16:18:49.570Z",
+      "type": "quote_reserve",
+      "ref": "local-1790337452363-iaebz",
+      "product_id": "PROD-026",
+      "sku": "PROD-026",
+      "qty": 25,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-19T16:18:49.570Z",
+      "type": "quote_reserve",
+      "ref": "local-1790337452363-iaebz",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 23,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-19T16:18:49.570Z",
+      "type": "quote_reserve",
+      "ref": "local-1790337452363-iaebz",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-19T16:18:49.570Z",
+      "type": "quote_reserve",
+      "ref": "local-1790337452363-iaebz",
+      "product_id": "PROD-060",
+      "sku": "PROD-060",
+      "qty": 22,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-19T16:18:49.570Z",
+      "type": "quote_reserve",
+      "ref": "local-1790337452363-iaebz",
+      "product_id": "SERV-115",
+      "sku": "SERV-115",
+      "qty": 5,
       "warehouse_id": "main"
     }
   ],
