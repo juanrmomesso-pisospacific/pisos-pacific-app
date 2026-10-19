@@ -157549,10 +157549,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde whatsapp",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-15T14:16:03.000Z",
-      "last_touch_at": "2026-10-15T14:16:03.000Z"
+      "last_touch_at": "2026-10-19T14:17:47.876Z"
     },
     {
       "id": "lead-email-1a1539f4a345",
@@ -157566,10 +157566,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Email: Pedido de Cotação — Bom dia,\r\n\r\n \r\n\r\n\r\nSolicitamos V/melhor preço e prazo de entrega para:\r\n\r\nFornecimento de Pavimento vinílico sistema flutuante Pacific Spazio Sport\r\nH20 de 6,5mm de espessura, resi",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-19T10:05:07.000Z",
-      "last_touch_at": "2026-10-19T10:05:07.000Z"
+      "last_touch_at": "2026-10-19T14:17:40.993Z"
     },
     {
       "id": "lead-email-1a154805800e",
@@ -157583,10 +157583,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 150m² · Con Colocación · CP 2760",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-19T14:10:59.000Z",
-      "last_touch_at": "2026-10-19T14:10:59.000Z"
+      "last_touch_at": "2026-10-19T14:17:38.444Z"
     }
   ],
   "conversations": [
@@ -165017,14 +165017,15 @@
       "contact_name": "Guillermo",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0daf3a9518",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-09-30T16:10:36.000Z",
       "last_message_preview": "PErdon, este estilo me gusta Roble Europeo Veta Cerrada\r\nEstoy buscando con tablones anchos intercalados de color claro dado como es\r\nel dep",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-09-30T16:10:36.000Z",
-      "last_outbound_at": "2026-09-28T16:54:06.086Z"
+      "last_outbound_at": "2026-09-28T16:54:06.086Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a0ddc40f175",
@@ -166085,11 +166086,12 @@
       "linked_lead_id": "lead-email-1a154805800e",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-19T14:10:59.000Z",
-      "last_message_preview": "Formulario web — 150m² · Con Colocación · CP 2760 · alsina 341",
+      "last_message_at": "2026-10-19T14:17:26.691Z",
+      "last_message_preview": "Hola elena, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-19T14:10:59.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-19T14:10:59.000Z",
+      "last_outbound_at": "2026-10-19T14:17:26.691Z"
     }
   ],
   "messages": [
@@ -189522,6 +189524,15 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 150m² · Con Colocación · CP 2760 · alsina 341",
       "ts": "2026-10-19T14:10:59.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1792419446691-h196",
+      "conversation_id": "conv-email-1a154805800e",
+      "direction": "out",
+      "body": "Hola elena, como estas?\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos en que zona seria la entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos, Victoria Gonzalez Collado\n1136982222",
+      "ts": "2026-10-19T14:17:26.691Z",
+      "status": "sent",
+      "wa_id": "1a154863f982f465"
     }
   ],
   "templates": [
