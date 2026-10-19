@@ -8561,7 +8561,7 @@
           "category": "Servicio"
         }
       ],
-      "status": "Programado",
+      "status": "En proceso",
       "delivery_status": "Acopiado",
       "created_at": "2026-02-11T00:00:00.000Z",
       "fecha_pendiente": false,
@@ -8597,6 +8597,12 @@
           "to": "Programado",
           "at": "2026-08-14T14:15:05.875Z",
           "by": "Victoria Gonzalez Collado"
+        },
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-10-19T01:11:37.719Z",
+          "by": "Admin User"
         }
       ]
     },
@@ -17823,7 +17829,7 @@
       ],
       "zoned": false,
       "discount_total": 182.02,
-      "status": "Programado",
+      "status": "En proceso",
       "created_at": "2026-10-08T19:48:43.925Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -17848,6 +17854,12 @@
           "from": "Confirmado",
           "to": "Programado",
           "at": "2026-10-14T15:20:43.605Z",
+          "by": "Admin User"
+        },
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-10-19T01:11:37.713Z",
           "by": "Admin User"
         }
       ]
