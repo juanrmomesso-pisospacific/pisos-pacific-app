@@ -157570,6 +157570,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-19T10:05:07.000Z",
       "last_touch_at": "2026-10-19T10:05:07.000Z"
+    },
+    {
+      "id": "lead-email-1a154805800e",
+      "name": "elena",
+      "email": "lucianavone.int@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "alsina 341",
+      "postal_code": "2760",
+      "approx_m2": 150,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 150m² · Con Colocación · CP 2760",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-19T14:10:59.000Z",
+      "last_touch_at": "2026-10-19T14:10:59.000Z"
     }
   ],
   "conversations": [
@@ -166058,6 +166075,21 @@
       "email_subject": "Pedido de Cotação",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-19T10:05:07.000Z"
+    },
+    {
+      "id": "conv-email-1a154805800e",
+      "channel": "email",
+      "contact_id": "lucianavone.int@gmail.com",
+      "contact_name": "elena",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a154805800e",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-19T14:10:59.000Z",
+      "last_message_preview": "Formulario web — 150m² · Con Colocación · CP 2760 · alsina 341",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-19T14:10:59.000Z"
     }
   ],
   "messages": [
@@ -189482,6 +189514,14 @@
       "template_name": "reenganche_consulta",
       "wa_id": "wamid.HBgNNTQ5MTE1NTk1MjkzNRUCABEYEkVFRUUzODBBRDlDMUUwMTJFNwA=",
       "error": "130472 User's number is part of an experiment — Failed to send message because this user's phone number is part of an experiment"
+    },
+    {
+      "id": "m-email-1a154805800e",
+      "conversation_id": "conv-email-1a154805800e",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 150m² · Con Colocación · CP 2760 · alsina 341",
+      "ts": "2026-10-19T14:10:59.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -199749,7 +199789,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-19T08:42:59.737Z",
     "gmail_seen_ids": [
-      "19fc8ad07119bef1",
       "19fc8cc7dca0a901",
       "19fc9076bb3fa6f0",
       "19fc957b0684fe5f",
@@ -200548,7 +200587,8 @@
       "1a1539f4a3451684",
       "1a153d0fb970a493",
       "1a153f3c75d43688",
-      "1a1542eb53d43e27"
+      "1a1542eb53d43e27",
+      "1a154805800e2cb4"
     ],
     "cash_sessions": {
       "1136982222": {
