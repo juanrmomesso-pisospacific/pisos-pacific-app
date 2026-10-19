@@ -146394,8 +146394,8 @@
       "date": "2026-10-05T00:00:00.000Z",
       "caja_id": "CAJ-005",
       "caja_name": "Efectivo USD",
-      "category": "Comisiones",
-      "subcategory": null,
+      "category": "Marketing",
+      "subcategory": "Comisiones",
       "counterparty": "Julieta Piñero",
       "counterparty_type": "supplier",
       "client_id": null,
@@ -146409,8 +146409,8 @@
       "fixed_variable": "Variable",
       "expense_type": "Marketing y Ventas",
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "comisión de revendedor — confirmar"
+      "needs_review": false,
+      "review_reason": null
     },
     {
       "id": "mov-1791911990216-s829a",
@@ -205275,6 +205275,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Julián\""
+    },
+    {
+      "id": "local-1792424396826-cwce2",
+      "match": [
+        "Julieta Piñero"
+      ],
+      "cuit": null,
+      "counterparty": "Julieta Piñero",
+      "category": "Marketing",
+      "subcategory": "Comisiones",
+      "expense_type": "Marketing y Ventas",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Julieta Piñero\""
     }
   ],
   "product_aliases": [
