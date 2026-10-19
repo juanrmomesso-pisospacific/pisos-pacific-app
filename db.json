@@ -18452,6 +18452,84 @@
           "by": "Victoria Gonzalez Collado"
         }
       ]
+    },
+    {
+      "id": "local-sale-1792442154821-9qnv",
+      "quote_id": "local-1791908013024-ag4fr",
+      "quote_number": "A7970",
+      "title": "Cotización Arq. Andrea Ton",
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 2 más",
+      "internal_notes": "",
+      "public_notes": "Las medidas deberán verificarse en obra. En caso de ser necesario realizar trabajos de nivelación, estos no están incluidos en el presupuesto y se cotizarán por separado.\n\nEl presupuesto incluye material, mano de obra de colocación, insumos, entrega y descarga.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mvfps285-dx88",
+      "client_name": "Arq. Andrea Ton",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 4435-9956",
+      "client_address": "Pilar",
+      "contract_total": 4091.1794,
+      "items": [
+        {
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+          "quantity": 66.7,
+          "unit_price": 38,
+          "category": "Pisos H2O",
+          "cost": 16.33,
+          "disc_value": 10,
+          "total": 2534.6,
+          "discount": 253.46,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 60,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 900,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 200,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 200,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 253.46,
+      "status": "Confirmado",
+      "created_at": "2026-10-19T20:35:54.821Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 4091.1794
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -43723,7 +43801,7 @@
     },
     {
       "id": "local-1791908013024-ag4fr",
-      "client_id": "",
+      "client_id": "CLI-mvfps285-dx88",
       "client_name": "Arq. Andrea Ton",
       "client_dni": "",
       "client_email": "",
@@ -43790,7 +43868,8 @@
       "created_at": "2026-10-13T16:13:32.821Z",
       "quote_number": "A7970",
       "status": "ACCEPTED",
-      "lead_id": "local-1791906930078-pqmkv"
+      "lead_id": "local-1791906930078-pqmkv",
+      "sale_id": "local-sale-1792442154821-9qnv"
     },
     {
       "id": "local-q-1791920279404-cxu4",
@@ -47784,6 +47863,22 @@
       "notes": null,
       "name": "Marina Fiks",
       "updated_at": "2026-10-19T17:43:19.636Z"
+    },
+    {
+      "id": "CLI-mvfps285-dx88",
+      "type": "client",
+      "active": true,
+      "name": "Arq. Andrea Ton",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        "+54 9 11 4435-9956"
+      ],
+      "addresses": [
+        "Pilar"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-19T20:35:54.821Z"
     }
   ],
   "expenses": [],
