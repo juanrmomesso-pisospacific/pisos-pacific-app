@@ -47558,6 +47558,18 @@
       "notes": null,
       "name": "Adrian Zerbetto",
       "updated_at": "2026-10-19T15:35:16.026Z"
+    },
+    {
+      "id": "CLI-mvffkye6-d1lq",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Logico SA",
+      "updated_at": "2026-10-19T15:50:27.102Z"
     }
   ],
   "expenses": [],
@@ -144894,11 +144906,11 @@
       "date": "2026-10-09T00:00:00.000Z",
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Venta - Pisos",
-      "subcategory": null,
-      "counterparty": "Sin clasificar",
+      "category": "Ingreso Otros",
+      "subcategory": "Paneles",
+      "counterparty": "Logico SA",
       "counterparty_type": "client",
-      "client_id": null,
+      "client_id": "CLI-mvffkye6-d1lq",
       "supplier_id": null,
       "description": "Sin clasificar",
       "sale_ref": null,
@@ -144909,8 +144921,8 @@
       "fixed_variable": null,
       "expense_type": null,
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "IB Proveedores — cobro de cliente, asignar a una venta"
+      "needs_review": false,
+      "review_reason": null
     },
     {
       "id": "oct26-bdc-crtrf633",
@@ -205306,6 +205318,20 @@
       "counterparty": "Sin clasificar",
       "category": "Venta - Pisos",
       "subcategory": null,
+      "expense_type": null,
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Sin clasificar\""
+    },
+    {
+      "id": "local-1792425028713-zmva2",
+      "match": [
+        "Sin clasificar"
+      ],
+      "cuit": null,
+      "counterparty": "Logico SA",
+      "category": "Ingreso Otros",
+      "subcategory": "Paneles",
       "expense_type": null,
       "personal": false,
       "source": "learned",
