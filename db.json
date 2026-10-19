@@ -47594,6 +47594,18 @@
       "notes": null,
       "name": "Romina",
       "updated_at": "2026-10-19T16:12:36.351Z"
+    },
+    {
+      "id": "CLI-mvfjm444-3r0t",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Marina Fiks",
+      "updated_at": "2026-10-19T17:43:19.636Z"
     }
   ],
   "expenses": [],
