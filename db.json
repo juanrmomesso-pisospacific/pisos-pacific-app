@@ -148601,6 +148601,28 @@
       "raw_name": "Comi Trf >250",
       "classified_by": "regla \"comi trf >250\" → Banco de Comercio (aprendida)",
       "id": "MOV-IMP-mvffwo2e-033"
+    },
+    {
+      "id": "local-1792442058144-vngi1",
+      "flow": "Ingreso",
+      "date": "2026-10-08T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Arq. Chloé - Constructora SZ",
+      "counterparty_type": "client",
+      "description": "Cobro - Haras Capilla Del Señor - Obra Cielorraso",
+      "sale_ref": "0000135",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 3500,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
