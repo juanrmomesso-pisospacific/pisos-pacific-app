@@ -18530,6 +18530,110 @@
       "commission_split_discount": true,
       "currency": "USD",
       "commission_amount": 0
+    },
+    {
+      "id": "local-sale-1792442938646-2luu",
+      "quote_id": "local-1790337452363-iaebz",
+      "quote_number": "A1177",
+      "title": "Quincho",
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 4 más",
+      "internal_notes": "",
+      "public_notes": "Las medidas deberán verificarse en obra. Para una correcta colocación, la carpeta debe encontrarse nivelada, firme y en condiciones adecuadas para recibir el piso.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-004",
+      "client_name": "Agustina Lando",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Colghan | Estomba y Ibera",
+      "contract_total": 1816.21,
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 25,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 950,
+          "discount": 95,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 23,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 345,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 160,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 160,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-060",
+          "sku": "PROD-060",
+          "description": "Cuartacaña MDF - Blanca",
+          "quantity": 22,
+          "unit_price": 3,
+          "cost": 0,
+          "category": "Terminaciones",
+          "total": 66,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-115",
+          "sku": "SERV-115",
+          "description": "Servicio - Nivelación de Carpeta - incluye Materiales",
+          "quantity": 5,
+          "unit_price": 15,
+          "cost": 10,
+          "category": "Servicio",
+          "total": 75,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 95,
+      "status": "Confirmado",
+      "created_at": "2026-10-19T20:48:58.646Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 1816.21
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -40223,7 +40327,8 @@
       "created_at": "2026-09-25T11:57:32.217Z",
       "quote_number": "A1177",
       "status": "ACCEPTED",
-      "commission_split_discount": true
+      "commission_split_discount": true,
+      "sale_id": "local-sale-1792442938646-2luu"
     },
     {
       "id": "local-1790342972764-toam2",
@@ -45234,7 +45339,9 @@
       "dni": "",
       "emails": [],
       "phones": [],
-      "addresses": [],
+      "addresses": [
+        "Colghan | Estomba y Ibera"
+      ],
       "active": true,
       "notes": null,
       "updated_at": "2026-06-03T19:46:57.827Z",
