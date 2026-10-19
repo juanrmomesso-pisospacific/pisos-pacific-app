@@ -47582,6 +47582,18 @@
       "notes": null,
       "name": "Consorcio de Copropietarios Austria",
       "updated_at": "2026-10-19T16:04:48.953Z"
+    },
+    {
+      "id": "CLI-mvfgdg1r-x4zt",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Romina",
+      "updated_at": "2026-10-19T16:12:36.351Z"
     }
   ],
   "expenses": [],
@@ -144970,10 +144982,10 @@
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
       "category": "Venta - No Pisos",
-      "subcategory": null,
-      "counterparty": "Sin clasificar",
+      "subcategory": "Servicios",
+      "counterparty": "Romina",
       "counterparty_type": "client",
-      "client_id": null,
+      "client_id": "CLI-mvfgdg1r-x4zt",
       "supplier_id": null,
       "description": "Sin clasificar",
       "sale_ref": null,
@@ -144984,8 +144996,8 @@
       "fixed_variable": null,
       "expense_type": null,
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "CRÉDITO POR CREDIN — asignar (¿paneles/cobro?)"
+      "needs_review": false,
+      "review_reason": null
     },
     {
       "id": "oct26-bdc-imp",
@@ -206245,6 +206257,20 @@
       "category": "Importaciones",
       "subcategory": "Gastos Locales Importacion",
       "expense_type": "COGS",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Sin clasificar\""
+    },
+    {
+      "id": "local-1792426358280-b7g9d",
+      "match": [
+        "Sin clasificar"
+      ],
+      "cuit": null,
+      "counterparty": "Romina",
+      "category": "Venta - No Pisos",
+      "subcategory": "Servicios",
+      "expense_type": null,
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Sin clasificar\""
