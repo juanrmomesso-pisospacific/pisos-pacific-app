@@ -166038,10 +166038,11 @@
       "linked_lead_id": "lead-whatsapp-1792073766137",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-15T14:16:03.000Z",
-      "last_message_preview": "Buenos días!quería averiguar si me pueden asesorar para cambiar mi piso por el H20 .Ustedes realizan colocación?",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-15T14:16:03.000Z"
+      "last_message_at": "2026-10-19T14:11:12.778Z",
+      "last_message_preview": "¡Hola Marcela! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seg",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-15T14:16:03.000Z",
+      "last_outbound_at": "2026-10-19T14:11:12.778Z"
     },
     {
       "id": "conv-email-1a1539f4a345",
@@ -189470,6 +189471,17 @@
       "body": "✉️ Re: **AVISO DE ARRIBO** Re: Comex+Cargo // Momesso // Cotizacion JR007 | Wall panles | Shanghai - Buenos Aires | 20 ft // CCF-MI-00000105\n\nEstimados,\r\nBuenos días!\r\n\r\nConfirmamos el arribo del buque *SAN RAPHAEL MAERSK*:\r\n[image: image.png]\r\n\r\nEnviaremos el Libre Deuda una vez que finalicen las operaciones de descarga\r\nen Terminal.\r\n\r\nSaludos,\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\nCarolina Lodovico\r\n*Customer Comex+ Cargo*\r\nCel WhatsApp: (+54)115-761-1787\r\n\r\n*Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nAv. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\n\r\nEl vie, 16 oct 2026 a la(s) 9:18 a.m., Customer Comex+ Cargo (\r\nCustomerCargo@grupocomexmas.com) escribió:\r\n\r\n> Hola Vicky,\r\n> Buenos días!\r\n>\r\n> Informamos que el arribo del buque SAN RAPHAEL MAERSK se mantiene para\r\n> mañana en Terminal 4:\r\n> [image: image.png]\r\n>\r\n> Volveremos con la confirmación de arribo.\r\n>\r\n> Saludos,\r\n>\r\n>\r\n>\r\n>\r\n> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n> Cordiali Saluti*\r\n> Carolina Lodovico\r\n> *Customer Comex+ Cargo*\r\n> Cel WhatsApp: (+54)115-761-1787\r\n>\r\n> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n> Tel.: (+54)114331-2207/1893\r\n> Av. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\n> Argentina\r\n>\r\n>\r\n> El jue, 1 oct 2026 a la(s) 3:40 p.m., Customer Comex+ Cargo (\r\n> CustomerCargo@grupocomexmas.com) escribió:\r\n>\r\n>> Hola Vicky,\r\n>> Buenas tardes!\r\n>>\r\n>> Te comparto debajo el tracking actualizado con el trasbordo en el puerto\r\n>> de TANGER.\r\n>> La ",
       "ts": "2026-10-19T11:36:49.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1792419072778-tq1b",
+      "conversation_id": "conv-1792073766137-x5jz",
+      "direction": "out",
+      "body": "¡Hola Marcela! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día.",
+      "ts": "2026-10-19T14:11:12.778Z",
+      "status": "failed",
+      "template_name": "reenganche_consulta",
+      "wa_id": "wamid.HBgNNTQ5MTE1NTk1MjkzNRUCABEYEkVFRUUzODBBRDlDMUUwMTJFNwA=",
+      "error": "130472 User's number is part of an experiment — Failed to send message because this user's phone number is part of an experiment"
     }
   ],
   "templates": [
