@@ -191095,6 +191095,15 @@
       "body": "Buen día estoy precisando conseguir un piso de ustedes dónde lo puedo pasar a ver",
       "ts": "2026-10-19T15:28:31.258Z",
       "status": "received"
+    },
+    {
+      "id": "m-1792442542103-9kzc",
+      "conversation_id": "conv-1792423712776-14b8",
+      "direction": "out",
+      "body": "Hola Gustavo como estas? que piso?",
+      "ts": "2026-10-19T20:42:22.104Z",
+      "status": "failed",
+      "error": "fetch failed"
     }
   ],
   "templates": [
