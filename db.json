@@ -144926,7 +144926,7 @@
       "client_id": null,
       "supplier_id": null,
       "description": "Sin clasificar",
-      "sale_ref": null,
+      "sale_ref": "A7752",
       "currency": "ARS",
       "amount_ars": 6330468.92,
       "amount_usd": 4220.31,
@@ -144934,8 +144934,9 @@
       "fixed_variable": null,
       "expense_type": null,
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "CRÉDITO POR TRANSFERENCIA — ¿cobro de cliente o entre cuentas? asignar"
+      "needs_review": false,
+      "review_reason": null,
+      "linked_sale_id": "local-sale-1791992691357-vafn"
     },
     {
       "id": "oct26-bdc-credin800",
@@ -205278,6 +205279,34 @@
       "category": "Flota",
       "subcategory": "Gastos por Mantenimiento Auto",
       "expense_type": "Gastos de Flota/Vehículos",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Sin clasificar\""
+    },
+    {
+      "id": "local-1792424947242-6zybx",
+      "match": [
+        "Sin clasificar"
+      ],
+      "cuit": null,
+      "counterparty": "Sin clasificar",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "expense_type": null,
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Sin clasificar\""
+    },
+    {
+      "id": "local-1792424957202-zv75c",
+      "match": [
+        "Sin clasificar"
+      ],
+      "cuit": null,
+      "counterparty": "Sin clasificar",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "expense_type": null,
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Sin clasificar\""
