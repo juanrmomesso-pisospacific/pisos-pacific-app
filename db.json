@@ -147317,6 +147317,28 @@
       "source": "mp-api",
       "mp_op_id": "000gx8z0u3",
       "id": "MOV-MPAUTO-mvf0b8rd-002"
+    },
+    {
+      "id": "local-1792419740144-80g7y",
+      "flow": "Ingreso",
+      "date": "2026-10-08T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Tamy Selvood",
+      "counterparty_type": "client",
+      "description": "Cobro - Cotización Tamy Selvood ",
+      "sale_ref": "A3929",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 3050,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
