@@ -17722,7 +17722,7 @@
       "quote_id": "local-1790957118804-75cko",
       "quote_number": "A4114",
       "title": "Obra Bellini",
-      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 6 más",
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 7 más",
       "internal_notes": "",
       "public_notes": "Presupuesto incluye desarmado de piso existente. Carpeta liviana y nivelada de 2cm y colocación de pisos y zócalos con los materiales e insumos incluidos. \n\nNo incluye descarga ni desecho del piso existente. ",
       "payment_terms": "Anticipo 80% · Conforme 20%",
@@ -17732,19 +17732,19 @@
       "client_email": "",
       "client_phone": " 11 6435-1398",
       "client_address": "Palermo",
-      "contract_total": 3803,
+      "contract_total": 3980,
       "items": [
         {
           "product_id": "PROD-026",
           "sku": "PROD-026",
           "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
-          "quantity": 47.9,
+          "quantity": 49.92,
           "unit_price": 38,
           "cost": 16.33,
           "category": "Pisos H2O",
           "disc_value": 10,
-          "total": 1820.2,
-          "discount": 182.02,
+          "total": 1896.96,
+          "discount": 189.7,
           "image": "",
           "target_item_index": null
         },
@@ -17769,7 +17769,7 @@
           "unit_price": 5.2,
           "cost": 4,
           "category": "Servicio",
-          "total": 187.20000000000002,
+          "total": 187.2,
           "discount": 0,
           "image": "",
           "target_item_index": null
@@ -17825,18 +17825,29 @@
           "discount": 0,
           "image": "",
           "target_item_index": null
+        },
+        {
+          "product_id": "SERV-122",
+          "sku": "SERV-122",
+          "description": "Ajuste o Cepillado de Puerta",
+          "quantity": 4,
+          "unit_price": 25,
+          "total": 100,
+          "cost": 5.33,
+          "category": "Servicio",
+          "discount": 0
         }
       ],
       "zoned": false,
-      "discount_total": 182.02,
+      "discount_total": 189.7,
       "status": "En proceso",
       "created_at": "2026-10-08T19:48:43.925Z",
       "has_iva": false,
       "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 3803,
+        "total_invoiced": 3980,
         "total_paid": 0,
-        "balance_due": 3803
+        "balance_due": 3980
       },
       "stock_reserved": true,
       "stock_deducted": false,
