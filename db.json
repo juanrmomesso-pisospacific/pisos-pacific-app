@@ -18009,7 +18009,7 @@
       "client_email": "",
       "client_phone": "+54 9 11 6750-1553",
       "client_address": "Guido 2660 piso 11",
-      "contract_total": 2570.1852000000003,
+      "contract_total": 2124,
       "items": [
         {
           "product_id": "PROD-011",
@@ -18095,12 +18095,12 @@
       "discount_total": 165,
       "status": "En proceso",
       "created_at": "2026-10-13T11:58:09.136Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
-        "total_paid": 0,
-        "balance_due": 2570.1852000000003
+        "total_invoiced": 2124,
+        "total_paid": 1300,
+        "balance_due": 824
       },
       "stock_reserved": false,
       "stock_deducted": true,
@@ -18136,7 +18136,8 @@
           "at": "2026-10-14T15:22:18.142Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "iva_amount": 0
     },
     {
       "id": "local-sale-1791892698049-0ivt",
