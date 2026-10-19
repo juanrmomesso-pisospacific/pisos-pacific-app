@@ -44774,7 +44774,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Obra Capilla Casa PPAL",
       "has_iva": true,
-      "price": 50857.6552,
+      "price": 48416.94,
       "zoned": false,
       "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed + 2 más",
       "items": [
@@ -44786,9 +44786,9 @@
           "unit_price": 99,
           "cost": 34.01,
           "category": "Pisos de Madera",
-          "disc_value": 15,
+          "disc_value": 20,
           "total": 40342.5,
-          "discount": 6051.38,
+          "discount": 8068.5,
           "image": "",
           "target_item_index": null
         },
@@ -44819,8 +44819,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 6051.38,
-      "discount_amount": 6051.38,
+      "discount_total": 8068.5,
+      "discount_amount": 8068.5,
       "reseller_id": "",
       "reseller_name": "",
       "commission_split_discount": true,
