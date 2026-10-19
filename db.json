@@ -726,7 +726,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 742.525328,
-      "reservedStock": 1224.71,
+      "reservedStock": 1180.71,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Natural Oak 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1517,7 +1517,7 @@
       "active": true,
       "margin": 50,
       "stock": 0,
-      "reservedStock": 33,
+      "reservedStock": 0,
       "subLine": "Zócalo EPS",
       "shortName": "Zócalo EPS Extra Line 100mm Blanco",
       "thicknessMm": null,
@@ -1859,7 +1859,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8562.747,
+      "reservedStock": 8522.747,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2411,7 +2411,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 874,
+      "reservedStock": 844,
       "subLine": "Zócalos",
       "shortName": "Colocación Zócalos Pegados y Clavados",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15430,
+      "reservedStock": 15429,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -41250,7 +41250,7 @@
       "currency": "USD",
       "created_at": "2026-10-01T16:19:35.088Z",
       "quote_number": "A7769",
-      "status": "SENT",
+      "status": "REJECTED",
       "lead_id": "local-1790871400999-f0zd6"
     },
     {
@@ -199956,6 +199956,51 @@
       "product_id": "SERV-115",
       "sku": "SERV-115",
       "qty": 5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-19T20:38:09.485Z",
+      "type": "quote_release",
+      "ref": "local-1790871575408-r0xut",
+      "product_id": "PROD-026",
+      "sku": "PROD-026",
+      "qty": -44,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-19T20:38:09.485Z",
+      "type": "quote_release",
+      "ref": "local-1790871575408-r0xut",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": -40,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-19T20:38:09.485Z",
+      "type": "quote_release",
+      "ref": "local-1790871575408-r0xut",
+      "product_id": "PROD-208",
+      "sku": "PROD-208",
+      "qty": -33,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-19T20:38:09.485Z",
+      "type": "quote_release",
+      "ref": "local-1790871575408-r0xut",
+      "product_id": "SERV-129",
+      "sku": "SERV-129",
+      "qty": -30,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-19T20:38:09.485Z",
+      "type": "quote_release",
+      "ref": "local-1790871575408-r0xut",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": -1,
       "warehouse_id": "main"
     }
   ],
