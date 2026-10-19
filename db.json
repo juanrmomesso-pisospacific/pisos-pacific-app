@@ -157553,6 +157553,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-15T14:16:03.000Z",
       "last_touch_at": "2026-10-15T14:16:03.000Z"
+    },
+    {
+      "id": "lead-email-1a1539f4a345",
+      "name": "Giordano | Revinobre",
+      "email": "gcardoso@revinobre.pt",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Pedido de Cotação — Bom dia,\r\n\r\n \r\n\r\n\r\nSolicitamos V/melhor preço e prazo de entrega para:\r\n\r\nFornecimento de Pavimento vinílico sistema flutuante Pacific Spazio Sport\r\nH20 de 6,5mm de espessura, resi",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-19T10:05:07.000Z",
+      "last_touch_at": "2026-10-19T10:05:07.000Z"
     }
   ],
   "conversations": [
@@ -166025,6 +166042,21 @@
       "last_message_preview": "Buenos días!quería averiguar si me pueden asesorar para cambiar mi piso por el H20 .Ustedes realizan colocación?",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-15T14:16:03.000Z"
+    },
+    {
+      "id": "conv-email-1a1539f4a345",
+      "channel": "email",
+      "contact_id": "gcardoso@revinobre.pt",
+      "contact_name": "Giordano | Revinobre",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a1539f4a345",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-19T10:05:07.000Z",
+      "last_message_preview": "Bom dia,\r\n\r\n \r\n\r\n\r\nSolicitamos V/melhor preço e prazo de entrega para:\r\n\r\nFornecimento de Pavimento vinílico sistema flutuante Pacific Spazi",
+      "email_subject": "Pedido de Cotação",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-19T10:05:07.000Z"
     }
   ],
   "messages": [
@@ -189422,6 +189454,14 @@
       "body": "✉️ Re: Solicitud de presupuesto\n\nMuchas gracias juan! Estaré analizando tu presupuesto junto con otros que tengo y cualquier cosa te escribo nuevamente. Te super agradezco!\r\n\r\n> El 15 oct 2026, a las 9:54 a. m., info pisos <info@pisospacific.com> escribió:\r\n> \r\n> Hola Ornella,\r\n> \r\n> Adjunto 3 presupuestos. Ambos son pisos de roble europeo prefinished con veta tallada.\r\n> \r\n> Roble Europeo Veta Tallada - Light Brushed <https://pisospacific.com/pisos-madera-natural-ingenieria/roble-europeo-veta-tallada>\r\n> Roble Kitsilano - Light Brushed <https://pisospacific.com/pisos-madera-natural-ingenieria/roble-kitsilano> \r\n> Roble Verona - Light Brushed <https://pisospacific.com/pisos-madera-natural-ingenieria/roble-verona>\r\n> \r\n> Por la foto que nos compartiste cualquiera de estos 3 puede gustarte. La unica diferencia que noto es que nuestras tablas son de 19 cm de ancho x 1,90 m de largo. \r\n> \r\n> Si te interesa, con gusto te acercamos muestras de todas las opciones, o podemos agendar una visita a nuestro depósito en Olivos para que puedas ver las tablas en persona y conocer todas las alternativas disponibles.\r\n> \r\n> Quedamos a tu disposición por cualquier duda o consulta.\r\n> \r\n> Saludos,\r\n> \r\n> \t\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>  \r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com <mailto:info@pisospacific.com>\r\n> pisospacific.com <https://pisospacific.com/>\r\n>  <https://www.instagram.com/pisospacific/>  <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso d",
       "ts": "2026-10-18T23:22:09.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1539f4a345",
+      "conversation_id": "conv-email-1a1539f4a345",
+      "direction": "in",
+      "body": "✉️ Pedido de Cotação\n\nBom dia,\r\n\r\n \r\n\r\n\r\nSolicitamos V/melhor preço e prazo de entrega para:\r\n\r\nFornecimento de Pavimento vinílico sistema flutuante Pacific Spazio Sport\r\nH20 de 6,5mm de espessura, resistente à agua e antibacteriano, inclui tela\r\nEVA acústica incorporada no pavimento.\r\n\r\nQuantidade estimada: 850m².\r\n\r\n \r\n\r\n \r\n\r\nMelhores cumprimentos,\r\n\r\nGiordano Cardoso\r\n  \r\nREVINOBRE – Técnicas de Revestimentos, Lda.\r\nAlvará de construção nº 45107 emitido pelo IMPIC\r\nRua Dr. Joaquim Manuel da Costa, 946 Fracção D\r\n4420 437 VALBOM\r\nTel.: (+351)224503606\r\n«Chamada para a rede fixa nacional»;\r\n <mailto:gcardoso@revinobre.pt%0bgeral@revinobre.pt> gcardoso@revinobre.pt\r\ngeral@revinobre.pt",
+      "ts": "2026-10-19T10:05:07.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -199689,7 +199729,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-19T08:42:59.737Z",
     "gmail_seen_ids": [
-      "19fc7f2de0691697",
       "19fc802641d0dbf2",
       "19fc80000f0a6af5",
       "19fc832943ae4b1f",
@@ -200488,7 +200527,8 @@
       "1a14f085839f0bba",
       "1a15152dd35cfaa7",
       "1a153266a6f3e5e5",
-      "1a1538ca63f76a3a"
+      "1a1538ca63f76a3a",
+      "1a1539f4a3451684"
     ],
     "cash_sessions": {
       "1136982222": {
