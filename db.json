@@ -148839,6 +148839,28 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "local-1792442554792-ji92u",
+      "flow": "Ingreso",
+      "date": "2026-10-19T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Flor Allende",
+      "counterparty_type": "client",
+      "description": "Cobro - Cotización Flor Allende",
+      "sale_ref": "A3235",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 824,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
@@ -159122,10 +159144,10 @@
       "needs_placement": null,
       "interested_products": [],
       "notes": "Lead automático desde instagram",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-19T15:28:31.258Z",
-      "last_touch_at": "2026-10-19T15:28:31.258Z"
+      "last_touch_at": "2026-10-19T20:42:39.740Z"
     }
   ],
   "conversations": [
@@ -167642,10 +167664,11 @@
       "linked_lead_id": "lead-instagram-1792423712776",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-19T15:28:31.258Z",
-      "last_message_preview": "Buen día estoy precisando conseguir un piso de ustedes dónde lo puedo pasar a ver",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-19T15:28:31.258Z"
+      "last_message_at": "2026-10-19T20:42:36.097Z",
+      "last_message_preview": "si tenes foto de la caja o del piso colocado te aviso si lo tenemos",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-19T15:28:31.258Z",
+      "last_outbound_at": "2026-10-19T20:42:36.097Z"
     }
   ],
   "messages": [
@@ -191104,6 +191127,15 @@
       "ts": "2026-10-19T20:42:22.104Z",
       "status": "failed",
       "error": "fetch failed"
+    },
+    {
+      "id": "m-1792442556097-3kq5",
+      "conversation_id": "conv-1792423712776-14b8",
+      "direction": "out",
+      "body": "si tenes foto de la caja o del piso colocado te aviso si lo tenemos",
+      "ts": "2026-10-19T20:42:36.097Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjI3MzkzMzY4NzQ5NzMxMzozMzA2NDcyOTA5MzU5ODQ4Mzc4NTE4MzQ3OTg0MzUyMDUxMgZDZD"
     }
   ],
   "templates": [
