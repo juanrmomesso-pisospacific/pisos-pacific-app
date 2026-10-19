@@ -144856,12 +144856,12 @@
       "date": "2026-10-09T00:00:00.000Z",
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Sin clasificar",
-      "subcategory": null,
-      "counterparty": "Sin clasificar",
+      "category": "Importaciones",
+      "subcategory": "Gastos Locales Importacion",
+      "counterparty": "Grama",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-040",
       "description": "Sin clasificar",
       "sale_ref": null,
       "currency": "ARS",
@@ -144869,10 +144869,10 @@
       "amount_usd": 1613.8,
       "exchange_rate": 1500,
       "fixed_variable": "Variable",
-      "expense_type": null,
+      "expense_type": "COGS",
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "HB (Debito Transf. HB) — el banco no da destinatario; clasificar con el detalle del home banking"
+      "needs_review": false,
+      "review_reason": null
     },
     {
       "id": "oct26-bdc-hb400",
@@ -205333,6 +205333,20 @@
       "category": "Ingreso Otros",
       "subcategory": "Paneles",
       "expense_type": null,
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Sin clasificar\""
+    },
+    {
+      "id": "local-1792425075168-1o5q2",
+      "match": [
+        "Sin clasificar"
+      ],
+      "cuit": null,
+      "counterparty": "Grama",
+      "category": "Importaciones",
+      "subcategory": "Gastos Locales Importacion",
+      "expense_type": "COGS",
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Sin clasificar\""
