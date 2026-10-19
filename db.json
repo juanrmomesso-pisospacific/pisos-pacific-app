@@ -47570,6 +47570,18 @@
       "notes": null,
       "name": "Logico SA",
       "updated_at": "2026-10-19T15:50:27.102Z"
+    },
+    {
+      "id": "CLI-mvfg3feh-k0do",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Consorcio de Copropietarios Austria",
+      "updated_at": "2026-10-19T16:04:48.953Z"
     }
   ],
   "expenses": [],
