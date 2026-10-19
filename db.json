@@ -146648,28 +146648,6 @@
       "review_reason": null
     },
     {
-      "id": "local-1792003356789-t0yy8",
-      "flow": "Ingreso",
-      "date": "2026-10-05T00:00:00.000Z",
-      "caja_id": "CAJ-003",
-      "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Venta - Pisos",
-      "subcategory": null,
-      "counterparty": "Arq. Pilar gondell",
-      "counterparty_type": "client",
-      "description": "Cobro - Cotización Arq. Pilar gondell",
-      "sale_ref": "A7752",
-      "currency": "ARS",
-      "amount_ars": 6330468.92,
-      "amount_usd": 4110.69,
-      "exchange_rate": 1540,
-      "fixed_variable": null,
-      "expense_type": null,
-      "transfer": false,
-      "needs_review": false,
-      "review_reason": null
-    },
-    {
       "date": "2026-10-14T00:00:00.000Z",
       "flow": "Egreso",
       "caja_id": "CAJ-002",
