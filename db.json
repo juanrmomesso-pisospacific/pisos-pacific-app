@@ -167392,13 +167392,14 @@
       "contact_name": "Giordano | Revinobre",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a1539f4a345",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-19T10:05:07.000Z",
       "last_message_preview": "Bom dia,\r\n\r\n \r\n\r\n\r\nSolicitamos V/melhor preço e prazo de entrega para:\r\n\r\nFornecimento de Pavimento vinílico sistema flutuante Pacific Spazi",
       "email_subject": "Pedido de Cotação",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-19T10:05:07.000Z"
+      "last_inbound_at": "2026-10-19T10:05:07.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a154805800e",
