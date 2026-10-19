@@ -146017,12 +146017,12 @@
       "date": "2026-10-09T00:00:00.000Z",
       "caja_id": "CAJ-009",
       "caja_name": "Efectivo Pesos",
-      "category": "Sin clasificar",
-      "subcategory": null,
-      "counterparty": "Julián",
+      "category": "Instalaciones",
+      "subcategory": "Insumos Generales Colocación",
+      "counterparty": "LOSMAC - Prestigio",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-067",
       "description": "Efectivo — Julián",
       "sale_ref": null,
       "currency": "ARS",
@@ -146030,10 +146030,10 @@
       "amount_usd": 254.9,
       "exchange_rate": 1530,
       "fixed_variable": "Variable",
-      "expense_type": null,
+      "expense_type": "Gastos de Instalaciones y Suministros",
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "¿colocador u otro? confirmar"
+      "needs_review": false,
+      "review_reason": null
     },
     {
       "id": "oct26-efe-p-36",
@@ -205070,6 +205070,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Showroom\""
+    },
+    {
+      "id": "local-1792422069646-72q2v",
+      "match": [
+        "Julián"
+      ],
+      "cuit": null,
+      "counterparty": "LOSMAC - Prestigio",
+      "category": "Instalaciones",
+      "subcategory": "Insumos Generales Colocación",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Julián\""
     }
   ],
   "product_aliases": [
