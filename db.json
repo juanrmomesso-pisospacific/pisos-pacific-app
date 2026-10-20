@@ -167507,11 +167507,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791206633783",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-14T12:51:08.577Z",
+      "unread_count": 1,
+      "last_message_at": "2026-10-20T14:20:43.322Z",
       "last_message_preview": "👏",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-14T12:51:08.577Z"
+      "last_inbound_at": "2026-10-20T14:20:43.322Z"
     },
     {
       "id": "conv-1791231510199-4gjh",
@@ -191434,6 +191434,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 21m² · Con Colocación · CP 11117 · Larrea 1267",
       "ts": "2026-10-20T13:40:59.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1792506044805-0567",
+      "conversation_id": "conv-1791206633783-ctsl",
+      "direction": "in",
+      "body": "👏",
+      "ts": "2026-10-20T14:20:43.322Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -204133,7 +204141,8 @@
       "wamid.HBgNNTQ5MTE1NTk1MjkzNRUCABIYFDNBMUY2NjVFREIwRThBREZCNEIzAA==",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMzA1OTQ0MjI3NTY3MTgwNTQxNDMwMjI5MDAxODMwNDAwMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMzA2MDg2ODk1OTkzNzcyNDE2ODExODQwNzQyMTQ5MzI0OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjI3MzkzMzY4NzQ5NzMxMzozMzA2NDM4MTQ3MzIyNjU5Njg4MTQ0ODI0NDAyMzkxODU5MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjI3MzkzMzY4NzQ5NzMxMzozMzA2NDM4MTQ3MzIyNjU5Njg4MTQ0ODI0NDAyMzkxODU5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NTkwMDIzMTc0NzEwODg5OTAyMDY1MDA4Mjk5MjEyOAZDZD"
     ],
     "last_weekly_reminder": "2026-10-16T12:36:36.308Z",
     "warehouses": [
