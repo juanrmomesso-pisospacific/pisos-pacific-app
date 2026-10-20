@@ -18507,7 +18507,7 @@
       "client_email": "",
       "client_phone": "+54 9 11 4435-9956",
       "client_address": "Pilar",
-      "contract_total": 4091.1794,
+      "contract_total": 3381,
       "items": [
         {
           "product_id": "PROD-202",
@@ -18554,12 +18554,12 @@
       "discount_total": 253.46,
       "status": "Confirmado",
       "created_at": "2026-10-19T20:35:54.821Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
-        "total_paid": 0,
-        "balance_due": 4091.1794
+        "total_invoiced": 3381,
+        "total_paid": 2280,
+        "balance_due": 1101
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -18568,7 +18568,8 @@
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "iva_amount": 0
     },
     {
       "id": "local-sale-1792442938646-2luu",
