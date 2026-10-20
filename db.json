@@ -167688,11 +167688,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791206633783",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-20T14:20:43.322Z",
+      "unread_count": 2,
+      "last_message_at": "2026-10-20T15:40:22.259Z",
       "last_message_preview": "👏",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-20T14:20:43.322Z"
+      "last_inbound_at": "2026-10-20T15:40:22.259Z"
     },
     {
       "id": "conv-1791231510199-4gjh",
@@ -191631,6 +191631,14 @@
       "body": "✉️ 回复：NEW ORDER URUGUAY PDPG 2633 | IMP-26-027\n\nHI Victoria\n\nPI attached, please check.\n\nLi\n\n在 2026年10月17日 06:50，Victoria Pisos Pacific<victoria@pisospacific.com> 写道：\n\nHi Young,\nI hope you are doing well.\n\nPlease find below a new order for Uruguay (PDPG 2633)\nAll items should have a 0.5mm wear layer.\nURUGUAY TEXTURE 86167 #\n\n- 10 P Clasico HD TW6151-15 EIR\n-5 P California Oak XL HD ZXE 2004 003\n- 5 P Salamanca XL HD MP88208-1 & 88209-1 (EIR)\n\nShipping & Packaging Requirements:\n- Box: Pacific Heavy Duty (Grey Box)\n- Click: South America\n- Pallets: Euro Pallets (Important)\n- Patent: No patent\n\nPlease keep us updated on the delivery schedule. If there is any possibility of expediting the container with the Clásico, it would be very helpful for us.\nPlease also ensure strict quality control throughout the production and loading process.\nKindly send us the order confirmation for our final verification.\nInternal number operation: IMP-26-027 (Young don’t give importance to this. Is something internal)\nBest Regards, Victoria",
       "ts": "2026-10-20T14:17:12.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1792510823189-t1ud",
+      "conversation_id": "conv-1791206633783-ctsl",
+      "direction": "in",
+      "body": "👏",
+      "ts": "2026-10-20T15:40:22.259Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -204421,7 +204429,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMzA1OTQ0MjI3NTY3MTgwNTQxNDMwMjI5MDAxODMwNDAwMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMzA2MDg2ODk1OTkzNzcyNDE2ODExODQwNzQyMTQ5MzI0OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjI3MzkzMzY4NzQ5NzMxMzozMzA2NDM4MTQ3MzIyNjU5Njg4MTQ0ODI0NDAyMzkxODU5MgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NTkwMDIzMTc0NzEwODg5OTAyMDY1MDA4Mjk5MjEyOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NTkwMDIzMTc0NzEwODg5OTAyMDY1MDA4Mjk5MjEyOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NTk4ODM4NzU3MjY3ODY3MTAzNTI3NjA0ODk5MDIwOAZDZD"
     ],
     "last_weekly_reminder": "2026-10-16T12:36:36.308Z",
     "warehouses": [
