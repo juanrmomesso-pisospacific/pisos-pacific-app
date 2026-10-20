@@ -49338,6 +49338,15 @@
       "stock_code": null,
       "category_default": null,
       "notes": null
+    },
+    {
+      "id": "PROV-mvgsdrjj-23kr",
+      "type": "supplier",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null,
+      "name": "CH Estudio"
     }
   ],
   "categories": [
@@ -149252,6 +149261,31 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1792506994843-4gfj4",
+      "date": "2026-10-20T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "Marketing",
+      "subcategory": "Comisiones",
+      "counterparty": "CH Estudio",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-mvgsdrjj-23kr",
+      "description": "Comision estudio ch",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 209200,
+      "amount_usd": 134.53,
+      "exchange_rate": 1555,
+      "fixed_variable": "Variable",
+      "expense_type": "Marketing y Ventas",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null,
+      "source": "efectivo-app"
     }
   ],
   "containers": [
