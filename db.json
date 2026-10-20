@@ -49329,6 +49329,15 @@
       "category_default": null,
       "notes": null,
       "name": "SteelCenter"
+    },
+    {
+      "id": "PROV-mvgs9z6a-5h39",
+      "name": "Nuciari Materiales",
+      "type": "supplier",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null
     }
   ],
   "categories": [
@@ -146422,7 +146431,7 @@
       "counterparty": "Nuciari Materiales",
       "counterparty_type": "supplier",
       "client_id": null,
-      "supplier_id": null,
+      "supplier_id": "PROV-mvgs9z6a-5h39",
       "description": "Efectivo — Bolsas de Mapei (Nuciari)",
       "sale_ref": null,
       "currency": "ARS",
