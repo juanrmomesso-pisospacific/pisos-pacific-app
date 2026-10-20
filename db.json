@@ -838,7 +838,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 622.2980000000001,
-      "reservedStock": 2034.5159999999998,
+      "reservedStock": 2097.0159999999996,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15429,
+      "reservedStock": 15579,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -42682,7 +42682,7 @@
       "currency": "USD",
       "created_at": "2026-10-05T13:27:26.632Z",
       "quote_number": "A5924",
-      "status": "DRAFT",
+      "status": "ACCEPTED",
       "lead_id": "local-1791206525181-nnjrv"
     },
     {
@@ -200586,6 +200586,24 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": -1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-20T14:32:29.402Z",
+      "type": "quote_reserve",
+      "ref": "local-1791206846943-tby7c",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": 62.5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-20T14:32:29.402Z",
+      "type": "quote_reserve",
+      "ref": "local-1791206846943-tby7c",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 150,
       "warehouse_id": "main"
     }
   ],
