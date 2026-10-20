@@ -3442,15 +3442,34 @@ app.post('/api/quotes/:id/share', async (req, res) => {
 // Remito para el depósito: dirección de obra + materiales y cantidades, SIN precios.
 function remitoData(rec) {
   // Si la inspección armó el remito (remito_items), se usa eso. Si no, se derivan de la venta.
+  // Sufijo de cajas para pisos con m²/caja definido: "120 m² · 8 cajas" (igual que el presupuesto).
+  const boxSuffix = (m2caja, qty) => {
+    const mpc = Number(m2caja) || 0, q = Number(qty) || 0;
+    if (!mpc || !q) return '';
+    const cajas = q / mpc, exact = Math.abs(cajas - Math.round(cajas)) < 0.02;
+    const n = (Math.round(cajas * 10) / 10).toLocaleString(db.settings.locale || 'es-AR', { maximumFractionDigits: exact ? 0 : 1 });
+    return ` · ${exact ? '' : '≈ '}${n} ${Math.round(cajas) === 1 && exact ? 'caja' : 'cajas'}`;
+  };
+  const prodByDesc = (desc) => db.products.find(p => desc && ((p.name || '') === desc || (p.description || '') === desc))
+    || db.products.find(p => desc && (p.name || '').trim() && desc.includes((p.name || '').trim()));
+  const isM2unit = (u) => /m²|m2/.test(String(u || ''));
   let rows;
   if (Array.isArray(rec.remito_items) && rec.remito_items.length) {
-    rows = rec.remito_items.map(it => [it.description || '', `${Number(it.quantity) || 0} ${it.unit || ''}`.trim()]);
+    rows = rec.remito_items.map(it => {
+      const qty = Number(it.quantity) || 0, u = it.unit || '';
+      const suf = isM2unit(u) ? boxSuffix((prodByDesc(it.description) || {}).m2_por_caja, qty) : '';
+      return [it.description || '', `${qty} ${u}`.trim() + suf];
+    });
   } else {
     const items = (rec.items || []).filter(it => it && it.product_id !== 'discount' && !/^descuento/i.test(it.description || ''));
     const isService = (it) => /^SERV/i.test(it.sku || '') || /colocaci[oó]n|entrega|ajuste|medici[oó]n|reparaci[oó]n|servicio|mano de obra|flete/i.test(it.description || '');
     const isFloor = (it) => { const p = db.products.find(pr => pr.sku === it.sku); return p ? !!p.stockTrack : false; };
     const unit = (it) => isFloor(it) ? 'm²' : (/z[oó]calo|varilla|cuartaca[ñn]a|nariz|moldura|cubrecanto/i.test(it.description || '') ? 'ml' : 'u');
-    rows = items.filter(it => !isService(it)).map(it => [it.description || it.sku || '', `${Number(it.quantity) || 0} ${unit(it)}`]);
+    rows = items.filter(it => !isService(it)).map(it => {
+      const qty = Number(it.quantity) || 0, u = unit(it);
+      const suf = u === 'm²' ? boxSuffix((db.products.find(p => p.sku === it.sku) || {}).m2_por_caja, qty) : '';
+      return [it.description || it.sku || '', `${qty} ${u}` + suf];
+    });
   }
   const rloc = db.settings.locale || 'es-AR';
   const dlv = rec.delivery_date ? new Date(rec.delivery_date).toLocaleDateString(rloc) + (rec.delivery_date_to && rec.delivery_date_to !== rec.delivery_date ? ' → ' + new Date(rec.delivery_date_to).toLocaleDateString(rloc) : '') : '';
