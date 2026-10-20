@@ -141189,7 +141189,7 @@
       "caja_name": "Banco de Comercio - Cuenta Pesos",
       "category": "Producto",
       "subcategory": "Pago Mercaderia",
-      "counterparty": "Losmac",
+      "counterparty": "LOSMAC - Prestigio",
       "counterparty_type": "supplier",
       "client_id": null,
       "supplier_id": "PROV-067",
@@ -144383,7 +144383,7 @@
       "flow": "Egreso",
       "amount_usd": 1000,
       "amount_ars": 1500000,
-      "counterparty": "Terminal (Comex)",
+      "counterparty": "COMEX",
       "category": "Importaciones",
       "subcategory": "Terminal",
       "expense_type": "COGS",
@@ -144391,7 +144391,8 @@
       "description": "Débito Transf. HB - Gastos terminal importación",
       "raw_name": "Debito Transf. HB",
       "needs_review": false,
-      "review_reason": null
+      "review_reason": null,
+      "supplier_id": "PROV-035"
     },
     {
       "id": "mov-1791028840130-k4sxs",
