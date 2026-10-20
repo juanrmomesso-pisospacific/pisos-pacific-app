@@ -18679,7 +18679,7 @@
       "quote_id": "local-1787748758858-q333r",
       "quote_number": "A2560",
       "title": "Cotización Bussola Haus - Flor Albinati",
-      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 3 más",
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 3 más",
       "internal_notes": "",
       "public_notes": "Las medidas se tomaron según plano y deberán verificarse en obra una vez que la misma se encuentre más avanzada.\n\nSe realizó una visita previa para evaluar y dejar asentadas las condiciones de la carpeta.\n\nSe bonifican las varillas y la colocación del mismo piso en el sector inferior de la banquina.\n",
       "payment_terms": "Anticipo 80% · Conforme 20%",
@@ -18689,22 +18689,8 @@
       "client_email": "",
       "client_phone": "+54 9 11 5963-7012",
       "client_address": "Libertador 4748",
-      "contract_total": 6565.0728,
+      "contract_total": 6565,
       "items": [
-        {
-          "product_id": "PROD-026",
-          "sku": "PROD-026",
-          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
-          "quantity": 110.4,
-          "unit_price": 38,
-          "cost": 16.33,
-          "category": "Pisos H2O",
-          "disc_value": 10,
-          "total": 4195.2,
-          "discount": 419.52,
-          "image": "",
-          "target_item_index": null
-        },
         {
           "product_id": "SERV-106",
           "sku": "SERV-106",
@@ -18744,6 +18730,19 @@
           "discount": 143.04,
           "image": "",
           "target_item_index": null
+        },
+        {
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+          "quantity": 110.4,
+          "unit_price": 38,
+          "total": 4195.2,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "disc_kind": "pct",
+          "discount": 419.52
         }
       ],
       "zoned": false,
@@ -18753,9 +18752,9 @@
       "has_iva": true,
       "iva_mode": "full",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 6565,
         "total_paid": 0,
-        "balance_due": 6565.0728
+        "balance_due": 6565
       },
       "stock_reserved": true,
       "stock_deducted": false,
