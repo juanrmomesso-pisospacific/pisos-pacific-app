@@ -159398,6 +159398,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-19T15:28:31.258Z",
       "last_touch_at": "2026-10-19T20:42:39.740Z"
+    },
+    {
+      "id": "lead-email-1a1598b53715",
+      "name": "Ariana coresky",
+      "email": "ari.coresky@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Larrea 1267",
+      "postal_code": "11117",
+      "approx_m2": 21,
+      "needs_placement": false,
+      "interested_products": [],
+      "notes": "Formulario web — 21m² · Sin Colocación · CP 11117",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-20T13:41:04.000Z",
+      "last_touch_at": "2026-10-20T13:40:59.000Z"
     }
   ],
   "conversations": [
@@ -167919,6 +167936,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-19T15:28:31.258Z",
       "last_outbound_at": "2026-10-19T20:42:36.097Z"
+    },
+    {
+      "id": "conv-email-1a1598b53715",
+      "channel": "email",
+      "contact_id": "ari.coresky@gmail.com",
+      "contact_name": "Ariana coresky",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a1598b53715",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-10-20T13:41:04.000Z",
+      "last_message_preview": "Formulario web — 21m² · Sin Colocación · CP 11117 · Larrea 1267",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-20T13:41:04.000Z"
     }
   ],
   "messages": [
@@ -191386,6 +191418,22 @@
       "ts": "2026-10-19T20:42:36.097Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjI3MzkzMzY4NzQ5NzMxMzozMzA2NDcyOTA5MzU5ODQ4Mzc4NTE4MzQ3OTg0MzUyMDUxMgZDZD"
+    },
+    {
+      "id": "m-email-1a1598b53715",
+      "conversation_id": "conv-email-1a1598b53715",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 21m² · Sin Colocación · CP 11117 · Larrea 1267",
+      "ts": "2026-10-20T13:41:04.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a1598b3faf0",
+      "conversation_id": "conv-email-1a1598b53715",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 21m² · Con Colocación · CP 11117 · Larrea 1267",
+      "ts": "2026-10-20T13:40:59.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -201747,9 +201795,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-20T08:43:00.485Z",
     "gmail_seen_ids": [
-      "19fc9d416260f1f0",
-      "19fc9ed2f907e07d",
-      "19fca8e9635aab5e",
       "19fcad7ba50d2b83",
       "19fcb559cae7f2a2",
       "19fcbdbaee2215f0",
@@ -202546,7 +202591,10 @@
       "1a158b68ccfda2bd",
       "1a1594ee4e29f64f",
       "1a1594e01380089a",
-      "1a159466a6e757ae"
+      "1a159466a6e757ae",
+      "1a159669c9327e4c",
+      "1a1598b53715b84c",
+      "1a1598b3faf05e75"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -203186,7 +203234,8 @@
       "1a14f085839f0bba",
       "1a153a2a1abca195",
       "1a1542eb53d43e27",
-      "1a154863f982f465"
+      "1a154863f982f465",
+      "1a159466a6e757ae"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
