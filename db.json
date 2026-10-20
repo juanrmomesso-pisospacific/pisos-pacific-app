@@ -16148,7 +16148,40 @@
           "at": "2026-10-01T15:12:21.729Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "remito_items": [
+        {
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 40.428,
+          "unit": "m²"
+        },
+        {
+          "description": "H2O HD - Nariz Volada - Canada - Roble Eslavonia XL",
+          "quantity": 13,
+          "unit": "u"
+        },
+        {
+          "description": "Adhesivo Especial Para Escaleras BONA",
+          "quantity": 8,
+          "unit": "u"
+        },
+        {
+          "description": "Adhesivo / Rellenador - para zocalos.",
+          "quantity": 4,
+          "unit": "u"
+        },
+        {
+          "description": "Varilla L de Acero",
+          "quantity": 1,
+          "unit": "u"
+        },
+        {
+          "description": "M2 - Nylon Manta 200 Micrones",
+          "quantity": 1,
+          "unit": "rollos"
+        }
+      ],
+      "remito_confirmed": false
     },
     {
       "id": "local-sale-1788129923090-btob",
@@ -204620,7 +204653,7 @@
         "learned_at": "2026-09-26T10:46:00.268Z"
       }
     },
-    "last_daily_pending_digest": "2026-10-19",
+    "last_daily_pending_digest": "2026-10-20",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
