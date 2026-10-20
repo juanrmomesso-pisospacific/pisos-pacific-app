@@ -18667,6 +18667,98 @@
       "commission_split_discount": true,
       "currency": "USD",
       "commission_amount": 0
+    },
+    {
+      "id": "local-sale-1792506069029-9ghy",
+      "quote_id": "local-1787748758858-q333r",
+      "quote_number": "A2560",
+      "title": "Cotización Bussola Haus - Flor Albinati",
+      "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 3 más",
+      "internal_notes": "",
+      "public_notes": "Las medidas se tomaron según plano y deberán verificarse en obra una vez que la misma se encuentre más avanzada.\n\nSe realizó una visita previa para evaluar y dejar asentadas las condiciones de la carpeta.\n\nSe bonifican las varillas y la colocación del mismo piso en el sector inferior de la banquina.\n",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mvgrtyqs-2kdm",
+      "client_name": "Bussola Haus - Flor Albinati",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 5963-7012",
+      "client_address": "Libertador 4748",
+      "contract_total": 6565.0728,
+      "items": [
+        {
+          "product_id": "PROD-026",
+          "sku": "PROD-026",
+          "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m",
+          "quantity": 110.4,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 4195.2,
+          "discount": 419.52,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 98,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 1470,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 180,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 180,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-063",
+          "sku": "PROD-063",
+          "description": "Varilla de Transición - Aluminio",
+          "quantity": 4,
+          "unit_price": 35.76,
+          "cost": 29.8,
+          "category": "Terminaciones",
+          "disc_value": 100,
+          "total": 143.04,
+          "discount": 143.04,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 562.56,
+      "status": "Confirmado",
+      "created_at": "2026-10-20T14:21:09.029Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 6565.0728
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -33455,7 +33547,7 @@
     },
     {
       "id": "local-1787748758858-q333r",
-      "client_id": "",
+      "client_id": "CLI-mvgrtyqs-2kdm",
       "client_name": "Bussola Haus - Flor Albinati",
       "client_dni": "",
       "client_email": "",
@@ -33537,7 +33629,8 @@
       "reseller_id": "",
       "reseller_name": "",
       "commission_split_discount": true,
-      "currency": "USD"
+      "currency": "USD",
+      "sale_id": "local-sale-1792506069029-9ghy"
     },
     {
       "id": "local-1787756608720-daxf1",
@@ -48119,6 +48212,22 @@
       ],
       "notes": null,
       "updated_at": "2026-10-19T20:35:54.821Z"
+    },
+    {
+      "id": "CLI-mvgrtyqs-2kdm",
+      "type": "client",
+      "active": true,
+      "name": "Bussola Haus - Flor Albinati",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        "+54 9 11 5963-7012"
+      ],
+      "addresses": [
+        "Libertador 4748"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-20T14:21:09.028Z"
     }
   ],
   "expenses": [],
