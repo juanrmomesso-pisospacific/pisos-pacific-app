@@ -149389,6 +149389,28 @@
       "needs_review": false,
       "review_reason": null,
       "source": "efectivo-app"
+    },
+    {
+      "id": "local-1792534114305-vf4nc",
+      "flow": "Ingreso",
+      "date": "2026-10-20T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Bussola Haus - Flor Albinati",
+      "counterparty_type": "client",
+      "description": "Cobro - Cotización Bussola Haus - Flor Albinati",
+      "sale_ref": "A2560",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 5600,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
