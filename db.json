@@ -159957,7 +159957,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-10-20T23:20:21.000Z",
-      "last_touch_at": "2026-10-20T23:20:21.000Z"
+      "last_touch_at": "2026-10-20T23:22:13.000Z"
     }
   ],
   "conversations": [
@@ -168504,12 +168504,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a15b9de6c27",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-20T23:20:21.000Z",
-      "last_message_preview": "﻿Juan aquí lo de Aeropuertos 2000 Abrazos Hugo Schelotto Enviado desde mi iPhone Inicio del mensaje reenviado: De: Florencia Antonic &lt;flo",
+      "unread_count": 2,
+      "last_message_at": "2026-10-20T23:22:13.000Z",
+      "last_message_preview": "Recibido . En breve enviaremos nuestra propuesta . Gracias por la convocatoria . Saludos Hugo Schelotto Enviado desde mi iPhone El 20 oct 20",
       "email_subject": "Fwd: AA - Pedido de precios pisos",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-20T23:20:21.000Z"
+      "last_inbound_at": "2026-10-20T23:22:13.000Z"
     }
   ],
   "messages": [
@@ -192066,6 +192066,14 @@
       "body": "👏",
       "ts": "2026-10-20T23:28:49.287Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a15b9f932a2",
+      "conversation_id": "conv-email-1a15b9de6c27",
+      "direction": "in",
+      "body": "✉️ Re: AA - Pedido de precios pisos\n\nRecibido . En breve enviaremos nuestra propuesta . Gracias por la convocatoria . Saludos Hugo Schelotto Enviado desde mi iPhone El 20 oct 2026, a la(s) 20:20, Hugo Schelotto &lt;hschelotto@gmail.com",
+      "ts": "2026-10-20T23:22:13.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -202521,7 +202529,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-20T08:43:00.485Z",
     "gmail_seen_ids": [
-      "19fcc13abd3f1771",
       "19fcc56edeffee68",
       "19fcca61f9c88725",
       "19fccbd71568d2f8",
@@ -203320,7 +203327,8 @@
       "1a159ac90eab6521",
       "1a15a9458d3ed388",
       "1a15a8efd4998729",
-      "1a15b9de6c27634c"
+      "1a15b9de6c27634c",
+      "1a15b9f932a21715"
     ],
     "cash_sessions": {
       "1136982222": {
