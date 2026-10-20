@@ -17256,7 +17256,7 @@
       ],
       "zoned": false,
       "discount_total": 1499.1,
-      "status": "Confirmado",
+      "status": "Programado",
       "created_at": "2026-09-30T20:43:15.402Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -17272,7 +17272,16 @@
       "reseller_name": "",
       "currency": "USD",
       "commission_amount": 0,
-      "iva_amount": 0
+      "iva_amount": 0,
+      "delivery_date": "2026-11-02",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Programado",
+          "at": "2026-10-20T23:20:45.130Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     },
     {
       "id": "local-sale-1790857921928-e17x",
@@ -206376,6 +206385,17 @@
       "sale_id": "local-sale-1784797365504-3npc",
       "notes": "Centauros - General Rodriguez",
       "created_at": "2026-10-20T22:19:35.373Z"
+    },
+    {
+      "id": "local-1792538445538-6lh75",
+      "type": "medicion",
+      "title": "Medición previa · Sol Rossi",
+      "due_date": "2026-10-31",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "status": "pendiente",
+      "sale_id": "local-sale-1790800995402-643w",
+      "notes": "Martindale - Pilar",
+      "created_at": "2026-10-20T23:20:45.433Z"
     }
   ],
   "password_resets": {},
