@@ -167759,11 +167759,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791206633783",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-10-20T15:40:22.259Z",
+      "unread_count": 3,
+      "last_message_at": "2026-10-20T21:51:38.275Z",
       "last_message_preview": "👏",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-20T15:40:22.259Z"
+      "last_inbound_at": "2026-10-20T21:51:38.275Z"
     },
     {
       "id": "conv-1791231510199-4gjh",
@@ -191736,6 +191736,14 @@
       "body": "✉️ Re: **AVISO DE ARRIBO** Re: Comex+Cargo // Momesso // Cotizacion JR007 | Wall panles | Shanghai - Buenos Aires | 20 ft // CCF-MI-00000105\n\nHola Cami ,\r\nTe envío debajo el detalle de LD para la carga de referencia.\r\n\r\nNotar que las liberaciones se generan y actualizan de forma electrónica:\r\n\r\n\r\n[image: image.png]\r\n\r\nSaludos,\r\n\r\n\r\n\r\n*Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\nCordiali Saluti*\r\nCarolina Lodovico\r\n*Customer Comex+ Cargo*\r\nCel WhatsApp: (+54)115-761-1787\r\n\r\n*Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\nTel.: (+54)114331-2207/1893\r\nAv. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\nArgentina\r\n\r\n\r\nEl lun, 19 oct 2026 a la(s) 8:36 a.m., Customer Comex+ Cargo (\r\nCustomerCargo@grupocomexmas.com) escribió:\r\n\r\n> Estimados,\r\n> Buenos días!\r\n>\r\n> Confirmamos el arribo del buque *SAN RAPHAEL MAERSK*:\r\n> [image: image.png]\r\n>\r\n> Enviaremos el Libre Deuda una vez que finalicen las operaciones de\r\n> descarga en Terminal.\r\n>\r\n> Saludos,\r\n>\r\n>\r\n>\r\n> *Saludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 |\r\n> Cordiali Saluti*\r\n> Carolina Lodovico\r\n> *Customer Comex+ Cargo*\r\n> Cel WhatsApp: (+54)115-761-1787\r\n>\r\n> *Grupo Comex+ // Comex+ CargoOficina Puerto Madero*\r\n> Tel.: (+54)114331-2207/1893\r\n> Av. Alicia Moreau de Justo 1150 – Of. A-103// (C1107AAX) – C.A.B.A.,\r\n> Argentina\r\n>\r\n>\r\n> El vie, 16 oct 2026 a la(s) 9:18 a.m., Customer Comex+ Cargo (\r\n> CustomerCargo@grupocomexmas.com) escribió:\r\n>\r\n>> Hola Vicky,\r\n>> Buenos días!\r\n>>\r\n>> Informamos que el arribo del buque SAN RAPHAEL MAERSK se mantiene para\r\n>> mañana en Terminal 4:\r\n>> [image: ima",
       "ts": "2026-10-20T18:24:04.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1792533099035-moo0",
+      "conversation_id": "conv-1791206633783-ctsl",
+      "direction": "in",
+      "body": "👏",
+      "ts": "2026-10-20T21:51:38.275Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -204528,7 +204536,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODQ3NjY2ODM3MTY1MTAzMjozMzA2MDg2ODk1OTkzNzcyNDE2ODExODQwNzQyMTQ5MzI0OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjI3MzkzMzY4NzQ5NzMxMzozMzA2NDM4MTQ3MzIyNjU5Njg4MTQ0ODI0NDAyMzkxODU5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NTkwMDIzMTc0NzEwODg5OTAyMDY1MDA4Mjk5MjEyOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NTk4ODM4NzU3MjY3ODY3MTAzNTI3NjA0ODk5MDIwOAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NTk4ODM4NzU3MjY3ODY3MTAzNTI3NjA0ODk5MDIwOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NjM5OTMwNzUzNDAxNjM3NjcyNzI2MjQwNzQyNjA0OAZDZD"
     ],
     "last_weekly_reminder": "2026-10-16T12:36:36.308Z",
     "warehouses": [
