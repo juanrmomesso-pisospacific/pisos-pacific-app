@@ -159941,6 +159941,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-20T13:41:04.000Z",
       "last_touch_at": "2026-10-20T17:05:06.195Z"
+    },
+    {
+      "id": "lead-email-1a15b9de6c27",
+      "name": "Hugo Schelotto",
+      "email": "hschelotto@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: Fwd: AA - Pedido de precios pisos — ﻿Juan aquí lo de Aeropuertos 2000 Abrazos Hugo Schelotto Enviado desde mi iPhone Inicio del mensaje reenviado: De: Florencia Antonic &lt;florencia@pauladeelia.com&gt; Fecha: 20 de ",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-20T23:20:21.000Z",
+      "last_touch_at": "2026-10-20T23:20:21.000Z"
     }
   ],
   "conversations": [
@@ -168478,6 +168495,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-20T13:41:04.000Z",
       "last_outbound_at": "2026-10-20T17:04:57.914Z"
+    },
+    {
+      "id": "conv-email-1a15b9de6c27",
+      "channel": "email",
+      "contact_id": "hschelotto@gmail.com",
+      "contact_name": "Hugo Schelotto",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a15b9de6c27",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-20T23:20:21.000Z",
+      "last_message_preview": "﻿Juan aquí lo de Aeropuertos 2000 Abrazos Hugo Schelotto Enviado desde mi iPhone Inicio del mensaje reenviado: De: Florencia Antonic &lt;flo",
+      "email_subject": "Fwd: AA - Pedido de precios pisos",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-20T23:20:21.000Z"
     }
   ],
   "messages": [
@@ -192018,6 +192050,14 @@
       "body": "👏",
       "ts": "2026-10-20T21:51:38.275Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a15b9de6c27",
+      "conversation_id": "conv-email-1a15b9de6c27",
+      "direction": "in",
+      "body": "✉️ Fwd: AA - Pedido de precios pisos\n\n﻿Juan aquí lo de Aeropuertos 2000 Abrazos Hugo Schelotto Enviado desde mi iPhone Inicio del mensaje reenviado: De: Florencia Antonic &lt;florencia@pauladeelia.com&gt; Fecha: 20 de octubre de 2026 a las",
+      "ts": "2026-10-20T23:20:21.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -202473,7 +202513,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-20T08:43:00.485Z",
     "gmail_seen_ids": [
-      "19fcbd450b5f0af1",
       "19fcc13abd3f1771",
       "19fcc56edeffee68",
       "19fcca61f9c88725",
@@ -203272,7 +203311,8 @@
       "1a1598b3faf05e75",
       "1a159ac90eab6521",
       "1a15a9458d3ed388",
-      "1a15a8efd4998729"
+      "1a15a8efd4998729",
+      "1a15b9de6c27634c"
     ],
     "cash_sessions": {
       "1136982222": {
