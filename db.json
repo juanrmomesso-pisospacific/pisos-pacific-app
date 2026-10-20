@@ -18748,7 +18748,7 @@
       ],
       "zoned": false,
       "discount_total": 562.56,
-      "status": "Confirmado",
+      "status": "Programado",
       "created_at": "2026-10-20T14:21:09.029Z",
       "has_iva": true,
       "iva_mode": "fixed",
@@ -18765,7 +18765,18 @@
       "commission_split_discount": true,
       "currency": "USD",
       "commission_amount": 0,
-      "iva_amount": 168
+      "iva_amount": 168,
+      "delivery_date": "2026-12-14",
+      "delivery_date_to": "2026-12-18",
+      "delivery_crew": "Hugo Ramirez",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Programado",
+          "at": "2026-10-20T22:18:48.710Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     },
     {
       "id": "local-sale-1792534527945-6t5p",
@@ -206220,6 +206231,17 @@
       "assigned_seller": "Hugo Ramirez",
       "status": "pendiente",
       "created_at": "2026-10-20T22:17:27.300Z"
+    },
+    {
+      "id": "local-1792534728944-7rh8b",
+      "type": "medicion",
+      "title": "Medición previa · Bussola Haus - Flor Albinati",
+      "due_date": "2026-12-12",
+      "assigned_seller": "Hugo Ramirez",
+      "status": "pendiente",
+      "sale_id": "local-sale-1792506069029-9ghy",
+      "notes": "Libertador 4748",
+      "created_at": "2026-10-20T22:18:48.577Z"
     }
   ],
   "password_resets": {},
