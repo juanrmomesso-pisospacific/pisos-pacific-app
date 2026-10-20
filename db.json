@@ -18766,6 +18766,71 @@
       "currency": "USD",
       "commission_amount": 0,
       "iva_amount": 168
+    },
+    {
+      "id": "local-sale-1792534527945-6t5p",
+      "quote_id": "local-1791206846943-tby7c",
+      "quote_number": "A5924",
+      "title": "Cotización Paz Pucheta ",
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 1 más",
+      "internal_notes": "",
+      "public_notes": "El diseño deberá definirse previamente. Las medidas consignadas en el presupuesto fueron proporcionadas por el cliente y deberán ser verificadas por el mismo antes de realizar la compra.\n\nEl presupuesto no incluye colocación.\n",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mvh8rxs9-huz8",
+      "client_name": "Paz Pucheta",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "1162176955",
+      "client_address": "Martinez",
+      "contract_total": 2624.1875,
+      "items": [
+        {
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+          "quantity": 62.5,
+          "unit_price": 38,
+          "category": "Pisos H2O",
+          "cost": 16.33,
+          "disc_value": 15,
+          "total": 2375,
+          "discount": 356.25,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 150,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 150,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 356.25,
+      "status": "Confirmado",
+      "created_at": "2026-10-20T22:15:27.945Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 2624.1875
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -42636,7 +42701,7 @@
     },
     {
       "id": "local-1791206846943-tby7c",
-      "client_id": "",
+      "client_id": "CLI-mvh8rxs9-huz8",
       "client_name": "Paz Pucheta",
       "client_dni": "",
       "client_email": "",
@@ -42690,7 +42755,8 @@
       "created_at": "2026-10-05T13:27:26.632Z",
       "quote_number": "A5924",
       "status": "ACCEPTED",
-      "lead_id": "local-1791206525181-nnjrv"
+      "lead_id": "local-1791206525181-nnjrv",
+      "sale_id": "local-sale-1792534527945-6t5p"
     },
     {
       "id": "local-1791208779394-2laj7",
@@ -48332,6 +48398,22 @@
       ],
       "notes": null,
       "updated_at": "2026-10-20T14:21:09.028Z"
+    },
+    {
+      "id": "CLI-mvh8rxs9-huz8",
+      "type": "client",
+      "active": true,
+      "name": "Paz Pucheta",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        "1162176955"
+      ],
+      "addresses": [
+        "Martinez"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-20T22:15:27.945Z"
     }
   ],
   "expenses": [],
@@ -206120,6 +206202,15 @@
       "assigned_seller": "Gastón Aguilera",
       "status": "pendiente",
       "created_at": "2026-10-20T22:14:52.488Z"
+    },
+    {
+      "id": "local-1792534532683-zdoa3",
+      "type": "otro",
+      "title": "Paneles - Martinez",
+      "due_date": "2026-10-27",
+      "status": "pendiente",
+      "created_at": "2026-10-20T22:15:32.253Z",
+      "assigned_seller": "Hugo Ramirez"
     }
   ],
   "password_resets": {},
