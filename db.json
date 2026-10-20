@@ -168050,11 +168050,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1791206633783",
       "status": "open",
-      "unread_count": 3,
-      "last_message_at": "2026-10-20T21:51:38.275Z",
+      "unread_count": 4,
+      "last_message_at": "2026-10-20T23:28:49.287Z",
       "last_message_preview": "👏",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-20T21:51:38.275Z"
+      "last_inbound_at": "2026-10-20T23:28:49.287Z"
     },
     {
       "id": "conv-1791231510199-4gjh",
@@ -192058,6 +192058,14 @@
       "body": "✉️ Fwd: AA - Pedido de precios pisos\n\n﻿Juan aquí lo de Aeropuertos 2000 Abrazos Hugo Schelotto Enviado desde mi iPhone Inicio del mensaje reenviado: De: Florencia Antonic &lt;florencia@pauladeelia.com&gt; Fecha: 20 de octubre de 2026 a las",
       "ts": "2026-10-20T23:20:21.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1792538929879-mjd7",
+      "conversation_id": "conv-1791206633783-ctsl",
+      "direction": "in",
+      "body": "👏",
+      "ts": "2026-10-20T23:28:49.287Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -204852,7 +204860,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjI3MzkzMzY4NzQ5NzMxMzozMzA2NDM4MTQ3MzIyNjU5Njg4MTQ0ODI0NDAyMzkxODU5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NTkwMDIzMTc0NzEwODg5OTAyMDY1MDA4Mjk5MjEyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NTk4ODM4NzU3MjY3ODY3MTAzNTI3NjA0ODk5MDIwOAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NjM5OTMwNzUzNDAxNjM3NjcyNzI2MjQwNzQyNjA0OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NjM5OTMwNzUzNDAxNjM3NjcyNzI2MjQwNzQyNjA0OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NjUwNjg3MDcyMDYwNjA2MTU4NTM4NzQ5OTgxNDkxMgZDZD"
     ],
     "last_weekly_reminder": "2026-10-16T12:36:36.308Z",
     "warehouses": [
