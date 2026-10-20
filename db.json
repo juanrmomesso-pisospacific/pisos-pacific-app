@@ -206211,6 +206211,15 @@
       "status": "pendiente",
       "created_at": "2026-10-20T22:15:32.253Z",
       "assigned_seller": "Hugo Ramirez"
+    },
+    {
+      "id": "local-1792534647878-4wdcd",
+      "type": "otro",
+      "title": "Paneles Ulloa",
+      "due_date": "2026-10-28",
+      "assigned_seller": "Hugo Ramirez",
+      "status": "pendiente",
+      "created_at": "2026-10-20T22:17:27.300Z"
     }
   ],
   "password_resets": {},
