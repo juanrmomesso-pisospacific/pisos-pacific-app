@@ -17284,7 +17284,7 @@
       "currency": "USD",
       "commission_amount": 0,
       "iva_amount": 0,
-      "delivery_date": "2026-11-02",
+      "delivery_date": "2026-11-09",
       "status_log": [
         {
           "from": "Confirmado",
@@ -17293,7 +17293,7 @@
           "by": "Victoria Gonzalez Collado"
         }
       ],
-      "delivery_date_to": "2026-11-07",
+      "delivery_date_to": "2026-11-14",
       "delivery_crew": "Hugo Ramirez"
     },
     {
