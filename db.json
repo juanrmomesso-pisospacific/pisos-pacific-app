@@ -168589,11 +168589,12 @@
       "linked_lead_id": "lead-email-1a15bea970fa",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-21T00:44:22.000Z",
-      "last_message_preview": "Formulario web — 15m² · Con Colocación · CP C1405CNA · Av Avellaneda 1171",
+      "last_message_at": "2026-10-21T13:40:32.848Z",
+      "last_message_preview": "Hola Marcela, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-21T00:44:22.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-21T00:44:22.000Z",
+      "last_outbound_at": "2026-10-21T13:40:32.848Z"
     },
     {
       "id": "conv-email-1a15da5966ec",
@@ -168603,7 +168604,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a15da5966ec",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-10-21T09:08:57.000Z",
       "last_message_preview": "Srs.,\r\n\r\nSolicito orçamento  de Fornecimento e assentamento de pavimento flutuante da marca PACIFIC série H20 com\r\n7mm de espessura, Ref. Ca",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -192197,6 +192198,15 @@
       "body": "✉️ Orçamento de piso vinilico - Obra Rua Borges Carneiro - Lapa\n\nSrs.,\r\n\r\nSolicito orçamento  de Fornecimento e assentamento de pavimento flutuante da marca PACIFIC série H20 com\r\n7mm de espessura, Ref. Carvalho Esloveno, incluindo peças e/ou outros elementos com\r\ndimensões especificas, cortes, remates, todos os trabalhos e materiais necessários a um\r\nperfeito acabamento, tudo de acordo com as peças escritas e desenhadas do projecto. São no total 420m2  considerando 10% de perda.\r\nSegue as plantas dos andares.\r\n\r\n\r\nCumprimentos\r\nMiguel Pace Fleury de Campos\r\nDireção de Obras\r\nmiguel.campos@cosmikgroup.com<mailto:francisco.costa@cosmikgroup.com>\r\nhttps://www.cosmikgroup.com/\r\nTlm: (+351) 910 900 979\r\nGer: (+351) 214 710 909\r\n[cid:image001.gif@01DD6142.DB10CCB0]",
       "ts": "2026-10-21T09:08:57.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1792590032848-dygk",
+      "conversation_id": "conv-email-1a15bea970fa",
+      "direction": "out",
+      "body": "Hola Marcela, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. También compartinos la zona de entrega así la agregamos en la cotización.\n\n¡Muchas gracias!\nSaludos, Equipo Pacific",
+      "ts": "2026-10-21T13:40:32.848Z",
+      "status": "sent",
+      "wa_id": "1a15eb12e9a454be"
     }
   ],
   "templates": [
