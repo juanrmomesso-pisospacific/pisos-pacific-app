@@ -160023,10 +160023,10 @@
       "needs_placement": true,
       "interested_products": [],
       "notes": "Formulario web — 10.63m² · Con Colocación · CP 1675-007",
-      "status": "New",
+      "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-21T08:48:15.000Z",
-      "last_touch_at": "2026-10-21T09:08:57.000Z"
+      "last_touch_at": "2026-10-21T13:39:58.153Z"
     }
   ],
   "conversations": [
@@ -168588,7 +168588,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a15bea970fa",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-21T00:44:22.000Z",
       "last_message_preview": "Formulario web — 15m² · Con Colocación · CP C1405CNA · Av Avellaneda 1171",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -204099,7 +204099,8 @@
       "1a159466a6e757ae",
       "1a15a45f8e718f5f",
       "1a15b5940c834acf",
-      "1a15e62e4c561997"
+      "1a15e62e4c561997",
+      "1a15e6992f5f96d4"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
