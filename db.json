@@ -160023,7 +160023,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-10-21T00:44:22.000Z",
-      "last_touch_at": "2026-10-21T00:44:22.000Z"
+      "last_touch_at": "2026-10-21T22:57:06.000Z"
     },
     {
       "id": "lead-email-1a15da5966ec",
@@ -168602,12 +168602,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a15bea970fa",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-21T13:40:32.848Z",
-      "last_message_preview": "Hola Marcela, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
+      "unread_count": 2,
+      "last_message_at": "2026-10-21T22:58:06.000Z",
+      "last_message_preview": "Perdón me olvidé de colocarles la zona vivo por Caballito. Gracias Enviado desde mi iPhone El 21 oct 2026, a la(s) 7:57 p. m., Marcela Cuñar",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-21T00:44:22.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-21T22:58:06.000Z",
       "last_outbound_at": "2026-10-21T13:40:32.848Z"
     },
     {
@@ -192221,6 +192221,22 @@
       "ts": "2026-10-21T13:40:32.848Z",
       "status": "sent",
       "wa_id": "1a15eb12e9a454be"
+    },
+    {
+      "id": "m-email-1a160afd9d50",
+      "conversation_id": "conv-email-1a15bea970fa",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nPerdón me olvidé de colocarles la zona vivo por Caballito. Gracias Enviado desde mi iPhone El 21 oct 2026, a la(s) 7:57 p. m., Marcela Cuñarro &lt;cunarromarcela@gmail.com&gt; escribió: ﻿ Buenas tardes",
+      "ts": "2026-10-21T22:58:06.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a160aef102e",
+      "conversation_id": "conv-email-1a15bea970fa",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenas tardes! Estoy interesada en el H20 .Tengo un piso colocado flotante.Me gustaría q sea con colocación.Pero no sé cómo tomar las medidas como para tener un aproximado.El que tengo es Alemán tiene",
+      "ts": "2026-10-21T22:57:06.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -202684,8 +202700,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-21T06:24:17.470Z",
     "gmail_seen_ids": [
-      "19fd0c23daa5671a",
-      "19fd0b879cf265b2",
       "19fd1050688a340b",
       "19fd0fd1c93c2851",
       "19fd1284ca858fcc",
@@ -203483,7 +203497,9 @@
       "1a15e544d28bb5c2",
       "1a15e51c1ea13831",
       "1a15e6992f5f96d4",
-      "1a15f5320ac81a86"
+      "1a15f5320ac81a86",
+      "1a160afd9d50440b",
+      "1a160aef102e8757"
     ],
     "cash_sessions": {
       "1136982222": {
