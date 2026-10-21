@@ -16547,7 +16547,7 @@
       ],
       "zoned": false,
       "discount_total": 962.5,
-      "status": "Confirmado",
+      "status": "Programado",
       "created_at": "2026-09-03T18:19:35.322Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -16561,7 +16561,17 @@
       "seller_name": "Victoria Gonzalez Collado",
       "reseller_id": "",
       "reseller_name": "",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "delivery_date": "2026-11-24",
+      "delivery_date_to": "2026-11-27",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Programado",
+          "at": "2026-10-21T15:38:18.785Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     },
     {
       "id": "local-sale-1788806608515-w851",
@@ -206608,6 +206618,17 @@
       "sale_id": "local-sale-1790864735151-jf47",
       "notes": "Cabello 3963 8A",
       "created_at": "2026-10-21T00:55:42.509Z"
+    },
+    {
+      "id": "local-1792597101413-zs7lh",
+      "type": "medicion",
+      "title": "Medición previa · Arq. María Fernandez Barca",
+      "due_date": "2026-11-22",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "status": "pendiente",
+      "sale_id": "local-sale-1788459575322-xjy3",
+      "notes": "Obra Palermo - Obra Beruti Ana Bertolino",
+      "created_at": "2026-10-21T15:38:19.046Z"
     }
   ],
   "password_resets": {},
