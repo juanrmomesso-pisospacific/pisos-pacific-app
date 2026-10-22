@@ -151471,7 +151471,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-22T12:03:51.000Z",
-      "last_touch_at": "2026-10-20T14:17:12.000Z"
+      "last_touch_at": "2026-10-22T02:19:47.000Z"
     },
     {
       "id": "lead-email-19eef49c3872",
@@ -151903,7 +151903,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-06-29T00:26:24.000Z",
-      "last_touch_at": "2026-10-08T03:08:12.000Z"
+      "last_touch_at": "2026-10-22T06:08:57.000Z"
     },
     {
       "id": "lead-email-19f13d3442c3",
@@ -161363,12 +161363,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19eef374d23d",
       "status": "closed",
-      "unread_count": 10,
-      "last_message_at": "2026-10-20T14:17:12.000Z",
-      "last_message_preview": "HI Victoria\n\nPI attached, please check.\n\nLi\n\n在 2026年10月17日 06:50，Victoria Pisos Pacific<victoria@pisospacific.com> 写道：\n\nHi Young,\nI hope you",
+      "unread_count": 11,
+      "last_message_at": "2026-10-22T02:19:47.000Z",
+      "last_message_preview": "HI Victoria\n\nMy mistake, it should be real EIR, PI updated, please check again.\n\nBest regards\nLi\n\n在 2026年10月21日 19:58，Victoria Pisos Pacific",
       "email_subject": "回复：Pacific Certifications - Request",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-20T14:17:12.000Z",
+      "last_inbound_at": "2026-10-22T02:19:47.000Z",
       "last_outbound_at": "2026-08-07T12:24:21.000Z",
       "ignored": true
     },
@@ -161761,12 +161761,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f10c540c11",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-10-08T03:08:12.000Z",
-      "last_message_preview": "Hi Victoria,\n\nPlease check and confirm attached the PI.\nVery noted for the end darker boards.\n\nBR\nRala\nTel/WeChat/WhatsApp:008615699576792\n-",
+      "unread_count": 1,
+      "last_message_at": "2026-10-22T06:08:57.000Z",
+      "last_message_preview": "Hi Victoria,\n\nJust confirmed today, the box is finish the printing.\nLet’s change next time.\n\nThanks.\n\nBR\nRala\nTel/WeChat/WhatsApp:0086156995",
       "email_subject": "Re: PROFORMA INVOICE LAM-PA2601",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-08T03:08:12.000Z",
+      "last_inbound_at": "2026-10-22T06:08:57.000Z",
       "ignored": true
     },
     {
@@ -192245,6 +192245,22 @@
       "body": "✉️ shipping documents of 20f't container\n\nDear Daniel.\r\n\r\nPls find the attached shipping documents of 20f't full container (CI PL, BL)\r\nOn board date : Oct. 23, 2026\r\n\r\nMany thanks\r\n\r\nJoshua\r\n\r\n\r\n\r\n\r\n861-4 Samil-Ro, Nam-Myeon, Yangju-Si, Gyeonggi-Do,\r\nKorea. 11405\r\nMob. : +82 10 4588 6512\r\nTel. : +82 31 866 5688\r\n\r\n* www.felixkorea.com <http://www.felixkorea.com>*\r\n\r\n\r\n\r\n2026년 9월 17일 (목) 오전 11:29, Daniel La Buonora <daniel@mrparquet.com.uy>님이 작성:\r\n\r\n> sorry, I meant:\r\n> 5mm thickness heating cable (15M) : 60rolls  (Excel or Navita brand),\r\n> USD15/roll\r\n>\r\n>\r\n> *Daniel La Buonora */Director\r\n>\r\n> Montevideo: Av Italia 5030\r\n> <https://www.google.com/maps/search/Av+Italia+5030?entry=gmail&source=g>.\r\n>\r\n> Carrasco: Via Disegno.\r\n>\r\n> Punta del Este: Open Mall, Calle San Francisco.\r\n>\r\n> Miami: 1221 Brickell Ave #900\r\n> <https://www.google.com/maps/search/Miami:+1221+Brickell+Ave+%23900?entry=gmail&source=g>\r\n> .\r\n>\r\n>\r\n>\r\n>     www.mrparquet.com.uy\r\n>\r\n>\r\n> On Wed, Sep 16, 2026 at 10:53 PM FELIXKOREA <felixkorea.com@gmail.com>\r\n> wrote:\r\n>\r\n>> Dear Daniel.\r\n>>\r\n>> Sorry for the stocks.\r\n>> I have checked with our factory director.\r\n>> We don't have 6mm thickness heating cable (15M) stock, so we have to\r\n>> produce newly. but it takes one month to produce newly.\r\n>> Instead of 6mm thickness heating cable (15M),\r\n>> I'd like to suggest the stocks of instant shipping possibility on sea\r\n>> shipment as below.\r\n>> <possible stocks>\r\n>> 5mm thickness heating cable (15M) : 60rolls  (Excel or Navita brand),\r\n>> USD15/roll\r\n>>",
       "ts": "2026-10-22T02:00:35.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1616874c61",
+      "conversation_id": "conv-email-19eef374d23d",
+      "direction": "in",
+      "body": "✉️ Re: NEW ORDER URUGUAY PDPG 2633 | IMP-26-027\n\nHI Victoria\n\nMy mistake, it should be real EIR, PI updated, please check again.\n\nBest regards\nLi\n\n在 2026年10月21日 19:58，Victoria Pisos Pacific<victoria@pisospacific.com> 写道：\n\nHi Young,\n\nIn the previous order for the Salamanca design, the texture used was EIR.\n\nCould you please check this for the upcoming order?\n\nBest regards,\nVictoria\n\nEl El mar, 20 oct 2026 a la(s) 11:17, leeofchina <leeofchina@163.com> escribió:\n\nHI Victoria\n\nPI attached, please check.\n\nLi\n\n在 2026年10月17日 06:50，Victoria Pisos Pacific<victoria@pisospacific.com> 写道：\n\nHi Young,\nI hope you are doing well.\n\nPlease find below a new order for Uruguay (PDPG 2633)\nAll items should have a 0.5mm wear layer.\nURUGUAY TEXTURE 86167 #\n\n- 10 P Clasico HD TW6151-15 EIR\n-5 P California Oak XL HD ZXE 2004 003\n- 5 P Salamanca XL HD MP88208-1 & 88209-1 (EIR)\n\nShipping & Packaging Requirements:\n- Box: Pacific Heavy Duty (Grey Box)\n- Click: South America\n- Pallets: Euro Pallets (Important)\n- Patent: No patent\n\nPlease keep us updated on the delivery schedule. If there is any possibility of expediting the container with the Clásico, it would be very helpful for us.\nPlease also ensure strict quality control throughout the production and loading process.\nKindly send us the order confirmation for our final verification.\nInternal number operation: IMP-26-027 (Young don’t give importance to this. Is something internal)\nBest Regards, Victoria",
+      "ts": "2026-10-22T02:19:47.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a1623a3ee5e",
+      "conversation_id": "conv-email-19f10c540c11",
+      "direction": "in",
+      "body": "✉️ Re: NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm\n\nHi Victoria,\n\nJust confirmed today, the box is finish the printing.\nLet’s change next time.\n\nThanks.\n\nBR\nRala\nTel/WeChat/WhatsApp:008615699576792\n---- Replied Message ----\n| From | Victoria Pisos Pacific<victoria@pisospacific.com> |\n| Date | 10/21/2026 18:55 |\n| To | Rala Qin<rala_lam@163.com> |\n| Cc | 张海晶<merry_lam@126.com> ,\ninfo pisos<info@pisospacific.com> ,\nMike<mike@pisospacific.com> ,\nFrank<frank_ljs@163.com> |\n| Subject | Re: NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm |\nHi Rala\nWe confirm. I will send you the box with some modifications.\n\nwe will pay this week the advanced payment.\n\nBest regards, Victoria\n\nEl El jue, 8 oct 2026 a la(s) 00:08, Rala Qin <rala_lam@163.com> escribió:\n\nHi Victoria,\n\nPlease check and confirm attached the PI.\nVery noted for the end darker boards.\n\nBR\nRala\nTel/WeChat/WhatsApp:008615699576792\n---- Replied Message ----\n| From | Victoria Pisos Pacific<victoria@pisospacific.com> |\n| Date | 10/8/2026 09:34 |\n| To | rala_lam@163.com<rala_lam@163.com> |\n| Cc | 张海晶<merry_lam@126.com> ,\ninfo pisos<info@pisospacific.com> ,\nMike<mike@pisospacific.com> ,\nFrank<frank_ljs@163.com> |\n| Subject | Re: NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm |\n\nHi Rala,\n\nWe will order one 40 ft container.\n\nOrder details:\n\n15 pallets Kitsilano 12/1 – 190 x 1900 x 12/1 mm\n\n9 pallets Verona 12/1 – 190 x 1900 x 12/1 mm\n\nPlease confirm the quantities and availability.\n\nAnd pay attention to the ends of the boards that arrive slightly darker.\n\nBes",
+      "ts": "2026-10-22T06:08:57.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -202705,11 +202721,9 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": null,
+    "mp_pending_job": 103707479,
     "mp_last_sync": "2026-10-21T06:24:17.470Z",
     "gmail_seen_ids": [
-      "19fd0fd1c93c2851",
-      "19fd1284ca858fcc",
       "19fd14c94d7c13a1",
       "19fd15c87648c003",
       "19fd16abc0566052",
@@ -203507,7 +203521,9 @@
       "1a15f5320ac81a86",
       "1a160afd9d50440b",
       "1a160aef102e8757",
-      "1a161574fccc3ba1"
+      "1a161574fccc3ba1",
+      "1a1616874c617cf8",
+      "1a1623a3ee5e7a96"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -205654,7 +205670,7 @@
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
-    "mp_pending_at": null,
+    "mp_pending_at": "2026-10-22T06:22:21.535Z",
     "receipt_next": 113,
     "receipt_signature": "firma-juan.png",
     "receipt_signer": "Juan Rodriguez Momesso"
