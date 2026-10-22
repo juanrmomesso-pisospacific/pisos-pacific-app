@@ -151752,7 +151752,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-10-18T08:25:19.000Z"
+      "last_touch_at": "2026-10-22T08:25:41.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -161610,12 +161610,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 69,
-      "last_message_at": "2026-10-18T08:25:19.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-16 00:00:00 UTC to 2026-10-17 00:00:00 UTC.",
+      "unread_count": 70,
+      "last_message_at": "2026-10-22T08:25:41.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-20 00:00:00 UTC to 2026-10-21 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-18T08:25:19.000Z",
+      "last_inbound_at": "2026-10-22T08:25:41.000Z",
       "ignored": true
     },
     {
@@ -192286,6 +192286,14 @@
       "body": "✉️ Re: NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm\n\nHi Victoria,\n\nJust confirmed today, the box is finish the printing.\nLet’s change next time.\n\nThanks.\n\nBR\nRala\nTel/WeChat/WhatsApp:008615699576792\n---- Replied Message ----\n| From | Victoria Pisos Pacific<victoria@pisospacific.com> |\n| Date | 10/21/2026 18:55 |\n| To | Rala Qin<rala_lam@163.com> |\n| Cc | 张海晶<merry_lam@126.com> ,\ninfo pisos<info@pisospacific.com> ,\nMike<mike@pisospacific.com> ,\nFrank<frank_ljs@163.com> |\n| Subject | Re: NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm |\nHi Rala\nWe confirm. I will send you the box with some modifications.\n\nwe will pay this week the advanced payment.\n\nBest regards, Victoria\n\nEl El jue, 8 oct 2026 a la(s) 00:08, Rala Qin <rala_lam@163.com> escribió:\n\nHi Victoria,\n\nPlease check and confirm attached the PI.\nVery noted for the end darker boards.\n\nBR\nRala\nTel/WeChat/WhatsApp:008615699576792\n---- Replied Message ----\n| From | Victoria Pisos Pacific<victoria@pisospacific.com> |\n| Date | 10/8/2026 09:34 |\n| To | rala_lam@163.com<rala_lam@163.com> |\n| Cc | 张海晶<merry_lam@126.com> ,\ninfo pisos<info@pisospacific.com> ,\nMike<mike@pisospacific.com> ,\nFrank<frank_ljs@163.com> |\n| Subject | Re: NEW ORDER ARGENTINA | Kitsilano & Verona | 1900x190x12/1 mm |\n\nHi Rala,\n\nWe will order one 40 ft container.\n\nOrder details:\n\n15 pallets Kitsilano 12/1 – 190 x 1900 x 12/1 mm\n\n9 pallets Verona 12/1 – 190 x 1900 x 12/1 mm\n\nPlease confirm the quantities and availability.\n\nAnd pay attention to the ends of the boards that arrive slightly darker.\n\nBes",
       "ts": "2026-10-22T06:08:57.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a162b7558ba",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 87e11cddc3974ff1b9a62226a7bf9b7e\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-20 00:00:00 UTC to 2026-10-21 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-10-22T08:25:41.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -202749,8 +202757,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-22T06:28:14.352Z",
     "gmail_seen_ids": [
-      "19fd15c87648c003",
-      "19fd16abc0566052",
       "19fd1cb6acd5d2f3",
       "19fd1e3cc7ce71f2",
       "19fd1f31895de433",
@@ -203548,7 +203554,9 @@
       "1a161574fccc3ba1",
       "1a1616874c617cf8",
       "1a1623a3ee5e7a96",
-      "1a16255bb502799c"
+      "1a16255bb502799c",
+      "1a162c153eff16d8",
+      "1a162b7558ba7319"
     ],
     "cash_sessions": {
       "1136982222": {
