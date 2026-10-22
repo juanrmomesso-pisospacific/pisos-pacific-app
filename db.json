@@ -160077,11 +160077,11 @@
       "linked_client_name": null,
       "status": "closed",
       "unread_count": 0,
-      "last_message_at": "2026-10-13T17:27:46.495Z",
+      "last_message_at": "2026-10-22T19:48:57.414Z",
       "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-09-28T12:22:09.790Z",
-      "last_outbound_at": "2026-10-13T17:27:46.495Z",
+      "last_outbound_at": "2026-10-22T19:48:57.414Z",
       "ignored": true
     },
     {
@@ -192294,6 +192294,16 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 87e11cddc3974ff1b9a62226a7bf9b7e\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-20 00:00:00 UTC to 2026-10-21 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-22T08:25:41.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1792698538371-1ym4",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-10-22T19:48:57.414Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzA2OTQ1MTEyMTAwMTc4OTM2OTc0MjEwNDQzMTk1MTg3MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
