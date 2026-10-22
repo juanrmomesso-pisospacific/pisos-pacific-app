@@ -160066,6 +160066,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-21T08:48:15.000Z",
       "last_touch_at": "2026-10-21T13:39:58.153Z"
+    },
+    {
+      "id": "lead-instagram-1792702529243",
+      "name": "@danielorellana740",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-22T20:55:24.837Z",
+      "last_touch_at": "2026-10-22T20:55:24.837Z"
     }
   ],
   "conversations": [
@@ -168649,6 +168665,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-21T09:08:57.000Z"
+    },
+    {
+      "id": "conv-1792702529242-rzrc",
+      "channel": "instagram",
+      "contact_id": "1808083840406022",
+      "contact_name": "@danielorellana740",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1792702529243",
+      "status": "open",
+      "unread_count": 3,
+      "last_message_at": "2026-10-22T20:55:34.024Z",
+      "last_message_preview": "Hacen envios?",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-22T20:55:34.024Z"
     }
   ],
   "messages": [
@@ -192304,6 +192334,30 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzA2OTQ1MTEyMTAwMTc4OTM2OTc0MjEwNDQzMTk1MTg3MgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1792702529243-v98i",
+      "conversation_id": "conv-1792702529242-rzrc",
+      "direction": "in",
+      "body": "Hola",
+      "ts": "2026-10-22T20:55:24.837Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1792702530117-qeix",
+      "conversation_id": "conv-1792702529242-rzrc",
+      "direction": "in",
+      "body": "Soy de Tucumán",
+      "ts": "2026-10-22T20:55:28.798Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1792702534976-2dfn",
+      "conversation_id": "conv-1792702529242-rzrc",
+      "direction": "in",
+      "body": "Hacen envios?",
+      "ts": "2026-10-22T20:55:34.024Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -205115,7 +205169,10 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NTkwMDIzMTc0NzEwODg5OTAyMDY1MDA4Mjk5MjEyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NTk4ODM4NzU3MjY3ODY3MTAzNTI3NjA0ODk5MDIwOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NjM5OTMwNzUzNDAxNjM3NjcyNzI2MjQwNzQyNjA0OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NjUwNjg3MDcyMDYwNjA2MTU4NTM4NzQ5OTgxNDkxMgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA2NjUwNjg3MDcyMDYwNjA2MTU4NTM4NzQ5OTgxNDkxMgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY5NTU3ODA3MTk1NTEzOTozMzA2OTUyNDY3NTk3NDQxNzAxMDU3MTY2NTQ5MjQxMDM2OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY5NTU3ODA3MTk1NTEzOTozMzA2OTUyNDc0OTAyODg1NDY1MTQ5ODc5MTk1MjE4NzM5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY5NTU3ODA3MTk1NTEzOTozMzA2OTUyNDg0NTQ0MjMxMjA3OTI0Mzk1NTA3NTU0NzEzNgZDZD"
     ],
     "last_weekly_reminder": "2026-10-16T12:36:36.308Z",
     "warehouses": [
