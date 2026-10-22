@@ -168674,12 +168674,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1792702529243",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-22T21:34:45.610Z",
-      "last_message_preview": "Soy arquitecto y mi cliente debe renovar el.piso y estoy mirando opciones",
-      "last_message_direction": "in",
+      "unread_count": 0,
+      "last_message_at": "2026-10-22T21:35:59.129Z",
+      "last_message_preview": "Que tiene actualmente? La idea es levantar o colocar por encima?",
+      "last_message_direction": "out",
       "last_inbound_at": "2026-10-22T21:34:45.610Z",
-      "last_outbound_at": "2026-10-22T21:33:36.230Z"
+      "last_outbound_at": "2026-10-22T21:35:59.129Z"
     }
   ],
   "messages": [
@@ -192397,6 +192397,16 @@
       "body": "Soy arquitecto y mi cliente debe renovar el.piso y estoy mirando opciones",
       "ts": "2026-10-22T21:34:45.610Z",
       "status": "received"
+    },
+    {
+      "id": "m-1792704959832-apr5",
+      "conversation_id": "conv-1792702529242-rzrc",
+      "direction": "out",
+      "body": "Que tiene actualmente? La idea es levantar o colocar por encima?",
+      "ts": "2026-10-22T21:35:59.129Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY5NTU3ODA3MTk1NTEzOTozMzA2OTU2OTU4MDcyODI4NjI5MDM1Mjg5ODQ0NDM2MTcyOAZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
