@@ -159479,7 +159479,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-09-27T20:08:28.000Z",
-      "last_touch_at": "2026-10-01T23:38:51.000Z"
+      "last_touch_at": "2026-10-23T14:20:33.000Z"
     },
     {
       "id": "lead-email-1a0e487ef0c5",
@@ -168286,12 +168286,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0e47bedc89",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-10-01T23:38:51.000Z",
-      "last_message_preview": "---------- Forwarded message ---------\r\nDe: Mail Delivery Subsystem <mailer-daemon@googlemail.com>\r\nDate: jue, 1 oct 2026, 18:09\r\nSubject: D",
+      "unread_count": 1,
+      "last_message_at": "2026-10-23T14:20:33.000Z",
+      "last_message_preview": "al equipo. claro le es muy caro soy pensionada\r\n quiero dar de baja",
       "email_subject": "(sin asunto)",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-01T23:38:51.000Z",
+      "last_inbound_at": "2026-10-23T14:20:33.000Z",
       "last_outbound_at": "2026-09-28T15:46:30.506Z",
       "ignored": true
     },
@@ -193066,6 +193066,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY5NTU3ODA3MTk1NTEzOTozMzA2OTU2OTU4MDcyODI4NjI5MDM1Mjg5ODQ0NDM2MTcyOAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-email-1a16922c7b65",
+      "conversation_id": "conv-email-1a0e47bedc89",
+      "direction": "in",
+      "body": "✉️ (sin asunto)\n\nal equipo. claro le es muy caro soy pensionada\r\n quiero dar de baja",
+      "ts": "2026-10-23T14:20:33.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -203623,7 +203631,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-23T06:24:13.256Z",
     "gmail_seen_ids": [
-      "19fd6947559813a4",
       "19fd70a284f4b59e",
       "19fd72a2f5b49470",
       "19fd7434c779099c",
@@ -204422,7 +204429,8 @@
       "1a1686da8f9184ef",
       "1a1686c596cf24f2",
       "1a168b64b0ec0e47",
-      "1a168b64ba355acd"
+      "1a168b64ba355acd",
+      "1a16922c7b65f5b6"
     ],
     "cash_sessions": {
       "1136982222": {
