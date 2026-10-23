@@ -39222,12 +39222,12 @@
       "has_iva": true,
       "price": 10134.355,
       "zoned": false,
-      "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada + 2 más",
+      "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada + 2 más",
       "items": [
         {
-          "product_id": "PROD-011",
-          "sku": "PROD-011",
-          "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada",
+          "product_id": "PROD-010",
+          "sku": "PROD-010",
+          "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada",
           "quantity": 98.7,
           "unit_price": 75,
           "cost": 29,
@@ -39274,7 +39274,8 @@
       "created_at": "2026-09-17T18:05:12.243Z",
       "quote_number": "A6492",
       "status": "ACCEPTED",
-      "sale_id": "local-sale-1792716740117-yzi3"
+      "sale_id": "local-sale-1792716740117-yzi3",
+      "commission_split_discount": true
     },
     {
       "id": "local-1789740744199-num6j",
