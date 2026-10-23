@@ -19027,7 +19027,7 @@
       "quote_id": "local-1789668312725-3phxc",
       "quote_number": "A6492",
       "title": "PH Nuñez",
-      "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada + 2 más",
+      "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada + 2 más",
       "internal_notes": "",
       "public_notes": "Se deben verificar medidas en obra.",
       "payment_terms": "Anticipo 80% · Conforme 20%",
@@ -19037,23 +19037,8 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "",
-      "contract_total": 10134.355,
+      "contract_total": 10134,
       "items": [
-        {
-          "product_id": "PROD-011",
-          "sku": "PROD-011",
-          "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada",
-          "quantity": 98.7,
-          "unit_price": 75,
-          "cost": 29,
-          "category": "Pisos de Madera",
-          "disc_kind": "amount",
-          "disc_value": 987,
-          "total": 7402.5,
-          "discount": 987,
-          "image": "",
-          "target_item_index": null
-        },
         {
           "product_id": "SERV-107",
           "sku": "SERV-107",
@@ -19079,6 +19064,19 @@
           "discount": 0,
           "image": "",
           "target_item_index": null
+        },
+        {
+          "product_id": "PROD-010",
+          "sku": "PROD-010",
+          "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada",
+          "quantity": 98.7,
+          "unit_price": 75,
+          "total": 7402.5,
+          "cost": 29,
+          "category": "Pisos de Madera",
+          "disc_value": 987,
+          "disc_kind": "amount",
+          "discount": 987
         }
       ],
       "zoned": false,
@@ -19088,9 +19086,9 @@
       "has_iva": true,
       "iva_mode": "full",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 10134,
         "total_paid": 0,
-        "balance_due": 10134.355
+        "balance_due": 10134
       },
       "stock_reserved": true,
       "stock_deducted": false,
