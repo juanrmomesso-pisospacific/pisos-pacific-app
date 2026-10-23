@@ -49053,6 +49053,18 @@
       ],
       "notes": null,
       "updated_at": "2026-10-23T00:54:03.882Z"
+    },
+    {
+      "id": "CLI-mvkuyw81-sh5f",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Aeropuertos Argentina 2000",
+      "updated_at": "2026-10-23T11:00:02.593Z"
     }
   ],
   "expenses": [],
