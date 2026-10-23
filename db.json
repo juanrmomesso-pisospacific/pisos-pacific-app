@@ -838,7 +838,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 622.2980000000001,
-      "reservedStock": 2097.0159999999996,
+      "reservedStock": 2122.0159999999996,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1715,7 +1715,7 @@
       "active": true,
       "margin": 166.7,
       "stock": 90,
-      "reservedStock": 77,
+      "reservedStock": 79.6,
       "subLine": "Terminaciones",
       "shortName": "Varilla L SPC",
       "thicknessMm": null,
@@ -1859,7 +1859,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8474.847,
+      "reservedStock": 8497.347,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2195,7 +2195,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 0,
+      "reservedStock": 2,
       "subLine": "Carpintería",
       "shortName": "Ajuste Puerta Placa",
       "thicknessMm": null,
@@ -2219,7 +2219,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 0,
+      "reservedStock": 1,
       "subLine": "Carpintería",
       "shortName": "Ajuste Puerta Blindada / Medidas Especiales",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15411,
+      "reservedStock": 15581,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -2932,7 +2932,7 @@
       "active": true,
       "margin": 167,
       "stock": 0,
-      "reservedStock": 0,
+      "reservedStock": 2,
       "subLine": "Varilla SPC",
       "shortName": "Varilla SPC - Reducer",
       "thicknessMm": null,
@@ -46511,7 +46511,7 @@
       "currency": "USD",
       "created_at": "2026-10-23T22:00:20.557Z",
       "quote_number": "A8170",
-      "status": "DRAFT"
+      "status": "SENT"
     }
   ],
   "clients": [
@@ -202502,6 +202502,69 @@
       "sku": "SERV-131",
       "qty": 1,
       "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-23T22:24:55.460Z",
+      "type": "quote_reserve",
+      "ref": "local-1792792820706-g62nr",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": 25,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-23T22:24:55.460Z",
+      "type": "quote_reserve",
+      "ref": "local-1792792820706-g62nr",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 22.5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-23T22:24:55.460Z",
+      "type": "quote_reserve",
+      "ref": "local-1792792820706-g62nr",
+      "product_id": "SERV-120",
+      "sku": "SERV-120",
+      "qty": 2,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-23T22:24:55.460Z",
+      "type": "quote_reserve",
+      "ref": "local-1792792820706-g62nr",
+      "product_id": "SERV-121",
+      "sku": "SERV-121",
+      "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-23T22:24:55.460Z",
+      "type": "quote_reserve",
+      "ref": "local-1792792820706-g62nr",
+      "product_id": "PROD-078",
+      "sku": "PROD-078",
+      "qty": 2.6,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-23T22:24:55.460Z",
+      "type": "quote_reserve",
+      "ref": "local-1792792820706-g62nr",
+      "product_id": "VAR-SPC-REDUCER",
+      "sku": "VAR-SPC-REDUCER",
+      "qty": 2,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-23T22:24:55.461Z",
+      "type": "quote_reserve",
+      "ref": "local-1792792820706-g62nr",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 170,
+      "warehouse_id": "main"
     }
   ],
   "users": [
@@ -205303,7 +205366,8 @@
       "1a15eb12e9a454be",
       "1a1638fec61686aa",
       "1a168b64ba355acd",
-      "1a168b64b0ec0e47"
+      "1a168b64b0ec0e47",
+      "1a16acf77d0f220f"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
