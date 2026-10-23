@@ -290,7 +290,7 @@
       "active": true,
       "margin": 159,
       "stock": 1718.2000000000003,
-      "reservedStock": 709.43,
+      "reservedStock": 808.13,
       "subLine": "Colección Madera",
       "shortName": "Roble Verona 12/1 Veta Tallada",
       "thicknessMm": 12,
@@ -1883,7 +1883,7 @@
       "active": true,
       "margin": 172.9,
       "stock": 0,
-      "reservedStock": 8496.630000000001,
+      "reservedStock": 8585.630000000001,
       "subLine": "Colocación Piso",
       "shortName": "Colocación Prefinished Sobre Manta",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15410,
+      "reservedStock": 15411,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -38942,7 +38942,7 @@
       "currency": "USD",
       "created_at": "2026-09-17T18:05:12.243Z",
       "quote_number": "A6492",
-      "status": "DRAFT"
+      "status": "ACCEPTED"
     },
     {
       "id": "local-1789740744199-num6j",
@@ -201736,6 +201736,33 @@
       "product_id": "PROD-063",
       "sku": "PROD-063",
       "qty": 2,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-23T00:48:05.633Z",
+      "type": "quote_reserve",
+      "ref": "local-1789668312725-3phxc",
+      "product_id": "PROD-011",
+      "sku": "PROD-011",
+      "qty": 98.7,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-23T00:48:05.633Z",
+      "type": "quote_reserve",
+      "ref": "local-1789668312725-3phxc",
+      "product_id": "SERV-107",
+      "sku": "SERV-107",
+      "qty": 89,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-23T00:48:05.633Z",
+      "type": "quote_reserve",
+      "ref": "local-1789668312725-3phxc",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 1,
       "warehouse_id": "main"
     }
   ],
