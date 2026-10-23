@@ -46209,7 +46209,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "Obra Oficinas Directorio",
       "has_iva": true,
-      "price": 38993.943999999996,
+      "price": 39682.0347,
       "zoned": false,
       "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed + 6 más",
       "items": [
@@ -46218,11 +46218,12 @@
           "sku": "PROD-201",
           "description": "Madera - Roble 14/3mm x 19cm x 1,90m - Light Brushed",
           "quantity": 277.4,
-          "unit_price": 92,
+          "unit_price": 99,
           "cost": 34.01,
           "category": "Pisos de Madera",
-          "total": 25520.8,
-          "discount": 0,
+          "disc_value": 5,
+          "total": 27462.6,
+          "discount": 1373.13,
           "image": "",
           "target_item_index": null
         },
@@ -46305,8 +46306,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 0,
-      "discount_amount": 0,
+      "discount_total": 1373.13,
+      "discount_amount": 1373.13,
       "reseller_id": "CLI-hugo-schellotto",
       "reseller_name": "Hugo Schellotto",
       "commission_split_discount": true,
