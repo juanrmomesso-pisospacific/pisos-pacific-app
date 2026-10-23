@@ -19219,6 +19219,110 @@
       "commission_split_discount": true,
       "currency": "USD",
       "commission_amount": 0
+    },
+    {
+      "id": "local-sale-1792716843882-7ttu",
+      "quote_id": "local-1791380433052-qljr3",
+      "quote_number": "A6803",
+      "title": "Cotización Kitsilano",
+      "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada + 4 más",
+      "internal_notes": "",
+      "public_notes": "Las medidas deberán verificarse en obra. Para la correcta colocación, la carpeta debe encontrarse nivelada, plana y en condiciones adecuadas.\n\nEl presupuesto incluye envío y descarga en planta baja.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mvk9blnu-qt61",
+      "client_name": "Antonella Jotayan",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 3350-7561",
+      "client_address": "Olavarria 1150 - Barracas",
+      "contract_total": 10509.8301,
+      "items": [
+        {
+          "product_id": "PROD-010",
+          "sku": "PROD-010",
+          "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada",
+          "quantity": 91.5,
+          "unit_price": 75,
+          "cost": 29,
+          "category": "Pisos de Madera",
+          "disc_value": 10,
+          "total": 6862.5,
+          "discount": 686.25,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-107",
+          "sku": "SERV-107",
+          "description": "Servicio - Colocación Prefinished Sobre Manta",
+          "quantity": 83,
+          "unit_price": 20,
+          "cost": 7.33,
+          "category": "Servicio",
+          "total": 1660,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-206",
+          "sku": "PROD-206",
+          "description": "Zócalo EPS 70mm - Recto Negro",
+          "quantity": 44,
+          "unit_price": 10.49,
+          "cost": 7,
+          "category": "Zócalos",
+          "total": 461.56,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-129",
+          "sku": "SERV-129",
+          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+          "quantity": 40,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 208,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 180,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 180,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 686.25,
+      "status": "Confirmado",
+      "created_at": "2026-10-23T00:54:03.882Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 10509.8301
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -43830,7 +43934,7 @@
     },
     {
       "id": "local-1791380433052-qljr3",
-      "client_id": "",
+      "client_id": "CLI-mvk9blnu-qt61",
       "client_name": "Antonella Jotayan",
       "client_dni": "",
       "client_email": "",
@@ -43922,8 +44026,9 @@
       "currency": "USD",
       "created_at": "2026-10-07T13:40:32.906Z",
       "quote_number": "A6803",
-      "status": "SENT",
-      "lead_id": "local-1791380302476-0q9se"
+      "status": "ACCEPTED",
+      "lead_id": "local-1791380302476-0q9se",
+      "sale_id": "local-sale-1792716843882-7ttu"
     },
     {
       "id": "local-1791380566708-r4p9r",
@@ -48932,6 +49037,22 @@
       ],
       "notes": null,
       "updated_at": "2026-10-23T00:34:41.167Z"
+    },
+    {
+      "id": "CLI-mvk9blnu-qt61",
+      "type": "client",
+      "active": true,
+      "name": "Antonella Jotayan",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        "+54 9 11 3350-7561"
+      ],
+      "addresses": [
+        "Olavarria 1150 - Barracas"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-23T00:54:03.882Z"
     }
   ],
   "expenses": [],
