@@ -160925,7 +160925,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-21T00:44:22.000Z",
-      "last_touch_at": "2026-10-23T22:09:08.123Z"
+      "last_touch_at": "2026-10-24T02:43:00.000Z"
     },
     {
       "id": "lead-email-1a15da5966ec",
@@ -169534,12 +169534,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a15bea970fa",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-23T22:09:03.657Z",
-      "last_message_preview": "Hola Marcela, ¿cómo estás? ¡Perdón por la demora en responder!\n\n¿Nos dejás tu número de WhatsApp? El lunes nos ponemos en contacto con vos p",
+      "unread_count": 1,
+      "last_message_at": "2026-10-24T02:43:00.000Z",
+      "last_message_preview": "Buenas! No hay problema por la demora.Mi celu es 1155952935. Muchas gracias Enviado desde mi iPhone El 23 oct 2026, a la(s) 7:09 p. m., Piso",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-21T22:58:06.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-24T02:43:00.000Z",
       "last_outbound_at": "2026-10-23T22:09:03.657Z"
     },
     {
@@ -193315,6 +193315,14 @@
       "ts": "2026-10-23T22:09:03.657Z",
       "status": "sent",
       "wa_id": "1a16acf77d0f220f"
+    },
+    {
+      "id": "m-email-1a16bca79da3",
+      "conversation_id": "conv-email-1a15bea970fa",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nBuenas! No hay problema por la demora.Mi celu es 1155952935. Muchas gracias Enviado desde mi iPhone El 23 oct 2026, a la(s) 7:09 p. m., Pisos Pacific &lt;info@pisospacific.com&gt; escribió: ﻿ Hola",
+      "ts": "2026-10-24T02:43:00.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -203939,7 +203947,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-23T06:24:13.256Z",
     "gmail_seen_ids": [
-      "19fd70a284f4b59e",
       "19fd72a2f5b49470",
       "19fd7434c779099c",
       "19fd7c4876798296",
@@ -204738,7 +204745,8 @@
       "1a1686c596cf24f2",
       "1a168b64b0ec0e47",
       "1a168b64ba355acd",
-      "1a16922c7b65f5b6"
+      "1a16922c7b65f5b6",
+      "1a16bca79da342d9"
     ],
     "cash_sessions": {
       "1136982222": {
