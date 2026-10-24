@@ -161051,6 +161051,23 @@
       "address": "",
       "created_at": "2026-10-23T16:05:02.801Z",
       "last_touch_at": "2026-10-23T16:05:34.705Z"
+    },
+    {
+      "id": "lead-email-1a16e11f2169",
+      "name": "Lucía Eraso",
+      "email": "arq.luciaeraso@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Santo Tome 6519",
+      "postal_code": "1408",
+      "approx_m2": 43,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 43m² · Con Colocación · CP 1408",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-24T13:20:32.000Z",
+      "last_touch_at": "2026-10-24T13:20:32.000Z"
     }
   ],
   "conversations": [
@@ -169649,6 +169666,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-22T21:34:45.610Z",
       "last_outbound_at": "2026-10-22T21:35:59.129Z"
+    },
+    {
+      "id": "conv-email-1a16e11f2169",
+      "channel": "email",
+      "contact_id": "arq.luciaeraso@gmail.com",
+      "contact_name": "Lucía Eraso",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a16e11f2169",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-24T13:20:32.000Z",
+      "last_message_preview": "Formulario web — 43m² · Con Colocación · CP 1408 · Santo Tome 6519",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-24T13:20:32.000Z"
     }
   ],
   "messages": [
@@ -193409,6 +193441,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 015d76093a554df89932e06f52aeb18f\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-22 00:00:00 UTC to 2026-10-23 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-24T08:25:24.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a16e11f2169",
+      "conversation_id": "conv-email-1a16e11f2169",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 43m² · Con Colocación · CP 1408 · Santo Tome 6519",
+      "ts": "2026-10-24T13:20:32.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -204033,7 +204073,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-24T06:25:54.993Z",
     "gmail_seen_ids": [
-      "19fd8207eaf4ed1d",
       "19fd8447e2263f4e",
       "19fd84835b82666d",
       "19fd96d3b2f467eb",
@@ -204832,7 +204871,8 @@
       "1a16bca79da342d9",
       "1a16d03ef7231e48",
       "1a16d55228074128",
-      "1a16ddca72a298af"
+      "1a16ddca72a298af",
+      "1a16e11f2169ebcc"
     ],
     "cash_sessions": {
       "1136982222": {
