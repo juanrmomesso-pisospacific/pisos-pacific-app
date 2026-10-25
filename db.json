@@ -161120,6 +161120,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-24T13:20:32.000Z",
       "last_touch_at": "2026-10-24T13:20:32.000Z"
+    },
+    {
+      "id": "lead-email-1a17394bf6a6",
+      "name": "Manuela",
+      "email": "manuelamoure@icloud.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Freire 4570",
+      "postal_code": "1431",
+      "approx_m2": 55,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 55m² · Con Colocación · CP 1431",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-25T15:01:30.000Z",
+      "last_touch_at": "2026-10-25T15:01:30.000Z"
     }
   ],
   "conversations": [
@@ -169733,6 +169750,21 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-24T13:20:32.000Z"
+    },
+    {
+      "id": "conv-email-1a17394bf6a6",
+      "channel": "email",
+      "contact_id": "manuelamoure@icloud.com",
+      "contact_name": "Manuela",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a17394bf6a6",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-25T15:01:30.000Z",
+      "last_message_preview": "Formulario web — 55m² · Con Colocación · CP 1431 · Freire 4570",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-25T15:01:30.000Z"
     }
   ],
   "messages": [
@@ -193501,6 +193533,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 43m² · Con Colocación · CP 1408 · Santo Tome 6519",
       "ts": "2026-10-24T13:20:32.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a17394bf6a6",
+      "conversation_id": "conv-email-1a17394bf6a6",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 55m² · Con Colocación · CP 1431 · Freire 4570",
+      "ts": "2026-10-25T15:01:30.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -204125,7 +204165,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-25T06:23:28.466Z",
     "gmail_seen_ids": [
-      "19fda5652cdf987a",
       "19fdafc6bf96bd45",
       "19fdb343c60df881",
       "19fdb533a94d74a7",
@@ -204924,7 +204963,8 @@
       "1a16ef10a12b128d",
       "1a1722105def6f12",
       "1a17260c64b9883c",
-      "1a17303034ed3839"
+      "1a17303034ed3839",
+      "1a17394bf6a617cf"
     ],
     "cash_sessions": {
       "1136982222": {
