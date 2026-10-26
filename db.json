@@ -169834,11 +169834,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1792972895464",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-10-26T00:02:09.232Z",
-      "last_message_preview": "Hola, me interesa recibir el catálogo de pisos, cómo tengo q hacer? gracias",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-26T00:02:09.232Z"
+      "unread_count": 0,
+      "last_message_at": "2026-10-26T14:40:58.572Z",
+      "last_message_preview": "Me pasas un WhatsApp o Mail así te mandamos!",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-26T00:02:09.232Z",
+      "last_outbound_at": "2026-10-26T14:40:58.572Z"
     },
     {
       "id": "conv-email-1a17638a0059",
@@ -193725,6 +193726,26 @@
       "body": "👏",
       "ts": "2026-10-26T14:19:39.896Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793025650737-4jdx",
+      "conversation_id": "conv-1792972895463-1smm",
+      "direction": "out",
+      "body": "Hola Noemi",
+      "ts": "2026-10-26T14:40:50.091Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NTQ4NTI4NDgyODExODk3MzA2MTUwMjMyMDI0Njc4NAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1793025659080-xdn6",
+      "conversation_id": "conv-1792972895463-1smm",
+      "direction": "out",
+      "body": "Me pasas un WhatsApp o Mail así te mandamos!",
+      "ts": "2026-10-26T14:40:58.572Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NTQ4NTQ0MTI4ODkxOTY0NzQ1NjAwNzcwNjExNjA5NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
