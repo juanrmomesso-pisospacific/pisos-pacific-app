@@ -170132,11 +170132,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1793027382488",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-26T18:42:05.390Z",
-      "last_message_preview": "1136982222",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-26T15:10:29.834Z",
+      "unread_count": 1,
+      "last_message_at": "2026-10-26T18:59:44.958Z",
+      "last_message_preview": "↩️ Reaccionó: ❤",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-26T18:59:44.958Z",
       "last_outbound_at": "2026-10-26T18:42:05.390Z"
     }
   ],
@@ -194090,6 +194090,14 @@
       "ts": "2026-10-26T18:42:05.390Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTc1MjMwMzgxODk5MjUzMjI5MjgyMTMwMjkwMjc4NAZDZD"
+    },
+    {
+      "id": "m-1793041185518-jyh5",
+      "conversation_id": "conv-1793027382488-no2h",
+      "direction": "in",
+      "body": "↩️ Reaccionó: ❤",
+      "ts": "2026-10-26T18:59:44.958Z",
+      "status": "received"
     }
   ],
   "templates": [
