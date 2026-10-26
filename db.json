@@ -161195,6 +161195,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-26T03:19:44.000Z",
       "last_touch_at": "2026-10-26T13:42:40.000Z"
+    },
+    {
+      "id": "lead-instagram-1793027382488",
+      "name": "@concavoestudio",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-26T15:09:40.309Z",
+      "last_touch_at": "2026-10-26T15:09:40.309Z"
     }
   ],
   "conversations": [
@@ -169856,6 +169872,20 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-26T13:42:40.000Z",
       "last_outbound_at": "2026-10-26T13:26:46.227Z"
+    },
+    {
+      "id": "conv-1793027382488-no2h",
+      "channel": "instagram",
+      "contact_id": "1082819504794571",
+      "contact_name": "@concavoestudio",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1793027382488",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-10-26T15:09:45.212Z",
+      "last_message_preview": "Hola! ¿Cómo va?  Soy Constanza Llorente, arquitecta y les escribo junto a mi marido, Félix Llambías, creador de contenido. Estamos armando e",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-26T15:09:45.212Z"
     }
   ],
   "messages": [
@@ -193746,6 +193776,22 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NTQ4NTQ0MTI4ODkxOTY0NzQ1NjAwNzcwNjExNjA5NgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1793027382488-kh51",
+      "conversation_id": "conv-1793027382488-no2h",
+      "direction": "in",
+      "body": "hola!",
+      "ts": "2026-10-26T15:09:40.309Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1793027386012-slfq",
+      "conversation_id": "conv-1793027382488-no2h",
+      "direction": "in",
+      "body": "Hola! ¿Cómo va?  Soy Constanza Llorente, arquitecta y les escribo junto a mi marido, Félix Llambías, creador de contenido. Estamos armando el nuevo local de Cóncavo en un galpon sobre panamericana (bajada PILARA) y nos encantan sus pisos sistema click. Necesitamos 80m2 y el espacio es ideal para lucirlos, es sobre un piso de cemento alisado asique que seria rapido y prolijo!\nen el local nos acompañan: Egger, Ita lighting, topcreat, Tania Pieres, Novastone, entre otras.\nYa trabajamos con más de 80 marcas en redes as partir de colaboración/canje para mostrar todo el proceso de colocación y el impacto de ese cambio en el local. En diciembre vamos a hacer una inaguracion y cierre de año del local con muchisimos invitados del rubro.\n\n¿A qué mail o WhatsApp del equipo comercial les podemos mandar la propuesta para que la vean? ¡Muchas gracias!",
+      "ts": "2026-10-26T15:09:45.212Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -206737,7 +206783,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY5NTU3ODA3MTk1NTEzOTozMzA2OTU2ODIyNDU0MDM3NDc0MTM1NzQ0NDQ4OTgwNTgyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NDUxMjA5ODA0NjgxODYzNjg1MjEwMjc2NDE2NzE2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NDUxMjc1NjY0ODk4NTM5MjM3NjQ4NDYwNzI5NTQ4OAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA3NTQ2MTg1Mzg2NDEzMDI1MjkxNzk5NTM1MTMxMDMzNgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA3NTQ2MTg1Mzg2NDEzMDI1MjkxNzk5NTM1MTMxMDMzNgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTUxNzIwMTcyOTc5ODU0NjcxNDU5MjkwNTUyNzI5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTUxNzI5MjE2NzQxNDc4NTAzNzQ3MzA3MzMzMjIyNAZDZD"
     ],
     "last_weekly_reminder": "2026-10-23T12:22:19.173Z",
     "warehouses": [
