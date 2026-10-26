@@ -169803,12 +169803,12 @@
       "linked_lead_id": "lead-email-1a16e11f2169",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-26T09:33:16.280Z",
+      "last_message_at": "2026-10-26T13:25:24.578Z",
       "last_message_preview": "Hola Lucía, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-24T13:20:32.000Z",
-      "last_outbound_at": "2026-10-26T09:33:16.280Z"
+      "last_outbound_at": "2026-10-26T13:25:24.578Z"
     },
     {
       "id": "conv-email-1a17394bf6a6",
@@ -193682,6 +193682,15 @@
       "ts": "2026-10-26T09:34:03.487Z",
       "status": "sent",
       "wa_id": "1a1778f513c73f64"
+    },
+    {
+      "id": "m-1793021124578-6wa6",
+      "conversation_id": "conv-email-1a16e11f2169",
+      "direction": "out",
+      "body": "Hola Lucía, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Pisos Pacific",
+      "ts": "2026-10-26T13:25:24.578Z",
+      "status": "sent",
+      "wa_id": "1a178631eb968a64"
     }
   ],
   "templates": [
