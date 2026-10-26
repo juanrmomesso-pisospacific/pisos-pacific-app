@@ -169881,11 +169881,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1793027382488",
       "status": "open",
-      "unread_count": 2,
-      "last_message_at": "2026-10-26T15:09:45.212Z",
-      "last_message_preview": "Hola! ¿Cómo va?  Soy Constanza Llorente, arquitecta y les escribo junto a mi marido, Félix Llambías, creador de contenido. Estamos armando e",
+      "unread_count": 3,
+      "last_message_at": "2026-10-26T15:10:17.515Z",
+      "last_message_preview": "📷 Foto",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-26T15:09:45.212Z"
+      "last_inbound_at": "2026-10-26T15:10:17.515Z"
     }
   ],
   "messages": [
@@ -193792,6 +193792,16 @@
       "body": "Hola! ¿Cómo va?  Soy Constanza Llorente, arquitecta y les escribo junto a mi marido, Félix Llambías, creador de contenido. Estamos armando el nuevo local de Cóncavo en un galpon sobre panamericana (bajada PILARA) y nos encantan sus pisos sistema click. Necesitamos 80m2 y el espacio es ideal para lucirlos, es sobre un piso de cemento alisado asique que seria rapido y prolijo!\nen el local nos acompañan: Egger, Ita lighting, topcreat, Tania Pieres, Novastone, entre otras.\nYa trabajamos con más de 80 marcas en redes as partir de colaboración/canje para mostrar todo el proceso de colocación y el impacto de ese cambio en el local. En diciembre vamos a hacer una inaguracion y cierre de año del local con muchisimos invitados del rubro.\n\n¿A qué mail o WhatsApp del equipo comercial les podemos mandar la propuesta para que la vean? ¡Muchas gracias!",
       "ts": "2026-10-26T15:09:45.212Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793027418281-6rom",
+      "conversation_id": "conv-1793027382488-no2h",
+      "direction": "in",
+      "body": "📷 Foto",
+      "ts": "2026-10-26T15:10:17.515Z",
+      "status": "received",
+      "media_url": "/uploads/7c70f909b085d6c4.jpg",
+      "media_type": "image"
     }
   ],
   "templates": [
@@ -206785,7 +206795,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NDUxMjc1NjY0ODk4NTM5MjM3NjQ4NDYwNzI5NTQ4OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA3NTQ2MTg1Mzg2NDEzMDI1MjkxNzk5NTM1MTMxMDMzNgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTUxNzIwMTcyOTc5ODU0NjcxNDU5MjkwNTUyNzI5NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTUxNzI5MjE2NzQxNDc4NTAzNzQ3MzA3MzMzMjIyNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTUxNzI5MjE2NzQxNDc4NTAzNzQ3MzA3MzMzMjIyNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTUxNzg4ODA0MzY5NzI2NzQzMzU5MDkyMTEwMTMxMgZDZD"
     ],
     "last_weekly_reminder": "2026-10-23T12:22:19.173Z",
     "warehouses": [
