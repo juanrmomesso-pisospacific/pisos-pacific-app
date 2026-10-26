@@ -161137,6 +161137,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-25T15:01:30.000Z",
       "last_touch_at": "2026-10-25T15:01:30.000Z"
+    },
+    {
+      "id": "lead-instagram-1792972895464",
+      "name": "@noemi.ferrari.587",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-26T00:01:33.530Z",
+      "last_touch_at": "2026-10-26T00:01:33.530Z"
     }
   ],
   "conversations": [
@@ -169765,6 +169781,20 @@
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-25T15:01:30.000Z"
+    },
+    {
+      "id": "conv-1792972895463-1smm",
+      "channel": "instagram",
+      "contact_id": "1934320324401773",
+      "contact_name": "@noemi.ferrari.587",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1792972895464",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-26T00:01:33.530Z",
+      "last_message_preview": "Hola, me interesa recibir el catálogo de pisos. Cómo",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-26T00:01:33.530Z"
     }
   ],
   "messages": [
@@ -193541,6 +193571,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 55m² · Con Colocación · CP 1431 · Freire 4570",
       "ts": "2026-10-25T15:01:30.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1792972895464-0aq2",
+      "conversation_id": "conv-1792972895463-1smm",
+      "direction": "in",
+      "body": "Hola, me interesa recibir el catálogo de pisos. Cómo",
+      "ts": "2026-10-26T00:01:33.530Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -206518,7 +206556,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY5NTU3ODA3MTk1NTEzOTozMzA2OTUyNDY3NTk3NDQxNzAxMDU3MTY2NTQ5MjQxMDM2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY5NTU3ODA3MTk1NTEzOTozMzA2OTUyNDc0OTAyODg1NDY1MTQ5ODc5MTk1MjE4NzM5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY5NTU3ODA3MTk1NTEzOTozMzA2OTUyNDg0NTQ0MjMxMjA3OTI0Mzk1NTA3NTU0NzEzNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY5NTU3ODA3MTk1NTEzOTozMzA2OTU2ODIyNDU0MDM3NDc0MTM1NzQ0NDQ4OTgwNTgyNAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjY5NTU3ODA3MTk1NTEzOTozMzA2OTU2ODIyNDU0MDM3NDc0MTM1NzQ0NDQ4OTgwNTgyNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NDUxMjA5ODA0NjgxODYzNjg1MjEwMjc2NDE2NzE2OAZDZD"
     ],
     "last_weekly_reminder": "2026-10-23T12:22:19.173Z",
     "warehouses": [
