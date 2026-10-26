@@ -161153,6 +161153,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-26T00:01:33.530Z",
       "last_touch_at": "2026-10-26T00:01:33.530Z"
+    },
+    {
+      "id": "lead-email-1a17638a0059",
+      "name": "David",
+      "email": "dtrejopizzo@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "José Antonio Cabrera 3752",
+      "postal_code": "1186",
+      "approx_m2": 60,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 60m² · Con Colocación · CP 1186",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-26T03:19:44.000Z",
+      "last_touch_at": "2026-10-26T03:19:44.000Z"
     }
   ],
   "conversations": [
@@ -169795,6 +169812,21 @@
       "last_message_preview": "Hola, me interesa recibir el catálogo de pisos, cómo tengo q hacer? gracias",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-26T00:02:09.232Z"
+    },
+    {
+      "id": "conv-email-1a17638a0059",
+      "channel": "email",
+      "contact_id": "dtrejopizzo@gmail.com",
+      "contact_name": "David",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a17638a0059",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-26T03:19:44.000Z",
+      "last_message_preview": "Formulario web — 60m² · Con Colocación · CP 1186 · José Antonio Cabrera 3752",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-26T03:19:44.000Z"
     }
   ],
   "messages": [
@@ -193587,6 +193619,14 @@
       "body": "Hola, me interesa recibir el catálogo de pisos, cómo tengo q hacer? gracias",
       "ts": "2026-10-26T00:02:09.232Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a17638a0059",
+      "conversation_id": "conv-email-1a17638a0059",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 60m² · Con Colocación · CP 1186 · José Antonio Cabrera 3752",
+      "ts": "2026-10-26T03:19:44.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -204208,10 +204248,9 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": null,
+    "mp_pending_job": 103773337,
     "mp_last_sync": "2026-10-25T06:23:28.466Z",
     "gmail_seen_ids": [
-      "19fdafc6bf96bd45",
       "19fdb343c60df881",
       "19fdb533a94d74a7",
       "19fdb5311d736aff",
@@ -205010,7 +205049,8 @@
       "1a1722105def6f12",
       "1a17260c64b9883c",
       "1a17303034ed3839",
-      "1a17394bf6a617cf"
+      "1a17394bf6a617cf",
+      "1a17638a0059f117"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -207169,7 +207209,7 @@
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
-    "mp_pending_at": null,
+    "mp_pending_at": "2026-10-26T06:22:20.077Z",
     "receipt_next": 113,
     "receipt_signature": "firma-juan.png",
     "receipt_signer": "Juan Rodriguez Momesso"
