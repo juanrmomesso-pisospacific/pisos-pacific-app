@@ -161290,6 +161290,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-26T15:09:40.309Z",
       "last_touch_at": "2026-10-26T15:09:40.309Z"
+    },
+    {
+      "id": "local-1793040501957-jt4uk",
+      "name": "Paula Sanmartino",
+      "phone": "+54 9 11 3682-4096",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "H2O"
+      ],
+      "notes": "",
+      "status": "New",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "La Horqueta",
+      "created_at": "2026-10-26T18:48:09.512Z",
+      "last_touch_at": "2026-10-26T18:48:09.512Z"
     }
   ],
   "conversations": [
