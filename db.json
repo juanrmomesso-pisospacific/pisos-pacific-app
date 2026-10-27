@@ -170915,11 +170915,11 @@
       "linked_lead_id": "lead-instagram-1792972895464",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-27T15:06:00.904Z",
-      "last_message_preview": "Por algún motivo no logro contactarme con ese número. Te comparto mi WhatsApp para que me escribas así logro seguimos",
+      "last_message_at": "2026-10-27T15:15:00.233Z",
+      "last_message_preview": "📎 Adjunto",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-26T15:12:38.975Z",
-      "last_outbound_at": "2026-10-27T15:06:00.904Z"
+      "last_outbound_at": "2026-10-27T15:15:00.233Z"
     },
     {
       "id": "conv-email-1a17638a0059",
@@ -195052,6 +195052,26 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola!\r\nMe gustaría recibir un asesoramiento más profundo sobre los materiales pero\r\nen principio seria la línea H20. Si queres podes hablarme por WhatsApp, mi\r\nnúmero es 1123816007\r\nGracias!\r\n\r\n\r\nEl El lun, 26 oct 2026 a la(s) 10:25, Pisos Pacific <info@pisospacific.com>\r\nescribió:\r\n\r\n> Hola Lucía, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a prueba de agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Pisos Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Juan Rodríguez Momesso\r\n> Ventas\r\n>\r\n> +54 11 5175-0087 <https://wa.me/5491151750087>\r\n> info@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-10-27T15:02:32.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793114100404-jbxp",
+      "conversation_id": "conv-1792972895463-1smm",
+      "direction": "out",
+      "body": "+541151750087",
+      "ts": "2026-10-27T15:14:59.950Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NzExNjg5Njc0NzMyODMwNDA0ODM4NDQwNTE0MzU1MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1793114100797-0si9",
+      "conversation_id": "conv-1792972895463-1smm",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-10-27T15:15:00.233Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NzExNjkwMTk3MjY0NTI2NDA4NzcyMDU0MzY0OTc5MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
