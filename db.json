@@ -837,8 +837,8 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 502.11160000000007,
-      "reservedStock": 2001.8295999999998,
+      "stock": 428.61160000000007,
+      "reservedStock": 1928.3295999999998,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1714,8 +1714,8 @@
       "currency": "USD",
       "active": true,
       "margin": 166.7,
-      "stock": 90,
-      "reservedStock": 79.6,
+      "stock": 42,
+      "reservedStock": 31.599999999999994,
       "subLine": "Terminaciones",
       "shortName": "Varilla L SPC",
       "thicknessMm": null,
@@ -2339,7 +2339,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 66,
+      "reservedStock": 0,
       "subLine": "Revestimientos",
       "shortName": "Colocación Revestimiento Cielo Raso PVC/Madera",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15200,
+      "reservedStock": 15000,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -2525,7 +2525,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 213,
+      "reservedStock": 199,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -14073,7 +14073,7 @@
       ],
       "zoned": false,
       "discount_total": 139.65,
-      "status": "En proceso",
+      "status": "Finalizado",
       "created_at": "2026-07-19T13:08:01.690Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -14082,8 +14082,8 @@
         "total_paid": 0,
         "balance_due": 6763
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Juan Rodriguez Momesso",
       "delivery_date": "2026-10-05",
       "delivery_date_to": "2026-10-08",
@@ -14099,6 +14099,12 @@
           "from": "Programado",
           "to": "En proceso",
           "at": "2026-09-15T14:48:05.045Z",
+          "by": "Admin User"
+        },
+        {
+          "from": "En proceso",
+          "to": "Finalizado",
+          "at": "2026-10-27T13:05:41.132Z",
           "by": "Admin User"
         }
       ],
@@ -203726,6 +203732,51 @@
       "product_id": "SERV-115",
       "sku": "SERV-115",
       "qty": -8,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:05:41.132Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1784466481690-xdjc",
+      "product_id": "SERV-126",
+      "sku": "SERV-126",
+      "qty": -66,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:05:41.132Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1784466481690-xdjc",
+      "product_id": "111223",
+      "sku": "111223",
+      "qty": -14,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:05:41.132Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1784466481690-xdjc",
+      "product_id": "PROD-078",
+      "sku": "PROD-078",
+      "qty": -48,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:05:41.132Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1784466481690-xdjc",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": -200,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:05:41.132Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1784466481690-xdjc",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": -73.5,
       "warehouse_id": "main"
     }
   ],
