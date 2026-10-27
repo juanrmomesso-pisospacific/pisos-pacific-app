@@ -162257,6 +162257,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-27T12:12:45.000Z",
       "last_touch_at": "2026-10-27T12:12:45.000Z"
+    },
+    {
+      "id": "lead-instagram-1793113282956",
+      "name": "@lueraso",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-27T15:01:20.586Z",
+      "last_touch_at": "2026-10-27T15:01:20.586Z"
     }
   ],
   "conversations": [
@@ -170951,6 +170967,20 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-27T12:12:45.000Z",
       "ignored": true
+    },
+    {
+      "id": "conv-1793113282956-e1ax",
+      "channel": "instagram",
+      "contact_id": "1824688482202661",
+      "contact_name": "@lueraso",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1793113282956",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-27T15:01:20.586Z",
+      "last_message_preview": "Hola como estas? Me gustaria recibir asesoramiento sobre los tipos de pisos y tambien pedir presupuesto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-27T15:01:20.586Z"
     }
   ],
   "messages": [
@@ -194959,6 +194989,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola Manuela,\r\n\r\nTe comparto dos presupuestos distintos.\r\n1. De la línea H2O - Es nuestra linea de pisos waterproof. Son pisos simil\r\nmadera que tienen una terminación mate y veta real.\r\n2. De la Colección Madera - Nuestra colección de pisos de madera. Te\r\npresupuesto con el Verona que es un roble europeo con un blanqueado que lo\r\nhace más claro. Pero en la página podes ver más alternativas para que\r\ncoticemos si te gusta alguno en particular.\r\n\r\nCualquier cosa, me avisas!\r\nSaludos,\r\n\r\n\r\n\r\n[image: Pisos Pacific]\r\nJuan Rodríguez Momesso\r\nVentas\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\npisospacific.com\r\n[image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\nFacebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\nLa evolución del piso de madera\r\n\r\nEl mar, 27 oct 2026 a las 10:18, Manuela Moure (<manuelamoure@icloud.com>)\r\nescribió:\r\n\r\n> Hola! Como están?\r\n>\r\n> No sé bien la diferencia, podrían pasarme de los dos? Gracias!\r\n>\r\n> Manuela\r\n>\r\n> El 26 oct 2026, a la(s) 10:26 a. m., Pisos Pacific <info@pisospacific.com>\r\n> escribió:\r\n>\r\n> ﻿\r\n> Hola Manuela, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a pr",
       "ts": "2026-10-27T14:36:26.000Z",
       "status": "sent"
+    },
+    {
+      "id": "m-1793113282956-q98k",
+      "conversation_id": "conv-1793113282956-e1ax",
+      "direction": "in",
+      "body": "Hola como estas? Me gustaria recibir asesoramiento sobre los tipos de pisos y tambien pedir presupuesto",
+      "ts": "2026-10-27T15:01:20.586Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -208356,7 +208394,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTUxNzg4ODA0MzY5NzI2NzQzMzU5MDkyMTEwMTMxMgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTUxODExNTMwMTY4MTI5NzQzMTY3OTc3MzcwNDE5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NTUyMDQ5NzUzNTIwMzM3MTAzOTA1NjkzMzY4MzIwMAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTc3MjA1MzM3MzkwMzQxNDI2NzYyODAyMTA4ODI1NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTc3MjA1MzM3MzkwMzQxNDI2NzYyODAyMTA4ODI1NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjcyNjE1MzA3ODk1NTY2MTozMzA3NzEwMTc4MjE0MTY0MzI0NzU2MDY3MDkzOTQ0NzI5NgZDZD"
     ],
     "last_weekly_reminder": "2026-10-23T12:22:19.173Z",
     "warehouses": [
