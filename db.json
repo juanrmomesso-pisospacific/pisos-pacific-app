@@ -836,8 +836,8 @@
       "cost": 16.33,
       "currency": "USD",
       "active": true,
-      "margin": 132.7,
-      "stock": 309.9116000000001,
+      "margin": 133,
+      "stock": 256.332,
       "reservedStock": 1809.6295999999998,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
@@ -848,11 +848,12 @@
       "stockTrack": true,
       "stockCodeLegacy": "206023302570",
       "createdAt": "2026-06-03T19:46:57.827Z",
-      "updatedAt": "2026-06-03T19:46:57.827Z",
+      "updatedAt": "2026-10-27T14:45:51.501Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
       "stockObs": "H2O HD XL Roble Clásico",
-      "m2_por_caja": 2.084
+      "m2_por_caja": 2.084,
+      "unit": "m2"
     },
     {
       "id": "PROD-029",
@@ -204277,6 +204278,15 @@
       "product_id": "PROD-202",
       "sku": "PROD-202",
       "qty": -66.7,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:45:52.072Z",
+      "type": "manual_adjustment",
+      "ref": "edit-info@pisospacific.com",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": -53.58,
       "warehouse_id": "main"
     }
   ],
