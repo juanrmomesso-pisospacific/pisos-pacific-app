@@ -170676,14 +170676,15 @@
       "contact_name": "Manuela",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a17394bf6a6",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-27T13:18:14.000Z",
       "last_message_preview": "Hola! Como están? No sé bien la diferencia, podrían pasarme de los dos? Gracias! Manuela El 26 oct 2026, a la(s) 10:26 a. m., Pisos Pacific ",
       "email_subject": "Pedido de Presupuesto | Página Web",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-27T13:18:14.000Z",
-      "last_outbound_at": "2026-10-26T13:26:02.908Z"
+      "last_outbound_at": "2026-10-26T13:26:02.908Z",
+      "ignored": true
     },
     {
       "id": "conv-1792972895463-1smm",
