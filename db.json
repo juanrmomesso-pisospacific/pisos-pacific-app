@@ -162337,7 +162337,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-10-27T12:12:45.000Z",
-      "last_touch_at": "2026-10-27T12:12:45.000Z"
+      "last_touch_at": "2026-10-27T15:30:53.000Z"
     },
     {
       "id": "lead-instagram-1793113282956",
@@ -171041,12 +171041,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a17d46fd734",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-10-27T12:12:45.000Z",
-      "last_message_preview": "Dear team,\r\n\r\nI am contacting you on behalf of Intuition Consulting Portugal regarding a confidential potential acquisition involving a Port",
+      "unread_count": 1,
+      "last_message_at": "2026-10-27T15:30:53.000Z",
+      "last_message_preview": "Dear team,\r\n\r\nI am following up on the confidential potential acquisition in the Portuguese wood flooring and parquet sector.\r\n\r\nIf relevant",
       "email_subject": "Project Designline | Confidential M&A opportunity",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-27T12:12:45.000Z",
+      "last_inbound_at": "2026-10-27T15:30:53.000Z",
       "ignored": true
     },
     {
@@ -195171,6 +195171,14 @@
       "body": "👏",
       "ts": "2026-10-27T15:15:31.470Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a17dfc67d86",
+      "conversation_id": "conv-email-1a17d46fd734",
+      "direction": "in",
+      "body": "✉️ Re: Project Designline | Confidential M&A opportunity\n\nDear team,\r\n\r\nI am following up on the confidential potential acquisition in the Portuguese wood flooring and parquet sector.\r\n\r\nIf relevant to your strategic plans, we would be pleased to send a short anonymous teaser for your review.\r\n\r\nKind regards,\r\n\r\nIntuition Consulting Portugal | M&A Team\r\n\r\nintuitionconsulting.net",
+      "ts": "2026-10-27T15:30:53.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -206195,7 +206203,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-27T12:25:03.290Z",
     "gmail_seen_ids": [
-      "19fdd0db54e7ec95",
       "19fdd14e77fc446e",
       "19fdd697ce332c51",
       "19fdd7a98e2cfe44",
@@ -206994,7 +207001,8 @@
       "1a17d83310dc9fb5",
       "1a17d7aa499efd22",
       "1a17d88af4ce670a",
-      "1a17de2a19fcb63b"
+      "1a17de2a19fcb63b",
+      "1a17dfc67d863c37"
     ],
     "cash_sessions": {
       "1136982222": {
