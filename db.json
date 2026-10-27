@@ -170915,11 +170915,11 @@
       "linked_lead_id": "lead-instagram-1792972895464",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-27T15:05:39.138Z",
-      "last_message_preview": "Hola Noemí,  como estás?",
+      "last_message_at": "2026-10-27T15:06:00.904Z",
+      "last_message_preview": "Por algún motivo no logro contactarme con ese número. Te comparto mi WhatsApp para que me escribas así logro seguimos",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-26T15:12:38.975Z",
-      "last_outbound_at": "2026-10-27T15:05:39.138Z"
+      "last_outbound_at": "2026-10-27T15:06:00.904Z"
     },
     {
       "id": "conv-email-1a17638a0059",
@@ -195033,6 +195033,16 @@
       "ts": "2026-10-27T15:05:39.138Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NzEwNjU1MTU5NDYwMjUxMDIyNjE1ODgzNzAzOTEwNAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1793113561454-x7xm",
+      "conversation_id": "conv-1792972895463-1smm",
+      "direction": "out",
+      "body": "Por algún motivo no logro contactarme con ese número. Te comparto mi WhatsApp para que me escribas así logro seguimos",
+      "ts": "2026-10-27T15:06:00.904Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NzEwNjk1MzA5NzA2MzA3MjU5ODgxNDg1ODY3NDE3NgZDZD",
       "via": "ig-app"
     }
   ],
