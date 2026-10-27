@@ -151120,6 +151120,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mvqnrmm2-004"
+    },
+    {
+      "id": "local-1793106523232-d8c3c",
+      "flow": "Ingreso",
+      "date": "2026-10-23T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Arq. Agustina Bilbao",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra Bonpland",
+      "sale_ref": "A6896",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 3400,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
