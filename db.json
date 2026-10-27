@@ -19698,6 +19698,72 @@
       "commission_split_discount": true,
       "currency": "USD",
       "commission_amount": 0
+    },
+    {
+      "id": "local-sale-1793113218891-ai0c",
+      "quote_id": "UKxXbX4m4WxWTlihsSha",
+      "quote_number": "A0048",
+      "title": "Obra Casa Propia",
+      "description": "H2OHD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 1 más",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-muy5g7g8-kqas",
+      "client_name": "Martina Iglesias",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Obra Casa Propia",
+      "contract_total": 4110,
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2OHD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 106.2,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_kind": "amount",
+          "disc_value": 1380.6,
+          "total": 4035.6,
+          "discount": 1380.6,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 97,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 1455,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 1380.6,
+      "status": "Confirmado",
+      "created_at": "2026-10-27T15:00:18.891Z",
+      "has_iva": false,
+      "iva_mode": "none",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 4110
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -20618,7 +20684,8 @@
       "reseller_id": "",
       "reseller_name": "",
       "commission_split_discount": true,
-      "currency": "USD"
+      "currency": "USD",
+      "sale_id": "local-sale-1793113218891-ai0c"
     },
     {
       "id": "chBPrrEvSki3YovQ5GWY",
@@ -49905,7 +49972,9 @@
       "dni": "",
       "emails": [],
       "phones": [],
-      "addresses": [],
+      "addresses": [
+        "Obra Casa Propia"
+      ],
       "notes": null,
       "name": "Martina Iglesias",
       "updated_at": "2026-10-07T13:34:44.408Z"
