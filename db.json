@@ -837,8 +837,8 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 376.61160000000007,
-      "reservedStock": 1876.3295999999998,
+      "stock": 309.9116000000001,
+      "reservedStock": 1809.6295999999998,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -18640,8 +18640,8 @@
         "total_paid": 2280,
         "balance_due": 1101
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Victoria Gonzalez Collado",
       "reseller_id": "",
       "reseller_name": "",
@@ -18657,7 +18657,23 @@
           "at": "2026-10-27T14:17:45.453Z",
           "by": "Victoria Gonzalez Collado"
         }
-      ]
+      ],
+      "material_deliveries": [
+        {
+          "id": "DEL-mvqrsutn",
+          "date": "2026-10-27",
+          "note": null,
+          "by": "Victoria Gonzalez Collado",
+          "items": [
+            {
+              "sku": "PROD-202",
+              "product_id": "PROD-202",
+              "quantity": 66.7
+            }
+          ]
+        }
+      ],
+      "material_delivery_date": "2026-10-27"
     },
     {
       "id": "local-sale-1792442938646-2luu",
@@ -204062,6 +204078,15 @@
       "product_id": "PROD-202",
       "sku": "PROD-202",
       "qty": -52,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:17:59.051Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1792442154821-9qnv",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": -66.7,
       "warehouse_id": "main"
     }
   ],
