@@ -170419,13 +170419,14 @@
       "contact_name": "Hugo Schelotto",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a15b9de6c27",
-      "status": "open",
-      "unread_count": 2,
+      "status": "closed",
+      "unread_count": 0,
       "last_message_at": "2026-10-20T23:22:13.000Z",
       "last_message_preview": "Recibido . En breve enviaremos nuestra propuesta . Gracias por la convocatoria . Saludos Hugo Schelotto Enviado desde mi iPhone El 20 oct 20",
       "email_subject": "Fwd: AA - Pedido de precios pisos",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-20T23:22:13.000Z"
+      "last_inbound_at": "2026-10-20T23:22:13.000Z",
+      "ignored": true
     },
     {
       "id": "conv-email-1a15bea970fa",
@@ -170497,7 +170498,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a17394bf6a6",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-27T13:18:14.000Z",
       "last_message_preview": "Hola! Como están? No sé bien la diferencia, podrían pasarme de los dos? Gracias! Manuela El 26 oct 2026, a la(s) 10:26 a. m., Pisos Pacific ",
       "email_subject": "Pedido de Presupuesto | Página Web",
@@ -170558,13 +170559,14 @@
       "contact_name": "Monica Raquel",
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a17d46fd734",
-      "status": "open",
+      "status": "closed",
       "unread_count": 0,
       "last_message_at": "2026-10-27T12:12:45.000Z",
       "last_message_preview": "Dear team,\r\n\r\nI am contacting you on behalf of Intuition Consulting Portugal regarding a confidential potential acquisition involving a Port",
       "email_subject": "Project Designline | Confidential M&A opportunity",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-27T12:12:45.000Z"
+      "last_inbound_at": "2026-10-27T12:12:45.000Z",
+      "ignored": true
     }
   ],
   "messages": [
