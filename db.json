@@ -18631,7 +18631,7 @@
       ],
       "zoned": false,
       "discount_total": 253.46,
-      "status": "Confirmado",
+      "status": "En proceso",
       "created_at": "2026-10-19T20:35:54.821Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -18648,7 +18648,16 @@
       "commission_split_discount": true,
       "currency": "USD",
       "commission_amount": 0,
-      "iva_amount": 0
+      "iva_amount": 0,
+      "delivery_date": "2026-10-15",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "En proceso",
+          "at": "2026-10-27T14:17:45.453Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     },
     {
       "id": "local-sale-1792442938646-2luu",
@@ -206870,7 +206879,8 @@
       "1a178645e8614c38",
       "1a17863b551baef6",
       "1a178631eb968a64",
-      "1a17d4fba45b5cfa"
+      "1a17d4fba45b5cfa",
+      "1a17da3a9fd4c4c6"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -209387,6 +209397,17 @@
       "sale_id": "local-sale-1788459575322-xjy3",
       "notes": "Obra Palermo - Obra Beruti Ana Bertolino",
       "created_at": "2026-10-21T15:38:19.046Z"
+    },
+    {
+      "id": "local-1793110665724-czbq3",
+      "type": "medicion",
+      "title": "Medición previa · Arq. Andrea Ton",
+      "due_date": "2026-10-13",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "status": "pendiente",
+      "sale_id": "local-sale-1792442154821-9qnv",
+      "notes": "Pilar",
+      "created_at": "2026-10-27T14:17:45.507Z"
     }
   ],
   "password_resets": {},
