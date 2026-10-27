@@ -754,7 +754,7 @@
       "active": true,
       "margin": 132.7,
       "stock": 639.5353279999998,
-      "reservedStock": 3873.8599999999997,
+      "reservedStock": 4103.0599999999995,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1860,7 +1860,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8345.847,
+      "reservedStock": 8542.847,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2124,7 +2124,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 217,
+      "reservedStock": 228,
       "subLine": "Escalera",
       "shortName": "Colocación Pedada/Frentín H2O",
       "thicknessMm": null,
@@ -2148,7 +2148,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 64,
+      "reservedStock": 70,
       "subLine": "Escalera",
       "shortName": "Colocación Compensados y Descansos",
       "thicknessMm": null,
@@ -2460,7 +2460,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 14920,
+      "reservedStock": 14921,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -2562,7 +2562,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 377,
+      "reservedStock": 394,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -3202,7 +3202,7 @@
       "cost": 11,
       "currency": "USD",
       "stock": 71,
-      "reservedStock": 35,
+      "reservedStock": 52,
       "active": true,
       "margin": 173,
       "createdAt": "2026-07-14T22:45:33.721Z",
@@ -3342,7 +3342,7 @@
       "cost": 18,
       "currency": "USD",
       "stock": 0,
-      "reservedStock": 40,
+      "reservedStock": 48,
       "active": true,
       "margin": 56,
       "createdAt": "2026-08-28T21:11:03.436Z",
@@ -19620,6 +19620,84 @@
       "commission_amount": 3572.58,
       "commission_type": "price_list",
       "commission_m2": 158.9
+    },
+    {
+      "id": "local-sale-1793112903449-prow",
+      "quote_id": "local-1790201323453-mqu9t",
+      "quote_number": "A6798",
+      "title": "Cotización Teresa Michelson",
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
+      "internal_notes": "",
+      "public_notes": "Se verificaron medidas en obra. Se deben retirar los zocalos existentes de piedra y alisar la pared para poner zocalos nuevos. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mvqt4j6h-wcxl",
+      "client_name": "Teresa Michelson",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 5313-7378",
+      "client_address": "Martindale",
+      "contract_total": 11873.3428,
+      "items": [
+        {
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 216.7,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 20,
+          "total": 8234.6,
+          "discount": 1646.92,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 197,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 2955,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 270,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 270,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 1646.92,
+      "status": "Confirmado",
+      "created_at": "2026-10-27T14:55:03.449Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 11873.3428
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -41275,7 +41353,7 @@
     },
     {
       "id": "local-1790201323453-mqu9t",
-      "client_id": "",
+      "client_id": "CLI-mvqt4j6h-wcxl",
       "client_name": "Teresa Michelson",
       "client_dni": "",
       "client_email": "",
@@ -41290,15 +41368,15 @@
       "has_iva": true,
       "price": 11873.3428,
       "zoned": false,
-      "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m + 2 más",
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
       "items": [
         {
-          "product_id": "local-1790089780830-ghwcm",
-          "sku": "PROD-400",
-          "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
           "quantity": 216.7,
           "unit_price": 38,
-          "cost": 16,
+          "cost": 16.33,
           "category": "Pisos H2O",
           "disc_value": 20,
           "total": 8234.6,
@@ -41340,8 +41418,10 @@
       "currency": "USD",
       "created_at": "2026-09-23T22:08:43.256Z",
       "quote_number": "A6798",
-      "status": "DRAFT",
-      "lead_id": "local-1790201167074-kzwvz"
+      "status": "Aceptado",
+      "lead_id": "local-1790201167074-kzwvz",
+      "commission_split_discount": true,
+      "sale_id": "local-sale-1793112903449-prow"
     },
     {
       "id": "local-1790337452363-iaebz",
@@ -43023,7 +43103,7 @@
       "currency": "USD",
       "created_at": "2026-10-01T19:04:17.415Z",
       "quote_number": "A7742",
-      "status": "DRAFT",
+      "status": "SENT",
       "lead_id": "local-1790201167074-kzwvz",
       "commission_split_discount": true
     },
@@ -50099,6 +50179,22 @@
       "notes": null,
       "name": "Aeropuertos Argentina 2000",
       "updated_at": "2026-10-23T11:00:02.593Z"
+    },
+    {
+      "id": "CLI-mvqt4j6h-wcxl",
+      "type": "client",
+      "active": true,
+      "name": "Teresa Michelson",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        "+54 9 11 5313-7378"
+      ],
+      "addresses": [
+        "Martindale"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-27T14:55:03.449Z"
     }
   ],
   "expenses": [],
@@ -204352,6 +204448,87 @@
       "product_id": "PROD-027",
       "sku": "PROD-027",
       "qty": -354.28,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:54:57.432Z",
+      "type": "quote_reserve",
+      "ref": "local-1790201323453-mqu9t",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 216.7,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:54:57.432Z",
+      "type": "quote_reserve",
+      "ref": "local-1790201323453-mqu9t",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 197,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:54:57.432Z",
+      "type": "quote_reserve",
+      "ref": "local-1790201323453-mqu9t",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": 1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:55:09.434Z",
+      "type": "quote_reserve",
+      "ref": "local-1790881457584-ek9va",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": 12.5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:55:09.435Z",
+      "type": "quote_reserve",
+      "ref": "local-1790881457584-ek9va",
+      "product_id": "SERV-117",
+      "sku": "SERV-117",
+      "qty": 11,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:55:09.435Z",
+      "type": "quote_reserve",
+      "ref": "local-1790881457584-ek9va",
+      "product_id": "SERV-118",
+      "sku": "SERV-118",
+      "qty": 6,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:55:09.435Z",
+      "type": "quote_reserve",
+      "ref": "local-1790881457584-ek9va",
+      "product_id": "local-1787951463606-9ixis",
+      "sku": "PROD-53",
+      "qty": 8,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:55:09.435Z",
+      "type": "quote_reserve",
+      "ref": "local-1790881457584-ek9va",
+      "product_id": "1534",
+      "sku": "1534",
+      "qty": 17,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:55:09.435Z",
+      "type": "quote_reserve",
+      "ref": "local-1790881457584-ek9va",
+      "product_id": "local-1784069133996-uwvg1",
+      "sku": "PROD - 102983",
+      "qty": 17,
       "warehouse_id": "main"
     }
   ],
