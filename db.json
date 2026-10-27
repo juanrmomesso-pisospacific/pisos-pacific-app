@@ -753,8 +753,8 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 1034.2453279999997,
-      "reservedStock": 4268.57,
+      "stock": 993.8153279999998,
+      "reservedStock": 4228.139999999999,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Eslavonia 6,5x23x150",
       "thicknessMm": 6.5,
@@ -3201,8 +3201,8 @@
       "price": 30,
       "cost": 11,
       "currency": "USD",
-      "stock": 84,
-      "reservedStock": 48,
+      "stock": 71,
+      "reservedStock": 35,
       "active": true,
       "margin": 173,
       "createdAt": "2026-07-14T22:45:33.721Z",
@@ -16182,8 +16182,8 @@
         "total_paid": 0,
         "balance_due": 3618
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Juan Rodriguez Momesso",
       "iva_amount": 0,
       "delivery_date": "2026-10-22",
@@ -16229,7 +16229,28 @@
           "unit": "rollos"
         }
       ],
-      "remito_confirmed": false
+      "remito_confirmed": false,
+      "material_deliveries": [
+        {
+          "id": "DEL-mvqsuw0f",
+          "date": "2026-10-27",
+          "note": null,
+          "by": "Admin User",
+          "items": [
+            {
+              "sku": "PROD-027",
+              "product_id": "PROD-027",
+              "quantity": 40.43
+            },
+            {
+              "sku": "PROD - 102983",
+              "product_id": "local-1784069133996-uwvg1",
+              "quantity": 13
+            }
+          ]
+        }
+      ],
+      "material_delivery_date": "2026-10-27"
     },
     {
       "id": "local-sale-1788129923090-btob",
@@ -204287,6 +204308,24 @@
       "product_id": "PROD-202",
       "sku": "PROD-202",
       "qty": -53.58,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:47:33.519Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788005505785-ibt1",
+      "product_id": "PROD-027",
+      "sku": "PROD-027",
+      "qty": -40.43,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T14:47:33.519Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1788005505785-ibt1",
+      "product_id": "local-1784069133996-uwvg1",
+      "sku": "PROD - 102983",
+      "qty": -13,
       "warehouse_id": "main"
     }
   ],
