@@ -170976,11 +170976,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1793113282956",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-27T15:04:21.013Z",
-      "last_message_preview": "Hola Lu, cómo estás? Soy Juan del equipo de ventas. Pásame un contacto así te escribimos por WhatsApp y podemos seguir la conversación para ",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-27T15:01:20.586Z",
+      "unread_count": 2,
+      "last_message_at": "2026-10-27T15:05:05.218Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-27T15:05:05.218Z",
       "last_outbound_at": "2026-10-27T15:04:21.013Z"
     }
   ],
@@ -195008,6 +195008,22 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjcyNjE1MzA3ODk1NTY2MTozMzA3NzEwNTExMDQzMjkwODA4MzgyMDIyNTM1NTU3OTM5MgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1793113505713-bxh7",
+      "conversation_id": "conv-1793113282956-e1ax",
+      "direction": "in",
+      "body": "Todo bien y vos? Dale, mi numero es 1123816007\nGracias Juan",
+      "ts": "2026-10-27T15:05:04.881Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1793113506233-b4jr",
+      "conversation_id": "conv-1793113282956-e1ax",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-10-27T15:05:05.218Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -208406,7 +208422,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTUxODExNTMwMTY4MTI5NzQzMTY3OTc3MzcwNDE5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NTUyMDQ5NzUzNTIwMzM3MTAzOTA1NjkzMzY4MzIwMAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUzODU2NTIyOTQyNDcyNjozMzA3NTc3MjA1MzM3MzkwMzQxNDI2NzYyODAyMTA4ODI1NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjcyNjE1MzA3ODk1NTY2MTozMzA3NzEwMTc4MjE0MTY0MzI0NzU2MDY3MDkzOTQ0NzI5NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjcyNjE1MzA3ODk1NTY2MTozMzA3NzEwMTc4MjE0MTY0MzI0NzU2MDY3MDkzOTQ0NzI5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjcyNjE1MzA3ODk1NTY2MTozMzA3NzEwNTkxOTY2OTE3NjI1MDE1Mjc3MTM1MzgzNzU2OAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjcyNjE1MzA3ODk1NTY2MTozMzA3NzEwNTkyNTg3NjcwODU0NTE0MDg0NjI3NzY4OTM0NAZDZD"
     ],
     "last_weekly_reminder": "2026-10-23T12:22:19.173Z",
     "warehouses": [
