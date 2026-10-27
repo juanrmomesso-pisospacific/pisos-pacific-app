@@ -170915,11 +170915,11 @@
       "linked_lead_id": "lead-instagram-1792972895464",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-27T15:15:00.233Z",
-      "last_message_preview": "📎 Adjunto",
+      "last_message_at": "2026-10-27T15:15:12.223Z",
+      "last_message_preview": "Soy Juan de ventas!",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-26T15:12:38.975Z",
-      "last_outbound_at": "2026-10-27T15:15:00.233Z"
+      "last_outbound_at": "2026-10-27T15:15:12.223Z"
     },
     {
       "id": "conv-email-1a17638a0059",
@@ -195071,6 +195071,16 @@
       "ts": "2026-10-27T15:15:00.233Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NzExNjkwMTk3MjY0NTI2NDA4NzcyMDU0MzY0OTc5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1793114113067-dusd",
+      "conversation_id": "conv-1792972895463-1smm",
+      "direction": "out",
+      "body": "Soy Juan de ventas!",
+      "ts": "2026-10-27T15:15:12.223Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTUyNzQxNzkzMzkxNDQxNDozMzA3NzExNzEyMzE0MzU3MjY4NDY0MzEzMTU1NDAwNDk5MgZDZD",
       "via": "ig-app"
     }
   ],
