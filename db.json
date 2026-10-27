@@ -169537,11 +169537,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1789480901918",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-09-16T16:16:37.297Z",
-      "last_message_preview": "↩️ Reaccionó: ❤",
+      "unread_count": 4,
+      "last_message_at": "2026-10-27T22:21:49.360Z",
+      "last_message_preview": "📲 Te mencionó en una historia",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-16T16:16:37.297Z",
+      "last_inbound_at": "2026-10-27T22:21:49.360Z",
       "last_outbound_at": "2026-09-15T18:21:43.635Z"
     },
     {
@@ -195730,6 +195730,36 @@
       "body": "✉️ Re: Project Designline | Confidential M&A opportunity\n\nDear team,\r\n\r\nI am following up on the confidential potential acquisition in the Portuguese wood flooring and parquet sector.\r\n\r\nIf relevant to your strategic plans, we would be pleased to send a short anonymous teaser for your review.\r\n\r\nKind regards,\r\n\r\nIntuition Consulting Portugal | M&A Team\r\n\r\nintuitionconsulting.net",
       "ts": "2026-10-27T15:30:53.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793139710701-m1w1",
+      "conversation_id": "conv-1789480901918-b86i",
+      "direction": "in",
+      "body": "📲 Te mencionó en una historia",
+      "ts": "2026-10-27T22:21:48.858Z",
+      "status": "received",
+      "media_url": "/uploads/55d2c902c632bef1.jpg",
+      "media_type": "image"
+    },
+    {
+      "id": "m-1793139711628-q3fv",
+      "conversation_id": "conv-1789480901918-b86i",
+      "direction": "in",
+      "body": "📲 Te mencionó en una historia",
+      "ts": "2026-10-27T22:21:48.866Z",
+      "status": "received",
+      "media_url": "/uploads/6012bd97b58b87ec.jpg",
+      "media_type": "image"
+    },
+    {
+      "id": "m-1793139712452-9wvr",
+      "conversation_id": "conv-1789480901918-b86i",
+      "direction": "in",
+      "body": "📲 Te mencionó en una historia",
+      "ts": "2026-10-27T22:21:49.360Z",
+      "status": "received",
+      "media_url": "/uploads/bc90b3b6a5840181.jpg",
+      "media_type": "image"
     }
   ],
   "templates": [
@@ -209231,7 +209261,10 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjcyNjE1MzA3ODk1NTY2MTozMzA3NzEwMTc4MjE0MTY0MzI0NzU2MDY3MDkzOTQ0NzI5NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjcyNjE1MzA3ODk1NTY2MTozMzA3NzEwNTkxOTY2OTE3NjI1MDE1Mjc3MTM1MzgzNzU2OAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjcyNjE1MzA3ODk1NTY2MTozMzA3NzEwNTkyNTg3NjcwODU0NTE0MDg0NjI3NzY4OTM0NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA3NzExNzQ3ODE5MTE3MzM3MTA3OTMyODQyMTM4MDA5NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA3NzExNzQ3ODE5MTE3MzM3MTA3OTMyODQyMTM4MDA5NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzA3NzU4OTI5NzcyMTMzMjg1Mjc0MjkxNjM5ODkwNzM5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzA3NzU4OTI5Nzg2MTU2NTAwMTE5MTI1NjQxMDI5MjIyNAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzA3NzU4OTMwNjk4Mzg4NTc3NDAxMDI1MTI5NDUzOTc3NgZDZD"
     ],
     "last_weekly_reminder": "2026-10-23T12:22:19.173Z",
     "warehouses": [
