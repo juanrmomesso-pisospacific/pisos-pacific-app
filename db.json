@@ -837,8 +837,8 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 622.2980000000001,
-      "reservedStock": 2122.0159999999996,
+      "stock": 617.2980000000001,
+      "reservedStock": 2117.0159999999996,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -2099,7 +2099,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 208,
+      "reservedStock": 199,
       "subLine": "Escalera",
       "shortName": "Colocación Pedada/Frentín Madera",
       "thicknessMm": null,
@@ -2147,7 +2147,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 69,
+      "reservedStock": 64,
       "subLine": "Escalera",
       "shortName": "Colocación Compensados y Descansos",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15581,
+      "reservedStock": 15580,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -2525,7 +2525,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 223,
+      "reservedStock": 216,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -2561,7 +2561,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 391,
+      "reservedStock": 377,
       "stockTrack": false,
       "source": "vercel-catalog",
       "createdAt": "2026-06-04T05:57:19.951Z",
@@ -3216,8 +3216,8 @@
       "price": 30,
       "cost": 11,
       "currency": "USD",
-      "stock": 10,
-      "reservedStock": 44,
+      "stock": 0,
+      "reservedStock": 30,
       "active": true,
       "margin": 173,
       "createdAt": "2026-07-14T22:45:48.504Z",
@@ -15810,7 +15810,7 @@
       ],
       "zoned": false,
       "discount_total": 470.58,
-      "status": "Confirmado",
+      "status": "Finalizado",
       "created_at": "2026-08-18T20:14:46.817Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -15819,9 +15819,17 @@
         "total_paid": 0,
         "balance_due": 1769.04
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
-      "seller_name": "Victoria Gonzalez Collado"
+      "stock_reserved": false,
+      "stock_deducted": true,
+      "seller_name": "Victoria Gonzalez Collado",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Finalizado",
+          "at": "2026-10-27T13:04:55.348Z",
+          "by": "Admin User"
+        }
+      ]
     },
     {
       "id": "local-sale-1787779289897-giig",
@@ -203533,6 +203541,69 @@
       "product_id": "SERV-131",
       "sku": "SERV-131",
       "qty": 170,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:04:55.348Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1787084086817-j719",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": -5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:04:55.348Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1787084086817-j719",
+      "product_id": "SERV-116",
+      "sku": "SERV-116",
+      "qty": -9,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:04:55.348Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1787084086817-j719",
+      "product_id": "SERV-118",
+      "sku": "SERV-118",
+      "qty": -5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:04:55.348Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1787084086817-j719",
+      "product_id": "111223",
+      "sku": "111223",
+      "qty": -7,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:04:55.348Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1787084086817-j719",
+      "product_id": "1534",
+      "sku": "1534",
+      "qty": -14,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:04:55.348Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1787084086817-j719",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": -1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:04:55.348Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1787084086817-j719",
+      "product_id": "local-1784069148766-cotkf",
+      "sku": "PROD - 102984",
+      "qty": -14,
       "warehouse_id": "main"
     }
   ],
