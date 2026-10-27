@@ -210719,6 +210719,14 @@
       "due_date": "2026-11-09",
       "status": "pendiente",
       "created_at": "2026-10-27T19:31:04.583Z"
+    },
+    {
+      "id": "local-1793129773829-v6vbr",
+      "type": "otro",
+      "title": "FERIADO CABA",
+      "due_date": "2026-11-10",
+      "status": "pendiente",
+      "created_at": "2026-10-27T19:36:13.533Z"
     }
   ],
   "password_resets": {},
