@@ -210727,6 +210727,14 @@
       "due_date": "2026-11-10",
       "status": "pendiente",
       "created_at": "2026-10-27T19:36:13.533Z"
+    },
+    {
+      "id": "local-1793129786725-t1spq",
+      "type": "otro",
+      "title": "FERIADO PROVINCIA",
+      "due_date": "2026-11-11",
+      "status": "pendiente",
+      "created_at": "2026-10-27T19:36:26.516Z"
     }
   ],
   "password_resets": {},
