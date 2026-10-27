@@ -837,8 +837,8 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 617.2980000000001,
-      "reservedStock": 2117.0159999999996,
+      "stock": 555.2980000000001,
+      "reservedStock": 2055.0159999999996,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1859,7 +1859,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8497.347,
+      "reservedStock": 8440.347,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2459,7 +2459,7 @@
       "active": true,
       "margin": 0,
       "stock": 0,
-      "reservedStock": 15580,
+      "reservedStock": 15400,
       "subLine": "Logística",
       "shortName": "Servicio de Entrega",
       "thicknessMm": null,
@@ -15678,7 +15678,7 @@
       ],
       "zoned": false,
       "discount_total": 490.65,
-      "status": "Confirmado",
+      "status": "Finalizado",
       "created_at": "2026-08-15T12:28:05.611Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -15687,9 +15687,17 @@
         "total_paid": 0,
         "balance_due": 2900.35
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
-      "seller_name": "Victoria Gonzalez Collado"
+      "stock_reserved": false,
+      "stock_deducted": true,
+      "seller_name": "Victoria Gonzalez Collado",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Finalizado",
+          "at": "2026-10-27T13:05:14.566Z",
+          "by": "Admin User"
+        }
+      ]
     },
     {
       "id": "local-sale-1787084086817-j719",
@@ -203604,6 +203612,33 @@
       "product_id": "local-1784069148766-cotkf",
       "sku": "PROD - 102984",
       "qty": -14,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:05:14.566Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1786796885611-ob2h",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": -62,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:05:14.566Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1786796885611-ob2h",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": -57,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-27T13:05:14.566Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1786796885611-ob2h",
+      "product_id": "SERV-131",
+      "sku": "SERV-131",
+      "qty": -180,
       "warehouse_id": "main"
     }
   ],
