@@ -42934,15 +42934,15 @@
       "has_iva": true,
       "price": 3147.1858,
       "zoned": false,
-      "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m + 5 más",
+      "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 5 más",
       "items": [
         {
-          "product_id": "local-1790089780830-ghwcm",
-          "sku": "PROD-400",
-          "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
+          "product_id": "PROD-027",
+          "sku": "PROD-027",
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
           "quantity": 12.5,
           "unit_price": 38,
-          "cost": 16,
+          "cost": 16.33,
           "category": "Pisos H2O",
           "disc_value": 20,
           "total": 475,
@@ -43003,9 +43003,9 @@
           "target_item_index": null
         },
         {
-          "product_id": "local-1784069289316-bpuc9",
-          "sku": "PROD - 102989",
-          "description": "H2O HD - Nariz Canada - Aura XL",
+          "product_id": "local-1784069133996-uwvg1",
+          "sku": "PROD - 102983",
+          "description": "H2O HD - Nariz Volada - Canada - Roble Eslavonia XL",
           "quantity": 17,
           "unit_price": 30,
           "cost": 11,
@@ -43024,7 +43024,8 @@
       "created_at": "2026-10-01T19:04:17.415Z",
       "quote_number": "A7742",
       "status": "DRAFT",
-      "lead_id": "local-1790201167074-kzwvz"
+      "lead_id": "local-1790201167074-kzwvz",
+      "commission_split_discount": true
     },
     {
       "id": "local-1790881685505-appjy",
