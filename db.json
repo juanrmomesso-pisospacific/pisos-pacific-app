@@ -154525,7 +154525,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-17T13:22:00.000Z",
-      "last_touch_at": "2026-07-17T13:22:00.000Z"
+      "last_touch_at": "2026-10-27T13:09:10.000Z"
     },
     {
       "id": "lead-email-19f709bfe551",
@@ -161560,7 +161560,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-10-25T15:01:30.000Z",
-      "last_touch_at": "2026-10-26T13:26:17.142Z"
+      "last_touch_at": "2026-10-27T13:18:14.000Z"
     },
     {
       "id": "lead-instagram-1792972895464",
@@ -164301,12 +164301,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19f703db8541",
       "status": "closed",
-      "unread_count": 1,
-      "last_message_at": "2026-07-17T13:22:00.000Z",
-      "last_message_preview": "Convierte tus diapositivas en un documento para compartir con un solo clic\r\n\r\nCanva  ( https://l.engage.canva.com/ss/c/u001.Note3it1gaozj0PI",
+      "unread_count": 2,
+      "last_message_at": "2026-10-27T13:09:10.000Z",
+      "last_message_preview": "Asigná el nivel de acceso adecuado a cada persona del equipo\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
       "email_subject": "Tu presentación está lista. ¿Y ahora qué?",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-07-17T13:22:00.000Z",
+      "last_inbound_at": "2026-10-27T13:09:10.000Z",
       "ignored": true
     },
     {
@@ -170267,12 +170267,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a17394bf6a6",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-26T13:26:02.908Z",
-      "last_message_preview": "Hola Manuela, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
+      "unread_count": 1,
+      "last_message_at": "2026-10-27T13:18:14.000Z",
+      "last_message_preview": "Hola! Como están? No sé bien la diferencia, podrían pasarme de los dos? Gracias! Manuela El 26 oct 2026, a la(s) 10:26 a. m., Pisos Pacific ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-25T15:01:30.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-27T13:18:14.000Z",
       "last_outbound_at": "2026-10-26T13:26:02.908Z"
     },
     {
@@ -194319,6 +194319,22 @@
       "body": "✉️ Project Designline | Confidential M&A opportunity\n\nDear team,\r\n\r\nI am contacting you on behalf of Intuition Consulting Portugal regarding a confidential potential acquisition involving a Portuguese company in the wood flooring and parquet sector.\r\n\r\nWe are assessing potential strategic interest from industry participants. Would your management or corporate development team be interested in receiving a brief anonymous teaser?\r\n\r\nIf this is not the appropriate contact, could you kindly forward this message to the relevant colleague?\r\n\r\nKind regards,\r\n\r\nIntuition Consulting Portugal | M&A Team\r\n\r\nintuitionconsulting.net",
       "ts": "2026-10-27T12:12:45.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a17d83310dc",
+      "conversation_id": "conv-email-1a17394bf6a6",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola! Como están? No sé bien la diferencia, podrían pasarme de los dos? Gracias! Manuela El 26 oct 2026, a la(s) 10:26 a. m., Pisos Pacific &lt;info@pisospacific.com&gt; escribió: ﻿ Hola Manuela, ¡",
+      "ts": "2026-10-27T13:18:14.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a17d7aa499e",
+      "conversation_id": "conv-email-19f703db8541",
+      "direction": "in",
+      "body": "✉️ Usá los modos del editor y trabajá en equipo con confianza\n\nAsigná el nivel de acceso adecuado a cada persona del equipo\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n(\r\nhttps://click.engage.canva.com/ss/c/u001.Note3it1gaozj0PIggVG9tZCzu9JMGAxYUjnJaK1fL8rOPJZb3eClnm4Td5chqK6sFRFJKI3gUmirBk-hidmmqx3Gur2jUHzRWWp71FhqGMOjwomDE6KwqdX_ex1cBRZSGLpaneSaVc-BsnoY49PvDp5lhmbIuS-bUm7eCLeaDwCnagZQubR2tuksnMJGS3G9-RLs2e1PGw5by5sehgQRHxIrVjEB4Ee0LDQHLPj8eUg00jaO6JbX7UCXMO2smM0lgXyQ7NkH0ImbJyA1_azgQ/4v8/JfKpyphHSPStC3rGi7WMOw/t0/h001.CPejMF8Fm8kqYKlpqTVnw8g8AudT4f1rCA8IVoQRnyI )\r\n\r\nCanva  ( https://click.engage.canva.com/ss/c/u001.Note3it1gaozj0PIggVG9tplar3juom3GwdJknmjC23b-J8QDNblugYZ-eQiRfS0/4v8/JfKpyphHSPStC3rGi7WMOw/t1/h001.g4kSxvCEfuEyTxDAZQG-GSNNwqBYp119EJ3FYLjSDW8 )\r\nPro           Canva  \r\n( https://click.engage.canva.com/ss/c/u001.Note3it1gaozj0PIggVG9tplar3juom3GwdJknmjC22jC3-XsnRdPbTolue3iutc/4v8/JfKpyphHSPStC3rGi7WMOw/t2/h001.zu2ag9vY3nl3YYqpN84-T3aWFhKVe6mV0ty2uYxzeFQ )\r\n    \r\n( https://click.engage.canva.com/ss/c/u001.Note3it1gaozj0PIggVG9jSYjQmDyWZrqxUXjHgaLPLrZ8tIb_ozLBO7iNkCjuk7u8v3ndXBmFTNN9lyll-yZN2Ra8C7vLmmmKfl0djrZRzpgS3nfCTD70Gsh9WZLhvX/4v8/JfKpyphHSPStC3rGi7WMOw/t3/h001.--YQVzjccL9TSjhkI7ngW2TQQr735XAyDL2nOOl8Chw )\r\n         \r\n( https://click.engage.canva.com/ss/c/u001.Note3it1gaozj0PIggVG9tplar3juom3GwdJknmjC23nNuwKY-rvKqgCNsn7o4pZ/4v8/JfKpyphHSPStC3rGi7WMOw/t4/h001.ShK_5rBttMazlNn1huZ9VYYXw1irxxcVx3WEV0AomLw )Docs**********************************\r\nModos del editor\r\n******************",
+      "ts": "2026-10-27T13:09:10.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -205190,8 +205206,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-27T12:25:03.290Z",
     "gmail_seen_ids": [
-      "19fdc5196758a625",
-      "19fdc5034b408068",
       "19fdc75aa7cb02fc",
       "19fdd11c4cf1838d",
       "19fdd0db54e7ec95",
@@ -205989,7 +206003,9 @@
       "1a17cbb149361416",
       "1a17d4fba45b5cfa",
       "1a17d46fd734c1ea",
-      "1a17d736385f9953"
+      "1a17d736385f9953",
+      "1a17d83310dc9fb5",
+      "1a17d7aa499efd22"
     ],
     "cash_sessions": {
       "1136982222": {
