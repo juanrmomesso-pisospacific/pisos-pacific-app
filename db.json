@@ -170976,11 +170976,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1793113282956",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-27T15:01:20.586Z",
-      "last_message_preview": "Hola como estas? Me gustaria recibir asesoramiento sobre los tipos de pisos y tambien pedir presupuesto",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-27T15:01:20.586Z"
+      "unread_count": 0,
+      "last_message_at": "2026-10-27T15:04:21.013Z",
+      "last_message_preview": "Hola Lu, cómo estás? Soy Juan del equipo de ventas. Pásame un contacto así te escribimos por WhatsApp y podemos seguir la conversación para ",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-27T15:01:20.586Z",
+      "last_outbound_at": "2026-10-27T15:04:21.013Z"
     }
   ],
   "messages": [
@@ -194997,6 +194998,16 @@
       "body": "Hola como estas? Me gustaria recibir asesoramiento sobre los tipos de pisos y tambien pedir presupuesto",
       "ts": "2026-10-27T15:01:20.586Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793113461549-a86r",
+      "conversation_id": "conv-1793113282956-e1ax",
+      "direction": "out",
+      "body": "Hola Lu, cómo estás? Soy Juan del equipo de ventas. Pásame un contacto así te escribimos por WhatsApp y podemos seguir la conversación para ayudarte a elegir mejor tu piso!",
+      "ts": "2026-10-27T15:04:21.013Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI2MjcyNjE1MzA3ODk1NTY2MTozMzA3NzEwNTExMDQzMjkwODA4MzgyMDIyNTM1NTU3OTM5MgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
