@@ -20324,6 +20324,111 @@
       "commission_split_discount": true,
       "currency": "USD",
       "commission_amount": 0
+    },
+    {
+      "id": "local-sale-1793208625059-g6rd",
+      "quote_id": "local-1789666733332-1s8ih",
+      "quote_number": "A8666",
+      "title": "Cotización Sol Garcia del Rio",
+      "description": "H2O HD XL - Notte 6,5mm x 23cm x 1,50m + 4 más",
+      "internal_notes": "",
+      "public_notes": "Las varillas de terminación se bonifican. El presupuesto incluye la entrega y descarga del material, así como los trabajos de nivelación y desbaste de la carpeta y la aplicación de autonivelante.\nNo incluye zocalos.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mvse46g3-md5m",
+      "client_name": "Sol Garcia del Rio",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Local Palermo | Gorriti y Malabia",
+      "contract_total": 5705.1016,
+      "items": [
+        {
+          "product_id": "PROD-028",
+          "sku": "PROD-028",
+          "description": "H2O HD XL - Notte 6,5mm x 23cm x 1,50m",
+          "quantity": 68.8,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 2614.4,
+          "discount": 261.44,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 60,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 900,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 1,
+          "unit_price": 170,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 170,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1790886373458-7ne0a",
+          "sku": "PROD-675",
+          "description": "Autonivelante Mapei",
+          "quantity": 34,
+          "unit_price": 20,
+          "cost": 18,
+          "category": "Extras",
+          "total": 680,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-105",
+          "sku": "SERV-105",
+          "description": "Servicio de Nivelación Carpeta",
+          "quantity": 60,
+          "unit_price": 12,
+          "cost": 4,
+          "category": "Servicio",
+          "disc_value": 15,
+          "total": 720,
+          "discount": 108,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 369.44,
+      "status": "Confirmado",
+      "created_at": "2026-10-28T17:30:25.059Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 5705.1016
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -40076,7 +40181,7 @@
     },
     {
       "id": "local-1789666733332-1s8ih",
-      "client_id": "",
+      "client_id": "CLI-mvse46g3-md5m",
       "client_name": "Sol Garcia del Rio",
       "client_dni": "",
       "client_email": "",
@@ -40170,7 +40275,8 @@
       "quote_number": "A8666",
       "status": "ACCEPTED",
       "lead_id": "local-1789666653613-7u6t6",
-      "commission_split_discount": true
+      "commission_split_discount": true,
+      "sale_id": "local-sale-1793208625059-g6rd"
     },
     {
       "id": "local-1789667068853-8ylva",
@@ -51275,6 +51381,20 @@
       ],
       "notes": null,
       "updated_at": "2026-10-28T17:29:19.903Z"
+    },
+    {
+      "id": "CLI-mvse46g3-md5m",
+      "type": "client",
+      "active": true,
+      "name": "Sol Garcia del Rio",
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [
+        "Local Palermo | Gorriti y Malabia"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-28T17:30:25.059Z"
     }
   ],
   "expenses": [],
