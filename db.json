@@ -50986,6 +50986,24 @@
       "currency": "USD",
       "active": true,
       "notes": "Banco de la Nación Argentina - cuenta en dólares"
+    },
+    {
+      "id": "CAJ-011",
+      "active": true,
+      "name": "Banco de Comercio (Global Build) - Pesos",
+      "type": "Banco",
+      "currency": "ARS",
+      "notes": "Cuenta corriente en pesos a nombre de GLOBAL BUILD SRL",
+      "entidad": "GLOBAL BUILD SRL"
+    },
+    {
+      "id": "CAJ-012",
+      "active": true,
+      "name": "Banco de Comercio (Global Build) - USD",
+      "type": "Banco",
+      "currency": "USD",
+      "notes": "Cuenta corriente en dólares a nombre de GLOBAL BUILD SRL",
+      "entidad": "GLOBAL BUILD SRL"
     }
   ],
   "suppliers": [
@@ -206962,6 +206980,14 @@
     "cM_6vSPAmqRD27RUe6HxLR4Zcnl9UmSs": {
       "userId": "u-admin",
       "expires": 1794227149355
+    },
+    "UElkEXCa7Qc0-cWUkR7b8t3tfrR0aiSB": {
+      "userId": "u-admin",
+      "expires": 1794397698959
+    },
+    "eVFJ7X0Npnp4UM0YTNfBqmweBi2Zgaa9": {
+      "userId": "u-admin",
+      "expires": 1794397709668
     }
   },
   "settings": {
