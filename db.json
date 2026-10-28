@@ -17644,7 +17644,30 @@
           "by": "Victoria Gonzalez Collado"
         }
       ],
-      "delivery_date_to": "2026-11-02"
+      "delivery_date_to": "2026-11-02",
+      "remito_items": [
+        {
+          "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m",
+          "quantity": 47.9,
+          "unit": "m²"
+        },
+        {
+          "description": "Varilla L Acero Inox 6mm",
+          "quantity": 1,
+          "unit": "ml"
+        },
+        {
+          "description": "Varilla de Transición - Aluminio",
+          "quantity": 1,
+          "unit": "ml"
+        },
+        {
+          "description": "Autonivelante Mapei",
+          "quantity": 25,
+          "unit": "u"
+        }
+      ],
+      "remito_confirmed": true
     },
     {
       "id": "local-sale-1791295990241-3awx",
