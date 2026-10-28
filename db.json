@@ -261,8 +261,8 @@
       "currency": "USD",
       "active": true,
       "margin": 159,
-      "stock": 2899.5,
-      "reservedStock": 8056.04,
+      "stock": 2874,
+      "reservedStock": 8030.54,
       "subLine": "Colección Madera",
       "shortName": "Roble Kitsilano 12/1 Veta Tallada",
       "thicknessMm": 12,
@@ -19127,14 +19127,30 @@
         "total_paid": 0,
         "balance_due": 2054.62
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Victoria Gonzalez Collado",
       "reseller_id": "",
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "material_deliveries": [
+        {
+          "id": "DEL-mvs45u9f",
+          "date": "2026-10-28",
+          "note": null,
+          "by": "Victoria Gonzalez Collado",
+          "items": [
+            {
+              "sku": "PROD-010",
+              "product_id": "PROD-010",
+              "quantity": 25.5
+            }
+          ]
+        }
+      ],
+      "material_delivery_date": "2026-10-28"
     },
     {
       "id": "local-sale-1792716740117-yzi3",
@@ -206872,6 +206888,15 @@
       "product_id": "SERV-105",
       "sku": "SERV-105",
       "qty": 20,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-28T12:51:46.419Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1792715681167-0tvo",
+      "product_id": "PROD-010",
+      "sku": "PROD-010",
+      "qty": -25.5,
       "warehouse_id": "main"
     }
   ],
