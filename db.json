@@ -174650,11 +174650,11 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1793186703721",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-10-28T20:29:09.734Z",
-      "last_message_preview": "Nos pasas un WhatsApp o Mail",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-10-28T11:25:01.849Z",
+      "unread_count": 2,
+      "last_message_at": "2026-10-28T20:29:33.310Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-28T20:29:33.310Z",
       "last_outbound_at": "2026-10-28T20:29:09.734Z"
     },
     {
@@ -198983,6 +198983,22 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3OTA1ODQxMjU2NzIzNzAxNTE4OTMzNDUxMzQxODI0MAZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1793219373659-ya9n",
+      "conversation_id": "conv-1793186703720-brtd",
+      "direction": "in",
+      "body": "Dale.  1153854154 mcgsoni@gmail.com",
+      "ts": "2026-10-28T20:29:32.677Z",
+      "status": "received"
+    },
+    {
+      "id": "m-1793219374159-a6mf",
+      "conversation_id": "conv-1793186703720-brtd",
+      "direction": "in",
+      "body": "📎 Adjunto",
+      "ts": "2026-10-28T20:29:33.310Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -212812,7 +212828,9 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzA3NzU4OTMwNjk4Mzg4NTc3NDAxMDI1MTI5NDUzOTc3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMxOTAzNDkwMjA3MDAyNzozMzA3NzY1NDkwMTU1Mjc2MzA1Njc0ODIxOTUzMzg4NTQ0MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3ODQ1NjE2NTQwNjEzNTAyOTkyODg2MTcyMjczODY4OAZDZD",
-      "wamid.HBgNNTQ5MTE1OTI3Njg4MhUCABIYEjgwQjRFOERGREJGMjM4MTdEQQA="
+      "wamid.HBgNNTQ5MTE1OTI3Njg4MhUCABIYEjgwQjRFOERGREJGMjM4MTdEQQA=",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3OTA1ODgzNTgwNjg5ODA3MjE2MzU1NzEzMDEwODkyOAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3OTA1ODg0NzQ4MTYyMTAzNTQ4NTQ0NzgzMzI1NTkzNgZDZD"
     ],
     "last_weekly_reminder": "2026-10-23T12:22:19.173Z",
     "warehouses": [
