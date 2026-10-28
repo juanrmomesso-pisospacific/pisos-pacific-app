@@ -809,8 +809,8 @@
       "currency": "USD",
       "active": true,
       "margin": 132.7,
-      "stock": 274.2,
-      "reservedStock": 175.8,
+      "stock": 190.79999999999998,
+      "reservedStock": 92.4,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Aspen 6,5x23x150",
       "thicknessMm": 6.5,
@@ -18511,8 +18511,8 @@
         "total_paid": 0,
         "balance_due": 6501.281600000001
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "Victoria Gonzalez Collado",
       "reseller_id": "",
       "reseller_name": "",
@@ -18535,7 +18535,23 @@
           "at": "2026-10-15T16:59:38.188Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "material_deliveries": [
+        {
+          "id": "DEL-mvs4ueii",
+          "date": "2026-10-15",
+          "note": null,
+          "by": "Victoria Gonzalez Collado",
+          "items": [
+            {
+              "sku": "PROD-190",
+              "product_id": "PROD-190",
+              "quantity": 83.4
+            }
+          ]
+        }
+      ],
+      "material_delivery_date": "2026-10-15"
     },
     {
       "id": "local-sale-1791992691357-vafn",
@@ -206997,6 +207013,15 @@
       "product_id": "PROD-010",
       "sku": "PROD-010",
       "qty": -25.5,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-28T13:10:52.410Z",
+      "type": "sale_deduct",
+      "ref": "local-sale-1791991448905-7qje",
+      "product_id": "PROD-190",
+      "sku": "PROD-190",
+      "qty": -83.4,
       "warehouse_id": "main"
     }
   ],
