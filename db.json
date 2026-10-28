@@ -8606,7 +8606,35 @@
           "at": "2026-10-19T01:11:37.719Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "remito_items": [
+        {
+          "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada",
+          "quantity": 289.14,
+          "unit": "m²"
+        },
+        {
+          "description": "Adhesivo Especial Para Escaleras 830",
+          "quantity": 8,
+          "unit": "m²"
+        },
+        {
+          "description": "Nariz a medida / Madera - Roble",
+          "quantity": 20,
+          "unit": "ml"
+        },
+        {
+          "description": "Varilla de terminación L",
+          "quantity": 4,
+          "unit": "u"
+        },
+        {
+          "description": "Adhesivo Para colocación",
+          "quantity": 1,
+          "unit": "cajas"
+        }
+      ],
+      "remito_confirmed": false
     },
     {
       "id": "0000099",
