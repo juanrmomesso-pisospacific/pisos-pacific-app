@@ -165812,13 +165812,13 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-whatsapp-1782400385886",
       "status": "closed",
-      "unread_count": 1,
-      "last_message_at": "2026-07-24T13:34:00.000Z",
+      "unread_count": 2,
+      "last_message_at": "2026-10-28T13:31:41.000Z",
       "last_message_preview": "📎 Mensaje que WhatsApp no entrega por API (encuesta / foto de una sola vez) — se le pidió al cliente que lo reenvíe",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-07-24T13:34:00.000Z",
+      "last_inbound_at": "2026-10-28T13:31:41.000Z",
       "ignored": true,
-      "last_unsupported_reply_at": "2026-07-24T13:34:02.918Z"
+      "last_unsupported_reply_at": "2026-10-28T13:31:44.450Z"
     },
     {
       "id": "conv-email-19effd3543e5",
@@ -197167,6 +197167,44 @@
       "body": "✉️ Equipo de Pacific Rim - pisospacific.com, recordatorio para agendar una llamada individual con un experto de Google Ads\n\nTu ID de cliente: 443-235-5149\r\n\r\nHola, equipo de Pacific Rim - pisospacific.com:\r\n\r\nEspero que te encuentres bien.\r\n\r\nMe pongo en contacto contigo para informarte de que mi equipo está aquí  \r\npara ayudar a tu empresa a prosperar. Reserva tu consulta sin coste cuanto  \r\nantes, mientras aún haya huecos disponibles, para asegurarte de que estás  \r\nsacando el máximo partido a tus campañas.\r\n\r\nSolo tienes que hacer clic abajo y elegir la hora que mejor te venga. Nos  \r\nencargaremos de revisar tu cuenta antes para facilitarte información que te  \r\nsirva de ayuda cuando hablemos.\r\n\r\nConcertar una  \r\nllamada<https://c.gle/AGSJxQyPuwpC-z0JVaYHqvz51uyTOc8O9GXYNTLdA8EIoPlFWO16S3fuv4apggEZdiMQf-eJo-fbxDKN1l5grg83SZNUKqGt_MHD-RedqMY4OScz71u4WwL4G1wNfanF5MEW5qsOgmZ2fOTcp9ihMMcYoh-eRfwObDZevwvdZOmBsEYQTmACEas5PZqmUbzJeGmzOq8Wxe0OKGKHjxSEpXJv2lzz1ABfY6Mb0cjDTvC1HGUETwG3MltLZ51gg5uwJdJc6GCYHSfTXQKAg2rc0cZxfuE65qZa5ra52gtZ9vXojUzLQ5P_TBwtiWHGQeuEF9OIP7NkSRdXXoVXrubaJdzzSuKtgKf2YwitkOsyzSGvUfKnPS_8ihB2eBFrVvsZjWaVx0Xkt1npyKo7>\r\n\r\nDurante la llamada, podemos hablar de temas como:\r\n\r\nPrácticas recomendadas para planificar campañas\r\nAsignación del presupuesto actual y estrategias de puja\r\nRendimiento y optimización de campañas\r\n\r\nReserva una  \r\ncita<https://c.gle/AGSJxQwfMLq8ZWBs19_cApSz3mlMRk8-r3OerblVoIzOFF29AB44cR-XC-pfNHEZeFI94Xnclk3NtascrQLP52vyfVeC8A-5pxyKbvB7fXn_-cZMKvIACeRnu1cQjSl9OIF3HL_Qi-wnxCBPGBAusOznQoHHw29taOeLxADLAUL2GhNHCDBU3ki_Vb2kx_6wTk-UZd_EQq52NKXEveghipRz2hyzLpc4EVF7mWZE8MYg",
       "ts": "2026-10-28T12:00:54.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793194304450-jtyq",
+      "conversation_id": "conv-1782400385886-mxk3",
+      "direction": "in",
+      "body": "📎 Mensaje que WhatsApp no entrega por API (encuesta / foto de una sola vez) — se le pidió al cliente que lo reenvíe",
+      "ts": "2026-10-28T13:31:41.000Z",
+      "status": "received",
+      "raw": {
+        "from": "5491159276882",
+        "from_user_id": "AR.778713258603145",
+        "id": "wamid.HBgNNTQ5MTE1OTI3Njg4MhUCABIYEjgwQjRFOERGREJGMjM4MTdEQQA=",
+        "timestamp": "1793194301",
+        "errors": [
+          {
+            "code": 131051,
+            "title": "Message type unknown",
+            "message": "Message type unknown",
+            "error_data": {
+              "details": "Message type is currently not supported."
+            }
+          }
+        ],
+        "type": "unsupported",
+        "unsupported": {
+          "type": "unknown",
+          "raw_type": "unknown"
+        }
+      }
+    },
+    {
+      "id": "m-1793194305556-lnkc",
+      "conversation_id": "conv-1782400385886-mxk3",
+      "direction": "out",
+      "body": "¡Hola! Me llegó tu mensaje pero WhatsApp no me deja abrirlo (suele pasar con encuestas o fotos de \"ver una sola vez\" 🙈). ¿Me lo reenviás como texto o foto común? ¡Gracias!",
+      "ts": "2026-10-28T13:31:45.556Z",
+      "status": "sent",
+      "via": "auto-unsupported"
     }
   ],
   "templates": [
@@ -210832,7 +210870,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzA3NzU4OTI5Nzg2MTU2NTAwMTE5MTI1NjQxMDI5MjIyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzA3NzU4OTMwNjk4Mzg4NTc3NDAxMDI1MTI5NDUzOTc3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMxOTAzNDkwMjA3MDAyNzozMzA3NzY1NDkwMTU1Mjc2MzA1Njc0ODIxOTUzMzg4NTQ0MAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3ODQ1NjE2NTQwNjEzNTAyOTkyODg2MTcyMjczODY4OAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3ODQ1NjE2NTQwNjEzNTAyOTkyODg2MTcyMjczODY4OAZDZD",
+      "wamid.HBgNNTQ5MTE1OTI3Njg4MhUCABIYEjgwQjRFOERGREJGMjM4MTdEQQA="
     ],
     "last_weekly_reminder": "2026-10-23T12:22:19.173Z",
     "warehouses": [
