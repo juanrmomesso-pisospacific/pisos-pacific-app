@@ -174635,11 +174635,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1793143267498",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-27T23:21:05.249Z",
-      "last_message_preview": "Buenas tardes, quisiera pasar por algún lugar a ver los pisos. Necesito para 2 obras 280 m2 y otra de 60 m2",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-27T23:21:05.249Z"
+      "unread_count": 0,
+      "last_message_at": "2026-10-28T20:28:20.640Z",
+      "last_message_preview": "📎 Adjunto",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-27T23:21:05.249Z",
+      "last_outbound_at": "2026-10-28T20:28:20.640Z"
     },
     {
       "id": "conv-1793186703720-brtd",
@@ -198911,6 +198912,46 @@
       "body": "✉️ RE: Pedido de Presupuesto | Página Web\n\nMe interesaría que se comunique un vendedor a mi celular si es posible ya\r\nvi la pagina de uds\r\n\r\n\r\n\r\n[image: firmas renovación 2023_MARTIN CORDEYRO]\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n*De:* Pisos Pacific [mailto:info@pisospacific.com]\r\n*Enviado el:* miércoles, 28 de octubre de 2026 13:05\r\n*Para:* mcordeyro@amphora.com.ar\r\n*Asunto:* Re: Pedido de Presupuesto | Página Web\r\n\r\n\r\n\r\nHola Martin, ¡muchas gracias por tu consulta!\r\n\r\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesado\r\ndentro de nuestras dos líneas de pisos:\r\n\r\n• Colección Madera\r\n<https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\nmadera noble prefinished\r\n• Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos SPC\r\n100% a prueba de agua\r\n\r\nEl presupuesto incluye materiales y mano de obra de colocación.\r\n\r\n¡Muchas gracias!\r\nSaludos, Victoria\r\n1136982222\r\n\r\n\r\n\r\n[image: Imagen quitada por el remitente. Pisos Pacific]\r\n\r\n*Juan Rodríguez Momesso*\r\n\r\nVentas\r\n\r\n\r\n\r\n+54 11 5175-0087 <https://wa.me/5491151750087>\r\ninfo@pisospacific.com\r\n*pisospacific.com* <https://pisospacific.com>\r\n\r\n[image: Imagen quitada por el remitente. Instagram]\r\n<https://www.instagram.com/pisospacific/>[image: Imagen quitada por el\r\nremitente. Facebook]\r\n<https://www.facebook.com/profile.php?id=100049956771854>\r\n\r\n*La evolución del piso de madera*",
       "ts": "2026-10-28T16:20:04.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793219286632-m94m",
+      "conversation_id": "conv-1793143267497-etld",
+      "direction": "out",
+      "body": "Hola Pablo cómo estás?",
+      "ts": "2026-10-28T20:28:05.534Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMxOTAzNDkwMjA3MDAyNzozMzA3OTA1NzIyODMwMTQ0OTE1MzQwODc4MzcyNzE5ODIwOAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1793219296141-m13n",
+      "conversation_id": "conv-1793143267497-etld",
+      "direction": "out",
+      "body": "Te paso el número de Victoria así arreglas con ella directamente",
+      "ts": "2026-10-28T20:28:15.667Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMxOTAzNDkwMjA3MDAyNzozMzA3OTA1NzQxNTIxNDEzNDk0NDY4MzAxNjkyMDc2MDMyMAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1793219300921-wmvs",
+      "conversation_id": "conv-1793143267497-etld",
+      "direction": "out",
+      "body": "1136982222",
+      "ts": "2026-10-28T20:28:20.328Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMxOTAzNDkwMjA3MDAyNzozMzA3OTA1NzUwMTIwMjg5NDU3NDUxNzE0MzM5NjY3OTY4MAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1793219301365-1mjk",
+      "conversation_id": "conv-1793143267497-etld",
+      "direction": "out",
+      "body": "📎 Adjunto",
+      "ts": "2026-10-28T20:28:20.640Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMxOTAzNDkwMjA3MDAyNzozMzA3OTA1NzUwNjk1NTgwNjg2MTgwODY0NjQyMDk1NTEzNgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
