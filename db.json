@@ -20097,7 +20097,7 @@
       ],
       "zoned": false,
       "discount_total": 257.88,
-      "status": "Confirmado",
+      "status": "Programado",
       "created_at": "2026-10-28T12:32:36.516Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -20113,7 +20113,17 @@
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "delivery_date": "2026-11-02",
+      "delivery_crew": "Ariel Ernesto Garcia",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Programado",
+          "at": "2026-10-28T12:45:41.125Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     }
   ],
   "quotes": [
@@ -212295,6 +212305,17 @@
       "due_date": "2026-11-11",
       "status": "pendiente",
       "created_at": "2026-10-27T19:36:26.516Z"
+    },
+    {
+      "id": "local-1793191541339-ihkcd",
+      "type": "medicion",
+      "title": "Medición previa · Arq. Julieta Steinmann",
+      "due_date": "2026-10-31",
+      "assigned_seller": "Ariel Ernesto Garcia",
+      "status": "pendiente",
+      "sale_id": "local-sale-1793190756516-l1a8",
+      "notes": "Palermo",
+      "created_at": "2026-10-28T12:45:41.270Z"
     }
   ],
   "password_resets": {},
