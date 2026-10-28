@@ -36,6 +36,16 @@ export default function CajasPage() {
   const lastByCaja: Record<string, Recon> = {}
   for (const r of recons) if (!lastByCaja[r.caja_id]) lastByCaja[r.caja_id] = r
 
+  // Entidad por caja (transición a Global Build) — chip para distinguir las cuentas nuevas
+  const entidadById: Record<string, string> = {}
+  for (const c of cajas) { const e = (c as any).entidad; if (e) entidadById[c.id] = String(e) }
+  const entidadChip = (id: string) => {
+    const e = entidadById[id]
+    if (!e) return null
+    const short = /global build/i.test(e) ? "Global Build" : e
+    return <Badge className="text-[10px]" title={e}>{short}</Badge>
+  }
+
   async function conciliar(b: CajaBalance) {
     const r = Number(String(real[b.caja_id] ?? "").replace(/\./g, "").replace(",", "."))
     if (!isFinite(r) || !real[b.caja_id]) return
@@ -84,6 +94,7 @@ export default function CajasPage() {
                 <div className="flex items-center gap-2">
                   <Icon className="h-4 w-4 text-muted-foreground" />
                   <span className="font-medium text-sm">{b.name}</span>
+                  {entidadChip(b.caja_id)}
                 </div>
                 <Badge variant="outline" className="text-[10px]">{b.currency}</Badge>
               </div>
@@ -172,7 +183,7 @@ export default function CajasPage() {
           <TableBody>
             {balances.map((b) => (
               <TableRow key={b.caja_id}>
-                <TableCell className="font-medium">{b.name}</TableCell>
+                <TableCell className="font-medium"><span className="inline-flex items-center gap-2">{b.name}{entidadChip(b.caja_id)}</span></TableCell>
                 <TableCell className="text-xs text-muted-foreground">{b.type}</TableCell>
                 <TableCell><Badge variant="outline" className="text-[10px]">{b.currency}</Badge></TableCell>
                 <TableCell className="text-right tabular text-muted-foreground">{b.movements}</TableCell>
