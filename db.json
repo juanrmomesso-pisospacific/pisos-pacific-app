@@ -153518,7 +153518,10 @@
       "category": "Instalaciones",
       "subcategory": "Insumos Generales Colocación",
       "expense_type": "Gastos de Instalaciones y Suministros",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "supplier_id": null,
+      "client_id": null,
+      "review_reason": null
     },
     {
       "id": "ef-l28-20261028-24",
@@ -213913,6 +213916,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Romina\""
+    },
+    {
+      "id": "local-1793192131482-n9biu",
+      "match": [
+        "LOSMAC - Prestigio"
+      ],
+      "cuit": null,
+      "counterparty": "LOSMAC - Prestigio",
+      "category": "Instalaciones",
+      "subcategory": "Insumos Generales Colocación",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"LOSMAC - Prestigio\""
     }
   ],
   "product_aliases": [
