@@ -20307,7 +20307,7 @@
       ],
       "zoned": false,
       "discount_total": 677.23,
-      "status": "Confirmado",
+      "status": "Programado",
       "created_at": "2026-10-28T17:29:19.903Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -20323,7 +20323,17 @@
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "delivery_date": "2026-11-03",
+      "delivery_date_to": "2026-11-04",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Programado",
+          "at": "2026-10-28T17:31:40.727Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     },
     {
       "id": "local-sale-1793208625059-g6rd",
@@ -214224,6 +214234,17 @@
       "sale_id": "local-sale-1793190756516-l1a8",
       "notes": "Palermo",
       "created_at": "2026-10-28T12:45:41.270Z"
+    },
+    {
+      "id": "local-1793208701118-b8rhk",
+      "type": "medicion",
+      "title": "Medición previa · Paula Sanmartino",
+      "due_date": "2026-11-01",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "status": "pendiente",
+      "sale_id": "local-sale-1793208559903-84ti",
+      "notes": "La Horqueta",
+      "created_at": "2026-10-28T17:31:40.746Z"
     }
   ],
   "password_resets": {},
