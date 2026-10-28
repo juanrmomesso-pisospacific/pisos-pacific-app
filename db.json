@@ -151177,10 +151177,10 @@
       "flow": "Ingreso",
       "caja_id": "CAJ-003",
       "caja_name": "Banco de Comercio - Cuenta Pesos",
-      "category": "Otros Gastos y Ajustes",
-      "subcategory": "Plazo fijo",
-      "counterparty": "DPF Renovado",
-      "counterparty_type": "client",
+      "category": "Ganancia del plazo fijo",
+      "subcategory": null,
+      "counterparty": null,
+      "counterparty_type": null,
       "client_id": null,
       "supplier_id": null,
       "description": "DPF Renovado",
@@ -151192,11 +151192,12 @@
       "fixed_variable": "Variable",
       "expense_type": null,
       "transfer": true,
-      "needs_review": true,
-      "review_reason": "plazo fijo — registrar también la pata en la caja Plazo Fijo",
+      "needs_review": false,
+      "review_reason": null,
       "raw_name": "DPF Renovado",
       "classified_by": "plazo fijo → fuera del P&L",
-      "id": "MOV-IMP-mvffwo2e-006"
+      "id": "MOV-IMP-mvffwo2e-006",
+      "linked_sale_id": null
     },
     {
       "source": "bdc-upload",
@@ -152953,25 +152954,26 @@
       "flow": "Egreso",
       "caja_id": "CAJ-001",
       "caja_name": "BBVA",
-      "subcategory": null,
-      "counterparty": "PAGO DE SERVICIOS TARJETA 17230770 OP6052",
+      "subcategory": "Paneles (ACUDESIGN)",
+      "counterparty": "ARCA",
       "counterparty_type": "supplier",
       "client_id": null,
       "supplier_id": null,
-      "description": "PAGO DE SERVICIOS TARJETA 17230770 OP6052",
+      "description": "VEP importación Paneles ACUDESIGN — nacionalización (PAGO SERVICIOS TARJETA OP6052)",
       "sale_ref": null,
       "currency": "ARS",
       "amount_ars": 15914072.56,
       "amount_usd": 10168.74,
       "exchange_rate": 1565,
       "fixed_variable": "Variable",
-      "expense_type": null,
+      "expense_type": "COGS",
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "¿VEP (nacionalización→COGS / carga Google Ads→Marketing) o pago de resumen de tarjeta?",
+      "needs_review": false,
+      "review_reason": null,
       "raw_name": "PAGO DE SERVICIOS TARJETA 17230770 OP6052",
       "classified_by": "canal de pagos/VEP de BBVA — ambiguo, decide el dueño",
-      "id": "MOV-IMP-mvs2ddzd-005"
+      "id": "MOV-IMP-mvs2ddzd-005",
+      "category": "Importaciones"
     },
     {
       "source": "bbva-upload",
@@ -208227,6 +208229,10 @@
     "f4AT4IcVgaC9J9iBVCODvs5TQgyfFzuK": {
       "userId": "u-admin",
       "expires": 1794401197348
+    },
+    "djGqPHZG9UXkMBS9cs_9IdSPo0UgN2Az": {
+      "userId": "u-admin",
+      "expires": 1794401401156
     }
   },
   "settings": {
