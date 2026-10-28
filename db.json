@@ -174651,11 +174651,11 @@
       "linked_lead_id": "lead-instagram-1793186703721",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-28T20:28:54.456Z",
-      "last_message_preview": "Obviously",
+      "last_message_at": "2026-10-28T20:29:09.734Z",
+      "last_message_preview": "Nos pasas un WhatsApp o Mail",
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-28T11:25:01.849Z",
-      "last_outbound_at": "2026-10-28T20:28:54.456Z"
+      "last_outbound_at": "2026-10-28T20:29:09.734Z"
     },
     {
       "id": "conv-email-1a1833916cb2",
@@ -198972,6 +198972,16 @@
       "ts": "2026-10-28T20:28:54.456Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3OTA1ODEzMDc0MzgyMDkwODY0NjUzOTM5OTc5MDU5MgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1793219350120-9isl",
+      "conversation_id": "conv-1793186703720-brtd",
+      "direction": "out",
+      "body": "Nos pasas un WhatsApp o Mail",
+      "ts": "2026-10-28T20:29:09.734Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3OTA1ODQxMjU2NzIzNzAxNTE4OTMzNDUxMzQxODI0MAZDZD",
       "via": "ig-app"
     }
   ],
