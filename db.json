@@ -20162,6 +20162,168 @@
           "by": "Victoria Gonzalez Collado"
         }
       ]
+    },
+    {
+      "id": "local-sale-1793208559903-84ti",
+      "quote_id": "local-1793040719957-3756f",
+      "quote_number": "A1019",
+      "title": "Cotización Paula Sanmartino",
+      "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m + 8 más",
+      "internal_notes": "",
+      "public_notes": "Texto\n\nEl presupuesto incluye materiales, mano de obra y colocación. En caso de que la superficie no se encuentre nivelada, no se incluye la ejecución de una nueva carpeta.\n\nSe cotizan 2 narices de escalón, el levantamiento del piso existente y la colocación del piso nuevo en el cuarto de Tobías.\n\nSe contempla la limpieza de una superficie de 65 m².\n",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mvse2s67-09qp",
+      "client_name": "Paula Sanmartino",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 3682-4096",
+      "client_address": "La Horqueta",
+      "contract_total": 1880.6183,
+      "items": [
+        {
+          "product_id": "PROD-033",
+          "sku": "PROD-033",
+          "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m",
+          "quantity": 20.8,
+          "unit_price": 38,
+          "cost": 16.13,
+          "category": "Pisos H2O",
+          "disc_value": 20,
+          "total": 790.4,
+          "discount": 158.08,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-110",
+          "sku": "SERV-110",
+          "description": "Servicio - Fabricación Nariz Recta 90 H2O",
+          "quantity": 2,
+          "unit_price": 30,
+          "cost": 10,
+          "category": "Servicio",
+          "disc_value": 50,
+          "total": 60,
+          "discount": 30,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 18,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 270,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-123",
+          "sku": "SERV-123",
+          "description": "Retiro de Piso Existente - Alfombra",
+          "quantity": 18,
+          "unit_price": 8,
+          "cost": 4,
+          "category": "Servicio",
+          "disc_value": 100,
+          "total": 144,
+          "discount": 144,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "111223",
+          "sku": "111223",
+          "description": "Adhesivo Especial Para Escaleras 830",
+          "quantity": 2,
+          "unit_price": 25,
+          "cost": 10,
+          "category": "Extras",
+          "total": 50,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 170,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "disc_value": 30,
+          "total": 170,
+          "discount": 51,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-130",
+          "sku": "SERV-130",
+          "description": "Servicio de Retiro y Recolocación Zócalos",
+          "quantity": 22,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "disc_value": 20,
+          "total": 114.4,
+          "discount": 22.88,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-124",
+          "sku": "SERV-124",
+          "description": "Limpieza Pro Clean - H2O",
+          "quantity": 65,
+          "unit_price": 8,
+          "cost": 3.33,
+          "category": "Servicio",
+          "disc_value": 50,
+          "total": 520,
+          "discount": 260,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-116",
+          "sku": "SERV-116",
+          "description": "Colocación Conjunto de Pedada/Frentin (Colección Madera)",
+          "quantity": 2,
+          "unit_price": 56.33,
+          "cost": 43.33,
+          "category": "Servicio",
+          "disc_value": 10,
+          "total": 112.66,
+          "discount": 11.27,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 677.23,
+      "status": "Confirmado",
+      "created_at": "2026-10-28T17:29:19.903Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 1880.6183
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -47478,7 +47640,7 @@
     },
     {
       "id": "local-1793040719957-3756f",
-      "client_id": "",
+      "client_id": "CLI-mvse2s67-09qp",
       "client_name": "Paula Sanmartino",
       "client_dni": "",
       "client_email": "",
@@ -47629,7 +47791,8 @@
       "created_at": "2026-10-26T18:51:59.450Z",
       "quote_number": "A1019",
       "status": "ACCEPTED",
-      "lead_id": "local-1793040501957-jt4uk"
+      "lead_id": "local-1793040501957-jt4uk",
+      "sale_id": "local-sale-1793208559903-84ti"
     },
     {
       "id": "local-1793111533229-9u9h1",
@@ -51096,6 +51259,22 @@
       ],
       "notes": null,
       "updated_at": "2026-10-28T12:32:36.516Z"
+    },
+    {
+      "id": "CLI-mvse2s67-09qp",
+      "type": "client",
+      "active": true,
+      "name": "Paula Sanmartino",
+      "dni": "",
+      "emails": [],
+      "phones": [
+        "+54 9 11 3682-4096"
+      ],
+      "addresses": [
+        "La Horqueta"
+      ],
+      "notes": null,
+      "updated_at": "2026-10-28T17:29:19.903Z"
     }
   ],
   "expenses": [],
