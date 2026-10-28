@@ -152657,7 +152657,7 @@
       "date": "2026-10-27T00:00:00.000Z",
       "flow": "Egreso",
       "caja_id": "CAJ-011",
-      "caja_name": "Banco de Comercio - Cuenta Pesos",
+      "caja_name": "Banco de Comercio (Global Build) - Pesos",
       "category": "Otros Gastos y Ajustes",
       "subcategory": "Plazo fijo",
       "counterparty": "Plazo fijo (DPF)",
@@ -152684,7 +152684,7 @@
       "date": "2026-10-27T00:00:00.000Z",
       "flow": "Egreso",
       "caja_id": "CAJ-011",
-      "caja_name": "Banco de Comercio - Cuenta Pesos",
+      "caja_name": "Banco de Comercio (Global Build) - Pesos",
       "category": "Impuestos",
       "subcategory": "Ingresos Brutos y Otros Impuestos",
       "counterparty": "ARCA",
@@ -152711,7 +152711,7 @@
       "date": "2026-10-27T00:00:00.000Z",
       "flow": "Ingreso",
       "caja_id": "CAJ-011",
-      "caja_name": "Banco de Comercio - Cuenta Pesos",
+      "caja_name": "Banco de Comercio (Global Build) - Pesos",
       "category": "Otros",
       "subcategory": null,
       "counterparty": "CRÉDITO POR TRANSFERENCIA",
@@ -152737,7 +152737,7 @@
       "date": "2026-10-23T00:00:00.000Z",
       "flow": "Egreso",
       "caja_id": "CAJ-011",
-      "caja_name": "Banco de Comercio - Cuenta Pesos",
+      "caja_name": "Banco de Comercio (Global Build) - Pesos",
       "category": "Impuestos",
       "subcategory": "Ingresos Brutos y Otros Impuestos",
       "counterparty": "ARCA",
@@ -152764,7 +152764,7 @@
       "date": "2026-10-23T00:00:00.000Z",
       "flow": "Ingreso",
       "caja_id": "CAJ-011",
-      "caja_name": "Banco de Comercio - Cuenta Pesos",
+      "caja_name": "Banco de Comercio (Global Build) - Pesos",
       "category": "Ingreso Otros",
       "subcategory": "Paneles",
       "counterparty": "IB Proveedores",
@@ -153144,7 +153144,8 @@
       "category": "Sueldos",
       "subcategory": "Retiro/Personal",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261017-02",
@@ -153161,7 +153162,8 @@
       "category": "Sueldos",
       "subcategory": "Retiro/Personal",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261021-03",
@@ -153178,7 +153180,8 @@
       "category": "Sueldos",
       "subcategory": "Retiro/Personal",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261021-04",
@@ -153195,7 +153198,8 @@
       "category": "Comisiones",
       "subcategory": null,
       "expense_type": "Marketing y Ventas",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo USD"
     },
     {
       "id": "ef-l28-20261022-05",
@@ -153212,7 +153216,8 @@
       "category": "Instalaciones",
       "subcategory": null,
       "expense_type": "Gastos de Instalaciones y Suministros",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo USD"
     },
     {
       "id": "ef-l28-20261023-06",
@@ -153229,7 +153234,8 @@
       "category": "HR",
       "subcategory": "Pago Instalaciones",
       "expense_type": "Gastos de Instalaciones y Suministros",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261023-07",
@@ -153246,7 +153252,8 @@
       "category": "Mano de Obra",
       "subcategory": null,
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo USD"
     },
     {
       "id": "ef-l28-20261023-08",
@@ -153263,7 +153270,8 @@
       "category": "Flota",
       "subcategory": null,
       "expense_type": "Gastos de Flota/Vehículos",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261023-09",
@@ -153280,7 +153288,8 @@
       "category": "Sueldos",
       "subcategory": "Retiro/Personal",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261023-10",
@@ -153297,7 +153306,8 @@
       "category": "Otros",
       "subcategory": null,
       "expense_type": "Otros Gastos y Ajustes",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261023-11",
@@ -153314,7 +153324,8 @@
       "category": "Otros",
       "subcategory": null,
       "expense_type": "Otros Gastos y Ajustes",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261023-12",
@@ -153331,7 +153342,8 @@
       "category": "Flota",
       "subcategory": "Flete",
       "expense_type": "Gastos de Flota/Vehículos",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261023-13",
@@ -153348,7 +153360,8 @@
       "category": "Mano de Obra",
       "subcategory": null,
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261023-14",
@@ -153365,7 +153378,8 @@
       "category": "Mano de Obra",
       "subcategory": null,
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261023-15",
@@ -153382,7 +153396,8 @@
       "category": "Mano de Obra",
       "subcategory": null,
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261024-16",
@@ -153399,7 +153414,8 @@
       "category": "Sueldos",
       "subcategory": "Retiro/Personal",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261024-17",
@@ -153416,7 +153432,8 @@
       "category": "Sueldos",
       "subcategory": "Retiro/Personal",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261025-18",
@@ -153433,7 +153450,8 @@
       "category": "Sueldos",
       "subcategory": "Retiro/Personal",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261025-19",
@@ -153450,7 +153468,8 @@
       "category": "Flota",
       "subcategory": null,
       "expense_type": "Gastos de Flota/Vehículos",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261025-20",
@@ -153467,7 +153486,8 @@
       "category": "Sueldos",
       "subcategory": "Retiro/Personal",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261026-21",
@@ -153484,7 +153504,8 @@
       "category": "HR",
       "subcategory": "Sueldos",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261026-22",
@@ -153501,7 +153522,8 @@
       "category": "HR",
       "subcategory": "Sueldos",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261027-23",
@@ -153521,7 +153543,8 @@
       "fixed_variable": "Variable",
       "supplier_id": null,
       "client_id": null,
-      "review_reason": null
+      "review_reason": null,
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "ef-l28-20261028-24",
@@ -153538,7 +153561,8 @@
       "category": "Sueldos",
       "subcategory": "Retiro/Personal",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "caja_name": "Efectivo Pesos"
     },
     {
       "id": "gb-dpf-2026-10-27",
@@ -153553,7 +153577,8 @@
       "subcategory": "Plazo fijo",
       "expense_type": null,
       "counterparty": "Constitución DPF (capital colocado)",
-      "description": "Capital colocado en plazo fijo (transferencia desde Global Build Pesos)"
+      "description": "Capital colocado en plazo fijo (transferencia desde Global Build Pesos)",
+      "caja_name": "Plazo Fijo (Global Build)"
     },
     {
       "date": "2026-10-27T00:00:00.000Z",
@@ -208337,6 +208362,10 @@
     "BnEN7aGfv_FOKwF5W0F6G0HpoIq7xfHl": {
       "userId": "u-admin",
       "expires": 1794401884779
+    },
+    "GpGzi-boNq29ePHKYDOQd2BMy2G-4jFw": {
+      "userId": "u-admin",
+      "expires": 1794401927766
     }
   },
   "settings": {
