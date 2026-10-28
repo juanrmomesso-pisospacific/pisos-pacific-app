@@ -162921,6 +162921,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-27T23:21:05.249Z",
       "last_touch_at": "2026-10-27T23:21:05.249Z"
+    },
+    {
+      "id": "lead-instagram-1793186703721",
+      "name": "@sonia.gough",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-28T11:25:01.849Z",
+      "last_touch_at": "2026-10-28T11:25:01.849Z"
     }
   ],
   "conversations": [
@@ -171644,6 +171660,20 @@
       "last_message_preview": "Buenas tardes, quisiera pasar por algún lugar a ver los pisos. Necesito para 2 obras 280 m2 y otra de 60 m2",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-27T23:21:05.249Z"
+    },
+    {
+      "id": "conv-1793186703720-brtd",
+      "channel": "instagram",
+      "contact_id": "1397878532554121",
+      "contact_name": "@sonia.gough",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1793186703721",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-28T11:25:01.849Z",
+      "last_message_preview": "Hola chicos. Sonia mc gough les escribe, interiorista. Me gustaría si pueden enviarme un catálogo de los productos con los precios por favor",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-28T11:25:01.849Z"
     }
   ],
   "messages": [
@@ -195806,6 +195836,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 3a28fc69f59249488498f2d9ae33a4a3\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-26 00:00:00 UTC to 2026-10-27 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-28T08:28:27.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793186703721-cdx5",
+      "conversation_id": "conv-1793186703720-brtd",
+      "direction": "in",
+      "body": "Hola chicos. Sonia mc gough les escribe, interiorista. Me gustaría si pueden enviarme un catálogo de los productos con los precios por favor",
+      "ts": "2026-10-28T11:25:01.849Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -209311,7 +209349,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzA3NzU4OTI5NzcyMTMzMjg1Mjc0MjkxNjM5ODkwNzM5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzA3NzU4OTI5Nzg2MTU2NTAwMTE5MTI1NjQxMDI5MjIyNAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc3MDA5OTA4ODk3NDYyNDozMzA3NzU4OTMwNjk4Mzg4NTc3NDAxMDI1MTI5NDUzOTc3NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMxOTAzNDkwMjA3MDAyNzozMzA3NzY1NDkwMTU1Mjc2MzA1Njc0ODIxOTUzMzg4NTQ0MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMxOTAzNDkwMjA3MDAyNzozMzA3NzY1NDkwMTU1Mjc2MzA1Njc0ODIxOTUzMzg4NTQ0MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3ODQ1NjE2NTQwNjEzNTAyOTkyODg2MTcyMjczODY4OAZDZD"
     ],
     "last_weekly_reminder": "2026-10-23T12:22:19.173Z",
     "warehouses": [
