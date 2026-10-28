@@ -51004,6 +51004,15 @@
       "currency": "USD",
       "notes": "Cuenta corriente en dólares a nombre de GLOBAL BUILD SRL",
       "entidad": "GLOBAL BUILD SRL"
+    },
+    {
+      "id": "CAJ-013",
+      "name": "Plazo Fijo (Global Build)",
+      "type": "Inversión",
+      "currency": "ARS",
+      "active": true,
+      "entidad": "GLOBAL BUILD SRL",
+      "notes": "Plazos fijos / DPF de GLOBAL BUILD SRL (ahorro, fuera del P&L)"
     }
   ],
   "suppliers": [
@@ -152463,8 +152472,8 @@
       "fixed_variable": "Variable",
       "expense_type": "Otros Gastos y Ajustes",
       "transfer": true,
-      "needs_review": true,
-      "review_reason": "plazo fijo — registrar también la pata en la caja Plazo Fijo",
+      "needs_review": false,
+      "review_reason": null,
       "raw_name": "Constitución DPF",
       "classified_by": "plazo fijo → fuera del P&L",
       "id": "MOV-IMP-mvs2dd7s-001"
@@ -153325,6 +153334,21 @@
       "subcategory": "Retiro/Personal",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
       "fixed_variable": "Variable"
+    },
+    {
+      "id": "gb-dpf-2026-10-27",
+      "date": "2026-10-27T12:00:00.000Z",
+      "flow": "Ingreso",
+      "caja_id": "CAJ-013",
+      "amount_ars": 5000000,
+      "amount_usd": 3194.89,
+      "transfer": true,
+      "needs_review": false,
+      "category": "Otros Gastos y Ajustes",
+      "subcategory": "Plazo fijo",
+      "expense_type": null,
+      "counterparty": "Constitución DPF (capital colocado)",
+      "description": "Capital colocado en plazo fijo (transferencia desde Global Build Pesos)"
     }
   ],
   "containers": [
@@ -207916,6 +207940,10 @@
     "B6hLXvszOWpT3-pkNg_qg_w5ckwDP3Fh": {
       "userId": "u-admin",
       "expires": 1794399119364
+    },
+    "OlSTPwqYfi75mvxt59XczrfD7UWjuJwt": {
+      "userId": "u-admin",
+      "expires": 1794399144841
     }
   },
   "settings": {
