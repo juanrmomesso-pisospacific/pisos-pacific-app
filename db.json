@@ -174651,10 +174651,11 @@
       "linked_lead_id": "lead-instagram-1793186703721",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-10-28T11:25:01.849Z",
-      "last_message_preview": "Hola chicos. Sonia mc gough les escribe, interiorista. Me gustaría si pueden enviarme un catálogo de los productos con los precios por favor",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-28T11:25:01.849Z"
+      "last_message_at": "2026-10-28T20:28:54.456Z",
+      "last_message_preview": "Obviously",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-28T11:25:01.849Z",
+      "last_outbound_at": "2026-10-28T20:28:54.456Z"
     },
     {
       "id": "conv-email-1a1833916cb2",
@@ -198951,6 +198952,26 @@
       "ts": "2026-10-28T20:28:20.640Z",
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMxOTAzNDkwMjA3MDAyNzozMzA3OTA1NzUwNjk1NTgwNjg2MTgwODY0NjQyMDk1NTEzNgZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1793219332690-jr36",
+      "conversation_id": "conv-1793186703720-brtd",
+      "direction": "out",
+      "body": "Hola Sonia cómo estás?",
+      "ts": "2026-10-28T20:28:52.204Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3OTA1ODA4OTIwMDIwMzcyODE1MDQzNzU1ODIyMjg0OAZDZD",
+      "via": "ig-app"
+    },
+    {
+      "id": "m-1793219335097-0hch",
+      "conversation_id": "conv-1793186703720-brtd",
+      "direction": "out",
+      "body": "Obviously",
+      "ts": "2026-10-28T20:28:54.456Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3OTA1ODEzMDc0MzgyMDkwODY0NjUzOTM5OTc5MDU5MgZDZD",
       "via": "ig-app"
     }
   ],
