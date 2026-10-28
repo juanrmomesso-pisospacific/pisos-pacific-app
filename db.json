@@ -153570,6 +153570,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mvs35qyp-001"
+    },
+    {
+      "id": "local-1793192017165-j3c9f",
+      "flow": "Ingreso",
+      "date": "2026-10-23T00:00:00.000Z",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Rosario - GGYA",
+      "counterparty_type": "client",
+      "description": "Cobro - Cotización Rosario - GGYA - Extension",
+      "sale_ref": "A9730",
+      "currency": "ARS",
+      "amount_ars": 3200000,
+      "amount_usd": 2057.88,
+      "exchange_rate": 1555,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
