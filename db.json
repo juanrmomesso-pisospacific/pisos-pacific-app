@@ -165433,6 +165433,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-28T11:25:01.849Z",
       "last_touch_at": "2026-10-28T11:25:01.849Z"
+    },
+    {
+      "id": "lead-email-1a1833916cb2",
+      "name": "Martin Cordeyro",
+      "email": "mcordeyro@amphora.com.ar",
+      "phone": "",
+      "source": "Web",
+      "address": "2358 COPÉRNICO",
+      "postal_code": "1425",
+      "approx_m2": 120,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 120m² · Con Colocación · CP 1425",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-28T15:55:18.000Z",
+      "last_touch_at": "2026-10-28T15:55:18.000Z"
     }
   ],
   "conversations": [
@@ -174170,6 +174187,21 @@
       "last_message_preview": "Hola chicos. Sonia mc gough les escribe, interiorista. Me gustaría si pueden enviarme un catálogo de los productos con los precios por favor",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-28T11:25:01.849Z"
+    },
+    {
+      "id": "conv-email-1a1833916cb2",
+      "channel": "email",
+      "contact_id": "mcordeyro@amphora.com.ar",
+      "contact_name": "Martin Cordeyro",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a1833916cb2",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-28T15:55:18.000Z",
+      "last_message_preview": "Formulario web — 120m² · Con Colocación · CP 1425 · 2358 COPÉRNICO",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-28T15:55:18.000Z"
     }
   ],
   "messages": [
@@ -198386,6 +198418,14 @@
       "ts": "2026-10-28T13:31:45.556Z",
       "status": "sent",
       "via": "auto-unsupported"
+    },
+    {
+      "id": "m-email-1a1833916cb2",
+      "conversation_id": "conv-email-1a1833916cb2",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 120m² · Con Colocación · CP 1425 · 2358 COPÉRNICO",
+      "ts": "2026-10-28T15:55:18.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -209703,7 +209743,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-28T12:23:42.529Z",
     "gmail_seen_ids": [
-      "19fe0777b28d85e5",
       "19fe0ad1757a607e",
       "19fe0ced78299802",
       "19fe0e294c366e65",
@@ -210502,7 +210541,8 @@
       "1a1819b4b5f809ca",
       "1a18201192be93d8",
       "1a18262807bca09c",
-      "1a1827617aecf9cb"
+      "1a1827617aecf9cb",
+      "1a1833916cb2fa1b"
     ],
     "cash_sessions": {
       "1136982222": {
