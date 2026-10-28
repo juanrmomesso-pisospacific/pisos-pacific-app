@@ -163496,7 +163496,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-10-13T12:03:35.000Z",
-      "last_touch_at": "2026-10-13T17:03:43.680Z"
+      "last_touch_at": "2026-10-28T12:00:54.000Z"
     },
     {
       "id": "local-1791906930078-pqmkv",
@@ -172312,12 +172312,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a135258c4bc",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-10-13T12:03:35.000Z",
-      "last_message_preview": "Tu ID de cliente: 443-235-5149\r\n\r\nHola, equipo de Pacific Rim - pisospacific.com:\r\n\r\nHe observado que todavía no has agendado ninguna llamad",
+      "unread_count": 1,
+      "last_message_at": "2026-10-28T12:00:54.000Z",
+      "last_message_preview": "Tu ID de cliente: 443-235-5149\r\n\r\nHola, equipo de Pacific Rim - pisospacific.com:\r\n\r\nEspero que te encuentres bien.\r\n\r\nMe pongo en contacto ",
       "email_subject": "Equipo de Pacific Rim - pisospacific.com, no olvidéis agendar una cita individualizada con un experto de Google Ads\r\n",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-13T12:03:35.000Z",
+      "last_inbound_at": "2026-10-28T12:00:54.000Z",
       "ignored": true
     },
     {
@@ -196798,6 +196798,14 @@
       "body": "Hola chicos. Sonia mc gough les escribe, interiorista. Me gustaría si pueden enviarme un catálogo de los productos con los precios por favor",
       "ts": "2026-10-28T11:25:01.849Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a18262807bc",
+      "conversation_id": "conv-email-1a135258c4bc",
+      "direction": "in",
+      "body": "✉️ Equipo de Pacific Rim - pisospacific.com, recordatorio para agendar una llamada individual con un experto de Google Ads\n\nTu ID de cliente: 443-235-5149\r\n\r\nHola, equipo de Pacific Rim - pisospacific.com:\r\n\r\nEspero que te encuentres bien.\r\n\r\nMe pongo en contacto contigo para informarte de que mi equipo está aquí  \r\npara ayudar a tu empresa a prosperar. Reserva tu consulta sin coste cuanto  \r\nantes, mientras aún haya huecos disponibles, para asegurarte de que estás  \r\nsacando el máximo partido a tus campañas.\r\n\r\nSolo tienes que hacer clic abajo y elegir la hora que mejor te venga. Nos  \r\nencargaremos de revisar tu cuenta antes para facilitarte información que te  \r\nsirva de ayuda cuando hablemos.\r\n\r\nConcertar una  \r\nllamada<https://c.gle/AGSJxQyPuwpC-z0JVaYHqvz51uyTOc8O9GXYNTLdA8EIoPlFWO16S3fuv4apggEZdiMQf-eJo-fbxDKN1l5grg83SZNUKqGt_MHD-RedqMY4OScz71u4WwL4G1wNfanF5MEW5qsOgmZ2fOTcp9ihMMcYoh-eRfwObDZevwvdZOmBsEYQTmACEas5PZqmUbzJeGmzOq8Wxe0OKGKHjxSEpXJv2lzz1ABfY6Mb0cjDTvC1HGUETwG3MltLZ51gg5uwJdJc6GCYHSfTXQKAg2rc0cZxfuE65qZa5ra52gtZ9vXojUzLQ5P_TBwtiWHGQeuEF9OIP7NkSRdXXoVXrubaJdzzSuKtgKf2YwitkOsyzSGvUfKnPS_8ihB2eBFrVvsZjWaVx0Xkt1npyKo7>\r\n\r\nDurante la llamada, podemos hablar de temas como:\r\n\r\nPrácticas recomendadas para planificar campañas\r\nAsignación del presupuesto actual y estrategias de puja\r\nRendimiento y optimización de campañas\r\n\r\nReserva una  \r\ncita<https://c.gle/AGSJxQwfMLq8ZWBs19_cApSz3mlMRk8-r3OerblVoIzOFF29AB44cR-XC-pfNHEZeFI94Xnclk3NtascrQLP52vyfVeC8A-5pxyKbvB7fXn_-cZMKvIACeRnu1cQjSl9OIF3HL_Qi-wnxCBPGBAusOznQoHHw29taOeLxADLAUL2GhNHCDBU3ki_Vb2kx_6wTk-UZd_EQq52NKXEveghipRz2hyzLpc4EVF7mWZE8MYg",
+      "ts": "2026-10-28T12:00:54.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -207961,7 +207969,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-27T12:25:03.290Z",
     "gmail_seen_ids": [
-      "19fde402f41f471d",
       "19fde4c74ed828c2",
       "19fe0777b28d85e5",
       "19fe0ad1757a607e",
@@ -208760,7 +208767,8 @@
       "1a18096b846b69db",
       "1a1819ffe20e3250",
       "1a1819b4b5f809ca",
-      "1a18201192be93d8"
+      "1a18201192be93d8",
+      "1a18262807bca09c"
     ],
     "cash_sessions": {
       "1136982222": {
