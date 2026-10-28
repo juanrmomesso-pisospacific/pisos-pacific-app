@@ -20469,18 +20469,18 @@
     {
       "id": "1zssueBSRMGNTEQeWhLQ",
       "quote_number": "A0061",
-      "client_id": "",
-      "client_name": "Rosario Novillo Astrada",
-      "client_dni": "23322",
+      "client_id": "CLI-091",
+      "client_name": "Rosario Novillo",
+      "client_dni": "",
       "client_email": "",
       "client_phone": "",
       "client_address": "Obra Tortugas",
-      "seller_name": "Juan Rodriguez Momesso",
-      "seller_phone": "+5491151750087",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
       "title": "Obra Tortugas",
-      "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada + 10 más",
+      "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada + 8 más",
       "created_at": "2026-04-29T19:33:02.809Z",
-      "price": 25381.99,
+      "price": 26985,
       "has_iva": false,
       "items": [
         {
@@ -20489,9 +20489,12 @@
           "description": "Madera - Roble Verona 12/1mm x 19cm x 1,90m - Veta Tallada",
           "quantity": 259,
           "unit_price": 75,
-          "total": 19425,
           "cost": 29,
-          "category": "Pisos de Madera"
+          "category": "Pisos de Madera",
+          "total": 19425,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
         },
         {
           "product_id": "SERV-107",
@@ -20499,9 +20502,12 @@
           "description": "Servicio - Colocación Prefinished Sobre Manta",
           "quantity": 236,
           "unit_price": 15,
-          "total": 3540,
           "cost": 7.33,
-          "category": "Servicio"
+          "category": "Servicio",
+          "total": 3540,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
         },
         {
           "product_id": "SERV-131",
@@ -20509,9 +20515,12 @@
           "description": "Servicio de Entrega",
           "quantity": 1,
           "unit_price": 170,
-          "total": 170,
           "cost": 0,
-          "category": "Servicio"
+          "category": "Servicio",
+          "total": 170,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
         },
         {
           "product_id": "SERV-118",
@@ -20519,9 +20528,12 @@
           "description": "Colocacion y Ajustes de Compensados Y Decansos en Escalera",
           "quantity": 2,
           "unit_price": 180,
-          "total": 360,
           "cost": 73.33,
-          "category": "Servicio"
+          "category": "Servicio",
+          "total": 360,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
         },
         {
           "product_id": "SERV-116",
@@ -20529,9 +20541,12 @@
           "description": "Colocacion Conjunto de Pedada /Frentin (Colección Madera)",
           "quantity": 18,
           "unit_price": 130,
-          "total": 2340,
           "cost": 43.33,
-          "category": "Servicio"
+          "category": "Servicio",
+          "total": 2340,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
         },
         {
           "product_id": "SERV-119",
@@ -20539,9 +20554,12 @@
           "description": "Colocacion Y Ajuste de Nariz En Balconeo - H2O/Madera",
           "quantity": 1,
           "unit_price": 50,
-          "total": 50,
           "cost": 30,
-          "category": "Servicio"
+          "category": "Servicio",
+          "total": 50,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
         },
         {
           "product_id": "111223",
@@ -20549,9 +20567,12 @@
           "description": "Adhesivo Especial Para Escaleras 830",
           "quantity": 8,
           "unit_price": 25,
-          "total": 200,
           "cost": 10,
-          "category": "Extras"
+          "category": "Extras",
+          "total": 200,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
         },
         {
           "product_id": "prod-123344",
@@ -20559,9 +20580,12 @@
           "description": "Nariz a medida / Madera - Roble",
           "quantity": 20,
           "unit_price": 30,
-          "total": 600,
           "cost": 20,
-          "category": "Pisos de Madera"
+          "category": "Pisos de Madera",
+          "total": 600,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
         },
         {
           "product_id": "1534",
@@ -20569,14 +20593,26 @@
           "description": "SERV - Ajuste Escalon a Filo",
           "quantity": 20,
           "unit_price": 15,
-          "total": 300,
           "cost": 0,
-          "category": "Servicio"
+          "category": "Servicio",
+          "total": 300,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
         }
       ],
-      "discount_total": 1603.01,
+      "discount_total": 0,
       "status": "ACCEPTED",
-      "source": "vercel"
+      "source": "vercel",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "zoned": false,
+      "discount_amount": 0,
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD"
     },
     {
       "id": "2KC7GezWMW3QhVtaSGM3",
