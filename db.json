@@ -48953,6 +48953,50 @@
       "quote_number": "A2142",
       "status": "ACCEPTED",
       "sale_id": "local-sale-1793285479979-st1r"
+    },
+    {
+      "id": "local-1793311285020-gp2xg",
+      "client_id": "CLI-mshygokp-lldf",
+      "client_name": "Arq. Maru Cosentino",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Pilar",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
+      "title": "Arq. Maru Cosentino",
+      "has_iva": false,
+      "price": 432,
+      "zoned": false,
+      "description": "Servicio - Nivelación de Carpeta - incluye Materiales",
+      "items": [
+        {
+          "product_id": "SERV-115",
+          "sku": "SERV-115",
+          "description": "Servicio - Nivelación de Carpeta - incluye Materiales",
+          "quantity": 40,
+          "unit_price": 18,
+          "cost": 10,
+          "category": "Servicio",
+          "disc_value": 40,
+          "total": 720,
+          "discount": 288,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 288,
+      "discount_amount": 288,
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "created_at": "2026-10-29T22:01:24.735Z",
+      "quote_number": "A4411",
+      "status": "DRAFT"
     }
   ],
   "clients": [
