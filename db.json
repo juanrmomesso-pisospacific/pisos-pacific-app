@@ -20499,6 +20499,151 @@
           "by": "Victoria Gonzalez Collado"
         }
       ]
+    },
+    {
+      "id": "local-sale-1793285479979-st1r",
+      "quote_id": "local-1793285411541-qmb9q",
+      "quote_number": "A2142",
+      "title": "mano obra",
+      "description": "Servicio de Entrega + 3 más",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mvse46g3-md5m",
+      "client_name": "Sol Garcia del Rio",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Local Palermo | Gorriti y Malabia | Alos",
+      "contract_total": 2362,
+      "items": [
+        {
+          "product_id": "SERV-131",
+          "sku": "SERV-131",
+          "description": "Servicio de Entrega",
+          "quantity": 170,
+          "unit_price": 1,
+          "cost": 0,
+          "category": "Servicio",
+          "total": 170,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 60,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "disc_value": 0,
+          "total": 900,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1790886373458-7ne0a",
+          "sku": "PROD-675",
+          "description": "Autonivelante Mapei",
+          "quantity": 34,
+          "unit_price": 20,
+          "cost": 18,
+          "category": "Extras",
+          "total": 680,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-105",
+          "sku": "SERV-105",
+          "description": "Servicio de Nivelación Carpeta",
+          "quantity": 60,
+          "unit_price": 12,
+          "cost": 4,
+          "category": "Servicio",
+          "disc_value": 108,
+          "disc_kind": "amount",
+          "total": 720,
+          "discount": 108,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 108,
+      "status": "Confirmado",
+      "created_at": "2026-10-29T14:51:19.980Z",
+      "has_iva": false,
+      "iva_mode": "none",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 2362
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
+    },
+    {
+      "id": "local-sale-1793285484273-wnsh",
+      "quote_id": "local-1793285268673-m4vxo",
+      "quote_number": "A5991",
+      "title": "Sol Garcia del Rio",
+      "description": "H2O HD XL - Notte 6,5mm x 23cm x 1,50m",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mvse46g3-md5m",
+      "client_name": "Sol Garcia del Rio",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Local Palermo | Gorriti y Malabia | Alos",
+      "contract_total": 2847.0816,
+      "items": [
+        {
+          "product_id": "PROD-028",
+          "sku": "PROD-028",
+          "description": "H2O HD XL - Notte 6,5mm x 23cm x 1,50m",
+          "quantity": 68.8,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 2614.4,
+          "discount": 261.44,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 261.44,
+      "status": "Confirmado",
+      "created_at": "2026-10-29T14:51:24.273Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 2847.0816
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -48720,7 +48865,8 @@
       "currency": "USD",
       "created_at": "2026-10-29T14:47:48.189Z",
       "quote_number": "A5991",
-      "status": "ACCEPTED"
+      "status": "ACCEPTED",
+      "sale_id": "local-sale-1793285484273-wnsh"
     },
     {
       "id": "local-1793285411541-qmb9q",
@@ -48805,7 +48951,8 @@
       "currency": "USD",
       "created_at": "2026-10-29T14:50:10.529Z",
       "quote_number": "A2142",
-      "status": "ACCEPTED"
+      "status": "ACCEPTED",
+      "sale_id": "local-sale-1793285479979-st1r"
     }
   ],
   "clients": [
