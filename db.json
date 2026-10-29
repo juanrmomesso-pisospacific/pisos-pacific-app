@@ -46837,7 +46837,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "Obra CABA - Ale Toyo",
       "has_iva": false,
-      "price": 1459.85,
+      "price": 1529.8400000000001,
       "zoned": false,
       "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
       "items": [
@@ -46845,19 +46845,19 @@
           "product_id": "local-1790089780830-ghwcm",
           "sku": "PROD-400",
           "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
-          "quantity": 43.8,
+          "quantity": 45.9,
           "unit_price": 38,
           "cost": 16,
           "category": "Pisos H2O",
           "disc_value": 12.29,
-          "total": 1664.3999999999999,
-          "discount": 204.55,
+          "total": 1744.2,
+          "discount": 214.36,
           "image": "",
           "target_item_index": null
         }
       ],
-      "discount_total": 204.55,
-      "discount_amount": 204.55,
+      "discount_total": 214.36,
+      "discount_amount": 214.36,
       "reseller_id": "",
       "reseller_name": "",
       "commission_split_discount": true,
@@ -212030,7 +212030,8 @@
       "1a17dbdf86e14a2e",
       "1a17ef4404e997e5",
       "1a1827617aecf9cb",
-      "1a1834238479a911"
+      "1a1834238479a911",
+      "1a187b2861e54865"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
