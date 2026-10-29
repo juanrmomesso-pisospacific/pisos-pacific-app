@@ -3467,7 +3467,7 @@
       "cost": 16,
       "currency": "USD",
       "stock": 583.5,
-      "reservedStock": 1591.7,
+      "reservedStock": 1639.6000000000001,
       "m2_por_caja": 2.084,
       "unit": "m2",
       "active": true,
@@ -47017,7 +47017,7 @@
       "currency": "USD",
       "created_at": "2026-10-15T17:08:02.544Z",
       "quote_number": "A4120",
-      "status": "DRAFT",
+      "status": "ACCEPTED",
       "share_token": "ade45337631e83d3b58a88ff"
     },
     {
@@ -209600,6 +209600,15 @@
       "product_id": "SERV-105",
       "sku": "SERV-105",
       "qty": -60,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-10-29T17:37:03.223Z",
+      "type": "quote_reserve",
+      "ref": "local-1792084083077-0ol2z",
+      "product_id": "local-1790089780830-ghwcm",
+      "sku": "PROD-400",
+      "qty": 47.9,
       "warehouse_id": "main"
     }
   ],
