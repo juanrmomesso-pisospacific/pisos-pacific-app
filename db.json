@@ -46864,7 +46864,8 @@
       "currency": "USD",
       "created_at": "2026-10-15T17:08:02.544Z",
       "quote_number": "A4120",
-      "status": "DRAFT"
+      "status": "DRAFT",
+      "share_token": "ade45337631e83d3b58a88ff"
     },
     {
       "id": "local-1792090215569-xt5we",
