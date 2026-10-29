@@ -166035,11 +166035,11 @@
       "contact_name": "@juanrmomesso",
       "linked_client_name": null,
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-10-22T19:48:57.414Z",
-      "last_message_preview": "📎 Adjunto",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-09-28T12:22:09.790Z",
+      "unread_count": 1,
+      "last_message_at": "2026-10-29T14:05:12.103Z",
+      "last_message_preview": "😍",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-29T14:05:12.103Z",
       "last_outbound_at": "2026-10-22T19:48:57.414Z",
       "ignored": true
     },
@@ -199123,6 +199123,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 0059064abf504ee69c54840c83e2ffce\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-27 00:00:00 UTC to 2026-10-28 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-29T08:26:20.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793282713453-uh9e",
+      "conversation_id": "conv-1781092436494-pbta",
+      "direction": "in",
+      "body": "😍",
+      "ts": "2026-10-29T14:05:12.103Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -212956,7 +212964,8 @@
       "wamid.HBgNNTQ5MTE1OTI3Njg4MhUCABIYEjgwQjRFOERGREJGMjM4MTdEQQA=",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3OTA1ODgzNTgwNjg5ODA3MjE2MzU1NzEzMDEwODkyOAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMwMzgwMzk4MDAwNjM4NTozMzA3OTA1ODg0NzQ4MTYyMTAzNTQ4NTQ0NzgzMzI1NTkzNgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA3OTI2OTg4MTI0MzExNTQyMDQ3NjQ2ODg2NjU4MDQ4MAZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA3OTI2OTg4MTI0MzExNTQyMDQ3NjQ2ODg2NjU4MDQ4MAZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzA4MDIyNzI0MTk3Mzg1NDg1MDQyODcyODE2ODY3NzM3NgZDZD"
     ],
     "last_weekly_reminder": "2026-10-23T12:22:19.173Z",
     "warehouses": [
