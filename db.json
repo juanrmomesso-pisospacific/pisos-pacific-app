@@ -166025,6 +166025,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-28T15:55:18.000Z",
       "last_touch_at": "2026-10-28T16:20:04.000Z"
+    },
+    {
+      "id": "local-1793283846104-67026",
+      "name": "Georgina Cornejo",
+      "phone": "+54 9 3874 50-0636",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "h2o"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "",
+      "address": "Callao 1973 | piso 10",
+      "created_at": "2026-10-29T14:24:05.674Z",
+      "last_touch_at": "2026-10-29T14:24:14.041Z"
     }
   ],
   "conversations": [
