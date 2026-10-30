@@ -175169,7 +175169,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a17d46fd734",
       "status": "closed",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-10-30T13:04:51.000Z",
       "last_message_preview": "Dear team,\r\n\r\nJust checking whether a potential acquisition in Portuguese wood flooring and parquet could be of interest.\r\n\r\nWe can provide ",
       "email_subject": "Project Designline | Confidential M&A opportunity",
@@ -212679,7 +212679,8 @@
       "1a1834238479a911",
       "1a187b2861e54865",
       "1a18cd8e174aebe9",
-      "1a18cd8e09a8afa9"
+      "1a18cd8e09a8afa9",
+      "1a18ceb1d1a0f93f"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
