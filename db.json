@@ -176158,11 +176158,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1793322482575",
       "status": "open",
-      "unread_count": 1,
-      "last_message_at": "2026-10-30T01:08:00.659Z",
-      "last_message_preview": "hola",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-10-30T01:08:00.659Z"
+      "unread_count": 0,
+      "last_message_at": "2026-10-30T19:16:15.120Z",
+      "last_message_preview": "Hola cómo estás?",
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-10-30T01:08:00.659Z",
+      "last_outbound_at": "2026-10-30T19:16:15.120Z"
     }
   ],
   "messages": [
@@ -200554,6 +200555,16 @@
       "body": "✉️ Re: Project Designline | Confidential M&A opportunity\n\nDear team,\r\n\r\nJust checking whether a potential acquisition in Portuguese wood flooring and parquet could be of interest.\r\n\r\nWe can provide an anonymous overview before disclosing the company's identity. Would you like to receive it?\r\n\r\nKind regards,\r\n\r\nIntuition Consulting Portugal | M&A Team\r\n\r\nintuitionconsulting.net\r\n\r\nOn Tue, October 27, 2026 3:30 PM, Monica Raquel <monica.raquel@intuitionconsultingportugal.org>\r\n[monica.raquel@intuitionconsultingportugal.org]> wrote:\r\n\r\n> Dear team,\r\n> \r\n> I am following up on the confidential potential acquisition in the Portuguese wood flooring and parquet sector.\r\n> \r\n> If relevant to your strategic plans, we would be pleased to send a short anonymous teaser for your review.\r\n> \r\n> Kind regards,\r\n> \r\n> Intuition Consulting Portugal | M&A Team\r\n> \r\n> intuitionconsulting.net\r\n> On Tue, October 27, 2026 12:12 PM, Monica Raquel <monica.raquel@intuitionconsultingportugal.org>\r\n> [monica.raquel@intuitionconsultingportugal.org]> wrote:\r\n> \r\n> > Dear team,\r\n> > \r\n> > I am contacting you on behalf of Intuition Consulting Portugal regarding a confidential potential acquisition involving a Portuguese company in the wood flooring and parquet sector.\r\n> > \r\n> > We are assessing potential strategic interest from industry participants. Would your management or corporate development team be interested in receiving a brief anonymous teaser?\r\n> > \r\n> > If this is not the appropriate contact, could you kindly forward this message to the relevant collea",
       "ts": "2026-10-30T13:04:51.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793387775795-dm75",
+      "conversation_id": "conv-1793322482575-7cid",
+      "direction": "out",
+      "body": "Hola cómo estás?",
+      "ts": "2026-10-30T19:16:15.120Z",
+      "status": "sent",
+      "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTgxNjg3ODUyODE0NjgxMzozMzA4MjE2NTMxMjU2MDYxOTA0ODYyNTQzMzY0MDY5Nzg1NgZDZD",
+      "via": "ig-app"
     }
   ],
   "templates": [
