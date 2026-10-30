@@ -157883,7 +157883,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-10-29T08:26:20.000Z"
+      "last_touch_at": "2026-10-30T08:27:01.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -168001,12 +168001,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 73,
-      "last_message_at": "2026-10-29T08:26:20.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-27 00:00:00 UTC to 2026-10-28 00:00:00 UTC.",
+      "unread_count": 74,
+      "last_message_at": "2026-10-30T08:27:01.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-28 00:00:00 UTC to 2026-10-29 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-29T08:26:20.000Z",
+      "last_inbound_at": "2026-10-30T08:27:01.000Z",
       "ignored": true
     },
     {
@@ -199601,6 +199601,14 @@
       "body": "✉️ 回复：NEW ORDER FOR CANADA | PDPG 2634\n\nHI Victoria\n\nPI attached.\n\nPlease check\nLi\n\n在 2026年10月27日 02:09，Victoria Pisos Pacific<victoria@pisospacific.com> 写道：\n\nHi Young,\n\nCould you please send me the order confirmation for PDPG 2634?\n\nThe last price was $5.30 USD.\n\nSpecifications:\n\n  - Product: SPC 1220x180x4mm/0.3mmWL\n  - Surface: EIR surface\n  - Underlayment: 1.5mm EVA (Total thickness: 5.5mm)\n  - Packaging: 10 pcs (2.196 sqm) / box, 65 boxes (142.74 sqm) / pallet, 20 pallets (2854.80 sqm) / 20' container\n  - Pallet Type: Canada Pallet\n\nOrder Breakdown:\n\n  - 12 pallets (780 boxes, 1,710 m2) – ASPEN - TW-9531-4\n  - 4 pallets (260 boxes, 570 m2) – ESLAVONIA - LS105-1\n  - 4 pallets (260 boxes, 570 m2) – NEW SMOKE TW6151-2\n\nAdditional Notes:\n\n  - Normal wooden pallets\n  - Pacific box branding\n  - No patent\n\nPlease also let me know the estimated production time.\n\nBest regards,\nVictoria",
       "ts": "2026-10-30T03:46:35.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a18beb6ad43",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 6e9e6b35f30343d09aefea879f83f51a\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-28 00:00:00 UTC to 2026-10-29 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-10-30T08:27:01.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -211170,7 +211178,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-29T12:48:01.044Z",
     "gmail_seen_ids": [
-      "19fe663ec098f58f",
       "19fe66a3e9605906",
       "19fe75cebcda6a30",
       "19fe8a90fff04bb2",
@@ -211969,7 +211976,8 @@
       "1a1892aab8325d1d",
       "1a1892a779af6a00",
       "1a18ae6a3e0bbc61",
-      "1a18aead000571e9"
+      "1a18aead000571e9",
+      "1a18beb6ad432f28"
     ],
     "cash_sessions": {
       "1136982222": {
