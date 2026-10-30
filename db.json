@@ -156382,20 +156382,20 @@
       "flow": "Egreso",
       "caja_id": "CAJ-004",
       "caja_name": "Banco de Comercio - Cuenta USD",
-      "category": "Flota",
-      "subcategory": "Seguro",
-      "counterparty": "Seguro",
+      "category": "Instalaciones",
+      "subcategory": "Seguro de caución de obra",
+      "counterparty": "Seguro de caución",
       "counterparty_type": "supplier",
       "client_id": null,
       "supplier_id": null,
-      "description": "Seguro",
+      "description": "Seguro de caución de obra",
       "sale_ref": null,
       "currency": "USD",
       "amount_ars": 392274,
       "amount_usd": 253.08,
       "exchange_rate": 1550,
       "fixed_variable": "Variable",
-      "expense_type": "Gastos de Flota/Vehículos",
+      "expense_type": "Gastos de Instalaciones y Suministros",
       "transfer": false,
       "needs_review": false,
       "review_reason": null,
@@ -212105,6 +212105,10 @@
     "9ofifCb3b2rQFtuJTfXMPF57wCAfhAjt": {
       "userId": "u-admin",
       "expires": 1794584851799
+    },
+    "mFJyu9fJETFlgffi4g9BOh-u-G9E_PVY": {
+      "userId": "u-admin",
+      "expires": 1794585039161
     }
   },
   "settings": {
