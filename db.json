@@ -19021,9 +19021,9 @@
       "quote_id": "local-1791206846943-tby7c",
       "quote_number": "A5924",
       "title": "Cotización Paz Pucheta ",
-      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 1 más",
+      "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 4 más",
       "internal_notes": "",
-      "public_notes": "El diseño deberá definirse previamente. Las medidas consignadas en el presupuesto fueron proporcionadas por el cliente y deberán ser verificadas por el mismo antes de realizar la compra.\n\nEl presupuesto no incluye colocación.\n",
+      "public_notes": "Las medidas fueron verificadas en obra. La carpeta tiene que estar nivelada.\n\nEl presupuesto no incluye colocación de pisos ni de zocalos\n",
       "payment_terms": "Anticipo 80% · Conforme 20%",
       "client_id": "CLI-mvh8rxs9-huz8",
       "client_name": "Paz Pucheta",
@@ -19031,19 +19031,19 @@
       "client_email": "",
       "client_phone": "1162176955",
       "client_address": "Martinez",
-      "contract_total": 2169,
+      "contract_total": 2282.2657,
       "items": [
         {
           "product_id": "PROD-202",
           "sku": "PROD-202",
           "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
-          "quantity": 62.5,
+          "quantity": 47.9,
           "unit_price": 38,
-          "category": "Pisos H2O",
           "cost": 16.33,
+          "category": "Pisos H2O",
           "disc_value": 15,
-          "total": 2375,
-          "discount": 356.25,
+          "total": 1820.2,
+          "discount": 273.03,
           "image": "",
           "target_item_index": null
         },
@@ -19051,26 +19051,65 @@
           "product_id": "SERV-131",
           "sku": "SERV-131",
           "description": "Servicio de Entrega",
-          "quantity": 150,
+          "quantity": 130,
           "unit_price": 1,
           "cost": 0,
           "category": "Servicio",
-          "total": 150,
+          "total": 130,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1784069148766-cotkf",
+          "sku": "PROD - 102984",
+          "description": "H2O HD - Nariz Volada - Canada - Roble Clásico XL",
+          "quantity": 2,
+          "unit_price": 30,
+          "cost": 11,
+          "category": "Pisos H2O",
+          "total": 60,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-078",
+          "sku": "PROD-078",
+          "description": "Varilla L SPC - L Shape",
+          "quantity": 2,
+          "unit_price": 8,
+          "cost": 3,
+          "category": "Terminaciones",
+          "total": 16,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "ZOC-MDF-08",
+          "sku": "ZOC-MDF-08",
+          "description": "Zócalo MDF 8cm",
+          "quantity": 35,
+          "unit_price": 3.8,
+          "cost": 1.36,
+          "category": "Zócalos",
+          "total": 133,
           "discount": 0,
           "image": "",
           "target_item_index": null
         }
       ],
       "zoned": false,
-      "discount_total": 356.25,
+      "discount_total": 273.03,
       "status": "Confirmado",
       "created_at": "2026-10-20T22:15:27.945Z",
-      "has_iva": false,
-      "iva_mode": "none",
+      "has_iva": true,
+      "iva_mode": "full",
       "financial_position": {
-        "total_invoiced": 2169,
+        "total_invoiced": 2282.2657,
         "total_paid": 0,
-        "balance_due": 2169
+        "balance_due": 2282.2657
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -212115,6 +212154,10 @@
     "GUHaBusdHLMUnDXntYwHO5_kzqBCCnid": {
       "userId": "u-admin",
       "expires": 1794588735688
+    },
+    "dTht7Ik_7ZPFNW0DS4iIx0aTOkPkI1VN": {
+      "userId": "u-admin",
+      "expires": 1794588777588
     }
   },
   "settings": {
