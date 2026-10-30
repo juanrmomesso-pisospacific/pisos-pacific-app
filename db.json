@@ -156322,6 +156322,32 @@
       "review_reason": null,
       "source": "internal-transfer",
       "transfer_group": "tg-1793374284727-bno2p"
+    },
+    {
+      "source": "bbva-upload",
+      "date": "2026-10-28T00:00:00.000Z",
+      "flow": "Ingreso",
+      "caja_id": "CAJ-001",
+      "caja_name": "BBVA",
+      "category": "Otros",
+      "subcategory": null,
+      "counterparty": "TRANSFERENCIA",
+      "counterparty_type": "client",
+      "client_id": null,
+      "supplier_id": null,
+      "description": "TRANSFERENCIA",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 60000,
+      "amount_usd": 38.71,
+      "exchange_rate": 1550,
+      "fixed_variable": "Variable",
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": true,
+      "review_reason": "extracto bancario importado — verificar clasificación y signo",
+      "raw_name": "TRANSFERENCIA",
+      "id": "MOV-IMP-mvv4tk67-001"
     }
   ],
   "containers": [
@@ -211649,6 +211675,14 @@
     "4d7naFmJW-NwpKkJ-YJdS7Q5WfFfA2Zf": {
       "userId": "u-admin",
       "expires": 1794583997954
+    },
+    "UGVX-GFhBpGgQUE7RbrIVCf8niHstfL0": {
+      "userId": "u-admin",
+      "expires": 1794584010577
+    },
+    "I-iXqwm25XijzzTg3Zdircp5TTBc5-kb": {
+      "userId": "u-admin",
+      "expires": 1794584012075
     }
   },
   "settings": {
