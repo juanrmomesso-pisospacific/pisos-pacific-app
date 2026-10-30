@@ -51964,6 +51964,18 @@
       ],
       "notes": null,
       "updated_at": "2026-10-28T17:30:25.059Z"
+    },
+    {
+      "id": "CLI-mvv3hpuy-ul7i",
+      "type": "client",
+      "active": true,
+      "dni": "",
+      "emails": [],
+      "phones": [],
+      "addresses": [],
+      "notes": null,
+      "name": "Paula Taquini",
+      "updated_at": "2026-10-30T14:56:19.498Z"
     }
   ],
   "expenses": [],
