@@ -167394,6 +167394,22 @@
       "assigned_seller": "",
       "created_at": "2026-10-30T01:08:00.659Z",
       "last_touch_at": "2026-10-30T01:08:00.659Z"
+    },
+    {
+      "id": "lead-instagram-1793391367452",
+      "name": "@nestormr8",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-10-30T20:16:06.042Z",
+      "last_touch_at": "2026-10-30T20:16:06.042Z"
     }
   ],
   "conversations": [
@@ -176164,6 +176180,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-10-30T01:08:00.659Z",
       "last_outbound_at": "2026-10-30T19:16:15.120Z"
+    },
+    {
+      "id": "conv-1793391367451-0bms",
+      "channel": "instagram",
+      "contact_id": "1413802724238282",
+      "contact_name": "@nestormr8",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1793391367452",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-10-30T20:16:06.042Z",
+      "last_message_preview": "Pisos spc precio por favor",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-10-30T20:16:06.042Z"
     }
   ],
   "messages": [
@@ -200565,6 +200595,14 @@
       "status": "sent",
       "wa_id": "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTgxNjg3ODUyODE0NjgxMzozMzA4MjE2NTMxMjU2MDYxOTA0ODYyNTQzMzY0MDY5Nzg1NgZDZD",
       "via": "ig-app"
+    },
+    {
+      "id": "m-1793391367452-t3wf",
+      "conversation_id": "conv-1793391367451-0bms",
+      "direction": "in",
+      "body": "Pisos spc precio por favor",
+      "ts": "2026-10-30T20:16:06.042Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -214622,7 +214660,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTc3MDUyMTQ5OTIwMzc0MzozMzA3OTI2OTg4MTI0MzExNTQyMDQ3NjQ2ODg2NjU4MDQ4MAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzA4MDIyNzI0MTk3Mzg1NDg1MDQyODcyODE2ODY3NzM3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMxOTAzNDkwMjA3MDAyNzozMzA4MDY5ODU1Njg1ODk2MzkxMTU1ODIxMDc5NTg2NDA2NAZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTgxNjg3ODUyODE0NjgxMzozMzA4MDk2MDg0MjM2MzQxNzQ2NTgzOTI0MDE0NDIyNDI1NgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTgxNjg3ODUyODE0NjgxMzozMzA4MDk2MDg0MjM2MzQxNzQ2NTgzOTI0MDE0NDIyNDI1NgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU2NzE3NDM3MDA3NjI3MzozMzA4MjIzMTU1MzM4MjQzNDkyNjUxMDcwMzI2NTE4NTc5MgZDZD"
     ],
     "last_weekly_reminder": "2026-10-30T12:46:25.948Z",
     "warehouses": [
