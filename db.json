@@ -53253,6 +53253,24 @@
       "category_default": null,
       "notes": null,
       "name": "CH Estudio"
+    },
+    {
+      "id": "PROV-mvv4l9ed-r932",
+      "type": "Personal",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null,
+      "name": "Elisa Pasman"
+    },
+    {
+      "id": "PROV-mvv4l9l1-yu4o",
+      "type": "Servicios",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null,
+      "name": "Lorena Patigore"
     }
   ],
   "categories": [
@@ -156083,11 +156101,12 @@
       "transfer": false,
       "needs_review": false,
       "counterparty": "Elisa Pasman",
-      "counterparty_type": "person",
+      "counterparty_type": "supplier",
       "category": "Sueldos",
       "subcategory": "Sueldo",
       "expense_type": "Gastos de Personal (HR y Mano de Obra)",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "supplier_id": "PROV-mvv4l9ed-r932"
     },
     {
       "id": "ef-l30-20261029-04",
@@ -156116,15 +156135,16 @@
       "caja_name": "Efectivo Pesos",
       "amount_ars": 700000,
       "amount_usd": 451.61,
-      "description": "Efectivo — Abogadas SECLO — honorarios conciliación laboral",
+      "description": "Efectivo — Abogadas SECLO (Lorena Patigore) — honorarios conciliación laboral",
       "transfer": false,
       "needs_review": false,
-      "counterparty": "Abogadas SECLO",
+      "counterparty": "Lorena Patigore",
       "counterparty_type": "supplier",
       "category": "Administración",
       "subcategory": "Honorarios Legales",
       "expense_type": "Gastos Administrativos",
-      "fixed_variable": "Variable"
+      "fixed_variable": "Variable",
+      "supplier_id": "PROV-mvv4l9l1-yu4o"
     },
     {
       "id": "ef-l30-20261030-06",
@@ -211569,6 +211589,10 @@
     "cYRJ5zezkbApASmIEoUmDHy4VGIVucyv": {
       "userId": "u-admin",
       "expires": 1794583603083
+    },
+    "Q8tbAAAQ_om9opT103y6hDOQlvmOZQIG": {
+      "userId": "u-admin",
+      "expires": 1794583624078
     }
   },
   "settings": {
