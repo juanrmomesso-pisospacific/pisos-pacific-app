@@ -157627,7 +157627,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-22T12:03:51.000Z",
-      "last_touch_at": "2026-10-22T02:19:47.000Z"
+      "last_touch_at": "2026-10-30T03:46:35.000Z"
     },
     {
       "id": "lead-email-19eef49c3872",
@@ -167779,12 +167779,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19eef374d23d",
       "status": "closed",
-      "unread_count": 11,
-      "last_message_at": "2026-10-22T02:19:47.000Z",
-      "last_message_preview": "HI Victoria\n\nMy mistake, it should be real EIR, PI updated, please check again.\n\nBest regards\nLi\n\n在 2026年10月21日 19:58，Victoria Pisos Pacific",
+      "unread_count": 12,
+      "last_message_at": "2026-10-30T03:46:35.000Z",
+      "last_message_preview": "HI Victoria\n\nPI attached.\n\nPlease check\nLi\n\n在 2026年10月27日 02:09，Victoria Pisos Pacific<victoria@pisospacific.com> 写道：\n\nHi Young,\n\nCould you ",
       "email_subject": "回复：Pacific Certifications - Request",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-22T02:19:47.000Z",
+      "last_inbound_at": "2026-10-30T03:46:35.000Z",
       "last_outbound_at": "2026-08-07T12:24:21.000Z",
       "ignored": true
     },
@@ -199593,6 +199593,14 @@
       "body": "hola",
       "ts": "2026-10-30T01:08:00.659Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a18aead0005",
+      "conversation_id": "conv-email-19eef374d23d",
+      "direction": "in",
+      "body": "✉️ 回复：NEW ORDER FOR CANADA | PDPG 2634\n\nHI Victoria\n\nPI attached.\n\nPlease check\nLi\n\n在 2026年10月27日 02:09，Victoria Pisos Pacific<victoria@pisospacific.com> 写道：\n\nHi Young,\n\nCould you please send me the order confirmation for PDPG 2634?\n\nThe last price was $5.30 USD.\n\nSpecifications:\n\n  - Product: SPC 1220x180x4mm/0.3mmWL\n  - Surface: EIR surface\n  - Underlayment: 1.5mm EVA (Total thickness: 5.5mm)\n  - Packaging: 10 pcs (2.196 sqm) / box, 65 boxes (142.74 sqm) / pallet, 20 pallets (2854.80 sqm) / 20' container\n  - Pallet Type: Canada Pallet\n\nOrder Breakdown:\n\n  - 12 pallets (780 boxes, 1,710 m2) – ASPEN - TW-9531-4\n  - 4 pallets (260 boxes, 570 m2) – ESLAVONIA - LS105-1\n  - 4 pallets (260 boxes, 570 m2) – NEW SMOKE TW6151-2\n\nAdditional Notes:\n\n  - Normal wooden pallets\n  - Pacific box branding\n  - No patent\n\nPlease also let me know the estimated production time.\n\nBest regards,\nVictoria",
+      "ts": "2026-10-30T03:46:35.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -211162,7 +211170,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-29T12:48:01.044Z",
     "gmail_seen_ids": [
-      "19fe6662508c51c3",
       "19fe663ec098f58f",
       "19fe66a3e9605906",
       "19fe75cebcda6a30",
@@ -211961,7 +211968,8 @@
       "1a18846d99e4fb42",
       "1a1892aab8325d1d",
       "1a1892a779af6a00",
-      "1a18ae6a3e0bbc61"
+      "1a18ae6a3e0bbc61",
+      "1a18aead000571e9"
     ],
     "cash_sessions": {
       "1136982222": {
