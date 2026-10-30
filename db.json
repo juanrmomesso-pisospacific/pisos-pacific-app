@@ -19031,7 +19031,7 @@
       "client_email": "",
       "client_phone": "1162176955",
       "client_address": "Martinez",
-      "contract_total": 2282.2657,
+      "contract_total": 1886,
       "items": [
         {
           "product_id": "PROD-202",
@@ -19104,12 +19104,12 @@
       "discount_total": 273.03,
       "status": "Confirmado",
       "created_at": "2026-10-20T22:15:27.945Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 2282.2657,
-        "total_paid": 0,
-        "balance_due": 2282.2657
+        "total_invoiced": 1886,
+        "total_paid": 1500,
+        "balance_due": 386
       },
       "stock_reserved": true,
       "stock_deducted": false,
