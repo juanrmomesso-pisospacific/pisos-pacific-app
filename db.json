@@ -166368,7 +166368,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-10-27T12:12:45.000Z",
-      "last_touch_at": "2026-10-27T15:30:53.000Z"
+      "last_touch_at": "2026-10-30T13:04:51.000Z"
     },
     {
       "id": "lead-instagram-1793113282956",
@@ -175169,12 +175169,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a17d46fd734",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-10-27T15:30:53.000Z",
-      "last_message_preview": "Dear team,\r\n\r\nI am following up on the confidential potential acquisition in the Portuguese wood flooring and parquet sector.\r\n\r\nIf relevant",
+      "unread_count": 1,
+      "last_message_at": "2026-10-30T13:04:51.000Z",
+      "last_message_preview": "Dear team,\r\n\r\nJust checking whether a potential acquisition in Portuguese wood flooring and parquet could be of interest.\r\n\r\nWe can provide ",
       "email_subject": "Project Designline | Confidential M&A opportunity",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-27T15:30:53.000Z",
+      "last_inbound_at": "2026-10-30T13:04:51.000Z",
       "ignored": true
     },
     {
@@ -199634,6 +199634,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 6e9e6b35f30343d09aefea879f83f51a\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-28 00:00:00 UTC to 2026-10-29 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-30T08:27:01.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a18ce9c6a3c",
+      "conversation_id": "conv-email-1a17d46fd734",
+      "direction": "in",
+      "body": "✉️ Re: Project Designline | Confidential M&A opportunity\n\nDear team,\r\n\r\nJust checking whether a potential acquisition in Portuguese wood flooring and parquet could be of interest.\r\n\r\nWe can provide an anonymous overview before disclosing the company's identity. Would you like to receive it?\r\n\r\nKind regards,\r\n\r\nIntuition Consulting Portugal | M&A Team\r\n\r\nintuitionconsulting.net\r\n\r\nOn Tue, October 27, 2026 3:30 PM, Monica Raquel <monica.raquel@intuitionconsultingportugal.org>\r\n[monica.raquel@intuitionconsultingportugal.org]> wrote:\r\n\r\n> Dear team,\r\n> \r\n> I am following up on the confidential potential acquisition in the Portuguese wood flooring and parquet sector.\r\n> \r\n> If relevant to your strategic plans, we would be pleased to send a short anonymous teaser for your review.\r\n> \r\n> Kind regards,\r\n> \r\n> Intuition Consulting Portugal | M&A Team\r\n> \r\n> intuitionconsulting.net\r\n> On Tue, October 27, 2026 12:12 PM, Monica Raquel <monica.raquel@intuitionconsultingportugal.org>\r\n> [monica.raquel@intuitionconsultingportugal.org]> wrote:\r\n> \r\n> > Dear team,\r\n> > \r\n> > I am contacting you on behalf of Intuition Consulting Portugal regarding a confidential potential acquisition involving a Portuguese company in the wood flooring and parquet sector.\r\n> > \r\n> > We are assessing potential strategic interest from industry participants. Would your management or corporate development team be interested in receiving a brief anonymous teaser?\r\n> > \r\n> > If this is not the appropriate contact, could you kindly forward this message to the relevant collea",
+      "ts": "2026-10-30T13:04:51.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -211203,7 +211211,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-10-30T12:49:08.868Z",
     "gmail_seen_ids": [
-      "19fe951ab15e6198",
       "19feaf9ac0efa5e6",
       "19feb171a67f5905",
       "19feb27895466849",
@@ -212002,7 +212009,8 @@
       "1a18beb6ad432f28",
       "1a18c3cda892cc29",
       "1a18cd8e09a8afa9",
-      "1a18cd8e174aebe9"
+      "1a18cd8e174aebe9",
+      "1a18ce9c6a3cab02"
     ],
     "cash_sessions": {
       "1136982222": {
