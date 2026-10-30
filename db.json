@@ -156718,6 +156718,28 @@
       "raw_name": "Comi Trf >250",
       "classified_by": "regla \"comi trf >250\" → Banco de Comercio (aprendida)",
       "id": "MOV-IMP-mvv55xdn-013"
+    },
+    {
+      "id": "local-1793377075464-t8zek",
+      "flow": "Ingreso",
+      "date": "2026-10-30T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Paz Pucheta",
+      "counterparty_type": "client",
+      "description": "Cobro - Cotización Paz Pucheta ",
+      "sale_ref": "A5924",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 1500,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
