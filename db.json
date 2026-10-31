@@ -53329,6 +53329,15 @@
       "category_default": null,
       "notes": null,
       "name": "Lorena Patigore"
+    },
+    {
+      "id": "PROV-mvwdipvo-azq8",
+      "type": "supplier",
+      "active": true,
+      "stock_code": null,
+      "category_default": null,
+      "notes": null,
+      "name": "Hugo Schelloto"
     }
   ],
   "categories": [
