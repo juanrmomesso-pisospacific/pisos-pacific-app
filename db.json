@@ -24962,8 +24962,8 @@
       "internal_notes": "",
       "public_notes": "",
       "payment_terms": "Anticipo 80% · Conforme 20%",
-      "seller_name": "Juan Rodriguez Momesso",
-      "seller_phone": "+54 9 11 51750087",
+      "seller_name": "Victoria Gonzalez Collado",
+      "seller_phone": "+54 11 36982222",
       "title": "Obra San Isidro - Arq. Guillermina",
       "has_iva": true,
       "price": 10300.73,
@@ -25092,7 +25092,11 @@
       "created_at": "2026-06-18T19:58:20.955Z",
       "quote_number": "A2900",
       "status": "Aceptado",
-      "sale_id": "local-sale-1781812711536-ocb4"
+      "sale_id": "local-sale-1781812711536-ocb4",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD"
     },
     {
       "id": "local-1781876989499-s9n6e",
