@@ -20813,7 +20813,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "",
-      "contract_total": 970.7829999999999,
+      "contract_total": 802,
       "items": [
         {
           "product_id": "ZOC-MDF-08",
@@ -20846,12 +20846,12 @@
       "discount_total": 0,
       "status": "Confirmado",
       "created_at": "2026-11-02T13:03:58.786Z",
-      "has_iva": true,
-      "iva_mode": "full",
+      "has_iva": false,
+      "iva_mode": "none",
       "financial_position": {
-        "total_invoiced": 0,
+        "total_invoiced": 802,
         "total_paid": 0,
-        "balance_due": 970.7829999999999
+        "balance_due": 802
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -20860,7 +20860,8 @@
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "iva_amount": 0
     }
   ],
   "quotes": [
