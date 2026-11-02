@@ -216068,7 +216068,7 @@
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
     "mp_pending_at": null,
-    "receipt_next": 114,
+    "receipt_next": 115,
     "receipt_signature": "firma-juan.png",
     "receipt_signer": "Juan Rodriguez Momesso"
   },
@@ -218826,6 +218826,17 @@
       "currency": "USD",
       "method": "Efectivo USD",
       "date": "2026-10-30T00:00:00.000Z",
+      "concept": ""
+    },
+    {
+      "no": 114,
+      "sale_id": "0000098",
+      "cobro_ref": "local-1793630020660-5s0pk",
+      "ts": "2026-11-02T14:34:58.438Z",
+      "amount": 10000,
+      "currency": "USD",
+      "method": "Efectivo USD",
+      "date": "2026-11-02T00:00:00.000Z",
       "concept": ""
     }
   ]
