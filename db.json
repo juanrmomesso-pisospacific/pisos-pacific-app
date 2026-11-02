@@ -166591,7 +166591,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-09-28T05:54:22.000Z",
-      "last_touch_at": "2026-09-28T05:54:22.000Z"
+      "last_touch_at": "2026-11-02T14:18:56.000Z"
     },
     {
       "id": "lead-email-1a0e83a7ebed",
@@ -175657,12 +175657,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a0e6942eb3d",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-09-28T05:54:22.000Z",
-      "last_message_preview": "Estimado equipo comercial,\r\n\r\n \r\n\r\nEspero que se encuentren muy bien.\r\n\r\n \r\n\r\nSomos un fabricante especializado en pisos con más de 23 años ",
+      "unread_count": 1,
+      "last_message_at": "2026-11-02T14:18:56.000Z",
+      "last_message_preview": "Estimado equipo comercial:\r\n\r\n\r\n\r\nQuisiera presentarles una nueva generación de pisos rígidos: MSPC, desarrollada para ofrecer un nivel supe",
       "email_subject": "Nueva solución de pisos rígidos de alto rendimiento – MSPC",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-28T05:54:22.000Z",
+      "last_inbound_at": "2026-11-02T14:18:56.000Z",
       "ignored": true
     },
     {
@@ -201247,6 +201247,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 158d428a96bf401c973a4adf3e18beaa\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-10-29 00:00:00 UTC to 2026-10-30 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-10-31T08:25:03.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a19ca0b9870",
+      "conversation_id": "conv-email-1a0e6942eb3d",
+      "direction": "in",
+      "body": "✉️ MSPC: una nueva generación de pisos rígidos de alto rendimiento\n\nEstimado equipo comercial:\r\n\r\n\r\n\r\nQuisiera presentarles una nueva generación de pisos rígidos: MSPC, desarrollada para ofrecer un nivel superior de resistencia superficial y durabilidad frente al SPC tradicional.\r\n\r\nGracias a su alto rendimiento frente a los rayones, la abrasión y el desgaste diario, MSPC es una solución especialmente interesante para aplicaciones comerciales y zonas de alto tránsito, donde la resistencia y la durabilidad del piso son factores clave.\r\n\r\nPara los distribuidores que buscan diferenciar su oferta, MSPC representa una oportunidad para incorporar una categoría de pisos de alto rendimiento, diseñada para responder a las exigencias de espacios residenciales y comerciales.\r\n\r\nSomos fabricantes de pisos con más de 23 años de experiencia en mercados internacionales, y nos gustaría que conocieran mejor esta tecnología.\r\n\r\nContamos con videos de pruebas de resistencia superficial e información técnica que podemos compartir con ustedes.\r\n\r\n¿Les gustaría recibir el video de prueba para conocer de primera mano el rendimiento de MSPC?\r\n\r\nMuchas gracias por su tiempo.\r\n\r\nSaludos cordiales,\r\n\r\nIvy\r\nSintop Works\r\nChangzhou, Jiangsu, China\r\nhttp://www.sintopworks.com/ \r\nWhatsApp: +86 138 6066 1561",
+      "ts": "2026-11-02T14:18:56.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -213034,7 +213042,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-11-02T12:50:32.306Z",
     "gmail_seen_ids": [
-      "19fed244459482a5",
       "19fed22c7cee78e9",
       "19fed1f07be96c82",
       "19fed4760f9a57ab",
@@ -213833,7 +213840,8 @@
       "1a1972598a16479a",
       "1a19bdd81dde102b",
       "1a19c254b8215df6",
-      "1a19c4bf718c5288"
+      "1a19c4bf718c5288",
+      "1a19ca0b98709012"
     ],
     "cash_sessions": {
       "1136982222": {
