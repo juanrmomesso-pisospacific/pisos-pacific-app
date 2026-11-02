@@ -168694,11 +168694,27 @@
         "Roble Clasico h2o"
       ],
       "notes": "",
-      "status": "Contacted",
+      "status": "Quoted",
       "assigned_seller": "Victoria Gonzalez Collado",
       "address": "Teodoro Garcia 1775 7A",
       "created_at": "2026-11-02T20:16:58.424Z",
-      "last_touch_at": "2026-11-02T20:17:00.839Z"
+      "last_touch_at": "2026-11-02T21:10:22.015Z"
+    },
+    {
+      "id": "local-1793653816505-phfm2",
+      "name": "Valeria Oria",
+      "phone": "1159265391",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "DECK WPC"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Cardales - Loma Negra",
+      "created_at": "2026-11-02T21:10:16.083Z",
+      "last_touch_at": "2026-11-02T21:10:19.714Z"
     }
   ],
   "conversations": [
