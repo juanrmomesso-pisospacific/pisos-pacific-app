@@ -168068,6 +168068,23 @@
       "assigned_seller": "",
       "created_at": "2026-10-30T20:16:06.042Z",
       "last_touch_at": "2026-10-30T20:16:06.042Z"
+    },
+    {
+      "id": "lead-email-1a19cb8fd3d1",
+      "name": "Felicitas St Cricq",
+      "email": "felicitas.saint.c@gmail.com",
+      "phone": "",
+      "source": "Email",
+      "address": "",
+      "postal_code": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Email: cotizacion piso madera — Hola buen dia, les escribo porque me interesa tener asesoramiento en pisos\r\nde madera para poner en el departamento de unos clientes.\r\nSerian aprox 50 m2. Actualmente en living com",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-11-02T14:45:16.000Z",
+      "last_touch_at": "2026-11-02T14:37:19.000Z"
     }
   ],
   "conversations": [
@@ -176852,6 +176869,21 @@
       "last_message_preview": "Pisos spc precio por favor",
       "last_message_direction": "in",
       "last_inbound_at": "2026-10-30T20:16:06.042Z"
+    },
+    {
+      "id": "conv-email-1a19cb8fd3d1",
+      "channel": "email",
+      "contact_id": "felicitas.saint.c@gmail.com",
+      "contact_name": "Felicitas St Cricq",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a19cb8fd3d1",
+      "status": "open",
+      "unread_count": 2,
+      "last_message_at": "2026-11-02T14:45:16.000Z",
+      "last_message_preview": "Hola buen dia, les escribo porque me interesa tener asesoramiento en pisos\r\nde madera para poner en el departamento de unos clientes.\r\nSeria",
+      "email_subject": "cotizacion piso madera",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-11-02T14:45:16.000Z"
     }
   ],
   "messages": [
@@ -201277,6 +201309,22 @@
       "body": "✉️ MSPC: una nueva generación de pisos rígidos de alto rendimiento\n\nEstimado equipo comercial:\r\n\r\n\r\n\r\nQuisiera presentarles una nueva generación de pisos rígidos: MSPC, desarrollada para ofrecer un nivel superior de resistencia superficial y durabilidad frente al SPC tradicional.\r\n\r\nGracias a su alto rendimiento frente a los rayones, la abrasión y el desgaste diario, MSPC es una solución especialmente interesante para aplicaciones comerciales y zonas de alto tránsito, donde la resistencia y la durabilidad del piso son factores clave.\r\n\r\nPara los distribuidores que buscan diferenciar su oferta, MSPC representa una oportunidad para incorporar una categoría de pisos de alto rendimiento, diseñada para responder a las exigencias de espacios residenciales y comerciales.\r\n\r\nSomos fabricantes de pisos con más de 23 años de experiencia en mercados internacionales, y nos gustaría que conocieran mejor esta tecnología.\r\n\r\nContamos con videos de pruebas de resistencia superficial e información técnica que podemos compartir con ustedes.\r\n\r\n¿Les gustaría recibir el video de prueba para conocer de primera mano el rendimiento de MSPC?\r\n\r\nMuchas gracias por su tiempo.\r\n\r\nSaludos cordiales,\r\n\r\nIvy\r\nSintop Works\r\nChangzhou, Jiangsu, China\r\nhttp://www.sintopworks.com/ \r\nWhatsApp: +86 138 6066 1561",
       "ts": "2026-11-02T14:18:56.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a19cb8fd3d1",
+      "conversation_id": "conv-email-1a19cb8fd3d1",
+      "direction": "in",
+      "body": "✉️ cotizacion piso madera\n\nHola buen dia, les escribo porque me interesa tener asesoramiento en pisos\r\nde madera para poner en el departamento de unos clientes.\r\nSerian aprox 50 m2. Actualmente en living comedor hay un parquet viejo que\r\nse levantara y en los dormitorios hay fenolico. Todo esta montado sobre\r\nvigas y alfajias con una camara de aire de 10 cm aprox. La obra es un 4to\r\npiso.\r\n\r\nMe gustaria asesorarme un poco porque el albañil me sugiere hacer carpeta y\r\nno quiero meter la pata.  Los clientes quieren \"piso de madera madera!\"\r\n\r\nMi numero de telefono esta en la firma, porfavor si pueden contactarme se\r\nlos agradeceria.\r\n\r\nSaludos!!\r\n*FELICITAS SAINT-CRICQ*\r\n     -diseño de interiores-\r\n*           t: 011 15 3846 8146*",
+      "ts": "2026-11-02T14:45:16.000Z",
+      "status": "received"
+    },
+    {
+      "id": "m-email-1a19cb17c212",
+      "conversation_id": "conv-email-1a19cb8fd3d1",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 50m² · Con Colocación · CP 1425 · Sanchez de bustamante 1754",
+      "ts": "2026-11-02T14:37:19.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -213064,8 +213112,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-11-02T12:50:32.306Z",
     "gmail_seen_ids": [
-      "19fed22c7cee78e9",
-      "19fed1f07be96c82",
       "19fed4760f9a57ab",
       "19fed688502dd256",
       "19feda7c520b4552",
@@ -213863,7 +213909,9 @@
       "1a19bdd81dde102b",
       "1a19c254b8215df6",
       "1a19c4bf718c5288",
-      "1a19ca0b98709012"
+      "1a19ca0b98709012",
+      "1a19cb8fd3d12c7e",
+      "1a19cb17c212d4c5"
     ],
     "cash_sessions": {
       "1136982222": {
