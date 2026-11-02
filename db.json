@@ -18360,7 +18360,7 @@
       ],
       "zoned": false,
       "discount_total": 165,
-      "status": "En proceso",
+      "status": "Finalizado",
       "created_at": "2026-10-13T11:58:09.136Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -18402,6 +18402,12 @@
           "to": "En proceso",
           "at": "2026-10-14T15:22:18.142Z",
           "by": "Admin User"
+        },
+        {
+          "from": "En proceso",
+          "to": "Finalizado",
+          "at": "2026-11-02T12:03:39.912Z",
+          "by": "Victoria Gonzalez Collado"
         }
       ],
       "iva_amount": 0
