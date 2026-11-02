@@ -17230,7 +17230,7 @@
       ],
       "zoned": false,
       "discount_total": 125.4,
-      "status": "Confirmado",
+      "status": "Finalizado",
       "created_at": "2026-09-10T00:25:31.613Z",
       "has_iva": false,
       "iva_mode": "none",
@@ -17262,7 +17262,15 @@
           ]
         }
       ],
-      "material_delivery_date": "2026-10-01"
+      "material_delivery_date": "2026-10-01",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Finalizado",
+          "at": "2026-11-02T12:04:36.941Z",
+          "by": "Victoria Gonzalez Collado"
+        }
+      ]
     },
     {
       "id": "local-sale-1789483538339-ymmr",
