@@ -3510,6 +3510,23 @@
       "createdAt": "2026-11-02T20:42:17.550Z",
       "updatedAt": "2026-11-02T20:42:31.414Z",
       "stockTrack": false
+    },
+    {
+      "id": "local-1793652339510-2q9li",
+      "name": "Colocacion prefinished pegada",
+      "sku": "SERV-97",
+      "category": "Pisos de Madera",
+      "price": 27,
+      "cost": 20,
+      "currency": "USD",
+      "stock": 0,
+      "reservedStock": 0,
+      "m2_por_caja": 0,
+      "unit": "m2",
+      "active": true,
+      "margin": 35,
+      "createdAt": "2026-11-02T20:45:39.221Z",
+      "updatedAt": "2026-11-02T20:45:39.221Z"
     }
   ],
   "sales": [
