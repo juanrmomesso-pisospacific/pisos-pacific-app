@@ -157167,6 +157167,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1793621904228-jiauv",
+      "date": "2026-09-11T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "HR",
+      "subcategory": "Pago Instalaciones",
+      "counterparty": "Fabian Ortiz",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-027",
+      "description": "Colocación Sole",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 1100000,
+      "amount_usd": 714.29,
+      "exchange_rate": 1539.99,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
