@@ -289,8 +289,8 @@
       "currency": "USD",
       "active": true,
       "margin": 159,
-      "stock": 1718.2000000000003,
-      "reservedStock": 808.13,
+      "stock": 1459.2000000000003,
+      "reservedStock": 549.13,
       "subLine": "Colección Madera",
       "shortName": "Roble Verona 12/1 Veta Tallada",
       "thicknessMm": 12,
@@ -8608,8 +8608,8 @@
         "total_paid": 10000,
         "balance_due": 15381.99
       },
-      "stock_reserved": true,
-      "stock_deducted": false,
+      "stock_reserved": false,
+      "stock_deducted": true,
       "seller_name": "",
       "payments": [
         {
@@ -8665,7 +8665,23 @@
           "unit": "cajas"
         }
       ],
-      "remito_confirmed": false
+      "remito_confirmed": false,
+      "material_deliveries": [
+        {
+          "id": "DEL-mvz9msn6",
+          "date": "2026-10-30",
+          "note": null,
+          "by": "Victoria Gonzalez Collado",
+          "items": [
+            {
+              "sku": "PROD-011",
+              "product_id": "PROD-011",
+              "quantity": 259
+            }
+          ]
+        }
+      ],
+      "material_delivery_date": "2026-10-30"
     },
     {
       "id": "0000099",
@@ -211235,6 +211251,15 @@
       "product_id": "PROD-190",
       "sku": "PROD-190",
       "qty": -80,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-11-02T12:59:18.786Z",
+      "type": "sale_deduct",
+      "ref": "0000098",
+      "product_id": "PROD-011",
+      "sku": "PROD-011",
+      "qty": -259,
       "warehouse_id": "main"
     }
   ],
