@@ -157415,6 +157415,28 @@
       "review_reason": null,
       "source": "mp-api",
       "id": "MOV-MPAUTO-mvz9bieq-002"
+    },
+    {
+      "id": "local-1793630020660-5s0pk",
+      "flow": "Ingreso",
+      "date": "2026-11-02T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Rosario Novillo",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra Tortugas",
+      "sale_ref": "0000098",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 10000,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
