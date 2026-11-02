@@ -168334,6 +168334,22 @@
       "assigned_seller": "",
       "created_at": "2026-11-02T18:18:58.000Z",
       "last_touch_at": "2026-11-02T18:18:58.000Z"
+    },
+    {
+      "id": "local-1793650618601-l7mz7",
+      "name": "Ine Carrera | Reparacion",
+      "phone": "+1150156815",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "Roble Clasico h2o"
+      ],
+      "notes": "",
+      "status": "Contacted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Teodoro Garcia 1775 7A",
+      "created_at": "2026-11-02T20:16:58.424Z",
+      "last_touch_at": "2026-11-02T20:17:00.839Z"
     }
   ],
   "conversations": [
