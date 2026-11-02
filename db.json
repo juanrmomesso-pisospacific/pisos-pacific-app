@@ -49890,6 +49890,63 @@
       "quote_number": "A5236",
       "status": "DRAFT",
       "lead_id": "local-1793650618601-l7mz7"
+    },
+    {
+      "id": "local-1793652453248-kh9dh",
+      "client_id": "CLI-mtlunk7u-15ph",
+      "client_name": "Arq. María Fernandez Barca",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "+54 9 11 5560-7419",
+      "client_address": "Obra Palermo - Obra Beruti Ana Bertolino",
+      "internal_notes": "",
+      "public_notes": "",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Arq. María Fernandez Barca",
+      "has_iva": true,
+      "price": 4438.885,
+      "zoned": false,
+      "description": "Colocacion prefinished pegada + 1 más",
+      "items": [
+        {
+          "product_id": "local-1793652339510-2q9li",
+          "sku": "SERV-97",
+          "description": "Colocacion prefinished pegada",
+          "quantity": 95,
+          "unit_price": 27,
+          "cost": 20,
+          "category": "Pisos de Madera",
+          "disc_value": 10,
+          "total": 2565,
+          "discount": 256.5,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "local-1793652138324-fo38r",
+          "sku": "PROD-97",
+          "description": "Adhesivo silano 848T 4K",
+          "quantity": 16,
+          "unit_price": 85,
+          "cost": 59,
+          "category": "Pisos de Madera",
+          "total": 1360,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 256.5,
+      "discount_amount": 256.5,
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "created_at": "2026-11-02T20:47:32.950Z",
+      "quote_number": "A6169",
+      "status": "DRAFT"
     }
   ],
   "clients": [
