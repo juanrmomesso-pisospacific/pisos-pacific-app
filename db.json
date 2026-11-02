@@ -157003,6 +157003,28 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "local-1793620629868-nlc34",
+      "flow": "Ingreso",
+      "date": "2026-11-02T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Arq. Julieta Steinmann",
+      "counterparty_type": "client",
+      "description": "Cobro - Cotización Arq. Julieta Steinmann",
+      "sale_ref": "A5780",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 2000,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
