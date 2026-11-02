@@ -156914,7 +156914,7 @@
     },
     {
       "id": "mov-1793618478630-wm1dp",
-      "date": "2026-11-02T00:00:00.000Z",
+      "date": "2026-10-30T00:00:00.000Z",
       "flow": "Egreso",
       "caja_id": "CAJ-009",
       "caja_name": "Efectivo Pesos",
@@ -218008,6 +218008,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Hugo Ramirez\""
+    },
+    {
+      "id": "local-1793618490384-oi41l",
+      "match": [
+        "Ariel Ernesto Garcia"
+      ],
+      "cuit": null,
+      "counterparty": "Ariel Ernesto Garcia",
+      "category": "HR",
+      "subcategory": "Pago Instalaciones",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Ariel Ernesto Garcia\""
     }
   ],
   "product_aliases": [
