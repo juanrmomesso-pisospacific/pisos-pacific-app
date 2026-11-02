@@ -157143,6 +157143,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1793621852361-h01rk",
+      "date": "2026-09-11T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "Flota",
+      "subcategory": "Flete",
+      "counterparty": "Carlos Vera",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-032",
+      "description": "Entregas de la semana",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 980000,
+      "amount_usd": 636.36,
+      "exchange_rate": 1540.01,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Flota/Vehículos",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
