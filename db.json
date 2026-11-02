@@ -49543,7 +49543,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Georgina Cornejo",
       "has_iva": true,
-      "price": 900.9659999999999,
+      "price": 840.2724,
       "zoned": false,
       "description": "H2O - Roble Eslavonia 5,5mm x 18cm x 1,20m + 2 más",
       "items": [
@@ -49555,8 +49555,9 @@
           "unit_price": 38,
           "cost": 16.13,
           "category": "Pisos H2O",
+          "disc_value": 10,
           "total": 501.59999999999997,
-          "discount": 0,
+          "discount": 50.16,
           "image": "",
           "target_item_index": null
         },
@@ -49587,8 +49588,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 0,
-      "discount_amount": 0,
+      "discount_total": 50.16,
+      "discount_amount": 50.16,
       "reseller_id": "",
       "reseller_name": "",
       "commission_split_discount": true,
