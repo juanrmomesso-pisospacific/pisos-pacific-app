@@ -2412,7 +2412,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 1143,
+      "reservedStock": 1226,
       "subLine": "Zócalos",
       "shortName": "Colocación Zócalos Pegados y Clavados",
       "thicknessMm": null,
@@ -3040,7 +3040,7 @@
       "currency": "USD",
       "margin": 50,
       "stock": 0,
-      "reservedStock": 187,
+      "reservedStock": 278,
       "stockTrack": false,
       "active": true,
       "createdAt": "2026-06-18T00:00:00.000Z",
@@ -20788,6 +20788,70 @@
         "total_invoiced": 0,
         "total_paid": 0,
         "balance_due": 2847.0816
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Victoria Gonzalez Collado",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
+    },
+    {
+      "id": "local-sale-1793624638786-zip1",
+      "quote_id": "local-1792438447791-u0bw5",
+      "quote_number": "A7380",
+      "title": "Las Liebres | Zocalos",
+      "description": "Zócalo MDF 8cm + 1 más",
+      "internal_notes": "",
+      "public_notes": "Las medidas deben verificarse en obra. Medidas basadas en planos. Varillas de terminaciones no estan contempladas.",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "local-1781547920984-3qj4v",
+      "client_name": "Tizi Grazioli",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "",
+      "contract_total": 970.7829999999999,
+      "items": [
+        {
+          "product_id": "ZOC-MDF-08",
+          "sku": "ZOC-MDF-08",
+          "description": "Zócalo MDF 8cm",
+          "quantity": 91,
+          "unit_price": 3.8,
+          "cost": 1.36,
+          "category": "Zócalos",
+          "total": 345.8,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-129",
+          "sku": "SERV-129",
+          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+          "quantity": 83,
+          "unit_price": 5.5,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 456.5,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 0,
+      "status": "Confirmado",
+      "created_at": "2026-11-02T13:03:58.786Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 970.7829999999999
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -47465,7 +47529,8 @@
       "currency": "USD",
       "created_at": "2026-10-19T19:34:07.640Z",
       "quote_number": "A7380",
-      "status": "DRAFT"
+      "status": "Aceptado",
+      "sale_id": "local-sale-1793624638786-zip1"
     },
     {
       "id": "local-1792439705345-g0jd3",
@@ -211262,6 +211327,24 @@
       "product_id": "PROD-011",
       "sku": "PROD-011",
       "qty": -259,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-11-02T13:03:56.627Z",
+      "type": "quote_reserve",
+      "ref": "local-1792438447791-u0bw5",
+      "product_id": "ZOC-MDF-08",
+      "sku": "ZOC-MDF-08",
+      "qty": 91,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-11-02T13:03:56.627Z",
+      "type": "quote_reserve",
+      "ref": "local-1792438447791-u0bw5",
+      "product_id": "SERV-129",
+      "sku": "SERV-129",
+      "qty": 83,
       "warehouse_id": "main"
     }
   ],
