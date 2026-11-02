@@ -3498,7 +3498,7 @@
       "name": "Adhesivo silano 848T 4K",
       "sku": "PROD-97",
       "category": "Pisos de Madera",
-      "price": 80,
+      "price": 85,
       "cost": 59,
       "currency": "USD",
       "stock": 0,
@@ -3506,9 +3506,10 @@
       "m2_por_caja": 0,
       "unit": "u",
       "active": true,
-      "margin": 36,
+      "margin": 44,
       "createdAt": "2026-11-02T20:42:17.550Z",
-      "updatedAt": "2026-11-02T20:42:17.550Z"
+      "updatedAt": "2026-11-02T20:42:31.414Z",
+      "stockTrack": false
     }
   ],
   "sales": [
