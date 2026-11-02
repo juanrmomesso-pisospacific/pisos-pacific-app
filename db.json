@@ -7705,7 +7705,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "Obra Casa Propia",
-      "contract_total": 15633,
+      "contract_total": 16142,
       "items": [
         {
           "product_id": "PROD-010",
@@ -7738,15 +7738,15 @@
       "delivery_status": "Acopiado",
       "created_at": "2025-12-23T00:00:00.000Z",
       "fecha_pendiente": false,
-      "has_iva": true,
+      "has_iva": false,
       "condicion": "Facturado",
       "factura": null,
       "comentarios": null,
       "payment_state": "Adelanto",
       "financial_position": {
-        "total_invoiced": 15633,
+        "total_invoiced": 16142,
         "total_paid": 13000,
-        "balance_due": 2633
+        "balance_due": 3142
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -7779,7 +7779,9 @@
         }
       ],
       "delivery_crew": "Gastón Aguilera",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "iva_mode": "none",
+      "iva_amount": 0
     },
     {
       "id": "0000087",
