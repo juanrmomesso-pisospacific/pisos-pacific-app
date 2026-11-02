@@ -49614,9 +49614,9 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Ine Carrera | Reparacion",
       "has_iva": true,
-      "price": 1594.5864000000001,
+      "price": 2175.3864000000003,
       "zoned": true,
-      "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m + 2 más",
+      "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m + 3 más",
       "items": [
         {
           "product_id": "PROD-033",
@@ -49657,6 +49657,20 @@
           "category": "Terminaciones",
           "zone": "Opcion 1 ",
           "total": 24,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 32,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "zone": "Opcion 1 ",
+          "total": 480,
           "discount": 0,
           "image": "",
           "target_item_index": null
