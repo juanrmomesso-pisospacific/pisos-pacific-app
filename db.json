@@ -168085,6 +168085,23 @@
       "assigned_seller": "",
       "created_at": "2026-11-02T14:45:16.000Z",
       "last_touch_at": "2026-11-02T14:37:19.000Z"
+    },
+    {
+      "id": "lead-email-1a19d7c6d056",
+      "name": "Rocio Musante",
+      "email": "rociomusante@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Godoy Cruz 2925",
+      "postal_code": "1425",
+      "approx_m2": 50,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 50m² · Con Colocación · CP 1425",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-11-02T18:18:58.000Z",
+      "last_touch_at": "2026-11-02T18:18:58.000Z"
     }
   ],
   "conversations": [
@@ -176884,6 +176901,21 @@
       "email_subject": "cotizacion piso madera",
       "last_message_direction": "in",
       "last_inbound_at": "2026-11-02T14:45:16.000Z"
+    },
+    {
+      "id": "conv-email-1a19d7c6d056",
+      "channel": "email",
+      "contact_id": "rociomusante@gmail.com",
+      "contact_name": "Rocio Musante",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a19d7c6d056",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-11-02T18:18:58.000Z",
+      "last_message_preview": "Formulario web — 50m² · Con Colocación · CP 1425 · Godoy Cruz 2925",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-11-02T18:18:58.000Z"
     }
   ],
   "messages": [
@@ -201325,6 +201357,14 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 50m² · Con Colocación · CP 1425 · Sanchez de bustamante 1754",
       "ts": "2026-11-02T14:37:19.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a19d7c6d056",
+      "conversation_id": "conv-email-1a19d7c6d056",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 50m² · Con Colocación · CP 1425 · Godoy Cruz 2925",
+      "ts": "2026-11-02T18:18:58.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -213112,7 +213152,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-11-02T12:50:32.306Z",
     "gmail_seen_ids": [
-      "19fed4760f9a57ab",
       "19fed688502dd256",
       "19feda7c520b4552",
       "19fef8111a0aa809",
@@ -213911,7 +213950,8 @@
       "1a19c4bf718c5288",
       "1a19ca0b98709012",
       "1a19cb8fd3d12c7e",
-      "1a19cb17c212d4c5"
+      "1a19cb17c212d4c5",
+      "1a19d7c6d056db79"
     ],
     "cash_sessions": {
       "1136982222": {
