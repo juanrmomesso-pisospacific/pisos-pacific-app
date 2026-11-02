@@ -1140,8 +1140,8 @@
       "price": 125,
       "cost": 75,
       "currency": "USD",
-      "active": false,
-      "margin": 66.7,
+      "active": true,
+      "margin": 67,
       "stock": 2.15,
       "reservedStock": 0,
       "subLine": "Deck PVC",
@@ -1153,10 +1153,12 @@
       "stockTrack": true,
       "stockCodeLegacy": "23901421",
       "createdAt": "2026-06-03T19:46:57.827Z",
-      "updatedAt": "2026-06-03T19:46:57.827Z",
+      "updatedAt": "2026-11-02T21:12:26.156Z",
       "lowStockAlarm": 50,
       "location": "Depósito",
-      "stockObs": "Deck PVC — STOCK BAJO"
+      "stockObs": "Deck PVC — STOCK BAJO",
+      "unit": "m2",
+      "m2_por_caja": 0
     },
     {
       "id": "PROD-043",
