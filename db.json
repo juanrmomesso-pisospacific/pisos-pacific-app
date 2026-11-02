@@ -156935,6 +156935,30 @@
       "transfer": false,
       "needs_review": false,
       "review_reason": null
+    },
+    {
+      "id": "mov-1793618640575-ysbc2",
+      "date": "2026-11-02T00:00:00.000Z",
+      "flow": "Egreso",
+      "caja_id": "CAJ-009",
+      "caja_name": "Efectivo Pesos",
+      "category": "HR",
+      "subcategory": "Sueldos",
+      "counterparty": "Pipi & Juan",
+      "counterparty_type": "supplier",
+      "client_id": null,
+      "supplier_id": "PROV-024",
+      "description": "Gastos de Fin de Semana",
+      "sale_ref": null,
+      "currency": "ARS",
+      "amount_ars": 220000,
+      "amount_usd": 141.48,
+      "exchange_rate": 1554.99,
+      "fixed_variable": "Variable",
+      "expense_type": "Gastos de Instalaciones y Suministros",
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
