@@ -45120,7 +45120,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "Obra Casa - Becco",
       "has_iva": true,
-      "price": 3364.2355999999995,
+      "price": 3767.0204,
       "zoned": false,
       "description": "H2O HD XL - Roble Eslavonia 6,5mm x 23cm x 1,50m + 2 más",
       "items": [
@@ -45132,9 +45132,9 @@
           "unit_price": 38,
           "cost": 16.33,
           "category": "Pisos H2O",
-          "disc_value": 20,
+          "disc_value": 5,
           "total": 2219.2,
-          "discount": 443.84,
+          "discount": 110.96,
           "image": "",
           "target_item_index": null
         },
@@ -45165,8 +45165,8 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 443.84,
-      "discount_amount": 443.84,
+      "discount_total": 110.96,
+      "discount_amount": 110.96,
       "reseller_id": "CLI-hugo-schellotto",
       "reseller_name": "Hugo Schellotto",
       "commission_split_discount": true,
