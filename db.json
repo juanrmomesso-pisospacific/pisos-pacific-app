@@ -11786,7 +11786,7 @@
       "client_email": "",
       "client_phone": "",
       "client_address": "A confirmar - Zona Norte - Pilar",
-      "contract_total": 9552.95,
+      "contract_total": 7895,
       "items": [
         {
           "product_id": "PROD-010",
@@ -11834,11 +11834,11 @@
       "discount_total": 675,
       "status": "En proceso",
       "created_at": "2026-06-15T18:28:23.174Z",
-      "has_iva": true,
+      "has_iva": false,
       "financial_position": {
-        "total_invoiced": 0,
-        "total_paid": 0,
-        "balance_due": 9552.95
+        "total_invoiced": 7895,
+        "total_paid": 6000,
+        "balance_due": 1895
       },
       "stock_reserved": false,
       "stock_deducted": true,
@@ -11875,7 +11875,9 @@
           ]
         }
       ],
-      "material_delivery_date": "2026-10-27"
+      "material_delivery_date": "2026-10-27",
+      "iva_mode": "none",
+      "iva_amount": 0
     },
     {
       "id": "local-sale-1781548327583-huow",
