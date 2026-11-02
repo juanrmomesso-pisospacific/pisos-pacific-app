@@ -7698,34 +7698,40 @@
       "id": "0000086",
       "quote_number": "0000086",
       "title": "Obra Casa Propia",
-      "description": "Madera - Roble Kitsilano 12/1 mm x 19cm x 1,90m / Veta Tallada",
+      "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada + 1 más",
       "client_id": "CLI-041",
       "client_name": "Arq. Tristan Miguens",
       "client_dni": "232323323",
       "client_email": "",
       "client_phone": "",
       "client_address": "Obra Casa Propia",
-      "contract_total": 18620.52,
+      "contract_total": 15633,
       "items": [
         {
           "product_id": "PROD-010",
           "sku": "PROD-010",
           "description": "Madera - Roble Kitsilano 12/1mm x 19cm x 1,90m - Veta Tallada",
-          "quantity": 245,
+          "quantity": 212.4,
           "unit_price": 75,
-          "total": 18375,
+          "total": 15930,
           "cost": 29,
-          "category": "Pisos de Madera"
+          "category": "Pisos de Madera",
+          "disc_value": 3587.6,
+          "disc_kind": "amount",
+          "discount": 3587.6
         },
         {
           "product_id": "SERV-107",
           "sku": "SERV-107",
           "description": "Servicio - Colocación Prefinished Sobre Manta",
-          "quantity": 222,
+          "quantity": 190,
           "unit_price": 20,
-          "total": 4440,
+          "total": 3800,
           "cost": 7.33,
-          "category": "Servicio"
+          "category": "Servicio",
+          "disc_value": 0,
+          "disc_kind": "pct",
+          "discount": 0
         }
       ],
       "status": "En proceso",
@@ -7738,9 +7744,9 @@
       "comentarios": null,
       "payment_state": "Adelanto",
       "financial_position": {
-        "total_invoiced": 18620.52,
+        "total_invoiced": 15633,
         "total_paid": 13000,
-        "balance_due": 5620.52
+        "balance_due": 2633
       },
       "stock_reserved": true,
       "stock_deducted": false,
@@ -7754,7 +7760,7 @@
         }
       ],
       "source": "excel-import+vercel+vercel",
-      "discount_total": 4194.48,
+      "discount_total": 3587.6,
       "vercel_qnum": "A0063",
       "delivery_date": "2026-10-26",
       "delivery_date_to": "2026-10-28",
@@ -7772,7 +7778,8 @@
           "by": "Admin User"
         }
       ],
-      "delivery_crew": "Gastón Aguilera"
+      "delivery_crew": "Gastón Aguilera",
+      "commission_amount": 0
     },
     {
       "id": "0000087",
