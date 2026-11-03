@@ -177581,7 +177581,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a19cb8fd3d1",
       "status": "open",
-      "unread_count": 2,
+      "unread_count": 0,
       "last_message_at": "2026-11-02T14:45:16.000Z",
       "last_message_preview": "Hola buen dia, les escribo porque me interesa tener asesoramiento en pisos\r\nde madera para poner en el departamento de unos clientes.\r\nSeria",
       "email_subject": "cotizacion piso madera",
@@ -177597,11 +177597,12 @@
       "linked_lead_id": "lead-email-1a19d7c6d056",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-11-02T18:18:58.000Z",
-      "last_message_preview": "Formulario web — 50m² · Con Colocación · CP 1425 · Godoy Cruz 2925",
+      "last_message_at": "2026-11-03T01:34:39.187Z",
+      "last_message_preview": "Hola Rocio, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-11-02T18:18:58.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-11-02T18:18:58.000Z",
+      "last_outbound_at": "2026-11-03T01:34:39.187Z"
     }
   ],
   "messages": [
@@ -202051,6 +202052,15 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 50m² · Con Colocación · CP 1425 · Godoy Cruz 2925",
       "ts": "2026-11-02T18:18:58.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793669679187-fls6",
+      "conversation_id": "conv-email-1a19d7c6d056",
+      "direction": "out",
+      "body": "Hola Rocio, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Equipo Pacific",
+      "ts": "2026-11-03T01:34:39.187Z",
+      "status": "sent",
+      "wa_id": "1a19f0b477b75b0e"
     }
   ],
   "templates": [
