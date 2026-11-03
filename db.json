@@ -838,7 +838,7 @@
       "active": true,
       "margin": 133,
       "stock": 256.332,
-      "reservedStock": 1935.2295999999997,
+      "reservedStock": 1989.4295999999997,
       "subLine": "Línea H2O HD XL",
       "shortName": "H2O HD XL Roble Clásico 6,5x23x150",
       "thicknessMm": 6.5,
@@ -1470,7 +1470,7 @@
       "active": true,
       "margin": 49.9,
       "stock": 0,
-      "reservedStock": 132,
+      "reservedStock": 184,
       "subLine": "Zócalo EPS",
       "shortName": "Zócalo EPS Line 70mm Negro",
       "thicknessMm": null,
@@ -1694,7 +1694,7 @@
       "active": true,
       "margin": 20,
       "stock": 0,
-      "reservedStock": 9,
+      "reservedStock": 11,
       "subLine": "Terminaciones",
       "shortName": "Varilla Aluminio Transición",
       "thicknessMm": null,
@@ -1766,7 +1766,7 @@
       "active": true,
       "margin": -100,
       "stock": 0,
-      "reservedStock": 5201.747,
+      "reservedStock": 5250.847000000001,
       "subLine": "Materiales",
       "shortName": "Nylon Manta 200 Micrones",
       "thicknessMm": null,
@@ -1862,7 +1862,7 @@
       "active": true,
       "margin": 150,
       "stock": 0,
-      "reservedStock": 8769.347,
+      "reservedStock": 8818.447,
       "subLine": "Colocación Piso",
       "shortName": "Colocación H2O",
       "thicknessMm": null,
@@ -2270,7 +2270,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 493,
+      "reservedStock": 542.1,
       "subLine": "Demolición",
       "shortName": "Retiro de Piso Existente (Alfombra)",
       "thicknessMm": null,
@@ -2414,7 +2414,7 @@
       "active": true,
       "margin": 30,
       "stock": 0,
-      "reservedStock": 1143,
+      "reservedStock": 1190,
       "subLine": "Zócalos",
       "shortName": "Colocación Zócalos Pegados y Clavados",
       "thicknessMm": null,
@@ -20913,6 +20913,136 @@
           "by": "Victoria Gonzalez Collado"
         }
       ]
+    },
+    {
+      "id": "local-sale-1793730519565-xozk",
+      "quote_id": "local-1792439705345-g0jd3",
+      "quote_number": "A2611",
+      "title": "Marina Fiks",
+      "description": "Servicio - Colocación H2O + 6 más",
+      "internal_notes": "",
+      "public_notes": "Presupuesto sujeto a condición de la carpeta, luego de retirar el piso existente",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "client_id": "CLI-mvfjm444-3r0t",
+      "client_name": "Marina Fiks",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "Marquéz y Panamericana",
+      "contract_total": 4647.973,
+      "items": [
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 49.1,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 736.5,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-206",
+          "sku": "PROD-206",
+          "description": "Zócalo EPS 70mm - Recto Negro",
+          "quantity": 52,
+          "unit_price": 10.49,
+          "cost": 7,
+          "category": "Zócalos",
+          "total": 545.48,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-129",
+          "sku": "SERV-129",
+          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
+          "quantity": 47,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 244.4,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-202",
+          "sku": "PROD-202",
+          "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
+          "quantity": 54.2,
+          "unit_price": 38,
+          "cost": 16.33,
+          "category": "Pisos H2O",
+          "total": 2059.6,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-062",
+          "sku": "PROD-062",
+          "description": "M2 - Nylon Manta 200 Micrones",
+          "quantity": 49.1,
+          "unit_price": 0,
+          "cost": 1,
+          "category": "Extras",
+          "total": 0,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "PROD-063",
+          "sku": "PROD-063",
+          "description": "Varilla de Transición - Aluminio",
+          "quantity": 2,
+          "unit_price": 0,
+          "cost": 29.8,
+          "category": "Terminaciones",
+          "disc_kind": "amount",
+          "total": 0,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-123",
+          "sku": "SERV-123",
+          "description": "Retiro de Piso Existente - Alfombra",
+          "quantity": 49.1,
+          "unit_price": 5.2,
+          "cost": 4,
+          "category": "Servicio",
+          "total": 255.32000000000002,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "zoned": false,
+      "discount_total": 0,
+      "status": "Confirmado",
+      "created_at": "2026-11-03T18:28:39.565Z",
+      "has_iva": true,
+      "iva_mode": "full",
+      "financial_position": {
+        "total_invoiced": 0,
+        "total_paid": 0,
+        "balance_due": 4647.973
+      },
+      "stock_reserved": true,
+      "stock_deducted": false,
+      "seller_name": "Juan Rodriguez Momesso",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "commission_amount": 0
     }
   ],
   "quotes": [
@@ -47783,7 +47913,8 @@
       "currency": "USD",
       "created_at": "2026-10-19T19:55:10.629Z",
       "quote_number": "A2611",
-      "status": "DRAFT"
+      "status": "Aceptado",
+      "sale_id": "local-sale-1793730519565-xozk"
     },
     {
       "id": "local-1792442448582-iq8fh",
@@ -53013,7 +53144,9 @@
       "dni": "",
       "emails": [],
       "phones": [],
-      "addresses": [],
+      "addresses": [
+        "Marquéz y Panamericana"
+      ],
       "notes": null,
       "name": "Marina Fiks",
       "updated_at": "2026-10-19T17:43:19.636Z"
@@ -212568,6 +212701,69 @@
       "product_id": "SERV-129",
       "sku": "SERV-129",
       "qty": -83,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-11-03T18:28:35.081Z",
+      "type": "quote_reserve",
+      "ref": "local-1792439705345-g0jd3",
+      "product_id": "SERV-106",
+      "sku": "SERV-106",
+      "qty": 49.1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-11-03T18:28:35.081Z",
+      "type": "quote_reserve",
+      "ref": "local-1792439705345-g0jd3",
+      "product_id": "PROD-206",
+      "sku": "PROD-206",
+      "qty": 52,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-11-03T18:28:35.081Z",
+      "type": "quote_reserve",
+      "ref": "local-1792439705345-g0jd3",
+      "product_id": "SERV-129",
+      "sku": "SERV-129",
+      "qty": 47,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-11-03T18:28:35.081Z",
+      "type": "quote_reserve",
+      "ref": "local-1792439705345-g0jd3",
+      "product_id": "PROD-202",
+      "sku": "PROD-202",
+      "qty": 54.2,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-11-03T18:28:35.081Z",
+      "type": "quote_reserve",
+      "ref": "local-1792439705345-g0jd3",
+      "product_id": "PROD-062",
+      "sku": "PROD-062",
+      "qty": 49.1,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-11-03T18:28:35.081Z",
+      "type": "quote_reserve",
+      "ref": "local-1792439705345-g0jd3",
+      "product_id": "PROD-063",
+      "sku": "PROD-063",
+      "qty": 2,
+      "warehouse_id": "main"
+    },
+    {
+      "ts": "2026-11-03T18:28:35.081Z",
+      "type": "quote_reserve",
+      "ref": "local-1792439705345-g0jd3",
+      "product_id": "SERV-123",
+      "sku": "SERV-123",
+      "qty": 49.1,
       "warehouse_id": "main"
     }
   ],
