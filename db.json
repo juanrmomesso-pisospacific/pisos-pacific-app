@@ -168839,6 +168839,23 @@
       "address": "Cardales - Loma Negra",
       "created_at": "2026-11-02T21:10:16.083Z",
       "last_touch_at": "2026-11-02T21:10:19.714Z"
+    },
+    {
+      "id": "lead-email-1a1a203a2249",
+      "name": "Lucila",
+      "email": "grupofraloconstrucciones@gmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "mercedes 3939",
+      "postal_code": "1419",
+      "approx_m2": 30,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 30m² · Con Colocación · CP 1419",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-11-03T15:25:09.000Z",
+      "last_touch_at": "2026-11-03T15:25:09.000Z"
     }
   ],
   "conversations": [
@@ -177654,6 +177671,21 @@
       "last_message_direction": "in",
       "last_inbound_at": "2026-11-03T13:34:22.000Z",
       "last_outbound_at": "2026-11-03T01:34:39.187Z"
+    },
+    {
+      "id": "conv-email-1a1a203a2249",
+      "channel": "email",
+      "contact_id": "grupofraloconstrucciones@gmail.com",
+      "contact_name": "Lucila",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a1a203a2249",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-11-03T15:25:09.000Z",
+      "last_message_preview": "Formulario web — 30m² · Con Colocación · CP 1419 · mercedes 3939",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-11-03T15:25:09.000Z"
     }
   ],
   "messages": [
@@ -202128,6 +202160,14 @@
       "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola!\r\nMe interesa la línea H20.\r\n\r\nAdemás de mano de obra de la colocación, necesitaría presupuestar para\r\nremover un piso vinílico anterior así como un piso de alfombra que está\r\ndebajo que no se sacó al instalarse el piso. También quería consultarles si\r\nincluye sócalos y varillas de terminación.\r\n\r\nGracias!\r\n\r\n\r\nEl lun, 2 nov 2026 a la(s) 10:34 p.m., Pisos Pacific (info@pisospacific.com)\r\nescribió:\r\n\r\n> Hola Rocio, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a prueba de agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Equipo Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
       "ts": "2026-11-03T13:34:22.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1a203a2249",
+      "conversation_id": "conv-email-1a1a203a2249",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 30m² · Con Colocación · CP 1419 · mercedes 3939",
+      "ts": "2026-11-03T15:25:09.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -213933,7 +213973,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-11-03T12:48:13.885Z",
     "gmail_seen_ids": [
-      "19ff4a5afccd3ea5",
       "19ff553d3371364d",
       "19ff57c75bbe8920",
       "19ff5d8917d72ae3",
@@ -214732,7 +214771,8 @@
       "1a1a17fda548a3a1",
       "1a1a19ec7effcaab",
       "1a1a19b88416b807",
-      "1a1a1ba6bb8b172c"
+      "1a1a1ba6bb8b172c",
+      "1a1a203a224973ec"
     ],
     "cash_sessions": {
       "1136982222": {
