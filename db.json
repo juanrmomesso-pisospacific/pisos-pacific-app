@@ -21026,7 +21026,7 @@
       ],
       "zoned": false,
       "discount_total": 0,
-      "status": "Confirmado",
+      "status": "Programado",
       "created_at": "2026-11-03T18:28:39.565Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -21042,7 +21042,17 @@
       "reseller_name": "",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0
+      "commission_amount": 0,
+      "delivery_date": "2026-11-16",
+      "delivery_date_to": "2026-11-17",
+      "status_log": [
+        {
+          "from": "Confirmado",
+          "to": "Programado",
+          "at": "2026-11-03T18:38:08.951Z",
+          "by": "Admin User"
+        }
+      ]
     }
   ],
   "quotes": [
@@ -215864,7 +215874,8 @@
       "1a1972598a16479a",
       "1a19c4bf718c5288",
       "1a19f0b477b75b0e",
-      "1a1a17252487ab72"
+      "1a1a17252487ab72",
+      "1a1a2a89e9873aba"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -218455,6 +218466,17 @@
       "sale_id": "local-sale-1793208559903-84ti",
       "notes": "La Horqueta",
       "created_at": "2026-10-28T17:31:40.746Z"
+    },
+    {
+      "id": "local-1793731089187-tfpxx",
+      "type": "medicion",
+      "title": "Medición previa · Marina Fiks",
+      "due_date": "2026-11-14",
+      "assigned_seller": "Juan Rodriguez Momesso",
+      "status": "pendiente",
+      "sale_id": "local-sale-1793730519565-xozk",
+      "notes": "Marquéz y Panamericana",
+      "created_at": "2026-11-03T18:38:08.933Z"
     }
   ],
   "password_resets": {},
