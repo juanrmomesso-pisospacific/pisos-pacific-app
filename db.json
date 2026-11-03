@@ -20548,7 +20548,7 @@
       ],
       "zoned": false,
       "discount_total": 677.23,
-      "status": "Programado",
+      "status": "En proceso",
       "created_at": "2026-10-28T17:29:19.903Z",
       "has_iva": true,
       "iva_mode": "full",
@@ -20573,6 +20573,12 @@
           "to": "Programado",
           "at": "2026-10-28T17:31:40.727Z",
           "by": "Victoria Gonzalez Collado"
+        },
+        {
+          "from": "Programado",
+          "to": "En proceso",
+          "at": "2026-11-03T15:50:42.777Z",
+          "by": "Admin User"
         }
       ],
       "delivery_crew": "Ariel Ernesto Garcia"
