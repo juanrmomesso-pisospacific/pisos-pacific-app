@@ -168806,7 +168806,7 @@
       "status": "Contacted",
       "assigned_seller": "",
       "created_at": "2026-11-02T18:18:58.000Z",
-      "last_touch_at": "2026-11-03T01:35:53.144Z"
+      "last_touch_at": "2026-11-03T13:34:22.000Z"
     },
     {
       "id": "local-1793650618601-l7mz7",
@@ -177647,12 +177647,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-1a19d7c6d056",
       "status": "open",
-      "unread_count": 0,
-      "last_message_at": "2026-11-03T01:34:39.187Z",
-      "last_message_preview": "Hola Rocio, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras ",
+      "unread_count": 1,
+      "last_message_at": "2026-11-03T13:34:22.000Z",
+      "last_message_preview": "Hola!\r\nMe interesa la línea H20.\r\n\r\nAdemás de mano de obra de la colocación, necesitaría presupuestar para\r\nremover un piso vinílico anterio",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "out",
-      "last_inbound_at": "2026-11-02T18:18:58.000Z",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-11-03T13:34:22.000Z",
       "last_outbound_at": "2026-11-03T01:34:39.187Z"
     }
   ],
@@ -202120,6 +202120,14 @@
       "body": "✉️ Re: Project Designline | Confidential M&A opportunity\n\nDear team,\r\n\r\nThis is our final follow-up regarding the confidential Portuguese wood flooring and parquet acquisition opportunity.\r\n\r\nIf the opportunity is relevant, please reply and we will send a short anonymous teaser. Otherwise, we will not follow up further.\r\n\r\nKind regards,\r\n\r\nIntuition Consulting Portugal | M&A Team\r\n\r\nintuitionconsulting.net\r\n\r\nOn Fri, October 30, 2026 1:04 PM, Monica Raquel <monica.raquel@intuitionconsultingportugal.org>\r\n[monica.raquel@intuitionconsultingportugal.org]> wrote:\r\n\r\n> Dear team,\r\n> \r\n> Just checking whether a potential acquisition in Portuguese wood flooring and parquet could be of interest.\r\n> \r\n> We can provide an anonymous overview before disclosing the company's identity. Would you like to receive it?\r\n> \r\n> Kind regards,\r\n> \r\n> Intuition Consulting Portugal | M&A Team\r\n> \r\n> intuitionconsulting.net\r\n> On Tue, October 27, 2026 3:30 PM, Monica Raquel <monica.raquel@intuitionconsultingportugal.org>\r\n> [monica.raquel@intuitionconsultingportugal.org]> wrote:\r\n> \r\n> > Dear team,\r\n> > \r\n> > I am following up on the confidential potential acquisition in the Portuguese wood flooring and parquet sector.\r\n> > \r\n> > If relevant to your strategic plans, we would be pleased to send a short anonymous teaser for your review.\r\n> > \r\n> > Kind regards,\r\n> > \r\n> > Intuition Consulting Portugal | M&A Team\r\n> > \r\n> > intuitionconsulting.net\r\n> > On Tue, October 27, 2026 12:12 PM, Monica Raquel <monica.raquel@intuitionconsultingportugal.org>\r\n> > [monica",
       "ts": "2026-11-03T12:39:51.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1a19ec7eff",
+      "conversation_id": "conv-email-1a19d7c6d056",
+      "direction": "in",
+      "body": "✉️ Re: Pedido de Presupuesto | Página Web\n\nHola!\r\nMe interesa la línea H20.\r\n\r\nAdemás de mano de obra de la colocación, necesitaría presupuestar para\r\nremover un piso vinílico anterior así como un piso de alfombra que está\r\ndebajo que no se sacó al instalarse el piso. También quería consultarles si\r\nincluye sócalos y varillas de terminación.\r\n\r\nGracias!\r\n\r\n\r\nEl lun, 2 nov 2026 a la(s) 10:34 p.m., Pisos Pacific (info@pisospacific.com)\r\nescribió:\r\n\r\n> Hola Rocio, ¡muchas gracias por tu consulta!\r\n>\r\n> Para avanzar con el presupuesto, comentanos en qué modelo estás interesada\r\n> dentro de nuestras dos líneas de pisos:\r\n>\r\n> • Colección Madera\r\n> <https://pisospacific.com/pisos-madera-natural-ingenieria> — Pisos de\r\n> madera noble prefinished\r\n> • Línea H2O <https://pisospacific.com/pisos-vinilicos-spc-h2o> — Pisos\r\n> SPC 100% a prueba de agua\r\n>\r\n> El presupuesto incluye materiales y mano de obra de colocación.\r\n>\r\n> ¡Muchas gracias!\r\n> Saludos, Equipo Pacific\r\n>\r\n>\r\n> [image: Pisos Pacific]\r\n> Victoria Collado\r\n> Ventas\r\n>\r\n> +54 11 3698-2222 <https://wa.me/5491136982222>\r\n> victoria@pisospacific.com\r\n> pisospacific.com\r\n> [image: Instagram] <https://www.instagram.com/pisospacific/> [image:\r\n> Facebook] <https://www.facebook.com/profile.php?id=100049956771854>\r\n> La evolución del piso de madera\r\n>",
+      "ts": "2026-11-03T13:34:22.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -213925,8 +213933,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-11-03T12:48:13.885Z",
     "gmail_seen_ids": [
-      "19ff1ed57f844d5c",
-      "19ff3888e0b82c3d",
       "19ff422c543e4cda",
       "19ff4a5afccd3ea5",
       "19ff553d3371364d",
@@ -214724,7 +214730,9 @@
       "1a1a10d20919cea0",
       "1a1a17252487ab72",
       "1a1a16c5551c8e88",
-      "1a1a17fda548a3a1"
+      "1a1a17fda548a3a1",
+      "1a1a19ec7effcaab",
+      "1a1a19b88416b807"
     ],
     "cash_sessions": {
       "1136982222": {
