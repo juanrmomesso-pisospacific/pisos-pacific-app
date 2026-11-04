@@ -178216,11 +178216,12 @@
       "linked_lead_id": "lead-email-1a1a7006d681",
       "status": "open",
       "unread_count": 0,
-      "last_message_at": "2026-11-04T14:39:44.000Z",
-      "last_message_preview": "Formulario web — 200m² · Con Colocación · CP 1629 · Estancias del Pilar",
+      "last_message_at": "2026-11-04T14:53:31.199Z",
+      "last_message_preview": "Hola Mariana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestra",
       "email_subject": "Pedido de Presupuesto | Página Web",
-      "last_message_direction": "in",
-      "last_inbound_at": "2026-11-04T14:39:44.000Z"
+      "last_message_direction": "out",
+      "last_inbound_at": "2026-11-04T14:39:44.000Z",
+      "last_outbound_at": "2026-11-04T14:53:31.199Z"
     }
   ],
   "messages": [
@@ -202728,6 +202729,15 @@
       "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 200m² · Con Colocación · CP 1629 · Estancias del Pilar",
       "ts": "2026-11-04T14:39:44.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793804011199-9pwp",
+      "conversation_id": "conv-email-1a1a7006d681",
+      "direction": "out",
+      "body": "Hola Mariana, ¡muchas gracias por tu consulta!\n\nPara avanzar con el presupuesto, comentanos en qué modelo estás interesada dentro de nuestras dos líneas de pisos:\n\n• Colección Madera — Pisos de madera noble prefinished\n• Línea H2O — Pisos SPC 100% a prueba de agua\n\nEl presupuesto incluye materiales y mano de obra de colocación. \n\n¡Muchas gracias!\nSaludos, Victoria\n1136982222",
+      "ts": "2026-11-04T14:53:31.199Z",
+      "status": "sent",
+      "wa_id": "1a1a70d07e7a4761"
     }
   ],
   "templates": [
