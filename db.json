@@ -31072,7 +31072,7 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Arq. Sonia Cogunet",
       "has_iva": true,
-      "price": 6893.611999999999,
+      "price": 5024.888,
       "zoned": false,
       "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m + 4 más",
       "items": [
@@ -31080,13 +31080,13 @@
           "product_id": "PROD-202",
           "sku": "PROD-202",
           "description": "H2O HD XL - Roble Clásico 6,5mm x 23cm x 1,50m",
-          "quantity": 115,
+          "quantity": 83,
           "unit_price": 38,
           "cost": 16.33,
           "category": "Pisos H2O",
           "disc_value": 10,
-          "total": 4370,
-          "discount": 437,
+          "total": 3154,
+          "discount": 315.4,
           "image": "",
           "target_item_index": null
         },
@@ -31094,11 +31094,11 @@
           "product_id": "SERV-106",
           "sku": "SERV-106",
           "description": "Servicio - Colocación H2O",
-          "quantity": 105,
+          "quantity": 75,
           "unit_price": 15,
           "cost": 6,
           "category": "Servicio",
-          "total": 1575,
+          "total": 1125,
           "discount": 0,
           "image": "",
           "target_item_index": null
@@ -31143,12 +31143,16 @@
           "target_item_index": null
         }
       ],
-      "discount_total": 437,
-      "discount_amount": 437,
+      "discount_total": 315.4,
+      "discount_amount": 315.4,
       "created_at": "2026-07-29T19:24:15.755Z",
       "quote_number": "A4940",
       "status": "SENT",
-      "lead_id": "local-1785352873186-77d7d"
+      "lead_id": "local-1785352873186-77d7d",
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD"
     },
     {
       "id": "local-1785353768470-ene1j",
@@ -216109,7 +216113,8 @@
       "1a19f0b477b75b0e",
       "1a1a17252487ab72",
       "1a1a2a89e9873aba",
-      "1a1a698af5fe5270"
+      "1a1a698af5fe5270",
+      "1a1a70d07e7a4761"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
