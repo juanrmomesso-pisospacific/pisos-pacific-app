@@ -160484,7 +160484,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-22T15:30:51.000Z",
-      "last_touch_at": "2026-09-04T21:49:28.000Z"
+      "last_touch_at": "2026-11-04T15:52:07.000Z"
     },
     {
       "id": "lead-instagram-1782150900322",
@@ -170753,12 +170753,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19eeff52b055",
       "status": "closed",
-      "unread_count": 11,
-      "last_message_at": "2026-09-04T21:49:28.000Z",
-      "last_message_preview": "Vicky,\r\n\r\nCómo estás? Por ahora no hay tarifas post esa vigencia. Lo que podemos\r\nhacer es el 13/9 aproximadamente revisar nuevamente como v",
+      "unread_count": 12,
+      "last_message_at": "2026-11-04T15:52:07.000Z",
+      "last_message_preview": "Buen dia Victoria!\r\n\r\nComo estas? Espero que pasando una gran semana!!\r\nTe comparto valores.\r\n\r\nCondición de venta: FOB\r\nPOL: Shanghai\r\nPOD:",
       "email_subject": "Re: COTIZACION Shanghai - Buenos Aires | PDPG 2619 | Juan Rodriguez Momesso",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-04T21:49:28.000Z",
+      "last_inbound_at": "2026-11-04T15:52:07.000Z",
       "ignored": true
     },
     {
@@ -202745,6 +202745,14 @@
       "ts": "2026-11-04T14:53:31.199Z",
       "status": "sent",
       "wa_id": "1a1a70d07e7a4761"
+    },
+    {
+      "id": "m-email-1a1a742e6b25",
+      "conversation_id": "conv-email-19eeff52b055",
+      "direction": "in",
+      "body": "✉️ Re: PDPG 2631 | 2 CONTAINERS\n\nBuen dia Victoria!\r\n\r\nComo estas? Espero que pasando una gran semana!!\r\nTe comparto valores.\r\n\r\nCondición de venta: FOB\r\nPOL: Shanghai\r\nPOD: Buenos Aires\r\nMercadería: general, no IMO - apilable  \r\n\r\nFlete internacional: \r\n20’GP - USD 3.704.-\r\n40’GP - USD 4.054.-\r\n40’NOR - USD 3.904.-\r\n\r\nGastos Locales: USD 800.- + IVA\r\n\r\nVigencia al 15/11\r\nTC: BNA\r\nCarrier: Maersk\r\n\r\nLas tarifas detalladas con anterioridad están sujetas a espacios y disponibilidad de equipos en origen.\r\nNo incluyen seguro pero podemos ofrecer servicio por el 0,35% del valor a asegurar.\r\n\r\nQuedo a disposición por cualquier consulta.\r\n\r\nSLds!!\r\n\r\nאנחנו עם ישראל\r\n\r\nSaludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n\r\nJuan M. Garcia Barcia\r\nGrupo Comex+ // Comex+Cargo\r\nOficina Puerto Madero\r\nTel.: (+54)114331-2207/1893\r\nCel.: (+54) 911 7098-2746\r\nAv. Alicia Moreau de Justo 1150 – Of. A-106 // (C1107AAX) – C.A.B.A., Argentina\r\n\r\n\r\nEl 2 nov. 2026, a las 22:50, Victoria Pisos Pacific <victoria@pisospacific.com> escribió:\r\n\r\nHola Juan, ¿cómo estás?\r\n\r\n¿Me podrías pasar una cotización y las próximas fechas disponibles para embarcar 2 contenedores?\r\n\r\nTe paso los detalles:\r\n\r\nRuta: Shanghai – Buenos Aires\r\n\r\nTipo de contenedor: 20' o 40' NOR\r\n\r\nPor favor, incluime también el tiempo estimado de tránsito (TT), ETD y ETA.\r\n\r\nCalculamos que la carga va a estar lista en aproximadamente 10 días.\r\n\r\nQuedo atenta. ¡Muchas gracias!\r\n\r\nSaludos,\r\nVictoria",
+      "ts": "2026-11-04T15:52:07.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -214640,7 +214648,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-11-04T12:48:02.408Z",
     "gmail_seen_ids": [
-      "19ff7521bb5fe621",
       "19ff7ca2a2891cd8",
       "19ffa39fa1150acf",
       "19ffa7c9391a40eb",
@@ -215439,7 +215446,8 @@
       "1a1a635fc1d2dd16",
       "1a1a698af5fe5270",
       "1a1a6a5ca2dca5ed",
-      "1a1a7006d681bc72"
+      "1a1a7006d681bc72",
+      "1a1a742e6b252091"
     ],
     "cash_sessions": {
       "1136982222": {
