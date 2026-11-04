@@ -153245,8 +153245,8 @@
       "date": "2026-10-16T00:00:00.000Z",
       "caja_id": "CAJ-005",
       "caja_name": "Efectivo USD",
-      "category": "Comisiones",
-      "subcategory": null,
+      "category": "Marketing",
+      "subcategory": "Comisiones",
       "counterparty": "Joaquin Gonzalez",
       "counterparty_type": "supplier",
       "client_id": null,
@@ -153260,8 +153260,8 @@
       "fixed_variable": "Variable",
       "expense_type": "Marketing y Ventas",
       "transfer": false,
-      "needs_review": true,
-      "review_reason": "comisión — confirmar"
+      "needs_review": false,
+      "review_reason": null
     },
     {
       "date": "2026-10-16T00:00:00.000Z",
@@ -220251,6 +220251,20 @@
       "personal": false,
       "source": "learned",
       "note": "Aprendida al clasificar \"Ariel Ernesto Garcia\""
+    },
+    {
+      "id": "local-1793806230928-i1vic",
+      "match": [
+        "Joaquin Gonzalez"
+      ],
+      "cuit": null,
+      "counterparty": "Joaquin Gonzalez",
+      "category": "Marketing",
+      "subcategory": "Comisiones",
+      "expense_type": "Marketing y Ventas",
+      "personal": false,
+      "source": "learned",
+      "note": "Aprendida al clasificar \"Joaquin Gonzalez\""
     }
   ],
   "product_aliases": [
