@@ -169358,6 +169358,23 @@
       "assigned_seller": "",
       "created_at": "2026-11-03T15:25:09.000Z",
       "last_touch_at": "2026-11-03T18:25:27.215Z"
+    },
+    {
+      "id": "lead-email-1a1a7006d681",
+      "name": "Mariana",
+      "email": "marianareysaravia@hotmail.com",
+      "phone": "",
+      "source": "Web",
+      "address": "Estancias del Pilar",
+      "postal_code": "1629",
+      "approx_m2": 200,
+      "needs_placement": true,
+      "interested_products": [],
+      "notes": "Formulario web — 200m² · Con Colocación · CP 1629",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-11-04T14:39:44.000Z",
+      "last_touch_at": "2026-11-04T14:39:44.000Z"
     }
   ],
   "conversations": [
@@ -178189,6 +178206,21 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-11-03T15:25:09.000Z",
       "last_outbound_at": "2026-11-03T18:25:22.072Z"
+    },
+    {
+      "id": "conv-email-1a1a7006d681",
+      "channel": "email",
+      "contact_id": "marianareysaravia@hotmail.com",
+      "contact_name": "Mariana",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-email-1a1a7006d681",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-11-04T14:39:44.000Z",
+      "last_message_preview": "Formulario web — 200m² · Con Colocación · CP 1629 · Estancias del Pilar",
+      "email_subject": "Pedido de Presupuesto | Página Web",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-11-04T14:39:44.000Z"
     }
   ],
   "messages": [
@@ -202688,6 +202720,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: 6025992a2259492697563dc868fe9a7e\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-11-02 00:00:00 UTC to 2026-11-03 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-11-04T08:24:06.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1a7006d681",
+      "conversation_id": "conv-email-1a1a7006d681",
+      "direction": "in",
+      "body": "✉️ Pedido de Presupuesto | Página Web\n\nFormulario web — 200m² · Con Colocación · CP 1629 · Estancias del Pilar",
+      "ts": "2026-11-04T14:39:44.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -214583,7 +214623,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-11-04T12:48:02.408Z",
     "gmail_seen_ids": [
-      "19ff6f4d26300650",
       "19ff7521bb5fe621",
       "19ff7ca2a2891cd8",
       "19ffa39fa1150acf",
@@ -215382,7 +215421,8 @@
       "1a1a637fa376039b",
       "1a1a635fc1d2dd16",
       "1a1a698af5fe5270",
-      "1a1a6a5ca2dca5ed"
+      "1a1a6a5ca2dca5ed",
+      "1a1a7006d681bc72"
     ],
     "cash_sessions": {
       "1136982222": {
