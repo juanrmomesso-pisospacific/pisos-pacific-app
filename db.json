@@ -31152,7 +31152,8 @@
       "reseller_id": "",
       "reseller_name": "",
       "commission_split_discount": true,
-      "currency": "USD"
+      "currency": "USD",
+      "renewed_at": "2026-11-04T15:24:22.205Z"
     },
     {
       "id": "local-1785353768470-ene1j",
