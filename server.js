@@ -2981,10 +2981,11 @@ function applyCommission(sale) {
   // Valor fijo (price_list): el descuento del piso se reparte a medias con el revendedor por defecto
   // (se puede apagar por venta con commission_split_discount:false). No afecta a % (va sobre el neto).
   const splitDiscount = sale.commission_split_discount !== false;
-  const { amount, type, m2 } = computeResellerCommission(rc.reseller_comision, sale.items || [], db.products, { splitDiscount });
+  const { amount, type, m2, commBase } = computeResellerCommission(rc.reseller_comision, sale.items || [], db.products, { splitDiscount });
   sale.commission_amount = amount;
   sale.commission_type = type;
   sale.commission_m2 = m2;
+  sale.commission_base = commBase;   // 'piso' | 'total' — base del % (para mostrar en Comisiones)
 }
 
 function convertQuoteToSale(q) {

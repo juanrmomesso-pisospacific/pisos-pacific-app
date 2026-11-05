@@ -154,7 +154,7 @@ export default function ComisionesPage() {
                         <TableCell className="tabular"><Link to={`/ventas?sale=${s.id}`} className="text-primary hover:underline">#{s.quote_number}</Link></TableCell>
                         <TableCell className="truncate max-w-[180px]">{s.client_name}</TableCell>
                         <TableCell className="text-xs text-muted-foreground">{s.created_at ? new Date(s.created_at).toLocaleDateString(appLocale()) : "—"}</TableCell>
-                        <TableCell className="text-right tabular">{fmtInt(s.commission_m2 || 0)}<span className="text-[10px] text-muted-foreground ml-1">{COM_LABEL[s.commission_type || ""] || ""}</span></TableCell>
+                        <TableCell className="text-right tabular">{fmtInt(s.commission_m2 || 0)}<span className="text-[10px] text-muted-foreground ml-1">{COM_LABEL[s.commission_type || ""] || ""}{s.commission_type === "pct" ? (s.commission_base === "total" ? " · total obra" : " · pisos") : ""}</span></TableCell>
                         <TableCell className="text-right"><CommissionCell sale={s} /></TableCell>
                         <TableCell className="text-right">
                           {s.commission_paid ? (

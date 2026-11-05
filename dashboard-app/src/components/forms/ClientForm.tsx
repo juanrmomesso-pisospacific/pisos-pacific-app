@@ -168,7 +168,7 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
               </div>
             ) : (
               <div className="space-y-2">
-                <p className="text-[11px] text-muted-foreground">La comisión se calcula <b>solo sobre los pisos</b> (no servicios ni accesorios). El cliente paga precio de lista.</p>
+                <p className="text-[11px] text-muted-foreground">El cliente paga precio de lista. La comisión por % se calcula sobre <b>solo los pisos</b> o sobre el <b>total de la obra</b> según se configure abajo; los otros tipos van siempre por m² de piso.</p>
                 <div>
                   <FieldLabel>Tipo de comisión</FieldLabel>
                   <select value={comision.type} onChange={(e) => setComision({ type: e.target.value as ComisionType })} className="h-8 w-full rounded-md border border-input bg-transparent px-2 text-sm">
@@ -179,8 +179,15 @@ export function ClientForm({ open, onOpenChange, initial, editClient }: {
                   </select>
                 </div>
                 {comision.type === "pct" && (
-                  <div><FieldLabel>Porcentaje (%)</FieldLabel>
-                    <Input type="number" min={0} step="0.5" value={comision.pct ?? 0} onChange={(e) => setComision({ pct: Number(e.target.value) || 0 })} className="h-8 w-32" /></div>
+                  <div className="space-y-2">
+                    <div><FieldLabel>Porcentaje (%)</FieldLabel>
+                      <Input type="number" min={0} step="0.5" value={comision.pct ?? 0} onChange={(e) => setComision({ pct: Number(e.target.value) || 0 })} className="h-8 w-32" /></div>
+                    <div><FieldLabel>Cobra sobre</FieldLabel>
+                      <select value={comision.base ?? "piso"} onChange={(e) => setComision({ base: e.target.value as "piso" | "total" })} className="h-8 w-full rounded-md border border-input bg-transparent px-2 text-sm">
+                        <option value="piso">Solo los pisos</option>
+                        <option value="total">Total de la obra (pisos + servicios + accesorios)</option>
+                      </select></div>
+                  </div>
                 )}
                 {comision.type === "per_m2" && (
                   <div><FieldLabel>Monto por m² (moneda del ítem)</FieldLabel>

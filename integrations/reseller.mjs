@@ -25,6 +25,13 @@ export function floorStats(items, products) {
   return { m2: r2(m2), amount: r2(amount) };
 }
 
+/** Neto de TODA la obra (todas las líneas: pisos + servicios + accesorios), ya con descuento por línea. */
+export function obraNet(items) {
+  let net = 0;
+  for (const it of items || []) net += Math.max(0, (Number(it.quantity) || 0) * (Number(it.unit_price) || 0) - lineDiscount(it));
+  return r2(net);
+}
+
 /**
  * Tasa del tramo que corresponde a `m2` (aplicación PLANA). tiers: [{upto_m2, rate}]
  * ordenados por upto_m2; el último puede tener upto_m2 null/0 = sin tope (∞).
@@ -69,9 +76,13 @@ export function computeCommission(comision, items, products, opts = {}) {
   let floorDisc = 0;
   for (const it of items || []) if (isFloorLine(it, products)) floorDisc += lineDiscount(it);
   floorDisc = r2(floorDisc);
-  if (!comision || !comision.type) return { amount: 0, type: null, m2, base: amount, floorDisc };
+  if (!comision || !comision.type) return { amount: 0, type: null, m2, base: amount, floorDisc, commBase: 'piso' };
+  const onTotal = comision.base === 'total';                      // % sobre TODA la obra, no solo pisos
   let val = 0;
-  if (comision.type === 'pct') val = Math.max(0, amount - floorDisc) * (Number(comision.pct) || 0) / 100;   // % sobre el precio final (ya con descuento)
+  if (comision.type === 'pct') {
+    const pctBase = onTotal ? obraNet(items) : Math.max(0, amount - floorDisc);   // total de la obra | solo pisos (ya con descuento)
+    val = pctBase * (Number(comision.pct) || 0) / 100;
+  }
   else if (comision.type === 'per_m2') val = m2 * (Number(comision.per_m2) || 0);
   else if (comision.type === 'tiered_m2') {
     const rate = tierRate(m2, (comision.tiers || []).map((t) => ({ upto_m2: t.upto_m2, rate: t.per_m2 })));
@@ -90,5 +101,5 @@ export function computeCommission(comision, items, products, opts = {}) {
       val += Math.max(0, lineComm);
     }
   }
-  return { amount: r2(val), type: comision.type, m2, base: amount, floorDisc };
+  return { amount: r2(val), type: comision.type, m2, base: amount, floorDisc, commBase: onTotal ? 'total' : 'piso' };
 }

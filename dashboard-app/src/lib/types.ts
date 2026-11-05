@@ -122,8 +122,9 @@ export type Sale = {
   reseller_id?: string
   reseller_name?: string
   commission_amount?: number      // comisión congelada al confirmar la venta (sobre pisos)
-  commission_type?: string        // pct | per_m2 | tiered_m2
+  commission_type?: string        // pct | per_m2 | tiered_m2 | price_list
   commission_m2?: number          // m² de piso base de la comisión
+  commission_base?: "piso" | "total"  // base del % : solo pisos | total de la obra
   commission_paid?: boolean
   commission_paid_at?: string | null
   commission_override?: boolean   // la comisión se editó a mano para esta venta (no se recalcula)

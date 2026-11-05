@@ -19,6 +19,8 @@ export type ComisionConfig = {
   tiers?: CommissionTier[]
   // Modo lista (Hugo): precio del revendedor por SKU. Comisión = (precio cotizado − precio revendedor) × cant.
   price_list?: Record<string, number>
+  // Base del % (solo type "pct"): "piso" = solo pisos (default) | "total" = toda la obra (pisos + servicios + accesorios).
+  base?: "piso" | "total"
 }
 
 // Campos que sumamos al registro de cliente (loose — clients no tienen tipo formal en la app).
@@ -57,6 +59,13 @@ export function floorStats(items: LineLike[], products: Product[]): { m2: number
     amount += qty * (Number(it.unit_price) || 0)
   }
   return { m2: r2(m2), amount: r2(amount) }
+}
+
+/** Neto de TODA la obra (todas las líneas), ya con descuento por línea. */
+export function obraNet(items: LineLike[]): number {
+  let net = 0
+  for (const it of items) net += Math.max(0, (Number(it.quantity) || 0) * (Number(it.unit_price) || 0) - lineDiscount(it))
+  return r2(net)
 }
 
 /** Tasa del tramo (aplicación plana) para `m2`. tiers ordenados por tope; último sin tope = ∞. */
@@ -103,9 +112,10 @@ export function computeCommission(comision: ComisionConfig | undefined, items: L
   let floorDisc = 0
   for (const it of items) if (isFloorLine(it, products)) floorDisc += lineDiscount(it)
   floorDisc = r2(floorDisc)
-  if (!comision || !comision.type) return { amount: 0, type: null as ComisionConfig["type"] | null, m2, base: amount, floorDisc }
+  if (!comision || !comision.type) return { amount: 0, type: null as ComisionConfig["type"] | null, m2, base: amount, floorDisc, commBase: "piso" as const }
+  const onTotal = comision.base === "total"                      // % sobre TODA la obra, no solo pisos
   let val = 0
-  if (comision.type === "pct") val = Math.max(0, amount - floorDisc) * (Number(comision.pct) || 0) / 100   // % sobre el precio final (ya con descuento)
+  if (comision.type === "pct") val = (onTotal ? obraNet(items) : Math.max(0, amount - floorDisc)) * (Number(comision.pct) || 0) / 100   // total de la obra | solo pisos (con descuento)
   else if (comision.type === "per_m2") val = m2 * (Number(comision.per_m2) || 0)
   else if (comision.type === "tiered_m2") {
     const rate = tierRate(m2, (comision.tiers || []).map((t) => ({ upto_m2: t.upto_m2, rate: t.per_m2 })))
@@ -125,7 +135,7 @@ export function computeCommission(comision: ComisionConfig | undefined, items: L
       val += Math.max(0, lineComm)
     }
   }
-  return { amount: r2(val), type: comision.type, m2, base: amount, floorDisc }
+  return { amount: r2(val), type: comision.type, m2, base: amount, floorDisc, commBase: onTotal ? "total" as const : "piso" as const }
 }
 
 export const DEFAULT_REVENTA: ReventaConfig = {
