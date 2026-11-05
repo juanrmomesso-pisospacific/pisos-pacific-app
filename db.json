@@ -169382,6 +169382,22 @@
       "assigned_seller": "",
       "created_at": "2026-11-04T14:39:44.000Z",
       "last_touch_at": "2026-11-04T14:53:57.518Z"
+    },
+    {
+      "id": "lead-instagram-1793881483709",
+      "name": "@martagerzko",
+      "email": "",
+      "phone": "",
+      "source": "Instagram",
+      "address": "",
+      "approx_m2": null,
+      "needs_placement": null,
+      "interested_products": [],
+      "notes": "Lead automático desde instagram",
+      "status": "New",
+      "assigned_seller": "",
+      "created_at": "2026-11-05T12:24:41.611Z",
+      "last_touch_at": "2026-11-05T12:24:41.611Z"
     }
   ],
   "conversations": [
@@ -178229,6 +178245,20 @@
       "last_message_direction": "out",
       "last_inbound_at": "2026-11-04T14:39:44.000Z",
       "last_outbound_at": "2026-11-04T14:53:31.199Z"
+    },
+    {
+      "id": "conv-1793881483708-5wc8",
+      "channel": "instagram",
+      "contact_id": "1512417925278623",
+      "contact_name": "@martagerzko",
+      "linked_client_name": null,
+      "linked_lead_id": "lead-instagram-1793881483709",
+      "status": "open",
+      "unread_count": 1,
+      "last_message_at": "2026-11-05T12:24:41.611Z",
+      "last_message_preview": "📷 Foto",
+      "last_message_direction": "in",
+      "last_inbound_at": "2026-11-05T12:24:41.611Z"
     }
   ],
   "messages": [
@@ -202769,6 +202799,16 @@
       "body": "✉️ RE: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X40' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\n\nBuen día, Estimado\r\n\r\nMis disculpas por la demora, estamos a espera de liquidación para poder confirmar entrega.\r\nEn cuanto contemos con la liquidación estaremos compartiéndola por este medio para su pago y proceder con el retiro en puerto y entrega del equipo en bodega.\r\n\r\nCualquier consulta adicional, quedo a su disposición.\r\n\r\nSaludos,\r\nBest Regards.\r\n\r\nAviso importante: Horario por fiestas patrias\r\nLe informamos que, debido a las celebraciones de las Fiestas Patrias, nuestras oficinas en Panamá y Colón permanecerán Cerradas el 3, 4, 5, 10 y 28 de noviembre.\r\nImportant Notice: National Holiday\r\nWe inform you that due to the National Holidays celebrations, our offices in Panama and Colon will be closed on the following Dates in November: the 3rd, 4th, 5th, 10th and 28th.\r\n\r\n[cid:6d0cc90b-1f25-482a-8c2f-f37486416aa7]\r\n\r\n\r\n\r\n________________________________\r\nDe: Victoria Pisos Pacific <victoria@pisospacific.com>\r\nEnviado: martes, 3 de noviembre de 2026 8:30\r\nPara: Juan Rosario <jrosario@bvlpanama.com>\r\nCc: Giselle Ceballos <gceballos@bvlpanama.com>; Abe Dabah <abedabah@gmail.com>; arieltesone26@gmail.com <arieltesone26@gmail.com>; info@pisospacific.com <info@pisospacific.com>; Joseph Sam <jsam@bvlpanama.com>; INSIDE SALES <insidesales@bvlpanama.com>\r\nAsunto: Re: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X40' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\r\n\r\nHola Equipo, como estan?\r\n\r\nQuerí",
       "ts": "2026-11-05T10:30:00.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-1793881483709-knmy",
+      "conversation_id": "conv-1793881483708-5wc8",
+      "direction": "in",
+      "body": "📷 Foto",
+      "ts": "2026-11-05T12:24:41.611Z",
+      "status": "received",
+      "media_url": "/uploads/99b4fe52c7733133.jpg",
+      "media_type": "image"
     }
   ],
   "templates": [
@@ -217073,7 +217113,8 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1ODc0MzE0MjQ3ODMzNjk1MjozMzA4MDIyNzI0MTk3Mzg1NDg1MDQyODcyODE2ODY3NzM3NgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTMxOTAzNDkwMjA3MDAyNzozMzA4MDY5ODU1Njg1ODk2MzkxMTU1ODIxMDc5NTg2NDA2NAZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTgxNjg3ODUyODE0NjgxMzozMzA4MDk2MDg0MjM2MzQxNzQ2NTgzOTI0MDE0NDIyNDI1NgZDZD",
-      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU2NzE3NDM3MDA3NjI3MzozMzA4MjIzMTU1MzM4MjQzNDkyNjUxMDcwMzI2NTE4NTc5MgZDZD"
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU2NzE3NDM3MDA3NjI3MzozMzA4MjIzMTU1MzM4MjQzNDkyNjUxMDcwMzI2NTE4NTc5MgZDZD",
+      "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0NjM5MDc3ODk4NzAxNTozMzA5MTI3MjU4OTg2MTk3NjgwMzU5NjI5ODQxMTMxMTEwNAZDZD"
     ],
     "last_weekly_reminder": "2026-10-30T12:46:25.948Z",
     "warehouses": [
