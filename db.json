@@ -160692,7 +160692,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-25T12:01:27.000Z",
-      "last_touch_at": "2026-11-04T08:24:06.000Z"
+      "last_touch_at": "2026-11-05T08:25:55.000Z"
     },
     {
       "id": "lead-whatsapp-1782400385886",
@@ -170926,12 +170926,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19efea816c74",
       "status": "closed",
-      "unread_count": 76,
-      "last_message_at": "2026-11-04T08:24:06.000Z",
-      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-11-02 00:00:00 UTC to 2026-11-03 00:00:00 UTC.",
+      "unread_count": 77,
+      "last_message_at": "2026-11-05T08:25:55.000Z",
+      "last_message_preview": "This is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-11-03 00:00:00 UTC to 2026-11-04 00:00:00 UTC.",
       "email_subject": "Report Domain: pisospacific.com Submitter: protection.outlook.com Report-ID: 27cd52e9feb949f4b6a77b89c100f947",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-11-04T08:24:06.000Z",
+      "last_inbound_at": "2026-11-05T08:25:55.000Z",
       "ignored": true
     },
     {
@@ -202753,6 +202753,14 @@
       "body": "✉️ Re: PDPG 2631 | 2 CONTAINERS\n\nBuen dia Victoria!\r\n\r\nComo estas? Espero que pasando una gran semana!!\r\nTe comparto valores.\r\n\r\nCondición de venta: FOB\r\nPOL: Shanghai\r\nPOD: Buenos Aires\r\nMercadería: general, no IMO - apilable  \r\n\r\nFlete internacional: \r\n20’GP - USD 3.704.-\r\n40’GP - USD 4.054.-\r\n40’NOR - USD 3.904.-\r\n\r\nGastos Locales: USD 800.- + IVA\r\n\r\nVigencia al 15/11\r\nTC: BNA\r\nCarrier: Maersk\r\n\r\nLas tarifas detalladas con anterioridad están sujetas a espacios y disponibilidad de equipos en origen.\r\nNo incluyen seguro pero podemos ofrecer servicio por el 0,35% del valor a asegurar.\r\n\r\nQuedo a disposición por cualquier consulta.\r\n\r\nSLds!!\r\n\r\nאנחנו עם ישראל\r\n\r\nSaludos cordiales | Best Regards! | Hälsningar | Grüße | よろしく| 最好的祝福 | Cordiali Saluti\r\n\r\nJuan M. Garcia Barcia\r\nGrupo Comex+ // Comex+Cargo\r\nOficina Puerto Madero\r\nTel.: (+54)114331-2207/1893\r\nCel.: (+54) 911 7098-2746\r\nAv. Alicia Moreau de Justo 1150 – Of. A-106 // (C1107AAX) – C.A.B.A., Argentina\r\n\r\n\r\nEl 2 nov. 2026, a las 22:50, Victoria Pisos Pacific <victoria@pisospacific.com> escribió:\r\n\r\nHola Juan, ¿cómo estás?\r\n\r\n¿Me podrías pasar una cotización y las próximas fechas disponibles para embarcar 2 contenedores?\r\n\r\nTe paso los detalles:\r\n\r\nRuta: Shanghai – Buenos Aires\r\n\r\nTipo de contenedor: 20' o 40' NOR\r\n\r\nPor favor, incluime también el tiempo estimado de tránsito (TT), ETD y ETA.\r\n\r\nCalculamos que la carga va a estar lista en aproximadamente 10 días.\r\n\r\nQuedo atenta. ¡Muchas gracias!\r\n\r\nSaludos,\r\nVictoria",
       "ts": "2026-11-04T15:52:07.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1aad0920a6",
+      "conversation_id": "conv-email-19efea816c74",
+      "direction": "in",
+      "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: e99d569b21964b3ab752d6f4a4155f07\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-11-03 00:00:00 UTC to 2026-11-04 00:00:00 UTC. You&#39;re receiving this email because you have included",
+      "ts": "2026-11-05T08:25:55.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -214652,7 +214660,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-11-04T12:48:02.408Z",
     "gmail_seen_ids": [
-      "19ff7ca2a2891cd8",
       "19ffa39fa1150acf",
       "19ffa7c9391a40eb",
       "19ffab90e43fc02c",
@@ -215451,7 +215458,8 @@
       "1a1a698af5fe5270",
       "1a1a6a5ca2dca5ed",
       "1a1a7006d681bc72",
-      "1a1a742e6b252091"
+      "1a1a742e6b252091",
+      "1a1aad0920a6b171"
     ],
     "cash_sessions": {
       "1136982222": {
