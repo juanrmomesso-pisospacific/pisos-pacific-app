@@ -163026,7 +163026,7 @@
       "status": "New",
       "assigned_seller": "",
       "created_at": "2026-07-30T15:09:29.000Z",
-      "last_touch_at": "2026-09-23T16:52:09.000Z"
+      "last_touch_at": "2026-11-05T10:30:00.000Z"
     },
     {
       "id": "lead-email-19fb38919e88",
@@ -172902,12 +172902,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19fb392d7c0c",
       "status": "closed",
-      "unread_count": 0,
-      "last_message_at": "2026-09-23T16:52:09.000Z",
-      "last_message_preview": "Buen día, Estimado cliente\r\n\r\nEsperamos que se encuentre bien.\r\nPor medio del presente correo, le confirmamos que el embarque correspondient",
+      "unread_count": 1,
+      "last_message_at": "2026-11-05T10:30:00.000Z",
+      "last_message_preview": "Buen día, Estimado\r\n\r\nMis disculpas por la demora, estamos a espera de liquidación para poder confirmar entrega.\r\nEn cuanto contemos con la ",
       "email_subject": "BVLRO2128 || S/  HUSHFLOORS INTERNATIONAL LIMITED  || C/ TOLEDOT INVESTMENT || VOL: 1X20' || POL: SHANGHAI | POD: BALBOA ||",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-09-23T16:52:09.000Z",
+      "last_inbound_at": "2026-11-05T10:30:00.000Z",
       "ignored": true
     },
     {
@@ -202761,6 +202761,14 @@
       "body": "✉️ [Preview] Report Domain: pisospacific.com Submitter: enterprise.protection.outlook.com Report-ID: e99d569b21964b3ab752d6f4a4155f07\n\nThis is a DMARC aggregate report from Microsoft Corporation. For Emails received between 2026-11-03 00:00:00 UTC to 2026-11-04 00:00:00 UTC. You&#39;re receiving this email because you have included",
       "ts": "2026-11-05T08:25:55.000Z",
       "status": "received"
+    },
+    {
+      "id": "m-email-1a1ab4279417",
+      "conversation_id": "conv-email-19fb392d7c0c",
+      "direction": "in",
+      "body": "✉️ RE: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X40' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\n\nBuen día, Estimado\r\n\r\nMis disculpas por la demora, estamos a espera de liquidación para poder confirmar entrega.\r\nEn cuanto contemos con la liquidación estaremos compartiéndola por este medio para su pago y proceder con el retiro en puerto y entrega del equipo en bodega.\r\n\r\nCualquier consulta adicional, quedo a su disposición.\r\n\r\nSaludos,\r\nBest Regards.\r\n\r\nAviso importante: Horario por fiestas patrias\r\nLe informamos que, debido a las celebraciones de las Fiestas Patrias, nuestras oficinas en Panamá y Colón permanecerán Cerradas el 3, 4, 5, 10 y 28 de noviembre.\r\nImportant Notice: National Holiday\r\nWe inform you that due to the National Holidays celebrations, our offices in Panama and Colon will be closed on the following Dates in November: the 3rd, 4th, 5th, 10th and 28th.\r\n\r\n[cid:6d0cc90b-1f25-482a-8c2f-f37486416aa7]\r\n\r\n\r\n\r\n________________________________\r\nDe: Victoria Pisos Pacific <victoria@pisospacific.com>\r\nEnviado: martes, 3 de noviembre de 2026 8:30\r\nPara: Juan Rosario <jrosario@bvlpanama.com>\r\nCc: Giselle Ceballos <gceballos@bvlpanama.com>; Abe Dabah <abedabah@gmail.com>; arieltesone26@gmail.com <arieltesone26@gmail.com>; info@pisospacific.com <info@pisospacific.com>; Joseph Sam <jsam@bvlpanama.com>; INSIDE SALES <insidesales@bvlpanama.com>\r\nAsunto: Re: BVLRO2128 || S/ Collyer Logistics North China Ltd. || C/ PISOS PACIFIC || VOL: 1X40' || POL: SHANGHAI | POD: BALBOA || BSHFL26080847 // RE: Embarque de Pisos Toledot - Ariel Tesone\r\n\r\nHola Equipo, como estan?\r\n\r\nQuerí",
+      "ts": "2026-11-05T10:30:00.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -214660,7 +214668,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-11-04T12:48:02.408Z",
     "gmail_seen_ids": [
-      "19ffa39fa1150acf",
       "19ffa7c9391a40eb",
       "19ffab90e43fc02c",
       "19ffb03af4cc3b86",
@@ -215459,7 +215466,8 @@
       "1a1a6a5ca2dca5ed",
       "1a1a7006d681bc72",
       "1a1a742e6b252091",
-      "1a1aad0920a6b171"
+      "1a1aad0920a6b171",
+      "1a1ab42794175ef9"
     ],
     "cash_sessions": {
       "1136982222": {
