@@ -53214,7 +53214,13 @@
         "Palermo"
       ],
       "notes": null,
-      "updated_at": "2026-10-08T19:48:43.925Z"
+      "updated_at": "2026-11-05T21:45:00.001Z",
+      "reseller": true,
+      "reseller_mode": "comision",
+      "reseller_comision": {
+        "type": "pct",
+        "pct": 7
+      }
     },
     {
       "id": "CLI-mv17ongf-ce24",
