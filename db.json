@@ -18208,11 +18208,11 @@
       "stock_reserved": false,
       "stock_deducted": true,
       "seller_name": "Juan Rodriguez Momesso",
-      "reseller_id": "",
-      "reseller_name": "",
+      "reseller_id": "CLI-muzy90k5-p42r",
+      "reseller_name": "Sol- CH Estudio",
       "commission_split_discount": true,
       "currency": "USD",
-      "commission_amount": 0,
+      "commission_amount": 278.6,
       "iva_amount": 0,
       "delivery_date": "2026-10-16",
       "delivery_crew": "Hugo Ramirez",
@@ -18235,7 +18235,12 @@
           "at": "2026-10-20T14:53:44.981Z",
           "by": "Admin User"
         }
-      ]
+      ],
+      "commission_override": true,
+      "commission_type": "pct",
+      "commission_base": "total",
+      "commission_paid": true,
+      "commission_paid_at": "2026-11-06T15:28:34.169Z"
     },
     {
       "id": "local-sale-1791565236159-ks2t",
@@ -53658,7 +53663,8 @@
       "reseller_mode": "comision",
       "reseller_comision": {
         "type": "pct",
-        "pct": 7
+        "pct": 7,
+        "base": "total"
       }
     },
     {
@@ -155134,8 +155140,8 @@
       "flow": "Egreso",
       "caja_id": "CAJ-009",
       "caja_name": "Efectivo Pesos",
-      "category": "Marketing",
-      "subcategory": "Comisiones",
+      "category": "Comisión a revendedor",
+      "subcategory": null,
       "counterparty": "CH Estudio",
       "counterparty_type": "supplier",
       "client_id": null,
@@ -155147,8 +155153,8 @@
       "amount_usd": 134.53,
       "exchange_rate": 1555,
       "fixed_variable": "Variable",
-      "expense_type": "Marketing y Ventas",
-      "transfer": false,
+      "expense_type": null,
+      "transfer": true,
       "needs_review": false,
       "review_reason": null,
       "source": "efectivo-app"
@@ -159509,15 +159515,16 @@
       "amount_ars": 231000,
       "amount_usd": 150,
       "description": "Efectivo — Comisión CH Estudio",
-      "transfer": false,
+      "transfer": true,
       "needs_review": false,
       "counterparty": "CH Estudio",
       "counterparty_type": "supplier",
-      "category": "Marketing",
-      "subcategory": "Comisiones",
-      "expense_type": "Marketing y Ventas",
+      "category": "Comisión a revendedor",
+      "subcategory": null,
+      "expense_type": null,
       "fixed_variable": "Variable",
-      "supplier_id": "PROV-mvgsdrjj-23kr"
+      "supplier_id": "PROV-mvgsdrjj-23kr",
+      "review_reason": null
     },
     {
       "id": "ef-l06-20261105-05",
@@ -215831,6 +215838,10 @@
     "wgr5iJ5TQ8ARdpCPUr7lrwY0ytolv6mC": {
       "userId": "u-admin",
       "expires": 1795188381380
+    },
+    "bca1oF-qXPsXsySfSMioM_tD55a3qqdJ": {
+      "userId": "u-admin",
+      "expires": 1795188514185
     }
   },
   "settings": {
