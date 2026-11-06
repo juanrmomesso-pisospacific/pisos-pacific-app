@@ -51014,7 +51014,8 @@
       "currency": "USD",
       "created_at": "2026-11-06T15:18:24.908Z",
       "quote_number": "A2557",
-      "status": "DRAFT"
+      "status": "DRAFT",
+      "share_token": "2b5795207026897ccf2cfa1f"
     }
   ],
   "clients": [
