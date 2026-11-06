@@ -50418,7 +50418,7 @@
       "seller_phone": "+54 9 11 51750087",
       "title": "Obra - Escaleras Palacio Bellini",
       "has_iva": true,
-      "price": 3940.0262,
+      "price": 4157.8261999999995,
       "zoned": false,
       "description": "H2O HD XL - Natural Oak 6,5mm x 23cm x 1,50m + 6 más",
       "items": [
@@ -50492,10 +50492,10 @@
           "sku": "SERV-131",
           "description": "Servicio de Entrega",
           "quantity": 180,
-          "unit_price": 0,
+          "unit_price": 1,
           "cost": 0,
           "category": "Servicio",
-          "total": 0,
+          "total": 180,
           "discount": 0,
           "image": "",
           "target_item_index": null
