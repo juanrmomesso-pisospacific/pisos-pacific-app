@@ -160259,7 +160259,7 @@
       "status": "Lost",
       "assigned_seller": "",
       "created_at": "2026-06-17T10:03:36.000Z",
-      "last_touch_at": "2026-10-05T23:22:47.000Z"
+      "last_touch_at": "2026-11-06T04:33:36.000Z"
     },
     {
       "id": "local-1781697527047-g12vp",
@@ -170628,12 +170628,12 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-email-19ed5094a970",
       "status": "closed",
-      "unread_count": 2,
-      "last_message_at": "2026-10-05T23:22:47.000Z",
-      "last_message_preview": "Skills, 3D, new models, CMS Lists, and more\r\n\r\n                                                  \r\n                                         ",
+      "unread_count": 3,
+      "last_message_at": "2026-11-06T04:33:36.000Z",
+      "last_message_preview": "MCP, Harness 2, Convert, and more\r\n\r\n                                                  \r\n                                                   ",
       "email_subject": "We’ve updated Framer’s legal terms",
       "last_message_direction": "in",
-      "last_inbound_at": "2026-10-05T23:22:47.000Z",
+      "last_inbound_at": "2026-11-06T04:33:36.000Z",
       "ignored": true
     },
     {
@@ -203016,6 +203016,14 @@
       "status": "received",
       "media_url": "/uploads/99b4fe52c7733133.jpg",
       "media_type": "image"
+    },
+    {
+      "id": "m-email-1a1af2234cae",
+      "conversation_id": "conv-email-19ed5094a970",
+      "direction": "in",
+      "body": "✉️ Framer Monthly\n\nMCP, Harness 2, Convert, and more\r\n\r\n                                                  \r\n                                                   \r\n                                                   \r\n                                                   \r\n                                                   \r\n                                                   \r\n                                                 \r\nConnect your favorite AI tool to Framer, hand complete workflows to the Agent, and run funnels and A/B tests from a conversation.\r\nYou’ll also find a new Content panel for localized content, Agent Templates, and guides for migrating a whole site.\r\n\r\nView all updates [https://www.framer.com/updates]\r\n\r\n\r\nFramer MCP\r\n\r\nBuild and update your site from ChatGPT, Claude, Cursor, or Grok. Edit the Canvas, manage CMS content, and publish from desktop or\r\nphone. Explore Framer MCP. [https://www.framer.com/mcp/]\r\n\r\nhttps://www.framer.com/mcp/\r\n\r\n\r\nHarness 2\r\n\r\nWe rebuilt the Agent to run whole workflows as a single program. It applies changes while it plans the next steps, so you see\r\nprogress sooner. Explore Harness 2. [https://www.framer.com/updates/harness-2]\r\n\r\nhttps://www.framer.com/updates/harness-2\r\n\r\n\r\nConvert update\r\n\r\nAsk the Agent to create, edit, and analyze funnels and A/B tests. Country-based triggers show overlays based on a visitor’s\r\ncountry or region. Explore Convert. [https://www.framer.com/updates/convert-update]\r\n\r\nhttps://www.framer.com/updates/convert-update\r\n\r\n\r\nOt",
+      "ts": "2026-11-06T04:33:36.000Z",
+      "status": "received"
     }
   ],
   "templates": [
@@ -214915,7 +214923,6 @@
     "mp_pending_job": null,
     "mp_last_sync": "2026-11-05T12:49:00.204Z",
     "gmail_seen_ids": [
-      "19ffb81bb8f43263",
       "19ffbc8398c01fe0",
       "19ffbdde5fff6b9f",
       "19ffbe4a0ab6c9c9",
@@ -215714,7 +215721,8 @@
       "1a1ab5e5789f2ca0",
       "1a1abbf0acf86d89",
       "1a1acf5b7182b42c",
-      "1a1af1492f23422e"
+      "1a1af1492f23422e",
+      "1a1af2234cae3990"
     ],
     "cash_sessions": {
       "1136982222": {
