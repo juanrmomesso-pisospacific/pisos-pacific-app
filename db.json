@@ -169774,6 +169774,22 @@
       "assigned_seller": "",
       "created_at": "2026-11-05T12:24:41.611Z",
       "last_touch_at": "2026-11-05T12:24:41.611Z"
+    },
+    {
+      "id": "local-1793976135127-2ozm4",
+      "name": "Arq. Dolores Rubio ",
+      "phone": "+54 9 11 3439-3497",
+      "email": "",
+      "source": "WhatsApp",
+      "interested_products": [
+        "h2o y madera"
+      ],
+      "notes": "",
+      "status": "Quoted",
+      "assigned_seller": "Victoria Gonzalez Collado",
+      "address": "Virrey Loreto 3188",
+      "created_at": "2026-11-06T14:42:15.005Z",
+      "last_touch_at": "2026-11-06T14:42:19.574Z"
     }
   ],
   "conversations": [
