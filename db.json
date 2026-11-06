@@ -50522,7 +50522,8 @@
       "currency": "USD",
       "created_at": "2026-11-05T21:26:27.207Z",
       "quote_number": "A5140",
-      "status": "SENT"
+      "status": "SENT",
+      "share_token": "b1a84d99bde56dc7c695a5ae"
     }
   ],
   "clients": [
