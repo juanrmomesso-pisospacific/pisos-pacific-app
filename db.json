@@ -50029,9 +50029,9 @@
       "seller_phone": "+54 11 36982222",
       "title": "Cotización Ine Carrera | Reparacion",
       "has_iva": true,
-      "price": 2717.0308,
+      "price": 1930.0467999999998,
       "zoned": false,
-      "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m + 6 más",
+      "description": "H2O - Roble Clásico 5,5mm x 18cm x 1,20m + 4 más",
       "items": [
         {
           "product_id": "PROD-033",
@@ -50044,19 +50044,6 @@
           "disc_value": 10,
           "total": 1421.2,
           "discount": 142.12,
-          "image": "",
-          "target_item_index": null
-        },
-        {
-          "product_id": "SERV-106",
-          "sku": "SERV-106",
-          "description": "Servicio - Colocación H2O",
-          "quantity": 34,
-          "unit_price": 15,
-          "cost": 6,
-          "category": "Servicio",
-          "total": 510,
-          "discount": 0,
           "image": "",
           "target_item_index": null
         },
@@ -50095,19 +50082,6 @@
           "cost": 1.36,
           "category": "Zócalos",
           "total": 120,
-          "discount": 0,
-          "image": "",
-          "target_item_index": null
-        },
-        {
-          "product_id": "SERV-129",
-          "sku": "SERV-129",
-          "description": "Servicio - Colocación Zócalos Pegados y Clavados",
-          "quantity": 27,
-          "unit_price": 5.2,
-          "cost": 4,
-          "category": "Servicio",
-          "total": 140.4,
           "discount": 0,
           "image": "",
           "target_item_index": null
