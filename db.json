@@ -178630,7 +178630,7 @@
       "linked_client_name": null,
       "linked_lead_id": "lead-instagram-1793881483709",
       "status": "open",
-      "unread_count": 1,
+      "unread_count": 0,
       "last_message_at": "2026-11-05T12:24:41.611Z",
       "last_message_preview": "📷 Foto",
       "last_message_direction": "in",
@@ -215114,6 +215114,10 @@
     "GC-a3Oklf53Ijq0oPoIyNu89_407I8oo": {
       "userId": "u-vicky",
       "expires": 1795029121750
+    },
+    "ouMfEWdJqF9Ocndt1VAHxdQhTh15cKnW": {
+      "userId": "u-mr9df9l41iq8",
+      "expires": 1795184794683
     }
   },
   "settings": {
