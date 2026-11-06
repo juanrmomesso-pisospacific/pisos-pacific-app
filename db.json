@@ -50958,6 +50958,63 @@
       "quote_number": "A9476",
       "status": "DRAFT",
       "lead_id": "local-1793976135127-2ozm4"
+    },
+    {
+      "id": "local-1793978305504-5k7z7",
+      "client_id": "CLI-062",
+      "client_name": "Francisco Rollo",
+      "client_dni": "",
+      "client_email": "",
+      "client_phone": "",
+      "client_address": "",
+      "internal_notes": "",
+      "public_notes": "Se debe realizar inspección previa. M2 basados en información brindada por el cliente. ",
+      "payment_terms": "Anticipo 80% · Conforme 20%",
+      "seller_name": "Juan Rodriguez Momesso",
+      "seller_phone": "+54 9 11 51750087",
+      "title": "Local Palermo",
+      "has_iva": true,
+      "price": 1785.3066000000001,
+      "zoned": false,
+      "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m + 1 más",
+      "items": [
+        {
+          "product_id": "local-1790089780830-ghwcm",
+          "sku": "PROD-400",
+          "description": "H2O HD XL - Aura 6,5mm x 23cm x 1,50m",
+          "quantity": 31.3,
+          "unit_price": 38,
+          "cost": 16,
+          "category": "Pisos H2O",
+          "disc_value": 10,
+          "total": 1189.4,
+          "discount": 118.94,
+          "image": "",
+          "target_item_index": null
+        },
+        {
+          "product_id": "SERV-106",
+          "sku": "SERV-106",
+          "description": "Servicio - Colocación H2O",
+          "quantity": 27,
+          "unit_price": 15,
+          "cost": 6,
+          "category": "Servicio",
+          "total": 405,
+          "discount": 0,
+          "image": "",
+          "target_item_index": null
+        }
+      ],
+      "discount_total": 118.94,
+      "discount_amount": 118.94,
+      "reseller_id": "",
+      "reseller_name": "",
+      "commission_split_discount": true,
+      "currency": "USD",
+      "created_at": "2026-11-06T15:18:24.908Z",
+      "quote_number": "A2557",
+      "status": "DRAFT"
     }
   ],
   "clients": [
