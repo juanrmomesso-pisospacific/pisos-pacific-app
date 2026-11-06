@@ -161368,6 +161368,28 @@
       "review_reason": "extracto bancario importado — verificar clasificación y signo",
       "raw_name": "Debito Transf. HB",
       "id": "MOV-IMP-mw54xye7-018"
+    },
+    {
+      "id": "local-1793980530185-3745k",
+      "flow": "Ingreso",
+      "date": "2026-11-06T00:00:00.000Z",
+      "caja_id": "CAJ-005",
+      "caja_name": "Efectivo USD",
+      "category": "Venta - Pisos",
+      "subcategory": null,
+      "counterparty": "Solana Ottaviani",
+      "counterparty_type": "client",
+      "description": "Cobro - Obra Sanchez de Bustamante",
+      "sale_ref": "A8170",
+      "currency": "USD",
+      "amount_ars": null,
+      "amount_usd": 1100,
+      "exchange_rate": null,
+      "fixed_variable": null,
+      "expense_type": null,
+      "transfer": false,
+      "needs_review": false,
+      "review_reason": null
     }
   ],
   "containers": [
