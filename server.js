@@ -3323,6 +3323,41 @@ app.get('/api/sales/:id/inspeccion-pdf', (req, res) => {
   renderPdf(inspeccionData(s), res, pdfFilename(`Protocolo inspeccion`, s.quote_number || s.id, s.client_name));
 });
 
+// Guía de uso, cuidado y cobertura (H2O / Madera) → PDF que el vendedor manda al cliente tras el
+// conforme de obra. 4 datos de la venta (cliente, dirección, modelo, fecha de conforme), editables
+// y guardados en sale.warranty_guide (PATCH genérico). Defaults derivados de la venta si están vacíos.
+function warrantyGuideData(s, tipo) {
+  const loc = db.settings.locale || 'es-AR';
+  const wg = s.warranty_guide || {};
+  const floorOf = (re) => (s.items || []).find(it => {
+    const p = db.products.find(x => x.sku === it.sku); if (!p || !p.stockTrack || p.kind === 'panel') return false;
+    return re.test(`${p.name || ''} ${it.description || ''}`);
+  });
+  const anyFloor = (s.items || []).find(it => { const p = db.products.find(x => x.sku === it.sku); return p && p.stockTrack && p.kind !== 'panel'; });
+  const floor = tipo === 'madera' ? (floorOf(/madera|roble|engineering|ingenieria/i) || anyFloor) : (floorOf(/h2o/i) || anyFloor);
+  const rawModel = floor ? (floor.description || '') : '';
+  const defModelo = rawModel.replace(/^\s*(h2o)\b[\s-]*(hd)?\b[\s-]*(xl)?\b[\s-]*/i, '').trim() || rawModel;
+  const finalizedAt = (s.status_log || []).filter(l => l.to === 'Finalizado').map(l => l.at).pop();
+  const fdef = s.delivery_date || finalizedAt || s.material_delivery_date || null;
+  const fmtD = (v) => { if (!v) return ''; const d = new Date(v); return isNaN(d) ? String(v) : d.toLocaleDateString(loc); };
+  return {
+    doc_type: 'guia_h2o',
+    guide_type: tipo === 'madera' ? 'madera' : 'h2o',
+    cliente: wg.cliente || s.client_name || '',
+    direccion: wg.direccion || s.title || s.client_address || '',
+    modelo: wg.modelo || defModelo || '',
+    fecha: wg.fecha || fmtD(fdef),
+  };
+}
+app.get('/api/sales/:id/guia-pdf', (req, res) => {
+  const s = db.sales.find(x => x.id === req.params.id);
+  if (!s) return res.sendStatus(404);
+  const tipo = String(req.query.tipo || 'h2o').toLowerCase();
+  if (tipo !== 'h2o') return res.status(400).json({ error: 'Guía no disponible todavía para ese tipo de piso.' });
+  const data = warrantyGuideData(s, tipo);
+  renderPdf(data, res, pdfFilename(`Guia-Pacific-H2O`, data.cliente, data.fecha));
+});
+
 // Estado de cuenta de una venta para compartir al cliente: detalle + total + pagos + saldo.
 // Los cobros se resuelven igual que en el detalle de Ventas: con finanzas = ingresos del cashflow
 // linkeados (sale_ref); sin finanzas = pagos directos (sale.payments). Monto en la moneda de la venta.

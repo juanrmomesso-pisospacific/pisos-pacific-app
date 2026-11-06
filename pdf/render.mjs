@@ -639,10 +639,200 @@ export async function estadoCuentaPdf(data) {
   return toBuffer(doc);
 }
 
+// ===== GUÍA DE USO, CUIDADO Y COBERTURA – PISOS PACIFIC H2O (handoff 1A) =====
+// 4 páginas A4, espacio de diseño 794×1123px (96dpi) como el recibo (escala sRPX). Textos FIJOS
+// del handoff (no se editan); 4 variables de la venta: cliente, direccion, modelo, fecha. Fuente
+// Inter (Gotham no licenciada). Motor pdfkit (Puppeteer/Playwright no corren en Render).
+export async function guiaH2OPdf(data) {
+  const doc = newDoc();
+  const S = 595.28 / 794;
+  const I = { i900: '#1A1815', i800: '#262320', i700: '#3D3935', i600: '#57524C', i500: '#7A746C', i400: '#9E978E', i300: '#C4BEB6', i200: '#E5E1DC', i100: '#F4F1ED', bone: '#F3F0EC', cross: '#BE2F2A' };
+  const esc = (v) => String(v == null ? '' : v);
+  // P(n, fn): dibuja la página n (escala + save/restore). data.__only renderiza una sola (para QA).
+  const only = data.__only || 0; let drawn = 0;
+  const P = (n, fn) => { if (only && n !== only) return; if (drawn++) { doc.addPage({ size: 'A4', margin: 0 }); doc.page.height = 1e6; } doc.save(); doc.scale(S); fn(); doc.restore(); };
+  const eyebrow = (txt, x, y, { color = I.i500, size = 11, em = 0.18, align = 'left' } = {}) =>
+    line(doc, txt.toUpperCase(), x, y, { font: 'semi', size, cs: size * em, color, align });
+  const folio = (txt) => { doc.font('reg').fontSize(11).fillColor(I.i500).text(txt, 0, 1091, { width: 794, align: 'center', characterSpacing: 11 * 0.16 }); };
+  // Fila de "tabla" 180/1fr (label + texto wrap). Devuelve el y siguiente.
+  const TX = 72, TW = 794 - 144, LBLW = 180, TXT_X = TX + LBLW + 16, TXT_W = 794 - TX - TXT_X;
+  const tableRow = (label, parts, y, pad = 9) => {
+    const yy = y + pad;
+    const lh = para(doc, label, TX, yy, LBLW, { font: 'semi', size: 14, color: I.i900 });  // etiqueta: wrap en 180px
+    const h = paraRich(parts, TXT_X, yy, TXT_W, 14, 1.55, I.i800);
+    const rowH = Math.max(h, lh, 18) + pad * 2;
+    hline(doc, TX, y + rowH, 794 - TX, I.i200, 1);
+    return y + rowH;
+  };
+  // Párrafo que admite tramos en 'semi' (negrita): parts = [{t},{t,b:true},…] o string.
+  function paraRich(parts, x, y, w, size = 14, lh = 1.55, color = I.i800) {
+    const arr = typeof parts === 'string' ? [{ t: parts }] : parts;
+    doc.fontSize(size).fillColor(color);
+    let cx = x, cy = y; const lineH = size * lh; let maxY = y + lineH;
+    for (const seg of arr) {
+      doc.font(seg.b ? 'semi' : 'reg');
+      for (const word of seg.t.split(/(\s+)/)) {
+        if (!word) continue;
+        const wW = doc.widthOfString(word);
+        if (cx + wW > x + w && cx > x) { cx = x; cy += lineH; }
+        doc.font(seg.b ? 'semi' : 'reg').fillColor(color).text(word, cx, cy, { lineBreak: false });
+        cx += wW; maxY = cy + lineH;
+      }
+    }
+    return maxY - y;
+  }
+
+  // ---------- PÁGINA 01 — Portada ----------
+  P(1, () => {
+  try { doc.image(ASSET('pacific_logo_black.png'), 56, 40, { height: 22 }); } catch { /* sin logo */ }
+  eyebrow('Guía de entrega · H2O', 738, 44, { color: I.i600, align: 'right' });
+  // Foto (asset ya recortado al aspecto 682×500 → se dibuja directo, sin clip: el clip de pdfkit
+  // en contexto escalado suprime la imagen, y el logo sin clip sí renderiza).
+  try { doc.image(ASSET('guia_h2o_living.png'), 56, 102, { width: 682, height: 500 }); }
+  catch { doc.roundedRect(56, 102, 682, 500, 2).fill(I.bone); }
+  // Título
+  eyebrow('Pisos Pacific H2O', 56, 640, { color: I.i500 });
+  doc.font('reg').fontSize(42).fillColor(I.i900);
+  doc.text('Guía de uso, cuidado', 56, 664, { lineBreak: false, characterSpacing: -0.42 });
+  doc.text('y cobertura', 56, 712, { lineBreak: false, characterSpacing: -0.42 });
+  // Grilla de datos de obra (2 col)
+  const gY = 792, colR = 56 + 341 + 24;
+  hline(doc, 56, gY, 738, I.i900, 1);
+  const cell = (label, value, x, y, w) => {
+    eyebrow(label, x, y + 16, { color: I.i500, size: 10 });
+    para(doc, value || '—', x, y + 34, w, { font: 'reg', size: 16, color: I.i900 });
+  };
+  cell('Cliente', esc(data.cliente), 56, gY, 300);
+  cell('Fecha de entrega / instalación', esc(data.fecha), colR, gY, 300);
+  hline(doc, 56, gY + 62, 738, I.i200, 1);
+  cell('Modelo de piso', 'Piso Pacific H2O ' + esc(data.modelo), 56, gY + 62, 300);
+  cell('Dirección de obra', esc(data.direccion), colR, gY + 62, 300);
+  hline(doc, 56, gY + 124, 738, I.i200, 1);
+  doc.moveTo(56 + 341 + 12, gY).lineTo(56 + 341 + 12, gY + 124).lineWidth(1).strokeColor(I.i200).stroke();
+  folio('01');
+  });
+
+  // ---------- PÁGINA 02 — Tu piso · Cobertura · Cuidado ----------
+  P(2, () => {
+  eyebrow('Tu piso · Cobertura · Cuidado', TX, 44);
+  let y = 84;
+  doc.font('reg').fontSize(28).fillColor(I.i900).text('Tu piso H2O: Calidad y Resistencia', TX, y, { lineBreak: false }); y += 42;
+  y += para(doc, 'Nuestra línea H2O está fabricada con tecnología de núcleo rígido composite (SWPC/SPC), diseñada para ofrecer una gran resistencia al agua, durabilidad frente al tránsito diario y un acabado cálido al pisar.', TX, y, TW, { font: 'reg', size: 15, color: I.i800 }) + 28;
+  // Plazos de cobertura
+  doc.font('reg').fontSize(28).fillColor(I.i900).text('Plazos de Cobertura', TX, y, { lineBreak: false }); y += 38;
+  line(doc, 'Respaldamos tu compra con los siguientes plazos de cobertura:', TX, y, { size: 15, color: I.i800 }); y += 28;
+  // dos tarjetas
+  const cardW = (TW - 16) / 2, cardH = 164, cardY = y;
+  const card = (x) => { doc.roundedRect(x, cardY, cardW, cardH, 4).fill(I.bone); };
+  card(TX); card(TX + cardW + 16);
+  // tarjeta Material
+  const mx = TX + 24;
+  doc.font('reg').fontSize(56).fillColor(I.i900).text('15', mx, cardY + 18, { lineBreak: false });
+  eyebrow('años', mx + 52, cardY + 40, { color: I.i900, size: 12, em: 0.16 });
+  eyebrow('Residencial', mx + 52, cardY + 56, { color: I.i600, size: 12, em: 0.16 });
+  const divx = mx + 150;
+  doc.moveTo(divx, cardY + 22).lineTo(divx, cardY + 74).lineWidth(1).strokeColor(I.i300).stroke();
+  doc.font('reg').fontSize(56).fillColor(I.i900).text('8', divx + 20, cardY + 18, { lineBreak: false });
+  eyebrow('años', divx + 48, cardY + 40, { color: I.i900, size: 12, em: 0.16 });
+  eyebrow('Comercial', divx + 48, cardY + 56, { color: I.i600, size: 12, em: 0.16 });
+  eyebrow('Material', mx, cardY + 92, { color: I.i600, size: 12, em: 0.16 });
+  para(doc, 'Cobertura sobre el producto frente a eventuales defectos de fabricación. 15 años para uso residencial y 8 años para uso comercial de tránsito medio.', mx, cardY + 110, cardW - 48, { font: 'reg', size: 14, color: I.i800 });
+  // tarjeta Instalación
+  const ix = TX + cardW + 16 + 24;
+  doc.font('reg').fontSize(56).fillColor(I.i900).text('12', ix, cardY + 18, { lineBreak: false });
+  eyebrow('meses / 1 año', ix + 72, cardY + 50, { color: I.i900, size: 12, em: 0.16 });
+  eyebrow('Instalación', ix, cardY + 92, { color: I.i600, size: 12, em: 0.16 });
+  para(doc, 'Cobertura sobre la correcta colocación y encastre del piso realizado por nuestro equipo.', ix, cardY + 110, cardW - 48, { font: 'reg', size: 14, color: I.i800 });
+  y = cardY + cardH + 16;
+  y += para(doc, 'La cobertura está sujeta a la evaluación técnica de Pisos Pacific sobre el correcto uso, cuidado y mantenimiento del producto según lo indicado en esta guía. No incluye daños por uso indebido o accidentes.', TX, y, TW, { font: 'reg', size: 12, color: I.i600 }) + 26;
+  // Consejos de cuidado
+  doc.font('reg').fontSize(28).fillColor(I.i900).text('Consejos Simples para el Cuidado Diario', TX, y, { lineBreak: false }); y += 38;
+  line(doc, 'Cuidar tu piso H2O es muy sencillo:', TX, y, { size: 15, color: I.i800 }); y += 24;
+  hline(doc, TX, y, 794 - TX, I.i200, 1);
+  y = tableRow('Limpieza cotidiana', 'Barré o pasá la aspiradora antes de trapear para retirar el polvo y la arena.', y);
+  y = tableRow('Trapeado', 'Usá un trapeador húmedo con agua y un limpiador de pH neutro. Si bien el piso es resistente al agua, es recomendable no dejar acumulaciones de agua por tiempo prolongado para cuidar las bases.', y);
+  y = tableRow('Protección para muebles', 'Colocá felpas protectoras en las patas de sillas, mesas y muebles pesados.', y);
+  y = tableRow('Felpudos de entrada', 'Utilizá un felpudo en los accesos desde el exterior para retener la suciedad.', y);
+  y += 16;
+  eyebrow('Lo que sugerimos evitar:', TX, y, { color: I.i900, size: 12, em: 0.16 }); y += 20;
+  const avoid = (txt, yy) => { line(doc, '✗', TX, yy, { font: 'semi', size: 14, color: I.cross }); para(doc, txt, TX + 24, yy, TW - 24, { font: 'reg', size: 14, color: I.i800 }); };
+  avoid('No utilices limpiadores a vapor, ceras, solventes fuertes ni amoníaco.', y); y += 24;
+  avoid('Evitá arrastrar muebles u objetos pesados directamente sobre las tablas.', y);
+  folio('02');
+  });
+
+  // ---------- PÁGINA 03 — Climatización · Beneficios ----------
+  P(3, () => {
+  eyebrow('Climatización · Beneficios', TX, 40);
+  let y = 84;
+  doc.font('reg').fontSize(28).fillColor(I.i900).text('Climatización, Losa Radiante y Sol Directo', TX, y, { lineBreak: false }); y += 44;
+  hline(doc, TX, y, 794 - TX, I.i200, 1);
+  y = tableRow('Uso con Losa Radiante', [
+    { t: 'El piso H2O es apto para sistemas de calefacción por losa radiante. Para preservar el material y el encastre, la temperatura de la superficie del piso no debe superar bajo ninguna circunstancia los ' },
+    { t: '28 °C', b: true },
+    { t: '. El uso de la calefacción debe ser gradual: al encenderla al inicio de la temporada, aumentá la temperatura de a poco durante los primeros días.' },
+  ], y, 12);
+  y = tableRow('Ventanales Grandes y Protección Solar', 'En ambientes con ventanales grandes de piso a techo o fuerte exposición al sol directo, es fundamental el uso de cortinas, persianas o toldos. Esto evita el sobrecalentamiento focalizado por radiación solar continua.', y, 12);
+  y += 40;
+  doc.font('reg').fontSize(28).fillColor(I.i900).text('Beneficios Exclusivos para Clientes Pisos Pacific', TX, y, { lineBreak: false }); y += 38;
+  y += para(doc, 'Como cliente de la marca, tenés a tu disposición ventajas comerciales y operativas posventa:', TX, y, TW, { font: 'reg', size: 15, color: I.i800 }) + 10;
+  hline(doc, TX, y, 794 - TX, I.i200, 1);
+  y = tableRow('Atención Posventa Prioritaria', 'Tu consulta o solicitud de asistencia entra directo en nuestra agenda preferencial.', y, 12);
+  y = tableRow('Servicio Pro Clean', 'Podés solicitar la contratación de nuestro tratamiento técnico de limpieza y mantenimiento profesional Pro Clean cuando quieras renovar el aspecto del piso.', y, 12);
+  y = tableRow('Prioridad para Reparaciones', 'Si el piso sufre un daño accidental o rotura por uso indebido (golpes, caída de objetos pesados o rayaduras), contás con el beneficio de prioridad de servicio técnico para la evaluación del daño y la cotización/reparación del sector afectado.', y, 12);
+  folio('03');
+  });
+
+  // ---------- PÁGINA 04 — Emergencias · Contacto ----------
+  P(4, () => {
+  eyebrow('Emergencias · Contacto', TX, 40);
+  let y = 84;
+  const px = TX + 32, TW2 = TW - 64;
+  const emTitle = 'En Caso de Inundación o Emergencia Hídrica';
+  const emDesc = 'Ante cualquier filtración, anegamiento o inundación en el ambiente, comunicate sin falta lo antes posible con nuestro equipo a cualquiera de los siguientes números directos:';
+  const emClose = 'Llamarnos de inmediato nos permite asistirte lo antes posible y evaluar la situación en conjunto para determinar los pasos a seguir.';
+  const titleH = (doc.font('reg').fontSize(28), doc.heightOfString(emTitle, { width: TW2 }));
+  const descH = (doc.font('reg').fontSize(14), doc.heightOfString(emDesc, { width: TW2 }));
+  const closeH = (doc.font('reg').fontSize(14), doc.heightOfString(emClose, { width: TW2 }));
+  const panelH = 24 + 26 + titleH + 12 + descH + 14 + 44 + 14 + closeH + 24;
+  doc.roundedRect(TX, y, TW, panelH, 4).fill(I.i900);
+  let py = y + 24;
+  eyebrow('Emergencias', px, py, { color: I.i300 }); py += 26;
+  py += para(doc, emTitle, px, py, TW2, { font: 'reg', size: 28, color: '#ffffff' }) + 12;
+  py += para(doc, emDesc, px, py, TW2, { font: 'reg', size: 14, color: I.i200 }) + 14;
+  // teléfonos (3 col)
+  const phones = ['+54 11 5175-0087', '+54 11 3698-2222', '+54 11 2331-3914'];
+  const colw = TW2 / 3;
+  hline(doc, px, py, px + TW2, I.i600, 1);
+  phones.forEach((disp, idx) => {
+    doc.font('reg').fontSize(18).fillColor('#ffffff').text(disp, px + colw * idx + (idx ? 16 : 0), py + 13, { lineBreak: false });
+    if (idx) doc.moveTo(px + colw * idx, py).lineTo(px + colw * idx, py + 44).lineWidth(1).strokeColor(I.i600).stroke();
+  });
+  py += 44;
+  hline(doc, px, py, px + TW2, I.i600, 1); py += 14;
+  para(doc, emClose, px, py, TW2, { font: 'reg', size: 14, color: I.i200 });
+  y += panelH + 40;
+  doc.font('reg').fontSize(28).fillColor(I.i900).text('¿Cómo Contactarnos?', TX, y, { lineBreak: false }); y += 40;
+  paraRich([
+    { t: 'Para consultas sobre uso, solicitud de presupuestos de reparación o coordinación de servicios, podés escribirnos por correo electrónico a ' },
+    { t: 'info@pisospacific.com.ar', b: true },
+    { t: ' o comunicarte a nuestros teléfonos de atención.' },
+  ], TX, y, TW, 15, 1.65, I.i800);
+  // Pie
+  try { doc.image(ASSET('pacific_logo_tagline_black.png'), TX, 1123 - 52 - 34, { height: 34 }); } catch { /* sin logo */ }
+  hline(doc, TX, 1123 - 52 - 16, 794 - TX, I.i200, 1);
+  eyebrow('pisospacific.com', 794 - TX, 1123 - 52, { color: I.i500, size: 11, em: 0.16, align: 'right' });
+  folio('04');
+  });
+
+  return toBuffer(doc);
+}
+
 export function generatePdf(data) {
   if (data?.doc_type === 'remito') return remitoPdf(data);
   if (data?.doc_type === 'recibo') return reciboPdf(data);
   if (data?.doc_type === 'inspeccion') return inspeccionPdf(data);
   if (data?.doc_type === 'estado_cuenta') return estadoCuentaPdf(data);
+  if (data?.doc_type === 'guia_h2o') return guiaH2OPdf(data);
   return presupuestoPdf(data);
 }

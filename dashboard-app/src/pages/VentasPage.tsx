@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Search, LayoutGrid, Rows3, Smartphone, Plus, Check, CalendarDays, Truck, Info, CalendarClock, ArrowUp, ArrowDown, ChevronsUpDown, MessageCircle, Pencil, Trash2 } from "lucide-react"
+import { Search, LayoutGrid, Rows3, Smartphone, Plus, Check, CalendarDays, Truck, Info, CalendarClock, ArrowUp, ArrowDown, ChevronsUpDown, MessageCircle, Pencil, Trash2, ShieldCheck } from "lucide-react"
 import { useNavigate, useSearchParams } from "react-router-dom"
 import { findConvId } from "@/lib/chat"
 import { Button } from "@/components/ui/button"
@@ -799,6 +799,9 @@ function SaleDetailSheet({ sale, onClose, onChanged }: { sale: Sale | null; onCl
           </DetailSection>
         </div>
 
+        {/* Guía de garantía — PDF que el vendedor manda al cliente tras el conforme de obra */}
+        <WarrantyGuidePanel sale={sale} products={products} onChanged={onChanged} />
+
         {/* Entrega de material — descuenta stock SIN finalizar la venta (entrega antes de colocar) */}
         <MaterialDeliveryPanel sale={sale} products={products} isAdmin={isAdmin} onOpen={() => setDeliverOpen(true)} onChanged={onChanged} />
 
@@ -1269,6 +1272,56 @@ function Tile({ label, value, highlight }: { label: string; value: string; highl
     </div>
   )
 }
+// Guía de uso, cuidado y cobertura (H2O / Madera) — 4 datos editables (precargados de la venta,
+// guardados en sale.warranty_guide) + botón que abre el PDF para descargar/imprimir/mandar al cliente.
+function WarrantyGuidePanel({ sale, products, onChanged }: { sale: Sale; products: Product[]; onChanged: () => void }) {
+  const update = useAction(api.update)
+  const wg = (sale.warranty_guide || {}) as { cliente?: string; direccion?: string; modelo?: string; fecha?: string }
+  const fmtD = (s?: string | null) => { const m = String(s || "").slice(0, 10).match(/(\d{4})-(\d{2})-(\d{2})/); return m ? `${m[3]}/${m[2]}/${m[1]}` : "" }
+  const floor = (sale.items || []).find((it) => { const p = products.find((x) => x.sku === it.sku); return !!(p && p.stockTrack && p.kind !== "panel") })
+  const defModelo = (floor?.description || "").replace(/^\s*h2o\b[\s-]*(hd)?\b[\s-]*(xl)?\b[\s-]*/i, "").trim()
+  const finalized = (sale.status_log || []).filter((l) => l.to === "Finalizado").map((l) => l.at).pop()
+  const defFecha = fmtD(sale.delivery_date || finalized || sale.material_delivery_date)
+  const [cliente, setCliente] = useState("")
+  const [direccion, setDireccion] = useState("")
+  const [modelo, setModelo] = useState("")
+  const [fecha, setFecha] = useState("")
+  useEffect(() => {
+    setCliente(wg.cliente ?? sale.client_name ?? "")
+    setDireccion(wg.direccion ?? sale.title ?? sale.client_address ?? "")
+    setModelo(wg.modelo ?? defModelo ?? "")
+    setFecha(wg.fecha ?? defFecha ?? "")
+  }, [sale.id])  // eslint-disable-line react-hooks/exhaustive-deps
+  const dirty = cliente !== (wg.cliente ?? sale.client_name ?? "") || direccion !== (wg.direccion ?? sale.title ?? sale.client_address ?? "") || modelo !== (wg.modelo ?? defModelo ?? "") || fecha !== (wg.fecha ?? defFecha ?? "")
+  const save = async () => { const r = await update.run("sales", sale.id, { warranty_guide: { cliente, direccion, modelo, fecha } }); if (r) onChanged() }
+  const openGuide = async (tipo: "h2o" | "madera") => { if (dirty) await save(); window.open(`/api/sales/${sale.id}/guia-pdf?tipo=${tipo}`, "_blank") }
+  const lbl = "text-[10px] uppercase tracking-wide text-muted-foreground mb-1"
+  return (
+    <div className="mt-6 rounded-lg border border-border">
+      <div className="px-4 py-2 border-b border-border flex items-center gap-2">
+        <ShieldCheck className="h-4 w-4 text-muted-foreground" />
+        <div className="text-sm font-medium">Guía de garantía</div>
+        <span className="text-[11px] text-muted-foreground ml-auto">para el cliente tras el conforme de obra</span>
+      </div>
+      <div className="p-4 space-y-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div><div className={lbl}>Cliente</div><Input value={cliente} onChange={(e) => setCliente(e.target.value)} className="h-8" /></div>
+          <div><div className={lbl}>Fecha de conforme / entrega</div><Input value={fecha} onChange={(e) => setFecha(e.target.value)} placeholder="DD/MM/AAAA" className="h-8" /></div>
+          <div><div className={lbl}>Modelo de piso</div><Input value={modelo} onChange={(e) => setModelo(e.target.value)} placeholder="Ej: Natural Oak XL" className="h-8" /></div>
+          <div><div className={lbl}>Dirección de obra</div><Input value={direccion} onChange={(e) => setDireccion(e.target.value)} className="h-8" /></div>
+        </div>
+        <p className="text-[11px] text-muted-foreground">El documento antepone “Piso Pacific H2O” al modelo. Se guarda en la venta y podés editarlo cuando quieras.</p>
+        <div className="flex flex-wrap items-center gap-2">
+          {dirty && <Button size="sm" variant="outline" onClick={save} disabled={update.busy}>Guardar</Button>}
+          <Button size="sm" onClick={() => openGuide("h2o")} disabled={update.busy}>📄 Generar guía H2O (PDF)</Button>
+          <Button size="sm" variant="outline" disabled title="Próximamente — falta el contenido de la guía de Madera">Guía Madera · próximamente</Button>
+        </div>
+        {update.error ? <p className="text-[11px] text-destructive">{update.error}</p> : null}
+      </div>
+    </div>
+  )
+}
+
 function DetailSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>

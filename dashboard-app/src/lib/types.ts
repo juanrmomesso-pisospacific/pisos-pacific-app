@@ -128,6 +128,7 @@ export type Sale = {
   commission_paid?: boolean
   commission_paid_at?: string | null
   commission_override?: boolean   // la comisión se editó a mano para esta venta (no se recalcula)
+  warranty_guide?: { cliente?: string; direccion?: string; modelo?: string; fecha?: string }  // datos editables de la guía de garantía
 }
 
 export type Quote = {
