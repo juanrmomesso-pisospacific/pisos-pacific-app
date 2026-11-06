@@ -214946,11 +214946,9 @@
       "Ariel Ernesto Garcia",
       "Fabián Ortiz"
     ],
-    "mp_pending_job": null,
+    "mp_pending_job": 103976016,
     "mp_last_sync": "2026-11-05T12:49:00.204Z",
     "gmail_seen_ids": [
-      "19ffc5b5d68f581f",
-      "19ffc890b3c41a0b",
       "19ffcaccc1ce37c9",
       "19ffce0c6eb830fe",
       "19ffd083de9023ff",
@@ -215748,7 +215746,9 @@
       "1a1af2234cae3990",
       "1a1aff7c2ad16ef9",
       "1a1b07d57b343003",
-      "1a1b0bc46a09d13a"
+      "1a1b0bc46a09d13a",
+      "1a1b0e567dc1a712",
+      "1a1b0e566440fc20"
     ],
     "cash_sessions": {
       "1136982222": {
@@ -216427,7 +216427,9 @@
       "1a1a2a89e9873aba",
       "1a1a698af5fe5270",
       "1a1a70d07e7a4761",
-      "1a1abbf0acf86d89"
+      "1a1abbf0acf86d89",
+      "1a1b0e567dc1a712",
+      "1a1b0e566440fc20"
     ],
     "inbound_seen_ids": [
       "wamid.HBgNNTQ5MTE1MTc1MDA4NxUCABIYFDNBNzZBMTVDNUQyNDFFMjYxQjhEAA==",
@@ -217358,14 +217360,14 @@
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTU2NzE3NDM3MDA3NjI3MzozMzA4MjIzMTU1MzM4MjQzNDkyNjUxMDcwMzI2NTE4NTc5MgZDZD",
       "aWdfZAG1faXRlbToxOklHTWVzc2FnZAUlEOjE3ODQxNDA1ODM1OTc1MTU4OjM0MDI4MjM2Njg0MTcxMDMwMTI0NDI1OTM0NjM5MDc3ODk4NzAxNTozMzA5MTI3MjU4OTg2MTk3NjgwMzU5NjI5ODQxMTMxMTEwNAZDZD"
     ],
-    "last_weekly_reminder": "2026-10-30T12:46:25.948Z",
+    "last_weekly_reminder": "2026-11-06T12:46:26.209Z",
     "warehouses": [
       {
         "id": "main",
         "name": "Depósito Pacific"
       }
     ],
-    "last_daily_task_reminder": "2026-11-05",
+    "last_daily_task_reminder": "2026-11-06",
     "cash_allowlist": [
       "+54 11 36982222"
     ],
@@ -217929,7 +217931,7 @@
         "learned_at": "2026-09-26T10:46:00.268Z"
       }
     },
-    "last_daily_pending_digest": "2026-11-05",
+    "last_daily_pending_digest": "2026-11-06",
     "company": {
       "name": "Pisos Pacific",
       "web": "pisospacific.com",
@@ -217959,7 +217961,7 @@
     "wa_templates": {
       "reenganche_consulta": "¡Hola {{1}}! Te escribimos de Pisos Pacific 🙌 Hace unos días nos consultaste por nuestros pisos y no queremos dejarte sin respuesta. ¿Seguís con el proyecto? Contanos qué espacio querés renovar y te preparamos la cotización en el día."
     },
-    "mp_pending_at": null,
+    "mp_pending_at": "2026-11-06T12:46:26.950Z",
     "receipt_next": 116,
     "receipt_signature": "firma-juan.png",
     "receipt_signer": "Juan Rodriguez Momesso"
